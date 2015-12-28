@@ -2,6 +2,74 @@
 {
     "id":"http://www.opengis.net/gml/3.3/xbt#",
     "definitions":{
+        "CodeType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/LanguageStringType"
+                },
+                {
+                    "type":"object",
+                    "title":"CodeType",
+                    "properties":{
+                        "codeSpace":{
+                            "title":"codeSpace",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"codeSpace",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"CodeType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/xbt"
+            },
+            "propertiesOrder":[
+                "codeSpace"
+            ]
+        },
+        "LanguageStringAuxType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/StringOrRefType"
+                },
+                {
+                    "type":"object",
+                    "title":"LanguageStringAuxType",
+                    "properties":{
+                        "lang":{
+                            "title":"lang",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"lang",
+                                "namespaceURI":"http://www.w3.org/XML/1998/namespace"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LanguageStringAuxType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/xbt"
+            },
+            "propertiesOrder":[
+                "lang"
+            ]
+        },
         "CodeWithAuthorityType":{
             "allOf":[
                 {
@@ -56,74 +124,6 @@
                 "value",
                 "lang"
             ]
-        },
-        "LanguageStringAuxType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/StringOrRefType"
-                },
-                {
-                    "type":"object",
-                    "title":"LanguageStringAuxType",
-                    "properties":{
-                        "lang":{
-                            "title":"lang",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"lang",
-                                "namespaceURI":"http://www.w3.org/XML/1998/namespace"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LanguageStringAuxType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/xbt"
-            },
-            "propertiesOrder":[
-                "lang"
-            ]
-        },
-        "CodeType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/LanguageStringType"
-                },
-                {
-                    "type":"object",
-                    "title":"CodeType",
-                    "properties":{
-                        "codeSpace":{
-                            "title":"codeSpace",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"codeSpace",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CodeType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/xbt"
-            },
-            "propertiesOrder":[
-                "codeSpace"
-            ]
         }
     },
     "anyOf":[
@@ -131,7 +131,26 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "description"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml/3.3/xbt"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"#/definitions/LanguageStringAuxType"
@@ -146,7 +165,26 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "remarks"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml/3.3/xbt"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"#/definitions/LanguageStringType"

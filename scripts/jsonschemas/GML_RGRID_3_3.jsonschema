@@ -157,7 +157,7 @@
                     "title":"remoteSchema",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -183,7 +183,7 @@
                     "title":"href",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -196,7 +196,7 @@
                     "title":"role",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -209,7 +209,7 @@
                     "title":"arcrole",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -371,6 +371,40 @@
                 "abstractCRS"
             ]
         },
+        "AbstractReferenceableGridType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/GridType"
+                },
+                {
+                    "type":"object",
+                    "title":"AbstractReferenceableGridType",
+                    "properties":{
+                        "gridCRS":{
+                            "title":"gridCRS",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/GridCRSPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"gridCRS",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractReferenceableGridType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
+            },
+            "propertiesOrder":[
+                "gridCRS"
+            ]
+        },
         "GeneralGridAxisPropertyType":{
             "type":"object",
             "title":"GeneralGridAxisPropertyType",
@@ -389,19 +423,6 @@
                     "elementName":{
                         "localPart":"GeneralGridAxis",
                         "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
-                    }
-                },
-                "owns":{
-                    "title":"owns",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"owns",
-                        "namespaceURI":""
                     }
                 },
                 "nilReason":{
@@ -424,7 +445,7 @@
                     "title":"remoteSchema",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -450,7 +471,7 @@
                     "title":"href",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -463,7 +484,7 @@
                     "title":"role",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -476,7 +497,7 @@
                     "title":"arcrole",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -523,6 +544,19 @@
                         "localPart":"actuate",
                         "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
+                },
+                "owns":{
+                    "title":"owns",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"owns",
+                        "namespaceURI":""
+                    }
                 }
             },
             "typeType":"classInfo",
@@ -532,7 +566,6 @@
             },
             "propertiesOrder":[
                 "generalGridAxis",
-                "owns",
                 "nilReason",
                 "remoteSchema",
                 "type",
@@ -541,88 +574,8 @@
                 "arcrole",
                 "title",
                 "show",
-                "actuate"
-            ]
-        },
-        "GeneralGridAxisType":{
-            "type":"object",
-            "title":"GeneralGridAxisType",
-            "required":[
-                "offsetVector",
-                "coefficients",
-                "gridAxesSpanned",
-                "sequenceRule"
-            ],
-            "properties":{
-                "offsetVector":{
-                    "title":"offsetVector",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/VectorType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"offsetVector",
-                        "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
-                    }
-                },
-                "coefficients":{
-                    "title":"coefficients",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                            }
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"coefficients",
-                        "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
-                    }
-                },
-                "gridAxesSpanned":{
-                    "title":"gridAxesSpanned",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"gridAxesSpanned",
-                        "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
-                    }
-                },
-                "sequenceRule":{
-                    "title":"sequenceRule",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SequenceRuleType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"sequenceRule",
-                        "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GeneralGridAxisType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
-            },
-            "propertiesOrder":[
-                "offsetVector",
-                "coefficients",
-                "gridAxesSpanned",
-                "sequenceRule"
+                "actuate",
+                "owns"
             ]
         },
         "ReferenceableGridByVectorsType":{
@@ -681,38 +634,85 @@
                 "generalGridAxis"
             ]
         },
-        "AbstractReferenceableGridType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/GridType"
+        "GeneralGridAxisType":{
+            "type":"object",
+            "title":"GeneralGridAxisType",
+            "required":[
+                "offsetVector",
+                "coefficients",
+                "gridAxesSpanned",
+                "sequenceRule"
+            ],
+            "properties":{
+                "offsetVector":{
+                    "title":"offsetVector",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/VectorType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"offsetVector",
+                        "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
+                    }
                 },
-                {
-                    "type":"object",
-                    "title":"AbstractReferenceableGridType",
-                    "properties":{
-                        "gridCRS":{
-                            "title":"gridCRS",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/GridCRSPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"gridCRS",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
+                "coefficients":{
+                    "title":"coefficients",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
                             }
                         }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"coefficients",
+                        "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
+                    }
+                },
+                "gridAxesSpanned":{
+                    "title":"gridAxesSpanned",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/NCName"
+                            }
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"gridAxesSpanned",
+                        "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
+                    }
+                },
+                "sequenceRule":{
+                    "title":"sequenceRule",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SequenceRuleType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"sequenceRule",
+                        "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
                     }
                 }
-            ],
+            },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AbstractReferenceableGridType",
+                "localPart":"GeneralGridAxisType",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
             },
             "propertiesOrder":[
-                "gridCRS"
+                "offsetVector",
+                "coefficients",
+                "gridAxesSpanned",
+                "sequenceRule"
             ]
         }
     },
@@ -721,22 +721,26 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/ReferenceableGridByVectorsType"
-                }
-            },
-            "elementName":{
-                "localPart":"ReferenceableGridByVectors",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "ReferenceableGridByTransformation"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml/3.3/rgrid"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"#/definitions/ReferenceableGridByTransformationType"
@@ -751,22 +755,26 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/GridCRSPropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"gridCRS",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "ReferenceableGridByArray"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml/3.3/rgrid"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"#/definitions/ReferenceableGridByArrayType"
@@ -781,14 +789,33 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "ReferenceableGridByVectors"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml/3.3/rgrid"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
-                    "$ref":"#/definitions/ReferenceableGridPropertyType"
+                    "$ref":"#/definitions/ReferenceableGridByVectorsType"
                 }
             },
             "elementName":{
-                "localPart":"referenceableGridProperty",
+                "localPart":"ReferenceableGridByVectors",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
             }
         },
@@ -796,7 +823,26 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "AbstractReferenceableGrid"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml/3.3/rgrid"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"#/definitions/AbstractReferenceableGridType"
@@ -811,7 +857,60 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "gridCRS"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml/3.3/rgrid"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GridCRSPropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"gridCRS",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "GeneralGridAxis"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml/3.3/rgrid"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"#/definitions/GeneralGridAxisType"
@@ -819,6 +918,40 @@
             },
             "elementName":{
                 "localPart":"GeneralGridAxis",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "referenceableGridProperty"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml/3.3/rgrid"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/ReferenceableGridPropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"referenceableGridProperty",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/rgrid"
             }
         }

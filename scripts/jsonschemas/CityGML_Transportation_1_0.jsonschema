@@ -2,17 +2,17 @@
 {
     "id":"http://www.opengis.net/citygml/transportation/1.0#",
     "definitions":{
-        "RoadType":{
+        "TrackType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/TransportationComplexType"
                 },
                 {
                     "type":"object",
-                    "title":"RoadType",
+                    "title":"TrackType",
                     "properties":{
-                        "genericApplicationPropertyOfRoad":{
-                            "title":"genericApplicationPropertyOfRoad",
+                        "genericApplicationPropertyOfTrack":{
+                            "title":"genericApplicationPropertyOfTrack",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -24,7 +24,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfRoad",
+                                "localPart":"_GenericApplicationPropertyOfTrack",
                                 "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
                             }
                         }
@@ -33,11 +33,11 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"RoadType",
+                "localPart":"TrackType",
                 "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
             },
             "propertiesOrder":[
-                "genericApplicationPropertyOfRoad"
+                "genericApplicationPropertyOfTrack"
             ]
         },
         "SquareType":{
@@ -77,62 +77,6 @@
             "propertiesOrder":[
                 "genericApplicationPropertyOfSquare"
             ]
-        },
-        "AbstractTransportationObjectType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/citygml/1.0#/definitions/AbstractCityObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractTransportationObjectType",
-                    "properties":{
-                        "genericApplicationPropertyOfTransportationObject":{
-                            "title":"genericApplicationPropertyOfTransportationObject",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfTransportationObject",
-                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractTransportationObjectType",
-                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-            },
-            "propertiesOrder":[
-                "genericApplicationPropertyOfTransportationObject"
-            ]
-        },
-        "TrafficAreaPropertyType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AssociationType"
-                },
-                {
-                    "type":"object",
-                    "title":"TrafficAreaPropertyType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TrafficAreaPropertyType",
-                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-            }
         },
         "AuxiliaryTrafficAreaType":{
             "allOf":[
@@ -246,6 +190,24 @@
                 "genericApplicationPropertyOfAuxiliaryTrafficArea"
             ]
         },
+        "TrafficAreaPropertyType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AssociationType"
+                },
+                {
+                    "type":"object",
+                    "title":"TrafficAreaPropertyType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TrafficAreaPropertyType",
+                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+            }
+        },
         "AuxiliaryTrafficAreaPropertyType":{
             "allOf":[
                 {
@@ -264,17 +226,17 @@
                 "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
             }
         },
-        "TrackType":{
+        "RailwayType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/TransportationComplexType"
                 },
                 {
                     "type":"object",
-                    "title":"TrackType",
+                    "title":"RailwayType",
                     "properties":{
-                        "genericApplicationPropertyOfTrack":{
-                            "title":"genericApplicationPropertyOfTrack",
+                        "genericApplicationPropertyOfRailway":{
+                            "title":"genericApplicationPropertyOfRailway",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -286,7 +248,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfTrack",
+                                "localPart":"_GenericApplicationPropertyOfRailway",
                                 "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
                             }
                         }
@@ -295,11 +257,217 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"TrackType",
+                "localPart":"RailwayType",
                 "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
             },
             "propertiesOrder":[
-                "genericApplicationPropertyOfTrack"
+                "genericApplicationPropertyOfRailway"
+            ]
+        },
+        "AbstractTransportationObjectType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/citygml/1.0#/definitions/AbstractCityObjectType"
+                },
+                {
+                    "type":"object",
+                    "title":"AbstractTransportationObjectType",
+                    "properties":{
+                        "genericApplicationPropertyOfTransportationObject":{
+                            "title":"genericApplicationPropertyOfTransportationObject",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfTransportationObject",
+                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractTransportationObjectType",
+                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+            },
+            "propertiesOrder":[
+                "genericApplicationPropertyOfTransportationObject"
+            ]
+        },
+        "RoadType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/TransportationComplexType"
+                },
+                {
+                    "type":"object",
+                    "title":"RoadType",
+                    "properties":{
+                        "genericApplicationPropertyOfRoad":{
+                            "title":"genericApplicationPropertyOfRoad",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfRoad",
+                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"RoadType",
+                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+            },
+            "propertiesOrder":[
+                "genericApplicationPropertyOfRoad"
+            ]
+        },
+        "TrafficAreaType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractTransportationObjectType"
+                },
+                {
+                    "type":"object",
+                    "title":"TrafficAreaType",
+                    "properties":{
+                        "usage":{
+                            "title":"usage",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"usage",
+                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+                            }
+                        },
+                        "function":{
+                            "title":"function",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"function",
+                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+                            }
+                        },
+                        "surfaceMaterial":{
+                            "title":"surfaceMaterial",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"surfaceMaterial",
+                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+                            }
+                        },
+                        "lod2MultiSurface":{
+                            "title":"lod2MultiSurface",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MultiSurfacePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"lod2MultiSurface",
+                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+                            }
+                        },
+                        "lod3MultiSurface":{
+                            "title":"lod3MultiSurface",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MultiSurfacePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"lod3MultiSurface",
+                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+                            }
+                        },
+                        "lod4MultiSurface":{
+                            "title":"lod4MultiSurface",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MultiSurfacePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"lod4MultiSurface",
+                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+                            }
+                        },
+                        "genericApplicationPropertyOfTrafficArea":{
+                            "title":"genericApplicationPropertyOfTrafficArea",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfTrafficArea",
+                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TrafficAreaType",
+                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+            },
+            "propertiesOrder":[
+                "usage",
+                "function",
+                "surfaceMaterial",
+                "lod2MultiSurface",
+                "lod3MultiSurface",
+                "lod4MultiSurface",
+                "genericApplicationPropertyOfTrafficArea"
             ]
         },
         "TransportationComplexType":{
@@ -485,174 +653,6 @@
                 "lod4MultiSurface",
                 "genericApplicationPropertyOfTransportationComplex"
             ]
-        },
-        "RailwayType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/TransportationComplexType"
-                },
-                {
-                    "type":"object",
-                    "title":"RailwayType",
-                    "properties":{
-                        "genericApplicationPropertyOfRailway":{
-                            "title":"genericApplicationPropertyOfRailway",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfRailway",
-                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"RailwayType",
-                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-            },
-            "propertiesOrder":[
-                "genericApplicationPropertyOfRailway"
-            ]
-        },
-        "TrafficAreaType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractTransportationObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"TrafficAreaType",
-                    "properties":{
-                        "usage":{
-                            "title":"usage",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"usage",
-                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-                            }
-                        },
-                        "function":{
-                            "title":"function",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"function",
-                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-                            }
-                        },
-                        "surfaceMaterial":{
-                            "title":"surfaceMaterial",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"surfaceMaterial",
-                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-                            }
-                        },
-                        "lod2MultiSurface":{
-                            "title":"lod2MultiSurface",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MultiSurfacePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"lod2MultiSurface",
-                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-                            }
-                        },
-                        "lod3MultiSurface":{
-                            "title":"lod3MultiSurface",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MultiSurfacePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"lod3MultiSurface",
-                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-                            }
-                        },
-                        "lod4MultiSurface":{
-                            "title":"lod4MultiSurface",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MultiSurfacePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"lod4MultiSurface",
-                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-                            }
-                        },
-                        "genericApplicationPropertyOfTrafficArea":{
-                            "title":"genericApplicationPropertyOfTrafficArea",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfTrafficArea",
-                                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TrafficAreaType",
-                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-            },
-            "propertiesOrder":[
-                "usage",
-                "function",
-                "surfaceMaterial",
-                "lod2MultiSurface",
-                "lod3MultiSurface",
-                "lod4MultiSurface",
-                "genericApplicationPropertyOfTrafficArea"
-            ]
         }
     },
     "anyOf":[
@@ -660,127 +660,26 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/RailwayType"
-                }
-            },
-            "elementName":{
-                "localPart":"Railway",
-                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/TrafficAreaType"
-                }
-            },
-            "elementName":{
-                "localPart":"TrafficArea",
-                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractTransportationObjectType"
-                }
-            },
-            "elementName":{
-                "localPart":"_TransportationObject",
-                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfTransportationComplex",
-                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfAuxiliaryTrafficArea",
-                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/TransportationComplexType"
-                }
-            },
-            "elementName":{
-                "localPart":"TransportationComplex",
-                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SquareType"
-                }
-            },
-            "elementName":{
-                "localPart":"Square",
-                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfTrack",
-                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_GenericApplicationPropertyOfRoad"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
@@ -795,7 +694,26 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_GenericApplicationPropertyOfSquare"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
@@ -810,14 +728,33 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Square"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
-                    "$ref":"#/definitions/AuxiliaryTrafficAreaType"
+                    "$ref":"#/definitions/SquareType"
                 }
             },
             "elementName":{
-                "localPart":"AuxiliaryTrafficArea",
+                "localPart":"Square",
                 "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
             }
         },
@@ -825,7 +762,26 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_GenericApplicationPropertyOfTrafficArea"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
@@ -840,14 +796,33 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_GenericApplicationPropertyOfAuxiliaryTrafficArea"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfTransportationObject",
+                "localPart":"_GenericApplicationPropertyOfAuxiliaryTrafficArea",
                 "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
             }
         },
@@ -855,14 +830,33 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "TrafficArea"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
-                    "$ref":"#/definitions/TrackType"
+                    "$ref":"#/definitions/TrafficAreaType"
                 }
             },
             "elementName":{
-                "localPart":"Track",
+                "localPart":"TrafficArea",
                 "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
             }
         },
@@ -870,7 +864,60 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Railway"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/RailwayType"
+                }
+            },
+            "elementName":{
+                "localPart":"Railway",
+                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_GenericApplicationPropertyOfRailway"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
@@ -885,7 +932,196 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "TransportationComplex"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/TransportationComplexType"
+                }
+            },
+            "elementName":{
+                "localPart":"TransportationComplex",
+                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_TransportationObject"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractTransportationObjectType"
+                }
+            },
+            "elementName":{
+                "localPart":"_TransportationObject",
+                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_GenericApplicationPropertyOfTransportationComplex"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfTransportationComplex",
+                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_GenericApplicationPropertyOfTransportationObject"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfTransportationObject",
+                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Track"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/TrackType"
+                }
+            },
+            "elementName":{
+                "localPart":"Track",
+                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Road"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"#/definitions/RoadType"
@@ -893,6 +1129,74 @@
             },
             "elementName":{
                 "localPart":"Road",
+                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "AuxiliaryTrafficArea"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/AuxiliaryTrafficAreaType"
+                }
+            },
+            "elementName":{
+                "localPart":"AuxiliaryTrafficArea",
+                "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_GenericApplicationPropertyOfTrack"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/transportation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfTrack",
                 "namespaceURI":"http://www.opengis.net/citygml/transportation/1.0"
             }
         }

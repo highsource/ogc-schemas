@@ -2,146 +2,215 @@
 {
     "id":"http://www.opengis.net/sampling/1.0#",
     "definitions":{
-        "LocatedSpecimenPropertyType":{
-            "type":"object",
-            "title":"LocatedSpecimenPropertyType",
+        "SpatiallyExtensiveSamplingFeatureType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/SamplingFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"SpatiallyExtensiveSamplingFeatureType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SpatiallyExtensiveSamplingFeatureType",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            }
+        },
+        "SpecimenType":{
             "required":[
-                "locatedSpecimen"
+                "materialClass",
+                "samplingTime"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/SamplingFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"SpecimenType",
+                    "properties":{
+                        "materialClass":{
+                            "title":"materialClass",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CodeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"materialClass",
+                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                            }
+                        },
+                        "currentLocation":{
+                            "title":"currentLocation",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/LocationPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"currentLocation",
+                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                            }
+                        },
+                        "size":{
+                            "title":"size",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/SpecimenType.Size"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"size",
+                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                            }
+                        },
+                        "samplingMethod":{
+                            "title":"samplingMethod",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ReferenceType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"samplingMethod",
+                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                            }
+                        },
+                        "samplingTime":{
+                            "title":"samplingTime",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/TimePrimitivePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"samplingTime",
+                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                            }
+                        },
+                        "processingDetails":{
+                            "title":"processingDetails",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/ReferenceType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"processingDetails",
+                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SpecimenType",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            },
+            "propertiesOrder":[
+                "materialClass",
+                "currentLocation",
+                "size",
+                "samplingMethod",
+                "samplingTime",
+                "processingDetails"
+            ]
+        },
+        "SamplingCurveType":{
+            "required":[
+                "shape"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/SpatiallyExtensiveSamplingFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"SamplingCurveType",
+                    "properties":{
+                        "shape":{
+                            "title":"shape",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CurvePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"shape",
+                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                            }
+                        },
+                        "length":{
+                            "title":"length",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"length",
+                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SamplingCurveType",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            },
+            "propertiesOrder":[
+                "shape",
+                "length"
+            ]
+        },
+        "SamplingFeatureRelationPropertyType":{
+            "type":"object",
+            "title":"SamplingFeatureRelationPropertyType",
+            "required":[
+                "samplingFeatureRelation"
             ],
             "properties":{
-                "locatedSpecimen":{
-                    "title":"locatedSpecimen",
+                "samplingFeatureRelation":{
+                    "title":"samplingFeatureRelation",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/LocatedSpecimenType"
+                            "$ref":"#/definitions/SamplingFeatureRelationType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"LocatedSpecimen",
+                        "localPart":"SamplingFeatureRelation",
                         "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"LocatedSpecimenPropertyType",
+                "localPart":"SamplingFeatureRelationPropertyType",
                 "namespaceURI":"http://www.opengis.net/sampling/1.0"
             },
             "propertiesOrder":[
-                "locatedSpecimen",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
+                "samplingFeatureRelation"
             ]
         },
         "SpecimenPropertyType":{
@@ -180,7 +249,7 @@
                     "title":"remoteSchema",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -206,7 +275,7 @@
                     "title":"href",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -219,7 +288,7 @@
                     "title":"role",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -232,7 +301,7 @@
                     "title":"arcrole",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -298,23 +367,115 @@
                 "actuate"
             ]
         },
-        "SamplingCurvePropertyType":{
-            "type":"object",
-            "title":"SamplingCurvePropertyType",
+        "SamplingFeatureCollectionType":{
             "required":[
-                "samplingCurve"
+                "member"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/SamplingFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"SamplingFeatureCollectionType",
+                    "properties":{
+                        "member":{
+                            "title":"member",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/SamplingFeaturePropertyType"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"member",
+                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SamplingFeatureCollectionType",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            },
+            "propertiesOrder":[
+                "member"
+            ]
+        },
+        "SamplingSurfaceType":{
+            "required":[
+                "shape"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/SpatiallyExtensiveSamplingFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"SamplingSurfaceType",
+                    "properties":{
+                        "shape":{
+                            "title":"shape",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/SurfacePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"shape",
+                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                            }
+                        },
+                        "area":{
+                            "title":"area",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"area",
+                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SamplingSurfaceType",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            },
+            "propertiesOrder":[
+                "shape",
+                "area"
+            ]
+        },
+        "LocatedSpecimenPropertyType":{
+            "type":"object",
+            "title":"LocatedSpecimenPropertyType",
+            "required":[
+                "locatedSpecimen"
             ],
             "properties":{
-                "samplingCurve":{
-                    "title":"samplingCurve",
+                "locatedSpecimen":{
+                    "title":"locatedSpecimen",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/SamplingCurveType"
+                            "$ref":"#/definitions/LocatedSpecimenType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"SamplingCurve",
+                        "localPart":"LocatedSpecimen",
                         "namespaceURI":"http://www.opengis.net/sampling/1.0"
                     }
                 },
@@ -322,7 +483,7 @@
                     "title":"remoteSchema",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -348,7 +509,7 @@
                     "title":"href",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -361,7 +522,7 @@
                     "title":"role",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -374,7 +535,7 @@
                     "title":"arcrole",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -425,11 +586,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SamplingCurvePropertyType",
+                "localPart":"LocatedSpecimenPropertyType",
                 "namespaceURI":"http://www.opengis.net/sampling/1.0"
             },
             "propertiesOrder":[
-                "samplingCurve",
+                "locatedSpecimen",
                 "remoteSchema",
                 "type",
                 "href",
@@ -438,36 +599,6 @@
                 "title",
                 "show",
                 "actuate"
-            ]
-        },
-        "SamplingFeatureRelationPropertyType":{
-            "type":"object",
-            "title":"SamplingFeatureRelationPropertyType",
-            "required":[
-                "samplingFeatureRelation"
-            ],
-            "properties":{
-                "samplingFeatureRelation":{
-                    "title":"samplingFeatureRelation",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SamplingFeatureRelationType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SamplingFeatureRelation",
-                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SamplingFeatureRelationPropertyType",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            },
-            "propertiesOrder":[
-                "samplingFeatureRelation"
             ]
         },
         "SpatiallyExtensiveSamplingFeaturePropertyType":{
@@ -506,7 +637,7 @@
                     "title":"remoteSchema",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -532,7 +663,7 @@
                     "title":"href",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -545,7 +676,7 @@
                     "title":"role",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -558,7 +689,7 @@
                     "title":"arcrole",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -624,41 +755,23 @@
                 "actuate"
             ]
         },
-        "SpatiallyExtensiveSamplingFeatureType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/SamplingFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"SpatiallyExtensiveSamplingFeatureType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SpatiallyExtensiveSamplingFeatureType",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            }
-        },
-        "SurveyProcedurePropertyType":{
+        "SamplingSolidPropertyType":{
             "type":"object",
-            "title":"SurveyProcedurePropertyType",
+            "title":"SamplingSolidPropertyType",
             "required":[
-                "surveyProcedure"
+                "samplingSolid"
             ],
             "properties":{
-                "surveyProcedure":{
-                    "title":"surveyProcedure",
+                "samplingSolid":{
+                    "title":"samplingSolid",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/SurveyProcedureType"
+                            "$ref":"#/definitions/SamplingSolidType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"SurveyProcedure",
+                        "localPart":"SamplingSolid",
                         "namespaceURI":"http://www.opengis.net/sampling/1.0"
                     }
                 },
@@ -666,7 +779,7 @@
                     "title":"remoteSchema",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -692,7 +805,7 @@
                     "title":"href",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -705,7 +818,7 @@
                     "title":"role",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -718,7 +831,7 @@
                     "title":"arcrole",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -769,11 +882,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SurveyProcedurePropertyType",
+                "localPart":"SamplingSolidPropertyType",
                 "namespaceURI":"http://www.opengis.net/sampling/1.0"
             },
             "propertiesOrder":[
-                "surveyProcedure",
+                "samplingSolid",
                 "remoteSchema",
                 "type",
                 "href",
@@ -784,7 +897,7 @@
                 "actuate"
             ]
         },
-        "SamplingSurfaceType":{
+        "SamplingSolidType":{
             "required":[
                 "shape"
             ],
@@ -794,13 +907,13 @@
                 },
                 {
                     "type":"object",
-                    "title":"SamplingSurfaceType",
+                    "title":"SamplingSolidType",
                     "properties":{
                         "shape":{
                             "title":"shape",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/SurfacePropertyType"
+                                    "$ref":"#/definitions/SolidPropertyType"
                                 }
                             ],
                             "propertyType":"element",
@@ -809,8 +922,8 @@
                                 "namespaceURI":"http://www.opengis.net/sampling/1.0"
                             }
                         },
-                        "area":{
-                            "title":"area",
+                        "volume":{
+                            "title":"volume",
                             "allOf":[
                                 {
                                     "$ref":"#/definitions/MeasureType"
@@ -818,7 +931,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"area",
+                                "localPart":"volume",
                                 "namespaceURI":"http://www.opengis.net/sampling/1.0"
                             }
                         }
@@ -827,36 +940,474 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SamplingSurfaceType",
+                "localPart":"SamplingSolidType",
                 "namespaceURI":"http://www.opengis.net/sampling/1.0"
             },
             "propertiesOrder":[
                 "shape",
-                "area"
+                "volume"
             ]
         },
-        "LocatedSpecimenType":{
+        "SamplingFeaturePropertyType":{
+            "type":"object",
+            "title":"SamplingFeaturePropertyType",
             "required":[
-                "samplingLocation"
+                "samplingFeature"
+            ],
+            "properties":{
+                "samplingFeature":{
+                    "title":"samplingFeature",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"#/definitions/SamplingFeatureType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"SamplingFeature",
+                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"SamplingFeature",
+                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SamplingFeaturePropertyType",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            },
+            "propertiesOrder":[
+                "samplingFeature",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "SamplingPointPropertyType":{
+            "type":"object",
+            "title":"SamplingPointPropertyType",
+            "required":[
+                "samplingPoint"
+            ],
+            "properties":{
+                "samplingPoint":{
+                    "title":"samplingPoint",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SamplingPointType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SamplingPoint",
+                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SamplingPointPropertyType",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            },
+            "propertiesOrder":[
+                "samplingPoint",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "SamplingSurfacePropertyType":{
+            "type":"object",
+            "title":"SamplingSurfacePropertyType",
+            "required":[
+                "samplingSurface"
+            ],
+            "properties":{
+                "samplingSurface":{
+                    "title":"samplingSurface",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SamplingSurfaceType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SamplingSurface",
+                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SamplingSurfacePropertyType",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            },
+            "propertiesOrder":[
+                "samplingSurface",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "SamplingPointType":{
+            "required":[
+                "position"
             ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/SpecimenType"
+                    "$ref":"#/definitions/SamplingFeatureType"
                 },
                 {
                     "type":"object",
-                    "title":"LocatedSpecimenType",
+                    "title":"SamplingPointType",
                     "properties":{
-                        "samplingLocation":{
-                            "title":"samplingLocation",
+                        "position":{
+                            "title":"position",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/GeometryPropertyType"
+                                    "$ref":"#/definitions/PointPropertyType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"samplingLocation",
+                                "localPart":"position",
                                 "namespaceURI":"http://www.opengis.net/sampling/1.0"
                             }
                         }
@@ -865,11 +1416,198 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"LocatedSpecimenType",
+                "localPart":"SamplingPointType",
                 "namespaceURI":"http://www.opengis.net/sampling/1.0"
             },
             "propertiesOrder":[
-                "samplingLocation"
+                "position"
+            ]
+        },
+        "SamplingFeatureRelationType":{
+            "type":"object",
+            "title":"SamplingFeatureRelationType",
+            "required":[
+                "role",
+                "target"
+            ],
+            "properties":{
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/CodeType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                    }
+                },
+                "target":{
+                    "title":"target",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SamplingFeaturePropertyType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"target",
+                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SamplingFeatureRelationType",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            },
+            "propertiesOrder":[
+                "role",
+                "target"
+            ]
+        },
+        "SamplingCurvePropertyType":{
+            "type":"object",
+            "title":"SamplingCurvePropertyType",
+            "required":[
+                "samplingCurve"
+            ],
+            "properties":{
+                "samplingCurve":{
+                    "title":"samplingCurve",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SamplingCurveType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SamplingCurve",
+                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SamplingCurvePropertyType",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            },
+            "propertiesOrder":[
+                "samplingCurve",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
             ]
         },
         "AnyOrReferenceType":{
@@ -899,7 +1637,7 @@
                     "title":"remoteSchema",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -925,7 +1663,7 @@
                     "title":"href",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -938,7 +1676,7 @@
                     "title":"role",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -951,7 +1689,7 @@
                     "title":"arcrole",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -1017,23 +1755,23 @@
                 "actuate"
             ]
         },
-        "SamplingFeatureCollectionPropertyType":{
+        "SurveyProcedurePropertyType":{
             "type":"object",
-            "title":"SamplingFeatureCollectionPropertyType",
+            "title":"SurveyProcedurePropertyType",
             "required":[
-                "samplingFeatureCollection"
+                "surveyProcedure"
             ],
             "properties":{
-                "samplingFeatureCollection":{
-                    "title":"samplingFeatureCollection",
+                "surveyProcedure":{
+                    "title":"surveyProcedure",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/SamplingFeatureCollectionType"
+                            "$ref":"#/definitions/SurveyProcedureType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"SamplingFeatureCollection",
+                        "localPart":"SurveyProcedure",
                         "namespaceURI":"http://www.opengis.net/sampling/1.0"
                     }
                 },
@@ -1041,7 +1779,7 @@
                     "title":"remoteSchema",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -1067,7 +1805,7 @@
                     "title":"href",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -1080,7 +1818,7 @@
                     "title":"role",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -1093,7 +1831,332 @@
                     "title":"arcrole",
                     "allOf":[
                         {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SurveyProcedurePropertyType",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            },
+            "propertiesOrder":[
+                "surveyProcedure",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "LocationPropertyType":{
+            "type":"object",
+            "title":"LocationPropertyType",
+            "required":[
+                "geometry",
+                "exGeographicDescription"
+            ],
+            "properties":{
+                "geometry":{
+                    "title":"geometry",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"#/definitions/AbstractGeometryType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"_Geometry",
+                                "namespaceURI":"http://www.opengis.net/gml"
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"_Geometry",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "exGeographicDescription":{
+                    "title":"exGeographicDescription",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/AnyOrReferenceType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"EX_GeographicDescription",
+                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                    }
+                },
+                "unionSemantics":{
+                    "title":"unionSemantics",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"unionSemantics",
+                        "namespaceURI":""
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LocationPropertyType",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            },
+            "propertiesOrder":[
+                "geometry",
+                "exGeographicDescription",
+                "unionSemantics",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "SamplingFeatureCollectionPropertyType":{
+            "type":"object",
+            "title":"SamplingFeatureCollectionPropertyType",
+            "required":[
+                "samplingFeatureCollection"
+            ],
+            "properties":{
+                "samplingFeatureCollection":{
+                    "title":"samplingFeatureCollection",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SamplingFeatureCollectionType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SamplingFeatureCollection",
+                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
@@ -1159,55 +2222,132 @@
                 "actuate"
             ]
         },
-        "SamplingCurveType":{
-            "required":[
-                "shape"
-            ],
+        "SpecimenType.Size":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/SpatiallyExtensiveSamplingFeatureType"
+                    "$ref":"#/definitions/MeasureType"
                 },
                 {
                     "type":"object",
-                    "title":"SamplingCurveType",
+                    "title":"SpecimenType.Size",
                     "properties":{
-                        "shape":{
-                            "title":"shape",
+                        "remoteSchema":{
+                            "title":"remoteSchema",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/CurvePropertyType"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                                 }
                             ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"shape",
-                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"remoteSchema",
+                                "namespaceURI":"http://www.opengis.net/gml"
                             }
                         },
-                        "length":{
-                            "title":"length",
+                        "type":{
+                            "title":"type",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/MeasureType"
+                                    "$ref":"#/definitions/TypeType"
                                 }
                             ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"length",
-                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"type",
+                                "namespaceURI":"http://www.w3.org/1999/xlink"
+                            }
+                        },
+                        "href":{
+                            "title":"href",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"href",
+                                "namespaceURI":"http://www.w3.org/1999/xlink"
+                            }
+                        },
+                        "role":{
+                            "title":"role",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"role",
+                                "namespaceURI":"http://www.w3.org/1999/xlink"
+                            }
+                        },
+                        "arcrole":{
+                            "title":"arcrole",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"arcrole",
+                                "namespaceURI":"http://www.w3.org/1999/xlink"
+                            }
+                        },
+                        "title":{
+                            "title":"title",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"title",
+                                "namespaceURI":"http://www.w3.org/1999/xlink"
+                            }
+                        },
+                        "show":{
+                            "title":"show",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ShowType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"show",
+                                "namespaceURI":"http://www.w3.org/1999/xlink"
+                            }
+                        },
+                        "actuate":{
+                            "title":"actuate",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ActuateType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"actuate",
+                                "namespaceURI":"http://www.w3.org/1999/xlink"
                             }
                         }
                     }
                 }
             ],
             "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SamplingCurveType",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            },
             "propertiesOrder":[
-                "shape",
-                "length"
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
             ]
         },
         "SurveyProcedureType":{
@@ -1359,913 +2499,6 @@
                 "surveyTime"
             ]
         },
-        "SamplingFeaturePropertyType":{
-            "type":"object",
-            "title":"SamplingFeaturePropertyType",
-            "required":[
-                "samplingFeature"
-            ],
-            "properties":{
-                "samplingFeature":{
-                    "title":"samplingFeature",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"#/definitions/SamplingFeatureType"
-                                }
-                            },
-                            "elementName":{
-                                "localPart":"SamplingFeature",
-                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                            }
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"SamplingFeature",
-                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SamplingFeaturePropertyType",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            },
-            "propertiesOrder":[
-                "samplingFeature",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "SamplingSurfacePropertyType":{
-            "type":"object",
-            "title":"SamplingSurfacePropertyType",
-            "required":[
-                "samplingSurface"
-            ],
-            "properties":{
-                "samplingSurface":{
-                    "title":"samplingSurface",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SamplingSurfaceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SamplingSurface",
-                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SamplingSurfacePropertyType",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            },
-            "propertiesOrder":[
-                "samplingSurface",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "SamplingSolidType":{
-            "required":[
-                "shape"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/SpatiallyExtensiveSamplingFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"SamplingSolidType",
-                    "properties":{
-                        "shape":{
-                            "title":"shape",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/SolidPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"shape",
-                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                            }
-                        },
-                        "volume":{
-                            "title":"volume",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"volume",
-                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SamplingSolidType",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            },
-            "propertiesOrder":[
-                "shape",
-                "volume"
-            ]
-        },
-        "SamplingFeatureCollectionType":{
-            "required":[
-                "member"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/SamplingFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"SamplingFeatureCollectionType",
-                    "properties":{
-                        "member":{
-                            "title":"member",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/SamplingFeaturePropertyType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"member",
-                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SamplingFeatureCollectionType",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            },
-            "propertiesOrder":[
-                "member"
-            ]
-        },
-        "SamplingFeatureRelationType":{
-            "type":"object",
-            "title":"SamplingFeatureRelationType",
-            "required":[
-                "role",
-                "target"
-            ],
-            "properties":{
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/CodeType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                    }
-                },
-                "target":{
-                    "title":"target",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SamplingFeaturePropertyType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"target",
-                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SamplingFeatureRelationType",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            },
-            "propertiesOrder":[
-                "role",
-                "target"
-            ]
-        },
-        "SpecimenType":{
-            "required":[
-                "materialClass",
-                "samplingTime"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/SamplingFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"SpecimenType",
-                    "properties":{
-                        "materialClass":{
-                            "title":"materialClass",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CodeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"materialClass",
-                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                            }
-                        },
-                        "currentLocation":{
-                            "title":"currentLocation",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/LocationPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"currentLocation",
-                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                            }
-                        },
-                        "size":{
-                            "title":"size",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/SpecimenType.Size"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"size",
-                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                            }
-                        },
-                        "samplingMethod":{
-                            "title":"samplingMethod",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ReferenceType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"samplingMethod",
-                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                            }
-                        },
-                        "samplingTime":{
-                            "title":"samplingTime",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/TimePrimitivePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"samplingTime",
-                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                            }
-                        },
-                        "processingDetails":{
-                            "title":"processingDetails",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/ReferenceType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"processingDetails",
-                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SpecimenType",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            },
-            "propertiesOrder":[
-                "materialClass",
-                "currentLocation",
-                "size",
-                "samplingMethod",
-                "samplingTime",
-                "processingDetails"
-            ]
-        },
-        "SamplingPointType":{
-            "required":[
-                "position"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/SamplingFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"SamplingPointType",
-                    "properties":{
-                        "position":{
-                            "title":"position",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/PointPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"position",
-                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SamplingPointType",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            },
-            "propertiesOrder":[
-                "position"
-            ]
-        },
-        "SamplingSolidPropertyType":{
-            "type":"object",
-            "title":"SamplingSolidPropertyType",
-            "required":[
-                "samplingSolid"
-            ],
-            "properties":{
-                "samplingSolid":{
-                    "title":"samplingSolid",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SamplingSolidType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SamplingSolid",
-                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SamplingSolidPropertyType",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            },
-            "propertiesOrder":[
-                "samplingSolid",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "LocationPropertyType":{
-            "type":"object",
-            "title":"LocationPropertyType",
-            "required":[
-                "geometry",
-                "exGeographicDescription"
-            ],
-            "properties":{
-                "geometry":{
-                    "title":"geometry",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"#/definitions/AbstractGeometryType"
-                                }
-                            },
-                            "elementName":{
-                                "localPart":"_Geometry",
-                                "namespaceURI":"http://www.opengis.net/gml"
-                            }
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"_Geometry",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "exGeographicDescription":{
-                    "title":"exGeographicDescription",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/AnyOrReferenceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"EX_GeographicDescription",
-                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                    }
-                },
-                "unionSemantics":{
-                    "title":"unionSemantics",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"unionSemantics",
-                        "namespaceURI":""
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LocationPropertyType",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            },
-            "propertiesOrder":[
-                "geometry",
-                "exGeographicDescription",
-                "unionSemantics",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
         "SamplingFeatureType":{
             "required":[
                 "sampledFeature"
@@ -2357,274 +2590,41 @@
                 "surveyDetails"
             ]
         },
-        "SpecimenType.Size":{
+        "LocatedSpecimenType":{
+            "required":[
+                "samplingLocation"
+            ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/MeasureType"
+                    "$ref":"#/definitions/SpecimenType"
                 },
                 {
                     "type":"object",
-                    "title":"SpecimenType.Size",
+                    "title":"LocatedSpecimenType",
                     "properties":{
-                        "remoteSchema":{
-                            "title":"remoteSchema",
+                        "samplingLocation":{
+                            "title":"samplingLocation",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    "$ref":"#/definitions/GeometryPropertyType"
                                 }
                             ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"remoteSchema",
-                                "namespaceURI":"http://www.opengis.net/gml"
-                            }
-                        },
-                        "type":{
-                            "title":"type",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/TypeType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"type",
-                                "namespaceURI":"http://www.w3.org/1999/xlink"
-                            }
-                        },
-                        "href":{
-                            "title":"href",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"href",
-                                "namespaceURI":"http://www.w3.org/1999/xlink"
-                            }
-                        },
-                        "role":{
-                            "title":"role",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"role",
-                                "namespaceURI":"http://www.w3.org/1999/xlink"
-                            }
-                        },
-                        "arcrole":{
-                            "title":"arcrole",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"arcrole",
-                                "namespaceURI":"http://www.w3.org/1999/xlink"
-                            }
-                        },
-                        "title":{
-                            "title":"title",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"title",
-                                "namespaceURI":"http://www.w3.org/1999/xlink"
-                            }
-                        },
-                        "show":{
-                            "title":"show",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ShowType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"show",
-                                "namespaceURI":"http://www.w3.org/1999/xlink"
-                            }
-                        },
-                        "actuate":{
-                            "title":"actuate",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ActuateType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"actuate",
-                                "namespaceURI":"http://www.w3.org/1999/xlink"
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"samplingLocation",
+                                "namespaceURI":"http://www.opengis.net/sampling/1.0"
                             }
                         }
                     }
                 }
             ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "SamplingPointPropertyType":{
-            "type":"object",
-            "title":"SamplingPointPropertyType",
-            "required":[
-                "samplingPoint"
-            ],
-            "properties":{
-                "samplingPoint":{
-                    "title":"samplingPoint",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SamplingPointType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SamplingPoint",
-                        "namespaceURI":"http://www.opengis.net/sampling/1.0"
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SamplingPointPropertyType",
+                "localPart":"LocatedSpecimenType",
                 "namespaceURI":"http://www.opengis.net/sampling/1.0"
             },
             "propertiesOrder":[
-                "samplingPoint",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
+                "samplingLocation"
             ]
         },
         "PositionMethodType":{
@@ -2645,67 +2645,26 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SurveyProcedureType"
-                }
-            },
-            "elementName":{
-                "localPart":"SurveyProcedure",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SamplingFeatureRelationType"
-                }
-            },
-            "elementName":{
-                "localPart":"SamplingFeatureRelation",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SamplingFeatureCollectionType"
-                }
-            },
-            "elementName":{
-                "localPart":"SamplingFeatureCollection",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SamplingFeatureType"
-                }
-            },
-            "elementName":{
-                "localPart":"SamplingFeature",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SamplingSolid"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sampling/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"#/definitions/SamplingSolidType"
@@ -2720,52 +2679,26 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SamplingSurfaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"SamplingSurface",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SamplingCurveType"
-                }
-            },
-            "elementName":{
-                "localPart":"SamplingCurve",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                },
-                "value":{
-                    "$ref":"#/definitions/SamplingPointType"
-                }
-            },
-            "elementName":{
-                "localPart":"SamplingPoint",
-                "namespaceURI":"http://www.opengis.net/sampling/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SpatiallyExtensiveSamplingFeature"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sampling/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"#/definitions/SpatiallyExtensiveSamplingFeatureType"
@@ -2780,7 +2713,26 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Specimen"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sampling/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"#/definitions/SpecimenType"
@@ -2795,7 +2747,162 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SamplingFeatureCollection"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sampling/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SamplingFeatureCollectionType"
+                }
+            },
+            "elementName":{
+                "localPart":"SamplingFeatureCollection",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SamplingFeature"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sampling/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SamplingFeatureType"
+                }
+            },
+            "elementName":{
+                "localPart":"SamplingFeature",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SurveyProcedure"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sampling/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SurveyProcedureType"
+                }
+            },
+            "elementName":{
+                "localPart":"SurveyProcedure",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SamplingFeatureRelation"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sampling/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SamplingFeatureRelationType"
+                }
+            },
+            "elementName":{
+                "localPart":"SamplingFeatureRelation",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "LocatedSpecimen"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sampling/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"#/definitions/LocatedSpecimenType"
@@ -2803,6 +2910,108 @@
             },
             "elementName":{
                 "localPart":"LocatedSpecimen",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SamplingPoint"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sampling/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SamplingPointType"
+                }
+            },
+            "elementName":{
+                "localPart":"SamplingPoint",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SamplingSurface"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sampling/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SamplingSurfaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"SamplingSurface",
+                "namespaceURI":"http://www.opengis.net/sampling/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SamplingCurve"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sampling/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SamplingCurveType"
+                }
+            },
+            "elementName":{
+                "localPart":"SamplingCurve",
                 "namespaceURI":"http://www.opengis.net/sampling/1.0"
             }
         }

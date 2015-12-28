@@ -14,7 +14,7 @@
                     "title":"startComponent",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/NCName"
                         }
                     ],
                     "propertyType":"element",
@@ -27,7 +27,7 @@
                     "title":"endComponent",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/NCName"
                         }
                     ],
                     "propertyType":"element",
@@ -45,6 +45,51 @@
             "propertiesOrder":[
                 "startComponent",
                 "endComponent"
+            ]
+        },
+        "RangeItemType":{
+            "type":"object",
+            "title":"RangeItemType",
+            "required":[
+                "rangeComponent",
+                "rangeInterval"
+            ],
+            "properties":{
+                "rangeComponent":{
+                    "title":"rangeComponent",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/NCName"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"RangeComponent",
+                        "namespaceURI":"http://www.opengis.net/wcs/range-subsetting/1.0"
+                    }
+                },
+                "rangeInterval":{
+                    "title":"rangeInterval",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/RangeIntervalType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"RangeInterval",
+                        "namespaceURI":"http://www.opengis.net/wcs/range-subsetting/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"RangeItemType",
+                "namespaceURI":"http://www.opengis.net/wcs/range-subsetting/1.0"
+            },
+            "propertiesOrder":[
+                "rangeComponent",
+                "rangeInterval"
             ]
         },
         "RangeSubsetType":{
@@ -80,51 +125,6 @@
             "propertiesOrder":[
                 "rangeItem"
             ]
-        },
-        "RangeItemType":{
-            "type":"object",
-            "title":"RangeItemType",
-            "required":[
-                "rangeComponent",
-                "rangeInterval"
-            ],
-            "properties":{
-                "rangeComponent":{
-                    "title":"rangeComponent",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"RangeComponent",
-                        "namespaceURI":"http://www.opengis.net/wcs/range-subsetting/1.0"
-                    }
-                },
-                "rangeInterval":{
-                    "title":"rangeInterval",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/RangeIntervalType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"RangeInterval",
-                        "namespaceURI":"http://www.opengis.net/wcs/range-subsetting/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"RangeItemType",
-                "namespaceURI":"http://www.opengis.net/wcs/range-subsetting/1.0"
-            },
-            "propertiesOrder":[
-                "rangeComponent",
-                "rangeInterval"
-            ]
         }
     },
     "anyOf":[
@@ -132,7 +132,26 @@
             "type":"object",
             "properties":{
                 "name":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "RangeSubset"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/wcs/range-subsetting/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "value":{
                     "$ref":"#/definitions/RangeSubsetType"

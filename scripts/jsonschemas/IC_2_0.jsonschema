@@ -5,7 +5,7 @@
         "ClassificationType":{
             "allOf":[
                 {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/NMTOKEN"
                 }
             ],
             "typeType":"enumInfo",
