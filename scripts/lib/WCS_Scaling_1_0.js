@@ -26,6 +26,51 @@ var WCS_Scaling_1_0_Module_Factory = function () {
             ti: '.ScaleToExtentType'
           }]
       }, {
+        ln: 'TargetAxisSizeType',
+        ps: [{
+            n: 'axis',
+            rq: true
+          }, {
+            n: 'targetSize',
+            rq: true,
+            ti: 'Decimal'
+          }]
+      }, {
+        ln: 'ScaleAxesByFactorType',
+        ps: [{
+            n: 'scaleAxis',
+            rq: true,
+            col: true,
+            en: 'ScaleAxis',
+            ti: '.ScaleAxisType'
+          }]
+      }, {
+        ln: 'ScaleToSizeType',
+        ps: [{
+            n: 'targetAxisSize',
+            rq: true,
+            col: true,
+            en: 'TargetAxisSize',
+            ti: '.TargetAxisSizeType'
+          }]
+      }, {
+        ln: 'ScaleAxisType',
+        ps: [{
+            n: 'axis',
+            rq: true
+          }, {
+            n: 'scaleFactor',
+            rq: true,
+            ti: 'Decimal'
+          }]
+      }, {
+        ln: 'ScaleByFactorType',
+        ps: [{
+            n: 'scaleFactor',
+            rq: true,
+            ti: 'Decimal'
+          }]
+      }, {
         ln: 'ScaleToExtentType',
         ps: [{
             n: 'targetAxisExtent',
@@ -47,51 +92,6 @@ var WCS_Scaling_1_0_Module_Factory = function () {
             n: 'high',
             rq: true,
             ti: 'Decimal'
-          }]
-      }, {
-        ln: 'TargetAxisSizeType',
-        ps: [{
-            n: 'axis',
-            rq: true
-          }, {
-            n: 'targetSize',
-            rq: true,
-            ti: 'Decimal'
-          }]
-      }, {
-        ln: 'ScaleByFactorType',
-        ps: [{
-            n: 'scaleFactor',
-            rq: true,
-            ti: 'Decimal'
-          }]
-      }, {
-        ln: 'ScaleAxesByFactorType',
-        ps: [{
-            n: 'scaleAxis',
-            rq: true,
-            col: true,
-            en: 'ScaleAxis',
-            ti: '.ScaleAxisType'
-          }]
-      }, {
-        ln: 'ScaleAxisType',
-        ps: [{
-            n: 'axis',
-            rq: true
-          }, {
-            n: 'scaleFactor',
-            rq: true,
-            ti: 'Decimal'
-          }]
-      }, {
-        ln: 'ScaleToSizeType',
-        ps: [{
-            n: 'targetAxisSize',
-            rq: true,
-            col: true,
-            en: 'TargetAxisSize',
-            ti: '.TargetAxisSizeType'
           }]
       }],
     eis: [{

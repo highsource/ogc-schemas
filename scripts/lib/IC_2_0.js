@@ -4,6 +4,7 @@ var IC_2_0_Module_Factory = function () {
     tis: [{
         t: 'enum',
         ln: 'ClassificationType',
+        bti: 'NMToken',
         vs: ['U', 'C', 'S', 'TS', 'R', 'CTS', 'CTS-B', 'CTS-BALK', 'NU', 'NR', 'NC', 'NS', 'NS-S', 'NS-A', 'CTSA', 'NSAT', 'NCA']
       }],
     eis: []

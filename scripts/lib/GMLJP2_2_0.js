@@ -3,7 +3,7 @@ var GMLJP2_2_0_Module_Factory = function () {
     n: 'GMLJP2_2_0',
     dens: 'http:\/\/www.opengis.net\/gmljp2\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GMLCOV_1_0', 'XLink_1_0', 'GML_3_2_1'],
+    deps: ['XLink_1_0', 'GMLCOV_1_0', 'GML_3_2_1'],
     tis: [{
         ln: 'GMLJP2FeaturesType',
         bti: 'GML_3_2_1.AbstractFeatureType',
@@ -45,45 +45,29 @@ var GMLJP2_2_0_Module_Factory = function () {
             ti: '.GenericWithAssocPropertyType'
           }]
       }, {
-        ln: 'GMLJP2CoverageType',
-        bti: 'GMLCOV_1_0.AbstractDiscreteCoverageType',
-        ps: [{
-            n: 'feature',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_2_1.FeaturePropertyType'
-          }, {
-            n: 'annotation',
-            mno: 0,
-            col: true,
-            ti: '.GenericWithAssocPropertyType'
-          }, {
-            n: 'style',
-            mno: 0,
-            col: true,
-            ti: '.GenericWithAssocPropertyType'
-          }, {
-            n: 'extension',
-            mno: 0,
-            col: true,
-            ti: '.GenericWithAssocPropertyType'
-          }]
-      }, {
-        ln: 'GMLJP2FeaturesType.Feature',
+        ln: 'GMLJP2CoverageCollectionType.FeatureMember',
         tn: null,
         bti: 'GML_3_2_1.AbstractFeatureMemberType',
         ps: [{
-            n: 'abstractFeature',
-            mno: 0,
+            n: 'gmljp2GridCoverageOrGMLJP2RectifiedGridCoverageOrGMLJP2ReferenceableGridCoverage',
+            rq: true,
             col: true,
             mx: false,
             dom: false,
-            en: {
-              lp: 'AbstractFeature',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.AbstractFeatureType',
-            t: 'er'
+            etis: [{
+                en: 'GMLJP2RectifiedGridCoverage',
+                ti: '.GMLJP2CoverageType'
+              }, {
+                en: 'GMLJP2Features',
+                ti: '.GMLJP2FeaturesType'
+              }, {
+                en: 'GMLJP2GridCoverage',
+                ti: '.GMLJP2CoverageType'
+              }, {
+                en: 'GMLJP2ReferenceableGridCoverage',
+                ti: '.GMLJP2CoverageType'
+              }],
+            t: 'ers'
           }, {
             n: 'nilReason',
             ti: {
@@ -126,29 +110,21 @@ var GMLJP2_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GMLJP2CoverageCollectionType.FeatureMember',
+        ln: 'GMLJP2FeaturesType.Feature',
         tn: null,
         bti: 'GML_3_2_1.AbstractFeatureMemberType',
         ps: [{
-            n: 'gmljp2GridCoverageOrGMLJP2RectifiedGridCoverageOrGMLJP2ReferenceableGridCoverage',
-            rq: true,
+            n: 'abstractFeature',
+            mno: 0,
             col: true,
             mx: false,
             dom: false,
-            etis: [{
-                en: 'GMLJP2Features',
-                ti: '.GMLJP2FeaturesType'
-              }, {
-                en: 'GMLJP2RectifiedGridCoverage',
-                ti: '.GMLJP2CoverageType'
-              }, {
-                en: 'GMLJP2GridCoverage',
-                ti: '.GMLJP2CoverageType'
-              }, {
-                en: 'GMLJP2ReferenceableGridCoverage',
-                ti: '.GMLJP2CoverageType'
-              }],
-            t: 'ers'
+            en: {
+              lp: 'AbstractFeature',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.AbstractFeatureType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {
@@ -238,22 +214,32 @@ var GMLJP2_2_0_Module_Factory = function () {
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
+      }, {
+        ln: 'GMLJP2CoverageType',
+        bti: 'GMLCOV_1_0.AbstractDiscreteCoverageType',
+        ps: [{
+            n: 'feature',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_2_1.FeaturePropertyType'
+          }, {
+            n: 'annotation',
+            mno: 0,
+            col: true,
+            ti: '.GenericWithAssocPropertyType'
+          }, {
+            n: 'style',
+            mno: 0,
+            col: true,
+            ti: '.GenericWithAssocPropertyType'
+          }, {
+            n: 'extension',
+            mno: 0,
+            col: true,
+            ti: '.GenericWithAssocPropertyType'
+          }]
       }],
     eis: [{
-        en: 'GMLJP2GridCoverage',
-        ti: '.GMLJP2CoverageType',
-        sh: {
-          lp: 'GridCoverage',
-          ns: 'http:\/\/www.opengis.net\/gmlcov\/1.0'
-        }
-      }, {
-        en: 'GMLJP2Features',
-        ti: '.GMLJP2FeaturesType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
         en: 'GMLJP2RectifiedGridCoverage',
         ti: '.GMLJP2CoverageType',
         sh: {
@@ -268,17 +254,31 @@ var GMLJP2_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gmlcov\/1.0'
         }
       }, {
-        en: 'GMLJP2ReferenceableGridCoverage',
+        en: 'GMLJP2GridCoverage',
         ti: '.GMLJP2CoverageType',
         sh: {
-          lp: 'ReferenceableGridCoverage',
+          lp: 'GridCoverage',
           ns: 'http:\/\/www.opengis.net\/gmlcov\/1.0'
+        }
+      }, {
+        en: 'GMLJP2Features',
+        ti: '.GMLJP2FeaturesType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
         en: 'Metadata',
         ti: '.GenericMetadataType',
         sh: {
           lp: 'Extension',
+          ns: 'http:\/\/www.opengis.net\/gmlcov\/1.0'
+        }
+      }, {
+        en: 'GMLJP2ReferenceableGridCoverage',
+        ti: '.GMLJP2CoverageType',
+        sh: {
+          lp: 'ReferenceableGridCoverage',
           ns: 'http:\/\/www.opengis.net\/gmlcov\/1.0'
         }
       }]

@@ -3,26 +3,8 @@ var OMEO_ALT_2_0_Module_Factory = function () {
     n: 'OMEO_ALT_2_0',
     dens: 'http:\/\/www.opengis.net\/alt\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_2_1', 'XLink_1_0', 'OMEO_EOP_2_0'],
+    deps: ['XLink_1_0', 'OMEO_EOP_2_0', 'GML_3_2_1'],
     tis: [{
-        ln: 'EarthObservationType',
-        bti: 'OMEO_EOP_2_0.EarthObservationType'
-      }, {
-        ln: 'ProcessingInformationPropertyType',
-        ps: [{
-            n: 'processingInformation',
-            rq: true,
-            en: 'ProcessingInformation',
-            ti: '.ProcessingInformationType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'ProcessingInformationType',
         bti: 'OMEO_EOP_2_0.ProcessingInformationType',
         ps: [{
@@ -39,6 +21,77 @@ var OMEO_ALT_2_0_Module_Factory = function () {
             ti: 'GML_3_2_1.MeasureType'
           }]
       }, {
+        ln: 'EarthObservationType',
+        bti: 'OMEO_EOP_2_0.EarthObservationType'
+      }, {
+        ln: 'EarthObservationMetaDataType',
+        bti: 'OMEO_EOP_2_0.EarthObservationMetaDataType',
+        ps: [{
+            n: 'rest',
+            mno: 0,
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'processing',
+            ti: 'OMEO_EOP_2_0.ProcessingInformationPropertyType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'FootprintPropertyType',
+        ps: [{
+            n: 'footprint',
+            rq: true,
+            en: 'Footprint',
+            ti: '.FootprintType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'AcquisitionType',
         bti: 'OMEO_EOP_2_0.AcquisitionType',
         ps: [{
@@ -52,12 +105,12 @@ var OMEO_ALT_2_0_Module_Factory = function () {
             ti: 'Integer'
           }]
       }, {
-        ln: 'AuxiliaryInstrumentPropertyType',
+        ln: 'AcquisitionPropertyType',
         ps: [{
-            n: 'auxiliaryInstrument',
+            n: 'acquisition',
             rq: true,
-            en: 'AuxiliaryInstrument',
-            ti: '.AuxiliaryInstrumentType'
+            en: 'Acquisition',
+            ti: '.AcquisitionType'
           }, {
             n: 'owns',
             ti: 'Boolean',
@@ -67,12 +120,25 @@ var OMEO_ALT_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AcquisitionPropertyType',
+        ln: 'AuxiliaryInstrumentType',
+        bti: 'OMEO_EOP_2_0.InstrumentType',
         ps: [{
-            n: 'acquisition',
+            n: 'rest',
             rq: true,
-            en: 'Acquisition',
-            ti: '.AcquisitionType'
+            mxo: 1,
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'instrumentType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'EarthObservationMetaDataPropertyType',
+        ps: [{
+            n: 'earthObservationMetaData',
+            rq: true,
+            en: 'EarthObservationMetaData',
+            ti: '.EarthObservationMetaDataType'
           }, {
             n: 'owns',
             ti: 'Boolean',
@@ -137,52 +203,12 @@ var OMEO_ALT_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'FootprintPropertyType',
+        ln: 'AuxiliaryInstrumentPropertyType',
         ps: [{
-            n: 'footprint',
+            n: 'auxiliaryInstrument',
             rq: true,
-            en: 'Footprint',
-            ti: '.FootprintType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            en: 'AuxiliaryInstrument',
+            ti: '.AuxiliaryInstrumentType'
           }, {
             n: 'owns',
             ti: 'Boolean',
@@ -247,12 +273,19 @@ var OMEO_ALT_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'EarthObservationMetaDataPropertyType',
+        ln: 'FootprintType',
+        bti: 'OMEO_EOP_2_0.FootprintType',
         ps: [{
-            n: 'earthObservationMetaData',
+            n: 'nominalTrack',
+            ti: 'GML_3_2_1.MultiCurvePropertyType'
+          }]
+      }, {
+        ln: 'ProcessingInformationPropertyType',
+        ps: [{
+            n: 'processingInformation',
             rq: true,
-            en: 'EarthObservationMetaData',
-            ti: '.EarthObservationMetaDataType'
+            en: 'ProcessingInformation',
+            ti: '.ProcessingInformationType'
           }, {
             n: 'owns',
             ti: 'Boolean',
@@ -274,90 +307,28 @@ var OMEO_ALT_2_0_Module_Factory = function () {
                 en: 'auxiliaryInstrument',
                 ti: '.AuxiliaryInstrumentPropertyType'
               }, {
-                en: 'instrument',
-                ti: 'OMEO_EOP_2_0.InstrumentPropertyType'
-              }, {
                 en: 'platform',
                 ti: 'OMEO_EOP_2_0.PlatformPropertyType'
+              }, {
+                en: 'instrument',
+                ti: 'OMEO_EOP_2_0.InstrumentPropertyType'
               }],
             t: 'ers'
           }]
       }, {
-        ln: 'EarthObservationMetaDataType',
-        bti: 'OMEO_EOP_2_0.EarthObservationMetaDataType',
-        ps: [{
-            n: 'rest',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'processing',
-            ti: 'OMEO_EOP_2_0.ProcessingInformationPropertyType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'FootprintType',
-        bti: 'OMEO_EOP_2_0.FootprintType',
-        ps: [{
-            n: 'nominalTrack',
-            ti: 'GML_3_2_1.MultiCurvePropertyType'
-          }]
-      }, {
-        ln: 'AuxiliaryInstrumentType',
-        bti: 'OMEO_EOP_2_0.InstrumentType',
-        ps: [{
-            n: 'rest',
-            rq: true,
-            mxo: 1,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'instrumentType',
-            t: 'er'
-          }]
+        t: 'enum',
+        ln: 'AuxiliaryInstrumentTypeValueEnumerationType',
+        vs: ['OTHER', 'MICROWAVE_RADIOMETER', 'LASER', 'DOPPLER', 'GPS']
       }, {
         t: 'enum',
         ln: 'ProductContentsTypeValueEnumerationType',
         vs: ['REGIONAL', 'OTHER', 'OPEN_OCEAN', 'ICE', 'HYDROLOGY', 'COASTAL', 'CONTINENTAL']
-      }, {
-        t: 'enum',
-        ln: 'AuxiliaryInstrumentTypeValueEnumerationType',
-        vs: ['OTHER', 'MICROWAVE_RADIOMETER', 'LASER', 'DOPPLER', 'GPS']
       }],
     eis: [{
-        en: 'AuxiliaryInstrument',
-        ti: '.AuxiliaryInstrumentType',
-        sh: {
-          lp: 'Instrument',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
-      }, {
-        en: 'Footprint',
-        ti: '.FootprintType',
-        sh: {
-          lp: 'Footprint',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
-      }, {
         en: 'EarthObservationEquipment',
         ti: '.EarthObservationEquipmentType',
         sh: {
           lp: 'EarthObservationEquipment',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
-      }, {
-        en: 'instrument',
-        ti: 'OMEO_EOP_2_0.InstrumentPropertyType',
-        sc: '.EarthObservationEquipmentType'
-      }, {
-        en: 'processing',
-        ti: 'OMEO_EOP_2_0.ProcessingInformationPropertyType',
-        sc: '.EarthObservationMetaDataType'
-      }, {
-        en: 'EarthObservation',
-        ti: '.EarthObservationType',
-        sh: {
-          lp: 'EarthObservation',
           ns: 'http:\/\/www.opengis.net\/eop\/2.0'
         }
       }, {
@@ -368,9 +339,48 @@ var OMEO_ALT_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/eop\/2.0'
         }
       }, {
+        en: 'instrument',
+        ti: 'OMEO_EOP_2_0.InstrumentPropertyType',
+        sc: '.EarthObservationEquipmentType'
+      }, {
+        en: 'EarthObservation',
+        ti: '.EarthObservationType',
+        sh: {
+          lp: 'EarthObservation',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+        }
+      }, {
+        en: 'processing',
+        ti: 'OMEO_EOP_2_0.ProcessingInformationPropertyType',
+        sc: '.EarthObservationMetaDataType'
+      }, {
         en: 'auxiliaryInstrument',
         ti: '.AuxiliaryInstrumentPropertyType',
         sc: '.EarthObservationEquipmentType'
+      }, {
+        en: 'instrumentType',
+        sc: '.AuxiliaryInstrumentType'
+      }, {
+        en: 'Footprint',
+        ti: '.FootprintType',
+        sh: {
+          lp: 'Footprint',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+        }
+      }, {
+        en: 'AuxiliaryInstrument',
+        ti: '.AuxiliaryInstrumentType',
+        sh: {
+          lp: 'Instrument',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+        }
+      }, {
+        en: 'ProcessingInformation',
+        ti: '.ProcessingInformationType',
+        sh: {
+          lp: 'ProcessingInformation',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+        }
       }, {
         en: 'platform',
         ti: 'OMEO_EOP_2_0.PlatformPropertyType',
@@ -382,16 +392,6 @@ var OMEO_ALT_2_0_Module_Factory = function () {
           lp: 'EarthObservationMetaData',
           ns: 'http:\/\/www.opengis.net\/eop\/2.0'
         }
-      }, {
-        en: 'ProcessingInformation',
-        ti: '.ProcessingInformationType',
-        sh: {
-          lp: 'ProcessingInformation',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
-      }, {
-        en: 'instrumentType',
-        sc: '.AuxiliaryInstrumentType'
       }]
   };
   return {

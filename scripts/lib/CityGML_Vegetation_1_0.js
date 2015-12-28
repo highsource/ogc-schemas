@@ -112,14 +112,14 @@ var CityGML_Vegetation_1_0_Module_Factory = function () {
         ti: '.SolitaryVegetationObjectType',
         sh: '_VegetationObject'
       }, {
-        en: '_GenericApplicationPropertyOfPlantCover',
-        ti: 'AnyType'
-      }, {
         en: 'PlantCover',
         ti: '.PlantCoverType',
         sh: '_VegetationObject'
       }, {
         en: '_GenericApplicationPropertyOfVegetationObject',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfPlantCover',
         ti: 'AnyType'
       }, {
         en: '_GenericApplicationPropertyOfSolitaryVegetationObject',

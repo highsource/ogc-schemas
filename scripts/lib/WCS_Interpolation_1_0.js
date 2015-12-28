@@ -32,11 +32,11 @@ var WCS_Interpolation_1_0_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'Interpolation',
-        ti: '.InterpolationType'
-      }, {
         en: 'InterpolationMetadata',
         ti: '.InterpolationMetadataType'
+      }, {
+        en: 'Interpolation',
+        ti: '.InterpolationType'
       }]
   };
   return {

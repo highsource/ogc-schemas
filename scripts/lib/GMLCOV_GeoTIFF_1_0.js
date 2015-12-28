@@ -10,7 +10,7 @@ var GMLCOV_GeoTIFF_1_0_Module_Factory = function () {
           }, {
             n: 'jpegQuality',
             en: 'jpeg_quality',
-            ti: 'Int'
+            ti: 'Integer'
           }, {
             n: 'predictor'
           }, {
@@ -27,12 +27,12 @@ var GMLCOV_GeoTIFF_1_0_Module_Factory = function () {
           }]
       }, {
         t: 'enum',
-        ln: 'CompressionType',
-        vs: ['None', 'PackBits', 'Huffman', 'LZW', 'JPEG', 'Deflate']
-      }, {
-        t: 'enum',
         ln: 'PredictorType',
         vs: ['None', 'Horizontal', 'FloatingPoint']
+      }, {
+        t: 'enum',
+        ln: 'CompressionType',
+        vs: ['None', 'PackBits', 'Huffman', 'LZW', 'JPEG', 'Deflate']
       }, {
         t: 'enum',
         ln: 'InterleaveType',

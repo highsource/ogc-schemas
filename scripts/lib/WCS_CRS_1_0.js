@@ -18,11 +18,11 @@ var WCS_CRS_1_0_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'Crs',
-        ti: '.CrsType'
-      }, {
         en: 'CrsMetadata',
         ti: '.CrsMetadataType'
+      }, {
+        en: 'Crs',
+        ti: '.CrsType'
       }]
   };
   return {

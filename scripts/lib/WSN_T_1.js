@@ -3,6 +3,40 @@ var WSN_T_1_Module_Factory = function () {
     n: 'WSN_T_1',
     dens: 'http:\/\/docs.oasis-open.org\/wsn\/t-1',
     tis: [{
+        ln: 'Documentation',
+        ps: [{
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'TopicSetType',
+        bti: '.ExtensibleDocumented',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'any',
+            mno: 0,
+            col: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'QueryExpressionType',
+        ps: [{
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }, {
+            n: 'dialect',
+            rq: true,
+            an: {
+              lp: 'Dialect'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'ExtensibleDocumented',
         ps: [{
             n: 'otherAttributes',
@@ -10,13 +44,6 @@ var WSN_T_1_Module_Factory = function () {
           }, {
             n: 'documentation',
             ti: '.Documentation'
-          }]
-      }, {
-        ln: 'Documentation',
-        ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
           }]
       }, {
         ln: 'TopicNamespaceType',
@@ -38,6 +65,7 @@ var WSN_T_1_Module_Factory = function () {
             t: 'ae'
           }, {
             n: 'name',
+            ti: 'NCName',
             an: {
               lp: 'name'
             },
@@ -66,22 +94,9 @@ var WSN_T_1_Module_Factory = function () {
             t: 'aa'
           }, {
             n: 'parent',
+            ti: 'Token',
             an: {
               lp: 'parent'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'QueryExpressionType',
-        ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
-          }, {
-            n: 'dialect',
-            rq: true,
-            an: {
-              lp: 'Dialect'
             },
             t: 'a'
           }]
@@ -111,6 +126,7 @@ var WSN_T_1_Module_Factory = function () {
           }, {
             n: 'name',
             rq: true,
+            ti: 'NCName',
             an: {
               lp: 'name'
             },
@@ -132,19 +148,6 @@ var WSN_T_1_Module_Factory = function () {
               lp: 'final'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'TopicSetType',
-        bti: '.ExtensibleDocumented',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'any',
-            mno: 0,
-            col: true,
-            mx: false,
-            t: 'ae'
           }]
       }],
     eis: [{

@@ -17,6 +17,54 @@ var GML_TIN_3_3_Module_Factory = function () {
             ti: 'GML_3_2_1.LengthType'
           }]
       }, {
+        ln: 'TINElementPropertyType',
+        ps: [{
+            n: 'tinElement',
+            rq: true,
+            en: 'TINElement',
+            ti: '.TINElementType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
         ln: 'SimpleTrianglePatchType',
         bti: 'GML_3_2_1.AbstractSurfacePatchType',
         ps: [{
@@ -70,54 +118,6 @@ var GML_TIN_3_3_Module_Factory = function () {
             n: 'elementGeometry',
             rq: true,
             ti: 'GML_3_2_1.GeometryPropertyType'
-          }]
-      }, {
-        ln: 'TINElementPropertyType',
-        ps: [{
-            n: 'tinElement',
-            rq: true,
-            en: 'TINElement',
-            ti: '.TINElementType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
           }]
       }],
     eis: [{

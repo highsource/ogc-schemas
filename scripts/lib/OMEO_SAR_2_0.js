@@ -63,24 +63,6 @@ var OMEO_SAR_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AcquisitionPropertyType',
-        ps: [{
-            n: 'acquisition',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'Acquisition',
-            ti: '.AcquisitionType',
-            t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'AcquisitionType',
         bti: 'OMEO_EOP_2_0.AcquisitionType',
         ps: [{
@@ -106,6 +88,28 @@ var OMEO_SAR_2_0_Module_Factory = function () {
         ln: 'EarthObservationType',
         bti: 'OMEO_EOP_2_0.EarthObservationType'
       }, {
+        ln: 'AcquisitionPropertyType',
+        ps: [{
+            n: 'acquisition',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'Acquisition',
+            ti: '.AcquisitionType',
+            t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        t: 'enum',
+        ln: 'AntennaLookDirectionValueEnumerationType',
+        vs: ['LEFT', 'RIGHT']
+      }, {
         t: 'enum',
         ln: 'PolarisationModeValueEnumerationType',
         vs: ['UNDEFINED', 'T', 'S', 'D', 'Q']
@@ -113,10 +117,6 @@ var OMEO_SAR_2_0_Module_Factory = function () {
         t: 'enum',
         ln: 'PolarisationChannelsValueEnumerationType',
         vs: ['HH', 'HV', 'UNDEFINED', 'HV, VH', 'VV, VH', 'VV, HV', 'VH, HV', 'VH, VV', 'HH, HV', 'HH, VH', 'HH, VV', 'VH', 'VV']
-      }, {
-        t: 'enum',
-        ln: 'AntennaLookDirectionValueEnumerationType',
-        vs: ['LEFT', 'RIGHT']
       }],
     eis: [{
         en: 'Acquisition',

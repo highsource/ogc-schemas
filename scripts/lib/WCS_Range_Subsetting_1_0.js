@@ -6,10 +6,25 @@ var WCS_Range_Subsetting_1_0_Module_Factory = function () {
         ln: 'RangeIntervalType',
         ps: [{
             n: 'startComponent',
-            rq: true
+            rq: true,
+            ti: 'NCName'
           }, {
             n: 'endComponent',
-            rq: true
+            rq: true,
+            ti: 'NCName'
+          }]
+      }, {
+        ln: 'RangeItemType',
+        ps: [{
+            n: 'rangeComponent',
+            rq: true,
+            en: 'RangeComponent',
+            ti: 'NCName'
+          }, {
+            n: 'rangeInterval',
+            rq: true,
+            en: 'RangeInterval',
+            ti: '.RangeIntervalType'
           }]
       }, {
         ln: 'RangeSubsetType',
@@ -19,18 +34,6 @@ var WCS_Range_Subsetting_1_0_Module_Factory = function () {
             col: true,
             en: 'RangeItem',
             ti: '.RangeItemType'
-          }]
-      }, {
-        ln: 'RangeItemType',
-        ps: [{
-            n: 'rangeComponent',
-            rq: true,
-            en: 'RangeComponent'
-          }, {
-            n: 'rangeInterval',
-            rq: true,
-            en: 'RangeInterval',
-            ti: '.RangeIntervalType'
           }]
       }],
     eis: [{

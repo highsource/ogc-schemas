@@ -3,33 +3,28 @@ var IndoorGML_Navigation_1_0_Module_Factory = function () {
     n: 'IndoorGML_Navigation_1_0',
     dens: 'http:\/\/www.opengis.net\/indoorgml\/1.0\/navigation',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_2_1', 'IndoorGML_Core_1_0', 'XLink_1_0'],
+    deps: ['GML_3_2_1', 'XLink_1_0', 'IndoorGML_Core_1_0'],
     tis: [{
-        ln: 'RouteSegmentType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'weight',
-            rq: true,
-            ti: 'Double'
-          }, {
-            n: 'connects',
-            rq: true,
-            mno: 2,
-            mxo: 2,
-            col: true,
-            ti: '.RouteNodePropertyType'
-          }, {
-            n: 'referencedTransition',
-            rq: true,
-            ti: 'IndoorGML_Core_1_0.TransitionPropertyType'
-          }, {
-            n: 'geometry',
-            rq: true,
-            ti: 'GML_3_2_1.CurvePropertyType'
-          }]
-      }, {
         ln: 'ConnectionBoundaryType',
         bti: '.TransferBoundaryType'
+      }, {
+        ln: 'TransitionSpaceType',
+        bti: '.TransferSpaceType'
+      }, {
+        ln: 'TransferBoundaryType',
+        bti: '.NavigableBoundaryType'
+      }, {
+        ln: 'TransferSpaceType',
+        bti: '.NavigableSpaceType'
+      }, {
+        ln: 'RouteNodeMemberType',
+        bti: 'GML_3_2_1.AbstractFeatureMemberType',
+        ps: [{
+            n: 'routeNode',
+            rq: true,
+            en: 'RouteNode',
+            ti: '.RouteNodeType'
+          }]
       }, {
         ln: 'RouteSegmentMemberType',
         bti: 'GML_3_2_1.AbstractFeatureMemberType',
@@ -40,39 +35,8 @@ var IndoorGML_Navigation_1_0_Module_Factory = function () {
             ti: '.RouteSegmentType'
           }]
       }, {
-        ln: 'ConnectionSpaceType',
-        bti: '.TransferSpaceType'
-      }, {
-        ln: 'PathType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'routeMember',
-            mno: 0,
-            col: true,
-            ti: '.RouteSegmentMemberType'
-          }, {
-            n: 'aggregationType',
-            ti: 'GML_3_2_1.AggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TransitionSpaceType',
-        bti: '.TransferSpaceType'
-      }, {
-        ln: 'RouteNodeType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'referencedState',
-            rq: true,
-            ti: 'IndoorGML_Core_1_0.StatePropertyType'
-          }, {
-            n: 'geometry',
-            rq: true,
-            ti: 'GML_3_2_1.PointPropertyType'
-          }]
+        ln: 'AnchorBoundaryType',
+        bti: '.TransferBoundaryType'
       }, {
         ln: 'RouteNodePropertyType',
         ps: [{
@@ -122,6 +86,72 @@ var IndoorGML_Navigation_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'GeneralSpaceType',
+        bti: '.NavigableSpaceType'
+      }, {
+        ln: 'NavigableSpaceType',
+        bti: 'IndoorGML_Core_1_0.CellSpaceType',
+        ps: [{
+            n: 'clazz',
+            rq: true,
+            en: 'class',
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'function',
+            rq: true,
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'usage',
+            rq: true,
+            ti: 'GML_3_2_1.CodeType'
+          }]
+      }, {
+        ln: 'RouteNodesType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'nodeMember',
+            rq: true,
+            mno: 2,
+            col: true,
+            ti: '.RouteNodeMemberType'
+          }, {
+            n: 'aggregationType',
+            ti: 'GML_3_2_1.AggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ConnectionSpaceType',
+        bti: '.TransferSpaceType'
+      }, {
+        ln: 'NavigableBoundaryType',
+        bti: 'IndoorGML_Core_1_0.CellSpaceBoundaryType'
+      }, {
+        ln: 'RouteSegmentType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'weight',
+            rq: true,
+            ti: 'Double'
+          }, {
+            n: 'connects',
+            rq: true,
+            mno: 2,
+            mxo: 2,
+            col: true,
+            ti: '.RouteNodePropertyType'
+          }, {
+            n: 'referencedTransition',
+            rq: true,
+            ti: 'IndoorGML_Core_1_0.TransitionPropertyType'
+          }, {
+            n: 'geometry',
+            rq: true,
+            ti: 'GML_3_2_1.CurvePropertyType'
+          }]
+      }, {
         ln: 'RouteType',
         bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
@@ -142,41 +172,13 @@ var IndoorGML_Navigation_1_0_Module_Factory = function () {
             ti: '.PathType'
           }]
       }, {
-        ln: 'AnchorSpaceType',
-        bti: '.TransferSpaceType'
-      }, {
-        ln: 'NavigableBoundaryType',
-        bti: 'IndoorGML_Core_1_0.CellSpaceBoundaryType'
-      }, {
-        ln: 'GeneralSpaceType',
-        bti: '.NavigableSpaceType'
-      }, {
-        ln: 'TransferBoundaryType',
-        bti: '.NavigableBoundaryType'
-      }, {
-        ln: 'RouteNodeMemberType',
-        bti: 'GML_3_2_1.AbstractFeatureMemberType',
-        ps: [{
-            n: 'routeNode',
-            rq: true,
-            en: 'RouteNode',
-            ti: '.RouteNodeType'
-          }]
-      }, {
-        ln: 'AnchorBoundaryType',
-        bti: '.TransferBoundaryType'
-      }, {
-        ln: 'TransferSpaceType',
-        bti: '.NavigableSpaceType'
-      }, {
-        ln: 'RouteNodesType',
+        ln: 'PathType',
         bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
-            n: 'nodeMember',
-            rq: true,
-            mno: 2,
+            n: 'routeMember',
+            mno: 0,
             col: true,
-            ti: '.RouteNodeMemberType'
+            ti: '.RouteSegmentMemberType'
           }, {
             n: 'aggregationType',
             ti: 'GML_3_2_1.AggregationType',
@@ -186,47 +188,43 @@ var IndoorGML_Navigation_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'NavigableSpaceType',
-        bti: 'IndoorGML_Core_1_0.CellSpaceType',
+        ln: 'RouteNodeType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
-            n: 'clazz',
+            n: 'referencedState',
             rq: true,
-            en: 'class',
-            ti: 'GML_3_2_1.CodeType'
+            ti: 'IndoorGML_Core_1_0.StatePropertyType'
           }, {
-            n: 'function',
+            n: 'geometry',
             rq: true,
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'usage',
-            rq: true,
-            ti: 'GML_3_2_1.CodeType'
+            ti: 'GML_3_2_1.PointPropertyType'
           }]
+      }, {
+        ln: 'AnchorSpaceType',
+        bti: '.TransferSpaceType'
       }],
     eis: [{
-        en: 'NavigableSpace',
-        ti: '.NavigableSpaceType',
-        sh: {
-          lp: 'CellSpace',
-          ns: 'http:\/\/www.opengis.net\/indoorgml\/1.0\/core'
-        }
-      }, {
-        en: 'RouteSegment',
-        ti: '.RouteSegmentType'
-      }, {
         en: 'GeneralSpace',
         ti: '.GeneralSpaceType',
         sh: 'NavigableSpace'
       }, {
-        en: 'Route',
-        ti: '.RouteType',
-        sh: {
-          lp: 'AbstractFeature',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
+        en: 'AnchorBoundary',
+        ti: '.AnchorBoundaryType',
+        sh: 'TransferBoundary'
       }, {
-        en: 'ConnectionSpace',
-        ti: '.ConnectionSpaceType',
+        en: 'TransferSpace',
+        ti: '.TransferSpaceType',
+        sh: 'NavigableSpace'
+      }, {
+        en: 'TransitionSpace',
+        ti: '.TransitionSpaceType',
+        sh: 'TransferSpace'
+      }, {
+        en: 'RouteNode',
+        ti: '.RouteNodeType'
+      }, {
+        en: 'AnchorSpace',
+        ti: '.AnchorSpaceType',
         sh: 'TransferSpace'
       }, {
         en: 'NavigableBoundary',
@@ -236,28 +234,30 @@ var IndoorGML_Navigation_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/indoorgml\/1.0\/core'
         }
       }, {
-        en: 'AnchorBoundary',
-        ti: '.AnchorBoundaryType',
-        sh: 'TransferBoundary'
+        en: 'Route',
+        ti: '.RouteType',
+        sh: {
+          lp: 'AbstractFeature',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
       }, {
-        en: 'RouteNode',
-        ti: '.RouteNodeType'
+        en: 'RouteSegment',
+        ti: '.RouteSegmentType'
+      }, {
+        en: 'NavigableSpace',
+        ti: '.NavigableSpaceType',
+        sh: {
+          lp: 'CellSpace',
+          ns: 'http:\/\/www.opengis.net\/indoorgml\/1.0\/core'
+        }
+      }, {
+        en: 'ConnectionSpace',
+        ti: '.ConnectionSpaceType',
+        sh: 'TransferSpace'
       }, {
         en: 'ConnectionBoundary',
         ti: '.ConnectionBoundaryType',
         sh: 'TransferBoundary'
-      }, {
-        en: 'AnchorSpace',
-        ti: '.AnchorSpaceType',
-        sh: 'TransferSpace'
-      }, {
-        en: 'TransferSpace',
-        ti: '.TransferSpaceType',
-        sh: 'NavigableSpace'
-      }, {
-        en: 'TransitionSpace',
-        ti: '.TransitionSpaceType',
-        sh: 'TransferSpace'
       }, {
         en: 'TransferBoundary',
         ti: '.TransferBoundaryType',

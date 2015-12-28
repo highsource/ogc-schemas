@@ -5,15 +5,13 @@ var GML_XBT_3_3_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/XML\/1998\/namespace',
     deps: ['GML_3_2_1'],
     tis: [{
-        ln: 'CodeWithAuthorityType',
-        bti: '.CodeType'
-      }, {
-        ln: 'LanguageStringType',
+        ln: 'CodeType',
+        bti: '.LanguageStringType',
         ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'lang',
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
+            },
             t: 'a'
           }]
       }, {
@@ -24,13 +22,15 @@ var GML_XBT_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'CodeType',
-        bti: '.LanguageStringType',
+        ln: 'CodeWithAuthorityType',
+        bti: '.CodeType'
+      }, {
+        ln: 'LanguageStringType',
         ps: [{
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'lang',
             t: 'a'
           }]
       }],
