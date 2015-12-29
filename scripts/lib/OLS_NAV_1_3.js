@@ -4,6 +4,387 @@ var OLS_NAV_1_3_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/ols\/nav',
     deps: ['OLS_1_2', 'GML_3_1_1'],
     tis: [{
+        ln: 'SetCursorPositionRequest',
+        bti: 'OLS_1_2.AbstractRequestParametersType',
+        ps: [{
+            n: 'cursorID',
+            rq: true,
+            en: 'CursorID',
+            ti: '.CursorIDType'
+          }, {
+            n: 'cursorStartPosition',
+            rq: true,
+            en: 'CursorStartPosition'
+          }, {
+            n: 'numOfPositions',
+            rq: true,
+            en: 'NumOfPositions',
+            ti: 'Long'
+          }, {
+            n: 'priority',
+            rq: true,
+            ti: 'UnsignedShort',
+            an: {
+              lp: 'priority'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetPositionResponseType',
+        bti: 'OLS_1_2.AbstractResponseParametersType',
+        ps: [{
+            n: 'locus',
+            rq: true,
+            en: 'Locus',
+            ti: '.LocusType'
+          }]
+      }, {
+        ln: 'GetPositionRequestType',
+        bti: 'OLS_1_2.AbstractRequestParametersType',
+        ps: [{
+            n: 'useHistory',
+            rq: true,
+            en: 'UseHistory',
+            ti: 'Boolean'
+          }, {
+            n: 'currentPosition',
+            rq: true,
+            en: 'CurrentPosition',
+            ti: 'OLS_1_2.PositionType'
+          }, {
+            n: 'priority',
+            rq: true,
+            ti: 'UnsignedShort',
+            an: {
+              lp: 'priority'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DayOfWeekOfYearType',
+        ps: [{
+            n: 'dayOfWeek',
+            rq: true,
+            en: 'DayOfWeek'
+          }, {
+            n: 'weekOfYear',
+            rq: true,
+            en: 'WeekOfYear',
+            ti: 'UnsignedShort'
+          }]
+      }, {
+        ln: 'DayOfMonthOfYearType',
+        ps: [{
+            n: 'dayOfMonth',
+            rq: true,
+            en: 'DayOfMonth',
+            ti: 'UnsignedShort'
+          }, {
+            n: 'monthOfYear',
+            rq: true,
+            en: 'MonthOfYear',
+            ti: 'UnsignedShort'
+          }]
+      }, {
+        ln: 'LocusType',
+        bti: 'OLS_1_2.AbstractWayPointType',
+        ps: [{
+            n: 'link',
+            rq: true,
+            en: 'Link',
+            ti: '.AbstractIDType'
+          }, {
+            n: 'positionAlongLink',
+            en: 'PositionAlongLink',
+            ti: 'Decimal'
+          }, {
+            n: 'side',
+            en: 'Side',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'DayOfWeekOfMonthOfYearType',
+        ps: [{
+            n: 'dayOfWeek',
+            rq: true,
+            en: 'DayOfWeek'
+          }, {
+            n: 'weekOfMonth',
+            rq: true,
+            en: 'WeekOfMonth',
+            ti: 'UnsignedShort'
+          }, {
+            n: 'monthOfYear',
+            rq: true,
+            en: 'MonthOfYear',
+            ti: 'UnsignedShort'
+          }]
+      }, {
+        ln: 'CursorFetchResponse',
+        bti: 'OLS_1_2.AbstractResponseParametersType',
+        ps: [{
+            n: 'numFetchedRecords',
+            rq: true,
+            en: 'NumFetchedRecords',
+            ti: 'Long'
+          }, {
+            n: 'cursorType',
+            rq: true,
+            en: 'CursorType'
+          }, {
+            n: 'retrievedRecords',
+            rq: true,
+            col: true,
+            en: 'RetrievedRecords',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'GetNearbyMapObjRequestType',
+        bti: 'OLS_1_2.AbstractRequestParametersType',
+        ps: [{
+            n: 'currentPosition',
+            rq: true,
+            en: 'CurrentPosition',
+            ti: 'OLS_1_2.PositionType'
+          }, {
+            n: 'delta',
+            rq: true,
+            en: 'Delta',
+            ti: 'UnsignedLong'
+          }, {
+            n: 'getFirstBucket',
+            en: 'GetFirstBucket',
+            ti: 'Integer'
+          }, {
+            n: 'priority',
+            rq: true,
+            ti: 'UnsignedShort',
+            an: {
+              lp: 'priority'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetCursorInfoRequest',
+        bti: 'OLS_1_2.AbstractRequestParametersType',
+        ps: [{
+            n: 'cursorID',
+            rq: true,
+            en: 'CursorID',
+            ti: '.CursorIDType'
+          }, {
+            n: 'priority',
+            rq: true,
+            ti: 'UnsignedShort',
+            an: {
+              lp: 'priority'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CloseCursorRequest',
+        bti: 'OLS_1_2.AbstractRequestParametersType',
+        ps: [{
+            n: 'cursorID',
+            rq: true,
+            en: 'CursorID',
+            ti: '.CursorIDType'
+          }, {
+            n: 'priority',
+            rq: true,
+            ti: 'UnsignedShort',
+            an: {
+              lp: 'priority'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractIDType',
+        ps: [{
+            n: 'id',
+            rq: true,
+            en: 'ID',
+            ti: 'Integer'
+          }]
+      }, {
+        ln: 'GetCursorPositionRequest',
+        bti: 'OLS_1_2.AbstractRequestParametersType',
+        ps: [{
+            n: 'cursorID',
+            rq: true,
+            en: 'CursorID',
+            ti: '.CursorIDType'
+          }, {
+            n: 'priority',
+            rq: true,
+            ti: 'UnsignedShort',
+            an: {
+              lp: 'priority'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'RoutePointType',
+        ps: [{
+            n: 'linkLoci',
+            rq: true,
+            col: true,
+            en: 'LinkLoci',
+            ti: '.LocusType'
+          }]
+      }, {
+        ln: 'DayOfWeekOfMonthType',
+        ps: [{
+            n: 'dayOfWeek',
+            rq: true,
+            en: 'DayOfWeek'
+          }, {
+            n: 'weekOfMonth',
+            rq: true,
+            en: 'WeekOfMonth',
+            ti: 'UnsignedShort'
+          }]
+      }, {
+        ln: 'GetNearbyMapObjResponseType',
+        bti: 'OLS_1_2.AbstractResponseParametersType',
+        ps: [{
+            n: 'mapObj',
+            rq: true,
+            en: 'MapObj',
+            ti: '.MapObjType'
+          }]
+      }, {
+        ln: 'CursorInfoType',
+        ps: [{
+            n: 'cursorBufferStart',
+            rq: true,
+            en: 'CursorBufferStart',
+            ti: 'Long'
+          }, {
+            n: 'cursorBufferEnd',
+            rq: true,
+            en: 'CursorBufferEnd',
+            ti: 'Long'
+          }, {
+            n: 'resultsSetComplete',
+            rq: true,
+            en: 'ResultsSetComplete',
+            ti: 'Boolean'
+          }, {
+            n: 'currentCursorPosition',
+            rq: true,
+            en: 'CurrentCursorPosition',
+            ti: 'Long'
+          }]
+      }, {
+        ln: 'CursorType',
+        ps: [{
+            n: 'cursorID',
+            rq: true,
+            en: 'CursorID',
+            ti: '.CursorIDType'
+          }, {
+            n: 'cursorType',
+            rq: true,
+            en: 'CursorType'
+          }]
+      }, {
+        ln: 'SetCursorPositionResponse',
+        bti: 'OLS_1_2.AbstractResponseParametersType',
+        ps: [{
+            n: 'gapNum',
+            rq: true,
+            en: 'GapNum',
+            ti: 'Long'
+          }]
+      }, {
+        ln: 'AbsoluteDateType',
+        ps: [{
+            n: 'monthOfYear',
+            rq: true,
+            en: 'MonthOfYear',
+            ti: 'UnsignedShort'
+          }, {
+            n: 'dayOfMonth',
+            rq: true,
+            en: 'DayOfMonth',
+            ti: 'UnsignedShort'
+          }, {
+            n: 'year',
+            rq: true,
+            en: 'Year',
+            ti: 'UnsignedShort'
+          }]
+      }, {
+        ln: 'ExtendedDateType',
+        ps: [{
+            n: 'dayOfWeek',
+            en: 'DayOfWeek'
+          }, {
+            n: 'dayOfYear',
+            en: 'DayOfYear',
+            ti: 'UnsignedShort'
+          }, {
+            n: 'dayOfMonth',
+            en: 'DayOfMonth',
+            ti: 'UnsignedShort'
+          }, {
+            n: 'dayOfWeekOfMonthType',
+            en: 'DayOfWeekOfMonthType',
+            ti: '.DayOfWeekOfMonthType'
+          }, {
+            n: 'dayOfWeekOfYearType',
+            en: 'DayOfWeekOfYearType',
+            ti: '.DayOfWeekOfYearType'
+          }, {
+            n: 'weekOfMonth',
+            en: 'WeekOfMonth',
+            ti: 'UnsignedShort'
+          }, {
+            n: 'weekOfYear',
+            en: 'WeekOfYear',
+            ti: 'UnsignedShort'
+          }, {
+            n: 'monthOfYear',
+            en: 'MonthOfYear',
+            ti: 'UnsignedShort'
+          }, {
+            n: 'dayOfMonthOfYearType',
+            en: 'DayOfMonthOfYearType',
+            ti: '.DayOfMonthOfYearType'
+          }, {
+            n: 'dayOfWeekOfMonthOfYearType',
+            en: 'DayOfWeekOfMonthOfYearType',
+            ti: '.DayOfMonthOfYearType'
+          }]
+      }, {
+        ln: 'ProcessCursorRequest',
+        bti: 'OLS_1_2.AbstractRequestParametersType',
+        ps: [{
+            n: 'cursorID',
+            rq: true,
+            en: 'CursorID',
+            ti: '.CursorIDType'
+          }, {
+            n: 'actionFunc',
+            rq: true,
+            en: 'ActionFunc',
+            ti: 'AnyType'
+          }, {
+            n: 'actionFuncParam',
+            rq: true,
+            en: 'ActionFuncParam',
+            ti: 'AnyType'
+          }, {
+            n: 'priority',
+            rq: true,
+            ti: 'UnsignedShort',
+            an: {
+              lp: 'priority'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'DateTimeType',
         ps: [{
             n: 'startDate',
@@ -87,214 +468,66 @@ var OLS_NAV_1_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GetCursorInfoRequest',
-        bti: 'OLS_1_2.AbstractRequestParametersType',
+        ln: 'RouteControlType',
         ps: [{
-            n: 'cursorID',
+            n: 'costCriteria',
             rq: true,
-            en: 'CursorID',
-            ti: '.CursorIDType'
+            en: 'CostCriteria',
+            ti: '.RouteCostModelType'
           }, {
-            n: 'priority',
-            rq: true,
-            ti: 'UnsignedShort',
-            an: {
-              lp: 'priority'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LocusType',
-        bti: 'OLS_1_2.AbstractWayPointType',
-        ps: [{
-            n: 'link',
-            rq: true,
-            en: 'Link',
-            ti: '.AbstractIDType'
+            n: 'vehicle',
+            mno: 0,
+            col: true,
+            en: 'Vehicle',
+            ti: '.VehicleTypeN'
           }, {
-            n: 'positionAlongLink',
-            en: 'PositionAlongLink',
-            ti: 'Decimal'
+            n: 'vehicleCompositionLogic',
+            en: 'VehicleCompositionLogic'
           }, {
-            n: 'side',
-            en: 'Side',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AbstractIDType',
-        ps: [{
-            n: 'id',
-            rq: true,
-            en: 'ID',
-            ti: 'Integer'
-          }]
-      }, {
-        ln: 'CursorInfoType',
-        ps: [{
-            n: 'cursorBufferStart',
-            rq: true,
-            en: 'CursorBufferStart',
-            ti: 'Long'
+            n: 'routeStartDateTime',
+            en: 'RouteStartDateTime',
+            ti: '.DateTimeType'
           }, {
-            n: 'cursorBufferEnd',
-            rq: true,
-            en: 'CursorBufferEnd',
-            ti: 'Long'
+            n: 'routeEndDateTime',
+            en: 'RouteEndDateTime',
+            ti: '.DateTimeType'
           }, {
-            n: 'resultsSetComplete',
-            rq: true,
-            en: 'ResultsSetComplete',
-            ti: 'Boolean'
-          }, {
-            n: 'currentCursorPosition',
-            rq: true,
-            en: 'CurrentCursorPosition',
-            ti: 'Long'
-          }]
-      }, {
-        ln: 'AbsoluteDateType',
-        ps: [{
-            n: 'monthOfYear',
-            rq: true,
-            en: 'MonthOfYear',
-            ti: 'UnsignedShort'
-          }, {
-            n: 'dayOfMonth',
-            rq: true,
-            en: 'DayOfMonth',
-            ti: 'UnsignedShort'
-          }, {
-            n: 'year',
-            rq: true,
-            en: 'Year',
-            ti: 'UnsignedShort'
-          }]
-      }, {
-        ln: 'GetCursorInfoResponse',
-        bti: 'OLS_1_2.AbstractResponseParametersType',
-        ps: [{
-            n: 'cursorInfo',
-            rq: true,
-            en: 'CursorInfo',
-            ti: '.CursorInfoType'
-          }]
-      }, {
-        ln: 'CursorIDType',
-        bti: '.AbstractIDType'
-      }, {
-        ln: 'GetPositionResponseType',
-        bti: 'OLS_1_2.AbstractResponseParametersType',
-        ps: [{
-            n: 'locus',
-            rq: true,
-            en: 'Locus',
-            ti: '.LocusType'
-          }]
-      }, {
-        ln: 'GetPositionRequestType',
-        bti: 'OLS_1_2.AbstractRequestParametersType',
-        ps: [{
-            n: 'useHistory',
-            rq: true,
-            en: 'UseHistory',
-            ti: 'Boolean'
-          }, {
-            n: 'currentPosition',
-            rq: true,
-            en: 'CurrentPosition',
-            ti: 'OLS_1_2.PositionType'
-          }, {
-            n: 'priority',
-            rq: true,
-            ti: 'UnsignedShort',
-            an: {
-              lp: 'priority'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CursorType',
-        ps: [{
-            n: 'cursorID',
-            rq: true,
-            en: 'CursorID',
-            ti: '.CursorIDType'
-          }, {
-            n: 'cursorType',
-            rq: true,
-            en: 'CursorType'
-          }]
-      }, {
-        ln: 'RoutePointSequenceType.ViaPoint',
-        tn: null,
-        bti: '.RoutePointType',
-        ps: [{
-            n: 'ordered',
+            n: 'useRealTimeTraffic',
             ti: 'Boolean',
             an: {
-              lp: 'ordered'
+              lp: 'useRealTimeTraffic'
             },
             t: 'a'
           }]
       }, {
-        ln: 'GetCursorPositionRequest',
-        bti: 'OLS_1_2.AbstractRequestParametersType',
+        ln: 'RoutePlanType',
         ps: [{
-            n: 'cursorID',
+            n: 'wayPointList',
             rq: true,
-            en: 'CursorID',
-            ti: '.CursorIDType'
+            en: 'WayPointList',
+            ti: '.RoutePointSequenceType'
           }, {
-            n: 'priority',
+            n: 'avoidList',
+            en: 'AvoidList',
+            ti: 'OLS_1_2.AvoidListType'
+          }, {
+            n: 'extendedRouteControl',
             rq: true,
-            ti: 'UnsignedShort',
+            en: 'ExtendedRouteControl',
+            ti: '.RouteControlType'
+          }, {
+            n: 'useRealTimeTraffic',
+            ti: 'Boolean',
             an: {
-              lp: 'priority'
+              lp: 'useRealTimeTraffic'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'CursorFetchResponse',
-        bti: 'OLS_1_2.AbstractResponseParametersType',
-        ps: [{
-            n: 'numFetchedRecords',
-            rq: true,
-            en: 'NumFetchedRecords',
-            ti: 'Long'
           }, {
-            n: 'cursorType',
+            n: 'relaxConstraint',
             rq: true,
-            en: 'CursorType'
-          }, {
-            n: 'retrievedRecords',
-            rq: true,
-            col: true,
-            en: 'RetrievedRecords',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'SetCursorPositionRequest',
-        bti: 'OLS_1_2.AbstractRequestParametersType',
-        ps: [{
-            n: 'cursorID',
-            rq: true,
-            en: 'CursorID',
-            ti: '.CursorIDType'
-          }, {
-            n: 'cursorStartPosition',
-            rq: true,
-            en: 'CursorStartPosition'
-          }, {
-            n: 'numOfPositions',
-            rq: true,
-            en: 'NumOfPositions',
-            ti: 'Long'
-          }, {
-            n: 'priority',
-            rq: true,
-            ti: 'UnsignedShort',
+            ti: 'Boolean',
             an: {
-              lp: 'priority'
+              lp: 'RelaxConstraint'
             },
             t: 'a'
           }]
@@ -308,92 +541,25 @@ var OLS_NAV_1_3_Module_Factory = function () {
             ti: 'Long'
           }]
       }, {
-        ln: 'MapObjType',
+        ln: 'GetCursorInfoResponse',
+        bti: 'OLS_1_2.AbstractResponseParametersType',
         ps: [{
-            n: 'cursor',
+            n: 'cursorInfo',
             rq: true,
-            en: 'Cursor',
-            ti: '.CursorType'
-          }, {
-            n: 'firstBucket',
-            en: 'FirstBucket',
-            ti: '.CursorFetchResponse'
+            en: 'CursorInfo',
+            ti: '.CursorInfoType'
           }]
       }, {
-        ln: 'DateType',
+        ln: 'RoutePointSequenceType.ViaPoint',
+        tn: null,
+        bti: '.RoutePointType',
         ps: [{
-            n: 'absoluteDateType',
-            en: 'AbsoluteDateType',
-            ti: '.AbsoluteDateType'
-          }, {
-            n: 'extendedDate',
-            en: 'ExtendedDate',
-            ti: '.ExtendedDateType'
-          }]
-      }, {
-        ln: 'RouteCostModelType',
-        ps: [{
-            n: 'minimizerGoal',
-            rq: true,
-            en: 'MinimizerGoal'
-          }, {
-            n: 'highwayAffinity',
-            en: 'HighwayAffinity'
-          }, {
-            n: 'tollroadAffinity',
-            en: 'TollroadAffinity'
-          }, {
-            n: 'scenicRoute',
+            n: 'ordered',
             ti: 'Boolean',
             an: {
-              lp: 'ScenicRoute'
+              lp: 'ordered'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'ProcessCursorRequest',
-        bti: 'OLS_1_2.AbstractRequestParametersType',
-        ps: [{
-            n: 'cursorID',
-            rq: true,
-            en: 'CursorID',
-            ti: '.CursorIDType'
-          }, {
-            n: 'actionFunc',
-            rq: true,
-            en: 'ActionFunc',
-            ti: 'AnyType'
-          }, {
-            n: 'actionFuncParam',
-            rq: true,
-            en: 'ActionFuncParam',
-            ti: 'AnyType'
-          }, {
-            n: 'priority',
-            rq: true,
-            ti: 'UnsignedShort',
-            an: {
-              lp: 'priority'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RouteLinkAndCost',
-        ps: [{
-            n: 'link',
-            rq: true,
-            en: 'Link',
-            ti: '.AbstractIDType'
-          }, {
-            n: 'estLinkTravelTime',
-            rq: true,
-            en: 'EstLinkTravelTime',
-            ti: 'UnsignedLong'
-          }, {
-            n: 'nodeTravelTime',
-            rq: true,
-            en: 'NodeTravelTime',
-            ti: 'UnsignedShort'
           }]
       }, {
         ln: 'DetermineRouteRequestType',
@@ -444,34 +610,97 @@ var OLS_NAV_1_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'RoutePlanType',
+        ln: 'MapObjType',
         ps: [{
-            n: 'wayPointList',
+            n: 'cursor',
             rq: true,
-            en: 'WayPointList',
-            ti: '.RoutePointSequenceType'
+            en: 'Cursor',
+            ti: '.CursorType'
           }, {
-            n: 'avoidList',
-            en: 'AvoidList',
-            ti: 'OLS_1_2.AvoidListType'
+            n: 'firstBucket',
+            en: 'FirstBucket',
+            ti: '.CursorFetchResponse'
+          }]
+      }, {
+        ln: 'DateType',
+        ps: [{
+            n: 'absoluteDateType',
+            en: 'AbsoluteDateType',
+            ti: '.AbsoluteDateType'
           }, {
-            n: 'extendedRouteControl',
+            n: 'extendedDate',
+            en: 'ExtendedDate',
+            ti: '.ExtendedDateType'
+          }]
+      }, {
+        ln: 'ProcessCursorResponse',
+        bti: 'OLS_1_2.AbstractResponseParametersType',
+        ps: [{
+            n: 'numRecordsProcessed',
             rq: true,
-            en: 'ExtendedRouteControl',
-            ti: '.RouteControlType'
+            en: 'NumRecordsProcessed',
+            ti: 'Long'
+          }]
+      }, {
+        ln: 'RoutePointSequenceType',
+        ps: [{
+            n: 'startPoint',
+            rq: true,
+            en: 'StartPoint',
+            ti: '.RoutePointType'
           }, {
-            n: 'useRealTimeTraffic',
-            ti: 'Boolean',
+            n: 'viaPoint',
+            mno: 0,
+            col: true,
+            en: 'ViaPoint',
+            ti: '.RoutePointSequenceType.ViaPoint'
+          }, {
+            n: 'endPoint',
+            rq: true,
+            en: 'EndPoint',
+            ti: '.RoutePointType'
+          }]
+      }, {
+        ln: 'RouteLinkAndCost',
+        ps: [{
+            n: 'link',
+            rq: true,
+            en: 'Link',
+            ti: '.AbstractIDType'
+          }, {
+            n: 'estLinkTravelTime',
+            rq: true,
+            en: 'EstLinkTravelTime',
+            ti: 'UnsignedLong'
+          }, {
+            n: 'nodeTravelTime',
+            rq: true,
+            en: 'NodeTravelTime',
+            ti: 'UnsignedShort'
+          }]
+      }, {
+        ln: 'CursorFetchRequest',
+        bti: 'OLS_1_2.AbstractRequestParametersType',
+        ps: [{
+            n: 'cursorID',
+            rq: true,
+            en: 'CursorID',
+            ti: '.CursorIDType'
+          }, {
+            n: 'fetchDirection',
+            rq: true,
+            en: 'FetchDirection'
+          }, {
+            n: 'numRecordsToFetch',
+            rq: true,
+            en: 'NumRecordsToFetch',
+            ti: 'UnsignedLong'
+          }, {
+            n: 'priority',
+            rq: true,
+            ti: 'UnsignedShort',
             an: {
-              lp: 'useRealTimeTraffic'
-            },
-            t: 'a'
-          }, {
-            n: 'relaxConstraint',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'RelaxConstraint'
+              lp: 'priority'
             },
             t: 'a'
           }]
@@ -511,188 +740,6 @@ var OLS_NAV_1_3_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'GetNearbyMapObjRequestType',
-        bti: 'OLS_1_2.AbstractRequestParametersType',
-        ps: [{
-            n: 'currentPosition',
-            rq: true,
-            en: 'CurrentPosition',
-            ti: 'OLS_1_2.PositionType'
-          }, {
-            n: 'delta',
-            rq: true,
-            en: 'Delta',
-            ti: 'UnsignedLong'
-          }, {
-            n: 'getFirstBucket',
-            en: 'GetFirstBucket',
-            ti: 'Integer'
-          }, {
-            n: 'priority',
-            rq: true,
-            ti: 'UnsignedShort',
-            an: {
-              lp: 'priority'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CloseCursorRequest',
-        bti: 'OLS_1_2.AbstractRequestParametersType',
-        ps: [{
-            n: 'cursorID',
-            rq: true,
-            en: 'CursorID',
-            ti: '.CursorIDType'
-          }, {
-            n: 'priority',
-            rq: true,
-            ti: 'UnsignedShort',
-            an: {
-              lp: 'priority'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ProcessCursorResponse',
-        bti: 'OLS_1_2.AbstractResponseParametersType',
-        ps: [{
-            n: 'numRecordsProcessed',
-            rq: true,
-            en: 'NumRecordsProcessed',
-            ti: 'Long'
-          }]
-      }, {
-        ln: 'RoutePointSequenceType',
-        ps: [{
-            n: 'startPoint',
-            rq: true,
-            en: 'StartPoint',
-            ti: '.RoutePointType'
-          }, {
-            n: 'viaPoint',
-            mno: 0,
-            col: true,
-            en: 'ViaPoint',
-            ti: '.RoutePointSequenceType.ViaPoint'
-          }, {
-            n: 'endPoint',
-            rq: true,
-            en: 'EndPoint',
-            ti: '.RoutePointType'
-          }]
-      }, {
-        ln: 'TimeZoneType',
-        ps: [{
-            n: 'code',
-            rq: true,
-            en: 'Code',
-            ti: 'Long'
-          }, {
-            n: 'minutesFromGMT',
-            rq: true,
-            en: 'MinutesFromGMT',
-            ti: 'Short'
-          }, {
-            n: 'description',
-            rq: true,
-            en: 'Description'
-          }]
-      }, {
-        ln: 'ExtendedDateType',
-        ps: [{
-            n: 'dayOfWeek',
-            en: 'DayOfWeek'
-          }, {
-            n: 'dayOfYear',
-            en: 'DayOfYear',
-            ti: 'UnsignedShort'
-          }, {
-            n: 'dayOfMonth',
-            en: 'DayOfMonth',
-            ti: 'UnsignedShort'
-          }, {
-            n: 'dayOfWeekOfMonthType',
-            en: 'DayOfWeekOfMonthType',
-            ti: '.DayOfWeekOfMonthType'
-          }, {
-            n: 'dayOfWeekOfYearType',
-            en: 'DayOfWeekOfYearType',
-            ti: '.DayOfWeekOfYearType'
-          }, {
-            n: 'weekOfMonth',
-            en: 'WeekOfMonth',
-            ti: 'UnsignedShort'
-          }, {
-            n: 'weekOfYear',
-            en: 'WeekOfYear',
-            ti: 'UnsignedShort'
-          }, {
-            n: 'monthOfYear',
-            en: 'MonthOfYear',
-            ti: 'UnsignedShort'
-          }, {
-            n: 'dayOfMonthOfYearType',
-            en: 'DayOfMonthOfYearType',
-            ti: '.DayOfMonthOfYearType'
-          }, {
-            n: 'dayOfWeekOfMonthOfYearType',
-            en: 'DayOfWeekOfMonthOfYearType',
-            ti: '.DayOfMonthOfYearType'
-          }]
-      }, {
-        ln: 'DayOfWeekOfMonthOfYearType',
-        ps: [{
-            n: 'dayOfWeek',
-            rq: true,
-            en: 'DayOfWeek'
-          }, {
-            n: 'weekOfMonth',
-            rq: true,
-            en: 'WeekOfMonth',
-            ti: 'UnsignedShort'
-          }, {
-            n: 'monthOfYear',
-            rq: true,
-            en: 'MonthOfYear',
-            ti: 'UnsignedShort'
-          }]
-      }, {
-        ln: 'GetNearbyMapObjResponseType',
-        bti: 'OLS_1_2.AbstractResponseParametersType',
-        ps: [{
-            n: 'mapObj',
-            rq: true,
-            en: 'MapObj',
-            ti: '.MapObjType'
-          }]
-      }, {
-        ln: 'CursorFetchRequest',
-        bti: 'OLS_1_2.AbstractRequestParametersType',
-        ps: [{
-            n: 'cursorID',
-            rq: true,
-            en: 'CursorID',
-            ti: '.CursorIDType'
-          }, {
-            n: 'fetchDirection',
-            rq: true,
-            en: 'FetchDirection'
-          }, {
-            n: 'numRecordsToFetch',
-            rq: true,
-            en: 'NumRecordsToFetch',
-            ti: 'UnsignedLong'
-          }, {
-            n: 'priority',
-            rq: true,
-            ti: 'UnsignedShort',
-            an: {
-              lp: 'priority'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'VehicleTypeN',
         tn: 'VehicleType.N',
         ps: [{
@@ -712,96 +759,57 @@ var OLS_NAV_1_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SetCursorPositionResponse',
-        bti: 'OLS_1_2.AbstractResponseParametersType',
+        ln: 'CursorIDType',
+        bti: '.AbstractIDType'
+      }, {
+        ln: 'TimeZoneType',
         ps: [{
-            n: 'gapNum',
+            n: 'code',
             rq: true,
-            en: 'GapNum',
+            en: 'Code',
             ti: 'Long'
+          }, {
+            n: 'minutesFromGMT',
+            rq: true,
+            en: 'MinutesFromGMT',
+            ti: 'Short'
+          }, {
+            n: 'description',
+            rq: true,
+            en: 'Description'
           }]
       }, {
-        ln: 'DayOfWeekOfMonthType',
+        ln: 'RouteCostModelType',
         ps: [{
-            n: 'dayOfWeek',
+            n: 'minimizerGoal',
             rq: true,
-            en: 'DayOfWeek'
+            en: 'MinimizerGoal'
           }, {
-            n: 'weekOfMonth',
-            rq: true,
-            en: 'WeekOfMonth',
-            ti: 'UnsignedShort'
-          }]
-      }, {
-        ln: 'DayOfWeekOfYearType',
-        ps: [{
-            n: 'dayOfWeek',
-            rq: true,
-            en: 'DayOfWeek'
+            n: 'highwayAffinity',
+            en: 'HighwayAffinity'
           }, {
-            n: 'weekOfYear',
-            rq: true,
-            en: 'WeekOfYear',
-            ti: 'UnsignedShort'
-          }]
-      }, {
-        ln: 'RoutePointType',
-        ps: [{
-            n: 'linkLoci',
-            rq: true,
-            col: true,
-            en: 'LinkLoci',
-            ti: '.LocusType'
-          }]
-      }, {
-        ln: 'DayOfMonthOfYearType',
-        ps: [{
-            n: 'dayOfMonth',
-            rq: true,
-            en: 'DayOfMonth',
-            ti: 'UnsignedShort'
+            n: 'tollroadAffinity',
+            en: 'TollroadAffinity'
           }, {
-            n: 'monthOfYear',
-            rq: true,
-            en: 'MonthOfYear',
-            ti: 'UnsignedShort'
-          }]
-      }, {
-        ln: 'RouteControlType',
-        ps: [{
-            n: 'costCriteria',
-            rq: true,
-            en: 'CostCriteria',
-            ti: '.RouteCostModelType'
-          }, {
-            n: 'vehicle',
-            mno: 0,
-            col: true,
-            en: 'Vehicle',
-            ti: '.VehicleTypeN'
-          }, {
-            n: 'vehicleCompositionLogic',
-            en: 'VehicleCompositionLogic'
-          }, {
-            n: 'routeStartDateTime',
-            en: 'RouteStartDateTime',
-            ti: '.DateTimeType'
-          }, {
-            n: 'routeEndDateTime',
-            en: 'RouteEndDateTime',
-            ti: '.DateTimeType'
-          }, {
-            n: 'useRealTimeTraffic',
+            n: 'scenicRoute',
             ti: 'Boolean',
             an: {
-              lp: 'useRealTimeTraffic'
+              lp: 'ScenicRoute'
             },
             t: 'a'
           }]
       }, {
         t: 'enum',
-        ln: 'RouteMinimizeOptionEnum',
-        vs: ['SHORTEST_DISTANCE', 'SHORTEST_TIME']
+        ln: 'VehicleTypeName',
+        vs: ['All Vehicles', 'Passenger Cars', 'Residential Vehicle', 'High Occupancy Vehicle', 'Car with Trailer', 'Emergency Vehicle', 'Taxi', 'Public Bus', 'Private Bus', 'Military vehicle', 'Delivery Truck', 'Transport Truck', 'Motorcycle', 'Moped', 'Bicycle', 'Pedestrian', 'Farm Vehicle', 'Vehicle with water polluting load', 'Vehicle with explosive load', 'Vehicle with other dangerous load', 'Trolley Bus', 'Employee Vehicle', 'Light Rail', 'Facility Vehicle', 'School Bus', '4 Wheel Drive Vehicle', 'Vehicle carrying snow chains', 'Mail Vehicle', 'Tanker', 'Vehicle for disabled persons', 'User defined 00', 'User defined 01', 'User defined 02', 'User defined 03', 'User defined 04', 'User defined 05', 'User defined 06', 'User defined 07', 'User defined 08', 'User defined 09']
+      }, {
+        t: 'enum',
+        ln: 'RouteHighwayUsageEnum',
+        vs: ['PROHIBIT_HIGHWAYS', 'AVOID_HIGHWAYS', 'PREFER_HIGHWAYS', 'NO_PREFERENCE']
+      }, {
+        t: 'enum',
+        ln: 'RouteTollUsageEnum',
+        vs: ['PROHIBIT_TOLLROADS', 'AVOID_TOLLROADS', 'NO_PREFERENCE']
       }, {
         t: 'enum',
         ln: 'CursorOriginEnum',
@@ -812,44 +820,22 @@ var OLS_NAV_1_3_Module_Factory = function () {
         vs: ['FetchForward', 'FetchBackward']
       }, {
         t: 'enum',
+        ln: 'RouteMinimizeOptionEnum',
+        vs: ['SHORTEST_DISTANCE', 'SHORTEST_TIME']
+      }, {
+        t: 'enum',
         ln: 'DateTimeEnum',
         vs: ['MAP_DAY_OF_WEEK', 'MAP_ABSOLUTE_DATE', 'MAP_DAY_OF_YEAR', 'MAP_DAY_OF_MONTH', 'MAP_DAY_OF_WEEK_OF_MONTH', 'MAP_DAY_OF_WEEK_OF_YEAR', 'MAP_WEEK_OF_MONTH', 'MAP_WEEK_OF_YEAR', 'MAP_MONTH_OF_YEAR', 'MAP_DAY_OF_MONTH_OF_YEAR', 'MAP_DAY_OF_WEEK_OF_MONTH_OF_YEAR']
-      }, {
-        t: 'enum',
-        ln: 'DayOfWeekEnum',
-        vs: ['Monday = 0x1', 'Tuesday = 0x2', 'Wednesday = 0x4', 'Thursday = 0x8', 'Friday = 0x10', 'Saturday = 0x20', 'Sunday = 0x40']
-      }, {
-        t: 'enum',
-        ln: 'VehicleTypeName',
-        vs: ['All Vehicles', 'Passenger Cars', 'Residential Vehicle', 'High Occupancy Vehicle', 'Car with Trailer', 'Emergency Vehicle', 'Taxi', 'Public Bus', 'Private Bus', 'Military vehicle', 'Delivery Truck', 'Transport Truck', 'Motorcycle', 'Moped', 'Bicycle', 'Pedestrian', 'Farm Vehicle', 'Vehicle with water polluting load', 'Vehicle with explosive load', 'Vehicle with other dangerous load', 'Trolley Bus', 'Employee Vehicle', 'Light Rail', 'Facility Vehicle', 'School Bus', '4 Wheel Drive Vehicle', 'Vehicle carrying snow chains', 'Mail Vehicle', 'Tanker', 'Vehicle for disabled persons', 'User defined 00', 'User defined 01', 'User defined 02', 'User defined 03', 'User defined 04', 'User defined 05', 'User defined 06', 'User defined 07', 'User defined 08', 'User defined 09']
       }, {
         t: 'enum',
         ln: 'CursorTypeEnum',
         vs: ['RouteLinkAndCostType', 'MapObjType']
       }, {
         t: 'enum',
-        ln: 'RouteHighwayUsageEnum',
-        vs: ['PROHIBIT_HIGHWAYS', 'AVOID_HIGHWAYS', 'PREFER_HIGHWAYS', 'NO_PREFERENCE']
-      }, {
-        t: 'enum',
-        ln: 'RouteTollUsageEnum',
-        vs: ['PROHIBIT_TOLLROADS', 'AVOID_TOLLROADS', 'NO_PREFERENCE']
+        ln: 'DayOfWeekEnum',
+        vs: ['Monday = 0x1', 'Tuesday = 0x2', 'Wednesday = 0x4', 'Thursday = 0x8', 'Friday = 0x10', 'Saturday = 0x20', 'Sunday = 0x40']
       }],
     eis: [{
-        en: 'GetPositionRequest',
-        ti: '.GetPositionRequestType',
-        sh: {
-          lp: '_RequestParameters',
-          ns: 'http:\/\/www.opengis.net\/xls'
-        }
-      }, {
-        en: 'GetNearbyMapObjResponse',
-        ti: '.GetNearbyMapObjResponseType',
-        sh: {
-          lp: '_ResponseParameters',
-          ns: 'http:\/\/www.opengis.net\/xls'
-        }
-      }, {
         en: 'GetPositionResponse',
         ti: '.GetPositionResponseType',
         sh: {
@@ -857,8 +843,15 @@ var OLS_NAV_1_3_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/xls'
         }
       }, {
-        en: 'GetNearbyMapObjRequest',
-        ti: '.GetNearbyMapObjRequestType',
+        en: 'GetPositionRequest',
+        ti: '.GetPositionRequestType',
+        sh: {
+          lp: '_RequestParameters',
+          ns: 'http:\/\/www.opengis.net\/xls'
+        }
+      }, {
+        en: 'DetermineRouteRequest',
+        ti: '.DetermineRouteRequestType',
         sh: {
           lp: '_RequestParameters',
           ns: 'http:\/\/www.opengis.net\/xls'
@@ -871,8 +864,15 @@ var OLS_NAV_1_3_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/xls'
         }
       }, {
-        en: 'DetermineRouteRequest',
-        ti: '.DetermineRouteRequestType',
+        en: 'GetNearbyMapObjResponse',
+        ti: '.GetNearbyMapObjResponseType',
+        sh: {
+          lp: '_ResponseParameters',
+          ns: 'http:\/\/www.opengis.net\/xls'
+        }
+      }, {
+        en: 'GetNearbyMapObjRequest',
+        ti: '.GetNearbyMapObjRequestType',
         sh: {
           lp: '_RequestParameters',
           ns: 'http:\/\/www.opengis.net\/xls'

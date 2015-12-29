@@ -3,27 +3,8 @@ var GMLJP2_2_0_Module_Factory = function () {
     n: 'GMLJP2_2_0',
     dens: 'http:\/\/www.opengis.net\/gmljp2\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1', 'GMLCOV_1_0'],
+    deps: ['GMLCOV_1_0', 'XLink_1_0', 'GML_3_2_1'],
     tis: [{
-        ln: 'GMLJP2CoverageCollectionType',
-        bti: 'GMLCOV_1_0.AbstractCoverageType',
-        ps: [{
-            n: 'featureMember',
-            rq: true,
-            col: true,
-            ti: '.GMLJP2CoverageCollectionType.FeatureMember'
-          }, {
-            n: 'style',
-            mno: 0,
-            col: true,
-            ti: '.GenericWithAssocPropertyType'
-          }, {
-            n: 'extension',
-            mno: 0,
-            col: true,
-            ti: '.GenericWithAssocPropertyType'
-          }]
-      }, {
         ln: 'GMLJP2FeaturesType.Feature',
         tn: null,
         bti: 'GML_3_2_1.AbstractFeatureMemberType',
@@ -39,6 +20,71 @@ var GMLJP2_2_0_Module_Factory = function () {
             },
             ti: 'GML_3_2_1.AbstractFeatureType',
             t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'GMLJP2CoverageCollectionType.FeatureMember',
+        tn: null,
+        bti: 'GML_3_2_1.AbstractFeatureMemberType',
+        ps: [{
+            n: 'gmljp2GridCoverageOrGMLJP2RectifiedGridCoverageOrGMLJP2ReferenceableGridCoverage',
+            rq: true,
+            col: true,
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'GMLJP2ReferenceableGridCoverage',
+                ti: '.GMLJP2CoverageType'
+              }, {
+                en: 'GMLJP2GridCoverage',
+                ti: '.GMLJP2CoverageType'
+              }, {
+                en: 'GMLJP2RectifiedGridCoverage',
+                ti: '.GMLJP2CoverageType'
+              }, {
+                en: 'GMLJP2Features',
+                ti: '.GMLJP2FeaturesType'
+              }],
+            t: 'ers'
           }, {
             n: 'nilReason',
             ti: {
@@ -132,83 +178,13 @@ var GMLJP2_2_0_Module_Factory = function () {
         ln: 'GenericMetadataType',
         bti: 'GMLCOV_1_0.ExtensionType'
       }, {
-        ln: 'GMLJP2CoverageCollectionType.FeatureMember',
-        tn: null,
-        bti: 'GML_3_2_1.AbstractFeatureMemberType',
+        ln: 'GMLJP2CoverageCollectionType',
+        bti: 'GMLCOV_1_0.AbstractCoverageType',
         ps: [{
-            n: 'gmljp2GridCoverageOrGMLJP2RectifiedGridCoverageOrGMLJP2ReferenceableGridCoverage',
+            n: 'featureMember',
             rq: true,
             col: true,
-            mx: false,
-            dom: false,
-            etis: [{
-                en: 'GMLJP2ReferenceableGridCoverage',
-                ti: '.GMLJP2CoverageType'
-              }, {
-                en: 'GMLJP2GridCoverage',
-                ti: '.GMLJP2CoverageType'
-              }, {
-                en: 'GMLJP2Features',
-                ti: '.GMLJP2FeaturesType'
-              }, {
-                en: 'GMLJP2RectifiedGridCoverage',
-                ti: '.GMLJP2CoverageType'
-              }],
-            t: 'ers'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'GMLJP2CoverageType',
-        bti: 'GMLCOV_1_0.AbstractDiscreteCoverageType',
-        ps: [{
-            n: 'feature',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_2_1.FeaturePropertyType'
-          }, {
-            n: 'annotation',
-            mno: 0,
-            col: true,
-            ti: '.GenericWithAssocPropertyType'
+            ti: '.GMLJP2CoverageCollectionType.FeatureMember'
           }, {
             n: 'style',
             mno: 0,
@@ -238,12 +214,36 @@ var GMLJP2_2_0_Module_Factory = function () {
             col: true,
             ti: '.GenericWithAssocPropertyType'
           }]
+      }, {
+        ln: 'GMLJP2CoverageType',
+        bti: 'GMLCOV_1_0.AbstractDiscreteCoverageType',
+        ps: [{
+            n: 'feature',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_2_1.FeaturePropertyType'
+          }, {
+            n: 'annotation',
+            mno: 0,
+            col: true,
+            ti: '.GenericWithAssocPropertyType'
+          }, {
+            n: 'style',
+            mno: 0,
+            col: true,
+            ti: '.GenericWithAssocPropertyType'
+          }, {
+            n: 'extension',
+            mno: 0,
+            col: true,
+            ti: '.GenericWithAssocPropertyType'
+          }]
       }],
     eis: [{
-        en: 'GMLJP2ReferenceableGridCoverage',
-        ti: '.GMLJP2CoverageType',
+        en: 'Metadata',
+        ti: '.GenericMetadataType',
         sh: {
-          lp: 'ReferenceableGridCoverage',
+          lp: 'Extension',
           ns: 'http:\/\/www.opengis.net\/gmlcov\/1.0'
         }
       }, {
@@ -261,10 +261,17 @@ var GMLJP2_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gmlcov\/1.0'
         }
       }, {
-        en: 'Metadata',
-        ti: '.GenericMetadataType',
+        en: 'GMLJP2ReferenceableGridCoverage',
+        ti: '.GMLJP2CoverageType',
         sh: {
-          lp: 'Extension',
+          lp: 'ReferenceableGridCoverage',
+          ns: 'http:\/\/www.opengis.net\/gmlcov\/1.0'
+        }
+      }, {
+        en: 'GMLJP2GridCoverage',
+        ti: '.GMLJP2CoverageType',
+        sh: {
+          lp: 'GridCoverage',
           ns: 'http:\/\/www.opengis.net\/gmlcov\/1.0'
         }
       }, {
@@ -273,13 +280,6 @@ var GMLJP2_2_0_Module_Factory = function () {
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'GMLJP2GridCoverage',
-        ti: '.GMLJP2CoverageType',
-        sh: {
-          lp: 'GridCoverage',
-          ns: 'http:\/\/www.opengis.net\/gmlcov\/1.0'
         }
       }]
   };

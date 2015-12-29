@@ -2,46 +2,43 @@
 {
     "id":"http://www.opengis.net/citygml/relief/2.0#",
     "definitions":{
-        "AbstractReliefComponentType":{
-            "required":[
-                "lod"
-            ],
+        "BreaklineReliefType":{
             "allOf":[
                 {
-                    "$ref":"http://www.opengis.net/citygml/2.0#/definitions/AbstractCityObjectType"
+                    "$ref":"#/definitions/AbstractReliefComponentType"
                 },
                 {
                     "type":"object",
-                    "title":"AbstractReliefComponentType",
+                    "title":"BreaklineReliefType",
                     "properties":{
-                        "lod":{
-                            "title":"lod",
+                        "ridgeOrValleyLines":{
+                            "title":"ridgeOrValleyLines",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                                    "$ref":"#/definitions/MultiCurvePropertyType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"lod",
+                                "localPart":"ridgeOrValleyLines",
                                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
                             }
                         },
-                        "extent":{
-                            "title":"extent",
+                        "breaklines":{
+                            "title":"breaklines",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/PolygonPropertyType"
+                                    "$ref":"#/definitions/MultiCurvePropertyType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"extent",
+                                "localPart":"breaklines",
                                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
                             }
                         },
-                        "genericApplicationPropertyOfReliefComponent":{
-                            "title":"genericApplicationPropertyOfReliefComponent",
+                        "genericApplicationPropertyOfBreaklineRelief":{
+                            "title":"genericApplicationPropertyOfBreaklineRelief",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -53,7 +50,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfReliefComponent",
+                                "localPart":"_GenericApplicationPropertyOfBreaklineRelief",
                                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
                             }
                         }
@@ -62,13 +59,210 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AbstractReliefComponentType",
+                "localPart":"BreaklineReliefType",
                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
             },
             "propertiesOrder":[
-                "lod",
-                "extent",
-                "genericApplicationPropertyOfReliefComponent"
+                "ridgeOrValleyLines",
+                "breaklines",
+                "genericApplicationPropertyOfBreaklineRelief"
+            ]
+        },
+        "GridPropertyType":{
+            "type":"object",
+            "title":"GridPropertyType",
+            "required":[
+                "rectifiedGridCoverage"
+            ],
+            "properties":{
+                "rectifiedGridCoverage":{
+                    "title":"rectifiedGridCoverage",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/RectifiedGridCoverageType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"RectifiedGridCoverage",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"gridPropertyType",
+                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
+            },
+            "propertiesOrder":[
+                "rectifiedGridCoverage",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "MassPointReliefType":{
+            "required":[
+                "reliefPoints"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractReliefComponentType"
+                },
+                {
+                    "type":"object",
+                    "title":"MassPointReliefType",
+                    "properties":{
+                        "reliefPoints":{
+                            "title":"reliefPoints",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MultiPointPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"reliefPoints",
+                                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
+                            }
+                        },
+                        "genericApplicationPropertyOfMassPointRelief":{
+                            "title":"genericApplicationPropertyOfMassPointRelief",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfMassPointRelief",
+                                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"MassPointReliefType",
+                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
+            },
+            "propertiesOrder":[
+                "reliefPoints",
+                "genericApplicationPropertyOfMassPointRelief"
             ]
         },
         "TinPropertyType":{
@@ -225,9 +419,9 @@
                 "actuate"
             ]
         },
-        "MassPointReliefType":{
+        "RasterReliefType":{
             "required":[
-                "reliefPoints"
+                "grid"
             ],
             "allOf":[
                 {
@@ -235,23 +429,23 @@
                 },
                 {
                     "type":"object",
-                    "title":"MassPointReliefType",
+                    "title":"RasterReliefType",
                     "properties":{
-                        "reliefPoints":{
-                            "title":"reliefPoints",
+                        "grid":{
+                            "title":"grid",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/MultiPointPropertyType"
+                                    "$ref":"#/definitions/GridPropertyType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"reliefPoints",
+                                "localPart":"grid",
                                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
                             }
                         },
-                        "genericApplicationPropertyOfMassPointRelief":{
-                            "title":"genericApplicationPropertyOfMassPointRelief",
+                        "genericApplicationPropertyOfRasterRelief":{
+                            "title":"genericApplicationPropertyOfRasterRelief",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -263,7 +457,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfMassPointRelief",
+                                "localPart":"_GenericApplicationPropertyOfRasterRelief",
                                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
                             }
                         }
@@ -272,51 +466,54 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"MassPointReliefType",
+                "localPart":"RasterReliefType",
                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
             },
             "propertiesOrder":[
-                "reliefPoints",
-                "genericApplicationPropertyOfMassPointRelief"
+                "grid",
+                "genericApplicationPropertyOfRasterRelief"
             ]
         },
-        "BreaklineReliefType":{
+        "AbstractReliefComponentType":{
+            "required":[
+                "lod"
+            ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/AbstractReliefComponentType"
+                    "$ref":"http://www.opengis.net/citygml/2.0#/definitions/AbstractCityObjectType"
                 },
                 {
                     "type":"object",
-                    "title":"BreaklineReliefType",
+                    "title":"AbstractReliefComponentType",
                     "properties":{
-                        "ridgeOrValleyLines":{
-                            "title":"ridgeOrValleyLines",
+                        "lod":{
+                            "title":"lod",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/MultiCurvePropertyType"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"ridgeOrValleyLines",
+                                "localPart":"lod",
                                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
                             }
                         },
-                        "breaklines":{
-                            "title":"breaklines",
+                        "extent":{
+                            "title":"extent",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/MultiCurvePropertyType"
+                                    "$ref":"#/definitions/PolygonPropertyType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"breaklines",
+                                "localPart":"extent",
                                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
                             }
                         },
-                        "genericApplicationPropertyOfBreaklineRelief":{
-                            "title":"genericApplicationPropertyOfBreaklineRelief",
+                        "genericApplicationPropertyOfReliefComponent":{
+                            "title":"genericApplicationPropertyOfReliefComponent",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -328,7 +525,7 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfBreaklineRelief",
+                                "localPart":"_GenericApplicationPropertyOfReliefComponent",
                                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
                             }
                         }
@@ -337,13 +534,13 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"BreaklineReliefType",
+                "localPart":"AbstractReliefComponentType",
                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
             },
             "propertiesOrder":[
-                "ridgeOrValleyLines",
-                "breaklines",
-                "genericApplicationPropertyOfBreaklineRelief"
+                "lod",
+                "extent",
+                "genericApplicationPropertyOfReliefComponent"
             ]
         },
         "ReliefFeatureType":{
@@ -420,146 +617,59 @@
                 "genericApplicationPropertyOfReliefFeature"
             ]
         },
-        "GridPropertyType":{
-            "type":"object",
-            "title":"GridPropertyType",
+        "TINReliefType":{
             "required":[
-                "rectifiedGridCoverage"
+                "tin"
             ],
-            "properties":{
-                "rectifiedGridCoverage":{
-                    "title":"rectifiedGridCoverage",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/RectifiedGridCoverageType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"RectifiedGridCoverage",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractReliefComponentType"
                 },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                {
+                    "type":"object",
+                    "title":"TINReliefType",
+                    "properties":{
+                        "tin":{
+                            "title":"tin",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/TinPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"tin",
+                                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
+                            }
+                        },
+                        "genericApplicationPropertyOfTinRelief":{
+                            "title":"genericApplicationPropertyOfTinRelief",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"_GenericApplicationPropertyOfTinRelief",
+                                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
+                            }
                         }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
                 }
-            },
+            ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"gridPropertyType",
+                "localPart":"TINReliefType",
                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
             },
             "propertiesOrder":[
-                "rectifiedGridCoverage",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
+                "tin",
+                "genericApplicationPropertyOfTinRelief"
             ]
         },
         "ReliefComponentPropertyType":{
@@ -715,116 +825,6 @@
                 "show",
                 "actuate"
             ]
-        },
-        "RasterReliefType":{
-            "required":[
-                "grid"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractReliefComponentType"
-                },
-                {
-                    "type":"object",
-                    "title":"RasterReliefType",
-                    "properties":{
-                        "grid":{
-                            "title":"grid",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/GridPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"grid",
-                                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
-                            }
-                        },
-                        "genericApplicationPropertyOfRasterRelief":{
-                            "title":"genericApplicationPropertyOfRasterRelief",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfRasterRelief",
-                                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"RasterReliefType",
-                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
-            },
-            "propertiesOrder":[
-                "grid",
-                "genericApplicationPropertyOfRasterRelief"
-            ]
-        },
-        "TINReliefType":{
-            "required":[
-                "tin"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractReliefComponentType"
-                },
-                {
-                    "type":"object",
-                    "title":"TINReliefType",
-                    "properties":{
-                        "tin":{
-                            "title":"tin",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/TinPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"tin",
-                                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
-                            }
-                        },
-                        "genericApplicationPropertyOfTinRelief":{
-                            "title":"genericApplicationPropertyOfTinRelief",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"_GenericApplicationPropertyOfTinRelief",
-                                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TINReliefType",
-                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
-            },
-            "propertiesOrder":[
-                "tin",
-                "genericApplicationPropertyOfTinRelief"
-            ]
         }
     },
     "anyOf":[
@@ -841,7 +841,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Elevation"
+                                        "TINRelief"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -854,113 +854,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/LengthType"
+                    "$ref":"#/definitions/TINReliefType"
                 }
             },
             "elementName":{
-                "localPart":"Elevation",
-                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "_GenericApplicationPropertyOfMassPointRelief"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/citygml/relief/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfMassPointRelief",
-                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "MassPointRelief"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/citygml/relief/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MassPointReliefType"
-                }
-            },
-            "elementName":{
-                "localPart":"MassPointRelief",
-                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "_ReliefComponent"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/citygml/relief/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractReliefComponentType"
-                }
-            },
-            "elementName":{
-                "localPart":"_ReliefComponent",
+                "localPart":"TINRelief",
                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
             }
         },
@@ -1045,7 +943,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "_GenericApplicationPropertyOfReliefComponent"
+                                        "Elevation"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1058,11 +956,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                    "$ref":"#/definitions/LengthType"
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfReliefComponent",
+                "localPart":"Elevation",
                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
             }
         },
@@ -1079,7 +977,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "ReliefFeature"
+                                        "_GenericApplicationPropertyOfTinRelief"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1092,11 +990,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/ReliefFeatureType"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                 }
             },
             "elementName":{
-                "localPart":"ReliefFeature",
+                "localPart":"_GenericApplicationPropertyOfTinRelief",
                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
             }
         },
@@ -1181,6 +1079,142 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
+                                        "_ReliefComponent"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/relief/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractReliefComponentType"
+                }
+            },
+            "elementName":{
+                "localPart":"_ReliefComponent",
+                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_GenericApplicationPropertyOfMassPointRelief"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/relief/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfMassPointRelief",
+                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "MassPointRelief"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/relief/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MassPointReliefType"
+                }
+            },
+            "elementName":{
+                "localPart":"MassPointRelief",
+                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_GenericApplicationPropertyOfReliefComponent"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/relief/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfReliefComponent",
+                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
                                         "BreaklineRelief"
                                     ]
                                 },
@@ -1215,7 +1249,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "_GenericApplicationPropertyOfTinRelief"
+                                        "ReliefFeature"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1228,45 +1262,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                    "$ref":"#/definitions/ReliefFeatureType"
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfTinRelief",
-                "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "TINRelief"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/citygml/relief/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/TINReliefType"
-                }
-            },
-            "elementName":{
-                "localPart":"TINRelief",
+                "localPart":"ReliefFeature",
                 "namespaceURI":"http://www.opengis.net/citygml/relief/2.0"
             }
         }

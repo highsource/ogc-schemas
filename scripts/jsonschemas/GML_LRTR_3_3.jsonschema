@@ -2,40 +2,6 @@
 {
     "id":"http://www.opengis.net/gml/3.3/lrtr#",
     "definitions":{
-        "DualAlongReferentType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/gml/3.3/lr#/definitions/AlongReferentType"
-                },
-                {
-                    "type":"object",
-                    "title":"DualAlongReferentType",
-                    "properties":{
-                        "towardsReferent":{
-                            "title":"towardsReferent",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.opengis.net/gml/3.3/lr#/definitions/ReferentPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"towardsReferent",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lrtr"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DualAlongReferentType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lrtr"
-            },
-            "propertiesOrder":[
-                "towardsReferent"
-            ]
-        },
         "DualAlongReferentPropertyType":{
             "type":"object",
             "title":"DualAlongReferentPropertyType",
@@ -193,6 +159,40 @@
                 "title",
                 "show",
                 "actuate"
+            ]
+        },
+        "DualAlongReferentType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/gml/3.3/lr#/definitions/AlongReferentType"
+                },
+                {
+                    "type":"object",
+                    "title":"DualAlongReferentType",
+                    "properties":{
+                        "towardsReferent":{
+                            "title":"towardsReferent",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/gml/3.3/lr#/definitions/ReferentPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"towardsReferent",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lrtr"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DualAlongReferentType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lrtr"
+            },
+            "propertiesOrder":[
+                "towardsReferent"
             ]
         }
     },

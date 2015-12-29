@@ -3,7 +3,7 @@ var GML_LROV_3_3_Module_Factory = function () {
     n: 'GML_LROV_3_3',
     dens: 'http:\/\/www.opengis.net\/gml\/3.3\/lrov',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_2_1', 'XLink_1_0', 'GML_LRO_3_3', 'GML_LR_3_3'],
+    deps: ['XLink_1_0', 'GML_3_2_1', 'GML_LR_3_3', 'GML_LRO_3_3'],
     tis: [{
         ln: 'VectorOffsetLinearSRSPropertyType',
         ps: [{
@@ -60,27 +60,11 @@ var GML_LROV_3_3_Module_Factory = function () {
             ti: '.VectorOffsetExpressionType'
           }]
       }, {
-        ln: 'VectorOffsetLinearSRSType',
-        bti: 'GML_LR_3_3.LinearSRSType',
+        ln: 'VectorOffsetExpressionType',
         ps: [{
-            n: 'rest',
+            n: 'offsetVector',
             rq: true,
-            mno: 3,
-            mxo: 5,
-            col: true,
-            mx: false,
-            dom: false,
-            etis: [{
-                en: 'linearElement',
-                ti: 'GML_LR_3_3.LinearElementPropertyType'
-              }, {
-                en: 'offsetVector',
-                ti: '.VectorType'
-              }, {
-                en: 'lrm',
-                ti: 'GML_LRO_3_3.LRMWithOffsetPropertyType'
-              }],
-            t: 'ers'
+            ti: 'GML_3_2_1.VectorType'
           }]
       }, {
         ln: 'VectorType',
@@ -93,14 +77,42 @@ var GML_LROV_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'VectorOffsetExpressionType',
+        ln: 'VectorOffsetLinearSRSType',
+        bti: 'GML_LR_3_3.LinearSRSType',
         ps: [{
-            n: 'offsetVector',
+            n: 'rest',
             rq: true,
-            ti: 'GML_3_2_1.VectorType'
+            mno: 3,
+            mxo: 5,
+            col: true,
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'offsetVector',
+                ti: '.VectorType'
+              }, {
+                en: 'lrm',
+                ti: 'GML_LRO_3_3.LRMWithOffsetPropertyType'
+              }, {
+                en: 'linearElement',
+                ti: 'GML_LR_3_3.LinearElementPropertyType'
+              }],
+            t: 'ers'
           }]
       }],
     eis: [{
+        en: 'offsetVector',
+        ti: '.VectorType',
+        sc: '.VectorOffsetLinearSRSType'
+      }, {
+        en: 'lrm',
+        ti: 'GML_LRO_3_3.LRMWithOffsetPropertyType',
+        sc: '.VectorOffsetLinearSRSType'
+      }, {
+        en: 'linearElement',
+        ti: 'GML_LR_3_3.LinearElementPropertyType',
+        sc: '.VectorOffsetLinearSRSType'
+      }, {
         en: 'VectorOffsetDistanceExpression',
         ti: '.VectorOffsetDistanceExpressionType',
         sh: {
@@ -108,24 +120,12 @@ var GML_LROV_3_3_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.3\/lr'
         }
       }, {
-        en: 'linearElement',
-        ti: 'GML_LR_3_3.LinearElementPropertyType',
-        sc: '.VectorOffsetLinearSRSType'
-      }, {
-        en: 'lrm',
-        ti: 'GML_LRO_3_3.LRMWithOffsetPropertyType',
-        sc: '.VectorOffsetLinearSRSType'
-      }, {
         en: 'VectorOffsetLinearSRS',
         ti: '.VectorOffsetLinearSRSType',
         sh: {
           lp: 'LinearSRS',
           ns: 'http:\/\/www.opengis.net\/gml\/3.3\/lr'
         }
-      }, {
-        en: 'offsetVector',
-        ti: '.VectorType',
-        sc: '.VectorOffsetLinearSRSType'
       }]
   };
   return {

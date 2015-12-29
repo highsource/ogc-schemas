@@ -45,17 +45,17 @@ var EOP_OPT_1_0_Module_Factory = function () {
           ns: 'http:\/\/earth.esa.int\/eop'
         }
       }, {
-        en: 'EarthObservationResult',
-        ti: '.EarthObservationResultType',
-        sh: {
-          lp: 'EarthObservationResult',
-          ns: 'http:\/\/earth.esa.int\/eop'
-        }
-      }, {
         en: 'EarthObservation',
         ti: '.EarthObservationType',
         sh: {
           lp: 'EarthObservation',
+          ns: 'http:\/\/earth.esa.int\/eop'
+        }
+      }, {
+        en: 'EarthObservationResult',
+        ti: '.EarthObservationResultType',
+        sh: {
+          lp: 'EarthObservationResult',
           ns: 'http:\/\/earth.esa.int\/eop'
         }
       }]

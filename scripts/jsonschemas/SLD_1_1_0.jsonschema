@@ -2,6 +2,187 @@
 {
     "id":"http://www.opengis.net/sld#",
     "definitions":{
+        "ElevationType":{
+            "type":"object",
+            "title":"ElevationType",
+            "required":[
+                "value",
+                "interval"
+            ],
+            "properties":{
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Value",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "interval":{
+                    "title":"interval",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/IntervalType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Interval",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ElevationType",
+                "namespaceURI":"http://www.opengis.net/sld"
+            },
+            "propertiesOrder":[
+                "value",
+                "interval"
+            ]
+        },
+        "NamedLayer":{
+            "type":"object",
+            "title":"NamedLayer",
+            "required":[
+                "name"
+            ],
+            "properties":{
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Name",
+                        "namespaceURI":"http://www.opengis.net/se"
+                    }
+                },
+                "description":{
+                    "title":"description",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/se#/definitions/DescriptionType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Description",
+                        "namespaceURI":"http://www.opengis.net/se"
+                    }
+                },
+                "layerFeatureConstraints":{
+                    "title":"layerFeatureConstraints",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/LayerFeatureConstraints"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LayerFeatureConstraints",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "namedStyleOrUserStyle":{
+                    "title":"namedStyleOrUserStyle",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/NamedStyle"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"NamedStyle",
+                                            "namespaceURI":"http://www.opengis.net/sld"
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/UserStyle"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"UserStyle",
+                                            "namespaceURI":"http://www.opengis.net/sld"
+                                        }
+                                    }
+                                ]
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"elements"
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "name",
+                "description",
+                "layerFeatureConstraints",
+                "namedStyleOrUserStyle"
+            ]
+        },
+        "Extent":{
+            "type":"object",
+            "title":"Extent",
+            "required":[
+                "name",
+                "value"
+            ],
+            "properties":{
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Name",
+                        "namespaceURI":"http://www.opengis.net/se"
+                    }
+                },
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Value",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "name",
+                "value"
+            ]
+        },
         "UserStyle":{
             "type":"object",
             "title":"UserStyle",
@@ -104,6 +285,110 @@
                 "featureTypeStyleOrCoverageStyleOrOnlineResource"
             ]
         },
+        "DescribeLayerResponseType":{
+            "type":"object",
+            "title":"DescribeLayerResponseType",
+            "required":[
+                "version",
+                "layerDescription"
+            ],
+            "properties":{
+                "version":{
+                    "title":"version",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Version",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "layerDescription":{
+                    "title":"layerDescription",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/LayerDescriptionType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LayerDescription",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DescribeLayerResponseType",
+                "namespaceURI":"http://www.opengis.net/sld"
+            },
+            "propertiesOrder":[
+                "version",
+                "layerDescription"
+            ]
+        },
+        "FeatureTypeConstraint":{
+            "type":"object",
+            "title":"FeatureTypeConstraint",
+            "properties":{
+                "featureTypeName":{
+                    "title":"featureTypeName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"FeatureTypeName",
+                        "namespaceURI":"http://www.opengis.net/se"
+                    }
+                },
+                "filter":{
+                    "title":"filter",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/ogc#/definitions/FilterType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Filter",
+                        "namespaceURI":"http://www.opengis.net/ogc"
+                    }
+                },
+                "extent":{
+                    "title":"extent",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/Extent"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Extent",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "featureTypeName",
+                "filter",
+                "extent"
+            ]
+        },
         "UserDefinedSymbolization":{
             "type":"object",
             "title":"UserDefinedSymbolization",
@@ -197,70 +482,29 @@
                 "remoteWCS"
             ]
         },
-        "OutputType.Size":{
+        "OutputType":{
             "type":"object",
-            "title":"OutputType.Size",
+            "title":"OutputType",
             "required":[
-                "width",
-                "height"
+                "size",
+                "format"
             ],
             "properties":{
-                "width":{
-                    "title":"width",
+                "size":{
+                    "title":"size",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
+                            "$ref":"#/definitions/OutputType.Size"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Width",
+                        "localPart":"Size",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 },
-                "height":{
-                    "title":"height",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Height",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "width",
-                "height"
-            ]
-        },
-        "CoverageExtent":{
-            "type":"object",
-            "title":"CoverageExtent",
-            "properties":{
-                "rangeAxis":{
-                    "title":"rangeAxis",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/RangeAxis"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"RangeAxis",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "timePeriod":{
-                    "title":"timePeriod",
+                "format":{
+                    "title":"format",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -268,70 +512,25 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"TimePeriod",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "rangeAxis",
-                "timePeriod"
-            ]
-        },
-        "LayerCoverageConstraints":{
-            "type":"object",
-            "title":"LayerCoverageConstraints",
-            "required":[
-                "coverageConstraint"
-            ],
-            "properties":{
-                "coverageConstraint":{
-                    "title":"coverageConstraint",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/CoverageConstraint"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"CoverageConstraint",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "coverageConstraint"
-            ]
-        },
-        "Extent":{
-            "type":"object",
-            "title":"Extent",
-            "required":[
-                "name",
-                "value"
-            ],
-            "properties":{
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Name",
-                        "namespaceURI":"http://www.opengis.net/se"
+                        "localPart":"Format",
+                        "namespaceURI":"http://www.opengis.net/wms"
                     }
                 },
-                "value":{
-                    "title":"value",
+                "transparent":{
+                    "title":"transparent",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Transparent",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "bGcolor":{
+                    "title":"bGcolor",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -339,20 +538,30 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Value",
+                        "localPart":"BGcolor",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 }
             },
             "typeType":"classInfo",
+            "typeName":{
+                "localPart":"OutputType",
+                "namespaceURI":"http://www.opengis.net/sld"
+            },
             "propertiesOrder":[
-                "name",
-                "value"
+                "size",
+                "format",
+                "transparent",
+                "bGcolor"
             ]
         },
-        "FeatureTypeConstraint":{
+        "TypeNameType":{
             "type":"object",
-            "title":"FeatureTypeConstraint",
+            "title":"TypeNameType",
+            "required":[
+                "featureTypeName",
+                "coverageName"
+            ],
             "properties":{
                 "featureTypeName":{
                     "title":"featureTypeName",
@@ -367,54 +576,8 @@
                         "namespaceURI":"http://www.opengis.net/se"
                     }
                 },
-                "filter":{
-                    "title":"filter",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/ogc#/definitions/FilterType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Filter",
-                        "namespaceURI":"http://www.opengis.net/ogc"
-                    }
-                },
-                "extent":{
-                    "title":"extent",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/Extent"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Extent",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "featureTypeName",
-                "filter",
-                "extent"
-            ]
-        },
-        "RangeAxis":{
-            "type":"object",
-            "title":"RangeAxis",
-            "required":[
-                "name",
-                "value"
-            ],
-            "properties":{
-                "name":{
-                    "title":"name",
+                "coverageName":{
+                    "title":"coverageName",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -422,28 +585,19 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Name",
+                        "localPart":"CoverageName",
                         "namespaceURI":"http://www.opengis.net/se"
                     }
-                },
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Value",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
                 }
             },
             "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TypeNameType",
+                "namespaceURI":"http://www.opengis.net/sld"
+            },
             "propertiesOrder":[
-                "name",
-                "value"
+                "featureTypeName",
+                "coverageName"
             ]
         },
         "IntervalType":{
@@ -491,16 +645,15 @@
                 "max"
             ]
         },
-        "DescribeLayerResponseType":{
+        "StyledLayerDescriptor":{
             "type":"object",
-            "title":"DescribeLayerResponseType",
+            "title":"StyledLayerDescriptor",
             "required":[
-                "version",
-                "layerDescription"
+                "version"
             ],
             "properties":{
-                "version":{
-                    "title":"version",
+                "name":{
+                    "title":"name",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -508,36 +661,333 @@
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Version",
-                        "namespaceURI":"http://www.opengis.net/sld"
+                        "localPart":"Name",
+                        "namespaceURI":"http://www.opengis.net/se"
                     }
                 },
-                "layerDescription":{
-                    "title":"layerDescription",
+                "description":{
+                    "title":"description",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/se#/definitions/DescriptionType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Description",
+                        "namespaceURI":"http://www.opengis.net/se"
+                    }
+                },
+                "useSLDLibrary":{
+                    "title":"useSLDLibrary",
                     "allOf":[
                         {
                             "type":"array",
                             "items":{
-                                "$ref":"#/definitions/LayerDescriptionType"
+                                "$ref":"#/definitions/UseSLDLibrary"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"UseSLDLibrary",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "namedLayerOrUserLayer":{
+                    "title":"namedLayerOrUserLayer",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/NamedLayer"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"NamedLayer",
+                                            "namespaceURI":"http://www.opengis.net/sld"
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/UserLayer"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"UserLayer",
+                                            "namespaceURI":"http://www.opengis.net/sld"
+                                        }
+                                    }
+                                ]
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"elements"
+                },
+                "version":{
+                    "title":"version",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/se#/definitions/VersionType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"version",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "name",
+                "description",
+                "useSLDLibrary",
+                "namedLayerOrUserLayer",
+                "version"
+            ]
+        },
+        "OutputType.Size":{
+            "type":"object",
+            "title":"OutputType.Size",
+            "required":[
+                "width",
+                "height"
+            ],
+            "properties":{
+                "width":{
+                    "title":"width",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Width",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "height":{
+                    "title":"height",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Height",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "width",
+                "height"
+            ]
+        },
+        "InlineFeature":{
+            "type":"object",
+            "title":"InlineFeature",
+            "required":[
+                "featureCollection"
+            ],
+            "properties":{
+                "featureCollection":{
+                    "title":"featureCollection",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/FeatureCollectionType"
                             },
                             "minItems":1
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"LayerDescription",
+                        "localPart":"FeatureCollection",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "featureCollection"
+            ]
+        },
+        "LayerFeatureConstraints":{
+            "type":"object",
+            "title":"LayerFeatureConstraints",
+            "required":[
+                "featureTypeConstraint"
+            ],
+            "properties":{
+                "featureTypeConstraint":{
+                    "title":"featureTypeConstraint",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/FeatureTypeConstraint"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"FeatureTypeConstraint",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "featureTypeConstraint"
+            ]
+        },
+        "RemoteOWS":{
+            "type":"object",
+            "title":"RemoteOWS",
+            "required":[
+                "service",
+                "onlineResource"
+            ],
+            "properties":{
+                "service":{
+                    "title":"service",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Service",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "onlineResource":{
+                    "title":"onlineResource",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/se#/definitions/OnlineResourceType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OnlineResource",
+                        "namespaceURI":"http://www.opengis.net/se"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "service",
+                "onlineResource"
+            ]
+        },
+        "LayerCoverageConstraints":{
+            "type":"object",
+            "title":"LayerCoverageConstraints",
+            "required":[
+                "coverageConstraint"
+            ],
+            "properties":{
+                "coverageConstraint":{
+                    "title":"coverageConstraint",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/CoverageConstraint"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"CoverageConstraint",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "coverageConstraint"
+            ]
+        },
+        "LayerDescriptionType":{
+            "type":"object",
+            "title":"LayerDescriptionType",
+            "required":[
+                "owsType",
+                "onlineResource",
+                "typeName"
+            ],
+            "properties":{
+                "owsType":{
+                    "title":"owsType",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/OwsTypeType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"owsType",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "onlineResource":{
+                    "title":"onlineResource",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/se#/definitions/OnlineResourceType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OnlineResource",
+                        "namespaceURI":"http://www.opengis.net/se"
+                    }
+                },
+                "typeName":{
+                    "title":"typeName",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/TypeNameType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TypeName",
                         "namespaceURI":"http://www.opengis.net/sld"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"DescribeLayerResponseType",
+                "localPart":"LayerDescriptionType",
                 "namespaceURI":"http://www.opengis.net/sld"
             },
             "propertiesOrder":[
-                "version",
-                "layerDescription"
+                "owsType",
+                "onlineResource",
+                "typeName"
             ]
         },
         "UserLayer":{
@@ -658,193 +1108,9 @@
                 "userStyle"
             ]
         },
-        "LayerFeatureConstraints":{
+        "NamedStyle":{
             "type":"object",
-            "title":"LayerFeatureConstraints",
-            "required":[
-                "featureTypeConstraint"
-            ],
-            "properties":{
-                "featureTypeConstraint":{
-                    "title":"featureTypeConstraint",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/FeatureTypeConstraint"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"FeatureTypeConstraint",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "featureTypeConstraint"
-            ]
-        },
-        "TypeNameType":{
-            "type":"object",
-            "title":"TypeNameType",
-            "required":[
-                "featureTypeName",
-                "coverageName"
-            ],
-            "properties":{
-                "featureTypeName":{
-                    "title":"featureTypeName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"FeatureTypeName",
-                        "namespaceURI":"http://www.opengis.net/se"
-                    }
-                },
-                "coverageName":{
-                    "title":"coverageName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"CoverageName",
-                        "namespaceURI":"http://www.opengis.net/se"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TypeNameType",
-                "namespaceURI":"http://www.opengis.net/sld"
-            },
-            "propertiesOrder":[
-                "featureTypeName",
-                "coverageName"
-            ]
-        },
-        "StyledLayerDescriptor":{
-            "type":"object",
-            "title":"StyledLayerDescriptor",
-            "required":[
-                "version"
-            ],
-            "properties":{
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Name",
-                        "namespaceURI":"http://www.opengis.net/se"
-                    }
-                },
-                "description":{
-                    "title":"description",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/se#/definitions/DescriptionType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Description",
-                        "namespaceURI":"http://www.opengis.net/se"
-                    }
-                },
-                "useSLDLibrary":{
-                    "title":"useSLDLibrary",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/UseSLDLibrary"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"UseSLDLibrary",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "namedLayerOrUserLayer":{
-                    "title":"namedLayerOrUserLayer",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/NamedLayer"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"NamedLayer",
-                                            "namespaceURI":"http://www.opengis.net/sld"
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/UserLayer"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"UserLayer",
-                                            "namespaceURI":"http://www.opengis.net/sld"
-                                        }
-                                    }
-                                ]
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"elements"
-                },
-                "version":{
-                    "title":"version",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/se#/definitions/VersionType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"version",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "name",
-                "description",
-                "useSLDLibrary",
-                "namedLayerOrUserLayer",
-                "version"
-            ]
-        },
-        "NamedLayer":{
-            "type":"object",
-            "title":"NamedLayer",
+            "title":"NamedStyle",
             "required":[
                 "name"
             ],
@@ -874,93 +1140,12 @@
                         "localPart":"Description",
                         "namespaceURI":"http://www.opengis.net/se"
                     }
-                },
-                "layerFeatureConstraints":{
-                    "title":"layerFeatureConstraints",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/LayerFeatureConstraints"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"LayerFeatureConstraints",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "namedStyleOrUserStyle":{
-                    "title":"namedStyleOrUserStyle",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/NamedStyle"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"NamedStyle",
-                                            "namespaceURI":"http://www.opengis.net/sld"
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/UserStyle"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"UserStyle",
-                                            "namespaceURI":"http://www.opengis.net/sld"
-                                        }
-                                    }
-                                ]
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"elements"
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
                 "name",
-                "description",
-                "layerFeatureConstraints",
-                "namedStyleOrUserStyle"
-            ]
-        },
-        "InlineFeature":{
-            "type":"object",
-            "title":"InlineFeature",
-            "required":[
-                "featureCollection"
-            ],
-            "properties":{
-                "featureCollection":{
-                    "title":"featureCollection",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/FeatureCollectionType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"FeatureCollection",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "featureCollection"
+                "description"
             ]
         },
         "UseSLDLibrary":{
@@ -987,6 +1172,47 @@
             "typeType":"classInfo",
             "propertiesOrder":[
                 "onlineResource"
+            ]
+        },
+        "RangeAxis":{
+            "type":"object",
+            "title":"RangeAxis",
+            "required":[
+                "name",
+                "value"
+            ],
+            "properties":{
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Name",
+                        "namespaceURI":"http://www.opengis.net/se"
+                    }
+                },
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Value",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "name",
+                "value"
             ]
         },
         "GetMapType":{
@@ -1120,273 +1346,6 @@
                 "version"
             ]
         },
-        "OutputType":{
-            "type":"object",
-            "title":"OutputType",
-            "required":[
-                "size",
-                "format"
-            ],
-            "properties":{
-                "size":{
-                    "title":"size",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/OutputType.Size"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Size",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "format":{
-                    "title":"format",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Format",
-                        "namespaceURI":"http://www.opengis.net/wms"
-                    }
-                },
-                "transparent":{
-                    "title":"transparent",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Transparent",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "bGcolor":{
-                    "title":"bGcolor",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"BGcolor",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"OutputType",
-                "namespaceURI":"http://www.opengis.net/sld"
-            },
-            "propertiesOrder":[
-                "size",
-                "format",
-                "transparent",
-                "bGcolor"
-            ]
-        },
-        "LayerDescriptionType":{
-            "type":"object",
-            "title":"LayerDescriptionType",
-            "required":[
-                "owsType",
-                "onlineResource",
-                "typeName"
-            ],
-            "properties":{
-                "owsType":{
-                    "title":"owsType",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/OwsTypeType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"owsType",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "onlineResource":{
-                    "title":"onlineResource",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/se#/definitions/OnlineResourceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OnlineResource",
-                        "namespaceURI":"http://www.opengis.net/se"
-                    }
-                },
-                "typeName":{
-                    "title":"typeName",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/TypeNameType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TypeName",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LayerDescriptionType",
-                "namespaceURI":"http://www.opengis.net/sld"
-            },
-            "propertiesOrder":[
-                "owsType",
-                "onlineResource",
-                "typeName"
-            ]
-        },
-        "NamedStyle":{
-            "type":"object",
-            "title":"NamedStyle",
-            "required":[
-                "name"
-            ],
-            "properties":{
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Name",
-                        "namespaceURI":"http://www.opengis.net/se"
-                    }
-                },
-                "description":{
-                    "title":"description",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/se#/definitions/DescriptionType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Description",
-                        "namespaceURI":"http://www.opengis.net/se"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "name",
-                "description"
-            ]
-        },
-        "ElevationType":{
-            "type":"object",
-            "title":"ElevationType",
-            "required":[
-                "value",
-                "interval"
-            ],
-            "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Value",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "interval":{
-                    "title":"interval",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/IntervalType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Interval",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ElevationType",
-                "namespaceURI":"http://www.opengis.net/sld"
-            },
-            "propertiesOrder":[
-                "value",
-                "interval"
-            ]
-        },
-        "RemoteOWS":{
-            "type":"object",
-            "title":"RemoteOWS",
-            "required":[
-                "service",
-                "onlineResource"
-            ],
-            "properties":{
-                "service":{
-                    "title":"service",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Service",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "onlineResource":{
-                    "title":"onlineResource",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/se#/definitions/OnlineResourceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OnlineResource",
-                        "namespaceURI":"http://www.opengis.net/se"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "service",
-                "onlineResource"
-            ]
-        },
         "CoverageConstraint":{
             "type":"object",
             "title":"CoverageConstraint",
@@ -1427,17 +1386,46 @@
                 "coverageExtent"
             ]
         },
-        "ExceptionsType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+        "CoverageExtent":{
+            "type":"object",
+            "title":"CoverageExtent",
+            "properties":{
+                "rangeAxis":{
+                    "title":"rangeAxis",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/RangeAxis"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"RangeAxis",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "timePeriod":{
+                    "title":"timePeriod",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TimePeriod",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
                 }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"ExceptionsType",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "rangeAxis",
+                "timePeriod"
+            ]
         },
         "OwsTypeType":{
             "allOf":[
@@ -1448,6 +1436,18 @@
             "typeType":"enumInfo",
             "typeName":{
                 "localPart":"owsTypeType",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        "ExceptionsType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"ExceptionsType",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         }
@@ -1466,7 +1466,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "UserLayer"
+                                        "LayerFeatureConstraints"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1479,521 +1479,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/UserLayer"
+                    "$ref":"#/definitions/LayerFeatureConstraints"
                 }
             },
             "elementName":{
-                "localPart":"UserLayer",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "GetMap"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sld"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GetMapType"
-                }
-            },
-            "elementName":{
-                "localPart":"GetMap",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "CoverageExtent"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sld"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/CoverageExtent"
-                }
-            },
-            "elementName":{
-                "localPart":"CoverageExtent",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "RangeAxis"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sld"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/RangeAxis"
-                }
-            },
-            "elementName":{
-                "localPart":"RangeAxis",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Extent"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sld"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/Extent"
-                }
-            },
-            "elementName":{
-                "localPart":"Extent",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "UseSLDLibrary"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sld"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/UseSLDLibrary"
-                }
-            },
-            "elementName":{
-                "localPart":"UseSLDLibrary",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "InlineFeature"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sld"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/InlineFeature"
-                }
-            },
-            "elementName":{
-                "localPart":"InlineFeature",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Value"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sld"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"Value",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "DescribeLayerResponse"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sld"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/DescribeLayerResponseType"
-                }
-            },
-            "elementName":{
-                "localPart":"DescribeLayerResponse",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "RemoteOWS"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sld"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/RemoteOWS"
-                }
-            },
-            "elementName":{
-                "localPart":"RemoteOWS",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Service"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sld"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"Service",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "UserDefinedSymbolization"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sld"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/UserDefinedSymbolization"
-                }
-            },
-            "elementName":{
-                "localPart":"UserDefinedSymbolization",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "StyledLayerDescriptor"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sld"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/StyledLayerDescriptor"
-                }
-            },
-            "elementName":{
-                "localPart":"StyledLayerDescriptor",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "UserStyle"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sld"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/UserStyle"
-                }
-            },
-            "elementName":{
-                "localPart":"UserStyle",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "GetLegendGraphic"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sld"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/OperationType"
-                }
-            },
-            "elementName":{
-                "localPart":"GetLegendGraphic",
-                "namespaceURI":"http://www.opengis.net/sld"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "DescribeLayer"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sld"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/OperationType"
-                }
-            },
-            "elementName":{
-                "localPart":"DescribeLayer",
+                "localPart":"LayerFeatureConstraints",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -2044,7 +1534,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "CoverageConstraint"
+                                        "GetMap"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2057,11 +1547,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/CoverageConstraint"
+                    "$ref":"#/definitions/GetMapType"
                 }
             },
             "elementName":{
-                "localPart":"CoverageConstraint",
+                "localPart":"GetMap",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -2078,7 +1568,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "LayerCoverageConstraints"
+                                        "InlineFeature"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2091,11 +1581,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/LayerCoverageConstraints"
+                    "$ref":"#/definitions/InlineFeature"
                 }
             },
             "elementName":{
-                "localPart":"LayerCoverageConstraints",
+                "localPart":"InlineFeature",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -2112,7 +1602,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "TimePeriod"
+                                        "StyledLayerDescriptor"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2125,11 +1615,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/StyledLayerDescriptor"
                 }
             },
             "elementName":{
-                "localPart":"TimePeriod",
+                "localPart":"StyledLayerDescriptor",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -2146,7 +1636,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "LayerFeatureConstraints"
+                                        "CoverageExtent"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2159,11 +1649,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/LayerFeatureConstraints"
+                    "$ref":"#/definitions/CoverageExtent"
                 }
             },
             "elementName":{
-                "localPart":"LayerFeatureConstraints",
+                "localPart":"CoverageExtent",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -2180,7 +1670,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "NamedStyle"
+                                        "UseSLDLibrary"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2193,11 +1683,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/NamedStyle"
+                    "$ref":"#/definitions/UseSLDLibrary"
                 }
             },
             "elementName":{
-                "localPart":"NamedStyle",
+                "localPart":"UseSLDLibrary",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         },
@@ -2248,6 +1738,176 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
+                                        "NamedStyle"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sld"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/NamedStyle"
+                }
+            },
+            "elementName":{
+                "localPart":"NamedStyle",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "GetLegendGraphic"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sld"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/OperationType"
+                }
+            },
+            "elementName":{
+                "localPart":"GetLegendGraphic",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "UserStyle"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sld"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/UserStyle"
+                }
+            },
+            "elementName":{
+                "localPart":"UserStyle",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "LayerCoverageConstraints"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sld"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/LayerCoverageConstraints"
+                }
+            },
+            "elementName":{
+                "localPart":"LayerCoverageConstraints",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "UserDefinedSymbolization"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sld"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/UserDefinedSymbolization"
+                }
+            },
+            "elementName":{
+                "localPart":"UserDefinedSymbolization",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
                                         "FeatureTypeConstraint"
                                     ]
                                 },
@@ -2266,6 +1926,346 @@
             },
             "elementName":{
                 "localPart":"FeatureTypeConstraint",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Extent"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sld"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/Extent"
+                }
+            },
+            "elementName":{
+                "localPart":"Extent",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "RemoteOWS"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sld"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/RemoteOWS"
+                }
+            },
+            "elementName":{
+                "localPart":"RemoteOWS",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "DescribeLayer"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sld"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/OperationType"
+                }
+            },
+            "elementName":{
+                "localPart":"DescribeLayer",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "RangeAxis"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sld"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/RangeAxis"
+                }
+            },
+            "elementName":{
+                "localPart":"RangeAxis",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Service"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sld"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"Service",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "CoverageConstraint"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sld"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/CoverageConstraint"
+                }
+            },
+            "elementName":{
+                "localPart":"CoverageConstraint",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "UserLayer"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sld"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/UserLayer"
+                }
+            },
+            "elementName":{
+                "localPart":"UserLayer",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "TimePeriod"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sld"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"TimePeriod",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "DescribeLayerResponse"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sld"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/DescribeLayerResponseType"
+                }
+            },
+            "elementName":{
+                "localPart":"DescribeLayerResponse",
+                "namespaceURI":"http://www.opengis.net/sld"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Value"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sld"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"Value",
                 "namespaceURI":"http://www.opengis.net/sld"
             }
         }

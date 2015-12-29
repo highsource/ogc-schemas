@@ -3,7 +3,7 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
     n: 'CityGML_TexturedSurface_1_0',
     dens: 'http:\/\/www.opengis.net\/citygml\/texturedsurface\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_1_1', 'XLink_1_0'],
+    deps: ['XLink_1_0', 'GML_3_1_1'],
     tis: [{
         ln: 'AppearancePropertyType',
         ps: [{
@@ -52,6 +52,18 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'AbstractAppearanceType',
+        bti: 'GML_3_1_1.AbstractGMLType'
+      }, {
+        ln: 'TexturedSurfaceType',
+        bti: 'GML_3_1_1.OrientableSurfaceType',
+        ps: [{
+            n: 'appearance',
+            rq: true,
+            col: true,
+            ti: '.AppearancePropertyType'
           }]
       }, {
         ln: 'SimpleTextureType',
@@ -104,18 +116,6 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
             }
           }]
       }, {
-        ln: 'TexturedSurfaceType',
-        bti: 'GML_3_1_1.OrientableSurfaceType',
-        ps: [{
-            n: 'appearance',
-            rq: true,
-            col: true,
-            ti: '.AppearancePropertyType'
-          }]
-      }, {
-        ln: 'AbstractAppearanceType',
-        bti: 'GML_3_1_1.AbstractGMLType'
-      }, {
         t: 'enum',
         ln: 'TextureTypeType',
         vs: ['specific', 'typical', 'unknown']
@@ -127,9 +127,6 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
           lp: 'OrientableSurface',
           ns: 'http:\/\/www.opengis.net\/gml'
         }
-      }, {
-        en: 'appearance',
-        ti: '.AppearancePropertyType'
       }, {
         en: 'Material',
         ti: '.MaterialType',
@@ -145,6 +142,9 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
         en: 'SimpleTexture',
         ti: '.SimpleTextureType',
         sh: '_Appearance'
+      }, {
+        en: 'appearance',
+        ti: '.AppearancePropertyType'
       }]
   };
   return {

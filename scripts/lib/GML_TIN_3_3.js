@@ -3,7 +3,7 @@ var GML_TIN_3_3_Module_Factory = function () {
     n: 'GML_TIN_3_3',
     dens: 'http:\/\/www.opengis.net\/gml\/3.3\/tin',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1'],
+    deps: ['GML_3_2_1', 'XLink_1_0'],
     tis: [{
         ln: 'TINElementType',
         bti: 'GML_3_2_1.AbstractFeatureType',
@@ -19,54 +19,6 @@ var GML_TIN_3_3_Module_Factory = function () {
             n: 'elementGeometry',
             rq: true,
             ti: 'GML_3_2_1.GeometryPropertyType'
-          }]
-      }, {
-        ln: 'TINElementPropertyType',
-        ps: [{
-            n: 'tinElement',
-            rq: true,
-            en: 'TINElement',
-            ti: '.TINElementType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
           }]
       }, {
         ln: 'TINType',
@@ -119,15 +71,56 @@ var GML_TIN_3_3_Module_Factory = function () {
             },
             t: 'a'
           }]
+      }, {
+        ln: 'TINElementPropertyType',
+        ps: [{
+            n: 'tinElement',
+            rq: true,
+            en: 'TINElement',
+            ti: '.TINElementType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
       }],
     eis: [{
-        en: 'TriangulatedSurface',
-        ti: 'GML_3_2_1.SurfaceType',
-        sh: {
-          lp: 'Surface',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
         en: 'TINElement',
         ti: '.TINElementType',
         sh: {
@@ -135,9 +128,12 @@ var GML_TIN_3_3_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'TIN',
-        ti: '.TINType',
-        sh: 'TriangulatedSurface'
+        en: 'TriangulatedSurface',
+        ti: 'GML_3_2_1.SurfaceType',
+        sh: {
+          lp: 'Surface',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
       }, {
         en: 'SimpleTrianglePatch',
         ti: '.SimpleTrianglePatchType',
@@ -145,6 +141,10 @@ var GML_TIN_3_3_Module_Factory = function () {
           lp: 'AbstractSurfacePatch',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
+      }, {
+        en: 'TIN',
+        ti: '.TINType',
+        sh: 'TriangulatedSurface'
       }]
   };
   return {

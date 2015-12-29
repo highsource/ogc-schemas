@@ -5,8 +5,23 @@ var OMEO_SAR_2_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['OMEO_EOP_2_0', 'XLink_1_0', 'GML_3_2_1'],
     tis: [{
-        ln: 'EarthObservationType',
-        bti: 'OMEO_EOP_2_0.EarthObservationType'
+        ln: 'AcquisitionPropertyType',
+        ps: [{
+            n: 'acquisition',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'Acquisition',
+            ti: '.AcquisitionType',
+            t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
       }, {
         ln: 'AcquisitionType',
         bti: 'OMEO_EOP_2_0.AcquisitionType',
@@ -28,24 +43,6 @@ var OMEO_SAR_2_0_Module_Factory = function () {
           }, {
             n: 'dopplerFrequency',
             ti: 'GML_3_2_1.MeasureType'
-          }]
-      }, {
-        ln: 'AcquisitionPropertyType',
-        ps: [{
-            n: 'acquisition',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'Acquisition',
-            ti: '.AcquisitionType',
-            t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'EarthObservationPropertyType',
@@ -106,17 +103,20 @@ var OMEO_SAR_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'EarthObservationType',
+        bti: 'OMEO_EOP_2_0.EarthObservationType'
+      }, {
         t: 'enum',
-        ln: 'PolarisationChannelsValueEnumerationType',
-        vs: ['HH', 'HV', 'UNDEFINED', 'HV, VH', 'VV, VH', 'VV, HV', 'VH, HV', 'VH, VV', 'HH, HV', 'HH, VH', 'HH, VV', 'VH', 'VV']
+        ln: 'PolarisationModeValueEnumerationType',
+        vs: ['UNDEFINED', 'T', 'S', 'D', 'Q']
       }, {
         t: 'enum',
         ln: 'AntennaLookDirectionValueEnumerationType',
         vs: ['LEFT', 'RIGHT']
       }, {
         t: 'enum',
-        ln: 'PolarisationModeValueEnumerationType',
-        vs: ['UNDEFINED', 'T', 'S', 'D', 'Q']
+        ln: 'PolarisationChannelsValueEnumerationType',
+        vs: ['HH', 'HV', 'UNDEFINED', 'HV, VH', 'VV, VH', 'VV, HV', 'VH, HV', 'VH, VV', 'HH, HV', 'HH, VH', 'HH, VV', 'VH', 'VV']
       }],
     eis: [{
         en: 'EarthObservation',

@@ -54,15 +54,53 @@ var Sampling_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SamplingFeatureComplexType',
+        ln: 'SFSamplingFeatureCollectionType',
+        tn: 'SF_SamplingFeatureCollectionType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
-            n: 'role',
+            n: 'member',
             rq: true,
+            col: true,
+            ti: '.SFSamplingFeaturePropertyType'
+          }]
+      }, {
+        ln: 'SamplingFeatureComplexPropertyType',
+        ps: [{
+            n: 'samplingFeatureComplex',
+            rq: true,
+            en: 'SamplingFeatureComplex',
+            ti: '.SamplingFeatureComplexType'
+          }]
+      }, {
+        ln: 'SFSamplingFeatureType',
+        tn: 'SF_SamplingFeatureType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'type',
             ti: 'GML_3_2_1.ReferenceType'
           }, {
-            n: 'relatedSamplingFeature',
+            n: 'sampledFeature',
             rq: true,
-            ti: '.SFSamplingFeaturePropertyType'
+            col: true,
+            ti: 'GML_3_2_1.FeaturePropertyType'
+          }, {
+            n: 'lineage',
+            ti: 'ISO19139_GMD_20070417.LILineagePropertyType'
+          }, {
+            n: 'relatedObservation',
+            mno: 0,
+            col: true,
+            ti: 'OM_2_0.OMObservationPropertyType'
+          }, {
+            n: 'relatedSamplingFeature',
+            mno: 0,
+            col: true,
+            ti: '.SamplingFeatureComplexPropertyType'
+          }, {
+            n: 'parameter',
+            mno: 0,
+            col: true,
+            ti: 'OM_2_0.NamedValuePropertyType'
           }]
       }, {
         ln: 'SFSamplingFeaturePropertyType',
@@ -114,45 +152,6 @@ var Sampling_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SamplingFeatureComplexPropertyType',
-        ps: [{
-            n: 'samplingFeatureComplex',
-            rq: true,
-            en: 'SamplingFeatureComplex',
-            ti: '.SamplingFeatureComplexType'
-          }]
-      }, {
-        ln: 'SFSamplingFeatureType',
-        tn: 'SF_SamplingFeatureType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'type',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'sampledFeature',
-            rq: true,
-            col: true,
-            ti: 'GML_3_2_1.FeaturePropertyType'
-          }, {
-            n: 'lineage',
-            ti: 'ISO19139_GMD_20070417.LILineagePropertyType'
-          }, {
-            n: 'relatedObservation',
-            mno: 0,
-            col: true,
-            ti: 'OM_2_0.OMObservationPropertyType'
-          }, {
-            n: 'relatedSamplingFeature',
-            mno: 0,
-            col: true,
-            ti: '.SamplingFeatureComplexPropertyType'
-          }, {
-            n: 'parameter',
-            mno: 0,
-            col: true,
-            ti: 'OM_2_0.NamedValuePropertyType'
-          }]
-      }, {
         ln: 'SFProcessPropertyType',
         tn: 'SF_ProcessPropertyType',
         ps: [{
@@ -202,20 +201,18 @@ var Sampling_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SFSamplingFeatureCollectionType',
-        tn: 'SF_SamplingFeatureCollectionType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
+        ln: 'SamplingFeatureComplexType',
         ps: [{
-            n: 'member',
+            n: 'role',
             rq: true,
-            col: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'relatedSamplingFeature',
+            rq: true,
             ti: '.SFSamplingFeaturePropertyType'
           }]
       }],
     eis: [{
-        en: 'SamplingFeatureComplex',
-        ti: '.SamplingFeatureComplexType'
-      }, {
         en: 'SF_SamplingFeatureCollection',
         ti: '.SFSamplingFeatureCollectionType',
         sh: {
@@ -229,6 +226,9 @@ var Sampling_2_0_Module_Factory = function () {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
+      }, {
+        en: 'SamplingFeatureComplex',
+        ti: '.SamplingFeatureComplexType'
       }]
   };
   return {

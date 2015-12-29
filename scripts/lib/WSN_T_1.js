@@ -52,6 +52,27 @@ var WSN_T_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'QueryExpressionType',
+        ps: [{
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }, {
+            n: 'dialect',
+            rq: true,
+            an: {
+              lp: 'Dialect'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Documentation',
+        ps: [{
+            n: 'content',
+            col: true,
+            t: 'ae'
+          }]
+      }, {
         ln: 'TopicNamespaceType',
         bti: '.ExtensibleDocumented',
         ps: [{
@@ -102,27 +123,6 @@ var WSN_T_1_Module_Factory = function () {
             mno: 0,
             col: true,
             mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'QueryExpressionType',
-        ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
-          }, {
-            n: 'dialect',
-            rq: true,
-            an: {
-              lp: 'Dialect'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Documentation',
-        ps: [{
-            n: 'content',
-            col: true,
             t: 'ae'
           }]
       }, {

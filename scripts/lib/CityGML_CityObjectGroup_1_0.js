@@ -56,6 +56,38 @@ var CityGML_CityObjectGroup_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'CityObjectGroupType',
+        bti: 'CityGML_1_0.AbstractCityObjectType',
+        ps: [{
+            n: 'clazz',
+            en: 'class'
+          }, {
+            n: 'function',
+            mno: 0,
+            col: true
+          }, {
+            n: 'usage',
+            mno: 0,
+            col: true
+          }, {
+            n: 'groupMember',
+            mno: 0,
+            col: true,
+            ti: '.CityObjectGroupMemberType'
+          }, {
+            n: 'parent',
+            ti: '.CityObjectGroupParentType'
+          }, {
+            n: 'geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfCityObjectGroup',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfCityObjectGroup',
+            ti: 'AnyType'
+          }]
+      }, {
         ln: 'CityObjectGroupParentType',
         ps: [{
             n: 'cityObject',
@@ -99,38 +131,6 @@ var CityGML_CityObjectGroup_1_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
-          }]
-      }, {
-        ln: 'CityObjectGroupType',
-        bti: 'CityGML_1_0.AbstractCityObjectType',
-        ps: [{
-            n: 'clazz',
-            en: 'class'
-          }, {
-            n: 'function',
-            mno: 0,
-            col: true
-          }, {
-            n: 'usage',
-            mno: 0,
-            col: true
-          }, {
-            n: 'groupMember',
-            mno: 0,
-            col: true,
-            ti: '.CityObjectGroupMemberType'
-          }, {
-            n: 'parent',
-            ti: '.CityObjectGroupParentType'
-          }, {
-            n: 'geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfCityObjectGroup',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfCityObjectGroup',
-            ti: 'AnyType'
           }]
       }],
     eis: [{

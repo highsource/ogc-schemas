@@ -2,6 +2,24 @@
 {
     "id":"http://www.opengis.net/lmb/2.0#",
     "definitions":{
+        "EarthObservationType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationType"
+                },
+                {
+                    "type":"object",
+                    "title":"EarthObservationType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationType",
+                "namespaceURI":"http://www.opengis.net/lmb/2.0"
+            }
+        },
         "EarthObservationEquipmentType":{
             "required":[
                 "rest"
@@ -71,54 +89,6 @@
                 "rest"
             ]
         },
-        "AcquisitionType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/AcquisitionType"
-                },
-                {
-                    "type":"object",
-                    "title":"AcquisitionType",
-                    "properties":{
-                        "observationMode":{
-                            "title":"observationMode",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"observationMode",
-                                "namespaceURI":"http://www.opengis.net/lmb/2.0"
-                            }
-                        },
-                        "verticalResolution":{
-                            "title":"verticalResolution",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"verticalResolution",
-                                "namespaceURI":"http://www.opengis.net/lmb/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AcquisitionType",
-                "namespaceURI":"http://www.opengis.net/lmb/2.0"
-            },
-            "propertiesOrder":[
-                "observationMode",
-                "verticalResolution"
-            ]
-        },
         "AcquisitionPropertyType":{
             "type":"object",
             "title":"AcquisitionPropertyType",
@@ -163,23 +133,67 @@
                 "owns"
             ]
         },
-        "EarthObservationPropertyType":{
+        "SensorPropertyType":{
             "type":"object",
-            "title":"EarthObservationPropertyType",
+            "title":"SensorPropertyType",
             "required":[
-                "earthObservation"
+                "sensor"
             ],
             "properties":{
-                "earthObservation":{
-                    "title":"earthObservation",
+                "sensor":{
+                    "title":"sensor",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/EarthObservationType"
+                            "$ref":"#/definitions/SensorType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"EarthObservation",
+                        "localPart":"Sensor",
+                        "namespaceURI":"http://www.opengis.net/lmb/2.0"
+                    }
+                },
+                "owns":{
+                    "title":"owns",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"owns",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SensorPropertyType",
+                "namespaceURI":"http://www.opengis.net/lmb/2.0"
+            },
+            "propertiesOrder":[
+                "sensor",
+                "owns"
+            ]
+        },
+        "EarthObservationEquipmentPropertyType":{
+            "type":"object",
+            "title":"EarthObservationEquipmentPropertyType",
+            "required":[
+                "earthObservationEquipment"
+            ],
+            "properties":{
+                "earthObservationEquipment":{
+                    "title":"earthObservationEquipment",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/EarthObservationEquipmentType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"EarthObservationEquipment",
                         "namespaceURI":"http://www.opengis.net/lmb/2.0"
                     }
                 },
@@ -319,11 +333,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"EarthObservationPropertyType",
+                "localPart":"EarthObservationEquipmentPropertyType",
                 "namespaceURI":"http://www.opengis.net/lmb/2.0"
             },
             "propertiesOrder":[
-                "earthObservation",
+                "earthObservationEquipment",
                 "owns",
                 "nilReason",
                 "remoteSchema",
@@ -509,23 +523,147 @@
                 "actuate"
             ]
         },
-        "EarthObservationEquipmentPropertyType":{
+        "AcquisitionType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/AcquisitionType"
+                },
+                {
+                    "type":"object",
+                    "title":"AcquisitionType",
+                    "properties":{
+                        "observationMode":{
+                            "title":"observationMode",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"observationMode",
+                                "namespaceURI":"http://www.opengis.net/lmb/2.0"
+                            }
+                        },
+                        "verticalResolution":{
+                            "title":"verticalResolution",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"verticalResolution",
+                                "namespaceURI":"http://www.opengis.net/lmb/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AcquisitionType",
+                "namespaceURI":"http://www.opengis.net/lmb/2.0"
+            },
+            "propertiesOrder":[
+                "observationMode",
+                "verticalResolution"
+            ]
+        },
+        "FootprintType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/FootprintType"
+                },
+                {
+                    "type":"object",
+                    "title":"FootprintType",
+                    "properties":{
+                        "maximumAltitude":{
+                            "title":"maximumAltitude",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"maximumAltitude",
+                                "namespaceURI":"http://www.opengis.net/lmb/2.0"
+                            }
+                        },
+                        "minimumAltitude":{
+                            "title":"minimumAltitude",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"minimumAltitude",
+                                "namespaceURI":"http://www.opengis.net/lmb/2.0"
+                            }
+                        },
+                        "nominalTrack":{
+                            "title":"nominalTrack",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MultiCurvePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"nominalTrack",
+                                "namespaceURI":"http://www.opengis.net/lmb/2.0"
+                            }
+                        },
+                        "occultationPoints":{
+                            "title":"occultationPoints",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MultiPointPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"occultationPoints",
+                                "namespaceURI":"http://www.opengis.net/lmb/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"FootprintType",
+                "namespaceURI":"http://www.opengis.net/lmb/2.0"
+            },
+            "propertiesOrder":[
+                "maximumAltitude",
+                "minimumAltitude",
+                "nominalTrack",
+                "occultationPoints"
+            ]
+        },
+        "EarthObservationPropertyType":{
             "type":"object",
-            "title":"EarthObservationEquipmentPropertyType",
+            "title":"EarthObservationPropertyType",
             "required":[
-                "earthObservationEquipment"
+                "earthObservation"
             ],
             "properties":{
-                "earthObservationEquipment":{
-                    "title":"earthObservationEquipment",
+                "earthObservation":{
+                    "title":"earthObservation",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/EarthObservationEquipmentType"
+                            "$ref":"#/definitions/EarthObservationType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"EarthObservationEquipment",
+                        "localPart":"EarthObservation",
                         "namespaceURI":"http://www.opengis.net/lmb/2.0"
                     }
                 },
@@ -665,11 +803,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"EarthObservationEquipmentPropertyType",
+                "localPart":"EarthObservationPropertyType",
                 "namespaceURI":"http://www.opengis.net/lmb/2.0"
             },
             "propertiesOrder":[
-                "earthObservationEquipment",
+                "earthObservation",
                 "owns",
                 "nilReason",
                 "remoteSchema",
@@ -716,144 +854,6 @@
                 "measurementType"
             ]
         },
-        "EarthObservationType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationType",
-                "namespaceURI":"http://www.opengis.net/lmb/2.0"
-            }
-        },
-        "FootprintType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/FootprintType"
-                },
-                {
-                    "type":"object",
-                    "title":"FootprintType",
-                    "properties":{
-                        "maximumAltitude":{
-                            "title":"maximumAltitude",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"maximumAltitude",
-                                "namespaceURI":"http://www.opengis.net/lmb/2.0"
-                            }
-                        },
-                        "minimumAltitude":{
-                            "title":"minimumAltitude",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"minimumAltitude",
-                                "namespaceURI":"http://www.opengis.net/lmb/2.0"
-                            }
-                        },
-                        "nominalTrack":{
-                            "title":"nominalTrack",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MultiCurvePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"nominalTrack",
-                                "namespaceURI":"http://www.opengis.net/lmb/2.0"
-                            }
-                        },
-                        "occultationPoints":{
-                            "title":"occultationPoints",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MultiPointPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"occultationPoints",
-                                "namespaceURI":"http://www.opengis.net/lmb/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"FootprintType",
-                "namespaceURI":"http://www.opengis.net/lmb/2.0"
-            },
-            "propertiesOrder":[
-                "maximumAltitude",
-                "minimumAltitude",
-                "nominalTrack",
-                "occultationPoints"
-            ]
-        },
-        "SensorPropertyType":{
-            "type":"object",
-            "title":"SensorPropertyType",
-            "required":[
-                "sensor"
-            ],
-            "properties":{
-                "sensor":{
-                    "title":"sensor",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SensorType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Sensor",
-                        "namespaceURI":"http://www.opengis.net/lmb/2.0"
-                    }
-                },
-                "owns":{
-                    "title":"owns",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"owns",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SensorPropertyType",
-                "namespaceURI":"http://www.opengis.net/lmb/2.0"
-            },
-            "propertiesOrder":[
-                "sensor",
-                "owns"
-            ]
-        },
         "MeasurementTypeValueType":{
             "allOf":[
                 {
@@ -881,7 +881,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "acquisitionParameters"
+                                        "EarthObservationEquipment"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -894,82 +894,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/AcquisitionPropertyType"
+                    "$ref":"#/definitions/EarthObservationEquipmentType"
                 }
             },
             "elementName":{
-                "localPart":"acquisitionParameters",
-                "namespaceURI":"http://www.opengis.net/lmb/2.0"
-            },
-            "scope":{
-                "$ref":"#/definitions/EarthObservationEquipmentType"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Footprint"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/lmb/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/FootprintType"
-                }
-            },
-            "elementName":{
-                "localPart":"Footprint",
-                "namespaceURI":"http://www.opengis.net/lmb/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "EarthObservation"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/lmb/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/EarthObservationType"
-                }
-            },
-            "elementName":{
-                "localPart":"EarthObservation",
+                "localPart":"EarthObservationEquipment",
                 "namespaceURI":"http://www.opengis.net/lmb/2.0"
             }
         },
@@ -1023,7 +952,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Acquisition"
+                                        "acquisitionParameters"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1036,12 +965,15 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/AcquisitionType"
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/AcquisitionPropertyType"
                 }
             },
             "elementName":{
-                "localPart":"Acquisition",
+                "localPart":"acquisitionParameters",
                 "namespaceURI":"http://www.opengis.net/lmb/2.0"
+            },
+            "scope":{
+                "$ref":"#/definitions/EarthObservationEquipmentType"
             }
         },
         {
@@ -1091,7 +1023,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "EarthObservationEquipment"
+                                        "EarthObservation"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1104,11 +1036,79 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/EarthObservationEquipmentType"
+                    "$ref":"#/definitions/EarthObservationType"
                 }
             },
             "elementName":{
-                "localPart":"EarthObservationEquipment",
+                "localPart":"EarthObservation",
+                "namespaceURI":"http://www.opengis.net/lmb/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Footprint"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/lmb/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/FootprintType"
+                }
+            },
+            "elementName":{
+                "localPart":"Footprint",
+                "namespaceURI":"http://www.opengis.net/lmb/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Acquisition"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/lmb/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/AcquisitionType"
+                }
+            },
+            "elementName":{
+                "localPart":"Acquisition",
                 "namespaceURI":"http://www.opengis.net/lmb/2.0"
             }
         }

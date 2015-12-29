@@ -27,16 +27,16 @@ var GMLCOV_GeoTIFF_1_0_Module_Factory = function () {
           }]
       }, {
         t: 'enum',
-        ln: 'InterleaveType',
-        vs: ['Pixel', 'Band']
-      }, {
-        t: 'enum',
         ln: 'PredictorType',
         vs: ['None', 'Horizontal', 'FloatingPoint']
       }, {
         t: 'enum',
         ln: 'CompressionType',
         vs: ['None', 'PackBits', 'Huffman', 'LZW', 'JPEG', 'Deflate']
+      }, {
+        t: 'enum',
+        ln: 'InterleaveType',
+        vs: ['Pixel', 'Band']
       }],
     eis: [{
         en: 'parameters',

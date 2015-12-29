@@ -113,18 +113,6 @@
                 "tilewidth"
             ]
         },
-        "InterleaveType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"interleaveType",
-                "namespaceURI":"http://www.opengis.net/gmlcov/geotiff/1.0"
-            }
-        },
         "PredictorType":{
             "allOf":[
                 {
@@ -146,6 +134,18 @@
             "typeType":"enumInfo",
             "typeName":{
                 "localPart":"compressionType",
+                "namespaceURI":"http://www.opengis.net/gmlcov/geotiff/1.0"
+            }
+        },
+        "InterleaveType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"interleaveType",
                 "namespaceURI":"http://www.opengis.net/gmlcov/geotiff/1.0"
             }
         }

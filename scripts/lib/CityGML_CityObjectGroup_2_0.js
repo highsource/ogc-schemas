@@ -3,7 +3,7 @@ var CityGML_CityObjectGroup_2_0_Module_Factory = function () {
     n: 'CityGML_CityObjectGroup_2_0',
     dens: 'http:\/\/www.opengis.net\/citygml\/cityobjectgroup\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'CityGML_2_0', 'GML_3_1_1'],
+    deps: ['GML_3_1_1', 'XLink_1_0', 'CityGML_2_0'],
     tis: [{
         ln: 'CityObjectGroupType',
         bti: 'CityGML_2_0.AbstractCityObjectType',
