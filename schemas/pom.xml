@@ -18,18 +18,18 @@
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
-					<execution>
-						<id>download-schemas</id>
-						<phase>generate-sources</phase>
-						<configuration>
-							<target>
-								<get src="http://schemas.opengis.net/${schemas.zip}" dest="src/main/etc/${schemas.zip}" usetimestamp="true"/>
-							</target>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
+					<!-- <execution> -->
+					<!-- 	<id>download-schemas</id> -->
+					<!-- 	<phase>generate-sources</phase> -->
+					<!-- 	<configuration> -->
+					<!-- 		<target> -->
+					<!-- 			<get src="http://schemas.opengis.net/${schemas.zip}" dest="src/main/etc/${schemas.zip}" usetimestamp="true"/> -->
+					<!-- 		</target> -->
+					<!-- 	</configuration> -->
+					<!-- 	<goals> -->
+					<!-- 		<goal>run</goal> -->
+					<!-- 	</goals> -->
+					<!-- </execution> -->
 					<execution>
 						<id>unpack</id>
 						<phase>generate-sources</phase>
