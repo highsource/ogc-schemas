@@ -3,3 +3,6 @@
 /err
 /std
 /target/
+.project
+.settings
+.classpath
