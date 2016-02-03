@@ -86,6 +86,14 @@
 									<version>${w3c-schemas.version}</version>
 								</dependencyResource>
 							</catalog>
+							<catalog>
+								<dependencyResource>
+                                    <groupId>${project.groupId}</groupId>
+									<artifactId>ogc-schemas</artifactId>
+									<resource>icsm/catalog.cat</resource>
+									<version>${project.version}</version>
+								</dependencyResource>
+							</catalog>
 						</catalogs>
 						<args>
 							<arg>-XfixJAXB1058</arg>

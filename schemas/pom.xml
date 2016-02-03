@@ -72,6 +72,25 @@
 							<goal>run</goal>
 						</goals>
 					</execution-->
+                    <execution>
+                        <id>download-geodesyml-schema</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <target>
+                                <exec executable="git">
+                                    <arg value="clone"/>
+                                    <arg value="git@github.com:GeoscienceAustralia/GeodesyML.git"/>
+                                    <arg value="--branch"/>
+                                    <arg value="ogc-schemas"/>
+                                    <arg value="--single-branch"/>
+                                    <arg value="src/main/resources-original/icsm/geodesyml"/>
+                                </exec>
+                            </target>
+                        </configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+                    </execution>
 					<execution>
 						<id>copy-original-resources</id>
 						<phase>generate-sources</phase>

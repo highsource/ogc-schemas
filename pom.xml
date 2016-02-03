@@ -69,6 +69,7 @@
 		<module>eop</module>
 		<module>eosps</module>
 		<module>filter</module>
+        <module>geodesyml</module>
 		<module>gml</module>
 		<module>gmlcov</module>
 		<module>gmljp2</module>
