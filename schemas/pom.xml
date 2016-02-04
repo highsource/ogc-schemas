@@ -16,9 +16,28 @@
 		<defaultGoal>install</defaultGoal>
 		<plugins>
 			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>wagon-maven-plugin</artifactId>
+				<version>1.0</version>
+				<executions>
+					<execution>
+						<id>download-schemas</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>download-single</goal>
+						</goals>
+						<configuration>
+							<url>http://schemas.opengis.net/</url>
+							<fromFile>${schemas.zip}</fromFile>
+							<toDir>src/main/etc/</toDir>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
-					<!-- <execution> -->
+					<!-- <execution> TODO: submit pull request to use wagon instead of ant -->
 					<!-- 	<id>download-schemas</id> -->
 					<!-- 	<phase>generate-sources</phase> -->
 					<!-- 	<configuration> -->
