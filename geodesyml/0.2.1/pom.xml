@@ -68,12 +68,10 @@
 						<configuration>
 							<target>
 								<!-- The XJC process is creating extra packages the same as used in ogc schema 	-->
-								<!-- but which contain an ObjectFactory that doesn't contain the same eleemnts. -->
+								<!-- but which contain an ObjectFactory that doesn't contain the same elements. -->
 								<!-- The simplest solution is to delete these.									-->
 								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/gml"/>
-								<delete dir="${basedir}/target/generated-sources/xjc/org"/>
-								<delete dir="${basedir}/target/generated-sources/xjc/net/opengis/iso19139/gmd"/>
-								<delete dir="${basedir}/target/generated-sources/xjc" includes="xAL_*.*"/>
+                                <delete dir="${basedir}/target/generated-sources/xjc/net/opengis/iso19139/gmd"/>
 							</target>
 						</configuration>
 						<goals>
