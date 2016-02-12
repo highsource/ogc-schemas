@@ -24,7 +24,7 @@ public class GeodesymlTest {
 	public void testMarshaller() throws JAXBException, IOException {
 
 		JAXBContext jc = JAXBContext.newInstance(net.opengis.gml.v_3_2_1.ObjectFactory.class,
-				au.gov.xml.icsm.geodesyml.v_0_2_1.ObjectFactory.class, net.opengis.om._2.ObjectFactory.class,
+				au.gov.xml.icsm.geodesyml.v_0_2_1.ObjectFactory.class, net.opengis.om.v_2_0.ObjectFactory.class,
 				net.opengis.iso19139.gmd.v_20070417.ObjectFactory.class);
 
 		Unmarshaller unmarshaller = jc.createUnmarshaller();
