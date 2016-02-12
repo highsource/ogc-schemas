@@ -23,6 +23,11 @@
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
+			<artifactId>om-v_2_0</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>iso19139-v_20070417</artifactId>
 			<version>${project.version}</version>
 		</dependency>
