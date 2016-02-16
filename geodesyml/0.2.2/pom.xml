@@ -2,9 +2,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>geodesyml-v_0_2_1</artifactId>
+	<artifactId>geodesyml-v_0_2_2</artifactId>
 	<packaging>jar</packaging>
-	<name>OGC GeodesyML 0.2.1</name>
+	<name>OGC GeodesyML 0.2.2</name>
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
 		<artifactId>ogc-schema-parent</artifactId>
@@ -41,7 +41,7 @@
 				<configuration>
 					<schemas>
 						<schema>
-							<url>http://xml.gov.au/icsm/geodesyml/0.2.1/geodesyML.xsd</url>
+							<url>http://xml.gov.au/icsm/geodesyml/0.2.2/geodesyML.xsd</url>
 						</schema>
 						<!-- *** Needed because of the XJC problem -->
 						<schema>

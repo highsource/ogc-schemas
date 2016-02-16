@@ -5,10 +5,10 @@
 	xmlns:annox="http://annox.dev.java.net"
 	jaxb:extensionBindingPrefixes="xjc wildcard annox">
 
-	<jaxb:bindings schemaLocation="http://xml.gov.au/icsm/geodesyml/0.2.1/geodesyML.xsd"
+	<jaxb:bindings schemaLocation="http://xml.gov.au/icsm/geodesyml/0.2.2/geodesyML.xsd"
 		node="/xs:schema">
 		<jaxb:schemaBindings>
-			<jaxb:package name="au.gov.xml.icsm.geodesyml.v_0_2_1"/>
+			<jaxb:package name="au.gov.xml.icsm.geodesyml.v_0_2_2"/>
 		</jaxb:schemaBindings>
 	</jaxb:bindings>
 </jaxb:bindings>
