@@ -3,7 +3,7 @@ var CityGML_CityObjectGroup_2_0_Module_Factory = function () {
     n: 'CityGML_CityObjectGroup_2_0',
     dens: 'http:\/\/www.opengis.net\/citygml\/cityobjectgroup\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_1_1', 'XLink_1_0', 'CityGML_2_0'],
+    deps: ['XLink_1_0', 'GML_3_1_1', 'CityGML_2_0'],
     tis: [{
         ln: 'CityObjectGroupType',
         bti: 'CityGML_2_0.AbstractCityObjectType',
@@ -137,15 +137,15 @@ var CityGML_CityObjectGroup_2_0_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: '_GenericApplicationPropertyOfCityObjectGroup',
-        ti: 'AnyType'
-      }, {
         en: 'CityObjectGroup',
         ti: '.CityObjectGroupType',
         sh: {
           lp: '_CityObject',
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
+      }, {
+        en: '_GenericApplicationPropertyOfCityObjectGroup',
+        ti: 'AnyType'
       }]
   };
   return {

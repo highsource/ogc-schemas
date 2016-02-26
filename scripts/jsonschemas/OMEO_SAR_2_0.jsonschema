@@ -2,61 +2,23 @@
 {
     "id":"http://www.opengis.net/sar/2.0#",
     "definitions":{
-        "AcquisitionPropertyType":{
-            "type":"object",
-            "title":"AcquisitionPropertyType",
-            "required":[
-                "acquisition"
-            ],
-            "properties":{
-                "acquisition":{
-                    "title":"acquisition",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"#/definitions/AcquisitionType"
-                                }
-                            },
-                            "elementName":{
-                                "localPart":"Acquisition",
-                                "namespaceURI":"http://www.opengis.net/sar/2.0"
-                            }
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"Acquisition",
-                        "namespaceURI":"http://www.opengis.net/sar/2.0"
-                    }
+        "EarthObservationType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationType"
                 },
-                "owns":{
-                    "title":"owns",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"owns",
-                        "namespaceURI":""
+                {
+                    "type":"object",
+                    "title":"EarthObservationType",
+                    "properties":{
                     }
                 }
-            },
+            ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AcquisitionPropertyType",
+                "localPart":"EarthObservationType",
                 "namespaceURI":"http://www.opengis.net/sar/2.0"
-            },
-            "propertiesOrder":[
-                "acquisition",
-                "owns"
-            ]
+            }
         },
         "AcquisitionType":{
             "allOf":[
@@ -174,6 +136,62 @@
                 "maximumIncidenceAngle",
                 "incidenceAngleVariation",
                 "dopplerFrequency"
+            ]
+        },
+        "AcquisitionPropertyType":{
+            "type":"object",
+            "title":"AcquisitionPropertyType",
+            "required":[
+                "acquisition"
+            ],
+            "properties":{
+                "acquisition":{
+                    "title":"acquisition",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"#/definitions/AcquisitionType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"Acquisition",
+                                "namespaceURI":"http://www.opengis.net/sar/2.0"
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"Acquisition",
+                        "namespaceURI":"http://www.opengis.net/sar/2.0"
+                    }
+                },
+                "owns":{
+                    "title":"owns",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"owns",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AcquisitionPropertyType",
+                "namespaceURI":"http://www.opengis.net/sar/2.0"
+            },
+            "propertiesOrder":[
+                "acquisition",
+                "owns"
             ]
         },
         "EarthObservationPropertyType":{
@@ -361,36 +379,6 @@
                 "actuate"
             ]
         },
-        "EarthObservationType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationType",
-                "namespaceURI":"http://www.opengis.net/sar/2.0"
-            }
-        },
-        "PolarisationModeValueEnumerationType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"PolarisationModeValueEnumerationType",
-                "namespaceURI":"http://www.opengis.net/sar/2.0"
-            }
-        },
         "AntennaLookDirectionValueEnumerationType":{
             "allOf":[
                 {
@@ -412,6 +400,18 @@
             "typeType":"enumInfo",
             "typeName":{
                 "localPart":"PolarisationChannelsValueEnumerationType",
+                "namespaceURI":"http://www.opengis.net/sar/2.0"
+            }
+        },
+        "PolarisationModeValueEnumerationType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"PolarisationModeValueEnumerationType",
                 "namespaceURI":"http://www.opengis.net/sar/2.0"
             }
         }

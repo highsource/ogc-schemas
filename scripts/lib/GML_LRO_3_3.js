@@ -17,12 +17,22 @@ var GML_LRO_3_3_Module_Factory = function () {
             ti: '.LRMWithOffsetPropertyType'
           }]
       }, {
-        ln: 'LRMWithOffsetPropertyType',
+        ln: 'LateralOffsetDistanceExpressionType',
+        bti: 'GML_LR_3_3.DistanceExpressionType',
         ps: [{
-            n: 'lrmWithOffset',
+            n: 'lateralOffsetExpression',
+            ti: '.LateralOffsetExpressionType'
+          }, {
+            n: 'verticalOffsetExpression',
+            ti: '.VerticalOffsetExpressionType'
+          }]
+      }, {
+        ln: 'LateralOffsetLinearSRSPropertyType',
+        ps: [{
+            n: 'lateralOffsetLinearSRS',
             rq: true,
-            en: 'LRMWithOffset',
-            ti: '.LRMWithOffsetType'
+            en: 'LateralOffsetLinearSRS',
+            ti: '.LateralOffsetLinearSRSType'
           }, {
             n: 'nilReason',
             ti: {
@@ -65,37 +75,12 @@ var GML_LRO_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'VerticalOffsetExpressionType',
+        ln: 'LRMWithOffsetPropertyType',
         ps: [{
-            n: 'value',
-            ti: 'Double',
-            t: 'v'
-          }, {
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }, {
-            n: 'verticalOffsetReferent',
-            an: {
-              lp: 'verticalOffsetReferent'
-            },
-            t: 'a'
-          }, {
-            n: 'featureGeometry',
-            an: {
-              lp: 'featureGeometry'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LateralOffsetLinearSRSPropertyType',
-        ps: [{
-            n: 'lateralOffsetLinearSRS',
+            n: 'lrmWithOffset',
             rq: true,
-            en: 'LateralOffsetLinearSRS',
-            ti: '.LateralOffsetLinearSRSType'
+            en: 'LRMWithOffset',
+            ti: '.LRMWithOffsetType'
           }, {
             n: 'nilReason',
             ti: {
@@ -149,16 +134,6 @@ var GML_LRO_3_3_Module_Factory = function () {
             n: 'positiveVerticalOffsetDirection'
           }]
       }, {
-        ln: 'LateralOffsetDistanceExpressionType',
-        bti: 'GML_LR_3_3.DistanceExpressionType',
-        ps: [{
-            n: 'lateralOffsetExpression',
-            ti: '.LateralOffsetExpressionType'
-          }, {
-            n: 'verticalOffsetExpression',
-            ti: '.VerticalOffsetExpressionType'
-          }]
-      }, {
         ln: 'LateralOffsetExpressionType',
         ps: [{
             n: 'value',
@@ -184,13 +159,38 @@ var GML_LRO_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        t: 'enum',
-        ln: 'LateralOffsetDirectionType',
-        vs: ['left', 'right']
+        ln: 'VerticalOffsetExpressionType',
+        ps: [{
+            n: 'value',
+            ti: 'Double',
+            t: 'v'
+          }, {
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }, {
+            n: 'verticalOffsetReferent',
+            an: {
+              lp: 'verticalOffsetReferent'
+            },
+            t: 'a'
+          }, {
+            n: 'featureGeometry',
+            an: {
+              lp: 'featureGeometry'
+            },
+            t: 'a'
+          }]
       }, {
         t: 'enum',
         ln: 'VerticalOffsetDirectionType',
         vs: ['up', 'down']
+      }, {
+        t: 'enum',
+        ln: 'LateralOffsetDirectionType',
+        vs: ['left', 'right']
       }],
     eis: [{
         en: 'LateralOffsetLinearSRS',

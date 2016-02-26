@@ -2,138 +2,6 @@
 {
     "id":"http://www.opengis.net/gml/3.3/tin#",
     "definitions":{
-        "TINElementType":{
-            "required":[
-                "elementType",
-                "elementGeometry"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"TINElementType",
-                    "properties":{
-                        "elementType":{
-                            "title":"elementType",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"elementType",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
-                            }
-                        },
-                        "elementID":{
-                            "title":"elementID",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"elementID",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
-                            }
-                        },
-                        "elementTag":{
-                            "title":"elementTag",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"elementTag",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
-                            }
-                        },
-                        "elementGeometry":{
-                            "title":"elementGeometry",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/GeometryPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"elementGeometry",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TINElementType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
-            },
-            "propertiesOrder":[
-                "elementType",
-                "elementID",
-                "elementTag",
-                "elementGeometry"
-            ]
-        },
-        "TINType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/SurfaceType"
-                },
-                {
-                    "type":"object",
-                    "title":"TINType",
-                    "properties":{
-                        "tinElement":{
-                            "title":"tinElement",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/TINElementPropertyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"tinElement",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
-                            }
-                        },
-                        "maxLength":{
-                            "title":"maxLength",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/LengthType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"maxLength",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TINType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
-            },
-            "propertiesOrder":[
-                "tinElement",
-                "maxLength"
-            ]
-        },
         "SimpleTrianglePatchType":{
             "required":[
                 "posOrPointProperty",
@@ -222,6 +90,58 @@
                 "posOrPointProperty",
                 "posList",
                 "interpolation"
+            ]
+        },
+        "TINType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/SurfaceType"
+                },
+                {
+                    "type":"object",
+                    "title":"TINType",
+                    "properties":{
+                        "tinElement":{
+                            "title":"tinElement",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/TINElementPropertyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"tinElement",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
+                            }
+                        },
+                        "maxLength":{
+                            "title":"maxLength",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/LengthType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"maxLength",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TINType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
+            },
+            "propertiesOrder":[
+                "tinElement",
+                "maxLength"
             ]
         },
         "TINElementPropertyType":{
@@ -382,9 +302,123 @@
                 "show",
                 "actuate"
             ]
+        },
+        "TINElementType":{
+            "required":[
+                "elementType",
+                "elementGeometry"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"TINElementType",
+                    "properties":{
+                        "elementType":{
+                            "title":"elementType",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"elementType",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
+                            }
+                        },
+                        "elementID":{
+                            "title":"elementID",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"elementID",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
+                            }
+                        },
+                        "elementTag":{
+                            "title":"elementTag",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"elementTag",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
+                            }
+                        },
+                        "elementGeometry":{
+                            "title":"elementGeometry",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/GeometryPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"elementGeometry",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TINElementType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
+            },
+            "propertiesOrder":[
+                "elementType",
+                "elementID",
+                "elementTag",
+                "elementGeometry"
+            ]
         }
     },
     "anyOf":[
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "TIN"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml/3.3/tin"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/TINType"
+                }
+            },
+            "elementName":{
+                "localPart":"TIN",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
+            }
+        },
         {
             "type":"object",
             "properties":{
@@ -416,40 +450,6 @@
             },
             "elementName":{
                 "localPart":"TINElement",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "TriangulatedSurface"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml/3.3/tin"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/SurfaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"TriangulatedSurface",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
             }
         },
@@ -500,7 +500,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "TIN"
+                                        "TriangulatedSurface"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -513,11 +513,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/TINType"
+                    "$ref":"#/definitions/SurfaceType"
                 }
             },
             "elementName":{
-                "localPart":"TIN",
+                "localPart":"TriangulatedSurface",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
             }
         }

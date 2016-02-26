@@ -4,6 +4,15 @@ var WCST_1_1_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/wcs\/1.1\/wcst',
     deps: ['OWS_1_1_0'],
     tis: [{
+        ln: 'CoverageType',
+        bti: 'OWS_1_1_0.ReferenceGroupType',
+        ps: [{
+            n: 'action',
+            rq: true,
+            en: 'Action',
+            ti: '.Action'
+          }]
+      }, {
         ln: 'AcknowledgementType',
         ps: [{
             n: 'timeStamp',
@@ -23,31 +32,6 @@ var WCST_1_1_Module_Factory = function () {
         ln: 'Action',
         tn: null,
         bti: 'OWS_1_1_0.CodeType'
-      }, {
-        ln: 'TransactionResponseType',
-        ps: [{
-            n: 'requestId',
-            rq: true,
-            en: 'RequestId'
-          }, {
-            n: 'identifier',
-            rq: true,
-            col: true,
-            en: {
-              lp: 'Identifier',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'OWS_1_1_0.CodeType'
-          }]
-      }, {
-        ln: 'CoverageType',
-        bti: 'OWS_1_1_0.ReferenceGroupType',
-        ps: [{
-            n: 'action',
-            rq: true,
-            en: 'Action',
-            ti: '.Action'
-          }]
       }, {
         ln: 'TransactionType',
         ps: [{
@@ -76,10 +60,29 @@ var WCST_1_1_Module_Factory = function () {
             },
             t: 'a'
           }]
+      }, {
+        ln: 'TransactionResponseType',
+        ps: [{
+            n: 'requestId',
+            rq: true,
+            en: 'RequestId'
+          }, {
+            n: 'identifier',
+            rq: true,
+            col: true,
+            en: {
+              lp: 'Identifier',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.CodeType'
+          }]
       }],
     eis: [{
         en: 'Acknowledgement',
         ti: '.AcknowledgementType'
+      }, {
+        en: 'Action',
+        ti: '.Action'
       }, {
         en: 'Coverage',
         ti: '.CoverageType',
@@ -90,14 +93,11 @@ var WCST_1_1_Module_Factory = function () {
       }, {
         en: 'RequestId'
       }, {
-        en: 'TransactionResponse',
-        ti: '.TransactionResponseType'
-      }, {
         en: 'Transaction',
         ti: '.TransactionType'
       }, {
-        en: 'Action',
-        ti: '.Action'
+        en: 'TransactionResponse',
+        ti: '.TransactionResponseType'
       }]
   };
   return {

@@ -2,25 +2,121 @@
 {
     "id":"http://www.opengis.net/sampling/2.0#",
     "definitions":{
-        "SFSamplingFeatureCollectionPropertyType":{
-            "type":"object",
-            "title":"SFSamplingFeatureCollectionPropertyType",
+        "SFSamplingFeatureCollectionType":{
             "required":[
-                "sfSamplingFeatureCollection"
+                "member"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"SFSamplingFeatureCollectionType",
+                    "properties":{
+                        "member":{
+                            "title":"member",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/SFSamplingFeaturePropertyType"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"member",
+                                "namespaceURI":"http://www.opengis.net/sampling/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SF_SamplingFeatureCollectionType",
+                "namespaceURI":"http://www.opengis.net/sampling/2.0"
+            },
+            "propertiesOrder":[
+                "member"
+            ]
+        },
+        "SamplingFeatureComplexType":{
+            "type":"object",
+            "title":"SamplingFeatureComplexType",
+            "required":[
+                "role",
+                "relatedSamplingFeature"
             ],
             "properties":{
-                "sfSamplingFeatureCollection":{
-                    "title":"sfSamplingFeatureCollection",
+                "role":{
+                    "title":"role",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/SFSamplingFeatureCollectionType"
+                            "$ref":"#/definitions/ReferenceType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"SF_SamplingFeatureCollection",
+                        "localPart":"role",
                         "namespaceURI":"http://www.opengis.net/sampling/2.0"
                     }
+                },
+                "relatedSamplingFeature":{
+                    "title":"relatedSamplingFeature",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SFSamplingFeaturePropertyType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"relatedSamplingFeature",
+                        "namespaceURI":"http://www.opengis.net/sampling/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SamplingFeatureComplexType",
+                "namespaceURI":"http://www.opengis.net/sampling/2.0"
+            },
+            "propertiesOrder":[
+                "role",
+                "relatedSamplingFeature"
+            ]
+        },
+        "SFProcessPropertyType":{
+            "type":"object",
+            "title":"SFProcessPropertyType",
+            "required":[
+                "any"
+            ],
+            "properties":{
+                "any":{
+                    "title":"any",
+                    "allOf":[
+                        {
+                            "anyOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
+                                },
+                                {
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                        },
+                                        "value":{
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "propertyType":"anyElement"
                 },
                 "nilReason":{
                     "title":"nilReason",
@@ -145,11 +241,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SF_SamplingFeatureCollectionPropertyType",
+                "localPart":"SF_ProcessPropertyType",
                 "namespaceURI":"http://www.opengis.net/sampling/2.0"
             },
             "propertiesOrder":[
-                "sfSamplingFeatureCollection",
+                "any",
                 "nilReason",
                 "remoteSchema",
                 "type",
@@ -159,77 +255,6 @@
                 "title",
                 "show",
                 "actuate"
-            ]
-        },
-        "SFSamplingFeatureCollectionType":{
-            "required":[
-                "member"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"SFSamplingFeatureCollectionType",
-                    "properties":{
-                        "member":{
-                            "title":"member",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/SFSamplingFeaturePropertyType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"member",
-                                "namespaceURI":"http://www.opengis.net/sampling/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SF_SamplingFeatureCollectionType",
-                "namespaceURI":"http://www.opengis.net/sampling/2.0"
-            },
-            "propertiesOrder":[
-                "member"
-            ]
-        },
-        "SamplingFeatureComplexPropertyType":{
-            "type":"object",
-            "title":"SamplingFeatureComplexPropertyType",
-            "required":[
-                "samplingFeatureComplex"
-            ],
-            "properties":{
-                "samplingFeatureComplex":{
-                    "title":"samplingFeatureComplex",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SamplingFeatureComplexType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SamplingFeatureComplex",
-                        "namespaceURI":"http://www.opengis.net/sampling/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SamplingFeatureComplexPropertyType",
-                "namespaceURI":"http://www.opengis.net/sampling/2.0"
-            },
-            "propertiesOrder":[
-                "samplingFeatureComplex"
             ]
         },
         "SFSamplingFeatureType":{
@@ -514,35 +539,25 @@
                 "actuate"
             ]
         },
-        "SFProcessPropertyType":{
+        "SFSamplingFeatureCollectionPropertyType":{
             "type":"object",
-            "title":"SFProcessPropertyType",
+            "title":"SFSamplingFeatureCollectionPropertyType",
             "required":[
-                "any"
+                "sfSamplingFeatureCollection"
             ],
             "properties":{
-                "any":{
-                    "title":"any",
+                "sfSamplingFeatureCollection":{
+                    "title":"sfSamplingFeatureCollection",
                     "allOf":[
                         {
-                            "anyOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
-                                },
-                                {
-                                    "type":"object",
-                                    "properties":{
-                                        "name":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                        },
-                                        "value":{
-                                        }
-                                    }
-                                }
-                            ]
+                            "$ref":"#/definitions/SFSamplingFeatureCollectionType"
                         }
                     ],
-                    "propertyType":"anyElement"
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SF_SamplingFeatureCollection",
+                        "namespaceURI":"http://www.opengis.net/sampling/2.0"
+                    }
                 },
                 "nilReason":{
                     "title":"nilReason",
@@ -667,11 +682,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SF_ProcessPropertyType",
+                "localPart":"SF_SamplingFeatureCollectionPropertyType",
                 "namespaceURI":"http://www.opengis.net/sampling/2.0"
             },
             "propertiesOrder":[
-                "any",
+                "sfSamplingFeatureCollection",
                 "nilReason",
                 "remoteSchema",
                 "type",
@@ -683,87 +698,38 @@
                 "actuate"
             ]
         },
-        "SamplingFeatureComplexType":{
+        "SamplingFeatureComplexPropertyType":{
             "type":"object",
-            "title":"SamplingFeatureComplexType",
+            "title":"SamplingFeatureComplexPropertyType",
             "required":[
-                "role",
-                "relatedSamplingFeature"
+                "samplingFeatureComplex"
             ],
             "properties":{
-                "role":{
-                    "title":"role",
+                "samplingFeatureComplex":{
+                    "title":"samplingFeatureComplex",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/ReferenceType"
+                            "$ref":"#/definitions/SamplingFeatureComplexType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.opengis.net/sampling/2.0"
-                    }
-                },
-                "relatedSamplingFeature":{
-                    "title":"relatedSamplingFeature",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SFSamplingFeaturePropertyType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"relatedSamplingFeature",
+                        "localPart":"SamplingFeatureComplex",
                         "namespaceURI":"http://www.opengis.net/sampling/2.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SamplingFeatureComplexType",
+                "localPart":"SamplingFeatureComplexPropertyType",
                 "namespaceURI":"http://www.opengis.net/sampling/2.0"
             },
             "propertiesOrder":[
-                "role",
-                "relatedSamplingFeature"
+                "samplingFeatureComplex"
             ]
         }
     },
     "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "SF_SamplingFeatureCollection"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sampling/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/SFSamplingFeatureCollectionType"
-                }
-            },
-            "elementName":{
-                "localPart":"SF_SamplingFeatureCollection",
-                "namespaceURI":"http://www.opengis.net/sampling/2.0"
-            }
-        },
         {
             "type":"object",
             "properties":{
@@ -795,6 +761,40 @@
             },
             "elementName":{
                 "localPart":"SF_SamplingFeature",
+                "namespaceURI":"http://www.opengis.net/sampling/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SF_SamplingFeatureCollection"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sampling/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SFSamplingFeatureCollectionType"
+                }
+            },
+            "elementName":{
+                "localPart":"SF_SamplingFeatureCollection",
                 "namespaceURI":"http://www.opengis.net/sampling/2.0"
             }
         },

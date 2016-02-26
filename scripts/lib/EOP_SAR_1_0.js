@@ -2,8 +2,11 @@ var EOP_SAR_1_0_Module_Factory = function () {
   var EOP_SAR_1_0 = {
     n: 'EOP_SAR_1_0',
     dens: 'http:\/\/earth.esa.int\/sar',
-    deps: ['GML_3_1_1', 'EOP_1_0'],
+    deps: ['EOP_1_0', 'GML_3_1_1'],
     tis: [{
+        ln: 'EarthObservationType',
+        bti: 'EOP_1_0.EarthObservationType'
+      }, {
         ln: 'AcquisitionType',
         bti: 'EOP_1_0.AcquisitionType',
         ps: [{
@@ -26,9 +29,6 @@ var EOP_SAR_1_0_Module_Factory = function () {
             ti: 'GML_3_1_1.MeasureType'
           }]
       }, {
-        ln: 'EarthObservationType',
-        bti: 'EOP_1_0.EarthObservationType'
-      }, {
         t: 'enum',
         ln: 'PolarisationChannelsPropertyType',
         vs: ['HH', 'HV', 'VH', 'VV', 'HH, VV', 'HH, VH', 'HH, HV', 'VH, VV', 'VH, HV', 'VV, HV', 'HH, VV, HV, VH', 'UNDEFINED']
@@ -38,21 +38,19 @@ var EOP_SAR_1_0_Module_Factory = function () {
         vs: ['D', 'Q', 'S', 'T', 'UNDEFINED']
       }],
     eis: [{
-        en: 'EarthObservation',
-        ti: '.EarthObservationType',
-        sh: {
-          lp: 'EarthObservation',
-          ns: 'http:\/\/earth.esa.int\/eop'
-        }
-      }, {
-        en: 'maximumIncidenceAngle',
-        ti: 'GML_3_1_1.AngleType'
+        en: 'dopplerFrequency',
+        ti: 'GML_3_1_1.MeasureType'
       }, {
         en: 'incidenceAngleVariation',
         ti: 'GML_3_1_1.AngleType'
       }, {
+        en: 'maximumIncidenceAngle',
+        ti: 'GML_3_1_1.AngleType'
+      }, {
         en: 'minimumIncidenceAngle',
         ti: 'GML_3_1_1.AngleType'
+      }, {
+        en: 'antennaLookDirection'
       }, {
         en: 'polarisationMode'
       }, {
@@ -63,12 +61,14 @@ var EOP_SAR_1_0_Module_Factory = function () {
           ns: 'http:\/\/earth.esa.int\/eop'
         }
       }, {
+        en: 'EarthObservation',
+        ti: '.EarthObservationType',
+        sh: {
+          lp: 'EarthObservation',
+          ns: 'http:\/\/earth.esa.int\/eop'
+        }
+      }, {
         en: 'polarisationChannels'
-      }, {
-        en: 'dopplerFrequency',
-        ti: 'GML_3_1_1.MeasureType'
-      }, {
-        en: 'antennaLookDirection'
       }]
   };
   return {

@@ -173,6 +173,80 @@
                 "actuate"
             ]
         },
+        "SFSpatialSamplingFeatureType":{
+            "required":[
+                "shape"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/sampling/2.0#/definitions/SFSamplingFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"SFSpatialSamplingFeatureType",
+                    "properties":{
+                        "hostedProcedure":{
+                            "title":"hostedProcedure",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/OMProcessPropertyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"hostedProcedure",
+                                "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
+                            }
+                        },
+                        "positionalAccuracy":{
+                            "title":"positionalAccuracy",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/DQPositionalAccuracyPropertyType"
+                                    },
+                                    "maxItems":2,
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"positionalAccuracy",
+                                "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
+                            }
+                        },
+                        "shape":{
+                            "title":"shape",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ShapeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"shape",
+                                "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SF_SpatialSamplingFeatureType",
+                "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
+            },
+            "propertiesOrder":[
+                "hostedProcedure",
+                "positionalAccuracy",
+                "shape"
+            ]
+        },
         "SFSpatialSamplingFeaturePropertyType":{
             "type":"object",
             "title":"SFSpatialSamplingFeaturePropertyType",
@@ -331,117 +405,9 @@
                 "show",
                 "actuate"
             ]
-        },
-        "SFSpatialSamplingFeatureType":{
-            "required":[
-                "shape"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/sampling/2.0#/definitions/SFSamplingFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"SFSpatialSamplingFeatureType",
-                    "properties":{
-                        "hostedProcedure":{
-                            "title":"hostedProcedure",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/OMProcessPropertyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"hostedProcedure",
-                                "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
-                            }
-                        },
-                        "positionalAccuracy":{
-                            "title":"positionalAccuracy",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/DQPositionalAccuracyPropertyType"
-                                    },
-                                    "maxItems":2,
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"positionalAccuracy",
-                                "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
-                            }
-                        },
-                        "shape":{
-                            "title":"shape",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ShapeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"shape",
-                                "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SF_SpatialSamplingFeatureType",
-                "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
-            },
-            "propertiesOrder":[
-                "hostedProcedure",
-                "positionalAccuracy",
-                "shape"
-            ]
         }
     },
     "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "shape"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/samplingSpatial/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/ShapeType"
-                }
-            },
-            "elementName":{
-                "localPart":"shape",
-                "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
-            }
-        },
         {
             "type":"object",
             "properties":{
@@ -473,6 +439,40 @@
             },
             "elementName":{
                 "localPart":"SF_SpatialSamplingFeature",
+                "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "shape"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/samplingSpatial/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/ShapeType"
+                }
+            },
+            "elementName":{
+                "localPart":"shape",
                 "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
             }
         }
