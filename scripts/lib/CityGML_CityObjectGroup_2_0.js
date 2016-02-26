@@ -5,41 +5,6 @@ var CityGML_CityObjectGroup_2_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_1_1', 'CityGML_2_0'],
     tis: [{
-        ln: 'CityObjectGroupType',
-        bti: 'CityGML_2_0.AbstractCityObjectType',
-        ps: [{
-            n: 'clazz',
-            en: 'class',
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'function',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'usage',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'groupMember',
-            mno: 0,
-            col: true,
-            ti: '.CityObjectGroupMemberType'
-          }, {
-            n: 'parent',
-            ti: '.CityObjectGroupParentType'
-          }, {
-            n: 'geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfCityObjectGroup',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfCityObjectGroup',
-            ti: 'AnyType'
-          }]
-      }, {
         ln: 'CityObjectGroupParentType',
         ps: [{
             n: 'cityObject',
@@ -134,6 +99,41 @@ var CityGML_CityObjectGroup_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'CityObjectGroupType',
+        bti: 'CityGML_2_0.AbstractCityObjectType',
+        ps: [{
+            n: 'clazz',
+            en: 'class',
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'function',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'usage',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'groupMember',
+            mno: 0,
+            col: true,
+            ti: '.CityObjectGroupMemberType'
+          }, {
+            n: 'parent',
+            ti: '.CityObjectGroupParentType'
+          }, {
+            n: 'geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfCityObjectGroup',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfCityObjectGroup',
+            ti: 'AnyType'
           }]
       }],
     eis: [{

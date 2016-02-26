@@ -2,54 +2,30 @@
 {
     "id":"#",
     "definitions":{
-        "HTTP":{
+        "TIFF":{
             "type":"object",
-            "title":"HTTP",
+            "title":"TIFF",
             "properties":{
-                "getOrPost":{
-                    "title":"getOrPost",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/Get"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"Get",
-                                            "namespaceURI":""
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/Post"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"Post",
-                                            "namespaceURI":""
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "propertyType":"elements"
-                }
             },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "getOrPost"
-            ]
+            "typeType":"classInfo"
         },
-        "WMSXML":{
+        "GIF":{
             "type":"object",
-            "title":"WMSXML",
+            "title":"GIF",
+            "properties":{
+            },
+            "typeType":"classInfo"
+        },
+        "GeoTIFF":{
+            "type":"object",
+            "title":"GeoTIFF",
+            "properties":{
+            },
+            "typeType":"classInfo"
+        },
+        "GML2":{
+            "type":"object",
+            "title":"GML2",
             "properties":{
             },
             "typeType":"classInfo"
@@ -60,6 +36,278 @@
             "properties":{
             },
             "typeType":"classInfo"
+        },
+        "Capability":{
+            "type":"object",
+            "title":"Capability",
+            "properties":{
+                "request":{
+                    "title":"request",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Request"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Request",
+                        "namespaceURI":""
+                    }
+                },
+                "exception":{
+                    "title":"exception",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Exception"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Exception",
+                        "namespaceURI":""
+                    }
+                },
+                "vendorSpecificCapabilities":{
+                    "title":"vendorSpecificCapabilities",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/VendorSpecificCapabilities"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"VendorSpecificCapabilities",
+                        "namespaceURI":""
+                    }
+                },
+                "layer":{
+                    "title":"layer",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Layer"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Layer",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "request",
+                "exception",
+                "vendorSpecificCapabilities",
+                "layer"
+            ]
+        },
+        "Exception":{
+            "type":"object",
+            "title":"Exception",
+            "properties":{
+                "format":{
+                    "title":"format",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Format"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Format",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "format"
+            ]
+        },
+        "DCPType":{
+            "type":"object",
+            "title":"DCPType",
+            "properties":{
+                "http":{
+                    "title":"http",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/HTTP"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"HTTP",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "http"
+            ]
+        },
+        "WebCGM":{
+            "type":"object",
+            "title":"WebCGM",
+            "properties":{
+            },
+            "typeType":"classInfo"
+        },
+        "Service":{
+            "type":"object",
+            "title":"Service",
+            "properties":{
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Name",
+                        "namespaceURI":""
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Title",
+                        "namespaceURI":""
+                    }
+                },
+                "_abstract":{
+                    "title":"_abstract",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Abstract",
+                        "namespaceURI":""
+                    }
+                },
+                "keywords":{
+                    "title":"keywords",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Keywords",
+                        "namespaceURI":""
+                    }
+                },
+                "onlineResource":{
+                    "title":"onlineResource",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OnlineResource",
+                        "namespaceURI":""
+                    }
+                },
+                "fees":{
+                    "title":"fees",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Fees",
+                        "namespaceURI":""
+                    }
+                },
+                "accessConstraints":{
+                    "title":"accessConstraints",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"AccessConstraints",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "name",
+                "title",
+                "_abstract",
+                "keywords",
+                "onlineResource",
+                "fees",
+                "accessConstraints"
+            ]
+        },
+        "INIMAGE":{
+            "type":"object",
+            "title":"INIMAGE",
+            "properties":{
+            },
+            "typeType":"classInfo"
+        },
+        "FeatureInfo":{
+            "type":"object",
+            "title":"FeatureInfo",
+            "properties":{
+                "format":{
+                    "title":"format",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Format"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Format",
+                        "namespaceURI":""
+                    }
+                },
+                "dcpType":{
+                    "title":"dcpType",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/DCPType"
+                            }
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DCPType",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "format",
+                "dcpType"
+            ]
         },
         "WMTMSCapabilities":{
             "type":"object",
@@ -126,30 +374,74 @@
                 "capability"
             ]
         },
-        "GML1":{
+        "LatLonBoundingBox":{
             "type":"object",
-            "title":"GML1",
+            "title":"LatLonBoundingBox",
             "properties":{
+                "minx":{
+                    "title":"minx",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"minx",
+                        "namespaceURI":""
+                    }
+                },
+                "miny":{
+                    "title":"miny",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"miny",
+                        "namespaceURI":""
+                    }
+                },
+                "maxx":{
+                    "title":"maxx",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"maxx",
+                        "namespaceURI":""
+                    }
+                },
+                "maxy":{
+                    "title":"maxy",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"maxy",
+                        "namespaceURI":""
+                    }
+                }
             },
-            "typeType":"classInfo"
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "minx",
+                "miny",
+                "maxx",
+                "maxy"
+            ]
         },
-        "JPEG":{
+        "Capabilities":{
             "type":"object",
-            "title":"JPEG",
-            "properties":{
-            },
-            "typeType":"classInfo"
-        },
-        "GIF":{
-            "type":"object",
-            "title":"GIF",
-            "properties":{
-            },
-            "typeType":"classInfo"
-        },
-        "Map":{
-            "type":"object",
-            "title":"Map",
+            "title":"Capabilities",
             "properties":{
                 "format":{
                     "title":"format",
@@ -187,68 +479,193 @@
                 "dcpType"
             ]
         },
-        "Request":{
+        "Get":{
             "type":"object",
-            "title":"Request",
+            "title":"Get",
             "properties":{
-                "mapOrCapabilitiesOrFeatureInfo":{
-                    "title":"mapOrCapabilitiesOrFeatureInfo",
+                "onlineResource":{
+                    "title":"onlineResource",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/Map"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"Map",
-                                            "namespaceURI":""
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/Capabilities"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"Capabilities",
-                                            "namespaceURI":""
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/FeatureInfo"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"FeatureInfo",
-                                            "namespaceURI":""
-                                        }
-                                    }
-                                ]
-                            }
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"elements"
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"onlineResource",
+                        "namespaceURI":""
+                    }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "mapOrCapabilitiesOrFeatureInfo"
+                "onlineResource"
             ]
         },
-        "GeoTIFF":{
+        "JPEG":{
             "type":"object",
-            "title":"GeoTIFF",
+            "title":"JPEG",
             "properties":{
             },
             "typeType":"classInfo"
+        },
+        "VendorSpecificCapabilities":{
+            "type":"object",
+            "title":"VendorSpecificCapabilities",
+            "properties":{
+            },
+            "typeType":"classInfo"
+        },
+        "BoundingBox":{
+            "type":"object",
+            "title":"BoundingBox",
+            "properties":{
+                "srs":{
+                    "title":"srs",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"SRS",
+                        "namespaceURI":""
+                    }
+                },
+                "minx":{
+                    "title":"minx",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"minx",
+                        "namespaceURI":""
+                    }
+                },
+                "miny":{
+                    "title":"miny",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"miny",
+                        "namespaceURI":""
+                    }
+                },
+                "maxx":{
+                    "title":"maxx",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"maxx",
+                        "namespaceURI":""
+                    }
+                },
+                "maxy":{
+                    "title":"maxy",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"maxy",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "srs",
+                "minx",
+                "miny",
+                "maxx",
+                "maxy"
+            ]
+        },
+        "SVG":{
+            "type":"object",
+            "title":"SVG",
+            "properties":{
+            },
+            "typeType":"classInfo"
+        },
+        "Style":{
+            "type":"object",
+            "title":"Style",
+            "properties":{
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Name",
+                        "namespaceURI":""
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Title",
+                        "namespaceURI":""
+                    }
+                },
+                "_abstract":{
+                    "title":"_abstract",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Abstract",
+                        "namespaceURI":""
+                    }
+                },
+                "styleURL":{
+                    "title":"styleURL",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"StyleURL",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "name",
+                "title",
+                "_abstract",
+                "styleURL"
+            ]
         },
         "Layer":{
             "type":"object",
@@ -436,262 +853,6 @@
                 "layer"
             ]
         },
-        "BoundingBox":{
-            "type":"object",
-            "title":"BoundingBox",
-            "properties":{
-                "srs":{
-                    "title":"srs",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"SRS",
-                        "namespaceURI":""
-                    }
-                },
-                "minx":{
-                    "title":"minx",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"minx",
-                        "namespaceURI":""
-                    }
-                },
-                "miny":{
-                    "title":"miny",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"miny",
-                        "namespaceURI":""
-                    }
-                },
-                "maxx":{
-                    "title":"maxx",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"maxx",
-                        "namespaceURI":""
-                    }
-                },
-                "maxy":{
-                    "title":"maxy",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"maxy",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "srs",
-                "minx",
-                "miny",
-                "maxx",
-                "maxy"
-            ]
-        },
-        "Capabilities":{
-            "type":"object",
-            "title":"Capabilities",
-            "properties":{
-                "format":{
-                    "title":"format",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Format"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Format",
-                        "namespaceURI":""
-                    }
-                },
-                "dcpType":{
-                    "title":"dcpType",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/DCPType"
-                            }
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DCPType",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "format",
-                "dcpType"
-            ]
-        },
-        "Service":{
-            "type":"object",
-            "title":"Service",
-            "properties":{
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Name",
-                        "namespaceURI":""
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Title",
-                        "namespaceURI":""
-                    }
-                },
-                "_abstract":{
-                    "title":"_abstract",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Abstract",
-                        "namespaceURI":""
-                    }
-                },
-                "keywords":{
-                    "title":"keywords",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Keywords",
-                        "namespaceURI":""
-                    }
-                },
-                "onlineResource":{
-                    "title":"onlineResource",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OnlineResource",
-                        "namespaceURI":""
-                    }
-                },
-                "fees":{
-                    "title":"fees",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Fees",
-                        "namespaceURI":""
-                    }
-                },
-                "accessConstraints":{
-                    "title":"accessConstraints",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"AccessConstraints",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "name",
-                "title",
-                "_abstract",
-                "keywords",
-                "onlineResource",
-                "fees",
-                "accessConstraints"
-            ]
-        },
-        "SVG":{
-            "type":"object",
-            "title":"SVG",
-            "properties":{
-            },
-            "typeType":"classInfo"
-        },
-        "Exception":{
-            "type":"object",
-            "title":"Exception",
-            "properties":{
-                "format":{
-                    "title":"format",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Format"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Format",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "format"
-            ]
-        },
         "ScaleHint":{
             "type":"object",
             "title":"ScaleHint",
@@ -729,64 +890,6 @@
                 "max"
             ]
         },
-        "MIME":{
-            "type":"object",
-            "title":"MIME",
-            "properties":{
-            },
-            "typeType":"classInfo"
-        },
-        "BLANK":{
-            "type":"object",
-            "title":"BLANK",
-            "properties":{
-            },
-            "typeType":"classInfo"
-        },
-        "DCPType":{
-            "type":"object",
-            "title":"DCPType",
-            "properties":{
-                "http":{
-                    "title":"http",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/HTTP"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"HTTP",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "http"
-            ]
-        },
-        "PNG":{
-            "type":"object",
-            "title":"PNG",
-            "properties":{
-            },
-            "typeType":"classInfo"
-        },
-        "INIMAGE":{
-            "type":"object",
-            "title":"INIMAGE",
-            "properties":{
-            },
-            "typeType":"classInfo"
-        },
-        "VendorSpecificCapabilities":{
-            "type":"object",
-            "title":"VendorSpecificCapabilities",
-            "properties":{
-            },
-            "typeType":"classInfo"
-        },
         "Post":{
             "type":"object",
             "title":"Post",
@@ -810,59 +913,12 @@
                 "onlineResource"
             ]
         },
-        "GML3":{
+        "BLANK":{
             "type":"object",
-            "title":"GML3",
+            "title":"BLANK",
             "properties":{
             },
             "typeType":"classInfo"
-        },
-        "WebCGM":{
-            "type":"object",
-            "title":"WebCGM",
-            "properties":{
-            },
-            "typeType":"classInfo"
-        },
-        "FeatureInfo":{
-            "type":"object",
-            "title":"FeatureInfo",
-            "properties":{
-                "format":{
-                    "title":"format",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Format"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Format",
-                        "namespaceURI":""
-                    }
-                },
-                "dcpType":{
-                    "title":"dcpType",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/DCPType"
-                            }
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DCPType",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "format",
-                "dcpType"
-            ]
         },
         "Format":{
             "type":"object",
@@ -1063,146 +1119,131 @@
                 "gifOrJPEGOrPNGOrWebCGMOrSVGOrGML1OrGML2OrGML3OrWBMPOrWMSXMLOrMIMEOrINIMAGEOrTIFFOrGeoTIFFOrPPMOrBLANK"
             ]
         },
-        "LatLonBoundingBox":{
+        "MIME":{
             "type":"object",
-            "title":"LatLonBoundingBox",
-            "properties":{
-                "minx":{
-                    "title":"minx",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"minx",
-                        "namespaceURI":""
-                    }
-                },
-                "miny":{
-                    "title":"miny",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"miny",
-                        "namespaceURI":""
-                    }
-                },
-                "maxx":{
-                    "title":"maxx",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"maxx",
-                        "namespaceURI":""
-                    }
-                },
-                "maxy":{
-                    "title":"maxy",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"maxy",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "minx",
-                "miny",
-                "maxx",
-                "maxy"
-            ]
-        },
-        "TIFF":{
-            "type":"object",
-            "title":"TIFF",
+            "title":"MIME",
             "properties":{
             },
             "typeType":"classInfo"
         },
-        "Style":{
+        "WMSXML":{
             "type":"object",
-            "title":"Style",
+            "title":"WMSXML",
             "properties":{
-                "name":{
-                    "title":"name",
+            },
+            "typeType":"classInfo"
+        },
+        "HTTP":{
+            "type":"object",
+            "title":"HTTP",
+            "properties":{
+                "getOrPost":{
+                    "title":"getOrPost",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/Get"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"Get",
+                                            "namespaceURI":""
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/Post"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"Post",
+                                            "namespaceURI":""
+                                        }
+                                    }
+                                ]
+                            }
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Name",
-                        "namespaceURI":""
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Title",
-                        "namespaceURI":""
-                    }
-                },
-                "_abstract":{
-                    "title":"_abstract",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Abstract",
-                        "namespaceURI":""
-                    }
-                },
-                "styleURL":{
-                    "title":"styleURL",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"StyleURL",
-                        "namespaceURI":""
-                    }
+                    "propertyType":"elements"
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "name",
-                "title",
-                "_abstract",
-                "styleURL"
+                "getOrPost"
             ]
         },
-        "GML2":{
+        "Request":{
             "type":"object",
-            "title":"GML2",
+            "title":"Request",
+            "properties":{
+                "mapOrCapabilitiesOrFeatureInfo":{
+                    "title":"mapOrCapabilitiesOrFeatureInfo",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/Map"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"Map",
+                                            "namespaceURI":""
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/Capabilities"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"Capabilities",
+                                            "namespaceURI":""
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/FeatureInfo"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"FeatureInfo",
+                                            "namespaceURI":""
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "propertyType":"elements"
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "mapOrCapabilitiesOrFeatureInfo"
+            ]
+        },
+        "GML3":{
+            "type":"object",
+            "title":"GML3",
+            "properties":{
+            },
+            "typeType":"classInfo"
+        },
+        "PNG":{
+            "type":"object",
+            "title":"PNG",
             "properties":{
             },
             "typeType":"classInfo"
@@ -1214,130 +1255,55 @@
             },
             "typeType":"classInfo"
         },
-        "Get":{
+        "Map":{
             "type":"object",
-            "title":"Get",
+            "title":"Map",
             "properties":{
-                "onlineResource":{
-                    "title":"onlineResource",
+                "format":{
+                    "title":"format",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"#/definitions/Format"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"onlineResource",
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Format",
+                        "namespaceURI":""
+                    }
+                },
+                "dcpType":{
+                    "title":"dcpType",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/DCPType"
+                            }
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DCPType",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "onlineResource"
+                "format",
+                "dcpType"
             ]
         },
-        "Capability":{
+        "GML1":{
             "type":"object",
-            "title":"Capability",
+            "title":"GML1",
             "properties":{
-                "request":{
-                    "title":"request",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Request"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Request",
-                        "namespaceURI":""
-                    }
-                },
-                "exception":{
-                    "title":"exception",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Exception"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Exception",
-                        "namespaceURI":""
-                    }
-                },
-                "vendorSpecificCapabilities":{
-                    "title":"vendorSpecificCapabilities",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/VendorSpecificCapabilities"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"VendorSpecificCapabilities",
-                        "namespaceURI":""
-                    }
-                },
-                "layer":{
-                    "title":"layer",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Layer"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Layer",
-                        "namespaceURI":""
-                    }
-                }
             },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "request",
-                "exception",
-                "vendorSpecificCapabilities",
-                "layer"
-            ]
+            "typeType":"classInfo"
         }
     },
     "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "WMS_XML"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/WMSXML"
-                }
-            },
-            "elementName":{
-                "localPart":"WMS_XML",
-                "namespaceURI":""
-            }
-        },
         {
             "type":"object",
             "properties":{
@@ -1385,7 +1351,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "GML.2"
+                                        "Capabilities"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1398,147 +1364,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/GML2"
+                    "$ref":"#/definitions/Capabilities"
                 }
             },
             "elementName":{
-                "localPart":"GML.2",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "WBMP"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/WBMP"
-                }
-            },
-            "elementName":{
-                "localPart":"WBMP",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "INIMAGE"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/INIMAGE"
-                }
-            },
-            "elementName":{
-                "localPart":"INIMAGE",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Layer"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/Layer"
-                }
-            },
-            "elementName":{
-                "localPart":"Layer",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "HTTP"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/HTTP"
-                }
-            },
-            "elementName":{
-                "localPart":"HTTP",
+                "localPart":"Capabilities",
                 "namespaceURI":""
             }
         },
@@ -1589,278 +1419,6 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "MIME"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MIME"
-                }
-            },
-            "elementName":{
-                "localPart":"MIME",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Capability"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/Capability"
-                }
-            },
-            "elementName":{
-                "localPart":"Capability",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Format"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/Format"
-                }
-            },
-            "elementName":{
-                "localPart":"Format",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "SVG"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/SVG"
-                }
-            },
-            "elementName":{
-                "localPart":"SVG",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Map"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/Map"
-                }
-            },
-            "elementName":{
-                "localPart":"Map",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "GML.3"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GML3"
-                }
-            },
-            "elementName":{
-                "localPart":"GML.3",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Exception"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/Exception"
-                }
-            },
-            "elementName":{
-                "localPart":"Exception",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Post"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/Post"
-                }
-            },
-            "elementName":{
-                "localPart":"Post",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
                                         "JPEG"
                                     ]
                                 },
@@ -1895,7 +1453,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "FeatureInfo"
+                                        "GeoTIFF"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1908,45 +1466,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/FeatureInfo"
+                    "$ref":"#/definitions/GeoTIFF"
                 }
             },
             "elementName":{
-                "localPart":"FeatureInfo",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "LatLonBoundingBox"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/LatLonBoundingBox"
-                }
-            },
-            "elementName":{
-                "localPart":"LatLonBoundingBox",
+                "localPart":"GeoTIFF",
                 "namespaceURI":""
             }
         },
@@ -1997,6 +1521,74 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
+                                        "GML.3"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GML3"
+                }
+            },
+            "elementName":{
+                "localPart":"GML.3",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "BoundingBox"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/BoundingBox"
+                }
+            },
+            "elementName":{
+                "localPart":"BoundingBox",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
                                         "PPM"
                                     ]
                                 },
@@ -2031,7 +1623,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "WebCGM"
+                                        "WBMP"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2044,11 +1636,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/WebCGM"
+                    "$ref":"#/definitions/WBMP"
                 }
             },
             "elementName":{
-                "localPart":"WebCGM",
+                "localPart":"WBMP",
                 "namespaceURI":""
             }
         },
@@ -2065,7 +1657,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "PNG"
+                                        "VendorSpecificCapabilities"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2078,11 +1670,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/PNG"
+                    "$ref":"#/definitions/VendorSpecificCapabilities"
                 }
             },
             "elementName":{
-                "localPart":"PNG",
+                "localPart":"VendorSpecificCapabilities",
                 "namespaceURI":""
             }
         },
@@ -2099,7 +1691,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "WMT_MS_Capabilities"
+                                        "Get"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2112,11 +1704,419 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/WMTMSCapabilities"
+                    "$ref":"#/definitions/Get"
                 }
             },
             "elementName":{
-                "localPart":"WMT_MS_Capabilities",
+                "localPart":"Get",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "FeatureInfo"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/FeatureInfo"
+                }
+            },
+            "elementName":{
+                "localPart":"FeatureInfo",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "MIME"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MIME"
+                }
+            },
+            "elementName":{
+                "localPart":"MIME",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "INIMAGE"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/INIMAGE"
+                }
+            },
+            "elementName":{
+                "localPart":"INIMAGE",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "GML.2"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GML2"
+                }
+            },
+            "elementName":{
+                "localPart":"GML.2",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Capability"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/Capability"
+                }
+            },
+            "elementName":{
+                "localPart":"Capability",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Layer"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/Layer"
+                }
+            },
+            "elementName":{
+                "localPart":"Layer",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "GML.1"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GML1"
+                }
+            },
+            "elementName":{
+                "localPart":"GML.1",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Service"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/Service"
+                }
+            },
+            "elementName":{
+                "localPart":"Service",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "HTTP"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/HTTP"
+                }
+            },
+            "elementName":{
+                "localPart":"HTTP",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "ScaleHint"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/ScaleHint"
+                }
+            },
+            "elementName":{
+                "localPart":"ScaleHint",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Post"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/Post"
+                }
+            },
+            "elementName":{
+                "localPart":"Post",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "WMS_XML"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/WMSXML"
+                }
+            },
+            "elementName":{
+                "localPart":"WMS_XML",
                 "namespaceURI":""
             }
         },
@@ -2201,7 +2201,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "ScaleHint"
+                                        "LatLonBoundingBox"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2214,11 +2214,79 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/ScaleHint"
+                    "$ref":"#/definitions/LatLonBoundingBox"
                 }
             },
             "elementName":{
-                "localPart":"ScaleHint",
+                "localPart":"LatLonBoundingBox",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SVG"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SVG"
+                }
+            },
+            "elementName":{
+                "localPart":"SVG",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Map"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/Map"
+                }
+            },
+            "elementName":{
+                "localPart":"Map",
                 "namespaceURI":""
             }
         },
@@ -2269,7 +2337,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "VendorSpecificCapabilities"
+                                        "Format"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2282,11 +2350,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/VendorSpecificCapabilities"
+                    "$ref":"#/definitions/Format"
                 }
             },
             "elementName":{
-                "localPart":"VendorSpecificCapabilities",
+                "localPart":"Format",
                 "namespaceURI":""
             }
         },
@@ -2303,7 +2371,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Service"
+                                        "WMT_MS_Capabilities"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2316,11 +2384,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/Service"
+                    "$ref":"#/definitions/WMTMSCapabilities"
                 }
             },
             "elementName":{
-                "localPart":"Service",
+                "localPart":"WMT_MS_Capabilities",
                 "namespaceURI":""
             }
         },
@@ -2337,7 +2405,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "GeoTIFF"
+                                        "WebCGM"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2350,11 +2418,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/GeoTIFF"
+                    "$ref":"#/definitions/WebCGM"
                 }
             },
             "elementName":{
-                "localPart":"GeoTIFF",
+                "localPart":"WebCGM",
                 "namespaceURI":""
             }
         },
@@ -2371,7 +2439,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Get"
+                                        "Exception"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2384,11 +2452,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/Get"
+                    "$ref":"#/definitions/Exception"
                 }
             },
             "elementName":{
-                "localPart":"Get",
+                "localPart":"Exception",
                 "namespaceURI":""
             }
         },
@@ -2405,7 +2473,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "GML.1"
+                                        "PNG"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2418,79 +2486,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/GML1"
+                    "$ref":"#/definitions/PNG"
                 }
             },
             "elementName":{
-                "localPart":"GML.1",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "BoundingBox"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/BoundingBox"
-                }
-            },
-            "elementName":{
-                "localPart":"BoundingBox",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Capabilities"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/Capabilities"
-                }
-            },
-            "elementName":{
-                "localPart":"Capabilities",
+                "localPart":"PNG",
                 "namespaceURI":""
             }
         }

@@ -4,15 +4,6 @@ var WCST_1_1_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/wcs\/1.1\/wcst',
     deps: ['OWS_1_1_0'],
     tis: [{
-        ln: 'CoverageType',
-        bti: 'OWS_1_1_0.ReferenceGroupType',
-        ps: [{
-            n: 'action',
-            rq: true,
-            en: 'Action',
-            ti: '.Action'
-          }]
-      }, {
         ln: 'AcknowledgementType',
         ps: [{
             n: 'timeStamp',
@@ -28,10 +19,6 @@ var WCST_1_1_Module_Factory = function () {
             en: 'OperationRequest',
             ti: '.TransactionType'
           }]
-      }, {
-        ln: 'Action',
-        tn: null,
-        bti: 'OWS_1_1_0.CodeType'
       }, {
         ln: 'TransactionType',
         ps: [{
@@ -61,6 +48,19 @@ var WCST_1_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'Action',
+        tn: null,
+        bti: 'OWS_1_1_0.CodeType'
+      }, {
+        ln: 'CoverageType',
+        bti: 'OWS_1_1_0.ReferenceGroupType',
+        ps: [{
+            n: 'action',
+            rq: true,
+            en: 'Action',
+            ti: '.Action'
+          }]
+      }, {
         ln: 'TransactionResponseType',
         ps: [{
             n: 'requestId',
@@ -78,12 +78,6 @@ var WCST_1_1_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'Acknowledgement',
-        ti: '.AcknowledgementType'
-      }, {
-        en: 'Action',
-        ti: '.Action'
-      }, {
         en: 'Coverage',
         ti: '.CoverageType',
         sh: {
@@ -91,13 +85,19 @@ var WCST_1_1_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/ows\/1.1'
         }
       }, {
+        en: 'TransactionResponse',
+        ti: '.TransactionResponseType'
+      }, {
+        en: 'Acknowledgement',
+        ti: '.AcknowledgementType'
+      }, {
+        en: 'Action',
+        ti: '.Action'
+      }, {
         en: 'RequestId'
       }, {
         en: 'Transaction',
         ti: '.TransactionType'
-      }, {
-        en: 'TransactionResponse',
-        ti: '.TransactionResponseType'
       }]
   };
   return {

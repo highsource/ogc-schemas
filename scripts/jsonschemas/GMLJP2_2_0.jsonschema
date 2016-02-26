@@ -2,266 +2,23 @@
 {
     "id":"http://www.opengis.net/gmljp2/2.0#",
     "definitions":{
-        "GMLJP2CoverageType":{
+        "GenericMetadataType":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
+                    "$ref":"#/definitions/ExtensionType"
                 },
                 {
                     "type":"object",
-                    "title":"GMLJP2CoverageType",
+                    "title":"GenericMetadataType",
                     "properties":{
-                        "feature":{
-                            "title":"feature",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/FeaturePropertyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"feature",
-                                "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
-                            }
-                        },
-                        "annotation":{
-                            "title":"annotation",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/GenericWithAssocPropertyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"annotation",
-                                "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
-                            }
-                        },
-                        "style":{
-                            "title":"style",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/GenericWithAssocPropertyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"style",
-                                "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
-                            }
-                        },
-                        "extension":{
-                            "title":"extension",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/GenericWithAssocPropertyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"extension",
-                                "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
-                            }
-                        }
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"GMLJP2CoverageType",
+                "localPart":"GenericMetadataType",
                 "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
-            },
-            "propertiesOrder":[
-                "feature",
-                "annotation",
-                "style",
-                "extension"
-            ]
-        },
-        "GenericWithAssocPropertyType":{
-            "type":"object",
-            "title":"GenericWithAssocPropertyType",
-            "required":[
-                "any"
-            ],
-            "properties":{
-                "any":{
-                    "title":"any",
-                    "allOf":[
-                        {
-                            "anyOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
-                                },
-                                {
-                                    "type":"object",
-                                    "properties":{
-                                        "name":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                        },
-                                        "value":{
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    ],
-                    "propertyType":"anyElement"
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":""
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml/3.2"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GenericWithAssocPropertyType",
-                "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
-            },
-            "propertiesOrder":[
-                "any",
-                "nilReason",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
+            }
         },
         "GMLJP2FeaturesType.Feature":{
             "allOf":[
@@ -438,32 +195,46 @@
                 "actuate"
             ]
         },
-        "GMLJP2CoverageCollectionType":{
-            "required":[
-                "featureMember"
-            ],
+        "GMLJP2CoverageType":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/AbstractCoverageType"
+                    "$ref":"#/definitions/AbstractDiscreteCoverageType"
                 },
                 {
                     "type":"object",
-                    "title":"GMLJP2CoverageCollectionType",
+                    "title":"GMLJP2CoverageType",
                     "properties":{
-                        "featureMember":{
-                            "title":"featureMember",
+                        "feature":{
+                            "title":"feature",
                             "allOf":[
                                 {
                                     "type":"array",
                                     "items":{
-                                        "$ref":"#/definitions/GMLJP2CoverageCollectionType.FeatureMember"
+                                        "$ref":"#/definitions/FeaturePropertyType"
                                     },
-                                    "minItems":1
+                                    "minItems":0
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"featureMember",
+                                "localPart":"feature",
+                                "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
+                            }
+                        },
+                        "annotation":{
+                            "title":"annotation",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/GenericWithAssocPropertyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"annotation",
                                 "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
                             }
                         },
@@ -506,11 +277,12 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"GMLJP2CoverageCollectionType",
+                "localPart":"GMLJP2CoverageType",
                 "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
             },
             "propertiesOrder":[
-                "featureMember",
+                "feature",
+                "annotation",
                 "style",
                 "extension"
             ]
@@ -588,23 +360,82 @@
                 "extension"
             ]
         },
-        "GenericMetadataType":{
+        "GMLJP2CoverageCollectionType":{
+            "required":[
+                "featureMember"
+            ],
             "allOf":[
                 {
-                    "$ref":"#/definitions/ExtensionType"
+                    "$ref":"#/definitions/AbstractCoverageType"
                 },
                 {
                     "type":"object",
-                    "title":"GenericMetadataType",
+                    "title":"GMLJP2CoverageCollectionType",
                     "properties":{
+                        "featureMember":{
+                            "title":"featureMember",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/GMLJP2CoverageCollectionType.FeatureMember"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"featureMember",
+                                "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
+                            }
+                        },
+                        "style":{
+                            "title":"style",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/GenericWithAssocPropertyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"style",
+                                "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
+                            }
+                        },
+                        "extension":{
+                            "title":"extension",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/GenericWithAssocPropertyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"extension",
+                                "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
+                            }
+                        }
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"GenericMetadataType",
+                "localPart":"GMLJP2CoverageCollectionType",
                 "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
-            }
+            },
+            "propertiesOrder":[
+                "featureMember",
+                "style",
+                "extension"
+            ]
         },
         "GMLJP2CoverageCollectionType.FeatureMember":{
             "required":[
@@ -636,6 +467,21 @@
                                                     }
                                                 },
                                                 "elementName":{
+                                                    "localPart":"GMLJP2GridCoverage",
+                                                    "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
+                                                }
+                                            },
+                                            {
+                                                "type":"object",
+                                                "properties":{
+                                                    "name":{
+                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                                    },
+                                                    "value":{
+                                                        "$ref":"#/definitions/GMLJP2CoverageType"
+                                                    }
+                                                },
+                                                "elementName":{
                                                     "localPart":"GMLJP2RectifiedGridCoverage",
                                                     "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
                                                 }
@@ -652,21 +498,6 @@
                                                 },
                                                 "elementName":{
                                                     "localPart":"GMLJP2ReferenceableGridCoverage",
-                                                    "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
-                                                }
-                                            },
-                                            {
-                                                "type":"object",
-                                                "properties":{
-                                                    "name":{
-                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                                    },
-                                                    "value":{
-                                                        "$ref":"#/definitions/GMLJP2CoverageType"
-                                                    }
-                                                },
-                                                "elementName":{
-                                                    "localPart":"GMLJP2GridCoverage",
                                                     "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
                                                 }
                                             },
@@ -828,6 +659,175 @@
                 "show",
                 "actuate"
             ]
+        },
+        "GenericWithAssocPropertyType":{
+            "type":"object",
+            "title":"GenericWithAssocPropertyType",
+            "required":[
+                "any"
+            ],
+            "properties":{
+                "any":{
+                    "title":"any",
+                    "allOf":[
+                        {
+                            "anyOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
+                                },
+                                {
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                        },
+                                        "value":{
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "propertyType":"anyElement"
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":""
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml/3.2"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GenericWithAssocPropertyType",
+                "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
+            },
+            "propertiesOrder":[
+                "any",
+                "nilReason",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
         }
     },
     "anyOf":[
@@ -844,7 +844,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "GMLJP2GridCoverage"
+                                        "GMLJP2RectifiedGridCoverage"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -861,7 +861,7 @@
                 }
             },
             "elementName":{
-                "localPart":"GMLJP2GridCoverage",
+                "localPart":"GMLJP2RectifiedGridCoverage",
                 "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
             }
         },
@@ -912,7 +912,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "GMLJP2RectifiedGridCoverage"
+                                        "GMLJP2Features"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -925,11 +925,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/GMLJP2CoverageType"
+                    "$ref":"#/definitions/GMLJP2FeaturesType"
                 }
             },
             "elementName":{
-                "localPart":"GMLJP2RectifiedGridCoverage",
+                "localPart":"GMLJP2Features",
                 "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
             }
         },
@@ -980,6 +980,40 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
+                                        "GMLJP2GridCoverage"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gmljp2/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GMLJP2CoverageType"
+                }
+            },
+            "elementName":{
+                "localPart":"GMLJP2GridCoverage",
+                "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
                                         "Metadata"
                                     ]
                                 },
@@ -998,40 +1032,6 @@
             },
             "elementName":{
                 "localPart":"Metadata",
-                "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "GMLJP2Features"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gmljp2/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GMLJP2FeaturesType"
-                }
-            },
-            "elementName":{
-                "localPart":"GMLJP2Features",
                 "namespaceURI":"http://www.opengis.net/gmljp2/2.0"
             }
         }

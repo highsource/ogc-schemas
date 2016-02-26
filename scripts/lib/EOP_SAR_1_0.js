@@ -38,21 +38,7 @@ var EOP_SAR_1_0_Module_Factory = function () {
         vs: ['D', 'Q', 'S', 'T', 'UNDEFINED']
       }],
     eis: [{
-        en: 'dopplerFrequency',
-        ti: 'GML_3_1_1.MeasureType'
-      }, {
-        en: 'incidenceAngleVariation',
-        ti: 'GML_3_1_1.AngleType'
-      }, {
-        en: 'maximumIncidenceAngle',
-        ti: 'GML_3_1_1.AngleType'
-      }, {
-        en: 'minimumIncidenceAngle',
-        ti: 'GML_3_1_1.AngleType'
-      }, {
         en: 'antennaLookDirection'
-      }, {
-        en: 'polarisationMode'
       }, {
         en: 'Acquisition',
         ti: '.AcquisitionType',
@@ -69,6 +55,20 @@ var EOP_SAR_1_0_Module_Factory = function () {
         }
       }, {
         en: 'polarisationChannels'
+      }, {
+        en: 'incidenceAngleVariation',
+        ti: 'GML_3_1_1.AngleType'
+      }, {
+        en: 'minimumIncidenceAngle',
+        ti: 'GML_3_1_1.AngleType'
+      }, {
+        en: 'dopplerFrequency',
+        ti: 'GML_3_1_1.MeasureType'
+      }, {
+        en: 'polarisationMode'
+      }, {
+        en: 'maximumIncidenceAngle',
+        ti: 'GML_3_1_1.AngleType'
       }]
   };
   return {

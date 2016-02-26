@@ -2,127 +2,6 @@
 {
     "id":"http://www.opengis.net/sen1/2.0#",
     "definitions":{
-        "QualityDisclaimerType":{
-            "type":"object",
-            "title":"QualityDisclaimerType",
-            "properties":{
-                "oqcFailed":{
-                    "title":"oqcFailed",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OQC_Failed",
-                        "namespaceURI":"http://www.opengis.net/sen1/2.0"
-                    }
-                },
-                "oqcUpdated":{
-                    "title":"oqcUpdated",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OQC_Updated",
-                        "namespaceURI":"http://www.opengis.net/sen1/2.0"
-                    }
-                },
-                "offQCResult":{
-                    "title":"offQCResult",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/QCResultType"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OffQC_Result",
-                        "namespaceURI":"http://www.opengis.net/sen1/2.0"
-                    }
-                },
-                "offQCDescription":{
-                    "title":"offQCDescription",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OffQC_Description",
-                        "namespaceURI":"http://www.opengis.net/sen1/2.0"
-                    }
-                },
-                "disclaimer":{
-                    "title":"disclaimer",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Disclaimer",
-                        "namespaceURI":"http://www.opengis.net/sen1/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"QualityDisclaimerType",
-                "namespaceURI":"http://www.opengis.net/sen1/2.0"
-            },
-            "propertiesOrder":[
-                "oqcFailed",
-                "oqcUpdated",
-                "offQCResult",
-                "offQCDescription",
-                "disclaimer"
-            ]
-        },
-        "DQElementPropertyType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/DQElementPropertyType"
-                },
-                {
-                    "type":"object",
-                    "title":"DQElementPropertyType",
-                    "properties":{
-                        "qualityDisclaimer":{
-                            "title":"qualityDisclaimer",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/QualityDisclaimerType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"qualityDisclaimer",
-                                "namespaceURI":"http://www.opengis.net/sen1/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DQ_Element_PropertyType",
-                "namespaceURI":"http://www.opengis.net/sen1/2.0"
-            },
-            "propertiesOrder":[
-                "qualityDisclaimer"
-            ]
-        },
         "EarthObservationResultType":{
             "allOf":[
                 {
@@ -155,60 +34,6 @@
             },
             "propertiesOrder":[
                 "timeliness"
-            ]
-        },
-        "EarthObservationMetadataType":{
-            "required":[
-                "rest"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationMetaDataType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationMetadataType",
-                    "properties":{
-                        "rest":{
-                            "title":"rest",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                            }
-                                        },
-                                        "elementName":{
-                                            "localPart":"parentIdentifier",
-                                            "namespaceURI":"http://www.opengis.net/sen1/2.0"
-                                        }
-                                    },
-                                    "maxItems":1,
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"parentIdentifier",
-                                "namespaceURI":"http://www.opengis.net/sen1/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationMetadataType",
-                "namespaceURI":"http://www.opengis.net/sen1/2.0"
-            },
-            "propertiesOrder":[
-                "rest"
             ]
         },
         "EarthObservationMetadataPropertyType":{
@@ -255,90 +80,6 @@
                 "owns"
             ]
         },
-        "EarthObservationType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/sar/2.0#/definitions/EarthObservationType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationType",
-                "namespaceURI":"http://www.opengis.net/sen1/2.0"
-            }
-        },
-        "AcquisitionType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/sar/2.0#/definitions/AcquisitionType"
-                },
-                {
-                    "type":"object",
-                    "title":"AcquisitionType",
-                    "properties":{
-                        "rest":{
-                            "title":"rest",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "anyOf":[
-                                            {
-                                                "type":"object",
-                                                "properties":{
-                                                    "name":{
-                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                                    },
-                                                    "value":{
-                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                                    }
-                                                },
-                                                "elementName":{
-                                                    "localPart":"polarisationChannels",
-                                                    "namespaceURI":"http://www.opengis.net/sen1/2.0"
-                                                }
-                                            },
-                                            {
-                                                "type":"object",
-                                                "properties":{
-                                                    "name":{
-                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                                    },
-                                                    "value":{
-                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                                    }
-                                                },
-                                                "elementName":{
-                                                    "localPart":"polarisationMode",
-                                                    "namespaceURI":"http://www.opengis.net/sen1/2.0"
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    "maxItems":2,
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"elementRefs"
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AcquisitionType",
-                "namespaceURI":"http://www.opengis.net/sen1/2.0"
-            },
-            "propertiesOrder":[
-                "rest"
-            ]
-        },
         "EarthObservationPropertyType":{
             "type":"object",
             "title":"EarthObservationPropertyType",
@@ -357,6 +98,19 @@
                     "elementName":{
                         "localPart":"EarthObservation",
                         "namespaceURI":"http://www.opengis.net/sen1/2.0"
+                    }
+                },
+                "owns":{
+                    "title":"owns",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"owns",
+                        "namespaceURI":""
                     }
                 },
                 "nilReason":{
@@ -478,6 +232,218 @@
                         "localPart":"actuate",
                         "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationPropertyType",
+                "namespaceURI":"http://www.opengis.net/sen1/2.0"
+            },
+            "propertiesOrder":[
+                "earthObservation",
+                "owns",
+                "nilReason",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "EarthObservationType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/sar/2.0#/definitions/EarthObservationType"
+                },
+                {
+                    "type":"object",
+                    "title":"EarthObservationType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationType",
+                "namespaceURI":"http://www.opengis.net/sen1/2.0"
+            }
+        },
+        "AcquisitionType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/sar/2.0#/definitions/AcquisitionType"
+                },
+                {
+                    "type":"object",
+                    "title":"AcquisitionType",
+                    "properties":{
+                        "rest":{
+                            "title":"rest",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "anyOf":[
+                                            {
+                                                "type":"object",
+                                                "properties":{
+                                                    "name":{
+                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                                    },
+                                                    "value":{
+                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                                    }
+                                                },
+                                                "elementName":{
+                                                    "localPart":"polarisationChannels",
+                                                    "namespaceURI":"http://www.opengis.net/sen1/2.0"
+                                                }
+                                            },
+                                            {
+                                                "type":"object",
+                                                "properties":{
+                                                    "name":{
+                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                                    },
+                                                    "value":{
+                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                                    }
+                                                },
+                                                "elementName":{
+                                                    "localPart":"polarisationMode",
+                                                    "namespaceURI":"http://www.opengis.net/sen1/2.0"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "maxItems":2,
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"elementRefs"
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AcquisitionType",
+                "namespaceURI":"http://www.opengis.net/sen1/2.0"
+            },
+            "propertiesOrder":[
+                "rest"
+            ]
+        },
+        "EarthObservationMetadataType":{
+            "required":[
+                "rest"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationMetaDataType"
+                },
+                {
+                    "type":"object",
+                    "title":"EarthObservationMetadataType",
+                    "properties":{
+                        "rest":{
+                            "title":"rest",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                            }
+                                        },
+                                        "elementName":{
+                                            "localPart":"parentIdentifier",
+                                            "namespaceURI":"http://www.opengis.net/sen1/2.0"
+                                        }
+                                    },
+                                    "maxItems":1,
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"parentIdentifier",
+                                "namespaceURI":"http://www.opengis.net/sen1/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationMetadataType",
+                "namespaceURI":"http://www.opengis.net/sen1/2.0"
+            },
+            "propertiesOrder":[
+                "rest"
+            ]
+        },
+        "DQElementPropertyType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/DQElementPropertyType"
+                },
+                {
+                    "type":"object",
+                    "title":"DQElementPropertyType",
+                    "properties":{
+                        "qualityDisclaimer":{
+                            "title":"qualityDisclaimer",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/QualityDisclaimerType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"qualityDisclaimer",
+                                "namespaceURI":"http://www.opengis.net/sen1/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DQ_Element_PropertyType",
+                "namespaceURI":"http://www.opengis.net/sen1/2.0"
+            },
+            "propertiesOrder":[
+                "qualityDisclaimer"
+            ]
+        },
+        "AcquisitionPropertyType":{
+            "type":"object",
+            "title":"AcquisitionPropertyType",
+            "required":[
+                "acquisition"
+            ],
+            "properties":{
+                "acquisition":{
+                    "title":"acquisition",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/AcquisitionType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Acquisition",
+                        "namespaceURI":"http://www.opengis.net/sen1/2.0"
+                    }
                 },
                 "owns":{
                     "title":"owns",
@@ -495,20 +461,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"EarthObservationPropertyType",
+                "localPart":"AcquisitionPropertyType",
                 "namespaceURI":"http://www.opengis.net/sen1/2.0"
             },
             "propertiesOrder":[
-                "earthObservation",
-                "nilReason",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate",
+                "acquisition",
                 "owns"
             ]
         },
@@ -685,73 +642,92 @@
                 "owns"
             ]
         },
-        "AcquisitionPropertyType":{
+        "QualityDisclaimerType":{
             "type":"object",
-            "title":"AcquisitionPropertyType",
-            "required":[
-                "acquisition"
-            ],
+            "title":"QualityDisclaimerType",
             "properties":{
-                "acquisition":{
-                    "title":"acquisition",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/AcquisitionType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Acquisition",
-                        "namespaceURI":"http://www.opengis.net/sen1/2.0"
-                    }
-                },
-                "owns":{
-                    "title":"owns",
+                "oqcFailed":{
+                    "title":"oqcFailed",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
                         }
                     ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"owns",
-                        "namespaceURI":""
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OQC_Failed",
+                        "namespaceURI":"http://www.opengis.net/sen1/2.0"
+                    }
+                },
+                "oqcUpdated":{
+                    "title":"oqcUpdated",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OQC_Updated",
+                        "namespaceURI":"http://www.opengis.net/sen1/2.0"
+                    }
+                },
+                "offQCResult":{
+                    "title":"offQCResult",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/QCResultType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OffQC_Result",
+                        "namespaceURI":"http://www.opengis.net/sen1/2.0"
+                    }
+                },
+                "offQCDescription":{
+                    "title":"offQCDescription",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OffQC_Description",
+                        "namespaceURI":"http://www.opengis.net/sen1/2.0"
+                    }
+                },
+                "disclaimer":{
+                    "title":"disclaimer",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Disclaimer",
+                        "namespaceURI":"http://www.opengis.net/sen1/2.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AcquisitionPropertyType",
+                "localPart":"QualityDisclaimerType",
                 "namespaceURI":"http://www.opengis.net/sen1/2.0"
             },
             "propertiesOrder":[
-                "acquisition",
-                "owns"
+                "oqcFailed",
+                "oqcUpdated",
+                "offQCResult",
+                "offQCDescription",
+                "disclaimer"
             ]
-        },
-        "TimelinessType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"TimelinessType",
-                "namespaceURI":"http://www.opengis.net/sen1/2.0"
-            }
-        },
-        "QCResultType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"QCResultType",
-                "namespaceURI":"http://www.opengis.net/sen1/2.0"
-            }
         },
         "PolarisationModeValueEnumerationType":{
             "allOf":[
@@ -765,6 +741,18 @@
                 "namespaceURI":"http://www.opengis.net/sen1/2.0"
             }
         },
+        "TimelinessType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"TimelinessType",
+                "namespaceURI":"http://www.opengis.net/sen1/2.0"
+            }
+        },
         "PolarisationChannelsValueEnumerationType":{
             "allOf":[
                 {
@@ -774,6 +762,18 @@
             "typeType":"enumInfo",
             "typeName":{
                 "localPart":"PolarisationChannelsValueEnumerationType",
+                "namespaceURI":"http://www.opengis.net/sen1/2.0"
+            }
+        },
+        "QCResultType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"QCResultType",
                 "namespaceURI":"http://www.opengis.net/sen1/2.0"
             }
         }
@@ -792,7 +792,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "EarthObservation"
+                                        "parentIdentifier"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -805,114 +805,15 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/EarthObservationType"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                 }
             },
             "elementName":{
-                "localPart":"EarthObservation",
+                "localPart":"parentIdentifier",
                 "namespaceURI":"http://www.opengis.net/sen1/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "EarthObservationResult"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sen1/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/EarthObservationResultType"
-                }
             },
-            "elementName":{
-                "localPart":"EarthObservationResult",
-                "namespaceURI":"http://www.opengis.net/sen1/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "EarthObservationMetadata"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sen1/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/EarthObservationMetadataType"
-                }
-            },
-            "elementName":{
-                "localPart":"EarthObservationMetadata",
-                "namespaceURI":"http://www.opengis.net/sen1/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Acquisition"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/sen1/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/AcquisitionType"
-                }
-            },
-            "elementName":{
-                "localPart":"Acquisition",
-                "namespaceURI":"http://www.opengis.net/sen1/2.0"
+            "scope":{
+                "$ref":"#/definitions/EarthObservationMetadataType"
             }
         },
         {
@@ -965,6 +866,40 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
+                                        "EarthObservationResult"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sen1/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/EarthObservationResultType"
+                }
+            },
+            "elementName":{
+                "localPart":"EarthObservationResult",
+                "namespaceURI":"http://www.opengis.net/sen1/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
                                         "polarisationMode"
                                     ]
                                 },
@@ -1002,7 +937,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "parentIdentifier"
+                                        "Acquisition"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1015,15 +950,80 @@
                     ]
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/AcquisitionType"
                 }
             },
             "elementName":{
-                "localPart":"parentIdentifier",
+                "localPart":"Acquisition",
                 "namespaceURI":"http://www.opengis.net/sen1/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "EarthObservationMetadata"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sen1/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/EarthObservationMetadataType"
+                }
             },
-            "scope":{
-                "$ref":"#/definitions/EarthObservationMetadataType"
+            "elementName":{
+                "localPart":"EarthObservationMetadata",
+                "namespaceURI":"http://www.opengis.net/sen1/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "EarthObservation"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/sen1/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/EarthObservationType"
+                }
+            },
+            "elementName":{
+                "localPart":"EarthObservation",
+                "namespaceURI":"http://www.opengis.net/sen1/2.0"
             }
         }
     ]

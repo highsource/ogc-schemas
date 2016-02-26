@@ -2,8 +2,113 @@ var SLD_1_1_0_Module_Factory = function () {
   var SLD_1_1_0 = {
     n: 'SLD_1_1_0',
     dens: 'http:\/\/www.opengis.net\/sld',
-    deps: ['GML_3_1_1', 'WMS_1_3_0', 'SE_1_1_0', 'Filter_1_1_0', 'OWS_1_0_0'],
+    deps: ['GML_3_1_1', 'WMS_1_3_0', 'SE_1_1_0', 'OWS_1_0_0', 'Filter_1_1_0'],
     tis: [{
+        ln: 'OutputType',
+        ps: [{
+            n: 'size',
+            rq: true,
+            en: 'Size',
+            ti: '.OutputType.Size'
+          }, {
+            n: 'format',
+            rq: true,
+            en: {
+              lp: 'Format',
+              ns: 'http:\/\/www.opengis.net\/wms'
+            }
+          }, {
+            n: 'transparent',
+            en: 'Transparent',
+            ti: 'Boolean'
+          }, {
+            n: 'bGcolor',
+            en: 'BGcolor'
+          }]
+      }, {
+        ln: 'CoverageConstraint',
+        tn: null,
+        ps: [{
+            n: 'coverageName',
+            rq: true,
+            en: {
+              lp: 'CoverageName',
+              ns: 'http:\/\/www.opengis.net\/se'
+            }
+          }, {
+            n: 'coverageExtent',
+            en: 'CoverageExtent',
+            ti: '.CoverageExtent'
+          }]
+      }, {
+        ln: 'UseSLDLibrary',
+        tn: null,
+        ps: [{
+            n: 'onlineResource',
+            rq: true,
+            en: {
+              lp: 'OnlineResource',
+              ns: 'http:\/\/www.opengis.net\/se'
+            },
+            ti: 'SE_1_1_0.OnlineResourceType'
+          }]
+      }, {
+        ln: 'UserLayer',
+        tn: null,
+        ps: [{
+            n: 'name',
+            en: {
+              lp: 'Name',
+              ns: 'http:\/\/www.opengis.net\/se'
+            }
+          }, {
+            n: 'description',
+            en: {
+              lp: 'Description',
+              ns: 'http:\/\/www.opengis.net\/se'
+            },
+            ti: 'SE_1_1_0.DescriptionType'
+          }, {
+            n: 'remoteOWS',
+            rq: true,
+            en: 'RemoteOWS',
+            ti: '.RemoteOWS'
+          }, {
+            n: 'inlineFeature',
+            rq: true,
+            en: 'InlineFeature',
+            ti: '.InlineFeature'
+          }, {
+            n: 'layerFeatureConstraints',
+            rq: true,
+            en: 'LayerFeatureConstraints',
+            ti: '.LayerFeatureConstraints'
+          }, {
+            n: 'layerCoverageConstraints',
+            rq: true,
+            en: 'LayerCoverageConstraints',
+            ti: '.LayerCoverageConstraints'
+          }, {
+            n: 'userStyle',
+            rq: true,
+            col: true,
+            en: 'UserStyle',
+            ti: '.UserStyle'
+          }]
+      }, {
+        ln: 'IntervalType',
+        ps: [{
+            n: 'min',
+            rq: true,
+            en: 'Min',
+            ti: 'Double'
+          }, {
+            n: 'max',
+            rq: true,
+            en: 'Max',
+            ti: 'Double'
+          }]
+      }, {
         ln: 'TypeNameType',
         ps: [{
             n: 'featureTypeName',
@@ -22,137 +127,28 @@ var SLD_1_1_0_Module_Factory = function () {
             }
           }]
       }, {
-        ln: 'LayerCoverageConstraints',
+        ln: 'FeatureTypeConstraint',
         tn: null,
         ps: [{
-            n: 'coverageConstraint',
-            rq: true,
-            col: true,
-            en: 'CoverageConstraint',
-            ti: '.CoverageConstraint'
-          }]
-      }, {
-        ln: 'CoverageConstraint',
-        tn: null,
-        ps: [{
-            n: 'coverageName',
-            rq: true,
+            n: 'featureTypeName',
             en: {
-              lp: 'CoverageName',
+              lp: 'FeatureTypeName',
               ns: 'http:\/\/www.opengis.net\/se'
-            }
-          }, {
-            n: 'coverageExtent',
-            en: 'CoverageExtent',
-            ti: '.CoverageExtent'
-          }]
-      }, {
-        ln: 'OutputType.Size',
-        tn: null,
-        ps: [{
-            n: 'width',
-            rq: true,
-            en: 'Width',
-            ti: 'PositiveInteger'
-          }, {
-            n: 'height',
-            rq: true,
-            en: 'Height',
-            ti: 'PositiveInteger'
-          }]
-      }, {
-        ln: 'Extent',
-        tn: null,
-        ps: [{
-            n: 'name',
-            rq: true,
-            en: {
-              lp: 'Name',
-              ns: 'http:\/\/www.opengis.net\/se'
-            }
-          }, {
-            n: 'value',
-            rq: true,
-            en: 'Value'
-          }]
-      }, {
-        ln: 'IntervalType',
-        ps: [{
-            n: 'min',
-            rq: true,
-            en: 'Min',
-            ti: 'Double'
-          }, {
-            n: 'max',
-            rq: true,
-            en: 'Max',
-            ti: 'Double'
-          }]
-      }, {
-        ln: 'DescribeLayerResponseType',
-        ps: [{
-            n: 'version',
-            rq: true,
-            en: 'Version'
-          }, {
-            n: 'layerDescription',
-            rq: true,
-            col: true,
-            en: 'LayerDescription',
-            ti: '.LayerDescriptionType'
-          }]
-      }, {
-        ln: 'GetMapType',
-        ps: [{
-            n: 'styledLayerDescriptor',
-            rq: true,
-            en: 'StyledLayerDescriptor',
-            ti: '.StyledLayerDescriptor'
-          }, {
-            n: 'crs',
-            rq: true,
-            en: 'CRS'
-          }, {
-            n: 'boundingBox',
-            rq: true,
-            en: 'BoundingBox',
-            ti: 'OWS_1_0_0.BoundingBoxType'
-          }, {
-            n: 'output',
-            rq: true,
-            en: 'Output',
-            ti: '.OutputType'
-          }, {
-            n: 'exceptions',
-            en: 'Exceptions'
-          }, {
-            n: 'time',
-            en: 'Time',
-            ti: 'DateTime'
-          }, {
-            n: 'elevation',
-            en: 'Elevation',
-            ti: '.ElevationType'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
             },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ElevationType',
-        ps: [{
-            n: 'value',
-            rq: true,
-            col: true,
-            en: 'Value',
-            ti: 'Double'
+            ti: 'QName'
           }, {
-            n: 'interval',
-            rq: true,
-            en: 'Interval',
-            ti: '.IntervalType'
+            n: 'filter',
+            en: {
+              lp: 'Filter',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'Filter_1_1_0.FilterType'
+          }, {
+            n: 'extent',
+            mno: 0,
+            col: true,
+            en: 'Extent',
+            ti: '.Extent'
           }]
       }, {
         ln: 'NamedLayer',
@@ -187,6 +183,19 @@ var SLD_1_1_0_Module_Factory = function () {
                 ti: '.UserStyle'
               }],
             t: 'es'
+          }]
+      }, {
+        ln: 'DescribeLayerResponseType',
+        ps: [{
+            n: 'version',
+            rq: true,
+            en: 'Version'
+          }, {
+            n: 'layerDescription',
+            rq: true,
+            col: true,
+            en: 'LayerDescription',
+            ti: '.LayerDescriptionType'
           }]
       }, {
         ln: 'StyledLayerDescriptor',
@@ -232,7 +241,17 @@ var SLD_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'RangeAxis',
+        ln: 'LayerCoverageConstraints',
+        tn: null,
+        ps: [{
+            n: 'coverageConstraint',
+            rq: true,
+            col: true,
+            en: 'CoverageConstraint',
+            ti: '.CoverageConstraint'
+          }]
+      }, {
+        ln: 'NamedStyle',
         tn: null,
         ps: [{
             n: 'name',
@@ -242,9 +261,123 @@ var SLD_1_1_0_Module_Factory = function () {
               ns: 'http:\/\/www.opengis.net\/se'
             }
           }, {
+            n: 'description',
+            en: {
+              lp: 'Description',
+              ns: 'http:\/\/www.opengis.net\/se'
+            },
+            ti: 'SE_1_1_0.DescriptionType'
+          }]
+      }, {
+        ln: 'ElevationType',
+        ps: [{
             n: 'value',
             rq: true,
-            en: 'Value'
+            col: true,
+            en: 'Value',
+            ti: 'Double'
+          }, {
+            n: 'interval',
+            rq: true,
+            en: 'Interval',
+            ti: '.IntervalType'
+          }]
+      }, {
+        ln: 'GetMapType',
+        ps: [{
+            n: 'styledLayerDescriptor',
+            rq: true,
+            en: 'StyledLayerDescriptor',
+            ti: '.StyledLayerDescriptor'
+          }, {
+            n: 'crs',
+            rq: true,
+            en: 'CRS'
+          }, {
+            n: 'boundingBox',
+            rq: true,
+            en: 'BoundingBox',
+            ti: 'OWS_1_0_0.BoundingBoxType'
+          }, {
+            n: 'output',
+            rq: true,
+            en: 'Output',
+            ti: '.OutputType'
+          }, {
+            n: 'exceptions',
+            en: 'Exceptions'
+          }, {
+            n: 'time',
+            en: 'Time',
+            ti: 'DateTime'
+          }, {
+            n: 'elevation',
+            en: 'Elevation',
+            ti: '.ElevationType'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'UserStyle',
+        tn: null,
+        ps: [{
+            n: 'name',
+            en: {
+              lp: 'Name',
+              ns: 'http:\/\/www.opengis.net\/se'
+            }
+          }, {
+            n: 'description',
+            en: {
+              lp: 'Description',
+              ns: 'http:\/\/www.opengis.net\/se'
+            },
+            ti: 'SE_1_1_0.DescriptionType'
+          }, {
+            n: 'isDefault',
+            en: 'IsDefault',
+            ti: 'Boolean'
+          }, {
+            n: 'featureTypeStyleOrCoverageStyleOrOnlineResource',
+            rq: true,
+            col: true,
+            etis: [{
+                en: {
+                  lp: 'FeatureTypeStyle',
+                  ns: 'http:\/\/www.opengis.net\/se'
+                },
+                ti: 'SE_1_1_0.FeatureTypeStyleType'
+              }, {
+                en: {
+                  lp: 'CoverageStyle',
+                  ns: 'http:\/\/www.opengis.net\/se'
+                },
+                ti: 'SE_1_1_0.CoverageStyleType'
+              }, {
+                en: {
+                  lp: 'OnlineResource',
+                  ns: 'http:\/\/www.opengis.net\/se'
+                },
+                ti: 'SE_1_1_0.OnlineResourceType'
+              }],
+            t: 'es'
+          }]
+      }, {
+        ln: 'InlineFeature',
+        tn: null,
+        ps: [{
+            n: 'featureCollection',
+            rq: true,
+            col: true,
+            en: {
+              lp: 'FeatureCollection',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.FeatureCollectionType'
           }]
       }, {
         ln: 'UserDefinedSymbolization',
@@ -293,50 +426,7 @@ var SLD_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'UserLayer',
-        tn: null,
-        ps: [{
-            n: 'name',
-            en: {
-              lp: 'Name',
-              ns: 'http:\/\/www.opengis.net\/se'
-            }
-          }, {
-            n: 'description',
-            en: {
-              lp: 'Description',
-              ns: 'http:\/\/www.opengis.net\/se'
-            },
-            ti: 'SE_1_1_0.DescriptionType'
-          }, {
-            n: 'remoteOWS',
-            rq: true,
-            en: 'RemoteOWS',
-            ti: '.RemoteOWS'
-          }, {
-            n: 'inlineFeature',
-            rq: true,
-            en: 'InlineFeature',
-            ti: '.InlineFeature'
-          }, {
-            n: 'layerFeatureConstraints',
-            rq: true,
-            en: 'LayerFeatureConstraints',
-            ti: '.LayerFeatureConstraints'
-          }, {
-            n: 'layerCoverageConstraints',
-            rq: true,
-            en: 'LayerCoverageConstraints',
-            ti: '.LayerCoverageConstraints'
-          }, {
-            n: 'userStyle',
-            rq: true,
-            col: true,
-            en: 'UserStyle',
-            ti: '.UserStyle'
-          }]
-      }, {
-        ln: 'NamedStyle',
+        ln: 'RangeAxis',
         tn: null,
         ps: [{
             n: 'name',
@@ -346,28 +436,9 @@ var SLD_1_1_0_Module_Factory = function () {
               ns: 'http:\/\/www.opengis.net\/se'
             }
           }, {
-            n: 'description',
-            en: {
-              lp: 'Description',
-              ns: 'http:\/\/www.opengis.net\/se'
-            },
-            ti: 'SE_1_1_0.DescriptionType'
-          }]
-      }, {
-        ln: 'RemoteOWS',
-        tn: null,
-        ps: [{
-            n: 'service',
+            n: 'value',
             rq: true,
-            en: 'Service'
-          }, {
-            n: 'onlineResource',
-            rq: true,
-            en: {
-              lp: 'OnlineResource',
-              ns: 'http:\/\/www.opengis.net\/se'
-            },
-            ti: 'SE_1_1_0.OnlineResourceType'
+            en: 'Value'
           }]
       }, {
         ln: 'LayerFeatureConstraints',
@@ -380,84 +451,33 @@ var SLD_1_1_0_Module_Factory = function () {
             ti: '.FeatureTypeConstraint'
           }]
       }, {
-        ln: 'InlineFeature',
-        tn: null,
-        ps: [{
-            n: 'featureCollection',
-            rq: true,
-            col: true,
-            en: {
-              lp: 'FeatureCollection',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.FeatureCollectionType'
-          }]
-      }, {
-        ln: 'UserStyle',
+        ln: 'Extent',
         tn: null,
         ps: [{
             n: 'name',
+            rq: true,
             en: {
               lp: 'Name',
               ns: 'http:\/\/www.opengis.net\/se'
             }
           }, {
-            n: 'description',
-            en: {
-              lp: 'Description',
-              ns: 'http:\/\/www.opengis.net\/se'
-            },
-            ti: 'SE_1_1_0.DescriptionType'
-          }, {
-            n: 'isDefault',
-            en: 'IsDefault',
-            ti: 'Boolean'
-          }, {
-            n: 'featureTypeStyleOrCoverageStyleOrOnlineResource',
+            n: 'value',
             rq: true,
-            col: true,
-            etis: [{
-                en: {
-                  lp: 'FeatureTypeStyle',
-                  ns: 'http:\/\/www.opengis.net\/se'
-                },
-                ti: 'SE_1_1_0.FeatureTypeStyleType'
-              }, {
-                en: {
-                  lp: 'CoverageStyle',
-                  ns: 'http:\/\/www.opengis.net\/se'
-                },
-                ti: 'SE_1_1_0.CoverageStyleType'
-              }, {
-                en: {
-                  lp: 'OnlineResource',
-                  ns: 'http:\/\/www.opengis.net\/se'
-                },
-                ti: 'SE_1_1_0.OnlineResourceType'
-              }],
-            t: 'es'
+            en: 'Value'
           }]
       }, {
-        ln: 'OutputType',
+        ln: 'OutputType.Size',
+        tn: null,
         ps: [{
-            n: 'size',
+            n: 'width',
             rq: true,
-            en: 'Size',
-            ti: '.OutputType.Size'
+            en: 'Width',
+            ti: 'PositiveInteger'
           }, {
-            n: 'format',
+            n: 'height',
             rq: true,
-            en: {
-              lp: 'Format',
-              ns: 'http:\/\/www.opengis.net\/wms'
-            }
-          }, {
-            n: 'transparent',
-            en: 'Transparent',
-            ti: 'Boolean'
-          }, {
-            n: 'bGcolor',
-            en: 'BGcolor'
+            en: 'Height',
+            ti: 'PositiveInteger'
           }]
       }, {
         ln: 'CoverageExtent',
@@ -493,9 +513,13 @@ var SLD_1_1_0_Module_Factory = function () {
             ti: '.TypeNameType'
           }]
       }, {
-        ln: 'UseSLDLibrary',
+        ln: 'RemoteOWS',
         tn: null,
         ps: [{
+            n: 'service',
+            rq: true,
+            en: 'Service'
+          }, {
             n: 'onlineResource',
             rq: true,
             en: {
@@ -503,30 +527,6 @@ var SLD_1_1_0_Module_Factory = function () {
               ns: 'http:\/\/www.opengis.net\/se'
             },
             ti: 'SE_1_1_0.OnlineResourceType'
-          }]
-      }, {
-        ln: 'FeatureTypeConstraint',
-        tn: null,
-        ps: [{
-            n: 'featureTypeName',
-            en: {
-              lp: 'FeatureTypeName',
-              ns: 'http:\/\/www.opengis.net\/se'
-            },
-            ti: 'QName'
-          }, {
-            n: 'filter',
-            en: {
-              lp: 'Filter',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: 'Filter_1_1_0.FilterType'
-          }, {
-            n: 'extent',
-            mno: 0,
-            col: true,
-            en: 'Extent',
-            ti: '.Extent'
           }]
       }, {
         t: 'enum',
@@ -538,41 +538,33 @@ var SLD_1_1_0_Module_Factory = function () {
         vs: ['wfs', 'wcs']
       }],
     eis: [{
-        en: 'Extent',
-        ti: '.Extent'
+        en: 'Value'
+      }, {
+        en: 'IsDefault',
+        ti: 'Boolean'
+      }, {
+        en: 'NamedLayer',
+        ti: '.NamedLayer'
       }, {
         en: 'CoverageExtent',
         ti: '.CoverageExtent'
       }, {
-        en: 'RangeAxis',
-        ti: '.RangeAxis'
-      }, {
         en: 'TimePeriod'
-      }, {
-        en: 'DescribeLayer',
-        ti: 'WMS_1_3_0.OperationType',
-        sh: {
-          lp: '_ExtendedOperation',
-          ns: 'http:\/\/www.opengis.net\/wms'
-        }
       }, {
         en: 'DescribeLayerResponse',
         ti: '.DescribeLayerResponseType'
       }, {
-        en: 'UserDefinedSymbolization',
-        ti: '.UserDefinedSymbolization',
-        sh: {
-          lp: '_ExtendedCapabilities',
-          ns: 'http:\/\/www.opengis.net\/wms'
-        }
+        en: 'FeatureTypeConstraint',
+        ti: '.FeatureTypeConstraint'
+      }, {
+        en: 'RemoteOWS',
+        ti: '.RemoteOWS'
       }, {
         en: 'LayerCoverageConstraints',
         ti: '.LayerCoverageConstraints'
       }, {
-        en: 'StyledLayerDescriptor',
-        ti: '.StyledLayerDescriptor'
-      }, {
-        en: 'Value'
+        en: 'CoverageConstraint',
+        ti: '.CoverageConstraint'
       }, {
         en: 'NamedStyle',
         ti: '.NamedStyle'
@@ -580,11 +572,11 @@ var SLD_1_1_0_Module_Factory = function () {
         en: 'UserStyle',
         ti: '.UserStyle'
       }, {
-        en: 'RemoteOWS',
-        ti: '.RemoteOWS'
+        en: 'Extent',
+        ti: '.Extent'
       }, {
-        en: 'IsDefault',
-        ti: 'Boolean'
+        en: 'InlineFeature',
+        ti: '.InlineFeature'
       }, {
         en: 'Service'
       }, {
@@ -595,29 +587,37 @@ var SLD_1_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/wms'
         }
       }, {
-        en: 'LayerFeatureConstraints',
-        ti: '.LayerFeatureConstraints'
+        en: 'GetMap',
+        ti: '.GetMapType'
+      }, {
+        en: 'StyledLayerDescriptor',
+        ti: '.StyledLayerDescriptor'
       }, {
         en: 'UseSLDLibrary',
         ti: '.UseSLDLibrary'
       }, {
+        en: 'LayerFeatureConstraints',
+        ti: '.LayerFeatureConstraints'
+      }, {
         en: 'UserLayer',
         ti: '.UserLayer'
       }, {
-        en: 'FeatureTypeConstraint',
-        ti: '.FeatureTypeConstraint'
+        en: 'DescribeLayer',
+        ti: 'WMS_1_3_0.OperationType',
+        sh: {
+          lp: '_ExtendedOperation',
+          ns: 'http:\/\/www.opengis.net\/wms'
+        }
       }, {
-        en: 'InlineFeature',
-        ti: '.InlineFeature'
+        en: 'RangeAxis',
+        ti: '.RangeAxis'
       }, {
-        en: 'GetMap',
-        ti: '.GetMapType'
-      }, {
-        en: 'NamedLayer',
-        ti: '.NamedLayer'
-      }, {
-        en: 'CoverageConstraint',
-        ti: '.CoverageConstraint'
+        en: 'UserDefinedSymbolization',
+        ti: '.UserDefinedSymbolization',
+        sh: {
+          lp: '_ExtendedCapabilities',
+          ns: 'http:\/\/www.opengis.net\/wms'
+        }
       }]
   };
   return {

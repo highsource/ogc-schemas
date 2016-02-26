@@ -4,6 +4,19 @@ var EOP_OPT_1_0_Module_Factory = function () {
     dens: 'http:\/\/earth.esa.int\/opt',
     deps: ['EOP_1_0', 'GML_3_1_1'],
     tis: [{
+        ln: 'EarthObservationType',
+        bti: 'EOP_1_0.EarthObservationType'
+      }, {
+        ln: 'AcquisitionType',
+        bti: 'EOP_1_0.AcquisitionType',
+        ps: [{
+            n: 'illuminationAzimuthAngle',
+            ti: 'GML_3_1_1.AngleType'
+          }, {
+            n: 'illuminationElevationAngle',
+            ti: 'GML_3_1_1.AngleType'
+          }]
+      }, {
         ln: 'EarthObservationResultType',
         bti: 'EOP_1_0.EarthObservationResultType',
         ps: [{
@@ -23,21 +36,15 @@ var EOP_OPT_1_0_Module_Factory = function () {
           }, {
             n: 'snowCoverPercentageQuotationMode'
           }]
-      }, {
-        ln: 'EarthObservationType',
-        bti: 'EOP_1_0.EarthObservationType'
-      }, {
-        ln: 'AcquisitionType',
-        bti: 'EOP_1_0.AcquisitionType',
-        ps: [{
-            n: 'illuminationAzimuthAngle',
-            ti: 'GML_3_1_1.AngleType'
-          }, {
-            n: 'illuminationElevationAngle',
-            ti: 'GML_3_1_1.AngleType'
-          }]
       }],
     eis: [{
+        en: 'EarthObservationResult',
+        ti: '.EarthObservationResultType',
+        sh: {
+          lp: 'EarthObservationResult',
+          ns: 'http:\/\/earth.esa.int\/eop'
+        }
+      }, {
         en: 'EarthObservation',
         ti: '.EarthObservationType',
         sh: {
@@ -49,13 +56,6 @@ var EOP_OPT_1_0_Module_Factory = function () {
         ti: '.AcquisitionType',
         sh: {
           lp: 'Acquisition',
-          ns: 'http:\/\/earth.esa.int\/eop'
-        }
-      }, {
-        en: 'EarthObservationResult',
-        ti: '.EarthObservationResultType',
-        sh: {
-          lp: 'EarthObservationResult',
           ns: 'http:\/\/earth.esa.int\/eop'
         }
       }]

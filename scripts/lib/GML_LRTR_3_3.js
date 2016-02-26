@@ -3,15 +3,8 @@ var GML_LRTR_3_3_Module_Factory = function () {
     n: 'GML_LRTR_3_3',
     dens: 'http:\/\/www.opengis.net\/gml\/3.3\/lrtr',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_LR_3_3'],
+    deps: ['GML_LR_3_3', 'XLink_1_0'],
     tis: [{
-        ln: 'DualAlongReferentType',
-        bti: 'GML_LR_3_3.AlongReferentType',
-        ps: [{
-            n: 'towardsReferent',
-            ti: 'GML_LR_3_3.ReferentPropertyType'
-          }]
-      }, {
         ln: 'DualAlongReferentPropertyType',
         ps: [{
             n: 'dualAlongReferent',
@@ -58,6 +51,13 @@ var GML_LRTR_3_3_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'DualAlongReferentType',
+        bti: 'GML_LR_3_3.AlongReferentType',
+        ps: [{
+            n: 'towardsReferent',
+            ti: 'GML_LR_3_3.ReferentPropertyType'
           }]
       }],
     eis: [{
