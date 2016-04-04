@@ -59,6 +59,7 @@
 	</scm>
 	<modules>
 		<!-- Schemas -->
+        <!--
 		<module>schemas</module>
 		<module>schema-parent</module>
 		<module>dtd-parent</module>
@@ -69,7 +70,6 @@
 		<module>eop</module>
 		<module>eosps</module>
 		<module>filter</module>
-                <module>geodesyml</module>
 		<module>gml</module>
 		<module>gmlcov</module>
 		<module>gmljp2</module>
@@ -110,6 +110,7 @@
 		<module>xal</module>
 		<module>scripts</module>
 		<module>dist</module>
+        -->
 	</modules>
 	<profiles>
 		<profile>
@@ -118,6 +119,17 @@
 				<module>dist</module>
 			</modules-->
 		</profile>
+        <profile>
+            <id>geodesyml</id>
+            <modules>
+                <module>schemas</module>
+                <module>schema-parent</module>
+                <module>iso19139/20070417</module>
+                <module>om/2.0</module>
+                <module>gml/3.2.1</module>
+                <module>geodesyml/0.3</module>
+            </modules>
+        </profile>
 	</profiles>
 	<properties> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
