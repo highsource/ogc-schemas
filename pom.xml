@@ -111,6 +111,12 @@
 		<module>scripts</module>
 		<module>dist</module>
         -->
+        <module>schemas</module>
+        <module>schema-parent</module>
+        <module>iso19139/20070417</module>
+        <module>om/2.0</module>
+        <module>gml/3.2.1</module>
+        <module>geodesyml/0.3</module>
 	</modules>
 	<profiles>
 		<profile>
@@ -119,17 +125,6 @@
 				<module>dist</module>
 			</modules-->
 		</profile>
-        <profile>
-            <id>geodesyml</id>
-            <modules>
-                <module>schemas</module>
-                <module>schema-parent</module>
-                <module>iso19139/20070417</module>
-                <module>om/2.0</module>
-                <module>gml/3.2.1</module>
-                <module>geodesyml/0.3</module>
-            </modules>
-        </profile>
 	</profiles>
 	<properties> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
