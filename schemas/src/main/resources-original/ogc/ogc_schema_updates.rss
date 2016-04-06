@@ -18,17 +18,20 @@
    geospatial and location based services.</description>
 <dc:language>en-us</dc:language>
 <dc:rights>Copyright 1994-2010, Open Geospatial Consortium.</dc:rights>
-<dc:date>2015-10-22T17:13:53:+00:00
+<dc:date>2016-04-05T19:39:22:+00:00
 </dc:date>
 <dc:publisher>Open Geospatial Consortium</dc:publisher>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:subject>OGC Standards</dc:subject>
-<syn:updateBase>2015-10-22T17:13:53:+00:00
+<syn:updateBase>2016-04-05T19:39:22:+00:00
 </syn:updateBase>
 <syn:updateFrequency>2</syn:updateFrequency>
 <syn:updatePeriod>hourly</syn:updatePeriod>
 <items>
  <rdf:Seq>
+  <rdf:li rdf:resource="http://schemas.opengis.net/opensearchgeo/ReadMe.txt#20160405t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20160203t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/wmts/ReadMe.txt#20160122t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/waterml/ReadMe.txt#20151022t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/kml/2.3/ReadMe.txt#20151022t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wfs/ReadMe.txt#20151013t15" />
@@ -101,6 +104,35 @@
 <url>http://www.opengeospatial.org/themes/ogc/logo.png</url>
 <link>http://www.opengeospatial.org/</link>
 </image>
+<item rdf:about="http://schemas.opengis.net/opensearchgeo/ReadMe.txt#20160405t15">
+<title>OGC OpenSearch Geo Schema Updated</title>
+<link>http://schemas.opengis.net/opensearchgeo/ReadMe.txt#20160405t15</link>
+<description>The OGC OpenSearch Geo 1.0 schema have been updated to correct the cardinality of Language, InputEncoding and OutputEncoding elements (changed ? to *), change Tags max length set to 256 characters, and Increment version to 1.0.1.  See http://www.opengeospatial.org/standards/opensearchgeo for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-04-05T15:46:08:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC OpenSearch Geo 1.0 Standard Schema Updated</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/wcs/ReadMe.txt#20160203t15">
+<title>OGC WCS 2.0 CRS Extension 1.0.0 Schema Added</title>
+<link>http://schemas.opengis.net/wcs/ReadMe.txt#20160203t15</link>
+<description>The OGC WCS 2.0 CRS Extension 1.0 schema described in OGC document 11-053r1 has been added.  
+See http://www.opengeospatial.org/standards/wcs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-02-03T15:46:07:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC WCS 2.0 CRS Extension 1.0 Schema Added</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/wmts/ReadMe.txt#20160122t15">
+<title>OGC WMTS Simple Profile 1.0 - Schema Added</title>
+<link>http://schemas.opengis.net/wmts/ReadMe.txt#20160122t15</link>
+<description>The OGC WMTS Simple Profile 1.0 schema described in OGC document 13-082r2 has been added.  
+See http://www.opengeospatial.org/standards/wmts for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2015-10-22T15:46:06:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC WMTS Simple Profile 1.0 Standard Schema Added</dc:subject>
+</item>
 <item rdf:about="http://schemas.opengis.net/waterml/ReadMe.txt#20151022t15">
 <title>OGC WaterML 2.0 Part 2 1.0 - Schema Added</title>
 <link>http://schemas.opengis.net/waterml/ReadMe.txt#20151022t15</link>

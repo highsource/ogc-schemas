@@ -4,7 +4,7 @@
 # Taken from http://tools.ietf.org/html/rfc4287#page-35
 # Defined a new constructor for ATOM Feed and Entry
 #
-# Version: 1.0.0
+# Version: 1.0.1
 #
 
 namespace atom = "http://www.w3.org/2005/Atom"

@@ -429,4 +429,14 @@
 	<!-- ====================================================================== -->
 	<!-- ====================================================================== -->
 	<!-- ====================================================================== -->
+
+	<element name="OtherAbstractTimeObject" type="om:OtherAbstractTimeObjectType" substitutionGroup="gml:AbstractTimeObject"/>
+	<complexType
+		name="OtherAbstractTimeObjectType">
+		<complexContent>
+			<extension
+				base="gml:AbstractTimeObjectType"/>
+		</complexContent>
+	</complexType>
+
 </schema>

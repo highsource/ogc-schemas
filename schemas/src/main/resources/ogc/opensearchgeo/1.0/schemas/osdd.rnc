@@ -6,43 +6,45 @@
    # Copyright (c) 2014 Open Geospatial Consortium.
    # To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
    #
-   # Version: 1.0.0
-   #   
-   
+   # Version: 1.0.1
+   # 2016-03-01 - Corrected the cardinality of Language, InputEncoding and OutputEncoding elements (was ? changed to *)
+   # 2016-03-29 - Tags max length set to 256 characters
+
 namespace os = "http://a9.com/-/spec/opensearch/1.1/"
 namespace s = "http://purl.oclc.org/dsdl/schematron"
-namespace local = ""   
+namespace local = ""
 start = osDocument
 
-osDocument = element os:OpenSearchDescription { osDocumentConstruct } 
+osDocument = element os:OpenSearchDescription { osDocumentConstruct }
 
 osDocumentConstruct =
-      element os:ShortName { xsd:string { maxLength = "16" } } 
-      & element os:Description { xsd:string { maxLength = "1024" } } 
-      & element os:Url { osdUrlAttr } * 
-      & element os:Contact { xsd:string {pattern=".+@.+"}}? 
-      & element os:Tags { text }? & element os:LongName { xsd:string {maxLength="48"}}?
-      & element os:Image { osdImage } * 
+      element os:ShortName { xsd:string { maxLength = "16" } }
+      & element os:Description { xsd:string { maxLength = "1024" } }
+      & element os:Url { osdUrlAttr } *
+      & element os:Contact { xsd:string {pattern=".+@.+"}}?
+      & element os:Tags { xsd:string {maxLength="256"}}?
+      & element os:LongName { xsd:string {maxLength="48"}}?
+      & element os:Image { osdImage } *
       & element os:Query { undefinedAttribute*, ( osQueryAttr ) }*
-      & element os:Developer { xsd:string { maxLength = "64" } }? 
-      & element os:Attribution { xsd:string { maxLength = "256" } }? 
-      & element os:SyndicationRight { osdSyndicationRightValues } ? 
-      & element os:AdultContent { "false" | "true" } ? 
-      & element os:Language {xsd:string { pattern="[A-Za-z]{1,8}(-[A-Za-z0-9]{1,8})*"}}? 
-      & element os:InputEncoding { text } ? & element os:OutputEncoding { text } ? 
+      & element os:Developer { xsd:string { maxLength = "64" } }?
+      & element os:Attribution { xsd:string { maxLength = "256" } }?
+      & element os:SyndicationRight { osdSyndicationRightValues } ?
+      & element os:AdultContent { "false" | "true" } ?
+      & element os:Language {xsd:string { pattern="[A-Za-z]{1,8}(-[A-Za-z0-9]{1,8})*"}}*
+      & element os:InputEncoding { text } * & element os:OutputEncoding { text } *
       & undefinedAttribute*
       & extensionElement*
 
 osdUrlAttr = attribute template { text }, attribute type { text },
 	          attribute rel { osdRelationValues }?, attribute indexOffset { xsd:int }?,
               attribute pageOffset { xsd:int }?, undefinedAttribute*, extensionElement*
-              
-osdImage = attribute height {xsd:int}, attribute width {xsd:int}, 
-           attribute type {xsd:string}, text 
+
+osdImage = attribute height {xsd:int}, attribute width {xsd:int},
+           attribute type {xsd:string}, text
 
 include "osquery.rnc"
-    
-osdRelationValues = "results" | "suggestions" | "self" | "collection" 
+
+osdRelationValues = "results" | "suggestions" | "self" | "collection"
 osdSyndicationRightValues = "open" | "limited" | "private" | "closed"
 
 # Simple Extension

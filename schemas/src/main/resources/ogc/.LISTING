@@ -708,9 +708,6 @@ gml/gml-3_1_0.zip
 gml/gml-3_1_1.zip
 gml/gml-3_2_1.zip
 gml/gml-3_3_0.zip
-gmljp2/2.0/examples/gmljp2_annotation.xml
-gmljp2/2.0/examples/gmljp2.xml
-gmljp2/2.0/examples/minimalInstance.xml
 gmljp2/2.0/gmljp2.xsd
 gmljp2/gmljp2-2_0_0.zip
 gmljp2/ReadMe.txt
@@ -1051,6 +1048,7 @@ opensearchgeo/1.0/tests/result-searchbytime.rnc
 opensearchgeo/1.0/tests/result-spatialrelations.rnc
 opensearchgeo/1.0/tests/result-timerelations.rnc
 opensearchgeo/opensearchgeo-1_0_0.zip
+opensearchgeo/opensearchgeo-1_0_1.zip
 opensearchgeo/ReadMe.txt
 oseo/1.0/EventCode.xml
 oseo/1.0/oseo.wsdl
@@ -1837,6 +1835,12 @@ wcs/2.0/wcsGetCapabilities.xsd
 wcs/2.0/wcsGetCoverage.xsd
 wcs/2.0/wsdl/example-soap-endpoint.wsdl
 wcs/2.0/wsdl/wcs-soap-binding.wsdl
+wcs/crs-1_0_0.zip
+wcs/crs/1.0/examples/requestGetCoverageOutputCRS.xml
+wcs/crs/1.0/examples/requestGetCoverageSubsettingCRS.xml
+wcs/crs/1.0/examples/responseGetCapabilities.xml
+wcs/crs/1.0/wcsCrs.sch
+wcs/crs/1.0/wcsCrs.xsd
 wcs/interpolation-1_0_0.zip
 wcs/interpolation/1.0/wcsInt.sch
 wcs/interpolation/1.0/wcsInt.xsd
@@ -2072,6 +2076,11 @@ wmts/1.0/examples/wmtsGetFeatureInfo_response_SOAP3.xml
 wmts/1.0/examples/wmtsGetFeatureInfo_response_SOAP.xml
 wmts/1.0/examples/wmtsGetTile_request_SOAP.xml
 wmts/1.0/examples/wmtsGetTile_response_SOAP.xml
+wmts/1.0/profiles/wmts-simple/examples/wmtsGetCapabilities_response_both.xml
+wmts/1.0/profiles/wmts-simple/examples/wmtsGetCapabilities_response_CRS84.xml
+wmts/1.0/profiles/wmts-simple/examples/wmtsGetCapabilities_response_OSM.xml
+wmts/1.0/profiles/wmts-simple/wmtsSimpleGetCapabilities.sch
+wmts/1.0/profiles/wmts-simple/wmtsTileMatrixSet.json
 wmts/1.0/wmtsAbstract.wsdl
 wmts/1.0/wmtsGetCapabilities_request.xsd
 wmts/1.0/wmtsGetCapabilities_response.xsd

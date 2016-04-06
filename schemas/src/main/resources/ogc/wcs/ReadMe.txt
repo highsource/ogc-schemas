@@ -16,6 +16,9 @@ The most current schema are available at http://schemas.opengis.net/ .
 
 -----------------------------------------------------------------------
 
+2016-02-03  Peter Baumann
+  * wcs/crs/1.0: added WCS 2.0 CRS Extension 1.0.0 (OGC 11-053r1)
+
 2014-11-26  Peter Baumann
   * wcs/processing/2.0: added WCS Processing Extension 2.0.0 (OGC 08-059r4)
 

@@ -11,6 +11,9 @@ The most current schema are available at http://schemas.opengis.net/ .
 
 -----------------------------------------------------------------------
 
+2014-11-06  Joan Maso
+  * wmts/1.0/profiles/wmts-simple: added WMTS Simple Profile 1.0.0 (OGC 13-082r2)
+
 2012-07-21  Kevin Stegemoller
   * v1.0: WARNING XLink change is NOT BACKWARD COMPATIBLE.
   * Changed OGC XLink (xlink:simpleLink) to W3C XLink (xlink:simpleAttrs)
