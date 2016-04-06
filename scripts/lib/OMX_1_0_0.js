@@ -3,8 +3,53 @@ var OMX_1_0_0_Module_Factory = function () {
     n: 'OMX_1_0_0',
     dens: 'http:\/\/www.opengis.net\/omx\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'OM_1_0_0', 'GML_3_1_1', 'SensorML_1_0_1'],
+    deps: ['XLink_1_0', 'GML_3_1_1', 'OM_1_0_0', 'SensorML_1_0_1'],
     tis: [{
+        ln: 'ObservationProcessPropertyType',
+        ps: [{
+            n: 'observationProcess',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'ObservationProcess',
+            ti: '.ObservationProcessType',
+            t: 'er'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'InstrumentType',
+        bti: '.ObservationProcessType'
+      }, {
         ln: 'InstrumentPropertyType',
         ps: [{
             n: 'instrument',
@@ -47,15 +92,12 @@ var OMX_1_0_0_Module_Factory = function () {
         ln: 'CalculationProcessType',
         bti: '.ObservationProcessType'
       }, {
-        ln: 'ObservationProcessPropertyType',
+        ln: 'CalculationProcessPropertyType',
         ps: [{
-            n: 'observationProcess',
+            n: 'calculationProcess',
             rq: true,
-            mx: false,
-            dom: false,
-            en: 'ObservationProcess',
-            ti: '.ObservationProcessType',
-            t: 'er'
+            en: 'CalculationProcess',
+            ti: '.CalculationProcessType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -99,50 +141,36 @@ var OMX_1_0_0_Module_Factory = function () {
             n: 'resultQuality',
             ti: 'OM_1_0_0.AnyOrReferenceType'
           }]
-      }, {
-        ln: 'CalculationProcessPropertyType',
-        ps: [{
-            n: 'calculationProcess',
-            rq: true,
-            en: 'CalculationProcess',
-            ti: '.CalculationProcessType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'InstrumentType',
-        bti: '.ObservationProcessType'
       }],
     eis: [{
+        en: 'ObservationProcess',
+        ti: '.ObservationProcessType',
+        sh: {
+          lp: '_Process',
+          ns: 'http:\/\/www.opengis.net\/sensorML\/1.0.1'
+        }
+      }, {
+        en: 'GeometryObservation',
+        ti: 'OM_1_0_0.ObservationType',
+        sh: {
+          lp: 'Observation',
+          ns: 'http:\/\/www.opengis.net\/om\/1.0'
+        }
+      }, {
+        en: 'ElementCoverageObservation',
+        ti: 'OM_1_0_0.ObservationType',
+        sh: {
+          lp: 'Observation',
+          ns: 'http:\/\/www.opengis.net\/om\/1.0'
+        }
+      }, {
+        en: 'CategoryObservation',
+        ti: 'OM_1_0_0.ObservationType',
+        sh: {
+          lp: 'Observation',
+          ns: 'http:\/\/www.opengis.net\/om\/1.0'
+        }
+      }, {
         en: 'PointCoverageObs',
         ti: 'OM_1_0_0.ObservationType',
         sh: {
@@ -164,50 +192,7 @@ var OMX_1_0_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/om\/1.0'
         }
       }, {
-        en: 'TimeSeriesObservation',
-        ti: 'OM_1_0_0.ObservationType',
-        sh: {
-          lp: 'Observation',
-          ns: 'http:\/\/www.opengis.net\/om\/1.0'
-        }
-      }, {
-        en: 'DiscreteCoverageObs',
-        ti: 'OM_1_0_0.ObservationType',
-        sh: {
-          lp: 'Observation',
-          ns: 'http:\/\/www.opengis.net\/om\/1.0'
-        }
-      }, {
-        en: 'PointCoverageObservation',
-        ti: 'OM_1_0_0.ObservationType',
-        sh: {
-          lp: 'Observation',
-          ns: 'http:\/\/www.opengis.net\/om\/1.0'
-        }
-      }, {
-        en: 'DiscreteCoverageObservation',
-        ti: 'OM_1_0_0.ObservationType',
-        sh: {
-          lp: 'Observation',
-          ns: 'http:\/\/www.opengis.net\/om\/1.0'
-        }
-      }, {
-        en: 'CalculationProcess',
-        ti: '.CalculationProcessType',
-        sh: 'ObservationProcess'
-      }, {
-        en: 'ObservationProcess',
-        ti: '.ObservationProcessType',
-        sh: {
-          lp: '_Process',
-          ns: 'http:\/\/www.opengis.net\/sensorML\/1.0.1'
-        }
-      }, {
-        en: 'Instrument',
-        ti: '.InstrumentType',
-        sh: 'ObservationProcess'
-      }, {
-        en: 'ComplexObservation',
+        en: 'Measurement',
         ti: 'OM_1_0_0.ObservationType',
         sh: {
           lp: 'Observation',
@@ -221,26 +206,27 @@ var OMX_1_0_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/om\/1.0'
         }
       }, {
-        en: 'GeometryObservation',
+        en: 'TimeSeriesObservation',
         ti: 'OM_1_0_0.ObservationType',
         sh: {
           lp: 'Observation',
           ns: 'http:\/\/www.opengis.net\/om\/1.0'
         }
       }, {
-        en: 'Measurement',
+        en: 'ComplexObservation',
         ti: 'OM_1_0_0.ObservationType',
         sh: {
           lp: 'Observation',
           ns: 'http:\/\/www.opengis.net\/om\/1.0'
         }
       }, {
-        en: 'CategoryObservation',
-        ti: 'OM_1_0_0.ObservationType',
-        sh: {
-          lp: 'Observation',
-          ns: 'http:\/\/www.opengis.net\/om\/1.0'
-        }
+        en: 'Instrument',
+        ti: '.InstrumentType',
+        sh: 'ObservationProcess'
+      }, {
+        en: 'CalculationProcess',
+        ti: '.CalculationProcessType',
+        sh: 'ObservationProcess'
       }, {
         en: 'TemporalObservation',
         ti: 'OM_1_0_0.ObservationType',
@@ -249,7 +235,21 @@ var OMX_1_0_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/om\/1.0'
         }
       }, {
-        en: 'ElementCoverageObservation',
+        en: 'DiscreteCoverageObs',
+        ti: 'OM_1_0_0.ObservationType',
+        sh: {
+          lp: 'Observation',
+          ns: 'http:\/\/www.opengis.net\/om\/1.0'
+        }
+      }, {
+        en: 'DiscreteCoverageObservation',
+        ti: 'OM_1_0_0.ObservationType',
+        sh: {
+          lp: 'Observation',
+          ns: 'http:\/\/www.opengis.net\/om\/1.0'
+        }
+      }, {
+        en: 'PointCoverageObservation',
         ti: 'OM_1_0_0.ObservationType',
         sh: {
           lp: 'Observation',

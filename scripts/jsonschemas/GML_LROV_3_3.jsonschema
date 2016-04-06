@@ -161,70 +161,6 @@
                 "actuate"
             ]
         },
-        "VectorOffsetDistanceExpressionType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/gml/3.3/lr#/definitions/DistanceExpressionType"
-                },
-                {
-                    "type":"object",
-                    "title":"VectorOffsetDistanceExpressionType",
-                    "properties":{
-                        "vectorOffsetExpression":{
-                            "title":"vectorOffsetExpression",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/VectorOffsetExpressionType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"vectorOffsetExpression",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lrov"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"VectorOffsetDistanceExpressionType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lrov"
-            },
-            "propertiesOrder":[
-                "vectorOffsetExpression"
-            ]
-        },
-        "VectorOffsetExpressionType":{
-            "type":"object",
-            "title":"VectorOffsetExpressionType",
-            "required":[
-                "offsetVector"
-            ],
-            "properties":{
-                "offsetVector":{
-                    "title":"offsetVector",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/VectorType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"offsetVector",
-                        "namespaceURI":"http://www.opengis.net/gml/3.3/lrov"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"VectorOffsetExpressionType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lrov"
-            },
-            "propertiesOrder":[
-                "offsetVector"
-            ]
-        },
         "VectorType":{
             "allOf":[
                 {
@@ -285,6 +221,21 @@
                                                         "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
                                                     },
                                                     "value":{
+                                                        "$ref":"http://www.opengis.net/gml/3.3/lr#/definitions/LinearElementPropertyType"
+                                                    }
+                                                },
+                                                "elementName":{
+                                                    "localPart":"linearElement",
+                                                    "namespaceURI":"http://www.opengis.net/gml/3.3/lrov"
+                                                }
+                                            },
+                                            {
+                                                "type":"object",
+                                                "properties":{
+                                                    "name":{
+                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                                    },
+                                                    "value":{
                                                         "$ref":"#/definitions/VectorType"
                                                     }
                                                 },
@@ -307,21 +258,6 @@
                                                     "localPart":"lrm",
                                                     "namespaceURI":"http://www.opengis.net/gml/3.3/lrov"
                                                 }
-                                            },
-                                            {
-                                                "type":"object",
-                                                "properties":{
-                                                    "name":{
-                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                                    },
-                                                    "value":{
-                                                        "$ref":"http://www.opengis.net/gml/3.3/lr#/definitions/LinearElementPropertyType"
-                                                    }
-                                                },
-                                                "elementName":{
-                                                    "localPart":"linearElement",
-                                                    "namespaceURI":"http://www.opengis.net/gml/3.3/lrov"
-                                                }
                                             }
                                         ]
                                     },
@@ -342,9 +278,107 @@
             "propertiesOrder":[
                 "rest"
             ]
+        },
+        "VectorOffsetExpressionType":{
+            "type":"object",
+            "title":"VectorOffsetExpressionType",
+            "required":[
+                "offsetVector"
+            ],
+            "properties":{
+                "offsetVector":{
+                    "title":"offsetVector",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/VectorType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"offsetVector",
+                        "namespaceURI":"http://www.opengis.net/gml/3.3/lrov"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"VectorOffsetExpressionType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lrov"
+            },
+            "propertiesOrder":[
+                "offsetVector"
+            ]
+        },
+        "VectorOffsetDistanceExpressionType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/gml/3.3/lr#/definitions/DistanceExpressionType"
+                },
+                {
+                    "type":"object",
+                    "title":"VectorOffsetDistanceExpressionType",
+                    "properties":{
+                        "vectorOffsetExpression":{
+                            "title":"vectorOffsetExpression",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/VectorOffsetExpressionType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"vectorOffsetExpression",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lrov"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"VectorOffsetDistanceExpressionType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lrov"
+            },
+            "propertiesOrder":[
+                "vectorOffsetExpression"
+            ]
         }
     },
     "anyOf":[
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "VectorOffsetDistanceExpression"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml/3.3/lrov"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/VectorOffsetDistanceExpressionType"
+                }
+            },
+            "elementName":{
+                "localPart":"VectorOffsetDistanceExpression",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lrov"
+            }
+        },
         {
             "type":"object",
             "properties":{
@@ -432,6 +466,40 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
+                                        "VectorOffsetLinearSRS"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml/3.3/lrov"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/VectorOffsetLinearSRSType"
+                }
+            },
+            "elementName":{
+                "localPart":"VectorOffsetLinearSRS",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lrov"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
                                         "linearElement"
                                     ]
                                 },
@@ -454,74 +522,6 @@
             },
             "scope":{
                 "$ref":"#/definitions/VectorOffsetLinearSRSType"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "VectorOffsetDistanceExpression"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml/3.3/lrov"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/VectorOffsetDistanceExpressionType"
-                }
-            },
-            "elementName":{
-                "localPart":"VectorOffsetDistanceExpression",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lrov"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "VectorOffsetLinearSRS"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml/3.3/lrov"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/VectorOffsetLinearSRSType"
-                }
-            },
-            "elementName":{
-                "localPart":"VectorOffsetLinearSRS",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lrov"
             }
         }
     ]

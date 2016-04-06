@@ -2,6 +2,24 @@
 {
     "id":"http://earth.esa.int/opt#",
     "definitions":{
+        "EarthObservationType":{
+            "allOf":[
+                {
+                    "$ref":"http://earth.esa.int/eop#/definitions/EarthObservationType"
+                },
+                {
+                    "type":"object",
+                    "title":"EarthObservationType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationType",
+                "namespaceURI":"http://earth.esa.int/opt"
+            }
+        },
         "AcquisitionType":{
             "allOf":[
                 {
@@ -49,24 +67,6 @@
                 "illuminationAzimuthAngle",
                 "illuminationElevationAngle"
             ]
-        },
-        "EarthObservationType":{
-            "allOf":[
-                {
-                    "$ref":"http://earth.esa.int/eop#/definitions/EarthObservationType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationType",
-                "namespaceURI":"http://earth.esa.int/opt"
-            }
         },
         "EarthObservationResultType":{
             "allOf":[
@@ -187,7 +187,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Acquisition"
+                                        "EarthObservationResult"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -200,11 +200,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/AcquisitionType"
+                    "$ref":"#/definitions/EarthObservationResultType"
                 }
             },
             "elementName":{
-                "localPart":"Acquisition",
+                "localPart":"EarthObservationResult",
                 "namespaceURI":"http://earth.esa.int/opt"
             }
         },
@@ -255,7 +255,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "EarthObservationResult"
+                                        "Acquisition"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -268,11 +268,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/EarthObservationResultType"
+                    "$ref":"#/definitions/AcquisitionType"
                 }
             },
             "elementName":{
-                "localPart":"EarthObservationResult",
+                "localPart":"Acquisition",
                 "namespaceURI":"http://earth.esa.int/opt"
             }
         }

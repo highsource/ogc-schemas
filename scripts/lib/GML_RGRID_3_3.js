@@ -3,7 +3,7 @@ var GML_RGRID_3_3_Module_Factory = function () {
     n: 'GML_RGRID_3_3',
     dens: 'http:\/\/www.opengis.net\/gml\/3.3\/rgrid',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1'],
+    deps: ['GML_3_2_1', 'XLink_1_0'],
     tis: [{
         ln: 'AbstractReferenceableGridType',
         bti: 'GML_3_2_1.GridType',
@@ -35,6 +35,19 @@ var GML_RGRID_3_3_Module_Factory = function () {
             n: 'sequenceRule',
             rq: true,
             ti: 'GML_3_2_1.SequenceRuleType'
+          }]
+      }, {
+        ln: 'ReferenceableGridByVectorsType',
+        bti: '.AbstractReferenceableGridType',
+        ps: [{
+            n: 'origin',
+            rq: true,
+            ti: 'GML_3_2_1.PointPropertyType'
+          }, {
+            n: 'generalGridAxis',
+            rq: true,
+            col: true,
+            ti: '.GeneralGridAxisPropertyType'
           }]
       }, {
         ln: 'ReferenceableGridByArrayType',
@@ -83,61 +96,6 @@ var GML_RGRID_3_3_Module_Factory = function () {
             },
             ti: 'GML_3_2_1.AbstractCRSType',
             t: 'er'
-          }]
-      }, {
-        ln: 'GeneralGridAxisPropertyType',
-        ps: [{
-            n: 'generalGridAxis',
-            rq: true,
-            en: 'GeneralGridAxis',
-            ti: '.GeneralGridAxisType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'ReferenceableGridPropertyType',
@@ -210,33 +168,62 @@ var GML_RGRID_3_3_Module_Factory = function () {
             ti: 'GML_3_2_1.ConcatenatedOperationPropertyType'
           }]
       }, {
-        ln: 'ReferenceableGridByVectorsType',
-        bti: '.AbstractReferenceableGridType',
+        ln: 'GeneralGridAxisPropertyType',
         ps: [{
-            n: 'origin',
-            rq: true,
-            ti: 'GML_3_2_1.PointPropertyType'
-          }, {
             n: 'generalGridAxis',
             rq: true,
-            col: true,
-            ti: '.GeneralGridAxisPropertyType'
+            en: 'GeneralGridAxis',
+            ti: '.GeneralGridAxisType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }]
       }],
     eis: [{
-        en: 'GeneralGridAxis',
-        ti: '.GeneralGridAxisType'
-      }, {
-        en: 'gridCRS',
-        ti: '.GridCRSPropertyType'
-      }, {
-        en: 'referenceableGridProperty',
-        ti: '.ReferenceableGridPropertyType'
-      }, {
-        en: 'ReferenceableGridByTransformation',
-        ti: '.ReferenceableGridByTransformationType',
-        sh: 'AbstractReferenceableGrid'
-      }, {
         en: 'AbstractReferenceableGrid',
         ti: '.AbstractReferenceableGridType',
         sh: {
@@ -247,6 +234,19 @@ var GML_RGRID_3_3_Module_Factory = function () {
         en: 'ReferenceableGridByVectors',
         ti: '.ReferenceableGridByVectorsType',
         sh: 'AbstractReferenceableGrid'
+      }, {
+        en: 'referenceableGridProperty',
+        ti: '.ReferenceableGridPropertyType'
+      }, {
+        en: 'gridCRS',
+        ti: '.GridCRSPropertyType'
+      }, {
+        en: 'ReferenceableGridByTransformation',
+        ti: '.ReferenceableGridByTransformationType',
+        sh: 'AbstractReferenceableGrid'
+      }, {
+        en: 'GeneralGridAxis',
+        ti: '.GeneralGridAxisType'
       }, {
         en: 'ReferenceableGridByArray',
         ti: '.ReferenceableGridByArrayType',

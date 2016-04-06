@@ -3,8 +3,20 @@ var GML_TIN_3_3_Module_Factory = function () {
     n: 'GML_TIN_3_3',
     dens: 'http:\/\/www.opengis.net\/gml\/3.3\/tin',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_2_1', 'XLink_1_0'],
+    deps: ['XLink_1_0', 'GML_3_2_1'],
     tis: [{
+        ln: 'TINType',
+        bti: 'GML_3_2_1.SurfaceType',
+        ps: [{
+            n: 'tinElement',
+            mno: 0,
+            col: true,
+            ti: '.TINElementPropertyType'
+          }, {
+            n: 'maxLength',
+            ti: 'GML_3_2_1.LengthType'
+          }]
+      }, {
         ln: 'TINElementType',
         bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
@@ -19,57 +31,6 @@ var GML_TIN_3_3_Module_Factory = function () {
             n: 'elementGeometry',
             rq: true,
             ti: 'GML_3_2_1.GeometryPropertyType'
-          }]
-      }, {
-        ln: 'TINType',
-        bti: 'GML_3_2_1.SurfaceType',
-        ps: [{
-            n: 'tinElement',
-            mno: 0,
-            col: true,
-            ti: '.TINElementPropertyType'
-          }, {
-            n: 'maxLength',
-            ti: 'GML_3_2_1.LengthType'
-          }]
-      }, {
-        ln: 'SimpleTrianglePatchType',
-        bti: 'GML_3_2_1.AbstractSurfacePatchType',
-        ps: [{
-            n: 'posOrPointProperty',
-            rq: true,
-            mno: 3,
-            mxo: 3,
-            col: true,
-            etis: [{
-                en: {
-                  lp: 'pos',
-                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-                },
-                ti: 'GML_3_2_1.DirectPositionType'
-              }, {
-                en: {
-                  lp: 'pointProperty',
-                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-                },
-                ti: 'GML_3_2_1.PointPropertyType'
-              }],
-            t: 'es'
-          }, {
-            n: 'posList',
-            rq: true,
-            en: {
-              lp: 'posList',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.DirectPositionListType'
-          }, {
-            n: 'interpolation',
-            ti: 'GML_3_2_1.SurfaceInterpolationType',
-            an: {
-              lp: 'interpolation'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'TINElementPropertyType',
@@ -119,14 +80,50 @@ var GML_TIN_3_3_Module_Factory = function () {
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
+      }, {
+        ln: 'SimpleTrianglePatchType',
+        bti: 'GML_3_2_1.AbstractSurfacePatchType',
+        ps: [{
+            n: 'posOrPointProperty',
+            rq: true,
+            mno: 3,
+            mxo: 3,
+            col: true,
+            etis: [{
+                en: {
+                  lp: 'pos',
+                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+                },
+                ti: 'GML_3_2_1.DirectPositionType'
+              }, {
+                en: {
+                  lp: 'pointProperty',
+                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+                },
+                ti: 'GML_3_2_1.PointPropertyType'
+              }],
+            t: 'es'
+          }, {
+            n: 'posList',
+            rq: true,
+            en: {
+              lp: 'posList',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.DirectPositionListType'
+          }, {
+            n: 'interpolation',
+            ti: 'GML_3_2_1.SurfaceInterpolationType',
+            an: {
+              lp: 'interpolation'
+            },
+            t: 'a'
+          }]
       }],
     eis: [{
-        en: 'TINElement',
-        ti: '.TINElementType',
-        sh: {
-          lp: 'AbstractObject',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
+        en: 'TIN',
+        ti: '.TINType',
+        sh: 'TriangulatedSurface'
       }, {
         en: 'TriangulatedSurface',
         ti: 'GML_3_2_1.SurfaceType',
@@ -142,9 +139,12 @@ var GML_TIN_3_3_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'TIN',
-        ti: '.TINType',
-        sh: 'TriangulatedSurface'
+        en: 'TINElement',
+        ti: '.TINElementType',
+        sh: {
+          lp: 'AbstractObject',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
       }]
   };
   return {

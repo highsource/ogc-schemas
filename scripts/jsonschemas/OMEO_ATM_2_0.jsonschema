@@ -2,68 +2,6 @@
 {
     "id":"http://www.opengis.net/atm/2.0#",
     "definitions":{
-        "EarthObservationType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationType",
-                "namespaceURI":"http://www.opengis.net/atm/2.0"
-            }
-        },
-        "DataLayerPropertyType":{
-            "type":"object",
-            "title":"DataLayerPropertyType",
-            "required":[
-                "dataLayer"
-            ],
-            "properties":{
-                "dataLayer":{
-                    "title":"dataLayer",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/DataLayerType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DataLayer",
-                        "namespaceURI":"http://www.opengis.net/atm/2.0"
-                    }
-                },
-                "owns":{
-                    "title":"owns",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"owns",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DataLayerPropertyType",
-                "namespaceURI":"http://www.opengis.net/atm/2.0"
-            },
-            "propertiesOrder":[
-                "dataLayer",
-                "owns"
-            ]
-        },
         "EarthObservationResultPropertyType":{
             "type":"object",
             "title":"EarthObservationResultPropertyType",
@@ -82,6 +20,19 @@
                     "elementName":{
                         "localPart":"EarthObservationResult",
                         "namespaceURI":"http://www.opengis.net/atm/2.0"
+                    }
+                },
+                "owns":{
+                    "title":"owns",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"owns",
+                        "namespaceURI":""
                     }
                 },
                 "nilReason":{
@@ -203,19 +154,6 @@
                         "localPart":"actuate",
                         "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
-                },
-                "owns":{
-                    "title":"owns",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"owns",
-                        "namespaceURI":""
-                    }
                 }
             },
             "typeType":"classInfo",
@@ -225,6 +163,7 @@
             },
             "propertiesOrder":[
                 "earthObservationResult",
+                "owns",
                 "nilReason",
                 "remoteSchema",
                 "type",
@@ -233,8 +172,7 @@
                 "arcrole",
                 "title",
                 "show",
-                "actuate",
-                "owns"
+                "actuate"
             ]
         },
         "EarthObservationPropertyType":{
@@ -410,107 +348,42 @@
                 "owns"
             ]
         },
-        "EarthObservationResultType":{
+        "AcquisitionType":{
+            "required":[
+                "multiViewAngles",
+                "centreViewAngles"
+            ],
             "allOf":[
                 {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationResultType"
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/AcquisitionType"
                 },
                 {
                     "type":"object",
-                    "title":"EarthObservationResultType",
+                    "title":"AcquisitionType",
                     "properties":{
-                        "dataLayers":{
-                            "title":"dataLayers",
+                        "multiViewAngles":{
+                            "title":"multiViewAngles",
                             "allOf":[
                                 {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/DataLayerPropertyType"
-                                    },
-                                    "minItems":0
+                                    "$ref":"#/definitions/MeasureOrNilReasonListType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"dataLayers",
+                                "localPart":"multiViewAngles",
                                 "namespaceURI":"http://www.opengis.net/atm/2.0"
                             }
                         },
-                        "cloudCoverPercentage":{
-                            "title":"cloudCoverPercentage",
+                        "centreViewAngles":{
+                            "title":"centreViewAngles",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/MeasureType"
+                                    "$ref":"#/definitions/MeasureOrNilReasonListType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"cloudCoverPercentage",
-                                "namespaceURI":"http://www.opengis.net/atm/2.0"
-                            }
-                        },
-                        "cloudCoverPercentageAssessmentConfidence":{
-                            "title":"cloudCoverPercentageAssessmentConfidence",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"cloudCoverPercentageAssessmentConfidence",
-                                "namespaceURI":"http://www.opengis.net/atm/2.0"
-                            }
-                        },
-                        "cloudCoverPercentageQuotationMode":{
-                            "title":"cloudCoverPercentageQuotationMode",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"cloudCoverPercentageQuotationMode",
-                                "namespaceURI":"http://www.opengis.net/atm/2.0"
-                            }
-                        },
-                        "snowCoverPercentage":{
-                            "title":"snowCoverPercentage",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"snowCoverPercentage",
-                                "namespaceURI":"http://www.opengis.net/atm/2.0"
-                            }
-                        },
-                        "snowCoverPercentageAssessmentConfidence":{
-                            "title":"snowCoverPercentageAssessmentConfidence",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"snowCoverPercentageAssessmentConfidence",
-                                "namespaceURI":"http://www.opengis.net/atm/2.0"
-                            }
-                        },
-                        "snowCoverPercentageQuotationMode":{
-                            "title":"snowCoverPercentageQuotationMode",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"snowCoverPercentageQuotationMode",
+                                "localPart":"centreViewAngles",
                                 "namespaceURI":"http://www.opengis.net/atm/2.0"
                             }
                         }
@@ -519,51 +392,12 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"EarthObservationResultType",
+                "localPart":"AcquisitionType",
                 "namespaceURI":"http://www.opengis.net/atm/2.0"
             },
             "propertiesOrder":[
-                "dataLayers",
-                "cloudCoverPercentage",
-                "cloudCoverPercentageAssessmentConfidence",
-                "cloudCoverPercentageQuotationMode",
-                "snowCoverPercentage",
-                "snowCoverPercentageAssessmentConfidence",
-                "snowCoverPercentageQuotationMode"
-            ]
-        },
-        "EarthObservationEquipmentType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationEquipmentType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationEquipmentType",
-                    "properties":{
-                        "acquisition":{
-                            "title":"acquisition",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/AcquisitionPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"acquisition",
-                                "namespaceURI":"http://www.opengis.net/atm/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationEquipmentType",
-                "namespaceURI":"http://www.opengis.net/atm/2.0"
-            },
-            "propertiesOrder":[
-                "acquisition"
+                "multiViewAngles",
+                "centreViewAngles"
             ]
         },
         "EarthObservationEquipmentPropertyType":{
@@ -836,6 +670,58 @@
                 "algorithmVersion"
             ]
         },
+        "EarthObservationType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationType"
+                },
+                {
+                    "type":"object",
+                    "title":"EarthObservationType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationType",
+                "namespaceURI":"http://www.opengis.net/atm/2.0"
+            }
+        },
+        "EarthObservationEquipmentType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationEquipmentType"
+                },
+                {
+                    "type":"object",
+                    "title":"EarthObservationEquipmentType",
+                    "properties":{
+                        "acquisition":{
+                            "title":"acquisition",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/AcquisitionPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"acquisition",
+                                "namespaceURI":"http://www.opengis.net/atm/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationEquipmentType",
+                "namespaceURI":"http://www.opengis.net/atm/2.0"
+            },
+            "propertiesOrder":[
+                "acquisition"
+            ]
+        },
         "AcquisitionPropertyType":{
             "type":"object",
             "title":"AcquisitionPropertyType",
@@ -880,42 +766,107 @@
                 "owns"
             ]
         },
-        "AcquisitionType":{
-            "required":[
-                "multiViewAngles",
-                "centreViewAngles"
-            ],
+        "EarthObservationResultType":{
             "allOf":[
                 {
-                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/AcquisitionType"
+                    "$ref":"http://www.opengis.net/eop/2.0#/definitions/EarthObservationResultType"
                 },
                 {
                     "type":"object",
-                    "title":"AcquisitionType",
+                    "title":"EarthObservationResultType",
                     "properties":{
-                        "multiViewAngles":{
-                            "title":"multiViewAngles",
+                        "dataLayers":{
+                            "title":"dataLayers",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/MeasureOrNilReasonListType"
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/DataLayerPropertyType"
+                                    },
+                                    "minItems":0
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"multiViewAngles",
+                                "localPart":"dataLayers",
                                 "namespaceURI":"http://www.opengis.net/atm/2.0"
                             }
                         },
-                        "centreViewAngles":{
-                            "title":"centreViewAngles",
+                        "cloudCoverPercentage":{
+                            "title":"cloudCoverPercentage",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/MeasureOrNilReasonListType"
+                                    "$ref":"#/definitions/MeasureType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"centreViewAngles",
+                                "localPart":"cloudCoverPercentage",
+                                "namespaceURI":"http://www.opengis.net/atm/2.0"
+                            }
+                        },
+                        "cloudCoverPercentageAssessmentConfidence":{
+                            "title":"cloudCoverPercentageAssessmentConfidence",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"cloudCoverPercentageAssessmentConfidence",
+                                "namespaceURI":"http://www.opengis.net/atm/2.0"
+                            }
+                        },
+                        "cloudCoverPercentageQuotationMode":{
+                            "title":"cloudCoverPercentageQuotationMode",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"cloudCoverPercentageQuotationMode",
+                                "namespaceURI":"http://www.opengis.net/atm/2.0"
+                            }
+                        },
+                        "snowCoverPercentage":{
+                            "title":"snowCoverPercentage",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"snowCoverPercentage",
+                                "namespaceURI":"http://www.opengis.net/atm/2.0"
+                            }
+                        },
+                        "snowCoverPercentageAssessmentConfidence":{
+                            "title":"snowCoverPercentageAssessmentConfidence",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"snowCoverPercentageAssessmentConfidence",
+                                "namespaceURI":"http://www.opengis.net/atm/2.0"
+                            }
+                        },
+                        "snowCoverPercentageQuotationMode":{
+                            "title":"snowCoverPercentageQuotationMode",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"snowCoverPercentageQuotationMode",
                                 "namespaceURI":"http://www.opengis.net/atm/2.0"
                             }
                         }
@@ -924,12 +875,61 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AcquisitionType",
+                "localPart":"EarthObservationResultType",
                 "namespaceURI":"http://www.opengis.net/atm/2.0"
             },
             "propertiesOrder":[
-                "multiViewAngles",
-                "centreViewAngles"
+                "dataLayers",
+                "cloudCoverPercentage",
+                "cloudCoverPercentageAssessmentConfidence",
+                "cloudCoverPercentageQuotationMode",
+                "snowCoverPercentage",
+                "snowCoverPercentageAssessmentConfidence",
+                "snowCoverPercentageQuotationMode"
+            ]
+        },
+        "DataLayerPropertyType":{
+            "type":"object",
+            "title":"DataLayerPropertyType",
+            "required":[
+                "dataLayer"
+            ],
+            "properties":{
+                "dataLayer":{
+                    "title":"dataLayer",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/DataLayerType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DataLayer",
+                        "namespaceURI":"http://www.opengis.net/atm/2.0"
+                    }
+                },
+                "owns":{
+                    "title":"owns",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"owns",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DataLayerPropertyType",
+                "namespaceURI":"http://www.opengis.net/atm/2.0"
+            },
+            "propertiesOrder":[
+                "dataLayer",
+                "owns"
             ]
         },
         "PercentageCoverQuotationModeValueEnumerationType":{
@@ -977,74 +977,6 @@
             },
             "elementName":{
                 "localPart":"EarthObservationEquipment",
-                "namespaceURI":"http://www.opengis.net/atm/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Acquisition"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/atm/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/AcquisitionType"
-                }
-            },
-            "elementName":{
-                "localPart":"Acquisition",
-                "namespaceURI":"http://www.opengis.net/atm/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "DataLayer"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/atm/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/DataLayerType"
-                }
-            },
-            "elementName":{
-                "localPart":"DataLayer",
                 "namespaceURI":"http://www.opengis.net/atm/2.0"
             }
         },
@@ -1113,6 +1045,74 @@
             },
             "elementName":{
                 "localPart":"EarthObservationResult",
+                "namespaceURI":"http://www.opengis.net/atm/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Acquisition"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/atm/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/AcquisitionType"
+                }
+            },
+            "elementName":{
+                "localPart":"Acquisition",
+                "namespaceURI":"http://www.opengis.net/atm/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "DataLayer"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/atm/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/DataLayerType"
+                }
+            },
+            "elementName":{
+                "localPart":"DataLayer",
                 "namespaceURI":"http://www.opengis.net/atm/2.0"
             }
         }

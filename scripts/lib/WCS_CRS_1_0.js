@@ -2,27 +2,13 @@ var WCS_CRS_1_0_Module_Factory = function () {
   var WCS_CRS_1_0 = {
     n: 'WCS_CRS_1_0',
     dens: 'http:\/\/www.opengis.net\/wcs\/crs\/1.0',
-    tis: [{
-        ln: 'CrsType',
-        ps: [{
-            n: 'subsettingCrs'
-          }, {
-            n: 'outputCrs'
-          }]
-      }, {
-        ln: 'CrsMetadataType',
-        ps: [{
-            n: 'crsSupported',
-            mno: 0,
-            col: true
-          }]
-      }],
+    tis: [],
     eis: [{
-        en: 'CrsMetadata',
-        ti: '.CrsMetadataType'
+        en: 'outputCrs'
       }, {
-        en: 'Crs',
-        ti: '.CrsType'
+        en: 'supportedCrs'
+      }, {
+        en: 'subsettingCrs'
       }]
   };
   return {

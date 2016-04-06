@@ -3,6 +3,26 @@ var WCS_Scaling_1_0_Module_Factory = function () {
     n: 'WCS_Scaling_1_0',
     dens: 'http:\/\/www.opengis.net\/wcs\/scaling\/1.0',
     tis: [{
+        ln: 'TargetAxisSizeType',
+        ps: [{
+            n: 'axis',
+            rq: true
+          }, {
+            n: 'targetSize',
+            rq: true,
+            ti: 'Decimal'
+          }]
+      }, {
+        ln: 'ScaleAxisType',
+        ps: [{
+            n: 'axis',
+            rq: true
+          }, {
+            n: 'scaleFactor',
+            rq: true,
+            ti: 'Decimal'
+          }]
+      }, {
         ln: 'TargetAxisExtentType',
         ps: [{
             n: 'axis',
@@ -15,6 +35,15 @@ var WCS_Scaling_1_0_Module_Factory = function () {
             n: 'high',
             rq: true,
             ti: 'Decimal'
+          }]
+      }, {
+        ln: 'ScaleToSizeType',
+        ps: [{
+            n: 'targetAxisSize',
+            rq: true,
+            col: true,
+            en: 'TargetAxisSize',
+            ti: '.TargetAxisSizeType'
           }]
       }, {
         ln: 'ScalingType',
@@ -49,12 +78,9 @@ var WCS_Scaling_1_0_Module_Factory = function () {
             ti: '.TargetAxisExtentType'
           }]
       }, {
-        ln: 'TargetAxisSizeType',
+        ln: 'ScaleByFactorType',
         ps: [{
-            n: 'axis',
-            rq: true
-          }, {
-            n: 'targetSize',
+            n: 'scaleFactor',
             rq: true,
             ti: 'Decimal'
           }]
@@ -66,32 +92,6 @@ var WCS_Scaling_1_0_Module_Factory = function () {
             col: true,
             en: 'ScaleAxis',
             ti: '.ScaleAxisType'
-          }]
-      }, {
-        ln: 'ScaleToSizeType',
-        ps: [{
-            n: 'targetAxisSize',
-            rq: true,
-            col: true,
-            en: 'TargetAxisSize',
-            ti: '.TargetAxisSizeType'
-          }]
-      }, {
-        ln: 'ScaleAxisType',
-        ps: [{
-            n: 'axis',
-            rq: true
-          }, {
-            n: 'scaleFactor',
-            rq: true,
-            ti: 'Decimal'
-          }]
-      }, {
-        ln: 'ScaleByFactorType',
-        ps: [{
-            n: 'scaleFactor',
-            rq: true,
-            ti: 'Decimal'
           }]
       }],
     eis: [{

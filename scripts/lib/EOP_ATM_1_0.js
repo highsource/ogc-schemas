@@ -4,13 +4,6 @@ var EOP_ATM_1_0_Module_Factory = function () {
     dens: 'http:\/\/earth.esa.int\/atm',
     deps: ['EOP_1_0', 'GML_3_1_1'],
     tis: [{
-        ln: 'EarthObservationResultType',
-        bti: 'EOP_1_0.EarthObservationResultType',
-        ps: [{
-            n: 'dataLayers',
-            ti: '.DataLayerPropertyType'
-          }]
-      }, {
         ln: 'DataLayerType',
         ps: [{
             n: 'specy'
@@ -28,9 +21,6 @@ var EOP_ATM_1_0_Module_Factory = function () {
             n: 'algorithmVersion'
           }]
       }, {
-        ln: 'EarthObservationType',
-        bti: 'EOP_1_0.EarthObservationType'
-      }, {
         ln: 'DataLayerPropertyType',
         ps: [{
             n: 'dataLayer',
@@ -39,25 +29,35 @@ var EOP_ATM_1_0_Module_Factory = function () {
             en: 'DataLayer',
             ti: '.DataLayerType'
           }]
+      }, {
+        ln: 'EarthObservationResultType',
+        bti: 'EOP_1_0.EarthObservationResultType',
+        ps: [{
+            n: 'dataLayers',
+            ti: '.DataLayerPropertyType'
+          }]
+      }, {
+        ln: 'EarthObservationType',
+        bti: 'EOP_1_0.EarthObservationType'
       }],
     eis: [{
+        en: 'EarthObservationResult',
+        ti: '.EarthObservationResultType',
+        sh: {
+          lp: 'EarthObservationResult',
+          ns: 'http:\/\/earth.esa.int\/eop'
+        }
+      }, {
         en: 'DataLayer',
         ti: '.DataLayerType'
+      }, {
+        en: 'dataLayers',
+        ti: '.DataLayerPropertyType'
       }, {
         en: 'EarthObservation',
         ti: '.EarthObservationType',
         sh: {
           lp: 'EarthObservation',
-          ns: 'http:\/\/earth.esa.int\/eop'
-        }
-      }, {
-        en: 'dataLayers',
-        ti: '.DataLayerPropertyType'
-      }, {
-        en: 'EarthObservationResult',
-        ti: '.EarthObservationResultType',
-        sh: {
-          lp: 'EarthObservationResult',
           ns: 'http:\/\/earth.esa.int\/eop'
         }
       }]
