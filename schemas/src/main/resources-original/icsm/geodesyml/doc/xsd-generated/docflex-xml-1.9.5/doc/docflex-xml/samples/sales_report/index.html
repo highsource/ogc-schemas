@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../../../styles.css">
+<title>DocFlex/XML - Samples - Sales Report</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/XML - Samples - Sales Report
+</h1>
+
+<p>The following sample demonstrates how <a href="../../about.html">DocFlex/XML</a>
+can be used for a typical reporting task: generating a financial/bookkeeping report
+with some rows of figures and total sums.</p>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+<li><a href="#task">Reporting Task</a>
+<li><a href="#xml_type">XML Type Definition</a>
+<li><a href="#template">Template</a>
+<li><a href="#gen_report">Generating Report</a>
+  <ul>
+    <li><a href="#running_generator">Running Generator</a>
+    <li><a href="#rtf_report">RTF Report</a>
+    <li><a href="#html_report">HTML Report</a>
+  </ul>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<h2>
+  <a name="task"></a>
+  1.&nbsp; Reporting Task
+</h2>
+
+<p>The purpose of this report is quite real.
+
+<p>FILIGRIS WORKS uses <a href="http://www.element5.com/" target="_blank">Element5</a>
+e-commerce service (called <i><a href="http://www.shareit.com/" target="_blank">share*it!</a></i>)
+to outsource processing of its sales.
+
+<p>To have the detailed information about the sales processed during a particular period of time,
+Element5 provides its customers with the raw data which can be downloaded from their web-site
+at any moment in the form of an XML file called <b><code>'sales.xml'</code></b>.
+
+<p>In addition to that XML with the raw data, Element5 provides the XML Schema file <b><code>'sales.xsd'</code></b>
+(which is also XML). This file contains the data type information on which <code>sales.xml</code>
+is based.
+
+<p>Click on the picture to see the full HTML listings of both XML files:
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/files/sales_xmls.html" target="_blank"><img src="images/sales_xmls.png" alt="Sales XML files" border="0"></a>
+</blockquote>
+
+<table cellspacing="0" cellpadding="0" border="0">
+<tr valign="top">
+  <td><span class="nav"><b>Notice:&nbsp;&nbsp;</b></span></td>
+  <td>
+    <span class="nav">
+    This XML listing documentation has been prepared with the <i>"XML File Documenter"</i> template
+    (see <a href="../xmldoc/index.html">XMLDoc</a>).
+    </span>
+  </td>
+</tr>
+</table>
+
+<p>Having received such XMLs, one may want to generate from them something looking more convenient
+to read as well as, probably, to have some total figures in addition.
+Here's how that task can be implemented using <a href="../../about.html">DocFlex/XML</a>.
+
+<h2>
+  <a name="xml_type"></a>
+  2.&nbsp; XML Type Definition
+</h2>
+
+<p>The structure of the <a href="../../../general/about.html#dsm">DSM</a> (Data Source Model)
+is entirely defined by the XML Schema specified in <code>sales.xsd</code> file.
+Click on the picture to see the documentation generated for this XML Schema:
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/files/sales_xsd.html" target="_blank"><img src="images/sales_xsd.png" alt="Sales XML Schema" border="0"></a>
+</blockquote>
+
+<table cellspacing="0" cellpadding="0" border="0">
+<tr valign="top">
+  <td><p span="nav"><b>Notice:&nbsp;&nbsp;</b></span></td>
+  <td>
+    <p class="nav">
+    This XML Schema documentation has been prepared using
+    <a href="../../xsddoc/about.html#xsddoc_templates">XSDDoc</a> template set --
+    another application of <a href="../../about.html">DocFlex/XML</a>, 
+    which implements a top quality
+    <a href="../../xsddoc/about.html">XML Schema Documentation Generator</a>.
+    </p>
+  </td>
+</tr>
+</table>
+
+<p>The <a href="../../design_templates.html#xmltype">XML Type</a> definition consists of
+only two lines:
+<blockquote>
+<pre>sales.name = Sales
+sales.xsd.files = %DFH%/samples/sales/sales.xsd</pre>
+</blockquote>
+
+<p>The <code>%DFH%</code> <a href="../../design_templates.html#using_macros">macro</a>
+representing the DocFlex/XML home directory is used to avoid specifying the absolute pathname.
+
+<p>Here is how the <a href="../../../general/about.html#dsm_type">DSM Type</a>
+(Data Source Model Type) constructed by this definition looks in the Template Designer's browser
+(the XML data type information is loaded from the <code>sales.xsd</code> schema file):
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/sales_report/images/sales_dsmtype.html" target="_blank"><img src="images/sales_dsmtype_s.png" title="Sales DSM Type" border="0"></a>
+</blockquote>
+
+Click on this screenshot to see a more detailed treeview shown within the
+<a href="../../../general/templates_designer_features.html#expr_editors">Expression Assistant Dialog</a>.
+
+<h2>
+  <a name="template"></a>
+  3.&nbsp; Template
+</h2>
+
+<p>The following screenshot shows the template based on the
+<a href="#xml_type">specified XML Type</a> and designed for the given
+<a href="#task">reporting task</a> (click on the picture to see in full size):
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/sales_report/images/sales_tpl.html" target="_blank"><img src="images/sales_tpl_s.png" title="sales.tpl" border="0"></a>
+</blockquote>
+
+<h2>
+  <a name="gen_report"></a>
+  4.&nbsp; Generating Report
+</h2>
+
+<h3>
+  <a name="running_generator"></a>
+  Running Generator
+</h3>
+
+<p>The generator dialog can be
+<a href="../../design_templates.html#designer.invoking_generator">invoked directly</a>
+from the Template Designer and specified as shown on the screenshot:
+
+<blockquote>
+  <img src="images/sales_gen.png" title="Generator Dialog">
+</blockquote>
+
+<h3>
+  <a name="rtf_report"></a>
+  RTF Report
+</h3>
+
+<p>As you click on the <b>&ldquo;Run&rdquo;</b> button in the dialog above, the following
+RTF document will be generated (click on the picture to see the real size page preview):
+
+<blockquote>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+  <td><a href="http://www.filigris.com/docflex-xml/samples/sales_report/images/sales_rtf1.html" target="_blank"><img src="images/sales_rtf1_s.gif" title="RTF Report, p.1" border="0"></a></td>
+  <td><a href="http://www.filigris.com/docflex-xml/samples/sales_report/images/sales_rtf2.html" target="_blank"><img src="images/sales_rtf2_s.gif" title="RTF Report, p.2" border="0"></a></td>
+</tr>
+</table>
+</blockquote>
+
+<p>The icons visible in the &ldquo;License Certificate&rdquo; column (on the first page) were also taken
+from the <a href="#task"><code>sales.xml</code></a> data source file. They are the values of
+<blockquote class="mrg8">
+<code>&lt;PurchaseItemKey&gt;&lt;Data&gt;&lt;/Data&gt;&lt;/PurchaseItemKey&gt;</code>
+</blockquote>
+<p class="mrg8">
+elements which originally were supposed to hold any binary data of the license keys to the sold
+software.
+<p class="mrg8">
+As this is a mock sales report, those elements have been filled with the Base64-encoded
+icons and the <a href="#template"><code>sales.tpl</code></a> template was programmed
+to display the values of those elements as images. This demonstrates how DocFlex/XML
+can handle images imbedded in any schema-based XML files in the form of element values.
+
+<h3>
+  <a name="html_report"></a>
+  HTML Report
+</h3>
+
+<p>When you <a href="#running_generator">run the generator</a> again with the
+HTML output format selected, the following document will be generated
+(click on the screenshot to see the live HTML):
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/sales_report/files/sales_report.html" target="_blank"><img src="images/sales_html.png" title="HTML Report" border="0"></a>
+</blockquote>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

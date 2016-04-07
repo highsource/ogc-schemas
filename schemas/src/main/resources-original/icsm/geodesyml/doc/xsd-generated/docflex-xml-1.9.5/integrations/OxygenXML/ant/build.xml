@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!-- This ANT buildfile demonstrates how to integrate  -->
+<!-- DocFlex/XML generator + OxygenXML with Apache Ant -->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<project name="DocFlex/XML+OxygenXML Ant Integration Demo" basedir=".">
+
+  <!-- This will generate an XML schema documentation -->
+  <target name="XSDDoc">
+
+    <!-- DocFlex/XML home directory -->
+    <property name="DFH" value="..\..\.."/>
+
+    <!-- DocFlex/XML Java class path -->
+    <property name="CLASSPATH" value="${DFH}\lib\xml-apis.jar;${DFH}\lib\xercesImpl.jar;${DFH}\lib\resolver.jar;${DFH}\lib\docflex-xml.jar"/>
+
+    <!-- OxygenXML home directory -->
+    <property name="OXYGENXML_HOME" value="C:\Program Files\Oxygen XML Editor 15"/>
+
+    <!--
+       Execute the DocFlex/XML generator.
+
+       IMPORTANT: The 'maxmemory' attribute sets the maximum heap size
+       available to Java VM when running DocFlex/XML. 
+       Check this attribute when you need to process large quantities of data!
+
+       According to our tests, allowing 512 Mb heap size on 32-bit Java is OK
+       in most cases (e.g. running XSDDoc to document large XML schemas).
+       However, for 64-bit Java (running on 64-bit OS) this amount must be doubled.
+       So, you should specify 1024m, instead of 512m.
+
+       The 'fork' attribute forces Ant to launch a separate instance of JVM.
+       This is needed to ensure that the memory specified in the 'maxmemory' attribute
+       will be allocated indeed.
+    -->
+    <java classname="com.docflex.xml.Generator" classpath="${CLASSPATH}" 
+          maxmemory="1024m" fork="true">
+
+       <!-- specify OxygenXML Integration class as element image provider -->
+       <arg value="-m:IMAGE_PROVIDER_CLASS=com.docflex.xml.OxygenXML.Kit"/>
+
+       <!-- 
+         Pass the integration parameter: the OS command to call OxygenXML's own XML schema doc-generator.
+
+         The command arguments with spaces must be enclosed in quotes ('"') to be recognized
+         by the generator as a single argument. Here, such quotes are encoded with '\&quot;',
+         where the '&quot;' is to encode '"' within the XML attribute value and the '\' before it
+         is to pass the quote through Windows command line issued by Ant to launches DocFlex/XML.
+       -->
+       <arg value="-m:OXYGENXML_COMMAND=cmd.exe /C \&quot;${OXYGENXML_HOME}\schemaDocumentation.bat\&quot;"/>
+
+       <!-- specify the template -->
+       <arg value="-template"/>
+       <arg value="${DFH}\templates\XSDDoc\FramedDoc.tpl"/>
+
+       <!-- specify the output format -->
+       <arg value="-format"/>
+       <arg value="HTML"/>
+
+       <!-- specify the output directory -->
+       <arg value="-d"/>
+       <arg value="${DFH}\out"/>
+
+       <!-- specify to not launch the generator GUI -->
+       <arg value="-nodialog"/>
+
+       <!-- specify to not launch the default viewer for the output file -->
+       <arg value="-launchviewer=false"/>
+
+       <!-- pass the template parameter (the documentation title, in this case) -->
+       <arg value="-p:docTitle=XML Schema for XML Schemas"/> 
+
+       <!-- 
+         Specify the data source XML file to be processed by the specified template.
+         (Both local pathnames and URLs are allowed.)
+         In this case, it is an XML schema to be documented.
+       -->
+       <arg value="http://www.w3.org/2001/XMLSchema.xsd"/>
+
+       <!-- 
+         Use default XML catalog to load the above specified file
+         from the DocFlex/XML resources (instead of W3C website)
+       -->
+       <arg value="-xmlcatalog"/>
+       <arg value="urn:docflex-com:xml:defaultcatalog"/>
+
+    </java>
+
+  </target>
+
+</project>

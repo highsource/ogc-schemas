@@ -1,0 +1,390 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../../styles.css">
+<title>DocFlex/XML - Integrations - Apache Maven</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/XML - Integrations - Apache Maven
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ul>
+  <li><a href="#plugin">Apache Maven Plugin</a></li>
+  <li><a href="#plugin.install">Installation</a></li>
+  <li><a href="#plugin.usage">Usage</a></li>
+  <li><a href="#plugin.example1">Example 1</a></li>
+  <li><a href="#plugin.example2">Example 2</a></li>
+</ul>
+<!-- END TABLE OF CONTENTS -->
+
+
+<h2>
+  <a name="plugin"></a>
+  Apache Maven Plugin
+</h2>
+
+It turned out that unlike Ant, <a href="http://maven.apache.org/" target="_blank">Apache Maven</a>
+provides no functionality to run an external Java application directly from itself.
+Instead, anything you want to run from Maven needs to be wrapped as a separate Maven plugin.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+Another problem is that Maven actually has (at least) two types of plugins:
+the <i>normal</i> ones and the <i>reporting</i> plugins.
+This prevents using some existing third-party plugins that do allow running external applications
+from Maven.
+<p class="inset"></p>
+For instance, the
+<a href="http://mojo.codehaus.org/exec-maven-plugin/" target="_blank">Maven Exec Plugin</a>
+found at <a href="http://www.codehaus.org/" target="_blank">Codehaus.org</a> cannot be used
+to run <a href="../generator.html">DocFlex/XML Generator</a>
+because it is not a reporting plugin.
+</td></tr>
+</table>
+<p>
+So, we needed to implement our own <b><i>&ldquo;DocFlex/XML Maven Plugin&rdquo;</i></b>.
+This is a very simple plugin. Basically, it does little more than it calls the 
+<a href="../generator.html">DocFlex/XML Generator</a>'s
+main class and passes to it the array of the same arguments as on the 
+<a href="../generator.html#cmdline">command-line</a>.
+<p>
+However, our plugin both extends
+<code><a href="http://maven.apache.org/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/AbstractMojo.html" target="_blank">org.apache.maven.plugin.AbstractMojo</a></code>
+class and implements 
+<code><a href="http://maven.apache.org/ref/current/maven-reporting/maven-reporting-api/apidocs/org/apache/maven/reporting/MavenReport.html" target="_blank">org.apache.maven.reporting.MavenReport</a></code>
+interface.
+So, it can be used both as a normal and reporting plugin simultaneously.
+
+<h2>
+  <a name="plugin.install"></a>
+  Installation
+</h2>
+
+The DocFlex/XML Maven Plugin's Java source, which consists of only <code>'DocFlexXMLMojo.java'</code> class,
+is contained in the <code>'integrations/maven/plugin/src/'</code> directory included in DocFlex/XML
+<a href="../about.html#editions">archive</a>.
+<p>
+To install the plugin into Maven repository, please follow these steps:
+<ol>
+<li class="mrg8">
+Edit <code>integrations/maven/plugin/pom.xml</code> to specify the absolute pathname of 
+<code>docflex-xml.jar</code> according to your DocFlex/XML installation in the following lines:
+
+<blockquote class="mrg8">
+<pre class="mrg8">
+&lt;dependency&gt;
+  &lt;groupId>docflex&lt;/groupId&gt;
+  &lt;artifactId&gt;docflex-xml&lt;/artifactId&gt;
+  &lt;version&gt;1.9.5&lt;/version&gt;
+  &lt;scope&gt;system&lt;/scope&gt;
+  &lt;systemPath&gt;<span class="red_darker">C:\docflex-xml-1.9.5\lib\docflex-xml.jar</span>&lt;/systemPath&gt;
+&lt;/dependency&gt;
+</pre>
+</blockquote>
+</li>
+
+<li class="mrg8">
+Edit <code>integrations/maven/plugin/install.bat </code>(on Windows) or <code>integrations/maven/plugin/install.sh </code>(on Linux)
+to specify the correct locations of your JDK/JRE and Maven installations.
+<p class="mrg8">
+Run this command file.
+<p class="mrg8">
+If everything is correct, the DocFlex/XML Maven Plugin will be compiled and installed.
+<p class="mrg8">
+Note: If you have no full JDK on your system, but only JRE,
+the pre-compiled <code>DocFlexXMLMojo.class</code> provided in the
+<code>'integrations/maven/plugin/target/'</code> directory allows you to build 
+and install the plugin anyway.
+</li>
+
+<li class="mrg8">
+To test the plugin,
+edit <code>integrations/maven/plugin/test.bat </code>(on Windows) or <code>integrations/maven/plugin/test.sh </code>(on Linux)
+according to your Java and Maven locations and run it.
+The <a href="../generator.html#gui">generator dialog</a> should appear.
+</li>
+</ol>
+
+<h2>
+  <a name="plugin.usage"></a>
+  Usage
+</h2>
+
+The DocFlex/XML Maven Plugin processes only three parameters:
+
+<dl>
+
+<dt><b>&lt;generatorParams&gt;</b></dt>
+<dd>
+  The array of all <a href="../generator.html#cmdline">command-line</a>
+  arguments passed to the DocFlex/XML generator (except those controlled by other two parameters).
+  <p class="mrg8">
+  Each command-line argument (which is either a
+  <a href="../generator.html#options">generator option</a> name,
+  the option value or an input XML file) should be specified with a nested
+  <b>&lt;param&gt;</b> element in the same order as on the DocFlex/XML generator
+  <a href="../generator.html#cmdline">command-line</a>.
+</dd>
+
+<dt><b>&lt;outputFolder&gt;</b></dt>
+<dd>Specifies the output directory name.
+  <p class="mrg8">
+  The plugin will convert the specified value into the absolute pathname of the output directory,
+  which is passed further both to Maven and to DocFlex/XML Generator (via 
+  <span class="nowrap">-<a href="../generator.html#d_option">d option</a></span>).
+</dd>
+
+<dt><b>&lt;outputFile&gt;</b></dt>
+<dd>Specifies the name of the main output file.
+  <p class="mrg8">
+  The plugin will pass the specified value directly to DocFlex/XML Generator (via 
+  <span class="nowrap">-<a href="../generator.html#f_option">f option</a></span>).
+  It will be also converted into the absolute pathname and passed to Maven
+  (exactly that pathname will be linked from the Maven-generated &ldquo;Project Reports&rdquo; page).
+</dd>
+
+</dl>
+
+The DocFlex/XML Maven Plugin provides only one goal <code>'generator'</code>,
+which launches the <a href="../generator.html">DocFlex/XML Generator</a>.
+<p>
+Since <a href="../generator.html">DocFlex/XML Generator</a> requires a lot of memory
+(especially when processing big template applications) and it will be executed by the same JVM as Maven,
+you need to ensure that the Maven's JVM maximum <b>memory heap</b> size is large enough.
+<p>
+You can specify this by setting <code>'MAVEN_OPTS'</code> variable in a <b>Windows</b> command file
+that starts the Maven. For example:
+<blockquote>
+  <code>MAVEN_OPTS=-Xms256m -Xmx512m</code>
+</blockquote>
+In a <b>Linux</b> shell script file, the same should be specified as the following:
+<blockquote>
+  <code>export MAVEN_OPTS="-Xms256m -Xmx512m"</code>
+</blockquote>
+
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  The lack of memory may cause the DocFlex/XML Generator to slow down very much
+  (especially, when processing a big template application like <a href="../xsddoc/index.html">XSDDoc</a>)
+  and lead eventually to <code>java.lang.OutOfMemoryError</code> exception!
+  <p class="inset"></p>
+  According to our tests, allowing 512 Mb heap size on 32-bit Java is OK in most cases
+  (e.g. running <a href="../xsddoc/index.html">XSDDoc</a> to document large XML schemas).
+  However, for <b>64-bit Java</b> (running on 64-bit OS) this amount must be doubled.
+  So, you should specify <b><code>-Xmx1024m</code></b>, instead of <code>-Xmx512m</code>.
+</td></tr>
+</table>
+
+<h2>
+  <a name="plugin.example1"></a>
+  Example 1
+</h2>
+
+This example shows how to configure the <a href="#plugin">DocFlex/XML Maven Plugin</a> in a project POM file
+so as to generate using <a href="../xsddoc/index.html">XSDDoc</a> template set the XML schema documentation by
+<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/wsdl11/index.html" target="_blank">XML Schemas for WSDL 1.1</a>
+that would appear on the &ldquo;Project Reports&rdquo; page of a Maven-generated project site.
+<p>
+<p class="mrg8"><u><i>pom.xml</i></u></p>
+<TABLE BGCOLOR="#F5F5F5" CELLSPACING="0" CELLPADDING="7" BORDER="0" CLASS="brdr1">
+<TR>
+<TD CLASS="f6">
+<DIV style="margin-right:8pt">
+<DIV><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">project</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f8">...</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"><BR>Reporting section.<BR>All reports for &quot;Project Reports&quot; page of the Maven-generated site<BR>should be specified here.<BR></SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">reporting</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">plugins</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Configure DocFlex/XML Maven plugin </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">plugin</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">groupId</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">docflex</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">groupId</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">artifactId</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">docflex-xml-maven-plugin</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">artifactId</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">version</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">1.0</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">version</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">configuration</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Specifying command-line parameters for DocFlex/XML Generator </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">generatorParams</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> The main template </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">-template</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">C:/docflex-xml/templates/XSDDoc/FramedDoc.tpl</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Pass template parameter </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">-p:docTitle</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">XML Schemas for WSDL 1.1</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Specify the output format </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">-format</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">HTML</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Suppress showing up the generator GUI </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">-nodialog</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Suppress most of the generator messages </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">-quiet</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"><BR>Specifying the data source XML files to be processed.<BR>The following files will be loaded directly from Internet by the given URLs.<BR></SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">http://schemas.xmlsoap.org/wsdl/</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">http://schemas.xmlsoap.org/wsdl/soap/</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">http://schemas.xmlsoap.org/wsdl/http/</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">http://schemas.xmlsoap.org/wsdl/mime/</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">generatorParams</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"><BR>Specify the output directory name.<BR>The plugin will convert it into the absolute pathname of the output directory,<BR>which is passed further both to Maven and to DocFlex/XML Generator (via -d option).<BR></SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">outputFolder</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">xsddoc</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">outputFolder</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> For the Maven project-reports page </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">XSDDoc</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">description</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">XML Schemas for WSDL 1.1</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">description</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">configuration</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">plugin</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">plugins</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">reporting</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f8">...</SPAN></DIV>
+<DIV><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">project</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+</DIV>
+</TD>
+</TR>
+</TABLE>
+<p>
+This complete working example is included in DocFlex/XML <a href="../about.html#editions">archive</a>
+prepared for <a target="_blank" href="http://www.filigris.com/downloads/">downloads</a>.
+
+<h2>
+  <a name="plugin.example2"></a>
+  Example 2
+</h2>
+
+In this example we show how to configure the <a href="#plugin">DocFlex/XML Maven Plugin</a>
+to generate with it simultaneously two reports:
+<ol class="mrg8">
+<li class="mrg8">
+  The &ldquo;<a href="../samples/sales_report/index.html#html_report">Sales Report</a>&rdquo;,
+  which is described in <a href="../samples/sales_report/index.html">DocFlex/XML | Samples | Sales Report</a>.
+</li>
+<li class="mrg8">
+  The XML schema documentation (using <a href="../xsddoc/index.html">XSDDoc</a> templates)
+  for the XML schema <code><a href="../samples/sales_report/index.html#xml_type">sales.xsd</a></code>
+  that describes the structure of 
+  <code><a href="../samples/sales_report/index.html#task">sales.xml</a></code>,
+  the data source file for the first report.
+</li>
+</ol>
+
+Both reports would be placed on the &ldquo;Project Reports&rdquo; page of a Maven-generated project site.
+
+<p>
+<p class="mrg8"><u><i>pom.xml</i></u></p>
+<TABLE BGCOLOR="#F5F5F5" CELLSPACING="0" CELLPADDING="7" BORDER="0" CLASS="brdr1">
+<TR>
+<TD CLASS="f6">
+<DIV style="margin-right:8pt">
+<DIV><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">project</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f8">...</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Specifying properties (i.e. variables for further usage) </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">properties</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> DocFlex/XML home directory </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">DFH</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">C:/docflex-xml</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">DFH</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f8">...</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">properties</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f8">...</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"><BR>Reporting section (where all reports for &quot;Project Reports&quot; page are specified)<BR></SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">reporting</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">plugins</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Configure DocFlex/XML Maven plugin </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">plugin</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">groupId</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">docflex</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">groupId</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">artifactId</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">docflex-xml-maven-plugin</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">artifactId</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">version</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">1.0</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">version</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> The plugin will generate two reports </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">reportSets</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"><BR>Specifying the FIRST REPORT: &quot;Sales Report&quot;.<BR>(The name of the &lt;reportSet&gt; element is actualy misleading here.<BR>Only one report we can define within this element.)<BR></SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">reportSet</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"><BR>The &lt;id&gt; element must be always specified and unique!<BR>Otherwise, only one report will be generated by the plugin.<BR></SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">id</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">report</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">id</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">configuration</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Specifying command-line parameters for DocFlex/XML Generator </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">generatorParams</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> The main template </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">-template</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">${DFH}/samples/sales/sales.tpl</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> The output format </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">-format</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">HTML</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Suppress showing up the generator GUI </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">-nodialog</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Suppress most of generator's messages </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">-quiet</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> The input XML file with the report's data </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">${DFH}/samples/sales/sales.xml</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">generatorParams</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"><BR>Specify the output directory name.<BR>The plugin will convert it into the absolute pathname of the report's<BR>output directory, which will be passed both to Maven and to DocFlex/XML<BR>Generator (via -d option).<BR></SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">outputFolder</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">sales</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">outputFolder</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"><BR>Specify the name of the main output file.<BR>The plugin will pass it directly to DocFlex/XML Generator (via -f option).<BR>It will be also converted into the absolute pathname and passed to Maven<BR>(exactly that pathname will be linked from the project-reports page).<BR></SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">outputFile</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">report</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">outputFile</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> For the project-reports page </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Sales Report</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">description</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">The sales report generated from sales.xml</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">description</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">configuration</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"><BR>Specifying the plugin's goal.<BR>(It is necessary here. Otherwise, nothing will be generated.)<BR></SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">reports</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">report</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">generator</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">report</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">reports</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">reportSet</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"><BR>Now, we specify the generation of the SECOND REPORT.<BR>This will be the XSDDoc (XML schema documentation) generated for the XML schema<BR>that describes the 'sales.xml' file used in the first report. (The 'sales.tpl'<BR>template, which actually generates the first report, is based on that schema.)<BR></SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">reportSet</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> The &lt;id&gt; is required and must be unique for each &lt;reportSet&gt; </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">id</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">xsddoc</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">id</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">configuration</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> The DocFlex/XML Generator's command-line parameters </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">generatorParams</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> The main template </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">-template</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">${DFH}/templates/XSDDoc/FramedDoc.tpl</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Pass template parameter: the documentation title </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">-p:docTitle</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Sales XML Schema</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Specify the output format </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">-format</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">HTML</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Show no generator GUI and few messages </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">-nodialog</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">-quiet</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"><BR>The input XML file to process (i.e. the XML schema to be documented)<BR></SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p8"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">${DFH}/samples/sales/sales.xsd</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">generatorParams</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Specifying the report's output directory and file </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">outputFolder</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">sales</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">outputFolder</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">outputFile</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">xsddoc</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">outputFile</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> For the project-reports page </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Sales XSDDoc</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">description</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">XML schema for sales.xml</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">description</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">configuration</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Specifying the required plugin's goal </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">reports</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p7"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">report</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">generator</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">report</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">reports</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">reportSet</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">reportSets</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">plugin</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">plugins</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">reporting</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f8">...</SPAN></DIV>
+<DIV><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">project</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+</DIV>
+</TD>
+</TR>
+</TABLE>
+<p>
+This complete working example is included in DocFlex/XML
+<a href="../about.html#editions">archive</a> prepared for <a target="_blank" href="http://www.filigris.com/downloads/">downloads</a>.
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

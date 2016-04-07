@@ -1,0 +1,44 @@
+When you annotate your XML schema simultaneously in different languages,
+this parameter will allow you to generate the documentation localized for only one of them
+(that is, only the annotations written in the selected language will be included in the documentation).
+<p>
+<u>Parameter Value</u>:
+<p>
+The 2- or 3-letter code identifying the language.
+This must be the same code which you have specified in the <b><code>'xml:lang'</code></b> attribute
+of the &lt;xs:documentation&gt; elements you want to process.
+<p>
+You may also specify multiple language codes separated with semicolons (';'). For example:
+<dl><dd>
+<code>de;deu</code>
+</dd></dl>
+In that case, only those &lt;xs:documentation&gt; elements will be processed,
+which contain the <code>'xml:lang'</code> attribute assigned with one of the specified language codes.
+<p>
+When this parameter is not specified (empty string), all sibling &lt;xs:documentation&gt; elements are processed,
+which will produce a single (however, multi-sectional) annotation text.
+<p>
+<u>Example</u>:
+<dl><dd>
+<pre><code>
+&lt;xs:annotation&gt;
+
+   &lt;xs:documentation xml:lang="en"&gt;
+      This description is in English...
+   &lt;/xs:documentation&gt;
+
+   &lt;xs:documentation xml:lang="de"&gt;
+      Die deutsche Beschreibung...
+   &lt;/xs:documentation&gt;
+
+&lt;/xs:annotation&gt;
+</code></pre>
+</dd></dl>
+When you specify <code>"de"</code> in this parameter, you will get in the documentation only this text:
+<i>"Die deutsche Beschreibung..."</i>
+
+<p>
+<b>Nested Parameter:</b>
+<dl><dd>
+Specifies an alternative language
+</dd></dl>

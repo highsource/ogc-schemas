@@ -1,0 +1,16 @@
+script: ./ci.sh
+branches:
+    only:
+        - master
+
+before_install:
+  git submodule init && git submodule --quiet update
+
+env:
+    global:
+        - GH_REF: github.com/GeoscienceAustralia/GeodesyML.git
+        - secure: "cl4mYTI/rG4wm1VWuqTNBZphHG/G7D8Vb/ZuimXU+HpCscclga6vB4bL3/AdG9sro624uRvSg6zETW7UkABoqNJfLn+/fpo+qhI6pTCFGUsEp7ZuKuydEAzo7J/QB2WqAbCuvFjj6ZjoT659s6t2tSSwwTrY83h5X3BgKiqYReJWPUaeUQjrV2Rv3OVwqAmQWN257P8RT9AUL479F2y03cpACNyx3YBdySEhudfT34KtdgkpgxbGETsR7njKOXJftW8Rqudtin8nf1LgXMZ9Iy8pb64ePSJCscdazx+OCBF11z8cSB8Sbei549RH49BzJHUekB7CJ7GHCnBpqI/n8W6Du8mMHhNSUg8Z7MG9FO/O4ncZVRlzRpmgMD8J9yNZy85Ja9FA9F7rhvNyj0eyWYynigReXVmzpwc0Ivy0KiZW7tdUFFJpQfe+bDMbixIAXaGcfN2lukMAapGFS/05ZtAKqcir/EnbdyvjGjlv2OvDYgdOLDMYxVa55h5Al2RG/R3Cp6wSaSkRgd21yz8efc6+cyVEOIx/NdvdLRf9zQDDNoYQ8+XvPFgsrVjIv28ZulOcFpNYXMzM9BURgCP3i9V75hW6eGOul5hfwOXsouyKQdImAw3RaiFGUZfOe+DDb5hPK7LAcYq1pk2ia14oCDpPGHzzQjFjeeCLwO8vOTM="
+
+jdk:
+    - oraclejdk8
+

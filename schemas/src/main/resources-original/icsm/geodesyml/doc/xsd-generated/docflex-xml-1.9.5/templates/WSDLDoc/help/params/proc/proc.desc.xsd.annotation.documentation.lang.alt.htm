@@ -1,0 +1,17 @@
+When the <i>"Language"</i> parameter is specified, only the &lt;xs:documentation&gt;
+elements marked with the specified language code(s) will be process.
+All others will be ignored.
+<p>
+However, you may have a situation that not all annotations in your XML schema are translated into a specific language.
+When you generate the documentation targeted to that language, it is preferable to have all descriptions written in it.
+However, when such a localized description is missing, a description written in some basic language (e.g. English)
+would also suffice.
+<p>
+Using this parameter you may specify such an alternative language.
+<p>
+The value of this parameter must be specified the same way as of <i>"Language"</i> parameter.
+<p>
+For example, let's suppose that in the <i>"Language"</i> parameter you have specified <code>"de"</code>
+and the value of this (<i>"Alternative Language"</i>) parameter is <code>"en"</code>.
+Then, when German annotations are found only them will get into the generated documentation.
+However, when a German annotation is missing and the English one exists, it will be used instead.

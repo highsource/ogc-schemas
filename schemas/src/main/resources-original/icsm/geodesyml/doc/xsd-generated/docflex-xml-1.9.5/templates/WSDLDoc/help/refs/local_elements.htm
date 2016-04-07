@@ -1,0 +1,287 @@
+<h1>
+  <a name="local_elements"></a>
+  About Local Elements
+</h1>
+
+<ul style="margin-top:8pt; margin-bottom:8pt">
+  <li><a href="#local_elements.problem">The problem with Local Elements</a></li>
+  <li><a href="#local_elements.documenting">How Local Elements are documented</a></li>
+  <li><a href="#local_elements.local_documenting">Local Documenting</a></li>
+  <li><a href="#local_elements.global_documenting">Global Documenting</a>
+    <ul style="margin-top:0;margin-bottom:0">
+      <li><a href="#local_elements.unifying_by_type">Unifying Local Elements By Type</a></li>
+    </ul>
+  </li>
+  <li><a href="#local_elements.global_naming">Global Naming of Local Elements</a>
+    <ul style="margin-top:0;margin-bottom:0">
+      <li><a href="#local_elements.global_naming.examples">Examples</a></li>
+      <li><a href="#local_elements.global_naming.omitting_name_ext">Omitting Name Extensions</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2>
+  <a name="local_elements.problem"></a>
+  The problem with Local Elements
+</h2>
+
+<b><i>Local Elements</i></b> are those XSD element components that are defined locally within:
+<ul>
+<li>
+  complex types (either global ones or defined anonymously within other elements)
+</li>
+<li>
+  element groups (which are separate schema components that define whole bunches of elements 
+  arranged in specific complex models).
+</li>
+</ul>
+Local elements represent a challenge to document.
+That is because since the introduction of local elements in W3C XML Schema language, 
+there is no strict relationship any longer between the element name and its type for the entire 
+scope of the XML document.
+<p>
+Now, within the same XML document, you may find several different XML elements
+that although share the same name, actually represent more or less different things and, 
+therefore, may have different attributes and content.
+It is clear that such equally named but essentially different local elements must be documented separately.
+<p>
+On the other hand, in many cases local elements are declared very simply:
+<dl><dd>
+<code>&lt;xs:element name="elementName" type="typeName"/&gt;</code>
+</dd></dl>
+In such a declaration, an element is totally defined by its type, which is a global one.
+An XML schema may contain many such simple declarations, where {elementName, typeName} pairs are repeating.
+Therefore, the {elementName, typeName} pair itself may be considered now as an actual "global" element 
+that could be documented as a single entity.
+
+<h2>
+  <a name="local_elements.documenting"></a>
+  How Local Elements are documented
+</h2>
+
+This XML Schema documentation generator provides unique capabilities to document all local elements defined in your XML schemas.
+<p>
+Local elements can be documented simultaneously in two ways: <i><a href="#local_elements.local_documenting">locally</a></i>
+and <i><a href="#local_elements.global_documenting">globally</a></i>.
+<p>
+The purpose of two types of the documentation is that some elements may be important 
+to show in the navigation lists, whereas other elements (particularly those with predefined simple content 
+that essentially play the role of attributes) are better to be documented locally where they are defined/used.
+Exposing such insignificant elements in the navigation lists and summaries
+(along with the global elements or those with complex content) may blow out and overwhelm such lists
+and make them difficult to navigate.
+
+<h2>
+  <a name="local_elements.local_documenting"></a>
+  Local Documenting of Local Elements
+</h2>
+
+An element component can be documented locally together with its parent component where it is defined. 
+In that case, the elements are documented essentially the same as attributes.
+<p>
+That documentation appears in the <i>"Content Element Detail"</i> section of the 
+<i>XSD Component Documentation</i> generated for the element's parent component.
+It may contain more details about the element declaration itself, but will provide
+less information about how the element is used elsewhere.
+<p>
+What exactly is included in this section for each element is controlled by the parameter group: 
+<i>"Details | XSD Component | Content Element Detail"</i>
+
+<h2>
+  <a name="local_elements.global_documenting"></a>
+  Global Documenting
+</h2>
+
+Global documenting of a local element means generating for it the full <i>Element Documentation</i> page.
+<p>
+In the case of framed HTML documentation, such an element will also appear in the component lists 
+shown in the documentation <i>Index Frame</i> (on the left).
+<p>
+Moreover, unlike the section describing that element in the <i>"Content Element Detail"</i> of its parent component, 
+the detailed <i>Element Documentation</i> may include a lot more information 
+about how the element interacts with other XML schema components
+(e.g. <i>"List of Containing Elements"</i>, <i>"Usage/Definition Locations"</i> etc.)
+<p>
+Which local elements are documented globally is controlled by the parameter group: 
+<i>"Generate Details | XSD Components | Elements | Local Elements"</i>.
+What will be included in that documentation is controlled by parameters in
+<i>"Details | XSD Component"</i> group.
+
+<h3>
+  <a name="local_elements.unifying_by_type"></a>
+  Unifying Local Elements By Type
+</h3>
+
+In many XML schemas there is a common feature.
+Some local element components defined across a schema share the same:
+<dl><dd>
+{ <code>namespace : elementName : typeName</code> }
+</dd></dl>
+In that case, their definitions typically look like the following:
+<dl><dd>
+<code>&lt;xs:element name="elementName" type="typeName"/&gt;</code>
+</dd></dl>
+So, there is basically nothing (or very little) special to say about every particular such a definition.
+<p>
+On the other hand, the same name/type combination for a schema element is typically associated with
+the same notion from the real world. When you try to understand a particular XML schema,
+tracking something associated with different local elements scattered across the whole schema may be difficult.
+Having a single documentation for those elements may quickly reveal a lot more things. 
+<p>
+This XML schema documentation generator supports such a possibility.
+<p>
+When the parameter
+<i>"Generate Details | XSD Components | Elements | Local Elements | Unify By Type"</i>
+is selected (<code>true</code>), all local elements that share the same {namespace : elementName : typeName}
+will be documented on the same global documentation page (or block) as a single entity --
+<b><i>unified local element</i></b>.
+<p>
+All actual element components unified by type across the documentation will be hyperlinked to that page 
+and all of them will be represented by a single item in various navigation lists.
+<p>
+If some of the definitions of the unified local element do vary
+(e.g. they may have different annotations or a few other settings, like <code>default</code> attribute)
+those differences will be also documented on the same unified global documentation page.
+<p> 
+For many XML schemas, the unification of local elements by type may greatly 
+reduce the overall number of documented elements, thereby making the documentation a lot clearer.
+In some special cases, the XML schema documentation generated without it would be even difficult to understand and use. 
+All you would see would be lots of repeating element names with a little clue what they actually mean
+(especially given that some of them may represent essentially the same things, whereas others quite different ones.)
+
+<h2>
+  <a name="local_elements.global_naming"></a>
+  Global Naming of Local Elements
+</h2>
+
+Since the name of a local element is required to be unique only within the scope of its parent,
+there may be several local element components in a schema that share the same name but have different types 
+and, therefore, should be documented differently (on different global documentation pages).
+<p>
+But when such equally named local elements need to be presented in a single navigation/reference list or summary,
+it may be impossible to tell them apart (at least until clicking the links).
+<p>
+Fortunately, that problem can be solved by extending each repeating local element name with a little text
+that would make the element unique across the documentation.
+Such <b><i>extensions of local element names</i></b> are generated according to the following rules:
+<ol>
+<li>
+When the element is included in the content model of only one other element
+(taking also into account the unification of local elements by type; see above),
+the element name is extended with the full name of its possible parent element like this:
+<blockquote>
+<code><i>name</i> (in <i>full_parent_name</i>)</code>
+</blockquote>
+where <code><i>full_parent_name</i></code> is a normal qualified name for a global element
+or the qualified name with the extension for a local element.
+<p>
+Otherwise, the element name is extended differently (as described below).
+</li>
+
+<li style="margin-top:12pt">
+If the following conditions are met
+<ul style="margin-top:12pt; margin-bottom:12pt">
+<li>The element has a <code>type</code> attribute</li>
+<li>
+  The unification of local elements by type is enabled.
+  (See <i><a href="#local_elements.unifying_by_type">Unifying Local Elements By Type</a></i> above.)
+</li>
+<li>The element is documented globally</li>
+</ul>
+then the element name is extended with the name of the type like the following:
+
+<blockquote>
+<code><i>name</i> (type <i>type_name</i>)</code>
+</blockquote>
+or, when the name appears within the extension of other local element's name:
+<blockquote>
+<code><i>name</i> : <i>type_name</i></code>
+</blockquote>
+Here, the <code><i>type_name</i></code> is the qualified name of a global type
+specified in the <code>type</code> attribute.
+<p style="margin-top:12pt">
+The conditions above guarantee that such a whole name (i.e. the element qualified name + extension)
+will be unique for every separately documented element entity (that is, the hyperlinks from equal names will 
+always lead to the same documentation).
+</li>
+
+<li style="margin-top:12pt">
+In all other cases, the local element must be the one defined within a global complex type or element group.
+
+<table border="1" style="margin-top:12pt;margin-bottom:12pt">
+<tr><td style="font-family: Dialog; font-size:12pt">
+Indeed, any local element can be defined only in three types of locations:
+<ol style="font-family: Dialog; font-size:12pt">
+<li>Within a global complex type</li>
+<li>Within a global element group</li>
+<li>Within an anonymous complex type in another element component</li>
+</ol>
+The last possibility is excluded here because in that case the given local element would 
+be included in the content model of only one other element: the one, in which it is defined.
+</td></tr>
+</table>
+
+So, the name extension is produced from the definition location, as follows:
+
+<blockquote>
+<code><i>name</i> (defined in <i>type_name</i> complexType)</code>
+</blockquote>
+or
+<blockquote>
+<code><i>name</i> (defined in <i>group_name</i> group)</code>
+</blockquote>
+
+where <code><i>type_name</i></code> or <code><i>group_name</i></code> is the qualified name 
+of the global complex type or element group, in which the element is defined.
+</li>
+</ol>
+
+<h3>
+  <a name="local_elements.global_naming.examples"></a>
+  Examples:
+</h3>
+
+<code>xs:choice <b>(in xs:group)</b></code>
+<dl><dd>
+Here, the local element <code>'xs:choice'</code> (whose name is being extended) may be included
+in only one other element <code>'xs:group'</code>, which is the global one.
+</dd></dl>
+
+<code>xs:group <b>(type xs:groupRef)</b></code>
+<dl><dd>
+The element <code>'xs:group'</code> has a global type <code>'xs:groupRef'</code>.
+This local element component is documented globally, possibly along with other equally named
+local elements unified by the same type.
+</dd></dl>
+
+<code>xs:attribute <b>(defined in xs:attrDecls group)</b></code>
+<dl><dd>
+The local element <code>'xs:attribute'</code> may be included
+in several other elements (documented differently) or in none at all.
+However, it is defined in only one location -- in <code>'xs:attrDecls'</code> group.
+</dd></dl>
+
+<code>configuration <b>(in plugin in plugins in reporting)</b></code>
+<dl><dd>
+The local element <code>'configuration'</code> (whose name is being extended) may be included
+in only one other element <code>'plugin'</code>, which itself is also a local one included
+only in <code>'plugins'</code> element and so on.
+</dd></dl>
+
+<code>configuration <b>(in plugin : Plugin)</b></code>
+<dl><dd>
+The local element <code>'configuration'</code> may be included in only one other element <code>'plugin'</code>,
+which by itself can be one or several local element components unified by the same type <code>'Plugin'</code>.
+</dd></dl>
+
+<h3>
+  <a name="local_elements.global_naming.omitting_name_ext"></a>
+  Omitting Name Extensions
+</h3>
+
+When the name of a local element is unique for the entire namespace, no name extension is actually needed.
+Besides that, you may want to suppress all name extensions for other reasons. 
+<p>
+In those cases, you can disable the generation of name extensions using
+<i>"Show | Local Element Extensions"</i> parameter, either for all local elements altogether or for only those whose
+original names are unique.

@@ -1,0 +1,332 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex Technology - Overview - Formatting Features</title>
+</head>
+
+<body>
+
+<h1>DocFlex Technology - Overview - Formatting Features</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ul>
+<li><a href="#output_formats">Output formats</a></li>
+<li><a href="#text_formatting">Text formatting</a></li>
+<li><a href="#paragraphs">Paragraphs</a></li>
+<li><a href="#styles">Styles</a></li>
+<li><a href="#borders">Borders</a></li>
+<li><a href="#tables">Tables</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#document_fields">Document fields</a></li>
+<li><a href="#page_formatting">Page formatting</a></li>
+<li><a href="#image_formatting">Image formatting</a></li>
+<li><a href="#embedded_html">Rendering of embedded HTML</a></li>
+</ul>
+<!-- END TABLE OF CONTENTS -->
+
+<h4>
+  <a name="output_formats"></a>
+  Output formats
+</h4>
+
+<blockquote>
+Output documents can be generated in HTML or RTF formats with the maximum support
+of formatting techniques provided in the both formats.
+<p class="mrg8">
+At the same time, the architecture of DocFlex and its templates allows designing
+templates independently on a particular destination format. The necessary format is selected
+just when starting the generator. All instructions and settings contained in the template
+will be rendered with the appropriate features of the selected output format. So, once the
+template has been created, it can be used to produce the best quality output documents in
+any format supported by the latest version of DocFlex.
+<p class="mrg8">
+The current version of <a href="about.html#sdk">DocFlex SDK</a>
+supports generation output in the following formats:
+<ul type="circle" class="mrg8">
+  <li><code><b>HTML</b> (version 4.0)</code></li>
+  <li><code><b>RTF</b> &nbsp;(version 1.6)</code></li>
+  <li><code><b>TXT</b></code></li>
+</ul>
+<p class="mrg8">
+TXT is a plain text output without any formatting features. It can be found useful in some applications
+as well. In the next version, it is planned to support the <b class="nowrap">XSL-FO</b>
+output generation.
+</blockquote>
+
+<h4>
+  <a name="text_formatting"></a>
+  Text formatting
+</h4>
+
+<blockquote>
+<div class="ul_anti_indent">
+<ul class="mrg8">
+  <li class="mrg8">
+    assigning a text font (i.e. font name and font size). In templates, a font size is specified in <b>points</b>.
+    However, depending on the generator settings, the HTML documents can be generated with the fonts having
+    either fixed or relative sizes. The relative font sizes are specified in <b>percents</b> and rendered by the
+    browsers relatively to the base font size.
+  </li>
+  <li>font style: <i>plain</i>, <i>italic</i>, <i>bold</i></li>
+  <li>text decoration: <i>none</i>, <i>underlined</i>, <i>strikethrough</i></li>
+  <li>colors of text and background</li>
+  <li>text border</li>
+</ul>
+</div>
+<p>
+<img src="images/text_fmt.png" title="specifying text formatting">
+</blockquote>
+
+<h4>
+  <a name="paragraphs"></a>
+  Paragraphs
+</h4>
+
+<blockquote>
+<div class="ul_anti_indent">
+<ul class="mrg8">
+  <li>paragraph margins</li>
+  <li>border</li>
+  <li>background color</li>
+  <li>pagination control</li>
+</ul>
+</div>
+</blockquote>
+
+<h4>
+  <a name="styles"></a>
+  Formatting Styles
+</h4>
+
+<blockquote>
+<div class="ul_anti_indent">
+<ul class="mrg8">
+  <li>defining styles in templates</li>
+  <li>using styles within templates to specify formatting of text and paragraphs</li>
+  <li>including styles in generated documents (RTF)</li>
+</ul>
+</div>
+<p>
+<img src="images/styles.png" title="Formatting Styles">
+</blockquote>
+
+<h4>
+  <a name="borders"></a>
+  Borders&nbsp; (of text / paragraph / table / image)
+</h4>
+
+<blockquote>
+<div class="ul_anti_indent">
+<ul class="mrg8">
+  <li>border styles: <i>none</i>, <i>solid</i>, <i>double</i>, <i>dashed</i>, <i>dotted</i></li>
+  <li>thickness: <i>thin</i>, <i>medium</i>, <i>thick</i></li>
+  <li>border colors</li>
+</ul>
+</div>
+</blockquote>
+
+<h4>
+  <a name="tables"></a>
+  Tables
+</h4>
+
+<blockquote>
+<div class="ul_anti_indent">
+<ul class="mrg8">
+  <li>defining tables with any layout of cells</li>
+  <li>specifying any table/row/cell borders and background colors</li>
+  <li>support of nested tables</li>
+</ul>
+</div>
+</blockquote>
+
+<h4>
+  <a name="lists"></a>
+  Lists
+</h4>
+
+<blockquote>
+<div class="ul_anti_indent">
+<ul class="mrg8">
+  <li>numbered lists</li>
+  <li>bulleted lists</li>
+</ul>
+</div>
+</blockquote>
+
+<h4>
+  <a name="document_fields"></a>
+  Document fields&nbsp; (RTF)
+</h4>
+
+<blockquote>
+<div class="ul_anti_indent">
+<ul class="mrg8">
+  <li><i>page number</i></li>
+  <li><i>number of pages</i></li>
+  <li><i>table of contents</i></li>
+</ul>
+</div>
+</blockquote>
+
+<h4>
+  <a name="page_formatting"></a>
+  Page formatting&nbsp; (RTF)
+</h4>
+
+<blockquote>
+<div class="ul_anti_indent">
+<ul class="mrg8">
+  <li class="mrg8">
+    specifying paper size and orientation
+  </li>
+  <li class="mrg8">
+    setting page margins
+  </li>
+  <li class="mrg8">
+    defining <b>page headers</b> and <b>footers</b> with any content and formatting.
+    Each document template may contain a single set of page header and footer definitions.
+    However,
+    using <a href="template_components.html#call_template">subtemplate calls</a>,
+    it is possible to generate documents having sections with different page header/footer sets.
+    <p class="mrg8">
+    For more information, see
+    <a href="template_components.html#call_template">Call Template</a> documentation.
+    <p class="mrg8">
+    See also examples:
+    <a target="_blank" href="http://www.filigris.com/docflex-javadoc/examples.php#rtf_demo">DocFlex/Javadoc | Examples | RTF&nbsp;demo</a>
+    and <a target="_blank" href="http://www.filigris.com/docflex-together/examples/">DocFlex/Together | Examples</a>.
+  </li>
+</ul>
+</div>
+</blockquote>
+
+<h4>
+  <a name="image_formatting"></a>
+  Image formatting
+</h4>
+
+<blockquote>
+<div class="ul_anti_indent">
+<ul class="mrg8">
+  <li>specifying the arbitrary scaling of the image: <b>zoom factor</b></li>
+  <li> 
+    option to scale the image automatically to fit into the containing frame
+    (e.g. document page or a table cell)
+  </li>
+  <li>borders around image</li>
+</ul>
+</div>
+<p>
+<img src="images/image_fmt.png" title="specifying image formatting">
+</blockquote>
+
+<h4>
+  <a name="embedded_html"></a>
+  Rendering of embedded HTML
+</h4>
+
+<blockquote class="mrg8">
+<p class="mrg8">
+DocFlex allows to render HTML tags inserted within the text data
+(for instance, the HTML formatting used in Java source comments).
+<p class="mrg8">
+When such a rendering is specified, while generating of an HTML output, the HTML tags are passed as is.
+However, in other formats, the embedded HTML tags need to be parsed and rendered with the
+appropriate features supported in the given output format.
+
+<p class="mrg8">
+DocFlex is able to do this in the way that the output markup produced by the rendering
+of the embedded HTML tags is smoothly integrated with that resulted from interpreting of the formatting
+directly specified in <a href="templates_designer_features.html#template_components">template components</a>.
+
+<p class="mrg8">
+This is implemented in some universal way for all possible non-HTML <a href="#output_formats">output formats</a>.
+Almost all HTML tags practically usable in doc-comments are supported now.
+Here's the list of the supported tags:
+<p>
+<table border="1" cellspacing="1" cellpadding="5">
+<tr valign="top">
+  <td><b>Text</b></td>
+  <td>
+    &lt;b&gt;,
+    &lt;strong&gt;,
+    &lt;i&gt;,
+    &lt;em&gt;,
+    &lt;code&gt;,
+    &lt;tt&gt;,
+    &lt;u&gt;,
+    &lt;s&gt;,
+    &lt;strike&gt;,
+    &lt;sub&gt;,
+    &lt;sup&gt;,
+    &lt;font&gt;,
+    &lt;br&gt;
+  </td>
+</tr>
+<tr valign="top">
+  <td><b>Paragraphs</b></td>
+  <td>
+    &lt;p&gt;,
+    &lt;center&gt;,
+    &lt;div&gt;,
+    &lt;pre&gt;,
+    &lt;h1&gt;,
+    &lt;h2&gt;,
+    &lt;h3&gt;,
+    &lt;h4&gt;,
+    &lt;h5&gt;,
+    &lt;h6&gt;,
+    &lt;blockquote&gt;
+  </td>
+</tr>
+<tr valign="top">
+  <td><b>Lists</b></td>
+  <td>
+    &lt;ul&gt;,
+    &lt;ol&gt;,
+    &lt;li&gt;,
+    &lt;dl&gt;,
+    &lt;dt&gt;,
+    &lt;dd&gt;
+  </td>
+</tr>
+<tr valign="top">
+  <td><b>Table</b></td>
+  <td>
+    &lt;table&gt;,
+    &lt;tr&gt;,
+    &lt;td&gt;,
+    &lt;th&gt;
+  </td>
+</tr>
+<tr valign="top">
+  <td><b>Other</b></td>
+  <td>
+    &lt;hr&gt;,
+    &lt;img&gt;,
+    &lt;a&gt;...&lt;/a&gt;
+  </td>
+</tr>
+</table>
+
+<p>See <a target="_blank" href="http://www.filigris.com/docflex-javadoc/examples.php#rtf_demo">DocFlex/Javadoc | Examples | RTF&nbsp;demo</a>
+for an example result produced by the rendering of embedded HTML.
+
+</blockquote>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2003-2009 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

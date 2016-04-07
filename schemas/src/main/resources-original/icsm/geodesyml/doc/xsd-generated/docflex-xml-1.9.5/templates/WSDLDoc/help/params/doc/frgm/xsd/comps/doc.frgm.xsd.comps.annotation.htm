@@ -1,0 +1,33 @@
+Specify whether to include in the summary item the XSD component annotation and which part of it.
+<p>
+The full annotation text is obtained from all <code>&lt;xs:documentation&gt;</code> elements
+found by the following path:
+<dl><dd>
+<code><b><i>xs:component</i></b>/xs:annotation/xs:documentation</code>
+</dd></dl>
+where <code><i>'xs:component'</i></code> is the particular XML element that defines the component
+(e.g. <code>xs:complexType</code>).
+Multiple <code>&lt;xs:documentation&gt;</code> elements produce different sections of the annotation text.
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"first sentence"</i>
+<dl><dd>
+Include only the first sentence of the annotation text.
+</dd></dl>
+
+<i>"full"</i>
+<dl><dd>
+Include the full annotation.
+</dd></dl>
+
+<i>"none"</i>
+<dl><dd>
+Do not include the annotation.
+</dd></dl>
+
+<p>
+<b>See Also:</b>
+<dl><dd>
+<i>"Processing | Descriptions"</i> parameter group, where you can specify how annotations are processed and displayed.
+</dd></dl>

@@ -1,0 +1,1563 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex Technology - FlexQuery Reference - Generator Object Model</title>
+</head>
+
+<style type="text/css">
+
+p.type_heading {
+  font-family: Verdana, Helvetica, sans-serif;
+  font-size: 110%;
+  font-weight: bold;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:3px;
+  padding-bottom:3px;
+  background-color:#F5E5CC;
+  border: 1px solid black;
+  margin-top: 15pt;
+}
+
+p.prop_heading {
+  font-size: 110%;
+  font-weight: bold;
+  margin:0px;
+  text-align: left;
+}
+
+code.prop {
+  font-weight: bold;
+  margin:0px;
+}
+
+code.prop_type {
+  color: blue;
+  white-space:nowrap;
+}
+
+</style>
+
+<body>
+
+<h1>DocFlex Technology - FlexQuery Reference - Generator Object Model</h1>
+
+The Generator Object Model (GOM) exposes some inner working
+of the <a href="about.html#generator">DocFlex Generator</a>
+in the form of hierarchy of objects which represent some of the
+generator's components and the data the generator processes.
+Currently, there are following GOM object types:
+<blockquote>
+<ul>
+  <li><code><a href="#DSM">DSM</a></code>
+  <li><code><a href="#DSMAttr">DSMAttr</a></code>
+  <li><code><a href="#DSMElement">DSMElement</a></code>
+  <li><code><a href="#DSMElementType">DSMElementType</a></code>
+  <li><code><a href="#GOMAttribute">GOMAttribute</a></code>
+  <li><code><a href="#GOMContext">GOMContext</a></code>
+  <li><code><a href="#GOMElement">GOMElement</a></code>
+  <li><code><a href="#GOMIterator">GOMIterator</a></code>
+  <li><code><a href="#GOMOutputInfo">GOMOutputInfo</a></code>
+  <li><code><a href="#GOMSectionBlock">GOMSectionBlock</a></code>
+  <li><code><a href="#GOMStockSection">GOMStockSection</a></code>
+  <li><code><a href="#OutputFormat">OutputFormat</a></code>
+</ul>
+</blockquote>
+<p>
+Those objects and their properties can be accessed within
+FlexQuery expressions in templates in order to control
+the interpretation of template components and the output
+they produce.
+<p>
+At any particular moment, the generator may be processing
+one or several templates (which, in that case, are those called one from another).
+<p>
+For each template, the generator maintains a special
+<code><b><a href="#GOMContext">GOMContext</a></b></code>
+object which holds information about the template's current processing state.
+<p>
+<a name="generator_variables"></a>
+The <b>GOM starts</b> from the <code><a href="#GOMContext">GOMContext</a></code>
+object associated with the given template. The properties of that object
+are accessible within the FlexQuery scripts in the same way as variables.
+Those properties presented in the form of predefined variables are called
+<b><i>generator variables</i></b>.
+<p>
+The values of generator variables are references to other GOM objects
+which in turn hold their own properties and in such a way provide access
+to other GOM objects.
+<p>
+<u>Example</u>:
+<blockquote>
+<pre>contextElement.id</pre>
+</blockquote>
+This expression returns an identifier of the generator's current
+<a href="template_components.html#context_element">context element</a>.
+
+<!--~~~~~~~~ DSM ~~~~~~~~-->
+
+<p class="type_heading">
+  <a name="DSM"></a>
+  DSM
+</p>
+Represents <a href="about.html#dsm">DSM</a> (Data Source Model).
+<p>
+Some <a href="about.html#dsm_type">DSM Types</a>
+may introduce their own extended properties associated with the whole data source
+which are accessible via this object (for instance, the name of an XML file
+which supplies all the data processed by the template).
+
+<!--~~~~~~~~ DSMAttr ~~~~~~~~-->
+
+<p class="type_heading">
+  <a name="DSMAttr"></a>
+  DSMAttr
+</p>
+
+Represents the <b><a href="about.html#dsm_attribute">DSM attribute</a></b>
+on the level of the <a href="about.html#dsm_driver">DSM Driver</a>
+which is the one who provides data from the
+<a href="about.html#dsm">DSM</a> (Data Source Model),
+a representation of the current data source.
+Each <code>DSMAttr</code> object is the DSM Driver's encapsulation
+of the corresponding DSM attribute.
+
+<p>
+Some <a href="about.html#dsm_type">DSM Type</a> may introduce their own extended properties
+which are accessible via this object. (That's why it is exposed in the Generator Object Model.)
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code><a href="#GOMAttribute">GOMAttribute</a></code>
+</blockquote>
+
+<!--~~~~~~~~ DSMElement ~~~~~~~~-->
+
+<p class="type_heading">
+  <a name="DSMElement"></a>
+  DSMElement
+</p>
+
+<p>
+Represents the <b><a href="about.html#dsm_element">DSM element</a></b>
+on the level of the <a href="about.html#dsm_driver">DSM Driver</a>,
+which is the one who provides data from the
+<a href="about.html#dsm">DSM</a> (Data Source Model),
+a representation of the current data source.
+<p>
+Some <a href="about.html#dsm_type">DSM Type</a> may introduce
+their own extended element properties which are accessible via this object.
+(That's why it is exposed in the Generator Object Model.)
+<p>
+<b>Note: </b>Each <code>DSMElement</code> object is the
+<a href="about.html#dsm_driver">DSM Driver</a>'s encapsulation of
+the corresponding <a href="about.html#dsm_element">DSM element</a>.
+It is not necessary that such an encapsulation is unique
+for a particular DSM element. To distinguish the exact elements,
+use <code><a href="#GOMElement.id">GOMElement.id</a></code> property.
+
+<p>
+<b>See Also:</b>
+<blockquote class="mrg8">
+<code><a href="#GOMElement">GOMElement</a></code>
+</blockquote>
+
+<!--~~~~~~~~ DSMElementType ~~~~~~~~-->
+
+<p class="type_heading">
+  <a name="DSMElementType"></a>
+  DSMElementType
+</p>
+
+<p>
+Provides the information about an
+<b><a href="about.html#element_type">Element Type</a></b>.
+<p>
+<b>Note:</b> The information about a particular
+<a href="about.html#element_type">Element Type</a>
+may be obtained using function
+<code><a href="functions.html#findElementType()">findElementType()</a></code>.
+
+<p>
+<b>See Also:</b>
+<blockquote class="msg8">
+<code>
+  <a href="functions.html#findElementType()">findElementType()</a>,
+  <a href="functions.html#instanceOf()">instanceOf()</a>,
+  <a href="functions.html#resolveElementType()">resolveElementType()</a>,
+  <a href="#GOMElement.elementType">GOMElement.elementType</a>
+</code>
+</blockquote>
+<p>
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="prop_heading">Properties</p></th></tr>
+
+<!-- DSMElementType.name -->
+
+<tr valign="top">
+<td>
+<a name="DSMElementType.name"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">name</code>
+<p>
+The <a href="about.html#element_type">Element Type</a> name.
+<p>
+This name is used for all references to this Element Type.
+</td>
+</tr>
+
+<!-- DSMElementType.displayName -->
+
+<tr valign="top">
+<td>
+<a name="DSMElementType.displayName"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">displayName</code>
+<p>
+The <a href="about.html#element_type">Element Type</a> display name.
+<p>
+This may be a more user-friendly name which
+is used only for displaying or printing
+(in particular, it is used by the
+<a href="about.html#template_designer">Template Designer</a>).
+<p>
+If not provided by the <a href="about.html#dsm_driver">DSM Driver</a>,
+the display name is the same as the
+<a href="about.html#element_type">Element Type</a>'s main name.
+</td>
+</tr>
+
+<!-- DSMElementType.printName -->
+
+<tr valign="top">
+<td>
+<a name="DSMElementType.printName"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">printName</code>
+<p>
+A yet another user-friendly name for the
+<a href="about.html#element_type">Element Type</a>
+provided by the <a href="about.html#dsm_driver">DSM Driver</a>.
+<p>
+Rather than the <i>display name</i>, which is more oriented for
+showing in the Template Designer, this name may be a somewhat
+shorter version that is more suitable for inserting in the
+generated documentation.
+<p>
+If the <i>print name</i> is not provided by the
+<a href="about.html#dsm_driver">DSM Driver</a>,
+the property returns the
+<a href="about.html#element_type">Element Type</a>'s main name.
+</td>
+</tr>
+
+<!-- DSMElementType.bigIconName -->
+
+<tr valign="top">
+<td>
+<a name="DSMElementType.bigIconName"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">bigIconName</code>
+<p>
+The name of the image resource file containing a <b><i>big icon</i></b>
+associated with the <a href="about.html#element_type">Element Type</a>.
+<p>
+If no such an icon provided, the property returns an empty string.
+</td>
+</tr>
+
+<!-- DSMElementType.smallIconName -->
+
+<tr valign="top">
+<td>
+<a name="DSMElementType.smallIconName"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">smallIconName</code>
+<p>
+The name of the image resource file containing a <b><i>small icon</i></b>
+associated with the <a href="about.html#element_type">Element Type</a>.
+<p>
+If no such an icon provided, the property returns an empty string.
+</td>
+</tr>
+
+</table>
+
+<!--~~~~~~~~ GOMAttribute ~~~~~~~~-->
+
+<p class="type_heading">
+  <a name="GOMAttribute"></a>
+  GOMAttribute
+</p>
+
+<p>
+Provides the most complete information about a particular attribute.
+This information is obtained dynamically both from the
+<a href="about.html#dsm">DSM</a> (Data Source Model)
+representing the current data source and the
+<a href="about.html#dsm_type">DSM Type</a> providing the data type
+information about the whole class of data sources this template was designed for.
+<p>
+<b>See Also:</b>
+<blockquote class="mrg4">
+<code><a href="functions.html#getAttr()">getAttr()</a></code>
+</blockquote>
+<p>
+
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="prop_heading">Properties</p></th></tr>
+
+<!-- GOMAttribute.name -->
+
+<tr valign="top">
+<td>
+<a name="GOMAttribute.name"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">name</code>
+<p>
+The attribute name.
+</td>
+</tr>
+
+<!-- GOMAttribute.displayName -->
+
+<tr valign="top">
+<td>
+<a name="GOMAttribute.displayName"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">displayName</code>
+<p>
+The attribute display name.
+<p>
+This is a more user-friendly name which may be provided by the
+<a href="about.html#dsm_type">DSM Type</a> in addition to the main name.
+</td>
+</tr>
+
+<!-- GOMAttribute.valueType -->
+
+<tr valign="top">
+<td>
+<a name="GOMAttribute.valueType"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">valueType</code>
+<p>
+The attribute value type (as string with the type name).
+<p>
+Possible types:
+<blockquote>
+<table cellpadding="3" cellspacing="0" border="1">
+<tr>
+  <th><b>Type Name</b></th>
+  <th><b>Implementing Java Class</b></th>
+</tr>
+<tr>
+  <td><code><i>"string"</i></code></td>
+  <td><code>java.lang.String</code></td>
+</tr>
+<tr>
+  <td><code><i>"number"</i></code></td>
+  <td><code>java.lang.Number</code></td>
+</tr>
+<tr>
+  <td><code><i>"boolean"</i></code></td>
+  <td><code>java.lang.Boolean</code></td>
+</tr>
+<tr>
+  <td><code><i>"date"</i></code></td>
+  <td><code>java.util.Date</code></td>
+</tr>
+<tr>
+  <td><code><i>"dateTime"</i></code></td>
+  <td><code>java.util.Date</code></td>
+</tr>
+<tr>
+  <td><code><i>"binary"</i></code></td>
+  <td><code>com.docflex.api.util.Binary</code></td>
+</tr>
+<tr>
+  <td><code><i>"id"</i></code></td>
+  <td><code>java.lang.Object</code></td>
+</tr>
+<tr>
+  <td><code><i>"idref"</i></code></td>
+  <td><code>java.lang.Object</code></td>
+</tr>
+<tr>
+  <td><code><i>"object"</i></code></td>
+  <td><code>java.lang.Object</code></td>
+</tr>
+</table>
+</blockquote>
+
+<p>
+<b>Note:</b> Attributes under some <a href="about.html#dsm_type">DSM Type</a>
+may have multiple (<i>list</i>) values. Such values are represented as arrays
+of objects of a particular value type, which is returned by this property.
+<p>
+In various dialogs and treeviews in the Template Designer, the list value types
+are shown with the square brackets (e.g. <code><font color="#000099">idref[]</font></code>).
+<p>
+Within a FlexQuery-expression, you can use the
+<code><a href="#GOMAttribute.multiValued">multiValued</a></code> property to test whether
+the attribute provides a list value.
+<p>
+To access all items of the list value, use
+<code><a href="#GOMAttribute.multiValued">multiValued</a></code> property.
+</td>
+</tr>
+
+<!-- GOMAttribute.multiValued -->
+
+<tr valign="top">
+<td>
+<a name="GOMAttribute.multiValued"></a>
+<code class="prop_type">Boolean</code>
+</td>
+<td>
+<code class="prop">multiValued</code>
+<p>
+If <code>true</code>, indicates that the element has a multiple
+(<i>list</i>) value.
+<p>
+To access all value items, use <code><a href="#GOMAttribute.values">values</a></code> property.
+</td>
+</tr>
+
+<!-- GOMAttribute.value -->
+
+<tr valign="top">
+<td>
+<a name="GOMAttribute.value"></a>
+<code class="prop_type">Object</code>
+</td>
+<td>
+<code class="prop">value</code>
+<p>
+The attribute value.
+<p>
+If the attribute has multiple values, this property returns the first one.
+</td>
+</tr>
+
+<!-- GOMAttribute.values -->
+
+<tr valign="top">
+<td>
+<a name="GOMAttribute.values"></a>
+<code class="prop_type">Object[]</code>
+</td>
+<td>
+<code class="prop">values</code>
+<p>
+An array of all values associated with this attribute (a vector value).
+<p>
+In the case of a single value, this property returns a single element array
+containing it.
+</td>
+</tr>
+
+<!-- GOMAttribute.dsmAttr -->
+
+<tr valign="top">
+<td>
+<a name="GOMAttribute.dsmAttr"></a>
+<code class="prop_type">DSMAttr</code>
+</td>
+<td>
+<code class="prop">dsmAttr</code>
+<p>
+Returns an object representing the attribute on the level of the underlying
+<a href="about.html#dsm">DSM</a> (Data Source Model).
+Some <a href="about.html#dsm_type">DSM Types</a> may introduce
+their own extended attribute properties which are accessible via this object.
+</td>
+</tr>
+
+</table>
+
+<!--~~~~~~~~ GOMContext ~~~~~~~~-->
+
+<p class="type_heading">
+  <a name="GOMContext"></a>
+  GOMContext
+</p>
+
+<p>Represents a template being processed by the generator.
+<p>
+This object provides the dynamic information associated
+with the template's current processing state.
+</p>
+
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="prop_heading">Properties</p></th></tr>
+
+<!-- GOMContext.contextElement -->
+
+<tr valign="top">
+<td>
+<a name="GOMContext.contextElement"></a>
+<code class="prop_type"><a href="#GOMElement">GOMElement</a></code>
+</td>
+<td>
+<code class="prop">contextElement</code>
+<p>
+Represents the
+<b><i><a href="template_components.html#context_element">generator's context element</a></i></b>.
+<p>
+During processing of a template, the generator always maintains some
+current context element around which most of the data processing occurs.
+</td>
+</tr>
+
+<!-- GOMContext.rootElement -->
+
+<tr valign="top">
+<td>
+<a name="GOMContext.rootElement"></a>
+<code class="prop_type"><a href="#GOMElement">GOMElement</a></code>
+</td>
+<td>
+<code class="prop">rootElement</code>
+<p>
+The <a href="template_components.html#root_element">root element</a>
+received by this template.
+</td>
+</tr>
+
+<!-- GOMContext.imgMapElement -->
+
+<tr valign="top">
+<td>
+<a name="GOMContext.imgMapElement"></a>
+<code class="prop_type"><a href="#GOMElement">GOMElement</a></code>
+</td>
+<td>
+<code class="prop">imgMapElement</code>
+<p>
+This property is used when generating a hypertext
+<a href="data_processing_features.html#imagemaps">imagemap</a>
+for the <a href="template_components.html#context_element">context element</a>'s
+<a href="template_components.html#image_control">image</a>.
+It represents an element associated with
+a certain area of the image where a hyperlink should be placed.
+</td>
+</tr>
+
+<!-- GOMContext.iterator -->
+
+<tr valign="top">
+<td>
+<a name="GOMContext.iterator"></a>
+<code class="prop_type"><a href="#GnrIterator">GnrIterator</a></code>
+</td>
+<td>
+<code class="prop">iterator</code>
+<p>
+Describes the state of the current iterator (i.e.
+<a href="template_components.html#element_iterator">Element Iterator</a> or
+<a href="template_components.html#attribute_iterator">Attribute Iterator</a>).
+<p>
+Please note, this property points to a given iterator section only within
+its <a href="template_components.html#body_block">body-</a>,
+<a href="template_components.html#header_block">header-</a> and
+<a href="template_components.html#footer_block">footer-</a>blocks.
+<p>
+Within all the iterator section's setting expressions as well as its
+<a href="template_components.html#else_block">else-block</a>,
+the <code>iterator</code> property always refers to the parent iterator.
+</td>
+</tr>
+
+<!-- GOMContext.sectionBlock -->
+
+<tr valign="top">
+<td>
+<a name="GOMContext.sectionBlock"></a>
+<code class="prop_type"><a href="#GOMSectionBlock">GOMSectionBlock</a></code>
+</td>
+<td>
+<code class="prop">sectionBlock</code>
+<p>
+Provides information about the currently executed
+<a href="template_components.html#section_blocks">section block</a>.
+</td>
+</tr>
+
+<!-- GOMContext.stockSection -->
+
+<tr valign="top">
+<td>
+<a name="GOMContext.stockSection"></a>
+<code class="prop_type"><a href="#GOMStockSection">GOMStockSection</a></code>
+</td>
+<td>
+<code class="prop">stockSection</code>
+<p>
+Provides information about the
+<a href="template_components.html#stock_sections">stock-section</a> call
+(such as parameters, etc.)
+<p>
+<b>Note:</b> This property is valid only within a stock-section body.
+</td>
+</tr>
+
+<!-- GOMContext.output -->
+
+<tr valign="top">
+<td>
+<a name="GOMContext.output"></a>
+<code class="prop_type"><a href="#GOMOutputInfo">GOMOutputInfo</a></code>
+</td>
+<td>
+<code class="prop">output</code>
+<p>
+Information about the generated output.
+</td>
+</tr>
+
+<!-- GOMContext.rootContext -->
+
+<tr valign="top">
+<td>
+<a name="GOMContext.rootContext"></a>
+<code class="prop_type"><a href="#GOMContext">GOMContext</a></code>
+</td>
+<td>
+<code class="prop">rootContext</code>
+<p>
+Represents the <b><i>root template</i></b> associated with the document being
+generated by the given template.
+If this template produces only a piece of the whole document,
+the <code><a href="#GOMContext">GOMContext</a></code> object associated with
+it is different from the root one.
+</td>
+</tr>
+
+<!-- GOMContext.mainContext -->
+
+<tr valign="top">
+<td>
+<a name="GOMContext.mainContext"></a>
+<code class="prop_type"><a href="#GOMContext">GOMContext</a></code>
+</td>
+<td>
+<code class="prop">mainContext</code>
+<p>
+Represents the <b><i>main template</i></b> whose processing
+was initially launched by the user
+(or from <a href="about.html#api">API</a>).
+This template may be different from the
+<i><a href="#GOMContext.rootContext">root template</a></i>
+in the event when the generated documentation consists
+of multiple documents (e.g. a
+<a href="data_processing_features.html#framed_doc">framed HTML documentation</a>).
+</td>
+</tr>
+
+</table>
+
+<!--~~~~~~~~ GOMIterator ~~~~~~~~-->
+
+<p class="type_heading">
+  <a name="GOMIterator"></a>
+  GOMIterator
+</p>
+
+<p>Describes the state of an iterator (such as
+<a href="template_components.html#element_iterator">Element Iterator</a>
+or <a href="template_components.html#attribute_iterator">Attribute Iterator</a>).
+</p>
+
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="prop_heading">Properties</p></th></tr>
+
+<!-- GOMIterator.contextElement -->
+
+<tr valign="top">
+<td>
+<a name="GOMIterator.contextElement"></a>
+<code class="prop_type"><a href="#GOMElement">GOMElement</a></code>
+</td>
+<td>
+<code class="prop">contextElement</code>
+<p>
+The context element received by the iterator. Normally, all iterated items
+(elements / attributes / attribute values) are produced from it.
+<p>
+<b>Note:</b> This property is valid within the iterator's
+<a href="template_components.html#body_block">body-</a>,
+<a href="template_components.html#header_block">header-</a> and
+<a href="template_components.html#footer_block">footer-blocks</a>.
+It remains unchanged and is not the same as the generator's
+current <a href="template_components.html#context_element">context element</a>.
+</td>
+</tr>
+
+<!-- GOMIterator.parentIterator -->
+
+<tr valign="top">
+<td>
+<a name="GOMIterator.parentIterator"></a>
+<code class="prop_type"><a href="#GOMIterator">GOMIterator</a></code>
+</td>
+<td>
+<code class="prop">parentIterator</code>
+<p>
+When the iterator is processed within another iterator, this property
+represents the parent one.
+<p>
+<b>Note:</b> The propery is valid within the iterator's
+<a href="template_components.html#body_block">body-</a>,
+<a href="template_components.html#header_block">header-</a> and
+<a href="template_components.html#footer_block">footer-blocks</a>.
+</td>
+</tr>
+
+<!-- GOMIterator.numItems -->
+
+<tr valign="top">
+<td>
+<a name="GOMIterator.numItems"></a>
+<code class="prop_type">Number</code>
+</td>
+<td>
+<code class="prop">numItems</code>
+<p>
+The total number of items (elements / attributes / attribute values) for iteration.
+<p>
+<b>Note:</b> This property is valid within the iterator's
+<a href="template_components.html#body_block">body-</a>,
+<a href="template_components.html#header_block">header-</a> and
+<a href="template_components.html#footer_block">footer-blocks</a>.
+</td>
+</tr>
+
+<!-- GOMIterator.isFirstItem -->
+
+<tr valign="top">
+<td>
+<a name="GOMIterator.isFirstItem"></a>
+<code class="prop_type">Boolean</code>
+</td>
+<td>
+<code class="prop">isFirstItem</code>
+<p>
+Indicates, if the current item is the <b>first</b> one.
+<p>
+<b>Note:</b> This property is valid only within the iterator's
+<a href="template_components.html#body_block">body-block</a>.
+</td>
+</tr>
+
+<!-- GOMIterator.isLastItem -->
+
+<tr valign="top">
+<td>
+<a name="GOMIterator.isLastItem"></a>
+<code class="prop_type">Boolean</code>
+</td>
+<td>
+<code class="prop">isLastItem</code>
+<p>
+Indicates, if the current item is the <b>last</b> one.
+<p>
+<b>Note:</b> This property is valid only within the iterator's
+<a href="template_components.html#body_block">body-block</a>.
+</td>
+</tr>
+
+<!-- GOMIterator.element -->
+
+<tr valign="top">
+<td>
+<a name="GOMIterator.element"></a>
+<code class="prop_type"><a href="#GOMElement">GOMElement</a></code>
+</td>
+<td>
+<code class="prop">element</code>
+<p>
+The current element item (in the case of an
+<a href="template_components.html#element_iterator">Element Iterator</a>).
+<p>
+<b>Note:</b> This property is valid only within the iterator's
+<a href="template_components.html#body_block">body-block</a>.
+</td>
+</tr>
+
+<!-- GOMIterator.attr -->
+
+<tr valign="top">
+<td>
+<a name="GOMIterator.attr"></a>
+<code class="prop_type"><a href="#GOMAttribute">GOMAttribute</a></code>
+</td>
+<td>
+<code class="prop">attr</code>
+<p>
+The current attribute item (in the case of an
+<a href="template_components.html#attribute_iterator">Attribute Iterator</a>).
+<p>
+<b>Note:</b> This property may be valid only within the iterator's
+<a href="template_components.html#body_block">body-block</a>.
+</td>
+</tr>
+
+<!-- GOMIterator.value -->
+
+<tr valign="top">
+<td>
+<a name="GOMIterator.value"></a>
+<code class="prop_type">Object</code>
+</td>
+<td>
+<code class="prop">value</code>
+<p>
+The current attribute value item (in the case of an
+<a href="template_components.html#attribute_iterator">Attribute Iterator</a>).
+<p>
+<b>Note:</b> This property may be valid only within the iterator's
+<a href="template_components.html#body_block">body-block</a>.
+</td>
+</tr>
+
+</table>
+
+<!--~~~~~~~~ GOMElement ~~~~~~~~-->
+
+<p class="type_heading">
+  <a name="GOMElement"></a>
+  GOMElement
+</p>
+
+<p>
+Represents an information about an element of the
+<a href="about.html#dsm">Data Source Model</a>
+(a <i><a href="about.html#dsm_element">DSM element</a></i>)
+on the level of generator.
+
+<p>
+The instances of this class are dynamically created by the generator to encapsulate
+the information about a particular element relevant to the current generation context.
+<p>
+Any <a href="about.html#dsm_element">DSM element</a>
+at the same time may be represented by different <code>GOMElement</code> objects.
+To distinguish which DSM element is represented by a <code>GOMElement</code> object,
+use <code><a href="#GOMElement.id">id</a></code> property, which provides a <b>unique identifier</b>
+of the <a href="about.html#dsm_element">DSM element</a>.
+</p>
+
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="prop_heading">Properties</p></th></tr>
+
+<!-- GOMElement.name -->
+
+<tr valign="top">
+<td>
+<a name="GOMElement.name"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">name</code>
+<p>
+The element name.
+<p>
+The particular meaning depends on the underlying
+<a href="about.html#dsm_type">DSM Type</a> which represents the data source.
+Normally, this is the name of the <a href="about.html#element_type">Element Type</a>
+associated with this element.
+</td>
+</tr>
+
+<!-- GOMElement.id -->
+
+<tr valign="top">
+<td>
+<a name="GOMElement.id"></a>
+<code class="prop_type">Object</code>
+</td>
+<td>
+<code class="prop">id</code>
+<p>
+The element's <i><b>unique identifier</b></i>.
+<p>
+This is an object (normally <code>String</code>) which uniquely identifies
+the element within the <a href="about.html#dsm">DSM</a> (Data Source Model).
+For instance, in the case of an XML-file data source, this would be the value of
+an element's attribute with the <code>ID</code> type.
+<p>
+<b>See Also:</b>
+<blockquote class="mrg4">
+<code>
+<a href="functions.html#findElementById()">findElementById()</a>,
+<a href="functions.html#findElementsByIds()">findElementsByIds()</a>,
+<a href="functions.html#getElementIds()">getElementIds()</a>
+</code>
+</blockquote>
+</td>
+</tr>
+
+<!-- GOMElement.valueType -->
+
+<tr valign="top">
+<td>
+<a name="GOMElement.valueType"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">valueType</code>
+<p>
+The element value type (as string with the type name).
+<p>
+Possible types:
+<blockquote>
+<table cellpadding="3" cellspacing="0" border="1">
+<tr>
+  <th><b>Type Name</b></th>
+  <th><b>Implementing Java Class</b></th>
+</tr>
+<tr>
+  <td><code><i>"void"</i></code></td>
+  <td><code>null</code></td>
+</tr>
+<tr>
+  <td><code><i>"string"</i></code></td>
+  <td><code>java.lang.String</code></td>
+</tr>
+<tr>
+  <td><code><i>"number"</i></code></td>
+  <td><code>java.lang.Number</code></td>
+</tr>
+<tr>
+  <td><code><i>"boolean"</i></code></td>
+  <td><code>java.lang.Boolean</code></td>
+</tr>
+<tr>
+  <td><code><i>"date"</i></code></td>
+  <td><code>java.util.Date</code></td>
+</tr>
+<tr>
+  <td><code><i>"dateTime"</i></code></td>
+  <td><code>java.util.Date</code></td>
+</tr>
+<tr>
+  <td><code><i>"binary"</i></code></td>
+  <td><code>com.docflex.api.util.Binary</code></td>
+</tr>
+<tr>
+  <td><code><i>"id"</i></code></td>
+  <td><code>java.lang.Object</code></td>
+</tr>
+<tr>
+  <td><code><i>"idref"</i></code></td>
+  <td><code>java.lang.Object</code></td>
+</tr>
+<tr>
+  <td><code><i>"object"</i></code></td>
+  <td><code>java.lang.Object</code></td>
+</tr>
+</table>
+</blockquote>
+If an element has no value, this property returns <code><i>"void"</i></code>.
+
+<p>
+<b>Note:</b> Elements under some <a href="about.html#dsm_type">DSM Type</a>
+may have multiple (<i>list</i>) values. Such values are represented as arrays
+of objects of a particular value type, which is returned by this property.
+<p>
+In various dialogs and treeviews in the Template Designer, the list value types
+are shown with the square brackets (e.g. <code><font color="#000099">idref[]</font></code>).
+<p>
+Within a FlexQuery-expression, you can use the
+<code><a href="#GOMElement.multiValued">multiValued</a></code> property to test whether
+the element provides a list value.
+<p>
+To access all items of the list value, use
+<code><a href="#GOMElement.multiValued">multiValued</a></code> property.
+</td>
+</tr>
+
+<!-- GOMElement.multiValued -->
+
+<tr valign="top">
+<td>
+<a name="GOMElement.multiValued"></a>
+<code class="prop_type">Boolean</code>
+</td>
+<td>
+<code class="prop">multiValued</code>
+<p>
+If <code>true</code>, indicates that the element has a multiple
+(<i>list</i>) value.
+<p>
+To access all value items, use <code><a href="#GOMElement.values">values</a></code> property.
+</td>
+</tr>
+
+<!-- GOMElement.value -->
+
+<tr valign="top">
+<td>
+<a name="GOMElement.value"></a>
+<code class="prop_type">Object</code>
+</td>
+<td>
+<code class="prop">value</code>
+<p>
+The element value.
+<p>
+If the element has no value, this property returns <code>null</code>.
+<br>
+In the case, the element has multiple values, this property returns the first one.
+</td>
+</tr>
+
+<!-- GOMElement.values -->
+
+<tr valign="top">
+<td>
+<a name="GOMElement.values"></a>
+<code class="prop_type">Object[]</code>
+</td>
+<td>
+<code class="prop">values</code>
+<p>
+An array of all values associated with this element (a <i>list</i> value).
+<p>
+In the case of a single value, this property returns a single-element array
+containing it. If the element has no value, an empty array is returned.
+</td>
+</tr>
+
+<!-- GOMElement.dsmElement -->
+
+<tr valign="top">
+<td>
+<a name="GOMElement.dsmElement"></a>
+<code class="prop_type"><a href="#DSMElement">DSMElement</a></code>
+</td>
+<td>
+<code class="prop">dsmElement</code>
+<p>
+Returns an object representing the <a href="about.html#dsm_element">DSM element</a>
+on the level of the <a href="about.html#dsm_driver">DSM Driver</a>.
+</td>
+</tr>
+
+<!-- GOMElement.elementType -->
+
+<tr valign="top">
+<td>
+<a name="GOMElement.elementType"></a>
+<code class="prop_type"><a href="#DSMElementType">DSMElementType</a></code>
+</td>
+<td>
+<code class="prop">elementType</code>
+<p>
+Returns the <a href="about.html#element_type">Element Type</a>
+associated with this element.
+<p>
+For some <a href="about.html#dsm">DSM</a>s (Data Source Models),
+there is no direct inherent association between elements and
+<a href="about.html#element_type">Element Types</a>.
+Even though the exact association always exists, finding it may take some resources.
+Because of this, the association between an element and its Element Type
+is established dynamically and may be refined during processing of the template
+(in the case, the element suits to several Element Types having inheritance relationship).
+<p>
+This property always returns the <b>exact</b>
+<a href="about.html#element_type">Element Type</a>
+associated with the given element.
+<p>
+Accessing this property for the first time per an element may evoke some internal calculations.
+So, use it only in necessary situations!
+</td>
+</tr>
+
+<!-- GOMElement.parent -->
+
+<tr valign="top">
+<td>
+<a name="GOMElement.parent"></a>
+<code class="prop_type"><a href="#GOMElement">GOMElement</a></code>
+</td>
+<td>
+<code class="prop">parent</code>
+<p>
+When the element was produced during execution of an
+<a href="template_components.html#element_iterator">Element Iterator</a>
+or as a result of interpretation of a
+<a href="element_iterator_details.html#location_path">Location Path</a>,
+this property returns the immediate predecessor of this element (i.e. the one from which
+the given element was reached).
+<p>
+For example, if an
+<a href="template_components.html#element_iterator">Element Iterator</a>
+is specified to iterate by children of the received context element, all iterated elements
+within the iterator will have the <code>parent</code> property set to the
+iterator's context element.
+<p>
+If the element was not originated from processing of an
+<a href="template_components.html#element_iterator">Element Iterator</a>
+or a <a href="element_iterator_details.html#location_path">Location Path</a>,
+this property returns <code>null</code>.
+</td>
+</tr>
+
+<!-- GOMElement.ancestors -->
+
+<tr valign="top">
+<td>
+<a name="GOMElement.ancestors"></a>
+<code class="prop_type"><a href="#GOMElement">GOMElement</a>[]</code>
+</td>
+<td>
+<code class="prop">ancestors</code>
+<p>
+This property returns an array produced from the given element as the following:
+<pre>{ parent,
+  parent->parent,
+  parent->parent->parent,
+  ... }</pre>
+<p>
+The sequence repeats until reaching <code>null</code>.
+<p>
+As example, let's assume an
+<a href="template_components.html#element_iterator">Element Iterator</a>
+is specified to iterate by descendants of the received context element.
+Then, the <code>ancestors</code> property of each iterated element
+will provide the chain of all the element's ancestors until the iterator's context element,
+the context element itself, plus all ancestors of the context element.
+</td>
+</tr>
+
+</table>
+
+<!--~~~~~~~~ GOMOutputInfo ~~~~~~~~-->
+
+<p class="type_heading">
+  <a name="GOMOutputInfo"></a>
+  GOMOutputInfo
+</p>
+
+<p>Information about the generated output.
+</p>
+
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="prop_heading">Properties</p></th></tr>
+
+<!-- GOMOutputInfo.format -->
+
+<tr valign="top">
+<td>
+<a name="GOMOutputInfo.format"></a>
+<code class="prop_type"><a href="#OutputFormat">OutputFormat</a></code>
+</td>
+<td>
+<code class="prop">format</code>
+<p>
+Information about the output format.
+</td>
+</tr>
+
+<!-- GOMOutputInfo.type -->
+
+<tr valign="top">
+<td>
+<a name="GOMOutputInfo.type"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">type</code>
+<p>
+Indicates what sort of output is being generated by this template.
+<p>
+Possible values:
+<dl>
+  <dt><i><code>"document"</code></i></dt>
+  <dd>the template generates a separate document file.</dd>
+  <dt><i><code>"included"</code></i></dt>
+  <dd>the template has been
+      <a href="template_components.html#call_template">called</a>
+      from a different one to generate a piece of the document being generated by the caller.
+  </dd>
+</dl>
+</td>
+</tr>
+
+<!-- GOMOutputInfo.dir -->
+
+<tr valign="top">
+<td>
+<a name="GOMOutputInfo.dir"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">dir</code>
+<p>
+The absolute pathname of the current output directory
+(i.e. where the template's output document is located).
+<p>
+<b>Note</b>: The returned pathname always ends with the name-separator character.
+</td>
+</tr>
+
+<!-- GOMOutputInfo.file -->
+
+<tr valign="top">
+<td>
+<a name="GOMOutputInfo.file"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">file</code>
+<p>
+The absolute pathname of the output document file.
+<p>
+<b>Note:</b> This is the output document whose entire or partial content
+is being generated by this template.
+</td>
+</tr>
+
+<!-- GOMOutputInfo.docName -->
+
+<tr valign="top">
+<td>
+<a name="GOMOutputInfo.docName"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">docName</code>
+<p>
+The name of the template's output document file without extension.
+<p>
+<b>Note:</b> This is the output document whose entire or partial content
+is being generated by this template.
+</td>
+</tr>
+
+<!-- GOMOutputInfo.filesDir -->
+
+<tr valign="top">
+<td>
+<a name="GOMOutputInfo.filesDir"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">filesDir</code>
+<p>
+The absolute pathname of the directory where the files associated with the template's
+current output document are stored (for instance, this might be a <i>doc-files</i> directory
+with the document's images).
+<p>
+<b>Note</b>: The returned pathname always ends with the name-separator character.
+</td>
+</tr>
+
+<!-- GOMOutputInfo.inputFilesPath -->
+
+<tr valign="top">
+<td>
+<a name="GOMOutputInfo.inputFilesPath"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">inputFilesPath</code>
+<p>
+The absolute pathname of the default directory where some input files
+associated with the currently generated output are searched.
+<p>
+For instance, this pathname is used during generation of the RTF output,
+when interpreting of embedded HTML (i.e. HTML tags embedded in doc-comments).
+In that case, when an <code>&lt;img&gt;</code> tag is processed,
+the image source specified with a relative local URL will be resolved against
+the default directory provided by this property.
+<p>
+For example, if an image tag looks like this:
+<blockquote>
+  <pre>&lt;img src="doc-files/image.gif"&gt;<pre>
+</blockquote>
+the actual image file will be searched at the following location:
+<blockquote>
+  <pre>output.inputFilesPath + "doc-files/image.gif"<pre>
+</blockquote>
+<p>
+<b>Note</b>: The pathname returned by this property always
+ends with the name-separator character.
+</td>
+</tr>
+
+<!-- GOMOutputInfo.estimationPhase -->
+
+<tr valign="top">
+<td>
+<a name="GOMOutputInfo.estimationPhase"></a>
+<code class="prop_type">Boolean</code>
+</td>
+<td>
+<code class="prop">estimationPhase</code>
+<p>
+Returns <code>true</code>, if the documentation output is currently being estimated
+by the generator.
+<p>
+The generation of the whole documentation consists of two phases --
+the <i>estimation phase</i> and the <i>generation phase</i>.
+<p>
+<a name="estimation_phase"></a>
+In the <i><b>estimation phase</b></i>, the generator quickly passes over
+all the source data and partially interprets the involved templates.
+During that, it collects the names and location of all documentation files
+to be created and all possible hypertarget locations within them. It also
+makes an estimation of the total generation time in order to graduate
+the progress bar.
+<p>
+<a name="generation_phase"></a>
+During the <i><b>generation phase</b></i>, all template components are
+being fully interpreted and the real output generated.
+<p>
+Normally, this property is not necessary to be used in any settings
+of template components. The only situation when this may be required
+is when using one of the following functions:
+<ul>
+<li><code><a href="functions.html#hyperTargetExists()">hyperTargetExists()</a></code>
+<li><code><a href="functions.html#documentByHyperTarget()">documentByHyperTarget()</a></code>
+<li><code><a href="functions.html#documentByTemplate()">documentByTemplate()</a></code>
+</ul>
+</td>
+</tr>
+
+</table>
+
+<!--~~~~~~~~ GOMSectionBlock ~~~~~~~~-->
+
+<p class="type_heading">
+  <a name="GOMSectionBlock"></a>
+  GOMSectionBlock
+</p>
+
+<p>Describes the execution state of a
+<a href="template_components.html#section_blocks">section block</a>.
+</p>
+
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="prop_heading">Properties</p></th></tr>
+
+<!-- GOMSectionBlock.execSecCount -->
+
+<tr valign="top">
+<td>
+<a name="GOMSectionBlock.execSecCount"></a>
+<code class="prop_type">Number</code>
+</td>
+<td>
+<code class="prop">execSecCount</code>
+<p>
+Returns the number of sections that have been already executed during the current pass through the
+<a href="template_components.html#section_blocks">section block</a>.
+<p>
+A section is executed only when
+<ol>
+<li>Its <a href="template_components.html#enabling_condition">enabling condition</a>
+    (when specified) is <code>true</code>
+<li>Its <a href="template_components.html#matching_element_types">Matching Element Types</a>
+    suit to the <a href="template_components.html#context_element">context element</a>
+</ol>
+<p>Using this property in conjunction with the enabling conditions of sections
+allows to specify processing of the sections in a way similar to
+<blockquote>
+<code>if (<i>condition1</i>)<br>...<br>elseif (<i>condition2</i>)<br>...</code>
+</blockquote>
+<p>construction.
+<p>
+Let's consider, the first section has an enabling condition <code><i>condition1</i></code>
+and the section following it should be processed alternatively to the first one when a
+<code><i>condition2</i></code> is satisfied. To program this, the enabling condition
+for the second section might be the following:
+<blockquote>
+<code>sectionBlock.execSecCount == 0 && <i>condition2</i></code>
+</blockquote>
+</td>
+</tr>
+
+</table>
+
+<!--~~~~~~~~ GOMStockSection ~~~~~~~~-->
+
+<p class="type_heading">
+  <a name="GOMStockSection"></a>
+  GOMStockSection
+</p>
+
+<p>Describes a
+<a href="template_components.html#stock_sections">stock-section</a> call.
+</p>
+
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="prop_heading">Properties</p></th></tr>
+
+<!-- GOMStockSection.name -->
+
+<tr valign="top">
+<td>
+<a name="GOMStockSection.name"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">name</code>
+<p>
+The stock-section name.
+</td>
+</tr>
+
+<!-- GOMStockSection.param -->
+
+<tr valign="top">
+<td>
+<a name="GOMStockSection.param"></a>
+<code class="prop_type">Object</code>
+</td>
+<td>
+<code class="prop">param</code>
+<p>
+Returns the first parameter passed to the stock-section.
+If no parameters have been passed, <code>null</code> is returned.
+<p>
+Effectively, this property is the same as the following expression:
+<blockquote>
+<pre>stockSection.params.length() > 0 ?
+   stockSection.params.elementAt(0) : null
+</pre>
+</blockquote>
+</td>
+</tr>
+
+<!-- GOMStockSection.params -->
+
+<tr valign="top">
+<td>
+<a name="GOMStockSection.params"></a>
+<code class="prop_type">Object[]</code>
+</td>
+<td>
+<code class="prop">params</code>
+<p>
+The array of parameters passed to the stock-section.
+<p>
+If no parameters have been passed, the empty array is returned.
+</td>
+</tr>
+
+<!-- GOMStockSection.contextElement -->
+
+<tr valign="top">
+<td>
+<a name="GOMStockSection.contextElement"></a>
+<code class="prop_type"><a href="#GOMElement">GOMElement</a></code>
+</td>
+<td>
+<code class="prop">contextElement</code>
+<p>
+The context element received by the stock-section.
+<p>
+<b>Note:</b> This is not the same as the generator's current
+<a href="template_components.html#context_element">context element</a>.
+</td>
+</tr>
+
+</table>
+
+<!--~~~~~~~~ OutputFormat ~~~~~~~~-->
+
+<p class="type_heading">
+  <a name="OutputFormat"></a>
+  OutputFormat
+</p>
+
+<p>Describes an <a href="formatting_features.html#output_formats">output format</a>.
+</p>
+
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="prop_heading">Properties</p></th></tr>
+
+<!-- OutputFormat.name -->
+
+<tr valign="top">
+<td>
+<a name="OutputFormat.name"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">name</code>
+<p>
+The output format name. Possible values:
+<i>"HTML"</i>, <i>"RTF"</i>, <i>"TXT"</i>.
+</td>
+</tr>
+
+<!-- OutputFormat.encoding -->
+
+<tr valign="top">
+<td>
+<a name="OutputFormat.encoding"></a>
+<code class="prop_type">String</code>
+</td>
+<td>
+<code class="prop">encoding</code>
+<p>
+The canonical name of the character encoding used to generate the plain text output.
+<p>
+In the case of a non-plain text output format (e.g. HTML, RTF), this property returns
+the name of the Java machine's default encoding which is still used when such a format
+is plain-text based.
+</td>
+</tr>
+
+<!-- OutputFormat.supportsPagination -->
+
+<tr valign="top">
+<td>
+<a name="OutputFormat.supportsPagination"></a>
+<code class="prop_type">Boolean</code>
+</td>
+<td>
+<code class="prop">supportsPagination</code>
+<p>
+Indicates if the output format supports pagination
+(e.g. for RTF, this is <code>true<code>).
+</td>
+</tr>
+
+</table>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2003-2009 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

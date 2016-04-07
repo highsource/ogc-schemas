@@ -1,0 +1,33 @@
+With this parameter you can specify the sorting order of WSDL definitions.
+<p>
+The meaning of this parameter is the following:
+<ul>
+<li>
+  When it is selected (<b><code>true</code></b>),
+  WSDL definitions will be sorted alphabetically by their names (ignoring letter case).
+  <p style="margin-top:10pt">
+  The definition name is assumed to be that under which the definition appears 
+  (is referenced to) at the given documentation location.
+  This is typically the definition qualified name (which is the actual namespace prefix 
+  plus the definition local name). That, however, can be changed using 
+  <i>"Show | Namespace Prefixes"</i> parameter.
+</li>
+<li style="margin-top:10pt">
+  When the parameter is unselected (<b><code>false</code></b>),
+  WSDL definitions are not sorted.
+  In that case they will follow in a certain "physical" order produced according to the following.
+  <p style="margin-top:10pt">
+  When definitions come from different WSDL files, first, they will be grouped by their containing files. 
+  The ordering of those groups is determined by what WSDL files are specified initially
+  and how they import other WSDL files.
+  <p style="margin-top:10pt">
+  Within a group of WSDL definitions belonging to the same WSDL file, they will follow in the same order 
+  as they are defined in that file.
+</li>
+</ul>
+
+<b>Default Value:</b>
+<dl><dd>
+Copied dynamically from the value of the parameter:
+<i>"Details | Fragments | WSDL Definition Summary | Sorting"</i>
+</dd></dl>

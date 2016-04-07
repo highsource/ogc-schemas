@@ -1,0 +1,31 @@
+Specify whether to include the XML schema annotation and which part of it.
+<p>
+The full annotation text is obtained from all <code>&lt;xs:documentation&gt;</code> elements
+found by the following path:
+<dl><dd>
+<code>xs:schema/xs:annotation/xs:documentation</code>
+</dd></dl>
+Multiple <code>&lt;xs:documentation&gt;</code> elements produce multiple sections of the annotation text.
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"first sentence"</i>
+<blockquote>
+Include only the first sentence of the annotation text.
+</blockquote>
+
+<i>"full"</i>
+<blockquote>
+Include the full annotation.
+</blockquote>
+
+<i>"none"</i>
+<blockquote>
+Do not include annotation.
+</blockquote>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<i>"Processing | Annotations"</i> parameter group, where you can specify how annotations are processed and displayed.
+</blockquote>

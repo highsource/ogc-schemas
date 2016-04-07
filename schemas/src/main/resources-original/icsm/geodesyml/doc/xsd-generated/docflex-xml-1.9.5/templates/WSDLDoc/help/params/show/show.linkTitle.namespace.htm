@@ -1,0 +1,26 @@
+When the hyperlink appears on a WSDL/XSD definition/component name,
+it would be helpful to use the link tooltip to quickly
+see what a namespace this component belongs to.
+
+<p style="margin:0">
+<table border="1">
+<tr><td><font face="Dialog" size="-1">
+This might be particularly useful when the WSDL/XSD files you document
+define many components with equal local names, however, in different namespaces
+and no prefixes are defined for those namespaces at that.
+</font>
+</td></tr>
+</table>
+<p>
+This parameter allows you to generate such tooltips. When it is selected
+(<b><code>true</code></b>), the titles of hyperlinks on component names
+will include the namespace URI of those components, 
+as shown on the following screenshot:
+
+<dl><dd>
+  <img src="${this_dir}/../../images/link_tooltip2.png">
+</dd></dl>
+
+But note that since the namespace URIs are typically rather long strings,
+when added to each hyperlink, they may considerably increase the size of the generated HTML files.
+That's why this parameter was introduced: to be able to switch them off.

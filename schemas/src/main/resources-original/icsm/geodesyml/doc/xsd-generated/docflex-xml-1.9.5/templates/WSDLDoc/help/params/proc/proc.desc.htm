@@ -1,0 +1,74 @@
+This parameter group controls the processing and formatting of description
+found in WSDL/XSD files.
+<p>
+In case of WSDL, the description text is obtained from <b><code>&lt;wsdl:documentation&gt;</code></b> elements
+and placed in corresponding <b><i>"Description"</i></b> sections of the generate documentation.
+<p>
+In case of XML schemas, the descriptions come from the content of <b><code>&lt;xs:annotation&gt;</code></b> elements.
+They appear in particular <b><i>"Annotation"</i></b> sections of the generate documentation.
+
+<h2>HTML Markup</h2>
+
+In both cases (WSDL and XML schemas), the descriptions may be preformatted with HTML tags,
+which can be used in the generated documentation.
+<p>
+There are three ways how you can use HTML in your WSDL/XSD descriptions:
+<p>
+
+1. <b>XHTML elements</b>
+<p>
+Since, WSDL/XSD files are XML files, you can specify all the HTML formatting in the form of XML tags (elements).
+That would be XHTML tags (XHTML is an XML adaptation of HTML).
+<p>
+Note that all XHTML elements must belong to the namespace:
+<dl><dd>
+<code>http://www.w3.org/1999/xhtml</code>
+</dd></dl>
+
+If you define your HTML markup as XHTML elements, to have them recognized and processed appropriately, 
+please check the following settings:
+<ol>
+<li>The parameter <i>"Processing | Descriptions | Tags | XHTML"</i> must be selected (<code>true</code>).</li>
+<li>
+  The HTML/RTF output format option <i>"Text | Render embedded HTML"</i> must be selected.
+  (See: Generator dialog | Output format | HTML/RTF | Options)
+</li>
+</ol>
+
+2. <b>XHTML-like elements</b>
+<p>
+Another possibility is that you define your HTML markup in the form of XML elements, 
+however without XHTML namespace (i.e. in no-namespace).
+So, you have something looking like XHTML but not exactly it.
+<p>
+That possibility is also supported:
+<ol>
+<li>The parameter <i>"Processing | Descriptions | Tags | Other Tags"</i> must be set <i>"process as XHTML"</i>.</li>
+<li>The parameter <i>"Processing | Descriptions | Tags | XHTML"</i> must be selected (<code>true</code>).</li>
+<li>
+  The HTML/RTF output format option <i>"Text | Render embedded HTML"</i> must be selected.
+  (See: Generator dialog | Output format | HTML/RTF | Options)
+</li>
+</ol>
+
+3. <b>Escaping XML markup character</b>
+<p>
+At last, you do not use XML elements at all to express your HTML markup.
+Instead you specify the HTML tags directly within the text by escaping XML special characters, e.g.:
+
+<dl><dd>
+<code>&amp;lt;i&amp;gt;this is my italic text&amp;lt;/i&amp;gt;</code>
+</dd></dl>
+
+That's the worst case and we highly discourage using such formatting. However, some WSDL / XML schemas authors do use it
+(apparently because of lack of tools able to process normal XHTML).
+So, WSDLDoc supports this as well.
+<p>
+In order to have such HTML recognized and processed, please check the following:
+<ol>
+<li>The parameter <i>"Processing | Descriptions | Encode markup characters"</i> must be selected (<code>true</code>).</li>
+<li>
+  The HTML/RTF output format option <i>"Text | Render embedded HTML"</i> must be selected.
+  (See: Generator dialog | Output format | HTML/RTF | Options)
+</li>
+</ol>

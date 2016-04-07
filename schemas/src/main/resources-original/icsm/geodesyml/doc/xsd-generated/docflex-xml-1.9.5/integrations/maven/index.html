@@ -1,0 +1,479 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Maven Plugin for DocFlex/XML, Version 1.0</title>
+
+<style type="text/css">
+
+body {
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+code {
+  white-space:nowrap;
+}
+
+.note {
+  font-size:90%;
+  padding: 4px;
+  border: solid 1px #999999;
+  background-color:#F3F3F3;
+}
+
+.mrg0 {
+  margin-top:0pt;
+  margin-bottom:0pt;
+}
+
+.brdr1 { border-left: 1px solid #CCCCCC; border-top: 1px solid #CCCCCC; border-right: 1px solid #999999; border-bottom: 1px solid #999999; }
+.brdr2 { border-left: 1px solid #999999; border-top: 1px solid #999999; border-right: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC; padding: 5px 6px 5px 6px }
+.brdr3 { border-left: 1px solid #999999; border-top: 1px solid #999999; border-right: 1px solid #CCCCCC; padding: 5px 6px 0px 6px }
+.brdr4 { border-left: 1px solid #999999; border-right: 1px solid #CCCCCC; padding: 0px 6px 0px 6px }
+.brdr5 { border-left: 1px solid #999999; border-right: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC; padding: 0px 6px 5px 6px }
+.row1 { background-color:#F3F3F3;}
+.row2 { background-color:#FFFFFF;}
+
+</style>
+</head>
+
+<body>
+
+<center>
+  <h1>Maven Plugin for DocFlex/XML, Version 1.0</h1>
+</center>
+
+<hr>
+
+<ul>
+  <li><a href="#contents">Content Files</a></li>
+  <li><a href="#license">License</a></li>
+  <li><a href="#installation">Installation</a></li>
+  <li><a href="#running_demos">Running Demos</a>
+    <ul>
+       <li><a href="#running_demos.site1">Site 1</a></li>
+       <li><a href="#running_demos.site2">Site 2</a></li>
+       <li><a href="#running_demos.site3">Site 3</a></li>
+    </ul>
+  </li>
+  <li><a href="#getting_help">Getting Help</a></li>
+</ul>
+
+<hr>
+
+<h2>
+  <a name="contents"></a>
+  Content Files
+</h2>
+
+<table cellspacing="0" cellpadding="0" border="0" class="brdr1">
+
+<!-- INDEX -->
+
+<tr class="row1">
+  <td class="brdr2">
+    <code>index.html</code>
+  </td>
+  <td class="brdr2">
+    this file
+  </td>
+</tr>
+
+<!-- PLUG-IN -->
+
+<tr class="row2" valign="top">
+  <td class="brdr3">
+    <code>plugin/</code>
+  </td>
+  <td class="brdr3">
+    The DocFlex/XML Maven plugin implementation and installation files:
+  </td>  
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr4">
+    <code>plugin/src/.../DocFlexXMLMojo.java</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>The Java class implementing the plugin (the <i>mojo</i>)</li>
+    </ul>
+  </td>
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr4">
+    <code>plugin/pom.xml</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>POM file to build the plugin</li>
+    </ul>
+  </td>  
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr4">
+    <code>plugin/install.bat</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>
+        Windows command file to build and install the plugin.
+        (First, it installs all DocFlex/XML Java libraries in the Maven repository
+        and, then, builds and installs the plugin.)
+      </li>
+    </ul>
+  </td>  
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr4">
+    <code>plugin/install.sh</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>
+        Linux shell script to build and install the plugin.
+      </li>
+    </ul>
+  </td>  
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr4">
+    <code>plugin/test.bat</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>
+        Windows command file to test the DocFlex/XML Maven plugin.
+        (It simply runs the DocFlex/XML generator from under Maven with the generator GUI enabled.)
+      </li>
+    </ul>
+  </td>  
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr5">
+    <code>plugin/test.sh</code>
+  </td>
+  <td class="brdr5">
+    <ul class="mrg0">
+      <li>
+        The same file prepared for Linux
+      </li>
+    </ul>
+  </td>  
+</tr>
+
+<!-- SITE 1 -->
+
+<tr class="row1" valign="top">
+  <td class="brdr3">
+    <code>site1/</code>
+  </td>
+  <td class="brdr3">
+    A demo project that shows how to use the DocFlex/XML Maven plugin
+    to generate an XML Schema documentation for the reports section 
+    of a Maven-generated site:
+  </td>  
+</tr>
+
+<tr class="row1" valign="top">
+  <td class="brdr4">
+    <code>site1/pom.xml</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>The project POM file</li>
+    </ul>
+  </td>  
+</tr>
+
+<tr class="row1" valign="top">
+  <td class="brdr4">
+    <code>site1/site.bat</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>
+        Windows command file to run the site generation
+      </li>
+    </ul>
+  </td>  
+</tr>
+
+<tr class="row1" valign="top">
+  <td class="brdr5">
+    <code>site1/site.sh</code>
+  </td>
+  <td class="brdr5">
+    <ul class="mrg0">
+      <li>
+        Linux shell script to run the site generation
+      </li>
+    </ul>
+  </td>  
+</tr>
+
+<!-- SITE 2 -->
+
+<tr class="row2" valign="top">
+  <td class="brdr2">
+    <code>site2/</code>
+  </td>
+  <td class="brdr2">
+    Another Maven demo project that shows how to configure the plugin to generate
+    the documentation for two different XML schemas as separate Maven-site reports.
+  </td>  
+</tr>
+
+<!-- SITE 3 -->
+
+<tr class="row1" valign="top">
+  <td class="brdr2">
+    <code>site3/</code>
+  </td>
+  <td class="brdr2">
+    This demo also generates two reports for the Maven-site:
+    one is the <i>"Sales Report"</i> by <code>samples/sales/sales.xml</code>
+    and another one is the XML Schema documentation by 
+    <code>samples/sales/sales.xsd</code>.
+  </td>  
+</tr>
+
+</table>
+
+<p>
+<i>Note: These files and directories can be found in <code>'integrations/maven/'</code> subdirectory of
+<a href="http://www.filigris.com/docflex-xml/">DocFlex/XML</a> installation.</i>
+
+<h2>
+  <a name="license"></a>
+  License
+</h2>
+
+All Maven plugin-specific files contained in the <code>'integrations/maven/'</code> subdirectory,
+which include:
+<ul>
+<li>
+ The plugin mojo Java class (<code>DocFlexXMLMojo.java</code>)
+</li>
+<li>
+ POM files
+</li>
+<li>
+ Windows command files 
+</li>
+<li>
+ Linux shell scripts
+</li>
+</ul>
+are <b>free</b> for any usage <b>without limitation</b>.
+
+<h2>
+  <a name="installation"></a>
+  Installation
+</h2>
+
+First, of course, you need to have Maven installed on your system.
+<p>
+If you do not have Maven yet, download it from the Apache Maven web-site: 
+<a href="http://maven.apache.org/" target="_blank">http://maven.apache.org/</a>.
+The download archive will contain exactly the Maven home directory, which you may 
+unpack at any location (e.g. <code>C:\apache-maven-2.2.1</code>).
+<p>
+Further, please follow these steps (Windows platform):
+<ol>
+<li>
+  Edit <code>maven\plugin\pom.xml</code> to specify the absolute pathname of
+  <code>docflex-xml.jar</code> according to your DocFlex/XML installation in the following lines:
+<blockquote><pre>
+&lt;!-- DocFlex/XML Java library --&gt;
+&lt;dependency&gt;
+  &lt;groupId>docflex&lt;/groupId&gt;
+  &lt;artifactId&gt;docflex-xml&lt;/artifactId&gt;
+  &lt;version&gt;1.9.5&lt;/version&gt;
+  &lt;scope&gt;system&lt;/scope&gt;
+  &lt;systemPath&gt;C:\docflex-xml-1.9.5\lib\docflex-xml.jar&lt;/systemPath&gt;
+&lt;/dependency&gt;
+</pre></blockquote>
+</li>
+<li>
+  Edit <code>plugin\install.bat</code> to specify <code>'JAVA_HOME'</code> and
+  <code>'M2_HOME'</code> variables according to the locations of Java and Maven
+  installed on your system. For example:
+  <blockquote>
+  <code>
+  set JAVA_HOME=C:\Program Files\Java\jdk1.7</br>
+  set M2_HOME=C:\apache-maven-2.2.1
+  </code>
+  </blockquote>
+  <p>
+  Switch the current directory to <code>{docflex-xml}\integrations\maven\plugin</code> 
+  and run <code>install.bat</code>.
+  <p>
+  If everything is correct, the DocFlex/XML Maven Plugin will be compiled and installed. 
+  (You may need to wait until Maven downloads from Internet and installs lots of other plugins it needs.)
+  <p>
+  On Linux, everything is the same except that, instead of <code>install.bat</code>,
+  you should use <code>install.sh</code> 
+  (also edit its "Permission" property to allow it to be executed by Linux).
+  <p>
+  <i>Note: To pass the installation successfully, you must be connected to Internet during it.</i>
+  <p>
+</li>
+<li>
+  To test the plugin, edit <code>plugin\test.bat</code> (on Windows) or 
+  <code>plugin/test.sh</code> (on Linux) according to your Java and Maven locations and run it.
+  The generator dialog should appear. 
+</li>
+</ol>
+
+<h2>
+  <a name="running_demos"></a>
+  Running Demos
+</h2>
+
+<h3>
+  <a name="running_demos.site1"></a>
+  Site 1
+</h3>
+
+This demo shows how to use DocFlex/XML Maven plugin to generate an XML Schema documentation 
+for the reports section of a Maven-generated site.
+<p>
+The XML schema to be documented is the <i>"XML Schema for W3C XML Schemas"</i>.
+Its files will be loaded directly from
+<code>{docflex-xml}\lib\resources</code> directory of your DocFlex/XML installation.
+(So, you don't need Internet to run this demo.)
+<p>
+In fact, this very schema is used by the "XSDDoc" templates
+-- the ones which implement the XML Schema documentation generator itself.
+So, here we have a kind of "bootstrapping".
+The original "XML Schema for XML Schemas" files can be found by URL:
+<a href="http://www.w3.org/2001/XMLSchema.xsd" target="_blank">http://www.w3.org/2001/XMLSchema.xsd</a>.
+<p>
+Running the demo is very simple:
+<ol>
+<li>
+  Switch to <code>{docflex-xml}\integrations\maven\site1</code> directory.
+</li>
+<li>
+  Run <code>site.bat</code> (or <code>site.sh</code> under Linux --
+  but do not forget to change its "Permission" properties to allow it to be executed).
+  After Maven ends you will see a new <code>'target'</code> subdirectory.
+</li>
+<li>
+  Open <code>target\site\index.html</code> file. 
+  Then, go to "Project Reports" and click "XSDDoc".
+  You will see a demo XML Schema documentation generated by DocFlex/XML XSDDoc. 
+</li>
+</ol>
+
+<h3>
+  <a name="running_demos.site2"></a>
+  Site 2
+</h3>
+
+This demo shows how to configure DocFlex/XML Maven plugin to document two
+different XML schemas into separate Maven-site reports.
+<p>
+The schemas to be documented are the following:
+<ol>
+<li>
+  The <i>"XML Schema for XML Schemas"</i>, as in the first example.
+  Now, its files will be loaded directly from Internet by the URL:
+  <ul>
+    <li><a href="http://www.w3.org/2001/XMLSchema.xsd" target="_blank">http://www.w3.org/2001/XMLSchema.xsd</a></li>
+  </ul>
+  <p>
+</li>
+<li>
+  The <i>"XML Schema for WSDL 1.1"</i>. Its initial source files will be loaded by the URLs:
+  <ul>
+    <li><a href="http://schemas.xmlsoap.org/wsdl/" target="_blank">http://schemas.xmlsoap.org/wsdl/</a></li>
+    <li><a href="http://schemas.xmlsoap.org/wsdl/soap/" target="_blank">http://schemas.xmlsoap.org/wsdl/soap/</a></li>
+    <li><a href="http://schemas.xmlsoap.org/wsdl/http/" target="_blank">http://schemas.xmlsoap.org/wsdl/http/</a></li>
+    <li><a href="http://schemas.xmlsoap.org/wsdl/mime/" target="_blank">http://schemas.xmlsoap.org/wsdl/mime/</a></li>
+  </ul>
+</li>
+</ol>
+
+Running the demo:
+<ol>
+<li>
+  Switch to <code>{docflex-xml}\integrations\maven\site2</code> directory.
+</li>
+<li>
+  Run <code>site.bat</code> (or <code>site.sh</code> under Linux).
+</li>
+<li>
+  Open <code>target\site\index.html</code> file.
+  Then, go to "Project Reports" and click "XMLSchema_xsddoc" or "wsdl11_xsddoc".
+  You will see two different XML Schema documentations generated with DocFlex/XML XSDDoc. 
+</li>
+</ol>
+
+<h3>
+  <a name="running_demos.site3"></a>
+  Site 3
+</h3>
+
+If you think that DocFlex/XML (and the Maven plugin for it) is all about generating the XML schema documentation,
+this demo will show you a different usage. It generates two Maven-site reports:
+<ol>
+<li>
+  One is the XML schema documentation again. It will be generated for
+  <code>{docflex-xml}\samples\sales\sales.xsd</code>, the XML schema that describes the data source for the
+  second report.
+  <p>
+</li>
+<li>
+  The second is the <i>"Sales Report"</i> report generated with <code>{docflex-xml}\samples\sales\sales.tpl</code> template
+  (which uses the <code>sales.xsd</code> schema) from <code>{docflex-xml}\samples\sales\sales.xml</code>
+  (which is the source of the report's data).
+  The <i>"Sales Report"</i> itself has nothing to do with XML schemas!
+</li>
+</ol>
+
+Running the demo:
+<ol>
+<li>
+  Switch to <code>{docflex-xml}\integrations\maven\site3</code> directory.
+</li>
+<li>
+  Run <code>site.bat</code> (or <code>site.sh</code> under Linux).
+  After Maven finishes you will see a new <code>'target'</code> subdirectory.
+</li>
+<li>
+  Open <code>target\site\index.html</code> file.
+  Then, go to "Project Reports" and click "Sales XSDDoc" or "Sales Report".
+</li>
+</ol>
+
+<h2>
+  <a name="getting_help"></a>
+  Getting Help
+</h2>
+
+For most up-to-date information about DocFlex/XML Maven Plugin, please see:
+<a href="http://www.filigris.com/docflex-xml/maven.php" target="_blank">www.filigris.com | DocFlex/XML | Integrations | Maven</a>.
+<p>
+If you have any questions, suggestions, etc.
+about Maven Plugin for DocFlex/XML, please let us know by sending an email to: 
+<a href="mailto:support@docflex.com">support@docflex.com</a> or
+<a href="mailto:contact@filigris.com">contact@filigris.com</a>
+
+<p>
+<hr>
+<span style="font-family: Verdana, helvetica;font-size: 13px;">
+Copyright&copy; 2008-2011 Filigris Works, Leonid Rudy Softwareprodukte. <br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or
+e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+
+</body>
+</html>

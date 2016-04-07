@@ -1,0 +1,29 @@
+Specify whether to generate the <b><i>Input</i></b> section,
+which describes the <b>operation input</b>.
+<p>
+It is generated according to the <code>input</code> element found in the WSDL operation definition:
+<dl><dd>
+<code>wsdl:operation/wsdl:input</code>
+</dd></dl>
+When the <code>input</code> element has <code>name</code> attribute,
+its value will be shown in the <i>Input</i> section heading.
+<p>
+In case of operation in WSDL <code>binding</code>, the full information about its input is obtained both by the path:
+<dl><dd>
+<code>wsdl:binding/wsdl:operation/wsdl:output</code>
+</dd></dl>
+and from the <code>input</code> element in the corresponding operation definition
+found in the <code>portType</code> assigned to that <code>binding</code>:
+<dl><dd>
+<code>wsdl:portType/wsdl:operation/wsdl:input</code>
+</dd></dl>
+
+<b>Applies To:</b>
+<dl><dd>
+All operations (portType/binding)
+</dd></dl>
+
+<b>Nested Parameters:</b>
+<dl><dd>
+Control what is included in the <i>Input</i> section.
+</dd></dl>

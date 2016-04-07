@@ -1,0 +1,13 @@
+Specify whether to show the attribute default value.
+<p>
+The default value is provided by the <code>'default'</code> attribute
+specified in the XSD element of the attribute declaration.
+For example:
+<dl><dd>
+<code>&lt;xs:attribute name="abstract" type="xs:boolean" <b>default="false"</b>/&gt;</code>
+</dd></dl>
+
+When the attribute is defined by reference to a global attribute, its default value may be specified both
+in the local reference component (which is being documented here)
+and in the global (referenced) attribute component. In that case, the actual default value will be looked for,
+first, in the reference component and, then, in the global one.

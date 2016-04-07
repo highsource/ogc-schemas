@@ -1,0 +1,36 @@
+Specifies whether to generate the detailed (global) <b><i>Element Documentation</i></b> for <i>local elements</i>
+(i.e. locally defined element components; see also below).
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"all"</i>
+<dl><dd>
+Document all local elements the same way as global ones (see <i>"How Local Elements are documented | Global Documenting"</i> below).
+</dd></dl>
+
+<i>"with complex type only"</i>
+<dl><dd>
+Generate the detailed <i>Element Documentation</i> only for local elements with complex types.
+<p></p>
+<b>Note:</b> Certain XML schema design patterns avoid using global element components almost entirely.
+Instead, they define a single global element component that describes the root element of a possible XML document.
+Any other elements, which may be contained in that XML document, are defined using only global types and local element components.
+What is more, frequently, those XML schemas also avoid defining element attributes.
+Instead, to store in an XML document the elementary data normally supposed for attributes,
+they define lots of local elements with primitive simple types.
+As a result, such an XML schema contains great a lot of insignificant local element components.
+When all of them are documented separately (and appear in main element component lists) they may overwhelm anything else.
+This parameter value allows you to avoid exactly such a mess and properly document your XML schemas written according to that pattern!
+</dd></dl>
+
+<i>"none"</i>
+<dl><dd>
+Do not generate separate <i>Element Documentation</i> for local elements.
+</dd></dl>
+
+<b>See Also:</b>
+<blockquote>
+<i>"Details | Component Documentation"</i> parameter group, which controls the exact content of the <i>Element Documentation</i>.
+</blockquote>
+
+${include ../refs/local_elements.htm}

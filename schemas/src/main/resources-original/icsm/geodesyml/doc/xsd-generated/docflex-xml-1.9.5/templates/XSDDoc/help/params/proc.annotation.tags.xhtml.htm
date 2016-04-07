@@ -1,0 +1,24 @@
+Specify whether to process XHTML tags embedded in the annotation text.
+<p>
+XHTML tags are considered any XML elements that belong to XHTML namespace, which is associated with the following URI:
+<dl><dd>
+<code>http://www.w3.org/1999/xhtml</code>
+</dd></dl>
+(Specifically, this particular URI, which is used by the templates to identify the XHTML elements,
+is specified in <b><code>'xsddoc.xmltype'</code></b> configuration file, where you can change it when you need.)
+<p>
+When this parameter is <b><code>true</code></b> (checked), any XHTML elements will be converted to normal HTML tags
+(that is, the namespace prefix will be removed from each tag's name and everything else rewritten as it was).
+That will make the annotation text look as a fragment of normal HTML, which will be further inserted directly
+into the documentation output (in case of HTML) or rendered (in case of RTF). 
+<p>
+When this parameter is <code><b>false</b></code> (unchecked), the XHTML elements will not be specifically processed
+in any way. The element tags will be simply removed or printed as normal text,
+which is controlled by <i>"Processing | Annotations | Tags | Other Tags"</i> parameter.
+<p>
+<b>Important:</b>
+<blockquote>
+To have XHTML embedded in your annotations work, when generating documentation (both HTML and RTF),
+check also that <b><i>"Render embedded HTML"</i></b> option of the destination output format is selected!
+(This can be specified in the generator dialog.)
+</blockquote>

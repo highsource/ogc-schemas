@@ -1,0 +1,107 @@
+This parameter allows you to customize the initial content of 
+the <b><i>Detail Frame</i></b>,
+which occupies the largest (right) part of the frameset:
+
+<center style="margin-top:10pt;margin-bottom:10pt">
+<img src="${this_dir}/../../images/frameset_diagram.png">
+</center>
+
+(All the documentation informative content appears in this frame.
+Other frames are used mainly for navigation purpose.)
+
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"Overview Summary"</i>
+<dl><dd>
+Preload the <b><i>Overview Summary</i></b> page.
+<p style="margin-top:8pt">
+The generation of this page is controlled by the parameters/groups:
+<ul style="margin-bottom:0">
+  <li><i>Generate Details | Overview Summary</i></li>
+  <li><i>Details | Schema Overview</i></li>
+</ul>
+</dd></dl>
+
+<i>"All Component Summary"</i>
+<dl><dd>
+Preload the <b><i>All Component Summary</i></b> page.
+<p style="margin-top:8pt">
+The generation of this page is controlled by the parameters/groups:
+<ul style="margin-bottom:0">
+  <li><i>Generate Details | All Component Summary</i></li>
+  <li><i>Details | All Component Summary</i></li>
+</ul>
+</dd></dl>
+
+<i>"Namespace Overview"</i>
+<dl><dd>
+Preload one of the <b><i>Namespace Overview</i></b> pages.
+
+<p style="margin-top:10pt">
+As there may be several of such pages (a separate page for each namespace),
+the preloaded will be one, which has been generated the first.
+That is controlled by the parameter: <i>"Generate Details | Sorting | Namespaces"</i>.
+
+<p style="margin-top:10pt">
+The generation of <i>Namespace Overview</i> pages is controlled by the parameters/groups:
+<ul style="margin-bottom:0">
+  <li><i>Generate Details | Namespace Overview</i></li>
+  <li><i>Details | Namespace Overview</i></li>
+</ul>
+</dd></dl>
+
+<i>"WSDL File Overview"</i>
+<dl><dd>
+Preload one of the <b><i>WSDL File Overview</i></b> pages.
+
+<p style="margin-top:10pt">
+As there may be several of such pages (a separate page for each WSDL file),
+the preloaded will be one, which has been generated the first.
+That is controlled by the parameter: <i>"Generate Details | Sorting | WSDL Files"</i>.
+
+<p style="margin-top:10pt">
+The generation of <i>WSDL File Overview</i> pages is controlled by the parameters/groups:
+<ul style="margin-bottom:0">
+  <li><i>Generate Details | Namespace Overview</i></li>
+  <li><i>Details | Namespace Overview</i></li>
+</ul>
+</dd></dl>
+
+<i>"Schema Overview"</i>
+<dl><dd>
+Preload one of the <b><i>Schema Overview</i></b> pages.
+
+<p style="margin-top:10pt">
+As there may be several of such pages (a separate page for each XML schema),
+the preloaded will be one, which has been generated the first.
+<p style="margin-top:10pt">
+Here is how it is determined:
+The first get processed the XML schemas embedded in WSDL files, in the same order as the WSDL files themselves.
+That is controlled by the parameter: <i>"Generate Details | Sorting | WSDL File"</i>.
+Then, XSD files are processed in the order controlled by the parameter:
+<i>"Generate Details | Sorting | Schemas"</i>.
+
+<p style="margin-top:10pt">
+The generation of <i>Schema Overview</i> pages is controlled by the parameters/groups:
+<ul style="margin-bottom:0">
+  <li><i>Generate Details | Schema Overview</i></li>
+  <li><i>Details | Schema Overview</i></li>
+</ul>
+</dd></dl>
+
+<b>Note:</b> 
+<dl><dd>
+When the specified index page is not available,
+what is loaded initially will be chosen according to the following priority list:
+<ol style="margin-bottom:0">
+  <li><i>Overview Summary</i></li>
+  <li><i>All Component Summary</i></li>
+  <li><i>Namespace Overview</i></li>
+  <li><i>WSDL File Overview</i></li>
+  <li><i>Schema Overview</i></li>
+  <li><i>WSDL Definition Documentation</i></li>
+  <li><i>XSD Component Documentation</i></li>
+  <li><i>Namespace Bindings Report</i></li>
+</ol>
+</dd></dl>

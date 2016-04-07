@@ -1,0 +1,47 @@
+Control what to do with any other XML tags that have not been specifically processed
+as XHTML markup.
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"show"</i>
+<dl><dd>
+All unprocessed XML tags will appear in the generated documentation as text.
+<p style="margin-top:10pt">
+For example, if in the input data there is:
+<blockquote>
+<code>&lt;tag&gt; blah-blah &lt;/tag&gt;</code>
+</blockquote>
+the same you will see in the result documentation.
+</dd></dl>
+
+<i>"process as XHTML"</i>
+<dl><dd>
+The unprocessed tags will be treated as XHTML tags.
+<p style="margin-top:10pt">
+<b>Note:</b> The <i>"Processing | Descriptions | Tags | XHTML"</i> parameter
+should be also selected for this.
+<p style="margin-top:10pt">
+For example, if in the input data there is:
+<blockquote>
+<code>&lt;i&gt;blah-blah&lt;/i&gt;</code>
+</blockquote>
+and the element <code>&lt;i&gt;</code> is in no-namespace,
+then in the result documentation you will still see (italic text):
+<blockquote>
+<code><i>blah-blah</i></code>
+</blockquote>
+</dd></dl>
+
+<i>"no processing"</i>
+<dl><dd>
+Any unprocessed tags will be ignored.
+<p style="margin-top:10pt">
+For example, if in the input data there is:
+<blockquote>
+<code>&lt;tag&gt; blah-blah &lt;/tag&gt;</code>
+</blockquote>
+in the result documentation you will see only:
+<blockquote>
+<code>blah-blah</code>
+</blockquote>
+</dd></dl>

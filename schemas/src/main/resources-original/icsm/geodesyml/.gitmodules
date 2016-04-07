@@ -1,0 +1,3 @@
+[submodule "tools/xml-schemer"]
+	path = tools/xml-schemer
+	url = https://github.com/GeoscienceAustralia/xml-schemer.git

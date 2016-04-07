@@ -1,0 +1,711 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../../../styles.css">
+<title>DocFlex/XML - Samples - XMLDoc (XML File Documenter)</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/XML - Samples - XMLDoc (XML File Documenter)
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+<li class="mrg4"><a href="#overview"><b>Overview</b></a></li>
+<li class="mrg4"><a href="#examples"><b>Examples</b></a></li>
+  <ul class="mrg4">
+    <li><a href="#rtf_demo">RTF demo</a></li>
+    <li><a href="#plain_html_demo">Plain HTML demo</a></li>
+    <li><a href="#framed_html_demo">Framed HTML demo</a></li>
+  </ul>
+</li>
+<li class="mrg4"><a href="#template_summary"><b>Template Summary</b></a></li>
+<li class="mrg4"><a href="#xml_type"><b>XML Type</b></a></li>
+<li class="mrg4"><a href="#PlainDoc.tpl"><b>PlainDoc.tpl</b></a>
+  <ul class="mrg4">
+    <li><a href="#PlainDoc.tpl.structure">Template organization</a></li>
+    <li><a href="#PlainDoc.tpl.param_defs">Parameter definitions</a></li>
+  </ul>
+</li>
+<li class="mrg4"><a href="#FramedDoc.tpl"><b>FramedDoc.tpl</b></a>
+  <ul class="mrg4">
+    <li><a href="#FramedDoc.tpl.structure">Template organization</a></li>
+    <li><a href="#FramedDoc.tpl.frameset">Frameset structure</a></li>
+  </ul>
+</li>
+<li class="mrg4"><a href="#Document.tpl"><b>Document.tpl</b></a>
+  <ul class="mrg4">
+    <li><a href="#Document.tpl.main_block">The main block</a></li>
+    <li><a href="#Document.tpl.Node_ss">&ldquo;Node&rdquo; stock-section</a></li>
+    <li><a href="#Document.tpl.AttrList_ss">&ldquo;AttrList&rdquo; stock-section</a></li>
+  </ul>
+</li>
+<li class="mrg4"><a href="#xmlns-bindings.tpl"><b>xmlns-bindings.tpl</b></a></li>
+<li class="mrg4"><a href="#TOC.tpl"><b>TOC.tpl</b></a></li>
+<li class="mrg4"><a href="#about.tpl"><b>about.tpl</b></a></li>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<h2>
+  <a name="overview"></a>
+  1.&nbsp; Overview
+</h2>
+
+The &ldquo;XML File Documenter&rdquo; (or &ldquo;XMLDoc&rdquo;) set of templates
+compiles any number of generic XML files into a nice looking web-ready HTML or printable
+RTF documentation with the optional inclusion of a namespace binding report.
+<p>
+It may also serve as an example of a very simple and, at the same time,
+practically useful application of <a href="../../about.html">DocFlex/XML</a>.
+See <a href="#templates">templates</a> to learn how it works.
+<p>
+The set includes two main templates (i.e. those to be specified directly
+in the <a href="../../generator.html#gui">generator dialog</a>
+or on the <a href="../../generator.html#cmdline">command line</a>
+with -<a href="../../generator.html#template_option">template</a>
+option):
+
+<ol>
+<li>
+  <a href="#PlainDoc.tpl"><b>PlainDoc.tpl</b></a> template
+  can be used to generate single file documentation in any output format supported by DocFlex.
+  See <a href="#rtf_demo">RTF demo</a> and <a href="#plain_html_demo">Plain HTML demo</a>.
+</li>
+<li class="mrg8">
+  <a href="#FramedDoc.tpl"><b>FramedDoc.tpl</b></a>
+  template is a variant of the same but designed to generate a framed HTML documentation.
+  See <a href="#framed_html_demo">Framed HTML demo</a>.</li>
+</ol>
+
+Besides those main templates, there are few sub-templates, which are called internally from
+the both main ones. See <a href="#templates">Template Summary</a> for more details.
+
+<h2>
+  <a name="examples"></a>
+  2.&nbsp; Examples
+</h2>
+
+The following XML file demo documentation has been generated from three XSL files
+(XSL is a subset of XML that encodes <a href="http://www.w3.org/TR/xslt" target="_blank">XSLT</a> scripts)
+found in Apache Ant software package.
+<p class="mrg8">
+We have chosen those files simply because we use Apache Ant itself (without learning
+much what those XSLT scripts do).
+
+<h3>
+  <a name="rtf_demo"></a>
+  RTF demo
+</h3>
+
+The following pages are from an RTF document generated with <a href="#PlainDoc.tpl">PlainDoc.tpl</a> template
+(click on the screenshot to see the real size page preview):
+
+<blockquote>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+  <td><a href="http://www.filigris.com/docflex-xml/samples/xmldoc/images/PlainDoc_rtf_p1.html" target="_blank"><img src="images/PlainDoc_rtf_p1_s.gif" title="RTF demo, p.1" border="0"></a></td>
+  <td><a href="http://www.filigris.com/docflex-xml/samples/xmldoc/images/PlainDoc_rtf_p6.html" target="_blank"><img src="images/PlainDoc_rtf_p6_s.gif" title="RTF demo, p.6" border="0"></a></td>
+  <td><a href="http://www.filigris.com/docflex-xml/samples/xmldoc/images/PlainDoc_rtf_p8.html" target="_blank"><img src="images/PlainDoc_rtf_p8_s.gif" title="RTF demo, p.8" border="0"></a></td>
+</tr>
+</table>
+</blockquote>
+
+<h3>
+  <a name="plain_html_demo"></a>
+  Plain HTML demo
+</h3>
+
+This is actually the same document as RTF above generated with
+<a href="#PlainDoc.tpl">PlainDoc.tpl</a> template,
+however, now it is in HTML format (click on the screenshot to see the real HTML):
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/xmldoc/files/PlainDoc.html" target="_blank"><img src="images/PlainDoc_html.png" title="Plain HTML demo" border="0"></a>
+</blockquote>
+
+<h3>
+  <a name="framed_html_demo"></a>
+  Framed HTML demo
+</h3>
+
+The following is a framed HTML variant generated with
+<a href="#FramedDoc.tpl">FramedDoc.tpl</a> template
+(click on the screenshot to see the real HTML):
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/xmldoc/files/FramedDoc.html" target="_blank"><img src="images/FramedDoc_html.png" title="Framed HTML demo" border="0"></a>
+</blockquote>
+
+<h2>
+  <a name="template_summary"></a>
+  3.&nbsp; Template Summary
+</h2>
+
+The &ldquo;XML File Documenter&rdquo; set of templates is based on a special <b>&ldquo;xmldoc&rdquo;</b>
+<a href="../../design_templates.html#xmltype">XML Type</a>, which is detailed <a href="#xml_type">below</a>.
+The set includes 2 <a href="../../generator.html#gui.template">main templates</a>
+and 4 subtemplates, which are summarized in the following table:
+
+<p>
+<p>
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+
+<!-- Table Heading -->
+
+  <tr bgcolor="#EEEEEE">
+    <th width="1%"><b>Template</b></th>
+    <th><b>Annotation</b></th>
+    <th><b>Called&nbsp;From</b></th>
+  </tr>
+
+<!-- PlainDoc.tpl -->
+
+  <tr valign="middle">
+    <td>
+      <a href="#PlainDoc.tpl">PlainDoc.tpl</a>
+    </td>
+    <td>
+      generates a single-file documentation from all specified XML files in any supported output format
+    </td>
+    <td>
+      <a href="../../generator.html">generator</a>
+    </td>
+  </tr>
+
+<!-- FramedDoc.tpl -->
+
+  <tr valign="middle">
+    <td>
+      <a href="#FramedDoc.tpl">FramedDoc.tpl</a>
+    </td>
+    <td>
+      generates a framed HTML documentation with a separate document for each XML file and table of contents frame
+    </td>
+    <td>
+      <a href="../../generator.html">generator</a>
+    </td>
+  </tr>
+
+<!-- SUBTEMPLATES -->
+
+  <tr>
+    <th colspan="3">
+      <i>Subtemplates</i>
+    </th>
+  </tr>
+
+<!-- Document.tpl -->
+
+  <tr valign="middle">
+    <td>
+      <a href="#Document.tpl">Document.tpl</a>
+    </td>
+    <td>
+      processes a single XML file
+    </td>
+    <td>
+      <a href="#PlainDoc.tpl">PlainDoc.tpl</a>,
+      <a href="#FramedDoc.tpl">FramedDoc.tpl</a>
+    </td>
+  </tr>
+
+<!-- xmlns-bindings.tpl -->
+
+  <tr valign="middle">
+    <td>
+      <span class="nowrap"><a href="#xmlns-bindings.tpl">xmlns-bindings.tpl</a></span>
+    </td>
+    <td>
+      generates Namespace Bindings report
+    </td>
+    <td>
+      <a href="#PlainDoc.tpl">PlainDoc.tpl</a>,
+      <a href="#FramedDoc.tpl">FramedDoc.tpl</a>
+    </td>
+  </tr>
+
+<!-- TOC.tpl -->
+
+  <tr valign="middle">
+    <td>
+      <a href="#TOC.tpl">TOC.tpl</a>
+    </td>
+    <td>
+      generates summary frame document
+    </td>
+    <td>
+      <a href="#FramedDoc.tpl">FramedDoc.tpl</a>
+    </td>
+  </tr>
+
+<!-- about.tpl -->
+
+  <tr valign="middle">
+    <td>
+      <a href="#about.tpl">about.tpl</a>
+    </td>
+    <td>
+      prints the about information at the bottom of document
+    </td>
+    <td>
+      <a href="#PlainDoc.tpl">PlainDoc.tpl</a>,
+      <a href="#Document.tpl">Document.tpl</a>,
+      <a href="#xmlns-bindings.tpl" class="nowrap">xmlns-bindings.tpl</a>
+    </td>
+  </tr>
+
+</table>
+
+<h2>
+  <a name="xml_type"></a>
+  4.&nbsp; XML Type
+</h2>
+
+The <a href="../../design_templates.html#xmltype">XML Type definition</a>
+used by the &ldquo;XML File Documenter&rdquo; templates covers a very general case of XML files.
+It is not based on any DTD or XSD, but instead enables all kinds of
+<a href="../../design_templates.html#xmltype.pseudo_elements">pseudo-elements</a>
+which represent all possible nodes of an XML document.
+Here is how that definition looks:
+
+<blockquote>
+<pre>xmldoc.name = Generic XML Files
+xmldoc.pseudo-elements.all = true
+xmldoc.defaultRootElement = Documents</pre>
+</blockquote>
+
+The following tree represents the <a href="../../../general/about.html#dsm_type">DSM Type</a>
+(Data Source Model Type) constructed by this definition (click on the picture to see
+the expanded tree):
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/xmldoc/images/xmldoc_dsmtype.html" target="_blank"><img src="images/xmldoc_dsmtype_s.png" title="&ldquo;XML File Documenter&rdquo; DSM Type" border="0"></a>
+</blockquote>
+
+The last line of the <a href="../../design_templates.html#xmltype">XML Type</a> definition:
+
+<blockquote>
+<code>xmldoc.defaultRootElement = Documents</code>
+</blockquote>
+
+says that for any <a href="../../generator.html#gui.template">main template</a>
+based on this type, the generator should open all XML files specified for the processing and pass them
+to the template as children of an <a href="../../design_templates.html#xmltype.DOCUMENTS">#DOCUMENTS</a>
+pseudo-element, which will be the template's
+<a href="../../../general/template_components.html#root_element">root element</a>.
+See <a href="../../design_templates.html#xmltype.defaultRootElement"><i>&lt;typeId&gt;</i>.defaultRootElement</a>
+setting for more details.
+
+<h2>
+  <a name="PlainDoc.tpl"></a>
+  5.&nbsp; PlainDoc.tpl
+</h2>
+
+This is the first <a href="../../generator.html#gui.template">main template</a>
+included in the &ldquo;XML File Documenter&rdquo; template set.
+This template is able to compile any number of XML files of any possible types into
+a single document with the table of contents and optional inclusion of
+Namespace Bindings report (see <a href="#xmlns-bindings.tpl">xmlns-bindings.tpl</a>).
+<p>
+Such documentation can be generated in any supported output format (which may be
+especially suitable for printing).
+To specify a necessary destination output format all you need is to select
+that format in <b>&ldquo;Output format&rdquo;</b> combo-box in the
+<a href="../../generator.html#gui">generator dialog</a>
+or using
+<span class="nowrap">-<a href="../../generator.html#format_option">format</a></span>
+option on the
+<a href="../../generator.html#cmdline">generator command line</a>.
+<p>
+See <a href="#rtf_demo">RTF demo</a> and <a href="#plain_html_demo">single-file HTML demo</a>
+documentation generated with this template.
+
+<h3>
+  <a name="PlainDoc.tpl.structure"></a>
+  Template organization
+</h3>
+
+This is the screenshot of <a href="#PlainDoc.tpl">PlainDoc.tpl</a> template open in
+<a href="../../design_templates.html#designer">Template Designer</a>
+(click on the picture to see it in natural size):
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/xmldoc/images/PlainDoc_tpl.html" target="_blank"><img src="images/PlainDoc_tpl_s.png" title="PlainDoc.tpl" border="0"></a>
+</blockquote>
+
+The template is designed to process all XML files specified for the generator.
+In according with the &ldquo;xmldoc&rdquo; <a href="#xml_type">XML Type</a>,
+the generator will open all those XML files and prepare them as children of
+an <a href="../../design_templates.html#xmltype.DOCUMENTS">#DOCUMENTS</a>
+pseudo-element passed to the template as its root element.
+<p>
+The <a href="../../../general/template_components.html#element_iterator">Element Iterator</a>
+titled &ldquo;DOC FOR EACH XML FILE&rdquo; is actually where all XML files are processed
+by calling <a href="#Document.tpl">Document.tpl</a> subtemplate for each XML file.
+
+<h3>
+  <a name="PlainDoc.tpl.param_defs"></a>
+  Parameter Definitions
+</h3>
+
+The <a href="#PlainDoc.tpl">PlainDoc.tpl</a> template accepts a few parameters, which provides some additional
+data for the generated documentation (such as title) as well as control the template behavior (e.g.
+sorting of multiple XML files, inclusion of <a href="#xmlns-bindings.tpl">Namespace Bindings report</a>, etc).
+<p>
+The following screenshots show how those parameters are defined:
+
+<blockquote>
+  <img src="images/param_defs.png" title="PlainDoc.tpl -- parameter definitions">
+</blockquote>
+
+This is the definition of a single parameter:
+
+<blockquote>
+  <img src="images/param_def.png" title="PlainDoc.tpl -- definition of a single parameter">
+</blockquote>
+
+And this is how the result
+<a href="../../generator.html#gui.param_inspector">Parameter Inspector</a> looks:
+
+<blockquote>
+  <img src="images/param_inspector.png" title="PlainDoc.tpl -- Parameter Inspector">
+</blockquote>
+
+<h2>
+  <a name="FramedDoc.tpl"></a>
+  6.&nbsp; FramedDoc.tpl
+</h2>
+
+This is the second <a href="../../generator.html#gui.template">main template</a>
+included in the &ldquo;XML File Documenter&rdquo; template set.
+This template is designed to generate a framed HTML documentation
+with a separate document for each XML file and table of contents frame.
+<p>
+<a name="FramedDoc.tpl.framed_html_demo"></a>
+The following demo documentation was generated with <a href="#FramedDoc.tpl">FramedDoc.tpl</a> template.
+This is a framed HTML variant of the same documentation shown in <a href="#rtf_demo">RTF demo</a>
+(click on the picture to see the real HTML):
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/xmldoc/files/FramedDoc.html" target="_blank"><img src="images/FramedDoc_html.png" title="Framed HTML demo" border="0"></a>
+</blockquote>
+
+<h3>
+  <a name="FramedDoc.tpl.structure"></a>
+  Template organization
+</h3>
+
+The <a href="#FramedDoc.tpl">FramedDoc.tpl</a> template is a special
+<a href="../../../general/about.html#frameset_template">frameset template</a>.
+Its main block by itself does not produce any output at all. Instead, it calls other templates
+which generate separate HTML documents.
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/xmldoc/images/FramedDoc_tpl.html" target="_blank"><img src="images/FramedDoc_tpl_s.png" title="FramedDoc.tpl" border="0"></a>
+</blockquote>
+
+The template's main block start with the
+<a href="../../../general/template_components.html#element_iterator">element iterator section</a>,
+which iterates by all XML files specified for processing by the
+<a href="../../generator.html">generator</a>.
+The generator opens each XML file and represents it as an
+<a href="../../design_templates.html#xmltype.DOCUMENT">#DOCUMENT</a> pseudo-element.
+Such pseudo-elements are provided as children of another special pseudo-element
+<a href="../../design_templates.html#xmltype.DOCUMENTS">#DOCUMENTS</a>,
+which is the one passed to the template as its
+<a href="../../../general/template_components.html#root_element">root element</a>.
+The iterator contains a
+<a href="../../../general/template_components.html#call_template">call</a>
+to the <a href="#Document.tpl">Document.tpl</a> template that generates
+a separate HTML document for each XML file.
+<p>
+The next <a href="../../../general/template_components.html#call_template">call template section</a>
+following the iterator call <a href="#xmlns-bindings.tpl">xmlns-bindings.tpl</a> template which generates
+the Namespace Bindings report.
+The last one is a call of <a href="#TOC.tpl">TOC.tpl</a> template that generates the table of contents
+HTML document.
+
+<h3>
+  <a name="FramedDoc.tpl.frameset"></a>
+  Frameset structure
+</h3>
+
+The only file directly produced by the <a href="#FramedDoc.tpl">FramedDoc.tpl</a> template
+is the HTML frameset document (such as <code>'index.html'</code>) that displays the whole
+documentation.
+This frameset HTML is generated by a special frameset structure definition contained
+in the <a href="#FramedDoc.tpl">FramedDoc.tpl</a> template and
+shown on the following screenshot:
+
+<blockquote>
+  <img src="images/frameset_def.png" title="FramedDoc.tpl -- frameset structure definition">
+</blockquote>
+
+The frameset structure defines frame windows and specifies which HTML document should be initially
+loaded in each frame.
+The frame definition shown on the screenshot specifies that the <code>'detailFrame'</code> frame
+should be preloaded with the first document produced by the <a href="#Document.tpl">Document.tpl</a> template.
+That would correspond with the first item in the table of contents produced by
+<a href="#TOC.tpl">TOC.tpl</a> template.
+
+<h2>
+  <a name="Document.tpl"></a>
+  7.&nbsp; Document.tpl
+</h2>
+
+The Document.tpl template is the one that processes a single XML file. It is used only as a subtemplate.
+That means, this template is not supposed to be specified directly for the generator, rather
+it is called from within both main templates:
+
+<ol>
+<li>From the <a href="#PlainDoc.tpl">PlainDoc.tpl</a> template to document an XML file as part of a single output
+document</li>
+<li>From the <a href="#FramedDoc.tpl">FramedDoc.tpl</a> to generate a separate HTML document
+for each particular XML file</li>
+</ol>
+
+The Document.tpl template works by reproducing the original content
+of an XML document. In a certain sense, it "understands" the XML document's structure and, then,
+"retells" it in its own way.
+<p>
+The template consists of the following parts:
+<ul>
+  <li><a href="#Document.tpl.main_block">The main block</a>
+  <li><a href="#Document.tpl.Node_ss">&ldquo;Node&rdquo; stock-section</a>
+  <li><a href="#Document.tpl.AttrList_ss">&ldquo;AttrList&rdquo; stock-section</a>
+</ul>
+
+Besides this, there is a
+<a href="../../../general/data_processing_features.html#hyperlinks">hypertext target definition</a>
+specified in the template properties:
+
+<blockquote>
+  <img src="images/htarget_def.png" title="Document.tpl -- hypertext target definition">
+</blockquote>
+
+This is used to generate a hyperlink to the detail of the particular XML file
+from the item representing it in the Table of Content (see <a href="#TOC.tpl">TOC.tpl</a> template).
+
+<h3>
+  <a name="Document.tpl.main_block"></a>
+  The main block
+</h3>
+
+The <a href="#Document.tpl">Document.tpl</a> template receives an XML file to process prepared
+in the form of <a href="../../design_templates.html#xmltype.DOCUMENT">#DOCUMENT</a>
+pseudo-element, which is passed as the template's
+<a href="../../../general/template_components.html#root_element">root element</a>.
+<p>
+Then, the <a href="../../generator.html">generator</a> starts
+processing the template's main block shown on the following screenshot (click to see in the full size):
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/xmldoc/images/Document_tpl.html" target="_blank"><img src="images/Document_tpl_s.png" title="Document.tpl" border="0"></a>
+</blockquote>
+
+The main block starts from the
+<a href="../../../general/template_components.html#area_section">Area Sections</a>,
+which generate the title information about the XML file.
+<p>
+Then, the <a href="../../../general/template_components.html#element_iterator">Element Iterator</a>
+follows which iterates by all direct children of the Document node
+provided by <a href="http://www.w3.org/DOM/" target="_blank">DOM</a> (specifically, that is the node
+represented by Java interface <code>org.w3c.dom.Document</code>).
+<p>
+The node associated with the XML file's &lt!DOCTYPE&gt; statement is processed directly
+within the iterator's body.
+All other <a href="http://www.w3.org/DOM/" target="_blank">DOM</a> nodes are processed by
+<a href="#Document.tpl.Node_ss">&ldquo;Node&rdquo; stock-section</a>.
+<p>
+At the very bottom, you can see the <i>Page Footer</i> block. This block contains
+<a href="../../../general/template_components.html">template components</a>
+to generate a page footer used in RTF documentation (see <a href="#PlainDoc.tpl.rtf_demo">RTF demo</a>).
+That page footer displays the information specific to the given XML document.
+To make it appear on the pages related to the XML file, the generator produces a separate RTF output
+section per each call of the <a href="#Document.tpl">Document.tpl</a> template.
+
+<h3>
+  <a name="Document.tpl.Node_ss"></a>
+  &ldquo;Node&rdquo; stock-section
+</h3>
+
+<a href="../../../general/template_components.html#stock_sections">Stock-sections</a>
+are the template parts which behave similar to procedures in ordinary programming languages.
+Each <a href="../../../general/template_components.html#stock_sections">stock-section</a>
+can be called from different locations in a template (including from within this stock-section itself).
+<p>
+This particular
+<a href="../../../general/template_components.html#stock_sections">stock-section</a>
+processes an XML document's node which may contain other child nodes:
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/xmldoc/images/Node_ss.html" target="_blank"><img src="images/Node_ss_s.png" title="Document.tpl -- &ldquo;Node&rdquo; stock-section" border="0"></a>
+</blockquote>
+
+You may notice a place where this
+<a href="../../../general/template_components.html#stock_sections">stock-section</a>
+calls itself to process nested nodes -- children of the one it received.
+
+<h3>
+  <a name="Document.tpl.AttrList_ss"></a>
+  &ldquo;AttrList&rdquo; stock-section
+</h3>
+
+This <a href="../../../general/template_components.html#stock_sections">stock-section</a>
+does a very simple work. It prints the list of attributes of an XML element.
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/xmldoc/images/AttrList_ss.html" target="_blank"><img src="images/AttrList_ss_s.png" title="Document.tpl -- &ldquo;AttrList&rdquo; stock-section" border="0"></a>
+</blockquote>
+
+The two nested <a href="../../../general/template_components.html#area_section">area sections</a>
+are variants of the same with slightly different text formatting.
+<ul class="mrg8">
+<li>
+  The top section is executed only for reserved XML attributes (that is, when the attribute's name
+  is <code>'xmlns'</code> or starts with <code>'xmlns:'</code> or <code>'xml:'</code> prefixes).
+</li>
+<li>
+  The bottom section is for any other attributes.
+</li>
+</ul>
+
+<h2>
+  <a name="xmlns-bindings.tpl"></a>
+  8.&nbsp; xmlns-bindings.tpl
+</h2>
+
+This template generates the Namespace Bindings report like the one shown of the following screenshot:
+<blockquote>
+  <a href="http://www.filigris.com/docflex-xml/samples/xmldoc/images/PlainDoc_rtf_p8.html" target="_blank"><img src="images/PlainDoc_rtf_p8_s.gif" title="Namespace Bindings" border="0"></a>
+</blockquote>
+
+When you are reading certain XML documents, sometimes you may notice that the element tags contained in them
+are littered with various unknown namespace prefixes. For a big XML document, it may take some efforts
+to find the location where a particular namespace prefix is defined and to which URI it is bound
+(especially when that XML document is in the printed form).
+<p>
+The Namespace Bindings report helps to quickly find by a each prefix the namespace URI
+corresponding to it and the location where that binding is defined.
+<p>
+The <a href="#xmlns-bindings.tpl">xmlns-bindings.tpl</a> template
+has a very simple structure shown on this screenshot (click to see in normal size):
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/xmldoc/images/xmlns-bindings_tpl.html" target="_blank"><img src="images/xmlns-bindings_tpl_s.png" title="TOC.tpl" border="0"></a>
+</blockquote>
+
+Basically, the template consists of an
+<a href="../../../general/template_components.html#element_iterator">Element Iterator</a>
+that generates a table in which every namespace binding is represented by a row.
+<p>
+Here is how it works.
+<p>
+The template receives as its
+<a href="../../../general/template_components.html#root_element">root element</a>
+the <a href="../../design_templates.html#xmltype.DOCUMENTS">#DOCUMENTS</a>
+pseudo-element that represents all XML files.
+Then, the <a href="../../../general/template_components.html#element_iterator">Element Iterator</a>
+iterates by the <a href="../../design_templates.html#xmltype.NAMESPACE">#NAMESPACE</a> pseudo-elements
+collected according to the following
+<a href="../../../general/element_iterator_details.html#advanced_location_rules">Location Rule</a>
+(specified in the iterator properties):
+<blockquote>
+<code>* -> child::#DOCUMENT/namespaces^::#NAMESPACE</code>
+</blockquote>
+
+The left part of the rule is the
+<a href="../../../general/element_iterator_details.html#location_path">Location Path</a>
+which defines the search of the <a href="../../design_templates.html#xmltype.NAMESPACE">#NAMESPACE</a>
+elements:
+<ol>
+<li>
+  The first step starts from the root <a href="../../design_templates.html#xmltype.DOCUMENTS">#DOCUMENTS</a>
+  element and selects all its children of <a href="../../design_templates.html#xmltype.DOCUMENT">#DOCUMENT</a>
+  type that represent XML files.
+</li>
+<li>
+  The second step selects all <a href="../../design_templates.html#xmltype.NAMESPACE">#NAMESPACE</a>
+  pseudo-elements by references obtained from values of
+  <a href="../../design_templates.html#xmltype.DOCUMENT@namespaces">namespaces</a> attribute
+  of each <a href="../../design_templates.html#xmltype.DOCUMENT">#DOCUMENT</a> element.
+  This is specified using
+  <a href="../../../general/element_iterator_details.html#link_axis">link-axis</a>.
+</li>
+</ol>
+
+<h2>
+  <a name="TOC.tpl"></a>
+  9.&nbsp; TOC.tpl
+</h2>
+
+This template is called from <a href="#FramedDoc.tpl">FramedDoc.tpl</a>
+to generate a summary frame document which appears in the left frame (see
+<a href="#FramedDoc.tpl.framed_html_demo">Framed HTML demo</a>).
+The template is shown on the following screenshot (click to enlarge):
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/xmldoc/images/TOC_tpl.html" target="_blank"><img src="images/TOC_tpl_s.png" title="TOC.tpl" border="0"></a>
+</blockquote>
+
+The template receives <a href="../../design_templates.html#xmltype.DOCUMENTS">#DOCUMENTS</a>
+root element.
+The <a href="../../../general/template_components.html#element_iterator">Element Iterator</a>
+iterates by all XML documents and generates the summary list of XML files.
+<p>
+Each summary item is produced by a
+<a href="../../../general/template_components.html#data_control">data control</a>
+(shown on the screenshot as rectangle with &ldquo;xmlName&rdquo;).
+This data control prints the name of each particular XML file as well as
+generates a hyperlink to the XML file's detailed documentation.
+<p>
+The hyperlink is defined in the
+<a href="../../../general/template_components.html#data_control">data control</a>'s
+properties:
+
+<blockquote>
+  <img src="images/hlink_def.png" alt="TOC.tpl -- hyperlink definition">
+</blockquote>
+
+When a hyperlink is generated, it is connected to the target using values of keys
+generated by expressions specified in the hyperlink definition properties (see screenshot).
+The corresponding target keys are generated using similar expressions
+defined in the properties of <a href="#Document.tpl">Document.tpl</a> template.
+<p>
+The &ldquo;detailFrame&rdquo; is the name of the target frame window where the HTML
+document referenced by hyperlink is loaded
+(see <a href="#FramedDoc.tpl.frameset">frameset structure</a> definition).
+
+<h2>
+  <a name="about.tpl"></a>
+  10.&nbsp; about.tpl
+</h2>
+
+This template just prints the information about <a href="../../about.html">DocFlex/XML</a>
+product together with the hyperlinks to this web-site at the bottom of each generated document.
+You can easily suppress this by disabling the
+<a href="../../../general/template_components.html#area_section">Area Section</a>,
+as shown on the screenshot:
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/xmldoc/images/about_tpl.html" target="_blank"><img src="images/about_tpl_s.png" title="about.tpl" border="0"></a>
+</blockquote>
+
+or replace it with something of your own.
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

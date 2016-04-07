@@ -1,0 +1,373 @@
+<DOCFLEX_TEMPLATE VER='1.19'>
+CREATED='2012-08-20 09:36:43'
+LAST_UPDATE='2014-07-05 20:02:57'
+DESIGNER_TOOL='DocFlex SDK 1.x'
+DESIGNER_LICENSE_TYPE='Filigris Works Team'
+APP_ID='docflex-xml-wsdldoc'
+APP_NAME='DocFlex/XML WSDLDoc'
+APP_VER='1.0.b'
+APP_AUTHOR='Copyright © 2014 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.'
+FEATURE_TYPE='pro'
+TEMPLATE_TYPE='DocumentTemplate'
+DSM_TYPE_ID='wsdldoc'
+ROOT_ET='#DOCUMENT'
+<TEMPLATE_PARAMS>
+	PARAM={
+		param.name='$mainXML';
+		param.type='GOMElement';
+	}
+	PARAM={
+		param.name='$bookmark.xmlns';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='$bookmark.elements';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='$remove.xsd.anns';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='$remove.wsdl.docs';
+		param.type='boolean';
+	}
+</TEMPLATE_PARAMS>
+<STYLES>
+	CHAR_STYLE={
+		style.name='Default Paragraph Font';
+		style.id='cs1';
+		style.default='true';
+	}
+	CHAR_STYLE={
+		style.name='Hyperlink';
+		style.id='cs2';
+		text.decor.underline='true';
+		text.color.foreground='#0000FF';
+	}
+	PAR_STYLE={
+		style.name='Normal';
+		style.id='s1';
+		style.default='true';
+	}
+	CHAR_STYLE={
+		style.name='XML Source';
+		style.id='cs3';
+		text.font.name='Verdana';
+		text.font.size='8';
+	}
+	CHAR_STYLE={
+		style.name='XML Source Internal Subset';
+		style.id='cs4';
+		text.font.name='Courier New';
+		text.color.foreground='#0000FF';
+	}
+	CHAR_STYLE={
+		style.name='XML Source Markup';
+		style.id='cs5';
+		text.color.foreground='#0000FF';
+	}
+</STYLES>
+FMT={
+	doc.lengthUnits='pt';
+	doc.hlink.style.link='cs2';
+}
+<ROOT>
+	<AREA_SEC>
+		DESCR='XML declaration'
+		COND='getAttrValue("xmlDecl") != ""'
+		FMT={
+			text.style='cs3';
+		}
+		<AREA>
+			<CTRL_GROUP>
+				FMT={
+					txtfl.delimiter.type='none';
+				}
+				<CTRLS>
+					<DATA_CTRL>
+						ATTR='xmlDecl'
+						FMT={
+							text.style='cs5';
+						}
+					</DATA_CTRL>
+				</CTRLS>
+			</CTRL_GROUP>
+		</AREA>
+	</AREA_SEC>
+	<ELEMENT_ITER>
+		DESCR='iterates by all nodes in the XML'
+		TARGET_ET='<ANY>'
+		SCOPE='simple-location-rules'
+		RULES={
+			'* -> *';
+		}
+		FMT={
+			text.style='cs3';
+		}
+		<BODY>
+			<FOLDER>
+				DESCR='processes <!DOCTYPE> node'
+				MATCHING_ET='#DOCTYPE'
+				BREAK_PARENT_BLOCK='when-executed'
+				<BODY>
+					<AREA_SEC>
+						DESCR='simple case of <!DOCTYPE> node'
+						COND='getAttrStringValue("internalSubset") == ""'
+						<AREA>
+							<CTRL_GROUP>
+								<CTRLS>
+									<TEXT_CTRL>
+										TEXT='<!DOCTYPE'
+										FMT={
+											text.style='cs5';
+										}
+									</TEXT_CTRL>
+									<DATA_CTRL>
+										ATTR='name'
+										FMT={
+											text.style='cs5';
+										}
+									</DATA_CTRL>
+									<PANEL>
+										COND='getAttrStringValue("publicId") != ""'
+										FMT={
+											ctrl.size.width='132';
+											txtfl.delimiter.type='none';
+										}
+										<AREA>
+											<CTRL_GROUP>
+												<CTRLS>
+													<TEXT_CTRL>
+														TEXT='PUBLIC'
+														FMT={
+															text.style='cs5';
+														}
+													</TEXT_CTRL>
+													<DELIMITER>
+													</DELIMITER>
+													<TEXT_CTRL>
+														TEXT='"'
+														FMT={
+															text.style='cs5';
+														}
+													</TEXT_CTRL>
+													<DATA_CTRL>
+														ATTR='publicId'
+														FMT={
+															ctrl.option.text.noBlankOutput='true';
+															text.style='cs5';
+														}
+													</DATA_CTRL>
+													<TEXT_CTRL>
+														TEXT='"'
+														FMT={
+															text.style='cs5';
+														}
+													</TEXT_CTRL>
+												</CTRLS>
+											</CTRL_GROUP>
+										</AREA>
+									</PANEL>
+									<PANEL>
+										COND='getAttrStringValue("systemId") != ""'
+										FMT={
+											ctrl.size.width='137.3';
+											txtfl.delimiter.type='none';
+										}
+										<AREA>
+											<CTRL_GROUP>
+												<CTRLS>
+													<TEXT_CTRL>
+														COND='getAttrStringValue("publicId") == ""'
+														TEXT='SYSTEM'
+														FMT={
+															text.style='cs5';
+														}
+													</TEXT_CTRL>
+													<DELIMITER>
+													</DELIMITER>
+													<TEXT_CTRL>
+														TEXT='"'
+														FMT={
+															text.style='cs5';
+														}
+													</TEXT_CTRL>
+													<DATA_CTRL>
+														ATTR='systemId'
+														FMT={
+															ctrl.option.text.noBlankOutput='true';
+															text.style='cs5';
+														}
+													</DATA_CTRL>
+													<TEXT_CTRL>
+														TEXT='"'
+														FMT={
+															text.style='cs5';
+														}
+													</TEXT_CTRL>
+												</CTRLS>
+											</CTRL_GROUP>
+										</AREA>
+									</PANEL>
+									<DELIMITER>
+										FMT={
+											text.style='cs5';
+											txtfl.delimiter.type='none';
+										}
+									</DELIMITER>
+									<TEXT_CTRL>
+										TEXT='>'
+										FMT={
+											text.style='cs5';
+										}
+									</TEXT_CTRL>
+								</CTRLS>
+							</CTRL_GROUP>
+						</AREA>
+					</AREA_SEC>
+					<AREA_SEC>
+						DESCR='<!DOCTYPE> node with Internal Subset'
+						COND='getAttrStringValue("internalSubset") != ""'
+						<AREA>
+							<CTRL_GROUP>
+								<CTRLS>
+									<TEXT_CTRL>
+										TEXT='<!DOCTYPE'
+										FMT={
+											text.style='cs5';
+										}
+									</TEXT_CTRL>
+									<DATA_CTRL>
+										ATTR='name'
+										FMT={
+											text.style='cs5';
+										}
+									</DATA_CTRL>
+									<PANEL>
+										COND='getAttrStringValue("publicId") != ""'
+										FMT={
+											ctrl.size.width='130.5';
+											txtfl.delimiter.type='none';
+										}
+										<AREA>
+											<CTRL_GROUP>
+												<CTRLS>
+													<TEXT_CTRL>
+														TEXT='PUBLIC'
+														FMT={
+															text.style='cs5';
+														}
+													</TEXT_CTRL>
+													<DELIMITER>
+													</DELIMITER>
+													<TEXT_CTRL>
+														TEXT='"'
+														FMT={
+															text.style='cs5';
+														}
+													</TEXT_CTRL>
+													<DATA_CTRL>
+														ATTR='publicId'
+														FMT={
+															ctrl.option.text.noBlankOutput='true';
+															text.style='cs5';
+														}
+													</DATA_CTRL>
+													<TEXT_CTRL>
+														TEXT='"'
+														FMT={
+															text.style='cs5';
+														}
+													</TEXT_CTRL>
+												</CTRLS>
+											</CTRL_GROUP>
+										</AREA>
+									</PANEL>
+									<PANEL>
+										COND='getAttrStringValue("systemId") != ""'
+										FMT={
+											ctrl.size.width='137.3';
+											txtfl.delimiter.type='none';
+										}
+										<AREA>
+											<CTRL_GROUP>
+												<CTRLS>
+													<TEXT_CTRL>
+														COND='getAttrStringValue("publicId") == ""'
+														TEXT='SYSTEM'
+														FMT={
+															text.style='cs5';
+														}
+													</TEXT_CTRL>
+													<DELIMITER>
+													</DELIMITER>
+													<TEXT_CTRL>
+														TEXT='"'
+														FMT={
+															text.style='cs5';
+														}
+													</TEXT_CTRL>
+													<DATA_CTRL>
+														ATTR='systemId'
+														FMT={
+															ctrl.option.text.noBlankOutput='true';
+															text.style='cs5';
+														}
+													</DATA_CTRL>
+													<TEXT_CTRL>
+														TEXT='"'
+														FMT={
+															text.style='cs5';
+														}
+													</TEXT_CTRL>
+												</CTRLS>
+											</CTRL_GROUP>
+										</AREA>
+									</PANEL>
+									<TEXT_CTRL>
+										TEXT='['
+										FMT={
+											text.style='cs5';
+										}
+									</TEXT_CTRL>
+								</CTRLS>
+							</CTRL_GROUP>
+							<CTRL_GROUP>
+								FMT={
+									par.margin.left='8.3';
+								}
+								<CTRLS>
+									<DATA_CTRL>
+										ATTR='internalSubset'
+										FMT={
+											ctrl.option.text.trimSpaces='true';
+											text.style='cs4';
+											text.option.renderNLs='true';
+										}
+									</DATA_CTRL>
+								</CTRLS>
+							</CTRL_GROUP>
+							<CTRL_GROUP>
+								<CTRLS>
+									<TEXT_CTRL>
+										TEXT=']>'
+										FMT={
+											text.style='cs5';
+										}
+									</TEXT_CTRL>
+								</CTRLS>
+							</CTRL_GROUP>
+						</AREA>
+					</AREA_SEC>
+				</BODY>
+			</FOLDER>
+			<TEMPLATE_CALL>
+				DESCR='processes other XML nodes'
+				TEMPLATE_FILE='nodeSource.tpl'
+			</TEMPLATE_CALL>
+		</BODY>
+	</ELEMENT_ITER>
+</ROOT>
+CHECKSUM='xh3Pl8XbM6Vg?OO2Uf+To9oHEEFQQWHX5BYu7hm8c7s'
+</DOCFLEX_TEMPLATE>

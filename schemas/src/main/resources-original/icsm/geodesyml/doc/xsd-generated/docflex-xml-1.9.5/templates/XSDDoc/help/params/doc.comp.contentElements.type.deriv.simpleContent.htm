@@ -1,0 +1,33 @@
+Specify whether to generate the details about the derivation of the element's <i>simple content</i> datatype,
+including all facets and (possibly) annotations.
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"local definition only"</i>
+<blockquote>
+Document the datatype derivation specified only within the definition of this element
+(i.e. within the XSD <code>&lt;xs:element&gt;</code> element defining this element component).
+</blockquote>
+
+<i>"full"</i>
+<blockquote>
+Document the entire datatype derivation tree produced by all known XML schema components involved.
+</blockquote>
+
+<i>"none"</i>
+<blockquote>
+Do not document the datatype derivation.
+</blockquote>
+
+<p>
+<b>Applies To:</b>
+<dl><dd>
+Content elements with simple content model
+(i.e. whose type is either a simple type or a complex type with simple content).
+</dd></dl>
+
+<b>Nested Parameter:</b>
+<dl><dd>
+Specify if certain features should be included in the type derivation details
+(e.g. full facet details, additional annotations)
+</dd></dl>

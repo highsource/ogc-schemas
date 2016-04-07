@@ -1,0 +1,33 @@
+wsdldoc.name = WSDL 1.1 & XSD Files
+wsdldoc.doc = Represents any number of WSDL 1.1 and W3C XML Schema 1.0 files
+wsdldoc.xsd.files = http://schemas.xmlsoap.org/wsdl/; \
+                    http://schemas.xmlsoap.org/wsdl/soap/; \
+                    http://schemas.xmlsoap.org/wsdl/soap12/; \
+                    http://schemas.xmlsoap.org/wsdl/http/; \
+                    http://schemas.xmlsoap.org/wsdl/mime/; \
+                    http://www.w3.org/2001/XMLSchema.xsd
+wsdldoc.xsd.catalogs = urn:docflex-com:xml:defaultcatalog
+wsdldoc.xsd.includeAbstractTypes = true
+wsdldoc.ns.1.prefix = xs
+wsdldoc.ns.1.uri = http://www.w3.org/2001/XMLSchema
+wsdldoc.ns.2.prefix = wsdl
+wsdldoc.ns.2.uri = http://schemas.xmlsoap.org/wsdl/
+wsdldoc.ns.3.prefix = soap
+wsdldoc.ns.3.uri = http://schemas.xmlsoap.org/wsdl/soap/
+wsdldoc.ns.4.prefix = soap12
+wsdldoc.ns.4.uri = http://schemas.xmlsoap.org/wsdl/soap12/
+wsdldoc.ns.5.prefix = http
+wsdldoc.ns.5.uri = http://schemas.xmlsoap.org/wsdl/http/
+wsdldoc.ns.6.prefix = mime
+wsdldoc.ns.6.uri = http://schemas.xmlsoap.org/wsdl/mime/
+wsdldoc.ns.7.prefix = xhtml
+wsdldoc.ns.7.uri = http://www.w3.org/1999/xhtml
+wsdldoc.pseudo-elements.all = on
+wsdldoc.defaultRootElement = Documents
+wsdldoc.defaultDocumentElement = wsdl:definitions|xs:schema
+wsdldoc.imageProvider.class = %IMAGE_PROVIDER_CLASS%
+wsdldoc.imageProvider.XMLSpy.version = %XMLSPY_VERSION%
+wsdldoc.imageProvider.XMLSpy.classPath = %XMLSPY_CLASSPATH%
+wsdldoc.imageProvider.XMLSpy.libPath = %XMLSPY_LIBPATH%
+wsdldoc.imageProvider.OxygenXML.command = %OXYGENXML_COMMAND%
+wsdldoc.imageProvider.OxygenXML.config = %OXYGENXML_CONFIG%

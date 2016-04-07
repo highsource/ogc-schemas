@@ -1,0 +1,21 @@
+Specify whether to include the component annotation (full annotation text).
+<p>
+The annotation text is obtained from the &lt;xs:documentation&gt; elements found by the following path:
+<dl><dd>
+<code><b><i>xs:component</i></b>/xs:annotation/xs:documentation</code>
+</dd></dl>
+where <code><i>'xs:component'</i></code> is the particular XSD element which defines the component
+(e.g. <code>xs:complexType</code>).
+Multiple &lt;xs:documentation&gt; elements produce separate sections of the annotation text.
+
+<p>
+<b>Nested Parameters:</b>
+<dl><dd>
+In the nested parameter group <i>"Generate For"</i>, you can specify precisely for which components
+the <i>"Annotation"</i> section will be generated.
+</dd></dl>
+
+<b>See Also:</b>
+<dl><dd>
+<i>"Processing | Descriptions"</i> parameter group, where you can specify how annotations are processed and displayed.
+</dd></dl>

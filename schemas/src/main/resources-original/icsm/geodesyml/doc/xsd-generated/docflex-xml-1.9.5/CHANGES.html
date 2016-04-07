@@ -1,0 +1,2548 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/REC-html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>DocFlex/XML - Change Log</title>
+
+<style type="text/css">
+
+body {
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+code {
+  white-space:nowrap;
+}
+
+.note {
+  font-size:90%;
+  padding: 5px;
+  border: solid 1px #999999;
+  background-color:#F3F3F3;
+}
+
+.note_font {
+  font-size:90%;
+}
+
+</style>
+</head>
+
+<body>
+
+<center>
+  <h1>DocFlex/XML - Change Log</h1>
+</center>
+
+<p class="note">
+This is the change log of the entire
+<a href="http://www.filigris.com/docflex-xml/">DocFlex/XML</a> software.
+The changes of <a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a> template set
+(the implementation of XML Schema Documentation Generator) are described in
+<a href="templates/XSDDoc/CHANGES.html">{docflex-xml}/templates/XSDDoc/CHANGES.html</a>
+</p>
+
+<h2>Table Of Contents</h2>
+<ul>
+  <li><a href="#v1.9.5"><b>Version 1.9.5</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.9.5_lite_edition">Elimination of &ldquo;DocFlex/XML RE&rdquo;</a></li>
+      <li><a href="#v1.9.5_wsdldoc">New &ldquo;WSDLDoc&rdquo; template set</a></li>
+      <li><a href="#v1.9.5_template_designer">Template Designer</a>
+        <ul>
+          <li><a href="#v1.9.5_template_param_defs">New template parameter definition editor</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.9.5_data_processing">Data Processing</a>
+        <ul>
+          <li><a href="#v1.9.5_multiple_schemas">XML files described by multiple XML schemas</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.9.5_rtf_output">RTF Output</a>
+        <ul>
+          <li><a href="#v1.9.5_rtf_ehtml_repeating_whitespace">Elimination of repeating whitespace in embedded HTML</a></li>
+          <li><a href="#v1.9.5_rtf_include_text">Including static Word document into generated RTF</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.9.5_xsddoc">Improvement of &ldquo;XSDDoc&rdquo; templates</a></li>
+      <li><a href="#v1.9.5_OxygenXML_integration">Improvement of OxygenXML Integration</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.9.0"><b>Version 1.9.0</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.9.0_template_language">Template language / general functionality</a>
+        <ul>
+          <li><a href="#v1.9.0_template_call">Style overrides in Template Call</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.9.0_html_output">HTML Output</a>
+        <ul>
+          <li><a href="#v1.9.0_new_html_generator">New HTML Generator</a></li>
+          <li><a href="#v1.9.0_html401_xhtml1">HTML 4.01 / XHTML 1.0</a></li>
+          <li><a href="#v1.9.0_custom_CSS">Custom CSS Rules</a></li>
+          <li><a href="#v1.9.0_html_options">New HTML Options</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.9.0_OxygenXML_integration">OxygenXML Integration</a></li>
+      <li><a href="#v1.9.0_xsddoc">Improvements of "XSDDoc" templates</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.8.7"><b>Version 1.8.7</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.8.7_template_language">Template language / general functionality</a>
+        <ul>
+          <li><a href="#v1.8.7_image_control">Image Control: paddings around images</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.8.7_fixed_bugs">Fixed bugs</a></li>
+      <li><a href="#v1.8.7_xsddoc">Improvements of "XSDDoc" templates</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.8.6"><b>Version 1.8.6</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.8.6_trial_output">Distortion of Trial Output</a></li>
+      <li><a href="#v1.8.6_template_language">Template language / general functionality</a>
+        <ul>
+          <li><a href="#v1.8.6_typecast_operator">Typecast operator in FlexQuery expressions</a></li>
+          <li><a href="#v1.8.6_image_control">Output file name for Image Control</a></li>
+          <li><a href="#v1.8.6_images_and_hyperlinks_in_txt">Generation of images and hyperlinks in plain-text output</a></li>
+          <li><a href="#v1.8.6_template_call">Template calls as stock-sections</a></li>
+          <li><a href="#v1.8.6_any_dsmtype"><i>Any Data Source</i> DSM Type</a></li>
+          <li><a href="#v1.8.6_template_file_format">Improvement of template file format</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.8.6_template_designer">Template Designer</a>
+        <ul>
+          <li><a href="#v1.8.6_expr_assistant">Improvement of Expression Assistant</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.8.6_rtf_output">RTF Output</a>
+        <ul>
+          <li><a href="#v1.8.6_rtf_compatibility">Compatibility with other RTF readers</a></li>
+          <li><a href="#v1.8.6_rtf_fixed_bugs">Fixed a bug</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.8.6_XMLSpy_integration">Improvement of XMLSpy Integration</a></li>
+      <li><a href="#v1.8.6_xsddoc">Improvements of "XSDDoc" templates</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.8.5"><b>Version 1.8.5</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.8.5_renaming_full_edition">Renaming of the full edition</a></li>
+      <li><a href="#v1.8.5_template_language">Template language / general functionality</a>
+        <ul>
+          <li><a href="#v1.8.5_text_control">Text Control</a></li>
+          <li><a href="#v1.8.5_grouping_elements">Grouping of elements with Element Iterators</a></li>
+          <li><a href="#v1.8.5_adding_javascript">Adding JavaScript in generated HTML</a></li>
+          <li><a href="#v1.8.5_hyperlink_defs">Definition of hyperlinks</a></li>
+          <li><a href="#v1.8.5_image_control">Output directory for Image Control</a></li>
+          <li><a href="#v1.8.5_return_statement">'Return' statement in FlexQuery expressions</a></li>
+          <li><a href="#v1.8.5_flattening_ehtml">Flattening of embedded HTML</a></li>
+          <li><a href="#v1.8.5_template_descriptions">Separation of template/parameter descriptions from templates</a></li>
+          <li><a href="#v1.8.5_disabling_params">Disabling of irrelevant parameters</a></li>
+          <li><a href="#v1.8.5_procedure_templates">Procedure Templates</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.8.5_data_processing">Data Processing</a>
+        <ul>
+          <li><a href="#v1.8.5_default_xml_catalog">Default XML catalog</a></li>
+          <li><a href="#v1.8.5_xml_files_from_jar">Dynamic loading of data source XML files directly from jar-files</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.8.5_html_output">HTML Output</a>
+        <ul>
+          <li><a href="#v1.8.5_CSS_file">Generation of CSS file</a></li>
+          <li><a href="#v1.8.5_html_options">New HTML Options</a></li>
+          <li><a href="#v1.8.5_html_gen_performance">Performance improvement</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.8.5_rtf_output">RTF Output</a>
+        <ul>
+          <li><a href="#v1.8.5_rtf_styles">Optimization of RTF styles</a></li>
+          <li><a href="#v1.8.5_rtf_wrap_nbr_str">Wrapping of long non-breaking strings in tables</a></li>
+          <li><a href="#v1.8.5_rtf_ehtml">Rendering of embedded HTML</a></li>
+          <li><a href="#v1.8.5_rtf_emf_images">Size and scaling of EMF Images</a></li>
+          <li><a href="#v1.8.5_rtf_options">New RTF Options</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.8.5_xsddoc">Improvements of "XSDDoc" templates</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.8.0"><b>Version 1.8.0</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.8.0_template_language">Template language / general functionality</a>
+        <ul>
+          <li><a href="#v1.8.0_element_images">Element Images</a></li>
+          <li><a href="#v1.8.0_section_flow_control">Section Flow Control</a></li>
+          <li><a href="#v1.8.0_service_attributes">Service Attributes</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.8.0_generator">Template interpreter / output generator</a>
+        <ul>
+          <li><a href="#v1.8.0_html_output">HTML Output</a></li>
+          <li><a href="#v1.8.0_rtf_output">RTF Output</a></li>
+          <li><a href="#v1.8.0_generator_gui">Generator GUI</a></li>
+          <li><a href="#v1.8.0_first_sentence">Extraction of first sentence from HTML formatted text</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.8.0_XMLSpy_integration">XMLSpy Integration</a></li>
+      <li><a href="#v1.8.0_xsddoc">Improvements of "XSDDoc" templates</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.7.2"><b>Version 1.7.2</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.7.2_licensing">Renaming & licensing of DocFlex/XML editions</a></li>
+      <li><a href="#v1.7.2_data_processing">Data Processing (XML Data Sources)</a></li>
+      <li><a href="#v1.7.2_template_language">Template language / general functionality</a>
+        <ul>
+          <li><a href="#v1.7.2_section_flow_control">Section Flow Control</a></li>
+          <li><a href="#v1.7.2_list_params">Multivalued (List) Parameters</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.7.2_generator">Template interpreter / output generator</a>
+        <ul>
+          <li><a href="#v1.7.2_generator_performance">Performance improvement</a></li>
+          <li><a href="#v1.7.2_emf_images">EMF Images</a></li>
+          <li><a href="#v1.7.2_rtf_wrap_nbr_str">Very long nonbreaking strings in RTF</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.7.2_generator_gui">Template Designer / Generator GUI</a></li>
+      <li><a href="#v1.7.2_maven_plugin">Maven Plugin</a></li>
+      <li><a href="#v1.7.2_xsddoc">Improvements of "XSDDoc" templates</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.7.0"><b>Version 1.7.0</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.7.0_xsddoc">Improvements of "XSDDoc" templates</a></li>
+      <li><a href="#v1.7.0_licensing">New licensing system</a></li>
+      <li><a href="#v1.7.0_generator_gui">Generator GUI | Template Parameter Inspector</a></li>
+      <li><a href="#v1.7.0_template_designer">Template Designer</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.6.8"><b>Version 1.6.8</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.6.8_xsddoc">Improvements of "XSDDoc" templates</a></li>
+      <li><a href="#v1.6.8_general_architecture">General architecture</a></li>
+      <li><a href="#v1.6.8_template_designer">Template Designer</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.6.7"><b>Version 1.6.7</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.6.7_xsddoc">Improvements of "XSDDoc" templates</a></li>
+      <li><a href="#v1.6.7_generator">Template interpreter / output generator</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.6.6"><b>Version 1.6.6</b></a></li>
+  <li><a href="#v1.6.5"><b>Version 1.6.5</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.6.5_xerces_2.9.0">Upgrade with the latest Apache Xerces2 Java Parser 2.9.0</a></li>
+      <li><a href="#v1.6.5_fixed_bugs">Fixed a bug</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.6.4"><b>Version 1.6.4</b></a></li>
+  <li><a href="#v1.6.3"><b>Version 1.6.3</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.6.3_xsddoc">Improvements of "XSDDoc" templates</a></li>
+      <li><a href="#v1.6.3_generator">Template interpreter / output generator</a></li>
+      <li><a href="#v1.6.3_template_language">Template language / Generator Object Model (GOM)</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.6.2"><b>Version 1.6.2</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.6.2_generator">Template interpreter / output generator</a></li>
+      <li><a href="#v1.6.2_gom">Generator Object Model (GOM)</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.6"><b>Version 1.6</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.6_xsdddoc">Improvements of "XSDDoc" templates</a></li>
+      <li><a href="#v1.6_docs">New documentation</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.5"><b>Version 1.5</b></a></li>
+  <li><a href="#v1.0"><b>Version 1.0</b></a></li>
+</ul>
+
+<hr>
+
+<h2>
+  <a name="v1.9.5"></a>
+  Version 1.9.5
+</h2>
+
+<ul>
+
+<li><a name="v1.9.5_lite_edition"></a>
+  <b>Elimination of &ldquo;DocFlex/XML RE&rdquo;</b>
+  <p>
+  The lite edition of DocFlex/XML (called &ldquo;DocFlex/XML RE&rdquo;) has been eliminated.
+  <p>
+  <table><tr><td class="note">
+    The reason is that by the time the lite edition has evolved into the same as the full one,
+    except it included no Template Designer.
+    Since currently different features of DocFlex/XML software are licensed separately anyway, no matter where they reside,
+    the lite edition is redundant -- just draws resources to maintain it.
+  </td></tr></table>
+  <p>
+  Now, only the full edition of DocFlex/XML (called simply &ldquo;DocFlex/XML&rdquo;) is available,
+  which includes all features/functionality developed in this product line
+  (however, grouped in different <a href="http://www.filigris.com/docflex-xml/#products">logical products</a> with separate licensing).
+  <p>
+  <table><tr><td class="note">
+    If you have been using DocFlex/XML RE, now simply install and use the full edition.
+    Equally, install your licenses there. Everything else is the same.
+  </td></tr></table>
+  <p>
+</li>
+
+<li><a name="v1.9.5_wsdldoc"></a>
+  <b>New &ldquo;<a href="doc/index.html?docflex-xml/wsdldoc/overview.html">WSDLDoc</a>&rdquo; template set</b>
+  <p>
+  Now, DocFlex/XML includes one more big template applications
+  called &ldquo;<a href="doc/index.html?docflex-xml/wsdldoc/overview.html">WSDLDoc</a>&rdquo;,
+  which implements a powerful WSDL/XSD documentation generator.
+  Made of 100 templates and controlled by 700+ parameters, it is the most complex end-user application
+  of the whole <a href="http://www.filigris.com/docflex/">DocFlex Technology</a> to date!
+  <p>
+  See: <a href="templates/WSDLDoc/README.html"><code>templates/WSDLDoc/README.html</code></a>
+  </p>
+</li>
+
+<li><a name="v1.9.5_template_designer"></a>
+  <b>Template Designer</b>
+  <p>
+  <ul>
+  <li>
+    <a name="v1.9.5_template_param_defs"></a>
+    <b><i>New template parameter definition editor</i></b>
+    <p>
+    The editor of template parameter definitions (found in the Template Property Dialog | <i>Parameter</i> tab) has been completely reworked.
+    <p>
+    Previously, that was just the plain list with each line representing a parameter.
+    As the number of parameters in some templates has grown to enormous quantity, that list eventually became practically unnavigable.
+    <p>
+    Now, the parameter definitions are represented in the form of tree with collapsible nodes
+    (the same as in Parameter Inspector). Thereby, the usability of the parameter definition editor has been restored.
+  </li>
+  </ul>
+</li>
+
+<li><a name="v1.9.5_data_processing"></a>
+  <b>Data Processing</b>
+  <p>
+  <ul>
+  <li>
+    <a name="v1.9.5_multiple_schemas"></a>
+    <b><i>XML files described by multiple XML schemas</i></b>
+    <p>
+    Some XML files may be described not by a single but by several XML schemas at once.
+    For instance, the XML file as a whole (starting from the root element) is described by one XML schema,
+    but some internal parts of it -- by another XML schema (even completely unrelated to the first one).
+    <p>
+    <table><tr><td class="note">
+      That's actually the case of WSDL files.
+      A WSDL 1.1 file as a whole is described by the schema: <code>http://schemas.xmlsoap.org/wsdl/</code>.
+      But the <code>&lt;wsdl:definitons&gt;/&lt;wsdl:types&gt;</code> element typically contains
+      one or many XML schemas embedded in that WSDL file, which are described by a different schema:
+      <code>http://www.w3.org/2001/XMLSchema.xsd</code>
+    </td></tr></table>
+    <p>
+    Now, DocFlex/XML is able to work with such XML files. XML schemas drive the whole data processing in DocFlex/XML.
+    They are used by both Template Designer and Template Interpreter.
+    <p>
+    That capability is critical for <a href="#v1.9.5_wsdldoc">WSDLDoc</a> template set.
+  </li>
+  </ul>
+</li>
+
+<li><a name="v1.9.5_rtf_output"></a>
+  <b>RTF Output</b>
+  <p>
+  <ul>
+  <li>
+    <a name="v1.9.5_rtf_ehtml_repeating_whitespace"></a>
+    <b><i>Elimination of repeating whitespace in embedded HTML</i></b>
+    <p>
+    When a text (e.g. XML schema annotations) preformatted with HTML tags contains repeating whitespace (i.e. space and newline characters),
+    those repeatings won't appear in the generated RTF output (the same it would be in case of HTML browsers).
+    <p>
+    That was not provided before this version.
+    <p>
+  </li>
+  <li>
+    <a name="v1.9.5_rtf_include_text"></a>
+    <b><i>Including static Word document into generated RTF</i></b>
+    <p>
+    A possibility has been supported to include a static Word document in the RTF document generated by DocFlex.
+    That is done through a Data Control with the data source specified as "Document Field".
+    A new "Include Text" field has been implemented.
+    The included Word document file must be specified with the "Expression for Filename or URL",
+    the parameter of that field.
+    <p>
+  </li>
+  </ul>
+</li>
+
+<li><a name="v1.9.5_xsddoc"></a>
+  <b>Improvement of &ldquo;<a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a>&rdquo; templates</b>
+  <p>
+  See: <a href="templates/XSDDoc/CHANGES.html#v2.8.1"><code>templates/XSDDoc/CHANGES.html</code> | Version 2.8.1</a>
+</li>
+
+<li><a name="v1.9.5_OxygenXML_integration"></a>
+  <b>Improvement of <a href="doc/index.html?docflex-xml/integrations/OxygenXML.html">OxygenXML Integration</a></b>
+  <p>
+  See: <a href="integrations/OxygenXML/README.html#change_log_v1.5"><code>integrations/OxygenXML/README.html</code> | Change Log | Version 1.5</a>
+  <p>
+</li>
+
+</ul>
+
+<h2>
+  <a name="v1.9.0"></a>
+  Version 1.9.0
+</h2>
+
+<ul>
+<li><a name="v1.9.0_template_language"></a>
+  <b>Template language / general functionality</b>
+  <p>
+  <ul>
+  <li>
+    <a name="v1.9.0_template_call"></a>
+    <b><i>Style overrides in Template Call</i></b>
+    <p>
+    <i>Template Call</i> is a template component that allows you to call one template from another.
+    Here, the called template (or <i>subtemplate</i>) serves as a procedure.
+    It may generate either a separate file or a piece of the file generated by the calling template.
+    A Template Call has a lot of settings (among them, of course, passing template parameters).
+    <p>
+    Now, one more group of settings has been added -- the <b><i>list of style overrides</i></b>.
+    <p>
+    <table><tr><td class="note">
+      Each template may define formatting styles. These are the named groups of formatting properties,
+      which can be assigned to a template component at once just by specifying the style name.
+      The formatting styles are template local things. That is, they are not imported from somewhere outside.
+      But when a template is called from another template, the styles defined in the calling template will override
+      the equally named styles defined in the called template. 
+      When multiple templates are called one from another, that will work in a chain.
+      So, the styles defined in the main template will override any equally named styles defined elsewhere.
+      As a whole, formatting styles behave as additional template parameters passed implicitly by their names.
+    </td></tr></table>
+    <p>
+    Now, it is possible also to specify explicitly for a given Template Call
+    how the style overriding occurs.
+    For each style found in the called template, a <b><i>style override</i></b> can be defined
+    that tells exactly which style from the calling template will override it (regardless of the style name).
+    That adds a lot more flexibility!
+    <p>
+    Style overrides are specified in the Template Call property dialog
+    on the <i>"Call Settings | Style Overrides"</i> tab.
+  </li>
+  </ul>
+  <p>
+</li>
+<li><a name="v1.9.0_html_output"></a>
+  <b>HTML Output</b>
+  <p>
+  <ul>
+  <li><a name="v1.9.0_new_html_generator"></a>
+    <b><i>New HTML Generator</i></b>
+    <p>
+    The HTML generator has been almost entirely redeveloped to achieve the following goals:
+    <ol>
+    <li>
+      Generation of HTML output fully compatible with one of the two markup standards:
+      <a href="#v1.9.0_html401_xhtml1">HTML 4.01 / XHTML 1.0</a>
+    </li>
+    <li>
+      To allow the users to style the generated HTML documentation with their
+      <a href="#v1.9.0_custom_CSS">own CSS rules</a>.
+    </li>
+    </ol>
+    <p>
+  </li>
+  <li><a name="v1.9.0_html401_xhtml1"></a>
+    <b><i>HTML 4.01 / XHTML 1.0</i></b>
+    <p>
+    Now, the HTML output can be generated in one of the markups:
+    <ul>
+    <li>HTML 4.01</li>
+    <li>XHTML 1.0</li>
+    </ul>
+    <p>
+    The markup is selected with the option:
+    <i><a href="#v1.9.0_html.output.markup">Output | Markup</a></i>
+    <p>
+  </li>
+  <li><a name="v1.9.0_custom_CSS"></a>
+    <b><i>Custom CSS Rules</i></b>
+    <p>
+    For those who wanted to customize the generated HTML documentation with their own CSS rules,
+    it is possible now!
+    <p>
+    <table><tr><td class="note">
+      Although, such a feature is typically ubiquitous in other doc-generators, to support it in DocFlex
+      required some kind of breakthrough.
+      <p></p>
+      The difference is that a typical doc-generator is developed from the start for a particular 
+      destination format (i.e. HTML) in some general programming language (like Java)
+      or XSLT, with very meticulous coding
+      of how all formatting constructs are generated. All CSS rules are planned beforehand and everything
+      is adjusted to them.
+      <p></p>
+      In DocFlex, the actual doc-generators are programmed in the form of templates,
+      where the formatting is specified in a highly abstract way independent on the destination format.
+      Then, it is rendered with suitable features available in a selected output format. 
+      So, the concept of CSS rules (which is available only in HTML) is somewhat foreign to all this.
+    </td></tr></table>
+    <p>
+    In case of HTML output, the CSS style sheet has been used before, 
+    but the CSS rules placed in it were effectively
+    the sets of inline CSS properties generated by particular template components and collected together in
+    a single style sheet to eliminate their repeating. The class selectors assigned to such CSS rules
+    were completely unpredictable and could not be used to substitute the generated CSS rules with the custom ones.
+    Such automatic CSS rules are generated now too and called 
+    <a href="doc/index.html?general/css_usage.html#anonymous_rules">anonymous CSS rules</a>.
+    <p>
+    But since this version, a new type of CSS rules has been supported -- 
+    <a href="doc/index.html?general/css_usage.html#named_rules">named CSS rules</a>.
+    Those are generated from the formatting styles defined in templates. When such a style is assigned to
+    a template component, each piece of HTML output (i.e. HTML element) produced by that component
+    can be assigned with the CSS rules generated by that style.
+    The class selector assigned to a named CSS rule is specified in the corresponding template style.
+    So, the relation between a particular CSS class selector and the pieces of output where it is applied
+    is predetermined. This makes possible to substitute the CSS rules (i.e. their properties) generated
+    for those class selectors automatically, with the custom CSS rules provided by the user.
+    <p>
+    The difficulty of implementing of named CSS rules comes from the fact that several template styles can
+    contribute to the result formatting of a particular template component. The styles can be either assigned directly
+    to the component or inherited from its parents. Besides that, some formatting properties can be specified
+    on the component directly without any styles at all.
+    When that everything is rendered with a single anonymous CSS rule, only effective properties
+    (left after all overriding) will get there.
+    But when named CSS rules are used, they must replicate in CSS the same property overriding that
+    occurs on the level of template styles. That wasn't simple to achieve!
+    <p>
+    For a lot more details please see:
+    <a href="doc/index.html?general/css_usage.html">DocFlex Technology | Documentation | Usage of CSS in generated HTML</a>.
+  </li>
+  <li><a name="v1.9.0_html_options"></a>
+    <b><i>New HTML Options</i></b>
+    <p>
+    <a name="v1.9.0_html.output.markup"></a>
+    <i>Output | Markup</i>
+    <blockquote>
+      Specify the (X)HTML <a href="#v1.9.0_html401_xhtml1">markup version</a> of the generated output.
+    </blockquote>
+
+    <i>CSS</i>
+    <blockquote>
+      The group of options related to formatting of HTML output, which is done through Cascading Style Sheets (CSS).
+      <p>      
+      <span class="note">See also: <a href="doc/index.html?general/css_usage.html">DocFlex Technology | Documentation | Usage of CSS in generated HTML</a></span>
+    </blockquote>
+
+    <i>CSS | Generate style sheet file</i>
+    <blockquote>
+      Specify whether to generate the external CSS file 
+      (<a href="doc/index.html?general/css_usage.html#global_style_sheet">global style sheet</a>).
+      <p>
+      <span class="note">This option was actually present before, however not in this group.</span>
+    </blockquote>
+
+    <i>CSS | Generate style sheet file | CSS pattern file</i>
+    <blockquote>
+      Specify the pattern file for the global style sheet.
+    </blockquote>
+
+    <i>CSS | Generate style sheet file | Include anonymous rules</i>
+    <blockquote>
+      Specify whether all generated 
+      <a href="doc/index.html?general/css_usage.html#anonymous_rules">anonymous CSS rules</a>
+      must be stored in the external CSS file
+      (<a href="doc/index.html?general/css_usage.html#global_style_sheet">global style sheet</a>).
+    </blockquote>
+
+    <i>CSS | Generate named rules</i>
+    <blockquote>
+      Specify whether to generate
+      <a href="doc/index.html?general/css_usage.html#named_rules">named CSS rules</a>.
+      <p>
+      <span class="note">Generation of named rules is essential for applying
+      <a href="#v1.9.0_custom_CSS">custom CSS rules</a></span>
+    </blockquote>
+
+    <i>CSS | Generate named rules | Include descriptions</i>
+    <blockquote>
+      Specify whether to add the descriptions of
+      <a href="doc/index.html?general/css_usage.html#template_styles">template formatting styles</a>
+      to the
+      <a href="doc/index.html?general/css_usage.html#named_rules">named CSS rules</a>
+      generated from them.
+    </blockquote>
+
+    <i>CSS | Generate named rules | Custom rule file</i>
+    <blockquote>
+      Specify a (CSS) file with custom definitions for some of the automatically generated
+      <a href="doc/index.html?general/css_usage.html#default_rules">default</a>
+      and 
+      <a href="doc/index.html?general/css_usage.html#named_rules">named</a>
+      CSS rules.
+      <p>
+      <span class="note">This setting is essential for applying <a href="#v1.9.0_custom_CSS">custom CSS rules</a></span>
+    </blockquote>
+
+    <i>CSS | Units</i>
+    <blockquote>
+      Specify measurement units used in the generated HTML.
+      <p>
+      <span class="note">The possible are <i>relative</i>, <i>pixel</i> and <i>point</i> units.</span>
+    </blockquote>
+
+    <i>Text | Render embedded HTML | Fix markup</i>
+    <blockquote>
+      Specifies whether the embedded HTML markup must be parsed and any syntax errors found in it
+      (e.g. missing closing tags) fixed.
+      <p>
+      <span class="note">This setting may be particularly important in case of
+      <a href="#v1.9.0_html401_xhtml1">XHTML</a> output.</span>
+    </blockquote>
+  </li>
+  </ul>
+</li>
+
+<li><a name="v1.9.0_OxygenXML_integration"></a>
+  <b>OxygenXML Integration</b>
+  <p>
+  An integration of DocFlex/XML with <a href="http://www.oxygenxml.com">Oxygen XML Editor</a>
+  has been implemented.
+  For all details, please see <code><a href="integrations/OxygenXML/README.html">integrations/OxygenXML/README.html</a></code>
+  and
+  <a href="doc/index.html?docflex-xml/integrations/OxygenXML.html">Documentation | Integrations | Oxygen XML</a>.
+  <p>
+</li>
+<li><a name="v1.9.0_xsddoc"></a>
+  <b>Improvements of &ldquo;<a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a>&rdquo; templates
+    (XML Schema Documentation Generator)</b>
+  <p>
+  See: <a href="templates/XSDDoc/CHANGES.html#v2.8.0"><code>templates/XSDDoc/CHANGES.html</code> | Version 2.8.0</a>
+</li>
+</ul>
+
+
+<h2>
+  <a name="v1.8.7"></a>
+  Version 1.8.7
+</h2>
+
+<ul>
+<li><a name="v1.8.7_template_language"></a>
+  <b>Template language / general functionality</b>
+  <p>
+  <ul>
+  <li>
+    <a name="v1.8.7_image_control"></a>
+    <b><i>Image Control: paddings around images</i></b>
+    <p>
+    For Image Control, it is possible now to specify paddings around the image.
+    See: Image Control | Properties dialog | Formatting | Image tab.
+    <p>
+    The image paddings are supported in both HTML and RTF output formats.
+    They may be particularly useful when inserting various icons in the documentation.
+  </li>
+  </ul>
+  <p>
+</li>
+<li><a name="v1.8.7_fixed_bugs"></a>
+  <b>Fixed bugs</b>
+  <p>
+  A few minor bugs have been fixed.
+  <p>
+  <table><tr><td class="note">
+    Among them, it turned out that <code>sortVector()</code> FlexQuery function was sorting strings
+    always ignoring case. In XSDDoc, in rare cases, this caused incorrect unifying local elements by type.
+  </td></tr></table>
+  </p>
+</li>
+<li><a name="v1.8.7_xsddoc"></a>
+    <b>Improvements of &ldquo;<a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a>&rdquo; templates
+    (XML Schema Documentation Generator)</b>
+  <p>
+  See: <a href="templates/XSDDoc/CHANGES.html#v2.7.0"><code>templates/XSDDoc/CHANGES.html</code> | Version 2.7.0</a>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.8.6"></a>
+  Version 1.8.6
+</h2>
+
+<ul>
+<li><a name="v1.8.6_trial_output"></a>
+  <b>Distortion of Trial Output</b>
+  <p>
+  Now, all output documents (in HTML and RTF formats) generated under the general
+  <a href="http://www.filigris.com/licensing/#trial_license">Trial License</a>
+  will be heavily distorted by replacing some letters with bullet characters (as well as contain special messages). 
+  <p>
+  This should help some our users to respect the trial license terms.
+  <p>
+</li>
+<li><a name="v1.8.6_template_language"></a>
+  <b>Template language / general functionality</b>
+  <p>
+  <ul>
+  <li>
+    <a name="v1.8.6_typecast_operator"></a>
+    <b><i>Typecast operator in FlexQuery expressions</i></b>
+    <p>
+    The Java-style typecast operator has been supported:
+    <blockquote><code>
+      (<i>type</i>) obj
+    </code></blockquote>
+    where <code><i>type</i></code> may be any primitive type (like <code>String</code> or <code>Number</code>)
+    or GOM-type ("GOM" stands for Generator Object Model).
+    <p>
+    It allows you to quickly access properties of various GOM objects,
+    provided via untyped references (mostly returned by various functions).
+    Now, you can write something like this:
+    <blockquote><code>
+      ((GOMElement) getParam("name")).id
+    </code></blockquote>
+    Previously, only special type-conversion functions (like <code>toString()</code> or <code>toElement()</code>)
+    were available for such operations.
+    <p>
+    Casting to array types is also supported. You can write:
+    <blockquote><code>
+      (<i>type</i>[]) obj
+    </code></blockquote>
+    At that, the necessary conversion will be done even when the initially <code>obj</code> is an array 
+    of a more generic type, however, containing only elements of the required type. For example:
+    <blockquote><pre>
+objects = Array (1, 2, 3);  // create an Object[] array with only integer elements
+ints = (int[]) objects;     // convert it to an array of integers
+ints[0] * ints[1] * ints[2] // access array elements as integers</pre>
+    </blockquote>
+    (In the case, when the initial array contains object of incompatible types, an error will be reported.)
+    <p>
+  </li>
+  <li><a name="v1.8.6_image_control"></a>
+    <b><i>Output file name for Image Control</i></b>
+    <p>
+    A new property has been added to Image Control: <b><i>"Expression for Image File Name"</i></b>.
+    It generates a name of the output image file.
+    <p>
+    This feature is most interesting in the case of <i>element images</i>, which are certain graphical
+    depictions (e.g. some diagrams) of the entities represented by the DSM elements.
+    <p>
+    Previously, the names of the element image files were produced from certain DSM element properties
+    (their internal names and types), which was hardcorded in the generator.
+    <p>
+  </li>
+  <li>
+    <a name="v1.8.6_images_and_hyperlinks_in_txt"></a>
+    <b><i>Generation of images and hyperlinks in plain-text output</i></b>
+    <p>
+    It may sound odd. What images and hyperlinks can exist in plain-text files?
+    <p>
+    Yet, the plain-text output may be just a base layer for other file formats, for instance DITA, which is an XML-based markup.
+    There, both images and hyperlinks do exist and are required.
+    <p>
+    The following new functionality will allow you to use plain-text output capability of DocFlex/XML
+    to generate some full-blown complex formats even when they are not supported by DocFlex/XML directly.
+    <p>
+    <u>Images</u>
+    <p>
+    In plain-text mode, an Image Control will produce the same image file (according to its setting).
+    However, in addition, it also emits into the main output the image file's relative pathname.
+    That pathname is calculated against the main file's location and the name-separator is UNIX style ("/").
+    In a template, you can surround the Image Control with other Text Controls generating some markup,
+    so everything would produce both the image file and the image tag for it in the main output.
+    <p>
+    <u>Hyperlinks</u>
+    <p>
+    Now, you can generate cross-hyperlinks in plain-text files too. This equally includes the hyperlinks from images
+    (the imagemaps).
+    <p>
+    What a hyperlink actually is depends on the final format you generate using the plain-text output.
+    DocFlex/XML just provides the necessary functionality to find the things you want to link from and to.
+    This is implemented in the form of new FlexQuery functions and GOM types/properties ("GOM" stands for
+    <i>Generator Object Model</i>):
+    <p>
+    <table cellspacing="1" cellpadding="4" border="1">
+      <tr bgcolor="#EEEEEE">
+        <th>Function / Type / Property</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><code>findHyperTarget()</code></td>
+        <td>
+          Finds a hypertarget matching the specified set of keys that may exist anywhere
+          in the whole generated documentation. Returns a <code>GOMHyperTarget</code> object
+          describing the target.
+        </td>
+      </tr>
+      <tr>
+        <td><code>GOMHyperTarget</code></td>
+        <td>
+          Provides information about a hyperlink target. This includes the output file containing the target
+          and the target name.
+        </td>
+      </tr>
+      <tr>
+        <td><code>getElementImageMapAreas()</code></td>
+        <td>
+          Returns all hypertext imagemap areas of the <i>element image</i> associated with the specified element.
+          The function returns an array of <code>GOMImageMapArea</code> objects.
+        </td>
+      </tr>
+      <tr>
+        <td><code>GOMImageMapArea</code></td>
+        <td>
+          Represents a single area in the hypertext imagemap of an element image.
+          This includes the area bounds (rectangle) and the referenced <code>GOMElement</code>.
+        </td>
+      </tr>
+      <tr>
+        <td><code>GOMElement.hasImage</code></td>
+        <td>
+          Indicates whether the element has a certain image representation (called <i>element image</i>).
+        </td>
+      </tr>
+    </table>
+    <p>
+    More information about these functions and types you can find in the Template Designer | Help | Assistant:
+    <ul>
+      <li>Functions | By Category | Hypertext Functions</li>
+      <li>Generator Object Model | Object Types</li>
+    </ul>
+    <p>
+  </li>
+  <li>
+    <a name="v1.8.6_template_call"></a>
+    <b><i>Template calls as stock-sections</i></b>
+    <p>
+    Template calls are the template components that invoke processing of other templates from the given one
+    (typically to insert their output into the currently generated document).
+    <p>
+    Processing of a template call is rather time-consuming.
+    The fewer of them are in a template the better they can be optimized.
+    Moreover, templates cannot be called directly from FlexQuery expressions.
+    <p>
+    The solution is to use stock-sections as light-weight proxies of template calls
+    (stock-sections can be called also from FlexQuery expressions).
+    That is, a template call is defined only once within a stock-section, and then
+    that stock-section is called from anywhere, instead of the template.
+    <p>
+    Previously, that was possible only by defining a <i>Folder</i> stock-section and
+    the <i>Template Call Section</i> within it.
+    <p>
+    Now, a Template Call Section itself can be specified as stock-section
+    (which, of course, reduces all the processing).
+    <p>
+  </li>
+  <li>
+    <a name="v1.8.6_any_dsmtype"></a>
+    <b><i>'Any Data Source' DSM Type</i></b>
+    <p>
+    <i>DSM</i> stands for <i>Data Source Model</i>.
+    <i>DSM Type</i> is a description of particular class of possible data sources processed by a given template.
+    <p>
+    <table><tr><td class="note">
+      In DocFlex/XML, DSM Type is called <i>XML Type</i>, since all data sources are typically XML files.
+    </td></tr></table>
+    </p>
+    Now, a special DSM Type has been supported: <i>Any Data Source</i>.
+    <p>
+    A template based on it can be called to process any data source (or even no data source at all).
+    It can be called also from any other templates.
+    This, however, comes to a price. Such a template can do little more but process only template parameters
+    and <code>#CUSTOM</code> elements.
+    <p>
+    Anyway, it might be useful. For instance, you can create a template that inserts in the output some complex
+    richly formatted messages, which are the same for all template applications.
+    It is also possible to pass quite complex data via template parameters (and even iterate by them).
+    <p>
+  </li>
+  <li>
+    <a name="v1.8.6_template_file_format"></a>
+    <b><i>Improvement of template file format</i></b>
+    <p>
+    The template file format has been made more friendly to view/edit template files manually (without Template Designer):
+    <ul>
+    <li>
+    The new lines in string constants and FlexQuery expressions are stored now directly in template files
+    (not encoded as <code>'\n'</code> escapes).
+    </li>
+    <li>
+    All template files are written now in UTF-8 encoding. This allows you to see/edit any non-ASCII characters directly
+    in templates (without numeric escapes <code>'\uxxxx'</code>).
+    </li>
+    <li>
+    The value of <code>'DSM_TYPE_ID'</code> property can be change manually now.
+    <p>
+    <table><tr><td class="note">
+      The <code class="note_font">'DSM_TYPE_ID'</code> property specifies the XML Type, on which the template is based.
+      XML Type provides the structure and data type information about possible XML files processed
+      by the template.
+    </td></tr></table>
+    </p>
+    This allows you to assign to templates a different XML Type, which may be derived from the initial one.
+    The Template Designer itself currently does not support such a possibility.
+    </li>
+    </ul>
+    <p>
+    <table><tr><td class="note">
+    Notes:
+    <ul>
+    <li>
+      After any manual changes, you still need to resave the templates in the Template Designer,
+      in order to allow them to be executed without the "DocFlex/XML SDK" license.
+    </li>
+    <li>
+      All changes of the template file format (above) are fully compatible with the old templates.
+      So, any old templates will be equally read by the Template Designer or generator in this version.
+      We always maintain backward compatibility of any templates (but not forward one)!
+    </li>
+    </ul>
+    </td></tr></table>
+    <p>
+  </li>
+  </ul>
+</li>
+<li><a name="v1.8.6_template_designer"></a>
+  <b>Template Designer</b>
+  <p>
+  <ul>
+  <li>
+    <a name="v1.8.6_expr_assistant"></a>
+    <b><i>Improvement of Expression Assistant</i></b>
+    <p>
+    Expression Assistant provides a dynamic help system when writing FlexQuery-expression
+    (those used to calculate various dynamic properties of template components and for other things).
+    <p>
+    As the number of FlexQuery-functions constantly increases (many actually overload
+    the same functionality with different parameter signatures), the function tree
+    in the Expression Assistant has been reorganized as follows:
+    <ul>
+    <li>
+    All functions with the same name, which are to be shown on the given branch of the tree,
+    are grouped in a single node with its children representing particular parameter signatures of the given function.
+    </li>
+    <li>Deprecated functions are shown as <i>disabled</i> (in grey color).</li>
+    <li>
+    As it was early, there are actually two function trees:
+    <ol>
+      <li>
+       <i>"Functions by Category"</i>, which represents all functions within a predefined category tree
+       according to their general functionality. (The same function may actually appear in different categories).
+      </li>
+      <li>
+       <i>"All Functions"</i>, which provides a single list of all available functions ordered alphabetically.
+      </li>
+    </ol>
+    Now, both trees have been moved under a single <i>"Functions"</i> node of the Expression Assistant
+    main tree.
+    </li>
+    </ul>
+    <p>
+  </ul>
+</li>
+<li><a name="v1.8.6_rtf_output"></a>
+  <b>RTF Output</b>
+  <p>
+  <ul>
+  <li><a name="v1.8.6_rtf_compatibility"></a>
+    <b><i>Compatibility with other RTF readers</i></b>
+    <p>
+    The primary focus of the generated RTF was always MS Word.
+    However, following some user complaints, we uncovered and fixed a lot of problems of
+    compatibility with other RTF readers.
+    For instance, under WordPad, certain features of the old RTF output might be distorted,
+    or the whole doc might get invisible starting from some point.
+    <p>
+    <table><tr><td class="note">
+      RTF is poorly documented format ridden with various legacy contradictions.
+      So, it is not very simple to get all known RTF reader work correctly together, 
+      particularly, when you have a rather complex RTF.
+    </td></tr></table>
+    </p>
+    Now we've fixed a lot of such issues. So, the generated RTF seems to work OK with all
+    RTF reader we tried:
+    <p>
+    <ul>
+      <li>MS Word 2000, 2007, 2010</li>
+      <li>WordPad under Windows XP, Vista, 7</li>
+      <li>LibreOffice (Windows/Linux)</li>
+    </ul>
+    <p>
+  </li>
+  <li><a name="v1.8.6_rtf_fixed_bugs"></a>
+    <b><i>Fixed a bug</i></b>
+    <p>
+    A bug has been fixed that in some cases caused distortion of text of formatting in page headers/footers.
+    <p>
+  </li>
+  </ul>
+</li>
+<li><a name="v1.8.6_XMLSpy_integration"></a>
+  <b>Improvement of <a href="doc/index.html?docflex-xml/integrations/XMLSpy.html">XMLSpy Integration</a></b>
+  <p>
+  See: <a href="integrations/XMLSpy/README.html#change_log_v1.5"><code>integrations/XMLSpy/README.html</code> | Change Log | Version 1.5</a>
+  <p>
+</li>
+<li><a name="v1.8.6_xsddoc"></a>
+    <b>Improvements of &ldquo;<a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a>&rdquo; templates
+    (XML Schema Documentation Generator)</b>
+  <p>
+  See: <a href="templates/XSDDoc/CHANGES.html#v2.6.0"><code>templates/XSDDoc/CHANGES.html</code> | Version 2.6.0</a>
+</li>
+
+</ul>
+
+<h2>
+  <a name="v1.8.5"></a>
+  Version 1.8.5
+</h2>
+
+<ul>
+<li><a name="v1.8.5_renaming_full_edition"></a>
+  <b>Renaming of the full edition</b>
+  <p>
+  The full edition of DocFlex/XML software, which was formerly called "DocFlex/XML SDK", is renamed back
+  to "DocFlex/XML (Full Edition)" to reflect the fact that a "DocFlex/XML SDK" license does not cover
+  the whole DocFlex/XML software.
+</li>
+<li><a name="v1.8.5_template_language"></a>
+  <b>Template language / general functionality</b>
+  <p>
+  <ul>
+  <li><a name="v1.8.5_text_control"></a>
+    <b><i>Text Control</i></b>
+    <p>
+    The "Label Control" has been renamed into "Text Control" and more functionality added.
+    <p>
+    The purpose of Text Control is to specify some static text in templates.
+    Now, unlike the old Label Control, it shows the full multi-line text directly in the designer pane 
+    (with the support of scrolling). This may be particular helpful, when you want to specify in templates
+    some multi-line descriptions.
+    <p>
+  </li>
+  <li><a name="v1.8.5_grouping_elements"></a>
+    <b><i>Grouping of elements with Element Iterators</i></b>
+    <p>
+    A new property has been introduced for Element Iterators: <b><i>"Expression for Grouping Key"</i></b>
+    (found on the <i>"Processing | Sorting/Grouping | Grouping"</i> tab of the Element Iterator properties dialog
+    in the Template Designer).
+    It allows you to break the iterated elements into groups so as to iterate, first, by the groups
+    and, then, by the elements within each group.
+    <p>
+    It works as follows.
+    <p>
+    After the initial elements have been collected, filtered and sorted, the result sequence of elements
+    is broken into groups according to the grouping keys generated for each element by the FlexQuery 
+    specified in the <i>"Expression for Grouping Key"</i> of the Element Iterator.
+    <p>
+    Each continuous subsequence of elements with equal grouping keys produces a group.
+    As a result, the sequence of elements prepared for iterations is converted into a sequence of element groups.
+    The ordering of elements in each group remains the same as in the initial sequence.
+    <p>
+    Since groups are not elements, the Element Iterator cannot iterate by them directly.
+    So, it will iterate by the first elements taken from each group. 
+    However, at that, on each iteration step, the Generator Object Model (GOM) property 
+    <code>iterator.groupElements</code>, which is accessible in FlexQuery expressions,
+    is updated so as to provide the enumeration of all elements
+    in the given group.
+    This allows you to specify a nested Element Iterator that will iterate by the elements
+    in the group received from the <code>iterator.groupElements</code> property.
+    <p>
+  </li>
+  <li><a name="v1.8.5_adding_javascript"></a>
+    <b><i>Adding JavaScript in generated HTML</i></b>
+    <p>
+    Although, dynamic HTML is not currently in the focus of DocFlex templates,
+    the following setting has been supported:
+    <i>Template | Properties | Output File | <b>HTML Head Expression</b></i>.
+    <p>
+    It specifies an expression that may produce a string, which will be included in the header
+    (between &lt;head&gt;...&lt;/head&gt; tags) of an HTML file generated by the given template.
+    In particular, this allows you to embed in the generated HTML file any custom JavaScript code 
+    (enclosed in &lt;script&gt;...&lt;/script&gt; tags).
+    <p>
+    For instance, this may be used to reload the <code>'detail'</code> frame
+    (of a frameset defined in <code>index.html</code>) with another HTML document passed 
+    to <code>index.html</code> via a URL parameter (specified after '?' in the initial URL).
+    <p>
+    <table><tr><td class="note">
+      That was actually supported in <a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a> templates;
+      see:
+      <a href="templates/XSDDoc/CHANGES.html#v2.5.0_opening_frameset_on_required_page"><code class="note_font">templates/XSDDoc/CHANGES.html</code> |
+      Version 2.5.0 | Opening of frameset on required page</a>
+    </td></tr></table>
+    </p>
+  </li>
+  <li><a name="v1.8.5_hyperlink_defs"></a>
+    <b><i>Definition of hyperlinks</i></b>
+    <p>
+    Hyperlinks are generated according to special link/target definitions specified in template components
+    (see component's Properties Dialog | Hypertext tab).
+    Now, hyperlink definitions themselves look more like components.
+    The following settings/features have been added:
+    <ul>
+    <li><i>Description</i>
+      <p>
+      Some hyperlink definitions may be so complicated that they are better to be explained.
+      <p>
+    </li>
+    <li><i>Expression for New Context Element</i>
+      <p>
+      The same as in template components, it allows switching context element used for calculations of other
+      hyperlink's settings.
+      <p>
+    </li>
+    <li><i>Matching Element Type(s)</i>
+      <p>
+      Specify one or several element types, which the context element must match.
+      This is a kind of filter. If the context element does not match any of the specified types,
+      the whole hyperlink definition will be skipped.
+      <p>
+    </li>
+    <li><i>Matrix of alternative keys</i>
+      <p>
+      A hyperlink is created when the vector of keys generated by the <i>Link Key Expressions</i>
+      matches a similar vector of keys associated with a certain target (generated by a different component).
+      <p>
+      Now, in addition to single vector of keys, it is possible to define matrix of alternative keys.
+      The matrix columns become alternative key vectors. If one vector cannot be matched, another is tried.
+      <p>
+      This allows unifying in a single hyperlink definition what were previously several ones,
+      which simplifies programming and improves performance of the template.
+    </li>
+    </ul>
+    <p>
+  </li>
+  <li><a name="v1.8.5_image_control"></a>
+    <b><i>Output directory for Image Control</i></b>
+    <p>
+    Image Control has been extended with a new property: <b><i>"Expression for Image File Output Directory"</i></b>,
+    which allows programming where the images produced by a given Image Control will be stored.
+    In particular, this makes possible to save all standard documentation icons in a single directory
+    (and, therefore, to prevent duplicating them):
+    <blockquote>
+      <code><i>{doc-root}</i>/resources</code>
+    </blockquote>
+    <p>
+    <table><tr><td class="note">
+      This is supported now in <a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a> templates;
+      see:
+      <a href="templates/XSDDoc/CHANGES.html#v2.5.0_single_dir_for_icons"><code class="note_font">templates/XSDDoc/CHANGES.html</code> |
+      Version 2.5.0 | Single directory for all documentation icons</a>
+    </td></tr></table>
+    </p>
+    Previously, all images were saved only in a local <i>'doc-files'</i> subdirectory associated with the
+    given document (which is now also the case when no separate image output directory specified).
+    <p>
+  </li>
+  <li><a name="v1.8.5_return_statement"></a>
+    <b><i>'Return' statement in FlexQuery expressions</i></b>
+    <p>
+    FlexQuery expressions are small program blocks (called <i>queries</i>) with a Java-like syntax
+    that are used in templates to calculate dynamic properties of template components and for other needs.
+    <p>
+    Now, the FlexQuery language is extended with the <i>return</i> statement:
+    <blockquote>
+      <code>return <i>&lt;result_expr&gt;</i></code>
+    </blockquote>
+    It makes possible to stop the execution of the query at any point and return the query result,
+    which is calculated by the <i><code>result_expr</code></i> specified in the return statement.
+    <p>
+    The type of the returned result is checked to comply with the data type necessary for the given query.
+    This is done yet during the parsing of the query (e.g. in Template Designer).
+    <p>
+    A FlexQuery expression may also contain subqueries, which are nested code blocks executed not directly,
+    but rather passed as parameters to functions. A function may call such a subquery repeatedly
+    to calculate certain things (e.g. to check a filter condition for the elements processed by the function).
+    <p>
+    A subquery may also contain <i>return</i> statements, which will affect only the execution of that subquery.
+    The <i><code>result_expr</code></i> specified in such a return statement will be also checked, however, 
+    now only to comply with the data type necessary for the given subquery.
+    <p>
+  </li>
+  <li><a name="v1.8.5_flattening_ehtml"></a>
+    <b><i>Flattening of embedded HTML</i></b>
+    <p>
+    <i>Embedded HTML</i> is the HTML markup (tags) inserted by the user directly in various descriptions, annotations etc.
+    (stored as plain text in XML files) in order to format them.
+    To have that formatting show up in the generated documentation, in general, the embedded HTML markup needs
+    to be processed (rendered) specifically, which depends on the output format. This is controlled by
+    the <i>"Render embedded HTML"</i> option of the given output format.
+    <p>
+    Sometimes it is needed to remove all block-level HTML tags but leave any other tags, so that
+    the result text would be displayed formatted but without any structure, as a single line.
+    That, we call <i>flattening</i>.
+    <p>
+    It is supported now!
+    <p>
+    A new formatting property has been introduced for all template components: 
+    <b><i>"Embedded HTML | Flatten"</i></b>
+    (found on the <i>"Formatting | Text Flow"</i> tab of the component properties dialog in the Template Designer).
+    If it is selected, any embedded HTML markup found in the text output produced by the component will be flattened
+    (given that the embedded HTML is processed both as a whole and for that component in particular).
+    This will also affect all nested components (including called stock-sections), unless rendering 
+    of embedded HTML is specifically disabled in some of them.
+  </li>
+  <li><a name="v1.8.5_template_descriptions"></a>
+    <b><i>Separation of template/parameter descriptions from templates</i></b>
+    <p>
+    Before this version, all descriptions of templates and their parameters could be stored only directly 
+    within the templates themselves.
+    Now, they can be held also in separate text files located near the main templates.
+    (The description text may also include HTML markup.)
+    <p>
+    This makes possible:
+    <ul>
+      <li>To reuse the same descriptions in several main templates</li>
+      <li>To reduce the sizes of main templates considerably thereby making them loadable faster</li>
+    </ul>
+    <p>
+    That functionality is achieved by introducing of a new macro:
+    <blockquote>
+      <code>${include <i>&lt;url&gt;</i>}</code>
+    </blockquote>
+    Such macros can be inserted both within the descriptions stored directly in templates
+    and within the included text files themselves.
+    <p>
+    The <i><code>url</code></i> specified in the macro points to the file to be included.
+    The macro is expanded with the content of that file (after the expansion of any <i>include</i>
+    macros found in that file).
+    <p>
+    The file URL may be both absolute and relative one.
+    If the macro is found within a description stored in a template, the relative URL
+    is interpreted against the location of that template. If the macro is found within a text file,
+    the URL is interpreted against the location of that file.
+    <p>
+    <table><tr><td class="note">
+      This everything has been applied in <a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a>
+      templates; see:
+      <a href="templates/XSDDoc/CHANGES.html#v2.5.0_template_descriptions"><code class="note_font">templates/XSDDoc/CHANGES.html</code> |
+      Version 2.5.0 | Separation of parameter descriptions from templates</a>
+    </td></tr></table>
+    </p>
+  </li>
+  <li><a name="v1.8.5_disabling_params"></a>
+    <b><i>Disabling of irrelevant parameters</i></b>
+    <p>
+    Now, in the Parameter Inspector, those parameters that are irrelevant to the current settings
+    (specified in other parameters) can be shown disabled. This will help navigating the parameter tree.
+    <p>
+    That is achieved by introducing new properties in the template parameter definition:
+    <i>"Enabling Condition"</i> and <i>"Group | Enabling Condition"</i>.
+    They specify the boolean FlexQuery expressions (queries) that are evaluated each time
+    any of the template parameters is changed:
+    <ul>
+    <li>
+      When the <i>"Enabling Condition"</i> query returns false, the given parameter is disabled.
+    </li>
+    <li>
+      When <i>"Group | Enabling Condition"</i> query returns false, all parameters in the group
+      headed by the given parameter are disabled.
+    </li>
+    </ul>
+    <p>
+  </li>
+  <li><a name="v1.8.5_procedure_templates"></a>
+    <b><i>Procedure Templates</i></b>
+    <p>
+    <i>Procedure templates</i> are a special kind of templates that generate no output.
+    Rather, they have been used internally in big template applications to employ the data querying and processing
+    capabilities of template components (such as Element Iterator) for some auxiliary tasks 
+    (e.g. creating of element maps).
+    <p>
+    Now, the role of procedure templates has been extended, so they can be used also 
+    to generate multi-file documentation with no particular root.
+    The following functionality has been supported:
+    <ul>
+    <li>
+      A procedure template can be specified directly to the generator, that is, used as a <i>main template</i>.
+    </li>
+    <li>
+      Procedure templates can call from themselves other templates, including document and frameset templates,
+      which would generate separate documentation files.
+    </li>
+    <li>
+      A procedure template may include definitions of any number of parameters (with any complexity) 
+      to control a large template application, as well as all the formatting styles to be inherited
+      by the called subtemplates.
+    </li>
+    </ul>
+    <p>
+  </li>
+  </ul>
+</li>
+
+<li><a name="v1.8.5_data_processing"></a>
+  <b>Data Processing</b>
+  <p>
+  <ul>
+  <li><a name="v1.8.5_default_xml_catalog"></a>
+    <b><i>Default XML catalog</i></b>
+    <p>
+    A <i>default XML catalog</i> has been introduced. Its purpose is to point to the local copies
+    of some standard XML schemas found in Internet
+    (like <a href="http://www.w3.org/2001/XMLSchema.xsd" class="nowrap">http://www.w3.org/2001/XMLSchema.xsd</a>),
+    which are critical for <a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a> templates.
+    <p>
+    Previously, those schemas were held along with the XSDDoc templates in the directory:
+    <blockquote>
+      <code><i>{docflex-xml}</i>/templates/XSDDoc/xmltype/</code>
+    </blockquote>
+    Now, they have been moved to a more central location in the DocFlex/XML resource directory:
+    <blockquote>
+      <code><i>{docflex-xml}</i>/lib/resources/</code>
+    </blockquote>
+    so as to allow reusing them for other things (e.g. in the coming WSDLDoc template set).
+    <p>
+    The default XML catalog, which is located in the same directory in the file:
+    <blockquote>
+      <code><i>{docflex-xml}</i>/lib/resources/catalog.xml</code>
+    </blockquote>
+    allows referencing to those schemas by their standard internet URLs, yet loading them from
+    the local files in DocFlex/XML resources.
+    <p>
+  </li>
+  <li><a name="v1.8.5_xml_files_from_jar"></a>
+    <b><i>Dynamic loading of data source XML files directly from jar-files</i></b>
+    <p>
+    Now, you can document your entire XML schema project even when it is packed in a jar-file!
+    <p>
+    <table><tr><td class="note">
+      For example, suppose you have a jar-file <code class="note_font">'C:\project\some.jar'</code>,
+      in which there is <code class="note_font">'xsd'</code> directory containing an XML schemas
+      <code class="note_font">'some.xsd'</code>.
+      Then, the URL to be passed to the generator to document that XML schema should look as follows:
+      <code class="note_font">jar:file:/C:/project/some.jar!/xsd/some.xsd</code>
+    </td></tr></table>
+    </p>
+  </li>
+  </ul>
+</li>
+
+<li><a name="v1.8.5_html_output"></a>
+  <b>HTML Output</b>
+  <p>
+  <ul>
+  <li><a name="v1.8.5_CSS_file"></a>
+    <b><i>Generation of CSS file</i></b>
+    <p>
+    All internal CSS declarations, which were previously defined and used only locally in every generated HTML document,
+    now can be held in a single <code>'stylesheet.css'</code> file stored in the documentation root.
+    Only links to this file will be included in the generated HTML documents.
+    <p>
+    Although such CSS declarations look typlically rather gibberish, they tend to repeat across HTML files.
+    So, moving them to a single CSS file may substantially reduce the overall size of the generated HTML documentation.
+    <p>
+    That possibility is controlled by a new 
+    <i>"<a href="#v1.8.5_html_options_generateCSSFile">Output | Generate style sheet file</a>"</i> option.
+    <p>
+    What's more, using the nested <i>"<a href="#v1.8.5_html_options_cssPatternFile">CSS pattern file</a>"</i> option,
+    you can frame the generated CSS declarations into your own CSS file. That will allow you to include in the
+    result CSS file your custom styles, which you can use to format the HTML markup embedded in your
+    descriptions/annotations.
+    <p>
+  </li>
+  <li><a name="v1.8.5_html_options"></a>
+    <b><i>New HTML Options</i></b>
+    <p>
+    <a name="v1.8.5_html_options_encoding"></a>
+    <i>Output | Character Encoding</i>
+    <blockquote>
+      Specifies the encoding of the generated HTML files.
+    </blockquote>
+
+    <i>Output | Add Charset</i>
+    <blockquote>
+      Specifies whether to insert the character encoding declaration in the generated HTML files.
+      The encoding name will be taken from the
+      <i>"<a href="#v1.8.5_html_options_encoding">Character Encoding</a>"</i> option.
+    </blockquote>
+
+    <a name="v1.8.5_html_options_noTimeStamp"></a>
+    <i>Output | Suppress Timestamp</i>
+    <blockquote>
+      Specifies whether to suppress the date/time information included in a special comment inserted
+      automatically at the beginning of every generated HTML file.
+      <p>
+      When you frequently upload the generated docs into some repository, which stores only changes of files
+      against their previous versions and your docs actually do not change, this will relieve
+      the repository from unnecessary updates.
+    </blockquote>
+
+    <a name="v1.8.5_html_options_generateCSSFile"></a>
+    <i>Output | Generate style sheet file</i>
+    <blockquote>
+      Specify whether to generate a separate style sheet file containing most of internal CSS
+      declarations generated by DocFlex (instead of holding them in every HTML documents where they are used).
+    </blockquote>
+
+    <a name="v1.8.5_html_options_cssPatternFile"></a>
+    <i>Output | Generate style sheet file | CSS pattern file</i>
+    <blockquote>
+      Allows you to frame the CSS declarations generated by DocFlex into your own CSS file.
+    </blockquote>
+  </li>
+  <li><a name="v1.8.5_html_gen_performance"></a>
+    <b><i>Performance improvement</i></b>
+    <p>
+    Thanks to all recent innovations, including storage of all internal CSS declarations
+    in a single CSS file (see <a href="#v1.8.5_CSS_file">Generation of CSS file</a>) and many others,
+    the HTML generator works now on average <b>5% faster</b>
+    and generate output <b>15% smaller</b> against DocFlex/XML <a href="#v1.8.0">1.8.0</a>.
+    <p>
+  </li>
+  </ul>
+</li>
+
+<li><a name="v1.8.5_rtf_output"></a>
+  <b>RTF Output</b>
+  <p>
+  <ul>
+  <li><a name="v1.8.5_rtf_styles"></a>
+    <b><i>Optimization of RTF styles</i></b>
+    <p>
+    Before this version, all formatting styles defined across a template set,
+    which are not overridden by other equally named styles from parent (calling) templates,
+    would produce the same number of separate styles in the RTF.
+    <p>
+    Now, this is changed:
+    <ul>
+      <li>
+        An RTF style is generated only when it is actually used (that is, there are references to it).
+        <p>
+      </li>
+      <li>
+        All equally named styles (defined in a template set), whose all properties are equal
+        and which are not overridden by other styles from calling templates,
+        will produce the only style in RTF (with those name and properties).
+      </li>
+    </ul>
+    <p>
+    That optimization prevents the contamination of the generated RTF with many unused styles
+    (which have been defined in templates but never used) and duplicated styles
+    (which are defined in several subtemplates, but never in the main one).
+    <p>
+  </li>
+  <li><a name="v1.8.5_rtf_wrap_nbr_str"></a>
+    <b><i>Wrapping of long non-breaking strings in tables</i></b>
+    <p>
+    The automatic wrapping of very long nonbreaking strings within table cells has been reworked once again.
+    <p>
+    <table><tr><td class="note">
+      The problem is that MS Word cannot wrap such strings by itself, which causes the table to stretch beyond
+      the visible page.
+    </td></tr></table>
+    </p>
+    The previous algorithm worked well when such strings appeared only in one table column.
+    But when they happened to be in several columns, the algorithm failed and the table was laid out by Word
+    again beyond the page width.
+    <p>
+    To deal with that problem, the following things have been implemented:
+    <ul>
+      <li>
+      When the table is generated by a template component
+      <blockquote>
+      (e.g. see: <i>Template Designer | Section's Properties Dialog | Formatting | General | Section Output | "Table"</i>)
+      </blockquote>
+      then a property similar to 
+      <i>"<a href="#v1.8.5_rtf_options_tables.breakLongStrings.maxNbrWidth">Tables | Break long nonbreaking strings | Maximal unbroken width</a>"</i>
+      option can be specified for each table cell/column; see:
+      <blockquote>
+        <i>Template Designer | Control's Properties Dialog | Formatting | Table Cell | Options | Max width allowed for long nonbreaking strings</i>
+      </blockquote>
+      </li>
+      <li>
+      When the table is generated by some embedded HTML markup (i.e. &lt;table&gt;,&lt;tr&gt;,&lt;td&gt; tags),
+      the above setting is estimated dynamically according to the overall content of each table column.
+      </li>
+    </ul>
+    <p>
+  </li>
+  <li><a name="v1.8.5_rtf_ehtml"></a>
+    <b><i>Rendering of embedded HTML</i></b>
+    <p>
+    <ul>
+      <li><i>&lt;img&gt; tags</i>
+      <p>
+      The <code>src</code> attribute now can specify not only a formal URL but also a local file pathname
+      (e.g. <code>c:\element.gif</code>). Such an image will be shown in RTF.
+      <p>
+      Also, when the image file specified in <code>src</code> attribute cannot be found and 
+      the <i>"Images | Show failed image path"</i> RTF option selected,
+      the failed image's pathname (or URL) will be shown in the generated RTF (along with a placeholder).
+      Previously, all &lt;img&gt; tags with failed images were just ignored.
+      <p>
+      </li>
+      <li><i>Rendering of line breaks (newlines)</i>
+      <p>
+      That has been completely reworked.
+      <p>
+      Previously, when <i>"Text | Render line breaks"</i> RTF option was selected
+      and some embedded HTML happened to contain table tags (&lt;table&gt;,&lt;tr&gt;,&lt;td&gt;)
+      intermitting with newlines, the rendering of such a markup in RTF could produce tables with extra cells.
+      Now, this is fixed!
+      <p>
+      </li>
+      <li><i>Formatting within table cells</i>
+      <p>
+      Before this version, when some HTML formatting was specified within a table cell, like:
+      <blockquote>
+      <code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;font color="red"&gt;blah-blah-blah&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code>
+      </blockquote>
+      it didn't work (<code>'blah-blah-blah'</code> wouldn't be red). Now, this is fixed!
+      <p>
+      </li>
+    </ul>
+    <p>
+  </li>
+  <li><a name="v1.8.5_rtf_emf_images"></a>
+    <b><i>Size and scaling of EMF Images</i></b>
+    <p>
+    Specification of the size and scaling of EMF images in RTF has been completely reworked.
+    <p>
+    As it was implemented previously, some EMF images inserted by DocFlex in RTF were scaled
+    incorrectly by MS Word, which resulted in displaying of too small or too large images
+    (particularly, when the goal was just to make an image/diagram fit best in the available page size).
+    Now, it is fixed (see below)!
+    <p>
+    EMF is a vector graphic format, which is especially useful for various diagrams.
+    It is widely generated by many software systems (thanks to its direct support by MS Windows itself, via its APIs).
+
+    <table cellpadding="0" cellspacing="0">
+    <tr><td class="note">
+      It took great efforts to understand how MS Word interprets (and calculates by itself)
+      the size of an EMF image specified in RTF.
+      <p></p>
+      When an EMF image just has been inserted in the document, MS Word 2000 displays it
+      on the document sheet exactly according to the pixel size of the image specified in the EMF file.
+      <p></p>
+      But other lengths are interpreted by MS Word not quite the same as they are.
+      For instance, when you specify a page width in points, MS Word converts it into the pixel width
+      it displays according to the formula:
+      <blockquote>
+        <code>width<sub> pt</sub> * 5/3</code>
+      </blockquote>
+      The same <code>5/3</code> factor is used by MS Word 2000 to display PNG and GIF images.
+      Their pixel size visible in MS Word is calculated as follows:
+      <blockquote><code>
+        image size<sub> pt</sub> = image size<sub> pix, from image file</sub> / 96<sub> screen dpi</sub> * 72<sub> points per inch</sub><br>
+        image size<sub> pix, in MS Word 2000</sub> = image size<sub> pt</sub> * 5/3
+      </code></blockquote>
+      In RTF, the image size must be specified in 0.01 mm. MS Word uses that size to display
+      the image as well as scale it according to <code>\picscalex</code> & <code>\picscaley</code> commands specified in RTF.
+      <p></p>
+      So, to be stored in RTF, the original EMF image size in pixels must be converted first
+      into some non-pixel units -- e.g. points, which can be converted further to mm according to standard
+      formula -- that will be interpreted correctly by MS Word.
+      (In fact, EMF file does include the image size specified in 0.01 mm, but it cannot be used here
+      because MS Word 2000 completely ignores it.)
+      <p></p>
+      From the investigation above, we've got an idea. The point size of an EMF image (to be used
+      for RTF) should be calculated like this:
+      <blockquote>
+         <code>image size<sub> pix, from EMF file</sub> * 3/5</code>
+      </blockquote>
+      That turned out to work perfect!
+      When an EMF image is specified in RTF with such a size,
+      both MS Word 2000 and MS Word 2010 display and scale it correctly.
+    </td></tr>
+    </table>
+    <p>
+  </li>
+  <li><a name="v1.8.5_rtf_options"></a>
+    <b><i>New RTF Options</i></b>
+    <p>
+    <i>Tables | Break long nonbreaking strings</i>
+    <blockquote>
+      Specify whether to break automatically the long nonbreaking strings placed within the tables
+      with the <i>'table autofit'</i> setting.
+    </blockquote>
+
+    <i>Tables | Break long nonbreaking strings | Maximal unbroken length</i>
+    <blockquote>
+      Specify the maximal characters length for a nonbreaking string
+      (i.e. non-wrapping text) allowed to be left unbroken.
+      <p>
+      This option lets you define what a long nonbreaking string actually is
+      (thereby preventing breaking of some resonably long words and names).
+    </blockquote>
+
+    <a name="v1.8.5_rtf_options_tables.breakLongStrings.maxNbrWidth"></a>
+    <i>Tables | Break long nonbreaking strings | Maximal unbroken width</i>
+    <blockquote>
+      Specify the maximal width for a long nonbreaking string (i.e. non-wrapping text)
+      allowed to be left unbroken.
+      Precisely, it is the percent of the table width, in which any nonbreaking string should be wrapped.
+      <p>
+      For all details, see the description of this option in:
+      Generator GUI | Output format | RTF | Options | "RTF Option" dialog
+    </blockquote>
+
+    <i>Tables | Break long nonbreaking strings | Use optional breaks</i>
+    <blockquote>
+      Specify whether to use <i>'Non-width Optional Breaks'</i> when breaking long strings for wrapping.
+    </blockquote>
+
+    <i>Other | Suppress Timestamp</i>
+    <blockquote>
+      The same as HTML option:
+      <i>"<a href="#v1.8.5_html_options_noTimeStamp">Output | Suppress Timestamp</a>"</i>
+    </blockquote>
+  </li>
+  </ul>
+</li>
+
+<li><a name="v1.8.5_xsddoc"></a>
+    <b>Improvements of &ldquo;<a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a>&rdquo; templates
+    (XML Schema Documentation Generator)</b>
+  <p>
+  See: <a href="templates/XSDDoc/CHANGES.html#v2.5.0"><code>templates/XSDDoc/CHANGES.html</code> | Version 2.5.0</a>
+</p>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.8.0"></a>
+  Version 1.8.0
+</h2>
+
+<ul>
+
+<li><a name="v1.8.0_template_language"></a>
+  <b>Template language / general functionality</b>
+  <p>
+  <ul>
+  <li><a name="v1.8.0_element_images"></a>
+    <b><i>Element Images</i></b>
+    <p>
+    The DocFlex/XML core (namely, XML <a href="doc/index.html?general/about.html#dsm">DSM</a>
+    [Data Source Model] driver)
+    has been extended with an abstract functionality that allows dynamic association
+    of some XML elements with certain graphic representations of them called <i>element images</i>
+    (which are typically some diagrams). Such images may be also supplied with hypertext <i>imagemaps</i>,
+    which enable generation of hyperlinks from the specific image regions to the corresponding locations
+    in the documentation.
+    <p>
+    The element images (and imagemaps to them) are not generated by the XML
+    <a href="doc/index.html?general/about.html#dsm">DSM</a> driver itself. Rather the driver
+    exposes a special <i>Element Image Provider</i> interface, which may be implemented by another extension
+    (or integration) specific to a particular template application field.
+    Such an implementation should "understand" the semantics of the underlying XML data source and
+    generate diagrams/images (along with the imagemaps) that somehow depict particular XML elements.
+    <p>
+    When supported, element images are accessible in templates via
+    <a href="doc/index.html?general/template_components.html#image_control">Image Controls</a>,
+    which makes possible to program how those images are inserted in the generated output, formatted and
+    hyperlinked to other documentation parts.
+    <p>
+    The new Element Image functionality was immediately used to develop the
+    <a href="doc/index.html?docflex-xml/integrations/XMLSpy.html">XMLSpy Integration</a>
+    (see <a href="#v1.8.0_XMLSpy_integration">below</a>).
+    <p>
+  </li>
+  <li><a name="v1.8.0_section_flow_control"></a>
+    <b><i>Section Flow Control</i></b>
+    <p>
+    A new property has been introduced for template sections: <b><i>"Output Notification Expression"</i></b>
+    (found on the <i>"Component | Options"</i> tab of the section property dialog in the Template Designer).
+    <p>
+    When that expression is specified, it will be executed each time the section has produced a non-empty output
+    (on the finishing of the section processing).
+    <p>
+    This makes possible, for instance, to program such things like tracking whether particular output sections 
+    have been generated early and, depending on it, to add some kind of separator (e.g. horizontal rule)
+    before the output that follows them.
+    <p>
+  </li>
+  <li><a name="v1.8.0_service_attributes"></a>
+    <b><i>Service Attributes</i></b>
+    <p>
+    A new functionality has been supported that makes possible to dynamically attach any data to particular
+    <a href="doc/index.html?general/about.html#dsm_element">DSM elements</a>
+    using special <i>service attributes</i>.
+    <p>
+    Service attributes serve the same role as normal element attributes.
+    They allow you to attach specific data to particular DSM elements and access those data by names.
+    However, unlike normal 
+    <a href="doc/index.html?general/about.html#dsm_attribute">DSM attributes</a>,
+    service attributes are not provided by the DSM driver and not connected to the external data source.
+    Rather, they are maintained by the generator itself in the form of a special hash-map.
+    <p>
+    <table><tr><td class="note">
+      That hash-map is actually very simple. Each service attribute is represented by a two-part key:
+      { attrName; element.id }, where 'attrName' is the attribute name;
+      'element.id' is the unique identifier of the DSM element, to which the attribute is attached.
+      Such a key is mapped to the attribute value.
+    </td></tr></table>
+    </p>
+    The main purpose of service attributes is to use them as a data cache.
+    That is to store some frequently needed information about particular elements,
+    which although can be found in the <a href="doc/index.html?general/about.html#dsm">DSM</a>,
+    practically is difficult to collect.
+    <p>
+    To work with service attributes, the following FlexQuery functions have been added:
+    <p>
+    <table cellspacing="1" cellpadding="4" border="1">
+      <tr bgcolor="#EEEEEE">
+        <th>Function</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><code>setServiceAttr()</code></td>
+        <td>Assigns a service attribute with the specified name and value to the specified element.</td>
+      </tr>
+      <tr>
+        <td><code>getServiceAttr()</code></td>
+        <td>Returns the value of a service attribute with the specified name attached to the specified element.</td>
+      </tr>
+      <tr>
+        <td><code>hasServiceAttr()</code></td>
+        <td>Tests if there is a service attribute with the specified name attached to the specified element.</td>
+      </tr>
+      <tr>
+        <td><code>removeServiceAttr()</code></td>
+        <td>Deletes a service attribute with the specified name attached to the specified element.</td>
+      </tr>
+    </table>
+    <p>
+    The full descriptions of those functions can be found in the Template Designer:
+    <i>Help | Assistant | Functions by Category | Elements / Attributes | Attribute Access</i>.
+    <p>
+    This new functionality was immediately used in 
+    <a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a> templates.
+    See:
+    <a href="templates/XSDDoc/CHANGES.html#v2.2.0_redefs"><code>templates/XSDDoc/CHANGES.html</code> |
+    Version 2.2.0 | Naming of redefined components</a>
+    <p>
+  </li>
+  </ul>
+</li>
+<li><a name="v1.8.0_generator"></a>
+  <b>Template interpreter / output generator</b>
+  <p>
+  <ul>
+  <li><a name="v1.8.0_html_output"></a>
+    <b><i>HTML Output</i></b>
+    <p>
+    The HTML output generator was optimized to work about 5% faster
+    and now produces more compact output (1-5% smaller size).
+    <p>
+    Besides this, the following HTML options have been added:
+    <p>
+    <i>"Use fixed font sizes"</i>
+    <blockquote>
+      If selected (true), all font sizes will be fixed. The actual font sizes are calculated
+      from the values specified in templates adjusted against the base font size specified in 
+      the <i>"Base font size"</i> option.
+      <p>
+      This option is not exactly new. It replaces the previous <i>"Use relative font sizes"</i> option,
+      which had the opposite meaning.
+    </blockquote>
+
+    <i>"Base font size"</i>
+    <blockquote>
+      This option is used only together with the <i>"Use fixed font sizes"</i> option (when checked).
+      It specifies the base font size (in points) against which the actual fixed font sizes used 
+      in the generated HTML are calculated.
+    </blockquote>
+    <p>
+  </li>
+  <li><a name="v1.8.0_rtf_output"></a>
+    <b><i>RTF Output</i></b>
+    <p>
+    Several new RTF output options have been added to control generation of hyperlinks and bookmarks:
+    <p>
+    <i>"Hypertext | Generate hyperlinks"</i>
+    <blockquote>
+      Specify whether to add hyperlinks in the RTF output.
+      <p>
+      Note: To have cross-reference hyperlinks (those pointing within the same document) be generated, 
+      the <i>"Generate bookmarks"</i> option must also be selected. Without it, only external (URL)
+      hyperlinks will be possible.
+    </blockquote>
+
+    <i>"Hypertext | Generate bookmarks"</i>
+    <blockquote>
+      Specify whether to add bookmarks in the RTF output.
+      <p>
+      Bookmarks are needed to generated both cross-reference hyperlinks and page number references.
+    </blockquote>
+
+    <i>"Hypertext | Bookmark name prefix"</i>
+    <blockquote>
+      Specify prefix for automatically generated bookmark names.
+      <p>
+      This option may be useful when you need to merge several RTF files produced with DocFlex 
+      into a single document. In that case, you should generate those files with different bookmark prefixes.
+      This will ensure that the bookmarks from different RTFs never overlap and all hyperlinks and 
+      page number references in the result document are correct.
+    </blockquote>
+
+    One more option was added specifically to format large images:
+    <p>
+    <i>"Images | Allow image rotation"</i>
+    <blockquote>
+      Allows rotating big images to make them better fit in the specified paper size 
+      in order to minimize the image scaling. Currently, this is supported only for the element images 
+      (diagrams) generated in PNG or GIF format and only when all graphics is stored in the RTF file.
+    </blockquote>
+  </li>
+  <li><a name="v1.8.0_generator_gui"></a>
+    <b><i>Generator GUI</i></b>
+    <p>
+    For the case when the generator is run from Java command line (e.g. using <code>generator.bat</code>) and with GUI,
+    the <a href="doc/index.html?docflex-xml/docs/generator.html#gui">generator dialog</a>
+    has been re-implemented using JFrame so that it will be visible on the Windows taskbar
+    as a Swing application.
+    <p>
+  </li>
+  <li><a name="v1.8.0_first_sentence"></a>
+    <b><i>Extraction of first sentence from HTML formatted text</i></b>
+    <p>
+    First sentences of description texts are used in various summary tables.
+    In a plain text, the first sentence is defined by the position of the dot (<code>'.'</code>) 
+    that ends the sentence.
+    When a text is formatted with HTML, extracting its first sentence becomes trickier.
+    In that case, besides the dot, a sentence may be terminated with a block-level tag.
+    In the early implementation,
+    all such tags were taken into account. Now, all heading tags (like <code>&lt;h1&gt;</code>) are ignored.
+    So, when a text has a heading, it will be just added before the first sentence extracted from the actual text,
+    but not replace it. This will make those short descriptions placed in summary table be more informative.
+    <p>
+  </li>
+  </ul>
+</li>
+<li><a name="v1.8.0_XMLSpy_integration"></a>
+  <b>XMLSpy Integration</b>
+  <p>
+  An integration of DocFlex/XML with Altova XMLSpy&reg; has been implemented.
+  For all details, please see <code><a href="integrations/XMLSpy/README.html">integrations/XMLSpy/README.html</a></code>
+  and
+  <a href="doc/index.html?docflex-xml/integrations/XMLSpy.html">Documentation | Integrations | XMLSpy</a>.
+  <p>
+</li>
+<li><a name="v1.8.0_xsddoc"></a>
+  <b>Improvements of &ldquo;<a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a>&rdquo; templates
+    (XML Schema Documentation Generator)</b>
+  <p>
+  See: <a href="templates/XSDDoc/CHANGES.html#v2.2.0"><code>templates/XSDDoc/CHANGES.html</code> | Version 2.2.0</a>
+</p>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.7.2"></a>
+  Version 1.7.2
+</h2>
+
+<ul>
+
+<li><a name="v1.7.2_licensing"></a>
+  <b>Renaming & licensing of DocFlex/XML editions</b>
+  <p>
+  To make things clearer and more convenient to the users, the following changes has been made in the DocFlex/XML product range:
+  <p>
+  <ol>
+  <li>
+    The former <i>"DocFlex/XML (full edition)"</i>, 
+    which included all the functionality implemented about DocFlex/XML, has been renamed to 
+    "<a href="README.html#about">DocFlex/XML SDK</a>".
+    <p>
+    Nothing has changed, however, either in the provided content/functionality or licensing of this edition.
+    Any 
+    <a href="http://www.filigris.com/licensing/#commercial_license">Commercial</a> or
+    <a href="http://www.filigris.com/licensing/#academic_license">Academic</a> licenses
+    issued previously for "DocFlex/XML" can be installed and will equally work with
+    <a href="README.html#about">DocFlex/XML SDK</a>.
+    <p>
+  </li>
+  <li>
+    The former <i>"DocFlex/XML (Kit)"</i>, which included only the template interpretor / output generators, 
+    now is called "<a href="http://www.filigris.com/docflex-xml/#docflex-xml-re">DocFlex/XML RE</a>".
+    <p>
+    That edition (the interpretor/generator itself) has been made freeware to provide the free runtime environment for execution 
+    of DocFlex/XML templates.
+    The output generators will work without limitations (on the features of the generated output). 
+    No, special licensing is needed for this any longer.
+    <p> 
+    However, the actual limitations on what you can generate may come from the template applications,
+    which may require special licensing by their own (or need to be created/modified under a 
+    <a href="http://www.filigris.com/licensing/#commercial_license">Commercial License</a>
+    for <a href="README.html#about">DocFlex/XML SDK</a>). See also
+    <a href="http://www.filigris.com/licensing/#templates">Licensing of Templates</a>
+    for more details.
+    <p>
+    As it was before, <a href="http://www.filigris.com/docflex-xml/#docflex-xml-re">DocFlex/XML RE</a>
+    is bundled with all currently available template applications developed by us (some of which require separate licensing).
+    <p>
+  </li>
+  </ol>
+  <p>
+</li>
+
+<li><a name="v1.7.2_data_processing"></a>
+  <b>Data Processing (XML Data Sources)</b>
+  <p>
+  The <a href="http://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html">OASIS XML Catalogs v1.1</a>
+  are fully supported now. In particular, this includes:
+  <p>
+  <ol>
+  <li>
+    The possibility to use XML catalog files in the definitions of XML Types
+    based on multiple XML schemas.
+    <p>
+    XML Types provide the structure and data type information about possible XML files processed
+    by a set of templates (each template is based on a certain XML Type).
+    For more details, please see 
+    <a href="doc/index.html?docflex-xml/docs/design_templates.html#xmltype.xsd.catalogs">DocFlex/XML | Documentation | Designing Templates | Defining XML Type | Assigning XML Schemas | xsd.catalogs</a>.
+    <p>
+  </li>
+  <li>
+    Using XML catalogs when processing input XML files (i.e. those containing the data
+    by which the documentation/reports are generated).
+    <p>
+    For more details, please see 
+    <a href="doc/index.html?docflex-xml/docs/generator.html#gui.xml_catalogs">Documentation | Running Generator | Generator GUI | Assigning XML Catalog(s)</a>.
+  </li>
+  </ol>
+  <p>
+  XML catalogs are special XML files that allow you to redefine the physical location of the XML files
+  (and other types of files) referred from some other XML files.
+  See also: <a href="doc/index.html?docflex-xml/docs/generator.html#gui.xml_catalogs.about">About XML Catalogs</a>
+  <p>
+  The "<a href="templates/XSDDoc/README.html">XSDDoc</a>" templates have been modified
+  to support this feature as well.
+  <p>
+</li>
+<li><a name="v1.7.2_template_language"></a>
+  <b>Template language / general functionality</b>
+  <p>
+  <ul>
+  <li><a name="v1.7.2_section_flow_control"></a>
+    <b><i>Section Flow Control</i></b>
+    <p>
+    A new property has been introduced for template sections: <b><i>"Break Parent Section Block"</i></b>.
+    <p>
+    When specified, it forces the template interpreter, after the processing of the given section,
+    to break the further processing of the containing it section block according to the property value,
+    which may be one of the following:
+    <p>
+    <i>"break when section executed"</i>
+    <blockquote>
+      The processing of the parent block will be broken only when the given section has been executed.
+      <p>
+      Note: The section is executed when it has passed its <i>enabling condition</i> (if specified)
+      and the current <i>generator context element</i> complies with the <i>Matching Element Type(s)</i>
+      specified on the section.
+    </blockquote>
+
+    <i>"break when section produced output"</i>
+    <blockquote>
+      The processing of the parent block will be broken only when the given section has not only 
+      been executed but also produced some non-empty output.
+    </blockquote>
+
+    In the Template Designer, when the <i>'Break Parent Section Block'</i> property is specified
+    on a section, it is indicated with a special icon, which appears on that section in the left designer
+    pane (showing the section tree).
+    The property itself can be specified in the <i>"Component | Options"</i> tab of section's property dialog.
+    <p>
+    Until now, the functionality of the new property was substituted by testing 
+    in the enabling conditions of other sections (located below the given one) one of the generator variables:
+    <code>'sectionBlock.execSecNone'</code> or <code>'sectionBlock.outputSecNone'</code>.
+    (Those variables allow you to test if some sections in a section block have been already executed
+    or produced a non-empty output.)
+    <p>
+    The old approach works as well now. However, the new one adds clarity, simplifies programming and 
+    may substantially improve performance of template applications.
+    <p>
+    In particular, the new feature allowed us to boost about 15% the performance of the 
+    "<a href="templates/XSDDoc/README.html">XSDDoc</a>" template application!
+    <p>
+  </li>
+  <li><a name="v1.7.2_list_params"></a>
+    <b><i>Multivalued (List) Parameters</i></b>
+    <p>
+    Since this version, DocFlex/XML supports multi-valued template parameters
+    (called also <i>list</i> parameters, for short).
+    </p><p>
+    Such parameters allow you to pass into template the whole vector of different values 
+    associated with the same parameter name. This provides a universal mechanism for implementing 
+    a user control over how a set of templates processes a certain type of data (or situations) 
+    that may come in unlimited number of variations.
+    A list parameter can be specified both in the Parameter Inspector dialog of the Generator GUI
+    and on the generator command line (using one or many <code>-P</code> options).
+    <p>
+  </li>
+  </ul>
+</li>
+<li><a name="v1.7.2_generator"></a>
+  <b>Template interpreter / output generator</b>
+  <p>
+  <ul>
+  <li><a name="v1.7.2_generator_performance"></a>
+    <b><i>Performance improvement</i></b>
+    <p>
+    Thanks to some new optimizations, all output generators work 30% faster now.
+    <p>
+  </li>
+  <li><a name="v1.7.2_emf_images"></a>
+    <b><i>EMF Images</i></b>
+    <p>
+    The EMF image format has been supported. Now, the EMF images can be inserted both in 
+    the generated HTML and RTF documents.
+    All supported (and tested) image formats now include: GIF, PNG, JPG, WMF, EMF, BMP.
+    <p>
+  </li>
+  <li><a name="v1.7.2_rtf_wrap_nbr_str"></a>
+    <b><i>Very long nonbreaking strings in RTF</i></b>
+    <p>
+    The automatic wrapping of very long nonbreaking strings within table cells has been improved.
+    <p>
+    Until this version, such a wrapping was done correctly when the string was generated by the same control.
+    When the entire nonbreaking string was produced by different controls (possibly using different fonts),
+    it was not recognized as a single string and, therefore, was not broken as needed.
+    That caused some summary tables in RTF JavaDoc to expand beyond the page width.
+    <p>
+    Now, this is fixed!
+    <p>
+    For more details about that problem with long nonbreaking strings in RTF, see Doclet GUI | 
+    RTF Options | Tables | Long string wrapping factor.
+    </p>
+  </li>
+  </ul>
+</li>
+<li><a name="v1.7.2_generator_gui"></a>
+  <b>Template Designer / Generator GUI</b>
+  <p>
+  The processing of mouse-click events has been reworked so as to show popup menus
+  correctly on different platforms.
+  Until this version, the popup menus actually didn't work on Apple Mac (with its one-button mouse).
+  Now, it is fixed!
+  <p>
+</li>
+<li><a name="v1.7.2_maven_plugin"></a>
+  <b>Maven Plugin</b>
+  <p>
+  The Apache Maven Plugin for DocFlex/XML has been implemented.
+  Now, you can easily integrate DocFlex/XML with the
+  <a href="http://maven.apache.org/">Apache Maven</a>
+  automated build system.
+  <p>
+  For more details, please see: <code><a href="integrations/maven/index.html">integrations/maven/index.html</a></code>
+  and
+  <a href="doc/index.html?docflex-xml/integrations/maven.html">Documentation | Integrations | Apache Maven</a>.
+  <p>
+</li>
+<li><a name="v1.7.2_xsddoc"></a>
+  <b>Improvements of &ldquo;<a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a>&rdquo; templates 
+  (XML Schema Documentation Generator)</b>
+  <p>
+  See: <a href="templates/XSDDoc/CHANGES.html#v2.1.0"><code>templates/XSDDoc/CHANGES.html</code> | Version 2.1.0</a>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.7.0"></a>
+  Version 1.7.0
+</h2>
+
+<ul>
+
+<li><a name="v1.7.0_xsddoc"></a>
+  <b>Improvements of &ldquo;<a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a>&rdquo; templates 
+  (XML Schema Documentation Generator)</b>
+  <p>
+  See: <a href="templates/XSDDoc/CHANGES.html#v2.0.0"><code>templates/XSDDoc/CHANGES.html</code> | Version 2.0.0</a>
+  </p>
+</li>
+<li><a name="v1.7.0_licensing"></a>
+  <b>New licensing system</b>
+  <p>
+  A new <a href="http://www.filigris.com/licensing/">licensing system</a>
+  has been implemented with the support of 
+  <a href="http://www.filigris.com/licensing/#multiple_licenses">multiple licenses</a>
+  (that cover different features within the same software package) and
+  a possibility to attach licenses to particular sets of templates 
+  (<a href="http://www.filigris.com/licensing/#templates.cta">commercial template application</a>).
+  <p>
+  The goal is both to allow our customers to pay exactly for what they are willing to use 
+  and to provide us with more resources for further development of this software.
+  <p>
+  <i>Note: Any old commercial licenses for DocFlex/XML will work the same. 
+  If you have one, you may install and use it with this version as well.</i>
+  <p>
+</li>
+<li><a name="v1.7.0_generator_gui"></a>
+  <b>Generator GUI | Template Parameter Inspector</b>
+  <p>
+  As the number of template parameters (controlling what is generated) ever grows,
+  the Template Parameter Inspector in its previous form became increasingly cumbersome and difficult to navigate. 
+  <p>
+  This problem has been addressed by introducing a possibility to collapse/expand the parameter group nodes dynamically 
+  (some of which can be preset in the templates to appear initially in the collapsed form; 
+  further, the current collapse/expand state of particular group nodes is saved in the 
+  <code>generator.config</code> and restored next time). 
+  <p>
+  What is more, now some of the parameter group nodes may themselves serve as the template parameters.
+  <p>
+  These improvements allow introducing lots of parameters so as to control a particular big template application.
+  Those parameters may be organized in the form of a hierarchical tree, which is both compact and easy to navigate.
+  <p>
+</li>
+<li><a name="v1.7.0_template_designer"></a>
+  <b>Template Designer</b>
+  <p>
+  <ul>
+    <li>
+      The improved support of the definition of template parameters (see above).
+      <p>
+    </li>
+    <li>
+      Support of Copy/Paste of all settings at once specified 
+      in a particular tab (e.g. "Processing") of a component property dialog,
+      including all sub-tabs.
+      <p>
+      This feature may not sound very great, but it was not that easy to implement.
+      In fact, it substantially speeds up the process of designing of templates
+      (which we particularly need ourselves as the primary users of our own tool).
+    </li>
+  </ul>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.6.8"></a>
+  Version 1.6.8
+</h2>
+
+<ul>
+
+<li><a name="v1.6.8_xsddoc"></a>
+  <b>Improvements of &ldquo;<a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a>&rdquo; templates 
+    (XML Schema Documentation Generator)</b>
+  <p>
+  See: <a href="templates/XSDDoc/CHANGES.html#v1.6.8"><code>templates/XSDDoc/CHANGES.html</code> | Version 1.6.8</a>
+  </p>
+</li>
+<li><a name="v1.6.8_general_architecture"></a>
+  <b>General architecture</b>
+  <p>
+  <ul>
+    <li>
+      The definitions of XML Types (which provide datatype information about XML-file data sources)
+      have been moved from a single location (previously, in <code>config/xmltypes.config</code> file)
+      to any number of XML Type Configuration Files.
+      Now, a complete XML Type definition (which includes the XML schemas describing the particular 
+      XML data source) can be stored together with the template set based on it and loaded dynamically when needed.
+      This makes possible to represent a particular template application in the form of a single software unit 
+      that can be easily distributed and deployed by its own.
+      <p>
+    </li>
+  </ul>
+</li>
+<li><a name="v1.6.8_template_designer"></a>
+  <b>Template Designer</b>
+  <p>
+  <ul>
+    <li>
+      The "New Template" dialog in the template designer has been reworked completely 
+      in order to make it easier to select the necessary XML Type (on which the new template 
+      is to be based). Now, when absent in the list, the needed XML Type can also be loaded
+      interactively from an XML Type config file containing its definition.
+      <p>
+    </li>
+    <li>
+      When Copy/Paste template components, the original settings of the component being copied 
+      (including those of its nested components) that are dependant on the context 
+      (e.g. the context Element Type or formatting styles) are preserved now in some "latent" form 
+      along with the copy of that component at the new location. This is done even though those 
+      settings might be senseless according to the new context at the moment of copying.
+      (For instance, the original component may print the value of an attribute of the context element.
+      However, at the new location the current context Element Type has no such an attribute.
+      Hence, the component's settings about that attribute would be lost. The same is true 
+      about formatting styles.) Once at the new location the context has been changed 
+      appropriately (e.g. the needed formatting style has been copied there as well), 
+      the latent settings will be restored as actual ones. This all may save lots of time 
+      when a piece of a template is being reused at different locations or in another template 
+      (perhaps with some little changes).
+      All the necessary context settings simply cannot be copied to the new location together with 
+      the component at once!
+      <p>
+    </li>
+    <li>
+      In the Element Type Tree, which shows the data type information about the particular
+      XML-file data source (see <i>Template Designer | Help | Assistant | All Element Types</i>),
+      the child element types and attributes inherited from the ancestor types appear now 
+      in a different color. This helps to distinguish them quickly from the own children 
+      and attribute of the given type, which adds clarity to the whole representation.
+    </li>
+  </ul>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.6.7"></a>
+  Version 1.6.7
+</h2>
+
+<ul>
+
+<li><a name="v1.6.7_xsddoc"></a>
+  <b>Improvements of &ldquo;<a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a>&rdquo; templates 
+    (XML Schema Documentation Generator)</b>
+  <p>
+  See: <a href="templates/XSDDoc/CHANGES.html#v1.6.7"><code>templates/XSDDoc/CHANGES.html</code> | Version 1.6.7</a>
+  </p>
+</li>
+<li><a name="v1.6.7_generator"></a>
+  <b>Template interpreter / output generator</b>
+  <p>
+  <ul>
+    <li>
+      A bug has been fixed which caused <code>java.lang.ClassCastException</code> exception
+      happening when a schema with unspecified (i.e. global) target namespace imported another schema using
+      <code>&lt;xs:include&gt;</code> directive.
+      <p>
+    </li>
+    <li>
+      Reworked scaling of images in HTML.
+      <p>
+      In templates, the new image size must be specified in device-independent units (like points).
+      Before that, it was an HTML browser who converted points into pixels, which might be
+      responsible for producing images with unpredictable sizes.
+      <p>
+      Now, when generating HTML, the DocFlex generator itself converts point size into pixel size according 
+      to the DPI value specified in the formatting properties of the given templates
+      (see: <i>Template Designer | File | Properties | Formatting | General | Resolution (DPI)</i>).
+      So, in HTML, the new image size will always be specified in pixels.
+      <p>
+    </li>
+    <li>
+      Support of images in BMP format.
+      <p>
+      Now, all supported image formats include: GIF, PNG, JPG, WMF, BMP
+    </li>
+  </ul>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.6.6"></a>
+  Version 1.6.6
+</h2>
+
+<dl>
+<dd>
+  Upgrade with the latest DocFlex core optimized for Java 6
+</dd>
+</dl>
+
+<h2>
+  <a name="v1.6.5"></a>
+  Version 1.6.5
+</h2>
+
+<ul>
+
+<li><a name="v1.6.5_xerces_2.9.0"></a>
+  <b>Upgrade with the latest Apache Xerces2 Java Parser 2.9.0</b>
+  <p>
+  This open source Java library is used by DocFlex/XML (all editions) and 
+  included in the package (see <a href="README.html#contents">Package Contents</a>).
+  Support of the newest version of <a href="http://xerces.apache.org">Apache Xerces</a>
+  will help to integrate DocFlex/XML seamlessly with the latest versions of other 
+  important tools (e.g. <a href="http://ant.apache.org">Apache Ant</a>).
+  <p>
+</li>
+<li><a name="v1.6.5_fixed_bugs"></a>
+  <b>Fixed a bug</b>
+  <p>
+  The bug happened when DocFlex/XML home directory was placed inside another directory 
+  whose name contained a space (e.g. <code>'C:\Program Files\docflex-xml'</code>).
+  It caused <code>java.io.FileNotFoundException</code> during opening the configuration files. 
+  Now, this is working.
+</li>
+</ul>
+
+<h2>
+  <a name="v1.6.4"></a>
+  Version 1.6.4
+</h2>
+
+<dl>
+<dd>
+  Additions/improvements of the documentation.
+</dd>
+</dl>
+
+<h2>
+  <a name="v1.6.3"></a>
+  Version 1.6.3
+</h2>
+
+<ul>
+
+<li><a name="v1.6.3_xsddoc"></a>
+  <b>Improvements of &ldquo;<a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a>&rdquo; templates 
+    (XML Schema Documentation Generator)</b>
+  <p>
+  See: <a href="templates/XSDDoc/CHANGES.html#v1.6.3"><code>templates/XSDDoc/CHANGES.html</code> | Version 1.6.3</a>
+  </p>
+</li>
+<li><a name="v1.6.3_generator"></a>
+  <b>Template interpreter / output generator</b>
+  <p>
+  <ul>
+    <li>
+      The general performance has been improved (about 5%).
+      <p>
+    </li>
+    <li>
+      Better support for image formatting. 
+      Now, an image can be aligned both to the left or right of a text and wrapped by it.
+      This is supported both in HTML and RTF output.
+      An image can be aligned directly in a template (e.g. by specifying properties of an Image Control) 
+      or using <b><code>align</code></b> attribute of an <b><code>&lt;img&gt;</code></b> tag in 
+      a description preformatted with HTML/XHTML markup.
+    </li>
+  </ul>
+  <p>
+</li>
+<li><a name="v1.6.3_template_language"></a>
+  <b>Template language / Generator Object Model (GOM)</b>
+  <p>
+  <ul>
+    <li>
+      <i>Init/Finish Expressions</i> are now supported in Area Sections.
+      <p>
+    </li>
+    <li>
+      The font size assigned to a particular template component can be specified now
+      not only as a fixed value but also relatively (in percents) to the font size
+      of the component's context. 
+      (See component's Properties Dialog | Formatting | Text tab).
+      <p>
+    </li>
+    <li>
+      The "Alignment" formatting property of Image Control has been extended up to five
+      possible setting: 
+      <p>
+      <ol>
+        <li><i>Bottom (base line)</i></li>
+        <li><i>Middle (base line)</i></li>
+        <li><i>Top (text line)</i></li>
+        <li><i>Left (margin)</i></li>
+        <li><i>Right (margin)</i></li>
+      </ol>
+      <p>
+      (See Image Control Properties Dialog | Formatting | Image tab).
+      <p>
+    </li>
+    <li>
+      The <b><code>firstSentence()</code></b> function, which extracts the first sentence
+      from a long description text to be placed in a summary table, has been totally redeveloped.
+      Now, it recognizes the HTML markup and finds the first sentence boundary according 
+      to the pure text extracted from the original string (i.e. without HTML tags) as well as
+      stops on any HTML block tag (such as &lt;p&gt;). In the returned string, the original HTML 
+      markup is preserved and unfinished HTML elements are correctly closed.
+      (See Template Designer | <i>Help | Expression Assistant</i> dialog for more info).
+      <p>
+    </li>
+    <li>
+      A new GOM property <b><code>OutputFormat.renderEmbeddedHTML</code></b> has been added
+      to indicate if <i>"Render embedded HTML"</i> format option has been specified for the generator.
+      Now, this property is used in <a href="templates/XSDDoc/README.html">XSDDoc</a>
+      templates to better control processing of XHTML in XML schema annotations.
+    </li>
+  </ul>
+<p>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.6.2"></a>
+  Version 1.6.2
+</h2>
+
+<ul>
+
+<li><a name="v1.6.2_generator"></a>
+  <b>Template interpreter / output generator</b>
+  <p>
+  <ul>
+    <li>
+      Now, the generator consumes considerably less memory and works up to 10% faster!
+    </li>
+    <li>
+      The error reporting, when the generator works without GUI, is directed now to the 
+      <code>stderr</code> (by default) or in a separate <code>'docflex_error.log'</code> file 
+      (when it is specified with the newly introduced <b><code>-errlog</code></b> option).
+    </li>
+  </ul>
+  <p>
+</li>
+<li><a name="v1.6.2_gom"></a>
+  <b>Generator Object Model (GOM)</b>
+  <p>
+  <ul>
+    <li>
+      New properties <b><code>GOMIterator.prevItem</code></b> and <b><code>GOMIterator.nextItem</code></b>
+      were introduced as well as a method accompanying them: 
+      <b><code>GOMIterator.itemAt()</code></b>.
+      <p>
+    </li>
+    <li>
+      More new properties: <b><code>DSMElement.rawValue</code></b> and 
+      <b><code>DSMAttr.rawValue</code></b>. These properties allow accessing the unprocessed 
+      text values of XML elements/attributes directly obtained from the XML files. 
+      You can use this, for instance, like the following:
+      <b><code>contextElement.dsmElement.rawValue</code></b> 
+      (e.g. in the Formula Expression of a Data Control).
+    </li>
+  </ul>
+  <p>
+  For details, see Template Designer | <i>Help | Expression Assistant</i> dialog.
+</li>
+</ul>
+
+<h2>
+  <a name="v1.6"></a>
+  Version 1.6
+</h2>
+
+<ul>
+<li><a name="v1.6_xsdddoc"></a>
+  <b>Improvements of &ldquo;<a href="doc/index.html?docflex-xml/xsddoc/overview.html">XSDDoc</a>&rdquo; templates 
+    (XML Schema Documentation Generator)</b>
+  <p>
+  See: <a href="templates/XSDDoc/CHANGES.html#v1.6"><code>templates/XSDDoc/CHANGES.html</code> | Version 1.6</a>
+  </p>
+</li>
+<li><a name="v1.6_docs"></a>
+  <b>New documentation</b>
+  <p>
+  All generator properties accessible within FlexQuery expressions (&gt; 100) as well as
+  all general (148) and XML-specific (18) FlexQuery functions are fully documented now.
+  In total this took writing more than 330 KB of explanations in HTML!
+  <p>
+  You can find everything at the Template Designer | Help | Assistant dialog.
+  <p>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.5"></a>
+  Version 1.5
+</h2>
+
+<dl>
+<dd>
+  <b>The major breakthrough!</b>
+  <p>
+  <ul>
+    <li>
+      Now, DocFlex/XML supports processing with the same template any number of XML files at once 
+      (based on the same DTD or XML scheme), which are represented as a single meta-XML document.
+      <p>
+    </li>
+    <li>
+      The data querying capabilities are enormously enhanced by introducing <i>Element Maps</i>
+      and <i>formula-axis</i> in Location Paths / Location Rules.
+      Lots of new embedded FlexQuery functions have been added.
+      <p>
+    </li>
+    <li>
+      The first real-world and very powerful template application has been developed
+      basing on this new functionality -- the "<a href="templates/XSDDoc/README.html">XSDDoc</a>" 
+      set of templates that implements a superior quality XML schema documentation generator!
+      <p>
+    </li>
+    <li>
+      The freeware edition of DocFlex/XML called <i>"DocFlex/XML (Kit)"</i> has been released,
+      which basically includes the template interpreter/documentation generator without the
+      Template Designer. The freeware edition can be used as a runtime environment for executing 
+      your custom templates. In addition, it includes "<a href="templates/XSDDoc/README.html">XSDDoc</a>" 
+      and "<a href="README.html#running_xmldoc">XMLDoc</a>" sets of templates that allow using it 
+      simply as the best quality documentation generator for your XML Schemas or raw XML files 
+      available absolutely for free!
+      <p>
+    </li> 
+  </ul>
+</dd>
+</dl>
+
+<h2>
+  <a name="v1.0"></a>
+  Version 1.0
+</h2>
+
+<dl>
+<dd>
+  <b>Here, the story begins!</b>
+  <p>
+  The first version DocFlex/XML has been released, which started the third and the most advanced product line
+  based on
+  <a href="doc/index.html?general/about.html">DocFlex Technology</a>.
+  (The previous two,
+  <a href="http://www.filigris.com/docflex-javadoc/">DocFlex/Javadoc</a> and 
+  <a href="http://www.filigris.com/docflex-together/">DocFlex/Together</a>,
+  had been already available for more than a year before that.)
+  <p>
+  Most of the document formatting capabilities was already in place. 
+  All processing of XML files was already based on the data type information obtained from DTD or XML Schemas.
+  However, the actual data sources possible to process at once with a single template were limited to only
+  one XML file.
+  <p>
+  The <i>"Sales Report"</i> and <i>"Alternative to XSLT"</i> <a href="README.html#running_samples">samples</a> 
+  come from those times.
+</dd>
+</dl>
+
+<hr>
+<span style="font-family: Verdana, helvetica; font-size: 13px">
+Copyright&copy; 2004-2014 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com">www.filigris.com</a> or
+e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+
+</body>
+</html>

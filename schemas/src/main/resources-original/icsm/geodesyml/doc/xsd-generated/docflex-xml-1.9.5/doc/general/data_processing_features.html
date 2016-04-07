@@ -1,0 +1,572 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex Technology - Overview - Data Processing Features</title>
+</head>
+
+<body>
+
+<h1>DocFlex Technology - Overview - Data Processing Features</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ul>
+<li><a href="#xml_data_sources">XML file data sources</a></li>
+<li><a href="#java_data_sources">Java application data sources</a></li>
+<li><a href="#multiple_data_sources">Single document from multiple data sources</a></li>
+<li><a href="#framed_doc">Creating framed HTML documentation</a></li>
+<li><a href="#images">Inserting graphic images</a></li>
+<li><a href="#hyperlinks">Creating hyperlinks</a>
+    <ul>
+       <li><a href="#targeting_frame_windows">Targeting frame windows</a></li>
+       <li><a href="#imagemaps">Hyperlinks within images (imagemaps)</a></li>
+    </ul>
+</li>
+<li><a href="#data_types">Supported data types</a></li>
+<li><a href="#fq_expr">FlexQuery-expressions</a></li>
+<li><a href="#location_paths">Retrieving elements/attributes by Location Paths</a></li>
+<li><a href="#iterations">Iterations by elements, attributes, attribute values</a></li>
+<li><a href="#location_rules">Collecting elements by Location Rules</a>
+    <ul>
+       <li><a href="#traversing_references">Traversing element references</a></li>
+    </ul>
+</li>
+<li><a href="#other_methods">Other methods of collecting elements</a>
+    <ul>
+       <li><a href="#sequence">Sequence</a></li>
+       <li><a href="#custom">Custom</a></li>
+    </ul>
+</li>
+<li><a href="#sorting">Sorting</a>
+    <ul>
+       <li><a href="#sorting_elements">Elements</a></li>
+       <li><a href="#sorting_attributes">Attributes</a></li>
+       <li><a href="#sorting_attribute_values">Multiple values of a single attribute</a></li>
+    </ul>
+</li>
+</ul>
+<!-- END TABLE OF CONTENTS -->
+
+<h4>
+  <a name="xml_data_sources"></a>
+  XML file data sources
+</h4>
+
+<blockquote>
+Ability to use any XML files as a data sources, retrieve any character or numeric data
+from them and generate by such data any kind of formatted/hypertext output
+documents.
+<p class="mrg8">
+This features is available in <a href="../docflex-xml/about.html">DocFlex/XML</a>.
+</blockquote>
+
+<h4>
+  <a name="java_data_sources"></a>
+  Java application data sources
+</h4>
+
+<blockquote>
+Using special drivers written with
+<a href="about.html#api">DocFlex API</a>, it is also
+possible to connect to any other non-XML data sources provided by a Java application.
+
+<p class="mrg8">
+Such data sources (called <a href="about.html#dsm"><i>Data Source Models</i></a>
+(or <b>DSM</b>s) and drivers to them --
+<a href="about.html#dsm_driver"><i>DSM Drivers</i></a>)
+can be processed in the same way as XML-files and allow to generate by them any kind
+of documentation.
+
+<p class="mrg8">
+See <a target="_blank" href="http://www.filigris.com/docflex-javadoc/">DocFlex/Javadoc</a>
+and <a target="_blank" href="http://www.filigris.com/docflex-together/">DocFlex/Together</a>
+as rich examples of working with such application-provided data sources.
+</blockquote>
+
+<h4>
+  <a name="multiple_data_sources"></a>
+  Single document from multiple data sources
+</h4>
+
+<blockquote>
+By calling from one template another templates
+(<a href="template_components.html#subtemplate">subtemplates</a>)
+it is possible to mix data from the different data sources and to generate by them a single documentation files.
+<p class="mrg8">
+The involved data sources can be of any possible nature, both XML and non-XML types.
+</blockquote>
+
+<h4>
+  <a name="framed_doc"></a>
+  Creating framed HTML documentation
+</h4>
+
+<blockquote>
+Using <a href="template_components.html#subtemplate">subtemplates</a>
+allows to generate from one or more data sources a documentation that consists of many
+separate HTML files interconnected by a common network of hyperlinks and displayed in separate frame windows.
+<p class="mrg8">
+This is achieved by creating special <b>frameset templates</b>.
+<p class="mrg8">
+Each frameset template consists of two major parts: the definition of a <i>frameset structure</i>
+and the <i>template body</i>.
+<p>
+The <b>frameset structure</b> is defined in the form of a tree as shown on the following screenshot:
+<p>
+<img src="images/frameset_structure.png" title="frameset structure definition">
+<p>
+It is used to generate a frameset HTML file which contains no actual data but only a layout of frame windows.
+<p class="mrg8">
+The documents displayed in the windows are generated during interpretation of the <b>template body</b>,
+which consists mostly of calls to the different document subtemplates:
+<p>
+<a href="http://www.filigris.com/docflex/images/frameset_template.html" target="_blank"><img src="images/frameset_template_s.png" title="Frameset Template" border="0"></a>
+
+</blockquote>
+
+<h4>
+  <a name="images"></a>
+  Inserting graphic images (both static and provided by Java application)
+</h4>
+
+<blockquote>
+DocFlex Technology supports inserting graphic images into the generated documentation.
+<p class="mrg8">
+The images can be either taken from the existing graphics files (via URLs, file pathnames or Java
+resource names specified in the templates) -- <b>static images</b>, or generated <b>dynamically</b>
+by a Java application and, then, provided to the
+<a href="about.html#generator">DocFlex Generator</a>
+by a custom written
+<a href="about.html#dsm_driver">DSM Driver</a>
+(see <a href="about.html#api">DocFlex API</a> for more details).
+
+<p class="mrg8">
+The supported graphics formats include JPEG, GIF, PNG, and WMF. Depending on the selected output
+format and the generator's settings, the images can be either inserted as the references to the
+graphics files stored externally near the generated documents (HTML, RTF) or embedded directly in the document
+files (RTF).
+See <a href="formatting_features.html#image_formatting">Image Formatting</a>
+for more details.
+
+<p class="mrg8">
+For more information about image support, see also
+<a href="template_components.html#image_control">Image Control</a>
+in
+<a href="template_components.html#components">Template Components</a>
+documentation.
+</blockquote>
+
+<h4>
+  <a name="hyperlinks"></a>
+  Creating hyperlinks
+</h4>
+
+<blockquote>
+DocFlex allows to generate hypertext links between any parts of the generated documentation
+as well as to the external URLs.
+<p class="mrg8">
+The internal links are generated using the special hyperlink <b>source-</b> and <b>target-anchors</b>
+defined within the properties of
+<a href="templates_designer_features.html#template_components">template components</a>.
+Each anchor definition contains specifications for generating the <b>anchor keys</b>.
+<p>
+The following screenshot shows defining two hyperlink <b>source</b> anchors by a
+<a href="template_components.html#data_control">Data Control</a>
+component (the two are because this control generates a text hyperlink which loads two frame windows
+at once; see description <a href="#targeting_frame_windows">below</a>):
+<p>
+<a name="multiple_source_anchors"></a>
+<img src="images/def_hlinks.png" title="defining hyperlink source anchors">
+<p>
+And here is how the particular source anchor defined:
+<p>
+<a name="def_hlink"></a>
+<img src="images/def_hlink.png" title="defining a source anchor">
+<p>
+The following two screenshot show defining a hyperlink <b>target</b> anchor (there may be also several of them;
+but in that case, this is only for convenience purpose):
+<p>
+<img src="images/def_htargets.png" title="defining hyperlink target anchors">
+<p>
+<img src="images/def_htarget.png" title="defining a target anchor">
+<p>
+The generation is subdivided into two phases:
+<ol class="mrg8">
+  <li class="mrg8">
+    During the first (<i>estimation</i>) phase, by the anchor definitions specified in the templates,
+    the possible anchor positions in the output documents are produced, together with their anchor keys.
+    These positions are stored in a single pool for all generated documents.
+  </li>
+  <li class="mrg8">
+    On the second (<i>generation</i>) phase, when the real output is generated, by each anchor having
+    a match in the anchor pool (i.e. another one of the opposite source/target type and with the same keys),
+    the real hyperlink anchor (source or target) is produced and inserted in the output.
+  </li>
+</ol>
+
+<p>
+<a name="targeting_frame_windows"></a>
+<u>Targeting frame windows</u>
+
+<p>
+A hyperlink source definition may include a name of the targeted frame window (see screenshot
+<a href="#def_hlink">above</a>).
+
+<p class="mrg8">
+It is also possibility to define by the same
+<a href="templates_designer_features.html#template_components">template component</a>
+several hyperlink sources assigned with different document destinations and
+targeted to different frame windows (see screenshot <a href="#multiple_source_anchors">above</a>).
+This allows to load from a generated hyperlink several frame windows at once
+with the different documents.
+<p>
+<a name="imagemaps"></a>
+<u>Hyperlinks within images (imagemaps)</u>
+<p>
+For images provided by a Java application (via <a href="about.html#dsm_driver">DSM Drivers</a>),
+it is possible to generate multiple hyperlinks within a single image.
+To do this, the DSM Driver should also provide a hypertext <b>imagemap</b> for the image.
+<p>
+The following screenshot shows how various hyperlinks are defined for a complex diagram image
+(specified in the
+<a href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#diagram.tpl" target="_blank">diagram.tpl</a>
+template included in <a href="../docflex-xml/xsddoc/index.html">DocFlex/XML | XSDDoc</a>):
+<p>
+<img src="images/image_hlinks.png" title="defining image hyperlinks">
+
+</blockquote>
+
+<h4>
+  <a name="data_types"></a>
+  Supported data types
+</h4>
+
+<blockquote>
+DocFlex recognizes the following data types of XML-element/attribute values:
+<ul class="mrg8">
+  <li><code><b>string</b></code></li>
+  <li><code><b>number</b></code></li>
+  <li><code><b>boolean</b></code></li>
+  <li><code><b>object</b></code></li>
+</ul>
+<p class="mrg8">
+These data types are considered in many situations. For example, when defining
+<a href="#sorting">sorting</a> of sequences of elements or attributes.
+
+<p class="mrg8">
+The '<code>object</code>' data type represents a reference to any Java object and is useful
+when a data source is <a href="#java_data_sources">provided by a Java applications</a>
+and represents its internal data.
+
+<p class="mrg8">
+In addition, DocFlex recognizes attributes with the <b>element identifier</b> data types:
+<ul class="mrg8">
+  <li><code><b>ID</b></code></li>
+  <li><code><b>IDREF</b></code></li>
+  <li><code><b>IDREFS</b></code></li>
+</ul>
+<p class="mrg8">
+The values of <code>ID</code> attributes are used to distinguish the particular elements.
+The values of <code>IDREF</code> or <code>IDREFS</code> attributes can be used for generation
+of <A href="#hyperlinks">hyperlinks</A>.
+</blockquote>
+
+<h4>
+  <a name="fq_expr"></a>
+  FlexQuery-expressions
+</h4>
+
+<blockquote>
+FlexQuery-expressions are small scripts with Java-based syntax widely used in DocFlex templates
+to specify all kinds of dynamically computed settings (such as dynamic
+<a href="templates_designer_features.html#component_properties">properties of template components</a>,
+filter conditions and so on).
+<p>
+The current FlexQuery implementation supports the following features:
+<ul>
+<li class="wide">
+   Each script may consist of any number of statements delimited with semicolons.
+   The last statement should be an expression returning the result value of the whole script.
+   The intermediate statements currently can be only assignments either to local variables
+   (which can be used further within the following statements) or to generator properties.
+</li>
+<li class="wide">
+   The supported operators within the expressions are the following:
+   <p class="mrg8">
+   <table border="1" cellspacing="1" cellpadding="5">
+     <tr>
+       <td>Arithmetical</td>
+       <td>+, -, *, /, %</td>
+     </tr>
+     <tr>
+       <td>String concatenation</td>
+       <td>+</td>
+     </tr>
+     <tr>
+       <td>Number comparison</td>
+       <td>==, !=, <, <=, >, >=</td>
+     </tr>
+     <tr>
+       <td>String and other types comparison</td>
+       <td>==, !=</td>
+     </tr>
+     <tr>
+       <td>Logical</td>
+       <td>!, &&, ||</td>
+     </tr>
+     <tr>
+       <td>Conditional</td>
+       <td>?:</td>
+     </tr>
+     <tr>
+       <td>Function call</td>
+       <td><i>func</i> (<i>args</i>)</td>
+     </tr>
+     <tr>
+       <td>Property access</td>
+       <td>-&gt; or .</td>
+     </tr>
+  </table>
+</li>
+<li class="wide">
+  Each expression may return a value of any Java class type.
+  However, only values of <code>string,</code> <code>number</code> and <code>boolean</code> types
+  (which are equivalent of Java <code>java.lang.String,</code> <code>java.lang.Number</code> and
+  <code>java.lang.Boolean</code> classes) can be processed by expression operators.
+  Values of other types can be only passed as function parameters.
+</li>
+<li class="wide">
+  More than 80 general-purpose built-in <a name="utility_functions"></a><b>utility functions</b>
+  are now available within the FlexQuery-expressions.
+</li>
+<li class="wide">
+  A special utility function <code>'callForName()'</code> allows to invoke a method of any
+  custom-written external Java-class (implementing a special interface from
+  <a href="about.html#api">DocFlex API</a>).
+</li>
+<li class="wide">
+  Any custom implemented <a href="about.html#dsm_driver">DSM Driver</a>
+  may also register its own utility functions to allow access to some specific features of
+  the underlying <a href="about.html#dsm">DSM</a>.
+  <p class="mrg8">
+  For instance, <a target="_blank" href="http://www.filigris.com/docflex-together/">DocFlex/Together</a>
+  provides more than 20 additional utility functions which allow to use the functionality specific
+  for Together OpenAPI interfaces.
+</li>
+<li class="wide">
+  Within FlexQuery-expressions, it is possible to access the
+  <a href="templates_designer_features.html#template_parameters">template parameters</a>
+  as well as various generator variables organized in the form of hierarchy of objects and <b>properties</b>
+  of Generator Object Model (similar to Document Object Model in Dynamic HTML).
+</li>
+</ul>
+</blockquote>
+
+<h4>
+  <a name="location_paths"></a>
+  Retrieving elements/attributes by Location Paths
+</h4>
+
+<blockquote>
+<dl>
+<dt><a href="element_iterator_details.html#location_path">Location Paths</a>
+    are special expressions used in DocFlex templates to specify searching of elements or attributes.
+    Location Paths applied in DocFlex are similar to those in <b>XPath</b> and looks like the following:
+</dt>
+<dd><code><i>Step1</i> / <i>Step2</i> / ... / <i>StepN</i></code></dd>
+<dt>Each step may assume the form:</dt>
+<dd><code><i>axis</i> :: <i>ETs</i> [<i>filter</i>]</code></dd>
+<dt>where <code><i>axis</i></code> is the step's axis;
+    <code><i>ETs</i></code> is a list of matching element types (delimited with&nbsp;'|');
+    <code><i>filter</i></code> is a boolean <a href="#fq_expr">FlexQuery-expression</a>
+</dt>
+</dl>
+<p>
+<code><i>StepN</i></code>, in addition, may assume the form:
+<blockquote class="mrg8"><code>@<i>name</i></code></blockquote>
+<p class="mrg8">
+where <code><i>name</i></code> is the name of an attribute.
+<p>
+However, there are several important differences between Location Paths used in DocFlex
+and those used in XPath:
+<ol>
+<li class="wide">
+  The supported axes introduced in XPath are limited to the following:
+  <code>child,</code> <code>self,</code> <code>child-or-self,</code> <code>descendant,</code>
+  <code>descendant-or-self</code> and <code>attribute</code> (only in the form <code>@<i>name</i></code>).
+</li>
+<li class="wide">
+  A new axis <code><i>link</i></code> was introduced, which has a form:
+  <blockquote class="mrg8"><code><i>name</i>^</code></blockquote>
+  <p class="mrg8">
+  where <code><i>name</i></code> is the name of an attribute whose type should be either <code>IDREF</code>
+  or <code>IDREFS</code>. This axis selects all those elements of the XML document
+  (or <a href="about.html#dsm">DSM</a>) whose identifiers are listed
+  in the attribute's value.
+</li>
+<li class="wide">
+  XPath predicates are replaced with a <code><i>filter</i></code>, which can be a boolean
+  <a href="#fq_expr">FlexQuery-expression</a>.
+</li>
+</ol>
+<p>
+For more information see documentation:
+<a href="element_iterator_details.html#location_path">Element Iterator (details) | Location Paths</a>.
+</blockquote>
+
+<h4>
+  <a name="iterations"></a>
+  Iterations by elements, attributes, attribute values
+</h4>
+
+<blockquote>
+The general data processing scheme employed in DocFlex consists in organizing nested iterations
+by sets of elements collected from the data source. Such iterations are specified using
+<a href="template_components.html#element_iterator">Element Iterator</a>
+template components.
+<p class="mrg8">
+In addition to elements, it is possible to iterate by a set of attributes of a certain element or by multiple
+values of a certain attribute. Organizing iterations by sets of attributes can be useful when the same processing
+should be repeated for each attribute from the set. See
+<a href="template_components.html#attribute_iterator">Attribute Iterator</a>
+documentation for more details.
+</blockquote>
+
+<h4>
+  <a name="location_rules"></a>
+  Collecting elements by Location Rules
+</h4>
+
+<blockquote>
+This is a primary method used in DocFlex to specify collecting elements for iterations.
+According to this, an
+<a href="template_components.html#element_iterator">Element Iterator</a>
+is specified with a set of
+<a href="element_iterator_details.html#element_location_rule">Location Rules</a>.
+<dl>
+   <dt>Each Location Rule has the following form:</dt>
+   <dd><code><i>Matching Element Types</i> &#8594; <i>Location Path</i></code></dd>
+   <dt>The rule is activated when the current context element has one of the <code><i>Matching Element Types</i></code>.
+       Then, the <code><i>Location Path</i></code> is interpreted against the
+       <a href="template_components.html#context_element">context element</a>
+       and a set of new elements is produced.
+   </dt>
+</dl>
+<p>
+<a name="traversing_references"></a>
+<u>Traversing element references</u>
+<p>
+Unlike techniques available in <a href="http://www.w3.org/TR/xslt" target="_blank"><i>XSL Transformations</i></a>,
+Location Rules allow to collect elements not only within a subtree attached to the
+<a href="template_components.html#context_element">context element</a>
+but also to involve in the search the elements accessible via reference attributes
+(i.e. those with <code>IDREF</code> or <code>IDREFS</code> types).
+This is achieved by using <code><i>link</i></code>-axes (introduced in DocFlex)
+together with specifying some Location Rules as recursive (i.e. repeatable an undefined number of times).
+For more details, see documentation:
+<a href="element_iterator_details.html#recursive_location_rules">Element Iterator (details) | Recursive Location Rules</a>.
+<p>
+The following screenshot shows specifying the collecting elements by Location Rules in an
+<a href="template_components.html#element_iterator">Element Iterator</a>:
+<p>
+<img src="images/ei_sope_advanced.png" title="Using Location Rules">
+</blockquote>
+
+<h4>
+  <a name="other_methods"></a>
+  Other methods of collecting elements
+</h4>
+
+<blockquote>
+Besides <a href="#location_rules">Location Rules</a>, DocFlex supports
+two additional alternative methods for collecting iterated elements:
+<p>
+<a name="sequence"></a>
+<u>Sequence</u>
+<blockquote>
+The set of elements is produced as a sequence of connected elements according to two
+<a href="#fq_expr">FlexQuery-expressions</a>:
+<ol class="mrg8">
+<li>
+  an expression calculating the first element (basing on the current
+  <a href="template_components.html#context_element">context element</a>)
+</li>
+<li>
+  an expression producing all subsequent elements each next from the previous one
+</li>
+</ol>
+</blockquote>
+<p>
+<a name="custom"></a>
+<u>Custom</u>
+<blockquote>
+This allows to organize iterations by an arbitrary set of elements
+provided by an external Java-class. The class should be written with the
+<a href="about.html#api">DocFlex&nbsp;API</a>.
+</blockquote>
+<p>
+For more information, see documentation:
+<a href="element_iterator_details.html#specifying_eis">Element Iterator (details) | Specifying Element Iteration Scope</a>.
+</blockquote>
+
+<h4>
+  <a name="sorting"></a>
+  Sorting
+</h4>
+
+<blockquote>
+The information placed in reports can be presented in a particular sorting order.
+This is achieved by specifying the sorting order for the iterated elements,
+attributes or the attribute values:
+<p>
+<a name="sorting_elements"></a>
+<u>Elements</u> can be sorted:
+<ul class="mrg8">
+  <li class="mrg8">by the element value (regarding its type)</li>
+  <li class="mrg8">by the value of a specified element attribute (regarding its type)</li>
+  <li class="mrg8">
+    by a specified compound key which may consist of an array of <b>subkeys</b> generated
+    separately for an element. The subkeys may have different data types and different
+    ordering (ascending or descending). Two compound keys are compared by
+    consecutive comparing their constituent subkeys regarding their data types and ordering.
+    <p>
+    Defining sorting by a compound key:
+    <p>
+    <img src="images/ei_sort_by_key.png" title="defining sorting by a compound key">
+  </li>
+</ul>
+<p>
+<a name="sorting_attributes"></a>
+<u>Attributes</u> can be sorted:
+<ul class="mrg8">
+  <li>by name</li>
+  <li>by value (regarding its type)</li>
+  <li>
+    by an arbitrary order defined in the
+    <a href="template_components.html#attribute_iterator">Attribute Iterator</a>.
+  </li>
+</ul>
+<p>
+<a name="sorting_attribute_values"></a>
+<u>Multiple values of a single attribute</u> can be sorted according to the value type.
+<p>
+For more information, see documentation:
+<a href="element_iterator_details.html#sorting_eis">Element&nbsp;Iterator&nbsp;(details)&nbsp;|&nbsp;Sorting&nbsp;Element&nbsp;Iteration&nbsp;Scope</a>
+and
+<a href="template_components.html#attribute_iterator">Template&nbsp;Components&nbsp;|&nbsp;Attribute&nbsp;Iterator</a>.
+</blockquote>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2003-2009 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

@@ -1,0 +1,655 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<e5SalesExport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xml.element5.com/1.0/salesexport.xsd">
+	<ExportCTime>2004-12-24T07:24:16</ExportCTime>
+	<RangeFromDate>2004-07-01</RangeFromDate>
+	<RangeToDate>2005-04-01</RangeToDate>
+	<ExportRefundsAndChargebacks>false</ExportRefundsAndChargebacks>
+	<ExportPurchaseItemKeys>true</ExportPurchaseItemKeys>
+	<Purchase>
+		<PurchaseId>0000000</PurchaseId>
+		<PurchaseDate>2004-07-05T16:10:18</PurchaseDate>
+		<PurchaseOrigin>online</PurchaseOrigin>
+		<PaymentCompleteDate>2004-07-05T16:10:18</PaymentCompleteDate>
+		<PaymentStatus>complete</PaymentStatus>
+		<CustomerData>
+			<BillingContact>
+				<Salutation>MR.</Salutation>
+				<FirstName>Anonymous Explorer</FirstName>
+				<Company>(undisclosed)</Company>
+				<Email>undisclosed@email.com</Email>
+				<Phone>???</Phone>
+				<Address>
+					<Street1>Unspecified</Street1>
+					<City>Unspecified</City>
+					<CountryId>??</CountryId>
+					<Country>UNKNOWN COUNTRY</Country>
+				</Address>
+			</BillingContact>
+			<DeliveryContact>
+				<Salutation>MR.</Salutation>
+				<FirstName>Anonymous Explorer</FirstName>
+				<Company>(undisclosed)</Company>
+				<Email>undisclosed@email.com</Email>
+				<Phone>???</Phone>
+				<Address>
+					<Street1>Unspecified</Street1>
+					<City>Unspecified</City>
+					<CountryId>??</CountryId>
+					<Country>UNKNOWN COUNTRY</Country>
+				</Address>
+			</DeliveryContact>
+			<CustomerPaymentData>
+				<PaymentType>No payment</PaymentType>
+			</CustomerPaymentData>
+			<Language>English</Language>
+			<RegName>Anonymous Explorer</RegName>
+			<SubscribeNewsletter>true</SubscribeNewsletter>
+		</CustomerData>
+		<PurchaseItem>
+			<RunningNo>1</RunningNo>
+			<ProductId>214632</ProductId>
+			<ProductName>DocFlex/Doclet</ProductName>
+			<NotificationNo>2</NotificationNo>
+			<DeliveryType>Electronically</DeliveryType>
+			<Currency>EUR</Currency>
+			<Quantity>1</Quantity>
+			<ProductSinglePrice>00.00</ProductSinglePrice>
+			<VatPct>16</VatPct>
+			<Discount>0.00</Discount>
+			<ExtendedDownloadPrice>0.00</ExtendedDownloadPrice>
+			<ManualOrderPrice>0.00</ManualOrderPrice>
+			<ShippingPrice>0.00</ShippingPrice>
+			<ShippingVatPct>16</ShippingVatPct>
+			<PurchaseItemKey>
+				<Data>
+					R0lGODlhCwAUAPcAAB0XFx0YEh4ZExkaFRwYFR8aFB0ZFh4ZFhwbFx8aFh4aFx8aFx0cFx0ZGB4YGB8ZGR8bGB4aGR4YGh8ZGx8bGh4aGx4dGx8bHCEXFSAZEyIZFCEaFCAbFSEZFyAbFyIaFyMfFicfFCceFS8eFCAXGCMZGCAbGCIaGCIZGiAaGiMaGyEcGSshFy8oFicgGCUiGScgGi4hGy0kGzchFjMnFzYlFTckFjgiFTcjGjYkGjclGzQmGzAmHTkjGDomHTUtGj81Ej4zFT80FC4pJS4oKDApIzEuJzYvJTgvKDovKTYwIDw2JjwzKkIlE0MjFEMjFkMmFEElF0InFkUkFUMoF0IkGUMlGkApGUcqHEgrGUoqG0gtHEI1EkA1FUE3FEA1F0A3FkQ1FkM2JUg+JVM2JlY3JVQ3J1Y8JVk3K1Y9KVc7LVg4KW06KW1ZEHpoFEdALU9DLVJEIV5PLkpCNXZMNmBTMHttUotCL41CLY5DLIxELIxDMJpQM5tQOZxSOZtTPZ1QPJ5QPJlWQ55VQppXRJpaQZxYRa9pT6pqUa1rU61sUK9tU7x8YeR/a+t9bOh/bOl/b8uuCMyyB8mzCN+2BtC1DN+6EeK+EOi9GPPFGt+9WeeBa+mAat6+a864fNHCf97He/HQZ+PKdu3Pd/fadvjbdfHYe/XbepSQj9O5htzJh9LHkezWgfTag/XfifvfjPTfkPbhhvriiPrjl/rjnfninvDksvfosf7ot/vvvQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAAAEALAAAAAALABQAAAi/AFsEAeNFSBguXYB8odGmEiVMkzJFsnRJkhssaPQsugGpCSBCU9JkKXPnkI1HUQINuqJGi5k9iWpwkuKnUJUzW8jgSaTDkZM+gqisCbAjj6IZnKz8McQigFM2iHJsesKHjtOrPno0goLjqtcQjEZ49VoEFZGxXu2gDfCjDhNTc+SI8fqCVStasELJ8DoGlKxct0TBufpGVaxStXC50hTnKohPpE7N6uTCKxJbqV55GrXE6xEjMFYN4aFkbZKxAQEA
+				</Data>
+			</PurchaseItemKey>
+		</PurchaseItem>
+	</Purchase>
+	<Purchase>
+		<PurchaseId>5328989</PurchaseId>
+		<PurchaseDate>2004-08-11T18:32:10</PurchaseDate>
+		<PurchaseOrigin>fax</PurchaseOrigin>
+		<PaymentCompleteDate>2004-08-22T10:09:00</PaymentCompleteDate>
+		<PaymentStatus>complete</PaymentStatus>
+		<CustomerData>
+			<BillingContact>
+				<Salutation>MR</Salutation>
+				<LastName>Gosling</LastName>
+				<FirstName>James</FirstName>
+				<Company>Sun Microsystems, Inc.</Company>
+				<Email>james.gosling@sun.com</Email>
+				<Phone>1-650-960-1300</Phone>
+				<Address>
+					<Street1>4150 Network Circle</Street1>
+					<City>Santa Clara</City>
+					<PostalCode>CA 95054</PostalCode>
+					<CountryId>US</CountryId>
+					<Country>USA</Country>
+				</Address>
+			</BillingContact>
+			<DeliveryContact>
+				<Salutation>MR</Salutation>
+				<LastName>Gosling</LastName>
+				<FirstName>James</FirstName>
+				<Company>Sun Microsystems, Inc.</Company>
+				<Email>james.gosling@sun.com</Email>
+				<Phone>1-650-960-1300</Phone>
+				<Address>
+					<Street1>4150 Network Circle</Street1>
+					<City>Santa Clara</City>
+					<PostalCode>CA 95054</PostalCode>
+					<CountryId>US</CountryId>
+					<Country>USA</Country>
+				</Address>
+			</DeliveryContact>
+			<CustomerPaymentData>
+				<PaymentType>Invoice</PaymentType>
+				<Currency>EUR</Currency>
+			</CustomerPaymentData>
+			<Language>English</Language>
+			<RegName>James Gosling</RegName>
+			<SubscribeNewsletter>true</SubscribeNewsletter>
+		</CustomerData>
+		<PurchaseItem>
+			<RunningNo>2</RunningNo>
+			<ProductId>214631</ProductId>
+			<ProductName>DocFlex/Javadoc</ProductName>
+			<NotificationNo>1</NotificationNo>
+			<DeliveryType>Electronically</DeliveryType>
+			<Currency>EUR</Currency>
+			<Quantity>1</Quantity>
+			<ProductSinglePrice>99.00</ProductSinglePrice>
+			<VatPct>16</VatPct>
+			<Discount>0.00</Discount>
+			<ExtendedDownloadPrice>0.00</ExtendedDownloadPrice>
+			<ManualOrderPrice>0.00</ManualOrderPrice>
+			<ShippingPrice>0.00</ShippingPrice>
+			<ShippingVatPct>0</ShippingVatPct>
+			<PurchaseItemKey>
+				<Data>
+					R0lGODlhEgATAKIEAP////95C+C9/yE5vQAAAAAAAAAAAAAAACH5BAEAAAQALAAAAAASABMAAANcSLrcviGo+Fi8t84AYpca4XHUMwzA5wEnc6YYlrbEIKgp7AmDYgcCTk4n4PmCyFsqCDTWkM0ls9h7AqOAYoR6vBalW+cvCW5WT16lFkjzhctVR+CVHYBCtTYenwAAOw==
+				</Data>
+			</PurchaseItemKey>
+		</PurchaseItem>
+	</Purchase>
+	<Purchase>
+		<PurchaseId>2728939</PurchaseId>
+		<PurchaseDate>2004-09-17T12:12:11</PurchaseDate>
+		<PurchaseOrigin>fax</PurchaseOrigin>
+		<PaymentCompleteDate>2004-09-17T12:12:11</PaymentCompleteDate>
+		<PaymentStatus>complete</PaymentStatus>
+		<CustomerData>
+			<BillingContact>
+				<Salutation>MR</Salutation>
+				<LastName>McNealy</LastName>
+				<FirstName>Scott G.</FirstName>
+				<Company>Sun Microsystems, Inc.</Company>
+				<Email>ceo@sun.com</Email>
+				<Phone>1-650-960-1300</Phone>
+				<Address>
+					<Street1>4150 Network Circle</Street1>
+					<City>Santa Clara</City>
+					<PostalCode>CA 95054</PostalCode>
+					<CountryId>US</CountryId>
+					<Country>USA</Country>
+				</Address>
+			</BillingContact>
+			<DeliveryContact>
+				<Salutation>MR</Salutation>
+				<LastName>McNealy</LastName>
+				<FirstName>Scott G.</FirstName>
+				<Company>Sun Microsystems, Inc.</Company>
+				<Email>ceo@sun.com</Email>
+				<Phone>1-650-960-1300</Phone>
+				<Address>
+					<Street1>4150 Network Circle</Street1>
+					<City>Santa Clara</City>
+					<PostalCode>CA 95054</PostalCode>
+					<CountryId>US</CountryId>
+					<Country>USA</Country>
+				</Address>
+			</DeliveryContact>
+			<CustomerPaymentData>
+				<PaymentType>Invoice</PaymentType>
+				<Currency>EUR</Currency>
+			</CustomerPaymentData>
+			<Language>English</Language>
+			<RegName>Sun Microsystems</RegName>
+			<SubscribeNewsletter>true</SubscribeNewsletter>
+		</CustomerData>
+		<PurchaseItem>
+			<RunningNo>3</RunningNo>
+			<ProductId>214631</ProductId>
+			<ProductName>DocFlex/Javadoc</ProductName>
+			<NotificationNo>1</NotificationNo>
+			<DeliveryType>Electronically</DeliveryType>
+			<Currency>EUR</Currency>
+			<Quantity>500</Quantity>
+			<ProductSinglePrice>99.00</ProductSinglePrice>
+			<VatPct>16</VatPct>
+			<Discount>0.00</Discount>
+			<ExtendedDownloadPrice>0.00</ExtendedDownloadPrice>
+			<ManualOrderPrice>0.00</ManualOrderPrice>
+			<ShippingPrice>0.00</ShippingPrice>
+			<ShippingVatPct>0</ShippingVatPct>
+			<PurchaseItemKey>
+				<Data>
+					R0lGODlhFAAQALMMAP///5mZmTMzMwAAAMzMzP//zGZmmcwAAAAzADMzZplmZmYAAAAAAAAAAAAAAAAAACH5BAEAAAwALAAAAAAUABAAAARZkMlJq734hs17rwEgjqRYEAIVIoaBlCaqAomiJMCg72c6hS4WDNCbGRYLQ26nK/6GJackxFwypYwQdIQNFL6HwAEs/sp+hHSAIVCz02eJYD5n0+33jH6/jwAAOw==
+				</Data>
+			</PurchaseItemKey>
+		</PurchaseItem>
+	</Purchase>
+	<Purchase>
+		<PurchaseId>1374090</PurchaseId>
+		<PurchaseDate>2004-10-25T10:45:11</PurchaseDate>
+		<PurchaseOrigin>online</PurchaseOrigin>
+		<PaymentCompleteDate>2004-10-25T10:45:11</PaymentCompleteDate>
+		<PaymentStatus>complete</PaymentStatus>
+		<CustomerData>
+			<BillingContact>
+				<Salutation>MR.</Salutation>
+				<FirstName>Curious Person</FirstName>
+				<Company>(undisclosed)</Company>
+				<Email>coolstuff@email.com</Email>
+				<Phone>???</Phone>
+				<Address>
+					<Street1>Unspecified</Street1>
+					<City>Undiclosed</City>
+					<CountryId>??</CountryId>
+					<Country>UNKNOWN</Country>
+				</Address>
+			</BillingContact>
+			<DeliveryContact>
+				<Salutation>MR.</Salutation>
+				<FirstName>Curious Person</FirstName>
+				<Company>(undisclosed)</Company>
+				<Email>coolstuff@email.com</Email>
+				<Phone>???</Phone>
+				<Address>
+					<Street1>Unspecified</Street1>
+					<City>Undiclosed</City>
+					<CountryId>??</CountryId>
+					<Country>UNKNOWN</Country>
+				</Address>
+			</DeliveryContact>
+			<CustomerPaymentData>
+				<PaymentType>Free</PaymentType>
+			</CustomerPaymentData>
+			<Language>English</Language>
+			<RegName>Curious Person</RegName>
+			<SubscribeNewsletter>true</SubscribeNewsletter>
+		</CustomerData>
+		<PurchaseItem>
+			<RunningNo>4</RunningNo>
+			<ProductId>221513</ProductId>
+			<ProductName>DocFlex/Together (Lite)</ProductName>
+			<NotificationNo>2</NotificationNo>
+			<DeliveryType>Electronically</DeliveryType>
+			<Currency>EUR</Currency>
+			<Quantity>1</Quantity>
+			<ProductSinglePrice>00.00</ProductSinglePrice>
+			<VatPct>16</VatPct>
+			<Discount>0.00</Discount>
+			<ExtendedDownloadPrice>0.00</ExtendedDownloadPrice>
+			<ManualOrderPrice>0.00</ManualOrderPrice>
+			<ShippingPrice>0.00</ShippingPrice>
+			<ShippingVatPct>16</ShippingVatPct>
+			<PurchaseItemKey>
+				<Data>
+					R0lGODlhCwAUAPcAAB0XFx0YEh4ZExkaFRwYFR8aFB0ZFh4ZFhwbFx8aFh4aFx8aFx0cFx0ZGB4YGB8ZGR8bGB4aGR4YGh8ZGx8bGh4aGx4dGx8bHCEXFSAZEyIZFCEaFCAbFSEZFyAbFyIaFyMfFicfFCceFS8eFCAXGCMZGCAbGCIaGCIZGiAaGiMaGyEcGSshFy8oFicgGCUiGScgGi4hGy0kGzchFjMnFzYlFTckFjgiFTcjGjYkGjclGzQmGzAmHTkjGDomHTUtGj81Ej4zFT80FC4pJS4oKDApIzEuJzYvJTgvKDovKTYwIDw2JjwzKkIlE0MjFEMjFkMmFEElF0InFkUkFUMoF0IkGUMlGkApGUcqHEgrGUoqG0gtHEI1EkA1FUE3FEA1F0A3FkQ1FkM2JUg+JVM2JlY3JVQ3J1Y8JVk3K1Y9KVc7LVg4KW06KW1ZEHpoFEdALU9DLVJEIV5PLkpCNXZMNmBTMHttUotCL41CLY5DLIxELIxDMJpQM5tQOZxSOZtTPZ1QPJ5QPJlWQ55VQppXRJpaQZxYRa9pT6pqUa1rU61sUK9tU7x8YeR/a+t9bOh/bOl/b8uuCMyyB8mzCN+2BtC1DN+6EeK+EOi9GPPFGt+9WeeBa+mAat6+a864fNHCf97He/HQZ+PKdu3Pd/fadvjbdfHYe/XbepSQj9O5htzJh9LHkezWgfTag/XfifvfjPTfkPbhhvriiPrjl/rjnfninvDksvfosf7ot/vvvQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAAAEALAAAAAALABQAAAi/AFsEAeNFSBguXYB8odGmEiVMkzJFsnRJkhssaPQsugGpCSBCU9JkKXPnkI1HUQINuqJGi5k9iWpwkuKnUJUzW8jgSaTDkZM+gqisCbAjj6IZnKz8McQigFM2iHJsesKHjtOrPno0goLjqtcQjEZ49VoEFZGxXu2gDfCjDhNTc+SI8fqCVStasELJ8DoGlKxct0TBufpGVaxStXC50hTnKohPpE7N6uTCKxJbqV55GrXE6xEjMFYN4aFkbZKxAQEA
+				</Data>
+			</PurchaseItemKey>
+		</PurchaseItem>
+	</Purchase>
+	<Purchase>
+		<PurchaseId>5913050</PurchaseId>
+		<PurchaseDate>2004-11-10T12:41:11</PurchaseDate>
+		<PurchaseOrigin>online</PurchaseOrigin>
+		<PaymentCompleteDate>2004-11-10T12:41:11</PaymentCompleteDate>
+		<PaymentStatus>complete</PaymentStatus>
+		<CustomerData>
+			<BillingContact>
+				<Salutation>MR.</Salutation>
+				<FirstName>Undisclosed Well-wisher</FirstName>
+				<Company>(undisclosed)</Company>
+				<Email>undisclosed@email.com</Email>
+				<Phone>???</Phone>
+				<Address>
+					<Street1>Undisclosed</Street1>
+					<City>Undisclosed</City>
+					<CountryId>??</CountryId>
+					<Country>UNDISCLOSED</Country>
+				</Address>
+			</BillingContact>
+			<DeliveryContact>
+				<Salutation>MR.</Salutation>
+				<FirstName>Undisclosed Well-wisher</FirstName>
+				<Company>(undisclosed)</Company>
+				<Email>undisclosed@email.com</Email>
+				<Phone>???</Phone>
+				<Address>
+					<Street1>Undisclosed</Street1>
+					<City>Undisclosed</City>
+					<CountryId>??</CountryId>
+					<Country>UNDISCLOSED</Country>
+				</Address>
+			</DeliveryContact>
+			<CustomerPaymentData>
+				<PaymentType>Credit Card</PaymentType>
+				<Currency>USD</Currency>
+				<CCType>Visa</CCType>
+			</CustomerPaymentData>
+			<Language>English</Language>
+			<RegName>Undisclosed Well-wisher</RegName>
+			<SubscribeNewsletter>true</SubscribeNewsletter>
+		</CustomerData>
+		<PurchaseItem>
+			<RunningNo>5</RunningNo>
+			<ProductId>214631</ProductId>
+			<ProductName>DocFlex/Javadoc</ProductName>
+			<NotificationNo>2</NotificationNo>
+			<DeliveryType>Electronically</DeliveryType>
+			<Currency>EUR</Currency>
+			<Quantity>1</Quantity>
+			<ProductSinglePrice>99.00</ProductSinglePrice>
+			<VatPct>16</VatPct>
+			<Discount>0.00</Discount>
+			<ExtendedDownloadPrice>0.00</ExtendedDownloadPrice>
+			<ManualOrderPrice>0.00</ManualOrderPrice>
+			<ShippingPrice>0.00</ShippingPrice>
+			<ShippingVatPct>16</ShippingVatPct>
+			<PurchaseItemKey>
+				<Data>
+					R0lGODlhEgATAKIEAP////95C+C9/yE5vQAAAAAAAAAAAAAAACH5BAEAAAQALAAAAAASABMAAANcSLrcviGo+Fi8t84AYpca4XHUMwzA5wEnc6YYlrbEIKgp7AmDYgcCTk4n4PmCyFsqCDTWkM0ls9h7AqOAYoR6vBalW+cvCW5WT16lFkjzhctVR+CVHYBCtTYenwAAOw==
+				</Data>
+			</PurchaseItemKey>
+		</PurchaseItem>
+		<PurchaseItem>
+			<RunningNo>6</RunningNo>
+			<ProductId>221502</ProductId>
+			<ProductName>DocFlex/Together</ProductName>
+			<NotificationNo>2</NotificationNo>
+			<DeliveryType>Electronically</DeliveryType>
+			<Currency>EUR</Currency>
+			<Quantity>1</Quantity>
+			<ProductSinglePrice>299.00</ProductSinglePrice>
+			<VatPct>16</VatPct>
+			<Discount>0.00</Discount>
+			<ExtendedDownloadPrice>0.00</ExtendedDownloadPrice>
+			<ManualOrderPrice>0.00</ManualOrderPrice>
+			<ShippingPrice>0.00</ShippingPrice>
+			<ShippingVatPct>16</ShippingVatPct>
+			<PurchaseItemKey>
+				<Data>
+					R0lGODlhEgATAKIEAP////95C+C9/yE5vQAAAAAAAAAAAAAAACH5BAEAAAQALAAAAAASABMAAANcSLrcviGo+Fi8t84AYpca4XHUMwzA5wEnc6YYlrbEIKgp7AmDYgcCTk4n4PmCyFsqCDTWkM0ls9h7AqOAYoR6vBalW+cvCW5WT16lFkjzhctVR+CVHYBCtTYenwAAOw==
+				</Data>
+			</PurchaseItemKey>
+		</PurchaseItem>
+	</Purchase>
+	<Purchase>
+		<PurchaseId>5528339</PurchaseId>
+		<PurchaseDate>2004-12-01T12:12:11</PurchaseDate>
+		<PurchaseOrigin>fax</PurchaseOrigin>
+		<PaymentCompleteDate>2004-12-01T12:12:11</PaymentCompleteDate>
+		<PaymentStatus>complete</PaymentStatus>
+		<CustomerData>
+			<BillingContact>
+				<Salutation>MR</Salutation>
+				<LastName>Fuller</LastName>
+				<FirstName>Dale L. Fuller</FirstName>
+				<Company>Borland Corp.</Company>
+				<Email>ceo@borland.com</Email>
+				<Phone>1-(831)431-1000</Phone>
+				<Address>
+					<Street1>100 Enterprise Way</Street1>
+					<City>Scotts Valley</City>
+					<PostalCode>CA 95066-3249</PostalCode>
+					<CountryId>US</CountryId>
+					<Country>USA</Country>
+				</Address>
+			</BillingContact>
+			<DeliveryContact>
+				<Salutation>MR</Salutation>
+				<LastName>Fuller</LastName>
+				<FirstName>Dale L. Fuller</FirstName>
+				<Company>Borland Corp.</Company>
+				<Email>ceo@borland.com</Email>
+				<Phone>1-(831)431-1000</Phone>
+				<Address>
+					<Street1>100 Enterprise Way</Street1>
+					<City>Scotts Valley</City>
+					<PostalCode>CA 95066-3249</PostalCode>
+					<CountryId>US</CountryId>
+					<Country>USA</Country>
+				</Address>
+			</DeliveryContact>
+			<CustomerPaymentData>
+				<PaymentType>Invoice</PaymentType>
+				<Currency>EUR</Currency>
+			</CustomerPaymentData>
+			<Language>English</Language>
+			<RegName>Borland Corporation</RegName>
+			<SubscribeNewsletter>true</SubscribeNewsletter>
+		</CustomerData>
+		<PurchaseItem>
+			<RunningNo>7</RunningNo>
+			<ProductId>221502</ProductId>
+			<ProductName>DocFlex/Together</ProductName>
+			<NotificationNo>1</NotificationNo>
+			<DeliveryType>Electronically</DeliveryType>
+			<Currency>EUR</Currency>
+			<Quantity>250</Quantity>
+			<ProductSinglePrice>299.00</ProductSinglePrice>
+			<VatPct>16</VatPct>
+			<Discount>0.00</Discount>
+			<ExtendedDownloadPrice>0.00</ExtendedDownloadPrice>
+			<ManualOrderPrice>0.00</ManualOrderPrice>
+			<ShippingPrice>0.00</ShippingPrice>
+			<ShippingVatPct>0</ShippingVatPct>
+			<PurchaseItemKey>
+				<Data>
+					R0lGODlhFAAQALMMAP///5mZmTMzMwAAAMzMzP//zGZmmcwAAAAzADMzZplmZmYAAAAAAAAAAAAAAAAAACH5BAEAAAwALAAAAAAUABAAAARZkMlJq734hs17rwEgjqRYEAIVIoaBlCaqAomiJMCg72c6hS4WDNCbGRYLQ26nK/6GJackxFwypYwQdIQNFL6HwAEs/sp+hHSAIVCz02eJYD5n0+33jH6/jwAAOw==
+				</Data>
+			</PurchaseItemKey>
+		</PurchaseItem>
+	</Purchase>
+	<Purchase>
+		<PurchaseId>5723095</PurchaseId>
+		<PurchaseDate>2005-02-28T09:05:21</PurchaseDate>
+		<PurchaseOrigin>online</PurchaseOrigin>
+		<PaymentCompleteDate>2005-02-28T09:05:21</PaymentCompleteDate>
+		<PaymentStatus>complete</PaymentStatus>
+		<CustomerData>
+			<BillingContact>
+				<Salutation>MR.</Salutation>
+				<FirstName>Curious Person</FirstName>
+				<Company>(undisclosed)</Company>
+				<Email>coolstuff@email.com</Email>
+				<Phone>???</Phone>
+				<Address>
+					<Street1>Unspecified</Street1>
+					<City>Undiclosed</City>
+					<CountryId>??</CountryId>
+					<Country>UNKNOWN</Country>
+				</Address>
+			</BillingContact>
+			<DeliveryContact>
+				<Salutation>MR.</Salutation>
+				<FirstName>Curious Person</FirstName>
+				<Company>(undisclosed)</Company>
+				<Email>coolstuff@email.com</Email>
+				<Phone>???</Phone>
+				<Address>
+					<Street1>Unspecified</Street1>
+					<City>Undiclosed</City>
+					<CountryId>??</CountryId>
+					<Country>UNKNOWN</Country>
+				</Address>
+			</DeliveryContact>
+			<CustomerPaymentData>
+				<PaymentType>Credit Card</PaymentType>
+				<Currency>EUR</Currency>
+				<CCType>Visa</CCType>
+			</CustomerPaymentData>
+			<Language>English</Language>
+			<RegName>Curious Person</RegName>
+			<SubscribeNewsletter>true</SubscribeNewsletter>
+		</CustomerData>
+		<PurchaseItem>
+			<RunningNo>8</RunningNo>
+			<ProductId>221555</ProductId>
+			<ProductName>DocFlex/XML</ProductName>
+			<NotificationNo>2</NotificationNo>
+			<DeliveryType>Electronically</DeliveryType>
+			<Currency>EUR</Currency>
+			<Quantity>1</Quantity>
+			<ProductSinglePrice>199.00</ProductSinglePrice>
+			<VatPct>16</VatPct>
+			<Discount>0.00</Discount>
+			<ExtendedDownloadPrice>0.00</ExtendedDownloadPrice>
+			<ManualOrderPrice>0.00</ManualOrderPrice>
+			<ShippingPrice>0.00</ShippingPrice>
+			<ShippingVatPct>16</ShippingVatPct>
+			<PurchaseItemKey>
+				<Data>
+					R0lGODlhEgATAKIEAP////95C+C9/yE5vQAAAAAAAAAAAAAAACH5BAEAAAQALAAAAAASABMAAANcSLrcviGo+Fi8t84AYpca4XHUMwzA5wEnc6YYlrbEIKgp7AmDYgcCTk4n4PmCyFsqCDTWkM0ls9h7AqOAYoR6vBalW+cvCW5WT16lFkjzhctVR+CVHYBCtTYenwAAOw==
+				</Data>
+			</PurchaseItemKey>
+		</PurchaseItem>
+	</Purchase>
+	<Purchase>
+		<PurchaseId>14430590</PurchaseId>
+		<PurchaseDate>2005-03-12T11:31:11</PurchaseDate>
+		<PurchaseOrigin>online</PurchaseOrigin>
+		<PaymentCompleteDate>2005-03-12T11:31:11</PaymentCompleteDate>
+		<PaymentStatus>complete</PaymentStatus>
+		<CustomerData>
+			<BillingContact>
+				<Salutation>MR.</Salutation>
+				<FirstName>Bill Gates</FirstName>
+				<Company>Microsoft Corp.</Company>
+				<Email>bill.gates@microsoft.com</Email>
+				<Phone>(800) 426-9400</Phone>
+				<Address>
+					<Street1>One Microsoft Way</Street1>
+					<City>Redmond</City>
+					<PostalCode>WA 98052-6399</PostalCode>
+					<CountryId>US</CountryId>
+					<Country>USA</Country>
+				</Address>
+			</BillingContact>
+			<DeliveryContact>
+				<Salutation>MR.</Salutation>
+				<FirstName>Bill Gates</FirstName>
+				<Company>Microsoft Corp.</Company>
+				<Email>bill.gates@microsoft.com</Email>
+				<Phone>(800) 426-9400</Phone>
+				<Address>
+					<Street1>One Microsoft Way</Street1>
+					<City>Redmond</City>
+					<PostalCode>WA 98052-6399</PostalCode>
+					<CountryId>US</CountryId>
+					<Country>USA</Country>
+				</Address>
+			</DeliveryContact>
+			<CustomerPaymentData>
+				<PaymentType>Credit Card</PaymentType>
+				<Currency>USD</Currency>
+				<CCType>Visa</CCType>
+			</CustomerPaymentData>
+			<Language>English</Language>
+			<RegName>Bill Gates</RegName>
+			<SubscribeNewsletter>true</SubscribeNewsletter>
+		</CustomerData>
+		<PurchaseItem>
+			<RunningNo>9</RunningNo>
+			<ProductId>221555</ProductId>
+			<ProductName>DocFlex/XML</ProductName>
+			<NotificationNo>2</NotificationNo>
+			<DeliveryType>Electronically</DeliveryType>
+			<Currency>EUR</Currency>
+			<Quantity>1</Quantity>
+			<ProductSinglePrice>199.00</ProductSinglePrice>
+			<VatPct>16</VatPct>
+			<Discount>0.00</Discount>
+			<ExtendedDownloadPrice>0.00</ExtendedDownloadPrice>
+			<ManualOrderPrice>0.00</ManualOrderPrice>
+			<ShippingPrice>0.00</ShippingPrice>
+			<ShippingVatPct>16</ShippingVatPct>
+			<PurchaseItemKey>
+				<Data>
+					R0lGODlhEgATAKIEAP////95C+C9/yE5vQAAAAAAAAAAAAAAACH5BAEAAAQALAAAAAASABMAAANcSLrcviGo+Fi8t84AYpca4XHUMwzA5wEnc6YYlrbEIKgp7AmDYgcCTk4n4PmCyFsqCDTWkM0ls9h7AqOAYoR6vBalW+cvCW5WT16lFkjzhctVR+CVHYBCtTYenwAAOw==
+				</Data>
+			</PurchaseItemKey>
+		</PurchaseItem>
+		<PurchaseItem>
+			<RunningNo>10</RunningNo>
+			<ProductId>214631</ProductId>
+			<ProductName>DocFlex/Javadoc</ProductName>
+			<NotificationNo>2</NotificationNo>
+			<DeliveryType>Electronically</DeliveryType>
+			<Currency>EUR</Currency>
+			<Quantity>1</Quantity>
+			<ProductSinglePrice>99.00</ProductSinglePrice>
+			<VatPct>16</VatPct>
+			<Discount>0.00</Discount>
+			<ExtendedDownloadPrice>0.00</ExtendedDownloadPrice>
+			<ManualOrderPrice>0.00</ManualOrderPrice>
+			<ShippingPrice>0.00</ShippingPrice>
+			<ShippingVatPct>16</ShippingVatPct>
+			<PurchaseItemKey>
+				<Data>
+					R0lGODlhEgATAKIEAP////95C+C9/yE5vQAAAAAAAAAAAAAAACH5BAEAAAQALAAAAAASABMAAANcSLrcviGo+Fi8t84AYpca4XHUMwzA5wEnc6YYlrbEIKgp7AmDYgcCTk4n4PmCyFsqCDTWkM0ls9h7AqOAYoR6vBalW+cvCW5WT16lFkjzhctVR+CVHYBCtTYenwAAOw==
+				</Data>
+			</PurchaseItemKey>
+		</PurchaseItem>
+		<PurchaseItem>
+			<RunningNo>11</RunningNo>
+			<ProductId>221502</ProductId>
+			<ProductName>DocFlex/Together</ProductName>
+			<NotificationNo>2</NotificationNo>
+			<DeliveryType>Electronically</DeliveryType>
+			<Currency>EUR</Currency>
+			<Quantity>1</Quantity>
+			<ProductSinglePrice>299.00</ProductSinglePrice>
+			<VatPct>16</VatPct>
+			<Discount>0.00</Discount>
+			<ExtendedDownloadPrice>0.00</ExtendedDownloadPrice>
+			<ManualOrderPrice>0.00</ManualOrderPrice>
+			<ShippingPrice>0.00</ShippingPrice>
+			<ShippingVatPct>16</ShippingVatPct>
+			<PurchaseItemKey>
+				<Data>
+					R0lGODlhEgATAKIEAP////95C+C9/yE5vQAAAAAAAAAAAAAAACH5BAEAAAQALAAAAAASABMAAANcSLrcviGo+Fi8t84AYpca4XHUMwzA5wEnc6YYlrbEIKgp7AmDYgcCTk4n4PmCyFsqCDTWkM0ls9h7AqOAYoR6vBalW+cvCW5WT16lFkjzhctVR+CVHYBCtTYenwAAOw==
+				</Data>
+			</PurchaseItemKey>
+		</PurchaseItem>
+	</Purchase>
+	<Purchase>
+		<PurchaseId>7778339</PurchaseId>
+		<PurchaseDate>2005-04-01T12:12:12</PurchaseDate>
+		<PurchaseOrigin>fax</PurchaseOrigin>
+		<PaymentCompleteDate>2005-04-01T12:12:12</PaymentCompleteDate>
+		<PaymentStatus>complete</PaymentStatus>
+		<CustomerData>
+			<BillingContact>
+				<Salutation>MR.</Salutation>
+				<FirstName>Bill Gates</FirstName>
+				<Company>Microsoft Corp.</Company>
+				<Email>bill.gates@microsoft.com</Email>
+				<Phone>(800) 426-9400</Phone>
+				<Address>
+					<Street1>One Microsoft Way</Street1>
+					<City>Redmond</City>
+					<PostalCode>WA 98052-6399</PostalCode>
+					<CountryId>US</CountryId>
+					<Country>USA</Country>
+				</Address>
+			</BillingContact>
+			<DeliveryContact>
+				<Salutation>MR.</Salutation>
+				<FirstName>Bill Gates</FirstName>
+				<Company>Microsoft Corp.</Company>
+				<Email>bill.gates@microsoft.com</Email>
+				<Phone>(800) 426-9400</Phone>
+				<Address>
+					<Street1>One Microsoft Way</Street1>
+					<City>Redmond</City>
+					<PostalCode>WA 98052-6399</PostalCode>
+					<CountryId>US</CountryId>
+					<Country>USA</Country>
+				</Address>
+			</DeliveryContact>
+			<CustomerPaymentData>
+				<PaymentType>Invoice</PaymentType>
+				<Currency>USD</Currency>
+			</CustomerPaymentData>
+			<Language>English</Language>
+			<RegName>Microsoft Corporation</RegName>
+			<SubscribeNewsletter>true</SubscribeNewsletter>
+		</CustomerData>
+		<PurchaseItem>
+			<RunningNo>12</RunningNo>
+			<ProductId>221555</ProductId>
+			<ProductName>DocFlex/XML</ProductName>
+			<NotificationNo>2</NotificationNo>
+			<DeliveryType>Electronically</DeliveryType>
+			<Currency>EUR</Currency>
+			<Quantity>1500</Quantity>
+			<ProductSinglePrice>199.00</ProductSinglePrice>
+			<VatPct>16</VatPct>
+			<Discount>0.00</Discount>
+			<ExtendedDownloadPrice>0.00</ExtendedDownloadPrice>
+			<ManualOrderPrice>0.00</ManualOrderPrice>
+			<ShippingPrice>0.00</ShippingPrice>
+			<ShippingVatPct>16</ShippingVatPct>
+			<PurchaseItemKey>
+				<Data>
+					R0lGODlhFAAQALMMAP///5mZmTMzMwAAAMzMzP//zGZmmcwAAAAzADMzZplmZmYAAAAAAAAAAAAAAAAAACH5BAEAAAwALAAAAAAUABAAAARZkMlJq734hs17rwEgjqRYEAIVIoaBlCaqAomiJMCg72c6hS4WDNCbGRYLQ26nK/6GJackxFwypYwQdIQNFL6HwAEs/sp+hHSAIVCz02eJYD5n0+33jH6/jwAAOw==
+				</Data>
+			</PurchaseItemKey>
+		</PurchaseItem>
+	</Purchase>
+</e5SalesExport>

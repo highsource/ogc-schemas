@@ -1,0 +1,1074 @@
+<DOCFLEX_TEMPLATE VER='1.19'>
+CREATED='2004-06-21 01:50:00'
+LAST_UPDATE='2014-07-05 20:02:57'
+DESIGNER_TOOL='DocFlex SDK 1.x'
+DESIGNER_LICENSE_TYPE='Filigris Works Team'
+APP_ID='docflex-xml-wsdldoc'
+APP_NAME='DocFlex/XML WSDLDoc'
+APP_VER='1.0.b'
+APP_AUTHOR='Copyright © 2014 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.'
+FEATURE_TYPE='pro'
+TEMPLATE_TYPE='DocumentTemplate'
+DSM_TYPE_ID='wsdldoc'
+ROOT_ETS={'#DOCUMENTS';'xs:schema'}
+TITLE_EXPR='nsURI = getStringParam("$nsURI");
+
+title = (nsURI != "") ? \'Namespace "\' + nsURI + \'"\' : \'{no namespace}\';
+
+(parentTitle = getStringParam("docTitle")) != null
+  ? title + " | " + parentTitle : title'
+HTML_HEAD_EXPR='nsURI = getStringParam("$nsURI");
+
+title = (nsURI != "") ? \'Namespace "\' + nsURI + \'"\' : \'{no namespace}\';
+
+(parentTitle = getStringParam("docTitle")) != null
+  ? title = title + " | " + parentTitle;
+
+\'<script type="text/javascript">
+    window.onload = function() {
+        parent.document.title="\' + encodeJScriptString (title) + \'";
+    }
+</script>\''
+<TEMPLATE_PARAMS>
+	PARAM={
+		param.name='$nsURI';
+		param.title='Namespace URI';
+		param.type='string';
+	}
+	PARAM={
+		param.name='$scope';
+		param.description='Specifies the scope passed to subtemplates (called from this template):
+<ul>
+<li>"any" - unspecified</li>
+<li>"namespace" - namespace overview</li>
+<li>"schema" - schema overview</li>
+</ul>';
+		param.type='enum';
+		param.enum.values='any;namespace;schema';
+		param.defaultValue='namespace';
+		param.fixed='true';
+	}
+	PARAM={
+		param.name='$page.heading.left';
+		param.title='Page Heading (on the left)';
+		param.type='string';
+		param.defaultValue.expr='(ns = getStringParam("$nsURI")) != ""
+  ? \'Namespace "\' + ns + \'"\' : "{no namespace}"';
+		param.fixed='true';
+	}
+	PARAM={
+		param.name='$resourceOutputDir';
+		param.title='documentation resources directory';
+		param.type='string';
+	}
+	PARAM={
+		param.name='docTitle';
+		param.title='Documentation Title';
+		param.type='string';
+	}
+	PARAM={
+		param.name='doc.namespace';
+		param.title='Namespace Overview';
+		param.title.style.bold='true';
+		param.group='true';
+	}
+	PARAM={
+		param.name='doc.namespace.profile';
+		param.title='Namespace Profile';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.files';
+		param.title='WSDL File Summary';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.files.sorting';
+		param.title='Sorting';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.files.description';
+		param.title='Description';
+		param.type='enum';
+		param.enum.values='first_sentence;full;none';
+		param.enum.displayValues='first sentence;full;none';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.files.profile';
+		param.title='WSDL File Profile';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.files.profile.location';
+		param.title='File Location';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.files.profile.location.relative';
+		param.title='Relative Path';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.files.profile.location.hyperlink';
+		param.title='Hyperlink';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.files.profile.targetNamespace';
+		param.title='Target Namespace';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.files.profile.types.schemas';
+		param.title='Types / Schemas';
+		param.type='enum';
+		param.enum.values='list;summary;none';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.files.profile.defs';
+		param.title='WSDL Definitions';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.files.profile.relatedWSDLs';
+		param.title='Related WSDL Files';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.defs';
+		param.title='WSDL Definition Summary';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.defs.for';
+		param.title='Generate For';
+		param.title.style.italic='true';
+		param.group='true';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.defs.for.services';
+		param.title='Services';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.defs.for.bindings';
+		param.title='Bindings';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.defs.for.portTypes';
+		param.title='Port Types';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.defs.for.messages';
+		param.title='Messages';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.defs.sorting';
+		param.title='Sorting';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.defs.description';
+		param.title='Description';
+		param.type='enum';
+		param.enum.values='first_sentence;full;none';
+		param.enum.displayValues='first sentence;full;none';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.defs.profile';
+		param.title='Definition Profile';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.defs.profile.namespace';
+		param.title='Namespace';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.defs.profile.portType';
+		param.title='Port Type';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.defs.profile.includes';
+		param.title='Includes';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.defs.profile.defined';
+		param.title='Defined / XML Source';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.wsdl.defs.profile.used';
+		param.title='Used';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas';
+		param.title='Schema Summary';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.sorting';
+		param.title='Sorting';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.annotation';
+		param.title='Annotation';
+		param.type='enum';
+		param.enum.values='first_sentence;full;none';
+		param.enum.displayValues='first sentence;full;none';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.profile';
+		param.title='Schema Profile';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.profile.location';
+		param.title='Schema Location';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.profile.location.relative';
+		param.title='Relative Path';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.profile.location.hyperlink';
+		param.title='Hyperlink';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.profile.targetNamespace';
+		param.title='Target Namespace';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.profile.version';
+		param.title='Version';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.profile.components';
+		param.title='Components';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.profile.formDefault';
+		param.title='Default NS-Qualified Form';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.profile.blockDefault';
+		param.title='Default Block Attribute';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.profile.blockDefault.value';
+		param.title='Value';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.profile.blockDefault.meaning';
+		param.title='Meaning';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.profile.finalDefault';
+		param.title='Default Final Attribute';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.profile.finalDefault.value';
+		param.title='Value';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.profile.finalDefault.meaning';
+		param.title='Meaning';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.schemas.profile.relatedSchemas';
+		param.title='Related Schemas';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps';
+		param.title='XSD Component Summary';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.for';
+		param.title='Generate For';
+		param.title.style.italic='true';
+		param.group='true';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.for.elements';
+		param.title='Elements';
+		param.title.style.italic='true';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.for.elements.local';
+		param.title='Local Elements';
+		param.title.style.italic='true';
+		param.type='enum';
+		param.enum.values='all;complexType;none';
+		param.enum.displayValues='all;with complex type;none';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.for.complexTypes';
+		param.title='Complex Types';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.for.simpleTypes';
+		param.title='Simple Types';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.for.groups';
+		param.title='Element Groups';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.for.attributes';
+		param.title='Global Attributes';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.for.attributeGroups';
+		param.title='Attribute Groups';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.sorting';
+		param.title='Sorting';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.annotation';
+		param.title='Annotation';
+		param.type='enum';
+		param.enum.values='first_sentence;full;none';
+		param.enum.displayValues='first sentence;full;none';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile';
+		param.title='Component Profile';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.namespace';
+		param.title='Namespace';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.type';
+		param.title='Type';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.content';
+		param.title='Content';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.abstract';
+		param.title='Abstract';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.block';
+		param.title='Block';
+		param.group='true';
+		param.type='enum';
+		param.enum.values='any;non_default;none';
+		param.enum.displayValues='any;non-default only;none';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.block.value';
+		param.title='Value';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.block.meaning';
+		param.title='Meaning';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.final';
+		param.title='Final';
+		param.group='true';
+		param.type='enum';
+		param.enum.values='any;non_default;none';
+		param.enum.displayValues='any;non-default only;none';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.final.value';
+		param.title='Value';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.final.meaning';
+		param.title='Meaning';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.subst';
+		param.title='Subst.Gr';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.subst.heads';
+		param.title='List of group heads';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.subst.members';
+		param.title='List of group members';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.nillable';
+		param.title='Nillable';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.defined';
+		param.title='Defined';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.includes';
+		param.title='Includes';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.redefines';
+		param.title='Redefines';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.redefined';
+		param.title='Redefined';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.namespace.xsd.comps.profile.used';
+		param.title='Used';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='show';
+		param.title='Show';
+		param.title.style.bold='true';
+		param.group='true';
+		param.group.defaultState='expanded';
+	}
+	PARAM={
+		param.name='show.about';
+		param.title='About (footer)';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='fmt.page';
+		param.title='Pagination';
+		param.title.style.bold='true';
+		param.group='true';
+		param.group.defaultState='expanded';
+	}
+	PARAM={
+		param.name='fmt.page.columns';
+		param.title='Generate page columns';
+		param.type='boolean';
+	}
+</TEMPLATE_PARAMS>
+<STYLES>
+	CHAR_STYLE={
+		style.name='Annotation Smaller';
+		style.id='cs1';
+		text.font.name='Arial';
+		text.font.size='9';
+	}
+	CHAR_STYLE={
+		style.name='Default Paragraph Font';
+		style.id='cs2';
+		style.default='true';
+	}
+	CHAR_STYLE={
+		style.name='Hyperlink';
+		style.id='cs3';
+		text.decor.underline='true';
+		text.color.foreground='#0000FF';
+	}
+	PAR_STYLE={
+		style.name='Main Heading';
+		style.id='s1';
+		text.font.name='Verdana';
+		text.font.size='13';
+		text.font.style.bold='true';
+		text.color.foreground='#4477AA';
+		par.bkgr.opaque='true';
+		par.bkgr.color='#EEEEEE';
+		par.border.style='solid';
+		par.border.color='#4477AA';
+		par.margin.top='0';
+		par.margin.bottom='7.5';
+		par.padding.left='4.2';
+		par.padding.right='4.2';
+		par.padding.top='2.5';
+		par.padding.bottom='2.5';
+		par.page.keepTogether='true';
+		par.page.keepWithNext='true';
+	}
+	PAR_STYLE={
+		style.name='Normal';
+		style.id='s2';
+		style.default='true';
+	}
+	CHAR_STYLE={
+		style.name='Normal Smaller';
+		style.id='cs4';
+		text.font.name='Arial';
+		text.font.size='9';
+	}
+	CHAR_STYLE={
+		style.name='Page Header Font';
+		style.id='cs5';
+		text.font.name='Arial';
+		text.font.style.italic='true';
+	}
+	CHAR_STYLE={
+		style.name='Page Number';
+		style.id='cs6';
+		text.font.size='9';
+	}
+	CHAR_STYLE={
+		style.name='Summary Heading';
+		style.id='cs7';
+		text.font.size='12';
+		text.font.style.bold='true';
+	}
+	CHAR_STYLE={
+		style.name='Summary Item';
+		style.id='cs8';
+		text.font.name='Verdana';
+		text.font.size='9';
+		text.font.style.bold='true';
+	}
+</STYLES>
+FMT={
+	doc.lengthUnits='pt';
+	doc.hlink.style.link='cs3';
+}
+<HTARGET>
+	HKEYS={
+		'getStringParam("$nsURI")';
+		'"detail"';
+	}
+</HTARGET>
+<PAGE_HEADER>
+	<AREA_SEC>
+		FMT={
+			text.style='cs5';
+			table.cell.padding.both='0';
+			table.border.style='none';
+			table.border.bottom.style='solid';
+		}
+		<AREA>
+			<CTRL_GROUP>
+				FMT={
+					par.border.bottom.style='solid';
+				}
+				<CTRLS>
+					<DATA_CTRL>
+						FORMULA='getStringParam("$page.heading.left")'
+					</DATA_CTRL>
+				</CTRLS>
+			</CTRL_GROUP>
+		</AREA>
+	</AREA_SEC>
+</PAGE_HEADER>
+<ROOT>
+	<AREA_SEC>
+		COND='getStringParam("$nsURI") == ""'
+		FMT={
+			par.style='s1';
+		}
+		<AREA>
+			<CTRL_GROUP>
+				<CTRLS>
+					<TEXT_CTRL>
+						TEXT='{no namespace}'
+					</TEXT_CTRL>
+				</CTRLS>
+			</CTRL_GROUP>
+		</AREA>
+	</AREA_SEC>
+	<AREA_SEC>
+		COND='getStringParam("$nsURI") != ""'
+		FMT={
+			par.style='s1';
+		}
+		<AREA>
+			<CTRL_GROUP>
+				<CTRLS>
+					<TEXT_CTRL>
+						TEXT='Namespace'
+					</TEXT_CTRL>
+					<DATA_CTRL>
+						FORMULA='\'"\' + getStringParam("$nsURI") + \'"\''
+					</DATA_CTRL>
+				</CTRLS>
+			</CTRL_GROUP>
+		</AREA>
+	</AREA_SEC>
+	<TEMPLATE_CALL>
+		COND='getBooleanParam("doc.namespace.profile")'
+		TEMPLATE_FILE='namespaceProfile.tpl'
+		FMT={
+			sec.spacing.before='10';
+		}
+	</TEMPLATE_CALL>
+	<TEMPLATE_CALL>
+		DESCR='WSDL file summary'
+		COND='getBooleanParam("doc.namespace.wsdl.files")'
+		TEMPLATE_FILE='../wsdl/file/wsdlSummary.tpl'
+		PASSED_PARAMS={
+			'doc.frgm.wsdl.files.sorting','getBooleanParam("doc.namespace.wsdl.files.sorting")';
+			'doc.frgm.wsdl.files.description','getStringParam("doc.namespace.wsdl.files.description")';
+			'doc.frgm.wsdl.files.profile','getBooleanParam("doc.namespace.wsdl.files.profile")';
+			'doc.frgm.wsdl.files.profile.location','getBooleanParam("doc.namespace.wsdl.files.profile.location")';
+			'doc.frgm.wsdl.files.profile.location.relative','getBooleanParam("doc.namespace.wsdl.files.profile.location.relative")';
+			'doc.frgm.wsdl.files.profile.location.hyperlink','getBooleanParam("doc.namespace.wsdl.files.profile.location.hyperlink")';
+			'doc.frgm.wsdl.files.profile.targetNamespace','getBooleanParam("doc.namespace.wsdl.files.profile.targetNamespace")';
+			'doc.frgm.wsdl.files.profile.types.schemas','getStringParam("doc.namespace.wsdl.files.profile.types.schemas")';
+			'doc.frgm.wsdl.files.profile.defs','getBooleanParam("doc.namespace.wsdl.files.profile.defs")';
+			'doc.frgm.wsdl.files.profile.relatedWSDLs','getBooleanParam("doc.namespace.wsdl.files.profile.relatedWSDLs")';
+		}
+		FMT={
+			sec.spacing.before='10';
+		}
+		<HTARGET>
+			HKEYS={
+				'getStringParam("$nsURI")';
+				'"wsdl-file-summary"';
+			}
+		</HTARGET>
+	</TEMPLATE_CALL>
+	<FOLDER>
+		DESCR='WSDL definition summaries'
+		COND='getBooleanParam("doc.namespace.wsdl.defs")'
+		<BODY>
+			<TEMPLATE_CALL>
+				DESCR='services'
+				COND='getBooleanParam("doc.namespace.wsdl.defs.for.services")'
+				TEMPLATE_FILE='../wsdl/service/serviceSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.wsdl.defs.sorting','getBooleanParam("doc.namespace.wsdl.defs.sorting")';
+					'doc.frgm.wsdl.defs.description','getStringParam("doc.namespace.wsdl.defs.description")';
+					'doc.frgm.wsdl.defs.profile','getBooleanParam("doc.namespace.wsdl.defs.profile")';
+					'doc.frgm.wsdl.defs.profile.namespace','getBooleanParam("doc.namespace.wsdl.defs.profile.namespace")';
+					'doc.frgm.wsdl.defs.profile.portType','getBooleanParam("doc.namespace.wsdl.defs.profile.portType")';
+					'doc.frgm.wsdl.defs.profile.includes','getBooleanParam("doc.namespace.wsdl.defs.profile.includes")';
+					'doc.frgm.wsdl.defs.profile.defined','getBooleanParam("doc.namespace.wsdl.defs.profile.defined")';
+					'doc.frgm.wsdl.defs.profile.used','getBooleanParam("doc.namespace.wsdl.defs.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'getStringParam("$nsURI")';
+						'"service-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+			<TEMPLATE_CALL>
+				DESCR='bindings'
+				COND='getBooleanParam("doc.namespace.wsdl.defs.for.bindings")'
+				TEMPLATE_FILE='../wsdl/binding/bindingSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.wsdl.defs.sorting','getBooleanParam("doc.namespace.wsdl.defs.sorting")';
+					'doc.frgm.wsdl.defs.description','getStringParam("doc.namespace.wsdl.defs.description")';
+					'doc.frgm.wsdl.defs.profile','getBooleanParam("doc.namespace.wsdl.defs.profile")';
+					'doc.frgm.wsdl.defs.profile.namespace','getBooleanParam("doc.namespace.wsdl.defs.profile.namespace")';
+					'doc.frgm.wsdl.defs.profile.portType','getBooleanParam("doc.namespace.wsdl.defs.profile.portType")';
+					'doc.frgm.wsdl.defs.profile.includes','getBooleanParam("doc.namespace.wsdl.defs.profile.includes")';
+					'doc.frgm.wsdl.defs.profile.defined','getBooleanParam("doc.namespace.wsdl.defs.profile.defined")';
+					'doc.frgm.wsdl.defs.profile.used','getBooleanParam("doc.namespace.wsdl.defs.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'getStringParam("$nsURI")';
+						'"binding-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+			<TEMPLATE_CALL>
+				DESCR='port types'
+				COND='getBooleanParam("doc.namespace.wsdl.defs.for.portTypes")'
+				TEMPLATE_FILE='../wsdl/portType/portTypeSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.wsdl.defs.sorting','getBooleanParam("doc.namespace.wsdl.defs.sorting")';
+					'doc.frgm.wsdl.defs.description','getStringParam("doc.namespace.wsdl.defs.description")';
+					'doc.frgm.wsdl.defs.profile','getBooleanParam("doc.namespace.wsdl.defs.profile")';
+					'doc.frgm.wsdl.defs.profile.namespace','getBooleanParam("doc.namespace.wsdl.defs.profile.namespace")';
+					'doc.frgm.wsdl.defs.profile.portType','getBooleanParam("doc.namespace.wsdl.defs.profile.portType")';
+					'doc.frgm.wsdl.defs.profile.includes','getBooleanParam("doc.namespace.wsdl.defs.profile.includes")';
+					'doc.frgm.wsdl.defs.profile.defined','getBooleanParam("doc.namespace.wsdl.defs.profile.defined")';
+					'doc.frgm.wsdl.defs.profile.used','getBooleanParam("doc.namespace.wsdl.defs.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'getStringParam("$nsURI")';
+						'"portType-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+			<TEMPLATE_CALL>
+				DESCR='messages'
+				COND='getBooleanParam("doc.namespace.wsdl.defs.for.messages")'
+				TEMPLATE_FILE='../wsdl/message/messageSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.wsdl.defs.sorting','getBooleanParam("doc.namespace.wsdl.defs.sorting")';
+					'doc.frgm.wsdl.defs.description','getStringParam("doc.namespace.wsdl.defs.description")';
+					'doc.frgm.wsdl.defs.profile','getBooleanParam("doc.namespace.wsdl.defs.profile")';
+					'doc.frgm.wsdl.defs.profile.namespace','getBooleanParam("doc.namespace.wsdl.defs.profile.namespace")';
+					'doc.frgm.wsdl.defs.profile.portType','getBooleanParam("doc.namespace.wsdl.defs.profile.portType")';
+					'doc.frgm.wsdl.defs.profile.includes','getBooleanParam("doc.namespace.wsdl.defs.profile.includes")';
+					'doc.frgm.wsdl.defs.profile.defined','getBooleanParam("doc.namespace.wsdl.defs.profile.defined")';
+					'doc.frgm.wsdl.defs.profile.used','getBooleanParam("doc.namespace.wsdl.defs.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'getStringParam("$nsURI")';
+						'"message-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+		</BODY>
+	</FOLDER>
+	<TEMPLATE_CALL>
+		DESCR='Schema summary'
+		COND='getBooleanParam("doc.namespace.xsd.schemas")'
+		TEMPLATE_FILE='../xsd/schema/schemaSummary.tpl'
+		PASSED_PARAMS={
+			'doc.frgm.xsd.schemas.sorting','getBooleanParam("doc.namespace.xsd.schemas.sorting")';
+			'doc.frgm.xsd.schemas.annotation','getStringParam("doc.namespace.xsd.schemas.annotation")';
+			'doc.frgm.xsd.schemas.profile','getBooleanParam("doc.namespace.xsd.schemas.profile")';
+			'doc.frgm.xsd.schemas.profile.location','getBooleanParam("doc.namespace.xsd.schemas.profile.location")';
+			'doc.frgm.xsd.schemas.profile.location.relative','getBooleanParam("doc.namespace.xsd.schemas.profile.location.relative")';
+			'doc.frgm.xsd.schemas.profile.location.hyperlink','getBooleanParam("doc.namespace.xsd.schemas.profile.location.hyperlink")';
+			'doc.frgm.xsd.schemas.profile.targetNamespace','getBooleanParam("doc.namespace.xsd.schemas.profile.targetNamespace")';
+			'doc.frgm.xsd.schemas.profile.version','getBooleanParam("doc.namespace.xsd.schemas.profile.version")';
+			'doc.frgm.xsd.schemas.profile.components','getBooleanParam("doc.namespace.xsd.schemas.profile.components")';
+			'doc.frgm.xsd.schemas.profile.formDefault','getBooleanParam("doc.namespace.xsd.schemas.profile.formDefault")';
+			'doc.frgm.xsd.schemas.profile.blockDefault','getBooleanParam("doc.namespace.xsd.schemas.profile.blockDefault")';
+			'doc.frgm.xsd.schemas.profile.blockDefault.value','getBooleanParam("doc.namespace.xsd.schemas.profile.blockDefault.value")';
+			'doc.frgm.xsd.schemas.profile.blockDefault.meaning','getBooleanParam("doc.namespace.xsd.schemas.profile.blockDefault.meaning")';
+			'doc.frgm.xsd.schemas.profile.finalDefault','getBooleanParam("doc.namespace.xsd.schemas.profile.finalDefault")';
+			'doc.frgm.xsd.schemas.profile.finalDefault.value','getBooleanParam("doc.namespace.xsd.schemas.profile.finalDefault.value")';
+			'doc.frgm.xsd.schemas.profile.finalDefault.meaning','getBooleanParam("doc.namespace.xsd.schemas.profile.finalDefault.meaning")';
+			'doc.frgm.xsd.schemas.profile.relatedSchemas','getBooleanParam("doc.namespace.xsd.schemas.profile.relatedSchemas")';
+		}
+		FMT={
+			sec.spacing.before='10';
+		}
+		<HTARGET>
+			HKEYS={
+				'getStringParam("$nsURI")';
+				'"schema-summary"';
+			}
+		</HTARGET>
+	</TEMPLATE_CALL>
+	<FOLDER>
+		DESCR='XSD component summaries'
+		COND='getBooleanParam("doc.namespace.xsd.comps")'
+		<BODY>
+			<TEMPLATE_CALL>
+				DESCR='elements'
+				COND='getBooleanParam("doc.namespace.xsd.comps.for.elements")'
+				TEMPLATE_FILE='../xsd/element/elementSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.xsd.comps.for.elements','getBooleanParam("doc.namespace.xsd.comps.for.elements")';
+					'doc.frgm.xsd.comps.for.elements.local','getStringParam("doc.namespace.xsd.comps.for.elements.local")';
+					'doc.frgm.xsd.comps.sorting','getBooleanParam("doc.namespace.xsd.comps.sorting")';
+					'doc.frgm.xsd.comps.annotation','getStringParam("doc.namespace.xsd.comps.annotation")';
+					'doc.frgm.xsd.comps.profile','getBooleanParam("doc.namespace.xsd.comps.profile")';
+					'doc.frgm.xsd.comps.profile.namespace','getBooleanParam("doc.namespace.xsd.comps.profile.namespace")';
+					'doc.frgm.xsd.comps.profile.type','getBooleanParam("doc.namespace.xsd.comps.profile.type")';
+					'doc.frgm.xsd.comps.profile.content','getBooleanParam("doc.namespace.xsd.comps.profile.content")';
+					'doc.frgm.xsd.comps.profile.abstract','getBooleanParam("doc.namespace.xsd.comps.profile.abstract")';
+					'doc.frgm.xsd.comps.profile.block','getStringParam("doc.namespace.xsd.comps.profile.block")';
+					'doc.frgm.xsd.comps.profile.block.value','getBooleanParam("doc.namespace.xsd.comps.profile.block.value")';
+					'doc.frgm.xsd.comps.profile.block.meaning','getBooleanParam("doc.namespace.xsd.comps.profile.block.meaning")';
+					'doc.frgm.xsd.comps.profile.final','getStringParam("doc.namespace.xsd.comps.profile.final")';
+					'doc.frgm.xsd.comps.profile.final.value','getBooleanParam("doc.namespace.xsd.comps.profile.final.value")';
+					'doc.frgm.xsd.comps.profile.final.meaning','getBooleanParam("doc.namespace.xsd.comps.profile.final.meaning")';
+					'doc.frgm.xsd.comps.profile.subst','getBooleanParam("doc.namespace.xsd.comps.profile.subst")';
+					'doc.frgm.xsd.comps.profile.subst.heads','getBooleanParam("doc.namespace.xsd.comps.profile.subst.heads")';
+					'doc.frgm.xsd.comps.profile.subst.members','getBooleanParam("doc.namespace.xsd.comps.profile.subst.members")';
+					'doc.frgm.xsd.comps.profile.nillable','getBooleanParam("doc.namespace.xsd.comps.profile.nillable")';
+					'doc.frgm.xsd.comps.profile.defined','getBooleanParam("doc.namespace.xsd.comps.profile.defined")';
+					'doc.frgm.xsd.comps.profile.includes','getBooleanParam("doc.namespace.xsd.comps.profile.includes")';
+					'doc.frgm.xsd.comps.profile.redefines','getBooleanParam("doc.namespace.xsd.comps.profile.redefines")';
+					'doc.frgm.xsd.comps.profile.redefined','getBooleanParam("doc.namespace.xsd.comps.profile.redefined")';
+					'doc.frgm.xsd.comps.profile.used','getBooleanParam("doc.namespace.xsd.comps.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'getStringParam("$nsURI")';
+						'"element-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+			<TEMPLATE_CALL>
+				DESCR='complexTypes'
+				COND='getBooleanParam("doc.namespace.xsd.comps.for.complexTypes")'
+				TEMPLATE_FILE='../xsd/type/complexTypeSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.xsd.comps.sorting','getBooleanParam("doc.namespace.xsd.comps.sorting")';
+					'doc.frgm.xsd.comps.annotation','getStringParam("doc.namespace.xsd.comps.annotation")';
+					'doc.frgm.xsd.comps.profile','getBooleanParam("doc.namespace.xsd.comps.profile")';
+					'doc.frgm.xsd.comps.profile.namespace','getBooleanParam("doc.namespace.xsd.comps.profile.namespace")';
+					'doc.frgm.xsd.comps.profile.type','getBooleanParam("doc.namespace.xsd.comps.profile.type")';
+					'doc.frgm.xsd.comps.profile.content','getBooleanParam("doc.namespace.xsd.comps.profile.content")';
+					'doc.frgm.xsd.comps.profile.abstract','getBooleanParam("doc.namespace.xsd.comps.profile.abstract")';
+					'doc.frgm.xsd.comps.profile.block','getStringParam("doc.namespace.xsd.comps.profile.block")';
+					'doc.frgm.xsd.comps.profile.block.value','getBooleanParam("doc.namespace.xsd.comps.profile.block.value")';
+					'doc.frgm.xsd.comps.profile.block.meaning','getBooleanParam("doc.namespace.xsd.comps.profile.block.meaning")';
+					'doc.frgm.xsd.comps.profile.final','getStringParam("doc.namespace.xsd.comps.profile.final")';
+					'doc.frgm.xsd.comps.profile.final.value','getBooleanParam("doc.namespace.xsd.comps.profile.final.value")';
+					'doc.frgm.xsd.comps.profile.final.meaning','getBooleanParam("doc.namespace.xsd.comps.profile.final.meaning")';
+					'doc.frgm.xsd.comps.profile.subst','getBooleanParam("doc.namespace.xsd.comps.profile.subst")';
+					'doc.frgm.xsd.comps.profile.subst.heads','getBooleanParam("doc.namespace.xsd.comps.profile.subst.heads")';
+					'doc.frgm.xsd.comps.profile.subst.members','getBooleanParam("doc.namespace.xsd.comps.profile.subst.members")';
+					'doc.frgm.xsd.comps.profile.nillable','getBooleanParam("doc.namespace.xsd.comps.profile.nillable")';
+					'doc.frgm.xsd.comps.profile.defined','getBooleanParam("doc.namespace.xsd.comps.profile.defined")';
+					'doc.frgm.xsd.comps.profile.includes','getBooleanParam("doc.namespace.xsd.comps.profile.includes")';
+					'doc.frgm.xsd.comps.profile.redefines','getBooleanParam("doc.namespace.xsd.comps.profile.redefines")';
+					'doc.frgm.xsd.comps.profile.redefined','getBooleanParam("doc.namespace.xsd.comps.profile.redefined")';
+					'doc.frgm.xsd.comps.profile.used','getBooleanParam("doc.namespace.xsd.comps.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'getStringParam("$nsURI")';
+						'"complexType-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+			<TEMPLATE_CALL>
+				DESCR='simpleTypes'
+				COND='getBooleanParam("doc.namespace.xsd.comps.for.simpleTypes")'
+				TEMPLATE_FILE='../xsd/type/simpleTypeSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.xsd.comps.sorting','getBooleanParam("doc.namespace.xsd.comps.sorting")';
+					'doc.frgm.xsd.comps.annotation','getStringParam("doc.namespace.xsd.comps.annotation")';
+					'doc.frgm.xsd.comps.profile','getBooleanParam("doc.namespace.xsd.comps.profile")';
+					'doc.frgm.xsd.comps.profile.namespace','getBooleanParam("doc.namespace.xsd.comps.profile.namespace")';
+					'doc.frgm.xsd.comps.profile.type','getBooleanParam("doc.namespace.xsd.comps.profile.type")';
+					'doc.frgm.xsd.comps.profile.content','getBooleanParam("doc.namespace.xsd.comps.profile.content")';
+					'doc.frgm.xsd.comps.profile.abstract','getBooleanParam("doc.namespace.xsd.comps.profile.abstract")';
+					'doc.frgm.xsd.comps.profile.block','getStringParam("doc.namespace.xsd.comps.profile.block")';
+					'doc.frgm.xsd.comps.profile.block.value','getBooleanParam("doc.namespace.xsd.comps.profile.block.value")';
+					'doc.frgm.xsd.comps.profile.block.meaning','getBooleanParam("doc.namespace.xsd.comps.profile.block.meaning")';
+					'doc.frgm.xsd.comps.profile.final','getStringParam("doc.namespace.xsd.comps.profile.final")';
+					'doc.frgm.xsd.comps.profile.final.value','getBooleanParam("doc.namespace.xsd.comps.profile.final.value")';
+					'doc.frgm.xsd.comps.profile.final.meaning','getBooleanParam("doc.namespace.xsd.comps.profile.final.meaning")';
+					'doc.frgm.xsd.comps.profile.subst','getBooleanParam("doc.namespace.xsd.comps.profile.subst")';
+					'doc.frgm.xsd.comps.profile.subst.heads','getBooleanParam("doc.namespace.xsd.comps.profile.subst.heads")';
+					'doc.frgm.xsd.comps.profile.subst.members','getBooleanParam("doc.namespace.xsd.comps.profile.subst.members")';
+					'doc.frgm.xsd.comps.profile.nillable','getBooleanParam("doc.namespace.xsd.comps.profile.nillable")';
+					'doc.frgm.xsd.comps.profile.defined','getBooleanParam("doc.namespace.xsd.comps.profile.defined")';
+					'doc.frgm.xsd.comps.profile.includes','getBooleanParam("doc.namespace.xsd.comps.profile.includes")';
+					'doc.frgm.xsd.comps.profile.redefines','getBooleanParam("doc.namespace.xsd.comps.profile.redefines")';
+					'doc.frgm.xsd.comps.profile.redefined','getBooleanParam("doc.namespace.xsd.comps.profile.redefined")';
+					'doc.frgm.xsd.comps.profile.used','getBooleanParam("doc.namespace.xsd.comps.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'getStringParam("$nsURI")';
+						'"simpleType-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+			<TEMPLATE_CALL>
+				DESCR='element groups'
+				COND='getBooleanParam("doc.namespace.xsd.comps.for.groups")'
+				TEMPLATE_FILE='../xsd/groups/groupSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.xsd.comps.sorting','getBooleanParam("doc.namespace.xsd.comps.sorting")';
+					'doc.frgm.xsd.comps.annotation','getStringParam("doc.namespace.xsd.comps.annotation")';
+					'doc.frgm.xsd.comps.profile','getBooleanParam("doc.namespace.xsd.comps.profile")';
+					'doc.frgm.xsd.comps.profile.namespace','getBooleanParam("doc.namespace.xsd.comps.profile.namespace")';
+					'doc.frgm.xsd.comps.profile.type','getBooleanParam("doc.namespace.xsd.comps.profile.type")';
+					'doc.frgm.xsd.comps.profile.content','getBooleanParam("doc.namespace.xsd.comps.profile.content")';
+					'doc.frgm.xsd.comps.profile.abstract','getBooleanParam("doc.namespace.xsd.comps.profile.abstract")';
+					'doc.frgm.xsd.comps.profile.block','getStringParam("doc.namespace.xsd.comps.profile.block")';
+					'doc.frgm.xsd.comps.profile.block.value','getBooleanParam("doc.namespace.xsd.comps.profile.block.value")';
+					'doc.frgm.xsd.comps.profile.block.meaning','getBooleanParam("doc.namespace.xsd.comps.profile.block.meaning")';
+					'doc.frgm.xsd.comps.profile.final','getStringParam("doc.namespace.xsd.comps.profile.final")';
+					'doc.frgm.xsd.comps.profile.final.value','getBooleanParam("doc.namespace.xsd.comps.profile.final.value")';
+					'doc.frgm.xsd.comps.profile.final.meaning','getBooleanParam("doc.namespace.xsd.comps.profile.final.meaning")';
+					'doc.frgm.xsd.comps.profile.subst','getBooleanParam("doc.namespace.xsd.comps.profile.subst")';
+					'doc.frgm.xsd.comps.profile.subst.heads','getBooleanParam("doc.namespace.xsd.comps.profile.subst.heads")';
+					'doc.frgm.xsd.comps.profile.subst.members','getBooleanParam("doc.namespace.xsd.comps.profile.subst.members")';
+					'doc.frgm.xsd.comps.profile.nillable','getBooleanParam("doc.namespace.xsd.comps.profile.nillable")';
+					'doc.frgm.xsd.comps.profile.defined','getBooleanParam("doc.namespace.xsd.comps.profile.defined")';
+					'doc.frgm.xsd.comps.profile.includes','getBooleanParam("doc.namespace.xsd.comps.profile.includes")';
+					'doc.frgm.xsd.comps.profile.redefines','getBooleanParam("doc.namespace.xsd.comps.profile.redefines")';
+					'doc.frgm.xsd.comps.profile.redefined','getBooleanParam("doc.namespace.xsd.comps.profile.redefined")';
+					'doc.frgm.xsd.comps.profile.used','getBooleanParam("doc.namespace.xsd.comps.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'getStringParam("$nsURI")';
+						'"group-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+			<TEMPLATE_CALL>
+				DESCR='attributes'
+				COND='getBooleanParam("doc.namespace.xsd.comps.for.attributes")'
+				TEMPLATE_FILE='../xsd/attribute/attributeSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.xsd.comps.sorting','getBooleanParam("doc.namespace.xsd.comps.sorting")';
+					'doc.frgm.xsd.comps.annotation','getStringParam("doc.namespace.xsd.comps.annotation")';
+					'doc.frgm.xsd.comps.profile','getBooleanParam("doc.namespace.xsd.comps.profile")';
+					'doc.frgm.xsd.comps.profile.namespace','getBooleanParam("doc.namespace.xsd.comps.profile.namespace")';
+					'doc.frgm.xsd.comps.profile.type','getBooleanParam("doc.namespace.xsd.comps.profile.type")';
+					'doc.frgm.xsd.comps.profile.content','getBooleanParam("doc.namespace.xsd.comps.profile.content")';
+					'doc.frgm.xsd.comps.profile.abstract','getBooleanParam("doc.namespace.xsd.comps.profile.abstract")';
+					'doc.frgm.xsd.comps.profile.block','getStringParam("doc.namespace.xsd.comps.profile.block")';
+					'doc.frgm.xsd.comps.profile.block.value','getBooleanParam("doc.namespace.xsd.comps.profile.block.value")';
+					'doc.frgm.xsd.comps.profile.block.meaning','getBooleanParam("doc.namespace.xsd.comps.profile.block.meaning")';
+					'doc.frgm.xsd.comps.profile.final','getStringParam("doc.namespace.xsd.comps.profile.final")';
+					'doc.frgm.xsd.comps.profile.final.value','getBooleanParam("doc.namespace.xsd.comps.profile.final.value")';
+					'doc.frgm.xsd.comps.profile.final.meaning','getBooleanParam("doc.namespace.xsd.comps.profile.final.meaning")';
+					'doc.frgm.xsd.comps.profile.subst','getBooleanParam("doc.namespace.xsd.comps.profile.subst")';
+					'doc.frgm.xsd.comps.profile.subst.heads','getBooleanParam("doc.namespace.xsd.comps.profile.subst.heads")';
+					'doc.frgm.xsd.comps.profile.subst.members','getBooleanParam("doc.namespace.xsd.comps.profile.subst.members")';
+					'doc.frgm.xsd.comps.profile.nillable','getBooleanParam("doc.namespace.xsd.comps.profile.nillable")';
+					'doc.frgm.xsd.comps.profile.defined','getBooleanParam("doc.namespace.xsd.comps.profile.defined")';
+					'doc.frgm.xsd.comps.profile.includes','getBooleanParam("doc.namespace.xsd.comps.profile.includes")';
+					'doc.frgm.xsd.comps.profile.redefines','getBooleanParam("doc.namespace.xsd.comps.profile.redefines")';
+					'doc.frgm.xsd.comps.profile.redefined','getBooleanParam("doc.namespace.xsd.comps.profile.redefined")';
+					'doc.frgm.xsd.comps.profile.used','getBooleanParam("doc.namespace.xsd.comps.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'getStringParam("$nsURI")';
+						'"attribute-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+			<TEMPLATE_CALL>
+				DESCR='attribute groups'
+				COND='getBooleanParam("doc.namespace.xsd.comps.for.attributeGroups")'
+				TEMPLATE_FILE='../xsd/groups/attributeGroupSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.xsd.comps.sorting','getBooleanParam("doc.namespace.xsd.comps.sorting")';
+					'doc.frgm.xsd.comps.annotation','getStringParam("doc.namespace.xsd.comps.annotation")';
+					'doc.frgm.xsd.comps.profile','getBooleanParam("doc.namespace.xsd.comps.profile")';
+					'doc.frgm.xsd.comps.profile.namespace','getBooleanParam("doc.namespace.xsd.comps.profile.namespace")';
+					'doc.frgm.xsd.comps.profile.type','getBooleanParam("doc.namespace.xsd.comps.profile.type")';
+					'doc.frgm.xsd.comps.profile.content','getBooleanParam("doc.namespace.xsd.comps.profile.content")';
+					'doc.frgm.xsd.comps.profile.abstract','getBooleanParam("doc.namespace.xsd.comps.profile.abstract")';
+					'doc.frgm.xsd.comps.profile.block','getStringParam("doc.namespace.xsd.comps.profile.block")';
+					'doc.frgm.xsd.comps.profile.block.value','getBooleanParam("doc.namespace.xsd.comps.profile.block.value")';
+					'doc.frgm.xsd.comps.profile.block.meaning','getBooleanParam("doc.namespace.xsd.comps.profile.block.meaning")';
+					'doc.frgm.xsd.comps.profile.final','getStringParam("doc.namespace.xsd.comps.profile.final")';
+					'doc.frgm.xsd.comps.profile.final.value','getBooleanParam("doc.namespace.xsd.comps.profile.final.value")';
+					'doc.frgm.xsd.comps.profile.final.meaning','getBooleanParam("doc.namespace.xsd.comps.profile.final.meaning")';
+					'doc.frgm.xsd.comps.profile.subst','getBooleanParam("doc.namespace.xsd.comps.profile.subst")';
+					'doc.frgm.xsd.comps.profile.subst.heads','getBooleanParam("doc.namespace.xsd.comps.profile.subst.heads")';
+					'doc.frgm.xsd.comps.profile.subst.members','getBooleanParam("doc.namespace.xsd.comps.profile.subst.members")';
+					'doc.frgm.xsd.comps.profile.nillable','getBooleanParam("doc.namespace.xsd.comps.profile.nillable")';
+					'doc.frgm.xsd.comps.profile.defined','getBooleanParam("doc.namespace.xsd.comps.profile.defined")';
+					'doc.frgm.xsd.comps.profile.includes','getBooleanParam("doc.namespace.xsd.comps.profile.includes")';
+					'doc.frgm.xsd.comps.profile.redefines','getBooleanParam("doc.namespace.xsd.comps.profile.redefines")';
+					'doc.frgm.xsd.comps.profile.redefined','getBooleanParam("doc.namespace.xsd.comps.profile.redefined")';
+					'doc.frgm.xsd.comps.profile.used','getBooleanParam("doc.namespace.xsd.comps.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'getStringParam("$nsURI")';
+						'"attributeGroup-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+		</BODY>
+	</FOLDER>
+	<TEMPLATE_CALL>
+		DESCR='Bottom Message'
+		COND='output.type == "document" && getBooleanParam("show.about")'
+		TEMPLATE_FILE='../about.tpl'
+	</TEMPLATE_CALL>
+</ROOT>
+CHECKSUM='D+jsdgowDlkVGVNRt76?bbHcsMDqOHnjjZ5HGZFPXrU'
+</DOCFLEX_TEMPLATE>

@@ -1,0 +1,34 @@
+With this parameter you can specify the sorting order of components.
+<p>
+The parameter has the following meaning:
+<ul>
+<li>
+  When the parameter is selected (<b><code>true</code></b>),
+  the components will be sorted alphabetically by their names (ignoring letter case).
+  <p style="margin-top:10pt">
+  The component name is assumed to be that under which the component appears 
+  (is referenced to) at the given documentation location.
+  This is typically the component qualified name (which is the actual namespace prefix 
+  plus the component local name). That, however, can be changed using 
+  <i>"Show | Namespace Prefixes"</i> parameter.
+  <p style="margin-top:10pt">
+  Additionally, in the case of a <i>local element</i>, the component name may also include
+  a special extension used to distinguish the equally named local elements.
+  For more details about this, please see <i>"Show | Local Element Extensions"</i> parameter.
+</li>
+<li style="margin-top:10pt">
+  When the parameter is unselected (<b><code>false</code></b>),
+  the components will follow in the same order as they are defined in the XML schema.
+  <p style="margin-top:10pt">
+  This gives you a possibility to specify a particular ordering of the components (e.g. elements)
+  by yourself. For instance, simply define the most important components 
+  (e.g. an XML document's root element) on the top of the XML schema.
+  Then, they will appear the first in the component summary.
+</li>
+</ul>
+
+<b>Note:</b> 
+<blockquote>
+The default value of this parameter is copied dynamically from
+the value of the <i>"Generate Details | Sorting | Components"</i> parameter.
+</blockquote>

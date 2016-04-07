@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Id: dataStreams.xsd,v 1.5 2011/07/06 14:56:29 lratzesberger Exp $ -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.3" targetNamespace="urn:xml-gov-au:icsm:egeodesy:0.3" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.3" xml:lang="en">
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<annotation>
+		<documentation>
+Filename     : dataStreams.xsd 
+Organization : Scripps Orbit and Permanent Array Center (SOPAC) 
+Date         : October 21, 2011 
+Description  : Realtime data stream information.
+Notes        : This element describes the realtime data streams available from 
+               permanent GPS sites and proxy ("published") streams
+               that are streamed in another format.  If the proxy is an NTRIP caster,
+               expanded parameters are available for each mount point.
+               
+               By making only a few elements required, this schema is hopefully
+               not onerous, but adaptable to describe a variety of configurations.
+               
+               The schema defines a baseDataStreamType with the essential network
+               information - an IP address, port number and data format.  Optionally,
+               it can have an ntripMounts element that contains one or more ntripMount
+               elements describing the available NTRIP mountpoints.
+                              
+               From the base type, two stream types are derived, the siteStreamType and 
+               the publishedStreamType.  The siteStreamType is the GPS site and only one
+               can be specified. There can be zero or more publishedStream 
+               elements representing the available proxies of the data. 
+               
+               Contact information about the site and published streams may be 
+               available in other parts of the schema, but it is (optionally) here
+               also so that the full stream information can be encapsulated into a 
+               message such as an ATOM feed. 
+               
+               The siteStreamType provides for two contacts, a telemetryAgency and a 
+               responsibleAgency, representing those in charge of communications and 
+               those in charge of data.  Neither are required elements and either 
+               could be the sole responsible party.  The publishedStreamType, on the 
+               other hand, provides only a responsibleAgency. 
+                              
+               The specified data formats (dataFormatType) are currently limited to:
+               
+               RTCM_2   - Radio Technical Commission for Maritime Services, Ver. 2
+               RTCM_2.2 - RTCM Ver. 2.2
+               RTCM_2.3 - RTCM Ver. 2.3
+               RTCM_3   - RTCM Ver. 3
+               RTCM_3.1 - RTCM Ver. 3.1
+               RYO      - RYO
+               RYO_1.0  - RYO Ver. 1.0
+               RYO_2.0  - RYO Ver. 2.0
+               CMR      - CMR
+               CMR+     - CMR+
+               RAW      - RAW
+              
+  </documentation>
+	</annotation>
+	<include schemaLocation="contact.xsd">
+		<annotation>
+			<documentation>
+       Import components from the "contact.xsd" schema which resides in
+       the "http://sopac.ucsd.edu/ns/geodesy/doc/igsSiteLog/contact/2004" namespace.
+     </documentation>
+		</annotation>
+	</include>
+	<simpleType name="ipv4AddressType">
+		<annotation>
+			<documentation>
+      An IP Version 4 address.
+    </documentation>
+		</annotation>
+		<restriction base="string">
+			<pattern value="\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="ipv6AddressType">
+		<annotation>
+			<documentation>
+      An IP Version 6 address.
+    </documentation>
+		</annotation>
+		<restriction base="string">
+			<pattern value="([A-Fa-f0-9]{1,4}:){7}[A-Fa-f0-9]{1,4}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="ipAddressType">
+		<union memberTypes="geo:ipv4AddressType geo:ipv6AddressType"/>
+	</simpleType>
+	<simpleType name="dataFormatType">
+		<restriction base="token">
+			<enumeration value="RTCM_2"/>
+			<enumeration value="RTCM_2.2"/>
+			<enumeration value="RTCM_2.3"/>
+			<enumeration value="RTCM_3.0"/>
+			<enumeration value="RTCM_3.1"/>
+			<enumeration value="RYO"/>
+			<enumeration value="RYO_1.0"/>
+			<enumeration value="RYO_2.0"/>
+			<enumeration value="CMR"/>
+			<enumeration value="CMR+"/>
+			<enumeration value="RAW"/>
+		</restriction>
+	</simpleType>
+	<complexType name="ntripMountType">
+		<sequence>
+			<element name="mountPoint" type="token" minOccurs="0"/>
+			<element name="sourceID" type="string" minOccurs="0"/>
+			<element name="countryCode" type="token" minOccurs="0"/>
+			<element name="network" type="token" minOccurs="0"/>
+			<element name="allowConnections" type="boolean" minOccurs="0"/>
+			<element name="requireAuthentication" type="boolean" minOccurs="0"/>
+			<element name="encryption" type="boolean" minOccurs="0"/>
+			<element name="feesApply" type="boolean" minOccurs="0"/>
+			<element name="bitrate" type="double" minOccurs="0"/>
+			<element name="carrierPhase" type="token" minOccurs="0"/>
+			<element name="navSystem" type="token" minOccurs="0"/>
+			<element name="nmea" type="string" minOccurs="0"/>
+			<element name="solution" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="ntripMountsType">
+		<sequence>
+			<element name="ntripMount" type="geo:ntripMountType" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="baseDataStreamType">
+		<sequence>
+			<choice>
+				<element name="hostname" type="string"/>
+				<element name="ipAddress" type="geo:ipAddressType"/>
+			</choice>
+			<element name="port" type="positiveInteger"/>
+			<element name="sampInterval" type="double"/>
+            <!-- TODO: use gco code list values -->
+            <element name="dataFormat" type="gml:CodeType"/>
+			<element name="ntripMounts" type="geo:ntripMountsType" minOccurs="0"/>
+			<element name="startDate" type="date" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="siteStreamType">
+		<sequence>
+			<element name="agency" type="geo:agencyPropertyType" minOccurs="0"/>
+			<element name="dataStream" type="geo:baseDataStreamType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="publishedStreamType">
+		<sequence>
+			<element name="agency" type="geo:agencyPropertyType" minOccurs="0"/>
+			<element name="dataStream" type="geo:baseDataStreamType" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="dataStreamsType">
+		<sequence>
+			<element name="siteStream" type="geo:siteStreamType" minOccurs="0"/>
+			<element name="publishedStream" type="geo:publishedStreamType" minOccurs="0"/>
+			<element name="notes" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<!--  Global dataStreams element -->
+	<element name="dataStreams" type="geo:dataStreamsType"/>
+	<!-- Property type -->
+	<complexType name="dataStreamsPropertyType">
+		<sequence minOccurs="0">
+			<element ref="geo:dataStreams"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+</schema>
