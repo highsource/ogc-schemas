@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.3" targetNamespace="urn:xml-gov-au:icsm:egeodesy:0.3" elementFormDefault="qualified" version="0.3" xml:lang="en">
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<include schemaLocation="geodeticEquipment.xsd"/>
+	<include schemaLocation="fieldMeasurement.xsd"/>
+	<include schemaLocation="measurement.xsd"/>
+	<include schemaLocation="commonTypes.xsd"/>
+	<annotation>
+		<documentation>
+     Filename     : baseEquipmentLib.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 9, 2003
+     Description  : This schema contains many uniquely derived complexTypes
+                  : and simpleTypes that are used by multiple site metadata
+                  : schemas.
+     Notes        : Used by temperatureSensor.xsd, humiditySensor.xsd,
+                  : waterVaporSensor.xsd, pressureSensor.xsd, receiver.xsd
+                  : antenna.xsd, collocation.xsd, and frequencyStandard.xsd
+  </documentation>
+	</annotation>
+	<!-- restriction of geo:Instrument to require the type field.  -->
+	<complexType name="SensorWithCodeType">
+		<complexContent>
+			<restriction base="geo:SensorType">
+				<sequence>
+					<sequence>
+						<group ref="gml:StandardObjectProperties"/>
+					</sequence>
+					<sequence>
+						<element name="type" type="gml:CodeType"/>
+						<group ref="geo:RemarksGroup"/>
+					</sequence>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<!-- used by Temperature, Humidity, Water Vapor, and Pressure Sensors  -->
+	<complexType name="baseSensorEquipmentType">
+		<complexContent>
+			<extension base="geo:SensorWithCodeType">
+				<sequence>
+					<element name="manufacturer" type="string"/>
+					<element name="serialNumber" type="string"/>
+					<element name="heightDiffToAntenna" type="double"/>
+					<element name="calibrationDate" type="gml:TimePositionType"/>
+					<element ref="gml:validTime"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- used by gnss Antenna -->
+	<simpleType name="antennaReferencePointType">
+		<restriction base="string">
+			<enumeration value="BPA"/>
+			<enumeration value="BCR"/>
+			<enumeration value="BGP"/>
+			<enumeration value="TPA"/>
+			<enumeration value="TCR"/>
+			<enumeration value="TGR"/>
+		</restriction>
+	</simpleType>
+    <!-- TODO: use gco code list values -->
+    <element name="antennaReferencePoint" type="gml:CodeType"/>
+	<!-- used by gnss Receiver -->
+	<simpleType name="satelliteSystemTypeOfType">
+		<restriction base="string">
+			<enumeration value="n/a"/>
+			<enumeration value="GPS"/>
+			<enumeration value="GLONASS"/>
+			<enumeration value="GPS+GLONASS"/>
+		</restriction>
+	</simpleType>
+	<!-- used by collocation information-->
+	<simpleType name="instrumentationTypeOfType">
+		<restriction base="string">
+			<enumeration value="Absolute Gravimeter"/>
+			<enumeration value="Circumzenithal VUGTK"/>
+			<enumeration value="DORIS"/>
+			<enumeration value="DORIS/SLR"/>
+			<enumeration value="DORIS/SLR/VLBI"/>
+			<enumeration value="Earth Tide Gravimeter"/>
+			<enumeration value="GLONASS receiver"/>
+			<enumeration value="WLRS"/>
+			<enumeration value="PRARE"/>
+			<enumeration value="DORIS/SLR/VLBI"/>
+			<enumeration value="Earth Tide Gravimeter"/>
+			<enumeration value="GLONASS receiver"/>
+			<enumeration value="WLRS"/>
+			<enumeration value="PRARE"/>
+			<enumeration value="Radio Telescope"/>
+			<enumeration value="SATREF"/>
+			<enumeration value="Siesmometer"/>
+			<enumeration value="SLP"/>
+			<enumeration value="Satellite Laser Ranging"/>
+			<enumeration value="SLR/VLBI"/>
+			<enumeration value="Very Large Baseline Interferometry"/>
+			<enumeration value="Superconducting Gravimeter"/>
+			<enumeration value="Transportable Integrated Geodetic Observatory"/>
+			<enumeration value="Tidal Gravimeter"/>
+			<enumeration value="Very Broad Band Seismograph"/>
+			<enumeration value="Campaign Mode GPS"/>
+			<enumeration value="Continuously Operating GPS"/>
+			<enumeration value="Transit"/>
+			<enumeration value="Not Available/unknown"/>
+			<enumeration value=""/>
+		</restriction>
+	</simpleType>
+	<simpleType name="statusType">
+		<restriction base="string">
+			<enumeration value="n/a"/>
+			<enumeration value="ACTIVE"/>
+			<enumeration value="MOBILE"/>
+			<enumeration value="PERMANENT"/>
+			<enumeration value="REMOVED"/>
+			<enumeration value=""/>
+		</restriction>
+	</simpleType>
+	<!-- used by frequency standard -->
+	<simpleType name="standardTypeOfType">
+		<restriction base="string">
+			<enumeration value="none"/>
+			<enumeration value="H-MASER"/>
+			<enumeration value="CESIUM"/>
+			<enumeration value="QUARTZ"/>
+			<enumeration value="INTERNAL"/>
+			<enumeration value="RUBIDIUM"/>
+			<enumeration value=""/>
+		</restriction>
+	</simpleType>
+	<!-- equipment.xsd not included due to being redefined in geodeticEquipment.xsd -->
+	<!-- Antenna.xsd -->
+	<annotation>
+		<documentation>
+     Filename     : antenna.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 17, 2003
+     Description  : This schema contains the constraints used to validate
+                  : the GNSS Antenna section of an XML-Encoded IGS Site Log
+                  : Document.
+     Notes        : This defined complexType is part of the set of site
+                  : metadata schemas developed at sopac.
+  </documentation>
+	</annotation>
+	<complexType name="gnssAntennaType">
+		<complexContent>
+			<extension base="geo:AbstractGNSSAntennaType">
+				<sequence>
+					<element name="antennaType" type="geo:igsAntennaModelCodeType"/>
+					<element name="serialNumber" type="string"/>
+                    <!-- TODO: use gco code list values -->
+                    <element name="antennaReferencePoint" type="gml:CodeType"/>
+					<element name="marker-arpUpEcc." type="double"/>
+					<element name="marker-arpNorthEcc." type="double"/>
+					<element name="marker-arpEastEcc." type="double"/>
+					<element name="alignmentFromTrueNorth" type="double"/>
+					<element name="antennaRadomeType" type="geo:igsRadomeModelCodeType"/>
+					<element name="radomeSerialNumber" type="string"/>
+					<element name="antennaCableType" type="string"/>
+					<element name="antennaCableLength" type="double"/>
+					<element name="dateInstalled" type="gml:TimePositionType"/>
+					<element name="dateRemoved" type="gml:TimePositionType"/>
+					<element name="notes" type="string"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- collocationInformation.xsd -->
+	<annotation>
+		<documentation>
+     Filename     : collocationInformation.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 20, 2003
+     Description  : This schema contains the constraints used to validate
+                  : the collocation Information section of an XML-Encoded IGS
+                  : Site Log Document.
+     Notes        : This defined complexType is part of the set of site
+                  : metadata schemas developed at sopac.
+  </documentation>
+	</annotation>
+	<complexType name="collocationInformationType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+                    <!-- TODO: use gco code list values -->
+                    <element name="instrumentationType" type="gml:CodeType"/>
+                    <element name="status" type="gml:CodeType"/>
+					<element ref="gml:validTime"/>
+					<element name="notes" type="string"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- frequencyStandard.xsd -->
+	<annotation>
+		<documentation>
+     Filename     : frequencyStandard.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 20, 2003
+     Description  : This schema contains the constraints used to validate
+                  : the Frequency Standard section of an XML-Encoded IGS
+                  : Site Log Document.
+     Notes        : This defined complexType is part of the set of site
+                  : metadata schemas developed at sopac.
+  </documentation>
+	</annotation>
+	<complexType name="frequencyStandardType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+                    <!-- TODO: use gco -->
+                    <element name="standardType" type="gml:CodeType"/>
+					<element name="inputFrequency" type="double"/>
+					<element ref="gml:validTime"/>
+					<element name="notes" type="string"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- humiditySensor.xsd -->
+	<annotation>
+		<documentation>
+     Filename     : humiditySensor.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 20, 2003
+     Description  : This schema contains the constraints used to validate
+                  : the Humidity Sensor section of an XML-Encoded IGS Site
+                  : Log Document.
+     Notes        : This defined complexType is part of the set of site 
+                  : metadata schemas developed at sopac.  
+		</documentation>
+	</annotation>
+	<complexType name="humiditySensorType">
+		<complexContent>
+			<extension base="geo:baseSensorEquipmentType">
+				<sequence>
+					<element name="dataSamplingInterval" type="double"/>
+					<element name="accuracy-percentRelativeHumidity" type="double"/>
+					<element name="aspiration" type="string"/>
+					<element name="notes" type="string"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- otherInstrumentation.xsd -->
+	<annotation>
+		<documentation>
+     Filename     : otherInstrumentation.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 20, 2003
+     Description  : This schema contains the constraints used to validate
+                  : the Other Instrumentation section of an XML-Encoded
+                  : IGS Site Log Document.
+     Notes        : This defined complexType is part of the set of site
+                  : metadata schemas developed at sopac.
+  </documentation>
+	</annotation>
+	<complexType name="otherInstrumentationType">
+		<complexContent>
+			<extension base="geo:InstrumentType">
+				<sequence>
+					<element name="instrumentation" type="string"/>
+					<element ref="gml:validTime"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- pressureSensor.xsd -->
+	<annotation>
+		<documentation>
+     Filename     : pressureSensor.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 20, 2003
+     Description  : This schema contains the constraints used to validate
+                  : the Pressure Sensor section of an XML-Encoded IGS Site
+                  : Log Document.
+     Notes        : This defined complexType is part of the set of site
+                  : metadata schemas developed at sopac.
+  </documentation>
+	</annotation>
+	<complexType name="pressureSensorType">
+		<complexContent>
+			<extension base="geo:baseSensorEquipmentType">
+				<sequence>
+					<element name="dataSamplingInterval" type="double"/>
+					<element name="accuracy-hPa" type="double"/>
+					<element name="notes" type="string"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- receiver.xsd -->
+	<annotation>
+		<documentation>
+     Filename     : receiver.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 17, 2003
+     Description  : This schema contains the constraints used to validate
+                  : the GNSS Receiver section of an XML-Encoded IGS Site
+                  : Log Document.
+     Notes        : This defined complexType is part of the set of site
+                  : metadata schemas developed at sopac.
+		</documentation>
+	</annotation>
+	<complexType name="gnssReceiverType">
+		<complexContent>
+			<extension base="geo:AbstractGNSSReceiverType">
+				<sequence>
+					<element name="receiverType" type="geo:igsReceiverModelCodeType"/>
+                    <!-- TODO: use gco -->
+                    <element name="satelliteSystem" type="gml:CodeType" maxOccurs="unbounded"/>
+					<element name="serialNumber" type="string"/>
+					<element name="firmwareVersion" type="string"/>
+					<element name="elevationCutoffSetting" type="double"/>
+					<element name="dateInstalled" type="gml:TimePositionType"/>
+					<element name="dateRemoved" type="gml:TimePositionType"/>
+					<element name="temperatureStabilization" type="double" minOccurs="0"/>
+					<element name="notes" type="string"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- surveyedLocalTies.xsd -->
+	<annotation>
+		<documentation>
+     Filename     : surveyedLocalTies.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 20, 2003
+     Description  : This schema contains the constraints used to validate
+                  : the Surveyed Local Ties section of an XML-Encoded IGS
+                  : Site Log Document.
+     Notes        : This defined complexType is part of the set of site
+                  : metadata schemas developed at sopac.
+    </documentation>
+	</annotation>
+	<complexType name="surveyedLocalTiesType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="tiedMarkerName" type="string"/>
+					<element name="tiedMarkerUsage" type="string"/>
+					<element name="tiedMarkerCDPNumber" type="string"/>
+					<element name="tiedMarkerDOMESNumber" type="string"/>
+					<element name="differentialComponentsGNSSMarkerToTiedMonumentITRS">
+						<complexType>
+							<sequence>
+								<element name="dx" type="double"/>
+								<element name="dy" type="double"/>
+								<element name="dz" type="double"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="localSiteTiesAccuracy" type="double"/>
+					<element name="surveyMethod" type="string"/>
+					<element name="dateMeasured" type="gml:TimePositionType"/>
+					<element name="notes" type="string"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- Alternative to surveyedLocalTiesType -->
+	<complexType name="TieMeasurementType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="Tie" type="geo:MeasurementLineType" maxOccurs="unbounded"/>
+					<element name="tiePairQuality" type="geo:MeasurementLineCovarianceType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+				<attributeGroup ref="geo:RequiredSRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- temperatureSensor.xsd -->
+	<annotation>
+		<documentation>
+     Filename     : temperatureSensor.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 20, 2003
+     Description  : This schema contains the constraints used to validate
+                  : the Temperature Sensor section of an XML-Encoded IGS
+                  : Site Log Document.
+     Notes        : This defined complexType is part of the set of site
+                  : metadata schemas developed at sopac.
+  </documentation>
+	</annotation>
+	<complexType name="temperatureSensorType">
+		<complexContent>
+			<extension base="geo:baseSensorEquipmentType">
+				<sequence>
+					<element name="dataSamplingInterval" type="decimal"/>
+					<element name="accuracy-degreesCelcius" type="decimal"/>
+					<element name="aspiration" type="string"/>
+					<element name="notes" type="string"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- waterVapourSensor.xsd -->
+	<annotation>
+		<documentation>
+     Filename     : waterVaporSensor.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 20, 2003
+     Description  : This schema contains the constraints used to validate
+                  : the Water Vapor Sensor section of an XML-Encoded IGS
+                  : Site Log Document.
+     Notes        : This defined complexType is part of the set of site
+                  : metadata schemas developed at sopac.
+		</documentation>
+	</annotation>
+	<complexType name="waterVaporSensorType">
+		<complexContent>
+			<extension base="geo:baseSensorEquipmentType">
+				<sequence>
+					<element name="distanceToAntenna" type="double"/>
+					<element name="notes" type="string"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!--  Global elements for each equipment type -->
+	<element name="gnssRadome" type="geo:gnssRadomeType" substitutionGroup="geo:Instrument"/>
+	<element name="gnssReceiver" type="geo:gnssReceiverType" substitutionGroup="geo:Instrument"/>
+	<element name="gnssAntenna" type="geo:gnssAntennaType" substitutionGroup="geo:Instrument"/>
+	<element name="humiditySensor" type="geo:humiditySensorType" substitutionGroup="geo:Sensor"/>
+	<element name="pressureSensor" type="geo:pressureSensorType" substitutionGroup="geo:Sensor"/>
+	<element name="temperatureSensor" type="geo:temperatureSensorType" substitutionGroup="geo:Sensor"/>
+	<element name="waterVaporSensor" type="geo:waterVaporSensorType" substitutionGroup="geo:Sensor"/>
+	<element name="otherInstrumentation" type="geo:otherInstrumentationType" substitutionGroup="geo:Instrument"/>
+	<element name="TieMeasurement" type="geo:TieMeasurementType" substitutionGroup="geo:AbstractMeasurement"/>
+	<element name="surveyedLocalTies" type="geo:surveyedLocalTiesType" substitutionGroup="gml:AbstractFeature"/>
+	<element name="frequencyStandard" type="geo:frequencyStandardType" substitutionGroup="gml:AbstractGML"/>
+	<element name="collocationInformation" type="geo:collocationInformationType" substitutionGroup="gml:AbstractGML"/>
+	<!--  Property types for each equipment type -->
+	<complexType name="gnssReceiverPropertyType">
+		<sequence>
+			<sequence minOccurs="0">
+				<element ref="geo:gnssReceiver"/>
+			</sequence>
+			<group ref="geo:ChangeTracking"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+	<complexType name="gnssAntennaPropertyType">
+		<sequence>
+			<sequence minOccurs="0">
+				<element ref="geo:gnssAntenna"/>
+			</sequence>
+			<group ref="geo:ChangeTracking"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+	<complexType name="humiditySensorPropertyType">
+		<sequence>
+			<sequence minOccurs="0">
+				<element ref="geo:humiditySensor"/>
+			</sequence>
+			<group ref="geo:ChangeTracking"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+	<complexType name="pressureSensorPropertyType">
+		<sequence>
+			<sequence minOccurs="0">
+				<element ref="geo:pressureSensor"/>
+			</sequence>
+			<group ref="geo:ChangeTracking"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+	<complexType name="temperatureSensorPropertyType">
+		<sequence>
+			<sequence minOccurs="0">
+				<element ref="geo:temperatureSensor"/>
+			</sequence>
+			<group ref="geo:ChangeTracking"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+	<complexType name="waterVaporSensorPropertyType">
+		<sequence>
+			<sequence minOccurs="0">
+				<element ref="geo:waterVaporSensor"/>
+			</sequence>
+			<group ref="geo:ChangeTracking"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+	<complexType name="otherInstrumentationPropertyType">
+		<sequence>
+		<sequence minOccurs="0">
+			<element ref="geo:otherInstrumentation"/>
+		</sequence>
+			<group ref="geo:ChangeTracking"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+	<complexType name="gnssRadomePropertyType">
+		<sequence>
+			<sequence minOccurs="0">
+				<element ref="geo:gnssRadome"/>
+			</sequence>
+			<group ref="geo:ChangeTracking"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+	<complexType name="surveyedLocalTiesPropertyType">
+		<sequence>
+			<choice minOccurs="0">
+				<element ref="geo:surveyedLocalTies"/>
+				<element ref="geo:TieMeasurement"/>
+			</choice>
+			<group ref="geo:ChangeTracking"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+	<complexType name="frequencyStandardPropertyType">
+		<sequence>
+			<sequence minOccurs="0">
+				<element ref="geo:frequencyStandard"/>
+			</sequence>
+			<group ref="geo:ChangeTracking"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+	<complexType name="collocationInformationPropertyType">
+		<sequence>
+			<sequence minOccurs="0">
+				<element ref="geo:collocationInformation"/>
+			</sequence>
+			<group ref="geo:ChangeTracking"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+</schema>

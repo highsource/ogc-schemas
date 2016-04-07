@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.3"
+	targetNamespace="urn:xml-gov-au:icsm:egeodesy:0.3" elementFormDefault="qualified"
+	version="0.3" xml:lang="en">
+	<annotation>
+		<documentation>eGeodesy schema implementation based on GML - draft. Copyright (c) 2015-2015
+			Commonwealth of Australia, on behalf of the Intergovernmental Committee on Surveying and
+			Mapping. All rights reserved.</documentation>
+	</annotation>
+	<!--  -->
+	<import namespace="http://www.opengis.net/gml/3.2"
+		schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.isotc211.org/2005/gmd"
+		schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
+	<!--  -->
+	<include schemaLocation="commonTypes.xsd"/>
+	<include schemaLocation="quality.xsd"/>
+	<include schemaLocation="observationSystem.xsd"/>
+	<include schemaLocation="lineage.xsd"/>
+	<include schemaLocation="referenceFrame.xsd"/>
+	<include schemaLocation="document.xsd"/>
+	<include schemaLocation="fieldMeasurement.xsd"/>
+	<include schemaLocation="measurement.xsd"/>
+	<include schemaLocation="project.xsd"/>
+	<!--  -->
+	<include schemaLocation="siteLog.xsd"/>
+	<!--  -->
+	<complexType name="GeodesyMLPropertyType">
+		<sequence minOccurs="0">
+			<element ref="geo:GeodesyML"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+	<element name="GeodesyML" type="geo:GeodesyMLType" substitutionGroup="gml:AbstractFeature"/>
+	<!--  -->
+	<complexType name="GeodesyMLType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element ref="gml:validTime" minOccurs="0"/>
+					<choice maxOccurs="unbounded">
+						<element ref="geo:Node"/>
+						<element ref="geo:AbstractPosition"/>
+						<element ref="geo:PositionPairCovariance"/>
+						<element ref="geo:Site"/>
+						<element ref="geo:siteVisit"/>
+						<element ref="geo:Monument"/>
+						<element ref="geo:SupplementaryMark"/>
+						<element ref="geo:AbstractMeasurement"/>
+						<element ref="geo:Instrument"/>
+						<element ref="geo:Sensor"/>
+						<element ref="geo:AbstractPositionSource"/>
+						<element ref="geo:AbstractPositionEstimator"/>
+						<element ref="geo:AbstractMeasurementSource"/>
+						<element ref="geo:AbstractMeasurementOperation"/>
+						<element ref="geo:AbstractDefinitionSource"/>
+						<element ref="geo:AbstractDefinitionOperation"/>
+						<element ref="geo:AbstractSiteLog"/>
+						<element ref="geo:Project"/>
+						<element ref="geo:Document"/>
+						<element ref="geo:Setup"/>
+						<element ref="geo:TerrestrialReferenceFrame"/>
+						<element ref="geo:DynamicTransformation"/>
+						<element ref="gml:AbstractCRS"/>
+					</choice>
+				</sequence>
+				<attributeGroup ref="gml:SRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!--  -->
+</schema>

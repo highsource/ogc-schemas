@@ -1,0 +1,42 @@
+With this parameter you can specify the sorting order of components.
+<p>
+The parameter has the following meaning:
+<ul>
+<li>
+  When it is selected (<b><code>true</code></b>),
+  the XSD components will be sorted alphabetically by their names (ignoring letter case).
+  <p style="margin-top:10pt">
+  The component name is assumed to be that under which the component appears 
+  (is referenced to) at the given documentation location.
+  This is typically the component qualified name (which is the actual namespace prefix 
+  plus the component local name). That, however, can be changed using 
+  <i>"Show | Namespace Prefixes"</i> parameter.
+  <p style="margin-top:10pt">
+  Additionally, in the case of <i>local elements</i>, the component name may also include
+  a special extension used to distinguish the equally named local elements.
+  For more details about this, please see <i>"Show | Local Element Extensions"</i> parameter.
+</li>
+<li style="margin-top:10pt">
+  When the parameter is unselected (<b><code>false</code></b>),
+  the XSD components are not sorted.
+  In that case they will follow in a certain "physical" order produced according to the following.
+  <p style="margin-top:10pt">
+  When components come from different XML schemas, first, they will be grouped by their schemas. 
+  The ordering of those groups is determined by what WSDL/XSD files have been specified initially
+  and how they reference (e.g. import) other WSDL/XSD files.
+  <p style="margin-top:10pt">
+  Within a group of components that belong to the same XML schema, they will follow in the same order 
+  as they are defined in that schema.
+  <p style="margin-top:10pt">
+  This allows you to control a particular ordering of components (e.g. elements)
+  by yourself. Simply define the most important components (e.g. an XML document's root element)
+  on the top of the XML schema. If you have several schemas to document, specify the most
+  important of them the first. That will produce the component ordering as you wish
+  (or something close to it).
+</li>
+</ul>
+
+<b>Default Value:</b>
+<dl><dd>
+Copied dynamically from the value of the parameter: <i>"Generate Details | Sorting | XSD Components"</i>
+</dd></dl>

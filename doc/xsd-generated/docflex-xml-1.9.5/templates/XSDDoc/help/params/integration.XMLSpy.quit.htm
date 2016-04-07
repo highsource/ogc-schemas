@@ -1,0 +1,49 @@
+Specify whether to quit XMLSpy.
+<p>
+Once all XML schemas have been processed and all diagrams generated,
+XMLSpy is not needed any longer. Then, XSDDoc issues a command to finish 
+the XMLSpy integration.
+What will happen with the running instance of XMLSpy
+depends on the setting of this parameter:
+<p>
+<b><code>true</code></b> (selected)
+<blockquote style="margin-top:10pt; margin-bottom:10pt">
+This is the default mode (and default setting of this parameter).
+<p style="margin-top:10pt">
+As soon as the finishing XMLSpy command is issued, the integration
+calls an XMLSpy API method to quit XMLSpy and waits until it returns.
+After that, the processing of XSDDoc templates (that is the generation of documentation)
+continues.
+<p style="margin-top:10pt">
+If you run XSDDoc again (e.g. while using the generator GUI) with XMLSpy integration enabled,
+a new XMLSpy instance will be launched and so on.
+<p style="margin-top:10pt">
+One problem with this mode is that on <a href="http://www.winehq.org">Linux/Wine</a>
+quitting of XMLSpy may raise an error (or even hang JVM).
+In that case, you may try to unselect this parameter.
+</blockquote>
+
+<b><code>false</code></b> (unselected)
+<blockquote style="margin-top:10pt; margin-bottom:10pt">
+The running instance of XMLSpy won't be quitted.
+The processing of XSDDoc templates continues as normally.
+<p style="margin-top:10pt">
+If you run XSDDoc from the generator GUI and then run it again (with XMLSpy integration enabled),
+the same XMLSpy instance will be reused.
+<p style="margin-top:10pt">
+When DocFlex/XML exits (that is the JVM running it), its use of the XMLSpy instance will be released.
+However, the XMLSpy process itself will remain in memory running.
+If <i>"Integrations | XMLSpy | Show XMLSpy"</i> parameter was selected before that, the XMLSpy IDE
+will be visible still. So, you can use it and quit by standard means.
+<p style="margin-top:10pt">
+On <a href="http://www.winehq.org">Linux/Wine</a>, releasing XMLSpy instance probably
+doesn't work smoothly again.
+But then, the Wine itself quits, so you won't see anything.
+(The full XML schema documentation with the diagrams will be ready at that).
+</blockquote>
+
+<b>See Also Parameters:</b>
+<ul>
+<li><i>Integrations | XMLSpy | Show XMLSpy</i></li>
+<li><i>Integrations | XMLSpy | Workarounds | XMLSpy API</i></li>
+</ul>

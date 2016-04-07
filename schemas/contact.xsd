@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gco="http://www.isotc211.org/2005/gco"
+	xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.3"
+	targetNamespace="urn:xml-gov-au:icsm:egeodesy:0.3" elementFormDefault="qualified" version="0.3"  xml:lang="en">
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
+	<import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd"/>
+	<annotation>
+		<documentation> Filename : baseContactLib.xsd Organization : Scripps Orbit and Permanent Array Center (SOPAC) Date : October 9, 2003
+			Description : This schema contains a uniqueley defined complexType : that is used multiple site metadata schemas. Notes : Used
+			by contactAgency.xsd and responsibleAgency.xsd </documentation>
+	</annotation>
+	<simpleType name="telephoneOrFax_Type">
+		<restriction base="string">
+			<!--  xsd:pattern value="\d{3}-\d{3}-\d{4}" / -->
+		</restriction>
+	</simpleType>
+	<complexType name="address_Type">
+		<sequence>
+			<element name="deliveryPoint" type="string" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="city" type="string" minOccurs="0"/>
+			<element name="administrativeArea" type="string" minOccurs="0"/>
+			<element name="postalCode" type="string" minOccurs="0"/>
+			<element name="country" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<complexType name="contact_Type">
+		<annotation>
+			<documentation>Contact information - roles are codeLists and should be restricted to file 'contactRoleCode.xml'. Eg. <![CDATA[
+				<contact>
+					<name>...</name>
+					<telephonePrimary></telephonePrimary>
+					<telephoneSecondary></telephoneSecondary>
+					<fax>...</fax>
+					<e-mail>...</e-mail>
+					<role codeList="../../codeLists/contacts-roles-codelists.xml#Role-Contact" codeListValue="Primary">Primary Contact</role>
+				</contact>
+				]]>
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="name" type="string"/>
+			<element name="telephonePrimary" type="geo:telephoneOrFax_Type" nillable="true"/>
+			<element name="telephoneSecondary" type="geo:telephoneOrFax_Type" nillable="true"/>
+			<element name="fax" type="geo:telephoneOrFax_Type" nillable="true"/>
+			<element name="e-mail" type="string"/>
+			<element name="role" type="gmd:CI_RoleCode_PropertyType"/>
+		</sequence>
+	</complexType>
+	<complexType name="agencyPropertyType">
+		<annotation>
+			<documentation>The agency contacts are of various types such as SiteOwner or SiteContact or ... , each with different possible occurences (0 or 1, 0 or more, 1 or more, 1 is required,...).  
+				They have a security constraint to specify who can view the data (if confidential then the business rules decide on who can view the information).
+				And as per the gmd:CI_ResponsibleParty definition, the individuals indicated have a role specified in gmd:CI_RoleCode.
+				Eg. <![CDATA[
+					<SiteOwner or SiteContact or SiteMetadataCustodian or SiteDataCenters or SiteDataSource gml:id="xyz">
+					    <gmd:MD_SecurityConstraints>
+						   <gmd:classification>
+						      <gmd:MD_ClassificationCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/agency-roles-codelists.xml#Security" codeListValue="Confidential">Confidential</gmd:MD_ClassificationCode>
+						   </gmd:classification>
+						</gmd:MD_SecurityConstraints>
+						<gmd:CI_ResponsibleParty>
+						    <gmd:individualName>
+						        <gco:CharacterString>Ryan Ruddick</gco:CharacterString>
+						    </gmd:individualName>
+						    <gmd:organisationName>
+								<gco:CharacterString>Geoscience Australia</gco:CharacterString>
+							</gmd:organisationName>
+						    ...
+						    <gmd:role>
+								<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
+							</gmd:role>
+					</agency>
+				]]>
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element ref="gmd:MD_SecurityConstraints" minOccurs="0"/>
+					<element ref="gmd:CI_ResponsibleParty"/>
+				</sequence>
+				<attributeGroup ref="gml:AssociationAttributeGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- element name="contactInformation" type="geo:contactInformationType" substitutionGroup="gml:AbstractGML"/ -->
+	<!-- complexType name="contactInformationPropertyType" >
+		<sequence minOccurs="0">
+			<element ref="geo:contactInformation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType -->
+</schema>

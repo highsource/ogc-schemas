@@ -1,0 +1,25 @@
+/* default rules for normal hyperlinks */
+
+a:link { color: #0066CC; }
+a:visited { color: #0066CC; }
+a:hover { color: #CC6600; }
+a:focus { color: #CC6600; }
+
+/* named rules for XML source */
+
+span.xml, a.xml { font-family: "Arial", sans-serif; font-size: 80%; }
+span.xmlMrk { font-family: "Arial", sans-serif; font-size: 80%; color: #000000; }
+
+span.xmlAttrName, span.xmlAttrName-reserved { font-family: "Arial", sans-serif; font-size: 80%; font-weight: bold; color: #000000; }
+span.xmlAttrVal, a.xmlAttrVal, span.xmlAttrVal-reserved { font-family: "Arial", sans-serif; font-size: 80%; color: #0066CC; }
+
+span.xmlCom, span.xmlComMrk { font-family: "Courier New", monospace; font-style: italic; font-size: 80%; color: #008800; }
+
+span.xmlElemName { font-family: "Arial", sans-serif; font-size: 80%; font-weight: bold; color: #800080; }
+span.xmlElemVal { font-family: "Arial", sans-serif; font-size: 80%; color: #000000; }
+
+span.xmlDOCTYPE, span.xmlIS { font-family: "Courier New", monospace; font-size: 80%; font-style: italic; font-weight: bold; color: #FF0000; }
+span.xmlPI { font-family: "Courier New", monospace; font-size: 80%; font-style: italic; color: #CC66CC; }
+span.xmlCDATA, span.xmlCDATAMrk { font-family: "Courier New", monospace; font-size: 80%; color: #CC0066; }
+
+a:hover.xmlSrcLink-hover { text-decoration: underline; color: #800080; }

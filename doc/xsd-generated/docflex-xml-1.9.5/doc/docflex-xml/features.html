@@ -1,0 +1,1506 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex/XML - Features</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/XML - Features
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+  <li class="mrg4"><a href="#tda"><b>Template-driven architecture</b></a>
+    <ul class="mrg4">
+      <li><a href="#template_sets">Documentation Generators as Template Sets</a></li>
+      <li><a href="#template_designer">Template Designer</a></li>
+      <li><a href="#template_processor">Template Processor (Generator)</a></li>
+      <li><a href="#template_params">Template Parameters</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#xml_data_sources"><b>Processing of XML data sources</b></a>
+    <ul class="mrg4">
+      <li><a href="#xml_files">Any number of input XML files with different structure</a></li>
+      <li><a href="#xml_dsm">All XML files as a single virtual XML document</a></li>
+      <li><a href="#xml_type">XML Schema-driven processing</a></li>
+      <li><a href="#data_mining">Data mining by Location Paths / Location Rules / Element Maps</a></li>
+      <li><a href="#xml_catalogs">Support of XML catalogs</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#formatting"><b>Formatting</b></a>
+    <ul class="mrg4">
+      <li><a href="#formatting_props">WYSIWYG capabilities of template components</a></li>
+      <li><a href="#formatting_styles">Formatting styles</a></li>
+      <li><a href="#custom_css">Custom CSS rules / CSS file</a>
+      <li><a href="#processing_xhtml">Processing of XHTML markup</a></li>
+      <li><a href="#embedded_html">Rendering of embedded HTML</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#images"><b>Insertion of images</b></a>
+    <ul class="mrg4">
+      <li><a href="#static_images">Static Images</a></li>
+      <li><a href="#dynamic_images">Dynamic Images</a></li>
+      <li><a href="#element_images">Element Images</a></li>
+      <li><a href="#xhtml_images">XHTML Images</a></li>
+      <li><a href="#image_formats">Supported Image Formats</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#hypertext"><b>Hypertext</b></a>
+    <ul class="mrg4">
+      <li><a href="#cross-ref-links">Cross-Reference Links</a></li>
+      <li><a href="#external-links">External Links</a></li>
+      <li><a href="#element-image-maps">Element Image Maps</a></li>
+      <li><a href="#hyperlinks-format-specific">Hyperlinks in Different Output Formats</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#output_formats"><b>Output formats</b></a>
+    <ul class="mrg4">
+      <li><a href="#html">HTML 4.01 / XHTML 1.0</a></li>
+      <li><a href="#rtf">RTF</a></li>
+      <li><a href="#txt">TXT (plain text)</a>
+        <ul>
+          <li><a href="#images_and_hyperlinks_in_txt">Images and hyperlinks in plain-text output</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#generator_gui"><b>Generator GUI</b></a>
+    <ul class="mrg4">
+      <li><a href="#why_generator_gui">Why generator GUI?</a></li>
+      <li><a href="#generator_dialog">Generator Dialog</a></li>
+      <li><a href="#param_option_inspectors">Template Parameter / Output Format Option Inspectors</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#ready_templates"><b>Ready template applications</b></a>
+    <ul class="mrg4">
+      <li><a href="#xmldoc">XMLDoc</a></li>
+      <li><a href="#xsddoc">XSDDoc</a></li>
+      <li><a href="#wsdldoc">WSDLDoc</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#integrations"><b>Integrations</b></a>
+    <ul class="mrg4">
+      <li><a href="#ant">Apache Ant</a></li>
+      <li><a href="#maven">Apache Maven</a></li>
+      <li><a href="#XMLSpy">XMLSpy</a></li>
+      <li><a href="#OxygenXML">Oxygen XML Editor</a></li>
+    </ul>
+  </li>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<h2 class="spec">
+  <a name="tda"></a>
+  Template-driven architecture
+</h2>
+
+<h4>
+  <a name="template_sets"></a>
+  Documentation Generators as Template Sets
+</h4>
+
+Actual doc-generators are created as sets of special <a href="../general/about.html#templates">templates</a>,
+executed by the <a href="#template_processor">template processor</a>.
+The templates are effectively programs that implement the entire generation of the documentation output.
+<p class="mrg8">
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  Here, the word <i>&ldquo;template&rdquo;</i> is not good to describe what this actually is. 
+  (We just haven't found a better term).
+  DocFlex/XML templates are rather a mixture of what is traditionally called &ldquo;templates&rdquo;
+  and &ldquo;scripts&rdquo;.
+  For more details, please see: <a href="../general/about.html#templates">DocFlex Technology | What are Templates?</a>
+</td></tr>
+</table>
+<p class="mrg8">
+There are basically four kinds of templates (or rather roles which they can play):
+<ol class="mrg8">
+  <li>Document templates that generate the whole documents (e.g. HTML files).</li>
+  <li>Fragment templates that generating parts/fragments of the documents.</li>
+  <li>
+    Procedure templates, which generate nothing by themselves, but may be used for some preparation
+    (e.g. loading referenced XML files, creating element maps, etc.) or to call the document templates
+    (particularly when the output documentation has no obvious root).
+  </li>
+  <li>
+    Main templates, which start the generation of the entire documentation.
+  </li>
+</ol>
+All those templates may call each other (and even in different roles).
+<p class="mrg8">
+<a name="main_template"></a>
+The <i>main templates</i> are those specified to the <a href="#template_processor">generator</a>
+(only one at a time). A template set may include several main templates
+to generate different kinds of documentation (e.g. single file, framed multi-file, etc.)
+
+<h4>
+  <a name="template_designer"></a>
+  Template Designer
+</h4>
+
+Although templates are stored as plain-text files (with an XML-like format),
+they are not supposed for editing manually.
+Rather, a special graphic <a href="../general/templates_designer_features.html">Template Designer</a> must be used,
+which visualizes templates in the form of <a href="../general/template_components.html#components">components</a>
+they are made of.
+<p>
+<table cellspacing="0" cellpading="0">
+<tr>
+<td><a href="http://www.filigris.com/docflex-xml/images/designer.png" target="_blank" title="Template Designer (click to enlarge)"><img src="images/designer_s.png" border="0"></a></td>
+<td style="width:8px"></td>
+<td>
+This screenshot shows the &ldquo;portType.tpl&rdquo; template (from <a href="wsdldoc/overview.html">WSDLDoc</a> template set)
+open in the Template Designer (click to see in full size).
+<p class="mrg8">
+The left pane represents the structural components called <a href="../general/template_components.html#sections">sections</a>,
+which are responsible for most of data processing as well as the generation of
+integral features of the output (such as paragraphs, tables, lists etc).
+<p class="mrg8">
+The right pane represents the components called <a href="../general/template_components.html#controls">controls</a>,
+which generate particular content details (e.g. text, images, table cells etc).
+Controls are visualized in a form resembling the output they generate.
+</td>
+</tr>
+</table>
+
+<h4>
+  <a name="template_processor"></a>
+  <a name="generator"></a>
+  Template Processor (Generator)
+</h4>
+
+This is the most crucial and sophisticated part of the whole <a href="about.html#intro">DocFlex/XML</a> system.
+It takes on input:
+
+<ol class="mrg8">
+<li>
+  The specified <a href="#xml_files">XML files</a>, which constitute the <a href="#xml_data_sources">data source</a>.
+</li>
+<li>
+  The <a href="#main_template">main template</a> (the entry point of the <a href="#template_sets">template set</a>).
+</li>
+<li>
+  The <a href="#xml_type">XML Type</a> associated with the template set.
+  It provides the structure / data type information about the input XML files.
+</li>
+<li>
+  <a href="#xml_catalogs">XML catalogs</a> that are used to resolve XML file references.
+</li>
+</ol>
+
+The template interpreter uses <a href="../general/template_components.html">template components</a>
+and their <a href="../general/template_components.html#component_properties">properties</a>
+as instructions and generates the output documentation by them (from the data found in the XML files).
+On the way, it may load more XML files referenced from those being processed.
+<p class="mrg8">
+The output generator is actually an interchangeable part, which has separate implementations for
+each supported <a href="#output_formats">output format</a>.
+Which particular output format will be used is specified as the option.
+<p class="mrg8">
+Together the template interpreter and all output generators represent a single functional unit,
+which is called also <b>&ldquo;DocFlex/XML Generator&rdquo;</b> (or simply &ldquo;generator&rdquo;).
+
+It is run from the Java <a href="generator.html#cmdline">command line</a> as a separate Java application
+and controlled by lots of <a href="generator.html#options">options</a>.
+
+<p class="mrg8">
+Alternatively, most of these settings can be specified in a
+<a href="#generator_gui">Generator GUI</a> interactively.
+Its main dialog is shown on the following screenshot:
+<p>
+<img src="images/generator_dialog.png" title="Generator Dialog" border="0" usemap="#gui.map">
+<map name="gui.map">
+  <area shape="rect" coords="15,50,476,74" href="#main_template" title="main template">
+  <area shape="rect" coords="481,50,504,74" href="#main_template" title="choose main template">
+  <area shape="rect" coords="508,50,572,74" href="generator.html#gui.param_inspector" title="Template Parameter Inspector">
+  <area shape="rect" coords="15,79,476,102" href="#xml_files" title="input XML files">
+  <area shape="rect" coords="481,79,504,102" href="#xml_files" title="choose XML files">
+  <area shape="rect" coords="508,79,572,102" href="#xml_catalogs" title="XML Catalog dialog">
+  <area shape="rect" coords="15,107,476,130" href="#output_formats" title="output format">
+  <area shape="rect" coords="508,107,572,130" href="generator.html#gui.format_option_inspector" title="Format Option Inspector">
+  <area shape="rect" coords="15,134,476,158" href="generator.html#gui.output_folder" title="output folder">
+  <area shape="rect" coords="481,134,504,158" href="generator.html#gui.output_folder" title="choose output folder">
+  <area shape="rect" coords="15,163,476,186" href="generator.html#gui.output_file" title="output file name">
+  <area shape="rect" coords="15,193,119,211" href="generator.html#gui.launch_viewer" title="launch viewer for generated docs (e.g. HTML browser)">
+  <area shape="rect" coords="173,229,250,253" href="generator.html#gui.run" title="start generator">
+  <area shape="rect" coords="337,229,414,253" target="_blank" href="http://www.filigris.com/licensing/#multiple_licenses.example" title="&ldquo;About DocFlex/XML&rdquo; dialog (shows your licenses etc.)">
+</map>
+
+<p>
+For further details, please see:
+<a href="generator.html">DocFlex/XML | Documentation | Running Generator</a>
+
+<h4>
+  <a name="template_params"></a>
+  Template Parameters
+</h4>
+
+Since all the content and formatting of the generated documentation is programmed entirely in
+<a href="#template_sets">templates</a>, what in ordinary doc-generators are command-line options
+now simply become <i>template parameters</i>.
+<p class="mrg8">
+The parameters are defined and accessed in templates to control
+<a href="../general/templates_designer_features.html#dynamic_properties">dynamic properties</a>
+of <a href="../general/templates_designer_features.html#template_components">template components</a>
+(or pass data to them).
+
+They may be of various data types including <a href="generator.html#list_params">list parameters</a>,
+which allow passing a vector of values associated with the same parameter name.
+<p>
+Because template parameters are easy to introduce and support in templates
+(most of time actually takes writing their descriptions), a large template application
+(like <a href="xsddoc/index.html">XSDDoc</a>) may have hundreds of parameters.
+This allows adjusting the generated documentation within a wide range of possibilities
+without changing the templates. 
+<p class="mrg8">
+However, it also creates two problems:
+<ol class="mrg8">
+<li>How to find and set a necessary parameter quickly?</li>
+<li>How to avoid settings lots of related parameters when just a few features need to be changed?</li>
+</ol>
+Those problems are solves as follows:
+<ul class="mrg8">
+<li class="mrg8">
+  All template parameters are organized in the form of a tree that can be easily navigated
+  in the <a href="generator.html#gui.param_inspector">Parameter Inspector</a>
+  (shown on the right screenshot below), which is a part of the <a href="#generator_gui">generator GUI</a>.
+</li>
+<li class="mrg8">
+  The parameters can be set to their default values, which may be not only constants
+  but also calculated dynamically from the values of other parameters.
+  That effectively allows you to set many related parameters at once just by setting only
+  a few most important of them.
+</li>
+</ul>
+
+On the left screenshot you can see how parameters are defined in a template.
+On the right is the <a href="generator.html#gui.param_inspector">Parameter Inspector</a>
+created from those definitions (click on each screenshots to enlarge):
+<p>
+<table cellspacing="0" cellpading="0">
+<tr valign="top">
+<td><a href="http://www.filigris.com/docflex-xml/images/param_defs.png" target="_blank" title="definitions of template parameters"><img src="images/param_defs_s.png" border="0"></a></td>
+<td style="width:16px"></td>
+<td><a href="http://www.filigris.com/docflex-xml/images/param_inspector.png" target="_blank"><img src="images/param_inspector_s.png" title="Template Parameter Inspector" border="0"></a></td>
+</tr>
+</table>
+
+
+<h2 class="spec">
+  <a name="xml_data_sources"></a>
+  Processing of XML data sources
+</h2>
+
+<h4>
+  <a name="xml_files"></a>
+  Any number of input XML files with different structure
+</h4>
+
+A template application may process (take data from) any number of XML files
+with different structures (e.g. <a href="wsdldoc/overview.html">WSDL+XSD</a>).
+The input XML files can be both specified initially as the
+<a href="generator.html">generator</a> arguments 
+and also loaded dynamically by the templates according to the data being processed.
+
+<h4>
+  <a name="xml_dsm"></a>
+  <a name="xml_dsm_driver"></a>
+  All XML files as a single virtual XML document
+</h4>
+
+All open XML files are represented together in the form of a single tree structure (similar to XML 
+<a href="http://en.wikipedia.org/wiki/Document_Object_Model" target="_blank">DOM</a>). That virtual representation,
+called <b>&ldquo;XML DSM&rdquo;</b> (or <a href="design_templates.html#xmltype">XML Data Source Model</a>),
+in turn, consists of abstract <a href="../general/about.html#dsm_element">DSM elements</a> and
+<a href="../general/about.html#dsm_attribute">DSM attributes</a>.
+Some of them mirror real XML elements and attributes found in the open XML files.
+Others (called <a href="design_templates.html#xmltype.pseudo_elements">pseudo-elements</a>)
+represent all kinds of non-element/attribute nodes found in XML DOM
+(such as TEXT-nodes, XML comments, processing instructions etc.) as well as each XML file as a whole.
+On top of the tree is a special pseudo-element
+<a href="design_templates.html#xmltype.DOCUMENTS">#DOCUMENTS</a>
+that represents all XML files together.
+<p class="mrg8">
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  In context of the whole <a href="../general/about.html">DocFlex Technology</a>,
+  the <a href="design_templates.html#xmltype">XML DSM</a> is a single unified representation
+  of the entire multi-files XML data source, with which a particular template application works.
+  It is created and maintained by the <b>XML DSM Driver</b>, a DocFlex/XML module, which takes on inputs XML files
+  and converts them into the branches of the XML DSM tree.
+</td></tr>
+</table>
+
+<h4>
+  <a name="xml_type"></a>
+  XML Schema-driven processing
+</h4>
+
+W3C XML schemas play crucial role in processing of input XML files.
+<p class="mrg8">
+Each template application is designed for a certain set of XML schemas, which describe all possible XML
+files the application may process (except some trivial cases, for instance, the reproducing of raw XML;
+see <a href="samples/xmldoc/index.html">XMLDoc</a>).
+<p class="mrg8">
+During the processing each input XML file is associated with some of those XML schemas 
+and each XML element becomes uniquely connected to a certain <code>&lt;xs:element&gt;</code> from it.
+That is used to:
+<ul class="mrg8">
+<li>
+  Determine the data types of the values of XML elements/attributes, which allows processing them accordingly.
+</li>
+<li>
+  Know all possible element children, which helps to resolve various complex queries.
+</li>
+<li>
+  In addition, all XSD types (i.e. 
+  <code>&lt;xs:simpleType&gt;</code>/<code>&lt;xs:complexType&gt;</code>
+  components), from which the <code>&lt;xs:element&gt;</code>
+  is derived, also become associated with the XML element.
+  That makes possible to search and iterate by those XSD types -- the abstract entities not even found
+  in the XML files themselves!
+</li>
+</ul>
+
+The collection of XML schemas, on which the template application is based, constitutes an <b>XML Type</b>.
+In effect, this is a logical description of the whole <a href="#xml_dsm">XML DSM</a>,
+which drives the entire processing!
+<p class="mrg8">
+<u>Example</u>:
+<p>
+<table cellspacing="0" cellpading="0">
+<tr>
+<td><a href="http://www.filigris.com/docflex-xml/images/wsdldoc_dsmtype.png" target="_blank" title="&ldquo;WSDL 1.1 & XSD Files&rdquo; XML Type"><img src="images/wsdldoc_dsmtype_s.png" border="0"></a></td>
+<td style="width:12px"></td>
+<td>
+On this screenshot you can see a tree representation of the <b>&ldquo;WSDL 1.1 & XSD Files&rdquo;</b> XML Type.
+It describes any number of input WSDL/XSD file as a single data source,
+which is processed by the <a href="wsdldoc/overview.html">WSDLDoc</a> template set
+(click to see a more expanded view).
+<p class="mrg8">
+This XML Type is based on the following XML schemas:
+<p class="mrg8">
+<a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/index.html?schemas/XMLSchema_xsd/schema-overview.html" target="_blank">http://www.w3.org/2001/XMLSchema.xsd</a><br>
+<a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/wsdl11/index.html?schemas/wsdl/schema-overview.html" target="_blank">http://schemas.xmlsoap.org/wsdl/</a><br>
+<a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/wsdl11/index.html?schemas/soap/schema-overview.html" target="_blank">http://schemas.xmlsoap.org/wsdl/soap/</a><br>
+<a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/wsdl11/index.html?schemas/http/schema-overview.html" target="_blank">http://schemas.xmlsoap.org/wsdl/http/</a><br>
+<a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/wsdl11/index.html?schemas/mime/schema-overview.html" target="_blank">http://schemas.xmlsoap.org/wsdl/mime/</a>
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1" width1="300" style="margin-top:18px">
+<tr><td bgcolor="#F6F6F6" class="inset">
+NOTE: The words &ldquo;DSM Type&rdquo; visible in the dialog actually mean &ldquo;XML Type&rdquo;.
+<a href="../general/about.html#dsm_type">DSM Type</a> is the same notion, but extended to any kind of
+DOM-like data sources provided by a Java API (XML files are covered by this as well).
+For instance, see: <a target="_blank" href="http://www.filigris.com/docflex-javadoc/#doclet_dsm">DocFlex/Javadoc | How it works | Doclet DSM</a>.
+</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<p>
+See also:
+<a href="design_templates.html#xmltype">DocFlex/XML | Documentation | Designing Templates | Defining XML Type</a>
+
+<h4>
+  <a name="data_mining"></a>
+  Data mining by Location Paths / Location Rules / Element Maps
+</h4>
+
+Most of data mining and retrieval is based on <a href="../general/element_iterator_details.html#collecting_elements_by_location_rules">Location Paths / Location Rules</a>,
+which is a developed by us extension of <a href="http://en.wikipedia.org/wiki/XPath" target="_blank">XPath</a>.
+This is complemented also with the specifically adapted hash-maps (called <i>&ldquo;element maps&rdquo;</i>)
+that serve the role of indexes.
+<p class="mrg8">
+The element maps are particularly important in finding XML elements referenced by qualified names
+(e.g. from various <code>xs:QName</code> attributes), which is typical, for instance, in XSD/WSDL files.
+<p class="mrg8">
+<u>Example</u>:
+<p class="mrg8">
+On the following screenshot you can see a set of 
+<a href="../general/element_iterator_details.html#collecting_elements_by_location_rules">Location Rules</a>
+to collect ancestor types (i.e. XML elements representing them) for a 
+<a href="xsddoc/features.html#types.derivation_tree">Type Derivation Tree</a>
+in <a href="xsddoc/index.html">XML schema documentation</a> (click to enlarge):
+<p>
+<table cellspacing="0" cellpading="0">
+<tr>
+<td><a href="http://www.filigris.com/docflex-xml/images/location_rules.png" target="_blank" title="Location Rules for Type Derivation Tree"><img src="images/location_rules_s.png" border="0"></a></td>
+<td style="width:12px"></td>
+<td>
+Here, the 
+<a href="../general/element_iterator_details.html#collecting_elements_by_location_rules">Location Rules</a>
+are specified among the properties of the
+<a href="../general/template_components.html#element_iterator">Element Iterator</a> section.
+<p class="mrg8">
+Each rule corresponds a particular type derivation method available in 
+<a href="http://www.w3.org/XML/Schema" target="_blank">XSD</a>.
+The rules are interpreted against a given XSD type, which produces a sequence of all ancestor types
+starting from that initial type itself (the first rule just includes it in the sequence).
+Then, the iterator prints the collected sequence in reverse order as a tree:
+<p>
+<a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/index.html?schemas/XMLSchema_xsd/simpleTypes/IDREFS.html" target="_blank" title="click to see in HTML"><img src="images/typeDerivationTree_s.png" border="0"></a>
+</td>
+</tr>
+</table>
+
+<h4>
+  <a name="xml_catalogs"></a>
+  Support of XML catalogs
+</h4>
+
+<a href="http://en.wikipedia.org/wiki/XML_Catalog" target="_blank">XML Catalogs</a>
+are special XML files that define redirections of certain URLs/URIs to other URLs/URIs.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1" width1="300" style="margin-top:18px">
+<tr><td bgcolor="#F6F6F6" class="inset">
+An XML file may contain references to other XML files, which are required for its processing
+(for instance, this is widely used in XML schemas).
+Those references are typically expressed as a file URL, which is the address where the file should be found.
+But the referenced file may not necessary exist at that address or the provided location
+is undesirable or impossible to access. There may be a local copy of the same file, which can be equally used.
+But how to tell the XML processor to use that local copy instead of the original one?
+When the XML processor is aware of an XML catalog containing a mapping of the original URL
+to the local one, the requested file will be automatically loaded from the new location.
+</td></tr>
+</table>
+<p>
+DocFlex/XML supports XML catalog files in
+<a href="http://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html" target="_blank">OASIS XML Catalogs v1.1</a>
+format.
+<p class="mrg8">
+XML catalogs can be used in processing of input XML files, for which they should be
+specified with
+<span class="nowrap">-<a href="generator.html#xmlcatalog_option">xmlcatalog</a></span> option
+or in a special dialog (part of the <a href="#generator_gui">generator GUI</a>):
+<p class="mrg8">
+<img src="images/xml_catalogs.png" border="0">
+<p>
+Additionally, XML catalogs are used in definitions of <a href="#xml_type">XML Types</a> based on multiple XML schemas
+(see <a href="design_templates.html#xmltype.xsd.catalogs">xsd.catalogs</a> config property).
+<p>
+For more details, please see:
+<a href="setup.html#xml_catalogs">DocFlex/XML | Documentation | Installation / Configuration Files | XML Catalogs</a>
+</a>
+
+<h2 class="spec">
+  <a name="formatting"></a>
+  Formatting
+</h2>
+
+<h4>
+  <a name="formatting_props"></a>
+  WYSIWYG capabilities of template components
+</h4>
+
+All formatting of the generated output is specified as 
+<a href="../general/templates_designer_features.html#component_properties">properties</a> of
+<a href="../general/templates_designer_features.html#template_components">template components</a>.
+In <a href="#template_designer">Template Designer</a>, this is visualized 
+in a form resembling the output those components generate.
+<p class="mrg8">
+On the following screenshot you can see how the generation of summary table is programmed:
+<p>
+<img src="images/summary_wysiwyg.png" 
+title="Programming in a template the generation of a summary table.
+Note: The multiple icons in the Panel Control representing the table cell will not get in a real cell at once. Rather, only one of them will be chosen for a each particular table row.">
+<p>
+In that way the following formatting features are supported:
+<ul class="mrg8">
+  <li>text formatting: fonts, colors, borders</li>
+  <li>paragraph formatting: margins, pagination control, borders, colors</li>
+  <li>border formatting: styles (solid, double, dashed, dotted), thickness, colors</li>
+  <li>tables: arbitrary cell layouts, borders, nested tables</li>
+  <li>lists: bulleted, numbered, delimited</li>
+  <li>document fields (RTF): page number, number of pages, TOC, etc.</li>
+  <li>page formatting: size, orientation, margins, headers/footers</li>
+</ul>
+</li>
+
+During the generation, 
+the <a href="../general/templates_designer_features.html#component_properties">formatting properties</a> of components
+are rendered with appropriate features available in the selected <a href="#output_formats">output format</a>.
+
+<h4>
+  <a name="formatting_styles"></a>
+  Formatting styles
+</h4>
+
+Formatting properties of 
+<a href="../general/templates_designer_features.html#template_components">template components</a>
+can be defined and stored independently of
+components themselves, in special definitions called <i>template formatting styles</i>:
+
+<p><a href="http://www.filigris.com/docflex-xml/images/styles.png" target="_blank" title="template formatting styles (click to enlarge)"><img src="images/styles_s.png" border="0"></a></p>
+
+Basically, the template formatting style is a bunch of component formatting properties, which is given a certain name:
+
+<p>
+<table cellspacing="0" cellpadding="0">
+<tr valign="top">
+<td><a href="http://www.filigris.com/docflex-xml/images/style_props1.png" target="_blank" title="Formatting Style: general properties (click to enlarge)"><img src="images/style_props1_s.png" border="0"></a></td>
+<td><table width="15"><tr><td></td></tr></table></td>
+<td><a href="http://www.filigris.com/docflex-xml/images/style_props2.png" target="_blank" title="Formatting Style: paragraph properties (click to enlarge)"><img src="images/style_props2_s.png" border="0"></a></td>
+<td><table width="15"><tr><td></td></tr></table></td>
+<td><a href="http://www.filigris.com/docflex-xml/images/style_props3.png" target="_blank" title="Formatting Style: text properties (click to enlarge)"><img src="images/style_props3_s.png" border="0"></a></td>
+</tr>
+</table>
+</p>
+By that name the style can be assigned to any component in the template.
+When a component has a formatting style, those formatting properties not specified on the component directly
+are inherited from the style.
+<p class="mrg8">
+Formatting styles are template local things.
+That is, they are not imported from somewhere outside.
+But when a template is called from another template, the styles defined in the caller template will
+override the equally named styles defined in the called one.
+When multiple templates are called one from another, that will work in a chain.
+So, the styles defined in the <a href="#main_template">main template</a> will override any equally
+named styles defined elsewhere.
+As a whole, formatting styles behave as additional <a href="#template_params">template parameters</a>
+passed implicitly by their names. 
+
+<h4>
+  <a name="custom_css"></a>
+  Custom CSS rules / CSS file
+</h4>
+
+In case of <a href="#html">HTML output</a>, DocFlex support the traditional way of styling 
+the generated documentation through customizing the CSS style sheet.
+It is done via the <a href="../general/css_usage.html#named_rules">named CSS rules</a>
+generated from <a href="#formatting_styles">template formatting styles</a>.
+<p class="mrg8">
+On the following screenshots you can see the same documentation
+with default (left) and custom (right) CSS. Click on each screenshot to see the real HTML:
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+  <td><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/schema-source.html" target="_blank"><img src="images/default_css.png" title="XML schema source with default formatting" border="0"></a></td>
+  <td style="width:16px"></td>
+  <td><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/schema-source2.html" target="_blank"><img src="images/custom_css.png" title="XML schema source formatted with custom CSS rules" border="0"></a></td>
+</tr>
+</table>
+</p>
+For further details, please see:
+<a href="../general/css_usage.html">DocFlex Technology | Documentation | Usage of CSS in generated HTML</a>
+
+<h4>
+  <a name="processing_xhtml"></a>
+  Processing of XHTML markup
+</h4>
+
+The XHTML tags can be recognized at specific locations of XML documents
+(for instance, within <code>&lt;xs:documentation&gt;</code> elements of XSD files). 
+This must be programmed entirely in a template,
+which converts all XHTML tags to normal HTML tags (e.g. by removing 'xhtml' namespace prefix from the tag names).
+Further, everything will be processed by the generator itself as <a href="#embedded_html">embedded HTML</a>.
+<p>
+<table cellspacing="0" cellpading="0">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+  <td><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/HumanEvolution/schemas/HumanEvolution_xsd/schema-source.html" target="_blank"><img src="images/xhtml_src.png" title="XML schema source with lots XHTML tags in annotations" border="0"></a></td>
+  <td><table border="0" cellpadding="0" cellspacing="0" width="16"><tr><td></td></tr></table></td>
+  <td><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/HumanEvolution/index.html" target="_blank"><img src="images/xhtml_processed.png" title="The documentation generated by that XML schema" border="0"></a></td>
+</tr>
+</table>
+</td>
+<td style="width:12px"></td>
+<td>
+This is a demo of what can be achieved by usage of XHTML in XML schema annotations.
+On the left you can see the XML source of an XML schema, whose annotations are heavily laden with XHTML markup (including insertion of images).
+On the right is the documentation generated by that schema.
+Click on each screenshot to see the actual HTML.
+<p class="mrg8">
+In this case, the XHTML tags are processed in 
+<a href="xsddoc/templates.html">XSDDoc</a>/lib/ann/<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.ann.php#annotation.tpl">annotation.tpl</a>
+template, which also takes care of images (inserted with &lt;img&gt; tags); they need to be copied to the documentation destination directory.
+</td>
+</tr>
+</table>
+</p>
+See also:
+<a href="xsddoc/faq.html#xhtml">XSDDoc | FAQ | How to format my comments using XHTML?</a>
+
+<h4>
+  <a name="embedded_html"></a>
+  Rendering of embedded HTML
+</h4>
+
+This means interpreting in the generated output the user HTML/XHTML tags embedded in text data (e.g. annotations). 
+<p class="mrg8">
+In case of <a href="#rtf">HTML/XHTML</a> output, little needs to be done (if only fixing wrong HTML markup or converting it to XHTML).
+<p class="mrg8">
+However, in case of <a href="#rtf">RTF</a>, the embedded HTML needs to be fully parsed and interpreted with the corresponding formatting features
+available in RTF, at that this everything must be integrated with the formatting imposed by the settings in templates.
+That is supported for almost all HTML tags practically usable in documentation comments (including <a href="#xhtml_images">inserting of images</a>):
+<p>
+<table border="1" cellspacing="1" cellpadding="5" class="brdr1">
+<tr valign="top">
+  <td class="brdr1"><b>Text</b></td>
+  <td class="brdr1">
+    &lt;b&gt;,
+    &lt;strong&gt;,
+    &lt;i&gt;,
+    &lt;em&gt;,
+    &lt;code&gt;,
+    &lt;tt&gt;,
+    &lt;u&gt;,
+    &lt;s&gt;,
+    &lt;strike&gt;,
+    &lt;sub&gt;,
+    &lt;sup&gt;,
+    &lt;font&gt;,
+    &lt;br&gt;
+  </td>
+</tr>
+<tr valign="top">
+  <td class="brdr1"><b>Paragraphs</b></td>
+  <td class="brdr1">
+    &lt;p&gt;,
+    &lt;center&gt;,
+    &lt;div&gt;,
+    &lt;pre&gt;,
+    &lt;h1&gt;,
+    &lt;h2&gt;,
+    &lt;h3&gt;,
+    &lt;h4&gt;,
+    &lt;h5&gt;,
+    &lt;h6&gt;,
+    &lt;blockquote&gt;
+  </td>
+</tr>
+<tr valign="top">
+  <td class="brdr1"><b>Lists</b></td>
+  <td class="brdr1">
+    &lt;ul&gt;,
+    &lt;ol&gt;,
+    &lt;li&gt;,
+    &lt;dl&gt;,
+    &lt;dt&gt;,
+    &lt;dd&gt;
+  </td>
+</tr>
+<tr valign="top">
+  <td class="brdr1"><b>Table</b></td>
+  <td class="brdr1">
+    &lt;table&gt;,
+    &lt;tr&gt;,
+    &lt;td&gt;,
+    &lt;th&gt;
+  </td>
+</tr>
+<tr valign="top">
+  <td class="brdr1"><b>Other</b></td>
+  <td class="brdr1">
+    &lt;hr&gt;,
+    &lt;img&gt;,
+    &lt;a&gt;...&lt;/a&gt;
+  </td>
+</tr>
+</table>
+<p>
+<u>Example</u>:
+<p>
+<table cellspacing="0" cellpading="0">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+  <td><a href="http://www.filigris.com/docflex-xml/images/ehtml1.html" target="_blank"><img src="images/ehtml1_s.png" title="click to enlarge" border="0"></a></td>
+  <td><table border="0" cellpadding="0" cellspacing="0" width="16"><tr><td></td></tr></table></td>
+  <td><a href="http://www.filigris.com/docflex-xml/images/ehtml2.html" target="_blank"><img src="images/ehtml2_s.png" title="click to enlarge" border="0"></a></td>
+</tr>
+</table>
+</td>
+<td style="width:12px"></td>
+<td>
+These are screenshots taken from two RTF documentations generated by XML schemas with intensive usage of user XHTML markup in annotations.
+<p>
+On the left is the same XML schema as in the demo <a href="#processing_xhtml">above</a>.
+For comparison, the HTML version of the same page you can see 
+<a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/HumanEvolution/index.html?schemas/HumanEvolution_xsd/complexTypes/HomoSapiens.html" target="_blank">here</a>.
+<p>
+The XML schema on the right is this one:
+<a href="http://www.w3.org/2001/xml.xsd" target="_blank">http://www.w3.org/2001/xml.xsd</a>
+</td>
+</tr>
+</table>
+</p>
+
+<h2 class="spec">
+  <a name="images"></a>
+  Insertion of images
+</h2>
+
+<h4>
+  <a name="static_images"></a>
+  Static Images
+</h4>
+
+When the image file is already known at the time of template design (e.g. various icons),
+it can be specified directly in the template 
+using <a href="../general/template_components.html#image_control">Image Control</a>.
+Then, such an image is instantly displayed in the designer pane (along with other controls):
+<p>
+<img src="images/static_images.png" border="0">
+
+<h4>
+  <a name="dynamic_images"></a>
+  Dynamic Images
+</h4>
+
+It is also possible that the image source becomes known only during the generation
+(according to the data being processed). This includes:
+<ul class="mrg8">
+  <li>Arbitrary files, URLs or Java resources</li>
+  <li>Binary data (base64- or hex-encoded) found in XML files</li>
+</ul>
+Such images can be also inserted in the output 
+using <a href="../general/template_components.html#image_control">Image Controls</a>.
+
+<h4>
+  <a name="element_images"></a>
+  Element Images
+</h4>
+
+Some XML elements may have special depiction (or diagrams) attached to them.
+For instance, an element in XML schema file that defines a particular XSD component
+may be associated with a diagram showing the content model or the derivation of that component.
+<p1 class="mrg8">
+Such depictions, called <i>&ldquo;element images&rdquo;</i>,
+can be easily inserted in the generated output using 
+<a href="../general/template_components.html#image_control">Image Controls</a>.
+
+<p class="mrg8">
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  Element images come from the
+  <a href="design_templates.html#xmltype.imageProvider">Element Image Provider</a>
+  -- a special interchangeable extension of the <a href="#xml_dsm_driver">XML DSM Driver</a>.
+  Since element images are specific only to a particular type of data sources (e.g. XSD files),
+  the <a href="design_templates.html#xmltype.imageProvider">Element Image Provider</a>
+  is effectively a part of the <a href="xml_type">XML Type</a>.
+  <p class="mrg8"></p>
+  The <a href="#integrations">integrations</a> with <a href="#XMLSpy">XMLSpy</a> and
+  <a href="#OxygenXML">OxygenXML</a> are actually different implementations of the 
+  <a href="design_templates.html#xmltype.imageProvider">Element Image Provider</a>.
+</td></tr>
+</table>
+
+<p class="mrg8">
+<u>Example</u>:
+<p class="mrg8">
+
+On the left screenshot you can see 
+<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#diagram.tpl">diagram.tpl</a>	
+template (from 
+<a href="xsddoc/index.html">XSDLDoc</a> template set),
+which prints a component diagram section. The diagram is inserted in the output via
+the <a href="../general/template_components.html#image_control">Image Control</a>
+specified to generate &ldquo;element image&rdquo;.
+The right screenshot shows a piece of output produced by this template:
+<p>
+<table cellspacing="0" cellpading="0">
+<tr>
+<td><a href="http://www.filigris.com/docflex-xml/images/diagram_tpl.png" target="_blank" title="diagram.tpl - inserting element image (click to enlarge)"><img src="images/diagram_tpl_s.png" border="0"></a></td>
+<td style="width:12px"></td>
+<td><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/index.html?schemas/XMLSchema_xsd/elements/annotation.html" target="_blank" title="click to see in HTML"><img src="images/diagram_s.png" border="0"></a></td>
+</tr>
+</table>
+
+<h4>
+  <a name="xhtml_images"></a>
+  XHTML Images
+</h4>
+
+Independently of what is specified about images in templates, they may come also from
+<a href="#processing_xhtml">XHTML tags</a> found in input XML files.
+When some XML elements (e.g. <code>&lt;xs:documentation&gt;</code> in XSD files)
+may include XHTML tags specifically <a href="#processing_xhtml">processed</a>
+by a given template set, images can be inserted using
+<b>&lt;img&gt;</b> tags.
+
+<p class="mrg8">
+<u>Example</u>:
+<p class="mrg8">
+
+<TABLE BGCOLOR="#F5F5F5" CELLSPACING="0" CELLPADDING="7" BORDER="0" CLASS="brdr1">
+<TR><TD CLASS="f6">
+<SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:annotation</SPAN><SPAN CLASS="f1">&gt;</SPAN>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:documentation</SPAN> <SPAN CLASS="f4">xmlns</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f5">http://www.w3.org/1999/xhtml</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f3">The "Valid XHTML 1.0" Icon:</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">p</SPAN><SPAN CLASS="f6"><SPAN CLASS="f1">/&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">img</SPAN> <SPAN CLASS="f2">src</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">http://www.w3.org/Icons/valid-xhtml10.png</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:documentation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:annotation</SPAN><SPAN CLASS="f1">&gt;</SPAN>
+</TD>
+</TR>
+</TABLE>
+<p>
+After processing such an annotation, the generator will produce the following fragment of HTML:
+<p>
+<table cellspacing="1" cellpadding="8" class="brdr1">
+<tr>
+<td BGCOLOR="#F5F5F5" class="brdr1">
+The "Valid XHTML 1.0" Icon:
+<p class="mrg8"></p>
+<img src="images/valid-xhtml10.png">
+</td></tr>
+</table>
+
+<h4>
+  <a name="image_formats"></a>
+  Supported Image Formats
+</h4>
+
+DocFlex does not generate images by its own. Any images must either
+be prepared beforehand or come from various external sources.
+However, DocFlex does need to read images in order to <a href="#static_images">display them</a> in 
+<a href="#template_designer">Template Designer</a> or, at least, to obtain some of their properties
+necessary to insert the image correctly in the generated output.
+<p class="mrg8">
+The following formats of incoming images are supported:
+<b>GIF</b>, <b>PNG</b>, <b>JPG</b>, <b>WMF</b>, <b>EMF</b>, <b>BMP</b>
+
+<h2 class="spec">
+  <a name="hypertext"></a>
+  Hypertext
+</h2>
+
+<h4>
+  <a name="cross-ref-links"></a>
+  Cross-Reference Links
+</h4>
+
+Cross-links are produced by <b>matching</b> sets of <b>special keys</b> generated
+for both <b>link source</b> and <b>destination</b> (target). The keys represent actual data being linked.
+Their generation is specified in templates along with the generation of the 
+corresponding pieces of output.
+
+<p class="mrg8">
+<u>Example</u>:
+<p class="mrg8">
+
+Suppose we need to generate a list of some components and link its items to the corresponding component details:
+<p>
+<img src="images/cross_links.png">
+<p>
+The list is generated by a template section like the one shown below on the left screenshot.
+Each list item is produced by the <a href="../general/template_components.html#data_control">Data Control</a> (selected)
+specified to print the component name.
+The hyperlink generation is defined here in the Data Control's properties (right screenshot).
+It is determined by a pair of keys: <code>{contextElement.id, "detail"}</code>.
+The first key <code>'contextElement.id'</code> represents the component itself
+(it's the unique ID of the <a href="../general/about.html#dsm_element">DSM element</a> representing the component).
+The second key is the string <code>"detail"</code>. It says that what we want to link to is the component's entire details.
+This is needed because there may be other sections in the documentation dedicated to the same component, which may be linked to as well
+(including some subsections within the detail).
+<p>
+<table cellspacing="0" cellpading="0">
+<tr valign="top">
+<td><a href="http://www.filigris.com/docflex-xml/images/cross_link_src_tpl.png" target="_blank" title="template section generating component list (click to enlarge)"><img src="images/cross_link_src_tpl_s.png" border="0"></a></td>
+<td style="width:16px"></td>
+<td><a href="http://www.filigris.com/docflex-xml/images/cross_link_src_def.png" target="_blank" title="hyperlink definition (click to enlarge)"><img src="images/cross_link_src_def_s.png" border="0"></a></td>
+</tr>
+</table>
+<p>
+The component detail is generated by the template shown below (left screenshot).
+The link target is defined in the template properties (right screenshot).
+It's again determined by the same pair of keys: <code>{contextElement.id, "detail"}</code>.
+<p>
+<table cellspacing="0" cellpading="0">
+<tr valign="top">
+<td><a href="http://www.filigris.com/docflex-xml/images/cross_link_target_tpl.png" target="_blank" title="template generating component detail (click to enlarge)"><img src="images/cross_link_target_tpl_s.png"></a></td>
+<td style="width:16px"></td>
+<td><a href="http://www.filigris.com/docflex-xml/images/cross_link_target_def.png" target="_blank" title="definition of hyperlink target (click to enlarge)"><img src="images/cross_link_target_def_s.png" border="0"></a></td>
+</tr>
+</table>
+<p>
+
+Such definitions allow the generator to create hyperlinks automatically.
+Each time the sets of keys produced by some possible link source and destination are matching, the actual hyperlink is generated.
+In that way anything can be cross-linked together.
+At that, if a particular set of keys cannot be matched, an alternative set of keys can be
+specified as well. That means, when the primary target is absent, the link can go to some alternative
+location related to the link source.
+
+<h4>
+  <a name="external-links"></a>
+  External Links
+</h4>
+
+Similar to <a href="#cross-ref-links">cross-links</a> can be programmed the generation of <b>outgoing</b> hyperlinks to any external URLs (left screenshot).
+The link URL is produced by an <a href="../general/data_processing_features.html#fq_expr">expression</a> specified in the properties of the link definition (right screenshot):
+<p>
+<table cellspacing="0" cellpading="0">
+<tr valign="top">
+<td><a href="http://www.filigris.com/docflex-xml/images/ext_link_def.png" target="_blank" title="definition of external hyperlink (click to enlarge)"><img src="images/ext_link_def_s.png" border="0"></a></td>
+<td style="width:16px"></td>
+<td><a href="http://www.filigris.com/docflex-xml/images/ext_link_props.png" target="_blank" title="external link definition properties (click to enlarge)"><img src="images/ext_link_props_s.png" border="0"></a></td>
+</tr>
+</table>
+<p>
+The <b>incoming</b> hyperlinks from external pages into the generated documentation can be supported as well.
+Each hypertext target (anchor) is generated by a definition like shown below (left screenshot). It is specified in the properties of the component
+whose output is targeted. Typically, the anchor name is generated automatically and, therefore, meaningless.
+But it can be any predefined string generated by an <a href="../general/data_processing_features.html#fq_expr">expression</a> specified in the properties
+of the target definition (right screenshot below), which can be used in the URL of the incoming link.
+<p>
+<table cellspacing="0" cellpading="0">
+<tr valign="top">
+<td><a href="http://www.filigris.com/docflex-xml/images/ext_target_def.png" target="_blank" title="definition of hyperlink target (click to enlarge)"><img src="images/ext_target_def_s.png" border="0"></a></td>
+<td style="width:16px"></td>
+<td><a href="http://www.filigris.com/docflex-xml/images/ext_target_props.png" target="_blank" title="target definition properties (click to enlarge)"><img src="images/ext_target_props_s.png" border="0"></a></td>
+</tr>
+</table>
+
+<h4>
+  <a name="element-image-maps"></a>
+  Element Image Maps
+</h4>
+
+As <a href="#element_images">element images</a> are typically diagrams, they may require a complex set of hyperlinks
+assigned to particular image areas. That is called <i>&ldquo;image map&rdquo;</i>.
+<p class="mrg8">
+Generic image maps, which associate the image areas with particular <a href="../general/about.html#dsm_element">DSM elements</a>
+(representing something depicted in those areas),
+come from the data source along with the element images themselves.
+But those associations need to be converted into actual hyperlinks going to the corresponding sections of the documentation.
+<p>
+<table cellspacing="0" cellpading="0">
+<tr>
+<td><a href="http://www.filigris.com/docflex-xml/images/image_map_def.png" target="_blank" title="programming of generation of hypertext image map (click to enlarge)"><img src="images/image_map_def_s.png" border="0"></a></td>
+<td style="width:12px"></td>
+<td>
+That is programmed in properties of the <a href="../general/template_components.html#image_control">Image Control</a>
+(that inserts the <a href="#element_images">element image</a>) as shown on the screenshot.
+<p class="mrg8">
+It looks the same as a definition of ordinary <a href="#cross-ref-links">cross-link</a>.
+The difference is that it is interpreted against every image area, so that the <a href="../general/about.html#dsm_element">DSM elements</a>
+associated with that area is made the generator context element and the hyperlink is generated by it.
+In that way each image area gets its actual hyperlink.
+</td>
+</tr>
+</table>
+
+<h4>
+  <a name="hyperlinks-format-specific"></a>
+  Hyperlinks in Different Output Formats
+</h4>
+
+Basically, hyperlinks can be generated in all output formats (included even <a href="#txt">plain text</a>).
+However, there are some specifics:
+<p>
+<table width="100%" border="1" cellspacing="1" cellpadding="5" class="brdr1">
+
+<tr align="center" bgcolor="#E9E9E9">
+  <th width="1%" class="brdr1"><b>Format</b></td>
+  <th width="98%" class="brdr1"><b>What's special</b></td>
+</tr>
+
+<tr valign="top">
+<td class="brdr1">
+<a href="#html">HTML</a>
+</td>
+<td class="brdr1">
+<b>Hyperlink Title</b>
+<p class="mrg8"></p>
+It is a small text generated by a &ldquo;Link Tile&rdquo; <a href="../general/data_processing_features.html#fq_expr">expression</a> specified in the properties of the hyperlink definition.
+In HTML, hyperlink titles are set using <code>title</code> attribute, like this:
+<p class="mrg8"></p>
+<code>&lt;a ... title="<i>link tooltip text</i>"&gt; ... &lt;/a&gt;</code>
+<p class="mrg8"></p>
+Most browsers interpret it as a hyperlink tooltip (a tiny window with the text that appears near the hyperlink when the mouse cursor is moved over it):
+<p class="mrg8"></p>
+<img src="images/link_tooltip.png" style="border: dotted 2px #999999">
+</td>
+</tr>
+
+<tr valign="top">
+<td class="brdr1">
+<a href="#html">RTF</a>
+</td>
+<td class="brdr1">
+<b>Page Number References</b>
+<p class="mrg8"></p>
+RTF supports similar hyperlinks as HTML.
+But this is good in electronic form.
+Once you have printed something on paper, you cannot click on it.
+So, how to navigated the printed documentation?
+<p class="mrg8"></p>
+In RTF, <a href="#cross-ref-links">cross-links</a> can be represented also in the form of page number references,
+which is programmed as follows.
+<p class="mrg8"></p>
+A <a href="../general/template_components.html#data_control">Data Control</a> is specified in a template:
+<p class="mrg8"></p>
+<img src="images/page_num_ref_1.png">
+<p class="mrg8"></p>
+to generate a &ldquo;Page Number&rdquo; document field:
+<p class="mrg8"></p>
+<img src="images/page_num_ref_2.png">
+<p class="mrg8"></p>
+The hypertext tab is specified the same as in case of <a href="#hyperlinks-format-specific">cross-link</a>:
+<p class="mrg8">
+<a href="http://www.filigris.com/docflex-xml/images/cross_link_src_def.png" target="_blank" title="hyperlink definition (click to enlarge)"><img src="images/cross_link_src_def_s.png" border="0"></a>
+<p class="mrg8"></p>
+That's all. The generated RTF will look as on this page (in square brackets you see page number references; click to enlarge):
+<p class="mrg8"></p>
+<a href="http://www.filigris.com/docflex-xml/xsddoc/images/p023.html" target="_blank"><img src="images/page_num_ref_3.png" title="RTF document with page number references" border="0"></a>
+</td>
+</tr>
+
+<tr valign="top">
+<td class="brdr1">
+<a href="#txt">TXT</a>
+</td>
+<td class="brdr1">
+See: <a href="#images_and_hyperlinks_in_txt">Images and hyperlinks in plain-text output</a>
+</td>
+</tr>
+
+<table>
+
+<h2 class="spec">
+  <a name="output_formats"></a>
+  Output formats
+</h2>
+
+<h4>
+  <a name="html"></a>
+  HTML 4.01 / XHTML 1.0
+</h4>
+
+Both framed multi-file and single-file output can be generated.
+Almost all formatting is expressed with CSS.
+It is possible also to replace some of the generated CSS rules with custom ones
+(see <a href="../general/css_usage.html">DocFlex Technology | Documentation | Usage of CSS in generated HTML</a>).
+
+<h4>
+  <a name="rtf"></a>
+  RTF
+</h4>
+
+version 1.6 - supported since Word 2000; can be further converted to PDF
+
+<h4>
+  <a name="txt"></a>
+  TXT (plain text)
+</h4>
+
+You can use plain-text output to generate documentation (or any other sort of output)
+in formats not supported directly by DocFlex.
+<p class="mrg8">
+That is possible only when such a format is eventually plain-text based (not binary).
+But that's the case for probably all modern formats (e.g.
+<a href="http://en.wikipedia.org/wiki/TeX" target="_blank">TeX</a>,
+<a href="http://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture" target="_blank">DITA</a>,
+<a href="http://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a>
+etc).
+Of course, you will need to specify in templates all necessary markup (tags, control words etc.)
+specific for that format.
+
+<h5>
+  <a name="images_and_hyperlinks_in_txt"></a>
+  Images and hyperlinks in plain-text output
+</h5>
+
+It may sound odd. What images and hyperlinks can exist in plain-text files?
+<p class="mrg8">
+Yet, plain-text output may be just a base layer for other file formats, for instance DITA, which is an XML-based markup.
+There, both images and hyperlinks do exist and are required. 
+<p class="mrg8">
+The following functionality will allow you to use plain-text output capability of <a href="about.html">DocFlex/XML</a>
+to generate some full-blown complex formats even when they are not supported by DocFlex/XML directly. 
+
+<p>
+<u>Images</u>
+</p>
+
+In plain-text mode, an <a href="../general/template_components.html#image_control">Image Control</a>
+will produce the same <a href="#images">image</a> file (according to its setting).
+However, in addition, it also emits into the main output the image file's relative pathname.
+That pathname is calculated against the main file's location and the name-separator is UNIX style ("/").
+In a template, you can surround the <a href="../general/template_components.html#image_control">Image Control</a>
+with other <a href="../general/template_components.html#text_control">Text Controls</a> generating some markup,
+so everything would produce both the image file and the image tag for it in the main output. 
+
+<p>
+<u>Hyperlinks</u>
+</p>
+
+You can generate <a href="#cross-ref-links">cross-hyperlinks</a> in plain-text files too. This equally includes the hyperlinks from images
+(the <a href="#element-image-maps">imagemaps</a>).
+
+<p class="mrg8">
+What exactly a hyperlink is depends on the final format you generate using the plain-text output.
+DocFlex/XML just provides the necessary functionality to find the things you want to link from and to.
+This is implemented in the form of new 
+<a href="../general/data_processing_features.html#fq_expr">FlexQuery</a> functions and GOM types/properties
+("GOM" stands for <i>Generator Object Model</i>): 
+
+<p>
+<table width="100%" border="1" cellspacing="1" cellpadding="5" class="brdr1">
+
+<tr align="center" bgcolor="#E9E9E9">
+  <th width="1%" class="brdr1"><b class="impr nowrap">Function/Type/Property</b></td>
+  <th width="98%" class="brdr1"><b class="impr">Description</b></td>
+</tr>
+
+<tr valign="top">
+<td class="brdr1">
+  <code>findHyperTarget()</code>
+</td>
+<td class="brdr1">
+  Finds a hyperlink <a href="#cross-ref-links">target</a> matching the specified set of keys that may exist anywhere
+  in the whole generated documentation. Returns a <code>GOMHyperTarget</code> object
+  describing the target.
+</td>
+</tr>
+
+<tr valign="top">
+<td class="brdr1">
+  <code>GOMHyperTarget</code>
+</td>
+<td class="brdr1">
+  Provides information about a hyperlink <a href="#cross-ref-links">target</a>.
+  This includes the output file containing the target and the target name.
+</td>
+</tr>
+
+<tr valign="top">
+<td class="brdr1">
+  <code>getElementImageMapAreas()</code>
+</td>
+<td class="brdr1">
+  Returns all hypertext <a href="#element-image-maps">imagemap</a> areas of the <a href="#element_images">element image</a>
+  associated with the specified element.
+  The function returns an array of <code>GOMImageMapArea</code> objects.
+</td>
+</tr>
+
+<tr valign="top">
+<td class="brdr1">
+  <code>GOMImageMapArea</code>
+</td>
+<td class="brdr1">
+  Represents a single area in the hypertext <a href="#element-image-maps">imagemap</a> of an <a href="#element_images">element image</a>.
+  This includes the area bounds (rectangle) and the referenced <code>GOMElement</code>.
+</td>
+</tr>
+
+<tr valign="top">
+<td class="brdr1">
+  <code>GOMElement.hasImage</code>
+</td>
+<td class="brdr1">
+  Indicates whether the element has a certain image representation (<a href="#element_images">element image</a>).
+</td>
+</tr>
+
+</table>
+<p>
+More information about these functions and types you can find in the
+<a href="../general/templates_designer_features.html#expr_editors">Template Designer | Help | Assistant</a>:
+<ul>
+  <li>Functions | By Category | Hypertext Functions</li>
+  <li>Generator Object Model | Object Types</li>
+</ul>
+
+<h2 class="spec">
+  <a name="generator_gui"></a>
+  Generator GUI
+</h2>
+
+<h4>
+  <a name="why_generator_gui"></a>
+  Why generator GUI?
+</h4>
+
+A documentation generator implemented as 
+{<a href="#generator">DocFlex/XML Generator</a> + <a href="#template_sets">template set</a>}
+is controlled by a lot of settings, which include:
+<ul class="mrg8">
+  <li><a href="#main_template">Main template</a></li>
+  <li><a href="#template_params">Template parameters</a></li>
+  <li><a href="#xml_files">Input XML file(s)</a></li>
+  <li><a href="#output_formats">Output format</a></li>
+  <li>Format-specific options for the output generator</li>
+  <li>Output destination (directory/file)</li>
+</ul>
+Of course, all such settings can be assigned using 
+<a href="generator.html#options">options</a>
+on the <a href="generator.html#cmdline">generator command line</a>
+(most, actually, have their default values).
+But there may be so many of them!
+<p class="mrg8">
+So, besides command line options, <a href="#generator">DocFlex/XML Generator</a> provides a more user-friendly way 
+to specify everything interactively -- the <a href="generator.html#gui">Generator GUI</a>.
+
+<h4>
+  <a name="generator_dialog"></a>
+  Generator Dialog
+</h4>
+
+When no 
+<span class="nowrap">-<a href="generator.html#nodialog_option">nodialog</a></span>
+option is specified on the generator <a href="generator.html#cmdline">command line</a>,
+by default, the following
+<a href="generator.html#gui">Generator Dialog</a> is invoked
+(click to enlarge):
+<p>
+<table cellspacing="0" cellpading="0">
+<tr>
+<td><a href="images/generator_dialog.png" target="_blank" title="Generator Dialog"><img src="images/generator_dialog_s.png" border="0"></a></td>
+<td rowspan="3" style="width:12px"></td>
+<td rowspan="3">
+Here, you can fill in all required settings.
+<p class="mrg8">
+The <b>&lt;Params&gt;</b> button invokes the
+<a href="generator.html#gui.param_inspector">Parameter Inspector</a>,
+where you can edit all
+<a href="#template_params">parameters</a> of the specified <a href="#main_template">main template</a>.
+<p class="mrg8">
+In a <a href="generator.html#gui.xml_catalogs">special dialog</a> invoked by
+the <b>&lt;Catalog&gt;</b> button, you can add <a href="#xml_catalogs">XML catalogs</a>
+that will be used during processing of input 
+<a href="#xml_files">XML file(s)</a>.
+<p class="mrg8">
+The <b>&lt;Options&gt;</b> button invokes the
+<a href="generator.html#gui.output_format">Option Inspector</a> corresponding the selected
+<a href="#output_formats">Output format</a>.
+<p class="mrg8">
+When all settings are prepared, you can start the generation by clicking <b>&lt;Run&gt;</b> button.
+Then, the generator dialog will transform itself to show the generation progress.
+<p class="mrg8">
+You can stop the generation at any moment by clicking <b>&lt;Cancel&gt;</b> button.
+<p class="mrg8">
+Once the generation has finished (or cancelled), the generator dialog transforms itself back 
+into its initial state.
+</td>
+</tr>
+<tr>
+<td style="height:10px"></td>
+</tr>
+<tr>
+<td><a href="images/generating.png" target="_blank" title="Running the generator"><img src="images/generating_s.png" border="0"></a></td>
+</tr>
+</table>
+
+<h4>
+  <a name="param_option_inspectors"></a>
+  Template Parameter / Output Format Option Inspectors
+</h4>
+
+The additional settings, such as <a href="#template_params">template parameters</a> and output format options
+can be assigned in the special property inspector dialogs invoked by clicking the buttons on the right 
+(click to enlarge):
+<p>
+<table cellspacing="0" cellpadding="0">
+<tr valign="top">
+<td>
+  <a href="http://www.filigris.com/docflex-xml/images/param_inspector.png" title="Template Parameter Inspector" target="_blank"><img src="images/param_inspector_s.png" title="Template Parameter Inspector" border="0"></a>
+</td>
+<td>
+  <table width="15"><tr><td></td></tr></table>
+</td>
+<td>
+  <a href="images/html_option_inspector.png" title="HTML Option Inspecor" target="_blank"><img src="images/html_option_inspector_s.png" title="HTML Option Inspector" border="0"></a>
+</td>
+<td>
+  <table width="15"><tr><td></td></tr></table>
+</td>
+<td>
+  <a href="images/rtf_option_inspector.png" title="RTF Option Inspector" target="_blank"><img src="images/rtf_option_inspector_s.png" title="RTF Option Inspector" border="0"></a>
+</td>
+</tr>
+</table>
+</p>
+Here you can edit the parameter or option values according to their data types.
+The bottom panel in the inspector dialog shows the HTML-preformatted description 
+of each parameter or format-specific generator option.
+<p>
+For further details, please see:
+<a href="generator.html#gui">DocFlex/XML | Documentation | Running Generator | Generator GUI</a>
+
+<h2 class="spec">
+  <a name="ready_templates"></a>
+  Ready template applications
+</h2>
+
+<h4>
+  <a name="xmldoc"></a>
+  <a href="samples/xmldoc/index.html" class="latent">XMLDoc</a>
+</h4>
+
+<table cellspacing="0" cellpading="0">
+<tr>
+<td><a href="http://www.filigris.comsamples/xmldoc/index.htmlfiles/FramedDoc.html" target="_blank"><img src="images/xmldoc.png" title="XML File documentation generated with &ldquo;XMLDoc&rdquo; template set" border="0"></a></td>
+<td style="width:12px"></td>
+<td>
+Allows you to compile any number of generic XML files into a web-ready HTML or printable RTF documentation
+with the optional inclusion of a namespace binding report that shows which namespace prefixes are bound
+to which namespace URIs and where.
+<p class="mrg8">
+On the left screenshot you can see a demo documentation generated with 
+<a href="samples/xmldoc/index.html">XMLDoc</a> (click to view the real HTML).
+<p class="mrg8">
+For further details, please see: <a href="samples/xmldoc/index.html">DocFlex/XML | Sample | XMLDoc</a>
+</td>
+</tr>
+</table>
+
+<h4>
+  <a name="xsddoc"></a>
+  <a href="xsddoc/index.html" class="latent">XSDDoc</a>
+</h4>
+
+<table cellspacing="0" cellpading="0">
+<tr>
+<td><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/index.html" target="_blank"><img src="images/xsddoc.png" title="&ldquo;XML Schema for XML Schemas&rdquo; - framed HTML documentation" border="0"></a></td>
+<td style="width:12px"></td>
+<td>
+Implements a very powerful XML Schema Documentation Generator
+able to produce both multi-framed Javadoc-like
+<a href="xsddoc/overview.html#output.html">HTML</a> and printable
+<a href="xsddoc/overview.html#output.rtf">RTF</a> documentation.
+<p class="mrg8">
+It supports also the integrations with both
+<a href="#XMLSpy">XMLSpy</a> and <a href="#OxygenXML">Oxygen XML Editor</a>,
+which allow you to insert automatically the XSD diagrams
+produced by either of those systems into the XML schema documentation
+generated by <a href="xsddoc/index.html">XSDDoc</a>
+(with the full support of diagram hyperlinks).
+<p class="mrg8">
+On the left screenshot you can see a demo documentation generated with 
+<a href="xsddoc/index.html">XSDDoc</a> (click to view the real HTML).
+<p class="mrg8">
+For further details, please see: <a href="xsddoc/index.html">DocFlex/XML | XSDDoc</a>
+</td>
+</tr>
+</table>
+
+<h4>
+  <a name="wsdldoc"></a>
+  <a href="wsdldoc/overview.html" class="latent">WSDLDoc</a>
+</h4>
+
+<table cellspacing="0" cellpading="0">
+<tr valign="top">
+<td><a href="http://www.filigris.comwsdldoc/overview.htmlexamples/html/xignite/index.html" target="_blank"><img src="images/wsdldoc.png" title="Xignite Web Services - WSDL documentation (click to see HTML)" border="0"></a></td>
+<td style="width:12px"></td>
+<td>
+This template set implements a combined WSDL/XSD documentation generator that will allow you
+to document both WSDL and XML schema (XSD) files as well as any interconnections between them.
+<p class="mrg8">
+It supports also the integrations with both
+<a href="#XMLSpy">XMLSpy</a> and <a href="#OxygenXML">Oxygen XML Editor</a>,
+which automatically insert the XSD diagrams
+produced by either of those systems into the documentation generated by
+<a href="wsdldoc/overview.html">WSDLDoc</a>
+(with the full support of diagram hyperlinks).
+<p class="mrg8">
+On the left screenshot you can see a demo documentation generated with 
+<a href="wsdldoc/overview.html">WSDLDoc</a> (click to view the real HTML).
+<p class="mrg8">
+For further details, please see: <a href="wsdldoc/overview.html">DocFlex/XML | WSDLDoc</a>
+</td>
+</tr>
+</table>
+
+<h2 class="spec">
+  <a name="integrations"></a>
+  Integrations
+</h2>
+
+<h4>
+  <a name="ant"></a>
+  <a href="integrations/ant.html" class="latent">Apache Ant</a>
+</h4>
+
+You can easily integrate DocFlex/XML <a href="#template_processor">generator</a>
+(template interpreter) with <a href="http://ant.apache.org/" target="_blank">Apache Ant</a>
+automated build system. No special plugin is required!
+For more details, please see:
+<a href="integrations/ant.html">DocFlex/XML | Integrations | Apache Ant</a>.
+
+<h4>
+  <a name="maven"></a>
+  <a href="integrations/maven.html" class="latent">Apache Maven</a>
+</h4>
+
+You can equally run DocFlex/XML <a href="#template_processor">generator</a>
+from your Maven build.
+For this, there is a special <i>&ldquo;DocFlex/XML Maven Plugin&rdquo;</i>.
+For more details, please see:
+<a href="integrations/maven.html">DocFlex/XML | Integrations | Apache Maven</a>.
+
+<h4>
+  <a name="XMLSpy"></a>
+  <a href="integrations/XMLSpy.html" class="latent">XMLSpy</a>
+</h4>
+
+<table cellspacing="0" cellpading="0">
+<tr>
+<td><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/index.html?schemas/XMLSchema_xsd/complexTypes/namedAttributeGroup.html" target="_blank"><img src="images/xsddoc_xmlspy.png" title="&ldquo;XML Schema for XML Schemas&rdquo; - HTML documentation with XMLSpy diagrams" border="0"></a></td>
+<td style="width:12px"></td>
+<td>
+The integration of DocFlex/XML with <b>Altova XMLSpy</b>
+(see <a href="http://www.altova.com/xmlspy/" target="_blank">http://www.altova.com/xmlspy/</a>)
+allows you to automatically insert graphic diagrams produced by XMLSpy
+into the documentation generated by
+<a href="xsddoc/index.html">XSDDoc</a>/<a href="wsdldoc/overview.html">WSDLDoc</a>
+(with the full support of diagram hyperlinks).
+<p class="mrg8">
+On the left you can see an XML schema documentation
+with XSD diagrams generated by XMLSpy (click on the screenshot to view the real HTML).
+<p class="mrg8">
+For more details, please see:
+<a href="integrations/XMLSpy.html">DocFlex/XML | Integrations | XMLSpy</a>.
+</td>
+</tr>
+</table>
+
+<h4>
+  <a name="OxygenXML"></a>
+  <a href="integrations/OxygenXML.html" class="latent">Oxygen XML Editor</a>
+</h4>
+
+<table cellspacing="0" cellpading="0">
+<tr>
+<td><a href="http://www.filigris.com/docflex-xml/OxygenXML/demo/html/wsdl11/index.html?schemas/wsdl/elements/binding.html" target="_blank"><img src="images/xsddoc_oxygenxml.png" title="&ldquo;XML Schemas for WSDL 1.1&rdquo; - HTML documentation with OxygenXML diagrams" border="0"></a></td>
+<td style="width:12px"></td>
+<td>
+The integration of DocFlex/XML with <b>Oxygen XML Editor</b>
+(see <a href="http://www.oxygenxml.com" target="_blank">http://www.oxygenxml.com</a>)
+allows you to automatically insert graphic diagrams produced by OxygenXML
+into the documentation generated by
+<a href="xsddoc/index.html">XSDDoc</a>/<a href="wsdldoc/overview.html">WSDLDoc</a>
+(with the full support of diagram hyperlinks).
+<p class="mrg8">
+On the left you can see an XML schema documentation
+with XSD diagrams generated by OxygenXML (click on the screenshot to view the real HTML).
+<p class="mrg8">
+For more details, please see:
+<a href="integrations/OxygenXML.html">DocFlex/XML | Integrations | Oxygen XML</a>.
+</td>
+</tr>
+</table>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2014 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.3" targetNamespace="urn:xml-gov-au:icsm:egeodesy:0.3" elementFormDefault="qualified" version="0.3" xml:lang="en">
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <include schemaLocation="geodeticMonument.xsd">
+        <annotation>
+            <documentation>Import components from the "geodeticMonument.xsd" schema which resides in the "http://sopac.ucsd.edu/ns/geodesy/base/geodeticMonument/2003/10" namespace.</documentation>
+        </annotation>
+    </include>
+    <annotation>
+        <documentation>
+     Filename     : siteIdentification.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 17, 2003
+     Description  : This schema contains the constraints used to validate
+                  : the Site Identification section of an XML-Encoded IGS
+                  : Site Log Document.
+     Notes        : This defined complexType is part of the set of site
+                  : metadata schemas developed at sopac.
+  </documentation>
+    </annotation>
+    <annotation>
+        <documentation>
+     Filename     : baseMonumentInfoLib.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 9, 2003
+     Description  : This schema contains many uniqueley defined complexTypes
+                  : and simpleTypes that are used by multiple site metadata 
+                  : schemas.
+     Notes        : Used by siteIdentification.xsd and siteLocation.xsd.
+  </documentation>
+    </annotation>
+    <!-- Defined SimpleTypes for use with Site Identification Meta data schema -->
+    <simpleType name="geologicCharacteristicType">
+        <restriction base="string">
+            <enumeration value="BEDROCK"/>
+            <enumeration value="Bedrock"/>
+            <enumeration value="CLAY"/>
+            <enumeration value="Clay"/>
+            <enumeration value="GRAVEL"/>
+            <enumeration value="Gravel"/>
+            <enumeration value="SAND"/>
+            <enumeration value="Sand"/>
+            <enumeration value="SEDIMENTS"/>
+            <enumeration value="Sediments"/>
+            <enumeration value="CONGLOMERATE"/>
+            <enumeration value="Conglomerate"/>
+            <enumeration value=""/>
+        </restriction>
+    </simpleType>
+    <simpleType name="monumentDescriptionTypeOfType">
+        <restriction base="string">
+            <enumeration value="pillar"/>
+            <enumeration value="brass plate"/>
+            <enumeration value="steel mast"/>
+            <enumeration value="shallow rod/braced antenna mount"/>
+            <enumeration value="removeable tripod / concrete pad"/>
+            <enumeration value="Wyatt/Agnew drilled-braced"/>
+            <enumeration value="Wyatt/Agnew driven braced"/>
+            <enumeration value="rock-pin/metal-tripod"/>
+            <enumeration value="rock-pin"/>
+            <enumeration value="glued-rod"/>
+            <enumeration value="wall"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="bedrockTypeOfType">
+        <restriction base="string">
+            <enumeration value="IGNEOUS"/>
+            <enumeration value="Igneous"/>
+            <enumeration value="Metaigneous"/>
+            <enumeration value="METAMORPHIC"/>
+            <enumeration value="Metamorphic"/>
+            <enumeration value="GRANITE"/>
+            <enumeration value="Granite"/>
+            <enumeration value="SEDIMENTARY"/>
+            <enumeration value="Sedimentary"/>
+            <enumeration value="CONGLOMERATE"/>
+            <enumeration value="Conglomerate"/>
+            <enumeration value="N/A"/>
+            <enumeration value=""/>
+        </restriction>
+    </simpleType>
+    <simpleType name="bedrockConditionsType">
+        <restriction base="string">
+            <enumeration value="FRESH"/>
+            <enumeration value="Fresh"/>
+            <enumeration value="JOINTED"/>
+            <enumeration value="Jointed"/>
+            <enumeration value="FRACTURED"/>
+            <enumeration value="Fractured"/>
+            <enumeration value="WEATHERED"/>
+            <enumeration value="Weathered"/>
+            <enumeration value="N/A"/>
+            <enumeration value=""/>
+        </restriction>
+    </simpleType>
+    <simpleType name="fractureSpacingTypeOfType">
+        <restriction base="string">
+            <enumeration value="1-10cm"/>
+            <enumeration value="11-50cm"/>
+            <enumeration value="51-200cm"/>
+            <enumeration value="over 200cm"/>
+            <enumeration value="N/A"/>
+            <enumeration value=""/>
+        </restriction>
+    </simpleType>
+    <simpleType name="faultZonesNearbyType">
+        <restriction base="string">
+            <enumeration value="Yes"/>
+            <enumeration value="No"/>
+            <enumeration value="Name_of_Zone"/>
+            <enumeration value=""/>
+        </restriction>
+    </simpleType>
+    <!--
+    <simpleType name="dateInstalledType">
+        <restriction base="string">
+            <pattern value="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}Z"/>
+        </restriction>
+    </simpleType>
+    -->
+    <!-- SimpleType for use with Site Location Meta data schema -->
+    <simpleType name="tectonicPlateTypeOfTypes">
+        <restriction base="string">
+            <enumeration value="African"/>
+            <enumeration value="African Indian/Australia"/>
+            <enumeration value="African Eurasian"/>
+            <enumeration value="Antarctic"/>
+            <enumeration value="Arabian"/>
+            <enumeration value="Caribbean"/>
+            <enumeration value="Cocos"/>
+            <enumeration value="Eurasian"/>
+            <enumeration value="Indian/Australian"/>
+            <enumeration value="Nazca"/>
+            <enumeration value="North America"/>
+            <enumeration value="North America Pacific"/>
+            <enumeration value="Pacific"/>
+            <enumeration value="Phillipine"/>
+            <enumeration value="South American"/>
+            <enumeration value="South American African"/>
+            <enumeration value="Juan De Fuca"/>
+            <enumeration value="Scotia"/>
+        </restriction>
+    </simpleType>
+    <annotation>
+        <documentation>
+     Filename     : formInformation.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 20, 2003
+     Description  : This schema contains the constraints used to validate
+                  : the Form Information section of an XML-Encoded IGS Site 
+                  : Log Document.
+     Notes        : This defined complexType is part of the set of site
+                  : metadata schemas developed at sopac.
+  </documentation>
+    </annotation>
+    <complexType name="formInformationType">
+        <sequence>
+            <element name="preparedBy" type="string"/>
+            <element name="datePrepared" type="gml:TimePositionType"/>
+            <element name="reportType" type="string"/>
+        </sequence>
+    </complexType>
+    <annotation>
+        <documentation>
+     Filename     : moreInformation.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 20, 2003
+     Description  : This schema contains the constraints used to validate
+                  : the More Information section of an XML-Encoded IGS
+                  : Site Log Document.
+     Notes        : This defined complexType is part of the set of site
+                  : metadata schemas developed at sopac.
+  </documentation>
+    </annotation>
+    <complexType name="moreInformationType">
+        <sequence>
+            <element name="dataCenter" type="string" maxOccurs="unbounded" />
+            <element name="urlForMoreInformation" type="string"/>
+            <element name="siteMap" type="string"/>
+            <element name="siteDiagram" type="string"/>
+            <element name="horizonMask" type="string"/>
+            <element name="monumentDescription" type="string"/>
+            <element name="sitePictures" type="string"/>
+            <element name="notes" type="string"/>
+            <element name="antennaGraphicsWithDimensions" type="string"/>
+            <element name="insertTextGraphicFromAntenna" type="string"/>
+            <element name="DOI" type="gml:CodeType">
+                <annotation><documentation>Data Digital Object Identifier</documentation></annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <annotation>
+        <documentation>
+     Filename     : siteIdentification.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 17, 2003
+     Description  : This schema contains the constraints used to validate
+                  : the Site Identification section of an XML-Encoded IGS
+                  : Site Log Document.
+     Notes        : This defined complexType is part of the set of site
+                  : metadata schemas developed at sopac.
+  </documentation>
+    </annotation>
+    <complexType name="siteIdentificationType">
+        <sequence>
+            <element name="siteName" type="string"/>
+            <element name="fourCharacterID" type="string"/>
+            <element name="monumentNumber" minOccurs="0">
+                <annotation>
+                    <documentation>Number of monuments at the site</documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <totalDigits value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="receiverNumber" minOccurs="0">
+                <annotation>
+                    <documentation>Number of receivers at the site</documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <totalDigits value="1"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="monumentInscription" type="string" minOccurs="0"/>
+            <element name="iersDOMESNumber" type="string"/>
+            <element name="cdpNumber" type="string"/>
+            <!-- TODO: use gco -->
+            <element name="monumentDescription" type="gml:CodeType" minOccurs="0"/>
+            <element name="heightOfTheMonument" type="double" minOccurs="0"/>
+            <element name="monumentFoundation" type="string" minOccurs="0"/>
+            <element name="foundationDepth" type="double" minOccurs="0"/>
+            <element name="markerDescription" type="string" minOccurs="0"/>
+            <element name="dateInstalled" type="gml:TimePositionType" minOccurs="0"/>
+            <!-- TODO: use gco -->
+            <element name="geologicCharacteristic" type="gml:CodeType" minOccurs="0"/>
+            <element name="bedrockType" type="string" minOccurs="0"/>
+            <element name="bedrockCondition" type="string" minOccurs="0"/>
+            <element name="fractureSpacing" type="string" minOccurs="0"/>
+            <!-- TODO: use gco -->
+            <element name="faultZonesNearby" type="gml:CodeType" minOccurs="0"/>
+            <element name="distance-Activity" type="string" minOccurs="0"/>
+            <element name="notes" type="string" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <annotation>
+        <documentation>
+     Filename     : siteLocation.xsd
+     Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+     Date         : October 17, 2003
+     Description  : This schema contains the constraints used to validate
+                  : the Site Location section of the IGS Site Log.
+     Notes        : This defined complexType is part of the set of site
+                  : metadata schemas developed at sopac.
+                  : CountryCode follows : ISO 3166-1 alpha-3 - https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
+  </documentation>
+    </annotation>
+    <complexType name="siteLocationType">
+        <sequence>
+            <element name="city" type="string"/>
+            <element name="state" type="string"/>
+            <element name="countryCodeISO">
+                <annotation>
+                    <documentation>Three-letter country code (ISO ISO 3166-1 alpha-3, https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)</documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <length value="3"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <!-- TODO: use gco -->
+            <element name="tectonicPlate" type="gml:CodeType"/>
+            <element name="approximatePositionITRF">
+                <complexType>
+                    <sequence>
+                        <element name="xCoordinateInMeters" type="string"/>
+                        <element name="yCoordinateInMeters" type="string"/>
+                        <element name="zCoordinateInMeters" type="string"/>
+                        <element name="latitude-North">
+                            <annotation>
+                                <documentation>
+                                    Approximate latitude in decimal degrees (GRS80)
+                                </documentation>
+                            </annotation>
+                            <simpleType>
+                                <restriction base="decimal">
+                                    <minInclusive value="-90"/>
+                                    <maxInclusive value="90"/>
+                                </restriction>
+                            </simpleType>
+                        </element>
+                        <element name="longitude-East">
+                            <annotation>
+                                <documentation>
+                                    Approximate longitude in decimal degrees (GRS80)
+                                </documentation>
+                            </annotation>
+                            <simpleType>
+                                <restriction base="decimal">
+                                    <minInclusive value="-180"/>
+                                    <maxInclusive value="180"/>
+                                </restriction>
+                            </simpleType>
+                        </element>
+                        <element name="elevation-m_ellips." type="string"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="notes" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,32 @@
+This parameter group controls how the diagram hyperlinks will be generated.
+The current implementation limits it to the following possibilities:
+<ol>
+<li>
+  The depiction of a <b>global attribute</b> (specified by reference) can be hyperlinked either to
+  the attribute's global documentation or to its local documentation (found in <i>Attrbute Detail</i> section).
+  This is controlled by the <i>"Global Attributes"</i> parameter of this group.
+  When neither local nor global documentation is found, the hyperlink will go to the location where
+  the global attribute is defined within the XML schema source.
+  See <i>"Details | Schema Overview | XML Source"</i> parameter.
+</li>
+<li style="margin-top:10pt">
+  The depiction of a <b>local attribute</b> or <b>attribute prohibition</b> can be hyperlinked only
+  to the corresponding local documentation in <i>Attrbute Detail</i> section.
+  When that documentation is not found, the hyperlink will go to the definition's location within
+  the XML schema source.
+</li>
+<li style="margin-top:10pt">
+  The depiction of a <b>global element</b> (specified by reference) can be hyperlinked only to
+  the element's global documentation. If not found, the hyperlink will go to the location where
+  the global element is defined within the XML schema source
+  (see <i>"Details | Schema Overview | XML Source"</i> parameter).
+</li>
+<li style="margin-top:10pt">
+  The depiction of a <b>local element</b> can be hyperlinked either to the global documentation related
+  to this element component (see <i>"Generate Details | XSD Components | Elements | Local Elements"</i> parameter)
+  or to its local documentation in <i>Content Element Detail</i> section. This is controlled by the
+  <i>"Local Elements"</i> parameter in this group.
+  When neither local nor global documentation is found, the hyperlink will go to the definition's location
+  within the XML schema source. See <i>"Details | Schema Overview | XML Source"</i> parameter.
+</li>
+</ol>

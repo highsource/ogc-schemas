@@ -1,0 +1,421 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex Technology - FlexQuery Reference</title>
+
+<script language = "JavaScript">
+  function popupWindow(url, width, height)
+  {
+    var max_width = screen.width - 8;
+    var max_height = screen.height - 64;
+
+    var resizable = false;
+
+    if (height > max_height)
+    {
+      height = max_height;
+      width = width + 20;
+      resizable = true;
+    }
+
+    if (width > max_width)
+    {
+      width = max_width;
+      resizable = true;
+    }
+
+    var left = (max_width - width) / 2;
+    var top = (max_height - height) / 2;
+
+    var winName = width + "x" + height;
+    var winParms = "top=" + top + ",left=" + left + ",height=" + height + ",width=" + width +
+                   ",toolbar=no,location=no,directories=no,status=no,menubar=no," +
+                   (resizable ? ",resizable=yes,scrollbars=yes" : ",resizable=no,scrollbars=no");
+
+    var win = window.open(url, winName, winParms);
+    if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
+  }
+</script>
+
+</head>
+
+<body>
+
+<h1>DocFlex Technology - FlexQuery Reference</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ul>
+  <li><a href="#overview">Overview</a>
+  <li><a href="#data_types">Data Types</a>
+  <li><a href="#constants">Constants</a>
+  <li><a href="#script_structure">Script Structure</a>
+  <li><a href="#operators">Operators</a>
+  <li><a href="#comments">Comments</a>
+  <li><a href="#expression_editors">Expression Editors and Assistant Dialog</a>
+      <ul>
+         <li><a href="#lpath_builder">Location Path Builder</a>
+         <li><a href="#lrule_builder">Location Rule Builder</a>
+         <li><a href="#subexpr_edit">Subexpression Editor</a>
+      </ul>
+</ul>
+<!-- END TABLE OF CONTENTS -->
+
+<h2>
+  <a name="overview"></a>
+  Overview
+</h2>
+
+FlexQuery-expressions are small scripts with the Java-based syntax, which are widely used
+in DocFlex templates to specify all kinds of dynamically computed settings,
+such as
+<ul>
+<li>Specifying data source properties of some <a href="template_components.html">template components</a>
+  (e.g. <i>Formula Expression</i> in <a href="template_components.html#data_control">Data Control</a>,
+   <i><a href="element_iterator_details.html#sequence">Sequence</a></i> and
+   <i><a href="element_iterator_details.html#custom">Custom</a> Iteration Scopes</i> in
+   <a href="template_components.html#element_iterator">Element Iterator</a> and so on).
+</li>
+<li>
+  Enabling conditions in
+  <a href="template_components.html#enabling_condition">template components</a>,
+  <a href="data_processing_features.html#hyperlinks">hyperlink/target definitions</a>,
+  <a href="data_processing_features.html#framed_doc">frameset structure definitions</a>,
+  <a href="element_iterator_details.html#location_rule_enabling_condition">Element Location Rules</a>.
+</li>
+<li>
+  Element/attribute filters in
+  <a href="template_components.html#element_iterator">Element Iterators</a>,
+  <a href="template_components.html#attribute_iterator">Attribute Iterators</a>,
+  <a href="element_iterator_details.html#element_location_step">Location Path Steps</a>.
+</li>
+<li>
+  <a href="element_iterator_details.html#sort_by_key">Sorting keys in Element Iterators</a>
+  and
+  <a href="template_components.html#attribute_iterator">Attribute Iterators</a>.
+</li>
+<li>
+  A lot of other places.
+</li>
+</ul>
+
+<h2>
+  <a name="data_types"></a>
+  Data Types
+</h2>
+
+FlexQuery scripts operate with values of the following data types:
+<p>
+<table cellpadding="4" cellspacing="1" border="1">
+<tr align="center">
+  <th><b>Data&nbsp;Type</b></th>
+  <th><b>Java Class</b></th>
+  <th><b>Usage</b></th>
+</tr>
+<tr>
+  <td><code class="type">String</code></td>
+  <td class="nowrap"><code>java.lang.String</code></td>
+  <td>string values</td>
+</tr>
+<tr>
+  <td><code class="type">Number</code></td>
+  <td class="nowrap"><code>java.lang.Number</code></td>
+  <td>numeric values of all kinds (both integers and floats)</td>
+</tr>
+<tr>
+  <td><code class="type">Boolean</code></td>
+  <td class="nowrap"><code>java.lang.Boolean</code></td>
+  <td>boolean values</td>
+</tr>
+<tr>
+  <td><code class="type">Object</code></td>
+  <td class="nowrap"><code>java.lang.Object</code></td>
+  <td>any other values</td>
+</tr>
+</table>
+<p>
+In addition to this, the FlexQuery processor recognizes
+objects of <a href="gom.html">Generator Object Model</a> types (backed
+by the corresponding Java classes of <a href="../api/api.html">DocFlex API</a>).
+Those object types have registered their properties which can be accessed
+using member operator (for example: <code>element.id</code>).
+<p>
+Some <a href="functions.html">utility functions</a>,
+which can be used within FlexQuery scripts, may accept parameters or
+return values of only specific Java classes
+(e.g. <code>java.lang.Object[]</code> or <code>java.util.Enumeration</code>).
+In such cases, those types are also tracked to ensure the parameters passed to a function
+have correct types. (For that matter, there are special
+<a href="functions.html#category.conversion_functions">conversion function</a>,
+which should be used to convert values from one specific type to another when necessary.)
+
+<h2>
+  <a name="constants"></a>
+  Constants
+</h2>
+
+<table cellpadding="4" cellspacing="1" border="1">
+<tr align="center">
+  <th><b>Data&nbsp;Type</b></th>
+  <th><b>Constants</b></th>
+</tr>
+<tr valign="top">
+  <td><code class="type">String</code></td>
+  <td>
+    Each string constant should start and end with the same single- or double-quote character,
+    for example: <code>"blue"</code> or <code>'green'</code>.
+    <p>
+    If a quote character is not used as the string delimiter, it may appear inside the string: e.g.
+    <code>"what's new?"</code>.
+    Otherwise, the quote character should be encoded as escape sequence.
+    <p>
+    The supported escape sequences are the following:
+    <blockquote>
+    <code><b>\\</b></code>, <code><b>\"</b></code>, <code><b>\'</b></code>,
+    <code><b>\n</b></code>, <code><b>\r</b></code>, <code><b>\t</b></code>,
+    <code><b>\u</b><i>xxxx</i></code>
+    </blockquote>
+    The last one allows to specify any Unicode character
+    encoded with the four hexadecimal digits. For example, '\u20AC' will represent Euro Sign
+    '&#8364;'.
+    <p>
+    <b>Note:</b> Although internally, strings are represented by <code>java.lang.String</code>
+     objects, within FlexQuery expressions, strings never assume <code>null</code> values.
+     All <code>null</code> string references received from function are always
+     converted to empty strings.
+  </td>
+</tr>
+<tr valign="top">
+  <td><code class="type">Boolean</code></td>
+  <td>There are two boolean constants recognized in FlexQuery expressions:
+      <code><b>true</b></code> and <code><b>false</b></code>
+  </td>
+</tr>
+<tr valign="top">
+  <td><code class="type">Object</code></td>
+  <td>Same as in Java, <code><b>null</b></code> keyword represents null reference.</td>
+</tr>
+</table>
+
+<h2>
+  <a name="script_structure"></a>
+  Script Structure
+</h2>
+
+Each script may consist of any number of statements delimited with semicolon:
+<blockquote>
+<pre><i>variable_1</i> = <i>expression_1</i> ;
+<i>variable_2</i> = <i>expression_2</i> ;
+. . .
+<i>result_expression</i>
+</pre>
+</blockquote>
+
+Currently, only assignment statements are supported. The assigned variables
+can be used within the statements following them.
+<p>
+The <b>last statement</b> should be an expression returning
+the result value of the whole script.
+
+<h2>
+  <a name="operators"></a>
+  Operators
+</h2>
+
+The following operators can be used within the expressions:
+<p>
+<table border="1" cellspacing="1" cellpadding="5">
+<tr>
+  <th><b>Category</b></th>
+  <th><b>Operators</b></th>
+</tr>
+<tr>
+  <td>Arithmetical</td>
+  <td>+, -, *, /, %</td>
+</tr>
+<tr>
+  <td>String concatenation</td>
+  <td>+</td>
+</tr>
+<tr>
+  <td>Number comparison</td>
+  <td>==, !=, <, <=, >, >=</td>
+</tr>
+<tr>
+  <td>String and other types comparison</td>
+  <td>==, !=</td>
+</tr>
+<tr>
+  <td>Logical</td>
+  <td>!, &&, ||</td>
+</tr>
+<tr>
+  <td>Conditional</td>
+  <td><i>cond</i> ? <i>expr1</i> : <i>expr2</i></td>
+</tr>
+<tr>
+  <td>Function call</td>
+  <td><i>func</i> (<i>args</i>)</td>
+</tr>
+<tr>
+  <td>Property/method access</td>
+  <td>-> or .</td>
+</tr>
+</table>
+
+<p>
+<b>Note:</b> Some <a href="functions.html">utility functions</a> are focused
+on processing of objects of some specific types, so they actually behave
+like methods of those objects. To make calls of such functions look
+in more method-like style, the first parameter of any function call
+may be moved before the function name separated with the property access operator
+'.' or '->'.
+<dl class="mrg8">
+<dt class="mrg8">For example, the call
+<dd class="mrg8"><code>substring(str,1,5)</code>
+<dt class="mrg8">may be written as
+<dd class="mrg0"><code>str.substring(1,5)</code>
+<dt class="mrg0">or
+<dd class="mrg0"><code>str->substring(1,5)</code>
+</dl>
+
+<h2>
+  <a name="comments"></a>
+  Comments
+</h2>
+
+Comments can be the same as in Java:
+<ol>
+<li>A single line comment, e.g.
+<p>
+<code>name = getParam("Name"); <b>// <i>comment</i></b></code>
+</blockquote>
+</li>
+<li>A multiline comment: <b><code>/* <i>comment</i> */</code></b></li>
+</ol>
+
+If an expression is totally commented, it is considered an empty expression.
+
+<h2>
+  <a name="expression_editors"></a>
+  Expression Editors and Assistant Dialog
+</h2>
+
+<p>
+When designing templates using <a href="about.html#template_designer">DocFlex Template Designer</a>,
+everywhere the FlexQuery-expressions may be specified, they are entered
+within special <b>Expression Editors</b>:
+<blockquote>
+<img src="images/expr_editor.png" alt="Expression Editor" border="0">
+</blockquote>
+Such an editor is supplied with the <b>&ldquo;Check Expression&rdquo;</b> button
+(<img align="absmiddle" src="images/check.gif">) which allows to check if the entered
+script is correct and the result data type it returns is appropriate to the given field.
+<p>
+Another button (<img align="absmiddle" src="images/question.gif">) that appears in the editor is
+the <b>&ldquo;Expression Assistant&rdquo;</b> button.
+It invokes the FlexQuery <b>Expression Assistant Dialog</b>:
+<blockquote>
+<a href="javascript:popupWindow('images/expr_assistant.html',748,991)">
+  <img src="images/expr_assistant_s.png" alt="Expression Assistant Dialog" border="0">
+</a>
+</blockquote>
+This dialog provides a lot of information about everything that can be used in the expression:
+<ul>
+<li>All available <a href="functions.html">utility functions</a>
+    together with their descriptions</li>
+<li>The <a href="gom.html#generator_variables">generator variables</a>
+    and the <a href="gom.html">Generator Object Model</a> types</li>
+<li>All declared <a href="templates_designer_features.html#template_parameters">template parameters</a></li>
+<li>All available <a href="about.html#element_type">Element Types</a> and their attributes
+    provided by the <a href="about.html#dsm_type">DSM Type</a> associated with this template</li>
+</ul>
+This information is always up-to-date as it is obtained not only from the static help
+files but collected dynamically from all available resources.
+Here, you can also select a necessary identifier and automatically insert it directly into
+the edited expression.
+<p>
+Besides this, the Expression Assistant Dialog contains three additional tools:
+<ul>
+  <li><a href="#lpath_builder">Location Path Builder</a>
+  <li><a href="#lrule_builder">Location Rule Builder</a>
+  <li><a href="#subexpr_edit">Subexpression Editor</a>
+</ul>
+
+<h3>
+  <a name="lpath_builder"></a>
+  Location Path Builder
+</h3>
+
+<p>This tool allows to easily construct element/attribute
+<a href="element_iterator_details.html#location_path">Location Paths</a> of any complexity,
+which can be further used to specify parameters for such functions as
+<a href="functions.html#findElementsByLPath()">findElementsByLPath()</a>,
+<a href="functions.html#getValuesByLPath()">getValuesByLPath()</a>.
+
+<blockquote>
+  <img src="images/lpath_builder.png" alt="Location Path Builder" border="0">
+</blockquote>
+
+<p>As soon as the neccessary Location Path is ready, you can quickly insert it into
+the expression editor by clicking the <b>&ldquo;Select&rdquo;</b> button.
+The Location Path will be automatically converted into a valid string
+constant enclosed in quotes.
+</p>
+
+<h3>
+  <a name="lrule_builder"></a>
+  Location Rule Builder
+</h3>
+
+<p>This dialog provides a convenient way for writing a definition of an
+<a href="element_iterator_details.html#location_rule">Element Location Rule</a>
+instantly encoded in the form of a <a href="functions.html#LocationRule()">LocationRule()</a>
+function call, which is necessary to specify a parameter for
+<a href="functions.html#findElementsByLRules()">findElementsByLRules()</a> function:
+
+<blockquote>
+  <img src="images/lrule_builder.png" alt="Location Rule Builder" border="0">
+</blockquote>
+
+<p>By clicking the <b>&ldquo;Select&rdquo;</b> button, you can insert the prepared
+Location Rule definition into the expression editor.
+</p>
+
+<h3>
+  <a name="subexpr_edit"></a>
+  Subexpression Editor
+</h3>
+
+<p>This tool may help you to write and check the FlexQuery subexpressions
+you want to specify as a parameter for one of such functions:
+<a href="functions.html#execSubquery()">execSubquery()</a>,
+<a href="functions.html#generateVector()">generateVector()</a>,
+<a href="functions.html#filterElements()">filterElements()</a>,
+<a href="functions.html#findElementsByKey()">findElementsByKey()</a>,
+<a href="functions.html#findElementsByLRules()">findElementsByLRules()</a>.
+
+<blockquote>
+  <img src="images/subexpr_edit.png" alt="Subexpression Editor" border="0">
+</blockquote>
+
+<p>Once the subexpression is finished, you can quickly insert it into the editor
+of the main expression by clicking the <b>&ldquo;Select&rdquo;</b> button.
+The subexpression will be automatically converted into a valid string constant
+enclosed in quotes.
+</p>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2003-2009 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

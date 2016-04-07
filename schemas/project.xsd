@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.3" targetNamespace="urn:xml-gov-au:icsm:egeodesy:0.3" elementFormDefault="qualified" version="0.3" xml:lang="en">
+	<annotation>
+		<documentation>eGeodesy schema implementation based on GML - draft. Copyright (c) 2013-2015 Commonwealth of Australia, on behalf of the Intergovernmental Committee on Surveying and Mapping. All rights reserved.</documentation>
+	</annotation>
+	<!--  -->
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
+	<include schemaLocation="commonTypes.xsd"/>
+	<!--  -->
+	<complexType name="ProjectPropertyType">
+		<sequence minOccurs="0">
+			<element ref="geo:Project"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+	<element name="Project" type="geo:ProjectType" substitutionGroup="gml:AbstractFeature"/>
+	<!--  -->
+	<complexType name="ProjectType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="status" type="gml:CodeType" minOccurs="0"/>
+					<element name="managedBy" type="gmd:CI_ResponsibleParty_PropertyType" minOccurs="0"/>
+					<element name="specifiedBy" type="gmd:CI_ResponsibleParty_PropertyType" minOccurs="0"/>
+					<element name="initiatedDate" type="gml:TimePositionType" minOccurs="0"/>
+					<element name="completedDate" type="gml:TimePositionType" minOccurs="0"/>
+					<group ref="geo:RemarksGroup"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../../styles.css">
+<title>DocFlex/XML - Integrations - Apache Ant</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/XML - Integrations - Apache Ant
+</h1>
+
+You can easily integrate <a href="../about.html">DocFlex/XML</a>
+with the <a href="http://ant.apache.org/" target="_blank">Apache Ant</a>
+automated build system.
+<p>
+Although we do not provide currently a specific Ant plugin, actually, it is not necessary.
+You may equally call the DocFlex/XML 
+<a href="../generator.html#cmdline">Generator</a> from Ant
+simply as a Java application.
+<p>
+Here is an example of how it can be done.
+<p>
+Let's suppose, you want to generate a framed HTML documentation using
+<a href="../xsddoc/templates.html#FramedDoc.tpl">XSDDoc | Templates | FramedDoc.tpl</a> template
+by the XML schema located at the URL <code>'http://www.w3.org/2001/XMLSchema.xsd'</code>.
+Here is a simple Windows command file that launches such a generation:
+
+<blockquote>
+<table cellpadding="0" cellspacing="0">
+<tr valign="top">
+  <td><code>set&nbsp;</code></td>
+  <td><code>DFH=C:\docflex-xml</code></td>
+</tr>
+<tr valign="top">
+  <td><code>set&nbsp;</code></td>
+  <td><code>CP=%DFH%\lib\xml-apis.jar;%DFH%\lib\xercesImpl.jar;%DFH%\lib\resolver.jar;%DFH%\lib\docflex-xml.jar</code></td>
+</tr>
+<tr valign="top">
+  <td><code>java&nbsp;</code></td>
+  <td><code>
+    <span class="nowrap">-Xmx512m</span>
+    <span class="nowrap">-cp %CP%</span>
+    <span class="nowrap">com.docflex.xml.Generator</span>
+    <span class="nowrap">-template %DFH%\templates\XSDDoc\FramedDoc.tpl</span>
+    <span class="nowrap">-format HTML</span>
+    <span class="nowrap">-d %DFH%\out</span>
+    <span class="nowrap">-nodialog</span>
+    <span class="nowrap">-launchviewer=false</span>
+    <span class="nowrap">http://www.w3.org/2001/XMLSchema.xsd</span>
+  </code></td>
+</tr>
+</table>
+</blockquote>
+
+The following is an equivalent Ant <code>build.xml</code> file doing the same:
+
+<p class="mrg8"><u><i>build.xml</i></u></p>
+<TABLE BGCOLOR="#F5F5F5" CELLSPACING="0" CELLPADDING="7" BORDER="0" CLASS="brdr1">
+<TR>
+<TD CLASS="f6">
+<SPAN CLASS="f1">&lt;?xml version=&quot;1.0&quot;?&gt;</SPAN>
+<DIV><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">project</SPAN> <SPAN CLASS="f2">basedir</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">.</SPAN><SPAN CLASS="f1">&quot;</SPAN> <SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">DocFlex/XML Ant Integration Demo</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> This will generate an XML schema documentation </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">target</SPAN> <SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">XSDDoc</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> the location of the DocFlex/XML home directory </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">property</SPAN> <SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">DFH</SPAN><SPAN CLASS="f1">&quot;</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">C:/docflex-xml</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> the DocFlex/XML Java class path </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">property</SPAN> <SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">CP</SPAN><SPAN CLASS="f1">&quot;</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">${DFH}/lib/xml-apis.jar;${DFH}/lib/xercesImpl.jar;${DFH}/lib/resolver.jar;${DFH}/lib/docflex-xml.jar</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"><BR>Execute the DocFlex/XML generator.<BR><BR>IMPORTANT: The 'maxmemory' attribute sets the maximum heap size<BR>available to Java VM when running DocFlex/XML.
+<BR>Check this attribute when you need to process large quantities of data!<BR><BR>According to our tests, allowing 512 Mb heap size on 32-bit Java is OK<BR>in most cases (e.g. running XSDDoc to document large XML schemas).<BR>However, for 64-bit Java (running on 64-bit OS) this amount must be doubled.<BR>So, you should specify 1024m, instead of 512m.<BR><BR>The 'fork' attribute forces Ant to launch a separate instance of JVM.<BR>This is needed to ensure that the memory specified in the 'maxmemory'<BR>attribute will be allocated indeed. (However, you may remain using Ant's<BR>JVM instance, if you have already specified for it that much of memory.)<BR></SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">java</SPAN> <SPAN CLASS="f2">classname</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">com.docflex.xml.Generator</SPAN><SPAN CLASS="f1">&quot;</SPAN> <SPAN CLASS="f2">classpath</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">${CP}</SPAN><SPAN CLASS="f1">&quot;</SPAN> <SPAN CLASS="f2">fork</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">true</SPAN><SPAN CLASS="f1">&quot;</SPAN> <SPAN CLASS="f2">maxmemory</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">512m</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"><BR>All options you want to pass to the DocFlex/XML Generator should be specified<BR>here with the &lt;arg&gt; elements in the same order as on the command line.<BR></SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> the main template </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">arg</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">-template</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">arg</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">${DFH}/templates/XSDDoc/FramedDoc.tpl</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> pass the template parameter 'docTitle' (the documentation title) </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">arg</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">-p:docTitle</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">arg</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">XML Schema for XML Schemas</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> the output format </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">arg</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">-format</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">arg</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">HTML</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> the output directory </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">arg</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">-d</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">arg</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">${DFH}/out</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> do not launch the generator GUI </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">arg</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">-nodialog</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> do not launch the default viewer for the output file </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">arg</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">-launchviewer=false</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"><BR>Specify one or many data source XML files to be processed<BR>by the specified template. (Both local pathnames and URLs<BR>are allowed.)<BR>In this example, it is the XML schema to be documented.<BR></SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">arg</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">http://www.w3.org/2001/XMLSchema.xsd</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">java</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">target</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">project</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+</TD>
+</TR>
+</TABLE>
+<p>
+To run that <code>build.xml</code> file, you can use a Windows BAT command file specified like the following:
+<blockquote><pre>
+set ANT_HOME=C:\apache-ant
+set PATH=%ANT_HOME%\bin;%PATH%
+set JAVA_HOME=C:\Program Files\Java\jre7
+call %ANT_HOME%\bin\ant.bat xsddoc
+</pre></blockquote>
+(Note that it should be started from the directory containing the Ant <code>build.xml</code> file!)
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

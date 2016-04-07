@@ -1,0 +1,11 @@
+Specify how many OxygenXML instances can be run at once.
+<p>
+You can set any number here 
+(and so many instances will be invoked when there are XML schemas to process).
+However, the actual performance improvement depends on how many
+concurrent threads are physically supported by your system 
+(e.g. the number of processor cores, hyperthreading etc.)
+<p>
+That you can specify with a special value <b><code>'auto'</code></b> (default).
+In that case, the maximal number of OxygenXML threads will be estimated automatically
+according to the number of available processors returned by JVM.

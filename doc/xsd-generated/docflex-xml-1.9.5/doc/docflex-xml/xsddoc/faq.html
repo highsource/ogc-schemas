@@ -1,0 +1,1337 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../../styles.css">
+<title>DocFlex/XML - XSDDoc - Frequently Asked Questions</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/XML - XSDDoc - Frequently Asked Questions
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+  <li><a href="#getting_started">How to get started?</a></li>
+  <li><a href="#how_fast">How fast does it work?</a></li>
+  <li><a href="#gen_html">How to generate HTML documentation?</a>
+      <ul>
+        <li><a href="#gen_html.framed">Framed HTML</a></li>
+        <li><a href="#gen_html.single_file">Single File HTML</a></li>
+        <li><a href="#gen_html.params">Template Parameters</a></li>
+        <li><a href="#gen_html.options">HTML Options</a></li>
+      </ul>
+  </li>
+  <li><a href="#gen_rtf">How to generate RTF documentation?</a>
+      <ul>
+        <li><a href="#gen_rtf.params">Template Parameters</a></li>
+        <li><a href="#gen_rtf.options">RTF Options</a></li>
+      </ul>
+  </li>
+  <li><a href="#multiple_schemas">How to generate a single documentation by multiple XML schemas?</a></li>
+  <li><a href="#pathname_with_spaces">How to specify a schema file pathname with spaces?</a></li>
+  <li><a href="#integration_with_ant_maven">How to integrate XSDDoc with Apache Ant and Maven?</a></li>
+  <li><a href="#adding_comments">How to add descriptions/comments into my XML schema?</a></li>
+  <li><a href="#rendering_line_breaks">How to enable/disable interpreting line breaks in my comments?</a></li>
+  <li><a href="#xhtml">How to format my comments using XHTML?</a>
+      <ul>
+        <li><a href="#xhtml.about">What is XHTML?</a></li>
+        <li><a href="#xhtml.usage">How to use XHTML?</a></li>
+        <li><a href="#xhtml.images">How to insert images?</a></li>
+        <li><a href="#xhtml.params_and_options">Parameters & options related to XHTML and images</a></li>
+      </ul>
+  </li>
+  <li><a href="#invalid_doc">There is some oddity in the documentation I've generated. What might be wrong?</a></li>
+  <li><a href="#xmlschema.resources">Where can I learn more about XML schemas?</a></li>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<h2>
+  <a name="getting_started"></a>
+  1.&nbsp; How to get started?
+</h2>
+
+Please, see <a href="overview.html#getting_started">DocFlex/XML | XSDDoc | How To Get Started</a>
+
+<h2>
+  <a name="how_fast"></a>
+  2.&nbsp; How fast does it work?
+</h2>
+
+Even though the entire XML Schema Documentation Generator is implemented
+as a <a href="templates.html">set of templates</a>,
+which adds an additional level of interpretation, we have passed a very long way
+of optimizations.
+<p>
+Now, by its performance, the result documentation generator
+(i.e. the templates plus the template interpreter) may well rival with anything
+written directly in Java or C++!
+<p>
+However, unlike a general programming language, the template approach gives
+incredible programming flexibility and integrity.
+The things that may take days or weeks of programming and debugging in Java or C++
+can be done using <a href="../../general/about.html">DocFlex templates</a>
+just in a few minutes!
+(Actually, the trick is that any general programming language cannot be optimized
+universally for every imaginable task.
+<a href="../../general/about.html">DocFlex</a>, on the contrary,
+is focused on a specific set of problems that have very much in common.
+Those common things allow developing a unified solution for them so as
+to make it reusable in the form of a special tool.)
+<p>
+The performance statistics is the following.
+<p>
+Processing a typical little XML Schema you would normally find in most of applications (e.g. see
+&ldquo;<a href="../samples/sales_report/index.html">Sales Report</a>&rdquo; sample)
+on an ordinary modern PC (e.g. based on Intel Pentium 4 or AMD Athlon) may take just
+a few seconds (most of which will be just launching the JVM itself).
+<p>
+One of the largest XML schemas, for which we have generated a single HTML documentation so far, is
+&ldquo;XML Schemas for Eclipse UML2&rdquo;.
+That XML schema set (which includes 3 XSD files) defines in total 800+ separately documented components
+(some of which specify very complicated content models).
+In the following table you can see the results of the most recent tests -- the generation time of the entire 
+HTML documentation (without diagrams, 849 separate files, 18.5 Mb total size):
+<p>
+<table border="1" cellspacing="1" cellpadding="3">
+  <tr align="center">
+    <th><b class="nav">System (Intel Core 2 Duo E6600)</b></th>
+    <th><b class="nav">Java 6 (ver 1.6.0_26)</span></b></th>
+    <th><b class="nav">Java 7 (ver 1.7.0)</b></th>
+  </tr>
+  <tr>
+    <td class="nav">Windows XP (Java 32-bit)</td>
+    <td class="nav" align="center">76 sec</td></td>
+    <td class="nav" align="center">70 sec</td></td>
+  </tr>
+  <tr>
+    <td class="nav">Windows 7 64-bit (Java 64-bit)</td>
+    <td class="nav" align="center">70 sec</td></td>
+    <td class="nav" align="center">65 sec</td></td>
+  </tr>
+</table>
+<p>
+See also <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/examples.php">Examples</a>
+for more demo documentations and statistics about other big XML schemas.
+
+<h2>
+  <a name="gen_html"></a>
+  3.&nbsp; How to generate HTML documentation?
+</h2>
+
+<h3>
+  <a name="gen_html.framed"></a>
+  Framed HTML
+</h3>
+
+To generate multi-file framed HTML (Javadoc-like) XML Schema documentation, basically, you should:
+
+<ol>
+  <li>Start the generator (run <code>generator.bat</code>).</li>
+  <li>
+    Select <a href="templates.html#FramedDoc.tpl">FramedDoc.tpl</a>
+    template in the <a href="overview.html#generator_dialog">Generator Dialog</a>.
+  </li>
+  <li>Specify one or many source XML schema (XSD) files.</li>
+  <li>Select HTML output format.</li>
+  <li>Click &ldquo;Run&rdquo; button.</li>
+</ol>
+
+<h3>
+  <a name="gen_html.single_file"></a>
+  Single File HTML
+</h3>
+
+Sometimes you may want to generate your entire XML Schema documentation as a single HTML file
+(including <a href="#xhtml.images">images</a> and anything else). That's easy to do:
+
+<ol>
+  <li>Start the generator (run <code>generator.bat</code>).</li>
+  <li>
+    Select <a href="templates.html#PlainDoc.tpl">PlainDoc.tpl</a>
+    template in the <a href="overview.html#generator_dialog">Generator Dialog</a>.
+  </li>
+  <li>Specify one or many source XML schema (XSD) files.</li>
+  <li>Select HTML output format.</li>
+  <li>Click &ldquo;Run&rdquo; button.</li>
+</ol>
+
+<h3>
+  <a name="gen_html.params"></a>
+  Template Parameters
+</h3>
+
+There are also some parameters of
+<a href="templates.html">XSDDoc</a> templates
+(as well as HTML output format <a href="#gen_html.options">options</a>)
+that you may check before starting the generation to ensure a better quality output.
+<p>
+To set the template parameters, click <b>&ldquo;Params&rdquo;</b> button.
+The <a href="overview.html#param_inspector">Parameter Inspector</a>
+dialog will appear filled with the parameters declared in the selected template
+as shown on the following screenshot (click on the picture to see a more expanded view):
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/xsddoc/images/param_inspector.html" target="_blank"><img src="images/param_inspector_s.png" title="Template Parameters" border="0"></a>
+</blockquote>
+
+When you start everything for the first time, all parameters will have their default values
+specified in the template. As you set some parameters and close the inspector dialog,
+the values of the parameters you changed will be stored (along with the parameter names) in the
+<a href="../setup.html#generator.config">generator.config</a> file.
+Further, the generator will use those values from that file. So will be when you open the
+Parameter Inspector dialog next time. The template parameters, whose names match those found in the
+<a href="../setup.html#generator.config">generator.config</a> file,
+will be initialized with the corresponding values stored in that file.
+That's why when you want to generate something different than the previous time,
+you may need to change the template parameters appropriately.
+
+<h3>
+  <a name="gen_html.options"></a>
+  HTML Options
+</h3>
+
+Besides the <a href="overview.html#param_inspector">template parameters</a>,
+there are also <b>output format options</b>.
+<p>
+The format options look similar to the template parameters. The difference is that they control 
+general settings specific only to the particular output format
+(whereas the template parameters control things specific only to the given template application).
+The support of the output format options is hardcoded in the output generator itself.
+<p>
+When you click <b>&ldquo;Options&rdquo;</b> button (with the HTML format selected at that),
+you will see the <b>HTML Option Inspector</b> dialog, like shown on the screenshot:
+<blockquote>
+<img src="../images/html_option_inspector.png" title="HTML Option Inspector" border="0">
+</blockquote>
+
+<p>
+The following options may by particularly important for the generation of HTML documentation:
+
+<p>
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+
+<tr align="center">
+  <th><b>Option</b></th>
+  <th><b>Comment</b></th>
+</tr>
+
+<tr valign="top">
+  <td><b>Output</b></td>
+  <td>option group</td>
+</tr>
+
+<tr valign="top">
+  <td>
+    <p class="mrg0" style="margin-left:10px"><span class="nowrap">Generate style sheet file</span></p>
+  </td>
+  <td>
+    When this option is selected, all internal CSS declarations generated by DocFlex
+    will be stored in a single <code>'stylesheet.css'</code> file located in the documentation root directory.
+    Only links to this file will be included in the generated HTML documents.
+    <p>
+    Although those CSS declarations may look rather gibberish, they are repeating across HTML files.
+    So, when you generate a multi-file (<a href="#gen_html.framed">framed</a>) documentation,
+    selecting this option may substantially reduce its overall size as well as speed up the generation.
+    <p>
+    However, in the case of <a href="#gen_html.single_file">single file</a> documentation,
+    the effect of this option will be just one extra CSS file. So, it is better to be unchecked.
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><b>Text</b></td>
+  <td>option group</td>
+</tr>
+
+<tr valign="top">
+  <td>
+    <a name="html.text.renderEmbeddedHTML"></a>
+    <p class="mrg0" style="margin-left:10px"><span class="nowrap">Render embedded HTML</span></p>
+  </td>
+  <td>
+    Select this option (together with
+    &ldquo;<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.proc.annotation.php#proc.annotation.tags.xhtml">Processing | Annotations | Tags | XHTML</a>&rdquo;
+    template parameter), when you want to show in the generated documentation the <a href="#xhtml">XHTML</a>
+    formatting specified in your <a href="#adding_comments">annotations</a>.
+  </td>
+</tr>
+
+<tr valign="top">
+  <td>
+    <a name="html.text.renderLineBreaks"></a>
+    <p class="mrg0" style="margin-left:10px"><span class="nowrap">Render line breaks</span></p>
+  </td>
+  <td>
+    Select this option, when you want the line breaks specified in your original
+    <a href="#adding_comments">annotation</a> texts to be interpreted
+    (with &lt;br&gt; tags) in the generated HTML output.
+    <p class="mrg8"></p>
+    Note: When you use <a href="#xhtml">XHTML</a> to format your
+    <a href="#adding_comments">annotations</a>, this option may need to be unselected.
+  </td>
+</tr>
+</table>
+
+<h2>
+  <a name="gen_rtf"></a>
+  4.&nbsp; How to generate RTF documentation?
+</h2>
+
+To generate a single file XML Schema documentation in RTF format, you should:
+
+<ol>
+  <li>Start the generator (run <code>generator.bat</code>).</li>
+  <li>
+    Select <a href="templates.html#PlainDoc.tpl">PlainDoc.tpl</a>
+    template in the <a href="overview.html#generator_dialog">Generator Dialog</a>.
+  </li>
+  <li>Specify one or many source XML schema (XSD) files.</li>
+  <li>Select RTF output format.</li>
+  <li>Click &ldquo;Run&rdquo; button to start generation.</li>
+</ol>
+
+<h3>
+  <a name="gen_rtf.params"></a>
+  Template Parameters
+</h3>
+
+Before starting the RTF generation, we also recommend to check the following
+parameters of <a href="templates.html#PlainDoc.tpl">PlainDoc.tpl</a> template:
+
+<p>
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+
+<tr align="center">
+  <th><b>Parameter</b></th>
+  <th><b>Comment</b></th>
+</tr>
+
+<tr valign="top">
+  <td><b><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.fmt.php#fmt" class="latent">Formatting</a></b></td>
+  <td>parameter group</td>
+</tr>
+
+<tr valign="top">
+  <td>
+    <p class="mrg0" style="margin-left:10px"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.fmt.php#fmt.allowNestedTables" class="latent">Allow nested tables</a></p>
+  </td>
+  <td>
+    This parameter controls whether the generated output may contain nested tables.
+    <p class="mrg8"></p>
+    <a href="templates.html">XSDDoc templates</a>
+    frequently use tables as layouts in order to fit data better on a page.
+    In certain cases, however, this leads to the situation when one table is nested into a cell
+    of another table. For some RTF reader, this may cause a problem.
+    <p class="mrg8"></p>
+    Although RTF specification since v1.6 does support nested tables (as well as MS Word 2000 and the later),
+    some modern and important RTF readers (such as OpenOffice.org 2.0) break on them.
+    <p class="mrg8"></p>
+    To work around this problem, all XSDDoc templates that use nested tables also
+    contain alternative sections without them. Such sections will be activated instead of
+    the primary ones, when this parameter is unchecked. Although, without nested tables
+    some pieces of the documentation may look less compact and sleek, this still allows generating
+    a quite decently looking output.
+    <p class="mrg8"></p>
+    Please, uncheck this parameter when your destination RTF reader has problems with nested tables!
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><p class="mrg0" style="margin-left:10px"><b><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.fmt.php#fmt.page" class="latent">Pagination</a></b></p></td>
+  <td>parameter group</td>
+</tr>
+
+<tr valign="top">
+  <td>
+    <p class="mrg0" style="margin-left:20px"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.fmt.php#fmt.page.columns" class="latent">Generate page columns</a></p>
+  </td>
+  <td>
+    Specify whether to generate page number columns in summary tables.
+    <p class="mrg8"></p>
+    The page numbers are substitution for hyperlinks in printed documentation and help to navigate it.
+  </td>
+</tr>
+
+<tr valign="top">
+  <td>
+    <p class="mrg0" style="margin-left:20px"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.fmt.php#fmt.refs" class="latent">Generate page references</a></p>
+  </td>
+  <td>
+    This parameter controls whether to generate cross-reference page numbers,
+    which look as the following:
+    <blockquote class="mrg8">
+      <code>xs:explicitGroup <b>[125]</b></code>
+    </blockquote>
+    Such page numbers are substitution for hyperlinks in printed documentation and help to navigate it.
+    If you do not need those references (and feel that the generated output is
+    too littered with them) you may uncheck this parameter.
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><p class="mrg0" style="margin-left:20px">
+    <span class="nowrap"><b><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.fmt.php#fmt.page.start" class="latent">Start from new page</a></b></span>
+  </p></td>
+  <td>parameter group</td>
+</tr>
+
+<tr valign="top">
+  <td>
+    <p class="mrg0" style="margin-left:30px"><span class="nowrap">
+      <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.fmt.php#fmt.page.start.namespace" class="latent">Namespace Overview</a><br>
+      <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.fmt.php#fmt.page.start.schema" class="latent">Schema Overview</a><br>
+      <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.fmt.php#fmt.page.start.comp" class="latent">Component Documentation</a>
+    </span></p>
+  </td>
+  <td>
+    These parameters control which documentation blocks should be started from a new page.
+  </td>
+</tr>
+
+</table>
+
+<h3>
+  <a name="gen_rtf.options"></a>
+  RTF Options
+</h3>
+
+Besides the <a href="#gen_rtf.params">template parameters</a>,
+there are also the <b>output format options</b>.
+They control the similar things. However, the difference is that unlike the template parameters,
+the support of the options is hardcoded in the template interpreter itself.
+
+<p>
+When you click <b>&ldquo;Options&rdquo;</b> button (with the RTF format selected at that),
+you will see the <b>RTF Option Inspector</b> dialog, like shown on the screenshot:
+<blockquote>
+<img src="../images/rtf_option_inspector.png" title="RTF Option Inspector" border="0">
+</blockquote>
+
+<p>
+Please, pay attention to the following options:
+
+<p>
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+
+<tr align="center">
+  <th width="1%"><b>Option</b></th>
+  <th width="99%"><b>Comment</b></th>
+</tr>
+
+<tr valign="top">
+  <td><b>Styles</b></td>
+  <td>option group</td>
+</tr>
+
+<tr valign="top">
+  <td><p class="mrg0" style="margin-left:10px">
+    <span class="nowrap">Include paragraph styles<br>Include character styles</span>
+  </p></td>
+  <td>
+    These two options specify whether paragraph/character styles should be included in the generated RTF.
+    <p class="mrg8"></p>
+    When the option is selected, for each style defined in templates a corresponding RTF style
+    will be generated and references to it will be inserted in every location where that style is used.
+    <p class="mrg8"></p>
+    When the option is unselected, no specific style information will get into the RTF.
+    However, any formatting specified in the template styles will be used anyway.
+    <p class="mrg8"></p>
+    You may need to disable the inclusion of style information in some situations,
+    when the generated RTF is intended primarily for using in non MS Word applications.
+    Certain RTF readers, although appear to understand most of the RTF settings quite well,
+    nevertheless, may produce such a mess with the styles imported from an RTF that the result document
+    may look considerably distorted.
+    <p class="mrg8"></p>
+    Here are the option values recommended for different destination applications:
+    <p class="mrg8"></p>
+    <table border="1" cellspacing="1" cellpadding="3">
+      <tr>
+        <th><b>Open with</b></th>
+        <th><b>Option value</b></th>
+      </tr>
+      <tr valign="bottom">
+        <td>MS Word</td>
+        <td><code>true</code></td>
+      </tr>
+      <tr valign="bottom">
+        <td>OpenOffice.org</td>
+        <td><code>false</code></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><b>Text</b></td>
+  <td>option group</td>
+</tr>
+
+<tr valign="top">
+  <td><p class="mrg0" style="margin-left:10px">
+    <span class="nowrap">Render embedded HTML</span>
+  </p></td>
+  <td>
+    Select this option (together with 
+    &ldquo;<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.proc.annotation.php#proc.annotation.tags.xhtml">Processing | Annotations | Tags | XHTML</a>&rdquo;
+    template parameter), when you want to show in the generated documentation the <a href="#xhtml">XHTML</a>
+    formatting specified in your <a href="#adding_comments">annotations</a>.
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><p class="mrg0" style="margin-left:10px">
+    <span class="nowrap">Render line breaks</span>
+  </p></td>
+  <td>
+    Select this option, when you want the line breaks specified in your original
+    <a href="#adding_comments">annotation</a> texts to be interpreted
+    with new lines in the generated RTF output.
+    <p class="mrg8"></p>
+    Note: When you use <a href="#xhtml">XHTML</a> to format your
+    <a href="#adding_comments">annotations</a>, this option may need to be unselected.
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><b>Images</b></td>
+  <td>option group</td>
+</tr>
+
+<tr valign="top">
+  <td>
+    <a name="rtf.images.storeGraphicsInRTF"></a>
+    <p class="mrg0" style="margin-left:10px"><span class="nowrap">Store graphics in RTF</span></p>
+  </td>
+  <td>
+    Select this option, when you want all images to be stored directly in the generated
+    RTF. In that case, the result will be a single file.
+    If unchecked, the image files will be saved separately in an 'xxx_files' subdirectory
+    near the document. Only references to them will be inserted in the generated RTF output.
+    This may reduce the result file size, particularly when some big images are repeating.
+    <p class="mrg8"></p>
+    See also: <a href="#xhtml.images">How to insert images?</a>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><b>Other options</b></td>
+  <td>option group</td>
+</tr>
+
+<tr valign="top">
+  <td><p class="mrg0" style="margin-left:10px">
+    <span class="nowrap">Tune output for MS Word</span>
+  </p></td>
+  <td>
+    When this option is <code>true</code>, the generator will adjust some RTF formatting
+    settings specifically for MS Word.
+    <p class="mrg8"></p>
+    Although Microsoft is the originator of RTF format, the MS Word itself appears to have
+    some oddities of rendering certain RTF settings, even though those settings may well
+    follow the RTF specification. For instance, when displaying the paragraph or table borders,
+    their horizontal positions may be shifted (e.g. when MS Word interprets horizontal margins
+    of a paragraph, it draws the paragraph borders and paddings within the specified margin space
+    but not within the paragraph content as it might be natural).
+    <p class="mrg8"></p>
+    To overcome this, in such cases, we adjust the initial dimensions in the opposite way
+    so as the result formatting would look properly in MS Word (e.g. to make the actual
+    paragraph margin look as intended the margin width specified in RTF is increased by the
+    paragraph border and padding widths).
+    <p class="mrg8"></p>
+    However, when you generate RTF to display it primarily not in MS Word but rather
+    in different viewers or editors (e.g. OpenOffice.org under Linux), which interpret
+    the original RTF specification more literally, those specific adjustments may cause
+    a visible distortion of the intended formatting of the result document.
+    In such cases, we recommend to uncheck this option.
+    <p class="mrg8"></p>
+    Values of this option recommended for different destination applications:
+    <p class="mrg8"></p>
+    <table border="1" cellspacing="1" cellpadding="3">
+      <tr>
+        <th><b>Open with</b></th>
+        <th><b>Option value</b></th>
+      </tr>
+      <tr valign="bottom">
+        <td>MS Word</td>
+        <td><code>true</code></td>
+      </tr>
+      <tr valign="bottom">
+        <td>OpenOffice.org</td>
+        <td><code>false</code></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+
+<h2>
+  <a name="multiple_schemas"></a>
+  5.&nbsp; How to generate a single documentation by multiple XML schemas?
+</h2>
+
+You can easily generate a single (common) XML schema documentation by any number
+of different XML schema files.
+At that, when a component from a schema A is used somewhere in a schema B,
+this will be mentioned and reflected with cross-hyperlinks in the corresponding sections
+of the documentation parts generated by both schemas.
+<p>
+Let's suppose, we have an XML schema called &ldquo;Products.xsd&rdquo;, which contains the following definition:
+<blockquote>
+  <pre>&lt;xs:element name="ProductId" type="xs:integer"/&gt;</pre>
+</blockquote>
+Now, we want to generate the documentation for that schema and integrate it together
+with the documentation generated for the
+<a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/index.html" target="_blank">&ldquo;XML&nbsp;Schema&nbsp;for&nbsp;XML&nbsp;Schemas&rdquo;</a>,
+which is the schema (found at
+<code><a href="http://www.w3.org/2001/XMLSchema.xsd" target="_blank">www.w3.org/2001/XMLSchema.xsd</a></code>)
+that defines the W3C XML Schema language itself.
+<p>
+To do this, in the <b>&ldquo;XML File(s)&rdquo;</b> field of the
+<a href="overview.html#generator_dialog">Generator Dialog</a>,
+we should specify the following line:
+<blockquote>
+  <pre>Products.xsd http://www.w3.org/2001/XMLSchema.xsd</pre>
+</blockquote>
+or the following:
+<blockquote>
+  <pre>"Products.xsd" "http://www.w3.org/2001/XMLSchema.xsd"</pre>
+</blockquote>
+which is the same.
+
+<p>
+After finishing of the generation, we will receive a documentation containing the full details
+of both &ldquo;Products.xsd&rdquo; and &ldquo;XMLSchema.xsd&rdquo; schemas.
+In addition, every type that is defined in &ldquo;XMLSchema.xsd&rdquo; and used in
+&ldquo;Products.xsd&rdquo; will be hyperlinked to its
+<a href="organization.html#blocks.comp">Component Documentation</a>
+generated by &ldquo;XMLSchema.xsd&rdquo;. For example:
+
+<blockquote>
+  <pre>&lt;xs:element name="ProductId" type="<a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/simpleTypes/integer.html" target="_blank">xs:integer</a>"/&gt;</pre>
+</blockquote>
+
+Moreover, in that case, the
+<a href="organization.html#comp_lists.usage">Usage Locations Report</a>
+of the <code>"xs:integer"</code> type will also contain mentioning of the <code>"ProductId"</code>
+element, which is defined in &ldquo;Products.xsd&rdquo; schema and uses this type.
+
+<h2>
+  <a name="pathname_with_spaces"></a>
+  6.&nbsp; How to specify a schema file pathname with spaces?
+</h2>
+
+When some of your XML schema file pathnames contain spaces, to specify them to the generator,
+you need to enclose every such a pathname in double quotes. For example:
+<blockquote>
+<code>"c:\My XML Projects\schemas\products.xsd"</code>
+</blockquote>
+
+This should be done both in the
+<a href="overview.html#generator_dialog">Generator Dialog</a>
+and on the generator <a href="../generator.html#cmdline">command line</a>.
+
+<h2>
+  <a name="integration_with_ant_maven"></a>
+  7.&nbsp; How to integrate XSDDoc with Apache Ant and Maven?
+</h2>
+
+Please, see 
+<a href="../integrations/ant.html">DocFlex/XML | Integrations | Apache Ant</a>
+and
+<a href="../integrations/maven.html">DocFlex/XML | Integrations | Apache Maven</a>
+
+<h2>
+  <a name="adding_comments"></a>
+  8.&nbsp; How to add descriptions/comments into my XML schema?
+</h2>
+
+The <a href="http://www.w3.org/XML/Schema" target="_blank">W3C XML Schema</a>
+language defines a special
+<b><code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/annotation.html" target="_blank">&lt;xs:annotation&gt;</a></code></b>
+element that allows adding comments into any XML Schema.
+<p>
+Precisely, the <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/annotation.html" target="_blank">&lt;xs:annotation&gt;</a></code>
+element is a container of two other elements:
+<ol class="mrg8">
+<li>
+  <b><code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/appinfo.html" target="_blank">&lt;xs:appinfo&gt;</a></code></b>,
+  which allows adding some additional custom instructions that may be used by a particular application
+  that processes the schema.
+</li>
+<li>
+  <b><code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/documentation.html" target="_blank">&lt;xs:documentation&gt;</a></code></b>,
+  where your comment text should be actually inserted.
+</li>
+</ol>
+
+In the following example, the string <i>"Complete List of all Salutations"</i>
+is the comment added in the definition of the <code>"SalutationType"</code> type using
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/annotation.html" target="_blank">&lt;xs:annotation&gt;</a></code>
+element:
+<p>
+<TABLE BGCOLOR="#F5F5F5" CELLSPACING="0" CELLPADDING="7" BORDER="0" CLASS="brdr1">
+<TR>
+<TD CLASS="f6">
+<SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:simpleType</SPAN> <SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">SalutationType</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:annotation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:documentation</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Complete List of all Salutations</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:documentation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:annotation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:restriction</SPAN> <SPAN CLASS="f2">base</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">xs:string</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:enumeration</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">MR.</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:enumeration</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">MS.</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:enumeration</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">MRS</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:restriction</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:simpleType</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+</TD>
+</TR>
+</TABLE>
+</p>
+
+The <a href="templates.html">XSDDoc</a> templates can process such an
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/annotation.html" target="_blank">&lt;xs:annotation&gt;</a></code>
+element and generate by its content the &ldquo;Annotation&rdquo; section of the
+<a href="organization.html#blocks.comp">Component Documentation</a>. Click
+<a href="../samples/sales_report/index.htmlfiles/sales_xsd_files/schemas/sales_xsd/simpleTypes/SalutationType.html" target="_blank">here</a>
+to see how it will look.
+<p>
+Almost all XML Schema elements can include
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/annotation.html" target="_blank">&lt;xs:annotation&gt;</a></code>
+elements (click on the link to see precisely which).
+However, not all of them are processed by <a href="templates.html">XSDDoc</a> templates.
+Which exactly are processed you can see in this section:
+<a href="features.html#annotations.elements" class="nowrap">How everything is documented | Annotations | Which annotation elements are processed</a>.
+<p>
+Within the <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/documentation.html" target="_blank">&lt;xs:documentation&gt;</a></code>
+element, you can write any text containing any number of lines.
+Note also that some XML markup character must be encoded with the corresponding entities:
+<p>
+<table border="1" cellspacing="1" cellpadding="3">
+<tr>
+  <th><b>Character</b></th>
+  <th><b>Entity</b></th>
+</tr>
+<tr>
+  <td align="center"><code>&lt;</code></td>
+  <td><code>&amp;lt;</code></td>
+</tr>
+<tr>
+  <td align="center"><code>&amp;</code></td>
+  <td><code>&amp;amp;&nbsp;</code></td>
+</tr>
+<tr>
+  <td align="center"><code>&gt;</code></td>
+  <td><code>&amp;gt;</code></td>
+</tr>
+</table>
+
+<p>
+For more information about
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/annotation.html" target="_blank">&lt;xs:annotation&gt;</a></code>
+elements, see the following links:
+<ul>
+<li><a href="http://www.w3.org/TR/xmlschema-1/#element-annotation" target="_blank">http://www.w3.org/TR/xmlschema-1/#element-annotation</a></li>
+<li><a href="http://www.w3schools.com/schema/el_annotation.asp" target="_blank">http://www.w3schools.com/schema/</a></li>
+</ul>
+
+<h2>
+  <a name="rendering_line_breaks"></a>
+  9.&nbsp; How to enable/disable interpreting line breaks in my comments?
+</h2>
+
+The comment text enclosed in a single
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/documentation.html" target="_blank">&lt;xs:documentation&gt;</a></code>
+element (see <a href="#adding_comments">How to add comments into my XML schema?</a>)
+may contain any number of lines.
+You may produce the new lines simply for convenience during writing that text.
+<p>
+However, you may also use the new lines as a way to format your comments.
+In that case, most likely, you will want too see the same lines in the &ldquo;Annotation&rdquo;
+sections of the generated documentation. Click on the following screenshot to see how this may look:
+
+<blockquote>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+  <td><a href="http://www.filigris.com/docflex-xml/xsddoc/images/p019.html" target="_blank"><img src="images/p019_s.gif" title="XML Schema for XML Schemas, RTF, p.19" border="0"></a></td>
+  <td><a href="http://www.filigris.com/docflex-xml/xsddoc/images/p020.html" target="_blank"><img src="images/p020_s.gif" title="XML Schema for XML Schemas, RTF, p.20" border="0"></a></td>
+</tr>
+</table>
+</blockquote>
+
+That means that the generator must interpret the line breaks specified within the raw XML
+with the markup coding appropriate to the given output format (e.g.
+with "&lt;BR&gt;" in HTML or "\line" in RTF).
+<p>
+To tell the generator to do so, you should invoke the output
+<a href="../generator.html#gui.format_option_inspector">Format Option Inspector</a>
+(by clicking the <b>&ldquo;Options&rdquo;</b> button in the
+<a href="overview.html#generator_dialog">Generator Dialog</a>)
+and select in it the <b class="nowrap">&ldquo;Text | Render line breaks&rdquo;</b> option.
+<p>
+If you actually do not need to have the line breaks to be interpreted
+(which may be especially true when you format your comments using <a href="#xhtml">XHTML</a>),
+make sure that <span class="nowrap">&ldquo;Text | Render line breaks&rdquo;</span> option is always unchecked.
+
+<h2>
+  <a name="xhtml"></a>
+  10.&nbsp; How to format my comments using XHTML?
+</h2>
+
+Besides interpreting <a href="#rendering_line_breaks">multiline</a> text comments
+<a href="#adding_comments">added</a> into your schema using
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/annotation.html" target="_blank">&lt;xs:annotation&gt;</a></code>
+elements,
+this XML Schema documentation generator supports a much more powerful way of formatting your texts and descriptions.
+<p>
+Now, within the
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/documentation.html" target="_blank">&lt;xs:documentation&gt;</a></code>
+elements, rather than just plain text, you can specify a full-blown XHTML markup!
+
+<h3>
+  <a name="xhtml.about"></a>
+  What is XHTML?
+</h3>
+
+XHTML is basically the old HTML which is well-formed enough to be a valid XML at the same time.
+In particular, that means:
+<ol>
+<li class="mrg8">
+  All HTML tags and their attributes become XHTML elements and attributes.
+</li>
+<li class="mrg8">
+  All XHTML elements belong to &ldquo;XHTML&rdquo; namespace associated with the following URI:
+  <blockquote class="mrg8">
+    <code><b>http://www.w3.org/1999/xhtml</b></code>
+  </blockquote>
+</li>
+<li class="mrg8">
+  Unlike in HTML, each XHTML container element must always have both opening and closing tags:
+  <blockquote class="mrg8">
+    <code>&lt<i>tag</i>&gt ... &lt/<i>tag</i>&gt</code>
+  </blockquote>
+</li>
+<li class="mrg8">
+  Each XHTML element with empty content must be specified as this:
+  <blockquote class="mrg8">
+    <code>&lt<i>tag</i>/&gt</code>
+  </blockquote>
+  (Rather than simply <code>'&lt<i>tag</i>&gt'</code>, which would be valid in HTML.)
+</li>
+</ol>
+
+In anything else, XHTML may be used the same as the normal HTML.
+<p>
+For more information about XHTML, see these links:
+<ul>
+<li><a href="http://www.w3.org/MarkUp/" target="_blank">http://www.w3.org/MarkUp/</a></li>
+<li><a href="http://www.w3schools.com/html/html_xhtml.asp" target="_blank">http://www.w3schools.com/html/html_xhtml.asp</a></li>
+</ul>
+
+<h3>
+  <a name="xhtml.usage"></a>
+  How to use XHTML?
+</h3>
+
+Here is how XHTML can be used in an XML Schema annotation:
+<p>
+<TABLE BGCOLOR="#F5F5F5" CELLSPACING="0" CELLPADDING="7" BORDER="0" CLASS="brdr1">
+<TR><TD CLASS="f6">
+<SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:schema</SPAN> <SPAN CLASS="f4">xmlns:xs</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f5">http://www.w3.org/2001/XMLSchema</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN>
+<DIV><SPAN CLASS="f2">...</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:annotation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:documentation</SPAN> <SPAN CLASS="f4"><u>xmlns</u></SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f5">http://www.w3.org/1999/xhtml</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">h3</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Complete List of all Salutations</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">h3</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f3">Allowed only three values:</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">ol</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">li</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">&quot;MR.&quot;</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">li</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">li</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">&quot;MS.&quot;</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">li</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">li</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">&quot;MRS&quot;</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">li</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">ol</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:documentation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:annotation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV><SPAN CLASS="f2">...</SPAN></DIV>
+<SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:schema</SPAN><SPAN CLASS="f1">&gt;</SPAN>
+</TD>
+</TR>
+</TABLE>
+<p>
+Here, the <b><code>xmlns</code></b> attribute specified in the start tag of the
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/documentation.html" target="_blank">&lt;xs:documentation&gt;</a></code>
+element switches the default namespace within it to XHTML. That means that any XML elements without namespace prefixes contained in that
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/documentation.html" target="_blank">&lt;xs:documentation&gt;</a></code>
+will belong to the XHTML namespace.
+Now, we can freely use ordinary HTML tags to format our comment!
+<p>
+The <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/documentation.html" target="_blank">&lt;xs:documentation&gt;</a></code>
+element is not the only place where you can switch the default namespace.
+You can equally do it in the start tag of any other element. At that, both that element and any other elements
+contained in it (if they have no namespace prefixes) will be treated as belonging to the XHTML namespace.
+For instance, the above example can be written also in the following way:
+<p>
+<TABLE BGCOLOR="#F5F5F5" CELLSPACING="0" CELLPADDING="7" BORDER="0" CLASS="brdr1">
+<TR><TD>
+<SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:schema</SPAN> <SPAN CLASS="f4">xmlns:xs</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f5">http://www.w3.org/2001/XMLSchema</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN>
+<DIV><SPAN CLASS="f2">...</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:annotation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:documentation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">div</SPAN> <SPAN CLASS="f4"><u>xmlns</u></SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f5">http://www.w3.org/1999/xhtml</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">h3</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Complete List of all Salutations</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">h3</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f3">Allowed only three values:</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">ol</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">li</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">&quot;MR.&quot;</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">li</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">li</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">&quot;MS.&quot;</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">li</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">li</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">&quot;MRS&quot;</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">li</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">ol</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">div</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:documentation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:annotation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV><SPAN CLASS="f2">...</SPAN></DIV>
+<SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:schema</SPAN><SPAN CLASS="f1">&gt;</SPAN>
+</TD>
+</TR>
+</TABLE>
+<p>
+The <b><code>&lt;div&gt;</code></b> element here is just a generic structure HTML element
+and it encloses all the annotation text with the HTML markup.
+<p>
+However, switch the default namespace is not the only way. Alternatively, you can bind
+the XHTML namespace URI to a certain arbitrary prefix (for instance, <code>"xhtml"</code>)
+in the start tag of the very top XML schema definition element (that is the
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/schema.html" target="_blank">&lt;xs:schema&gt;</a></code>
+element itself). Further, you should add that prefix to each HTML tag you use in your annotations.
+Here is how our example will look in that case:
+<p>
+<TABLE BGCOLOR="#F5F5F5" CELLSPACING="0" CELLPADDING="7" BORDER="0" CLASS="brdr1">
+<TR><TD>
+<SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:schema</SPAN> <SPAN CLASS="f4">xmlns:xs</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f5">http://www.w3.org/2001/XMLSchema</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f4"><br><u>xmlns:xhtml</u></SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f5">http://www.w3.org/1999/xhtml</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN>
+<DIV><SPAN CLASS="f2">...</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:annotation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:documentation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xhtml:h3</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Complete List of all Salutations</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xhtml:h3</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f3">Allowed only three values:</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xhtml:ol</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xhtml:li</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">&quot;MR.&quot;</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xhtml:li</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xhtml:li</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">&quot;MS.&quot;</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xhtml:li</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xhtml:li</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">&quot;MRS&quot;</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xhtml:li</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xhtml:ol</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:documentation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:annotation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV><SPAN CLASS="f2">...</SPAN></DIV>
+<SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:schema</SPAN><SPAN CLASS="f1">&gt;</SPAN>
+</TD>
+</TR>
+</TABLE>
+<p>
+The <a href="templates.html">XSDDoc</a> templates
+are designed so that they recognize the XHTML elements contained in
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/documentation.html" target="_blank">&lt;xs:documentation&gt;</a></code>
+elements and process them appropriately.
+<p>
+In fact, the templates simply filter all XHTML tags and just reproduce them back with all namespace prefixes removed
+(if any were used in the original comment source, as in the previous example).
+So, the entire content of an
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/documentation.html" target="_blank">&lt;xs:documentation&gt;</a></code>
+element produces a piece of normal HTML, which is inserted directly into the generated
+<a href="#gen_html">HTML output</a> or processed further, in the case of non-HTML output formats (see below).
+Here is how such an HTML will look when generated from both of the above examples:
+<p>
+<table border="1" cellspacing="1" cellpadding="8">
+<tr>
+<td BGCOLOR="#F5F5F5">
+<h3>Complete List of all Salutations</h3>
+Allowed only three values:
+<ol class="mrg80">
+<li>"MR."</li>
+<li>"MS."</li>
+<li>"MRS"</li>
+</ol>
+</td></tr>
+</table>
+<p>
+In the case of the <a href="#gen_rtf">RTF documentation</a> (generated using
+<a href="templates.html#PlainDoc.tpl"><code>PlainDoc.tpl</code></a> template),
+the piece of HTML produced from the content of an
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/documentation.html" target="_blank">&lt;xs:documentation&gt;</a></code>
+element is processed even further.
+All HTML tags are parsed and interpreted with the proper formatting features available in RTF.
+Almost all HTML tags (and their attributes) practically usable in documentation comments are processed in that way.
+Here's the list of all supported HTML tags:
+<p>
+<table border="1" cellspacing="1" cellpadding="5">
+<tr valign="top">
+  <td><b>Text</b></td>
+  <td>
+    &lt;b&gt;, &lt;strong&gt;, &lt;i&gt;, &lt;em&gt;, &lt;code&gt;, &lt;tt&gt;, &lt;u&gt;,
+    &lt;s&gt;, &lt;strike&gt;, &lt;sub&gt;, &lt;sup&gt;, &lt;font&gt;, &lt;br&gt;
+  </td>
+</tr>
+<tr valign="top">
+  <td><b>Paragraphs</b></td>
+  <td>
+    &lt;p&gt;, &lt;center&gt;, &lt;div&gt;, &lt;pre&gt;, &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;,
+    &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;, &lt;blockquote&gt;
+  </td>
+</tr>
+<tr valign="top">
+  <td><b>Lists</b></td>
+  <td>
+    &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;, &lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;
+  </td>
+</tr>
+<tr valign="top">
+  <td><b>Table</b></td>
+  <td>
+    &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, &lt;th&gt;
+  </td>
+</tr>
+<tr valign="top">
+  <td><b>Other</b></td>
+  <td>
+    &lt;hr&gt;, &lt;img&gt;, &lt;a&gt;...&lt;/a&gt;
+  </td>
+</tr>
+</table>
+<p>
+The result RTF output generated by such an annotation preformatted with <a href="#xhtml">XHTML</a>
+may look as on the following screenshot (click to see the real size page preview):
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/xsddoc/images/xhtml_ann_rtf1.html" target="_blank"><img src="images/xhtml_ann_rtf1_s.gif" title="Using XHTML in XML Schema annotations (RTF demo)" border="0"></a>
+</blockquote>
+
+<h3>
+  <a name="xhtml.images"></a>
+  How to insert images?
+</h3>
+
+In addition to the rich formatting capabilities, XHTML allows you also
+to insert images into your XML schema documentation.
+To add an image in the annotation, you should use <code>&lt;img&gt;</code> tag.
+Here is how this can be done:
+<p>
+<TABLE BGCOLOR="#F5F5F5" CELLSPACING="0" CELLPADDING="7" BORDER="0" CLASS="brdr1">
+<TR><TD CLASS="f6">
+<SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:annotation</SPAN><SPAN CLASS="f1">&gt;</SPAN>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:documentation</SPAN> <SPAN CLASS="f4">xmlns</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f5">http://www.w3.org/1999/xhtml</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f3">The "Valid XHTML 1.0" Icon:</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">p</SPAN><SPAN CLASS="f6"><SPAN CLASS="f1">/&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">img</SPAN> <SPAN CLASS="f2">src</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">http://www.w3.org/Icons/valid-xhtml10.png</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:documentation</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:annotation</SPAN><SPAN CLASS="f1">&gt;</SPAN>
+</TD>
+</TR>
+</TABLE>
+<p>
+After processing such an annotation, the generator will produce the following fragment of
+<a href="#gen_html">HTML</a>:
+<p>
+<table border="1" cellspacing="1" cellpadding="8">
+<tr>
+<td BGCOLOR="#F5F5F5">
+The "Valid XHTML 1.0" Icon:
+<p class="mrg8"></p>
+<img src="../images/valid-xhtml10.png">
+</td></tr>
+</table>
+<p>
+The images can also be inserted in the <a href="#gen_rtf">RTF</a> output (see the screenshot above).
+<p>
+Please note, the following
+<a href="overview.html#param_inspector">template parameters</a> and
+<a href="../generator.html#gui.output_format">output format options</a>
+are important for processing of images:
+<ul>
+<li>
+  &ldquo;<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.proc.annotation.php#proc.annotation.tags.xhtml">Processing | Annotations | Tags | XHTML</a>&rdquo; parameter group
+  (both <a href="templates.html#FramedDoc.tpl"><code>FramedDoc.tpl</code></a>
+  and <a href="templates.html#PlainDoc.tpl"><code>PlainDoc.tpl</code></a>).
+</li>
+<li>
+  &ldquo;<a href="#rtf.images.storeGraphicsInRTF">Images | Store graphics in RTF</a>&rdquo; option (<a href="#gen_rtf">RTF</a> output).
+</li>
+</ul>
+
+See details below.
+
+<h3>
+  <a name="xhtml.params_and_options"></a>
+  Parameters & options related to XHTML and images
+</h3>
+
+If you <a href="#xhtml.usage">use XHTML</a> to format your XML schema annotations,
+when generating documentation, please pay attention to the following
+<a href="overview.html#param_inspector">template parameters</a>:
+<ul>
+<li>
+  <b>&ldquo;<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.proc.annotation.php#proc.annotation.tags.xhtml">Processing | Annotations | Tags | XHTML</a>&rdquo;</b>
+  parameter (both <a href="templates.html#FramedDoc.tpl"><code>FramedDoc.tpl</code></a>
+  and <a href="templates.html#PlainDoc.tpl"><code>PlainDoc.tpl</code></a>)
+  should be <b><code>true</code></b>.
+</li>
+<li>
+  <b>&ldquo;<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.proc.annotation.php#proc.annotation.tags.xhtml.images">Processing | Annotations | Tags | XHTML | Include Images</a>&rdquo;</b>
+  parameter controls whether to include <a href="#xhtml.images">images</a> specified
+  with <code>&lt;img&gt;</code> tags.
+</li>
+<li>
+  <b>&ldquo;<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.proc.annotation.php#proc.annotation.tags.xhtml.images.copy">Processing | Annotations | Tags | XHTML | Include images | Copy Images</a>&rdquo;</b>
+  parameter should be <b><code>true</code></b>,
+  when you generate <a href="#gen_html">HTML</a> output and want all <a href="#xhtml.images">images</a>
+  specified in <code>&lt;img&gt;</code> tags to be automatically copied and stored along with
+  the result documentation (rather than left referred from it by the original URLs).
+</li>
+<li>
+  The following parameters (both templates) control removing of
+  <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/annotation.html" target="_blank">&lt;xs:annotation&gt;</a></code>
+  elements from the reproduced <a href="features.html#xml_source">XML source</a>:
+  <ul class="mrg8">
+    <li><b>&ldquo;<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.doc.schema.php#doc.schema.xml.remove.anns">Details | Schema Overview | XML Source | Remove Annotation</a>&rdquo;</b></li>
+    <li><b>&ldquo;<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.doc.comp.xml.php#doc.comp.xml.remove.anns">Details | Component Documentation | XML Source | Remove Annotation</a>&rdquo;</b></li>
+    <li><b>&ldquo;<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.doc.comp.attributes.php#doc.comp.attributes.xml.remove.anns">Details | Component Documentation | Attribute Detail | XML Source | Remove Annotation</a>&rdquo;</b></li>
+    <li><b>&ldquo;<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.doc.comp.contentElements.php#doc.comp.contentElements.xml.remove.anns">Details | Component Documentation | Content Element Detail | XML Source | Remove Annotation</a>&rdquo;</b></li>
+  </ul>
+  You may want to exclude
+  <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/annotation.html" target="_blank">&lt;xs:annotation&gt;</a></code>
+  elements because when XHTML tags are used to format annotation texts, the full XML source of such elements may be
+  so large that it will overwhelm anything else. This will make difficult to understand anything.
+</li>
+</ul>
+and the following
+<a href="../generator.html#gui.output_format">output format options</a>:
+<ul>
+<li>
+  <b>&ldquo;<a href="#html.text.renderEmbeddedHTML">Text | Render embedded HTML</a>&rdquo;</b> option (all formats) should be <b><code>true</code></b>.
+</li>
+<li>
+  <b>&ldquo;<a href="#html.text.renderLineBreaks">Text | Render line breaks</a>&rdquo;</b> option (all formats) should be <b><code>false</code></b>,
+  unless you want your original line breaks to be interpreted along with your HTML markup.
+</li>
+<li>
+  <b>&ldquo;<a href="#rtf.images.storeGraphicsInRTF">Images | Store graphics in RTF</a>&rdquo;</b> option (<a href="#gen_rtf">RTF</a>)
+  should be <b><code>true</code></b> to have all <a href="#xhtml.images">images</a> stored directly
+  in the generated RTF file.
+</li>
+</ul>
+
+<h2>
+  <a name="invalid_doc"></a>
+  11.&nbsp; There is some oddity in the documentation I've generated. What might be wrong?
+</h2>
+
+Your problem is that: You have generated a documentation by your XML schema(s) and
+it appears that something is wrong in it. For instance, some hyperlinks lead
+to wrong locations, others may be absent at all when they should be there and so on.
+<p>
+Most likely, the cause of all such odd things may be that some of your input
+XML schemas are actually invalid (that is, they do not strictly comply with
+<a href="http://www.w3.org/XML/Schema" target="_blank">W3C XML Schema</a>
+specification).
+<p>
+<table border="1" cellspacing="1" cellpadding="6">
+<tr><td bgcolor="#F5F5F5" class="inset">
+
+A common mistake is specifying the schema's target namespace and
+forgetting to set that namespace to be default within the
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/schema.html" target="_blank">&lt;xs:schema&gt;</a></code>
+element. For example, in the following schema definition:
+<blockquote class="mrg8">
+<div CLASS="f6">
+<SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:schema</SPAN> <SPAN CLASS="f4">xmlns:xs</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f5">http://www.w3.org/2001/XMLSchema</SPAN><SPAN CLASS="f1">&quot;</SPAN>
+<br><SPAN CLASS="f2">targetNamespace</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">http://www.company.com/project</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN>
+<DIV><SPAN CLASS="f2">...</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f7">&lt;!-- Complex Type Definitions --&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:complexType</SPAN> <SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">Account</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:sequence</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:element</SPAN> <SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">NAME</SPAN><SPAN CLASS="f1">&quot;</SPAN> <SPAN CLASS="f2">type</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">acctholdername</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f2">...</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:sequence</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:complexType</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV><SPAN CLASS="f2">...</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f7">&lt;!-- Simple Type Definitions --&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:simpleType</SPAN> <SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">acctholdername</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:restriction</SPAN> <SPAN CLASS="f2">base</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">xs:string</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:minLength</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">1</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:maxLength</SPAN> <SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">80</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:restriction</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:simpleType</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV><SPAN CLASS="f2">...</SPAN></DIV>
+<SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xs:schema</SPAN><SPAN CLASS="f1">&gt;</SPAN>
+</div>
+</blockquote>
+the element <code>'NAME'</code> specified within the complex type is supposed to have a simple type
+<code>'acctholdername'</code>, which is defined just below and belongs to the schema's target namespace
+<code class="small">"http://www.company.com/project"</code>. However, the <code>type</code> attribute of
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/element_1.html" target="_blank">&lt;xs:element&gt;</a></code>
+element requires a value of <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/simpleTypes/QName.html" target="_blank">xs:QName</a></code>
+type, that is an XML qualified name. Since the default namespace was not assigned in that schema,
+what that particular <code>type</code> attribute actually refers to is the <code>'acctholdername'</code> type
+within the <i>global</i> namespace. Such a type has nothing to do with the simple type <code>'acctholdername'</code>
+defined in that schema and will be simply unknown here.
+Hence, the whole schema is incorrect and the documentation generated by it will be incorrect too.
+<p class="mrg8"></p>
+However, the situation can be easily fixed. All is needed is to set the default namespace
+in the start tag of the
+<code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/schema.html" target="_blank">&lt;xs:schema&gt;</a></code>
+element:
+<blockquote class="mrg8">
+<div CLASS="f6">
+<SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:schema</SPAN> <SPAN CLASS="f4">xmlns:xs</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f5">http://www.w3.org/2001/XMLSchema</SPAN><SPAN CLASS="f1">&quot;</SPAN><br>
+<SPAN CLASS="f2">targetNamespace</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">http://www.company.com/project</SPAN><SPAN CLASS="f1">&quot;</SPAN><br>
+<SPAN CLASS="f4"><u>xmlns</u></SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f5">http://www.company.com/project</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN>
+<DIV><SPAN CLASS="f2">...</SPAN></DIV>
+</div>
+</blockquote>
+Alternatively, a custom namespace prefix may be used, for instance <code>"prj"</code>:
+<blockquote class="mrg8">
+<div CLASS="f6">
+<SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:schema</SPAN> <SPAN CLASS="f4">xmlns:xs</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f5">http://www.w3.org/2001/XMLSchema</SPAN><SPAN CLASS="f1">&quot;</SPAN><br>
+<SPAN CLASS="f2">targetNamespace</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">http://www.company.com/project</SPAN><SPAN CLASS="f1">&quot;</SPAN><br>
+<SPAN CLASS="f4"><u>xmlns:prj</u></SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f5">http://www.company.com/project</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN>
+<DIV><SPAN CLASS="f2">...</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f7">&lt;!-- Complex Type Definitions --&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:complexType</SPAN> <SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">Account</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:sequence</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xs:element</SPAN> <SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">NAME</SPAN><SPAN CLASS="f1">&quot;</SPAN> <SPAN CLASS="f2">type</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3"><u>prj</u>:acctholdername</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+</div>
+</blockquote>
+</td></tr>
+</table>
+
+<p>
+In fact, <a href="templates.html">XSDDoc</a>
+templates do not verify the validity of the input XML schemas.
+The templates have been designed in assumption that the input XML schemas are correct.
+When the schema is incorrect a certain documentation will be generated still.
+However, what that documentation will be no one knows...
+Actually, it may be even more incorrect than the source schema because what exactly
+processing a particular invalid XML schema will spawn is difficult to predict.
+<p>
+So, before running the documentation generator, we suggest to verify your schemas(s) with
+an appropriate tool.
+<p>
+For instance, you may use an online XML schema validator found by this link:
+<a href="http://www.w3.org/2001/03/webdata/xsv" target="_blank">http://www.w3.org/2001/03/webdata/xsv</a>.
+Otherwise, you can go to W3C XML Schema home page and look at the &ldquo;Tools&rdquo; section:
+<a href="http://www.w3.org/XML/Schema#Tools" target="_blank">http://www.w3.org/XML/Schema#Tools</a>.
+<p>
+If all your schemas have passed the validation and the errors in the generated documentation
+still persist, then, indeed, there may be something wrong in the templates (or elsewhere)...
+In that case, please, let us know by sending an e-mail to:
+<a href="mailto:contact@filigris.com">contact@filigris.com</a>.
+
+
+<h2>
+  <a name="xmlschema.resources"></a>
+  12.&nbsp; Where can I learn more about XML schemas?
+</h2>
+
+We may suggest the following links:
+<ul>
+<li><a href="http://www.w3.org/XML/Schema" target="_blank">W3.org: W3C XML Schema</a></li>
+<li><a href="http://en.wikipedia.org/wiki/XML_Schema" target="_blank">Wikipedia: XML Schema</a></li>
+<li><a href="http://msdn.microsoft.com/en-us/library/aa153011.aspx" target="_blank">MSDN: XML Schemas</a></li>
+<li><a href="http://www.w3schools.com/schema/" target="_blank">W3Schools.com: XML Schema Tutorial</a></li>
+<li><a href="http://www.xml.com/pub/a/2000/11/29/schemas/part1.html" target="_blank">XML.com: Using W3C XML Schema</a></li>
+<li><a href="http://www.xml.com/resourceguide/" target="_blank">XML.com: Resource Guide</a></li>
+<li><a href="http://www.oracle.com/technetwork/articles/" target="_blank">Oracle Technology Network | Articles</a>:
+  <ul>
+    <li><a href="http://www.oracle.com/technetwork/articles/srivastava-namespaces-092580.html" target="_blank">XML Schema: Understanding Namespaces</a></li>
+    <li><a href="http://www.oracle.com/technetwork/articles/srivastava-datatypes-087961.html" target="_blank">XML Schema: Understanding Datatypes</a></li>
+    <li><a href="http://www.oracle.com/technetwork/articles/srivastava-structures-090493.html" target="_blank">XML Schema: Understanding Structures</a></li>
+    <li><a href="http://www.oracle.com/technetwork/java/design-patterns-142138.html" target="_blank">Introducing Design Patterns in XML Schemas</a></li>
+    <li><a href="http://www.oracle.com/technetwork/java/xmlschema-tips-139858.html" target="_blank">Tips and Tricks in XML Schema Design and Authoring</a></li>
+  </ul>
+</li>
+<li><a href="http://www.xfront.com/xml-schema.html" target="_blank">xFront.com: XML Schema Tutorial</a></li>
+<li><a href="http://www.rpbourret.com/xml/XMLURLs.htm" target="_blank">Ronald Bourret: XML Links</a></li>
+</ul>
+
+Also, there is a good book (which we have been using ourselves from the very start):
+<p>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr valign="top">
+<td><a href="http://www.oreilly.com/catalog/xmlschema/" target="_blank"><img src="images/xmlschema_book.gif" border="0" style="margin-right:10px"></a></td>
+<td class="impr">
+<b>XML Schema</b><br>by Eric van der Vlist
+<p class="mrg8">
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+  <td class="impr">Publisher:&nbsp;</td>
+  <td class="impr"><b>O'Reilly</b></td>
+</tr>
+<tr>
+  <td class="impr">Pub Date:&nbsp;</td>
+  <td class="impr"><b>June 2002</b></td>
+</tr>
+<tr>
+  <td class="impr">ISBN:&nbsp;</td>
+  <td class="impr"><b>0-596-00252-1</b></td>
+</tr>
+<tr>
+  <td class="impr">Pages:&nbsp;</td>
+  <td class="impr"><b>400</b></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p>
+The &ldquo;Element Reference Guide&rdquo; contained in that book gave us some important ideas of
+how a good <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/examples.php">XML schema documentation</a>
+should be organized and what it should include.
+
+<p>
+Another good book is the following:
+<p>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr valign="top">
+<td><a href="http://www.amazon.com/Definitive-XML-Schema-2nd-Edition/dp/0132886723" target="_blank"><img src="images/xmlschema_book2.png" border="0" style="margin-right:10px"></a></td>
+<td class="impr">
+<b>Definitive XML Schema, 2nd Edition</b><br>by Priscilla Walmsley 
+<p class="mrg8">
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+  <td class="impr">Publisher:&nbsp;</td>
+  <td class="impr"><b>Prentice Hall</b></td>
+</tr>
+<tr>
+  <td class="impr">Pub Date:&nbsp;</td>
+  <td class="impr"><b>September 2012</b></td>
+</tr>
+<tr>
+  <td class="impr">ISBN:&nbsp;</td>
+  <td class="impr"><b>978-0132886727</b></td>
+</tr>
+<tr>
+  <td class="impr">Pages:&nbsp;</td>
+  <td class="impr"><b>768</b></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p>
+It is the most recent book about XML schemas and it covers XSD 1.1.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="nav">
+  The only problem, it is printed with quite large font and has wide margins on pages,
+  which make it quite voluminous and heavy. 
+  If printed normally, the same content would make about 400 pages, as the first book.
+</td></tr>
+</table>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2013 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

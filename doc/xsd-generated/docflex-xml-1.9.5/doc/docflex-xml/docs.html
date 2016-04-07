@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex/XML - Documentation</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/XML - Documentation
+</h1>
+
+<h3 class="spec">
+  <a href="setup.html" class="latent">Installation / Configuration Files</a>
+</h3>
+
+<ol>
+  <li class="mrg4"><a href="setup.html#installation"><b>Installation</b></a></li>
+  <li class="mrg4"><a href="setup.html#config_files"><b>Configuration Files</b></a>
+    <ul class="mrg4">
+      <li><a href="setup.html#docflex.config">docflex.config</a></li>
+      <li><a href="setup.html#docflex.license">docflex.license</a></li>
+      <li><a href="setup.html#designer.config">designer.config</a></li>
+      <li><a href="setup.html#generator.config">generator.config</a></li>
+      <li><a href="setup.html#catalog.xml">catalog.xml</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="setup.html#xml_catalogs"><b>XML Catalogs</b></a>
+    <ul class="mrg4">
+      <li><a href="setup.html#xml_catalogs.about">What is XML Catalog?</a></li>
+      <li><a href="setup.html#xml_catalogs.usage">How DocFlex/XML uses XML Catalogs</a></li>
+      <li><a href="setup.html#xml_catalogs.default">Default XML Catalog</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 class="spec">
+  <a href="generator.html" class="latent">Running Generator</a>
+</h3>
+
+<ol>
+  <li class="mrg4"><a href="generator.html#cmdline"><b>Launching Generator from Command Line</b></a></li>
+    <ul class="mrg4">
+      <li><a href="generator.html#options">Command Line Options</a>
+        <ul>
+          <li><a href="generator.html#template_options">Template Options</a></li>
+          <li><a href="generator.html#output_options">Output Options</a></li>
+          <li><a href="generator.html#processing_options">Processing Options</a></li>
+          <li><a href="generator.html#config_options">Configuration Options</a></li>
+        </ul>
+      </li>
+      <li><a href="generator.html#argument_files">Command Line Argument Files</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="generator.html#gui"><b>Generator GUI</b></a>
+    <ul class="mrg4">
+      <li><a href="generator.html#gui.template">Specifying Template</a>
+        <ul>
+          <li><a href="generator.html#gui.param_inspector">Setting Template Parameters</a></li>
+        </ul>
+      </li>
+      <li><a href="generator.html#gui.xml_files">Choosing XML File(s)</a>
+        <ul>
+          <li><a href="generator.html#gui.xml_catalogs">Assigning XML Catalog(s)</a></li>
+        </ul>
+      </li>
+      <li><a href="generator.html#gui.output_format">Selecting Output Format</a>
+        <ul>
+          <li><a href="generator.html#gui.html_option_inspector">HTML Option Inspector</a></li>
+          <li><a href="generator.html#gui.rtf_option_inspector">RTF Option Inspector</a></li>
+          <li><a href="generator.html#gui.txt_option_inspector">TXT Option Inspector</a></li>
+        </ul>
+      </li>
+      <li><a href="generator.html#gui.output_location">Specifying Output Location</a></li>
+      <li><a href="generator.html#gui.run">Starting Generation</a>
+        <ul>
+          <li><a href="generator.html#generation_phases">Generation Phases</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="generator.html#list_params"><b>Multi-valued (List) Parameters</b></a>
+      <ul class="mrg4">
+        <li><a href="generator.html#list_params.gui">Specifying List Value in Parameter Inspector</a></li>
+        <li><a href="generator.html#list_params.escapes">Using Escapes</a></li>
+        <li><a href="generator.html#list_params.cmdline">Specifying List Parameter on Command Line</a></li>
+      </ul>
+  </li>
+  <li class="mrg4"><a href="generator.html#error_report"><b>Error Reporting</b></a></li>
+  <li class="mrg4"><a href="generator.html#tips"><b>Tips</b></a>
+      <ul class="mrg4">
+        <li><a href="generator.html#xml_tips">Input XML Files</a>
+          <ul>
+            <li><a href="generator.html#file_pathname_patterns">Using file pathname patterns</a></li>
+          </ul>
+        </li>
+        <li><a href="generator.html#html_tips">HTML Output</a>
+          <ul>
+            <li><a href="generator.html#mark_of_the_web">Inserting "Mark of the Web" comment</a></li>
+          </ul>
+        </li>
+        <li><a href="generator.html#rtf_tips">RTF Output</a>
+          <ul>
+            <li><a href="generator.html#updating_rtf_fields">Updating RTF fields in MS Word</a></li>
+            <li><a href="generator.html#including_rtf_in_doc">Including generated RTF in larger Word document</a></li>
+            <li><a href="generator.html#including_doc_in_rtf">Including static Word document into generated RTF</a></li>
+            <li><a href="generator.html#generating_rtf_for_other_apps">Generating RTF for non-Word applications</a></li>
+          </ul>
+        </li>
+     </ul>
+  </li>
+</ol>
+
+<h3 class="spec">
+  <a href="design_templates.html" class="latent">Designing Templates</a>
+</h3>
+
+<ol>
+  <li class="mrg4"><a href="design_templates.html#creating_template"><b>How to Create a Template?</b></a>
+  <li class="mrg4"><a href="design_templates.html#xmltype"><b>Defining XML Type</b></a>
+    <ul class="mrg4">
+      <li><a href="design_templates.html#xmltype.config">XML Type Configuration File</a></li>
+      <li><a href="design_templates.html#xmltype.dtd">Assigning DTD</a>
+        <ul>
+          <li><a href="design_templates.html#xmltype.dtd.file">dtd.file</a></li>
+          <li><a href="design_templates.html#xmltype.dtd.systemID">dtd.systemID</a></li>
+          <li><a href="design_templates.html#xmltype.dtd.publicID">dtd.publicID</a></li>
+        </ul>
+      </li>
+      <li><a href="design_templates.html#xmltype.xsd">Assigning XML Schemas</a>
+        <ul>
+          <li><a href="design_templates.html#xmltype.xsd.files">xsd.files</a></li>
+          <li><a href="design_templates.html#xmltype.xsd.catalogs">xsd.catalogs</a></li>
+          <li><a href="design_templates.html#xmltype.xsd.includeAbstractTypes">xsd.includeAbstractTypes</a></li>
+          <li><a href="design_templates.html#xmltype.local_element_types">Local Element Types</a></li>
+        </ul>
+      </li>
+      <li><a href="design_templates.html#xmltype.ns">Declaring Namespaces</a>
+        <ul>
+          <li><a href="design_templates.html#xmltype.ns.uri">ns.<i>&lt;n&gt;</i>.uri</a></li>
+          <li><a href="design_templates.html#xmltype.ns.prefix">ns.<i>&lt;n&gt;</i>.prefix</a></li>
+          <li><a href="design_templates.html#xmltype.ns.default">ns.<i>&lt;n&gt;</i>.default</a></li>
+          <li><a href="design_templates.html#xmltype.ns_example">Example</a></li>
+        </ul>
+      </li>
+      <li><a href="design_templates.html#xmltype.pseudo_elements">Pseudo-elements</a>
+        <ul>
+          <li><a href="design_templates.html#xmltype.pseudo-elements.all">pseudo-elements.all</a></li>
+          <li><a href="design_templates.html#xmltype.pseudo-elements.NAME">pseudo-elements.<i>&lt;NAME&gt;</i></a></li>
+          <li><a href="design_templates.html#xmltype.defaultRootElement">defaultRootElement</a></li>
+          <li><a href="design_templates.html#xmltype.CDATA">#CDATA</a></li>
+          <li><a href="design_templates.html#xmltype.COMMENT">#COMMENT</a></li>
+          <li><a href="design_templates.html#xmltype.CUSTOM">#CUSTOM</a></li>
+          <li><a href="design_templates.html#xmltype.DOCTYPE">#DOCTYPE</a></li>
+          <li><a href="design_templates.html#xmltype.DOCUMENT">#DOCUMENT</a></li>
+          <li><a href="design_templates.html#xmltype.DOCUMENTS">#DOCUMENTS</a></li>
+          <li><a href="design_templates.html#xmltype.NAMESPACE">#NAMESPACE</a></li>
+          <li><a href="design_templates.html#xmltype.PI">#PI</a></li>
+          <li><a href="design_templates.html#xmltype.TEXT">#TEXT</a></li>
+        </ul>
+      </li>
+      <li><a href="design_templates.html#xmltype.imageProvider">Element Image Provider</a></li>
+      <li><a href="design_templates.html#using_macros">Using Macros</a></li>
+    </ul>
+  <li class="mrg4"><a href="design_templates.html#designer"><b>Running Template Designer</b></a>
+    <ul class="mrg4">
+      <li><a href="design_templates.html#designer.options">Command Line Options</a>
+      <li><a href="design_templates.html#designer.new_template">Creating a New Template</a>
+      <li><a href="design_templates.html#designer.invoking_generator">Invoking Generator from Template Designer</a>
+    </ul>
+  </li>
+</ol>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,848 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex Technology - Documentation - Template Components</title>
+</head>
+
+<body>
+
+<h1>
+DocFlex Technology - Documentation - Template Components
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+
+<ol>
+  <li><a href="#components">Components</a>
+  <li><a href="#sections">Sections</a>
+  <li><a href="#section_blocks">Section Blocks</a>
+  <li><a href="#area_section">Area Section</a>
+  <li><a href="#area_rows">Area Rows</a>
+    <ul>
+      <li><a href="#control_group">Control Group</a>
+      <li><a href="#horizontal_rule">Horizontal Rule</a>
+      <li><a href="#vertical_spacer">Vertical Spacer</a>
+    </ul>
+
+  <li><a href="#controls">Controls</a>
+    <ul>
+      <li><a href="#label_control">Label Control</a>
+      <li><a href="#data_control">Data Control</a>
+      <li><a href="#delimiter_control">Delimiter Control</a>
+      <li><a href="#image_control">Image Control</a>
+      <li><a href="#panel_control">Panel Control</a>
+      <li><a href="#call_stock_section_control">Call Stock-Section Control</a>
+    </ul>
+
+  <li><a href="#container_sections">Container Sections</a>
+    <ul>
+      <li><a href="#folder_section">Folder Section</a>
+      <li><a href="#element_iterator">Element Iterator</a>
+      <li><a href="#attribute_iterator">Attribute Iterator</a>
+    </ul>
+  <li><a href="#stock_sections">Stock-Sections</a>
+  <li><a href="#call_stock_section">Call Stock-Section</a>
+  <li><a href="#call_template">Call Template</a>
+</ol>
+
+<!-- END TABLE OF CONTENTS -->
+
+<h2><a name="components"></a>1.&nbsp;&nbsp;Components</h2>
+<p>
+DocFlex templates can be considered as a sort of computer programs,
+which contain instructions interpreted by
+<a href="about.html#generator">DocFlex Generator</a>.
+Such instructions are subdivided into <i><b>template components</b></i>
+and <i><b>component properties</b></i>.
+<p>
+Template components are the template's building blocks and visualized in the
+<a href="about.html#template_designer">DocFlex Template Designer</a>.
+<a name="component_properties"></a>
+The component properties allow adjusting the component's look and behavior.
+In the template designer, they can be specified in the component property dialogs and inspectors.
+<p>
+<a name="output"></a>When interpreting a component the generator produces by it a piece
+of the output document, which is called the <i><b>component output</b></i>.
+<p>
+<a name="enabling_condition"></a>
+For each template component, an <i><b>enabling condition</b></i> can be defined.
+(In the Template Designer, it is normally indicated with the "question"
+<img align="absmiddle" alt="enabling condition icon" src="images/cond.gif"> icon).
+Once defined, the enabling condition is checked by the generator each time before interpreting
+the component. If the enabling condition is not satisfied the generator normally passes it over
+without generating any output. The enabling condition can be specified in the component properties
+simultaneously in two ways:
+<ul>
+  <li class="wide">in the form of a boolean FlexQuery-expression
+  <li class="wide">
+    <a name="matching_element_types"></a>
+    in the form of the list of <i><b>Matching Element Types</b></i>.
+    In this case, the component is processed only when the
+    <a href="#context_element">context element</a>'s
+    type is compatible with the one of the types specified in the list.
+</ul>
+<p>
+There are three types of template components:
+<ul>
+  <li><a href="#sections">Sections</a></li>
+  <li><a href="#area_rows">Area Rows</a></li>
+  <li><a href="#controls">Controls</a></li>
+</ul></p>
+<h2><a name="sections"></a>2.&nbsp;&nbsp;Sections</h2>
+<p>Sections are the basic template components.
+  They provide the control of the data flow (i.e.
+  the flow of elements and attributes)
+  and generate consecutive fragments of the result
+  document.<br>
+  <br>
+  There are following <i><b>section types</b></i>:
+<ul>
+  <li><a href="#area_section">Area Section</a></li>
+  <li><a href="#folder_section">Folder Section</a></li>
+  <li><a href="#element_iterator">Element Iterator</a></li>
+  <li><a href="#attribute_iterator">Attribute Iterator</a></li>
+  <li><a href="#call_stock_section">Call Stock-Section</a></li>
+  <li><a href="#call_template">Call Template</a></li>
+</ul></p>
+<h2>
+  <a name="section_blocks"></a>
+  3.&nbsp;&nbsp;Section Blocks
+</h2>
+<p>
+In a template, <a href="#sections">sections</a>
+are grouped in <i><b>section blocks</b></i>,
+where they follow one another in the order defined during the template design.
+At any particular moment, when executing a template, the generator processes
+some section block. It passes through the block and interprets the contained
+sections, according to the order they follow in the block.
+As a result of a single pass, the generator produces some document
+part called the <i><b>block output</b></i>.
+
+<p>
+<a name="context_element"></a>
+<a name="generator_variables"></a>
+When processing a section block, the generator always maintains
+some current element called <i><b>generator's context element</b></i>.
+During a single pass, the context element is not changed and used
+as a parameter for every section being interpreted. The context element is one
+of the <i><b>generator variables</b></i> which are available in FlexQuery-expressions
+to provide access to the <a href="gom.html">Generator Object Model</a> (GOM).
+Almost all data processing specified in a template normally is linked
+to the context element. At the same time, all elements iterated
+by the generator at some moments get assigned to the context element.
+In such a way, the elements constitute a specific flow in which
+they are being processed.
+
+<p>
+In similar way, the flow of attributes is organized,
+for which purpose the generator maintains yet another variables:
+<i><b>context attribute</b></i> and <i><b>context attribute value</b></i>
+(see GOM object properties:
+<code><a href="gom.html#GOMIterator.attr">GOMIterator.attr</a></code> and
+<code><a href="gom.html#GOMIterator.value">GOMIterator.value</a></code>).
+For more information, see also <a href="#attribute_iterator">Attribute Iterator</a>.
+
+<p>
+<a name="root_element"></a>
+Each template contains the <i><b>root section block</b></i>, from which
+the generator starts processing this template.
+The context element is initially set to the <b><i>root element</i></b>
+passed to the template together with the <a href="about.html#dsm">Data Source Model</a>.
+
+<h2><a name="area_section"></a>4.&nbsp;&nbsp;Area Section</h2>
+
+<p>
+<b><i>Area Sections</i></b> are the primary
+<a href="#components">template components</a> to define
+and produce the content of the output documents.
+<p>
+Each time the generator interprets an Area Section it appends
+a new fragment to the output document. The fragment is filled with
+the data produced from the
+<a href="#context_element">context element</a>
+as well as from the current values of other generator's variables.
+<p>
+Each output document is built of the sequence of fragments produced by some
+of the Area Sections defined in the template. The role of the
+<a href="#sections">sections</a>
+of other types is mainly to control the data flow and to dispatch the queue
+in which the Area Sections are invoked and processed.
+
+<p><a name="template_area"></a>
+Each Area Section contains a <i><b>template area</b></i>,
+which, in turn, is a container of <a href="#area_rows">Area Rows</a>.
+The template area is not a separate component by itself. Instead, it is a special
+part of both Area Section and <a href="#panel_control">Panel Control</a>
+&#150; another template component containing it.
+
+<h2>
+  <a name="area_rows"></a>
+  5.&nbsp;&nbsp;Area Rows
+</h2>
+<p>
+<b><i>Area Rows</i></b> are the
+<a href="#components">template components</a> in many ways
+similar to <a href="#sections">sections</a>.
+However, unlike sections their purpose is to generate document's informative content
+and its formatting rather than controlling the flow of data and processing of the other
+components.
+<p>
+Area Rows can be defined only within a
+<a href="#template_area">template area</a> where they follow one another
+in the order specified during template design.
+<p>
+There are three Area Row types:
+<ul>
+  <li><a href="#control_group">Control Group</a></li>
+  <li><a href="#horizontal_rule">Horizontal Rule</a></li>
+  <li><a href="#vertical_spacer">Vertical Spacer</a></li>
+</ul>
+
+<h4><a name="control_group"></a>Control Group</h4>
+<blockquote>
+<p>The container of <a href="#controls">Controls</a>.
+Depending on its settings, an interpretation of the Control Group may
+produce a <i>paragraph</i>, a <i>list item</i>, or a <i>table row</i>.
+</blockquote>
+
+<h4><a name="horizontal_rule"></a>Horizontal Rule</h4>
+<blockquote>
+  <p>Generates a paragraph with the <i>horizontal rule</i>.</p>
+</blockquote>
+
+<h4><a name="vertical_spacer"></a>Vertical Spacer</h4>
+<blockquote>
+<p>Generates an <i>empty paragraph</i> with the specified height or
+a vertical spacing added before the following paragraph.
+</blockquote>
+
+<h2>
+  <a name="controls"></a>
+  6.&nbsp;&nbsp;Controls
+</h2>
+<p>
+<b><i>Controls</i></b> are the template components which generate
+the minimal pieces of the informative and formatting content
+added to the output documents (such are the text fragments
+with the individual formatting, graphic images, table cells and so on).
+<p>
+Controls can be defined only within a
+<a href="#control_group">Control Group</a> and follow one another
+in the order specified during template design.
+<p>
+When a Control Group represents a table row, each control defines one of the table cells.
+In this case, if the control is blocked by an enabling condition the table cell is eliminated
+by merging it with the neighboring one.
+<p>
+When a Control Group is designed to generate paragraphs or list items,
+the <a href="#output">output</a> of each control is consecutively added to the
+flow that forms a paragraph.
+In this case, the output generated by the different controls
+can be separated with a delimiter (for instance, a <i>space</i> or a <i>new line</i>).
+Such delimiter can be specified in the <a href="#control_group">Control Group</a> properties.
+Another possibility is a special <a href="#delimiter_control">Delimiter Control</a>
+which allows to specify the individual delimiters that are inserted between the output
+of particular controls.
+<p>
+There are following control types:
+<ul>
+  <li><a href="#label_control">Label Control</a></li>
+  <li><a href="#data_control">Data Control</a></li>
+  <li><a href="#delimiter_control">Delimiter Control</a></li>
+  <li><a href="#image_control">Image Control</a></li>
+  <li><a href="#panel_control">Panel Control</a></li>
+  <li><a href="#call_stock_section_control">Call Stock-Section Control</a></li>
+</ul></p>
+<h3><a name="label_control"></a>Label Control</h3>
+<blockquote>
+<p>
+Generates a fragment of the predefined text
+with the specified formatting
+</blockquote>
+<h3><a name="data_control"></a>Data Control</h3>
+<blockquote>
+<p>
+Generates either a fragment of the text data or a document field (RTF) with the specified formatting.
+The data source can be selected as one of the following:
+<ol>
+   <li class="wide"><i>Location Path</i><br><br>
+      The value of a certain element or attribute
+      pointed by the specified
+      <a href="element_iterator_details.html#location_path">Location Path</a>,
+      which is interpreted relatively to the <a href="#context_element">context element</a>
+   </li>
+   <li class="wide"><i> Element Attribute</i><br><br>
+      The value of the specified <a href="#context_element">context
+      element</a>'s attribute
+   </li>
+   <li class="wide"><i> Formula</i><br><br>
+      The value is calculated by a string FlexQuery-expression
+   </li>
+   <li class="wide"> <i>Document Field</i><br><br>
+      The document field (RTF), for example:
+      <i>page number</i>, <i>number of pages</i>, <i>table of contents</i>.
+      The value of the field is calculated by the application rendering the document (for
+      example, Microsoft&reg; Word). However, the field's formatting is generated by DocFlex.
+   </li>
+</ol>
+</blockquote>
+
+<h3><a name="delimiter_control" id="delimiter_control"></a>Delimiter Control</h3>
+<blockquote>
+<p>
+Allows to define an individual delimiter, which is inserted after the
+<a href="#output">output</a> of the preceding
+<a href="#controls">controls</a>.
+The actual delimiter is generated only when there is anything to divide,
+i.e. there are both the output of the controls preceding this Delimiter Control
+and the output of the following ones.
+</blockquote>
+
+<h3><a name="image_control"></a>Image Control</h3>
+<blockquote>
+<p>
+Inserts the graphic image in the document.
+The image can be specified as one of the following:
+<ol>
+   <li class="wide"><i>File Image</i><br><br>
+      The image is specified by the <i>filepath</i>
+      of the source graphics file.
+   </li>
+   <li class="wide"><i>URL Image</i><br><br>
+      The image is specified by the FlexQuery-expression,
+      which generates the URL of the source graphics file.
+   </li>
+   <li class="wide"> <i>Resource Image</i><br><br>
+      The image is specified by the FlexQuery-expression,
+      which generates the Java-resource name of the source graphics file,
+      for example: <code>package1/package2/image.gif</code>
+   </li>
+   <li class="wide"><a name="element_image"></a><i>Element Image</i><br><br>
+      A graphic image that somehow depicts (or illustrates) the <a href="#context_element">context element</a>
+      (for example, the element's diagram).
+      <p>
+      The image should be provided by the DSM driver.
+      In addition, the driver can pass the <i>hypertext map of the image</i>
+      that allows to specify generation of the hypertext links from the certain elements
+      of the image to the appropriate fragments of the generated documentation.
+   </li>
+   <li class="wide"><i>Element Small Icon</i><br><br>
+      A small icon representing the <a href="#context_element">context
+      element</a>. The icon image should be provided
+      by the <i>DSM driver</i>.
+   </li>
+   <li class="wide"><i>Element Big Icon</i><br><br>
+      A big icon representing the <a href="#context_element">context
+      element</a>. The icon image should be provided
+      by the <i>DSM driver</i>.</li>
+</ol>
+<p>
+Depending on the selected output format and the specified generator options, the image can
+be either inserted into the document in the form of a reference to the external graphics
+file (which is copied into the <code>images</code> subdirectory near the document) or
+stored directly within the document file itself.
+</blockquote>
+
+<h3><a name="panel_control"></a>Panel Control</h3>
+<blockquote>
+<p>
+This control, as well as the <a href="#area_section">Area Section</a>,
+contains a <a href="#template_area">template area</a> and generates
+the <a href="#output">output</a> produced by it.
+<p>
+Panel Control can be especially useful for
+<ul>
+   <li class="wide">defining a complex content of the table
+      cells (such as the sequence of paragraphs with the different formatting,
+      formatted lists, nested tables)
+   </li>
+   <li class="wide"> assigning the common formatting properties
+      for the series of text fragments generated by the different
+      <a href="#controls">controls</a>
+      (e.g. generating of a common text border)
+    </li>
+</ul>
+</blockquote>
+
+<h3><a name="call_stock_section_control"></a>Call Stock-Section Control</h3>
+<blockquote>
+<p>
+Is similar to <a href="#panel_control">Panel Control</a>, but
+the control's <a href="#output">output</a> is generated by the
+called <a href="#stock_sections">stock-section</a>. Practically,
+this allows, for example, to insert into a table cell an output with the arbitrary
+content and formatting (including the nested tables).
+</blockquote>
+
+<h2><a name="container_sections"></a>7.&nbsp;&nbsp;Container Sections</h2>
+<p>
+Some template <a href="#sections">sections</a>
+can contain other <a href="#section_blocks">section blocks</a>.
+Such sections are called <i><b>container sections</b></i>.
+When interpreting a container section, the generator switches to processing
+one or several of the section blocks contained in it. Following this, the generator
+returns back and continues processing the previous section block with
+the initial <a href="#context_element">context element</a>.
+<p>
+The container sections are:
+<ul>
+  <li> <a href="#folder_section">Folder Section</a>
+  <li> <a href="#element_iterator">Element Iterator</a>
+  <li> <a href="#attribute_iterator">Attribute Iterator</a>
+</ul>
+<p>
+Each container section may contain the following
+<a href="#section_blocks">section blocks</a>:
+<ul>
+  <li><a href="#body_block">body-block</a></li>
+  <li><a href="#header_block">header-block</a></li>
+  <li><a href="#footer_block">footer-block</a></li>
+  <li><a href="#else_block">else-block</a></li>
+</ul>
+<p>
+<a name="body_block"></a>
+<a name="main_section_output"></a>
+The <b><i>body-block</i></b> is presented in every container
+section. When a container section is interpreted, its body-block may be iterated
+any number of times depending on a particular section type and parameters.
+During these iterations, the <i><b>main section output</b></i> is produced.
+Each time, as a new pass through the body-block starts, the generator's
+<a href="#context_element">context element</a> may be changed.
+This depends on the section's type and settings.
+<p>
+It may also occur that during a single interpretation of the container section,
+its body-block is never processed at all, or at those times it is run
+all the nested sections contained in it produce no
+<a href="#output">output</a> by themselves (for example, because of all
+<a href="#enabling_condition">enabling conditions</a> defined
+in those sections are not satisfied and, therefore, the sections are blocked).
+In such a case, the <a href="#main_section_output">main section output</a>
+is said to be <b>empty</b>.
+<p>
+<a name="header_block"></a>
+<a name="footer_block"></a>
+The <b><i>header-block</i></b> and <b><i>footer-block</i></b>
+are optional. If defined, they are processed only when the
+<a href="#main_section_output">section main output</a> is <b>not empty</b>.
+In that case, the output of the header-block is inserted in the generated document
+just <b>before</b> the section's main output, whereas the output of
+the footer-block – <b>after</b>.
+The header- and footer-blocks are always processed with the initial
+<a href="#context_element">context element</a> received by the section.
+<p>
+<a name="else_block"></a>
+The <b><i>else-block</i></b> is yet another optional block of container section.
+However, on the contrary to the header- and footer-blocks, if defined,
+it is processed only when the <a href="#main_section_output">section main output</a>
+is <b>empty</b>. During this, the <a href="#context_element">context element</a>
+remains the same received by the section.
+<p>
+Thus, the structure of the container sections allows
+<ul>
+   <li> to generate some <a href="#main_section_output">main output</a>
+   <li> when the main output exists, to frame it with the header and footer
+   <li> in the case no main output generated, to insert instead of it an alternative content
+</ul>
+
+<h3><a name="folder_section"></a>Folder Section</h3>
+
+<p>
+<b><i>Folder Section</i></b> is the simplest variant of
+<a href="#container_sections">container section</a>.
+During its interpretation, the <a href="#body_block">body-block</a>
+is processed always and only once. The
+<a href="#context_element">context element</a> remains the same as in the parent
+<a href="#section_blocks">section block</a>.
+<p>
+Folder Sections may be useful to
+<ul>
+  <li class="wide">dynamically switching on/off the large parts of a template</li>
+  <li class="wide"> adding a common header/footer to the total
+    <a href="#output">output</a>
+    produced by the series of <a href="#sections">sections</a>
+    in the case that such an output is not empty
+  </li>
+  <li class="wide"> assigning a series of <a href="#sections">sections</a>
+    to generate a single formatted object, e.g.
+    a table or a list. In this case, each section
+    will produce a table row or a list item.
+  </li>
+</ul>
+
+<h3><a name="element_iterator"></a>Element Iterator</h3>
+
+<p>
+<b><i>Element Iterator</i></b> is another kind of
+<a href="#container_sections">container section</a>.
+Element Iterators are the primary
+<a href="#components">template components</a>
+to specify and control the flow of the elements.
+<p>
+<a name="eis"></a>Receiving the <a href="#context_element">context element</a>,
+an Element Iterator produces from it a set of other elements, which become the
+<i><b>Element Iteration Scope</b></i> (<b>EIS</b>). Then, the generator
+switches to the Element Iterator's <a href="#body_block">body-block</a>
+and iterate it for every element from the EIS, each time setting the new element as the
+generator context element. The order in which the elements are processed is determined by
+the sorting order of the EIS.
+<p>
+In this way, the Element Iterator's <a href="#main_section_output">main output</a>
+is generated. It may occur that the EIS is empty. In such an event, the iterator's
+<a href="#body_block">body-block</a> is not processed at all and the section's
+main output will be empty as well.
+<p>
+<a name="original_order"></a>By default, the EIS is sorted in the <i>original order</i>
+which is forming naturally when the elements being added to the EIS during its generation.
+However, a
+<a href="element_iterator_details.html#sorting_eis">different sorting order</a>
+can be imposed. In that case, before iterations start the EIS is sorted according
+to the sorting order specified in the Element Iterator's properties.
+<p>
+For detailed description of the Element Iterator's features and settings, see
+<a href="element_iterator_details.html#element_iterator_details">Element
+Iterator (details)</a>.
+
+<h3><a name="attribute_iterator"></a>Attribute Iterator</h3>
+
+<p>
+<b><i>Attribute Iterator</i></b> is the third variety of
+<a href="#container_sections">container sections</a>.
+<p>
+Attribute Iterators are organized similarly to
+<a href="#element_iterator">Element Iterators</a>, but unlike the former,
+instead of the elements, they iterate through the set of the attributes (or the multiple values
+of a single attribute).
+<p>
+When an Attribute Iterator is interpreted, depending on its settings it produces from the
+<a href="#context_element">context element</a> either a set of its attributes or
+an array of the values of a single attribute. In both cases the
+<i><b>Attribute Iteration Scope</b></i> (<b>AIS</b>) is formed.
+Then, the generator switches to the Attribute Iterator's <a href="#body_block">body-block</a>
+and inteprets it for every item from the AIS, each time adjusting to it the generator variables:
+<i><b>context attribute</b></i> and <i><b>context attribute value</b></i>.
+The order, in which the AIS items are processed, depends on the sorting of the AIS.
+<p>
+In this way, the Attribute Iterator's <a href="#main_section_output">main output</a> is generated.
+When the AIS is empty, the iterator's <a href="#body_block">body-block</a>
+is not processed at all and the section's main output is empty too.
+<p>
+There are following methods to specify collecting of the AIS:
+
+<ol>
+  <li><a href="#enumerated-attrs">Enumerated Attributes</a></li>
+  <li><a href="#selected-attrs">Selected Attributes</a></li>
+  <li><a href="#selected-plus-enumerated-attrs">Selected+Enumerated Attributes</a></li>
+  <li><a href="#attr-values">Values of Single Attribute</a></li>
+</ol>
+
+<h4>
+  <a name="enumerated-attrs"></a>
+  1.&nbsp;&nbsp;Enumerated Attributes
+</h4>
+
+<blockquote>
+<p>
+Enumerates attributes of the <a href="#context_element">context element</a>.
+<p>
+This method may have different interpretations for different
+<a href="about.html#dsm_type">DSM Types</a>.
+Here's the explanation:
+<p>
+Some DSM Types (like 'Together RWI' in
+<a target="_blank" href="http://www.filigris.com/docflex-together/">DocFlex/Together</a>)
+may associate with a certain element an undefined number of attributes.
+The reason of this is that the same notion of "element attribute" may be applied
+to quite different data entities provided by the underlying data source.
+That's because some features of those entities relevant to their processing
+(like having a certain name and a certain value) are well fit to
+the notion of attribute, which makes them convenient to treat in a universal way.
+<p>
+For that reason, all attributes generally associated with a given element
+are subdivided into two types:
+<ol>
+  <li>The <i>declared attributes</i></li>
+  <li>The <i>unknown attributes</i> (whose number may vary for different elements)</li>
+</ol>
+<p>
+For each <b>declared attribute</b>, it is always known the attribute's name, the data type of
+its value and how the value can be obtained from the data source (which allows it to be
+requested by the name when needed).
+<p>
+The <b>unknown attributes</b> are always obtained dynamically and returned by the
+<a href="about.html#dsm_driver">DSM Driver</a>
+in the form of an enumeration, which in turn is provided by a call to some
+data source's native API.
+<p>
+When the 'Enumerated Attributes' method is processed, the generator actually asks the
+<a href="about.html#dsm_driver">DSM Driver</a> to provide for the
+given element the enumeration of its unknown attributes. The DSM Driver, in turn, calls some
+data source's native API to provide such an enumeration.
+The native API, however, has no information which attributes are declared in the
+<a href="about.html#dsm_type">DSM Type</a> and which are not.
+(Since the DSM Type itself is just some approximation of the original data source,
+which is introduced by a DocFlex implementation and exists independently on
+the application providing the data source.)
+<p>
+Because of this, the returned enumeration of attributes may contain both unknown attributes
+and some of the declared ones (but not necessary all the declared attributes, since some of
+them may be obtained only using some specific methods known to the
+<a href="about.html#dsm_driver">DSM Driver</a>).
+<p>
+Thus, the 'Enumerated Attributes' method provides some general framework and should
+be treated accordingly to a particular DocFlex application.
+
+<h5>Settings</h5>
+   <ol>
+   <li class="wide"><i>Exclude already iterated attributes</i>
+      <br><br>
+      If selected, forces the generator to exclude
+      from the AIS those attributes of the <a href="#context_element">context
+      element</a>, which have been already processed
+      in one of the Attribute Iterators interpreted before.
+    </li>
+    <li class="wide"><i>Filter Expression</i><br>
+      <br>
+      Allows to include into the resulting AIS
+      only those attributes that satisfy the filter
+      condition specified as the boolean FlexQuery-expression.
+    </li>
+  </ol>
+<h5>Sorting</h5>
+  <ol>
+    <li class="wide"><i>none (original order)</i>
+    </li>
+    <li class="wide"> <i>by name</i><br><br>
+      Sorts the AIS by the attribute name
+    </li>
+    <li class="wide"><i> by value</i><br><br>
+      Sorts the AIS by the attribute value (according
+      to the value data type)
+    </li>
+    <li class="wide"><i> by key expression</i><br><br>
+      Sorts the AIS by the key generated for each
+      attribute by the specified FlexQuery-expression
+    </li>
+  </ol>
+</blockquote>
+
+<h4>
+  <a name="selected-attrs"></a>
+  2.&nbsp;&nbsp;Selected Attributes
+</h4>
+<blockquote>
+
+<p>Enumerates only those attributes of the <a href="#context_element">context element</a>
+which are specified in the list defined in the section's properties.
+<p>
+This method works only with the declared attributes. So, its interpretation is always
+the same in all DocFlex application.
+
+<h5>Settings</h5>
+<ol>
+   <li><i>Filter Expression</i></li>
+</ol>
+<h5>Sorting</h5>
+<blockquote>
+  <p>The order in which the attributes are iterated can be assigned arbitrary and depends
+  on the position of each attributes in the list where they are specified.
+</blockquote>
+</blockquote>
+
+<h4>
+  <a name="selected-plus-enumerated-attrs"></a>
+  3.&nbsp;&nbsp;Selected+Enumerated Attributes
+</h4>
+
+<blockquote>
+<p>
+This method represents a composition of the previous two methods.
+It should be used when it is necessary to include in the iteration scope as some selected
+declared attributes as the enumerated ones.
+<p>
+If no sorting specified, the selected attributes will appear the first (before the enumerated
+ones). The selected attributes will not be duplicated in the event some of them emerge
+among the enumerated attributes as well.
+</blockquote>
+
+<h4>
+  <a name="attr-values"></a>
+  4.&nbsp;&nbsp;Values of Single Attribute
+</h4>
+<blockquote>
+<p>Enumerates all values of the specified attribute of the
+<a href="#context_element">context element</a>.
+
+<h5>Settings</h5>
+<ol>
+   <li><i>Filter Expression</i></li>
+</ol>
+<h5>Sorting</h5>
+<ol>
+  <li><i>none (original order)</i>
+  <li><i> by value</i>
+  <li><i> by key expression</i>
+</ol>
+</blockquote>
+
+<h2><a name="stock_sections"></a>8.&nbsp;&nbsp;Stock-Sections</h2>
+
+<p>As in any computer program, some <a href="#sections">sections</a>
+of a template can repeat themselves. In those situations DocFlex provides the possibility
+to design such repeating sections only once and store them into the special template part
+called <i><b>Stock</b></i>, in the form of <i><b>stock-sections</b></i>.
+
+<p>When storing into the Stock, each stock-section is assigned with the special <b><i>unique name</i></b>.
+Then, by this name, the stock-section can be called many times from the different locations of
+the template (including the other stock-sections and even from within this stock-section itself).
+This can be done using some <a href="#components">template components</a>
+specifically designed for that purpose.
+
+<p>Each stock-section call produces the same document fragment, as would be generated by the stock-section
+itself if it was on the place of its call. In this way, stock-sections can be considered as an equivalent
+of the procedures in a typical programming language.
+
+<p>Besides their main use of eliminating duplications in templates, stock-sections allow:
+<ul>
+   <li class="wide"> to generate an arbitrary content of a table
+     cell. Using the <a href="#call_stock_section_control">Call
+     Stock-Section Control</a>, it is possible
+     to fill any table cell with the output representing
+     any complexity of the data and formatting.
+  </li>
+  <li class="wide"> using recursive stock-section calls, to
+    generate document fragments with the complex recurrent structure.
+  </li>
+</ul>
+<p>Stock-sections can be one of the following section types:
+<ul>
+  <li> <a href="#area_section">Area Section</a></li>
+  <li> <a href="#folder_section">Folder Section</a></li>
+  <li> <a href="#element_iterator">Element Iterator</a></li>
+  <li> <a href="#attribute_iterator">Attribute Iterator</a></li>
+</ul></p>
+<p>
+There are two template components used to insert a stock-section call:
+<ul>
+  <li> <a href="#call_stock_section">Call Stock-Section</a>
+    &#150; the <a href="#sections">template section</a> version </li>
+  <li> <a href="#call_stock_section_control">Call
+    Stock-Section Control</a> &#150; the version
+    of a <a href="#controls">control</a>
+  </li>
+</ul>
+
+<h2><a name="call_stock_section"></a>9.&nbsp;&nbsp;Call Stock-Section</h2>
+
+<p>
+This is a template section that just calls the particular <a href="#stock_sections">stock-section</a>
+using its name. The effect of this <a href="#sections">template section</a> is the same
+as if the called stock-section was presented on its place by itself.
+
+<h2>
+<a name="call_template"></a>
+<a name="subtemplate"></a>
+10.&nbsp;&nbsp;Call Template
+</h2>
+
+<p>
+This section type allows to spawn from the current template the processing of some another
+template (a <i>subtemplate</i>).
+<p>
+Each time the Call Template section is interpreted, the new instance of the generator is created,
+by which the called template is processed. During this, the processing of the current template
+is suspended, while the called template, depending on the section's settings, may generate either
+a new fragment of the common document (which is being generated by the current template) or
+the completely new separate document.
+<p>
+The following section settings determine how this is done:
+
+<ul>
+  <li><a href="#call_template_template">Template</a></li>
+  <li><a href="#call_template_data_source">Data Source</a></li>
+  <li><a href="#call_template_output_type">Output Type</a></li>
+  <li><a href="#call_template_passed_parameters">Passed Parameters</a></li>
+</ul>
+
+<h4>
+  <a name="call_template_template"></a>
+  Template
+</h4>
+<blockquote>
+<p>Specifies the filepath of the called template
+</blockquote>
+
+<h4>
+  <a name="call_template_data_source"></a>
+  Data Source
+</h4>
+
+<blockquote>
+<p>
+Specifies which data source should be passed to the called template.
+There are two possibilities:
+<ol>
+   <li class="wide"><i> Pass Current Model</i><br>
+      <br>
+      The called template receives the same data source that is being processed
+      by the current template
+   </li>
+   <li class="wide"><i> Init New Model</i><br>
+      <br>
+      The new data source is initialized</li>
+</ol>
+</blockquote>
+
+<h4>
+  <a name="call_template_output_type"></a>
+  Output Type
+</h4>
+
+<blockquote>
+<p>
+Specifies what sort of output the called template will produce.
+There are two options:
+<ol>
+   <li class="wide"> <i>This Document</i><br>
+      <br>
+      The called template produces a piece of the common document being generated by the
+      current template. In this case, the behaviour of this section is similar to that of the
+      <a href="#call_stock_section">Call Stock-Section</a> section.
+   </li>
+   <li class="wide"> <i>Separate Document</i><br>
+      <br>
+      The called template creates a new document
+   </li>
+</ol>
+</blockquote>
+
+<h4>
+  <a name="call_template_passed_parameters"></a>
+  Passed Parameters
+</h4>
+
+<blockquote>
+<p>
+The list of parameters passed to the called template.
+Each parameter is specified by the following settings:
+<ol>
+   <li> The parameter name
+   <li> The FlexQuery-expression calculating the parameter's value
+</ol>
+</blockquote>
+
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2003-2009 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

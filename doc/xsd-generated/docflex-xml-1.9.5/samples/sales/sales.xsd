@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:annotation>
+		<xsd:documentation>element 5 sales export schema - version 1.0</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="e5SalesExport" nillable="false">
+		<xsd:annotation>
+			<xsd:documentation>Main Element</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="e5SalesExportType"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="e5SalesExportType">
+		<xsd:annotation>
+			<xsd:documentation>Meta Data plus list of Purchases</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ExportCTime" type="xsd:dateTime" nillable="false"/>
+			<xsd:element name="RangeFromDate" type="xsd:date" nillable="false"/>
+			<xsd:element name="RangeToDate" type="xsd:date" nillable="false"/>
+			<xsd:element name="ExportRefundsAndChargebacks" type="xsd:boolean" nillable="false"/>
+			<xsd:element name="ExportPurchaseItemKeys" type="xsd:boolean" nillable="false"/>
+			<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="Purchase" type="PurchaseType"/>
+			</xsd:sequence>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PurchaseType">
+		<xsd:annotation>
+			<xsd:documentation>all relevant Purchase Data (Type)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="PurchaseId" type="xsd:integer" nillable="false"/>
+			<xsd:element name="PurchaseDate" type="xsd:dateTime" nillable="false"/>
+			<xsd:element name="PurchaseOrigin" type="PurchaseOriginType" nillable="false"/>
+			<xsd:element name="PaymentCompleteDate" type="xsd:dateTime" nillable="true" minOccurs="0"/>
+			<xsd:element name="ReimbursementDate" type="xsd:dateTime" nillable="true" minOccurs="0"/>
+			<xsd:element name="PaymentStatus" type="PaymentStatusType" nillable="false"/>
+			<xsd:element name="CustomerData" type="CustomerDataType"/>
+			<xsd:sequence maxOccurs="unbounded">
+				<xsd:element name="PurchaseItem">
+					<xsd:complexType>
+						<xsd:complexContent>
+							<xsd:extension base="PurchaseItemType"/>
+						</xsd:complexContent>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustomerDataType">
+		<xsd:annotation>
+			<xsd:documentation>complete customer information (used by PurchaseType)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="BillingContact" type="ContactType" nillable="false"/>
+			<xsd:element name="DeliveryContact" type="ContactType" nillable="false"/>
+			<xsd:element name="CustomerPaymentData" type="CustomerPaymentDataType" nillable="false"/>
+			<xsd:element name="Language" type="LanguageType" nillable="false"/>
+			<xsd:element name="RegName" type="xsd:string" nillable="false"/>
+			<xsd:element name="VatId" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:element name="SubscribeNewsletter" type="xsd:boolean" nillable="false" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ContactType">
+		<xsd:annotation>
+			<xsd:documentation>Personal Data (part of CustomerDataType)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Salutation" type="SalutationType" nillable="true" minOccurs="0"/>
+			<xsd:element name="Title" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:element name="LastName" type="xsd:string" nillable="false"/>
+			<xsd:element name="LastNameKatakana" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:element name="FirstName" type="xsd:string" nillable="false"/>
+			<xsd:element name="FirstNameKatakana" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:element name="Company" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:element name="Email" type="xsd:string" nillable="false"/>
+			<xsd:element name="Phone" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:element name="Phone2" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:element name="Fax" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:element name="Address" type="AddressDataType" nillable="false"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AddressDataType">
+		<xsd:annotation>
+			<xsd:documentation>Address Data (part of ContactTypeType)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Street1" type="xsd:string" nillable="false"/>
+			<xsd:element name="Street2" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:element name="City" type="xsd:string" nillable="false"/>
+			<xsd:element name="PostalCode" type="xsd:string" nillable="false"/>
+			<xsd:element name="StateId" nillable="true" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="2"/>
+						<xsd:maxLength value="5"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="State" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:element name="CountryId" nillable="false">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="2"/>
+						<xsd:maxLength value="2"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Country" type="xsd:string" nillable="false"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustomerPaymentDataType">
+		<xsd:annotation>
+			<xsd:documentation>Payment Information of Customer (part of CustomerDataType)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="PaymentType" type="PaymenttypeType" nillable="false"/>
+			<xsd:element name="Currency" type="CurrencyType" nillable="false"/>
+			<xsd:element name="CCType" type="CCtypeType" nillable="true" minOccurs="0"/>
+			<xsd:element name="DCType" type="DCtypeType" nillable="true" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PurchaseItemType">
+		<xsd:annotation>
+			<xsd:documentation>Purchase Item Information (part of PurchaseType)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="RunningNo" type="xsd:integer" nillable="false"/>
+			<xsd:element name="ProductId" type="xsd:integer" nillable="false"/>
+			<xsd:element name="ProductName" type="xsd:string"/>
+			<xsd:element name="NotificationNo">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="DeliveryType" type="DeliverytypeType" nillable="false"/>
+			<xsd:element name="Currency" type="CurrencyType"/>
+			<xsd:element name="Quantity" type="xsd:integer" nillable="false"/>
+			<xsd:element name="ProductSinglePrice" type="xsd:double"/>
+			<xsd:element name="VatPct" type="xsd:double"/>
+			<xsd:element name="Discount" type="xsd:double"/>
+			<xsd:element name="ExtendedDownloadPrice" type="xsd:double"/>
+			<xsd:element name="ManualOrderPrice" type="xsd:double"/>
+			<xsd:element name="ShippingPrice" type="xsd:double"/>
+			<xsd:element name="ShippingVatPct" type="xsd:string"/>
+			<xsd:element name="PromotionId" type="xsd:integer" nillable="true" minOccurs="0"/>
+			<xsd:element name="PromotionCoupon" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="CrossSellingProductId" type="xsd:integer" minOccurs="0"/>
+			<xsd:element name="PublisherAffiliateInformation" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:element name="e5AffiliateInformation" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:element name="KeyAccountResellerInformation" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:element name="EanCode" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:element name="YourProductId" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:element name="ProductGroup" type="xsd:string" nillable="true" minOccurs="0"/>
+			<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="AdditionalInformation" type="AdditionalInformationType"/>
+			</xsd:sequence>
+			<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="PurchaseItemKey" type="PurchaseItemKeyType"/>
+			</xsd:sequence>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PurchaseItemKeyType">
+		<xsd:annotation>
+			<xsd:documentation>Key, Bin Key or Download Information (part of PurchaseItemType)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+			<xsd:element name="Key" type="xsd:string" nillable="false"/>
+			<xsd:sequence>
+				<xsd:element name="Link" type="xsd:string" nillable="false"/>
+				<xsd:element name="Valid" type="xsd:dateTime" nillable="false"/>
+			</xsd:sequence>
+			<xsd:sequence>
+				<xsd:element name="BinName" type="xsd:string" nillable="false"/>
+				<xsd:element name="MimeType" type="xsd:string" nillable="false"/>
+				<xsd:element name="Data" type="xsd:base64Binary"/>
+			</xsd:sequence>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="AdditionalInformationType">
+		<xsd:annotation>
+			<xsd:documentation>Additional Information entered by the Customer during the Order Process (part of PurchaseItemType)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="AdditionalId" type="xsd:integer" nillable="false"/>
+			<xsd:element name="AdditionalValue" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="PaymentStatusType">
+		<xsd:annotation>
+			<xsd:documentation>Complete List of all Payment Stati</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="requested"/>
+			<xsd:enumeration value="not possible"/>
+			<xsd:enumeration value="not arrived"/>
+			<xsd:enumeration value="complete"/>
+			<xsd:enumeration value="incomplete"/>
+			<xsd:enumeration value="refunded"/>
+			<xsd:enumeration value="charged back"/>
+			<xsd:enumeration value="test payment arrived"/>
+			<xsd:enumeration value="test payment requested"/>
+			<xsd:enumeration value="invoice waiting"/>
+			<xsd:enumeration value="partly refunded"/>
+			<xsd:enumeration value="no encashment"/>
+			<xsd:enumeration value="cancellation"/>
+			<xsd:enumeration value="quote"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PaymenttypeType">
+		<xsd:annotation>
+			<xsd:documentation>Complete List of all Payment Types</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Credit Card"/>
+			<xsd:enumeration value="Check"/>
+			<xsd:enumeration value="Wire Transfer"/>
+			<xsd:enumeration value="Cash"/>
+			<xsd:enumeration value="Direct Debit"/>
+			<xsd:enumeration value="Debit Card"/>
+			<xsd:enumeration value="Stackbox"/>
+			<xsd:enumeration value="Invoice"/>
+			<xsd:enumeration value="No Payment needed"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LanguageType">
+		<xsd:annotation>
+			<xsd:documentation>Complete List of all Languages</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="English"/>
+			<xsd:enumeration value="German"/>
+			<xsd:enumeration value="Spanish"/>
+			<xsd:enumeration value="French"/>
+			<xsd:enumeration value="Portuguese"/>
+			<xsd:enumeration value="Italian"/>
+			<xsd:enumeration value="Dutch"/>
+			<xsd:enumeration value="Norwegian"/>
+			<xsd:enumeration value="Swedish"/>
+			<xsd:enumeration value="Finnish"/>
+			<xsd:enumeration value="Japanese"/>
+			<xsd:enumeration value="Korean"/>
+			<xsd:enumeration value="Russian"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DeliverytypeType">
+		<xsd:annotation>
+			<xsd:documentation>Complete List of all Delivery Types</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Electronically"/>
+			<xsd:enumeration value="Postal Mail"/>
+			<xsd:enumeration value="Fax"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CCtypeType">
+		<xsd:annotation>
+			<xsd:documentation>Complete List of all Credit Cards</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Visa"/>
+			<xsd:enumeration value="Mastercard / Eurocard"/>
+			<xsd:enumeration value="American Express"/>
+			<xsd:enumeration value="Diners Club"/>
+			<xsd:enumeration value="Discover"/>
+			<xsd:enumeration value="JCB"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DCtypeType">
+		<xsd:annotation>
+			<xsd:documentation>Complete List of all Debit Cards</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Switch"/>
+			<xsd:enumeration value="Solo"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CurrencyType">
+		<xsd:annotation>
+			<xsd:documentation>Complete List of all Currencies</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="USD"/>
+			<xsd:enumeration value="EUR"/>
+			<xsd:enumeration value="GBP"/>
+			<xsd:enumeration value="AUD"/>
+			<xsd:enumeration value="CAD"/>
+			<xsd:enumeration value="CHF"/>
+			<xsd:enumeration value="JPY"/>
+			<xsd:enumeration value="OTH"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SalutationType">
+		<xsd:annotation>
+			<xsd:documentation>Complete List of all Salutations</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="MR."/>
+			<xsd:enumeration value="MS."/>
+			<xsd:enumeration value="MRS"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PurchaseOriginType">
+		<xsd:annotation>
+			<xsd:documentation>Complete List of all PurchaseSources</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="online"/>
+			<xsd:enumeration value="phone"/>
+			<xsd:enumeration value="fax"/>
+			<xsd:enumeration value="email"/>
+			<xsd:enumeration value="letter"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

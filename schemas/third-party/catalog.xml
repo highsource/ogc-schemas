@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: bootstrap? -->
+<!-- <!DOCTYPE catalog -->
+<!--       PUBLIC "&#45;//OASIS//DTD XML Catalogs V1.1//EN" -->
+<!--       "http://www.oasis&#45;open.org/committees/entity/release/1.1/catalog.dtd"> -->
+
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <system
+            systemId="http://www.w3.org/2001/xml.xsd"
+            uri="file:./xml.xsd"/>
+
+    <system
+            systemId="http://www.w3.org/1999/xlink.xsd"
+            uri="file:./xlink.xsd"/>
+
+    <rewriteSystem
+            systemIdStartString="http://www.isotc211.org/2005/"
+            rewritePrefix="file:./iso-19139-20070417/"/>
+
+    <rewriteSystem
+            systemIdStartString="http://schemas.opengis.net/iso/19139/20070417/"
+            rewritePrefix="file:./iso-19139-20070417/"/>
+
+    <rewriteSystem
+            systemIdStartString="http://www.opengis.net/gml/3.2/"
+            rewritePrefix="file:./gml/3.2.1/"/>
+
+    <rewriteSystem
+            systemIdStartString="http://schemas.opengis.net/gml/3.2.1/"
+            rewritePrefix="file:./gml/3.2.1/"/>
+    <rewriteSystem
+            systemIdStartString="http://schemas.opengis.net/om/2.0/"
+            rewritePrefix="file:./om/2.0/"/>
+</catalog>

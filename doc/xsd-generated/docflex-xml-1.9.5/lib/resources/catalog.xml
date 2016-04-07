@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+
+  <system systemId="http://www.w3.org/2001/XMLSchema.xsd" uri="www_w3_org/2001/XMLSchema.xsd"/>
+
+  <system systemId="http://www.w3.org/2001/xml.xsd" uri="www_w3_org/2001/xml.xsd"/>
+  <uri name="http://www.w3.org/XML/1998/namespace" uri="www_w3_org/2001/xml.xsd"/>
+
+  <uri name="http://schemas.xmlsoap.org/wsdl/" uri="schemas_xmlsoap_org/wsdl/wsdl.xsd"/>
+  <uri name="http://schemas.xmlsoap.org/wsdl/soap/" uri="schemas_xmlsoap_org/wsdl/soap.xsd"/>
+  <uri name="http://schemas.xmlsoap.org/wsdl/soap12/" uri="schemas_xmlsoap_org/wsdl/soap12.xsd"/>
+  <uri name="http://schemas.xmlsoap.org/wsdl/http/" uri="schemas_xmlsoap_org/wsdl/http.xsd"/>
+  <uri name="http://schemas.xmlsoap.org/wsdl/mime/" uri="schemas_xmlsoap_org/wsdl/mime.xsd"/>
+
+  <uri name="http://schemas.xmlsoap.org/soap/envelope/" uri="schemas_xmlsoap_org/soap/envelope.xsd"/>
+  <uri name="http://schemas.xmlsoap.org/soap/encoding/" uri="schemas_xmlsoap_org/soap/encoding.xsd"/>
+
+</catalog>

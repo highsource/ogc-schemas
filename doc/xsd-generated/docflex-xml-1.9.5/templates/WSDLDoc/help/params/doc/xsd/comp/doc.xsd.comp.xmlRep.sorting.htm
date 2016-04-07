@@ -1,0 +1,20 @@
+This parameter specifies the ordering of attributes shown in the XML Representation Summary.
+<p>
+When selected (<b><code>true</code></b>) the attributes will be sorted 
+in alphabetic order of their qualified names (with letter case ignored).
+<p>
+When unselected (<b><code>false</code></b>) the attributes will follow according
+to some <b><i>natural order</i></b> determined by how and where those attributes are declared:
+<ul>
+<li>
+In the simplest case, when all attributes are declared within the same component,
+that will be exactly the order of their declarations.
+</li>
+<li style="margin-top:10pt">
+When the given component (whose attributes are represented) is based on other components,
+some of the attributes may be inherited from them.
+Moreover, the ancestor components may block certain attributes declared in their own ancestors.
+In that case, the result attribute ordering will appear from the subsequent
+interpretation of all involved components.
+</li>
+</ul>

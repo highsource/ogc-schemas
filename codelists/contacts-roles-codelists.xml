@@ -1,0 +1,47 @@
+<CT_CodelistCatalogue xmlns='http://www.isotc211.org/2005/gmx' xmlns:gco='http://www.isotc211.org/2005/gco' xmlns:gml='http://www.opengis.net/gml/3.2' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+	<!-- =====Catalogue description===== -->
+	<name>
+		<gco:CharacterString>GeodesyCodelists</gco:CharacterString>
+	</name>
+	<scope>
+		<gco:CharacterString>
+			Codelists for description of Geodesy Roles.
+		</gco:CharacterString>
+	</scope>
+	<fieldOfApplication>
+		<gco:CharacterString>Geodesy (and imported) namespace</gco:CharacterString>
+	</fieldOfApplication>
+	<versionNumber>
+		<gco:CharacterString>0.3</gco:CharacterString>
+	</versionNumber>
+	<versionDate>
+		<gco:Date>2016-01-19</gco:Date>
+	</versionDate>
+	<!-- ============================= Codelists ======================================= -->
+	<!-- === CI_DateTypeCode === -->
+	<codelistItem>
+		<CodeListDictionary gml:id="Role-Contact">
+			<gml:description>Geodesy Role - Contact</gml:description>
+			<gml:identifier codeSpace="urn:xml-gov-au:icsm:egeodesy:0.3">Role-Contact</gml:identifier>
+			<codeEntry>
+				<CodeDefinition gml:id="Role-Contact_Primary">
+					<gml:description>Primary Contact</gml:description>
+					<gml:identifier codeSpace="urn:xml-gov-au:icsm:egeodesy:0.3">Primary</gml:identifier>
+				</CodeDefinition>
+			</codeEntry>
+			<codeEntry>
+				<CodeDefinition gml:id="Role-Contact_Secondary">
+					<gml:description>Secondary Contact</gml:description>
+					<gml:identifier codeSpace="urn:xml-gov-au:icsm:egeodesy:0.3">Secondary</gml:identifier>
+				</CodeDefinition>
+			</codeEntry>
+			<codeEntry>
+				<CodeDefinition gml:id="Role-Contact_OnSite">
+					<gml:description>On-Site Contact</gml:description>
+					<gml:identifier codeSpace="urn:xml-gov-au:icsm:egeodesy:0.3">OnSite</gml:identifier>
+				</CodeDefinition>
+			</codeEntry>
+		</CodeListDictionary>
+	</codelistItem>
+	<!-- === EOF === -->
+</CT_CodelistCatalogue>

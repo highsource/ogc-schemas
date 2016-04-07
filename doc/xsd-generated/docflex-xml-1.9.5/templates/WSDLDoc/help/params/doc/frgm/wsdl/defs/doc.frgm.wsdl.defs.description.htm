@@ -1,0 +1,32 @@
+Specify whether to include in the summary item the <b>description</b> of the WSDL definition and which part of it.
+<p>
+The full description text is obtained from the <code>&lt;wsdl:documentation&gt;</code> element found by the following path:
+<dl><dd>
+<code><i>wsdl:definition</i>/wsdl:documentation</code>
+</dd></dl>
+where <code><i>'wsdl:definition'</i></code> is the particular XML element of the WSDL definition
+(e.g. <code>&lt;wsdl:portType&gt;</code>).
+
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"first sentence"</i>
+<dl><dd>
+Include only the first sentence of the description text.
+</dd></dl>
+
+<i>"full"</i>
+<dl><dd>
+Include the full description.
+</dd></dl>
+
+<i>"none"</i>
+<dl><dd>
+Do not include the description.
+</dd></dl>
+
+<p>
+<b>See Also:</b>
+<dl><dd>
+<i>"Processing | Descriptions"</i> parameter group, where you can specify how descriptions are processed and displayed.
+</dd></dl>

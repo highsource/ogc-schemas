@@ -1,0 +1,28 @@
+With these parameters you can select where to look for <b>alternative descriptions</b> of some WSDL definitions.
+<p>
+WSDL has a special <code>&lt;wsdl:documentation&gt;</code> element to specify descriptions of WSDL definitions.
+WSDLDoc does use these elements to obtain various descriptions, which are placed in the generated documentation.
+<p>
+However, some descriptions may be absent and need to be inherited from closely related WSDL definitions
+(e.g. an operation binding may have the same description as the corresponding operation in a portType).
+<p>
+Besides that, not all WSDL files use <code>&lt;wsdl:documentation&gt;</code>
+elements to convey actual descriptions/documentation.
+
+<table border="1" cellspacing="0" style="margin-top:12pt; margin-bottom:12pt">
+<tr><td style="font-family: Dialog; font-size:12pt">
+For instance, the WSDL file describing the 
+<i>"<a href="http://developer.ebay.com/webservices/latest/ebaySvc.wsdl">eBay Trading API</a>"</i> 
+defines lots of operations, which are documented pretty well in the same file.
+However, that documentation is not specified in the corresponding
+<code>&lt;wsdl:operation&gt;</code> elements (via <code>&lt;wsdl:documentation&gt;</code>).
+Rather, it is found in annotations of XSD components (found in the XML schema embedded in that WSDL)
+that define the data types of the operation input/output messages.
+</td></tr>
+</table>
+
+So, although for such WSDL files the proper documentation can be generated,
+the relevant descriptions must be looked for in different places and copied from there.
+
+<p>
+This parameter group allows you to specify that.

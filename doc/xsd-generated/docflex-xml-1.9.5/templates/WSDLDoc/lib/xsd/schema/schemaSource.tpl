@@ -1,0 +1,556 @@
+<DOCFLEX_TEMPLATE VER='1.19'>
+CREATED='2012-07-31 12:43:11'
+LAST_UPDATE='2014-07-05 20:02:58'
+DESIGNER_TOOL='DocFlex SDK 1.x'
+DESIGNER_LICENSE_TYPE='Filigris Works Team'
+APP_ID='docflex-xml-wsdldoc'
+APP_NAME='DocFlex/XML WSDLDoc'
+APP_VER='1.0.b'
+APP_AUTHOR='Copyright � 2014 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.'
+FEATURE_TYPE='pro'
+TEMPLATE_TYPE='DocumentTemplate'
+DSM_TYPE_ID='wsdldoc'
+ROOT_ET='xs:schema'
+<STYLES>
+	CHAR_STYLE={
+		style.name='Default Paragraph Font';
+		style.id='cs1';
+		style.default='true';
+	}
+	CHAR_STYLE={
+		style.name='Hyperlink';
+		style.id='cs2';
+		text.decor.underline='true';
+		text.color.foreground='#0000FF';
+	}
+	PAR_STYLE={
+		style.name='Normal';
+		style.id='s1';
+		style.default='true';
+	}
+</STYLES>
+FMT={
+	doc.lengthUnits='pt';
+	doc.hlink.style.link='cs2';
+}
+<ROOT>
+	<AREA_SEC>
+		<AREA>
+			<CTRL_GROUP>
+				<CTRLS>
+					<TEXT_CTRL>
+						TEXT='<?xml version=\'1.0\' encoding=\'UTF-8\'?>'
+					</TEXT_CTRL>
+				</CTRLS>
+			</CTRL_GROUP>
+		</AREA>
+	</AREA_SEC>
+	<FOLDER>
+		FMT={
+			sec.outputStyle='text-par';
+			txtfl.delimiter.type='none';
+		}
+		<BODY>
+			<AREA_SEC>
+				<AREA>
+					<CTRL_GROUP>
+						<CTRLS>
+							<TEXT_CTRL>
+								TEXT='<'
+							</TEXT_CTRL>
+							<DATA_CTRL>
+								FORMULA='contextElement.name'
+							</DATA_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+			<ELEMENT_ITER>
+				TARGET_ET='#NAMESPACE'
+				SCOPE='advanced-location-rules'
+				RULES={
+					'* -> #NAMESPACE',recursive;
+					'* -> {Enum (contextElement.parent)}::*',recursive;
+				}
+				FILTER_BY_KEY='HashKey (
+  getAttrValue("prefix"),
+  getAttrValue("namespaceURI")
+)'
+				<BODY>
+					<AREA_SEC>
+						<AREA>
+							<CTRL_GROUP>
+								<CTRLS>
+									<DELIMITER>
+									</DELIMITER>
+									<TEXT_CTRL>
+										TEXT='xmlns'
+									</TEXT_CTRL>
+									<DELIMITER>
+										FMT={
+											txtfl.delimiter.type='text';
+											txtfl.delimiter.text=':';
+										}
+									</DELIMITER>
+									<DATA_CTRL>
+										ATTR='prefix'
+										FMT={
+											ctrl.option.text.noBlankOutput='true';
+										}
+									</DATA_CTRL>
+									<DELIMITER>
+										FMT={
+											txtfl.delimiter.type='text';
+											txtfl.delimiter.text='=';
+										}
+									</DELIMITER>
+									<TEXT_CTRL>
+										TEXT='"'
+									</TEXT_CTRL>
+									<DATA_CTRL>
+										ATTR='namespaceURI'
+									</DATA_CTRL>
+									<TEXT_CTRL>
+										TEXT='"'
+									</TEXT_CTRL>
+								</CTRLS>
+							</CTRL_GROUP>
+						</AREA>
+					</AREA_SEC>
+				</BODY>
+			</ELEMENT_ITER>
+			<ATTR_ITER>
+				SCOPE='enumerated-attrs'
+				EXCL_PASSED=false
+				FILTER='name = iterator.attr.name;
+name != "xmlns" && ! name.startsWith ("xmlns:")'
+				FMT={
+					txtfl.delimiter.type='none';
+				}
+				<BODY>
+					<AREA_SEC>
+						<AREA>
+							<CTRL_GROUP>
+								<CTRLS>
+									<DELIMITER>
+									</DELIMITER>
+									<DATA_CTRL>
+										FORMULA='iterator.attr.name'
+									</DATA_CTRL>
+									<TEXT_CTRL>
+										TEXT='="'
+									</TEXT_CTRL>
+									<DATA_CTRL>
+										FORMULA='encodeXMLChars (
+  iterator.value.toString(),
+  true, true, true, false
+)'
+									</DATA_CTRL>
+									<TEXT_CTRL>
+										TEXT='"'
+									</TEXT_CTRL>
+								</CTRLS>
+							</CTRL_GROUP>
+						</AREA>
+					</AREA_SEC>
+				</BODY>
+			</ATTR_ITER>
+			<AREA_SEC>
+				<AREA>
+					<CTRL_GROUP>
+						<CTRLS>
+							<TEXT_CTRL>
+								TEXT='>'
+							</TEXT_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+		</BODY>
+	</FOLDER>
+	<ELEMENT_ITER>
+		TARGET_ET='<ANY>'
+		SCOPE='simple-location-rules'
+		RULES={
+			'* -> *';
+		}
+		FMT={
+			sec.indent.block='true';
+		}
+		<BODY>
+			<SS_CALL>
+				SS_NAME='Node'
+			</SS_CALL>
+		</BODY>
+	</ELEMENT_ITER>
+	<AREA_SEC>
+		<AREA>
+			<CTRL_GROUP>
+				FMT={
+					txtfl.delimiter.type='none';
+				}
+				<CTRLS>
+					<TEXT_CTRL>
+						TEXT='</'
+					</TEXT_CTRL>
+					<DATA_CTRL>
+						FORMULA='contextElement.name'
+					</DATA_CTRL>
+					<TEXT_CTRL>
+						TEXT='>'
+					</TEXT_CTRL>
+				</CTRLS>
+			</CTRL_GROUP>
+		</AREA>
+	</AREA_SEC>
+</ROOT>
+<STOCK_SECTIONS>
+	<FOLDER>
+		SS_NAME='AttrList'
+		FMT={
+			sec.outputStyle='text-par';
+			txtfl.delimiter.type='none';
+		}
+		<BODY>
+			<AREA_SEC>
+				COND='instanceOf("xs:import")
+&&
+hasServiceAttr (
+  findElementByKey ("referenced-schema", contextElement.id),
+  "embedded"
+)'
+				<AREA>
+					<CTRL_GROUP>
+						<CTRLS>
+							<DELIMITER>
+							</DELIMITER>
+							<DATA_CTRL>
+								FORMULA='importedSchema = findElementByKey ("referenced-schema", contextElement.id);
+
+\'schemaLocation="\'
++
+makeRelativePath (
+  importedSchema.getServiceAttr("schemaLocation").toString(),
+  output.dir,
+  true
+)
++ \'"\'
+'
+								FMT={
+									ctrl.size.width='484.5';
+									ctrl.size.height='17.3';
+								}
+							</DATA_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+			<ATTR_ITER>
+				SCOPE='enumerated-attrs'
+				EXCL_PASSED=false
+				<BODY>
+					<AREA_SEC>
+						<AREA>
+							<CTRL_GROUP>
+								<CTRLS>
+									<DELIMITER>
+									</DELIMITER>
+									<DATA_CTRL>
+										FORMULA='iterator.attr.name'
+									</DATA_CTRL>
+									<TEXT_CTRL>
+										TEXT='="'
+									</TEXT_CTRL>
+									<DATA_CTRL>
+										FORMULA='value = iterator.value.toString();
+
+iterator.attr.name == "schemaLocation" &&
+instanceOf ("xs:import | xs:include | xs:redefine") ?
+{
+  value = resolveURI (
+            value,
+            getXMLDocument().getAttrStringValue("xmlURI")
+          )
+};
+
+encodeXMLChars (value, true, true, true, false)'
+										FMT={
+											ctrl.size.width='384';
+											ctrl.size.height='17.3';
+										}
+									</DATA_CTRL>
+									<TEXT_CTRL>
+										TEXT='"'
+									</TEXT_CTRL>
+								</CTRLS>
+							</CTRL_GROUP>
+						</AREA>
+					</AREA_SEC>
+				</BODY>
+			</ATTR_ITER>
+		</BODY>
+	</FOLDER>
+	<FOLDER>
+		SS_NAME='Node'
+		DESCR='This stock-section processes a node which may contain similar nodes within itself'
+		<BODY>
+			<FOLDER>
+				DESCR='case of element node'
+				COND='! contextElement.pseudoElement'
+				BREAK_PARENT_BLOCK='when-executed'
+				<BODY>
+					<AREA_SEC>
+						DESCR='this is executed only when the element contains a short text (in order to produce a single-line output)'
+						COND='countChildren ("*") == 1 &&
+(text = getValueByLPath ("#TEXT")) != null && {
+  s = text.toString();
+  s.len() < 50 && ! s.contains ("\\n")
+}'
+						BREAK_PARENT_BLOCK='when-executed'
+						<AREA>
+							<CTRL_GROUP>
+								FMT={
+									txtfl.delimiter.type='none';
+								}
+								<CTRLS>
+									<TEXT_CTRL>
+										TEXT='<'
+									</TEXT_CTRL>
+									<DATA_CTRL>
+										FORMULA='contextElement.name'
+									</DATA_CTRL>
+									<SS_CALL_CTRL>
+										SS_NAME='AttrList'
+									</SS_CALL_CTRL>
+									<TEXT_CTRL>
+										TEXT='>'
+									</TEXT_CTRL>
+									<DATA_CTRL>
+										FORMULA='encodeXMLChars (
+  getValueByLPath ("#TEXT").toString()
+)'
+										FMT={
+											ctrl.option.text.collapseSpaces='true';
+											ctrl.option.text.trimSpaces='true';
+										}
+									</DATA_CTRL>
+									<TEXT_CTRL>
+										TEXT='</'
+									</TEXT_CTRL>
+									<DATA_CTRL>
+										FORMULA='contextElement.name'
+									</DATA_CTRL>
+									<TEXT_CTRL>
+										TEXT='>'
+									</TEXT_CTRL>
+								</CTRLS>
+							</CTRL_GROUP>
+						</AREA>
+					</AREA_SEC>
+					<ELEMENT_ITER>
+						DESCR='iterates by the element\'s child nodes -- the case of a complex element'
+						BREAK_PARENT_BLOCK='when-output'
+						TARGET_ET='<ANY>'
+						SCOPE='simple-location-rules'
+						RULES={
+							'* -> *';
+						}
+						<BODY>
+							<SS_CALL>
+								DESCR='calls this stock-section recursively'
+								SS_NAME='Node'
+								FMT={
+									sec.indent.block='true';
+									sec.indent.left='8.3';
+								}
+							</SS_CALL>
+						</BODY>
+						<HEADER>
+							<AREA_SEC>
+								<AREA>
+									<CTRL_GROUP>
+										FMT={
+											txtfl.delimiter.type='none';
+										}
+										<CTRLS>
+											<TEXT_CTRL>
+												TEXT='<'
+											</TEXT_CTRL>
+											<DATA_CTRL>
+												FORMULA='contextElement.name'
+											</DATA_CTRL>
+											<SS_CALL_CTRL>
+												SS_NAME='AttrList'
+											</SS_CALL_CTRL>
+											<TEXT_CTRL>
+												TEXT='>'
+											</TEXT_CTRL>
+										</CTRLS>
+									</CTRL_GROUP>
+								</AREA>
+							</AREA_SEC>
+						</HEADER>
+						<FOOTER>
+							<AREA_SEC>
+								<AREA>
+									<CTRL_GROUP>
+										FMT={
+											txtfl.delimiter.type='none';
+										}
+										<CTRLS>
+											<TEXT_CTRL>
+												TEXT='</'
+											</TEXT_CTRL>
+											<DATA_CTRL>
+												FORMULA='contextElement.name'
+											</DATA_CTRL>
+											<TEXT_CTRL>
+												TEXT='>'
+											</TEXT_CTRL>
+										</CTRLS>
+									</CTRL_GROUP>
+								</AREA>
+							</AREA_SEC>
+						</FOOTER>
+					</ELEMENT_ITER>
+					<AREA_SEC>
+						DESCR='this is executed when no child nodes encountered -- the case of a simple element'
+						<AREA>
+							<CTRL_GROUP>
+								FMT={
+									txtfl.delimiter.type='none';
+								}
+								<CTRLS>
+									<TEXT_CTRL>
+										TEXT='<'
+									</TEXT_CTRL>
+									<DATA_CTRL>
+										FORMULA='contextElement.name'
+									</DATA_CTRL>
+									<SS_CALL_CTRL>
+										SS_NAME='AttrList'
+									</SS_CALL_CTRL>
+									<TEXT_CTRL>
+										TEXT='/>'
+									</TEXT_CTRL>
+								</CTRLS>
+							</CTRL_GROUP>
+						</AREA>
+					</AREA_SEC>
+				</BODY>
+			</FOLDER>
+			<AREA_SEC>
+				DESCR='TEXT node'
+				MATCHING_ET='#TEXT'
+				BREAK_PARENT_BLOCK='when-executed'
+				<AREA>
+					<CTRL_GROUP>
+						<CTRLS>
+							<DATA_CTRL>
+								FORMULA='encodeXMLChars (contextElement.value.toString())'
+								FMT={
+									ctrl.option.text.collapseSpaces='true';
+									ctrl.option.text.trimSpaces='true';
+									ctrl.option.text.noEmptyOutput='true';
+									text.option.renderNLs='true';
+								}
+							</DATA_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+			<AREA_SEC>
+				DESCR='COMMENT node'
+				MATCHING_ET='#COMMENT'
+				BREAK_PARENT_BLOCK='when-executed'
+				<AREA>
+					<CTRL_GROUP>
+						FMT={
+							txtfl.delimiter.type='none';
+						}
+						<CTRLS>
+							<TEXT_CTRL>
+								TEXT='<!--'
+							</TEXT_CTRL>
+							<DATA_CTRL>
+								ELEMENT_VALUE
+								FMT={
+									ctrl.option.text.collapseSpaces='true';
+									text.option.renderNLs='true';
+								}
+							</DATA_CTRL>
+							<TEXT_CTRL>
+								TEXT='-->'
+							</TEXT_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+			<AREA_SEC>
+				DESCR='CDATA node'
+				MATCHING_ET='#CDATA'
+				BREAK_PARENT_BLOCK='when-executed'
+				<AREA>
+					<CTRL_GROUP>
+						<CTRLS>
+							<TEXT_CTRL>
+								TEXT='<![CDATA['
+							</TEXT_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+					<CTRL_GROUP>
+						FMT={
+							row.indent.block='true';
+						}
+						<CTRLS>
+							<DATA_CTRL>
+								ELEMENT_VALUE
+								FMT={
+									ctrl.option.text.collapseSpaces='true';
+									ctrl.option.text.trimSpaces='true';
+									text.option.renderNLs='true';
+								}
+							</DATA_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+					<CTRL_GROUP>
+						<CTRLS>
+							<TEXT_CTRL>
+								TEXT=']]>'
+							</TEXT_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+			<AREA_SEC>
+				DESCR='Processing Instruction node'
+				MATCHING_ET='#PI'
+				<AREA>
+					<CTRL_GROUP>
+						FMT={
+							txtfl.delimiter.type='none';
+						}
+						<CTRLS>
+							<TEXT_CTRL>
+								TEXT='<?'
+							</TEXT_CTRL>
+							<DATA_CTRL>
+								ATTR='target'
+							</DATA_CTRL>
+							<DELIMITER>
+							</DELIMITER>
+							<DATA_CTRL>
+								ELEMENT_VALUE
+							</DATA_CTRL>
+							<TEXT_CTRL>
+								TEXT='?>'
+							</TEXT_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+		</BODY>
+	</FOLDER>
+</STOCK_SECTIONS>
+CHECKSUM='rnRPr6gUdk+tCPbSYRQBn9UR4MgL?gJ1maMqzaklajE'
+</DOCFLEX_TEMPLATE>

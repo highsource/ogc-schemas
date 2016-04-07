@@ -1,0 +1,977 @@
+<DOCFLEX_TEMPLATE VER='1.19'>
+CREATED='2004-06-21 01:50:00'
+LAST_UPDATE='2014-07-05 20:02:58'
+DESIGNER_TOOL='DocFlex SDK 1.x'
+DESIGNER_LICENSE_TYPE='Filigris Works Team'
+APP_ID='docflex-xml-wsdldoc'
+APP_NAME='DocFlex/XML WSDLDoc'
+APP_VER='1.0.b'
+APP_AUTHOR='Copyright © 2014 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.'
+FEATURE_TYPE='pro'
+TEMPLATE_TYPE='DocumentTemplate'
+DSM_TYPE_ID='wsdldoc'
+ROOT_ET='xs:schema'
+TITLE_EXPR='title = getStringParam("$title");
+
+(parentTitle = getStringParam("docTitle")) != null
+  ? title + " | " + parentTitle : title'
+HTML_HEAD_EXPR='title = getStringParam("$title");
+
+(parentTitle = getStringParam("docTitle")) != null
+  ? title = title + " | " + parentTitle;
+
+\'<script type="text/javascript">
+    window.onload = function() {
+        parent.document.title="\' + encodeJScriptString (title) + \'";
+    }
+</script>\''
+<TEMPLATE_PARAMS>
+	PARAM={
+		param.name='$mainXML';
+		param.type='GOMElement';
+		param.defaultValue.expr='findElementByKey ("main-xmls", getXMLDocument().id)';
+	}
+	PARAM={
+		param.name='$nsURI';
+		param.title='Namespace URI';
+		param.type='string';
+		param.defaultValue.expr='getServiceAttr("targetNamespace")';
+		param.fixed='true';
+	}
+	PARAM={
+		param.name='$scope';
+		param.description='Specifies the scope passed to subtemplates (called from this template):
+<ul>
+<li>"any" - unspecified</li>
+<li>"namespace" - namespace overview</li>
+<li>"schema" - schema overview</li>
+</ul>';
+		param.type='enum';
+		param.enum.values='any;namespace;schema';
+		param.defaultValue='schema';
+		param.fixed='true';
+	}
+	PARAM={
+		param.name='$title';
+		param.title='Schema doc\'s title';
+		param.type='string';
+		param.defaultValue.expr='hasServiceAttr("embedded")
+?
+  "Schema" + getServiceAttr("embeddedSchemaNo") + " in " + getXMLDocument().getAttrValue("xmlName")
+: 
+  \'Schema "\' + getXMLDocument().getAttrStringValue("xmlName") + \'"\'';
+		param.autoPassed='false';
+	}
+	PARAM={
+		param.name='$page.heading.left';
+		param.title='Page Heading (on the left)';
+		param.type='string';
+		param.defaultValue.expr='getStringParam("$title")';
+		param.fixed='true';
+	}
+	PARAM={
+		param.name='docTitle';
+		param.title='Documentation Title';
+		param.type='string';
+	}
+	PARAM={
+		param.name='doc.xsd.schema';
+		param.title='Schema Overview';
+		param.title.style.bold='true';
+		param.group='true';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.profile';
+		param.title='Schema Profile';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.profile.location';
+		param.title='Schema Location';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.profile.location.relative';
+		param.title='Relative Path';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.profile.location.hyperlink';
+		param.title='Hyperlink';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.profile.targetNamespace';
+		param.title='Target Namespace';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.profile.version';
+		param.title='Version';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.profile.components';
+		param.title='Components';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.profile.formDefault';
+		param.title='Default NS-Qualified Form';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.profile.blockDefault';
+		param.title='Default Block Attribute';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.profile.blockDefault.value';
+		param.title='Value';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.profile.blockDefault.meaning';
+		param.title='Meaning';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.profile.finalDefault';
+		param.title='Default Final Attribute';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.profile.finalDefault.value';
+		param.title='Value';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.profile.finalDefault.meaning';
+		param.title='Meaning';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.profile.relatedSchemas';
+		param.title='Related Schemas';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.annotation';
+		param.title='Annotation';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps';
+		param.title='XSD Component Summary';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.for';
+		param.title='Generate For';
+		param.title.style.italic='true';
+		param.group='true';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.for.elements';
+		param.title='Elements';
+		param.title.style.italic='true';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.for.elements.local';
+		param.title='Local Elements';
+		param.title.style.italic='true';
+		param.type='enum';
+		param.enum.values='all;complexType;none';
+		param.enum.displayValues='all;with complex type;none';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.for.complexTypes';
+		param.title='Complex Types';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.for.simpleTypes';
+		param.title='Simple Types';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.for.groups';
+		param.title='Element Groups';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.for.attributes';
+		param.title='Global Attributes';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.for.attributeGroups';
+		param.title='Attribute Groups';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.sorting';
+		param.title='Sorting';
+		param.title.style.italic='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.annotation';
+		param.title='Annotation';
+		param.type='enum';
+		param.enum.values='first_sentence;full;none';
+		param.enum.displayValues='first sentence;full;none';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile';
+		param.title='Component Profile';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.namespace';
+		param.title='Namespace';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.type';
+		param.title='Type';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.content';
+		param.title='Content';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.abstract';
+		param.title='Abstract';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.block';
+		param.title='Block';
+		param.group='true';
+		param.type='enum';
+		param.enum.values='any;non_default;none';
+		param.enum.displayValues='any;non-default only;none';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.block.value';
+		param.title='Value';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.block.meaning';
+		param.title='Meaning';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.final';
+		param.title='Final';
+		param.group='true';
+		param.type='enum';
+		param.enum.values='any;non_default;none';
+		param.enum.displayValues='any;non-default only;none';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.final.value';
+		param.title='Value';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.final.meaning';
+		param.title='Meaning';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.subst';
+		param.title='Subst.Gr';
+		param.group='true';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.subst.heads';
+		param.title='List of group heads';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.subst.members';
+		param.title='List of group members';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.nillable';
+		param.title='Nillable';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.defined';
+		param.title='Defined';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.includes';
+		param.title='Includes';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.redefines';
+		param.title='Redefines';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.redefined';
+		param.title='Redefined';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.comps.profile.used';
+		param.title='Used';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.xml';
+		param.title='XML Source';
+		param.group='true';
+		param.type='enum';
+		param.enum.values='all;xsd;none';
+		param.enum.displayValues='all;XSD files only;none';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.xml.separate';
+		param.title='Separate File';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.xml.box';
+		param.title='Enclose in Box';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='doc.xsd.schema.xml.remove.xsd.anns';
+		param.title='Remove <xs:annotation>';
+		param.type='boolean';
+	}
+	PARAM={
+		param.name='show';
+		param.title='Show';
+		param.title.style.bold='true';
+		param.group='true';
+		param.group.defaultState='expanded';
+	}
+	PARAM={
+		param.name='show.about';
+		param.title='About (footer)';
+		param.type='boolean';
+	}
+</TEMPLATE_PARAMS>
+<STYLES>
+	CHAR_STYLE={
+		style.name='Code';
+		style.id='cs1';
+		text.font.name='Courier New';
+		text.font.size='9';
+	}
+	CHAR_STYLE={
+		style.name='Default Paragraph Font';
+		style.id='cs2';
+		style.default='true';
+	}
+	PAR_STYLE={
+		style.name='Detail Heading 1';
+		style.id='s1';
+		text.font.size='12';
+		text.font.style.bold='true';
+	}
+	PAR_STYLE={
+		style.name='Detail Heading 2';
+		style.id='s2';
+		text.font.size='10';
+		text.font.style.bold='true';
+		par.bkgr.opaque='true';
+		par.bkgr.color='#EEEEFF';
+		par.border.style='solid';
+		par.border.color='#666666';
+		par.margin.top='10';
+		par.margin.bottom='8.3';
+		par.padding.left='1.7';
+		par.padding.right='1.7';
+		par.padding.top='1.7';
+		par.padding.bottom='1.7';
+		par.page.keepWithNext='true';
+	}
+	CHAR_STYLE={
+		style.name='Hyperlink';
+		style.id='cs3';
+		text.decor.underline='true';
+		text.color.foreground='#0000FF';
+	}
+	PAR_STYLE={
+		style.name='Main Heading';
+		style.id='s3';
+		text.font.name='Verdana';
+		text.font.size='13';
+		text.font.style.bold='true';
+		text.color.foreground='#4477AA';
+		par.bkgr.opaque='true';
+		par.bkgr.color='#EEEEEE';
+		par.border.style='solid';
+		par.border.color='#4477AA';
+		par.margin.top='0';
+		par.margin.bottom='7.5';
+		par.padding.left='4.2';
+		par.padding.right='4.2';
+		par.padding.top='2.5';
+		par.padding.bottom='2.5';
+		par.page.keepTogether='true';
+		par.page.keepWithNext='true';
+	}
+	PAR_STYLE={
+		style.name='Normal';
+		style.id='s4';
+		style.default='true';
+	}
+	CHAR_STYLE={
+		style.name='Normal Smaller';
+		style.id='cs4';
+		text.font.name='Arial';
+		text.font.size='9';
+	}
+	CHAR_STYLE={
+		style.name='Note Font';
+		style.id='cs5';
+		text.font.name='Arial';
+		text.font.size='8';
+		text.font.style.bold='false';
+	}
+	CHAR_STYLE={
+		style.name='Page Header Font';
+		style.id='cs6';
+		text.font.name='Arial';
+		text.font.style.italic='true';
+	}
+	CHAR_STYLE={
+		style.name='Page Number';
+		style.id='cs7';
+		text.font.size='9';
+		text.font.style.italic='true';
+	}
+	CHAR_STYLE={
+		style.name='Summary Heading Font';
+		style.id='cs8';
+		text.font.size='12';
+		text.font.style.bold='true';
+	}
+	CHAR_STYLE={
+		style.name='XML Source';
+		style.id='cs9';
+		text.font.name='Verdana';
+		text.font.size='8';
+	}
+	CHAR_STYLE={
+		style.name='XML Source Internal Subset';
+		style.id='cs10';
+		text.font.name='Courier New';
+		text.color.foreground='#0000FF';
+	}
+	CHAR_STYLE={
+		style.name='XML Source Markup';
+		style.id='cs11';
+		text.color.foreground='#0000FF';
+	}
+</STYLES>
+FMT={
+	doc.lengthUnits='pt';
+	doc.hlink.style.link='cs3';
+}
+<HTARGET>
+	HKEYS={
+		'contextElement.id';
+		'"detail"';
+	}
+</HTARGET>
+<HTARGET>
+	COND='! hasServiceAttr("embedded")'
+	HKEYS={
+		'getXMLDocument().id';
+		'"detail"';
+	}
+</HTARGET>
+<PAGE_HEADER>
+	<AREA_SEC>
+		FMT={
+			text.style='cs6';
+			table.cell.padding.both='0';
+			table.border.style='none';
+			table.border.bottom.style='solid';
+		}
+		<AREA>
+			<CTRL_GROUP>
+				FMT={
+					par.border.bottom.style='solid';
+				}
+				<CTRLS>
+					<DATA_CTRL>
+						FORMULA='getStringParam("$page.heading.left")'
+					</DATA_CTRL>
+				</CTRLS>
+			</CTRL_GROUP>
+		</AREA>
+	</AREA_SEC>
+</PAGE_HEADER>
+<ROOT>
+	<AREA_SEC>
+		FMT={
+			par.style='s3';
+		}
+		<AREA>
+			<CTRL_GROUP>
+				<CTRLS>
+					<DATA_CTRL>
+						FORMULA='getParam("$title")'
+					</DATA_CTRL>
+				</CTRLS>
+			</CTRL_GROUP>
+		</AREA>
+	</AREA_SEC>
+	<TEMPLATE_CALL>
+		COND='getBooleanParam("doc.xsd.schema.profile")'
+		TEMPLATE_FILE='schemaProfile.tpl'
+		PASSED_PARAMS={
+			'$schemaOverview','true';
+		}
+		FMT={
+			sec.spacing.before='10';
+		}
+	</TEMPLATE_CALL>
+	<FOLDER>
+		DESCR='Annotation'
+		COND='getBooleanParam("doc.xsd.schema.annotation")'
+		COLLAPSED
+		<BODY>
+			<TEMPLATE_CALL>
+				TEMPLATE_FILE='../ann/annotation.tpl'
+			</TEMPLATE_CALL>
+		</BODY>
+		<HEADER>
+			<AREA_SEC>
+				FMT={
+					par.style='s2';
+				}
+				<AREA>
+					<CTRL_GROUP>
+						FMT={
+							trow.bkgr.color='#CCCCFF';
+						}
+						<CTRLS>
+							<TEXT_CTRL>
+								TEXT='Annotation'
+							</TEXT_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+		</HEADER>
+	</FOLDER>
+	<FOLDER>
+		DESCR='COMPONENT SUMMARY'
+		COND='getBooleanParam("doc.xsd.schema.comps")'
+		FMT={
+			sec.spacing.before='11.7';
+		}
+		<BODY>
+			<TEMPLATE_CALL>
+				DESCR='elements'
+				COND='getBooleanParam("doc.xsd.schema.comps.for.elements")'
+				TEMPLATE_FILE='../element/elementSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.xsd.comps.for.elements','getBooleanParam("doc.xsd.schema.comps.for.elements")';
+					'doc.frgm.xsd.comps.for.elements.local','getStringParam("doc.xsd.schema.comps.for.elements.local")';
+					'doc.frgm.xsd.comps.sorting','getBooleanParam("doc.xsd.schema.comps.sorting")';
+					'doc.frgm.xsd.comps.annotation','getStringParam("doc.xsd.schema.comps.annotation")';
+					'doc.frgm.xsd.comps.profile','getBooleanParam("doc.xsd.schema.comps.profile")';
+					'doc.frgm.xsd.comps.profile.namespace','getBooleanParam("doc.xsd.schema.comps.profile.namespace")';
+					'doc.frgm.xsd.comps.profile.type','getBooleanParam("doc.xsd.schema.comps.profile.type")';
+					'doc.frgm.xsd.comps.profile.content','getBooleanParam("doc.xsd.schema.comps.profile.content")';
+					'doc.frgm.xsd.comps.profile.abstract','getBooleanParam("doc.xsd.schema.comps.profile.abstract")';
+					'doc.frgm.xsd.comps.profile.block','getStringParam("doc.xsd.schema.comps.profile.block")';
+					'doc.frgm.xsd.comps.profile.block.value','getBooleanParam("doc.xsd.schema.comps.profile.block.value")';
+					'doc.frgm.xsd.comps.profile.block.meaning','getBooleanParam("doc.xsd.schema.comps.profile.block.meaning")';
+					'doc.frgm.xsd.comps.profile.final','getStringParam("doc.xsd.schema.comps.profile.final")';
+					'doc.frgm.xsd.comps.profile.final.value','getBooleanParam("doc.xsd.schema.comps.profile.final.value")';
+					'doc.frgm.xsd.comps.profile.final.meaning','getBooleanParam("doc.xsd.schema.comps.profile.final.meaning")';
+					'doc.frgm.xsd.comps.profile.subst','getBooleanParam("doc.xsd.schema.comps.profile.subst")';
+					'doc.frgm.xsd.comps.profile.subst.heads','getBooleanParam("doc.xsd.schema.comps.profile.subst.heads")';
+					'doc.frgm.xsd.comps.profile.subst.members','getBooleanParam("doc.xsd.schema.comps.profile.subst.members")';
+					'doc.frgm.xsd.comps.profile.nillable','getBooleanParam("doc.xsd.schema.comps.profile.nillable")';
+					'doc.frgm.xsd.comps.profile.defined','getBooleanParam("doc.xsd.schema.comps.profile.defined")';
+					'doc.frgm.xsd.comps.profile.includes','getBooleanParam("doc.xsd.schema.comps.profile.includes")';
+					'doc.frgm.xsd.comps.profile.redefines','getBooleanParam("doc.xsd.schema.comps.profile.redefines")';
+					'doc.frgm.xsd.comps.profile.redefined','getBooleanParam("doc.xsd.schema.comps.profile.redefined")';
+					'doc.frgm.xsd.comps.profile.used','getBooleanParam("doc.xsd.schema.comps.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'contextElement.id';
+						'"element-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+			<TEMPLATE_CALL>
+				DESCR='complexTypes'
+				COND='getBooleanParam("doc.xsd.schema.comps.for.complexTypes")'
+				TEMPLATE_FILE='../type/complexTypeSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.xsd.comps.sorting','getBooleanParam("doc.xsd.schema.comps.sorting")';
+					'doc.frgm.xsd.comps.annotation','getStringParam("doc.xsd.schema.comps.annotation")';
+					'doc.frgm.xsd.comps.profile','getBooleanParam("doc.xsd.schema.comps.profile")';
+					'doc.frgm.xsd.comps.profile.namespace','getBooleanParam("doc.xsd.schema.comps.profile.namespace")';
+					'doc.frgm.xsd.comps.profile.type','getBooleanParam("doc.xsd.schema.comps.profile.type")';
+					'doc.frgm.xsd.comps.profile.content','getBooleanParam("doc.xsd.schema.comps.profile.content")';
+					'doc.frgm.xsd.comps.profile.abstract','getBooleanParam("doc.xsd.schema.comps.profile.abstract")';
+					'doc.frgm.xsd.comps.profile.block','getStringParam("doc.xsd.schema.comps.profile.block")';
+					'doc.frgm.xsd.comps.profile.block.value','getBooleanParam("doc.xsd.schema.comps.profile.block.value")';
+					'doc.frgm.xsd.comps.profile.block.meaning','getBooleanParam("doc.xsd.schema.comps.profile.block.meaning")';
+					'doc.frgm.xsd.comps.profile.final','getStringParam("doc.xsd.schema.comps.profile.final")';
+					'doc.frgm.xsd.comps.profile.final.value','getBooleanParam("doc.xsd.schema.comps.profile.final.value")';
+					'doc.frgm.xsd.comps.profile.final.meaning','getBooleanParam("doc.xsd.schema.comps.profile.final.meaning")';
+					'doc.frgm.xsd.comps.profile.subst','getBooleanParam("doc.xsd.schema.comps.profile.subst")';
+					'doc.frgm.xsd.comps.profile.subst.heads','getBooleanParam("doc.xsd.schema.comps.profile.subst.heads")';
+					'doc.frgm.xsd.comps.profile.subst.members','getBooleanParam("doc.xsd.schema.comps.profile.subst.members")';
+					'doc.frgm.xsd.comps.profile.nillable','getBooleanParam("doc.xsd.schema.comps.profile.nillable")';
+					'doc.frgm.xsd.comps.profile.defined','getBooleanParam("doc.xsd.schema.comps.profile.defined")';
+					'doc.frgm.xsd.comps.profile.includes','getBooleanParam("doc.xsd.schema.comps.profile.includes")';
+					'doc.frgm.xsd.comps.profile.redefines','getBooleanParam("doc.xsd.schema.comps.profile.redefines")';
+					'doc.frgm.xsd.comps.profile.redefined','getBooleanParam("doc.xsd.schema.comps.profile.redefined")';
+					'doc.frgm.xsd.comps.profile.used','getBooleanParam("doc.xsd.schema.comps.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'contextElement.id';
+						'"complexType-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+			<TEMPLATE_CALL>
+				DESCR='simpleTypes'
+				COND='getBooleanParam("doc.xsd.schema.comps.for.simpleTypes")'
+				TEMPLATE_FILE='../type/simpleTypeSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.xsd.comps.sorting','getBooleanParam("doc.xsd.schema.comps.sorting")';
+					'doc.frgm.xsd.comps.annotation','getStringParam("doc.xsd.schema.comps.annotation")';
+					'doc.frgm.xsd.comps.profile','getBooleanParam("doc.xsd.schema.comps.profile")';
+					'doc.frgm.xsd.comps.profile.namespace','getBooleanParam("doc.xsd.schema.comps.profile.namespace")';
+					'doc.frgm.xsd.comps.profile.type','getBooleanParam("doc.xsd.schema.comps.profile.type")';
+					'doc.frgm.xsd.comps.profile.content','getBooleanParam("doc.xsd.schema.comps.profile.content")';
+					'doc.frgm.xsd.comps.profile.abstract','getBooleanParam("doc.xsd.schema.comps.profile.abstract")';
+					'doc.frgm.xsd.comps.profile.block','getStringParam("doc.xsd.schema.comps.profile.block")';
+					'doc.frgm.xsd.comps.profile.block.value','getBooleanParam("doc.xsd.schema.comps.profile.block.value")';
+					'doc.frgm.xsd.comps.profile.block.meaning','getBooleanParam("doc.xsd.schema.comps.profile.block.meaning")';
+					'doc.frgm.xsd.comps.profile.final','getStringParam("doc.xsd.schema.comps.profile.final")';
+					'doc.frgm.xsd.comps.profile.final.value','getBooleanParam("doc.xsd.schema.comps.profile.final.value")';
+					'doc.frgm.xsd.comps.profile.final.meaning','getBooleanParam("doc.xsd.schema.comps.profile.final.meaning")';
+					'doc.frgm.xsd.comps.profile.subst','getBooleanParam("doc.xsd.schema.comps.profile.subst")';
+					'doc.frgm.xsd.comps.profile.subst.heads','getBooleanParam("doc.xsd.schema.comps.profile.subst.heads")';
+					'doc.frgm.xsd.comps.profile.subst.members','getBooleanParam("doc.xsd.schema.comps.profile.subst.members")';
+					'doc.frgm.xsd.comps.profile.nillable','getBooleanParam("doc.xsd.schema.comps.profile.nillable")';
+					'doc.frgm.xsd.comps.profile.defined','getBooleanParam("doc.xsd.schema.comps.profile.defined")';
+					'doc.frgm.xsd.comps.profile.includes','getBooleanParam("doc.xsd.schema.comps.profile.includes")';
+					'doc.frgm.xsd.comps.profile.redefines','getBooleanParam("doc.xsd.schema.comps.profile.redefines")';
+					'doc.frgm.xsd.comps.profile.redefined','getBooleanParam("doc.xsd.schema.comps.profile.redefined")';
+					'doc.frgm.xsd.comps.profile.used','getBooleanParam("doc.xsd.schema.comps.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'contextElement.id';
+						'"simpleType-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+			<TEMPLATE_CALL>
+				DESCR='element groups'
+				COND='getBooleanParam("doc.xsd.schema.comps.for.groups")'
+				TEMPLATE_FILE='../groups/groupSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.xsd.comps.sorting','getBooleanParam("doc.xsd.schema.comps.sorting")';
+					'doc.frgm.xsd.comps.annotation','getStringParam("doc.xsd.schema.comps.annotation")';
+					'doc.frgm.xsd.comps.profile','getBooleanParam("doc.xsd.schema.comps.profile")';
+					'doc.frgm.xsd.comps.profile.namespace','getBooleanParam("doc.xsd.schema.comps.profile.namespace")';
+					'doc.frgm.xsd.comps.profile.type','getBooleanParam("doc.xsd.schema.comps.profile.type")';
+					'doc.frgm.xsd.comps.profile.content','getBooleanParam("doc.xsd.schema.comps.profile.content")';
+					'doc.frgm.xsd.comps.profile.abstract','getBooleanParam("doc.xsd.schema.comps.profile.abstract")';
+					'doc.frgm.xsd.comps.profile.block','getStringParam("doc.xsd.schema.comps.profile.block")';
+					'doc.frgm.xsd.comps.profile.block.value','getBooleanParam("doc.xsd.schema.comps.profile.block.value")';
+					'doc.frgm.xsd.comps.profile.block.meaning','getBooleanParam("doc.xsd.schema.comps.profile.block.meaning")';
+					'doc.frgm.xsd.comps.profile.final','getStringParam("doc.xsd.schema.comps.profile.final")';
+					'doc.frgm.xsd.comps.profile.final.value','getBooleanParam("doc.xsd.schema.comps.profile.final.value")';
+					'doc.frgm.xsd.comps.profile.final.meaning','getBooleanParam("doc.xsd.schema.comps.profile.final.meaning")';
+					'doc.frgm.xsd.comps.profile.subst','getBooleanParam("doc.xsd.schema.comps.profile.subst")';
+					'doc.frgm.xsd.comps.profile.subst.heads','getBooleanParam("doc.xsd.schema.comps.profile.subst.heads")';
+					'doc.frgm.xsd.comps.profile.subst.members','getBooleanParam("doc.xsd.schema.comps.profile.subst.members")';
+					'doc.frgm.xsd.comps.profile.nillable','getBooleanParam("doc.xsd.schema.comps.profile.nillable")';
+					'doc.frgm.xsd.comps.profile.defined','getBooleanParam("doc.xsd.schema.comps.profile.defined")';
+					'doc.frgm.xsd.comps.profile.includes','getBooleanParam("doc.xsd.schema.comps.profile.includes")';
+					'doc.frgm.xsd.comps.profile.redefines','getBooleanParam("doc.xsd.schema.comps.profile.redefines")';
+					'doc.frgm.xsd.comps.profile.redefined','getBooleanParam("doc.xsd.schema.comps.profile.redefined")';
+					'doc.frgm.xsd.comps.profile.used','getBooleanParam("doc.xsd.schema.comps.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'contextElement.id';
+						'"group-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+			<TEMPLATE_CALL>
+				DESCR='attributes'
+				COND='getBooleanParam("doc.xsd.schema.comps.for.attributes")'
+				TEMPLATE_FILE='../attribute/attributeSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.xsd.comps.sorting','getBooleanParam("doc.xsd.schema.comps.sorting")';
+					'doc.frgm.xsd.comps.annotation','getStringParam("doc.xsd.schema.comps.annotation")';
+					'doc.frgm.xsd.comps.profile','getBooleanParam("doc.xsd.schema.comps.profile")';
+					'doc.frgm.xsd.comps.profile.namespace','getBooleanParam("doc.xsd.schema.comps.profile.namespace")';
+					'doc.frgm.xsd.comps.profile.type','getBooleanParam("doc.xsd.schema.comps.profile.type")';
+					'doc.frgm.xsd.comps.profile.content','getBooleanParam("doc.xsd.schema.comps.profile.content")';
+					'doc.frgm.xsd.comps.profile.abstract','getBooleanParam("doc.xsd.schema.comps.profile.abstract")';
+					'doc.frgm.xsd.comps.profile.block','getStringParam("doc.xsd.schema.comps.profile.block")';
+					'doc.frgm.xsd.comps.profile.block.value','getBooleanParam("doc.xsd.schema.comps.profile.block.value")';
+					'doc.frgm.xsd.comps.profile.block.meaning','getBooleanParam("doc.xsd.schema.comps.profile.block.meaning")';
+					'doc.frgm.xsd.comps.profile.final','getStringParam("doc.xsd.schema.comps.profile.final")';
+					'doc.frgm.xsd.comps.profile.final.value','getBooleanParam("doc.xsd.schema.comps.profile.final.value")';
+					'doc.frgm.xsd.comps.profile.final.meaning','getBooleanParam("doc.xsd.schema.comps.profile.final.meaning")';
+					'doc.frgm.xsd.comps.profile.subst','getBooleanParam("doc.xsd.schema.comps.profile.subst")';
+					'doc.frgm.xsd.comps.profile.subst.heads','getBooleanParam("doc.xsd.schema.comps.profile.subst.heads")';
+					'doc.frgm.xsd.comps.profile.subst.members','getBooleanParam("doc.xsd.schema.comps.profile.subst.members")';
+					'doc.frgm.xsd.comps.profile.nillable','getBooleanParam("doc.xsd.schema.comps.profile.nillable")';
+					'doc.frgm.xsd.comps.profile.defined','getBooleanParam("doc.xsd.schema.comps.profile.defined")';
+					'doc.frgm.xsd.comps.profile.includes','getBooleanParam("doc.xsd.schema.comps.profile.includes")';
+					'doc.frgm.xsd.comps.profile.redefines','getBooleanParam("doc.xsd.schema.comps.profile.redefines")';
+					'doc.frgm.xsd.comps.profile.redefined','getBooleanParam("doc.xsd.schema.comps.profile.redefined")';
+					'doc.frgm.xsd.comps.profile.used','getBooleanParam("doc.xsd.schema.comps.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'contextElement.id';
+						'"attribute-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+			<TEMPLATE_CALL>
+				DESCR='attribute groups'
+				COND='getBooleanParam("doc.xsd.schema.comps.for.attributeGroups")'
+				TEMPLATE_FILE='../groups/attributeGroupSummary.tpl'
+				PASSED_PARAMS={
+					'doc.frgm.xsd.comps.sorting','getBooleanParam("doc.xsd.schema.comps.sorting")';
+					'doc.frgm.xsd.comps.annotation','getStringParam("doc.xsd.schema.comps.annotation")';
+					'doc.frgm.xsd.comps.profile','getBooleanParam("doc.xsd.schema.comps.profile")';
+					'doc.frgm.xsd.comps.profile.namespace','getBooleanParam("doc.xsd.schema.comps.profile.namespace")';
+					'doc.frgm.xsd.comps.profile.type','getBooleanParam("doc.xsd.schema.comps.profile.type")';
+					'doc.frgm.xsd.comps.profile.content','getBooleanParam("doc.xsd.schema.comps.profile.content")';
+					'doc.frgm.xsd.comps.profile.abstract','getBooleanParam("doc.xsd.schema.comps.profile.abstract")';
+					'doc.frgm.xsd.comps.profile.block','getStringParam("doc.xsd.schema.comps.profile.block")';
+					'doc.frgm.xsd.comps.profile.block.value','getBooleanParam("doc.xsd.schema.comps.profile.block.value")';
+					'doc.frgm.xsd.comps.profile.block.meaning','getBooleanParam("doc.xsd.schema.comps.profile.block.meaning")';
+					'doc.frgm.xsd.comps.profile.final','getStringParam("doc.xsd.schema.comps.profile.final")';
+					'doc.frgm.xsd.comps.profile.final.value','getBooleanParam("doc.xsd.schema.comps.profile.final.value")';
+					'doc.frgm.xsd.comps.profile.final.meaning','getBooleanParam("doc.xsd.schema.comps.profile.final.meaning")';
+					'doc.frgm.xsd.comps.profile.subst','getBooleanParam("doc.xsd.schema.comps.profile.subst")';
+					'doc.frgm.xsd.comps.profile.subst.heads','getBooleanParam("doc.xsd.schema.comps.profile.subst.heads")';
+					'doc.frgm.xsd.comps.profile.subst.members','getBooleanParam("doc.xsd.schema.comps.profile.subst.members")';
+					'doc.frgm.xsd.comps.profile.nillable','getBooleanParam("doc.xsd.schema.comps.profile.nillable")';
+					'doc.frgm.xsd.comps.profile.defined','getBooleanParam("doc.xsd.schema.comps.profile.defined")';
+					'doc.frgm.xsd.comps.profile.includes','getBooleanParam("doc.xsd.schema.comps.profile.includes")';
+					'doc.frgm.xsd.comps.profile.redefines','getBooleanParam("doc.xsd.schema.comps.profile.redefines")';
+					'doc.frgm.xsd.comps.profile.redefined','getBooleanParam("doc.xsd.schema.comps.profile.redefined")';
+					'doc.frgm.xsd.comps.profile.used','getBooleanParam("doc.xsd.schema.comps.profile.used")';
+				}
+				FMT={
+					sec.spacing.before='10';
+				}
+				<HTARGET>
+					HKEYS={
+						'contextElement.id';
+						'"attributeGroup-summary"';
+					}
+				</HTARGET>
+			</TEMPLATE_CALL>
+		</BODY>
+	</FOLDER>
+	<FOLDER>
+		DESCR='XML SOURCE'
+		COND='getParam("doc.xsd.schema.xml") != "none"
+&&
+! getBooleanParam("doc.xsd.schema.xml.separate")
+&&
+(getParam("doc.xsd.schema.xml") != "xsd" || ! hasServiceAttr ("embedded"))'
+		CONTEXT_ELEMENT_EXPR='hasServiceAttr ("embedded") ? 
+  contextElement : getXMLDocument()'
+		MATCHING_ETS={'#DOCUMENT';'xs:schema'}
+		COLLAPSED
+		FMT={
+			sec.spacing.before='11.7';
+		}
+		<HTARGET>
+			COND='! hasServiceAttr ("embedded")'
+			HKEYS={
+				'getXMLDocument().id';
+				'"xml-source"';
+			}
+		</HTARGET>
+		<HTARGET>
+			HKEYS={
+				'contextElement.id';
+				'"xml-source"';
+			}
+		</HTARGET>
+		<BODY>
+			<AREA_SEC>
+				COND='getBooleanParam("doc.xsd.schema.xml.box")'
+				BREAK_PARENT_BLOCK='when-executed'
+				FMT={
+					sec.outputStyle='table';
+					table.sizing='Relative';
+					table.autofit='false';
+					table.cell.padding.both='3.3';
+					table.bkgr.color='#F5F5F5';
+					table.border.style='solid';
+					table.border.color='#999999';
+					table.option.borderStylesInHTML='true';
+				}
+				<AREA>
+					<CTRL_GROUP>
+						<CTRLS>
+							<SS_CALL_CTRL>
+								SS_NAME='XML Source'
+								FMT={
+									ctrl.size.width='499.5';
+									ctrl.size.height='17.3';
+								}
+							</SS_CALL_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+			<SS_CALL>
+				SS_NAME='XML Source'
+			</SS_CALL>
+		</BODY>
+		<HEADER>
+			<AREA_SEC>
+				FMT={
+					sec.outputStyle='table';
+					table.sizing='Relative';
+				}
+				<AREA>
+					<SPACER>
+						FMT={
+							spacer.height='10';
+						}
+					</SPACER>
+					<CTRL_GROUP>
+						<CTRLS>
+							<PANEL>
+								FMT={
+									ctrl.size.width='499.5';
+									ctrl.size.height='41.3';
+									tcell.bkgr.color='#CCCCFF';
+									par.style='s1';
+								}
+								<AREA>
+									<CTRL_GROUP>
+										<CTRLS>
+											<TEXT_CTRL>
+												TEXT='XML Source'
+											</TEXT_CTRL>
+											<DELIMITER>
+												FMT={
+													text.style='cs1';
+												}
+											</DELIMITER>
+											<TEMPLATE_CALL_CTRL>
+												TEMPLATE_FILE='../../xml/sourceNote.tpl'
+												PASSED_PARAMS={
+													'$remove.xsd.anns','getBooleanParam("doc.xsd.schema.xml.remove.xsd.anns")';
+												}
+												FMT={
+													text.style='cs5';
+												}
+											</TEMPLATE_CALL_CTRL>
+										</CTRLS>
+									</CTRL_GROUP>
+								</AREA>
+							</PANEL>
+						</CTRLS>
+					</CTRL_GROUP>
+					<SPACER>
+						FMT={
+							spacer.height='8.3';
+						}
+					</SPACER>
+				</AREA>
+			</AREA_SEC>
+		</HEADER>
+	</FOLDER>
+	<TEMPLATE_CALL>
+		DESCR='Bottom Message'
+		COND='output.type == "document" && getBooleanParam("show.about")'
+		TEMPLATE_FILE='../../about.tpl'
+	</TEMPLATE_CALL>
+</ROOT>
+<STOCK_SECTIONS>
+	<FOLDER>
+		SS_NAME='XML Source'
+		MATCHING_ETS={'#DOCUMENT';'xs:schema'}
+		<BODY>
+			<TEMPLATE_CALL>
+				DESCR='case of embedded schema'
+				MATCHING_ET='xs:schema'
+				BREAK_PARENT_BLOCK='when-executed'
+				TEMPLATE_FILE='../../xml/nodeSource.tpl'
+				PASSED_PARAMS={
+					'$remove.xsd.anns','getBooleanParam("doc.xsd.schema.xml.remove.xsd.anns")';
+				}
+			</TEMPLATE_CALL>
+			<TEMPLATE_CALL>
+				DESCR='case of XSD file'
+				MATCHING_ET='#DOCUMENT'
+				TEMPLATE_FILE='../../xml/documentSource.tpl'
+				PASSED_PARAMS={
+					'$bookmark.elements','true';
+					'$bookmark.xmlns','true';
+					'$remove.xsd.anns','getBooleanParam("doc.xsd.schema.xml.remove.xsd.anns")';
+				}
+			</TEMPLATE_CALL>
+		</BODY>
+	</FOLDER>
+</STOCK_SECTIONS>
+CHECKSUM='Ph7ChcuFPAcp+vaT2jmHWgeM?yNJ5QM1udeiDzo5oDA'
+</DOCFLEX_TEMPLATE>

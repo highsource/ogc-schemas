@@ -1,0 +1,33 @@
+Specify whether to show all <b>actual facets</b> that restrict a possible value allowed for this attribute.
+<p>
+The list of actual facets is produced as the following.
+<p>
+First, the initial facets are collected by all types starting from the type assigned to the attribute
+throughout the chain of all its ancestor types (both global and anonymous) until the top ancestor passed
+or a derivation by list or union reached.
+<p>
+Further, the produced sequence of facets is filtered so as the facets collected earliest
+(that is defined in lower descendant types) remain and those overridden by them are removed.
+In particular:
+<ol>
+<li>
+  All <code>xs:pattern</code> facets will remain, because the attribute value must match all of them.
+</li>
+<li>
+  The <code>xs:enumeration</code> facets will remain those that are defined in the same type,
+  which is either the attribute type itself or the one nearest to it.
+</li>
+<li>
+  All other facets will override the same facets defined in the ancestor types.
+</li>
+</ol>
+
+<b>Nested Parameter:</b>
+<dl><dd>
+Specifies whether to show the annotation of each facet.
+</dd></dl>
+
+<b>See Also:</b>
+<dl><dd>
+Parameter <i>"Attribute Detail | Type Detail | Simple Content Derivation | Facets"</i>
+</dd></dl>

@@ -1,0 +1,13 @@
+Specify whether to show the attribute fixed value.
+<p>
+The default value is provided by the <code>'fixed'</code> attribute
+specified in the XSD element of the attribute declaration.
+For example:
+<dl><dd>
+<code>&lt;xs:attribute name="version" type="xs:string" <b>fixed="2.0"</b>/&gt;</code>
+</dd></dl>
+
+When the attribute is defined by reference to a global attribute, its fixed value can be specified either 
+in the local reference component (which is being documented here) or in the global (referenced)
+attribute component.
+In that case, the <code>fixed</code> attribute is searched for in the both components.

@@ -1,0 +1,882 @@
+<?xml version="1.0"?> 
+
+<xs:schema targetNamespace="http://www.geocities.com/palaeoanthropology"
+	xmlns="http://www.geocities.com/palaeoanthropology"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"> 
+
+<xs:annotation> 
+	<xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+<font size="-1"><i><b>Notice:</b> All scientific texts and most of the images presented here were borrowed from the following website:
+<a href="http://www.geocities.com/palaeoanthropology/palaeo.html" target="_blank">http://www.geocities.com/palaeoanthropology/</a>.
+FILIGRIS WORKS respects and appreciates the work of the site author.</i></font>
+<p align="center">
+<img src="images/evolution.gif" usemap="#evolution"/>
+<map name="evolution">
+  <area shape="rect" coords="57,12,98,37" href="complexTypes/HomoSapiens.html"/>
+  <area shape="rect" coords="131,37,180,75" href="complexTypes/HomoNeandertalensis.html"/>
+  <area shape="rect" coords="101,130,150,169" href="complexTypes/HomoHeidelbergensis.html"/>
+  <area shape="rect" coords="216,173,290,186" href="complexTypes/HomoErectus.html"/>
+  <area shape="rect" coords="42,374,122,387" href="complexTypes/HomoErgaster.html"/>
+  <area shape="rect" coords="248,478,316,491" href="complexTypes/HomoHabilis.html"/>
+  <area shape="rect" coords="105,490,163,513" href="complexTypes/HomoRudolfensis.html"/>
+  <area shape="rect" coords="296,424,386,448" href="complexTypes/AustralopithecusBoisei.html"/>
+  <area shape="rect" coords="385,625,474,647" href="complexTypes/AustralopithecusAethiopicus.html"/>
+  <area shape="rect" coords="173,666,263,691" href="complexTypes/AustralopithecusAfricanus.html"/>
+  <area shape="rect" coords="196,850,286,876" href="complexTypes/AustralopithecusAfarensis.html"/>
+  <area shape="rect" coords="240,1015,329,1039" href="complexTypes/AustralopithecusAnamensis.html"/>
+  <area shape="rect" coords="305,1107,372,1132" href="complexTypes/ArdipithecusRamidus.html"/>
+</map>
+</p>
+	</xs:documentation> 
+</xs:annotation> 
+
+<!--~~~~~~~~~~~~~~~~~~~~~~-->
+<!-- Ardipithecus Ramidus -->
+<!--~~~~~~~~~~~~~~~~~~~~~~-->
+
+<xs:complexType name="ArdipithecusRamidus"> 
+<xs:annotation>
+	<xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+<img src="images/aramidus.jpg" align="left"/>
+<i>Ardipithecus ramidus</i> is the earliest hominid found so far and was discovered in
+<a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Aramis</a>,
+in the Middle Awash region of Ethiopia in 1994 by Tim White and his two colleagues,
+Gen Suwa and Berhane Asfaw. <i>Ardipithecus ramidus</i> translates literally as
+"ground man-root" and is thought to be 4.4 to 4.5 million years old. Originally 
+it was named as a member of the Australopithecine family, but it was later decided
+that this species differed too much from other australopithecines.
+<p/>
+However, even though the possibility has been raised that <i>ramidus</i> might even
+be an ape, it is fairly sure that it is a hominid, as the very earliest hominines
+were expected to be apelike (or even possibly chimplike) in many ways such as
+dentition anyway. It has thus been decided that <i>Ardipithecus ramidus</i>
+was <b>not</b> a direct ancestor to later hominids.
+<br clear="left"/>
+	</xs:documentation>
+</xs:annotation>
+
+<xs:attribute name="height" type="xs:decimal"/>
+<xs:attribute name="weight" type="xs:decimal"/>
+<xs:attribute name="physique" type="xs:string"/>
+<xs:attribute name="cranialVolume" type="xs:integer"/>
+<xs:attribute name="knownDate" type="xs:gYear"/>
+<xs:attribute name="distribution" type="xs:string"/>
+<xs:attribute name="skullForm" type="xs:string"/>
+
+</xs:complexType> 
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!-- Australopithecus Anamensis -->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<xs:complexType name="AustralopithecusAnamensis"> 
+<xs:annotation> 
+	<xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+<img src="images/aanamensis.jpg" align="left"/>
+This hominine species was discovered in 1994 by
+<a href="http://www.benedictine.edu/mleakey.html" target="_blank">Maeve Leakey</a> in
+<a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Kanapoi and Allia Bay</a>,
+situated in North Kenya. It was named <i>Australopithecus anamensis</i>
+from "<i>anam</i>" meaning "lake" in the local Turkana language. The fossils 
+(9 from Kanapoi and 12 from Allia Bay) include upper and lower jaws, 
+cranial fragments, and the upper and lower parts of a leg bone (tibia). 
+In addition to this, the collection includes a fragment of humerus that
+was found 30 years ago at the same site at Kanapoi.
+<p/>
+It was found along the East African Rift valley and due to the dating of
+this hominine species, <i>Australopithecus anamensis</i> could possibly 
+be an ancestor to "Lucy" and counterparts.
+<br clear="left"/>
+	</xs:documentation>
+</xs:annotation>
+<xs:complexContent>
+	<xs:extension base="ArdipithecusRamidus"/>
+</xs:complexContent>
+</xs:complexType> 
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!-- Australopithecus Afarensis -->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<xs:complexType name="AustralopithecusAfarensis"> 
+<xs:annotation> 
+	<xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+<img src="images/aafarensis.jpg" align="left"/>
+Until recently, the earliest known hominine for which sufficient diagnostic
+anatomical evidence was available was <i>Australopithecus afarensis</i>, 
+fossils of which have been found in 
+<a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Ethiopia, Tanzania, and Kenya</a>, 
+and most of which date between 2.9 and 3.9 million years.
+New finds of fossils as old or older than <i>A. afarensis</i>
+have been made in Ethiopia, Kenya, and Chad. These speciments,
+which are sufficiently different from <i>A. afarensis</i>
+to have been named a new species, include the following:
+<a href="http://www.geocities.com/palaeoanthropology/Aramidus.html" target="_blank"><i>Ardipithecus ramidus</i></a>
+from Ethiopia, dated at 4.4 million years;
+<a href="http://www.geocities.com/palaeoanthropology/Aanamensis.html" target="_blank"><i>Australopithecus anamensis</i></a>
+from Kenya, with an age range of 4.2 to 3.9 million years; and <i>Australopithecus bahrelghazali</i>
+from Chad, with an age estimate of 3 to 3.5 million years.
+<p/>
+The first <i>afarensis</i> fossils were found in the mid 1970s.
+Their initial interpretation was controversial and remains so today, 
+albeit to a lesser degree. While many anthropologists accept that 
+the multitude of fossil specimens that have been attributed to <i>afarensis</i>
+do indeed represent a single, sexually dimorphic species, others believe 
+that the fossils belong to two, and perhaps more, species. For a long time 
+<i>afarensis</i> was assumed to have represented the founding species 
+of the hominine clade and the ancestor of all later species.
+<p/>
+<table width="100%" cellpadding="4" cellspacing="2" border="1">
+<tr valign="top">
+	<td><u>Height</u></td>
+	<td>1.0 &#8211; 1.5 metres</td>
+</tr>
+<tr valign="top">
+	<td><u>Weight</u></td>
+	<td>30 &#8211; 70 kg</td>
+</tr>
+<tr valign="top">
+	<td><u>Cranial Volume</u></td>
+	<td>400 &#8211; 500 cm&#179;</td>
+</tr>
+<tr valign="top">
+	<td><u>Known Date</u></td>
+	<td>4.0 &#8211; 2.5 million years ago</td>
+</tr>
+<tr valign="top">
+	<td><u>Distribution</u></td>
+	<td>Eastern Africa</td>
+</tr>
+<tr valign="top">
+	<td><u>Physique</u></td>
+	<td>Light build; some ape-like features</td>
+</tr>
+<tr valign="top">
+	<td><u>Skull form</u></td>
+	<td>Low, flat forehead; projecting face; prominent brow ridges</td>
+</tr>
+<tr valign="top">
+	<td><u>Jaws/Teeth</u></td>
+	<td>Relatively large incisors and canines; gap between upper incisors and canines; moderate-sized molars</td>
+</tr>
+<tr valign="top">
+	<td><u>Sexual Dimorphism</u></td>
+	<td>Marked to moderate</td>
+</tr>
+</table>
+	</xs:documentation> 
+</xs:annotation> 
+<xs:complexContent>
+	<xs:extension base="AustralopithecusAnamensis"/>
+</xs:complexContent>
+</xs:complexType> 
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!-- Australopithecus Aethiopicus -->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<xs:complexType name="AustralopithecusAethiopicus">
+<xs:annotation> 
+	<xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+In 1985, a cranium was found by Alan Walker at the west side of 
+<a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Lake Turkana in Northern Tanzania</a>
+and was named <i>Australopithecus aethiopicus</i>.
+The cranium was as robust as any yet known, but was 2.5 million years old.
+Clearly, the huge molars, flared cheek bones, and dished face could not be the 
+end-product of an evolutionary line if it were present at the origin of that 
+supposed line. How this discovery affects the shape of the hominie family tree 
+remains under discussion today.
+	</xs:documentation> 
+</xs:annotation> 
+<xs:complexContent>
+	<xs:extension base="AustralopithecusAfarensis"/>
+</xs:complexContent>
+</xs:complexType> 
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!-- Australopithecus Boisei -->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<xs:complexType name="AustralopithecusBoisei">
+<xs:annotation> 
+	<xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+<img src="images/aboisei.jpg" align="left"/>
+In 1959, <a href="http://www.talkorigins.org/faqs/homs/mleakey.html" target="_blank">Mary Leakey</a>
+made the first hominine discovery in East Africa at the
+<a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Olduvai Gorge in Tanzania</a>
+which resembled the robust australopithecines already found in South Africa.
+After reconstructing the skull which was built up out of hundreds of fragments,
+it was found that this specimen was even more "robust" than its southern relatives.
+At first, it was named <i>Zinjanthropus boisei</i>, but later changed to <i>Australopithecus boisei</i>.
+There is still however a lively debate over the genus name and this species 
+is also often referred to as <i>Paranthropus boisei</i>.
+A common perception is that the robust species of australopithecine differs 
+sufficiently from the gracile type to warrant a different genus name.
+<br clear="all"/>
+<p/>
+<table width="100%" cellpadding="4" cellspacing="2" border="1">
+<tr valign="top">
+	<td><u>Height</u></td>
+	<td>1.2 &#8211; 1.4 metres</td>
+</tr>
+<tr valign="top">
+	<td><u>Weight</u></td>
+	<td>40 &#8211; 80 kg</td>
+</tr>
+<tr valign="top">
+	<td><u>Cranial Volume</u></td>
+	<td>410 &#8211; 530 cm&#179;</td>
+</tr>
+<tr valign="top">
+	<td><u>Known Date</u></td>
+	<td>2.6 &#8211; 1.2 million years ago</td>
+</tr>
+<tr valign="top">
+	<td><u>Distribution</u></td>
+	<td>Eastern Africa</td>
+</tr>
+<tr valign="top">
+	<td><u>Physique</u></td>
+	<td>Very heavy build; relatively long arms</td>
+</tr>
+<tr valign="top">
+	<td><u>Skull form</u></td>
+	<td>Prominent crests on top and back of skull; very long, broad, flattish face; strong facial buttressing</td>
+</tr>
+<tr valign="top">
+	<td><u>Jaws/Teeth</u></td>
+	<td>Very thick jaws; small incisors and canines; large, molar-like premolars; very large molars</td>
+</tr>
+<tr valign="top">
+	<td><u>Sexual Dimorphism</u></td>
+	<td>Marked sexual dimorphism</td>
+</tr>
+</table>
+	</xs:documentation> 
+</xs:annotation> 
+<xs:complexContent>
+	<xs:extension base="AustralopithecusAethiopicus"/>
+</xs:complexContent>
+</xs:complexType> 
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!-- Australopithecus Africanus -->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<xs:complexType name="AustralopithecusAfricanus">
+<xs:annotation> 
+	<xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+<img src="images/aafricanus.jpg" align="left"/>
+An Australian anatomist at the University of the Witwatersrand, 
+Johannesburg, South Africa, named 
+<a href="http://www.talkorigins.org/faqs/homs/rdart.html" target="_blank">Raymond Dart</a>, 
+discovered the first australopithecine in November 1924 and published his 
+interpretation of it in the journal <i>Nature</i> in February 1925. The fossil 
+was that of an immature apelike individual and was found at a lime quarry at 
+<a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Taung</a>,
+southwest of Johannesburg. The fossil existed of the face, part of the cranium,
+the complete lower jaw and a brain endocast, formed when sand inside the skull 
+hardened to rock, recording the shape of the brain.
+<p/>
+In the <i>Nature</i> paper published by Dart, he stated that the Taung individual
+was an earlier form of human, and named it <i>Australopithecus africanus</i>
+("southern ape from Africa"). When a Scottish paleontologist named Robert Broom,
+joined in the search for early hominid fossils with Dart, they soon discovered
+other examples of australopithecine. <i>Australopithecus africanus</i> appeared
+to be apelike in having a protruding face and small brain, but had distinctly 
+unapelike dentition, including small canines and large, flat molars.
+A bipedal posture was again indicated by the central position of the foramen
+magnum, and by the anatomy of the spine, pelvis, and femur.
+<p/>
+<table width="100%" cellpadding="4" cellspacing="2" border="1">
+<tr valign="top">
+	<td><u>Height</u></td>
+	<td>1.1 &#8211; 1.4 metres</td>
+</tr>
+<tr valign="top">
+	<td><u>Weight</u></td>
+	<td>30 &#8211; 60 kg</td>
+</tr>
+<tr valign="top">
+	<td><u>Cranial Volume</u></td>
+	<td>400 &#8211; 500 cm&#179;</td>
+</tr>
+<tr valign="top">
+	<td><u>Known Date</u></td>
+	<td>3.0 &#8211; 2.5 million years ago</td>
+</tr>
+<tr valign="top">
+	<td><u>Distribution</u></td>
+	<td>Southern Africa</td>
+</tr>
+<tr valign="top">
+	<td><u>Physique</u></td>
+	<td>Light build; probably relatively long arms; more "human" features</td>
+</tr>
+<tr valign="top">
+	<td><u>Skull form</u></td>
+	<td>Higher forehead; shorter face; brow ridges less prominent</td>
+</tr>
+<tr valign="top">
+	<td><u>Jaws/Teeth</u></td>
+	<td>Small incisor-like canines; no gap between upper incisors and canines; larger molars</td>
+</tr>
+<tr valign="top">
+	<td><u>Sexual Dimorphism</u></td>
+	<td>Probably less than <i>A. afarensis</i></td>
+</tr>
+</table>
+	</xs:documentation> 
+</xs:annotation> 
+<xs:complexContent>
+	<xs:extension base="AustralopithecusAfarensis"/>
+</xs:complexContent>
+</xs:complexType> 
+
+<!--~~~~~~~~~~~~~~~~~~-->
+<!-- Homo Rudolfensis -->
+<!--~~~~~~~~~~~~~~~~~~-->
+
+<xs:complexType name="HomoRudolfensis">
+<xs:annotation> 
+	<xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+<img src="images/hrudolfensis.jpg" align="left"/>
+In October 1993, an international team of paleontologists discovered a partial hominine mandible near 
+<a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Lake Malawi</a>. 
+The mandible was less robust than that in australopithecines and the cheek teeth smaller,
+indicating that it was closely associated with <i>Homo</i>. 
+The authors named this specimen <i>Homo rudolfensis</i>, a contemporary of 
+<a href="http://www.geocities.com/palaeoanthropology/Hhabilis.html" target="_blank"><i>Homo habilis</i></a>
+which was found at <a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Lake Turkana</a>.
+The Malawi hominid, together with other fauna that are characteristic of Eastern Africa,
+indicate significant fauna movement between the two regions.
+<p/>
+<i>Homo rudolfensis</i> had a flatter, broader face and broader postcanine teeth with more complex
+crowns and roots, and thicker enamel. This species also had a larger cranium.
+All the non-australopithecine speciments found at Olduvai Gorge are known to be 
+<i>Homo habilis</i>, whereas the ones found at Lake Turkana can be divided between
+<i>Homo habilis</i> and <i>Homo rudolfensis.</i>
+<p/>
+There is now a general agreement that two species of <i>Homo</i>
+coexisted 2 million years ago. Although the taxonomic distinction is based 
+principally on cranial and dental characters, it is useful to think of <i>Homo habilis</i> 
+as a smaller-brained creature with an archaic postcranium, and <i>Homo rudolfensis</i>
+as larger-brained with a more modern postcranium. Which of the two (if either) 
+gave rise to later <i>Homo</i>is still being debated. <i>Homo rudolfensis</i>
+appears to have a good claim based on brain size and the more modern postcranium,
+but some insist that its facial and dental anatomy disqualify it from this role.
+<p/>
+<table width="100%" cellpadding="4" cellspacing="2" border="1">
+<tr valign="top">
+	<td><u>Height</u></td>
+	<td>Ca. 1.5 metres</td>
+</tr>
+<tr valign="top">
+	<td><u>Physique</u></td>
+	<td>Robust, but "human" skeleton</td>
+</tr>
+<tr valign="top">
+	<td><u>Cranial Volume</u></td>
+	<td>600 &#8211; 800 cm&#179;</td>
+</tr>
+<tr valign="top">
+	<td><u>Known Date</u></td>
+	<td>2.4 &#8211; 1.6 million years ago</td>
+</tr>
+<tr valign="top">
+	<td><u>Distribution</u></td>
+	<td>Eastern Africa</td>
+</tr>
+<tr valign="top">
+	<td><u>Skull form</u></td>
+	<td>Larger, flatter face</td>
+</tr>
+<tr valign="top">
+	<td><u>Jaws/Teeth</u></td>
+	<td>Robust jaw; large narrow molars</td>
+</tr>
+</table>
+	</xs:documentation> 
+</xs:annotation> 
+<xs:complexContent>
+	<xs:extension base="AustralopithecusAfricanus"/>
+</xs:complexContent>
+</xs:complexType> 
+
+<!--~~~~~~~~~~~~~~-->
+<!-- Homo Habilis -->
+<!--~~~~~~~~~~~~~~-->
+
+<xs:complexType name="HomoHabilis">
+<xs:annotation> 
+	<xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+<img src="images/hhabilis.jpg" align="left"/>
+The early discoveries of early hominid fossils were made at 
+<a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Olduvai Gorge</a>, 
+by the <a href="http://www.leakeyfoundation.org/" target="_blank">Leakeys</a>. Not long after 
+<a href="http://www.talkorigins.org/faqs/homs/mleakey.html" target="_blank">Mary Leakey</a>
+had found 
+<a href="http://www.geocities.com/palaeoanthropology/Aboisei.html" target="_blank"><i>Australopithecus boisei</i></a>,
+<a href="http://www.talkorigins.org/faqs/homs/lleakey.html" target="_blank">Louis Leakey</a> 
+found fossils which he thought were the makers of the stone tools found in the gorge. 
+At first he had attributed <i>Australopithecus boisei</i>
+with the stone artifacts discovered in the gorge, but when the hominid fossils 
+were finally found, he immediately realised that this was not the case.
+<p/>
+The fossils were thought to be slightly older than <i>Australopithecus boisei</i>
+(about 1.75 million years) and in addition, the teeth were smaller and the brain 
+was calculated to be significantly larger. Louis Leakey became convinced that these 
+fossils were in fact the ancestors of modern humans. It was determined that 
+<i>Homo habilis</i> (as the fossils were named) overlapped with the robust australopithecines 
+for roughly 1 million years. <i>Homo habilis</i> 
+means "handy man" and was suggested to them by Raymond Dart.
+<p/>
+A series of anatomical characters is to be found uniquely in <i>Homo</i>
+&#8211; for example, an increase in cranial vault height and thickness, reduced lower 
+facial prognathism, and reduction in the size of premolars and molars and the length 
+of the molar row &#8211; but what has always stood out the most is brain size.
+<p/>
+<table width="100%" cellpadding="4" cellspacing="2" border="1">
+<tr valign="top">
+	<td><u>Height</u></td>
+	<td>1.0 metres</td>
+</tr>
+<tr valign="top">
+	<td><u>Physique</u></td>
+	<td>Relatively long arms</td>
+</tr>
+<tr valign="top">
+	<td><u>Cranial Volume</u></td>
+	<td>500 &#8211; 650 cm&#179;</td>
+</tr>
+<tr valign="top">
+	<td><u>Known Date</u></td>
+	<td>2.0 &#8211; 1.6 million years ago</td>
+</tr>
+<tr valign="top">
+	<td><u>Distribution</u></td>
+	<td>Eastern (+Southern?) Africa</td>
+</tr>
+<tr valign="top">
+	<td><u>Skull form</u></td>
+	<td>Relatively small face; nose developed</td>
+</tr>
+<tr valign="top">
+	<td><u>Jaws/Teeth</u></td>
+	<td>Thinner jaw; smaller, narrow molars</td>
+</tr>
+</table>
+	</xs:documentation> 
+</xs:annotation> 
+<xs:complexContent>
+	<xs:extension base="AustralopithecusAfricanus"/>
+</xs:complexContent>
+</xs:complexType> 
+
+<!--~~~~~~~~~~~~~~~-->
+<!-- Homo Ergaster -->
+<!--~~~~~~~~~~~~~~~-->
+
+<xs:complexType name="HomoErgaster">
+<xs:annotation> 
+	<xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+<img src="images/hergaster.jpg" align="left"/>
+One of the most famous finds at 
+<a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Lake Turkana, Northern Kenya</a>, 
+is the cranium of an early species of <i>Homo</i>, known as 
+<a href="http://www.geocities.com/palaeoanthropology/Aboisei.html" target="_blank"><i>Australopithecus boisei</i></a>. 
+However, in the same sedimentary layer, another cranium was also found belonging 
+to a species of hominid named <i>Homo ergaster</i>.
+This hominid species is believed to be a different geographical population of 
+<a href="http://www.geocities.com/palaeoanthropology/Herectus.html" target="_blank"><i>Homo erectus</i></a>.
+<p/>
+Many aspects of <i>Homo ergaster</i> and 
+<a href="http://www.geocities.com/palaeoanthropology/Herectus.html" target="_blank"><i>Homo erectus</i></a>
+anatomy are, of course, similar, with the principal differences being a higher cranial 
+vault, thinner cranial bone, absence of sagittal keel, and certain cranial base 
+characteristics in <i>Homo ergaster</i>.
+One distinguishing feature between early <i>Homo</i> and <i>ergaster</i>/<i>erectus</i>
+involves increased brain size (ranging between 850 and 1100 cm&#179;, 
+with an increase over time), although the increase in body size actually 
+means that the relative brain size has increased but little.
+<p/>
+Other distinguishing features include a long, low cranium (particularly in <i>Homo erectus</i>),
+the presence of brow ridges, a shortened face, and a projecting nasal aperture, suggesting 
+the first appearance of the typical human external nose with the nostrils facing downward.
+The structure of the nose would permit the condensation of moisture from exhaled air, 
+which would have proved beneficial in a species that pursued an active subsistence 
+strategy in warm, arid habitats, such as those occupied by early <i>Homo ergaster</i>.
+<p/>
+Early <i>Homo</i> gave rise to a large-bodied, large-brained speices in Africa approximately
+2 million years ago, but this species is now called <i>Homo ergaster</i> 
+by many anthropologists. <i>Homo ergaster</i>
+expanded its range beyond Africa and into Asia soon after its origin 
+and at least by 1.8 million years ago; it then gave rise to <i>Homo erectus</i> in those areas. 
+<a href="http://www.geocities.com/palaeoanthropology/Herectus.html" target="_blank"><i>Homo erectus</i></a>
+expanded its range throughout Asia, back into Africa, and presumably into Europe. 
+Approximately 150,000 years ago, a speciation event in Africa gave rise to 
+<a href="http://www.geocities.com/palaeoanthropology/Hsapiens.html" target="_blank"><i>Homo sapiens</i></a> 
+(probably from <i>Homo ergaster</i>, but possibly from <i>Homo erectus</i>), 
+which then spread into the rest of the Old World, and subsequently into Australia and the Americas.
+<p/>
+<table width="100%" cellpadding="4" cellspacing="2" border="1">
+<tr valign="top">
+	<td><u>Height</u></td>
+	<td>1.3 &#8211; 1.7 metres</td>
+</tr>
+<tr valign="top">
+	<td><u>Physique</u></td>
+	<td>Robust, but "human" skeleton</td>
+</tr>
+<tr valign="top">
+	<td><u>Cranial Volume</u></td>
+	<td>750 &#8211; 1250 cm&#179;</td>
+</tr>
+<tr valign="top">
+	<td><u>Known Date</u></td>
+	<td>1.8 &#8211; 1.2 million years ago</td>
+</tr>
+<tr valign="top">
+	<td><u>Distribution</u></td>
+	<td>Africa into Asia</td>
+</tr>
+<tr valign="top">
+	<td><u>Skull form</u></td>
+	<td>Higher cranial vault, thinner cranial bone, absence of sagittal keel and certain cranial base characteristics</td>
+</tr>
+<tr valign="top">
+	<td><u>Jaws/Teeth</u></td>
+	<td>Robust jaw in larger individuals; smaller teeth than <i>H. habilis</i></td>
+</tr>
+</table>
+	</xs:documentation> 
+</xs:annotation> 
+<xs:complexContent>
+	<xs:extension base="HomoRudolfensis"/>
+</xs:complexContent>
+</xs:complexType> 
+
+<!--~~~~~~~~~~~~~~-->
+<!-- Homo Erectus -->
+<!--~~~~~~~~~~~~~~-->
+
+<xs:complexType name="HomoErectus">
+<xs:annotation> 
+	<xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+<img src="images/herectus.jpg" align="left"/>
+The first findings of <i>Homo erectus</i> fossils were made in the late 19th and early 20th century in 
+<a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Indonesia and China</a>. 
+At first, these findings were not recognised as early hominids, but with later studies 
+it was finally accepted that <i>Homo erectus</i> was a widespread early human species.
+<p/>
+Since the 1950s, discoveries of <i>Homo erectus</i> fossils have been made sporadically, principally in 
+<a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Africa, but also in Asia</a>.
+The first of these discoveries took place in Algeria, where three jaws, a cranial bone, 
+and some teeth were found. Several specimens of <i>Homo erectus</i> were also found at 
+<a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Olduvai Gorge</a>, 
+in East Africa, including a rather robustly built, large-brained cranium.
+Findings were also made in South Africa.
+<p/>
+However, the richest source of fossils has been the Lake Turkana region of 
+northern Kenya, both on the east and west sides. These sites have exposed 
+the oldest and most complete speciments. In 1975, an almost complete cranium 
+was found and then dated at 1.8 million years with a brain size of 880 cm&#179;. 
+A decade later, they found the now famous "Turkana Boy" which is renowned 
+for its almost complete skeleton. This skeleton was a huge aid in assessing 
+overal body proportions and relationships of the species. This boy stood more 
+than 5 feet tall when he died, and would have exceeded 6 feet &#8211; 
+had he lived to maturity. His cranial capacity was 880 cm&#179; and his 
+body stature (tall, thin, long arms and legs) are typical of humans adapted 
+to open, tropical environments. 
+<p/>
+Two different hypotheses exist stating where <i>Homo erectus</i>
+first arose. The first model is called 
+<a href="http://www.geocities.com/palaeoanthropology/Multiregional.html" target="_blank">The Multiregional Evolution Model</a>
+and used to be by far the most popular until recent genetic evidence was brought 
+to light by a scientist at the University of California at Berkeley called 
+Allan Wilson. This model believes that roughly 1 million years ago, <i>Homo erectus</i>
+expanded its range beyond Africa, first into Asia and then into Europe, 
+developing geographically variable populations. <i>Homo erectus</i>
+then became the direct ancestor of <i>Homo sapiens</i>
+by a gradual worldwide (excluding the Americas and Australia) evolutionary 
+transformation of all populations of <i>Homo erectus</i>.
+<p/>
+The second hypothesis is referred to as the 
+<a href="http://www.geocities.com/palaeoanthropology/OutofAfrica.html" target="_blank">"Out of Africa Model"</a>
+and believes that that it was not a gradual worldwide change that led 
+to the evolutionary transformation of populations of <i>Homo erectus</i>,
+but a speciation event in a single population in Africa, which then spread 
+throughout the Old World and replaced established populations. This hypothesis 
+was brought forward by Allan Wilson who in 1987 proved with genetic evidence 
+that all modern humans evolved from a single female who lived in Africa 
+approximately 200,000 years ago. 
+This is also known as the "Mitochondrial Eve Hypothesis".
+<p/>
+<table width="100%" cellpadding="4" cellspacing="2" border="1">
+<tr valign="top">
+	<td><u>Height</u></td>
+	<td>1.3 &#8211; 1.7 metres</td>
+</tr>
+<tr valign="top">
+	<td><u>Physique</u></td>
+	<td>Robust, but "human" skeleton</td>
+</tr>
+<tr valign="top">
+	<td><u>Cranial Volume</u></td>
+	<td>750 &#8211; 1250 cm&#179;</td>
+</tr>
+<tr valign="top">
+	<td><u>Known Date</u></td>
+	<td>1.8 &#8211; 0.1 million years ago</td>
+</tr>
+<tr valign="top">
+	<td><u>Distribution</u></td>
+	<td>Africa, Asia and Indonesia (and Europe?)</td>
+</tr>
+<tr valign="top">
+	<td><u>Skull form</u></td>
+	<td>Flat, thick skull with large occipital and brow ridge</td>
+</tr>
+<tr valign="top">
+	<td><u>Jaws/Teeth</u></td>
+	<td>Robust jaw in larger individuals; smaller teeth than <i>H. habilis</i></td>
+</tr>
+</table>
+	</xs:documentation> 
+</xs:annotation> 
+<xs:complexContent>
+	<xs:extension base="HomoErgaster"/>
+</xs:complexContent>
+</xs:complexType> 
+
+<!--~~~~~~~~~~~~~~~~~~~~~~-->
+<!-- Homo Heidelbergensis -->
+<!--~~~~~~~~~~~~~~~~~~~~~~-->
+
+<xs:complexType name="HomoHeidelbergensis">
+<xs:annotation> 
+	<xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+<img src="images/hheidelbergensis.jpg" align="left"/>
+This species is often also referred to as "Archaic <i>Homo Sapiens</i>".
+Many examples of so-called Archaic <i>Homo sapiens</i>
+have been located, including some recent spectacular finds at 
+<a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Atapuerca</a>, 
+in North East Spain. These remains of many individuals include some 
+that may be 780,000 years old. According to some proponents of the 
+"<a href="http://www.geocities.com/palaeoanthropology/OutofAfrica.html" target="_blank">Out of Africa</a>" 
+hypothesis, most of these speciments should be assigned to <i>Homo heidelbergensis</i>, 
+which may have been ancestral to Neanderthals in Europe and to 
+<a href="http://www.geocities.com/palaeoanthropology/Hsapiens.html" target="_blank"><i>Homo sapiens</i></a>
+in Africa. However, in May 1997, the discoverers of the fossils elected 
+to name the fossils a new species, <i>Homo antecessor</i>. 
+<a href="http://www.geocities.com/palaeoanthropology/Multiregional.html" target="_blank">Multiregionalists</a>
+view this group as evidence of a transition toward modern <i>Homo sapiens</i>.
+<p/>
+The "Mauer mandible", found in 1907 and dated at roughly 500,000 years old, 
+combines primitive features (robusticity) with modern features (molar size),
+was given the species name <i>Homo heidelbergensis</i>
+in 1908. Some major findings of this species may be located at 
+<a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Atapuerca</a> 
+in Northern Spain where one of the most spectacular dings of recent times was made.
+They uncovered 1300 human fossils remains (representing 30 individuals) 
+dated at 300,000 years old. These specimens also display modern and ancient 
+features mixed, and can probably be assigned to <i>Homo heidelbergensis</i>.
+<p/>
+The main noticable features of the fossils is the more prominent face 
+and nose and the changes at the base of the skull which are perhaps thought 
+to be associated with changes in the voice box.
+<p/>
+Little is known so far about how this group fitted into the 
+<a href="http://www.geocities.com/palaeoanthropology/timeline.html" target="_blank">hominid timeline</a>, 
+but it is thought to have possibly evolved into <i>Homo sapiens</i> 
+(perhaps with an intermittent species not yet found) and <i>Homo neanderthalensis</i>.
+<p/>
+<table width="100%" cellpadding="4" cellspacing="2" border="1">
+<tr valign="top">
+	<td><u>Height</u></td>
+	<td>Roughly 1.5 metres</td>
+</tr>
+<tr valign="top">
+	<td><u>Physique</u></td>
+	<td>Robust, but "human" skeleton</td>
+</tr>
+<tr valign="top">
+	<td><u>Cranial Volume</u></td>
+	<td>1100 &#8211; 1400 cm&#179;</td>
+</tr>
+<tr valign="top">
+	<td><u>Known Date</u></td>
+	<td>400,000 &#8211; 100,000</td>
+</tr>
+<tr valign="top">
+	<td><u>Distribution</u></td>
+	<td>Africa, Asia and Europe</td>
+</tr>
+<tr valign="top">
+	<td><u>Skull form</u></td>
+	<td>Higher skull; face less protruding</td>
+</tr>
+<tr valign="top">
+	<td><u>Jaws/Teeth</u></td>
+	<td>Simliar to <i>H. erectus</i>, but teeth may be smaller</td>
+</tr>
+</table>
+	</xs:documentation> 
+</xs:annotation> 
+<xs:complexContent>
+	<xs:extension base="HomoErgaster"/>
+</xs:complexContent>
+</xs:complexType> 
+
+<!--~~~~~~~~~~~~~~~~~~~~~~-->
+<!-- Homo Neandertalensis -->
+<!--~~~~~~~~~~~~~~~~~~~~~~-->
+
+<xs:complexType name="HomoNeandertalensis">
+<xs:annotation> 
+	<xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+<img src="images/hneandertalensis.jpg" align="left"/>
+Neanderthals lived roughly 150,000 to 30,000 years ago and lived in much of 
+<a href="http://www.geocities.com/palaeoanthropology/findings.html" target="_blank">Europe, part of Asia, and the Middle East</a>.
+The first fossils humans to be discovered, Neanderthals have long been the focus 
+of anthropological investigation. More bones of Neanderthals are known than 
+for any other fossil hominine group, including some 30 nearly complete skeletons, 
+so this preoccupation within the anthropological profession is understandable.
+<p/>
+Neanderthal anatomy represents a mixture of primitive characters, derived 
+characters that are shared with other hominines, and derived characters that 
+are unique to Neanderthals. In general terms, this species may be described 
+as being robustly built, heavily muscled, and short in stature. Evidence of 
+the heavy musculature appears in the extremely large muscle attachments and 
+the bowing of the long bones. This implies that the species was involved 
+in daily, routine, heavy work.
+<p/>
+This species existed in a cold climate, at the end of the Pleistocene Ice Age 
+and this appears in the short forearm and leg relative to the humerus and femur 
+(Allen's rule which implies that in warm-blooded species, the relative size 
+of the limbs decreases as temperature decreases).
+<p/>
+The Neanderthal DNA sequence falls <u>outside</u> the variation of modern 
+human DNA. Thus if Neanderthals had contributed to our genome (any interbreeding 
+whatsoever), it would be expected that modern-day individuals would express 
+Neanderthals geno- and phenotypes. A paper published in the Journal <i>Cell</i> 
+in 1997 proves that there is no overlap between modern-day 
+<a href="http://www.geocities.com/palaeoanthropology/Hsapiens.html" target="_blank"><i>Homo sapiens</i></a>
+and <i>Homo neanderthalensis</i>
+genes. After a long period of overlap in the same timescale, Neanderthals went 
+extinct in a wave from East to West where the last Neanderthal remains were 
+found in Zafarraya, Spain 27,000 years ago.
+<p/>
+<table width="100%" cellpadding="4" cellspacing="2" border="1">
+<tr valign="top">
+	<td><u>Height</u></td>
+	<td>1.5 &#8211; 1.7 metres</td>
+</tr>
+<tr valign="top">
+	<td><u>Physique</u></td>
+	<td>As <i>H. heidelbergensis</i>, but adapted for cold</td>
+</tr>
+<tr valign="top">
+	<td><u>Cranial Volume</u></td>
+	<td>1200 &#8211; 1750 cm&#179;</td>
+</tr>
+<tr valign="top">
+	<td><u>Known Date</u></td>
+	<td>150,000 &#8211; 30,000</td>
+</tr>
+<tr valign="top">
+	<td><u>Distribution</u></td>
+	<td>Europe and Western Asia</td>
+</tr>
+<tr valign="top">
+	<td><u>Skull form</u></td>
+	<td>Reduced brow ridge; thinner skull; large nose: midface projection</td>
+</tr>
+<tr valign="top">
+	<td><u>Jaws/Teeth</u></td>
+	<td>Simliar to <i>H. heidelbergensis</i>; teeth smaller except for incisors; chin development in some</td>
+</tr>
+</table>
+	</xs:documentation> 
+</xs:annotation> 
+<xs:complexContent>
+	<xs:extension base="HomoHeidelbergensis"/>
+</xs:complexContent>
+</xs:complexType> 
+
+<!--~~~~~~~~~~~~~~-->
+<!-- Homo Sapiens -->
+<!--~~~~~~~~~~~~~~-->
+
+<xs:complexType name="HomoSapiens">
+<xs:annotation> 
+	<xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+<img src="images/hsapiens.jpg" align="left"/>
+Population movements such as the colonisation of the Americas have occurred 
+many times in human prehistory, and they inevitably muddy what might otherwise 
+be a clear relationship between body shape and climate, and its change through 
+time. One important example relates to the issue of the origin of modern humans. 
+Many anthropologists believe that anatomically modern <i>Homo sapiens</i> 
+evolved from a small population in Africa 200,000 years ago, and then spread 
+into the rest of the Old World, reaching western Europe only 35,000 years ago. 
+This is known as the 
+"<a href="http://www.geocities.com/palaeoanthropology/OutofAfrica.html" target="_blank">Out of Africa</a>"
+hypothesis. However, if this was true, the African origin of anatomically 
+modern humans would be reflected in their body and limb proportions. 
+Indeed, such populations do show this trend, as these tall, 
+long-limbed people entered lands located at a latitude more conducive 
+to wide bodies and short limbs.
+<p/>
+It is mostly agreed on the overall anatomical and behavioural shifts 
+that accompanied the evolutionary transformation from 
+<a href="http://www.geocities.com/palaeoanthropology/Herectus.html" target="_blank"><i>Homo erectus</i></a>
+to <i>Homo sapiens</i>. 
+Anatomically, it involved a decrease of skeletal and dental robusticity, 
+modifications of certain functional &#8211; particularly locomotor &#8211; 
+anatomy, and an increase in cranial volume. Behaviourally, the transition 
+brought more finely crafted and diverse tool technologies, more efficient 
+foraging strategies, more complex social organisation, the full development
+of spoken language, and artistic expression. However, one point on which 
+an agreement has not yet been reached, is the origin of these <b>anatomically modern humans</b>.
+<p/>
+<table width="100%" cellpadding="4" cellspacing="2" border="1">
+<tr>
+	<th colspan="2" bgcolor="#EEEEEE"><i>Early modern Homo sapiens</i></th>
+</tr>
+<tr valign="top">
+	<td><u>Height</u></td>
+	<td>1.6 &#8211; 1.85 metres</td>
+</tr>
+<tr valign="top">
+	<td><u>Physique</u></td>
+	<td>Modern skeleton, adapted for warmth</td>
+</tr>
+<tr valign="top">
+	<td><u>Cranial Volume</u></td>
+	<td>1200 &#8211; 1750 cm&#179;</td>
+</tr>
+<tr valign="top">
+	<td><u>Known Date</u></td>
+	<td>130,000 &#8211; 60,000</td>
+</tr>
+<tr valign="top">
+	<td><u>Distribution</u></td>
+	<td>Europe and Western Asia</td>
+</tr>
+<tr valign="top">
+	<td><u>Skull form</u></td>
+	<td>Small or no brow ridge; shorter high skull</td>
+</tr>
+<tr valign="top">
+	<td><u>Jaws/Teeth</u></td>
+	<td>Shorter jaws than <i>Neanderthals</i>; chin developed; teeth may be smaller</td>
+</tr>
+</table>
+	</xs:documentation> 
+</xs:annotation> 
+<xs:complexContent>
+	<xs:extension base="HomoHeidelbergensis"/>
+</xs:complexContent>
+</xs:complexType> 
+
+</xs:schema> 

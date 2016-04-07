@@ -1,0 +1,35 @@
+Specify whether to add namespace prefixes to any XML names appearing in the generated documentation.
+<p style="margin:0">
+<table border="1">
+<tr><td><font face="Dialog" size="-1">
+As you may know, each XML name is not just a string. Rather, it is a vector of two values:
+{ <i>namespace URI</i>, <i>local name</i> }
+</font>
+</td></tr>
+</table>
+<p>
+Any namespace prefixes used in the output documentation originate
+from the namespace URI/prefix bindings declared in the source XSD files.
+For a particular XML name, its namespace prefix is generated according to the binding for
+the given namespace found the nearest to the documentation context where that XML name appears.
+<p>
+<u>Example</u>:
+<p>
+Suppose you generate documentation for two XML schemas: <b><i>schema1</i></b> and <b><i>schema2</i></b>.
+<p>
+The <i>schema1</i> is targeted to the namespace associated with <code>'namespace_uri_1'</code> URI,
+which is bound to <code>'myns'</code> prefix.
+This schema defines some <b><i>MyType</i></b> type component.
+<p>
+The <i>schema2</i> is targeted to a different namespace, however, it also uses <i>MyType</i>,
+which it imports from the <i>schema1</i>. 
+To reference to that type, the <i>schema2</i> binds the <code>'namespace_uri_1'</code>
+to the prefix <code>'ns1'</code>, so <i>MyType</i> looks in it as:
+<dl><dd><code>ns1:MyType</code></dd></dl>
+How will <i>MyType</i> look in the output documentation when this parameter is selected?
+<p>
+In the parts of the documentation related to <i>schema1</i> you will see:
+<dl><dd><code>myns:MyType</code></dd></dl>
+In parts related to <i>schema2</i>, you will see:
+<dl><dd><code>ns1:MyType</code></dd></dl>
+However, both names will be connected via hyperlinks to the same details of <i>MyType</i> type.

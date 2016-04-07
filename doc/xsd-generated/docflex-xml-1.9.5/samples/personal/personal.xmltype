@@ -1,0 +1,3 @@
+personal.name = Personal
+personal.dtd.file = %THIS_DIR%/personal.dtd
+personal.dtd.systemID = personal.dtd

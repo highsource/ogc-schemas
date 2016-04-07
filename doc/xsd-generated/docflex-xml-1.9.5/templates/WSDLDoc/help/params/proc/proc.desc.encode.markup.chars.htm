@@ -1,0 +1,58 @@
+Specifies whether to encode HTML markup characters contained in the description text.
+<p>
+The following table shows all such characters and the entities into which they are encoded:
+<dl><dd>
+<table border="1">
+<tr bgcolor="#CCCCEE">
+  <td><b>Character</b></td>
+  <td><b>Entity</b></td>
+</tr>
+<tr>
+  <td align="center"><code>&lt;</code></td>
+  <td><code>&amp;lt;</code></td>
+</tr>
+<tr>
+  <td align="center"><code>&gt;</code></td>
+  <td><code>&amp;gt;</code></td>
+</tr>
+<tr>
+  <td align="center"><code>&amp;</code></td>
+  <td><code>&amp;amp;&nbsp;</code></td>
+</tr>
+</table>
+</dd></dl>
+</blockquote>
+<p>
+<b>Note:</b> The encoding will be done only when the output format supports rendering of embedded HTML,
+and it is switched on (see output format option: <i>"Text | Render embedded HTML"</i>).
+<p>
+The purpose of this parameter is the following:
+<p>
+1. Suppose you use XHTML elements to format your descriptions and some description contains a text like this:
+<blockquote><code>A &lt; B</code></blockquote>
+You need to show the <code>'&lt;'</code> character as it is.
+Since the whole description will be converted into HTML, that character needs to be encoded.
+In that case, this parameter should be <b>selected</b>.
+<p>
+2. However, some WSDL/XSD authors do not rely on XHTML to format their descriptions
+(probably because few tools process it).
+Instead, they insert HTML markup directly into the description text, like the following:
+
+<dl><dd>
+<pre><code>
+&lt;xs:annotation&gt;
+   &lt;xs:documentation&gt;
+      This is &amp;lt;b&amp;gt;keyword&amp;lt;/b&amp;gt;
+   &lt;/xs:documentation&gt;
+&lt;/xs:annotation&gt;
+</code></pre>
+</dd></dl>
+
+An XML parser would convert such a text into the string:
+<dl><dd>
+<code>This is &lt;b&gt;keyword&lt;/b&gt;</code>
+</dd></dl>
+which could be immediately passed to an HTML viewer or added to HTML output.
+In that case, the HTML markup characters should not be encoded!
+<p>
+Therefore, if you have an XML schema like this, you should <b>unselect</b> this parameter.

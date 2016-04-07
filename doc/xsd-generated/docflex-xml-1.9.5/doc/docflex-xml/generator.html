@@ -1,0 +1,1677 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex/XML - Documentation - Running Generator</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/XML - Documentation - Running Generator
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+  <li class="mrg4"><a href="#cmdline"><b>Launching Generator from Command Line</b></a></li>
+    <ul class="mrg4">
+      <li><a href="#options">Command Line Options</a>
+        <ul>
+          <li><a href="#template_options">Template Options</a></li>
+          <li><a href="#output_options">Output Options</a></li>
+          <li><a href="#processing_options">Processing Options</a></li>
+          <li><a href="#config_options">Configuration Options</a></li>
+        </ul>
+      </li>
+      <li><a href="#argument_files">Command Line Argument Files</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#gui"><b>Generator GUI</b></a>
+    <ul class="mrg4">
+      <li><a href="#gui.template">Specifying Template</a>
+        <ul>
+          <li><a href="#gui.param_inspector">Setting Template Parameters</a></li>
+        </ul>
+      </li>
+      <li><a href="#gui.xml_files">Choosing XML File(s)</a>
+        <ul>
+          <li><a href="#gui.xml_catalogs">Assigning XML Catalog(s)</a></li>
+        </ul>
+      </li>
+      <li><a href="#gui.output_format">Selecting Output Format</a>
+        <ul>
+          <li><a href="#gui.html_option_inspector">HTML Option Inspector</a></li>
+          <li><a href="#gui.rtf_option_inspector">RTF Option Inspector</a></li>
+          <li><a href="#gui.txt_option_inspector">TXT Option Inspector</a></li>
+        </ul>
+      </li>
+      <li><a href="#gui.output_location">Specifying Output Location</a></li>
+      <li><a href="#gui.run">Starting Generation</a>
+        <ul>
+          <li><a href="#generation_phases">Generation Phases</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#list_params"><b>Multi-valued (List) Parameters</b></a>
+    <ul class="mrg4">
+      <li><a href="#list_params.gui">Specifying List Value in Parameter Inspector</a></li>
+      <li><a href="#list_params.escapes">Using Escapes</a></li>
+      <li><a href="#list_params.cmdline">Specifying List Parameter on Command Line</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#error_report"><b>Error Reporting</b></a></li>
+  <li class="mrg4"><a href="#tips"><b>Tips</b></a>
+    <ul class="mrg4">
+      <li><a href="#xml_tips">Input XML Files</a>
+        <ul>
+          <li><a href="#file_pathname_patterns">Using file pathname patterns</a></li>
+        </ul>
+      </li>
+      <li><a href="#html_tips">HTML Output</a>
+        <ul>
+          <li><a href="#custom_css">Custom Style Sheet</a></li>
+          <li><a href="#mark_of_the_web">Inserting "Mark of the Web" comment</a></li>
+        </ul>
+      </li>
+      <li><a href="#rtf_tips">RTF Output</a>
+        <ul>
+          <li><a href="#updating_rtf_fields">Updating RTF fields in MS Word</a></li>
+          <li><a href="#including_rtf_in_doc">Including generated RTF in larger Word document</a></li>
+          <li><a href="#including_doc_in_rtf">Including static Word document into generated RTF</a></li>
+          <li><a href="#generating_rtf_for_other_apps">Generating RTF for non-Word applications</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<h2>
+  <a name="launching"></a>
+  <a name="cmdline"></a>
+  1.&nbsp; Launching Generator from Command Line
+</h2>
+
+To start the <a href="about.html#docflex-xml-generator">DocFlex/XML Generator</a>,
+use the following command:
+
+<blockquote class="mrg8">
+<code>
+  <a class="latent" href="#cmdline.java">java</a>
+  <a class="latent" href="#cmdline.java_options">[java_options]</a>
+  <a class="latent" href="#cmdline.class_path">&lt;class_path&gt;</a>
+  <a class="latent" href="#cmdline.generator_class">&lt;generator_class&gt;</a>
+  <a class="latent" href="#cmdline.options">[options]</a>
+  <a class="latent" href="#cmdline.xml_files">[XML files]</a>
+</code>
+</blockquote>
+
+where all arguments are explained in this table:
+
+<p class="mrg8">
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+
+<tr align="center" bgcolor="#E0E0E0">
+  <th width="1%"><b>Command/Arg</b></th>
+  <th width="99%"><b>Explanation</b></th>
+</tr>
+
+<tr valign="top">
+  <td>
+    <a name="cmdline.java"></a>
+    <code>java</code>
+  </td>
+  <td>
+    A system command that starts JVM (Java Virtual Machine).
+    <p class="mrg80">
+    On Windows, that command may be as simple as <code>'java'</code> (when you have installed 
+    <a href="http://java.sun.com/" target="_blank">Java</a> properly)
+    or, alternatively, may look like the following:
+    <p class="mrg80">
+    <code>"C:\Program Files\Java\jre6\bin\java"</code>
+    <p class="mrg80">
+    (Just do not forget to enclose it in double quotes, when the pathname contains spaces!)
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="cmdline.java_options"></a>
+    <code>[java_options]</code>
+  </td>
+  <td>
+    The JVM options.
+    <p class="mrg8">
+    When you process large quantities of data (e.g. big XML files or lots of them),
+    use <b class="nowrap">-Xmx</b> option to set the maximum heap size allocated by JVM.
+    Otherwise, the generator may slow down and even run out of memory!
+    <p class="mrg8">
+    For example, setting <b>-Xmx512m</b> will allocate 512 Mb for the heap, which is OK
+    for most purposes (e.g. to run <a href="xsddoc/index.html">XSDDoc</a>) on 32-bit Java.
+    <p class="mrg80">
+    <table cellspacing="0" cellpadding="5" CLASS="brdr1">
+    <tr><td bgcolor="#F6F6F6" class="inset">
+      For 64-bit Java (running on 64-bit OS), we recommend to double the amount of allocated memory
+      since lots of internal things (like memory pointers) get doubled in size on 64-bit (as compared to 32-bit OS).
+      <p class="mrg8"></p>
+      So, on <b>Windows 7 64-bit</b> you should specify <b><code>-Xmx1024m</code></b>,
+      instead of <code>-Xmx512m</code>. (For instance, allocating 512 Mb for 64-bit Java heap size 
+      is no longer enough to document big XML schemas using <a href="xsddoc/index.html">XSDDoc</a>).
+      <p class="mrg8"></p>
+      Concerning Windows 7 64-bit itself, DocFlex/XML generator appears to work about 20% faster on 64-bit Java,
+      as compared to 32-bit.
+    </td></tr>
+    </table>
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="cmdline.class_path"></a>
+    <code>&lt;class_path&gt;</code>
+  </td>
+  <td>
+    Specify DocFlex/XML class path, which should look as follows (Windows platform):
+    <p class="mrg8">
+    <code>-cp "%DFH%\lib\xml-apis.jar;%DFH%\lib\xercesImpl.jar;%DFH%\lib\resolver.jar;%DFH%\lib\docflex-xml.jar"</code>
+    <p class="mrg80">
+    where
+    <ul class="mrg0">
+      <li><code>'%DFH%'</code> must expand to the pathname of DocFlex/XML home directory (e.g. <code>C:\docflex-xml</code>)</li>
+      <li><code>xml-apis.jar</code>, <code>xercesImpl.jar</code>, <code>resolver.jar</code> 
+          are <a href="http://xerces.apache.org/xerces2-j/" target="_blank">Apache Xerces2</a> Java libraries</li>
+      <li><code>docflex-xml.jar</code> is DocFlex/XML Java library</li>
+    </ul>
+    <p class="mrg80">
+    Notes:
+    <ul class="mrg0">
+      <li>
+        The precise form of the class path depends on the OS.
+        (For instance, on Linux the name-separator is '/' and the path-separator is ':')
+      </li>
+      <li>
+        When an integration with other software system is used,
+        the above class path should also include all additional Java libraries necessary for that integration
+        (e.g. see <a href="integrations/XMLSpy.html">DocFlex/XML | Integrations | XMLSpy</a>)
+        and all of them should be specified before <code>docflex-xml.jar</code>!
+      </li>
+      <li>
+        When the file pathnames contain spaces, the entire class path should be enclosed in double quotes!
+        (Otherwise, it will be treated as separate arguments.)
+      </li>
+    </ul>
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="cmdline.generator_class"></a>
+    <code>&lt;generator_class&gt;</code>
+  </td>
+  <td>
+    The qualified name of the DocFlex/XML generator main Java class:
+    <b><code class="nowrap">com.docflex.xml.Generator</code></b>
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="cmdline.options"></a>
+    <code>[options]</code>
+  </td>
+  <td>
+    Generator command-line <a href="#options">options</a>, which provide settings
+    to control both the generator and the template application.
+    <p class="mrg80">
+    <table cellspacing="0" cellpadding="5" CLASS="brdr1">
+    <tr><td bgcolor="#F6F6F6" class="inset">
+      In fact, to run a big template application
+      (like <a href="xsddoc/index.html">XSDDoc</a>), lots of special settings may be needed.
+      The generator resolves each setting as follows:
+      <ol>
+        <li>
+          First, it looks whether a setting was specified directly with an
+          <a href="#options">option</a> on the command line.
+        </li>
+        <li>
+          If it wasn't, the generator finds the 
+          <a href="setup.html#generator.config">generator.config</a> file
+          and looks for that setting in it.
+        </li>
+        <li>
+          If the setting is not found still, its default value will be used.
+        </li>
+      </ol>
+      <p class="mrg8"></p>
+      That mechanism allows you to greatly optimize your Java command line (or your Ant/Maven build file, respectively).
+      <p class="mrg8"></p>
+      Instead of specifying every single setting separately using command-line <a href="#options">options</a>,
+      you may simply prepare everything you need at once using the <b><a href="#gui">generator GUI</a></b>
+      and, then, pass the result 
+      <a href="setup.html#generator.config">generator.config</a> file
+      with just one <span class="nowrap">-<a href="#config_option">config</a></span> option on the command-line.
+      <p class="mrg8"></p>
+      The <a href="#gui">generator GUI</a> stores all settings, which you edit with it, in the
+      <a href="setup.html#generator.config">generator.config</a> file
+      found in 
+      <blockquote class="mrg8">
+        <code><i>{docflex-xml}</i>/config</code>
+      </blockquote>
+      <p class="mrg8"></p>
+      directory. (Actually, that location is not static. By default, it is specified in the 
+      <a href="setup.html#docflex.config">docflex.config</a>
+      found near <code>docflex-xml.jar</code>. But again, it may be overridden
+      with <span class="nowrap">-<a href="#config_option">config</a></span> option, when you run the generator with GUI).
+      <p class="mrg8"></p>
+      Having prepared all the necessary setting using the <a href="#gui">generator GUI</a>,
+      you may specify the result <a href="setup.html#generator.config">generator.config</a>
+      on the command-line with <span class="nowrap">-<a href="#config_option">config</a></span> option, e.g.:
+      <blockquote class="mrg8">
+        <code>-config <i>{docflex-xml}</i>/config/generator.config</code>
+      </blockquote>
+      <p class="mrg8"></p>
+      That will reduce most of your command-line options to just one!
+      <p class="mrg8"></p>
+      You may prepare different <a href="setup.html#generator.config">generator.config</a>
+      files for different types of documentation, which will allow you to quickly setup the generator for a new
+      kind of job just by specifying another config-file. That's what the <a href="#gui">generator GUI</a> is for!
+    </td></tr>
+    </table>
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="cmdline.xml_files"></a>
+    <code>[XML files]</code>
+  </td>
+  <td>
+    One or many input XML files to process. 
+    They should be specified with separate command-line arguments, which may be either:
+    <ul class="mrg8">
+      <li>local file pathname (or <a href="#file_pathname_patterns">pathname pattern</a>)
+      <li>URL</li>
+    </ul>
+    Notes:
+    <p class="mrg8"></p>
+    <ul class="mrg0">
+    <li>
+      Multiple file specifications must be separated with spaces.
+    </li>
+    <li>
+      When a file specification contains spaces itself, it must be enclosed in double quotes.
+    </li>
+    <li>
+      When <a href="setup.html#xml_catalogs">XML catalogs</a> are used
+      (see -<a href="#xmlcatalog_option">xmlcatalog</a> option), each XML file URL will be resolved
+      by those catalogs. This allows you, for instance, to redirect some external file locations
+      to their local copies on your system.
+    </li>
+    </ul>
+  </td>
+</tr>
+
+</table>
+
+<h3>
+  <a name="options"></a>
+  Command Line Options
+</h3>
+
+The DocFlex/XML Generator recognizes the following command line options:
+
+<p>
+<table cellspacing="0" cellpadding="0">
+<tr valign="top">
+  <td><table width="32" height="8" border="0"><tr><td></td></tr></table></td>
+  <td>
+    -<a href="#config_option">config</a><br>
+    -<a href="#d_option">d</a><br>
+    -<a href="#defaultcatalog_option">defaultcatalog</a><br>
+    -<a href="#docflexconfig_option">docflexconfig</a><br>
+    -<a href="#errlog_option">errlog</a><br>
+    -<a href="#f_option">f</a>
+  </td>
+  <td><table width="32" height="8" border="0"><tr><td></td></tr></table></td>
+  <td>
+    -<a href="#format_option">format</a><br>
+    -<a href="#launchviewer_option">launchviewer</a><br>
+    -<a href="#license_option">license</a><br>
+    -<a href="#m_option">m</a><br>
+    -<a href="#nodialog_option">nodialog</a><br>
+    -<a href="#o_option">o</a>
+  </td>
+  <td><table width="32" height="8" border="0"><tr><td></td></tr></table></td>
+  <td>
+    -<a href="#p_option">p</a><br>
+    -<a href="#quiet_option">quiet</a><br>
+    -<a href="#template_option">template</a><br>
+    -<a href="#xmlcatalog_option">xmlcatalog</a><br>
+    -<a href="#xmltype_option">xmltype</a>
+  </td>
+</tr>
+</table>
+<p>
+<i>Please note that options not specified directly on the command line, first, will be searched in the
+<a href="setup.html#generator.config">generator.config</a> file
+and only when not found their default values will be used.</i>
+
+<p class="mrg8">
+Here are the option details grouped by category:
+<ul>
+  <li><a href="#template_options">Template Options</a></li>
+  <li><a href="#output_options">Output Options</a></li>
+  <li><a href="#processing_options">Processing Options</a></li>
+  <li><a href="#config_options">Configuration Options</a></li>
+</ul>
+
+<h4 class="spec">
+  <a name="template_options"></a>
+  <i>Template Options</i>
+</h4>
+
+<dl>
+<dt><a name="template_option"></a><b>-template</b> <i>&lt;file&gt;</i></dt>
+<dd>Specifies the main template file to be executed by the generator. All what
+    is generated is controlled by this template. The main template may call from itself
+    another templates
+    (<a href="../general/template_components.html#subtemplate">subtemplates</a>)
+    producing either a single output file or multiple files (framed documentation).
+    <p class="mrg8">
+    The template file may be specified both with absolute or relative pathname.
+    The relative pathname will be treated against the default template directory (specified in
+    <a href="setup.html#docflex.config">docflex.config</a> file).
+    <dl class="mrg8">
+      <dt><u>Examples</u>:
+      <dd>
+        <dl>
+          <dt><code>-template C:\docflex-xml\samples\sales\sales.tpl</code>
+          <dt><code>-template PlainDoc.tpl</code>
+        </dl>
+    </dl>
+</dd>
+<dt><a name="p_option"></a>
+    <b>-p:</b><i>&lt;parameter&gt;=&lt;value&gt;</i>
+    <p style="margin:5px">or</p>
+    <b>-p:</b><i>&lt;parameter&gt; &lt;value&gt;</i>
+</dt>
+<dd>Specifies the value of a template parameter.
+    <br>
+    <b>Notes:</b>
+    <ul>
+      <li>
+        You can find the necessary parameter names in the
+        <a href="#gui.param_inspector">Template Parameter Inspector</a>
+        invoked from the <a href="#gui">Generator Dialog</a>.
+      </li>
+      <li>
+        The boolean values should be specified as <code>"true"</code> and 
+        <code>"false"</code> strings
+        (for example: <code class="nowrap">-p:includeImages=true</code>).
+      </li>
+      <li>
+        There are also <i>enum</i> parameters, which are strings limited to only fixed number of values.
+        You can see all possible values accepted by an enum parameter in 
+        <a href="#gui.param_inspector">Parameter Inspector</a>.
+      </li>
+      <li>
+        Now DocFlex supports <a href="#list_params">multivalued (list) parameters</a>,
+        which can be equally specified on the command line using this option.
+        See <a href="#list_params.cmdline">Specifying List Parameter on Command Line</a> for more details.
+      </li>
+      <li>
+        When the value contains spaces, enclose it in double quotes
+        (for example: <code class="nowrap">-p:title="My Docs"</code>).
+      </li>
+      <li>
+        The first variant of this option allows you to specify the parameter with a single command line argument,
+        the second variant breaks the option into two arguments
+        (one for the parameter name, another one for the parameter value).
+        This may be useful when you prepare some build files (e.g. for 
+        <a href="integrations/ant.html">Ant</a>/<a href="integrations/maven.html">Maven</a>).
+      </li>
+    </ul>
+</dd>
+</dl>
+
+<h4 class="spec">
+  <a name="output_options"></a>
+  <i>Output Options</i>
+</h4>
+
+<dl>
+<dt><a name="format_option"></a><b>-format</b> <i>&lt;<u>HTML</u> | RTF | TXT&gt;</i></dt>
+<dd>Specifies the output format. By default, HTML.</dd>
+
+<dt><a name="o_option"></a>
+    <b>-o:</b><i>&lt;option&gt;=&lt;value&gt;</i>
+    <p style="margin:5px">or</p>
+    <b>-o:</b><i>&lt;option&gt; &lt;value&gt;</i>
+</dt>
+<dd>Specifies the output format option.
+    <br>
+    <b>Notes:</b>
+    <ul>
+      <li>
+        You can find the necessary option names in the
+        <a href="#gui.format_option_inspector">Format Option Inspector</a>
+        invoked from the <a href="#gui">Generator Dialog</a>.
+      </li>
+      <li>
+        The values of the boolean options should be specified as <code>"true"</code>
+        and <code>"false"</code> strings (for example:
+        <code class="nowrap">-o:rtf.storeGraphicsInRTF=false</code>).
+      </li>
+      <li>
+        The first variant of this option allows you to specify everything with a single command line argument,
+        the second variant breaks the option into two arguments
+        (one for the option name, another one for the value).
+        This may be useful when you prepare some build files (e.g. for 
+        <a href="integrations/ant.html">Ant</a>/<a href="integrations/maven.html">Maven</a>).
+      </li>
+    </ul>
+</dd>
+<dt><a name="d_option"></a><b>-d</b> <i>&lt;directory&gt;</i></dt>
+<dd>Specifies the destination directory for the generated report/documentation.
+    This option works in conjunction with the -<a href="#f_option">f option</a>.
+
+    <p class="mrg8">The output files are distributed in the following way:</p>
+    <ul>
+      <li>
+        <b>In the case of a single-file output</b>
+        <ol>
+          <li class="mrg8">
+            The output document is placed in the destination directory under default file name
+            '<i>template_name</i>.<i>format_extention</i>' (for example, in the RTF output format,
+            template PlainDoc.tpl will produce document 'PlainDoc.rtf').
+            The -<a href="#f_option">f option</a> may override this name.
+          </li>
+          <li class="mrg8">
+            All associated files (such as images, if not included in the document) are placed
+            in the '<i>docname</i>_files' subdirectory near the main document.
+          </li>
+        </ol>
+      </li>
+      <li>
+        <b>In the case of a framed multiple-file documentation</b>
+        <ol>
+          <li class="mrg8">
+            By default, all generated files and subdirectories are placed in the specified destination
+            directory. The frameset file produced by the main template is saved under the name 'index.html'.
+          </li>
+          <li class="mrg8">
+            If a different name '<i>docname</i>' is specified with the -<a href="#f_option">f option</a>,
+            the frameset file is saved under this name. All other files and the subdirectory tree are moved into
+            '<i>docname</i>_files' subdirectory near the frameset file.
+            <p class="mrg8">
+            This makes the whole documentation to look as to consist of only two file entities, which may be easier
+            to distribute yet during the generation, especially when different types of documentation are produced
+            from the same project.
+          </li>
+        </ol>
+      </li>
+    </ul>
+    <dl>
+      <dt><u>Examples</u>:</dt>
+      <dd>
+        <dl>
+          <dt><code><b>-template PlainDoc.tpl -format RTF -d c:\out</b></code></dt>
+          <dd>generate the document file <code>c:\out\PlainDoc.rtf</code> with the associated files
+              subdirectory <code>c:\out\XMLDoc_files\</code> (if any)
+          </dd>
+          <dt><code><b>-template SalesReport.tpl -format HTML -d c:\out -f MySales</b></code></dt>
+          <dd>generate the report file <code>c:\out\MySales.html</code> with the associated files
+              subdirectory <code>c:\out\MySales_files\</code> (if any)
+          </dd>
+          <dt><code><b>-template XMLDocFrames.tpl -format HTML -d c:\out</b></code></dt>
+          <dd>generate the framed documentation located in the directory <code>c:\out\</code>
+              with the main file <code>index.html</code>
+          </dd>
+          <dt><code><b>-template XMLDocFrames.tpl -format HTML -d c:\out -f MyXML</b></code></dt>
+          <dd>generate the framed documentation with the main file <code>c:\out\MyXML.html</code>
+              and all other files located in the directory <code>c:\out\MyXML_files\</code>
+          </dd>
+        </dl>
+    </dl>
+</dd>
+<dt><a name="f_option"></a><b>-f</b> <i>&lt;file&gt;</i></dt>
+<dd>Specifies the output file name. This option works in conjunction with the
+    -<a href="#d_option">d option</a> and specifies the name of the main output file
+    (the one associated with the main template).
+    <p class="mrg8">
+    Typically, it should be used to specify a pure name associated with the generated report/documentation
+    (for example, 'MySales'). However, the pathname may also be used. In that case, it is interpreted
+    against the initial destination directory (specified with the -<a href="#d_option">d option</a>)
+    and may override it. If the pathname is the absolute one, the -<a href="#d_option">d option</a>
+    is effectively ignored.
+</dd>
+<dt><a name="launchviewer_option"></a><b>-launchviewer</b>[=<i>&lt;true | <u>false</u>&gt;</i>]</dt>
+<dd>Tells the generator to execute a specific non-Java command to launch an external application
+    able to view the generated result (for instance, an Internet browser for viewing HTML files
+    or MS Word for RTF document).
+    <p class="mrg8">
+    Precisely, this command is specified in
+    <a href="setup.html#docflex.config">docflex.config</a>
+    file found near <code>docflex-xml.jar</code> file in the <code><b>lib</b></code> directory.
+
+    <dl>
+      <dt><u>Examples</u>:</dt>
+      <dd>
+        <dl>
+          <dt><code><b>-launchviewer</b></code></dt>
+          <dd>Do launch viewer</dd>
+        </dl>
+        <dl>
+          <dt><code><b>-launchviewer=false</b></code></dt>
+          <dd>Do not launch viewer, no matter what's specified in the
+              <a href="setup.html#generator.config">generator.config</a>
+          </dd>
+        </dl>
+    </dl>
+</dd>
+</dl>
+
+<h4 class="spec">
+  <a name="processing_options"></a>
+  <i>Processing Options</i>
+</h4>
+
+<dl>
+<dt><a name="xmlcatalog_option"></a><b>-xmlcatalog</b> <i>&lt;file | URI&gt;</i></dt>
+<dd>Specifies an <a href="setup.html#xml_catalogs">XML catalog</a> file.
+    The option argument may one of the following:
+    <ul class="mrg8">
+      <li>Local file pathname</li>
+      <li>URL</li>
+      <li>
+        An abstract URI <code>'urn:docflex-com:xml:defaultcatalog'</code>, which denotes the
+        <a href="setup.html#xml_catalogs.default">default XML catalog</a>
+      </li>
+    </ul>
+    To specify multiple XML catalogs, use this option several times for each file.
+    <p class="mrg8">
+    All XML catalogs will be loaded before the data-source XML files and further used to resolve (or redirect)
+    both the <a href="#cmdline.xml_files">initially specified</a> XML file URIs and
+    any external identifiers or URI references found the actual XML files being processed.
+    <p class="mrg8">
+    For more details, please see:
+    <a href="setup.html#xml_catalogs">Installation / Configuration Files | XML catalogs</a>.
+    <p class="mrg8">
+    <b>Notes:</b>
+    <ul class="mrg8">
+      <li class="mrg8">
+        Besides the command-line option, XML catalogs can be equally assigned
+        using <a href="#gui">generator GUI</a>;
+        see <a href="#gui.xml_catalogs">Generator GUI | Assigning XML Catalog(s)</a>.
+      </li>
+      <li class="mrg8">
+        When one or more <code>-xmlcatalog</code> options are specified on the <a href="#cmdline">command line</a>,
+        they will override the XML catalog settings stored in the 
+        <a href="setup.html#generator.config">generator.config</a>.
+        If you need to ensure that no XML catalogs
+        (of those left from the previous <a href="#gui">GUI</a> settings) will be used, 
+        just specify this option with the empty string argument: <code>-xmlcatalog ""</code>
+      </li>
+      <li class="mrg8">
+        When multiple <a href="setup.html#xml_catalogs">XML catalogs</a>
+        are used, the order in which they are specified
+        (on the <a href="#cmdline">command line</a> or in the <a href="#gui.xml_catalogs">GUI</a>)
+        may be important!
+        The same URI may have different resolutions according to different catalogs,
+        but the one will be used, which was found in the catalog specified the first.
+      </li>
+    </ul>
+</dd>
+
+<dt><a name="nodialog_option"></a><b>-nodialog</b>[=<i>&lt;true | <u>false</u>&gt;</i>]</dt>
+<dd>Do not invoke the <a href="#gui">Generator Dialog</a>.
+    <p class="mrg8">
+    If this option specified, the generation will be started immediately
+    according to the setting provided on the <a href="#cmdline">command line</a>
+    and in the <a href="setup.html#generator.config">generator.config</a>
+    (see -<a href="#config_option">config</a> option).
+    Then, the generator exits.
+</dd>
+
+<dt><a name="quiet_option"></a><b>-quiet</b>[=<i>&lt;true | <u>false</u>&gt;</i>]</dt>
+<dd>Suppresses displaying most of the status messages to Java console.</dd>
+
+<dt><a name="errlog_option"></a><b>-errlog</b> <i>&lt;file&gt;</i></dt>
+<dd>
+    Specifies the <b>error log file</b> used when the DocFlex/XML Generator
+    is executed without the <a href="#gui">Generator Dialog</a>
+    (i.e. when -<a href="#nodialog_option">nodialog</a> option is also specified on the command line).
+    <p class="mrg8">
+    By default, when an unexpected error/exception occurs during the generation and no GUI is enabled,
+    all details about the error are printed to the standard console.
+    <p class="mrg8">
+    Using this option, you can assign a separate error log file, into which the detailed ERROR REPORT is dumped
+    each time an error happens. Only brief messages will get on the console in that case.
+    (See also <a href="#error_report">Error Reporting</a> for more details.)
+    <p class="mrg8">
+    The error log file should be specified as an absolute or relative file pathname.
+    When the pathname points to a directory, it will be extended with the default
+    <i>&ldquo;docflex_error.log&rdquo;</i> name (for example, setting <code>"-errlog ."</code>
+    will be interpreted as <code>'docflex_error.log'</code> file located in the current directory).
+    <p class="mrg8">
+    If the error log file does not exist, it is created in the event of error.
+    Otherwise, the ERROR REPORT is appended to the existing file.
+    In the case of any I/O error related to the error log file itself, everything will be printed
+    to the console (along with additional the log file error message).
+</dd>
+</dl>
+
+<h4 class="spec">
+  <a name="config_options"></a>
+  <i>Configuration Options</i>
+</h4>
+
+<dl>
+<dt><a name="config_option"></a><b>-config</b> <i>&lt;file&gt;</i></dt>
+<dd>Specifies the <a href="setup.html#generator.config">generator configuration file</a>,
+    which may contain options written manually or using the
+    <a href="#gui">Generator Dialog</a>. All generator options not provided directly
+    on the <a href="#cmdline">generator command line</a> are searched in this file.
+    <p class="mrg8">
+    If this option is not provided, the location of the generator config file will be searched in
+    <a href="setup.html#docflex.config">docflex.config</a>
+    which, by default, points to the file: <code><i>{docflex-xml}</i>/config/generator.config</code>
+</dd>
+
+<dt><a name="docflexconfig_option"></a><b>-docflexconfig</b> <i>&lt;file&gt;</i></dt>
+<dd>Specifies an alternative path to the DocFlex/XML
+    <a href="setup.html#docflex.config">main configuration file</a>.
+    By default, this file is <code>'docflex.config'</code> which is searched in the
+    directory where the DocFlex Java library file <code class="nowrap">'docflex-xml.jar'</code> is
+    located. If not found, <code>docflex.config</code> is created automatically with default settings.
+</dd>
+
+<dt><a name="license_option"></a><b>-license</b> <i>&lt;files&gt;</i>
+<dd>Specifies the locations of one or many
+    <a href="setup.html#docflex.license">license files</a>.
+    <p class="mrg8">
+    The option value may include multiple file pathnames, which should be separated 
+    with the OS-specific path-separator character
+    (e.g. <code>';'</code> under MS Windows or <code>':'</code> under Linux).
+    Alternatively, you can specify different license files with any number of <code>-license</code> options 
+    on the command line.
+    <p class="mrg8">
+    The license files directly specified on the <a href="#cmdline">command line</a> with 
+    the <code>-license</code> options will be loaded (and used) before any other license files:
+    <ul class="mrg8">
+      <li>
+        Those assigned in the
+        <a href="setup.html#docflex.config">docflex.config</a>
+      </li>
+      <li>
+        The default license file found near the DocFlex/XML Java library file 'docflex-xml.jar'
+      </li>
+      <li>
+        The license files found near the main templates of
+        <a target="_blank" href="http://www.filigris.com/licensing/#templates.cta">commercial template applications</a>
+      </li>
+    </ul>
+    This means that when you have placed several licenses for the same product
+    in various files/locations (where the licenses are searched)
+    and one license specified on the command line using <code>-license</code> option, 
+    that one will be used.
+    <p class="mrg8">
+    See also <a target="_blank" href="http://www.filigris.com/licensing/#multiple_licenses">Multiple Licenses</a>.
+</dd>
+
+<dt><a name="m_option"></a>
+    <b>-m:</b><i>&lt;macro&gt;=&lt;value&gt;</i>
+    <p style="margin:5px">or</p>
+    <b>-m:</b><i>&lt;macro&gt; &lt;value&gt;</i>
+</dt>
+<dd>Specifies the value of a <a href="design_templates.html#using_macros">macro</a>,
+    which can be used in
+    <a href="setup.html#docflex.config">docflex.config</a> and
+    <a href="design_templates.html#xmltype.config">XML Type Configuration</a>
+    files to allow configuring them from the command line.
+    <p class="mrg8">
+    <b>Notes:</b>
+    <ul class="mrg8">
+      <li>
+        When the macro value contains spaces, enclose it in double quotes
+        (for example: <code class="nowrap">-m:LIBPATH="C:\Program Files\..."</code>).
+      </li>
+      <li>
+        The first variant of this option allows you to specify the macro with a single command line argument,
+        the second variant breaks the option into two arguments (one for the macro name, another one for the macro value).
+        This may be useful when you prepare some build files (e.g. for 
+        <a href="integrations/ant.html">Ant</a>/<a href="integrations/maven.html">Maven</a>).
+      </li>
+    </ul>
+</dd>
+
+<dt><a name="xmltype_option"></a><b>-xmltype</b> <i>&lt;files&gt;</i>
+    &nbsp;or&nbsp; <b>-xmlconfig</b> <i>&lt;files&gt;</i></dt>
+<dd>Specifies the locations of one or many
+    <a href="design_templates.html#xmltype.config">XML Type Configuration Files</a>.
+    <p class="mrg8">
+    The option value may include multiple file pathnames, which should be separated 
+    with the OS-specific path-separator character
+    (e.g. <code>';'</code> under MS Windows or <code>':'</code> under Linux).
+    Alternatively, you can specify different config files with any number of <code>-xmltype</code> options 
+    on the command line.
+    <p class="mrg8">
+    All <a href="design_templates.html#xmltype.config">XML Type Configuration Files</a>
+    specified with the <code>-xmltype</code> options are loaded in addition to 
+    those assigned statically in the 
+    <a href="setup.html#docflex.config">docflex.config</a>.
+    However, when an <a href="design_templates.html#xmltype">XML Type</a>
+    happens to be defined simultaneously in several files, 
+    the definition contained in a file directly specified on the command line will be used the first.
+</dd>
+
+<dt><a name="defaultcatalog_option"></a><b>-defaultcatalog</b> <i>&lt;file | URL&gt;</i></dt>
+<dd>
+    Specify the location of the 
+    <a href="setup.html#xml_catalogs.default">default XML catalog</a> file.
+    The option argument may be both the local file pathname and a URL.
+    <p class="mrg8">
+    For more details, please see:
+    <a href="setup.html#xml_catalogs.default">Installation / Configuration Files | XML Catalogs | Default XML Catalog</a>
+</dd>
+</dl>
+
+<h3>
+  <a name="argument_files"></a>
+  Command Line Argument Files
+</h3>
+
+<p>To shorten/simplify list of arguments on the command line, you can specify
+one or more files containing all those arguments you need. Any such file should contain
+space- or newline-separated arguments or options written the same way as on the command line.
+<p>
+When DocFlex parses the command line arguments and encounters an argument beginning
+with the character '@', it treats the characters following it as a file name and
+expands the contents of that file into the argument list.
+<p>
+<u>Example</u>:
+<dl>
+  <dt>This will run DocFlex/XML (on MS Windows platform):</dt>
+  <dd><code><b>
+      set classpath=lib\xml-apis.jar;lib\xercesImpl.jar;lib\resolver.jar;lib\docflex-xml.jar<br>
+      java -cp %classpath% com.docflex.xml.Generator @argfile
+      </b></code>
+  </dd>
+  <dt>The <code>argfile</code> may contain the following lines:</dt>
+  <dd><code><b>
+      -template templates/XMLDoc/PlainDoc.tpl<br>
+      -p:title="Sales XML Files"<br>
+      -format RTF<br>
+      -nodialog<br>
+      -launchviewer<br>
+      samples/sales/sales.xsd<br>
+      samples/sales/sales.xml
+      </b></code>
+  </dd>
+</dl>
+
+<h2>
+  <a name="gui"></a>
+  2.&nbsp; Generator GUI
+</h2>
+
+Besides the <a href="#options">command line options</a>, DocFlex/XML provides a different more user-friendly
+way for specifying most of the settings used by the generator.
+<p>
+When the generator starts without -<a href="#nodialog_option">nodialog</a> option set on the
+<a href="#cmdline">command line</a>, by default, it invokes the <b>Generator Dialog</b>,
+as shown on the following screenshot:
+
+<blockquote>
+  <img src="images/generator_dialog.png" title="Generator Dialog" border="0" usemap="#gui.map">
+  <map name="gui.map">
+    <area shape="rect" coords="15,50,476,74" href="#gui.template" title="main template">
+    <area shape="rect" coords="481,50,504,74" href="#gui.template" title="choose main template">
+    <area shape="rect" coords="508,50,572,74" href="#gui.param_inspector" title="Template Parameter Inspector">
+    <area shape="rect" coords="15,79,476,102" href="#gui.xml_files" title="input XML files">
+    <area shape="rect" coords="481,79,504,102" href="#gui.xml_files" title="choose XML files">
+    <area shape="rect" coords="508,79,572,102" href="#gui.xml_catalogs" title="XML Catalog dialog">
+    <area shape="rect" coords="15,107,476,130" href="#gui.output_format" title="output format">
+    <area shape="rect" coords="508,107,572,130" href="#gui.format_option_inspector" title="Format Option Inspector">
+    <area shape="rect" coords="15,134,476,158" href="#gui.output_folder" title="output folder">
+    <area shape="rect" coords="481,134,504,158" href="#gui.output_folder" title="choose output folder">
+    <area shape="rect" coords="15,163,476,186" href="#gui.output_file" title="output file name">
+    <area shape="rect" coords="15,193,119,211" href="#gui.launch_viewer" title="launch viewer for generated docs (e.g. HTML browser)">
+    <area shape="rect" coords="173,229,250,253" href="#gui.run" title="start generator">
+    <area shape="rect" coords="337,229,414,253" target="_blank" href="http://www.filigris.com/licensing/#multiple_licenses.example" title="&ldquo;About DocFlex/XML&rdquo; dialog (shows your licenses etc.)">
+  </map>
+</blockquote>
+
+In this dialog, you can specify most of the settings
+needed for the generator as well as to <a href="#gui.run">start</a> generation and track
+its progress.
+<p>
+The Generator Dialog can also be
+<a href="design_templates.html#designer.invoking_generator">invoked</a>
+from the <a href="design_templates.html#designer">Template Designer</a>.
+In that case, the dialog fields are initialized from the default
+<a href="setup.html#generator.config">generator.config</a>
+and the &ldquo;<a href="#gui.template">Template</a>&rdquo; field is set to the current template
+open in the designer.
+<p>
+When the generator is started directly from the Java <a href="#cmdline">command line</a>
+(e.g. by running <code>generator.bat</code>) and no
+<span class="nowrap">-<a href="#nodialog_option">nodialog</a></span> option specified,
+the Generator Dialog is launched automatically.
+In that case, the dialog fields are initialized with exactly those settings prepared for the generator
+-- that is the generator options specified on the command line plus everything else loaded from
+the <a href="setup.html#generator.config">generator.config</a>
+(see also -<a href="#config_option">config</a> option).
+
+<h3>
+  <a name="gui.template"></a>
+  Specifying Template
+</h3>
+
+In the <b>&ldquo;Template&rdquo;</b> field, you should specify the pathname of the <i>main template</i>
+to be interpreted by the generator.
+<p>
+The combo-box contains the list of the last used templates which allows you to quickly pick
+one when needed. When the <a href="#gui">Generator Dialog</a> is invoked
+<a href="design_templates.html#designer.invoking_generator">from the Template Designer</a>,
+the &ldquo;Template&rdquo; field is preset to the current designed template.
+<p>
+This field duplicate <span class="nowrap">-<a href="#template_option">template</a></span>
+option specified on the generator <a href="#cmdline">command line</a>.
+
+<h4>
+  <a name="gui.param_inspector"></a>
+  Setting Template Parameters
+</h4>
+
+For the specified template, the <b>&ldquo;Params&rdquo;</b> button invokes
+the <b>Template Parameter Inspector</b>, like the one shown on this screenshot:
+
+<blockquote>
+  <img src="images/param_inspector.png" title="Template Parameter Inspector">
+</blockquote>
+
+The inspector content is constructed dynamically from the
+<a href="xsddoc/templates.html#parameters">parameter definitions</a>
+contained in the given template.
+In fact, when you click the <b>&ldquo;Params&rdquo;</b> button, the template file is loaded and parsed
+in order to obtain those definitions.
+The parameter values are displayed and edited according to their types.
+<p>
+The bottom panel in the inspector dialog displays the description of the selected parameter
+(which is also obtained from the template).
+The first line of the description (the highlighted text) shows the internal parameter name.
+Use this name in the -<a href="#p_option">p option</a> to specify the parameter value
+on the generator command line.
+<p>
+See also: 
+<a href="#list_params">Multi-valued (List) Parameters | Specifying List Value in Parameter Inspector</a>.
+
+<h3>
+  <a name="gui.xml_files"></a>
+  Choosing XML File(s)
+</h3>
+
+In the <b>&ldquo;XML File(s)&rdquo;</b> field, you should specify one or many input XML files to process
+(i.e. used as the generator data source).
+<p>
+Each file specification must be either:
+<ul>
+  <li>local file pathname (or <a href="#file_pathname_patterns">pathname pattern</a>)
+  <li>URL</li>
+</ul>
+
+Multiple files specifications must be separated with spaces.
+When a file specification contains spaces itself, it must be enclosed in double quotes.
+For example, the following line specifies three XML files:
+<dl><dd>
+<code>test1.xml c:\projects\test2.xml "c:\My Projects\test3.xml"</code>
+</dd></dl>
+
+<h4>
+  <a name="gui.xml_catalogs"></a>
+  Assigning XML Catalog(s)
+</h4>
+
+When you click the <b>&ldquo;Catalog&rdquo;</b> button, the following dialog will appear:
+
+<blockquote>
+  <img src="images/xml_catalogs.png" title="List of OASIS XML Catalog Files">
+</blockquote>
+
+Here, you can add one or more 
+<a href="setup.html#xml_catalogs">XML Catalog</a>
+files, which may be both local file pathnames and absolute URLs.
+The <i>&ldquo;Include default XML catalog&rdquo;</i> check-box allows you to add
+also the <a href="setup.html#xml_catalogs.default">default XML catalog</a>.
+<p>
+All specified XML catalogs will be loaded before the data-source XML files and
+further used to resolve (or redirect) both the <a href="#gui.xml_files">initially specified</a> XML file URIs
+and any external identifiers or URI references found within the XML files being processed.
+<p>
+For more details, please see:
+<a href="setup.html#xml_catalogs">Installation / Configuration Files | XML catalogs</a>.
+<p>
+
+<p>
+<b>Notes:</b>
+<ul class="mrg8">
+  <li class="mrg8">
+    The ordering of the catalogs in the list may be important!
+    The same URI may have different resolutions according to different catalogs,
+    but the one will be used, which was found in the catalog specified the first.
+  </li>
+  <li class="mrg8">
+    The list of XML catalog files specified in this dialog will be stored in the
+    <a href="setup.html#generator.config">generator.config</a>.
+    Those files will be restored again when invoking this dialog next time 
+    and used when running the generator 
+    (unless -<a href="#xmlcatalog_option">xmlcatalog</a> command line option is specified).
+  </li>
+  <li class="mrg8">
+    The -<a href="#xmlcatalog_option">xmlcatalog</a> option allows you to specify
+    the XML catalog files on the generator <a href="#cmdline">command line</a>.
+    It will override the XML catalog settings stored in the 
+    <a href="setup.html#generator.config">generator.config</a>.
+    <p class="mrg8">
+    If you need to make sure that no XML catalogs will be used (of those left in
+    <a href="setup.html#generator.config">generator.config</a>
+    from the previous GUI settings), just specify -<a href="#xmlcatalog_option">xmlcatalog</a> 
+    option with the empty string argument: <code>-xmlcatalog ""</code>
+  </li>
+</ul>
+
+<h3>
+  <a name="gui.output_format"></a>
+  Selecting Output Format
+</h3>
+
+In the <b>&ldquo;Output format&rdquo;</b> combo-box you can select the output format
+of the generated documentation. Currently, the following formats are supported:
+<ul>
+  <li><a href="#gui.html_option_inspector">HTML</a></li>
+  <li><a href="#gui.rtf_option_inspector">RTF</a></li>
+  <li><a href="#gui.txt_option_inspector">TXT</a></li>
+</ul>
+
+Since all <a href="../general/about.html#document_template">document templates</a>
+are output format independent, if you have specified one in the &ldquo;Template&rdquo; field,
+you can freely use any output format.
+The <a href="../general/about.html#frameset_template">frameset templates</a>
+are supported only by HTML output format.
+<p>
+<a name="gui.format_option_inspector"></a>
+Similar to the template parameters, the <b>&ldquo;Options&rdquo;</b> button near the
+&ldquo;Output format&rdquo; combo-box invokes the <b>Format Option Inspector</b>
+which is specific for the selected output format.
+<p>
+The bottom panel in the inspector dialog displays the description of the selected option.
+The first line of the description (the highlighted text) shows the internal option name.
+This name should be used in the -<a href="#o_option">o option</a> to specify the format
+option value on the generator command line.
+<p>
+The following screenshots show the option inspectors for each supported output format:
+
+<h4>
+  <a name="gui.html_option_inspector"></a>
+  HTML Option Inspector
+</h4>
+
+<blockquote>
+  <img src="images/html_option_inspector.png" title="HTML Option Inspector">
+</blockquote>
+
+<h4>
+  <a name="gui.rtf_option_inspector"></a>
+  RTF Option Inspector
+</h4>
+
+<blockquote>
+  <img src="images/rtf_option_inspector.png" title="RTF Option Inspector">
+</blockquote>
+
+<h4>
+  <a name="gui.txt_option_inspector"></a>
+  TXT Option Inspector
+</h4>
+
+<blockquote>
+  <img src="images/txt_option_inspector.png" title="TXT Option Inspector">
+</blockquote>
+
+<h3>
+  <a name="gui.output_location"></a>
+  Specifying Output Location
+</h3>
+
+<dl>
+<dt><a name="gui.output_folder"></a><b>Output folder</b></dt>
+<dd>Use this field to specify the destination directory for the generated documentation.
+    See -<a href="#d_option">d option</a> for more details.
+</dd>
+<dt><a name="gui.output_file"></a><b>Output file</b></dt>
+<dd>Use this field to specify the documentation main output file name.
+    See -<a href="#f_option">f option</a> for more details.
+</dd>
+</dl>
+
+<h3>
+  <a name="gui.run"></a>
+  Starting Generation
+</h3>
+
+Once all settings prepared, the generator can be started by clicking the <b>&ldquo;Run&rdquo;</b> button.
+Then, the dialog transforms and the progress panel appears:
+
+<blockquote>
+  <img src="images/generating.png" title="Generating documentation">
+</blockquote>
+
+The progress bar tracks the generation progress and shows the name of the output file being
+currently generated. The <b>&ldquo;Cancel&rdquo;</b> button stops the generation at any moment.
+<p>
+Once the generation has finished or cancelled, the
+<a href="#gui">Generator Dialog</a> transforms back to the initial state.
+Then, the new settings can be entered and the generation started again.
+<p>
+<a name="gui.launch_viewer"></a>
+When the generation was successful and the <b>&ldquo;Launch Viewer&rdquo;</b> check-box
+selected, the generator will try to launch an external application (e.g. MS Word)
+to view the produced result. See -<a href="#launchviewer_option">launchviewer</a> option
+for more details about this setting.
+
+<h4>
+  <a name="generation_phases"></a>
+  Generation Phases
+</h4>
+
+DocFlex generates the whole documentation in two phases:
+<i>estimation phase</i> and <i>generation phase</i>.
+<p>
+In the <i><b>estimation phase</b></i>, the generator quickly passes
+over all the source data and partially interprets the involved templates.
+During that, it collects the names and location of all documentation files
+to be created and all possible hypertarget locations within them. It also
+makes an estimation of the total generation time in order to graduate
+the progress bar.
+<p>
+During the estimation phase, only the message
+<i>"Scanning data source, please wait..."</i> is displayed on the
+<a href="#gui">generator dialog</a>'s progress bar.
+Please note, the estimation phase may take some time!
+On a lot of data (plus a slow computer), it may last some minutes.
+This does not mean, the generator hangs. Please wait!
+<p>
+During the <i><b>generation phase</b></i>, all template components are
+being fully interpreted and the real output generated. The progress bar is alive
+and shows what's being generated at the particular moment.
+
+<h2>
+  <a name="list_params"></a>
+  3.&nbsp; Multi-valued (List) Parameters
+</h2>
+
+Since the version 1.7.2, 
+<a href="about.html">DocFlex/XML</a>
+supports multi-valued template parameters (which we shall call also <i>list parameters</i>, for short).
+<p>
+List parameters allow you to pass to the template the whole vector of different values associated with the same 
+parameter name.
+This provides a universal mechanism of implementing the user control over how the set of templates 
+processes a certain type of data (or situations) that may come in unlimited number of variations.
+<p>
+The parameter inspector represents the whole value of a list parameter as a concatenation 
+of all value items (represented as strings) delimited with a separator character.
+However, there is no need to process that string representation within a template.
+Rather, it will be parsed automatically by the 
+<a href="#top">Generator</a> (as well as the parameter inspector ensures its integrity).
+
+<h3>
+  <a name="list_params.gui"></a>
+  Specifying List Value in Parameter Inspector
+</h3>
+
+In Parameter Inspector dialog, the entite list parameter value is displayed as a single string
+in the value field of the inspector row, where you can edit it as well:
+<blockquote>
+  <img src="images/list_param_value.png">
+</blockquote>
+
+Additionally, the list value can be edited as a multi-line text in a special dialog
+(invoked by the ellipsis button):
+
+<blockquote>
+  <img src="images/list_param_value_edit.png">
+</blockquote>
+
+At that, when the allowed value item separators include <code>newline</code>,
+all currently used separators will be replaced with it so as to show each value item 
+on a different line.
+When the editing in this dialog is finished, all <code>newline</code>-separators will be
+automatically replaced with another available separator suitable for single-line
+representation.
+<p>
+<a name="list_params.separators"></a>
+You can see all available value item <b>separator characters</b> in the 
+&ldquo;Parameter Description&rdquo; window, when the list parameter is selected:
+<blockquote>
+  <img src="images/list_param_descr.png">
+</blockquote>
+
+The separators are specified in the template along with the parameter definition.
+
+<h3>
+  <a name="list_params.escapes"></a>
+  Using Escapes
+</h3>
+
+When the characters recognized as value item separators 
+may also appear within the value items themselves, 
+the list parameter may be defined so as to recognize escapes. 
+In that case, each separator character can be equally 
+used within value items if escaped with a backslash.
+For example, given that <code>';'</code> is a separator,
+the following value item:
+<blockquote class="mrg8">
+  <code>red;green;blue</code>
+</blockquote>
+can be specified like this:
+<blockquote class="mrg8">
+  <code>red\;green\;blue</code>
+</blockquote>
+
+If a backslash is not consumed by an escape it will be remained in the text as is.
+To make sure that a backslash is not part of some escape, you may add another backslash.
+A sequence of two backslashes (<code>"\\"</code>) is an escape itself, which represents a single backslash. 
+This is important because backslashes may be used also in a secondary system of escapes
+within value items, which is specific to the given parameter.
+<p>
+When the escapes are recognized, the sequence <code>"\n"</code> 
+is reserved to encode a <code>newline</code> character.
+The encoding of <code>newline</code> may be needed, for instance, 
+when it is used not as a value item separator, but rather within multi-line content 
+of value items themselves. In that case, the <code>"\n"</code> escape allows flattening
+the entire list value into a single line. This may be particularly important
+for specifying the list parameter on the <a href="#options">command line</a> (see also below).
+<p>
+Some list parameters can be specified to ignore escapes. This may be needed when 
+backslashes must be frequently used within value items. (For example, the parameter
+will accept a list of Windows file pathnames.)
+<p>
+All possible escapes related to specifying of the value of a list parameter 
+as a whole can be found in the &ldquo;Parameter Description&rdquo; window.
+
+<h3>
+  <a name="list_params.cmdline"></a>
+  Specifying List Parameter on Command Line
+</h3>
+
+To specify a list parameter on Javadoc command-line you should encode
+the entire list value into a single string (using the value item
+<a href="#list_params.separators">separators</a> and possibly 
+<a href="#list_params.escapes">escapes</a>) and provide
+that string as a -<a href="#p_option">p option</a> argument.
+<p>
+For example, suppose you need to pass into a template the list parameter 
+<code>'gen.doc.element.names'</code> with three value items:
+<blockquote>
+<code>
+link<br>
+target<br>
+key
+</code>
+</blockquote>
+
+You can do this using a single command line option
+(given that <code>';'</code> is a value item separator):
+<blockquote>
+<code>
+-p:gen.doc.element.names "link;target;key"
+</code>
+</blockquote>
+(The quotes are necessary only when the parameter value contains spaces
+and must be treated as a single command-line argument.)
+<p>
+Alternatively, you can pass the same list value using multiple 
+-<a href="#p_option">p options</a>, each one for a separate value item. e.g.:
+<blockquote>
+<code>
+-p:gen.doc.element.names link
+-p:gen.doc.element.names target
+-p:gen.doc.element.names key
+</code>
+</blockquote>
+
+You can even combine the two approaches simultaneously:
+<blockquote>
+<code>
+-p:gen.doc.element.names link;target
+-p:gen.doc.element.names key
+</code>
+</blockquote>
+
+Multiple options specifying the same list parameter
+can be mixed with other options on command line.
+However, the order in which the parameter options follow is important,
+because it defines the ordering of the list value items received by the template.
+
+<h2>
+  <a name="error_report"></a>
+  4.&nbsp; Error Reporting
+</h2>
+
+Both the DocFlex/XML <a href="#cmdline">Generator</a> and the
+<a href="design_templates.html#designer">Template Designer</a>
+may encounter various unexpected error situations.
+During the generation, the unexpected errors and exceptions may arise
+because of the following reasons:
+<ol>
+<li>
+  I/O errors (e.g. invalid file pathnames, disk full, etc.)
+</li>
+<li>
+  Template errors (when something is improperly specified in templates).
+</li>
+<li>
+  Data source exceptions (in the case of
+  <a href="about.html">DocFlex/XML</a>,
+  these are exceptions thrown by the
+  <a href="http://xerces.apache.org/xerces2-j/" target="_blank">Apache Xerces2</a>).
+</li>
+<li>
+  DocFlex core exceptions (may be caused by bugs not discovered and fixed yet).
+</li>
+</ol>
+
+DocFlex tries to catch all such errors/exceptions and report about them along
+with the full diagnostics possible (i.e. where exactly and how the error has happened).
+<p>
+When the <a href="#gui">Generator Dialog</a> is enabled,
+any error is reported via the error message dialog, like the one shown on the screenshot:
+<blockquote>
+  <img src="images/err_dialog.png" title="Error Message Dialog">
+</blockquote>
+
+The error dialog shows brief information about the error.
+When more details are available, a full ERROR REPORT is created and dumped to the system clipboard.
+You can easily extract it (e.g. under MS Windows, just run <b>Notepad</b> and press <b>Ctrl+V</b>).
+<p>
+The detailed <b>ERROR REPORT</b> includes:
+<ul>
+<li>The general info about JVM, OS, command-line arguments, etc.</li>
+<li>All available error messages.</li>
+<li>
+  The Template Location Trace that shows which precisely template component was being interpreted
+  when the error happened.
+</li>
+<li>The Java Exception Stack Trace (when the error was caused by some unexpected Java exception).</li>
+</ul>
+
+When the DocFlex Generator is executed without GUI
+(-<a href="#nodialog_option">nodialog</a> option is specified on the generator
+<a href="#cmdline">command line</a>), by default, all exception/error details are printed
+to the standard console.
+However, using -<a href="#errlog_option">errlog</a> option, you can specify a separate error log file.
+In that case, the detailed ERROR REPORT will be dumped in that file; only brief messages will get on the console.
+
+<h2>
+  <a name="tips"></a>
+  5.&nbsp; Tips
+</h2>
+
+Here are some tips on various topics of using DocFlex/XML <a href="#top">Generator</a>
+and the output documents produced with it.
+
+<h3>
+  <a name="xml_tips"></a>
+  Input XML Files
+</h3>
+
+<h4>
+  <a name="file_pathname_patterns"></a>
+  Using file pathname patterns
+</h4>
+
+When you need to process at once so many input XML files that it is impractical to list all of them as generator arguments,
+you can use Ant-style file pathname patterns.
+<p>
+Each pathname pattern looks similar to a normal file pathname besides that it may contain some wildcard characters
+with a special interpretation. These are the following:
+<p>
+<table border="1" cellspacing="1" cellpadding="5">
+<tr align="center">
+  <th class="impr"><b>Wildcard</b></td>
+  <th class="impr"><b>Description</b></td>
+</tr>
+<tr>
+  <td align="center">
+    ?
+  </td>
+  <td>
+    matches one character in a real file name
+  </td>
+<tr>
+<tr>
+  <td align="center">
+    *
+  </td>
+  <td>
+    matches zero or more characters
+  </td>
+<tr>
+<tr>
+  <td align="center">
+    **
+  </td>
+  <td>
+    when used as the name of a directory, it matches zero or more sub-directories at any depth
+  </td>
+<tr>
+</table>
+
+<p>
+The file pathname patterns may be both absolute and relative ones, may contain spaces, etc.
+Basically, they should be specified the same as the ordinary file pathnames.
+
+<p>
+<b>Example Patterns:</b>
+<p>
+
+<table border="1" cellspacing="1" cellpadding="5">
+<tr align="center">
+  <th class="impr"><b>Pattern</b></td>
+  <th class="impr"><b>Description</b></td>
+</tr>
+<tr>
+  <td>
+    <code class="nowrap">*.xsd</code>
+  </td>
+  <td>
+    matches all XSD files in the current directory
+  </td>
+<tr>
+<tr>
+  <td>
+    <code class="nowrap">c:\schemas\*.xsd</code>
+  </td>
+  <td>
+    matches all XSD files in the directory <code>c:\schemas\</code>
+  </td>
+<tr>
+<tr>
+  <td>
+    <code class="nowrap">c:\schemas\**\*.xsd</code>
+  </td>
+  <td>
+    matches all XSD files in the directory <code>c:\schemas\</code> and all its subdirectories
+  </td>
+<tr>
+<tr>
+  <td>
+    <code class="nowrap">c:\**\schemas\*.xsd</code>
+  </td>
+  <td>
+    matches all XSD files found in any directory with the name <code>'schema'</code> at any depth
+  </td>
+<tr>
+<tr>
+  <td>
+    <code class="nowrap">../**/*.xsd</code>
+  </td>
+  <td>
+    matches all XSD files found in the parent directory of the current one and all its subdirectories
+  </td>
+<tr>
+<tr>
+  <td>
+    <code class="nowrap">*.x??</code>
+  </td>
+  <td>
+    matches all files in the current directory, whose name extension consists of 3 letters starting with <code>'x'</code>
+  </td>
+<tr>
+<tr>
+  <td>
+    <code class="nowrap">*.x*</code>
+  </td>
+  <td>
+    matches all files in the current directory, whose name extension starts with <code>'x'</code>
+  </td>
+<tr>
+</table>
+
+<p>
+<b>Notes:</b>
+<ul class="mrg8">
+<li>
+  File pathname patterns are supported only since DocFlex/XML v1.9.5
+</li>
+<li>
+  The name-separator may be either slash (<code>'\'</code> or <code>'/'</code>) independent on the system.
+</li>
+</ul>
+
+<h3>
+  <a name="html_tips"></a>
+  HTML Output
+</h3>
+
+<h4>
+  <a name="custom_css"></a>
+  Custom Style Sheet
+</h4>
+
+Since the version 1.9.0 it is possible to substitute some of the generated CSS rules
+with your custom ones.
+This allows you to adjust (to some extent) how the generated documentation looks without changing the templates.
+<p>
+For further details, please see: <a href="../general/css_usage.html">DocFlex Technology | Documentation | Usage of CSS in generated HTML</a>
+
+<h4>
+  <a name="mark_of_the_web"></a>
+  Inserting "Mark of the Web" comment
+</h4>
+
+When you run generated HTML documentation from a local drive using Internet Explorer with Windows XP SP2,
+the Information Bar may indicate that active content (the JavaScript in the HTML) has been blocked.
+To avoid this problem, according to Microsoft, a Mark of the Web (MOTW) comment should be inserted in all generated
+HTML documents.
+<p>
+DocFlex/XML is able to insert the generic MOTW automatically (see code below).
+This is controlled by <i>"Add Mark of the Web"</i> option
+(see <a href="#gui.html_option_inspector">HTML Options Inspector</a>).
+<p>
+You may also program inserting MOTW by yourself using a special <i>HTML pattern file</i>.
+To do this, you should create a separate HTML file with the following content:
+<blockquote>
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+<b>&lt;!-- saved from url=(0014)about:internet --&gt;</b>
+&lt;HTML&gt;
+&lt;HEAD&gt;
+<b>&lt;!-- docflex-html-head --&gt;</b>
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+<b>&lt;!-- docflex-html-body --&gt;</b>
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+</pre>
+</blockquote>
+
+Then, specify location of this file in the &ldquo;HTML pattern file&rdquo; field within the
+<a href="#gui.html_option_inspector">HTML Options Inspector</a> (or using
+<code class="nowrap">'-o:html.documentPatternFile'</code> <a href="#o_option">formatting option</a>
+on the <a href="#cmdline">generator command line</a>).
+<p>
+DocFlex will produce all HTML documents using the specified HTML pattern file with the
+lines <code class="nowrap">&lt;!--&nbsp;docflex-html-head&nbsp;--&gt;</code> and
+<code class="nowrap">&lt;!--&nbsp;docflex-html-body&nbsp;--&gt;</code> replaced with the actual generated output.
+<p>
+For more information about MOTW, please see Microsoft MSDN web-site 
+(they frequently change the page location, so here is a Google query):
+<a target="_blank" href="http://www.google.com/#q=Mark+of+the+Web">http://www.google.com/#q=Mark+of+the+Web</a>
+
+<h3>
+  <a name="rtf_tips"></a>
+  RTF Output
+</h3>
+
+<h4>
+  <a name="updating_rtf_fields"></a>
+  Updating RTF fields in MS Word
+</h4>
+
+The RTF documentation generated by the provided templates heavily uses document
+<b>fields</b> (for such things like <i>page number references</i>,
+<i>number of pages</i> and so on).
+<p>
+When you load the generated RTF in MS Word, to have the fields display the correct values,
+you will need to update them. To do this, please type: <b>Ctrl+A</b>, then <b>F9</b>.
+
+<h4>
+  <a name="including_rtf_in_doc"></a>
+  Including generated RTF in larger Word document
+</h4>
+
+Your task is the following. You have prepared a certain static Word document 
+and need to include into it the output generated with DocFlex so as each time 
+your XML documentation is regenerated, the larger Word document is updated as well. 
+<p>
+Here is how you can do that.
+<p>
+You should insert into your Word document an <b><i>INCLUDETEXT</i></b> field.
+Using the MS Word menu, it may be done like this:
+
+<blockquote>
+<i>Insert | Field... | Categories: Links and References | Field names: Include Text</i>
+</blockquote>
+
+In the Word document (when &ldquo;Toggle Field Codes&rdquo; switched on), 
+the field will look like the following:
+
+<blockquote>
+<code>{ INCLUDETEXT "C:\\blah\\blah\\XMLDoc.rtf" \* MERGEFORMAT }</code>
+</blockquote>
+
+Here, the RTF document generated with DocFlex should be found by the path:
+<blockquote>
+<code>C:\blah\blah\XMLDoc.rtf</code>
+</blockquote>
+Make sure you use double slashes in the field's pathname 
+(as a single slash is used to start a command or an option)!
+<p> 
+After that, you can generate with DocFlex the XMLDoc RTF.
+To prepare the result big document, open it with MS Word.
+Then, press <b>Ctrl+A</b> (select all) and <b>F9</b> (to update fields).
+
+<h4>
+  <a name="including_doc_in_rtf"></a>
+  Including static Word document into generated RTF
+</h4>
+
+Now, the task is the <a href="#including_rtf_in_doc">opposite</a>.
+You have prepared some static Word document and need to include it somewhere in the RTF document generated by DocFlex.
+<p>
+That is possible too. However, you will need to specify this in some template (because only templates eventually generate any output).
+Therefore, you will need to use the <a href="about.html#template_designer">Template Designer</a>.
+<p>
+In some template location, which is determined by where you need to insert your Word document,
+you should specify a <a href="../general/template_components.html#data_control">Data Control</a>
+as shown on the screenshot (the rectangle with "Include Text ..."):
+<blockquote>
+<img src="images/including_doc_in_rtf_1.png">
+</blockquote>
+
+In the property dialog of that Data Control, you should specify: Data Source = 'Document Field'; Field = 'Include Text',
+as shown on the next screenshot:
+
+<blockquote>
+<img src="images/including_doc_in_rtf_2.png">
+</blockquote>
+
+In the &ldquo;Expression for Filename or URL&rdquo; field, specify a <a href="../general/data_processing_features.html#fq_expr">FlexQuery expression</a>
+that will evaluate to the pathname or URL of the Word document file you want to include.
+That expression may be as simple as just a string constant (as shown in the screenshot).
+<p>
+When you generate an RTF file with that template and open it in MS Word, you will see in it a field like this:
+<blockquote>
+<img src="images/including_doc_in_rtf_3.png">
+</blockquote>
+
+After updating that field, your Word document will be included there.
+
+<h4>
+  <a name="generating_rtf_for_other_apps"></a>
+  Generating RTF for non-Word applications
+</h4>
+
+The RTF generated by DocFlex/XML may be successfully imported into OpenOffice.org Writer, 
+Adobe FrameMaker and probably many other (non MS Word) software.
+<p>
+To make the RTF look better in other applications, before generating it, you may uncheck
+<b>&ldquo;Tune output for MS Word&rdquo;</b> option in <a href="#gui.rtf_option_inspector">RTF Options dialog</a>
+(or using 
+<code class="nowrap">'-o:rtf.tuneForMSWord=false'</code> <a href="#o_option">formatting option</a>
+on the Javadoc command line).
+
+<p class="mrg8">
+Here are the details about this option:
+<p class="mrg8">
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+When <b>&ldquo;Tune output for MS Word&rdquo;</b> option is selected,
+the generator will adjust some RTF formatting settings specifically for MS Word.
+<p class="mrg8"></p>
+Although Microsoft is the originator of RTF format, the MS Word itself
+appears to have some oddities of rendering certain RTF settings,
+even though those settings may well follow the RTF specification.
+For instance, when displaying the paragraph or table borders, their
+horizontal positions may be shifted (e.g. when MS Word interprets
+horizontal margins of a paragraph, it draws the paragraph borders and
+paddings within the specified margin space but not within the paragraph
+content as it might be natural).
+<p class="mrg8"></p>
+To overcome this, in such cases, we adjust the initial dimensions in
+the opposite way so as the result formatting would look properly in MS Word
+(e.g. to make the actual paragraph margin look as intended the margin width
+specified in RTF is increased by the paragraph border and padding widths).
+<p class="mrg8"></p>
+However, when you generate RTF to display it primarily not in MS Word
+but rather in different viewers or editors (e.g. OpenOffice.org under Linux),
+which interpret the original RTF specification more literally,
+those specific adjustments may cause a visible distortion of the intended
+formatting of the document.
+<p class="mrg8"></p>
+In such cases, we recommend to uncheck this option.
+</td></tr>
+</table>
+<p>
+If something is wrong with the imported RTF,
+try also to uncheck <b>&ldquo;Include paragraph style&rdquo;</b>
+and <b>&ldquo;Include character style&rdquo;</b> options.
+Some tools have problems with the formatting styles embedded in RTF.
+<p>
+At last, very important. Most of non-Word applications cannot handle nested tables in RTF.
+(For instance, FrameMaker 8 simply hangs during importing any RTF that contains nested tables.)
+Generation of nested tables is not specifically controlled by the 
+<a href="#gui.rtf_option_inspector">RTF options</a> of the generator.
+Instead, it is programmed entirely in templates
+(e.g. <a href="xsddoc/index.html">XSDDoc</a>). 
+We frequently use nested tables to organize grid layouts so as to place information more
+compact on the page.
+Those templates normally include an alternative implementation without nested tables,
+which is activated by a special template parameter.
+For instance, in the case of <a href="xsddoc/index.html">XSDDoc</a> templates, this is
+&ldquo;<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.fmt.php#fmt.allowNestedTables">Formatting | Allow nested tables</a>&rdquo;
+parameter.
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2014 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>
