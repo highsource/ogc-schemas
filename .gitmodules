@@ -1,4 +1,0 @@
-[submodule "schemas/src/main/resources-original/icsm/geodesyml"]
-	path = schemas/src/main/resources-original/icsm/geodesyml
-	url = https://github.com/GeoscienceAustralia/GeodesyML.git
-    branch = "ogc-schemas"
