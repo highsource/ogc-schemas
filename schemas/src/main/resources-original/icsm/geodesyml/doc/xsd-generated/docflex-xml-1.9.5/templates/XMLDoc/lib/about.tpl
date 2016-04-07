@@ -1,0 +1,151 @@
+<DOCFLEX_TEMPLATE VER='1.19'>
+CREATED='2005-10-17 11:23:00'
+LAST_UPDATE='2013-12-16 01:52:20'
+DESIGNER_TOOL='DocFlex SDK 1.x'
+DESIGNER_LICENSE_TYPE='Filigris Works Team'
+APP_NAME='XMLDoc'
+TEMPLATE_TYPE='DocumentTemplate'
+DSM_TYPE_ID='xmldoc'
+ROOT_ET='<ANY>'
+<STYLES>
+	CHAR_STYLE={
+		style.name='About';
+		style.id='cs1';
+		text.font.name='Verdana';
+		text.font.size='7';
+		text.color.foreground='#808080';
+	}
+	CHAR_STYLE={
+		style.name='Default Paragraph Font';
+		style.id='cs2';
+		style.default='true';
+	}
+	CHAR_STYLE={
+		style.name='Hyperlink';
+		style.id='cs3';
+		text.decor.underline='true';
+		text.color.foreground='#0000FF';
+	}
+	PAR_STYLE={
+		style.name='Normal';
+		style.id='s1';
+		style.default='true';
+	}
+</STYLES>
+FMT={
+	doc.lengthUnits='pt';
+	doc.default.font='Arial';
+	doc.hlink.style.link='cs3';
+}
+<ROOT>
+	<AREA_SEC>
+		FMT={
+			text.style='cs1';
+		}
+		<AREA>
+			<CTRL_GROUP>
+				FMT={
+					par.border.top.style='solid';
+					par.border.top.color='#808080';
+					par.margin.top='20';
+					par.margin.bottom='5';
+					par.padding.top='1.7';
+				}
+				<CTRLS>
+					<TEXT_CTRL>
+						TEXT='XML File documentation generated with'
+					</TEXT_CTRL>
+					<DATA_CTRL>
+						FORMULA='output.generator.name'
+						<URL_HLINK>
+							TARGET_FRAME_EXPR='"_blank"'
+							TARGET_FRAME_ALWAYS
+							URL_EXPR='"http://www.filigris.com/docflex-xml/"'
+						</URL_HLINK>
+					</DATA_CTRL>
+					<TEXT_CTRL>
+						TEXT='v'
+					</TEXT_CTRL>
+					<DELIMITER>
+						FMT={
+							txtfl.delimiter.type='none';
+						}
+					</DELIMITER>
+					<DATA_CTRL>
+						FORMULA='output.generator.version'
+					</DATA_CTRL>
+					<TEXT_CTRL>
+						TEXT='using'
+					</TEXT_CTRL>
+					<DATA_CTRL>
+						FORMULA='template.appName'
+						<URL_HLINK>
+							TARGET_FRAME_EXPR='"_blank"'
+							TARGET_FRAME_ALWAYS
+							URL_EXPR='"http://www.filigris.com/docflex-xml/xmldoc/"'
+						</URL_HLINK>
+					</DATA_CTRL>
+					<TEXT_CTRL>
+						TEXT='template set'
+					</TEXT_CTRL>
+					<DELIMITER>
+						FMT={
+							txtfl.delimiter.type='none';
+						}
+					</DELIMITER>
+					<TEXT_CTRL>
+						TEXT='.'
+					</TEXT_CTRL>
+				</CTRLS>
+			</CTRL_GROUP>
+			<CTRL_GROUP>
+				<CTRLS>
+					<TEXT_CTRL>
+						TEXT='DocFlex/XML'
+						<URL_HLINK>
+							TARGET_FRAME_EXPR='"_blank"'
+							TARGET_FRAME_ALWAYS
+							URL_EXPR='"http://www.filigris.com/docflex-xml/"'
+						</URL_HLINK>
+					</TEXT_CTRL>
+					<TEXT_CTRL>
+						TEXT='is a powerful template-driven documentation and report generator from any data stored in XML files.'
+					</TEXT_CTRL>
+					<TEXT_CTRL>
+						TEXT='Based on an innovative technology developed by'
+					</TEXT_CTRL>
+					<TEXT_CTRL>
+						TEXT='FILIGRIS WORKS'
+						<URL_HLINK>
+							TARGET_FRAME_EXPR='"_blank"'
+							TARGET_FRAME_ALWAYS
+							URL_EXPR='"http://www.filigris.com"'
+						</URL_HLINK>
+					</TEXT_CTRL>
+					<DELIMITER>
+						FMT={
+							txtfl.delimiter.type='text';
+							txtfl.delimiter.text=', ';
+						}
+					</DELIMITER>
+					<TEXT_CTRL>
+						TEXT='this new tool offers capabilities not found in anything else!'
+					</TEXT_CTRL>
+					<TEXT_CTRL>
+						TEXT='Find out more at'
+					</TEXT_CTRL>
+					<TEXT_CTRL>
+						TEXT='www.filigris.com'
+						<URL_HLINK>
+							TARGET_FRAME_EXPR='"_blank"'
+							TARGET_FRAME_ALWAYS
+							URL_EXPR='"http://www.filigris.com"'
+						</URL_HLINK>
+					</TEXT_CTRL>
+				</CTRLS>
+			</CTRL_GROUP>
+		</AREA>
+	</AREA_SEC>
+</ROOT>
+CHECKSUM='hmNDccvXMu9vAhe?I6Fp33klEyciCydVKw2b+Y0Y+zg'
+</DOCFLEX_TEMPLATE>

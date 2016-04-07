@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.3" targetNamespace="urn:xml-gov-au:icsm:egeodesy:0.3" elementFormDefault="qualified" version="0.3" xml:lang="en">
+	<annotation>
+		<documentation>eGeodesy schema implementation based on GML - draft. Copyright (c) 2013-2015 Commonwealth of Australia, on behalf of the Intergovernmental Committee on Surveying and Mapping. All rights reserved.</documentation>
+	</annotation>
+	<!--  -->
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<include schemaLocation="commonTypes.xsd"/>
+	<include schemaLocation="quality.xsd"/>
+	<include schemaLocation="project.xsd"/>
+	<include schemaLocation="lineage.xsd"/>
+	<include schemaLocation="fieldMeasurement.xsd"/>
+	<!--  -->
+	<complexType name="AbstractMeasurementPropertyType">
+		<sequence minOccurs="0">
+			<element ref="geo:AbstractMeasurement"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+	<element name="AbstractMeasurement" abstract="true" substitutionGroup="gml:AbstractFeature"/>
+	<!--  -->
+	<complexType name="AbstractMeasurementType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element ref="gml:validTime" minOccurs="0">
+						<annotation>
+							<documentation>WFS Temporal Query compatible time element that defines the time instant or time period at which the raw measurement was observed in the field.</documentation>
+						</annotation>
+					</element>
+					<element name="aprioriScalar" type="geo:ValueType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="fromProject" type="geo:ProjectPropertyType" minOccurs="0"/>
+					<element name="source" type="geo:AbstractMeasurementSourcePropertyType" minOccurs="0">
+						<annotation>
+							<documentation>A reference to the source of the measurement. An example is a static GNSS baseline reduction from a pair of RINEX files via baseline processing software. Another example is atmospheric correction of a raw EDM measurement. Optional.</documentation>
+						</annotation>
+					</element>
+					<group ref="geo:RemarksGroup"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!--  -->
+	<element name="Measurement" type="geo:MeasurementType" substitutionGroup="geo:AbstractMeasurement">
+		<annotation>
+			<documentation>A general container for any geodetic measurement. This element will be deprecated in a subsequent version of GeodesyML subject to the requirements coverage provided by the specific named measurement types such as GNSSBaseline, DirectionSet, OrthometricHeight, etc.</documentation>
+		</annotation>
+	</element>
+	<!--  -->
+	<complexType name="MeasurementType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="type" type="gml:CodeType">
+						<annotation>
+							<documentation>Type of measurement. Typical examples (from the DynaNet manual) are:
+								Measurement types
+								A Horizontal angles (uncorrelated)
+								B Geodetic azimuth (or bearing)
+								C Ellipsoid chord distance
+								D Direction set
+								E Ellipsoid arc distance 
+								G Single GNSS baseline
+								H Orthometric height
+								I Astronomic latitude
+								J Astronomic longitude
+								K Astronomic (Laplace) azimuth
+								L Orthometric height difference
+								M Mean sea level (MSL) arc distance 
+								P Geodetic latitude
+								Q Geodetic longitude
+								R Ellipsoid height
+								S Slope (direct) distance
+								V Zenith distance
+								X GNSS baseline cluster (full correlations)
+								Y GNSS point cluster (full correlations)
+								Z Vertical angle
+							</documentation>
+						</annotation>
+					</element>
+					<element name="MeasurementLine" type="geo:MeasurementLineType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="linePairQuality" type="geo:MeasurementLineCovarianceType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="MeasurementPoint" type="geo:MeasurementPointType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="pointPairQuality" type="geo:MeasurementPointCovarianceType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+				<attributeGroup ref="gml:SRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!--  -->
+	<complexType name="MeasurementPointType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="atSetup" type="geo:SetupPropertyType"/>
+					<element name="atNode" type="geo:NodePropertyType"/>
+					<element name="atHeight" type="gml:MeasureType" minOccurs="0"/>
+					<element name="value">
+						<complexType>
+							<simpleContent>
+								<extension base="double">
+									<attribute name="uomLabel" type="NCName"/>
+								</extension>
+							</simpleContent>
+						</complexType>
+					</element>
+					<element ref="geo:AbstractQuality" minOccurs="0" maxOccurs="unbounded"/>
+					<group ref="geo:RemarksGroup"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!--  -->
+	<complexType name="MeasurementLineType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="atSetup" type="geo:SetupPropertyType" minOccurs="0"/>
+					<element name="toSetup" type="geo:SetupPropertyType" minOccurs="0"/>
+					<element name="atNode" type="geo:NodePropertyType"/>
+					<element name="atHeight" type="gml:MeasureType" minOccurs="0"/>
+					<element name="toNode" type="geo:NodePropertyType"/>
+					<element name="toHeight" type="gml:MeasureType" minOccurs="0"/>
+					<element name="value">
+						<complexType>
+							<simpleContent>
+								<extension base="gml:doubleList">
+									<attribute name="uomLabels" type="gml:NCNameList"/>
+								</extension>
+							</simpleContent>
+						</complexType>
+					</element>
+					<element ref="geo:AbstractQuality" minOccurs="0" maxOccurs="unbounded"/>
+					<group ref="geo:RemarksGroup"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<complexType name="MeasurementLineCovarianceType">
+		<annotation>
+			<documentation>Covariances between measurementLines.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="atLine" type="gml:ReferenceType"/>
+					<element name="toLine" type="gml:ReferenceType"/>
+					<element ref="geo:AbstractQuality"/>
+					<group ref="geo:RemarksGroup"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<complexType name="MeasurementPointCovarianceType">
+		<annotation>
+			<documentation>Covariances between measurementLines.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="atPoint" type="gml:ReferenceType"/>
+					<element name="toPoint" type="gml:ReferenceType"/>
+					<element ref="geo:AbstractQuality"/>
+					<group ref="geo:RemarksGroup"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!--  -->
+	<element name="HorizontalAngle" type="geo:HorizontalAngleType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!--  -->
+	<complexType name="HorizontalAngleType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="base" type="geo:MeasurementPointType">
+						<annotation>
+							<documentation>The base is a reference to the node at which the angle was measured (the instrument setup). The base/value element is ignored and by convention should be blank.</documentation>
+						</annotation>
+					</element>
+					<element name="angle" type="geo:MeasurementLineType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="GeodeticAzimuth" type="geo:GeodeticAzimuthType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="GeodeticAzimuthType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="azimuth" type="geo:MeasurementLineType"/>
+				</sequence>
+				<attributeGroup ref="geo:RequiredSRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="EllipsoidChordDistance" type="geo:EllipsoidChordDistanceType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="EllipsoidChordDistanceType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="distance" type="geo:MeasurementLineType"/>
+				</sequence>
+				<attributeGroup ref="geo:RequiredSRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="EllipsoidArcDistance" type="geo:EllipsoidArcDistanceType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="EllipsoidArcDistanceType">
+		<annotation>
+			<documentation>Ellipsoid Arc Distances store the same data structure as Ellipsoid Chord Distances and differ only in implementation, thus it is safe to use an alias.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="geo:EllipsoidChordDistanceType"/>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="DirectionSet" type="geo:DirectionSetType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="DirectionSetType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="direction" type="geo:MeasurementLineType" maxOccurs="unbounded"/>
+					<element name="directionPairQuality" type="geo:MeasurementLineCovarianceType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="GNSSBaseline" type="geo:GNSSBaselineType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="GNSSBaselineType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="vector" type="geo:MeasurementLineType"/>
+				</sequence>
+				<attributeGroup ref="geo:RequiredSRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="OrthometricHeight" type="geo:OrthometricHeightType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="OrthometricHeightType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="orthometricHeight" type="geo:MeasurementPointType"/>
+				</sequence>
+				<attributeGroup ref="geo:RequiredSRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="HeightDifference" type="geo:HeightDifferenceType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="HeightDifferenceType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="heightDifference" type="geo:MeasurementLineType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="OrthometricHeightDifference" type="geo:OrthometricHeightDifferenceType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="OrthometricHeightDifferenceType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="heightDifference" type="geo:MeasurementLineType"/>
+				</sequence>
+				<attributeGroup ref="geo:RequiredSRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="AstronomicLatitude" type="geo:AstronomicLatitudeType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="AstronomicLatitudeType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="latitude" type="geo:MeasurementPointType"/>
+				</sequence>
+				<attributeGroup ref="geo:RequiredSRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="AstronomicLongitude" type="geo:AstronomicLongitudeType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="AstronomicLongitudeType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="longitude" type="geo:MeasurementPointType"/>
+				</sequence>
+				<attributeGroup ref="geo:RequiredSRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="AstronomicAzimuth" type="geo:AstronomicAzimuthType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="AstronomicAzimuthType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="azimuth" type="geo:MeasurementLineType"/>
+				</sequence>
+				<attributeGroup ref="geo:RequiredSRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="GeodeticLatitude" type="geo:GeodeticLatitudeType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="GeodeticLatitudeType">
+		<complexContent>
+			<extension base="geo:AstronomicLatitudeType"/>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="GeodeticLongitude" type="geo:GeodeticLongitudeType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="GeodeticLongitudeType">
+		<complexContent>
+			<extension base="geo:AstronomicLongitudeType"/>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="MeanSeaLevelArcDistance" type="geo:MeanSeaLevelArcDistanceType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="MeanSeaLevelArcDistanceType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="arcDistance" type="geo:MeasurementLineType"/>
+				</sequence>
+				<attributeGroup ref="geo:RequiredSRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="SlopeDistance" type="geo:SlopeDistanceType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="SlopeDistanceType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="slopeDistance" type="geo:MeasurementLineType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="EllipsoidHeight" type="geo:EllipsoidHeightType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="EllipsoidHeightType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="ellipsoidHeight" type="geo:MeasurementPointType"/>
+				</sequence>
+				<attributeGroup ref="geo:RequiredSRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="ZenithDistance" type="geo:ZenithDistanceType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="ZenithDistanceType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="zenithDistance" type="geo:MeasurementLineType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="VerticalAngle" type="geo:VerticalAngleType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="VerticalAngleType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="verticalAngle" type="geo:MeasurementLineType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="GNSSBaselineCluster" type="geo:GNSSBaselineClusterType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="GNSSBaselineClusterType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="Baseline" type="geo:MeasurementLineType" maxOccurs="unbounded"/>
+					<element name="baselinePairQuality" type="geo:MeasurementLineCovarianceType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+				<attributeGroup ref="geo:RequiredSRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="GNSSPointCluster" type="geo:GNSSPointClusterType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="GNSSPointClusterType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="point" type="geo:MeasurementPointType" maxOccurs="unbounded"/>
+					<element name="pointPairQuality" type="geo:MeasurementPointCovarianceType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+				<attributeGroup ref="geo:RequiredSRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<element name="DInSARWrapped" type="geo:DInSARWrappedType" substitutionGroup="geo:AbstractMeasurement"/>
+	<!-- -->
+	<complexType name="DInSARWrappedType">
+		<complexContent>
+			<extension base="geo:AbstractMeasurementType">
+				<sequence>
+					<element name="captureSystem" type="gml:CodeType"/>
+					<!-- the start date and end date are catered for in the gml:validTime element in geo:AbstractMeasurementType -->
+					<element name="mFrame" type="decimal"/>
+					<element name="sFrame" type="decimal"/>
+					<element name="temporalBaseline" type="decimal">
+						<annotation>
+							<documentation>Decimal days</documentation>
+						</annotation>
+					</element>
+					<element name="perpendicularBaseline" type="geo:ValueType"/>
+					<element name="track" type="integer"/>
+					<element name="heading" type="gml:CodeType"/>
+					<element name="polarity" type="gml:CodeType"/>
+					<element name="centre" type="geo:ValueType">
+						<annotation>
+							<documentation>Geodetic coordinate lat/lon</documentation>
+						</annotation>
+					</element>
+					<element name="lookAngle" type="geo:ValueType"/>
+					<element name="imageFormat" type="gml:CodeType" minOccurs="0"/>
+					<element ref="gml:RectifiedGridCoverage" minOccurs="0"/>
+				</sequence>
+				<attributeGroup ref="geo:RequiredSRSReferenceGroup"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+</schema>

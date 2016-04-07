@@ -1,0 +1,19 @@
+This group of parameters allows you to select which XML schema files (and components defined in them)
+will be documented.
+<p>
+The XML schema files you initially specify on the command line (or in the generator dialog)
+are the primary XML files to be processed by the XSDDoc template set.
+<p>
+However, those initial XML schemas may call (reference) from themselves some other XML schema files
+(via <code>&lt;xs:import&gt;</code>, <code>&lt;xs:include&gt;</code> and 
+<code>&lt;xs:redefine&gt;</code> elements) and they, in turn, yet more extra schemas.
+<p>
+All those initial and referenced XML schema files will constitute the whole your XML schema project.
+Generally, all of them must be loaded and processed in order to make sense of the declarations
+specified in your initial XML schemas.
+Some of the imported extra XML schemas may be the standard (and fairly big) ones used in other your projects.
+<p>
+So, do you need to document all the involved XML schemas?
+If not, which ones?
+That can be specified with the parameters in this group.
+

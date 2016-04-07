@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<geo:GeodesyML gml:id="GEO_1" xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="urn:xml-gov-au:icsm:egeodesy:0.3 ../schemas/geodesyML.xsd">
+    <!--
+        @Name MOBS_SiteLog.xml
+        @Author Laurence Davies
+        @Date 2015-06-03
+        @Description: Demonstration file using GeodesyML 0.3 to demonstrate encapsulation of a site, site-log, regulation 13 site certificate, and a national adjustment weekly solution time series.
+    -->
+    <geo:Site gml:id="SITE_1">
+        <geo:type codeSpace="">CORS</geo:type>
+        <geo:Monument xlink:href="#MONUMENT_1"/>
+    </geo:Site>
+    <geo:Monument gml:id="MONUMENT_1">
+        <gml:description>Centre of base of 5/8&quot; spigot on GPS</gml:description>
+        <gml:name codeSpace="urn:ga-gov-au:monument-siteName">Melbourne Observatory</gml:name>
+        <gml:name codeSpace="urn:ga-gov-au:monument-fourCharacterID">MOBS</gml:name>
+        <gml:name codeSpace="urn:ga-gov-au:monument-iersDOMESNumber">50182M001</gml:name>
+        <gml:name codeSpace="urn:ga-gov-au:monument-cdpNumber">Not Available</gml:name>
+        <geo:type codeSpace="urn:ga-gov-au:monument-type">CORS</geo:type>
+        <geo:installedDate>2002-09-15Z</geo:installedDate>
+        <geo:remarks>antenna mounting plate fixed to 1.5m stainless steel pole. Pole is fixed to 0.6m diameter bluestone pillar The GPS antenna is located on top of a stainless steel pillar, which has been secured into the top of a bluestone pillar set in bedrock</geo:remarks>
+        <geo:inscription/>
+        <geo:monumentDescription codeSpace="urn:ga-gov-au:monument-description">Centre of base of 5/8&quot; spigot on GPS</geo:monumentDescription>
+        <geo:height uomLabels="m">1.5</geo:height>
+        <geo:foundation codeSpace="urn:ga-gov-au:monument-foundation">Concrete cast in situ, set in Bedrock</geo:foundation>
+        <geo:foundationDepth uomLabels="m">4.9</geo:foundationDepth>
+        <geo:markerDescription>Stainless Steel Plate</geo:markerDescription>
+        <geo:geologicCharacteristic codeSpace="urn:ga-gov-au:monument-geologicCharacteristic">Thin Bedrock of between 5-20m of</geo:geologicCharacteristic>
+        <geo:bedrockType codeSpace="urn:ga-gov-au:monument-bedrockType">SANDSTONE</geo:bedrockType>
+        <geo:bedrockCondition codeSpace="urn:ga-gov-au:monument-bedrockCondition">>Firm, variably oxidised, variably cemented</geo:bedrockCondition>
+        <geo:fractureSpacing codeSpace="urn:ga-gov-au:monument-fractureSpacing">No Fractures</geo:fractureSpacing>
+        <geo:faultZonesNearby codeSpace="urn:ga-gov-au:monument-faultZonesNearby">Non documented</geo:faultZonesNearby>
+    </geo:Monument>
+    <geo:gnssReceiver gml:id="GNSS_REC_1">
+        <geo:manufacturerSerialNumber>ZR520021114</geo:manufacturerSerialNumber>
+        <geo:receiverType codeSpace="urn:igs-org:gnss-receiver-model-code" codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode" codeListValue="ASHTECH UZ-12">ASHTECH UZ-12</geo:receiverType>
+        <geo:satelliteSystem>GPS</geo:satelliteSystem>
+        <geo:serialNumber>ZR520021114</geo:serialNumber>
+        <geo:firmwareVersion>ZC00</geo:firmwareVersion>
+        <geo:elevationCutoffSetting>0</geo:elevationCutoffSetting>
+        <geo:dateInstalled>2002-10-29T00:00:00Z</geo:dateInstalled>
+        <geo:dateRemoved>2006-01-23T23:59:00Z</geo:dateRemoved>
+        <geo:notes/>
+    </geo:gnssReceiver>
+    <geo:gnssReceiver gml:id="GNSS_REC_2">
+        <geo:manufacturerSerialNumber>ZR220012001</geo:manufacturerSerialNumber>
+        <geo:receiverType codeSpace="urn:igs-org:gnss-receiver-model-code" codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode" codeListValue="ASHTECH UZ-12">ASHTECH UZ-12</geo:receiverType>
+        <geo:satelliteSystem>GPS</geo:satelliteSystem>
+        <geo:serialNumber>ZR220012001</geo:serialNumber>
+        <geo:firmwareVersion>CK00</geo:firmwareVersion>
+        <geo:elevationCutoffSetting>0</geo:elevationCutoffSetting>
+        <geo:dateInstalled>2006-01-24T00:00:00Z</geo:dateInstalled>
+        <geo:dateRemoved>2007-06-20T23:59:00Z</geo:dateRemoved>
+        <geo:notes/>
+    </geo:gnssReceiver>
+    <geo:gnssReceiver gml:id="GNSS_REC_3">
+        <geo:manufacturerSerialNumber>462891</geo:manufacturerSerialNumber>
+        <geo:receiverType codeSpace="urn:igs-org:gnss-receiver-model-code" codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode" codeListValue="LEICA GRX1200GGPRO">LEICA GRX1200PRO</geo:receiverType>
+        <geo:satelliteSystem>GPS</geo:satelliteSystem>
+        <geo:serialNumber>462891</geo:serialNumber>
+        <geo:firmwareVersion>3.10</geo:firmwareVersion>
+        <geo:elevationCutoffSetting>0</geo:elevationCutoffSetting>
+        <geo:dateInstalled>2007-06-21T00:00:00Z</geo:dateInstalled>
+        <geo:dateRemoved>2008-11-16T23:59:00Z</geo:dateRemoved>
+        <geo:notes/>
+    </geo:gnssReceiver>
+    <geo:gnssReceiver gml:id="GNSS_REC_4">
+        <geo:manufacturerSerialNumber>356538</geo:manufacturerSerialNumber>
+        <geo:receiverType codeSpace="urn:igs-org:gnss-receiver-model-code" codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode" codeListValue="LEICA GRX1200GGPRO">LEICA GRX1200GGPRO</geo:receiverType>
+        <geo:satelliteSystem>GPS+GLONASS</geo:satelliteSystem>
+        <geo:serialNumber>356538</geo:serialNumber>
+        <geo:firmwareVersion>6.02</geo:firmwareVersion>
+        <geo:elevationCutoffSetting>0</geo:elevationCutoffSetting>
+        <geo:dateInstalled>2008-11-17T00:00:00Z</geo:dateInstalled>
+        <geo:dateRemoved>2009-07-23T23:59:00Z</geo:dateRemoved>
+        <geo:notes/>
+    </geo:gnssReceiver>
+    <geo:gnssReceiver gml:id="GNSS_REC_5">
+        <geo:manufacturerSerialNumber>356538</geo:manufacturerSerialNumber>
+        <geo:receiverType codeSpace="urn:igs-org:gnss-receiver-model-code" codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode" codeListValue="LEICA GRX1200GGPRO">LEICA GRX1200GGPRO</geo:receiverType>
+        <geo:satelliteSystem>GPS+GLONASS</geo:satelliteSystem>
+        <geo:serialNumber>356538</geo:serialNumber>
+        <geo:firmwareVersion>7.50</geo:firmwareVersion>
+        <geo:elevationCutoffSetting>0</geo:elevationCutoffSetting>
+        <geo:dateInstalled>2009-07-24T00:00:00Z</geo:dateInstalled>
+        <geo:dateRemoved>2010-05-03T04:30:00Z</geo:dateRemoved>
+        <geo:notes>The tracking was changed from C2 or P2, to P2 only at 2009-07-30T00 Tracking changed to all in view at 2009-09-09T01</geo:notes>
+    </geo:gnssReceiver>
+    <geo:gnssReceiver gml:id="GNSS_REC_6">
+        <geo:manufacturerSerialNumber>356538</geo:manufacturerSerialNumber>
+        <geo:receiverType codeSpace="urn:igs-org:gnss-receiver-model-code" codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode" codeListValue="LEICA GRX1200GGPRO">LEICA GRX1200GGPRO</geo:receiverType>
+        <geo:satelliteSystem>GPS+GLONASS</geo:satelliteSystem>
+        <geo:serialNumber>356538</geo:serialNumber>
+        <geo:firmwareVersion>7.50/3.019</geo:firmwareVersion>
+        <geo:elevationCutoffSetting>0</geo:elevationCutoffSetting>
+        <geo:dateInstalled>2010-05-03T04:30:00Z</geo:dateInstalled>
+        <geo:dateRemoved>2010-08-05T00:00:00Z</geo:dateRemoved>
+        <geo:notes>ME upgrade due to GLONASS tracking problem.</geo:notes>
+    </geo:gnssReceiver>
+    <geo:gnssReceiver gml:id="GNSS_REC_7">
+        <geo:manufacturerSerialNumber>356538</geo:manufacturerSerialNumber>
+        <geo:receiverType codeSpace="urn:igs-org:gnss-receiver-model-code" codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode" codeListValue="LEICA GRX1200GGPRO">LEICA GRX1200GGPRO</geo:receiverType>
+        <geo:satelliteSystem>GPS+GLONASS</geo:satelliteSystem>
+        <geo:serialNumber>356538</geo:serialNumber>
+        <geo:firmwareVersion>8.00/3.019</geo:firmwareVersion>
+        <geo:elevationCutoffSetting>0</geo:elevationCutoffSetting>
+        <geo:dateInstalled>2010-08-05T00:00:00Z</geo:dateInstalled>
+        <geo:dateRemoved>2010-10-08T03:15:00Z</geo:dateRemoved>
+        <geo:notes/>
+    </geo:gnssReceiver>
+    <geo:gnssReceiver gml:id="GNSS_REC_8">
+        <geo:manufacturerSerialNumber>356538</geo:manufacturerSerialNumber>
+        <geo:receiverType codeSpace="urn:igs-org:gnss-receiver-model-code" codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode" codeListValue="LEICA GRX1200GGPRO">LEICA GRX1200GGPRO</geo:receiverType>
+        <geo:satelliteSystem>GPS+GLONASS</geo:satelliteSystem>
+        <geo:serialNumber>356538</geo:serialNumber>
+        <geo:firmwareVersion>8.01/3.019</geo:firmwareVersion>
+        <geo:elevationCutoffSetting>0</geo:elevationCutoffSetting>
+        <geo:dateInstalled>2010-10-08T03:15:00Z</geo:dateInstalled>
+        <geo:dateRemoved>2013-06-24T02:00:00Z</geo:dateRemoved>
+        <geo:notes>FW update for BKG RTK caster issue</geo:notes>
+    </geo:gnssReceiver>
+    <geo:gnssReceiver gml:id="GNSS_REC_9">
+        <geo:manufacturerSerialNumber>356538</geo:manufacturerSerialNumber>
+        <geo:receiverType codeSpace="urn:igs-org:gnss-receiver-model-code" codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode" codeListValue="LEICA GRX1200GGPRO">LEICA GRX1200GGPRO</geo:receiverType>
+        <geo:satelliteSystem>GPS+GLONASS</geo:satelliteSystem>
+        <geo:serialNumber>356538</geo:serialNumber>
+        <geo:firmwareVersion>8.71/3.822</geo:firmwareVersion>
+        <geo:elevationCutoffSetting>0</geo:elevationCutoffSetting>
+        <geo:dateInstalled>2013-06-24T02:00:00Z</geo:dateInstalled>
+        <geo:dateRemoved indeterminatePosition="unknown"/>
+        <geo:notes/>
+    </geo:gnssReceiver>
+    <geo:gnssAntenna gml:id="GNSS_ANT_1">
+        <geo:manufacturerSerialNumber>CR20020709</geo:manufacturerSerialNumber>
+        <geo:antennaType codeSpace="urn:igs-org:gnss-antenna-model-code" codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSAntennaTypeCode" codeListValue="ASH701945C_M">ASH701945C_M</geo:antennaType>
+        <geo:serialNumber>CR20020709</geo:serialNumber>
+        <geo:antennaReferencePoint>BPA</geo:antennaReferencePoint>
+        <geo:marker-arpUpEcc.>0.0</geo:marker-arpUpEcc.>
+        <geo:marker-arpNorthEcc.>0.0</geo:marker-arpNorthEcc.>
+        <geo:marker-arpEastEcc.>0.0</geo:marker-arpEastEcc.>
+        <geo:alignmentFromTrueNorth>0</geo:alignmentFromTrueNorth>
+        <geo:antennaRadomeType codeSpace="urn:igs-org:gnss-antenna-radome-type">NONE</geo:antennaRadomeType>
+        <geo:radomeSerialNumber/>
+        <geo:antennaCableType/>
+        <geo:antennaCableLength>12</geo:antennaCableLength>
+        <geo:dateInstalled>2002-10-21Z</geo:dateInstalled>
+        <geo:dateRemoved/>
+        <geo:notes/>
+    </geo:gnssAntenna>
+    <geo:SiteCertificate gml:id="SITECERT_1">
+        <geo:aggregationType codeSpace="urn:ga-gov-au:node-reg13-certificate"/>
+        <gml:validTime>
+            <gml:TimePeriod gml:id="SC_TP_1">
+                <gml:beginPosition>2013-11-04Z</gml:beginPosition>
+                <gml:endPosition>2018-11-03Z</gml:endPosition>
+            </gml:TimePeriod>
+        </gml:validTime>
+        <geo:atSite xlink:href="#SITE_1"/>
+        <geo:associatedDocument>
+            <geo:Document gml:id="DOC_1">
+                <geo:type>PDF</geo:type>
+                <geo:createdDate>2013-11-04Z</geo:createdDate>
+                <geo:receivedDate>2013-11-04Z</geo:receivedDate>
+                <geo:custodian xlink:href="#DrJohnDawsonGA"/>
+                <geo:body>
+                    <geo:fileReference
+                        xlink:href="https://icsm.govspace.gov.au/files/2015/06/MOBS_Reg13certificate2014.pdf"
+                    />
+                </geo:body>
+            </geo:Document>
+        </geo:associatedDocument>
+        <geo:FourCharID>MOBS</geo:FourCharID>
+        <geo:Location>The station is located at the old Melbourne Observatory in the Royal Melbourne Botanical Gardens.</geo:Location>
+        <geo:MarkDescription>Antenna is attached on top of a stainless steel pillar which has been secured intot the top of a bluestone pillar set in bedrock.</geo:MarkDescription>
+        <geo:GNSSReceiver xlink:href="#GNSS_REC_3"/>
+        <geo:GNSSAntenna xlink:href="#GNSS_ANT_1"/>
+        <geo:AntennaOffset uomLabels="m">0.0000</geo:AntennaOffset>
+        <geo:Photo/>
+    </geo:SiteCertificate>
+    <geo:Position gml:id="POS_1_H" srsName="http://www.opengis.net/gml/srs/epsg.xml#4283">
+        <geo:atNode xlink:href="#SITECERT_1"/>
+        <geo:Status>
+            <geo:currentStatus>
+                <gml:validTime xlink:href="#POS_TP_1"/>
+                <geo:statusCode codeSpace="urn:ga-gov-au:position-status">Authoritative</geo:statusCode>
+            </geo:currentStatus>
+        </geo:Status>
+        <geo:coordinates srsName="http://www.opengis.net/gml/srs/epsg.xml#4283"
+            axisLabels="latitude longitude" uomLabels="degrees degrees">-37.82941637
+            144.9753352</geo:coordinates>
+        <gml:validTime>
+            <gml:TimePeriod gml:id="POS_TP_1">
+                <gml:beginPosition>2013-11-04Z</gml:beginPosition>
+                <gml:endPosition>2018-11-04Z</gml:endPosition>
+            </gml:TimePeriod>
+        </gml:validTime>
+        <geo:VCV2D codeSpace="urn:ga-gov-au:position-quality-horizontal" uomLabels="m"
+            axisLabels="latitude longitude">0.007 0 0 0.007</geo:VCV2D>
+    </geo:Position>
+    <geo:Position gml:id="POS_1_V" srsName="http://www.opengis.net/gml/srs/epsg.xml#4283">
+        <geo:atNode xlink:href="#SITECERT_1"/>
+        <geo:Status>
+            <geo:currentStatus>
+                <gml:validTime xlink:href="#POS_TP_2"/>
+                <geo:statusCode codeSpace="urn:ga-gov-au:position-status">Authoritative</geo:statusCode>
+            </geo:currentStatus>
+        </geo:Status>
+        <geo:coordinates srsName="http://www.opengis.net/gml/srs/epsg.xml#4283"
+            axisLabels="ellipsoid-height" uomLabels="m">40.6757</geo:coordinates>
+        <gml:validTime>
+            <gml:TimePeriod gml:id="POS_TP_2">
+                <gml:beginPosition>2013-11-04Z</gml:beginPosition>
+                <gml:endPosition>2018-11-04Z</gml:endPosition>
+            </gml:TimePeriod>
+        </gml:validTime>
+        <geo:NumericSingleQuality codeSpace="urn:ga-gov-au:position-quality-ellip-height"
+            uomLabels="m">0.017</geo:NumericSingleQuality>
+    </geo:Position>
+    <geo:siteLog gml:id="SITELOG_1">
+        <geo:atSite xlink:href="#SITE_1"/>
+        <geo:formInformation>
+            <geo:preparedBy/>
+            <geo:datePrepared/>
+            <geo:reportType/>
+        </geo:formInformation>
+        <geo:siteIdentification>
+            <geo:siteName>Melbourne Observatory</geo:siteName>
+            <geo:fourCharacterID>MOBS</geo:fourCharacterID>
+            <geo:iersDOMESNumber>50182M001</geo:iersDOMESNumber>
+            <geo:cdpNumber>Not Available</geo:cdpNumber>
+            <geo:monumentDescription>Centre of base of 5/8&quot; spigot on GPS</geo:monumentDescription>
+            <geo:heightOfTheMonument>1.5</geo:heightOfTheMonument>
+            <geo:monumentFoundation>Concrete cast in situ, set in Bedrock</geo:monumentFoundation>
+            <geo:foundationDepth>4.9</geo:foundationDepth>
+            <geo:markerDescription>Stainless Steel Plate</geo:markerDescription>
+            <geo:dateInstalled>2002-09-15Z</geo:dateInstalled>
+            <geo:geologicCharacteristic>Thin Bedrock of between 5-20m of</geo:geologicCharacteristic>
+            <geo:bedrockType>SANDSTONE</geo:bedrockType>
+            <geo:bedrockCondition>Firm, variably oxidised, variably cemented</geo:bedrockCondition>
+            <geo:fractureSpacing>No Fractures</geo:fractureSpacing>
+            <geo:faultZonesNearby>Non documented</geo:faultZonesNearby>
+            <geo:notes>antenna mounting plate fixed to 1.5m stainless steel pole. Pole is fixed to 0.6m diameter bluestone pillar The GPS antenna is located on top of a stainless steel pillar, which has been secured into the top of a bluestone pillar set in bedrock</geo:notes>
+        </geo:siteIdentification>
+        <geo:siteLocation>
+            <geo:city>Melbourne</geo:city>
+            <geo:state>Victoria</geo:state>
+            <geo:countryCodeISO>AUS</geo:countryCodeISO>
+            <geo:tectonicPlate>Indian/Australian</geo:tectonicPlate>
+            <geo:approximatePositionITRF>
+                <geo:xCoordinateInMeters>-4130636.106</geo:xCoordinateInMeters>
+                <geo:yCoordinateInMeters>2894953.089</geo:yCoordinateInMeters>
+                <geo:zCoordinateInMeters>-3890531.051</geo:zCoordinateInMeters>
+                <geo:latitude-North>-37.82941634</geo:latitude-North>
+                <geo:longitude-East>144.9753351</geo:longitude-East>
+                <geo:elevation-m_ellips.>40.674</geo:elevation-m_ellips.>
+            </geo:approximatePositionITRF>
+            <geo:notes>The GPS is located at the old Melbourne Observatory, located in the Royal Melbourne Botanical Gardens</geo:notes>
+        </geo:siteLocation>
+        <geo:gnssReceivers xlink:href="#GNSS_REC_1">
+            <geo:dateInserted>2002-10-29T00:00:00Z</geo:dateInserted>
+            <geo:dateDeleted>2006-01-23T23:59:00Z</geo:dateDeleted>
+        </geo:gnssReceivers>
+        <geo:gnssReceivers xlink:href="#GNSS_REC_2">
+            <geo:dateInserted>2006-01-24T00:00:00Z</geo:dateInserted>
+            <geo:dateDeleted>2007-06-20T23:59:00Z</geo:dateDeleted>
+        </geo:gnssReceivers>
+        <geo:gnssReceivers xlink:href="#GNSS_REC_3">
+            <geo:dateInserted>2007-06-21T00:00:00Z</geo:dateInserted>
+            <geo:dateDeleted>2008-11-16T23:59:00Z</geo:dateDeleted>
+        </geo:gnssReceivers>
+        <geo:gnssReceivers xlink:href="#GNSS_REC_4">
+            <geo:dateInserted>2008-11-17T00:00:00Z</geo:dateInserted>
+            <geo:dateDeleted>2009-07-23T23:59:00Z</geo:dateDeleted>
+        </geo:gnssReceivers>
+        <geo:gnssReceivers xlink:href="#GNSS_REC_5">
+            <geo:dateInserted>2009-07-24T00:00:00Z</geo:dateInserted>
+            <geo:dateDeleted>2010-05-03T04:30:00Z</geo:dateDeleted>
+        </geo:gnssReceivers>
+        <geo:gnssReceivers xlink:href="#GNSS_REC_6">
+            <geo:dateInserted>2010-05-03T04:30:00Z</geo:dateInserted>
+            <geo:dateDeleted>2010-08-05T00:00:00Z</geo:dateDeleted>
+        </geo:gnssReceivers>
+        <geo:gnssReceivers xlink:href="#GNSS_REC_7">
+            <geo:dateInserted>2010-08-05T00:00:00Z</geo:dateInserted>
+            <geo:dateDeleted>2010-10-08T03:15:00Z</geo:dateDeleted>
+        </geo:gnssReceivers>
+        <geo:gnssReceivers xlink:href="#GNSS_REC_8">
+            <geo:dateInserted>2010-10-08T03:15:00Z</geo:dateInserted>
+            <geo:dateDeleted>2013-06-24T02:00:00Z</geo:dateDeleted>
+        </geo:gnssReceivers>
+        <geo:gnssReceivers xlink:href="#GNSS_REC_9">
+            <geo:dateInserted>2013-06-24T02:00:00Z</geo:dateInserted>
+        </geo:gnssReceivers>
+        <geo:gnssAntennas xlink:href="#GNSS_ANT_1">
+            <geo:dateInserted>2002-10-21Z</geo:dateInserted>
+        </geo:gnssAntennas>
+        <geo:surveyedLocalTies>
+            <geo:surveyedLocalTies gml:id="SLT_1">
+                <geo:tiedMarkerName>Melbourne South PM 520</geo:tiedMarkerName>
+                <geo:tiedMarkerUsage>Local Height Control,</geo:tiedMarkerUsage>
+                <geo:tiedMarkerCDPNumber/>
+                <geo:tiedMarkerDOMESNumber/>
+                <geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
+                    <geo:dx>31.8727</geo:dx>
+                    <geo:dy>15.4048</geo:dy>
+                    <geo:dz>-7.1087</geo:dz>
+                </geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
+                <geo:localSiteTiesAccuracy>1</geo:localSiteTiesAccuracy>
+                <geo:surveyMethod>Total Station</geo:surveyMethod>
+                <geo:dateMeasured>2012-06-07</geo:dateMeasured>
+                <geo:notes>Deep driven copper clad rod - 2.8m long</geo:notes>
+            </geo:surveyedLocalTies>
+            <geo:dateInserted>2012-06-07</geo:dateInserted>
+        </geo:surveyedLocalTies>
+        <geo:surveyedLocalTies>
+            <geo:surveyedLocalTies gml:id="SLT_2">
+                <geo:tiedMarkerName>Melbourne South PM 520/1</geo:tiedMarkerName>
+                <geo:tiedMarkerUsage>Local Horizontal Reference Control</geo:tiedMarkerUsage>
+                <geo:tiedMarkerCDPNumber/>
+                <geo:tiedMarkerDOMESNumber/>
+                <geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
+                    <geo:dx>10.8675</geo:dx>
+                    <geo:dy>-58.0712</geo:dy>
+                    <geo:dz>-41.0895</geo:dz>
+                </geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
+                <geo:localSiteTiesAccuracy>1</geo:localSiteTiesAccuracy>
+                <geo:surveyMethod>Total Station</geo:surveyMethod>
+                <geo:dateMeasured>2012-06-07</geo:dateMeasured>
+                <geo:notes>Rivet in concrete kerb</geo:notes>
+            </geo:surveyedLocalTies>
+            <geo:dateInserted>2012-06-07</geo:dateInserted>
+        </geo:surveyedLocalTies>
+        <geo:surveyedLocalTies>
+            <geo:surveyedLocalTies gml:id="SLT_3">
+                <geo:tiedMarkerName>Melbourne South PM 436/1</geo:tiedMarkerName>
+                <geo:tiedMarkerUsage>Local Horizontal Reference Control</geo:tiedMarkerUsage>
+                <geo:tiedMarkerCDPNumber/>
+                <geo:tiedMarkerDOMESNumber/>
+                <geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
+                    <geo:dx>28.5638</geo:dx>
+                    <geo:dy>-28.7831</geo:dy>
+                    <geo:dz>-37.5713</geo:dz>
+                </geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
+                <geo:localSiteTiesAccuracy>1</geo:localSiteTiesAccuracy>
+                <geo:surveyMethod>Total Station</geo:surveyMethod>
+                <geo:dateMeasured>2012-06-07</geo:dateMeasured>
+                <geo:notes>Rivet in concrete pit surround</geo:notes>
+            </geo:surveyedLocalTies>
+            <geo:dateInserted>2012-06-07</geo:dateInserted>
+        </geo:surveyedLocalTies>
+        <geo:surveyedLocalTies>
+            <geo:surveyedLocalTies gml:id="SLT_4">
+                <geo:tiedMarkerName>Melbourne South PM 436</geo:tiedMarkerName>
+                <geo:tiedMarkerUsage>Local Height Control,</geo:tiedMarkerUsage>
+                <geo:tiedMarkerCDPNumber/>
+                <geo:tiedMarkerDOMESNumber/>
+                <geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
+                    <geo:dx>60.9038</geo:dx>
+                    <geo:dy>23.0815</geo:dy>
+                    <geo:dz>-30.4277</geo:dz>
+                </geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
+                <geo:localSiteTiesAccuracy>1</geo:localSiteTiesAccuracy>
+                <geo:surveyMethod>Total Station</geo:surveyMethod>
+                <geo:dateMeasured>2012-06-07</geo:dateMeasured>
+                <geo:notes>Deep driven copper clad rod - 2.8m long</geo:notes>
+            </geo:surveyedLocalTies>
+            <geo:dateInserted>2012-06-07</geo:dateInserted>
+        </geo:surveyedLocalTies>
+        <geo:frequencyStandards>
+            <geo:frequencyStandard gml:id="FREQSTANDARD_1">
+                <geo:standardType>QUARTZ</geo:standardType>
+                <geo:inputFrequency>5</geo:inputFrequency>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="FS_TP_1">
+                        <gml:beginPosition>2002-10-29Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="unknown"/>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:notes/>
+            </geo:frequencyStandard>
+            <geo:dateInserted>2002-10-29Z</geo:dateInserted>
+        </geo:frequencyStandards>
+        <geo:siteOwner gml:id="SO">
+            <gmd:CI_ResponsibleParty>
+                <gmd:individualName>
+                    <gco:CharacterString>Ryan Ruddick</gco:CharacterString>
+                </gmd:individualName>
+                <gmd:organisationName>
+                    <gco:CharacterString>Geoscience Australia</gco:CharacterString>
+                </gmd:organisationName>
+                <gmd:positionName>
+                    <gco:CharacterString>Scientist A/g, Geodesy &amp; Seismic Monitoring Group</gco:CharacterString>
+                </gmd:positionName>
+                <gmd:contactInfo>
+                    <gmd:CI_Contact>
+                        <gmd:phone>
+                            <gmd:CI_Telephone>
+                                <gmd:voice>
+                                    <gco:CharacterString>+61 2 6249 9426</gco:CharacterString>
+                                </gmd:voice>
+                                <gmd:facsimile>
+                                    <gco:CharacterString>+61 2 6249 9426</gco:CharacterString>
+                                </gmd:facsimile>
+                            </gmd:CI_Telephone>
+                        </gmd:phone>
+                        <gmd:address>
+                            <gmd:CI_Address>
+                                <gmd:deliveryPoint>
+                                    <gco:CharacterString>GPO Box 378</gco:CharacterString>
+                                </gmd:deliveryPoint>
+                                <gmd:city>
+                                    <gco:CharacterString>Canberra</gco:CharacterString>
+                                </gmd:city>
+                                <gmd:postalCode>
+                                    <gco:CharacterString>2601</gco:CharacterString>
+                                </gmd:postalCode>
+                                <gmd:country>
+                                    <gco:CharacterString>Australia</gco:CharacterString>
+                                </gmd:country>
+                                <gmd:electronicMailAddress>
+                                    <gco:CharacterString>Ryan.Ruddick@ga.gov.au</gco:CharacterString>
+                                </gmd:electronicMailAddress>
+                            </gmd:CI_Address>
+                        </gmd:address>
+                    </gmd:CI_Contact>
+                </gmd:contactInfo>
+                <gmd:role>
+                    <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"/>
+                </gmd:role>
+            </gmd:CI_ResponsibleParty>
+        </geo:siteOwner>
+        <geo:siteContact gml:id="SC_1">
+            <gmd:CI_ResponsibleParty>
+                <gmd:individualName>
+                    <gco:CharacterString>Ryan Ruddick</gco:CharacterString>
+                </gmd:individualName>
+                <gmd:organisationName>
+                    <gco:CharacterString>Geoscience Australia</gco:CharacterString>
+                </gmd:organisationName>
+                <gmd:positionName>
+                    <gco:CharacterString>Scientist A/g, Geodesy &amp; Seismic Monitoring Group</gco:CharacterString>
+                </gmd:positionName>
+                <gmd:contactInfo>
+                    <gmd:CI_Contact>
+                        <gmd:phone>
+                            <gmd:CI_Telephone>
+                                <gmd:voice>
+                                    <gco:CharacterString>+61 2 6249 9426</gco:CharacterString>
+                                </gmd:voice>
+                                <gmd:facsimile>
+                                    <gco:CharacterString>+61 2 6249 9426</gco:CharacterString>
+                                </gmd:facsimile>
+                            </gmd:CI_Telephone>
+                        </gmd:phone>
+                        <gmd:address>
+                            <gmd:CI_Address>
+                                <gmd:deliveryPoint>
+                                    <gco:CharacterString>GPO Box 378</gco:CharacterString>
+                                </gmd:deliveryPoint>
+                                <gmd:city>
+                                    <gco:CharacterString>Canberra</gco:CharacterString>
+                                </gmd:city>
+                                <gmd:postalCode>
+                                    <gco:CharacterString>2601</gco:CharacterString>
+                                </gmd:postalCode>
+                                <gmd:country>
+                                    <gco:CharacterString>Australia</gco:CharacterString>
+                                </gmd:country>
+                                <gmd:electronicMailAddress>
+                                    <gco:CharacterString>Ryan.Ruddick@ga.gov.au</gco:CharacterString>
+                                </gmd:electronicMailAddress>
+                            </gmd:CI_Address>
+                        </gmd:address>
+                    </gmd:CI_Contact>
+                </gmd:contactInfo>
+                <gmd:role>
+                    <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"/>
+                </gmd:role>
+            </gmd:CI_ResponsibleParty>
+        </geo:siteContact>
+        <geo:siteContact gml:id="SC_2">
+            <gmd:CI_ResponsibleParty>
+                <gmd:individualName>
+                    <gco:CharacterString>Bob Twilley</gco:CharacterString>
+                </gmd:individualName>
+                <gmd:organisationName>
+                    <gco:CharacterString>Geoscience Australia</gco:CharacterString>
+                </gmd:organisationName>
+                <gmd:positionName>
+                    <gco:CharacterString>Technical Officer, Geodesy &amp; Seismic Monitoring Group</gco:CharacterString>
+                </gmd:positionName>
+                <gmd:contactInfo>
+                    <gmd:CI_Contact>
+                        <gmd:phone>
+                            <gmd:CI_Telephone>
+                                <gmd:voice>
+                                    <gco:CharacterString>+61 2 6249 9066</gco:CharacterString>
+                                </gmd:voice>
+                                <gmd:voice>
+                                    <gco:CharacterString>+61 413 604 180</gco:CharacterString>
+                                </gmd:voice>
+                                <gmd:facsimile>
+                                    <gco:CharacterString>+61 2 6249 9426</gco:CharacterString>
+                                </gmd:facsimile>
+                            </gmd:CI_Telephone>
+                        </gmd:phone>
+                        <gmd:address>
+                            <gmd:CI_Address>
+                                <gmd:deliveryPoint>
+                                    <gco:CharacterString>GPO Box 378</gco:CharacterString>
+                                </gmd:deliveryPoint>
+                                <gmd:city>
+                                    <gco:CharacterString>Canberra</gco:CharacterString>
+                                </gmd:city>
+                                <gmd:postalCode>
+                                    <gco:CharacterString>2601</gco:CharacterString>
+                                </gmd:postalCode>
+                                <gmd:country>
+                                    <gco:CharacterString>Australia</gco:CharacterString>
+                                </gmd:country>
+                                <gmd:electronicMailAddress>
+                                    <gco:CharacterString>Ryan.Ruddick@ga.gov.au</gco:CharacterString>
+                                </gmd:electronicMailAddress>
+                            </gmd:CI_Address>
+                        </gmd:address>
+                    </gmd:CI_Contact>
+                </gmd:contactInfo>
+                <gmd:role>
+                    <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"/>
+                </gmd:role>
+            </gmd:CI_ResponsibleParty>
+        </geo:siteContact>
+        <geo:siteMetadataCustodian gml:id="SMDC">
+            <gmd:CI_ResponsibleParty>
+                <gmd:individualName>
+                    <gco:CharacterString>Ryan Ruddick</gco:CharacterString>
+                </gmd:individualName>
+                <gmd:organisationName>
+                    <gco:CharacterString>Geoscience Australia</gco:CharacterString>
+                </gmd:organisationName>
+                <gmd:positionName>
+                    <gco:CharacterString>Scientist A/g, Geodesy &amp; Seismic Monitoring Group</gco:CharacterString>
+                </gmd:positionName>
+                <gmd:contactInfo>
+                    <gmd:CI_Contact>
+                        <gmd:phone>
+                            <gmd:CI_Telephone>
+                                <gmd:voice>
+                                    <gco:CharacterString>+61 2 6249 9426</gco:CharacterString>
+                                </gmd:voice>
+                                <gmd:facsimile>
+                                    <gco:CharacterString>+61 2 6249 9426</gco:CharacterString>
+                                </gmd:facsimile>
+                            </gmd:CI_Telephone>
+                        </gmd:phone>
+                        <gmd:address>
+                            <gmd:CI_Address>
+                                <gmd:deliveryPoint>
+                                    <gco:CharacterString>GPO Box 378</gco:CharacterString>
+                                </gmd:deliveryPoint>
+                                <gmd:city>
+                                    <gco:CharacterString>Canberra</gco:CharacterString>
+                                </gmd:city>
+                                <gmd:postalCode>
+                                    <gco:CharacterString>2601</gco:CharacterString>
+                                </gmd:postalCode>
+                                <gmd:country>
+                                    <gco:CharacterString>Australia</gco:CharacterString>
+                                </gmd:country>
+                                <gmd:electronicMailAddress>
+                                    <gco:CharacterString>Ryan.Ruddick@ga.gov.au</gco:CharacterString>
+                                </gmd:electronicMailAddress>
+                            </gmd:CI_Address>
+                        </gmd:address>
+                    </gmd:CI_Contact>
+                </gmd:contactInfo>
+                <gmd:role>
+                    <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"/>
+                </gmd:role>
+            </gmd:CI_ResponsibleParty>
+        </geo:siteMetadataCustodian>
+        <geo:siteDataCenters gml:id="SDC_1">
+            <gmd:CI_ResponsibleParty>
+                <gmd:individualName>
+                    <gco:CharacterString>Ryan Ruddick</gco:CharacterString>
+                </gmd:individualName>
+                <gmd:organisationName>
+                    <gco:CharacterString>Geoscience Australia</gco:CharacterString>
+                </gmd:organisationName>
+                <gmd:positionName>
+                    <gco:CharacterString>Scientist A/g, Geodesy &amp; Seismic Monitoring Group</gco:CharacterString>
+                </gmd:positionName>
+                <gmd:contactInfo>
+                    <gmd:CI_Contact>
+                        <gmd:phone>
+                            <gmd:CI_Telephone>
+                                <gmd:voice>
+                                    <gco:CharacterString>+61 2 6249 9426</gco:CharacterString>
+                                </gmd:voice>
+                                <gmd:facsimile>
+                                    <gco:CharacterString>+61 2 6249 9426</gco:CharacterString>
+                                </gmd:facsimile>
+                            </gmd:CI_Telephone>
+                        </gmd:phone>
+                        <gmd:address>
+                            <gmd:CI_Address>
+                                <gmd:deliveryPoint>
+                                    <gco:CharacterString>GPO Box 378</gco:CharacterString>
+                                </gmd:deliveryPoint>
+                                <gmd:city>
+                                    <gco:CharacterString>Canberra</gco:CharacterString>
+                                </gmd:city>
+                                <gmd:postalCode>
+                                    <gco:CharacterString>2601</gco:CharacterString>
+                                </gmd:postalCode>
+                                <gmd:country>
+                                    <gco:CharacterString>Australia</gco:CharacterString>
+                                </gmd:country>
+                                <gmd:electronicMailAddress>
+                                    <gco:CharacterString>Ryan.Ruddick@ga.gov.au</gco:CharacterString>
+                                </gmd:electronicMailAddress>
+                            </gmd:CI_Address>
+                        </gmd:address>
+                    </gmd:CI_Contact>
+                </gmd:contactInfo>
+                <gmd:role>
+                    <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"/>
+                </gmd:role>
+            </gmd:CI_ResponsibleParty>
+        </geo:siteDataCenters>
+        <geo:siteDataCenters gml:id="SDC_2">
+            <gmd:CI_ResponsibleParty>
+                <gmd:individualName>
+                    <gco:CharacterString>Bob Twilley</gco:CharacterString>
+                </gmd:individualName>
+                <gmd:organisationName>
+                    <gco:CharacterString>Geoscience Australia</gco:CharacterString>
+                </gmd:organisationName>
+                <gmd:positionName>
+                    <gco:CharacterString>Technical Officer, Geodesy &amp; Seismic Monitoring Group</gco:CharacterString>
+                </gmd:positionName>
+                <gmd:contactInfo>
+                    <gmd:CI_Contact>
+                        <gmd:phone>
+                            <gmd:CI_Telephone>
+                                <gmd:voice>
+                                    <gco:CharacterString>+61 2 6249 9066</gco:CharacterString>
+                                </gmd:voice>
+                                <gmd:voice>
+                                    <gco:CharacterString>+61 413 604 180</gco:CharacterString>
+                                </gmd:voice>
+                                <gmd:facsimile>
+                                    <gco:CharacterString>+61 2 6249 9426</gco:CharacterString>
+                                </gmd:facsimile>
+                            </gmd:CI_Telephone>
+                        </gmd:phone>
+                        <gmd:address>
+                            <gmd:CI_Address>
+                                <gmd:deliveryPoint>
+                                    <gco:CharacterString>GPO Box 378</gco:CharacterString>
+                                </gmd:deliveryPoint>
+                                <gmd:city>
+                                    <gco:CharacterString>Canberra</gco:CharacterString>
+                                </gmd:city>
+                                <gmd:postalCode>
+                                    <gco:CharacterString>2601</gco:CharacterString>
+                                </gmd:postalCode>
+                                <gmd:country>
+                                    <gco:CharacterString>Australia</gco:CharacterString>
+                                </gmd:country>
+                                <gmd:electronicMailAddress>
+                                    <gco:CharacterString>Ryan.Ruddick@ga.gov.au</gco:CharacterString>
+                                </gmd:electronicMailAddress>
+                            </gmd:CI_Address>
+                        </gmd:address>
+                    </gmd:CI_Contact>
+                </gmd:contactInfo>
+                <gmd:role>
+                    <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"/>
+                </gmd:role>
+            </gmd:CI_ResponsibleParty>
+        </geo:siteDataCenters>
+        <geo:siteDataSource gml:id="SDS_1">
+            <gmd:CI_ResponsibleParty>
+                <gmd:individualName>
+                    <gco:CharacterString>Ryan Ruddick</gco:CharacterString>
+                </gmd:individualName>
+                <gmd:organisationName>
+                    <gco:CharacterString>Geoscience Australia</gco:CharacterString>
+                </gmd:organisationName>
+                <gmd:positionName>
+                    <gco:CharacterString>Scientist A/g, Geodesy &amp; Seismic Monitoring Group</gco:CharacterString>
+                </gmd:positionName>
+                <gmd:contactInfo>
+                    <gmd:CI_Contact>
+                        <gmd:phone>
+                            <gmd:CI_Telephone>
+                                <gmd:voice>
+                                    <gco:CharacterString>+61 2 6249 9426</gco:CharacterString>
+                                </gmd:voice>
+                                <gmd:facsimile>
+                                    <gco:CharacterString>+61 2 6249 9426</gco:CharacterString>
+                                </gmd:facsimile>
+                            </gmd:CI_Telephone>
+                        </gmd:phone>
+                        <gmd:address>
+                            <gmd:CI_Address>
+                                <gmd:deliveryPoint>
+                                    <gco:CharacterString>GPO Box 378</gco:CharacterString>
+                                </gmd:deliveryPoint>
+                                <gmd:city>
+                                    <gco:CharacterString>Canberra</gco:CharacterString>
+                                </gmd:city>
+                                <gmd:postalCode>
+                                    <gco:CharacterString>2601</gco:CharacterString>
+                                </gmd:postalCode>
+                                <gmd:country>
+                                    <gco:CharacterString>Australia</gco:CharacterString>
+                                </gmd:country>
+                                <gmd:electronicMailAddress>
+                                    <gco:CharacterString>Ryan.Ruddick@ga.gov.au</gco:CharacterString>
+                                </gmd:electronicMailAddress>
+                            </gmd:CI_Address>
+                        </gmd:address>
+                    </gmd:CI_Contact>
+                </gmd:contactInfo>
+                <gmd:role>
+                    <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"/>
+                </gmd:role>
+            </gmd:CI_ResponsibleParty>
+        </geo:siteDataSource>
+    </geo:siteLog>
+    <!--  -->
+    <geo:Node gml:id="NODE_1">
+        <geo:aggregationType codeSpace="urn:ga-gov-au:egeodesy-node-aggregation-type">National Adjustment Weekly Solution</geo:aggregationType>
+        <gml:validTime>
+            <gml:TimePeriod gml:id="NODE_TP_1">
+                <gml:beginPosition>2013-11-04Z</gml:beginPosition>
+                <gml:endPosition indeterminatePosition="unknown"/>
+            </gml:TimePeriod>
+        </gml:validTime>
+        <geo:atSite xlink:href="#SITE_1"/>
+    </geo:Node>
+    <geo:PositionSource gml:id="ID_PS_1">
+        <gml:validTime>
+            <gml:TimePeriod gml:id="ID_PS_1_TP">
+                <gml:beginPosition>2015-01-11Z</gml:beginPosition>
+                <gml:end>
+                    <gml:TimeInstant gml:id="PS_1_ET">
+                        <gml:timePosition>2015-01-17Z</gml:timePosition>
+                    </gml:TimeInstant>
+                </gml:end>
+            </gml:TimePeriod>
+        </gml:validTime>
+        <geo:results>
+            <geo:adjustedPosition>
+                <geo:usesPosition xlink:href="ID_PTS_1"/>
+            </geo:adjustedPosition>
+        </geo:results>
+        <geo:associatedDocument>
+            <geo:Document gml:id="SINEX_1">
+                <geo:type>SINEX</geo:type>
+                <geo:createdDate>2015-03-04Z</geo:createdDate>
+                <geo:receivedDate/>
+                <geo:custodian xlink:href="#DrJohnDawsonGA"/>
+                <geo:body>
+                    <geo:fileReference
+                        xlink:href="ftp://ftp.ga.gov.au/geodesy-outgoing/gnss/solutions/apref/apr18277.snx"
+                    />
+                </geo:body>
+            </geo:Document>
+        </geo:associatedDocument>
+        <geo:operation xlink:href="#ID_PEP_1"/>
+    </geo:PositionSource>
+    <geo:PositionSource gml:id="ID_PS_2">
+        <gml:validTime>
+            <gml:TimePeriod gml:id="ID_PS_2_TP">
+                <gml:beginPosition>2015-01-18Z</gml:beginPosition>
+                <gml:end>
+                    <gml:TimeInstant gml:id="PS_2_ET">
+                        <gml:timePosition>2015-01-24Z</gml:timePosition>
+                    </gml:TimeInstant>
+                </gml:end>
+            </gml:TimePeriod>
+        </gml:validTime>
+        <geo:results>
+            <geo:adjustedPosition>
+                <geo:usesPosition xlink:href="ID_PTS_1"/>
+            </geo:adjustedPosition>
+        </geo:results>
+        <geo:associatedDocument>
+            <geo:Document gml:id="SINEX_2">
+                <geo:type>SINEX</geo:type>
+                <geo:createdDate>2015-03-20Z</geo:createdDate>
+                <geo:receivedDate/>
+                <geo:custodian xlink:href="#DrJohnDawsonGA"/>
+                <geo:body>
+                    <geo:fileReference
+                        xlink:href="ftp://ftp.ga.gov.au/geodesy-outgoing/gnss/solutions/apref/apr18287.snx"
+                    />
+                </geo:body>
+            </geo:Document>
+        </geo:associatedDocument>
+        <geo:operation xlink:href="#ID_PEP_1"/>
+    </geo:PositionSource>
+    <geo:PositionSource gml:id="ID_PS_3">
+        <gml:validTime>
+            <gml:TimePeriod gml:id="ID_PS_3_TP">
+                <gml:beginPosition>2015-01-25Z</gml:beginPosition>
+                <gml:end>
+                    <gml:TimeInstant gml:id="PS_3_ET">
+                        <gml:timePosition>2015-01-31Z</gml:timePosition>
+                    </gml:TimeInstant>
+                </gml:end>
+            </gml:TimePeriod>
+        </gml:validTime>
+        <geo:results>
+            <geo:adjustedPosition>
+                <geo:usesPosition xlink:href="ID_PTS_1"/>
+            </geo:adjustedPosition>
+        </geo:results>
+        <geo:associatedDocument>
+            <geo:Document gml:id="SINEX_3">
+                <geo:type>SINEX</geo:type>
+                <geo:createdDate>2015-04-01Z</geo:createdDate>
+                <geo:receivedDate/>
+                <geo:custodian xlink:href="#DrJohnDawsonGA"/>
+                <geo:body>
+                    <geo:fileReference
+                        xlink:href="ftp://ftp.ga.gov.au/geodesy-outgoing/gnss/solutions/apref/apr18297.snx"
+                    />
+                </geo:body>
+            </geo:Document>
+        </geo:associatedDocument>
+        <geo:operation xlink:href="#ID_PEP_1"/>
+    </geo:PositionSource>
+    <geo:PositionSource gml:id="ID_PS_4">
+        <gml:validTime>
+            <gml:TimePeriod gml:id="ID_PS_4_TP">
+                <gml:beginPosition>2015-02-01Z</gml:beginPosition>
+                <gml:end>
+                    <gml:TimeInstant gml:id="PS_4_ET">
+                        <gml:timePosition>2015-02-07Z</gml:timePosition>
+                    </gml:TimeInstant>
+                </gml:end>
+            </gml:TimePeriod>
+        </gml:validTime>
+        <geo:results>
+            <geo:adjustedPosition>
+                <geo:usesPosition xlink:href="ID_PTS_1"/>
+            </geo:adjustedPosition>
+        </geo:results>
+        <geo:associatedDocument>
+            <geo:Document gml:id="SINEX_4">
+                <geo:type>SINEX</geo:type>
+                <geo:createdDate>2015-03-20Z</geo:createdDate>
+                <geo:receivedDate/>
+                <geo:custodian xlink:href="#DrJohnDawsonGA"/>
+                <geo:body>
+                    <geo:fileReference
+                        xlink:href="ftp://ftp.ga.gov.au/geodesy-outgoing/gnss/solutions/apref/apr18307.snx"
+                    />
+                </geo:body>
+            </geo:Document>
+        </geo:associatedDocument>
+        <geo:operation xlink:href="#ID_PEP_1"/>
+    </geo:PositionSource>
+    <geo:PositionEstimatorProcess gml:id="ID_PEP_1">
+        <gml:identifier codeSpace="urn:itrf.ensg.ign.fr"/>
+        <gml:scope/>
+        <geo:processStep>
+            <geo:description>Bernese</geo:description>
+        </geo:processStep>
+    </geo:PositionEstimatorProcess>
+    <geo:PositionTimeSeries gml:id="ID_PTS_1" srsName="http://www.opengis.net/gml/srs/epsg.xml#4938"
+        srsDimension="3">
+        <geo:atNode xlink:href="#NODE_1"/>
+        <geo:Status>
+            <geo:currentStatus>
+                <gml:validTime>
+                    <gml:TimeInstant gml:id="ID_PTS_STATUS_1">
+                        <gml:timePosition>2013-11-04Z</gml:timePosition>
+                    </gml:TimeInstant>
+                </gml:validTime>
+                <geo:statusCode codeSpace="">Authoritative</geo:statusCode>
+            </geo:currentStatus>
+        </geo:Status>
+        <geo:history>
+            <geo:PositionTimeSlice gml:id="ID_7">
+                <geo:coordinates uomLabels="m" axisLabels="X Y Z">-.413063656951996E+07
+                    0.289495312583357E+07 -.389053047150543E+07</geo:coordinates>
+                <gml:validTime xlink:href="#PS_1_ET"/>
+                <geo:hasVelocity>
+                    <geo:velocity uomLabels="mPyr" axisLabels="dX dY dZ">0.0 0.0 0.0</geo:velocity>
+                    <geo:VCV3D codeSpace="urn:xml-gov-au:icsm:egeodesy:sp1v20_velocity-uncertainty"
+                        uomLabels="m">0.01 0 0 0.01 0 0.01</geo:VCV3D>
+                </geo:hasVelocity>
+                <geo:VCV3D codeSpace="urn:ga-gov-au:egeodesy:vcv3d" uomLabels="m"
+                    axisLabels="sXX sXY sXZ sYY sYZ sZZ" confidence="1 sigma">2.04E-07 0 0 1.34E-07
+                    0 1.77E-07</geo:VCV3D>
+                <geo:NumericSingleQuality
+                    codeSpace="urn:xml-gov-au:icsm:egeodesy:sp1v20_positional-uncertainty"
+                    uomLabels="m">0.002154006</geo:NumericSingleQuality>
+                <geo:source xlink:href="#ID_PS_1"/>
+            </geo:PositionTimeSlice>
+            <geo:PositionTimeSlice gml:id="ID_8">
+                <geo:coordinates uomLabels="m" axisLabels="X Y Z">-.413063657063766E+07
+                    0.289495312799760E+07 -.389053047181324E+07</geo:coordinates>
+                <gml:validTime xlink:href="#PS_2_ET"/>
+                <geo:hasVelocity>
+                    <geo:velocity uomLabels="mPyr" axisLabels="dX dY dZ">0.0 0.0 0.0</geo:velocity>
+                    <geo:VCV3D codeSpace="urn:xml-gov-au:icsm:egeodesy:sp1v20_velocity-uncertainty"
+                        uomLabels="m">0.01 0 0 0.01 0 0.01</geo:VCV3D>
+                </geo:hasVelocity>
+                <geo:VCV3D codeSpace="urn:ga-gov-au:egeodesy:vcv3d" uomLabels="m"
+                    axisLabels="sXX sXY sXZ sYY sYZ sZZ" confidence="1 sigma">4.87E-08 0 0 3.81E-08
+                    0 4.44E-08</geo:VCV3D>
+                <geo:NumericSingleQuality
+                    codeSpace="urn:xml-gov-au:icsm:egeodesy:sp1v20_positional-uncertainty"
+                    uomLabels="m">0.00108692</geo:NumericSingleQuality>
+            </geo:PositionTimeSlice>
+            <geo:PositionTimeSlice gml:id="ID_9">
+                <geo:coordinates uomLabels="m" axisLabels="X Y Z">-.413063656959656E+07
+                    0.289495312557582E+07 -.389053046799322E+07</geo:coordinates>
+                <gml:validTime xlink:href="#PS_3_ET"/>
+                <geo:hasVelocity>
+                    <geo:velocity uomLabels="mPyr" axisLabels="dX dY dZ">0.0 0.0 0.0</geo:velocity>
+                    <geo:VCV3D codeSpace="urn:xml-gov-au:icsm:egeodesy:sp1v20_velocity-uncertainty"
+                        uomLabels="m">0.01 0 0 0.01 0 0.01</geo:VCV3D>
+                </geo:hasVelocity>
+                <geo:VCV3D codeSpace="urn:ga-gov-au:egeodesy:vcv3d" uomLabels="m"
+                    axisLabels="sXX sXY sXZ sYY sYZ sZZ" confidence="1 sigma">2.20E-07 0 0 1.44E-07
+                    0 1.84E-07</geo:VCV3D>
+                <geo:NumericSingleQuality
+                    codeSpace="urn:xml-gov-au:icsm:egeodesy:sp1v20_positional-uncertainty"
+                    uomLabels="m">2.2E-03</geo:NumericSingleQuality>
+            </geo:PositionTimeSlice>
+            <geo:PositionTimeSlice gml:id="ID_10">
+                <geo:coordinates uomLabels="m" axisLabels="X Y Z">-.413063657442620E+07
+                    0.289495312786955E+07 -.389053047117374E+07</geo:coordinates>
+                <gml:validTime xlink:href="#PS_4_ET"/>
+                <geo:hasVelocity>
+                    <geo:velocity uomLabels="mPyr" axisLabels="dX dY dZ">0.0 0.0 0.0</geo:velocity>
+                    <geo:VCV3D codeSpace="urn:xml-gov-au:icsm:egeodesy:sp1v20_velocity-uncertainty"
+                        uomLabels="m">0.01 0 0 0.01 0 0.01</geo:VCV3D>
+                </geo:hasVelocity>
+                <geo:VCV3D codeSpace="urn:ga-gov-au:egeodesy:vcv3d" uomLabels="m"
+                    axisLabels="sXX sXY sXZ sYY sYZ sZZ" confidence="1 sigma">2.99E-07 0 0 1.95E-07
+                    0 2.62E-07</geo:VCV3D>
+                <geo:NumericSingleQuality
+                    codeSpace="urn:xml-gov-au:icsm:egeodesy:sp1v20_positional-uncertainty"
+                    uomLabels="m">0.00260872</geo:NumericSingleQuality>
+            </geo:PositionTimeSlice>
+        </geo:history>
+    </geo:PositionTimeSeries>
+</geo:GeodesyML>

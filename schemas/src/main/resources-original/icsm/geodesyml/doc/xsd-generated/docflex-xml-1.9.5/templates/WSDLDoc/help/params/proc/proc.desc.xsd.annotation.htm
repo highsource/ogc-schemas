@@ -1,0 +1,12 @@
+This parameter group controls some specifics about processing of XML schema annotations 
+(i.e. the content of <b><code>&lt;xs:annotation&gt;</code></b> elements).
+<p>
+The annotation text, which appears in a particular <i>"Annotation"</i> section of the generate documentation,
+is produced from all <code>&lt;xs:documentation&gt;</code> elements found by the path:
+<dl><dd>
+<code><b><i>xs:annotated</i></b>/xs:annotation/xs:documentation</code>
+</dd></dl>
+where <code><i>'xs:annotated'</i></code> is an XSD element that defines either the XML schema itself
+(<code>xs:schema</code>) or a schema component (e.g. <code>xs:complexType</code>) being documented.
+<p>
+Multiple <code>&lt;xs:documentation&gt;</code> elements will produce different sections of the annotation text.

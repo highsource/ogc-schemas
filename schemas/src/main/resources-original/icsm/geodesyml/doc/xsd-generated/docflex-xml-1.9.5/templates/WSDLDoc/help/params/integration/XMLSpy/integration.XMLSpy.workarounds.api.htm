@@ -1,0 +1,53 @@
+Specify which version of XMLSpy Java API will be used to communicate with XMLSpy.
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"early version"</i>
+<dl><dd>
+The early version of XMLSpy Java API, which existed all the time since the very start.
+It is based on the files:
+<dl><dd>
+<code style="white-space:nowrap">
+  C:\Program Files\Altova\XMLSpy\XMLSpyInterface.jar<br>
+  C:\Windows\system32\XmlSpyLib.dll
+</code>
+</dd></dl>
+This API is currently most stable and should be preferred (particularly on Windows).
+So it is the default choice.
+</dd></dl>
+
+<i>"2012"</i>
+<dl><dd>
+A new API provided since XMLSpy 2012.
+It is based on the files found in the directory:
+<dl><dd>
+  <code style="white-space:nowrap">C:\Program Files\Altova\XMLSpy\JavaAPI\</code>
+</dd></dl>
+Namely:
+<dl><dd>
+<code style="white-space:nowrap">
+  XMLSpyAPI.jar<br>
+  AltovaAutomation.jar<br>
+  AltovaAutomation.dll
+</code>
+</dd></dl>
+
+As of the XMLSpy v2012, the problem of this API is that it raises
+some internal Java exception when quitting XMLSpy.
+However, that exception is tolerable and can be ignored in most cases.
+<p style="margin-top:10pt">
+We don't know the reason why Altova has created another Java API for XMLSpy.
+But it may be expected that the new API will be given a priority in the next XMLSpy version.
+<p style="margin-top:10pt">
+So, if something doesn't work with some new XMLSpy version (since 2012),
+you may try to switch to this API.
+<p style="margin-top:10pt">
+The same we suggest, if you have problem of running the XMLSpy integration on
+<a href="http://www.winehq.org">Linux/Wine</a>.
+</dd></dl>
+
+<p>
+<b>See Also Parameter:</b>
+<dl><dd>
+<i>Integrations | XMLSpy | Quit XMLSpy</i>
+</dd></dl>

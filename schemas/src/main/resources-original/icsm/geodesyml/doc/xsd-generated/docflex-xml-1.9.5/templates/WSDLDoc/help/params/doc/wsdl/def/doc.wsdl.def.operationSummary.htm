@@ -1,0 +1,31 @@
+Specify whether to generate <b><i>Operation Summary</i></b> section that lists all <b>operations</b>
+(or operation bindings) defined in the given WSDL <b>portType</b> or <b>binding</b>.
+<p>
+The summary information about each operation includes its name and description (the first sentence).
+The description text is supposed to come from the <code>&lt;wsdl:documentation&gt;</code> element found by the path:
+<dl><dd>
+<code>wsdl:operation/wsdl:documentation</code>
+</dd></dl>
+However, when that description is absent, an alternative description may be used,
+which is searched for according to the settings in the parameter group:
+<i>"Details | WSDL Definition | Alternative Descriptions | Operation"</i>.
+
+<p>
+<b>Applies To:</b>
+<ul>
+<li>Port Types</li>
+<li>Bindings</li>
+</ul>
+
+<b>Nested Parameters:</b>
+<dl><dd>
+Select precisely for which top WSDL definitions (portTypes and bindings) 
+the operation summary is generated
+</dd></dl>
+
+<b>See Also Parameters:</b>
+<ul>
+<li><i>Details | WSDL Definition | Alternative Descriptions | Operation</i></li>
+<li><i>Details | WSDL Definition | Definition Profile | Includes</i></li>
+<li><i>Details | WSDL Definition | Operation Detail</i></li>
+</ul>

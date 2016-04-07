@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../../styles.css">
+<title>DocFlex/XML - XSDDoc - XML Schema Documentation Generator</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/XML - XSDDoc - XML Schema Documentation Generator
+</h1>
+
+<h3 class="spec">
+  <a href="overview.html" class="latent">Overview</a>
+</h3>
+
+<ol>
+  <li class="mrg4"><a href="overview.html#intro"><b>What is DocFlex/XML XSDDoc?</b></a></li>
+  <li class="mrg4"><a href="overview.html#output"><b>What you can generate with it</b></a>
+    <ul class="mrg4">
+      <li><a href="overview.html#output.html">HTML Output</a>
+        <ul>
+          <li><a href="overview.html#output.html.framed">Framed HTML Documentation</a></li>
+          <li><a href="overview.html#output.html.single_file">Single File HTML Documentation</a></li>
+        </ul>
+      </li>
+      <li><a href="overview.html#output.rtf">RTF Output</a>
+        <ul>
+          <li><a href="overview.html#output.rtf.doc">RTF Documentation</a></li>
+          <li><a href="overview.html#output.rtf.pdf">PDF Documentation</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="overview.html#input_schemas"><b>What XML Schemas you can document</b></a>
+    <ul class="mrg4">
+      <li><a href="overview.html#schema_projects">Any XML schema projects</a></li>
+      <li><a href="overview.html#schema_size">Any XML schema size and number of components</a></li>
+      <li><a href="overview.html#schema_design_patterns">Support of any XML schema design patterns</a></li>
+      <li><a href="overview.html#conflicting_schemas">Joint documenting of conflicting XML schemas</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="overview.html#doc"><b>XML Schema Documentation</b></a>
+    <ul class="mrg4">
+      <li><a href="overview.html#features">Features (How everything is documented)</a></li>
+      <li><a href="overview.html#organization">Organization (Documentation Structure)</a></li>
+      <li><a href="overview.html#examples">Examples</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="overview.html#how_it_works"><b>How Documentation Generator Works</b></a>
+    <ul class="mrg4">
+      <li><a href="overview.html#tda">Template-Driven Architecture</a>
+        <ul>
+          <li><a href="overview.html#what_are_templates">What are Templates?</a></li>
+          <li><a href="overview.html#template_parameters">Template Parameters</a></li>
+          <li><a href="overview.html#template_designer">Template Designer</a></li>
+        </ul>
+      </li>
+      <li><a href="overview.html#xsddoc_templates">"XSDDoc" Template Set</a></li>
+      <li><a href="overview.html#diagrams">Generation of Diagrams</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="overview.html#running_generator"><b>Running Documentation Generator</b></a>
+    <ul class="mrg4">
+      <li><a href="overview.html#command_line">Java Command Line</a></li>
+      <li><a href="overview.html#generator_gui">Generator GUI</a>
+        <ul>
+          <li><a href="overview.html#generator_dialog">Generator Dialog</a></li>
+          <li><a href="overview.html#param_inspector">Parameter Inspector</a></li>
+        </ul>
+      </li>
+      <li><a href="overview.html#using_generator_config">Using generator.config</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="overview.html#integrations"><b>Integrations</b></a>
+    <ul class="mrg4">
+      <li><a href="overview.html#integrations.ant">Apache Ant</a></li>
+      <li><a href="overview.html#integrations.maven">Apache Maven</a></li>
+      <li><a href="overview.html#integrations.XMLSpy">XMLSpy</a></li>
+      <li><a href="overview.html#integrations.OxygenXML">Oxygen XML</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="overview.html#getting_started"><b>How To Get Started</b></a></li>
+  <li class="mrg4"><a href="overview.html#licensing"><b>What you need to license</b></a>
+    <ul class="mrg4">
+      <li><a href="overview.html#licensing.free">Limited mode - Use it for free!</a></li>
+      <li><a href="overview.html#licensing.commercial">Full functionality - Pay only for what you need!</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 class="spec">
+  <a href="features.html" class="latent">Documentation Features (How everything is documented)</a>
+</h3>
+
+<ol>
+  <li class="mrg4"><a href="features.html#schemas"><b>XML Schemas</b></a>
+    <ul class="mrg4">
+      <li><a href="features.html#schemas.overview">Schema Overview</a></li>
+      <li><a href="features.html#schemas.summaries">Schema Summaries</a></li>
+      <li><a href="features.html#schemas.profile">Schema Profile</a></li>
+      <li><a href="features.html#schemas.sorting">Sorting of XML Schemas</a></li>
+      <li><a href="features.html#schemas.redefinitions">Processing/documenting of redefinitions</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="features.html#namespaces"><b>Namespaces</b></a>
+    <ul class="mrg4">
+      <li><a href="features.html#namespaces.overview">Namespace Overview</a></li>
+      <li><a href="features.html#namespaces.summary">Namespace Summary</a></li>
+      <li><a href="features.html#namespaces.profile">Namespace Profile</a></li>
+      <li><a href="features.html#namespaces.sorting">Sorting of Namespaces</a></li>
+      <li><a href="features.html#namespaces.prefixes">Showing Namespace Prefixes</a></li>
+      <li><a href="features.html#namespaces.binding_report">Namespace Binding Report</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="features.html#components"><b>Components</b></a>
+    <ul class="mrg4">
+      <li><a href="features.html#components.detail">Component Documentation</a></li>
+      <li><a href="features.html#components.summaries">Component Summaries</a></li>
+      <li><a href="features.html#components.profile">Component Profile</a></li>
+      <li><a href="features.html#components.usage">Component Usage Report</a></li>
+      <li><a href="features.html#components.sorting">Sorting of Components</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="features.html#xml_source"><b>XML Source</b></a>
+    <ul class="mrg4">
+      <li><a href="features.html#xml_source.xsd_files">Reproducing full XML schema source</a></li>
+      <li><a href="features.html#xml_source.colors">Highlighting XML source with colors</a></li>
+      <li><a href="features.html#xml_source.hyperlinks">Hyperlinks from/into XML source</a></li>
+      <li><a href="features.html#xml_source.components">Fragment XML source of component definitions</a></li>
+      <li><a href="features.html#xml_source.without_annotations">Removing annotation elements from XML source</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="features.html#annotations"><b>Annotations</b></a>
+    <ul class="mrg4">
+      <li><a href="features.html#annotations.elements">Which annotation elements are processed</a></li>
+      <li><a href="features.html#annotations.xhtml">XHTML formatting</a></li>
+      <li><a href="features.html#annotations.images">Inserting images</a></li>
+      <li><a href="features.html#annotations.line_breaks">Rendering line breaks</a></li>
+      <li><a href="features.html#annotations.first_sentence">First sentence of annotation text</a></li>
+      <li><a href="features.html#annotations.custom_elements">Custom elements within annotations</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="features.html#simple_content"><b>Simple Content</b></a>
+    <ul class="mrg4">
+      <li><a href="features.html#simple_content.datatype_model">Datatype Model</a></li>
+      <li><a href="features.html#simple_content.restrictions">Restrictions (actual facets)</a></li>
+      <li><a href="features.html#simple_content.default_fixed_value">Default/Fixed Value</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="features.html#complex_content"><b>Complex Content</b></a>
+    <ul class="mrg4">
+      <li><a href="features.html#complex_content.model">Content Model</a>
+        <ul>
+          <li><a href="features.html#complex_content.model.diagram">Content Model Diagram</a></li>
+          <li><a href="features.html#complex_content.model.xmlRep">XML Representation Summary</a></li>
+        </ul>
+      </li>
+      <li><a href="features.html#complex_content.attribute_detail">Attribute Detail</a></li>
+      <li><a href="features.html#complex_content.content_element_detail">Content Element Detail</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="features.html#types"><b>Types</b></a>
+    <ul class="mrg4">
+      <li><a href="features.html#types.global">Global Types</a></li>
+      <li><a href="features.html#types.abstract">Abstract Types</a></li>
+      <li><a href="features.html#types.anonymous">Anonymous Types</a></li>
+      <li><a href="features.html#types.definition_detail">Type Definition Detail</a>
+        <ul>
+          <li><a href="features.html#types.derivation_tree">Type Derivation Tree</a></li>
+          <li><a href="features.html#types.simple_content_derivation">Simple Content Derivation</a></li>
+          <li><a href="features.html#types.facets">Facets</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="features.html#global_elements"><b>Global Elements</b></a>
+    <ul class="mrg4">
+      <li><a href="features.html#element_documentation">Element Documentation</a></li>
+      <li><a href="features.html#substitution_groups">Substitution Groups</a></li>
+      <li><a href="features.html#abstract_elements">Abstract Elements</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="features.html#local_elements"><b>Local Elements</b></a>
+    <ul class="mrg4">
+      <li><a href="features.html#local_elements.about">About Local Elements</a></li>
+      <li><a href="features.html#local_elements.documenting">Two Ways of Documenting of Local Elements</a></li>
+      <li><a href="features.html#local_elements.local_documenting">Local Documenting</a></li>
+      <li><a href="features.html#local_elements.global_documenting">Global Documenting</a>
+        <ul>
+          <li><a href="features.html#local_elements.unifying_by_type">Unifying Local Elements By Type</a></li>
+        </ul>
+      </li>
+      <li><a href="features.html#local_elements.global_naming">Global Naming of Local Elements</a>
+        <ul>
+          <li><a href="features.html#local_elements.omit_name_ext">Omitting Name Extensions</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="features.html#attributes"><b>Attributes</b></a>
+    <ul class="mrg4">
+      <li><a href="features.html#attributes.global">Global Attributes</a></li>
+      <li><a href="features.html#attributes.local">Local Attributes</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="features.html#groups"><b>Global Groups</b></a>
+    <ul class="mrg4">
+      <li><a href="features.html#element_groups">Element Groups</a></li>
+      <li><a href="features.html#attribute_groups">Attribute Groups</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 class="spec">
+  <a href="organization.html" class="latent">Documentation Organization</a>
+</h3>
+
+<ol>
+  <li><a href="organization.html#blocks"><b>Main Blocks</b></a>
+    <ul class="mrg4">
+      <li><a href="organization.html#blocks.overview">Overview Summary</a></li>
+      <li><a href="organization.html#blocks.allcomps">All Component Summary</a></li>
+      <li><a href="organization.html#blocks.namespace">Namespace Overview</a></li>
+      <li><a href="organization.html#blocks.schema">Schema Overview</a></li>
+      <li><a href="organization.html#blocks.comp">Component Documentation</a></li>
+      <li><a href="organization.html#blocks.xmlnsBindings">XML Namespace Bindings</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="organization.html#framed_doc"><b>Framed HTML Documentation</b></a>
+    <ul class="mrg4">
+      <li><a href="organization.html#framed_doc.frameset">Frameset Structure</a>
+        <ul>
+          <li><a href="organization.html#framed_doc.overviewFrame">Overview Frame</a></li>
+          <li><a href="organization.html#framed_doc.listFrame">List Frame</a></li>
+          <li><a href="organization.html#framed_doc.detailFrame">Detail Frame</a></li>
+        </ul>
+      </li>
+      <li><a href="organization.html#framed_doc.nav">Component Navigation Lists</a>
+        <ul>
+          <li><a href="organization.html#framed_doc.nav.allcomps">All Components</a></li>
+          <li><a href="organization.html#framed_doc.nav.namespace">Namespace Components</a></li>
+          <li><a href="organization.html#framed_doc.nav.schema">Schema Components</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="organization.html#single_file_doc"><b>Single File Documentation</b></a></li>
+</ol>
+
+<h3 class="spec">
+  <a href="templates.html" class="latent">Templates</a>
+</h3>
+
+<ol>
+  <li><a href="templates.html#overview">Overview</a></li>
+  <li><a href="templates.html#xmltype">XML Type</a></li>
+  <li><a href="templates.html#main_templates">Main Templates</a>
+    <ul>
+      <li><a href="templates.html#FramedDoc.tpl">FramedDoc.tpl</a></li>
+      <li><a href="templates.html#PlainDoc.tpl">PlainDoc.tpl</a></li>
+    </ul>
+  </li>
+  <li><a href="templates.html#subtemplates">Subtemplates</a></li>
+  <li><a href="templates.html#parameters">Template Parameters</a></li>
+</ol>
+
+<h3 class="spec">
+  <a href="faq.html" class="latent">Frequently Asked Questions</a>
+</h3>
+
+<ol>
+  <li><a href="faq.html#getting_started">How to get started?</a></li>
+  <li><a href="faq.html#how_fast">How fast does it work?</a></li>
+  <li><a href="faq.html#gen_html">How to generate HTML documentation?</a>
+      <ul>
+        <li><a href="faq.html#gen_html.framed">Framed HTML</a></li>
+        <li><a href="faq.html#gen_html.single_file">Single-file HTML</a></li>
+        <li><a href="faq.html#gen_html.params">Template Parameters</a></li>
+        <li><a href="faq.html#gen_html.options">HTML Options</a></li>
+      </ul>
+  </li>
+  <li><a href="faq.html#gen_rtf">How to generate RTF documentation?</a>
+      <ul>
+        <li><a href="faq.html#gen_rtf.params">Template Parameters</a></li>
+        <li><a href="faq.html#gen_rtf.options">RTF Options</a></li>
+      </ul>
+  </li>
+  <li><a href="faq.html#multiple_schemas">How to generate a single documentation by multiple XML schemas?</a></li>
+  <li><a href="faq.html#pathname_with_spaces">How to specify a schema file pathname with spaces?</a></li>
+  <li><a href="faq.html#integration_with_ant_maven">How to integrate XSDDoc with Apache Ant and Maven?</a></li>
+  <li><a href="faq.html#adding_comments">How to add descriptions/comments into my XML schema?</a></li>
+  <li><a href="faq.html#rendering_line_breaks">How to enable/disable interpreting line breaks in my comments?</a></li>
+  <li><a href="faq.html#xhtml">How to format my comments using XHTML?</a>
+      <ul>
+        <li><a href="faq.html#xhtml.about">What is XHTML?</a></li>
+        <li><a href="faq.html#xhtml.usage">How to use XHTML?</a></li>
+        <li><a href="faq.html#xhtml.images">How to insert images?</a></li>
+        <li><a href="faq.html#xhtml.params_and_options">Parameters & options related to XHTML and images</a></li>
+      </ul>
+  </li>
+  <li><a href="faq.html#invalid_doc">There is some oddity in the documentation I've generated. What might be wrong?</a></li>
+  <li><a href="faq.html#xmlschema.resources">Where can I learn more about XML schemas?</a></li>
+</ol>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+</html>

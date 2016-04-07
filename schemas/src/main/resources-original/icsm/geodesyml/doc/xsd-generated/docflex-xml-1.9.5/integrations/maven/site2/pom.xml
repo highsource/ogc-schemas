@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- POM Basics -->
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1.0</version>
+  <name>my-app</name>
+
+  <!-- Specifying properties (i.e. variable for further usage) -->
+  <properties>
+    <!-- DocFlex/XML home directory -->
+    <DFH>${basedir}/../../..</DFH>
+  </properties>
+
+  <!-- Reporting section (i.e. where we need to setup the DocFlex/XML Generator) -->
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>docflex</groupId>
+        <artifactId>docflex-xml-maven-plugin</artifactId>
+        <version>1.0</version>
+
+        <reportSets>
+
+          <reportSet>
+            <id>xsddoc1</id>
+            <configuration>
+
+              <generatorParams>
+
+                <param>-template</param>
+                <param>${DFH}/templates/XSDDoc/FramedDoc.tpl</param>
+
+                <param>-p:docTitle</param>
+                <param>XML Schema for XML Schemas</param>
+
+                <param>-nodialog</param>
+                <param>-quiet</param>
+
+                <param>http://www.w3.org/2001/XMLSchema.xsd</param>
+
+              </generatorParams>
+
+              <outputFolder>xsddoc</outputFolder>
+              <outputFile>schema4schemas</outputFile>
+
+              <!-- For the project-reports page-->
+              <name>XMLSchema_xsddoc</name>
+              <description>XML Schema for XML Schemas</description>
+
+            </configuration>
+
+            <reports>
+              <report>generator</report>
+            </reports>
+
+          </reportSet>
+
+          <reportSet>
+            <id>xsddoc2</id>
+            <configuration>
+
+              <generatorParams>
+
+                <param>-template</param>
+                <param>${DFH}/templates/XSDDoc/FramedDoc.tpl</param>
+
+                <param>-p:docTitle</param>
+                <param>XML Schemas for WSDL 1.1</param>
+
+                <param>-nodialog</param>
+                <param>-quiet</param>
+
+                <param>http://schemas.xmlsoap.org/wsdl/</param>
+                <param>http://schemas.xmlsoap.org/wsdl/soap/</param>
+                <param>http://schemas.xmlsoap.org/wsdl/http/</param>
+                <param>http://schemas.xmlsoap.org/wsdl/mime/</param>
+
+              </generatorParams>
+
+              <outputFolder>xsddoc</outputFolder>
+              <outputFile>wsdl11</outputFile>
+
+              <!-- For the project-reports page -->
+              <name>wsdl11_xsddoc</name>
+              <description>XML Schemas for WSDL 1.1</description>
+
+            </configuration>
+
+            <reports>
+              <report>generator</report>
+            </reports>
+
+          </reportSet>
+
+        </reportSets>
+      </plugin>
+    </plugins>
+ </reporting>
+
+</project>

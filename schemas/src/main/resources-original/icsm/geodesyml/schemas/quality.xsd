@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 (http://www.altova.com) by DEPT OF SUSTAINABILITY & ENVIRONMENT (DEPT OF SUSTAINABILITY & ENVIRONMENT) -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sopac="http://sopac.ucsd.edu/ns/geodesy/doc/igsSiteLog/2004" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.3" targetNamespace="urn:xml-gov-au:icsm:egeodesy:0.3" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.3" xml:lang="en">
+	<annotation>
+		<documentation>eGeodesy schema implementation based on GML - draft. Copyright (c) 2013-2015 Commonwealth of Australia, on behalf of the Intergovernmental Committee on Surveying and Mapping. All rights reserved.</documentation>
+	</annotation>
+	<!--  -->
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<!--  -->
+	<simpleType name="ConfidenceTypeEnumeration">
+		<restriction base="string">
+			<enumeration value="1 sigma"/>
+			<enumeration value="2 sigma"/>
+			<enumeration value="3 sigma"/>
+			<enumeration value="39.4%"/>
+			<enumeration value="86.5%"/>
+			<enumeration value="95%"/>
+			<enumeration value="98.9%"/>
+			<enumeration value="unknown"/>
+		</restriction>
+	</simpleType>
+	<!--  -->
+	<complexType name="ValueType">
+		<annotation>
+			<documentation>Format of values is as per the dictionary identified by the codeSpace attribute. e.g. "sp1v20_positional-uncertainty"</documentation>
+		</annotation>
+		<simpleContent>
+			<extension base="geo:ValueTypeUnion">
+				<attribute name="codeSpace" type="anyURI" use="required"/>
+				<attribute name="uomLabels" type="gml:NCNameList"/>
+				<attribute name="axisLabels" type="gml:NCNameList"/>
+				<attribute name="confidence" type="geo:ConfidenceTypeEnumeration"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<!--  -->
+	<simpleType name="ValueTypeUnion">
+		<union memberTypes="gml:doubleList string"/>
+	</simpleType>
+	<!--  -->
+	<complexType name="SingleValueType">
+		<annotation>
+			<documentation>Format of a single value is as per the dictionary identified by the codeSpace attribute. e.g. "sp1v20_positional-uncertainty"</documentation>
+		</annotation>
+		<simpleContent>
+			<extension base="double">
+				<attribute name="codeSpace" type="anyURI"/>
+				<attribute name="uomLabels" type="gml:NCNameList"/>
+				<attribute name="confidence" type="geo:ConfidenceTypeEnumeration"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<!--  -->
+	<simpleType name="DescriptiveQualityType">
+		<restriction base="string">
+			<enumeration value="Unknown">
+				<annotation>
+					<documentation>Unknown is used when the parameter values are provided without a source and without an estimate of quality.</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="Approximate">
+				<annotation>
+					<documentation>Approximate is used to describe parameters that have been manually or systematically guessed for the purpose of providing operands for a parameter estimation.</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<!--  -->
+	<complexType name="VCV3x3Type">
+		<annotation>
+			<documentation>A type for 3x3 VCV described as a list of double values.</documentation>
+		</annotation>
+		<simpleContent>
+			<extension base="geo:ValueTypes6">
+				<attribute name="codeSpace" type="anyURI" use="required"/>
+				<attribute name="srsName" type="anyURI">
+					<annotation>
+						<documentation>Often the reference frame and coordinate system of the quality matrix matches that of the coordinates, but sometimes these figures can be provided in a difference coordinate system. For example, coordinates could be in geocentric cartesian coordinates, but the quality could be in topocentric (ENU) cartesian coordinates which thurs requires rotation and translation before propagating variance.</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="uomLabels" type="gml:NCNameList"/>
+				<attribute name="axisLabels" type="gml:NCNameList"/>
+				<attribute name="confidence" type="geo:ConfidenceTypeEnumeration"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<!--  -->
+	<simpleType name="ValueTypes6">
+		<union memberTypes="geo:doubleList6 string"/>
+	</simpleType>
+	<!--  -->
+	<simpleType name="doubleList6">
+		<annotation>
+			<documentation>A gml:doubleList of length 6.</documentation>
+		</annotation>
+		<restriction base="gml:doubleList">
+			<length value="6"/>
+		</restriction>
+	</simpleType>
+	<!--  -->
+	<complexType name="VCV2x2Type">
+		<annotation>
+			<documentation>A type for 2x2 VCV described as a list of double values.</documentation>
+		</annotation>
+		<simpleContent>
+			<extension base="geo:ValueTypes3">
+				<attribute name="codeSpace" type="anyURI" use="required"/>
+				<attribute name="srsName" type="anyURI">
+					<annotation>
+						<documentation>Often the reference frame and coordinate system of the quality matrix matches that of the coordinates, but sometimes these figures can be provided in a difference coordinate system. For example, coordinates could be in geocentric cartesian coordinates, but the quality could be in topocentric (ENU) cartesian coordinates which thurs requires rotation and translation before propagating variance.</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="uomLabels" type="gml:NCNameList"/>
+				<attribute name="axisLabels" type="gml:NCNameList"/>
+				<attribute name="confidence" type="geo:ConfidenceTypeEnumeration"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<!--  -->
+	<simpleType name="ValueTypes3">
+		<union memberTypes="geo:doubleList3 string"/>
+	</simpleType>
+	<!--  -->
+	<simpleType name="doubleList3">
+		<annotation>
+			<documentation>A gml:doubleList of length 3.</documentation>
+		</annotation>
+		<restriction base="gml:doubleList">
+			<length value="3"/>
+		</restriction>
+	</simpleType>
+	<!--  -->
+	<element name="Value" type="geo:ValueType">
+		<annotation>
+			<documentation>Generic property value holder</documentation>
+		</annotation>
+	</element>
+	<!--  -->
+	<element name="AbstractQuality" abstract="true">
+		<annotation>
+			<documentation>Abstract group for quality values.</documentation>
+		</annotation>
+	</element>
+	<!--  -->
+	<element name="NumericSingleQuality" type="geo:SingleValueType" substitutionGroup="geo:AbstractQuality">
+		<annotation>
+			<documentation>A numeric value for quality. This is often the type used to describe Positional Uncertainty, Relative Uncertainty and Survey Uncertainty.</documentation>
+		</annotation>
+	</element>
+	<!--  -->
+	<element name="NumericQualityList" type="geo:ValueType" substitutionGroup="geo:AbstractQuality">
+		<annotation>
+			<documentation>A numeric list value for quality. This is often the type used to describe a VCV matrix or some other arbitrary list of values. To specify a VCV matrix of 2x2 or 3x3 dimension it is better to use VCV2D and VCV3D respectively.</documentation>
+		</annotation>
+	</element>
+	<!--  -->
+    <!-- TODO: use gco -->
+    <element name="DescriptiveQuality" type="gml:CodeType" substitutionGroup="geo:AbstractQuality"/>
+	<!--  -->
+	<element name="VCV3D" type="geo:VCV3x3Type" substitutionGroup="geo:AbstractQuality">
+		<annotation>
+			<documentation>Upper triangle of a symmetric 3x3 VCV matrix defined as a list of six doubles.</documentation>
+		</annotation>
+	</element>
+	<!--  -->
+	<element name="VCV2D" type="geo:VCV2x2Type" substitutionGroup="geo:AbstractQuality">
+		<annotation>
+			<documentation>Upper triangle of a symmetric 2x2 VCV matrix defined as a list of three doubles.</documentation>
+		</annotation>
+	</element>
+	<!--  -->
+</schema>

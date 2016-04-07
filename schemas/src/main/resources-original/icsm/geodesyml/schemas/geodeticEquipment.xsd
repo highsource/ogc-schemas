@@ -1,0 +1,398 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.3" xmlns:gco="http://www.isotc211.org/2005/gco" targetNamespace="urn:xml-gov-au:icsm:egeodesy:0.3" elementFormDefault="qualified" version="0.3" xml:lang="en">
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd"/>
+	<include schemaLocation="fieldMeasurement.xsd"/>
+	<annotation>
+		<documentation>
+	Author       : Michael Scharber
+	Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+	Date 	     : September 10, 2003
+	Description  : These schema components were desgined to encapsulate and validate
+	             : physical equipment (hardware) used in the field of geodesy.
+		     :
+	Notes        :
+    </documentation>
+	</annotation>
+	<complexType name="geodeticEquipmentItemPropertyType">
+		<sequence>
+			<sequence minOccurs="0">
+				<element ref="geo:geodeticEquipmentItem"/>
+			</sequence>
+			<group ref="geo:ChangeTracking"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<element name="geodeticEquipmentItem" type="geo:baseGeodeticEquipmentType" abstract="false">
+		<annotation>
+			<documentation>
+         Provides a base non-instantiable element type whose
+         structure is a derived complex type.  This element
+         can then be referenced as a substitutionGroup for
+         equipment cataloges and such.
+			</documentation>
+		</annotation>
+	</element>
+	<complexType name="baseGeodeticEquipmentType" abstract="true">
+		<annotation>
+			<documentation>
+         Base Geodetic Equipment class.  Serves as a platform
+         for the construction of other, more specific, types
+         of equipment related to the field of geodesy.  More
+         specifically, this class is designed for equipment
+         that can be uniquely-identified.  In other words,
+         actual physical objects used in geodetic practices.
+         
+         GeodesyML 0.2 change: Extend geo:InstrumentType and removed attr  final="restriction"
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="geo:InstrumentType">
+				<sequence>
+					<!-- -->
+					<!-- Manufacturer Name -->
+					<!-- -->
+					<element name="manufacturerName" type="string" minOccurs="0"/>
+					<!-- -->
+					<!-- Manufacturer Model -->
+					<!-- -->
+					<element name="manufacturerModel" type="string" minOccurs="0"/>
+					<!-- -->
+					<!-- Manufacturer Part Number -->
+					<!-- -->
+					<element name="manufacturerPartNumber" type="string" minOccurs="0"/>
+					<!-- -->
+					<!-- Manufacturer Description -->
+					<!-- -->
+					<element name="manufacturerDescription" type="string" minOccurs="0"/>
+					<!-- -->
+					<!-- Manufacturer Serial Number -->
+					<!-- -->
+					<element name="manufacturerSerialNumber" type="string"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<annotation>
+		<documentation>
+	Author       : Michael Scharber
+	Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+	Date 	     : August 7, 2003
+	Description  : These schema componenet were desgined to encapsulate and validate
+	             : GPS/GLONASS antenna equipment for use/reference in
+		     : other XML document types, such as IGS-style Site
+		     : Information Logs, and GPS/Geodetic Observation/Occupation Log
+		     : from the National Geodetic Survey (NGS).
+		     :
+		     : The data model used in this XSD aims at uniquely-identifying
+		     : a given (single) GPS/GLONASS antenna.  This entity could then
+		     : be contained within a parent entity which attributes other
+		     : aspects of where, when, by whom, and why this particular piece
+		     : of equipment was used or referenced.
+		     :
+	Notes        : All distance/length measurements/values are assumed to be in meters.
+                     : All date/time measurements/values are assumed to be of the
+                     : ISO8601 variant "CCYY-MM-DDThh:mm:ssZ" (UTC)
+    </documentation>
+	</annotation>
+	<!--  -->
+	<!--<element name="gnssAntenna" type="geo:gnssAbstractAntennaType"/>-->
+	<complexType name="AbstractGNSSAntennaType" abstract="true">
+		<annotation>
+			<documentation xml:lang="en">
+        Instantiable, non-substituble, global complex type
+        representing a GNSS Antenna uniquely-identified
+        by a serial number and IGS model code.
+        
+        GeodesyML 0.2: removed block="#all" attribute.
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="geo:baseGeodeticEquipmentType">
+				<sequence>
+					<element name="igsModelCode" type="geo:igsAntennaModelCodeType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="gnssAntennaConfigType" abstract="false" block="#all">
+		<annotation>
+			<documentation xml:lang="en">
+        Instantiable, non-substituble, global complex type
+        representing the settings (transient properties)
+        of a gnss antenna.
+			</documentation>
+		</annotation>
+		<choice minOccurs="0" maxOccurs="2">
+			<element name="antennaCableLengthMeters" minOccurs="0">
+				<annotation>
+					<documentation>
+            Refers to the length (in meters) of the cable
+            used to connect the antenna to other gnss equipment
+            (typically a gnss receiver or set of receivers).
+					</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="decimal">
+						<totalDigits value="6"/>
+						<fractionDigits value="3"/>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="antennaCableType" type="string" minOccurs="0">
+				<annotation>
+					<documentation>
+            Refers to the type of cable
+            used to connect the antenna to other gnss equipment
+            (typically a gnss receiver or set of receivers).
+					</documentation>
+				</annotation>
+			</element>
+		</choice>
+	</complexType>
+	<complexType name="gnssAntennaHeightMeasurementType" abstract="false" block="#all">
+		<annotation>
+			<documentation xml:lang="en">
+        Instantiable, non-substituble, global complex type
+        representing the measurement of a distance between
+        a specified location on a gnss antenna and another
+        location of choice.
+			</documentation>
+		</annotation>
+		<choice maxOccurs="5">
+			<element name="type" type="gml:CodeWithAuthorityType" default="vertical" minOccurs="0"/>
+			<element name="value">
+				<annotation>
+					<documentation>
+            Refers to the distance (+|-) between the geodetic
+            reference point of the associated monument, and a
+            chosen reference point on the antenna.
+					</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="decimal">
+						<totalDigits value="6"/>
+						<fractionDigits value="4"/>
+					</restriction>
+				</simpleType>
+			</element>
+			<element ref="gml:unitOfMeasure" minOccurs="0"/>
+			<element name="referencePoint" type="gml:CodeWithAuthorityType" default="BPA" minOccurs="0"/>
+			<element name="dateAndTimeUTC" type="gml:TimePositionType" minOccurs="0"/>
+		</choice>
+	</complexType>
+	<complexType name="igsAntennaModelCodeType" final="#all">
+		<annotation>
+			<documentation xml:lang="en">
+        Non-instantiable, non-substituable, non-extendable or
+        restrictable global simple type representing a valid
+        IGS antenna model code.
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="gco:CodeListValue_Type"/>
+		</complexContent>
+	</complexType>
+	<!-- -->
+	<annotation>
+		<documentation>
+	Author       : Michael Scharber
+	Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+	Date 	     : August 11, 2003
+	Description  : These schema components were desgined to encapsulate and validate
+	             : GPS/GLONASS radome equipment for use/reference in
+		     : other XML document types, such as IGS-style Site
+		     : Information Logs, and GPS/Geodetic Observation/Occupation Log
+		     : from the National Geodetic Survey (NGS).
+		     :
+		     : The data model used in this XSD aims at uniquely-identifying
+		     : a given (single) GPS/GLONASS radome.  This entity could then
+		     : be contained within a parent entity which attributes other
+		     : aspects of where, when, by whom, and why this particular piece
+		     : of equipment was used or referenced.
+		     :
+	Notes        : All distance/length measurements/values are assumed to be in meters.
+                     : All date/time measurements/values are assumed to be of the
+                     : ISO8601 variant "CCYY-MM-DDThh:mm:ssZ" (UTC)
+		</documentation>
+	</annotation>
+	<complexType name="gnssRadomeType" block="#all">
+		<annotation>
+			<documentation xml:lang="en">
+        Instantiable, non-substituble, global complex type
+        representing a GNSS Radome uniquely-identified
+        by a serial number and IGS model code.
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="geo:baseGeodeticEquipmentType">
+				<sequence minOccurs="0">
+					<element name="igsModelCode" type="geo:igsRadomeModelCodeType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="gnssRadomeConfigType" abstract="false" block="#all">
+		<annotation>
+			<documentation xml:lang="en">
+        Instantiable, non-substituble, global complex type
+        representing the settings (transient properties)
+        of a gnss radome.
+			</documentation>
+		</annotation>
+		<choice minOccurs="0">
+			<element name="radomeFastenerType" type="string" minOccurs="0">
+				<annotation>
+					<documentation>
+            Refers to the type of fasteners used to secure a radome
+            in place.  This is pretty much a bogus data field
+            intended for future compatibility purposes.
+          </documentation>
+				</annotation>
+			</element>
+		</choice>
+	</complexType>
+	<complexType name="igsRadomeModelCodeType" final="#all">
+		<annotation>
+			<documentation xml:lang="en">
+        Non-instantiable, non-substituable, non-extendable or
+        restrictable global simple type representing a valid
+        IGS radome model code.
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="gml:CodeWithAuthorityType"/>
+		</complexContent>
+	</complexType>
+	<element name="igsRadomeModelCode" type="geo:igsRadomeModelCodeType"/>
+	<!-- -->
+	<annotation>
+		<documentation>
+	Author			 : Michael Scharber
+	Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+	Date 			 : August 7, 2003
+	Description	: These schema components were desgined to encapsulate and validate
+							 : GPS/GLONASS receiver equipment for use/reference in
+				 : other XML document types, such as IGS-style Site
+				 : Information Logs, and GPS/Geodetic Observation/Occupation Log
+				 : from the National Geodetic Survey (NGS).
+				 :
+				 : The data model used in this XSD aims at uniquely-identifying
+				 : a given (single) GPS/GLONASS receiver.	This entity could then
+				 : be contained within a parent entity which attributes other
+				 : aspects of where, when, by whom, and why this particular piece
+				 : of equipment was used or referenced.
+				 :
+	Notes				: All distance/length measurements/values are assumed to be in meters.
+										 : All date/time measurements/values are assumed to be of the
+										 : ISO8601 variant "CCYY-MM-DDThh:mm:ssZ" (UTC)
+		</documentation>
+	</annotation>
+	<!--<element name="gnssReceiver" type="geo:AbstractGnssReceiverType"/>-->
+	<complexType name="AbstractGNSSReceiverType" abstract="true">
+		<annotation>
+			<documentation xml:lang="en">
+				Instantiable, non-substituble, global complex type
+				representing a GNSS Receiver uniquely-identified
+				by a serial number and IGS model code.
+				
+				GeodesyML 0.2 changes: removed  block="#all"
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="geo:baseGeodeticEquipmentType">
+				<sequence minOccurs="0">
+					<element name="igsModelCode" type="geo:igsReceiverModelCodeType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="gnssReceiverConfigType" abstract="false" block="#all">
+		<annotation>
+			<documentation xml:lang="en">
+				Instantiable, non-substituble, global complex type
+				representing the settings (transient properties)
+				of a gnss receiver.
+			</documentation>
+		</annotation>
+		<choice minOccurs="0" maxOccurs="6">
+			<element name="satelliteSystem" type="gml:CodeListType" minOccurs="0">
+				<annotation>
+					<documentation>
+						Refers to a satellite
+						constellation being observed by a gnss receiver.
+					</documentation>
+				</annotation>
+			</element>
+			<element name="firmwareVersion" type="string" minOccurs="0">
+				<annotation>
+					<documentation>
+						Refers to the manufacturer-
+						designated version of the firmware installed
+						on a gnss receiver.
+					</documentation>
+				</annotation>
+			</element>
+			<element name="elevationCutoff" type="string" minOccurs="0">
+				<annotation>
+					<documentation>
+						Refers to the elevation mask (or cutoff)
+						used on a gnss receiver.
+					</documentation>
+				</annotation>
+			</element>
+			<element name="temperatureStabilization" type="string" minOccurs="0">
+				<annotation>
+					<documentation>
+						Refers to the temperature stabilization
+						on a gnss receiver.
+					</documentation>
+				</annotation>
+			</element>
+			<element name="sampleIntervalInSeconds" minOccurs="0">
+				<annotation>
+					<documentation>
+						Refers to the sampling interval with which
+						observations are made with respect to the observed
+						constellation(s) of satellite(s).
+					</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="decimal">
+						<totalDigits value="4"/>
+						<fractionDigits value="1"/>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="nativeBaudRateInBPS" minOccurs="0">
+				<annotation>
+					<documentation>
+						Refers to the sampling interval with which
+						observations are made with respect to the observed
+						constellation(s) of satellite(s).
+					</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="decimal">
+						<totalDigits value="6"/>
+						<fractionDigits value="0"/>
+					</restriction>
+				</simpleType>
+			</element>
+		</choice>
+	</complexType>
+	<complexType name="igsReceiverModelCodeType" final="#all">
+		<annotation>
+			<documentation xml:lang="en">
+				Non-instantiable, non-substituable, non-extendable or
+				restrictable global simple type representing a valid
+				IGS receiver model code.  With a codeList attribute
+				to set the allowed types.
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="gco:CodeListValue_Type"/>
+		</complexContent>
+	</complexType>
+</schema>

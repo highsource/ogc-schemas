@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../../../styles.css">
+<title>DocFlex/XML - Samples - Alternative to XSLT</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/XML - Samples - Alternative to XSLT
+</h1>
+
+This sample demonstrates how <a href="../../about.html">DocFlex/XML</a> can be used
+as an alternative to a standard <a href="http://www.w3.org/TR/xslt" target="_blank">XSL Transformation</a>.
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+  <li class="mrg4"><a href="#sample_data"><b>Sample Data</b></a>
+    <ul>
+      <li><a href="#xml_document">XML document</a>
+      <li><a href="#dtd_file">DTD file</a>
+    </ul>
+  <li class="mrg4"><a href="#using_xslt"><b>Using XSLT</b></a>
+    <ul>
+      <li><a href="#xslt_script">XSLT script</a>
+      <li><a href="#html_result">HTML result</a>
+    </ul>
+  <li class="mrg4"><a href="#docflex_alternative"><b>DocFlex/XML Alternative</b></a>
+    <ul>
+      <li><a href="#template">Template</a>
+      <li><a href="#html_result">HTML result</a>
+      <li><a href="#rtf_result">RTF result</a>
+    </ul>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<table cellspacing="0" cellpadding="0" border="0">
+<tr valign="top">
+  <td><p class="nav"><b>Notice:&nbsp;&nbsp;</b></td>
+  <td>
+    <p class="nav">
+    This XML listing documentation has been prepared with the <i>"XML File Documenter"</i> template
+    (see <a href="../xmldoc/index.html">XMLDoc</a>).
+    </p>
+  </td>
+</tr>
+</table>
+
+<h2 align="left">
+  <a name="sample_data"></a>
+  1.&nbsp; Sample Data
+</h2>
+
+<p><a name="xml_document"></a>
+The sample data are taken from the following <b>XML document</b>:
+</p>
+
+<p class="mrg8"><u><em>personal.xml</em></u></p>
+
+<div class="example">
+<DIV><SPAN CLASS="f1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</SPAN></DIV><DIV><SPAN CLASS="f1">&lt;!DOCTYPE</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f1">personnel</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f1">SYSTEM</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f1">&quot;personal.dtd&quot;&gt;</SPAN></DIV><DIV><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">personnel</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">person</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">id</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">Big.Boss</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">family</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Boss</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">family</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">given</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Big</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">given</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">email</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">chief@foo.com</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">email</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">link</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">subordinates</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">one.worker two.worker three.worker four.worker five.worker</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">person</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">person</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">id</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">one.worker</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">family</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Worker</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">family</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">given</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">One</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">given</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">email</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">one@foo.com</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">email</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">link</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">manager</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">Big.Boss</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">person</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">person</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">id</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">two.worker</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">family</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Worker</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">family</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">given</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Two</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">given</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">email</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">two@foo.com</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">email</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">link</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">manager</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">Big.Boss</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">person</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">person</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">id</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">three.worker</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">family</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Worker</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">family</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">given</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Three</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">given</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">email</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">three@foo.com</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">email</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">link</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">manager</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">Big.Boss</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">person</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">person</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">id</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">four.worker</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">family</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Worker</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">family</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">given</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Four</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">given</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">email</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">four@foo.com</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">email</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">link</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">manager</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">Big.Boss</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">person</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">person</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">id</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">five.worker</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">family</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Worker</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">family</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">given</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Five</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">given</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">email</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">five@foo.com</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">email</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">link</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">manager</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">Big.Boss</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">person</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">personnel</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+</div>
+
+<p align="left">
+<a name="dtd_file"></a>
+The XML's structure is described by this <b>DTD-file</b>:</p>
+
+<p class="mrg8"><u><em>personal.dtd</em></u></p>
+
+<div class="example">
+<pre class="small" style="margin:0">
+&lt;?xml encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;!ELEMENT personnel (person)+&gt;
+
+&lt;!ELEMENT person (name,email*,url*,link?)&gt;
+&lt;!ATTLIST person id ID #REQUIRED&gt;
+&lt;!ATTLIST person note CDATA #IMPLIED&gt;
+&lt;!ATTLIST person contr (true|false) 'false'&gt;
+&lt;!ATTLIST person salary CDATA #IMPLIED&gt;
+
+&lt;!ELEMENT name ((family,given)|(given,family))&gt;
+&lt;!ELEMENT family (#PCDATA)&gt;
+&lt;!ELEMENT given (#PCDATA)&gt;
+&lt;!ELEMENT email (#PCDATA)&gt;
+
+&lt;!ELEMENT url EMPTY&gt;
+&lt;!ATTLIST url href CDATA 'http://'&gt;
+
+&lt;!ELEMENT link EMPTY&gt;
+&lt;!ATTLIST link manager IDREF #IMPLIED&gt;
+&lt;!ATTLIST link subordinates IDREFS #IMPLIED&gt;</pre>
+</div>
+
+<h2 align="left">
+  <a name="using_xslt"></a>
+  2.&nbsp; Using XSLT
+</h2>
+
+<p align="left"> <a name="xslt_script" id="xslt_script"></a>
+Here's the <b>XSLT-script</b> defining the transformation:</p>
+
+<p class="mrg8"><u><em>personal.xsl</em></u></p>
+
+<div class="example">
+<SPAN CLASS="f1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</SPAN><DIV><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:stylesheet</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">version</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">1.0</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f4">xmlns:xsl</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f5">http://www.w3.org/1999/XSL/Transform</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:template</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">match</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">/</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">html</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">p</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Personnel</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">p</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:element</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">table</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:attribute</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">border</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN><SPAN CLASS="f3">2</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:attribute</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">tr</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:attribute</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">color</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN><SPAN CLASS="f3">#3333FF</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:attribute</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:attribute</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">bgcolor</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN><SPAN CLASS="f3">#FFCCCC</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:attribute</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:attribute</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">align</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN><SPAN CLASS="f3">center</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:attribute</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">td</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">font</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">verdana</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">size</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">3</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p7"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">b</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Name</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">b</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p6"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">font</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">td</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">td</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">font</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">verdana</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">size</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">3</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p7"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">b</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Email</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">b</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p6"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">font</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">td</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">td</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">font</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">verdana</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">size</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">3</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p7"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">b</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">Link</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">b</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p6"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">font</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">td</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p4"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">tr</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:apply-templates</SPAN><SPAN CLASS="f1">/&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:element</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">html</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:template</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:template</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">match</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">//person</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:element</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">tr</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:attribute</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">align</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN><SPAN CLASS="f3">center</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:attribute</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:element</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">td</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">font</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">verdana</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">size</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">3</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:attribute</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">width</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN><SPAN CLASS="f3">120</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:attribute</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">i</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:value-of</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">select</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">name/family/text()</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV><DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:text</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">disable-output-escaping</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">yes</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN><SPAN CLASS="f3">&amp;nbsp;</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:text</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">i</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:value-of</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">select</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">name/given/text()</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV><DIV CLASS="p4"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">font</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:element</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:element</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">td</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:attribute</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">width</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN><SPAN CLASS="f3">120</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:attribute</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">font</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">verdana</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">size</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">3</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:value-of</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">select</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">email/text()</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV><DIV CLASS="p4"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">font</SPAN><SPAN CLASS="f1">&gt;</SPAN></D
+IV
+><
+DIV CLASS="p3"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:element</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:element</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">td</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">font</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">color</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">black</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">verdana</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">size</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">3</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:value-of</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">select</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">./link/@subordinates</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV><DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">xsl:value-of</SPAN><SPAN CLASS="f0"> </SPAN><SPAN CLASS="f2">select</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">./link/@manager</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV><DIV CLASS="p4"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">font</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p3"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:element</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:element</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:template</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV><DIV><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">xsl:stylesheet</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+</div>
+
+<p align="left">
+<a name="html_result"></a>
+The <b>HTML file</b> produced with that <a href="#xslt_script">XSLT-script</a> is the following:
+<blockquote>
+  <img src="images/xslt_html.png" title="HTML generated by XSLT" border="0">
+</blockquote>
+</p>
+
+<h2 align="left">
+  <a name="docflex_alternative"></a>
+  3.&nbsp; DocFlex/XML Alternative
+</h2>
+
+<p><a name="template"></a>
+Here is how the corresponding <b>DocFlex template</b> looks (click on the screenshot to see in full size):</p>
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/samples/xslt_alt/images/personal_tpl.html" target="_blank"><img src="images/personal_tpl_s.png" title="DocFlex Template" border="0"></a>
+</blockquote>
+
+<p>Except of a few settings invisible on this screenshot, it is almost all needed
+to be designed as a replacement for the <a href="#xslt_script">XSLT-script</a> above.
+
+<p>The <a href="../../design_templates.html#xmltype">XML Type</a> definition prepared for
+this template consists of just three lines:
+<blockquote>
+<pre>personal.name = Personal
+personal.dtd.file = %DFH%/samples/personal/personal.dtd
+personal.dtd.systemID = personal.dtd</pre>
+</blockquote>
+
+<p><a name="html_result"></a>
+This is the <b>HTML document</b> generated by the template:
+<blockquote>
+  <img src="images/personal_html.png" alt="HTML generated by DocFlex" border="0">
+</blockquote>
+
+<p align="left"><a name="rtf_result"></a>
+
+And here is something XSL-processors normally do not at all -- the <b>RTF document</b> generated
+with this <a href="#docflex_alternative">template</a>:
+<blockquote>
+  <img src="images/personal_rtf.png" alt="RTF generated by DocFlex" border="0">
+</blockquote>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

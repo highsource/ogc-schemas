@@ -1,0 +1,69 @@
+This parameter allows you to customize the initial content of 
+the <b><i>List Frame</i></b>, which is shown on this diagram:
+<p> 
+<img src="${this_dir}/../images/frameset_diagram.png">
+<p>
+The <i>List Frame</i> is used to display one of the second-level navigation pages
+associated with a particular selection in the <i>Overview Frame</i>.
+This includes:
+<ul>
+  <li>The list of all components</li>
+  <li>The list of all schemas/components that target/belong to a particular namespace</li>
+  <li>The list of components defined in a particular XML schema</li>
+</ul>
+
+<u>Possible Choices</u>:
+<p>
+<i>"All Components"</i>
+<blockquote style="margin-top:10pt; margin-bottom:10pt">
+Load the first the All Components Page.
+<p style="margin-top:10pt">
+This page lists all global components and local elements
+defined throughout all XML schemas being documented.
+<p style="margin-top:10pt">
+Using the <i>"Navigation | List Frame | All Components"</i> parameters,
+you can customize precisely what is included in that list (as well as how it is sorted).
+</blockquote>
+
+<i>"Namespace"</i>
+<blockquote style="margin-top:10pt; margin-bottom:10pt">
+This selection causes a Namespace Navigation Page generated for one of the documented namespaces
+to be loaded the first.
+<p style="margin-top:10pt">
+There may be several such pages, a separate page for each namespace.
+The loaded will be one, which has been generated the first.
+This is controlled by the <i>"Generate Details | Sorting | Namespaces"</i> parameter.
+<p style="margin-top:8pt">
+The generation of <i>Namespace Navigation</i> pages is controlled by
+the <i>"Navigation | List Frame | Namespace"</i> parameter group.
+</blockquote>
+
+<i>"Schema"</i>
+<blockquote style="margin-top:10pt; margin-bottom:10pt">
+This selection causes a Schema Navigation Page
+generated for one of the documented XML schemas to be loaded the first.
+<p style="margin-top:10pt">
+There may be several such pages, a separate page for each XML schema.
+The loaded will be one, which has been generated the first.
+This is controlled by the <i>"Generate Details | Sorting | Schemas"</i> parameter.
+<p style="margin-top:8pt">
+The generation of the <i>Schema Navigation</i> pages is controlled by
+the <i>"Navigation | List Frame | Schema"</i> parameter group.
+</blockquote>
+
+<b>Note:</b> 
+<blockquote>
+When the specified component list (HTML page) is not available (has not been generated),
+by default, the initially loaded document is chosen according to the following priority list:
+<ol>
+<li><i>All Components</i></li>
+<li><i>Namespace</i></li>
+<li><i>Schema</i></li>
+</ol>
+</blockquote>
+
+<b>Nested Parameters:</b>
+<dl><dd>
+Control the generation and content of the particular navigation lists
+loaded in the <i>List Frame</i>.
+</dd></dl>

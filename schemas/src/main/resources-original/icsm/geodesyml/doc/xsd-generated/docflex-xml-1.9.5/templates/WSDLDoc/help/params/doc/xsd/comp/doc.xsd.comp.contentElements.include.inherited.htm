@@ -1,0 +1,13 @@
+Specify whether to document in this section the declarations of content elements <b>inherited</b>
+from other (ancestor) components. 
+<p>
+When this parameter is selected (<b><code>true</code></b>), both the elements declared directly within
+this component itself and those inherited from other (ancestor) components will be documented together.
+That will result in repeating of the details of the same content element declarations across the documentation
+of all components that inherit those content elements.
+<p>
+If this parameter is unselected (<b><code>false</code></b>), only content elements specified directly
+within the declaration of this component will be documented. Any content elements inherited
+from other components will be documented only once along with their parent components (where they are declared).
+Only hyperlinks to the corresponding content element details will lead from this component documentation
+(e.g. from the <i>XML Representation Summary</i>). That setting will produce a more compact documentation.

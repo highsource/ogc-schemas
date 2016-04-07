@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.3" targetNamespace="urn:xml-gov-au:icsm:egeodesy:0.3" elementFormDefault="qualified" version="0.3" xml:lang="en">
+	<annotation>
+		<documentation>eGeodesy schema implementation based on GML - draft. Copyright (c) 2013-2015 Commonwealth of Australia, on behalf of the Intergovernmental Committee on Surveying and Mapping. All rights reserved.</documentation>
+	</annotation>
+	<!--  -->
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
+	<!--  -->
+	<complexType name="DocumentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="geo:Document"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+	<element name="Document" type="geo:DocumentType" substitutionGroup="gml:AbstractFeature"/>
+	<!--  -->
+	<complexType name="DocumentType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="type" type="gml:CodeType">
+						<annotation>
+							<documentation>Type of document.</documentation>
+						</annotation>
+					</element>
+					<element name="createdDate" type="gml:TimePositionType" minOccurs="0"/>
+					<element name="receivedDate" type="gml:TimePositionType" minOccurs="0"/>
+					<element name="custodian" type="gmd:CI_ResponsibleParty_PropertyType" minOccurs="0"/>
+					<element name="remarks" type="string" minOccurs="0"/>
+					<element name="body" minOccurs="0">
+						<complexType>
+							<choice>
+								<element name="fileReference" type="gml:ReferenceType"/>
+								<element name="content">
+									<complexType>
+										<simpleContent>
+											<extension base="string">
+												<attribute name="encoding" type="geo:EncodingType" default="none"/>
+											</extension>
+										</simpleContent>
+									</complexType>
+								</element>
+								<any namespace="##other"/>
+							</choice>
+							<attribute name="format" type="string"/>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<simpleType name="EncodingType">
+		<restriction base="string">
+			<enumeration value="none"/>
+			<enumeration value="base64"/>
+		</restriction>
+	</simpleType>
+</schema>

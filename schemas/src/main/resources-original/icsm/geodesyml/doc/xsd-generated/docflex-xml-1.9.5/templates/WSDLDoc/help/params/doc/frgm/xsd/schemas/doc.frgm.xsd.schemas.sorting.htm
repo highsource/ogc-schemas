@@ -1,0 +1,22 @@
+Specify how the <i>Schema Summary</i> is sorted.
+<p>
+The parameter has the following meaning:
+<ul>
+<li>
+  When it is selected (<b><code>true</code></b>),
+  the XML schemas will be sorted alphabetically by their file names (ignoring letter case).
+  The XML schemas embedded in WSDL files are sorted first by the file name,
+  then by the order number of the schema within the WSDL file.
+</li>
+<li style="margin-top:10pt">
+  When the parameter is unselected (<b><code>false</code></b>),
+  the XML schemas will follow in a certain "physical" order
+  determined by what WSDL/XSD files have been specified initially
+  and how they reference (e.g. import) other WSDL/XSD files.
+</li>
+</ul>
+
+<b>Default Value:</b>
+<dl><dd>
+Copied dynamically from the value of the parameter: <i>"Generate Details | Sorting | Schemas"</i>
+</dd></dl>

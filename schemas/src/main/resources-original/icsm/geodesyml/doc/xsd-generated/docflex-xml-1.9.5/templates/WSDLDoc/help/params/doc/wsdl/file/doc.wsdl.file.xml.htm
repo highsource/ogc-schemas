@@ -1,0 +1,24 @@
+Specifies whether to reproduce the XML source of the whole WSDL file.
+<p>
+It appears as a part of the documentation
+with the XML markup highlighted with special colors and the values of some XML attributes
+hyperlinked to the related sections of the documentation.
+<p>
+The reproduced XML source is included as a section of the <i>WSDL File Overview</i> page/block.
+In case of framed HTML documentation, it may be also placed in a separate page (HTML file),
+which is controlled by the nested parameter: <i>"Separate File"</i>.
+<p>
+Although the reproduced XML source closely replicates the real one, it may be slightly different.
+For instance, ordering of XML attribute may be not the same. 
+Additionally, <code>&lt;wsdl:documentation&gt;</code> and <code>&lt;xs:annotation&gt;</code> elements
+may be intentionally omitted, which is controlled by the nested parameters:
+<ul>
+<li><i>"Remove &lt;wsdl:documentation&gt;"</i></li>
+<li><i>"Remove &lt;xs:annotation&gt;"</i></li>
+</ul>
+
+<p>
+<b>Nested Parameters:</b>
+<dl><dd>
+Control how the reproduced XML source will look, where it is placed and what it will include.
+</dd></dl>

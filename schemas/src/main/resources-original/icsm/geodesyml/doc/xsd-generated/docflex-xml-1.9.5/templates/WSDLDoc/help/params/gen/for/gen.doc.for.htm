@@ -1,0 +1,21 @@
+With these parameters you can filter which WSDL files and XML schemas should be documented in full details.
+<p>
+Precisely, <b><i>WSDL file</i></b> is considered any XML file containing
+<code>&lt;wsdl:definitions&gt;</code> as top element.
+<b><i>XML schemas</i></b> is identified by a <code>&lt;xs:schema&gt;</code> element
+found either as top XML file element or within <code>&lt;wsdl:definitions&gt;/&lt;wsdl:types&gt;</code> element
+(in that case, it is called <b><i>embedded schema</i></b>).
+Those things come from the following locations:
+<ul>
+<li>WSDL/XSD files specified initially as the generator arguments.</li>
+<li>WSDL/XSD files directly or indirectly referenced from the initial files (via
+<code>&lt;wsdl:import&gt;</code>,
+<code>&lt;xs:import&gt;</code>, <code>&lt;xs:include&gt;</code>, <code>&lt;xs:redefine&gt;</code> elements).</li>
+</ul>
+Although all involved WSDL files and XML schemas must be loaded and processed,
+you may want actually to document only some of them.
+With these parameters you can specify which.
+<p>
+<b>Note:</b>
+The filtered out WSDL files and XML schemas (as well as the definitions/components found in them)
+may still be mentioned in the documentation, however with few details.

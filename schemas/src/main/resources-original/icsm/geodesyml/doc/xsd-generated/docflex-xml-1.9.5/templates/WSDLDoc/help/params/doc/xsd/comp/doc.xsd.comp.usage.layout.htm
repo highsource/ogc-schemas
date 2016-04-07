@@ -1,0 +1,40 @@
+This parameter controls how the list items are displayed.
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"flow"</i>
+<dl><dd>
+The list items will appear as a comma delimited text flow within a single paragraph.
+<p style="margin-top:10pt">
+This layout produces a very compact representation of the list. However,
+it may be rather difficult to read, especially when some items contain spaces.
+</dd></dl>
+
+<i>"one column"</i>
+<dl><dd>
+The list will be printed in a single column: each item on a separate line. 
+<p style="margin-top:10pt">
+This layout suits best for the lists containing long strings (particularly with spaces).
+</dd></dl>
+
+<i>"two columns"</i>
+<dl><dd>
+The list items will be arranged in a two-column table.
+<p style="margin-top:10pt">
+This representation suits more for the lists, whose items include strings with spaces.
+<p style="margin-top:10pt">
+However, when the list contains long strings, the two-column table may stretch
+far beyond the visible (printable) page width. 
+In that case, the <i>one-column</i> layout suits better.
+<p style="margin-top:10pt">
+Also, the two-column layout may be not very good for big lists made of short word items
+(because it will occupy too much space).
+In that case the <i>flow</i> may fit better.
+</dd></dl>
+
+<i>"optimal"</i>
+<dl><dd>
+This choice allows the list layout to be selected automatically
+during the generation so as to represent each particular list in both the most dense
+and readable form. (This is programmed in templates.)
+</dd></dl>

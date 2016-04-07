@@ -1,0 +1,230 @@
+<DOCFLEX_TEMPLATE VER='1.19'>
+CREATED='2007-08-09 02:06:27'
+LAST_UPDATE='2014-07-05 20:02:57'
+DESIGNER_TOOL='DocFlex SDK 1.x'
+DESIGNER_LICENSE_TYPE='Filigris Works Team'
+APP_ID='docflex-xml-wsdldoc'
+APP_NAME='DocFlex/XML WSDLDoc'
+APP_VER='1.0.b'
+APP_AUTHOR='Copyright © 2014 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.'
+FEATURE_TYPE='pro'
+TEMPLATE_TYPE='DocumentTemplate'
+DSM_TYPE_ID='wsdldoc'
+ROOT_ET='xs:%wildcard'
+<TEMPLATE_PARAMS>
+	PARAM={
+		param.name='$wildcardType';
+		param.type='string';
+		param.defaultValue.expr='instanceOf("xs:any") ? "element" : "attribute"';
+		param.fixed='true';
+		param.autoPassed='false';
+	}
+	PARAM={
+		param.name='$brackets';
+		param.description='Specify whether to print brackets';
+		param.type='boolean';
+		param.defaultValue='true';
+	}
+</TEMPLATE_PARAMS>
+<STYLES>
+	CHAR_STYLE={
+		style.name='Default Paragraph Font';
+		style.id='cs1';
+		style.default='true';
+	}
+	CHAR_STYLE={
+		style.name='Hyperlink';
+		style.id='cs2';
+		text.decor.underline='true';
+		text.color.foreground='#0000FF';
+	}
+	PAR_STYLE={
+		style.name='Normal';
+		style.id='s1';
+		style.default='true';
+	}
+</STYLES>
+FMT={
+	doc.lengthUnits='pt';
+	doc.hlink.style.link='cs2';
+}
+<ROOT>
+	<ATTR_ITER>
+		SCOPE='attr-values'
+		ATTR='namespace'
+		FMT={
+			sec.outputStyle='text-par';
+			txtfl.delimiter.type='nbtxt';
+			txtfl.delimiter.text=';\\n ';
+		}
+		<BODY>
+			<AREA_SEC>
+				COND='iterator.value == "##any"'
+				BREAK_PARENT_BLOCK='when-executed'
+				<AREA>
+					<CTRL_GROUP>
+						FMT={
+							txtfl.delimiter.type='space';
+						}
+						<CTRLS>
+							<TEXT_CTRL>
+								TEXT='any'
+							</TEXT_CTRL>
+							<DATA_CTRL>
+								FORMULA='getParam("$wildcardType")'
+							</DATA_CTRL>
+							<TEXT_CTRL>
+								TEXT='with any namespace'
+							</TEXT_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+			<AREA_SEC>
+				COND='iterator.value == "##other"'
+				BREAK_PARENT_BLOCK='when-executed'
+				<AREA>
+					<CTRL_GROUP>
+						FMT={
+							txtfl.delimiter.type='space';
+						}
+						<CTRLS>
+							<TEXT_CTRL>
+								TEXT='any'
+							</TEXT_CTRL>
+							<DATA_CTRL>
+								FORMULA='getParam("$wildcardType")'
+							</DATA_CTRL>
+							<TEXT_CTRL>
+								TEXT='with non-schema namespace'
+							</TEXT_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+			<AREA_SEC>
+				COND='iterator.value == "##local"'
+				BREAK_PARENT_BLOCK='when-executed'
+				<AREA>
+					<CTRL_GROUP>
+						FMT={
+							txtfl.delimiter.type='space';
+						}
+						<CTRLS>
+							<TEXT_CTRL>
+								TEXT='any local'
+							</TEXT_CTRL>
+							<DATA_CTRL>
+								FORMULA='getParam("$wildcardType")'
+							</DATA_CTRL>
+							<TEXT_CTRL>
+								TEXT='(without namespace)'
+							</TEXT_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+			<AREA_SEC>
+				COND='iterator.value == "##targetNamespace"'
+				BREAK_PARENT_BLOCK='when-executed'
+				<AREA>
+					<CTRL_GROUP>
+						FMT={
+							txtfl.delimiter.type='space';
+						}
+						<CTRLS>
+							<TEXT_CTRL>
+								TEXT='any'
+							</TEXT_CTRL>
+							<DATA_CTRL>
+								FORMULA='getParam("$wildcardType")'
+							</DATA_CTRL>
+							<TEXT_CTRL>
+								TEXT='with schema namespace'
+							</TEXT_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+			<AREA_SEC>
+				<AREA>
+					<CTRL_GROUP>
+						FMT={
+							txtfl.delimiter.type='space';
+						}
+						<CTRLS>
+							<TEXT_CTRL>
+								TEXT='any'
+							</TEXT_CTRL>
+							<DATA_CTRL>
+								FORMULA='getParam("$wildcardType")'
+							</DATA_CTRL>
+							<TEXT_CTRL>
+								TEXT='with'
+							</TEXT_CTRL>
+							<PANEL>
+								FMT={
+									ctrl.size.width='102.8';
+									ctrl.size.height='38.3';
+									txtfl.delimiter.type='none';
+								}
+								<AREA>
+									<CTRL_GROUP>
+										<CTRLS>
+											<TEXT_CTRL>
+												TEXT='"'
+											</TEXT_CTRL>
+											<DATA_CTRL>
+												FORMULA='iterator.value'
+												<URL_HLINK>
+													TARGET_FRAME_EXPR='"_blank"'
+													URL_EXPR='iterator.value.toString()'
+												</URL_HLINK>
+											</DATA_CTRL>
+											<TEXT_CTRL>
+												TEXT='"'
+											</TEXT_CTRL>
+										</CTRLS>
+									</CTRL_GROUP>
+								</AREA>
+							</PANEL>
+							<TEXT_CTRL>
+								TEXT='namespace'
+							</TEXT_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+		</BODY>
+		<HEADER>
+			COND='getBooleanParam("$brackets")'
+			<AREA_SEC>
+				<AREA>
+					<CTRL_GROUP>
+						<CTRLS>
+							<TEXT_CTRL>
+								TEXT='{'
+							</TEXT_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+		</HEADER>
+		<FOOTER>
+			COND='getBooleanParam("$brackets")'
+			<AREA_SEC>
+				<AREA>
+					<CTRL_GROUP>
+						<CTRLS>
+							<TEXT_CTRL>
+								TEXT='}'
+							</TEXT_CTRL>
+						</CTRLS>
+					</CTRL_GROUP>
+				</AREA>
+			</AREA_SEC>
+		</FOOTER>
+	</ATTR_ITER>
+</ROOT>
+CHECKSUM='WhPCEvUt5VU+yJToBBms2Gh2YGIoOkM2oqBmrv1kjuI'
+</DOCFLEX_TEMPLATE>

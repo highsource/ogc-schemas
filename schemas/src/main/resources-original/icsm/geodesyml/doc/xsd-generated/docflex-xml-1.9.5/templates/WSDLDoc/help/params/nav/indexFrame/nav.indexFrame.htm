@@ -1,0 +1,132 @@
+This parameter allows you to customize the initial content of 
+the <b><i>Index Frame</i></b>, which is shown on this diagram:
+
+<center style="margin-top:10pt;margin-bottom:10pt">
+<img src="${this_dir}/../../../images/frameset_diagram.png">
+</center>
+
+The <i>Index Frame</i> is used to display one of the second-level navigation indexes
+associated with a particular selection in the <i>Overview Frame</i>.
+There are following types of such indexes:
+
+<table border="1" style="margin-top:10pt;margin-bottom:10pt">
+<tr bgcolor="#CCCCEE">
+  <td align="center"><b>Index</b></td>
+  <td align="center"><b>Description</b></td>
+</tr>
+
+<tr valign="top">
+<td><i>All Components</i></td>
+<td>
+  The index of <b>all components</b>. It is generated only once and may include:
+  <ul>
+    <li>
+      All top-level WSDL definitions (services, bindings, portTypes, messages)
+      defined throughout all documented WSDL files.
+    </li>
+    <li>
+      All global XSD components and local elements defined throughout all documented XML schemas.
+    </li>
+  </ul>
+  The exact content is controlled by the parameter group: <i>"Navigation | Index Frame | All Components"</i>
+</td>
+</tr>
+
+<tr valign="top">
+<td><i>Namespace</i></td>
+<td>
+  This index (a separate HTML page) is generated for every documented <b>namespace</b>. It includes:
+  <ul>
+    <li>All WSDL files targeting that namespace.</li>
+    <li>All XML schemas targeting that namespace (both XSD files and XML schemas embedded in WSDL).</li>
+    <li>All top-level WSDL definitions, which belong to that namespace.</li>
+    <li>All global XSD components and local elements, which belong to that namespace.</li>
+  </ul>
+  The exact content is controlled by the parameter group: <i>"Navigation | Index Frame | Namespace"</i>
+</td>
+</tr>
+
+<tr valign="top">
+<td><i>WSDL File</i></td>
+<td>
+  This index (a separate HTML page) is generated for every documented <b>WSDL file</b>. It includes:
+  <ul>
+    <li>All XML schemas embedded in that WSDL file</li>
+    <li>All top-level WSDL definitions found in that WSDL file</li>
+  </ul>
+  The exact content is controlled by the parameter group: <i>"Navigation | Index Frame | WSDL File"</i>
+</td>
+</tr>
+
+<tr valign="top">
+<td><i>Schema</i></td>
+<td>
+  This index (a separate HTML page) is generated for every documented <b>XML schema</b>
+  (both XSD file and XML schema embedded in WSDL). It may include:
+  <ul>
+    <li>All global components defined in that schema</li>
+    <li>All local elements defined in that schema</li>
+  </ul>
+  The exact content is controlled by the parameter group: <i>"Navigation | Index Frame | Schema"</i>
+</td>
+</tr>
+
+</table>
+
+This parameter specifies which of those indexes will be preloaded in the <i>Index Frame</i>.
+
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"All Components"</i>
+<dl><dd>
+Preload the index of <b>all components</b>.
+</dd></dl>
+
+<i>"Namespace"</i>
+<dl><dd>
+Preload the index for a <b>namespace</b>.
+<p style="margin-top:10pt">
+As there may be several of such indexes, the preloaded will be one, which has been generated the first.
+That is controlled by the parameter: <i>"Generate Details | Sorting | Namespaces"</i>.
+</dd></dl>
+
+<i>"WSDL File"</i>
+<dl><dd>
+Preload the index for a <b>WSDL file</b>.
+<p style="margin-top:10pt">
+As there may be several of such indexes,
+the preloaded will be one, which has been generated the first.
+That is controlled by the parameter: <i>"Generate Details | Sorting | WSDL Files"</i>.
+</dd></dl>
+
+<i>"Schema"</i>
+<dl><dd>
+Preload the index for an <b>XML schema</b>.
+<p style="margin-top:10pt">
+As there may be several of such indexes,
+the preloaded will be one, which has been generated the first.
+Here is how it is determined:
+<p style="margin-top:10pt">
+The first get processed the XML schemas embedded in WSDL files, in the same order as the WSDL files themselves.
+That is controlled by the parameter: <i>"Generate Details | Sorting | WSDL File"</i>.
+Then, XSD files are processed. In which order is controlled by the parameter:
+<i>"Generate Details | Sorting | Schemas"</i>.
+</dd></dl>
+
+<b>Note:</b> 
+<dl><dd>
+When the specified index (HTML page) is not available,
+what is loaded initially will be chosen according to the following priority list:
+<ol style="margin-bottom:0">
+  <li><i>All Components</i></li>
+  <li><i>Namespace</i></li>
+  <li><i>WSDL File</i></li>
+  <li><i>Schema</i></li>
+</ol>
+</dd></dl>
+
+<b>Nested Parameters:</b>
+<dl><dd>
+Control the content of particular navigation indexes loaded in the <i>Index Frame</i>.
+</dd></dl>

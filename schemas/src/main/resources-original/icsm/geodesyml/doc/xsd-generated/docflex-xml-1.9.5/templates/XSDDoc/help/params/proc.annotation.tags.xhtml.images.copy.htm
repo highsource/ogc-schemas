@@ -1,0 +1,8 @@
+Specifies whether the images embedded in the annotation text must be copied to the documentation destination directory.
+<p>
+If this parameter is <code><b>true</b></code> (checked), all images referred from <code>&lt;img&gt;</code> tags
+will be automatically copied to the associated files directory (e.g. "doc-files") of the schema documentation.
+The <code>src</code> attribute of each <code>&lt;img&gt;</code> tag will be altered to point to the new image location.
+<p>
+When the parameter is <code><b>false</b></code> (unchecked), no images will be copied and
+the original image source URL in each <code>&lt;img&gt;</code> tag will be preserved.

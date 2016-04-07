@@ -1,0 +1,111 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- POM Basics -->
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1.0</version>
+  <name>my-app</name>
+
+  <!-- Specifying properties (i.e. variables for further usage) -->
+  <properties>
+    <!-- DocFlex/XML home directory -->
+    <DFH>${basedir}\..\..\..</DFH>
+
+    <!-- XMLSpy home directory -->
+    <XMLSPY_HOME>C:\Program Files\Altova\XMLSpy2014</XMLSPY_HOME>
+
+    <!-- XMLSpy version -->
+    <XMLSPY_VERSION>2014</XMLSPY_VERSION>
+
+    <!-- XMLSpy Java class path -->
+    <XMLSPY_CLASSPATH>
+      ${XMLSPY_HOME}\XMLSpyInterface.jar;${XMLSPY_HOME}\JavaAPI\XMLSpyAPI.jar;${XMLSPY_HOME}\JavaAPI\AltovaAutomation.jar
+    </XMLSPY_CLASSPATH>
+
+    <!-- 
+      XMLSpy library path (the location of Windows DLLs that implement
+      the bridge between XMLSpy Java API v2012 and XMLSpy.exe)
+    -->
+    <XMLSPY_LIBPATH>${XMLSPY_HOME}\JavaAPI</XMLSPY_LIBPATH>
+
+  </properties>
+
+  <!-- 
+    Reporting section. 
+    All reports for "Project Reports" page of the Maven-generated site
+    should be specified here.
+  -->
+  <reporting>
+    <plugins>
+      <!-- Configure DocFlex/XML Maven plugin -->
+      <plugin>
+        <groupId>docflex</groupId>
+        <artifactId>docflex-xml-maven-plugin</artifactId>
+        <version>1.0</version>
+        <configuration>
+
+          <!-- Specifying command-line parameters for DocFlex/XML Generator -->
+          <generatorParams>
+
+            <!-- Specify XMLSpy Integration main class as the element image provider -->
+            <param>-m:IMAGE_PROVIDER_CLASS=com.docflex.xml.xmlspy.SpyKit</param>
+
+            <!-- Pass XMLSpy version to the integration -->
+            <param>-m:XMLSPY_VERSION=${XMLSPY_VERSION}</param>
+
+            <!-- Pass XMLSpy class path -->
+            <param>-m:XMLSPY_CLASSPATH=${XMLSPY_CLASSPATH}</param>
+
+            <!-- Pass XMLSpy library path -->
+            <param>-m:XMLSPY_LIBPATH=${XMLSPY_LIBPATH}</param>
+
+            <!-- The main template -->
+            <param>-template</param>
+            <param>${DFH}\templates\XSDDoc\FramedDoc.tpl</param>
+
+            <!-- Pass template parameter -->
+            <param>-p:docTitle</param>
+            <param>XML Schema for XML Schemas</param>
+
+            <!-- Specify the output format -->
+            <param>-format</param>
+            <param>HTML</param>
+
+            <!-- Suppress showing up the generator GUI -->
+            <param>-nodialog</param>
+
+            <!-- Suppress most of messages -->
+            <param>-quiet</param>
+
+            <!-- 
+              The data source XML file to be processed.
+              (Both local pathnames and URLs are allowed.)
+              In this example, it is an XML schema to be documented.
+            -->
+            <param>http://www.w3.org/2001/XMLSchema.xsd</param>
+
+          </generatorParams>
+
+          <!-- 
+            Specify the output directory name.
+
+            The plugin will produce by it the full output directory pathname 
+            and pass it both to Maven and to DocFlex/XML Generator (via -d option)
+          -->
+          <outputFolder>xsddoc</outputFolder>
+
+          <!-- For the Maven project-reports page -->
+          <name>XSDDoc</name>
+          <description>XML Schema for XML Schemas</description>
+
+        </configuration>
+
+      </plugin>
+    </plugins>
+  </reporting>
+
+</project>

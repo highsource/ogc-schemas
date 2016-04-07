@@ -1,0 +1,39 @@
+This group of parameters controls the overall content of the generated XML schema documentation.
+<p>
+The XML schema documentation generated with <i>"XSDDoc"</i> template set is built of big independent
+<b><i>documentation blocks</i></b>.
+<p>
+In framed HTML documentation, each of those blocks becomes a separate HTML file (or page),
+which is displayed in the <i>"details"</i> frame.
+<p>
+In single file (HTML or RTF) documentation, the blocks become separate sections that follow one after another.
+In RTF each of those sections also has its own page header/footer.
+<p>
+There are following types of documentation blocks:
+<ul>
+<li>
+  <b><i>Overview Summary</i></b>: This block is generated only once for the whole documentation.
+</li>
+<li>
+  <b><i>All Component Summary</i></b>: This block (also generated only once) contains summaries
+  of all schema components of the specified types throughout all XML schemas being documented.
+</li>
+<li>
+  <b><i>Namespace Overview</i></b>: This block is generated for every namespace being documented.
+</li>
+<li>
+  <b><i>Schema Overview</i></b>: This is generated for every XML schema.
+</li>
+<li>
+  <b><i>Component Documentation</i></b>: This is the most sophisticated type of blocks that can be generated
+  for all types of global components as well as all local elements.
+</li>
+<li>
+  <b><i>XML Namespace Bindings</i></b>: A special report, which can be generated only once.
+</li>
+</ul>
+
+Using parameters in this group, you can specify which of those blocks must be generated and
+for which XML schema components (e.g. <i>Component Documentation</i> blocks).
+<p>
+What exactly is included in particular those blocks should be specified in the <b><i>"Details"</i></b> parameter group.
