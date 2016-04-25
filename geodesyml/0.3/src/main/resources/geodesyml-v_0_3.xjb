@@ -10,6 +10,9 @@
 		<jaxb:schemaBindings>
 			<jaxb:package name="au.gov.xml.icsm.geodesyml.v_0_3"/>
 		</jaxb:schemaBindings>
+        <jaxb:bindings node="//xs:complexType[@name='GeodesyMLType']//xs:sequence/xs:choice">
+            <jaxb:property name="elements"/>
+        </jaxb:bindings>
 	</jaxb:bindings>
 </jaxb:bindings>
 
