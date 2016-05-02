@@ -310,4 +310,10 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus.gadevs</id>
+			<url>https://nexus.gadevs.ga./repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
