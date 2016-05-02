@@ -3,7 +3,8 @@
     xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
     xmlns:wildcard="http://jaxb2-commons.dev.java.net/basic/wildcard"
     xmlns:annox="http://annox.dev.java.net"
-    jaxb:extensionBindingPrefixes="xjc wildcard annox">
+    xmlns:inheritance="http://jaxb2-commons.dev.java.net/basic/inheritance"
+    jaxb:extensionBindingPrefixes="xjc wildcard annox inheritance">
 
     <jaxb:bindings schemaLocation="http://xml.gov.au/icsm/geodesyml/0.3/geodesyML.xsd" node="/xs:schema">
         <jaxb:schemaBindings>
@@ -11,6 +12,18 @@
         </jaxb:schemaBindings>
         <jaxb:bindings node="//xs:complexType[@name='GeodesyMLType']//xs:sequence/xs:choice">
             <jaxb:property name="elements"/>
+        </jaxb:bindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="http://xml.gov.au/icsm/geodesyml/0.3/equipment.xsd" node="/xs:schema">
+        <jaxb:bindings multiple="true" node="//xs:complexType[substring(@name, string-length(@name) - string-length('PropertyType') + 1) = 'PropertyType']">
+            <inheritance:implements>au.gov.ga.geodesy.support.gml.GMLPropertyType</inheritance:implements>
+        </jaxb:bindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="http://xml.gov.au/icsm/geodesyml/0.3/observationSystem.xsd" node="/xs:schema">
+        <jaxb:bindings multiple="true" node="//xs:complexType[substring(@name, string-length(@name) - string-length('PropertyType') + 1) = 'PropertyType']">
+            <inheritance:implements>au.gov.ga.geodesy.support.gml.GMLPropertyType</inheritance:implements>
         </jaxb:bindings>
     </jaxb:bindings>
 </jaxb:bindings>
