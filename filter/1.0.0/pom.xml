@@ -30,6 +30,9 @@
 							<url>http://schemas.opengis.net/filter/1.0.0/filter.xsd</url>
 						</schema>
 						<schema>
+							<url>http://schemas.opengis.net/filter/1.0.0/filterCapabilities.xsd</url>
+						</schema>
+						<schema>
 							<url>http://schemas.opengis.net/filter/1.0.20/sort.xsd</url>
 						</schema>
 					</schemas>

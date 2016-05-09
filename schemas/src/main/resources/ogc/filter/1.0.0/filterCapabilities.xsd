@@ -16,15 +16,19 @@
          <xsd:element name="Functions" type="ogc:FunctionsType"/>
       </xsd:choice>
    </xsd:complexType>
+   <!--
    <xsd:element name="BBOX">
       <xsd:complexType/>
    </xsd:element>
+   -->
    <xsd:element name="Between">
       <xsd:complexType/>
    </xsd:element>
+   <!--
    <xsd:element name="Beyond">
       <xsd:complexType/>
    </xsd:element>
+   -->
    <xsd:complexType name="Comparison_OperatorsType">
       <xsd:choice maxOccurs="unbounded">
          <xsd:element ref="ogc:Simple_Comparisons"/>
@@ -33,6 +37,7 @@
          <xsd:element ref="ogc:NullCheck"/>
       </xsd:choice>
    </xsd:complexType>
+   <!--
    <xsd:element name="Contains">
       <xsd:complexType/>
    </xsd:element>
@@ -48,6 +53,7 @@
    <xsd:element name="Equals">
       <xsd:complexType/>
    </xsd:element>
+   -->
    <xsd:element name="Filter_Capabilities">
       <xsd:complexType>
          <xsd:sequence>
@@ -75,9 +81,11 @@
          <xsd:element name="Function_Names" type="ogc:Function_NamesType"/>
       </xsd:sequence>
    </xsd:complexType>
+   <!--
    <xsd:element name="Intersect">
       <xsd:complexType/>
    </xsd:element>
+   -->
    <xsd:element name="Like">
       <xsd:complexType/>
    </xsd:element>
@@ -87,9 +95,11 @@
    <xsd:element name="NullCheck">
       <xsd:complexType/>
    </xsd:element>
+   <!--
    <xsd:element name="Overlaps">
       <xsd:complexType/>
    </xsd:element>
+   -->
    <xsd:complexType name="Scalar_CapabilitiesType">
       <xsd:choice maxOccurs="unbounded">
          <xsd:element ref="ogc:Logical_Operators"/>
@@ -113,23 +123,47 @@
    </xsd:complexType>
    <xsd:complexType name="Spatial_OperatorsType">
       <xsd:choice maxOccurs="unbounded">
-         <xsd:element ref="ogc:BBOX"/>
-         <xsd:element ref="ogc:Equals"/>
-         <xsd:element ref="ogc:Disjoint"/>
-         <xsd:element ref="ogc:Intersect"/>
-         <xsd:element ref="ogc:Touches"/>
-         <xsd:element ref="ogc:Crosses"/>
-         <xsd:element ref="ogc:Within"/>
-         <xsd:element ref="ogc:Contains"/>
-         <xsd:element ref="ogc:Overlaps"/>
-         <xsd:element ref="ogc:Beyond"/>
-         <xsd:element ref="ogc:DWithin"/>
+         <xsd:element name="BBOX">
+            <xsd:complexType/>
+         </xsd:element>
+         <xsd:element name="Equals">
+            <xsd:complexType/>
+         </xsd:element>
+         <xsd:element name="Disjoint">
+            <xsd:complexType/>
+         </xsd:element>
+         <xsd:element name="Intersect">
+            <xsd:complexType/>
+         </xsd:element>
+         <xsd:element name="Touches">
+            <xsd:complexType/>
+         </xsd:element>
+         <xsd:element name="Crosses">
+            <xsd:complexType/>
+         </xsd:element>
+         <xsd:element name="Within">
+            <xsd:complexType/>
+         </xsd:element>
+         <xsd:element name="Contains">
+            <xsd:complexType/>
+         </xsd:element>
+         <xsd:element name="Overlaps">
+            <xsd:complexType/>
+         </xsd:element>
+         <xsd:element name="Beyond">
+            <xsd:complexType/>
+         </xsd:element>
+         <xsd:element name="DWithin">
+            <xsd:complexType/>
+         </xsd:element>
       </xsd:choice>
    </xsd:complexType>
+   <!--
    <xsd:element name="Touches">
       <xsd:complexType/>
    </xsd:element>
    <xsd:element name="Within">
       <xsd:complexType/>
    </xsd:element>
+   -->
 </xsd:schema>

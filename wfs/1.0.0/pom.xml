@@ -39,6 +39,9 @@
 							<url>http://schemas.opengis.net/wfs/1.0.0/wfs.xsd</url>
 						</schema>
 						<schema>
+							<url>http://schemas.opengis.net/wfs/1.0.0/WFS-capabilities.xsd</url>
+						</schema>
+						<schema>
 							<url>http://schemas.opengis.net/filter/1.0.0/filter.xsd</url>
 						</schema>
 						<schema>
