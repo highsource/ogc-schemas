@@ -11,6 +11,10 @@
         <version>2.6.1-SNAPSHOT</version>
         <relativePath>../../schema-parent/pom.xml</relativePath>
     </parent>
+    <properties>
+        <java.version>1.8</java.version>
+        <java.version>1.8</java.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.hisrc.w3c</groupId>
@@ -45,6 +49,15 @@
     <build>
         <defaultGoal>install</defaultGoal>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
             <plugin>
                   <groupId>org.apache.maven.plugins</groupId>
                   <artifactId>maven-source-plugin</artifactId>
