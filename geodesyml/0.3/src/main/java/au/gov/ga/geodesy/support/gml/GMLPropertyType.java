@@ -66,7 +66,7 @@ public interface GMLPropertyType {
     public default <T> void setTargetElement(T targetElement) {
         String targetElementName = Helpers.getTargetElementName(this);
         try {
-            PropertyUtils.setProperty(this, targetElementName, targetElementName);
+            PropertyUtils.setProperty(this, targetElementName, targetElement);
         } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
             throw new RuntimeException(e);
         }
