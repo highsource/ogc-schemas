@@ -502,7 +502,8 @@ var SWES_2_0_Module_Factory = function () {
             n: 'abstractOffering',
             rq: true,
             en: 'AbstractOffering',
-            ti: '.AbstractOfferingType'
+            ti: '.AbstractOfferingType',
+            t: 'er'
           }]
       }, {
         ln: 'SensorDescriptionType.Data',
