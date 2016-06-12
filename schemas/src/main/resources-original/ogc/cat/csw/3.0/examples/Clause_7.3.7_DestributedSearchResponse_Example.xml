@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetRecordsResponse
+   xmlns="http://www.opengis.net/cat/csw/3.0"
+   xmlns:fes="http://www.opengis.net/fes/2.0"
+   xmlns:ows="http://www.opengis.net/ows/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/cat/csw/3.0
+                       http://schemas.opengis.net/cat/csw/3.0/cswAll.xsd
+                       http://www.opengis.net/gml/3.2
+                       http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+   <RequestId>http://www.altova.com</RequestId>
+   <SearchStatus timestamp="2006-12-17T09:30:47-05:00"/>
+   <SearchResults resultSetId="http://www.altova.com"
+                  elementSet="brief"
+                  recordSchema="http://www.altova.com"
+                  numberOfRecordsMatched="0"
+                  numberOfRecordsReturned="0"
+                  nextRecord="1"
+                  status="complete"
+                  elapsedTime="6000">
+      <FederatedSearchResult catalogueURL="http://www.esa.int/csw?">
+         <searchResult numberOfRecordsReturned="0"
+                       numberOfRecordsMatched="0"
+                       status="complete"
+                       elapsedTime="5000">
+            <FederatedSearchResult catalogueURL="http://www.eumetsat.int/csw?">
+               <searchResult numberOfRecordsReturned="0"
+                             numberOfRecordsMatched="0"
+                             status="complete" elapsedTime="1000">
+                  <FederatedException
+                     catalogueURL="http://www.somehost.int/csw?">
+                     <ows:ExceptionReport version="1.1.0">
+                        <ows:Exception exceptionCode="someCode">
+                           <ows:ExceptionText>someError</ows:ExceptionText>
+                        </ows:Exception>
+                     </ows:ExceptionReport>
+                  </FederatedException>
+               </searchResult>
+            </FederatedSearchResult>
+            <FederatedSearchResult catalogueURL="http://www.dlr.de/csw?">
+               <searchResult numberOfRecordsReturned="0"
+                             numberOfRecordsMatched="0"
+                             status="complete"
+                             elapsedTime="2000">
+               </searchResult>
+            </FederatedSearchResult>
+         </searchResult>
+      </FederatedSearchResult>
+   </SearchResults>
+</GetRecordsResponse>

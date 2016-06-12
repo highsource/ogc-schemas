@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetCapabilities
+   service="CSW" 
+   xmlns="http://www.opengis.net/cat/csw/3.0" 
+   xmlns:ows="http://www.opengis.net/ows/2.0"
+   xmlns:csw="http://www.opengis.net/cat/csw/3.0" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/cat/csw/3.0
+                       http://schemas.opengis.net/cat/csw/3.0/cswAll.xsd"> 
+   <ows:AcceptVersions>
+      <ows:Version>2.0.2</ows:Version>
+      <ows:Version>3.0.0</ows:Version>
+   </ows:AcceptVersions>
+   <ows:AcceptFormats>
+      <ows:OutputFormat>application/xml</ows:OutputFormat>
+   </ows:AcceptFormats>
+</GetCapabilities>

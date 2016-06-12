@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetRecords
+   service="CSW"
+   version="3.0.0"
+   outputSchema="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
+   xmlns="http://www.opengis.net/cat/csw/3.0"
+   xmlns:csw="http://www.opengis.net/cat/csw/3.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
+   xsi:schemaLocation="http://www.opengis.net/cat/csw/3.0
+                       http://schemas.opengis.net/cat/csw/3.0/cswAll.xsd">
+   <rim:AdhocQuery
+      id="urn:ogc:def:ebRIM-Query:OGC:findServices"
+      xsi:schemaLocation="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0
+                        http://docs.oasis-open.org/regrep/v3.0/schema/rim.xsd">
+      <rim:Slot name="serviceType">
+         <rim:ValueList>
+            <rim:Value>WFS</rim:Value>
+         </rim:ValueList>
+      </rim:Slot>
+   </rim:AdhocQuery>
+</GetRecords>

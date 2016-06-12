@@ -18,17 +18,20 @@
    geospatial and location based services.</description>
 <dc:language>en-us</dc:language>
 <dc:rights>Copyright 1994-2010, Open Geospatial Consortium.</dc:rights>
-<dc:date>2016-04-05T19:39:22:+00:00
+<dc:date>2016-06-10T16:51:37:+00:00
 </dc:date>
 <dc:publisher>Open Geospatial Consortium</dc:publisher>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:subject>OGC Standards</dc:subject>
-<syn:updateBase>2016-04-05T19:39:22:+00:00
+<syn:updateBase>2016-06-10T16:51:37:+00:00
 </syn:updateBase>
 <syn:updateFrequency>2</syn:updateFrequency>
 <syn:updatePeriod>hourly</syn:updatePeriod>
 <items>
  <rdf:Seq>
+  <rdf:li rdf:resource="http://schemas.opengis.net/gmljp2/ReadMe.txt#20160610t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/cat/ReadMe.txt#20160610t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/eompom/ReadMe.txt#20160608t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/opensearchgeo/ReadMe.txt#20160405t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20160203t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wmts/ReadMe.txt#20160122t15" />
@@ -104,6 +107,35 @@
 <url>http://www.opengeospatial.org/themes/ogc/logo.png</url>
 <link>http://www.opengeospatial.org/</link>
 </image>
+<item rdf:about="http://schemas.opengis.net/gmljp2/ReadMe.txt#20160610t15">
+<title>OGC GMLJP2 2.0.1 - Schema Examples Updated</title>
+<link>http://schemas.opengis.net/gmljp2/ReadMe.txt#20160610t15</link>
+<description>The GMLJP2 online examples have been updated. The OGC GML JPEG2 XML encoding 2.0.1 examples described in OGC document 08-085r5 has been posted.  See http://www.opengeospatial.org/standards/gmljp2 for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-06-10T15:46:11:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC GMLJP2 2.01 Standard Schema Examples Posted</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/cat/ReadMe.txt#20160610t15">
+<title>OGC Catalogue Services 3.0 Specification - HTTP Protocol Binding 3.0.0 Schema Posted</title>
+<link>http://schemas.opengis.net/cat/ReadMe.txt#20160610t15</link>
+<description>The OGC Catalogue CSW 3.0 schema described in OGC document 12-176r7 has been added.  
+See http://www.opengeospatial.org/standards/cat for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-06-10T15:46:10:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC Catalogue CSW 3.0 Standard Schema Posted</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/eompom/ReadMe.txt#20160608t15">
+<title>OGC Earth Observation Metadata profile of Observations &#x26; Measurements 1.1 Schema Posted</title>
+<link>http://schemas.opengis.net/eompom/ReadMe.txt#20160608t15</link>
+<description>The OGC EOMPOM 1.1 schema described in OGC document 10-157r4 has been added.  
+See http://www.opengeospatial.org/standards/om for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-06-07T15:46:09:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC EOMPOM 1.1 Standard Schema Posted</dc:subject>
+</item>
 <item rdf:about="http://schemas.opengis.net/opensearchgeo/ReadMe.txt#20160405t15">
 <title>OGC OpenSearch Geo Schema Updated</title>
 <link>http://schemas.opengis.net/opensearchgeo/ReadMe.txt#20160405t15</link>

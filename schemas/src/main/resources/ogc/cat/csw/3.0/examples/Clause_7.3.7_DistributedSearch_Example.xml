@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetRecords
+   service="CSW"
+   version="3.0.0"
+   maxRecords="5"
+   startPosition="1"
+   outputFormat="application/xml"
+   outputSchema="http://www.opengis.net/cat/csw/3.0"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:dct="http://purl.org/dc/terms/"
+   xmlns="http://www.opengis.net/cat/csw/3.0"
+   xmlns:csw="http://www.opengis.net/cat/csw/3.0"
+   xmlns:fes="http://www.opengis.net/fes/2.0"
+   xmlns:ows="http://www.opengis.net/ows/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/cat/csw/3.0
+                       http://schemas.opengis.net/cat/csw/3.0/cswAll.xsd
+                       http://www.opengis.net/gml/3.2
+                       http://schemas.opengis.net/gml/3.2.1/gml.xsd">
+   <DistributedSearch distributedSearchId="123" clientId="Client" hopCount="3">
+      <federatedCatalogues catalogueURL="http://www.conterra.de/csw?" timeout="30000"/>
+   </DistributedSearch>
+   <Query typeNames="Record">
+      <ElementSetName typeNames="csw:Record">full</ElementSetName>
+      <Constraint version="2.0.0">
+         <fes:Filter>
+            <fes:And>
+               <fes:PropertyIsLike escapeChar="\" singleChar="?" wildCard="*">
+                  <fes:ValueReference>dc:title</fes:ValueReference>
+                  <fes:Literal>*Elevation*</fes:Literal>
+               </fes:PropertyIsLike>
+               <fes:PropertyIsEqualTo>
+                  <fes:ValueReference>dc:type</fes:ValueReference>
+                  <fes:Literal>Service</fes:Literal>
+               </fes:PropertyIsEqualTo>
+               <fes:PropertyIsGreaterThanOrEqualTo>
+                  <fes:ValueReference>dct:modified</fes:ValueReference>
+                  <fes:Literal>2004-03-01</fes:Literal>
+               </fes:PropertyIsGreaterThanOrEqualTo>
+               <fes:Intersects>
+                  <fes:ValueReference>ows:BoundingBox</fes:ValueReference>
+                  <gml:Envelope>
+                     <gml:lowerCorner>14.05 46.46</gml:lowerCorner>
+                     <gml:upperCorner>17.24 48.42</gml:upperCorner>
+                  </gml:Envelope>
+               </fes:Intersects>
+            </fes:And>
+         </fes:Filter>
+      </Constraint>
+   </Query>
+</GetRecords>

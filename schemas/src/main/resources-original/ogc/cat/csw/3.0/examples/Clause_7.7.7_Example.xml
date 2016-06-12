@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Harvest
+   service="CSW"
+   version="3.0.0"
+   xmlns="http://www.opengis.net/cat/csw/3.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/cat/csw/3.0 
+                       http://schemas.opengis.net/cat/csw/3.0/cswAll.xsd">
+   <Source>http://www.yourserver.com/metadata.xml</Source>
+   <ResourceType>http://www.fgdc.gov/metadata/csdgm</ResourceType>
+   <ResourceFormat>application/xml</ResourceFormat>
+   <HarvestInterval>P14D</HarvestInterval>
+   <ResponseHandler> ftp://ftp.myserver.com/HarvestResponses</ResponseHandler>
+</Harvest>

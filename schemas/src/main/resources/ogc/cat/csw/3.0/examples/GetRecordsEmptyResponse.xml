@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetRecordsResponse
+   xmlns="http://www.opengis.net/cat/csw/3.0"
+   xmlns:csw="http://www.opengis.net/cat/csw/3.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/cat/csw/3.0
+                       http://schemas.opengis.net/cat/csw/3.0/cswAll.xsd">
+   <RequestId>someID</RequestId>
+   <SearchStatus timestamp="2006-12-17T09:30:47-05:00"/>
+   <SearchResults
+      elementSet="brief"
+      resultSetId="http://www.altova.com"
+      recordSchema="http://www.altova.com"
+      numberOfRecordsMatched="1"
+      numberOfRecordsReturned="0"
+      nextRecord="1"/>
+</GetRecordsResponse>

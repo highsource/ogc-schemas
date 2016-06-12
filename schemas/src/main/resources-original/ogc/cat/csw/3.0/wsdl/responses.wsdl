@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 sp1 (http://www.altova.com) by Uwe Voges (con terra GmbH) -->
+<wsdl:definitions xmlns:csw30="http://www.opengis.net/cat/csw/3.0" xmlns:csw30-wsdl="http://www.opengis.net/cat/csw/3.0/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns="http://purl.org/dc/elements/1.1/" xmlns:ns1="http://www.opengis.net/fes/2.0" xmlns:ows20="http://www.opengis.net/ows/2.0" targetNamespace="http://www.opengis.net/cat/csw/3.0/wsdl">
+	<wsdl:documentation xmlns:dc="http://purl.org/dc/elements/1.1/">
+		<dc:date>2012-11-26</dc:date>
+		<dc:description>This WSDL document defines the response messages and types
+         for the CSW.</dc:description>
+	</wsdl:documentation>
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.opengis.net/cat/csw/3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="3.0">
+			<xsd:include schemaLocation="../cswAll.xsd"/>
+			<xsd:element name="CSW30GetRecordByIdResponse" type="csw30:CSW30GetRecordByIdResponseType" id="CSW30GetRecordByIdResponse"/>
+			<xsd:complexType name="CSW30GetRecordByIdResponseType" id="CSW30GetRecordByIdResponseType">
+				<xsd:choice>
+					<xsd:element ref="csw30:BriefRecord"/>
+					<xsd:element ref="csw30:SummaryRecord"/>
+					<xsd:element ref="csw30:Record"/>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="ServiceExceptionReport">
+		<wsdl:part name="Body" element="ows20:ExceptionReport"/>
+	</wsdl:message>
+	<wsdl:message name="GetCapabilitiesResponse">
+		<wsdl:part name="Body" element="csw30:Capabilities"/>
+	</wsdl:message>
+	<wsdl:message name="GetRecordsResponse">
+		<wsdl:part name="Body" element="csw30:GetRecordsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetRecordByIdResponse">
+		<wsdl:part name="Body" element="csw30:CSW30GetRecordByIdResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetDomainResponse">
+		<wsdl:part name="Body" element="csw30:GetDomainResponse"/>
+	</wsdl:message>
+	<wsdl:message name="HarvestResponse">
+		<wsdl:part name="Body" element="csw30:HarvestResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UnHarvestResponse">
+		<wsdl:part name="Body" element="csw30:UnHarvestResponse"/>
+	</wsdl:message>
+	<wsdl:message name="TransactionResponse">
+		<wsdl:part name="Body" element="csw30:TransactionResponse"/>
+	</wsdl:message>
+</wsdl:definitions>

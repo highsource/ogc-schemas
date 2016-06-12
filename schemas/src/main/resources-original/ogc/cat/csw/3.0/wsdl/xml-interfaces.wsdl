@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:csw30="http://www.opengis.net/cat/csw/3.0" xmlns:csw30-wsdl="http://www.opengis.net/cat/csw/3.0/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns="http://purl.org/dc/elements/1.1/" xmlns:ns1="http://www.opengis.net/fes/2.0" xmlns:ows20="http://www.opengis.net/ows/2.0" targetNamespace="http://www.opengis.net/cat/csw/3.0/wsdl">
+	<wsdl:import namespace="http://www.opengis.net/cat/csw/3.0/wsdl" location="./responses.wsdl"/>
+	<wsdl:documentation xmlns:dc="http://purl.org/dc/elements/1.1/">
+		<dc:identifier>urn:opengis:spec:csw:wsdl-1.1:interfaces:3.0</dc:identifier>
+		<dc:date>2012-11-26</dc:date>
+		<dc:contributor>Dr. Uwe Voges, u.voges@conterra.de</dc:contributor>
+		<dc:description xmlns:dc="http://purl.org/dc/elements/1.1/">This is the the normative abstract service interface definition
+         for the  OpenGIS CSW, v3.0. The WSDL 1.1 syntax is 
+         used to describe the interface signatures and message structures.</dc:description>
+	</wsdl:documentation>
+	<wsdl:types>
+		<wsdl:documentation>Convenience schema that defines all common CSW message elements.</wsdl:documentation>
+		<xsd:schema targetNamespace="http://www.opengis.net/cat/csw/3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="3.0">
+			<xsd:include schemaLocation="../cswAll.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="GetCapabilitiesRequest">
+		<wsdl:part name="Body" element="csw30:GetCapabilities"/>
+	</wsdl:message>
+	<wsdl:message name="GetRecordsRequest">
+		<wsdl:part name="Body" element="csw30:GetRecords"/>
+	</wsdl:message>
+	<wsdl:message name="GetRecordByIdRequest">
+		<wsdl:part name="Body" element="csw30:GetRecordById"/>
+	</wsdl:message>
+	<wsdl:message name="GetDomainRequest">
+		<wsdl:part name="Body" element="csw30:GetDomain"/>
+	</wsdl:message>
+	<wsdl:message name="HarvestRequest">
+		<wsdl:part name="Body" element="csw30:Harvest"/>
+	</wsdl:message>
+	<wsdl:message name="UnHarvestRequest">
+		<wsdl:part name="Body" element="csw30:UnHarvest"/>
+	</wsdl:message>
+	<wsdl:message name="TransactionRequest">
+		<wsdl:part name="Body" element="csw30:Transaction"/>
+	</wsdl:message>
+	<wsdl:portType name="cswDiscovery">
+		<wsdl:operation name="cswGetCapabilities">
+			<wsdl:input message="csw30-wsdl:GetCapabilitiesRequest"/>
+			<wsdl:output message="csw30-wsdl:GetCapabilitiesResponse"/>
+			<wsdl:fault name="ServiceExceptionReport" message="csw30-wsdl:ServiceExceptionReport"/>
+		</wsdl:operation>
+		<wsdl:operation name="cswGetRecords">
+			<wsdl:input message="csw30-wsdl:GetRecordsRequest"/>
+			<wsdl:output message="csw30-wsdl:GetRecordsResponse"/>
+			<wsdl:fault name="ServiceExceptionReport" message="csw30-wsdl:ServiceExceptionReport"/>
+		</wsdl:operation>
+		<wsdl:operation name="cswGetRecordById">
+			<wsdl:input message="csw30-wsdl:GetRecordByIdRequest"/>
+			<wsdl:output message="csw30-wsdl:GetRecordByIdResponse"/>
+			<wsdl:fault name="ServiceExceptionReport" message="csw30-wsdl:ServiceExceptionReport"/>
+		</wsdl:operation>
+		<wsdl:operation name="cswGetDomain">
+			<wsdl:input message="csw30-wsdl:GetDomainRequest"/>
+			<wsdl:output message="csw30-wsdl:GetDomainResponse"/>
+			<wsdl:fault name="ServiceExceptionReport" message="csw30-wsdl:ServiceExceptionReport"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="cswTransaction">
+		<wsdl:operation name="cswHarvest">
+			<wsdl:input message="csw30-wsdl:HarvestRequest"/>
+			<wsdl:output message="csw30-wsdl:HarvestResponse"/>
+			<wsdl:fault name="ServiceExceptionReport" message="csw30-wsdl:ServiceExceptionReport"/>
+		</wsdl:operation>
+		<wsdl:operation name="cswUnHarvest">
+			<wsdl:input message="csw30-wsdl:UnHarvestRequest"/>
+			<wsdl:output message="csw30-wsdl:UnHarvestResponse"/>
+			<wsdl:fault name="ServiceExceptionReport" message="csw30-wsdl:ServiceExceptionReport"/>
+		</wsdl:operation>
+		<wsdl:operation name="cswTransaction">
+			<wsdl:input message="csw30-wsdl:TransactionRequest"/>
+			<wsdl:output message="csw30-wsdl:TransactionResponse"/>
+			<wsdl:fault name="ServiceExceptionReport" message="csw30-wsdl:ServiceExceptionReport"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

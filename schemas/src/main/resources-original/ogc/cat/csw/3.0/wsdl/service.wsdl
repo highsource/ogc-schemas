@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 sp1 (http://www.altova.com) by Uwe Voges (con terra GmbH) -->
+<wsdl:definitions xmlns:csw30-wsdl="http://www.opengis.net/cat/csw/3.0/wsdl"
+   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+   xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+   targetNamespace="http://www.opengis.net/cat/csw/3.0/wsdl">
+   <wsdl:import namespace="http://www.opengis.net/cat/csw/3.0/wsdl"
+      location="./soap-binding.wsdl"/>
+   <wsdl:import namespace="http://www.opengis.net/cat/csw/3.0/wsdl"
+      location="./http-binding.wsdl"/>
+   <wsdl:documentation xmlns:dc="http://purl.org/dc/elements/1.1/">
+      <dc:date>2012-11-26</dc:date>
+      <dc:contributor>Dr. Uwe Voges, u.voges@conterra.de</dc:contributor>
+      <dc:description>This WSDL document defines the service-specific properties
+         of a MyService CSW 3.0 implementation; it specifies available
+         endpoints and alternative bindings.</dc:description>
+   </wsdl:documentation>
+   <wsdl:service name="CSW">
+      <wsdl:documentation>A CSW implementation. Includes alternative SOAP bindings
+         for the CSW interfaces.</wsdl:documentation>
+      <wsdl:port name="csw-Discovery-SOAP-Port"
+         binding="csw30-wsdl:csw30-Discovery-SOAP">
+         <soap12:address location="http://localhost:8080/csw/CSW/SOAP/Discovery"/>
+      </wsdl:port>
+      <wsdl:port name="csw-Transaction-SOAP-Port"
+         binding="csw30-wsdl:csw30-Transaction-SOAP">
+         <soap12:address
+            location="http://localhost:8080/csw/CSW/SOAP/Transaction"/>
+      </wsdl:port>
+      <wsdl:port name="csw-Discovery-POST-Port"
+         binding="csw30-wsdl:csw-Discovery-POST">
+         <http:address location="http://localhost:8080/csw/POST/Discovery"/>
+      </wsdl:port>
+      <wsdl:port name="csw-Transaction-POST-Port"
+         binding="csw30-wsdl:csw-Transaction-POST">
+         <http:address location="http://localhost:8080/csw/POST/Transaction"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>
