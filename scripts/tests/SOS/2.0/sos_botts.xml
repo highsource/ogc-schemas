@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sos:Capabilities updateSequence="0" version="2.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:ows="http://www.opengis.net/ows/1.1"
+    xmlns:sos="http://www.opengis.net/sos/2.0"
+    xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ows:ServiceIdentification>
+        <ows:Title>GeoHuntsville SOS Service</ows:Title>
+        <ows:Abstract>An SOS service automatically deployed by SensorHub for the GeoHSV project</ows:Abstract>
+        <ows:ServiceType>OGC:SOS</ows:ServiceType>
+        <ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/resultRetrieval</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/resultInsertion</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/obsInsertion</ows:Profile>
+        <ows:Fees>NONE</ows:Fees>
+        <ows:AccessConstraints>NONE</ows:AccessConstraints>
+    </ows:ServiceIdentification>
+    <ows:ServiceProvider>
+        <ows:ProviderName>Botts Innovative Research, Inc.</ows:ProviderName>
+        <ows:ServiceContact>
+            <ows:IndividualName>Mike Botts</ows:IndividualName>
+            <ows:PositionName>President</ows:PositionName>
+            <ows:ContactInfo>
+                <ows:Address>
+                    <ows:City>Huntsville</ows:City>
+                    <ows:Country>United States</ows:Country>
+                </ows:Address>
+            </ows:ContactInfo>
+        </ows:ServiceContact>
+    </ows:ServiceProvider>
+    <ows:OperationsMetadata>
+        <ows:Operation name="GetCapabilities">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                    <ows:Post xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="DescribeSensor">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                    <ows:Post xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="GetFeatureOfInterest">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                    <ows:Post xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="GetObservation">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                    <ows:Post xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="GetResult">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                    <ows:Post xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="GetResultTemplate">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                    <ows:Post xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="InsertResult">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                    <ows:Post xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="InsertSensor">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Post xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="InsertObservation">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Post xlink:href="http://bottsgeo.com:8080/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+    </ows:OperationsMetadata>
+    <sos:filterCapabilities>
+        <fes:Filter_Capabilities xmlns:fes="http://www.opengis.net/fes/2.0">
+            <fes:Spatial_Capabilities>
+                <fes:SpatialOperators>
+                    <fes:SpatialOperator name="BBOX"/>
+                </fes:SpatialOperators>
+            </fes:Spatial_Capabilities>
+            <fes:Temporal_Capabilities>
+                <fes:TemporalOperands>
+                    <fes:TemporalOperand name="gml:TimeInstant"/>
+                    <fes:TemporalOperand name="gml:TimePeriod"/>
+                </fes:TemporalOperands>
+                <fes:TemporalOperators>
+                    <fes:TemporalOperator name="During"/>
+                </fes:TemporalOperators>
+            </fes:Temporal_Capabilities>
+        </fes:Filter_Capabilities>
+    </sos:filterCapabilities>
+    <sos:contents>
+        <sos:Contents>
+            <swes:procedureDescriptionFormat>http://www.opengis.net/sensorml/2.0</swes:procedureDescriptionFormat>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Simulated GPS locations</swes:description>
+                    <swes:identifier>urn:mysos:offering02</swes:identifier>
+                    <swes:name>Simulated GPS</swes:name>
+                    <swes:procedure>urn:test:sensors:fakegps</swes:procedure>
+                    <swes:observableProperty>http://www.opengis.net/def/property/OGC/0/SensorLocation</swes:observableProperty>
+                    <sos:phenomenonTime>
+                        <gml:TimeInstant gml:id="T1">
+                            <gml:timePosition indeterminatePosition="now"/>
+                        </gml:TimeInstant>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Simulated weather measurements</swes:description>
+                    <swes:identifier>urn:mysos:offering03</swes:identifier>
+                    <swes:name>Simulated Weather</swes:name>
+                    <swes:procedure>urn:test:sensors:simweather:0123456879</swes:procedure>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Weather</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/AirTemperature</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/AtmosphericPressure</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/WindSpeed</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/WindDirection</swes:observableProperty>
+                    <sos:phenomenonTime>
+                        <gml:TimeInstant gml:id="T2">
+                            <gml:timePosition indeterminatePosition="now"/>
+                        </gml:TimeInstant>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Location of target pointed with range finder</swes:description>
+                    <swes:identifier>urn:offering:trupulse:target</swes:identifier>
+                    <swes:name>Target Location</swes:name>
+                    <swes:procedure>5cb4569c-9e08-4fa1-1458-fead589eff51</swes:procedure>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/TargetLocation</swes:observableProperty>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T3">
+                            <gml:beginPosition>2015-08-29T18:28:21.560Z</gml:beginPosition>
+                            <gml:endPosition>2016-04-28T20:46:42.670Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Data available from storage Alex's Phone Sensors Storage</swes:description>
+                    <swes:identifier>urn:android:device:a0e0eac2fea3f614-sos</swes:identifier>
+                    <swes:name>Alex's Phone Sensors Storage</swes:name>
+                    <swes:procedure>urn:android:device:a0e0eac2fea3f614</swes:procedure>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Location</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Latitude</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Longitude</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Altitude</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/OrientationQuaternion</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/QuaternionComponent</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/VideoFrame</swes:observableProperty>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Data available from storage TruPulse Storage</swes:description>
+                    <swes:identifier>urn:test:sensors:trupulse360-sos</swes:identifier>
+                    <swes:name>TruPulse Storage</swes:name>
+                    <swes:procedure>urn:test:sensors:trupulse360</swes:procedure>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/LaserRangeData</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/HorizontalDistance</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/LineOfSightDistance</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/TrueHeading</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Inclination</swes:observableProperty>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T4">
+                            <gml:beginPosition>2015-08-29T18:26:40.336Z</gml:beginPosition>
+                            <gml:endPosition>2016-04-28T20:46:42.670Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Data available from storage Mikes Nexus5 Sensors Storage</swes:description>
+                    <swes:identifier>urn:android:device:89845ed469b7edc7-sos</swes:identifier>
+                    <swes:name>Mikes Nexus5 Sensors Storage</swes:name>
+                    <swes:procedure>urn:android:device:89845ed469b7edc7</swes:procedure>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Location</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Latitude</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Longitude</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Altitude</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/OrientationQuaternion</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/QuaternionComponent</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/VideoFrame</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Orientation</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/AngleToNorth</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Pitch</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Roll</swes:observableProperty>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T5">
+                            <gml:beginPosition>2015-08-29T16:12:29.783Z</gml:beginPosition>
+                            <gml:endPosition>2016-04-28T20:48:06.411Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Data available from storage MikesNexus9 Sensors Storage</swes:description>
+                    <swes:identifier>urn:android:device:8b65f9d7048a345a-sos</swes:identifier>
+                    <swes:name>MikesNexus9 Sensors Storage</swes:name>
+                    <swes:procedure>urn:android:device:8b65f9d7048a345a</swes:procedure>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Location</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Latitude</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Longitude</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Altitude</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Orientation</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/AngleToNorth</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Pitch</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Roll</swes:observableProperty>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T6">
+                            <gml:beginPosition>2015-09-15T15:32:49.397Z</gml:beginPosition>
+                            <gml:endPosition>2015-12-12T20:16:17.006Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Data available from storage AXIS_CAMERA_SENSOR Storage</swes:description>
+                    <swes:identifier>d136b6ea-3951-4691-bf56-c84ec7d89d72-sos</swes:identifier>
+                    <swes:name>AXIS_CAMERA_SENSOR Storage</swes:name>
+                    <swes:procedure>d136b6ea-3951-4691-bf56-c84ec7d89d72</swes:procedure>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Pan</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Tilt</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/AxisZoomFactor</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/VideoFrame</swes:observableProperty>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T7">
+                            <gml:beginPosition>2015-09-18T17:26:46.847Z</gml:beginPosition>
+                            <gml:endPosition>2015-12-12T20:15:49.030Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Data available from storage Garmin VIRB 2 Storage</swes:description>
+                    <swes:identifier>urn:garmin:cam:3910500051-sos</swes:identifier>
+                    <swes:name>Garmin VIRB 2 Storage</swes:name>
+                    <swes:procedure>urn:garmin:cam:3910500051</swes:procedure>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/VideoFrame</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Image</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/stateVectors</swes:observableProperty>
+                    <swes:observableProperty>http://www.opengis.net/def/property/OGC/0/SensorLocation</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/AngularRate</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Acceleration</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/AccelerationMagnitude</swes:observableProperty>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T8">
+                            <gml:beginPosition>2016-05-25T13:25:37.709Z</gml:beginPosition>
+                            <gml:endPosition>2016-05-25T14:15:06.023Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <sos:responseFormat>http://www.opengis.net/om/2.0</sos:responseFormat>
+            <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Observation</sos:observationType>
+            <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_ComplexObservation</sos:observationType>
+        </sos:Contents>
+    </sos:contents>
+</sos:Capabilities>

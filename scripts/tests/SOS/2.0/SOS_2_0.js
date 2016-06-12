@@ -24,5 +24,13 @@ module.exports = {
 		var context = new Jsonix.Context(mappings);
 		test.done();
         },
+	"sos_botts.xml": function(test) {
+		var context = new Jsonix.Context(mappings);
+		var unmarshaller = context.createUnmarshaller();
+		unmarshaller.unmarshalFile(__dirname +"/sos_botts.xml", function(result) {
+			test.equal('Simulated GPS locations', result.value.contents.contents.offering[0].abstractOffering.value.description);
+			test.done();
+		});
+	},
 	"Roundtrips" : roundtrips(mappings, __dirname)
 };

@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sos:Capabilities version="2.0.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:ows="http://www.opengis.net/ows/1.1"
+    xmlns:sos="http://www.opengis.net/sos/2.0"
+    xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ows:ServiceIdentification>
+        <ows:Title>Test SOS Service</ows:Title>
+        <ows:Abstract>An SOS service automatically deployed by SensorHub</ows:Abstract>
+        <ows:ServiceType>OGC:SOS</ows:ServiceType>
+        <ows:ServiceTypeVersion>2.0.0</ows:ServiceTypeVersion>
+        <ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/resultRetrieval</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/OMXML/2.0/conf/observation</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/sensorInsertion</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/sensorDeletion</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/obsInsertion</ows:Profile>
+        <ows:Profile>http://www.opengis.net/spec/SOS/2.0/conf/resultInsertion</ows:Profile>
+        <ows:Fees>NONE</ows:Fees>
+        <ows:AccessConstraints>NONE</ows:AccessConstraints>
+    </ows:ServiceIdentification>
+    <ows:ServiceProvider>
+        <ows:ProviderName>Sensia Software LLC</ows:ProviderName>
+        <ows:ServiceContact>
+            <ows:IndividualName>Alex Robin</ows:IndividualName>
+            <ows:PositionName>Engineer</ows:PositionName>
+            <ows:ContactInfo>
+                <ows:Phone>
+                    <ows:Voice>+33 5 89 65 32 45</ows:Voice>
+                </ows:Phone>
+                <ows:Address>
+                    <ows:City>Toulouse</ows:City>
+                    <ows:PostalCode>30000</ows:PostalCode>
+                    <ows:Country>France</ows:Country>
+                </ows:Address>
+            </ows:ContactInfo>
+        </ows:ServiceContact>
+    </ows:ServiceProvider>
+    <ows:OperationsMetadata>
+        <ows:Operation name="GetCapabilities">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                    <ows:Post xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="DescribeSensor">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                    <ows:Post xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="GetFeatureOfInterest">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                    <ows:Post xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="GetObservation">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                    <ows:Post xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="GetResult">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                    <ows:Post xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="GetResultTemplate">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                    <ows:Post xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="InsertResult">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                    <ows:Post xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="InsertSensor">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Post xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="DeleteSensor">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Post xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="InsertObservation">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Post xlink:href="http://sensiasoft.net:8181/sensorhub/sos"/>
+                </ows:HTTP>
+            </ows:DCP>
+        </ows:Operation>
+    </ows:OperationsMetadata>
+    <sos:filterCapabilities>
+        <fes:Filter_Capabilities xmlns:fes="http://www.opengis.net/fes/2.0">
+            <fes:Conformance>
+                <fes:Constraint name="ImplementsQuery">
+                    <ows:NoValues/>
+                    <ows:DefaultValue>true</ows:DefaultValue>
+                </fes:Constraint>
+                <fes:Constraint name="ImplementsAdHocQuery">
+                    <ows:NoValues/>
+                    <ows:DefaultValue>false</ows:DefaultValue>
+                </fes:Constraint>
+                <fes:Constraint name="ImplementsFunctions">
+                    <ows:NoValues/>
+                    <ows:DefaultValue>false</ows:DefaultValue>
+                </fes:Constraint>
+                <fes:Constraint name="ImplementsResourceld">
+                    <ows:NoValues/>
+                    <ows:DefaultValue>false</ows:DefaultValue>
+                </fes:Constraint>
+                <fes:Constraint name="ImplementsMinStandardFilter">
+                    <ows:NoValues/>
+                    <ows:DefaultValue>false</ows:DefaultValue>
+                </fes:Constraint>
+                <fes:Constraint name="ImplementsStandardFilter">
+                    <ows:NoValues/>
+                    <ows:DefaultValue>false</ows:DefaultValue>
+                </fes:Constraint>
+                <fes:Constraint name="ImplementsMinSpatialFilter">
+                    <ows:NoValues/>
+                    <ows:DefaultValue>true</ows:DefaultValue>
+                </fes:Constraint>
+                <fes:Constraint name="ImplementsSpatialFilter">
+                    <ows:NoValues/>
+                    <ows:DefaultValue>false</ows:DefaultValue>
+                </fes:Constraint>
+                <fes:Constraint name="ImplementsMinTemporalFilter">
+                    <ows:NoValues/>
+                    <ows:DefaultValue>true</ows:DefaultValue>
+                </fes:Constraint>
+                <fes:Constraint name="ImplementsTemporalFilter">
+                    <ows:NoValues/>
+                    <ows:DefaultValue>false</ows:DefaultValue>
+                </fes:Constraint>
+                <fes:Constraint name="ImplementsVersionNav">
+                    <ows:NoValues/>
+                    <ows:DefaultValue>false</ows:DefaultValue>
+                </fes:Constraint>
+                <fes:Constraint name="ImplementsSorting">
+                    <ows:NoValues/>
+                    <ows:DefaultValue>false</ows:DefaultValue>
+                </fes:Constraint>
+                <fes:Constraint name="ImplementsExtendedOperators">
+                    <ows:NoValues/>
+                    <ows:DefaultValue>false</ows:DefaultValue>
+                </fes:Constraint>
+                <fes:Constraint name="ImplementsMinimumXPath">
+                    <ows:NoValues/>
+                    <ows:DefaultValue>false</ows:DefaultValue>
+                </fes:Constraint>
+                <fes:Constraint name="ImplementsSchemaElementFunc">
+                    <ows:NoValues/>
+                    <ows:DefaultValue>false</ows:DefaultValue>
+                </fes:Constraint>
+            </fes:Conformance>
+            <fes:Spatial_Capabilities>
+                <fes:GeometryOperands>
+                    <fes:GeometryOperand name="gml:Envelope"/>
+                </fes:GeometryOperands>
+                <fes:SpatialOperators>
+                    <fes:SpatialOperator name="BBOX"/>
+                </fes:SpatialOperators>
+            </fes:Spatial_Capabilities>
+            <fes:Temporal_Capabilities>
+                <fes:TemporalOperands>
+                    <fes:TemporalOperand name="gml:TimeInstant"/>
+                    <fes:TemporalOperand name="gml:TimePeriod"/>
+                </fes:TemporalOperands>
+                <fes:TemporalOperators>
+                    <fes:TemporalOperator name="During"/>
+                </fes:TemporalOperators>
+            </fes:Temporal_Capabilities>
+        </fes:Filter_Capabilities>
+    </sos:filterCapabilities>
+    <sos:contents>
+        <sos:Contents>
+            <swes:procedureDescriptionFormat>http://www.opengis.net/sensorml/2.0</swes:procedureDescriptionFormat>
+            <swes:observableProperty>http://sensorml.com/ont/swe/property/AVLData</swes:observableProperty>
+            <swes:observableProperty>http://sensorml.com/ont/swe/property/MDT-ID</swes:observableProperty>
+            <swes:observableProperty>http://sensorml.com/ont/swe/property/Unit-ID</swes:observableProperty>
+            <swes:observableProperty>http://sensorml.com/ont/swe/property/Vehicle-ID</swes:observableProperty>
+            <swes:observableProperty>http://www.opengis.net/def/property/OGC/0/SensorLocation</swes:observableProperty>
+            <swes:observableProperty>http://sensorml.com/ont/swe/property/Vehicle-Status</swes:observableProperty>
+            <swes:observableProperty>http://sensorml.com/ont/swe/property/Event-ID</swes:observableProperty>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Simulated GPS sensor</swes:description>
+                    <swes:identifier>urn:mysos:offering02</swes:identifier>
+                    <swes:name>Simulated GPS</swes:name>
+                    <swes:procedure>urn:test:sensors:fakegps</swes:procedure>
+                    <swes:observableProperty>http://www.opengis.net/def/property/OGC/0/SensorLocation</swes:observableProperty>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T1">
+                            <gml:beginPosition>now</gml:beginPosition>
+                            <gml:endPosition indeterminatePosition="now"/>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Simulated Weather sensor</swes:description>
+                    <swes:identifier>urn:mysos:offering03</swes:identifier>
+                    <swes:name>Simulated Weather</swes:name>
+                    <swes:procedure>urn:test:sensors:simweather:0123456879</swes:procedure>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Weather</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/AirTemperature</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/AtmosphericPressure</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/WindSpeed</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/WindDirection</swes:observableProperty>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:test:sensors:simweather:0123456879:foi"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T2">
+                            <gml:beginPosition>2015-10-15T16:34:01.664Z</gml:beginPosition>
+                            <gml:endPosition indeterminatePosition="now"/>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>GPS and video data collected using Android phone during a drive through Toulouse</swes:description>
+                    <swes:identifier>urn:android:device:060693280a28e015-sos</swes:identifier>
+                    <swes:name>Android GPS and Video Data</swes:name>
+                    <swes:procedure>urn:android:device:060693280a28e015</swes:procedure>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/VideoFrame</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Location</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Latitude</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Longitude</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Altitude</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/OrientationQuaternion</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/QuaternionComponent</swes:observableProperty>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T3">
+                            <gml:beginPosition>2015-02-16T07:57:50.038Z</gml:beginPosition>
+                            <gml:endPosition>2015-02-16T08:21:04.810Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>AVL location and status data for 911 vehicles</swes:description>
+                    <swes:identifier>urn:mysos:avl</swes:identifier>
+                    <swes:name>AVL 911</swes:name>
+                    <swes:procedure>urn:osh:sensors:avl:911:fleet</swes:procedure>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:911:fleet:FE12"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:911:fleet:FE4"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:911:fleet:FL11"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:911:fleet:FL12"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:911:fleet:FR6"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T4">
+                            <gml:beginPosition>2014-03-29T05:00:03Z</gml:beginPosition>
+                            <gml:endPosition>2014-03-30T04:59:53Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>AVL location and status data for police vehicles</swes:description>
+                    <swes:identifier>urn:mysos:avl:police</swes:identifier>
+                    <swes:name>Police Dept AVL Data Storage</swes:name>
+                    <swes:procedure>urn:osh:sensors:avl:hsv:police</swes:procedure>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:police:PC01"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:police:PC02"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:police:PC03"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:police:PC04"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:police:PC05"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:police:PC06"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:police:PC07"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:police:PC08"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:police:PC09"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:police:PC10"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T5">
+                            <gml:beginPosition>2015-12-11T16:30:00Z</gml:beginPosition>
+                            <gml:endPosition>2015-12-11T16:38:04Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>AVL location and status data for fire vehicles</swes:description>
+                    <swes:identifier>urn:mysos:avl:fire</swes:identifier>
+                    <swes:name>Fire Dept AVL Data Storage</swes:name>
+                    <swes:procedure>urn:osh:sensors:avl:hsv:fire</swes:procedure>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:fire:FL04"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:fire:FL05"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:fire:FL06"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:fire:FR01"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:fire:FR02"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:fire:FR03"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T6">
+                            <gml:beginPosition>2015-12-11T16:30:00Z</gml:beginPosition>
+                            <gml:endPosition>2015-12-11T16:39:24Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>AVL location and status data for rescue vehicles</swes:description>
+                    <swes:identifier>urn:mysos:avl:rescue</swes:identifier>
+                    <swes:name>Rescue Dept AVL Data Storage</swes:name>
+                    <swes:procedure>urn:osh:sensors:avl:hsv:rescue</swes:procedure>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:rescue:HE01"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:rescue:HE02"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:rescue:HE03"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <swes:relatedFeature>
+                        <swes:FeatureRelationship>
+                            <swes:target xlink:href="urn:osh:sensors:avl:hsv:rescue:HE04"/>
+                        </swes:FeatureRelationship>
+                    </swes:relatedFeature>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T7">
+                            <gml:beginPosition>2015-12-11T16:30:00Z</gml:beginPosition>
+                            <gml:endPosition>2015-12-11T16:33:55Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Simulated data of a chemical release based on a plume model</swes:description>
+                    <swes:identifier>urn:mysos:plume</swes:identifier>
+                    <swes:name>Plume Data</swes:name>
+                    <swes:procedure>urn:test:sensors:model:plume</swes:procedure>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/LagrangianPlumeModel</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Location</swes:observableProperty>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T8">
+                            <gml:beginPosition>2015-09-10T21:09:19Z</gml:beginPosition>
+                            <gml:endPosition>2015-09-11T06:59:19Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Navigation data from 3DR Solo UAV</swes:description>
+                    <swes:identifier>urn:mysos:solo:nav2</swes:identifier>
+                    <swes:name>Solo MAVLink Storage (Airport Road 2)</swes:name>
+                    <swes:procedure>urn:osh:sensor:mavlink:solo:BB11A5A00157</swes:procedure>
+                    <swes:observableProperty>http://www.opengis.net/def/property/OGC/0/PlatformLocation</swes:observableProperty>
+                    <swes:observableProperty>http://www.opengis.net/def/property/OGC/0/PlatformOrientation</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/OSH/0/GimbalOrientation</swes:observableProperty>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T9">
+                            <gml:beginPosition>2015-12-19T21:01:29.231Z</gml:beginPosition>
+                            <gml:endPosition>2015-12-19T21:09:19.675Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Video data from 3DR Solo UAV</swes:description>
+                    <swes:identifier>urn:mysos:solo:video2</swes:identifier>
+                    <swes:name>Solo Video Storage (Airport Road 2)</swes:name>
+                    <swes:procedure>urn:osh:sensor:rtpcam:solo:BB11A5A00157:cam</swes:procedure>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/VideoFrame</swes:observableProperty>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T10">
+                            <gml:beginPosition>2015-12-19T21:01:30.829Z</gml:beginPosition>
+                            <gml:endPosition>2015-12-19T21:09:19.793Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Data available from storage Alex's Nexus5 Sensors Storage</swes:description>
+                    <swes:identifier>urn:android:device:a0e0eac2fea3f614-sos</swes:identifier>
+                    <swes:name>Alex's Nexus5 Sensors Storage</swes:name>
+                    <swes:procedure>urn:android:device:a0e0eac2fea3f614</swes:procedure>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Location</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Latitude</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Longitude</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Altitude</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/VideoFrame</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/Image</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/OrientationQuaternion</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/QuaternionComponent</swes:observableProperty>
+                    <sos:phenomenonTime>
+                        <gml:TimePeriod gml:id="T11">
+                            <gml:beginPosition>2016-04-25T21:16:36.731Z</gml:beginPosition>
+                            <gml:endPosition>2016-04-28T14:28:21.651Z</gml:endPosition>
+                        </gml:TimePeriod>
+                    </sos:phenomenonTime>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <swes:offering>
+                <sos:ObservationOffering>
+                    <swes:description>Data available from storage FLIR One Thermal Camera Storage</swes:description>
+                    <swes:identifier>urn:android:device:a0e0eac2fea3f614:flirone-sos</swes:identifier>
+                    <swes:name>FLIR One Thermal Camera Storage</swes:name>
+                    <swes:procedure>urn:android:device:a0e0eac2fea3f614:flirone</swes:procedure>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/VideoFrame</swes:observableProperty>
+                    <swes:observableProperty>http://sensorml.com/ont/swe/property/ThermalImage</swes:observableProperty>
+                </sos:ObservationOffering>
+            </swes:offering>
+            <sos:responseFormat>http://www.opengis.net/om/2.0</sos:responseFormat>
+            <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Observation</sos:observationType>
+            <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/SWEScalarObservation</sos:observationType>
+            <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_ComplexObservation</sos:observationType>
+        </sos:Contents>
+    </sos:contents>
+</sos:Capabilities>
