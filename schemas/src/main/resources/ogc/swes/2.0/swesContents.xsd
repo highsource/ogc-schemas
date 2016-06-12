@@ -17,7 +17,7 @@
     </annotation>
   </element>
   <!-- Other AbstractOffering element to force XJC generate element reference property -->
-  <element name="OtherAbstractOffering" type="swes:AbstractOfferingType" abstract="true" substitutionGroup="swes:AbstractSWES"/>
+  <element name="OtherOffering" type="swes:AbstractOfferingType" abstract="true" substitutionGroup="swes:AbstractOffering"/>
   <complexType name="AbstractOfferingType" abstract="true">
     <complexContent>
       <extension base="swes:AbstractSWESType">
