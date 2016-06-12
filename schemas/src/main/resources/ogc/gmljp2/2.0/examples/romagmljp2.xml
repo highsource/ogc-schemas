@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmljp2:GMLJP2CoverageCollection gml:id="CCID1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:gmljp2="http://www.opengis.net/gmljp2/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/gmljp2/2.0 http://schemas.opengis.net/gmljp2/2.0/gmljp2.xsd">
+	<gml:boundedBy>
+		<gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326" axisLabels="Lat Long" uomLabels="deg deg" srsDimension="2">
+			<gml:lowerCorner>41.88542 12.49725</gml:lowerCorner>
+			<gml:upperCorner>41.89307 12.48497</gml:upperCorner>
+		</gml:Envelope>
+	</gml:boundedBy>
+	<gml:domainSet nilReason="inapplicable"/>
+	<gml:rangeSet>
+		<gml:DataBlock>
+			<gml:rangeParameters nilReason="inapplicable"/>
+			<gml:doubleOrNilReasonTupleList>inapplicable</gml:doubleOrNilReasonTupleList>
+		</gml:DataBlock>
+	</gml:rangeSet>
+	<gmlcov:rangeType>
+		<swe:DataRecord>
+			<swe:field name="Collection"> </swe:field>
+		</swe:DataRecord>
+	</gmlcov:rangeType>
+	<gmljp2:featureMember>
+		<gmljp2:GMLJP2RectifiedGridCoverage gml:id="RGC0001">
+			<gml:boundedBy>
+				<gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/32633" axisLabels="x Y" uomLabels="m m" srsDimension="2">
+					<gml:lowerCorner>291330.566 4640933.037</gml:lowerCorner>
+					<gml:upperCorner>292374.286 4640113.401</gml:upperCorner>
+				</gml:Envelope>
+			</gml:boundedBy>
+			<gml:domainSet>
+				<gml:RectifiedGrid gml:id="rg0001_C0002" dimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/32633">
+					<gml:limits>
+						<gml:GridEnvelope>
+							<gml:low>0 0</gml:low>
+							<gml:high>3327 2946</gml:high>
+						</gml:GridEnvelope>
+					</gml:limits>
+					<gml:axisName>x</gml:axisName>
+					<gml:axisName>y</gml:axisName>
+					<gml:origin>
+						<gml:Point gml:id="P0001">
+							<gml:pos>291355.903287358 4640962.87782889</gml:pos>
+						</gml:Point>
+					</gml:origin>
+					<gml:offsetVector>0.298582141738734 0</gml:offsetVector>
+					<gml:offsetVector>0 -0.298582141738591</gml:offsetVector>
+				</gml:RectifiedGrid>
+			</gml:domainSet>
+			<gml:rangeSet>
+				<gml:File>
+					<gml:rangeParameters/>
+					<gml:fileName>gmljp2://codestream/0</gml:fileName>
+					<gml:fileStructure>Record Interleaved</gml:fileStructure>
+				</gml:File>
+			</gml:rangeSet>
+			<gmlcov:rangeType/>
+		</gmljp2:GMLJP2RectifiedGridCoverage>
+	</gmljp2:featureMember>
+</gmljp2:GMLJP2CoverageCollection>

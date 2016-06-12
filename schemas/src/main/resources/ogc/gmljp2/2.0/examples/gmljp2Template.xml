@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmljp2:GMLJP2CoverageCollection gml:id="CCID1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:gmljp2="http://www.opengis.net/gmljp2/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/gmljp2/2.0 http://schemas.opengis.net/gmljp2/2.0/gmljp2.xsd">
+	<gml:boundedBy>
+		<!-- Note: This boundedBy element for the Coverage container is optional. If present it is either the same as the single RecifiedGridCoverage contained or the global envelope for all boundeBy elements of the coverages contained. -->
+		<!-- Note: The srsName attribute of the Envelope element shall be used as the default coordinate reference system for "all geometric objects encoded inline" [GML 3.2.1], i.e.: for all range set values. -->
+		<!-- Note: If the srsName attribute of a member Coverage differs from the Coverage container, it should be specified by the <gml:Envelope srsName< element of the member Coverage -->
+		<gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326" axisLabels="Lat Long" uomLabels="deg deg" srsDimension="2">
+			<!-- Note: Populate following element with minimal coordinates corner (p.e Lower Left in northern hemisphere) -->
+			<gml:lowerCorner> </gml:lowerCorner>
+			<!-- Note: Populate following element with maximal coordinates corner (p.e Upper Right in northern hemisphere) -->
+			<gml:upperCorner> </gml:upperCorner>
+		</gml:Envelope>
+	</gml:boundedBy>
+	<gml:domainSet nilReason="inapplicable"/>
+	<gml:rangeSet>
+		<gml:DataBlock>
+			<gml:rangeParameters nilReason="inapplicable"/>
+			<gml:doubleOrNilReasonTupleList>inapplicable				
+			</gml:doubleOrNilReasonTupleList>
+		</gml:DataBlock>
+	</gml:rangeSet>
+	<gmlcov:rangeType>
+		<swe:DataRecord>
+			<swe:field name="Collection"> </swe:field>
+		</swe:DataRecord>
+	</gmlcov:rangeType>
+	<gmljp2:featureMember>
+		<gmljp2:GMLJP2RectifiedGridCoverage gml:id="C1_CCID1">
+			<gml:boundedBy>
+				<!-- Note: This boundedBy element for each Coverage member is recommended. -->
+				<!-- Note: The srsName attribute of the Envelope element shall be used as the default coordinate reference system for "all geometric objects encoded inline" [GML 3.2.1], i.e.: for all range set values. -->
+				<gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326" axisLabels="Lat Long" uomLabels="deg deg" srsDimension="2">
+					<!-- Note: Populate following element with minimal coordinates corner (p.e Lower Left in northern hemisphere) -->
+					<gml:lowerCorner> </gml:lowerCorner>
+					<!-- Note: Populate following element with maximal coordinates corner (p.e Upper Right in northern hemisphere) -->
+					<gml:upperCorner> </gml:upperCorner>
+				</gml:Envelope>
+			</gml:boundedBy>
+			<gml:domainSet>
+				<gml:RectifiedGrid gml:id="rg0001_C1_CCID1" dimension="2">
+					<gml:limits>
+						<gml:GridEnvelope>
+							<gml:low>0  0</gml:low>
+							<!-- Note: Populate following element with (WIDTH - 1, HEIGTH -1) for the grid -->
+							<gml:high> </gml:high>
+						</gml:GridEnvelope>
+					</gml:limits>
+					<gml:axisLabels>Lat Long</gml:axisLabels>
+					<gml:origin>
+						<gml:Point gml:id="P0001_C1_CCID1">
+							<!-- "Upper-left" image origin (coordinates following order provided by CRS (here lat, long for EPSG=4326)) -->
+							<gml:pos> </gml:pos>
+						</gml:Point>
+					</gml:origin>
+					<!-- 1st offset vector in  the width (column) direction (coordinates following order provided by CRS (here lat, long for EPSG=4326)) -->
+					<gml:offsetVector> </gml:offsetVector>
+					<!-- 2nd offset vector in  the heigth (row) direction (coordinates following order provided by CRS (here lat, long for EPSG=4326)) -->
+					<gml:offsetVector> </gml:offsetVector>
+				</gml:RectifiedGrid>
+			</gml:domainSet>
+			<gml:rangeSet>
+				<gml:File>
+					<gml:rangeParameters/>
+					<gml:fileName>gmljp2://codestream/0</gml:fileName>
+					<gml:fileStructure>Record Interleaved</gml:fileStructure>
+				</gml:File>
+			</gml:rangeSet>
+			<gmlcov:rangeType>
+				<!--  Short definition of Record content for Coverage rangeSet: here Raster with PANCHROMATIC radiance (may also be COLOR or MULTISPECTRAL Radiance) ; one swe:field element per band -->
+				<swe:DataRecord>
+					<swe:field name="Panchromatic">
+						<swe:Quantity definition="http://www.opengis.net/def/ogc-eo/opt/SpectralMode/PANCHROMATIC">
+							<swe:description>Panchromatic Channel</swe:description>
+							<swe:uom code="unity"/> 		<!-- Unity for value without unit of measures -->
+						</swe:Quantity>
+					</swe:field>
+				</swe:DataRecord>
+			</gmlcov:rangeType>
+		</gmljp2:GMLJP2RectifiedGridCoverage>
+	</gmljp2:featureMember>
+</gmljp2:GMLJP2CoverageCollection>
