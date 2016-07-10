@@ -198,9 +198,8 @@
       <xsd:complexContent>
          <xsd:extension base="ogc:SpatialOpsType">
             <xsd:sequence>
-               <xsd:element ref="ogc:PropertyName"/>
-               <xsd:choice>
-                  <xsd:element ref="ogc:PropertyName"/>
+               <xsd:element ref="ogc:PropertyName" maxOccurs="2"/>
+               <xsd:choice minOccurs="0">
                   <xsd:element ref="gml:_Geometry"/>
                   <xsd:element ref="gml:Envelope"/>
                </xsd:choice>
