@@ -60,6 +60,18 @@ var GML_TIN_3_3_Module_Factory = function () {
             ti: 'GML_3_2_1.GeometryPropertyType'
           }]
       }, {
+        ln: 'TINType',
+        bti: 'GML_3_2_1.SurfaceType',
+        ps: [{
+            n: 'tinElement',
+            mno: 0,
+            col: true,
+            ti: '.TINElementPropertyType'
+          }, {
+            n: 'maxLength',
+            ti: 'GML_3_2_1.LengthType'
+          }]
+      }, {
         ln: 'TINElementPropertyType',
         ps: [{
             n: 'tinElement',
@@ -107,31 +119,8 @@ var GML_TIN_3_3_Module_Factory = function () {
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
-      }, {
-        ln: 'TINType',
-        bti: 'GML_3_2_1.SurfaceType',
-        ps: [{
-            n: 'tinElement',
-            mno: 0,
-            col: true,
-            ti: '.TINElementPropertyType'
-          }, {
-            n: 'maxLength',
-            ti: 'GML_3_2_1.LengthType'
-          }]
       }],
     eis: [{
-        en: 'TINElement',
-        ti: '.TINElementType',
-        sh: {
-          lp: 'AbstractObject',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'TIN',
-        ti: '.TINType',
-        sh: 'TriangulatedSurface'
-      }, {
         en: 'SimpleTrianglePatch',
         ti: '.SimpleTrianglePatchType',
         sh: {
@@ -145,6 +134,17 @@ var GML_TIN_3_3_Module_Factory = function () {
           lp: 'Surface',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
+      }, {
+        en: 'TINElement',
+        ti: '.TINElementType',
+        sh: {
+          lp: 'AbstractObject',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'TIN',
+        ti: '.TINType',
+        sh: 'TriangulatedSurface'
       }]
   };
   return {

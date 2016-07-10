@@ -15,13 +15,6 @@ var WCS_Interpolation_1_0_Module_Factory = function () {
             ti: '.InterpolationPerAxisType'
           }]
       }, {
-        ln: 'InterpolationMetadataType',
-        ps: [{
-            n: 'interpolationSupported',
-            mno: 0,
-            col: true
-          }]
-      }, {
         ln: 'InterpolationPerAxisType',
         ps: [{
             n: 'axis',
@@ -30,13 +23,20 @@ var WCS_Interpolation_1_0_Module_Factory = function () {
             n: 'interpolationMethod',
             rq: true
           }]
+      }, {
+        ln: 'InterpolationMetadataType',
+        ps: [{
+            n: 'interpolationSupported',
+            mno: 0,
+            col: true
+          }]
       }],
     eis: [{
-        en: 'InterpolationMetadata',
-        ti: '.InterpolationMetadataType'
-      }, {
         en: 'Interpolation',
         ti: '.InterpolationType'
+      }, {
+        en: 'InterpolationMetadata',
+        ti: '.InterpolationMetadataType'
       }]
   };
   return {

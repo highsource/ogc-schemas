@@ -2,7 +2,7 @@ var CityGML_Vegetation_2_0_Module_Factory = function () {
   var CityGML_Vegetation_2_0 = {
     n: 'CityGML_Vegetation_2_0',
     dens: 'http:\/\/www.opengis.net\/citygml\/vegetation\/2.0',
-    deps: ['GML_3_1_1', 'CityGML_2_0'],
+    deps: ['CityGML_2_0', 'GML_3_1_1'],
     tis: [{
         ln: 'AbstractVegetationObjectType',
         bti: 'CityGML_2_0.AbstractCityObjectType',
@@ -11,57 +11,6 @@ var CityGML_Vegetation_2_0_Module_Factory = function () {
             mno: 0,
             col: true,
             en: '_GenericApplicationPropertyOfVegetationObject',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'PlantCoverType',
-        bti: '.AbstractVegetationObjectType',
-        ps: [{
-            n: 'clazz',
-            en: 'class',
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'function',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'usage',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'averageHeight',
-            ti: 'GML_3_1_1.LengthType'
-          }, {
-            n: 'lod1MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'lod2MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'lod3MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'lod4MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'lod1MultiSolid',
-            ti: 'GML_3_1_1.MultiSolidPropertyType'
-          }, {
-            n: 'lod2MultiSolid',
-            ti: 'GML_3_1_1.MultiSolidPropertyType'
-          }, {
-            n: 'lod3MultiSolid',
-            ti: 'GML_3_1_1.MultiSolidPropertyType'
-          }, {
-            n: 'lod4MultiSolid',
-            ti: 'GML_3_1_1.MultiSolidPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfPlantCover',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfPlantCover',
             ti: 'AnyType'
           }]
       }, {
@@ -124,16 +73,72 @@ var CityGML_Vegetation_2_0_Module_Factory = function () {
             en: '_GenericApplicationPropertyOfSolitaryVegetationObject',
             ti: 'AnyType'
           }]
+      }, {
+        ln: 'PlantCoverType',
+        bti: '.AbstractVegetationObjectType',
+        ps: [{
+            n: 'clazz',
+            en: 'class',
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'function',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'usage',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'averageHeight',
+            ti: 'GML_3_1_1.LengthType'
+          }, {
+            n: 'lod1MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'lod2MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'lod3MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'lod4MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'lod1MultiSolid',
+            ti: 'GML_3_1_1.MultiSolidPropertyType'
+          }, {
+            n: 'lod2MultiSolid',
+            ti: 'GML_3_1_1.MultiSolidPropertyType'
+          }, {
+            n: 'lod3MultiSolid',
+            ti: 'GML_3_1_1.MultiSolidPropertyType'
+          }, {
+            n: 'lod4MultiSolid',
+            ti: 'GML_3_1_1.MultiSolidPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfPlantCover',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfPlantCover',
+            ti: 'AnyType'
+          }]
       }],
     eis: [{
-        en: '_GenericApplicationPropertyOfSolitaryVegetationObject',
-        ti: 'AnyType'
-      }, {
         en: '_GenericApplicationPropertyOfPlantCover',
         ti: 'AnyType'
       }, {
-        en: '_GenericApplicationPropertyOfVegetationObject',
+        en: '_GenericApplicationPropertyOfSolitaryVegetationObject',
         ti: 'AnyType'
+      }, {
+        en: 'PlantCover',
+        ti: '.PlantCoverType',
+        sh: '_VegetationObject'
+      }, {
+        en: 'SolitaryVegetationObject',
+        ti: '.SolitaryVegetationObjectType',
+        sh: '_VegetationObject'
       }, {
         en: '_VegetationObject',
         ti: '.AbstractVegetationObjectType',
@@ -142,13 +147,8 @@ var CityGML_Vegetation_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
       }, {
-        en: 'SolitaryVegetationObject',
-        ti: '.SolitaryVegetationObjectType',
-        sh: '_VegetationObject'
-      }, {
-        en: 'PlantCover',
-        ti: '.PlantCoverType',
-        sh: '_VegetationObject'
+        en: '_GenericApplicationPropertyOfVegetationObject',
+        ti: 'AnyType'
       }]
   };
   return {

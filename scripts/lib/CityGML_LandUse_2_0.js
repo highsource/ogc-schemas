@@ -2,7 +2,7 @@ var CityGML_LandUse_2_0_Module_Factory = function () {
   var CityGML_LandUse_2_0 = {
     n: 'CityGML_LandUse_2_0',
     dens: 'http:\/\/www.opengis.net\/citygml\/landuse\/2.0',
-    deps: ['GML_3_1_1', 'CityGML_2_0'],
+    deps: ['CityGML_2_0', 'GML_3_1_1'],
     tis: [{
         ln: 'LandUseType',
         bti: 'CityGML_2_0.AbstractCityObjectType',
@@ -44,15 +44,15 @@ var CityGML_LandUse_2_0_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: '_GenericApplicationPropertyOfLandUse',
-        ti: 'AnyType'
-      }, {
         en: 'LandUse',
         ti: '.LandUseType',
         sh: {
           lp: '_CityObject',
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
+      }, {
+        en: '_GenericApplicationPropertyOfLandUse',
+        ti: 'AnyType'
       }]
   };
   return {

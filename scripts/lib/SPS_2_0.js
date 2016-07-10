@@ -3,14 +3,285 @@ var SPS_2_0_Module_Factory = function () {
     n: 'SPS_2_0',
     dens: 'http:\/\/www.opengis.net\/sps\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'SWE_2_0', 'OWS_1_1_0', 'GML_3_2_1', 'SWES_2_0'],
+    deps: ['XLink_1_0', 'SWES_2_0', 'GML_3_2_1', 'SWE_2_0', 'OWS_1_1_0'],
     tis: [{
-        ln: 'GetStatusResponsePropertyType',
+        ln: 'TaskingRequestType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
         ps: [{
-            n: 'getStatusResponse',
+            n: 'procedure',
+            rq: true
+          }, {
+            n: 'taskingParameters',
             rq: true,
-            en: 'GetStatusResponse',
-            ti: '.GetStatusResponseType'
+            ti: '.TaskingRequestType.TaskingParameters'
+          }, {
+            n: 'latestResponseTime',
+            ti: 'DateTime'
+          }]
+      }, {
+        ln: 'DescribeResultAccessResponsePropertyType',
+        ps: [{
+            n: 'describeResultAccessResponse',
+            rq: true,
+            en: 'DescribeResultAccessResponse',
+            ti: '.DescribeResultAccessResponseType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'StatusReportType.Alternative',
+        tn: null,
+        ps: [{
+            n: 'alternative',
+            rq: true,
+            en: 'Alternative',
+            ti: '.AlternativeType'
+          }]
+      }, {
+        ln: 'ReservationReportType',
+        bti: '.StatusReportType',
+        ps: [{
+            n: 'reservationExpiration',
+            rq: true,
+            ti: 'DateTime'
+          }]
+      }, {
+        ln: 'SubmitPropertyType',
+        ps: [{
+            n: 'submit',
+            rq: true,
+            en: 'Submit',
+            ti: '.SubmitType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ReserveResponsePropertyType',
+        ps: [{
+            n: 'reserveResponse',
+            rq: true,
+            en: 'ReserveResponse',
+            ti: '.ReserveResponseType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetStatusPropertyType',
+        ps: [{
+            n: 'getStatus',
+            rq: true,
+            en: 'GetStatus',
+            ti: '.GetStatusType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribeTaskingResponsePropertyType',
+        ps: [{
+            n: 'describeTaskingResponse',
+            rq: true,
+            en: 'DescribeTaskingResponse',
+            ti: '.DescribeTaskingResponseType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribeTaskingPropertyType',
+        ps: [{
+            n: 'describeTasking',
+            rq: true,
+            en: 'DescribeTasking',
+            ti: '.DescribeTaskingType'
           }, {
             n: 'nilReason',
             ti: {
@@ -101,155 +372,16 @@ var SPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ReserveType',
-        bti: '.TaskingRequestType',
-        ps: [{
-            n: 'reservationExpiration',
-            ti: 'DateTime'
-          }]
-      }, {
-        ln: 'AlternativeType.TaskingParameters',
+        ln: 'DescribeResultAccessResponseType.Availability',
         tn: null,
         ps: [{
-            n: 'parameterData',
+            n: 'available',
             rq: true,
-            en: 'ParameterData',
-            ti: '.ParameterDataType'
-          }]
-      }, {
-        ln: 'CapabilitiesType.Notifications',
-        tn: null,
-        ps: [{
-            n: 'notificationProducerMetadata',
+            ti: '.AvailableOrNotPropertyType.Available'
+          }, {
+            n: 'unavailable',
             rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'NotificationProducerMetadata',
-              ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-            },
-            ti: 'SWES_2_0.NotificationProducerMetadataType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'ReservationReportPropertyType',
-        ps: [{
-            n: 'reservationReport',
-            rq: true,
-            en: 'ReservationReport',
-            ti: '.ReservationReportType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescribeTaskingResponseType',
-        bti: 'SWES_2_0.ExtensibleResponseType',
-        ps: [{
-            n: 'taskingParameters',
-            rq: true,
-            ti: '.DescribeTaskingResponseType.TaskingParameters'
-          }]
-      }, {
-        ln: 'TaskPropertyType',
-        ps: [{
-            n: 'task',
-            rq: true,
-            en: 'Task',
-            ti: '.TaskType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'StatusReportType.Alternative',
-        tn: null,
-        ps: [{
-            n: 'alternative',
-            rq: true,
-            en: 'Alternative',
-            ti: '.AlternativeType'
-          }]
-      }, {
-        ln: 'UpdateType',
-        bti: '.TaskingRequestType',
-        ps: [{
-            n: 'targetTask',
-            rq: true
+            ti: '.AvailableOrNotPropertyType.Unavailable'
           }]
       }, {
         ln: 'AlternativePropertyType',
@@ -300,12 +432,32 @@ var SPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GetFeasibilityPropertyType',
+        ln: 'AvailableOrNotPropertyType.Unavailable',
+        tn: null,
         ps: [{
-            n: 'getFeasibility',
+            n: 'dataNotAvailable',
             rq: true,
-            en: 'GetFeasibility',
-            ti: '.GetFeasibilityType'
+            en: 'DataNotAvailable',
+            ti: '.DataNotAvailableType'
+          }]
+      }, {
+        ln: 'DataNotAvailableType',
+        ps: [{
+            n: 'unavailableCode',
+            rq: true
+          }, {
+            n: 'message',
+            mno: 0,
+            col: true,
+            ti: 'OWS_1_1_0.LanguageStringType'
+          }]
+      }, {
+        ln: 'ReservationReportPropertyType',
+        ps: [{
+            n: 'reservationReport',
+            rq: true,
+            en: 'ReservationReport',
+            ti: '.ReservationReportType'
           }, {
             n: 'nilReason',
             ti: {
@@ -348,117 +500,183 @@ var SPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DescribeResultAccessResponseType',
-        bti: 'SWES_2_0.ExtensibleResponseType',
-        ps: [{
-            n: 'availability',
-            rq: true,
-            ti: '.DescribeResultAccessResponseType.Availability'
-          }]
-      }, {
-        ln: 'GetTaskResponseType',
-        bti: 'SWES_2_0.ExtensibleResponseType',
+        ln: 'CancelType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
         ps: [{
             n: 'task',
+            rq: true
+          }]
+      }, {
+        ln: 'PointOrPolygonPropertyType.ByPolygon',
+        tn: null,
+        ps: [{
+            n: 'polygon',
             rq: true,
+            en: {
+              lp: 'Polygon',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.PolygonType'
+          }]
+      }, {
+        ln: 'CapabilitiesPropertyType',
+        ps: [{
+            n: 'capabilities',
+            rq: true,
+            en: 'Capabilities',
+            ti: '.CapabilitiesType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AvailableOrNotPropertyType.Available',
+        tn: null,
+        ps: [{
+            n: 'dataAvailable',
+            rq: true,
+            en: 'DataAvailable',
+            ti: '.DataAvailableType'
+          }]
+      }, {
+        ln: 'SensorOfferingPropertyType',
+        ps: [{
+            n: 'sensorOffering',
+            rq: true,
+            en: 'SensorOffering',
+            ti: '.SensorOfferingType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CapabilitiesType.Notifications',
+        tn: null,
+        ps: [{
+            n: 'notificationProducerMetadata',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'NotificationProducerMetadata',
+              ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+            },
+            ti: 'SWES_2_0.NotificationProducerMetadataType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'StatusReportType',
+        bti: 'SWES_2_0.AbstractSWESType',
+        ps: [{
+            n: 'task',
+            rq: true
+          }, {
+            n: 'estimatedToC',
+            ti: 'DateTime'
+          }, {
+            n: 'event'
+          }, {
+            n: 'percentCompletion',
+            ti: 'Double'
+          }, {
+            n: 'procedure',
+            rq: true
+          }, {
+            n: 'requestStatus',
+            rq: true
+          }, {
+            n: 'statusMessage',
+            mno: 0,
             col: true,
-            ti: '.GetTaskResponseType.Task'
-          }]
-      }, {
-        ln: 'DescribeTaskingResponsePropertyType',
-        ps: [{
-            n: 'describeTaskingResponse',
+            ti: 'OWS_1_1_0.LanguageStringType'
+          }, {
+            n: 'taskStatus'
+          }, {
+            n: 'updateTime',
             rq: true,
-            en: 'DescribeTaskingResponse',
-            ti: '.DescribeTaskingResponseType'
+            ti: 'DateTime'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
+            n: 'alternative',
+            mno: 0,
+            col: true,
+            ti: '.StatusReportType.Alternative'
           }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'UpdatePropertyType',
-        ps: [{
-            n: 'update',
-            rq: true,
-            en: 'Update',
-            ti: '.UpdateType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'taskingParameters',
+            ti: '.ParameterDataPropertyType'
           }]
       }, {
         ln: 'CancelResponseType.Result',
@@ -473,80 +691,63 @@ var SPS_2_0_Module_Factory = function () {
             t: 'er'
           }]
       }, {
-        ln: 'SensorOfferingType.ObservableArea',
-        tn: null,
-        ps: [{
-            n: 'byPoint',
-            rq: true,
-            ti: '.PointOrPolygonPropertyType.ByPoint'
-          }, {
-            n: 'byPolygon',
-            rq: true,
-            ti: '.PointOrPolygonPropertyType.ByPolygon'
-          }]
+        ln: 'GetFeasibilityType',
+        bti: '.TaskingRequestType'
       }, {
-        ln: 'DataNotAvailableType',
+        ln: 'GetTaskResponsePropertyType',
         ps: [{
-            n: 'unavailableCode',
-            rq: true
+            n: 'getTaskResponse',
+            rq: true,
+            en: 'GetTaskResponse',
+            ti: '.GetTaskResponseType'
           }, {
-            n: 'message',
-            mno: 0,
-            col: true,
-            ti: 'OWS_1_1_0.LanguageStringType'
-          }]
-      }, {
-        ln: 'DescribeResultAccessResponseType.Availability',
-        tn: null,
-        ps: [{
-            n: 'available',
-            rq: true,
-            ti: '.AvailableOrNotPropertyType.Available'
-          }, {
-            n: 'unavailable',
-            rq: true,
-            ti: '.AvailableOrNotPropertyType.Unavailable'
-          }]
-      }, {
-        ln: 'DescribeTaskingResponseType.TaskingParameters',
-        tn: null,
-        ps: [{
-            n: 'abstractDataComponent',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractDataComponent',
-              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+            n: 'nilReason',
+            ti: {
+              t: 'l'
             },
-            ti: 'SWE_2_0.AbstractDataComponentType',
-            t: 'er'
-          }, {
-            n: 'name',
-            rq: true,
-            ti: 'NCName',
             an: {
-              lp: 'name'
+              lp: 'nilReason'
             },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
-        ln: 'GetStatusType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
+        ln: 'UpdateResponsePropertyType',
         ps: [{
-            n: 'task',
-            rq: true
-          }, {
-            n: 'since',
-            ti: 'DateTime'
-          }]
-      }, {
-        ln: 'CapabilitiesPropertyType',
-        ps: [{
-            n: 'capabilities',
+            n: 'updateResponse',
             rq: true,
-            en: 'Capabilities',
-            ti: '.CapabilitiesType'
+            en: 'UpdateResponse',
+            ti: '.UpdateResponseType'
           }, {
             n: 'nilReason',
             ti: {
@@ -604,23 +805,24 @@ var SPS_2_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'TaskingResponseType',
-        bti: 'SWES_2_0.ExtensibleResponseType',
+        ln: 'ConfirmResponseType.Result',
+        tn: null,
         ps: [{
-            n: 'latestResponseTime',
-            ti: 'DateTime'
-          }, {
-            n: 'result',
+            n: 'statusReport',
             rq: true,
-            ti: '.TaskingResponseType.Result'
+            mx: false,
+            dom: false,
+            en: 'StatusReport',
+            ti: '.StatusReportType',
+            t: 'er'
           }]
       }, {
-        ln: 'GetStatusPropertyType',
+        ln: 'GetStatusResponsePropertyType',
         ps: [{
-            n: 'getStatus',
+            n: 'getStatusResponse',
             rq: true,
-            en: 'GetStatus',
-            ti: '.GetStatusType'
+            en: 'GetStatusResponse',
+            ti: '.GetStatusResponseType'
           }, {
             n: 'nilReason',
             ti: {
@@ -663,11 +865,141 @@ var SPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GetFeasibilityType',
-        bti: '.TaskingRequestType'
+        ln: 'ParameterDataType',
+        ps: [{
+            n: 'encoding',
+            rq: true,
+            ti: '.ParameterDataType.Encoding'
+          }, {
+            n: 'values',
+            rq: true,
+            ti: 'AnyType'
+          }]
       }, {
-        ln: 'ReserveResponseType',
-        bti: '.TaskingResponseType'
+        ln: 'PointOrPolygonPropertyType',
+        ps: [{
+            n: 'byPoint',
+            rq: true,
+            ti: '.PointOrPolygonPropertyType.ByPoint'
+          }, {
+            n: 'byPolygon',
+            rq: true,
+            ti: '.PointOrPolygonPropertyType.ByPolygon'
+          }, {
+            n: 'unionSemantics',
+            an: {
+              lp: 'unionSemantics'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ReservePropertyType',
+        ps: [{
+            n: 'reserve',
+            rq: true,
+            en: 'Reserve',
+            ti: '.ReserveType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TaskingResponseType.Result',
+        tn: null,
+        ps: [{
+            n: 'statusReport',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'StatusReport',
+            ti: '.StatusReportType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'DescribeResultAccessType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
+        ps: [{
+            n: 'target',
+            rq: true,
+            ti: '.DescribeResultAccessType.Target'
+          }]
       }, {
         ln: 'GetStatusResponseType.Status',
         tn: null,
@@ -681,15 +1013,12 @@ var SPS_2_0_Module_Factory = function () {
             t: 'er'
           }]
       }, {
-        ln: 'TaskingRequestPropertyType',
+        ln: 'UpdatePropertyType',
         ps: [{
-            n: 'taskingRequest',
+            n: 'update',
             rq: true,
-            mx: false,
-            dom: false,
-            en: 'TaskingRequest',
-            ti: '.TaskingRequestType',
-            t: 'er'
+            en: 'Update',
+            ti: '.UpdateType'
           }, {
             n: 'nilReason',
             ti: {
@@ -732,12 +1061,12 @@ var SPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SensorOfferingPropertyType',
+        ln: 'DescribeResultAccessPropertyType',
         ps: [{
-            n: 'sensorOffering',
+            n: 'describeResultAccess',
             rq: true,
-            en: 'SensorOffering',
-            ti: '.SensorOfferingType'
+            en: 'DescribeResultAccess',
+            ti: '.DescribeResultAccessType'
           }, {
             n: 'nilReason',
             ti: {
@@ -780,12 +1109,135 @@ var SPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SubmitPropertyType',
+        ln: 'GetTaskType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
         ps: [{
-            n: 'submit',
+            n: 'task',
             rq: true,
-            en: 'Submit',
-            ti: '.SubmitType'
+            col: true
+          }]
+      }, {
+        ln: 'SubmitType',
+        bti: '.TaskingRequestType'
+      }, {
+        ln: 'GetTaskResponseType.Task',
+        tn: null,
+        ps: [{
+            n: 'task',
+            rq: true,
+            en: 'Task',
+            ti: '.TaskType'
+          }]
+      }, {
+        ln: 'ParameterDataPropertyType',
+        ps: [{
+            n: 'parameterData',
+            rq: true,
+            en: 'ParameterData',
+            ti: '.ParameterDataType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ConfirmType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
+        ps: [{
+            n: 'task',
+            rq: true
+          }]
+      }, {
+        ln: 'GetTaskPropertyType',
+        ps: [{
+            n: 'getTask',
+            rq: true,
+            en: 'GetTask',
+            ti: '.GetTaskType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TaskPropertyType',
+        ps: [{
+            n: 'task',
+            rq: true,
+            en: 'Task',
+            ti: '.TaskType'
           }, {
             n: 'nilReason',
             ti: {
@@ -883,16 +1335,100 @@ var SPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GetFeasibilityResponseType',
-        bti: '.TaskingResponseType'
-      }, {
-        ln: 'CapabilitiesType.Contents',
-        tn: null,
+        ln: 'DataNotAvailablePropertyType',
         ps: [{
-            n: 'spsContents',
+            n: 'dataNotAvailable',
             rq: true,
-            en: 'SPSContents',
-            ti: '.SPSContentsType'
+            en: 'DataNotAvailable',
+            ti: '.DataNotAvailableType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CancelPropertyType',
+        ps: [{
+            n: 'cancel',
+            rq: true,
+            en: 'Cancel',
+            ti: '.CancelType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
         ln: 'DataAvailableType',
@@ -903,376 +1439,86 @@ var SPS_2_0_Module_Factory = function () {
             ti: '.DataAvailableType.DataReference'
           }]
       }, {
-        ln: 'ReservationReportType',
-        bti: '.StatusReportType',
+        ln: 'SPSContentsType',
+        bti: 'SWES_2_0.AbstractContentsType',
         ps: [{
-            n: 'reservationExpiration',
+            n: 'minStatusTime',
             rq: true,
-            ti: 'DateTime'
-          }]
-      }, {
-        ln: 'CancelResponsePropertyType',
-        ps: [{
-            n: 'cancelResponse',
-            rq: true,
-            en: 'CancelResponse',
-            ti: '.CancelResponseType'
+            ti: 'Duration'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'PointOrPolygonPropertyType.ByPoint',
-        tn: null,
-        ps: [{
-            n: 'point',
-            rq: true,
-            en: {
-              lp: 'Point',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.PointType'
-          }]
-      }, {
-        ln: 'AvailableOrNotPropertyType.Available',
-        tn: null,
-        ps: [{
-            n: 'dataAvailable',
-            rq: true,
-            en: 'DataAvailable',
-            ti: '.DataAvailableType'
-          }]
-      }, {
-        ln: 'TaskingResponsePropertyType',
-        ps: [{
-            n: 'taskingResponse',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'TaskingResponse',
-            ti: '.TaskingResponseType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescribeResultAccessType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
-        ps: [{
-            n: 'target',
-            rq: true,
-            ti: '.DescribeResultAccessType.Target'
-          }]
-      }, {
-        ln: 'ReserveResponsePropertyType',
-        ps: [{
-            n: 'reserveResponse',
-            rq: true,
-            en: 'ReserveResponse',
-            ti: '.ReserveResponseType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ParameterDataType.Encoding',
-        tn: null,
-        ps: [{
-            n: 'abstractEncoding',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'AbstractEncoding',
-              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
-            },
-            ti: 'SWE_2_0.AbstractEncodingType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'GetFeasibilityResponsePropertyType',
-        ps: [{
-            n: 'getFeasibilityResponse',
-            rq: true,
-            en: 'GetFeasibilityResponse',
-            ti: '.GetFeasibilityResponseType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'StatusReportType',
-        bti: 'SWES_2_0.AbstractSWESType',
-        ps: [{
-            n: 'task',
-            rq: true
-          }, {
-            n: 'estimatedToC',
-            ti: 'DateTime'
-          }, {
-            n: 'event'
-          }, {
-            n: 'percentCompletion',
-            ti: 'Double'
-          }, {
-            n: 'procedure',
-            rq: true
-          }, {
-            n: 'requestStatus',
-            rq: true
-          }, {
-            n: 'statusMessage',
-            mno: 0,
-            col: true,
-            ti: 'OWS_1_1_0.LanguageStringType'
-          }, {
-            n: 'taskStatus'
-          }, {
-            n: 'updateTime',
-            rq: true,
-            ti: 'DateTime'
-          }, {
-            n: 'alternative',
-            mno: 0,
-            col: true,
-            ti: '.StatusReportType.Alternative'
-          }, {
-            n: 'taskingParameters',
-            ti: '.ParameterDataPropertyType'
-          }]
-      }, {
-        ln: 'GetTaskPropertyType',
-        ps: [{
-            n: 'getTask',
-            rq: true,
-            en: 'GetTask',
-            ti: '.GetTaskType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SPSMetadataType',
-        ps: [{
-            n: 'dataAccessType',
-            rq: true
-          }]
-      }, {
-        ln: 'GetTaskType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
-        ps: [{
-            n: 'task',
+            n: 'supportedEncoding',
             rq: true,
             col: true
           }]
       }, {
-        ln: 'GetCapabilitiesType',
-        bti: 'OWS_1_1_0.GetCapabilitiesType',
+        ln: 'TaskingResponseType',
+        bti: 'SWES_2_0.ExtensibleResponseType',
         ps: [{
-            n: 'extension',
-            mno: 0,
-            col: true,
-            ti: 'AnyType'
+            n: 'latestResponseTime',
+            ti: 'DateTime'
           }, {
-            n: 'service',
-            an: {
-              lp: 'service'
+            n: 'result',
+            rq: true,
+            ti: '.TaskingResponseType.Result'
+          }]
+      }, {
+        ln: 'StatusReportPropertyType',
+        ps: [{
+            n: 'statusReport',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'StatusReport',
+            ti: '.StatusReportType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
             },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
-        ln: 'DescribeTaskingPropertyType',
+        ln: 'ConfirmPropertyType',
         ps: [{
-            n: 'describeTasking',
+            n: 'confirm',
             rq: true,
-            en: 'DescribeTasking',
-            ti: '.DescribeTaskingType'
+            en: 'Confirm',
+            ti: '.ConfirmType'
           }, {
             n: 'nilReason',
             ti: {
@@ -1327,12 +1573,15 @@ var SPS_2_0_Module_Factory = function () {
             ti: 'OWS_1_1_0.ReferenceGroupType'
           }]
       }, {
-        ln: 'ReservePropertyType',
+        ln: 'TaskingRequestPropertyType',
         ps: [{
-            n: 'reserve',
+            n: 'taskingRequest',
             rq: true,
-            en: 'Reserve',
-            ti: '.ReserveType'
+            mx: false,
+            dom: false,
+            en: 'TaskingRequest',
+            ti: '.TaskingRequestType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {
@@ -1375,27 +1624,28 @@ var SPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SPSContentsType',
-        bti: 'SWES_2_0.AbstractContentsType',
+        ln: 'UpdateResponseType',
+        bti: '.TaskingResponseType',
         ps: [{
-            n: 'minStatusTime',
-            rq: true,
-            ti: 'Duration'
-          }, {
-            n: 'supportedEncoding',
-            rq: true,
-            col: true
+            n: 'targetTask',
+            rq: true
           }]
       }, {
-        ln: 'SubmitType',
-        bti: '.TaskingRequestType'
-      }, {
-        ln: 'ConfirmResponsePropertyType',
+        ln: 'GetTaskResponseType',
+        bti: 'SWES_2_0.ExtensibleResponseType',
         ps: [{
-            n: 'confirmResponse',
+            n: 'task',
             rq: true,
-            en: 'ConfirmResponse',
-            ti: '.ConfirmResponseType'
+            col: true,
+            ti: '.GetTaskResponseType.Task'
+          }]
+      }, {
+        ln: 'DataAvailablePropertyType',
+        ps: [{
+            n: 'dataAvailable',
+            rq: true,
+            en: 'DataAvailable',
+            ti: '.DataAvailableType'
           }, {
             n: 'nilReason',
             ti: {
@@ -1486,12 +1736,33 @@ var SPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DescribeResultAccessPropertyType',
+        ln: 'GetCapabilitiesType',
+        bti: 'OWS_1_1_0.GetCapabilitiesType',
         ps: [{
-            n: 'describeResultAccess',
+            n: 'extension',
+            mno: 0,
+            col: true,
+            ti: 'AnyType'
+          }, {
+            n: 'service',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SPSMetadataType',
+        ps: [{
+            n: 'dataAccessType',
+            rq: true
+          }]
+      }, {
+        ln: 'CancelResponsePropertyType',
+        ps: [{
+            n: 'cancelResponse',
             rq: true,
-            en: 'DescribeResultAccess',
-            ti: '.DescribeResultAccessType'
+            en: 'CancelResponse',
+            ti: '.CancelResponseType'
           }, {
             n: 'nilReason',
             ti: {
@@ -1534,12 +1805,15 @@ var SPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GetTaskResponsePropertyType',
+        ln: 'TaskingResponsePropertyType',
         ps: [{
-            n: 'getTaskResponse',
+            n: 'taskingResponse',
             rq: true,
-            en: 'GetTaskResponse',
-            ti: '.GetTaskResponseType'
+            mx: false,
+            dom: false,
+            en: 'TaskingResponse',
+            ti: '.TaskingResponseType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {
@@ -1582,62 +1856,22 @@ var SPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DescribeResultAccessType.Target',
-        tn: null,
+        ln: 'DescribeResultAccessResponseType',
+        bti: 'SWES_2_0.ExtensibleResponseType',
+        ps: [{
+            n: 'availability',
+            rq: true,
+            ti: '.DescribeResultAccessResponseType.Availability'
+          }]
+      }, {
+        ln: 'GetStatusType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
         ps: [{
             n: 'task',
             rq: true
           }, {
-            n: 'procedure',
-            rq: true
-          }]
-      }, {
-        ln: 'UpdateResponsePropertyType',
-        ps: [{
-            n: 'updateResponse',
-            rq: true,
-            en: 'UpdateResponse',
-            ti: '.UpdateResponseType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'since',
+            ti: 'DateTime'
           }]
       }, {
         ln: 'CancelResponseType',
@@ -1648,146 +1882,21 @@ var SPS_2_0_Module_Factory = function () {
             ti: '.CancelResponseType.Result'
           }]
       }, {
-        ln: 'TaskingRequestType.TaskingParameters',
-        tn: null,
-        ps: [{
-            n: 'parameterData',
-            rq: true,
-            en: 'ParameterData',
-            ti: '.ParameterDataType'
-          }]
-      }, {
-        ln: 'UpdateResponseType',
-        bti: '.TaskingResponseType',
-        ps: [{
-            n: 'targetTask',
-            rq: true
-          }]
-      }, {
-        ln: 'CancelType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
-        ps: [{
-            n: 'task',
-            rq: true
-          }]
-      }, {
-        ln: 'CancelPropertyType',
-        ps: [{
-            n: 'cancel',
-            rq: true,
-            en: 'Cancel',
-            ti: '.CancelType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescribeResultAccessResponsePropertyType',
-        ps: [{
-            n: 'describeResultAccessResponse',
-            rq: true,
-            en: 'DescribeResultAccessResponse',
-            ti: '.DescribeResultAccessResponseType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TaskType',
-        bti: 'SWES_2_0.AbstractSWESType',
+        ln: 'GetStatusResponseType',
+        bti: 'SWES_2_0.ExtensibleResponseType',
         ps: [{
             n: 'status',
-            rq: true,
+            mno: 0,
             col: true,
-            ti: '.StatusReportPropertyType'
+            ti: '.GetStatusResponseType.Status'
           }]
       }, {
-        ln: 'TaskingRequestType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
+        ln: 'ConfirmResponseType',
+        bti: 'SWES_2_0.ExtensibleResponseType',
         ps: [{
-            n: 'procedure',
-            rq: true
-          }, {
-            n: 'taskingParameters',
+            n: 'result',
             rq: true,
-            ti: '.TaskingRequestType.TaskingParameters'
-          }, {
-            n: 'latestResponseTime',
-            ti: 'DateTime'
+            ti: '.ConfirmResponseType.Result'
           }]
       }, {
         ln: 'SPSContentsPropertyType',
@@ -1838,12 +1947,90 @@ var SPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'PointOrPolygonPropertyType.ByPoint',
+        tn: null,
+        ps: [{
+            n: 'point',
+            rq: true,
+            en: {
+              lp: 'Point',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.PointType'
+          }]
+      }, {
         ln: 'SensorOfferingType',
         bti: 'SWES_2_0.AbstractOfferingType',
         ps: [{
             n: 'observableArea',
             rq: true,
             ti: '.SensorOfferingType.ObservableArea'
+          }]
+      }, {
+        ln: 'DescribeResultAccessType.Target',
+        tn: null,
+        ps: [{
+            n: 'task',
+            rq: true
+          }, {
+            n: 'procedure',
+            rq: true
+          }]
+      }, {
+        ln: 'DescribeTaskingResponseType',
+        bti: 'SWES_2_0.ExtensibleResponseType',
+        ps: [{
+            n: 'taskingParameters',
+            rq: true,
+            ti: '.DescribeTaskingResponseType.TaskingParameters'
+          }]
+      }, {
+        ln: 'GetFeasibilityResponseType',
+        bti: '.TaskingResponseType'
+      }, {
+        ln: 'DescribeTaskingResponseType.TaskingParameters',
+        tn: null,
+        ps: [{
+            n: 'abstractDataComponent',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractDataComponent',
+              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+            },
+            ti: 'SWE_2_0.AbstractDataComponentType',
+            t: 'er'
+          }, {
+            n: 'name',
+            rq: true,
+            ti: 'NCName',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribeTaskingType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
+        ps: [{
+            n: 'procedure',
+            rq: true
+          }]
+      }, {
+        ln: 'ParameterDataType.Encoding',
+        tn: null,
+        ps: [{
+            n: 'abstractEncoding',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'AbstractEncoding',
+              ns: 'http:\/\/www.opengis.net\/swe\/2.0'
+            },
+            ti: 'SWE_2_0.AbstractEncodingType',
+            t: 'er'
           }]
       }, {
         ln: 'SubmitResponsePropertyType',
@@ -1894,199 +2081,8 @@ var SPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'StatusReportPropertyType',
-        ps: [{
-            n: 'statusReport',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'StatusReport',
-            ti: '.StatusReportType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'PointOrPolygonPropertyType.ByPolygon',
+        ln: 'SensorOfferingType.ObservableArea',
         tn: null,
-        ps: [{
-            n: 'polygon',
-            rq: true,
-            en: {
-              lp: 'Polygon',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.PolygonType'
-          }]
-      }, {
-        ln: 'DescribeTaskingType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
-        ps: [{
-            n: 'procedure',
-            rq: true
-          }]
-      }, {
-        ln: 'ConfirmResponseType',
-        bti: 'SWES_2_0.ExtensibleResponseType',
-        ps: [{
-            n: 'result',
-            rq: true,
-            ti: '.ConfirmResponseType.Result'
-          }]
-      }, {
-        ln: 'ParameterDataPropertyType',
-        ps: [{
-            n: 'parameterData',
-            rq: true,
-            en: 'ParameterData',
-            ti: '.ParameterDataType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetStatusResponseType',
-        bti: 'SWES_2_0.ExtensibleResponseType',
-        ps: [{
-            n: 'status',
-            mno: 0,
-            col: true,
-            ti: '.GetStatusResponseType.Status'
-          }]
-      }, {
-        ln: 'GetTaskResponseType.Task',
-        tn: null,
-        ps: [{
-            n: 'task',
-            rq: true,
-            en: 'Task',
-            ti: '.TaskType'
-          }]
-      }, {
-        ln: 'ConfirmPropertyType',
-        ps: [{
-            n: 'confirm',
-            rq: true,
-            en: 'Confirm',
-            ti: '.ConfirmType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'PointOrPolygonPropertyType',
         ps: [{
             n: 'byPoint',
             rq: true,
@@ -2095,12 +2091,23 @@ var SPS_2_0_Module_Factory = function () {
             n: 'byPolygon',
             rq: true,
             ti: '.PointOrPolygonPropertyType.ByPolygon'
-          }, {
-            n: 'unionSemantics',
-            an: {
-              lp: 'unionSemantics'
-            },
-            t: 'a'
+          }]
+      }, {
+        ln: 'TaskType',
+        bti: 'SWES_2_0.AbstractSWESType',
+        ps: [{
+            n: 'status',
+            rq: true,
+            col: true,
+            ti: '.StatusReportPropertyType'
+          }]
+      }, {
+        ln: 'ConfirmResponsePropertyType',
+        ps: [{
+            n: 'confirmResponse',
+            rq: true,
+            en: 'ConfirmResponse',
+            ti: '.ConfirmResponseType'
           }, {
             n: 'nilReason',
             ti: {
@@ -2143,49 +2150,22 @@ var SPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ParameterDataType',
-        ps: [{
-            n: 'encoding',
-            rq: true,
-            ti: '.ParameterDataType.Encoding'
-          }, {
-            n: 'values',
-            rq: true,
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'SubmitResponseType',
-        bti: '.TaskingResponseType'
-      }, {
-        ln: 'ConfirmType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
-        ps: [{
-            n: 'task',
-            rq: true
-          }]
-      }, {
-        ln: 'TaskingResponseType.Result',
+        ln: 'CapabilitiesType.Contents',
         tn: null,
         ps: [{
-            n: 'statusReport',
+            n: 'spsContents',
             rq: true,
-            mx: false,
-            dom: false,
-            en: 'StatusReport',
-            ti: '.StatusReportType',
-            t: 'er'
+            en: 'SPSContents',
+            ti: '.SPSContentsType'
           }]
       }, {
-        ln: 'ConfirmResponseType.Result',
+        ln: 'TaskingRequestType.TaskingParameters',
         tn: null,
         ps: [{
-            n: 'statusReport',
+            n: 'parameterData',
             rq: true,
-            mx: false,
-            dom: false,
-            en: 'StatusReport',
-            ti: '.StatusReportType',
-            t: 'er'
+            en: 'ParameterData',
+            ti: '.ParameterDataType'
           }]
       }, {
         ln: 'AvailableOrNotPropertyType',
@@ -2245,12 +2225,15 @@ var SPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DataAvailablePropertyType',
+        ln: 'SubmitResponseType',
+        bti: '.TaskingResponseType'
+      }, {
+        ln: 'GetFeasibilityResponsePropertyType',
         ps: [{
-            n: 'dataAvailable',
+            n: 'getFeasibilityResponse',
             rq: true,
-            en: 'DataAvailable',
-            ti: '.DataAvailableType'
+            en: 'GetFeasibilityResponse',
+            ti: '.GetFeasibilityResponseType'
           }, {
             n: 'nilReason',
             ti: {
@@ -2291,6 +2274,70 @@ var SPS_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'ReserveType',
+        bti: '.TaskingRequestType',
+        ps: [{
+            n: 'reservationExpiration',
+            ti: 'DateTime'
+          }]
+      }, {
+        ln: 'GetFeasibilityPropertyType',
+        ps: [{
+            n: 'getFeasibility',
+            rq: true,
+            en: 'GetFeasibility',
+            ti: '.GetFeasibilityType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'AlternativeType.TaskingParameters',
+        tn: null,
+        ps: [{
+            n: 'parameterData',
+            rq: true,
+            en: 'ParameterData',
+            ti: '.ParameterDataType'
           }]
       }, {
         ln: 'AlternativeType',
@@ -2307,66 +2354,15 @@ var SPS_2_0_Module_Factory = function () {
             ti: '.AlternativeType.TaskingParameters'
           }]
       }, {
-        ln: 'DataNotAvailablePropertyType',
-        ps: [{
-            n: 'dataNotAvailable',
-            rq: true,
-            en: 'DataNotAvailable',
-            ti: '.DataNotAvailableType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
+        ln: 'ReserveResponseType',
+        bti: '.TaskingResponseType'
       }, {
-        ln: 'AvailableOrNotPropertyType.Unavailable',
-        tn: null,
+        ln: 'UpdateType',
+        bti: '.TaskingRequestType',
         ps: [{
-            n: 'dataNotAvailable',
-            rq: true,
-            en: 'DataNotAvailable',
-            ti: '.DataNotAvailableType'
+            n: 'targetTask',
+            rq: true
           }]
-      }, {
-        t: 'enum',
-        ln: 'TaskOrProcessUnionSemantics',
-        vs: ['task', 'procedure']
       }, {
         t: 'enum',
         ln: 'TaskStatusCodeEnumerationType',
@@ -2377,8 +2373,16 @@ var SPS_2_0_Module_Factory = function () {
         vs: ['available', 'unavailable']
       }, {
         t: 'enum',
+        ln: 'PointOrPolygonUnionSemantics',
+        vs: ['byPoint', 'byPolygon']
+      }, {
+        t: 'enum',
         ln: 'EventCodeEnumerationType',
         vs: ['DataPublished', 'ReservationExpired', 'TaskCancelled', 'TaskCompleted', 'TaskConfirmed', 'TaskFailed', 'TaskingRequestExpired', 'TaskReserved', 'TaskSubmitted', 'TaskUpdated']
+      }, {
+        t: 'enum',
+        ln: 'TaskOrProcessUnionSemantics',
+        vs: ['task', 'procedure']
       }, {
         t: 'enum',
         ln: 'TaskingRequestStatusCodeEnumerationType',
@@ -2387,25 +2391,18 @@ var SPS_2_0_Module_Factory = function () {
         t: 'enum',
         ln: 'UnavailableCodeEnumerationType',
         vs: ['DataNotAvailable', 'DataServiceUnavailable']
-      }, {
-        t: 'enum',
-        ln: 'PointOrPolygonUnionSemantics',
-        vs: ['byPoint', 'byPolygon']
       }],
     eis: [{
-        en: 'DescribeTaskingResponse',
-        ti: '.DescribeTaskingResponseType',
+        en: 'CancelResponse',
+        ti: '.CancelResponseType',
         sh: {
           lp: 'ExtensibleResponse',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
-        en: 'ConfirmResponse',
-        ti: '.ConfirmResponseType',
-        sh: {
-          lp: 'ExtensibleResponse',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-        }
+        en: 'GetFeasibility',
+        ti: '.GetFeasibilityType',
+        sh: 'TaskingRequest'
       }, {
         en: 'DescribeResultAccessResponse',
         ti: '.DescribeResultAccessResponseType',
@@ -2417,69 +2414,35 @@ var SPS_2_0_Module_Factory = function () {
         en: 'Capabilities',
         ti: '.CapabilitiesType'
       }, {
-        en: 'TaskingRequest',
-        ti: '.TaskingRequestType',
-        sh: {
-          lp: 'ExtensibleRequest',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-        }
+        en: 'GetFeasibilityResponse',
+        ti: '.GetFeasibilityResponseType',
+        sh: 'TaskingResponse'
       }, {
-        en: 'SPSMetadata',
-        ti: '.SPSMetadataType',
+        en: 'GetCapabilities',
+        ti: '.GetCapabilitiesType',
         sh: {
-          lp: 'AbstractMetaData',
+          lp: 'GetCapabilities',
           ns: 'http:\/\/www.opengis.net\/ows\/1.1'
         }
       }, {
-        en: 'GetStatus',
-        ti: '.GetStatusType',
-        sh: {
-          lp: 'ExtensibleRequest',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-        }
-      }, {
-        en: 'GetStatusResponse',
-        ti: '.GetStatusResponseType',
+        en: 'GetTaskResponse',
+        ti: '.GetTaskResponseType',
         sh: {
           lp: 'ExtensibleResponse',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
-        en: 'Cancel',
-        ti: '.CancelType',
-        sh: {
-          lp: 'ExtensibleRequest',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-        }
-      }, {
-        en: 'CancelResponse',
-        ti: '.CancelResponseType',
-        sh: {
-          lp: 'ExtensibleResponse',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-        }
+        en: 'Submit',
+        ti: '.SubmitType',
+        sh: 'TaskingRequest'
       }, {
         en: 'DataNotAvailable',
         ti: '.DataNotAvailableType'
       }, {
-        en: 'SensorOffering',
-        ti: '.SensorOfferingType',
+        en: 'SPSContents',
+        ti: '.SPSContentsType',
         sh: {
-          lp: 'AbstractOffering',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-        }
-      }, {
-        en: 'Alternative',
-        ti: '.AlternativeType',
-        sh: {
-          lp: 'AbstractSWES',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-        }
-      }, {
-        en: 'TaskingResponse',
-        ti: '.TaskingResponseType',
-        sh: {
-          lp: 'ExtensibleResponse',
+          lp: 'AbstractContents',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
@@ -2490,63 +2453,55 @@ var SPS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
-        en: 'SubmitResponse',
-        ti: '.SubmitResponseType',
-        sh: 'TaskingResponse'
-      }, {
-        en: 'GetFeasibility',
-        ti: '.GetFeasibilityType',
+        en: 'Reserve',
+        ti: '.ReserveType',
         sh: 'TaskingRequest'
       }, {
         en: 'UpdateResponse',
         ti: '.UpdateResponseType',
         sh: 'TaskingResponse'
       }, {
-        en: 'DescribeResultAccess',
-        ti: '.DescribeResultAccessType',
-        sh: {
-          lp: 'ExtensibleRequest',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
-        }
-      }, {
-        en: 'Submit',
-        ti: '.SubmitType',
-        sh: 'TaskingRequest'
-      }, {
-        en: 'GetFeasibilityResponse',
-        ti: '.GetFeasibilityResponseType',
-        sh: 'TaskingResponse'
-      }, {
-        en: 'ReserveResponse',
-        ti: '.ReserveResponseType',
-        sh: 'TaskingResponse'
-      }, {
-        en: 'StatusReport',
-        ti: '.StatusReportType',
+        en: 'Task',
+        ti: '.TaskType',
         sh: {
           lp: 'AbstractSWES',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
-        en: 'GetCapabilities',
-        ti: '.GetCapabilitiesType',
+        en: 'SensorOffering',
+        ti: '.SensorOfferingType',
         sh: {
-          lp: 'GetCapabilities',
-          ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-        }
-      }, {
-        en: 'SPSContents',
-        ti: '.SPSContentsType',
-        sh: {
-          lp: 'AbstractContents',
+          lp: 'AbstractOffering',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
-        en: 'DataAvailable',
-        ti: '.DataAvailableType'
+        en: 'GetTask',
+        ti: '.GetTaskType',
+        sh: {
+          lp: 'ExtensibleRequest',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+        }
       }, {
-        en: 'GetTaskResponse',
-        ti: '.GetTaskResponseType',
+        en: 'Cancel',
+        ti: '.CancelType',
+        sh: {
+          lp: 'ExtensibleRequest',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+        }
+      }, {
+        en: 'SubmitResponse',
+        ti: '.SubmitResponseType',
+        sh: 'TaskingResponse'
+      }, {
+        en: 'SPSMetadata',
+        ti: '.SPSMetadataType',
+        sh: {
+          lp: 'AbstractMetaData',
+          ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+        }
+      }, {
+        en: 'ConfirmResponse',
+        ti: '.ConfirmResponseType',
         sh: {
           lp: 'ExtensibleResponse',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
@@ -2556,8 +2511,11 @@ var SPS_2_0_Module_Factory = function () {
         ti: '.ReservationReportType',
         sh: 'StatusReport'
       }, {
-        en: 'GetTask',
-        ti: '.GetTaskType',
+        en: 'DataAvailable',
+        ti: '.DataAvailableType'
+      }, {
+        en: 'DescribeResultAccess',
+        ti: '.DescribeResultAccessType',
         sh: {
           lp: 'ExtensibleRequest',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
@@ -2570,19 +2528,61 @@ var SPS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
-        en: 'Reserve',
-        ti: '.ReserveType',
-        sh: 'TaskingRequest'
+        en: 'TaskingResponse',
+        ti: '.TaskingResponseType',
+        sh: {
+          lp: 'ExtensibleResponse',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+        }
+      }, {
+        en: 'StatusReport',
+        ti: '.StatusReportType',
+        sh: {
+          lp: 'AbstractSWES',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+        }
       }, {
         en: 'Update',
         ti: '.UpdateType',
         sh: 'TaskingRequest'
       }, {
+        en: 'GetStatusResponse',
+        ti: '.GetStatusResponseType',
+        sh: {
+          lp: 'ExtensibleResponse',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+        }
+      }, {
+        en: 'TaskingRequest',
+        ti: '.TaskingRequestType',
+        sh: {
+          lp: 'ExtensibleRequest',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+        }
+      }, {
+        en: 'DescribeTaskingResponse',
+        ti: '.DescribeTaskingResponseType',
+        sh: {
+          lp: 'ExtensibleResponse',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+        }
+      }, {
+        en: 'ReserveResponse',
+        ti: '.ReserveResponseType',
+        sh: 'TaskingResponse'
+      }, {
+        en: 'GetStatus',
+        ti: '.GetStatusType',
+        sh: {
+          lp: 'ExtensibleRequest',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+        }
+      }, {
         en: 'ParameterData',
         ti: '.ParameterDataType'
       }, {
-        en: 'Task',
-        ti: '.TaskType',
+        en: 'Alternative',
+        ti: '.AlternativeType',
         sh: {
           lp: 'AbstractSWES',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'

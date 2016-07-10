@@ -3,19 +3,8 @@ var Sampling_2_0_Module_Factory = function () {
     n: 'Sampling_2_0',
     dens: 'http:\/\/www.opengis.net\/sampling\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1', 'OM_2_0', 'ISO19139_GMD_20070417'],
+    deps: ['OM_2_0', 'XLink_1_0', 'GML_3_2_1', 'ISO19139_GMD_20070417'],
     tis: [{
-        ln: 'SamplingFeatureComplexType',
-        ps: [{
-            n: 'role',
-            rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'relatedSamplingFeature',
-            rq: true,
-            ti: '.SFSamplingFeaturePropertyType'
-          }]
-      }, {
         ln: 'SFSamplingFeaturePropertyType',
         tn: 'SF_SamplingFeaturePropertyType',
         ps: [{
@@ -63,6 +52,14 @@ var Sampling_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'SamplingFeatureComplexPropertyType',
+        ps: [{
+            n: 'samplingFeatureComplex',
+            rq: true,
+            en: 'SamplingFeatureComplex',
+            ti: '.SamplingFeatureComplexType'
           }]
       }, {
         ln: 'SFSamplingFeatureCollectionPropertyType',
@@ -155,12 +152,15 @@ var Sampling_2_0_Module_Factory = function () {
             ti: '.SFSamplingFeaturePropertyType'
           }]
       }, {
-        ln: 'SamplingFeatureComplexPropertyType',
+        ln: 'SamplingFeatureComplexType',
         ps: [{
-            n: 'samplingFeatureComplex',
+            n: 'role',
             rq: true,
-            en: 'SamplingFeatureComplex',
-            ti: '.SamplingFeatureComplexType'
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'relatedSamplingFeature',
+            rq: true,
+            ti: '.SFSamplingFeaturePropertyType'
           }]
       }, {
         ln: 'SFProcessPropertyType',
@@ -213,18 +213,18 @@ var Sampling_2_0_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'SamplingFeatureComplex',
-        ti: '.SamplingFeatureComplexType'
-      }, {
-        en: 'SF_SamplingFeature',
-        ti: '.SFSamplingFeatureType',
+        en: 'SF_SamplingFeatureCollection',
+        ti: '.SFSamplingFeatureCollectionType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'SF_SamplingFeatureCollection',
-        ti: '.SFSamplingFeatureCollectionType',
+        en: 'SamplingFeatureComplex',
+        ti: '.SamplingFeatureComplexType'
+      }, {
+        en: 'SF_SamplingFeature',
+        ti: '.SFSamplingFeatureType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'

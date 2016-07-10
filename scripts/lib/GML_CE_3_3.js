@@ -4,91 +4,6 @@ var GML_CE_3_3_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/gml\/3.2',
     deps: ['GML_3_2_1', 'XLink_1_0'],
     tis: [{
-        ln: 'SimpleArcByCenterPointType',
-        tn: {
-          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce',
-          lp: 'SimpleArcByCenterPointType'
-        },
-        bti: 'GML_3_2_1.AbstractCurveType',
-        ps: [{
-            n: 'pos',
-            rq: true,
-            ti: 'GML_3_2_1.DirectPositionType'
-          }, {
-            n: 'pointProperty',
-            rq: true,
-            ti: 'GML_3_2_1.PointPropertyType'
-          }, {
-            n: 'posList',
-            rq: true,
-            ti: 'GML_3_2_1.DirectPositionListType'
-          }, {
-            n: 'radius',
-            rq: true,
-            en: {
-              lp: 'radius',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
-            },
-            ti: 'GML_3_2_1.LengthType'
-          }, {
-            n: 'startAngle',
-            rq: true,
-            en: {
-              lp: 'startAngle',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
-            },
-            ti: 'GML_3_2_1.AngleType'
-          }, {
-            n: 'endAngle',
-            rq: true,
-            en: {
-              lp: 'endAngle',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
-            },
-            ti: 'GML_3_2_1.AngleType'
-          }, {
-            n: 'interpolation',
-            ti: 'GML_3_2_1.CurveInterpolationType',
-            an: {
-              lp: 'interpolation'
-            },
-            t: 'a'
-          }, {
-            n: 'numARC',
-            rq: true,
-            ti: 'Integer',
-            an: {
-              lp: 'numArc'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SimpleRectangleType',
-        tn: {
-          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce',
-          lp: 'SimpleRectangleType'
-        },
-        bti: 'GML_3_2_1.AbstractSurfaceType',
-        ps: [{
-            n: 'posOrPointProperty',
-            rq: true,
-            mno: 4,
-            mxo: 4,
-            col: true,
-            etis: [{
-                en: 'pos',
-                ti: 'GML_3_2_1.DirectPositionType'
-              }, {
-                en: 'pointProperty',
-                ti: 'GML_3_2_1.PointPropertyType'
-              }],
-            t: 'es'
-          }, {
-            n: 'posList',
-            rq: true,
-            ti: 'GML_3_2_1.DirectPositionListType'
-          }]
-      }, {
         ln: 'SimpleTriangleType',
         tn: {
           ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce',
@@ -110,75 +25,6 @@ var GML_CE_3_3_Module_Factory = function () {
               }],
             t: 'es'
           }, {
-            n: 'posList',
-            rq: true,
-            ti: 'GML_3_2_1.DirectPositionListType'
-          }]
-      }, {
-        ln: 'SimpleArcStringByBulgeType',
-        tn: {
-          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce',
-          lp: 'SimpleArcStringByBulgeType'
-        },
-        bti: 'GML_3_2_1.AbstractCurveType',
-        ps: [{
-            n: 'posOrPointProperty',
-            rq: true,
-            mno: 2,
-            col: true,
-            etis: [{
-                en: 'pos',
-                ti: 'GML_3_2_1.DirectPositionType'
-              }, {
-                en: 'pointProperty',
-                ti: 'GML_3_2_1.PointPropertyType'
-              }],
-            t: 'es'
-          }, {
-            n: 'posList',
-            rq: true,
-            ti: 'GML_3_2_1.DirectPositionListType'
-          }, {
-            n: 'bulge',
-            rq: true,
-            col: true,
-            en: {
-              lp: 'bulge',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
-            },
-            ti: 'Double'
-          }, {
-            n: 'normal',
-            rq: true,
-            col: true,
-            en: {
-              lp: 'normal',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
-            },
-            ti: 'GML_3_2_1.VectorType'
-          }, {
-            n: 'interpolation',
-            ti: 'GML_3_2_1.CurveInterpolationType',
-            an: {
-              lp: 'interpolation'
-            },
-            t: 'a'
-          }, {
-            n: 'numArc',
-            ti: 'Integer',
-            an: {
-              lp: 'numArc'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SimpleMultiPointType',
-        tn: {
-          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce',
-          lp: 'SimpleMultiPointType'
-        },
-        bti: 'GML_3_2_1.AbstractGeometricAggregateType',
-        ps: [{
             n: 'posList',
             rq: true,
             ti: 'GML_3_2_1.DirectPositionListType'
@@ -248,6 +94,75 @@ var GML_CE_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'SimpleMultiPointType',
+        tn: {
+          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce',
+          lp: 'SimpleMultiPointType'
+        },
+        bti: 'GML_3_2_1.AbstractGeometricAggregateType',
+        ps: [{
+            n: 'posList',
+            rq: true,
+            ti: 'GML_3_2_1.DirectPositionListType'
+          }]
+      }, {
+        ln: 'SimpleArcStringByBulgeType',
+        tn: {
+          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce',
+          lp: 'SimpleArcStringByBulgeType'
+        },
+        bti: 'GML_3_2_1.AbstractCurveType',
+        ps: [{
+            n: 'posOrPointProperty',
+            rq: true,
+            mno: 2,
+            col: true,
+            etis: [{
+                en: 'pos',
+                ti: 'GML_3_2_1.DirectPositionType'
+              }, {
+                en: 'pointProperty',
+                ti: 'GML_3_2_1.PointPropertyType'
+              }],
+            t: 'es'
+          }, {
+            n: 'posList',
+            rq: true,
+            ti: 'GML_3_2_1.DirectPositionListType'
+          }, {
+            n: 'bulge',
+            rq: true,
+            col: true,
+            en: {
+              lp: 'bulge',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
+            },
+            ti: 'Double'
+          }, {
+            n: 'normal',
+            rq: true,
+            col: true,
+            en: {
+              lp: 'normal',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
+            },
+            ti: 'GML_3_2_1.VectorType'
+          }, {
+            n: 'interpolation',
+            ti: 'GML_3_2_1.CurveInterpolationType',
+            an: {
+              lp: 'interpolation'
+            },
+            t: 'a'
+          }, {
+            n: 'numArc',
+            ti: 'Integer',
+            an: {
+              lp: 'numArc'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'SimpleArcType',
         tn: {
           ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce',
@@ -288,6 +203,90 @@ var GML_CE_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'SimpleArcByBulgeType',
+        tn: {
+          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce',
+          lp: 'SimpleArcByBulgeType'
+        },
+        bti: 'GML_3_2_1.AbstractCurveType',
+        ps: [{
+            n: 'posOrPointProperty',
+            rq: true,
+            mno: 2,
+            mxo: 2,
+            col: true,
+            etis: [{
+                en: 'pos',
+                ti: 'GML_3_2_1.DirectPositionType'
+              }, {
+                en: 'pointProperty',
+                ti: 'GML_3_2_1.PointPropertyType'
+              }],
+            t: 'es'
+          }, {
+            n: 'posList',
+            rq: true,
+            ti: 'GML_3_2_1.DirectPositionListType'
+          }, {
+            n: 'bulge',
+            rq: true,
+            col: true,
+            en: {
+              lp: 'bulge',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
+            },
+            ti: 'Double'
+          }, {
+            n: 'normal',
+            rq: true,
+            col: true,
+            en: {
+              lp: 'normal',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
+            },
+            ti: 'GML_3_2_1.VectorType'
+          }, {
+            n: 'interpolation',
+            ti: 'GML_3_2_1.CurveInterpolationType',
+            an: {
+              lp: 'interpolation'
+            },
+            t: 'a'
+          }, {
+            n: 'numARC',
+            ti: 'Integer',
+            an: {
+              lp: 'numArc'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SimpleRectangleType',
+        tn: {
+          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce',
+          lp: 'SimpleRectangleType'
+        },
+        bti: 'GML_3_2_1.AbstractSurfaceType',
+        ps: [{
+            n: 'posOrPointProperty',
+            rq: true,
+            mno: 4,
+            mxo: 4,
+            col: true,
+            etis: [{
+                en: 'pos',
+                ti: 'GML_3_2_1.DirectPositionType'
+              }, {
+                en: 'pointProperty',
+                ti: 'GML_3_2_1.PointPropertyType'
+              }],
+            t: 'es'
+          }, {
+            n: 'posList',
+            rq: true,
+            ti: 'GML_3_2_1.DirectPositionListType'
+          }]
+      }, {
         ln: 'MultiPointPropertyType',
         tn: {
           ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce',
@@ -306,6 +305,13 @@ var GML_CE_3_3_Module_Factory = function () {
               ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
             },
             ti: '.SimpleMultiPointType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }, {
             n: 'nilReason',
             ti: {
@@ -374,57 +380,50 @@ var GML_CE_3_3_Module_Factory = function () {
               ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
             t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
           }]
       }, {
-        ln: 'SimpleArcByBulgeType',
+        ln: 'SimpleArcByCenterPointType',
         tn: {
           ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce',
-          lp: 'SimpleArcByBulgeType'
+          lp: 'SimpleArcByCenterPointType'
         },
         bti: 'GML_3_2_1.AbstractCurveType',
         ps: [{
-            n: 'posOrPointProperty',
+            n: 'pos',
             rq: true,
-            mno: 2,
-            mxo: 2,
-            col: true,
-            etis: [{
-                en: 'pos',
-                ti: 'GML_3_2_1.DirectPositionType'
-              }, {
-                en: 'pointProperty',
-                ti: 'GML_3_2_1.PointPropertyType'
-              }],
-            t: 'es'
+            ti: 'GML_3_2_1.DirectPositionType'
+          }, {
+            n: 'pointProperty',
+            rq: true,
+            ti: 'GML_3_2_1.PointPropertyType'
           }, {
             n: 'posList',
             rq: true,
             ti: 'GML_3_2_1.DirectPositionListType'
           }, {
-            n: 'bulge',
+            n: 'radius',
             rq: true,
-            col: true,
             en: {
-              lp: 'bulge',
+              lp: 'radius',
               ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
             },
-            ti: 'Double'
+            ti: 'GML_3_2_1.LengthType'
           }, {
-            n: 'normal',
+            n: 'startAngle',
             rq: true,
-            col: true,
             en: {
-              lp: 'normal',
+              lp: 'startAngle',
               ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
             },
-            ti: 'GML_3_2_1.VectorType'
+            ti: 'GML_3_2_1.AngleType'
+          }, {
+            n: 'endAngle',
+            rq: true,
+            en: {
+              lp: 'endAngle',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
+            },
+            ti: 'GML_3_2_1.AngleType'
           }, {
             n: 'interpolation',
             ti: 'GML_3_2_1.CurveInterpolationType',
@@ -434,6 +433,7 @@ var GML_CE_3_3_Module_Factory = function () {
             t: 'a'
           }, {
             n: 'numARC',
+            rq: true,
             ti: 'Integer',
             an: {
               lp: 'numArc'
@@ -442,6 +442,43 @@ var GML_CE_3_3_Module_Factory = function () {
           }]
       }],
     eis: [{
+        en: {
+          lp: 'SimpleArcByCenterPoint',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
+        },
+        ti: '.SimpleArcByCenterPointType',
+        sh: {
+          lp: 'AbstractSimpleArcString',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
+        }
+      }, {
+        en: {
+          lp: 'AbstractSimpleArcString',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
+        },
+        ti: 'GML_3_2_1.AbstractCurveType',
+        sh: 'AbstractCurve'
+      }, {
+        en: {
+          lp: 'SimpleArc',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
+        },
+        ti: '.SimpleArcType',
+        sh: {
+          lp: 'AbstractSimpleArcString',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
+        }
+      }, {
+        en: {
+          lp: 'SimpleCircleByCenterPoint',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
+        },
+        ti: '.SimpleArcByCenterPointType',
+        sh: {
+          lp: 'AbstractSimpleArcString',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
+        }
+      }, {
         en: {
           lp: 'SimpleCircle',
           ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
@@ -453,21 +490,11 @@ var GML_CE_3_3_Module_Factory = function () {
         }
       }, {
         en: {
-          lp: 'SimpleTriangle',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
-        },
-        ti: '.SimpleTriangleType',
-        sh: {
           lp: 'AbstractSimplePolygon',
           ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
-        }
-      }, {
-        en: {
-          lp: 'SimpleMultiPoint',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
         },
-        ti: '.SimpleMultiPointType',
-        sh: 'AbstractGeometricAggregate'
+        ti: 'GML_3_2_1.AbstractSurfaceType',
+        sh: 'AbstractSurface'
       }, {
         en: {
           lp: 'SimpleRectangle',
@@ -510,41 +537,11 @@ var GML_CE_3_3_Module_Factory = function () {
         }
       }, {
         en: {
-          lp: 'SimpleArc',
+          lp: 'SimpleMultiPoint',
           ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
         },
-        ti: '.SimpleArcType',
-        sh: {
-          lp: 'AbstractSimpleArcString',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
-        }
-      }, {
-        en: {
-          lp: 'SimpleCircleByCenterPoint',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
-        },
-        ti: '.SimpleArcByCenterPointType',
-        sh: {
-          lp: 'AbstractSimpleArcString',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
-        }
-      }, {
-        en: {
-          lp: 'SimpleArcByCenterPoint',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
-        },
-        ti: '.SimpleArcByCenterPointType',
-        sh: {
-          lp: 'AbstractSimpleArcString',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
-        }
-      }, {
-        en: {
-          lp: 'AbstractSimplePolygon',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
-        },
-        ti: 'GML_3_2_1.AbstractSurfaceType',
-        sh: 'AbstractSurface'
+        ti: '.SimpleMultiPointType',
+        sh: 'AbstractGeometricAggregate'
       }, {
         en: {
           lp: 'SimplePolygon',
@@ -557,11 +554,14 @@ var GML_CE_3_3_Module_Factory = function () {
         }
       }, {
         en: {
-          lp: 'AbstractSimpleArcString',
+          lp: 'SimpleTriangle',
           ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
         },
-        ti: 'GML_3_2_1.AbstractCurveType',
-        sh: 'AbstractCurve'
+        ti: '.SimpleTriangleType',
+        sh: {
+          lp: 'AbstractSimplePolygon',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.3\/ce'
+        }
       }]
   };
   return {

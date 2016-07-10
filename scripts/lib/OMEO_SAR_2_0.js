@@ -5,6 +5,49 @@ var OMEO_SAR_2_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['GML_3_2_1', 'XLink_1_0', 'OMEO_EOP_2_0'],
     tis: [{
+        ln: 'AcquisitionType',
+        bti: 'OMEO_EOP_2_0.AcquisitionType',
+        ps: [{
+            n: 'polarisationMode'
+          }, {
+            n: 'polarisationChannels'
+          }, {
+            n: 'antennaLookDirection'
+          }, {
+            n: 'minimumIncidenceAngle',
+            ti: 'GML_3_2_1.AngleType'
+          }, {
+            n: 'maximumIncidenceAngle',
+            ti: 'GML_3_2_1.AngleType'
+          }, {
+            n: 'incidenceAngleVariation',
+            ti: 'GML_3_2_1.AngleType'
+          }, {
+            n: 'dopplerFrequency',
+            ti: 'GML_3_2_1.MeasureType'
+          }]
+      }, {
+        ln: 'AcquisitionPropertyType',
+        ps: [{
+            n: 'acquisition',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'Acquisition',
+            ti: '.AcquisitionType',
+            t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'EarthObservationType',
+        bti: 'OMEO_EOP_2_0.EarthObservationType'
+      }, {
         ln: 'EarthObservationPropertyType',
         ps: [{
             n: 'earthObservation',
@@ -14,6 +57,13 @@ var OMEO_SAR_2_0_Module_Factory = function () {
             en: 'EarthObservation',
             ti: '.EarthObservationType',
             t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }, {
             n: 'nilReason',
             ti: {
@@ -54,56 +104,6 @@ var OMEO_SAR_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AcquisitionType',
-        bti: 'OMEO_EOP_2_0.AcquisitionType',
-        ps: [{
-            n: 'polarisationMode'
-          }, {
-            n: 'polarisationChannels'
-          }, {
-            n: 'antennaLookDirection'
-          }, {
-            n: 'minimumIncidenceAngle',
-            ti: 'GML_3_2_1.AngleType'
-          }, {
-            n: 'maximumIncidenceAngle',
-            ti: 'GML_3_2_1.AngleType'
-          }, {
-            n: 'incidenceAngleVariation',
-            ti: 'GML_3_2_1.AngleType'
-          }, {
-            n: 'dopplerFrequency',
-            ti: 'GML_3_2_1.MeasureType'
-          }]
-      }, {
-        ln: 'EarthObservationType',
-        bti: 'OMEO_EOP_2_0.EarthObservationType'
-      }, {
-        ln: 'AcquisitionPropertyType',
-        ps: [{
-            n: 'acquisition',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'Acquisition',
-            ti: '.AcquisitionType',
-            t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
           }]
       }, {
         t: 'enum',
@@ -119,17 +119,17 @@ var OMEO_SAR_2_0_Module_Factory = function () {
         vs: ['LEFT', 'RIGHT']
       }],
     eis: [{
-        en: 'EarthObservation',
-        ti: '.EarthObservationType',
-        sh: {
-          lp: 'EarthObservation',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
-      }, {
         en: 'Acquisition',
         ti: '.AcquisitionType',
         sh: {
           lp: 'Acquisition',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+        }
+      }, {
+        en: 'EarthObservation',
+        ti: '.EarthObservationType',
+        sh: {
+          lp: 'EarthObservation',
           ns: 'http:\/\/www.opengis.net\/eop\/2.0'
         }
       }]

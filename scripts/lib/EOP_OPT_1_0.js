@@ -2,7 +2,7 @@ var EOP_OPT_1_0_Module_Factory = function () {
   var EOP_OPT_1_0 = {
     n: 'EOP_OPT_1_0',
     dens: 'http:\/\/earth.esa.int\/opt',
-    deps: ['EOP_1_0', 'GML_3_1_1'],
+    deps: ['GML_3_1_1', 'EOP_1_0'],
     tis: [{
         ln: 'EarthObservationType',
         bti: 'EOP_1_0.EarthObservationType'
@@ -38,6 +38,13 @@ var EOP_OPT_1_0_Module_Factory = function () {
           }]
       }],
     eis: [{
+        en: 'Acquisition',
+        ti: '.AcquisitionType',
+        sh: {
+          lp: 'Acquisition',
+          ns: 'http:\/\/earth.esa.int\/eop'
+        }
+      }, {
         en: 'EarthObservationResult',
         ti: '.EarthObservationResultType',
         sh: {
@@ -49,13 +56,6 @@ var EOP_OPT_1_0_Module_Factory = function () {
         ti: '.EarthObservationType',
         sh: {
           lp: 'EarthObservation',
-          ns: 'http:\/\/earth.esa.int\/eop'
-        }
-      }, {
-        en: 'Acquisition',
-        ti: '.AcquisitionType',
-        sh: {
-          lp: 'Acquisition',
           ns: 'http:\/\/earth.esa.int\/eop'
         }
       }]

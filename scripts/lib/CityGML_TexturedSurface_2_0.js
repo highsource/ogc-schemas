@@ -5,6 +5,37 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_1_1'],
     tis: [{
+        ln: 'MaterialType',
+        bti: '.AbstractAppearanceType',
+        ps: [{
+            n: 'shininess',
+            ti: 'Double'
+          }, {
+            n: 'transparency',
+            ti: 'Double'
+          }, {
+            n: 'ambientIntensity',
+            ti: 'Double'
+          }, {
+            n: 'specularColor',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'diffuseColor',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'emissiveColor',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }]
+      }, {
         ln: 'TexturedSurfaceType',
         bti: 'GML_3_1_1.OrientableSurfaceType',
         ps: [{
@@ -12,6 +43,28 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
             rq: true,
             col: true,
             ti: '.AppearancePropertyType'
+          }]
+      }, {
+        ln: 'AbstractAppearanceType',
+        bti: 'GML_3_1_1.AbstractGMLType'
+      }, {
+        ln: 'SimpleTextureType',
+        bti: '.AbstractAppearanceType',
+        ps: [{
+            n: 'textureMap',
+            rq: true
+          }, {
+            n: 'textureCoordinates',
+            rq: true,
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'textureType'
+          }, {
+            n: 'repeat',
+            ti: 'Boolean'
           }]
       }, {
         ln: 'AppearancePropertyType',
@@ -63,78 +116,21 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SimpleTextureType',
-        bti: '.AbstractAppearanceType',
-        ps: [{
-            n: 'textureMap',
-            rq: true
-          }, {
-            n: 'textureCoordinates',
-            rq: true,
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'textureType'
-          }, {
-            n: 'repeat',
-            ti: 'Boolean'
-          }]
-      }, {
-        ln: 'AbstractAppearanceType',
-        bti: 'GML_3_1_1.AbstractGMLType'
-      }, {
-        ln: 'MaterialType',
-        bti: '.AbstractAppearanceType',
-        ps: [{
-            n: 'shininess',
-            ti: 'Double'
-          }, {
-            n: 'transparency',
-            ti: 'Double'
-          }, {
-            n: 'ambientIntensity',
-            ti: 'Double'
-          }, {
-            n: 'specularColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'diffuseColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'emissiveColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }]
-      }, {
         t: 'enum',
         ln: 'TextureTypeType',
         vs: ['specific', 'typical', 'unknown']
       }],
     eis: [{
-        en: 'SimpleTexture',
-        ti: '.SimpleTextureType',
-        sh: '_Appearance'
-      }, {
-        en: 'Material',
-        ti: '.MaterialType',
-        sh: '_Appearance'
-      }, {
         en: '_Appearance',
         ti: '.AbstractAppearanceType',
         sh: {
           lp: '_GML',
           ns: 'http:\/\/www.opengis.net\/gml'
         }
+      }, {
+        en: 'Material',
+        ti: '.MaterialType',
+        sh: '_Appearance'
       }, {
         en: 'appearance',
         ti: '.AppearancePropertyType'
@@ -145,6 +141,10 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
           lp: 'OrientableSurface',
           ns: 'http:\/\/www.opengis.net\/gml'
         }
+      }, {
+        en: 'SimpleTexture',
+        ti: '.SimpleTextureType',
+        sh: '_Appearance'
       }]
   };
   return {

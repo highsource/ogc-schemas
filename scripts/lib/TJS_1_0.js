@@ -4,45 +4,16 @@ var TJS_1_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/tjs\/1.0',
     deps: ['OWS_1_1_0'],
     tis: [{
-        ln: 'JoinDataResponse.DataInputs',
+        ln: 'Ordinal',
         tn: null,
         ps: [{
-            n: 'framework',
-            rq: true,
-            en: 'Framework',
-            ti: '.FrameworkDatasetDescribeDataType'
-          }]
-      }, {
-        ln: 'DescribeFrameworks',
-        tn: null,
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'frameworkURI',
-            en: 'FrameworkURI'
-          }]
-      }, {
-        ln: 'BoundingCoordinates',
-        tn: null,
-        ps: [{
-            n: 'north',
-            rq: true,
-            en: 'North',
-            ti: 'Decimal'
+            n: 'classes',
+            en: 'Classes',
+            ti: '.Ordinal.Classes'
           }, {
-            n: 'south',
-            rq: true,
-            en: 'South',
-            ti: 'Decimal'
-          }, {
-            n: 'east',
-            rq: true,
-            en: 'East',
-            ti: 'Decimal'
-          }, {
-            n: 'west',
-            rq: true,
-            en: 'West',
-            ti: 'Decimal'
+            n: 'exceptions',
+            en: 'Exceptions',
+            ti: '.NominalOrdinalExceptions'
           }]
       }, {
         ln: 'MeasureCountExceptions.Null',
@@ -65,14 +36,95 @@ var TJS_1_0_Module_Factory = function () {
             en: 'Documentation'
           }]
       }, {
-        ln: 'DataDescriptions',
+        ln: 'JoinDataResponse.JoinedOutputs.Output.Resource',
+        tn: null,
+        ps: [{
+            n: 'url',
+            rq: true,
+            en: 'URL',
+            ti: 'AnyType'
+          }, {
+            n: 'parameter',
+            mno: 0,
+            col: true,
+            en: 'Parameter',
+            ti: '.JoinDataResponse.JoinedOutputs.Output.Resource.Parameter'
+          }]
+      }, {
+        ln: 'JoinData',
+        tn: null,
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'attributeData',
+            rq: true,
+            en: 'AttributeData',
+            ti: '.JoinData.AttributeData'
+          }, {
+            n: 'mapStyling',
+            en: 'MapStyling',
+            ti: '.JoinData.MapStyling'
+          }, {
+            n: 'classificationURL',
+            en: 'ClassificationURL',
+            ti: 'AnyType'
+          }, {
+            n: 'update',
+            an: {
+              lp: 'update'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'JoinDataResponse.JoinedOutputs.Output.ExceptionReport',
+        tn: null,
+        ps: [{
+            n: 'exception',
+            rq: true,
+            en: {
+              lp: 'Exception',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'OWS_1_1_0.ExceptionType'
+          }]
+      }, {
+        ln: 'AbstractType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'content',
+            col: true,
+            typed: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'SpatialFrameworks',
         tn: null,
         ps: [{
             n: 'framework',
             rq: true,
             col: true,
             en: 'Framework',
-            ti: '.FrameworkDatasetDescribeDataType'
+            ti: '.SpatialFrameworks.Framework'
+          }]
+      }, {
+        ln: 'GetCapabilities.AcceptVersions',
+        tn: null,
+        ps: [{
+            n: 'version',
+            rq: true,
+            col: true,
+            en: 'Version'
+          }]
+      }, {
+        ln: 'DatasetDescriptions',
+        tn: null,
+        ps: [{
+            n: 'framework',
+            rq: true,
+            col: true,
+            en: 'Framework',
+            ti: '.DatasetDescriptions.Framework'
           }, {
             n: 'service',
             rq: true,
@@ -104,73 +156,6 @@ var TJS_1_0_Module_Factory = function () {
               ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'DescribeDatasetsRequest',
-        tn: null,
-        ps: [{
-            n: 'href',
-            rq: true,
-            an: {
-              lp: 'href',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'OutputMechanismsType',
-        ps: [{
-            n: 'mechanism',
-            rq: true,
-            col: true,
-            en: 'Mechanism',
-            ti: '.Mechanism'
-          }]
-      }, {
-        ln: 'TjsCapabilitiesType.Languages',
-        tn: null,
-        ps: [{
-            n: 'language',
-            rq: true,
-            col: true,
-            en: {
-              lp: 'Language',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-            },
-            ti: 'Language'
-          }]
-      }, {
-        ln: 'FrameworkKey',
-        tn: null,
-        ps: [{
-            n: 'column',
-            rq: true,
-            col: true,
-            en: 'Column',
-            ti: '.FrameworkKey.Column'
-          }]
-      }, {
-        ln: 'Styling',
-        tn: null,
-        ps: [{
-            n: 'identifier',
-            rq: true,
-            en: 'Identifier'
-          }, {
-            n: 'title',
-            rq: true,
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            rq: true,
-            en: 'Abstract'
-          }, {
-            n: 'reference',
-            rq: true,
-            en: 'Reference'
-          }, {
-            n: 'schema',
-            en: 'Schema'
           }]
       }, {
         ln: 'FrameworkDatasetDescribeDataType',
@@ -226,7 +211,7 @@ var TJS_1_0_Module_Factory = function () {
             ti: '.FrameworkDatasetDescribeDataType.Dataset'
           }]
       }, {
-        ln: 'TjsCapabilitiesType.WSDL',
+        ln: 'DescribeDatasetsRequest',
         tn: null,
         ps: [{
             n: 'href',
@@ -238,58 +223,78 @@ var TJS_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DescribeFrameworkKeyType.Rowset.Row',
+        ln: 'JoinAbilities.OutputStylings',
         tn: null,
-        ps: [{
-            n: 'k',
-            rq: true,
-            col: true,
-            en: 'K',
-            ti: '.K'
-          }, {
-            n: 'title',
-            en: 'Title'
-          }]
+        bti: '.OutputStylingsType'
       }, {
-        ln: 'FrameworkKey.Column',
+        ln: 'GetCapabilities',
         tn: null,
         ps: [{
-            n: 'name',
+            n: 'acceptVersions',
+            en: 'AcceptVersions',
+            ti: '.GetCapabilities.AcceptVersions'
+          }, {
+            n: 'sections',
+            en: 'Sections',
+            ti: 'OWS_1_1_0.SectionsType'
+          }, {
+            n: 'acceptFormats',
+            en: 'AcceptFormats',
+            ti: 'OWS_1_1_0.AcceptFormatsType'
+          }, {
+            n: 'service',
             rq: true,
+            ti: 'AnySimpleType',
             an: {
-              lp: 'name'
+              lp: 'service'
             },
             t: 'a'
           }, {
-            n: 'type',
-            rq: true,
+            n: 'language',
+            ti: 'AnySimpleType',
             an: {
-              lp: 'type'
+              lp: 'language'
             },
             t: 'a'
           }, {
-            n: 'length',
-            rq: true,
-            ti: 'NonNegativeInteger',
+            n: 'updateSequence',
             an: {
-              lp: 'length'
-            },
-            t: 'a'
-          }, {
-            n: 'decimals',
-            ti: 'NonNegativeInteger',
-            an: {
-              lp: 'decimals'
+              lp: 'updateSequence'
             },
             t: 'a'
           }]
       }, {
-        ln: 'FrameworkDescriptions.Framework',
+        ln: 'Nominal',
         tn: null,
         ps: [{
-            n: 'frameworkURI',
+            n: 'classes',
+            en: 'Classes',
+            ti: '.Nominal.Classes'
+          }, {
+            n: 'exceptions',
+            en: 'Exceptions',
+            ti: '.NominalOrdinalExceptions'
+          }]
+      }, {
+        ln: 'JoinData.MapStyling',
+        tn: null,
+        ps: [{
+            n: 'stylingIdentifier',
             rq: true,
-            en: 'FrameworkURI'
+            en: 'StylingIdentifier',
+            ti: 'AnyType'
+          }, {
+            n: 'stylingURL',
+            rq: true,
+            en: 'StylingURL'
+          }]
+      }, {
+        ln: 'FrameworkDatasetDescribeDataType.Dataset',
+        tn: null,
+        ps: [{
+            n: 'datasetURI',
+            rq: true,
+            en: 'DatasetURI'
           }, {
             n: 'organization',
             rq: true,
@@ -316,20 +321,102 @@ var TJS_1_0_Module_Factory = function () {
             n: 'documentation',
             en: 'Documentation'
           }, {
-            n: 'frameworkKey',
+            n: 'describeDataRequest',
             rq: true,
-            en: 'FrameworkKey',
-            ti: '.FrameworkKey'
+            en: 'DescribeDataRequest',
+            ti: '.DescribeDataRequest'
           }, {
-            n: 'boundingCoordinates',
+            n: 'columnset',
             rq: true,
-            en: 'BoundingCoordinates',
-            ti: '.BoundingCoordinates'
+            en: 'Columnset',
+            ti: '.Columnset'
+          }]
+      }, {
+        ln: 'GDAS.Framework.Dataset',
+        tn: null,
+        ps: [{
+            n: 'datasetURI',
+            rq: true,
+            en: 'DatasetURI'
           }, {
-            n: 'describeDatasetsRequest',
+            n: 'organization',
             rq: true,
-            en: 'DescribeDatasetsRequest',
-            ti: '.DescribeDatasetsRequest'
+            en: 'Organization'
+          }, {
+            n: 'title',
+            rq: true,
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            rq: true,
+            en: 'Abstract',
+            ti: '.AbstractType'
+          }, {
+            n: 'referenceDate',
+            rq: true,
+            en: 'ReferenceDate',
+            ti: '.ReferenceDate'
+          }, {
+            n: 'version',
+            rq: true,
+            en: 'Version'
+          }, {
+            n: 'documentation',
+            en: 'Documentation'
+          }, {
+            n: 'describeDataRequest',
+            rq: true,
+            en: 'DescribeDataRequest',
+            ti: '.DescribeDataRequest'
+          }, {
+            n: 'columnset',
+            rq: true,
+            en: 'Columnset',
+            ti: '.Columnset'
+          }, {
+            n: 'rowset',
+            rq: true,
+            en: 'Rowset',
+            ti: '.Rowset'
+          }]
+      }, {
+        ln: 'JoinData.AttributeData',
+        tn: null,
+        ps: [{
+            n: 'getDataURL',
+            rq: true,
+            en: 'GetDataURL'
+          }, {
+            n: 'getDataXML',
+            rq: true,
+            en: 'GetDataXML',
+            ti: '.JoinData.AttributeData.GetDataXML'
+          }]
+      }, {
+        ln: 'Count',
+        tn: null,
+        ps: [{
+            n: 'uom',
+            rq: true,
+            en: 'UOM',
+            ti: '.UOM'
+          }, {
+            n: 'uncertainty',
+            en: 'Uncertainty',
+            ti: '.Uncertainty'
+          }, {
+            n: 'exceptions',
+            en: 'Exceptions',
+            ti: '.MeasureCountExceptions'
+          }]
+      }, {
+        ln: 'NominalOrdinalExceptions',
+        ps: [{
+            n: '_null',
+            rq: true,
+            col: true,
+            en: 'Null',
+            ti: '.NominalOrdinalExceptions.Null'
           }]
       }, {
         ln: 'GDAS.Framework',
@@ -385,13 +472,112 @@ var TJS_1_0_Module_Factory = function () {
             ti: '.GDAS.Framework.Dataset'
           }]
       }, {
-        ln: 'GetCapabilities.AcceptVersions',
+        ln: 'FrameworkKeyDescription',
         tn: null,
         ps: [{
+            n: 'framework',
+            rq: true,
+            en: 'Framework',
+            ti: '.DescribeFrameworkKeyType'
+          }, {
+            n: 'service',
+            rq: true,
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
             n: 'version',
             rq: true,
-            col: true,
-            en: 'Version'
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'capabilities',
+            rq: true,
+            an: {
+              lp: 'capabilities'
+            },
+            t: 'a'
+          }, {
+            n: 'lang',
+            rq: true,
+            an: {
+              lp: 'lang',
+              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'FrameworkKey.Column',
+        tn: null,
+        ps: [{
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            rq: true,
+            an: {
+              lp: 'type'
+            },
+            t: 'a'
+          }, {
+            n: 'length',
+            rq: true,
+            ti: 'NonNegativeInteger',
+            an: {
+              lp: 'length'
+            },
+            t: 'a'
+          }, {
+            n: 'decimals',
+            ti: 'NonNegativeInteger',
+            an: {
+              lp: 'decimals'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Ordinal.Classes.Value',
+        tn: null,
+        ps: [{
+            n: 'identifier',
+            rq: true,
+            en: 'Identifier'
+          }, {
+            n: 'title',
+            rq: true,
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            rq: true,
+            en: 'Abstract',
+            ti: '.AbstractType'
+          }, {
+            n: 'documentation',
+            en: 'Documentation'
+          }, {
+            n: 'rank',
+            rq: true,
+            ti: 'NonNegativeInteger',
+            an: {
+              lp: 'rank'
+            },
+            t: 'a'
+          }, {
+            n: 'color',
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'color'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'SpatialFrameworks.Framework',
@@ -437,201 +623,16 @@ var TJS_1_0_Module_Factory = function () {
             ti: '.BoundingCoordinates'
           }]
       }, {
-        ln: 'NominalOrdinalExceptions',
-        ps: [{
-            n: '_null',
-            rq: true,
-            col: true,
-            en: 'Null',
-            ti: '.NominalOrdinalExceptions.Null'
-          }]
-      }, {
-        ln: 'FrameworkDatasetDescribeDataType.Dataset',
+        ln: 'TjsCapabilitiesType.WSDL',
         tn: null,
         ps: [{
-            n: 'datasetURI',
-            rq: true,
-            en: 'DatasetURI'
-          }, {
-            n: 'organization',
-            rq: true,
-            en: 'Organization'
-          }, {
-            n: 'title',
-            rq: true,
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            rq: true,
-            en: 'Abstract',
-            ti: '.AbstractType'
-          }, {
-            n: 'referenceDate',
-            rq: true,
-            en: 'ReferenceDate',
-            ti: '.ReferenceDate'
-          }, {
-            n: 'version',
-            rq: true,
-            en: 'Version'
-          }, {
-            n: 'documentation',
-            en: 'Documentation'
-          }, {
-            n: 'describeDataRequest',
-            rq: true,
-            en: 'DescribeDataRequest',
-            ti: '.DescribeDataRequest'
-          }, {
-            n: 'columnset',
-            rq: true,
-            en: 'Columnset',
-            ti: '.Columnset'
-          }]
-      }, {
-        ln: 'JoinData.MapStyling',
-        tn: null,
-        ps: [{
-            n: 'stylingIdentifier',
-            rq: true,
-            en: 'StylingIdentifier',
-            ti: 'AnyType'
-          }, {
-            n: 'stylingURL',
-            rq: true,
-            en: 'StylingURL'
-          }]
-      }, {
-        ln: 'JoinDataResponse.JoinedOutputs',
-        tn: null,
-        ps: [{
-            n: 'output',
-            rq: true,
-            col: true,
-            en: 'Output',
-            ti: '.JoinDataResponse.JoinedOutputs.Output'
-          }]
-      }, {
-        ln: 'RequestBaseType',
-        ps: [{
-            n: 'service',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'language',
-            an: {
-              lp: 'language'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Columnset',
-        tn: null,
-        ps: [{
-            n: 'frameworkKey',
-            rq: true,
-            en: 'FrameworkKey',
-            ti: '.Columnset.FrameworkKey'
-          }, {
-            n: 'attributes',
-            rq: true,
-            en: 'Attributes',
-            ti: '.Columnset.Attributes'
-          }]
-      }, {
-        ln: 'JoinDataResponse',
-        tn: null,
-        ps: [{
-            n: 'status',
-            rq: true,
-            en: 'Status',
-            ti: '.JoinDataResponse.Status'
-          }, {
-            n: 'dataInputs',
-            rq: true,
-            en: 'DataInputs',
-            ti: '.JoinDataResponse.DataInputs'
-          }, {
-            n: 'joinedOutputs',
-            rq: true,
-            en: 'JoinedOutputs',
-            ti: '.JoinDataResponse.JoinedOutputs'
-          }, {
-            n: 'service',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'capabilities',
+            n: 'href',
             rq: true,
             an: {
-              lp: 'capabilities'
+              lp: 'href',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
             t: 'a'
-          }, {
-            n: 'lang',
-            rq: true,
-            an: {
-              lp: 'lang',
-              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'JoinData',
-        tn: null,
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'attributeData',
-            rq: true,
-            en: 'AttributeData',
-            ti: '.JoinData.AttributeData'
-          }, {
-            n: 'mapStyling',
-            en: 'MapStyling',
-            ti: '.JoinData.MapStyling'
-          }, {
-            n: 'classificationURL',
-            en: 'ClassificationURL',
-            ti: 'AnyType'
-          }, {
-            n: 'update',
-            an: {
-              lp: 'update'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescribeDatasets',
-        tn: null,
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'frameworkURI',
-            en: 'FrameworkURI'
-          }, {
-            n: 'datasetURI',
-            en: 'DatasetURI'
           }]
       }, {
         ln: 'DatasetDescriptions.Framework.Dataset',
@@ -672,256 +673,9 @@ var TJS_1_0_Module_Factory = function () {
             ti: '.DescribeDataRequest'
           }]
       }, {
-        ln: 'JoinDataResponse.Status.Failed',
-        tn: null
-      }, {
-        ln: 'AbstractType',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'content',
-            col: true,
-            typed: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'DescribeKey',
-        tn: null,
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'frameworkURI',
-            rq: true,
-            en: 'FrameworkURI'
-          }]
-      }, {
-        ln: 'JoinDataResponse.JoinedOutputs.Output.Resource.Parameter',
+        ln: 'DescribeDataRequest',
         tn: null,
         ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'name',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Ordinal.Classes.Value',
-        tn: null,
-        ps: [{
-            n: 'identifier',
-            rq: true,
-            en: 'Identifier'
-          }, {
-            n: 'title',
-            rq: true,
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            rq: true,
-            en: 'Abstract',
-            ti: '.AbstractType'
-          }, {
-            n: 'documentation',
-            en: 'Documentation'
-          }, {
-            n: 'rank',
-            rq: true,
-            ti: 'NonNegativeInteger',
-            an: {
-              lp: 'rank'
-            },
-            t: 'a'
-          }, {
-            n: 'color',
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'color'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescribeData',
-        tn: null,
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'frameworkURI',
-            en: 'FrameworkURI'
-          }, {
-            n: 'datasetURI',
-            en: 'DatasetURI'
-          }, {
-            n: 'attributes',
-            en: 'Attributes'
-          }]
-      }, {
-        ln: 'FrameworkDescriptions',
-        tn: null,
-        ps: [{
-            n: 'framework',
-            rq: true,
-            col: true,
-            en: 'Framework',
-            ti: '.FrameworkDescriptions.Framework'
-          }, {
-            n: 'service',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'capabilities',
-            rq: true,
-            an: {
-              lp: 'capabilities'
-            },
-            t: 'a'
-          }, {
-            n: 'lang',
-            rq: true,
-            an: {
-              lp: 'lang',
-              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Rowset.Row.V',
-        tn: null,
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'aid',
-            an: {
-              lp: 'aid'
-            },
-            t: 'a'
-          }, {
-            n: '_null',
-            ti: 'Boolean',
-            an: {
-              lp: 'null'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Measure',
-        tn: null,
-        ps: [{
-            n: 'uom',
-            rq: true,
-            en: 'UOM',
-            ti: '.UOM'
-          }, {
-            n: 'uncertainty',
-            en: 'Uncertainty',
-            ti: '.Uncertainty'
-          }, {
-            n: 'exceptions',
-            en: 'Exceptions',
-            ti: '.MeasureCountExceptions'
-          }]
-      }, {
-        ln: 'GDAS',
-        tn: null,
-        ps: [{
-            n: 'framework',
-            rq: true,
-            en: 'Framework',
-            ti: '.GDAS.Framework'
-          }, {
-            n: 'service',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'capabilities',
-            rq: true,
-            an: {
-              lp: 'capabilities'
-            },
-            t: 'a'
-          }, {
-            n: 'lang',
-            rq: true,
-            an: {
-              lp: 'lang',
-              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Nominal.Classes.Value',
-        tn: null,
-        ps: [{
-            n: 'identifier',
-            rq: true,
-            en: 'Identifier'
-          }, {
-            n: 'title',
-            rq: true,
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            rq: true,
-            en: 'Abstract',
-            ti: '.AbstractType'
-          }, {
-            n: 'documentation',
-            en: 'Documentation'
-          }, {
-            n: 'color',
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'color'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'JoinDataResponse.Status',
-        tn: null,
-        ps: [{
-            n: 'accepted',
-            rq: true,
-            en: 'Accepted',
-            ti: 'AnyType'
-          }, {
-            n: 'completed',
-            rq: true,
-            en: 'Completed',
-            ti: 'AnyType'
-          }, {
-            n: 'failed',
-            rq: true,
-            en: 'Failed',
-            ti: '.JoinDataResponse.Status.Failed'
-          }, {
             n: 'href',
             rq: true,
             an: {
@@ -929,139 +683,6 @@ var TJS_1_0_Module_Factory = function () {
               ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
             t: 'a'
-          }, {
-            n: 'creationTime',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'creationTime'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetCapabilities',
-        tn: null,
-        ps: [{
-            n: 'acceptVersions',
-            en: 'AcceptVersions',
-            ti: '.GetCapabilities.AcceptVersions'
-          }, {
-            n: 'sections',
-            en: 'Sections',
-            ti: 'OWS_1_1_0.SectionsType'
-          }, {
-            n: 'acceptFormats',
-            en: 'AcceptFormats',
-            ti: 'OWS_1_1_0.AcceptFormatsType'
-          }, {
-            n: 'service',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'language',
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'language'
-            },
-            t: 'a'
-          }, {
-            n: 'updateSequence',
-            an: {
-              lp: 'updateSequence'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SpatialFrameworks',
-        tn: null,
-        ps: [{
-            n: 'framework',
-            rq: true,
-            col: true,
-            en: 'Framework',
-            ti: '.SpatialFrameworks.Framework'
-          }]
-      }, {
-        ln: 'Nominal.Classes',
-        tn: null,
-        ps: [{
-            n: 'title',
-            rq: true,
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            rq: true,
-            en: 'Abstract',
-            ti: '.AbstractType'
-          }, {
-            n: 'documentation',
-            en: 'Documentation'
-          }, {
-            n: 'value',
-            rq: true,
-            col: true,
-            en: 'Value',
-            ti: '.Nominal.Classes.Value'
-          }]
-      }, {
-        ln: 'JoinData.AttributeData',
-        tn: null,
-        ps: [{
-            n: 'getDataURL',
-            rq: true,
-            en: 'GetDataURL'
-          }, {
-            n: 'getDataXML',
-            rq: true,
-            en: 'GetDataXML',
-            ti: '.JoinData.AttributeData.GetDataXML'
-          }]
-      }, {
-        ln: 'Columnset.FrameworkKey.Column',
-        tn: null,
-        ps: [{
-            n: 'name',
-            rq: true,
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            rq: true,
-            an: {
-              lp: 'type'
-            },
-            t: 'a'
-          }, {
-            n: 'length',
-            rq: true,
-            ti: 'NonNegativeInteger',
-            an: {
-              lp: 'length'
-            },
-            t: 'a'
-          }, {
-            n: 'decimals',
-            ti: 'NonNegativeInteger',
-            an: {
-              lp: 'decimals'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescribeFrameworkKeyType.Rowset',
-        tn: null,
-        ps: [{
-            n: 'row',
-            rq: true,
-            col: true,
-            en: 'Row',
-            ti: '.DescribeFrameworkKeyType.Rowset.Row'
           }]
       }, {
         ln: 'JoinData.AttributeData.GetDataXML',
@@ -1103,82 +724,9 @@ var TJS_1_0_Module_Factory = function () {
             ti: '.Styling'
           }]
       }, {
-        ln: 'GetData',
-        tn: null,
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'frameworkURI',
-            rq: true,
-            en: 'FrameworkURI'
-          }, {
-            n: 'datasetURI',
-            rq: true,
-            en: 'DatasetURI'
-          }, {
-            n: 'attributes',
-            en: 'Attributes'
-          }, {
-            n: 'linkageKeys',
-            en: 'LinkageKeys'
-          }, {
-            n: 'filterColumn',
-            en: 'FilterColumn',
-            ti: 'AnyType'
-          }, {
-            n: 'filterValue',
-            en: 'FilterValue',
-            ti: 'AnyType'
-          }, {
-            n: 'xsl',
-            en: 'XSL',
-            ti: 'AnyType'
-          }, {
-            n: 'aid',
-            ti: 'Boolean',
-            an: {
-              lp: 'aid'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'JoinDataResponse.JoinedOutputs.Output.Resource',
+        ln: 'Ordinal.Classes',
         tn: null,
         ps: [{
-            n: 'url',
-            rq: true,
-            en: 'URL',
-            ti: 'AnyType'
-          }, {
-            n: 'parameter',
-            mno: 0,
-            col: true,
-            en: 'Parameter',
-            ti: '.JoinDataResponse.JoinedOutputs.Output.Resource.Parameter'
-          }]
-      }, {
-        ln: 'GetDataRequest',
-        tn: null,
-        ps: [{
-            n: 'href',
-            rq: true,
-            an: {
-              lp: 'href',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GDAS.Framework.Dataset',
-        tn: null,
-        ps: [{
-            n: 'datasetURI',
-            rq: true,
-            en: 'DatasetURI'
-          }, {
-            n: 'organization',
-            rq: true,
-            en: 'Organization'
-          }, {
             n: 'title',
             rq: true,
             en: 'Title'
@@ -1188,86 +736,17 @@ var TJS_1_0_Module_Factory = function () {
             en: 'Abstract',
             ti: '.AbstractType'
           }, {
-            n: 'referenceDate',
-            rq: true,
-            en: 'ReferenceDate',
-            ti: '.ReferenceDate'
-          }, {
-            n: 'version',
-            rq: true,
-            en: 'Version'
-          }, {
             n: 'documentation',
             en: 'Documentation'
           }, {
-            n: 'describeDataRequest',
-            rq: true,
-            en: 'DescribeDataRequest',
-            ti: '.DescribeDataRequest'
-          }, {
-            n: 'columnset',
-            rq: true,
-            en: 'Columnset',
-            ti: '.Columnset'
-          }, {
-            n: 'rowset',
-            rq: true,
-            en: 'Rowset',
-            ti: '.Rowset'
-          }]
-      }, {
-        ln: 'DatasetDescriptions',
-        tn: null,
-        ps: [{
-            n: 'framework',
+            n: 'value',
             rq: true,
             col: true,
-            en: 'Framework',
-            ti: '.DatasetDescriptions.Framework'
-          }, {
-            n: 'service',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'capabilities',
-            rq: true,
-            an: {
-              lp: 'capabilities'
-            },
-            t: 'a'
-          }, {
-            n: 'lang',
-            rq: true,
-            an: {
-              lp: 'lang',
-              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
-            },
-            t: 'a'
+            en: 'Value',
+            ti: '.Ordinal.Classes.Value'
           }]
       }, {
-        ln: 'Columnset.Attributes',
-        tn: null,
-        ps: [{
-            n: 'column',
-            rq: true,
-            col: true,
-            en: 'Column',
-            ti: '.Columnset.Attributes.Column'
-          }]
-      }, {
-        ln: 'DatasetDescriptions.Framework',
+        ln: 'FrameworkDescriptions.Framework',
         tn: null,
         ps: [{
             n: 'frameworkURI',
@@ -1313,174 +792,12 @@ var TJS_1_0_Module_Factory = function () {
             rq: true,
             en: 'DescribeDatasetsRequest',
             ti: '.DescribeDatasetsRequest'
-          }, {
-            n: 'dataset',
-            rq: true,
-            col: true,
-            en: 'Dataset',
-            ti: '.DatasetDescriptions.Framework.Dataset'
           }]
       }, {
-        ln: 'JoinDataResponse.JoinedOutputs.Output',
-        tn: null,
-        ps: [{
-            n: 'mechanism',
-            rq: true,
-            en: 'Mechanism',
-            ti: '.Mechanism'
-          }, {
-            n: 'resource',
-            rq: true,
-            en: 'Resource',
-            ti: '.JoinDataResponse.JoinedOutputs.Output.Resource'
-          }, {
-            n: 'exceptionReport',
-            rq: true,
-            en: 'ExceptionReport',
-            ti: '.JoinDataResponse.JoinedOutputs.Output.ExceptionReport'
-          }]
+        ln: 'JoinDataResponse.Status.Failed',
+        tn: null
       }, {
-        ln: 'DescribeDataRequest',
-        tn: null,
-        ps: [{
-            n: 'href',
-            rq: true,
-            an: {
-              lp: 'href',
-              ns: 'http:\/\/www.w3.org\/1999\/xlink'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Count',
-        tn: null,
-        ps: [{
-            n: 'uom',
-            rq: true,
-            en: 'UOM',
-            ti: '.UOM'
-          }, {
-            n: 'uncertainty',
-            en: 'Uncertainty',
-            ti: '.Uncertainty'
-          }, {
-            n: 'exceptions',
-            en: 'Exceptions',
-            ti: '.MeasureCountExceptions'
-          }]
-      }, {
-        ln: 'FrameworkKeyDescription',
-        tn: null,
-        ps: [{
-            n: 'framework',
-            rq: true,
-            en: 'Framework',
-            ti: '.DescribeFrameworkKeyType'
-          }, {
-            n: 'service',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'capabilities',
-            rq: true,
-            an: {
-              lp: 'capabilities'
-            },
-            t: 'a'
-          }, {
-            n: 'lang',
-            rq: true,
-            an: {
-              lp: 'lang',
-              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescribeFrameworkKeyType',
-        ps: [{
-            n: 'frameworkURI',
-            rq: true,
-            en: 'FrameworkURI'
-          }, {
-            n: 'organization',
-            rq: true,
-            en: 'Organization'
-          }, {
-            n: 'title',
-            rq: true,
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            rq: true,
-            en: 'Abstract',
-            ti: '.AbstractType'
-          }, {
-            n: 'referenceDate',
-            rq: true,
-            en: 'ReferenceDate',
-            ti: '.ReferenceDate'
-          }, {
-            n: 'version',
-            rq: true,
-            en: 'Version'
-          }, {
-            n: 'documentation',
-            en: 'Documentation'
-          }, {
-            n: 'frameworkKey',
-            rq: true,
-            en: 'FrameworkKey',
-            ti: '.FrameworkKey'
-          }, {
-            n: 'boundingCoordinates',
-            rq: true,
-            en: 'BoundingCoordinates',
-            ti: '.BoundingCoordinates'
-          }, {
-            n: 'rowset',
-            rq: true,
-            en: 'Rowset',
-            ti: '.DescribeFrameworkKeyType.Rowset'
-          }]
-      }, {
-        ln: 'Rowset',
-        tn: null,
-        ps: [{
-            n: 'row',
-            rq: true,
-            col: true,
-            en: 'Row',
-            ti: '.Rowset.Row'
-          }]
-      }, {
-        ln: 'K',
-        tn: null,
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'aid',
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'aid'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'NominalOrdinalExceptions.Null',
+        ln: 'Nominal.Classes.Value',
         tn: null,
         ps: [{
             n: 'identifier',
@@ -1507,30 +824,88 @@ var TJS_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Columnset.FrameworkKey',
+        ln: 'Nominal.Classes',
         tn: null,
         ps: [{
-            n: 'column',
+            n: 'title',
+            rq: true,
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            rq: true,
+            en: 'Abstract',
+            ti: '.AbstractType'
+          }, {
+            n: 'documentation',
+            en: 'Documentation'
+          }, {
+            n: 'value',
             rq: true,
             col: true,
-            en: 'Column',
-            ti: '.Columnset.FrameworkKey.Column'
-          }, {
-            n: 'relationship',
+            en: 'Value',
+            ti: '.Nominal.Classes.Value'
+          }]
+      }, {
+        ln: 'MeasureCountExceptions',
+        ps: [{
+            n: '_null',
             rq: true,
-            ti: 'AnySimpleType',
+            col: true,
+            en: 'Null',
+            ti: '.MeasureCountExceptions.Null'
+          }]
+      }, {
+        ln: 'JoinDataResponse.DataInputs',
+        tn: null,
+        ps: [{
+            n: 'framework',
+            rq: true,
+            en: 'Framework',
+            ti: '.FrameworkDatasetDescribeDataType'
+          }]
+      }, {
+        ln: 'Rowset.Row.V',
+        tn: null,
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'aid',
             an: {
-              lp: 'relationship'
+              lp: 'aid'
             },
             t: 'a'
           }, {
-            n: 'complete',
-            rq: true,
-            ti: 'AnySimpleType',
+            n: '_null',
+            ti: 'Boolean',
             an: {
-              lp: 'complete'
+              lp: 'null'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'BoundingCoordinates',
+        tn: null,
+        ps: [{
+            n: 'north',
+            rq: true,
+            en: 'North',
+            ti: 'Decimal'
+          }, {
+            n: 'south',
+            rq: true,
+            en: 'South',
+            ti: 'Decimal'
+          }, {
+            n: 'east',
+            rq: true,
+            en: 'East',
+            ti: 'Decimal'
+          }, {
+            n: 'west',
+            rq: true,
+            en: 'West',
+            ti: 'Decimal'
           }]
       }, {
         ln: 'Uncertainty',
@@ -1547,40 +922,69 @@ var TJS_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'JoinDataResponse.JoinedOutputs.Output.ExceptionReport',
+        ln: 'Columnset.Attributes',
         tn: null,
         ps: [{
-            n: 'exception',
+            n: 'column',
             rq: true,
-            en: {
-              lp: 'Exception',
-              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            col: true,
+            en: 'Column',
+            ti: '.Columnset.Attributes.Column'
+          }]
+      }, {
+        ln: 'Mechanism',
+        tn: null,
+        ps: [{
+            n: 'identifier',
+            rq: true,
+            en: 'Identifier'
+          }, {
+            n: 'title',
+            rq: true,
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            rq: true,
+            en: 'Abstract'
+          }, {
+            n: 'reference',
+            rq: true,
+            en: 'Reference'
+          }]
+      }, {
+        ln: 'JoinDataResponse.Status',
+        tn: null,
+        ps: [{
+            n: 'accepted',
+            rq: true,
+            en: 'Accepted',
+            ti: 'AnyType'
+          }, {
+            n: 'completed',
+            rq: true,
+            en: 'Completed',
+            ti: 'AnyType'
+          }, {
+            n: 'failed',
+            rq: true,
+            en: 'Failed',
+            ti: '.JoinDataResponse.Status.Failed'
+          }, {
+            n: 'href',
+            rq: true,
+            an: {
+              lp: 'href',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
             },
-            ti: 'OWS_1_1_0.ExceptionType'
-          }]
-      }, {
-        ln: 'Ordinal',
-        tn: null,
-        ps: [{
-            n: 'classes',
-            en: 'Classes',
-            ti: '.Ordinal.Classes'
+            t: 'a'
           }, {
-            n: 'exceptions',
-            en: 'Exceptions',
-            ti: '.NominalOrdinalExceptions'
-          }]
-      }, {
-        ln: 'Nominal',
-        tn: null,
-        ps: [{
-            n: 'classes',
-            en: 'Classes',
-            ti: '.Nominal.Classes'
-          }, {
-            n: 'exceptions',
-            en: 'Exceptions',
-            ti: '.NominalOrdinalExceptions'
+            n: 'creationTime',
+            rq: true,
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'creationTime'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'ReferenceDate',
@@ -1642,6 +1046,40 @@ var TJS_1_0_Module_Factory = function () {
             rq: true,
             en: 'Dataset',
             ti: '.Dataset'
+          }]
+      }, {
+        ln: 'JoinDataResponse.JoinedOutputs',
+        tn: null,
+        ps: [{
+            n: 'output',
+            rq: true,
+            col: true,
+            en: 'Output',
+            ti: '.JoinDataResponse.JoinedOutputs.Output'
+          }]
+      }, {
+        ln: 'OutputMechanismsType',
+        ps: [{
+            n: 'mechanism',
+            rq: true,
+            col: true,
+            en: 'Mechanism',
+            ti: '.Mechanism'
+          }]
+      }, {
+        ln: 'JoinDataResponse.JoinedOutputs.Output.Resource.Parameter',
+        tn: null,
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'name',
+            rq: true,
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'TjsCapabilitiesType',
@@ -1707,30 +1145,6 @@ var TJS_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Values',
-        tn: null,
-        ps: [{
-            n: 'nominal',
-            rq: true,
-            en: 'Nominal',
-            ti: '.Nominal'
-          }, {
-            n: 'ordinal',
-            rq: true,
-            en: 'Ordinal',
-            ti: '.Ordinal'
-          }, {
-            n: 'count',
-            rq: true,
-            en: 'Count',
-            ti: '.Count'
-          }, {
-            n: 'measure',
-            rq: true,
-            en: 'Measure',
-            ti: '.Measure'
-          }]
-      }, {
         ln: 'UOM',
         tn: null,
         ps: [{
@@ -1752,9 +1166,73 @@ var TJS_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'JoinAbilities.OutputStylings',
+        ln: 'DatasetDescriptions.Framework',
         tn: null,
-        bti: '.OutputStylingsType'
+        ps: [{
+            n: 'frameworkURI',
+            rq: true,
+            en: 'FrameworkURI'
+          }, {
+            n: 'organization',
+            rq: true,
+            en: 'Organization'
+          }, {
+            n: 'title',
+            rq: true,
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            rq: true,
+            en: 'Abstract',
+            ti: '.AbstractType'
+          }, {
+            n: 'referenceDate',
+            rq: true,
+            en: 'ReferenceDate',
+            ti: '.ReferenceDate'
+          }, {
+            n: 'version',
+            rq: true,
+            en: 'Version'
+          }, {
+            n: 'documentation',
+            en: 'Documentation'
+          }, {
+            n: 'frameworkKey',
+            rq: true,
+            en: 'FrameworkKey',
+            ti: '.FrameworkKey'
+          }, {
+            n: 'boundingCoordinates',
+            rq: true,
+            en: 'BoundingCoordinates',
+            ti: '.BoundingCoordinates'
+          }, {
+            n: 'describeDatasetsRequest',
+            rq: true,
+            en: 'DescribeDatasetsRequest',
+            ti: '.DescribeDatasetsRequest'
+          }, {
+            n: 'dataset',
+            rq: true,
+            col: true,
+            en: 'Dataset',
+            ti: '.DatasetDescriptions.Framework.Dataset'
+          }]
+      }, {
+        ln: 'K',
+        tn: null,
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'aid',
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'aid'
+            },
+            t: 'a'
+          }]
       }, {
         ln: 'JoinAbilities',
         tn: null,
@@ -1822,6 +1300,557 @@ var TJS_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'DescribeFrameworkKeyType.Rowset.Row',
+        tn: null,
+        ps: [{
+            n: 'k',
+            rq: true,
+            col: true,
+            en: 'K',
+            ti: '.K'
+          }, {
+            n: 'title',
+            en: 'Title'
+          }]
+      }, {
+        ln: 'DescribeFrameworkKeyType',
+        ps: [{
+            n: 'frameworkURI',
+            rq: true,
+            en: 'FrameworkURI'
+          }, {
+            n: 'organization',
+            rq: true,
+            en: 'Organization'
+          }, {
+            n: 'title',
+            rq: true,
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            rq: true,
+            en: 'Abstract',
+            ti: '.AbstractType'
+          }, {
+            n: 'referenceDate',
+            rq: true,
+            en: 'ReferenceDate',
+            ti: '.ReferenceDate'
+          }, {
+            n: 'version',
+            rq: true,
+            en: 'Version'
+          }, {
+            n: 'documentation',
+            en: 'Documentation'
+          }, {
+            n: 'frameworkKey',
+            rq: true,
+            en: 'FrameworkKey',
+            ti: '.FrameworkKey'
+          }, {
+            n: 'boundingCoordinates',
+            rq: true,
+            en: 'BoundingCoordinates',
+            ti: '.BoundingCoordinates'
+          }, {
+            n: 'rowset',
+            rq: true,
+            en: 'Rowset',
+            ti: '.DescribeFrameworkKeyType.Rowset'
+          }]
+      }, {
+        ln: 'FrameworkDescriptions',
+        tn: null,
+        ps: [{
+            n: 'framework',
+            rq: true,
+            col: true,
+            en: 'Framework',
+            ti: '.FrameworkDescriptions.Framework'
+          }, {
+            n: 'service',
+            rq: true,
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            rq: true,
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'capabilities',
+            rq: true,
+            an: {
+              lp: 'capabilities'
+            },
+            t: 'a'
+          }, {
+            n: 'lang',
+            rq: true,
+            an: {
+              lp: 'lang',
+              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribeFrameworkKeyType.Rowset',
+        tn: null,
+        ps: [{
+            n: 'row',
+            rq: true,
+            col: true,
+            en: 'Row',
+            ti: '.DescribeFrameworkKeyType.Rowset.Row'
+          }]
+      }, {
+        ln: 'DescribeDatasets',
+        tn: null,
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'frameworkURI',
+            en: 'FrameworkURI'
+          }, {
+            n: 'datasetURI',
+            en: 'DatasetURI'
+          }]
+      }, {
+        ln: 'NominalOrdinalExceptions.Null',
+        tn: null,
+        ps: [{
+            n: 'identifier',
+            rq: true,
+            en: 'Identifier'
+          }, {
+            n: 'title',
+            rq: true,
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            rq: true,
+            en: 'Abstract',
+            ti: '.AbstractType'
+          }, {
+            n: 'documentation',
+            en: 'Documentation'
+          }, {
+            n: 'color',
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'color'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Columnset',
+        tn: null,
+        ps: [{
+            n: 'frameworkKey',
+            rq: true,
+            en: 'FrameworkKey',
+            ti: '.Columnset.FrameworkKey'
+          }, {
+            n: 'attributes',
+            rq: true,
+            en: 'Attributes',
+            ti: '.Columnset.Attributes'
+          }]
+      }, {
+        ln: 'DescribeKey',
+        tn: null,
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'frameworkURI',
+            rq: true,
+            en: 'FrameworkURI'
+          }]
+      }, {
+        ln: 'GetDataRequest',
+        tn: null,
+        ps: [{
+            n: 'href',
+            rq: true,
+            an: {
+              lp: 'href',
+              ns: 'http:\/\/www.w3.org\/1999\/xlink'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TjsCapabilitiesType.Languages',
+        tn: null,
+        ps: [{
+            n: 'language',
+            rq: true,
+            col: true,
+            en: {
+              lp: 'Language',
+              ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+            },
+            ti: 'Language'
+          }]
+      }, {
+        ln: 'JoinDataResponse',
+        tn: null,
+        ps: [{
+            n: 'status',
+            rq: true,
+            en: 'Status',
+            ti: '.JoinDataResponse.Status'
+          }, {
+            n: 'dataInputs',
+            rq: true,
+            en: 'DataInputs',
+            ti: '.JoinDataResponse.DataInputs'
+          }, {
+            n: 'joinedOutputs',
+            rq: true,
+            en: 'JoinedOutputs',
+            ti: '.JoinDataResponse.JoinedOutputs'
+          }, {
+            n: 'service',
+            rq: true,
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            rq: true,
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'capabilities',
+            rq: true,
+            an: {
+              lp: 'capabilities'
+            },
+            t: 'a'
+          }, {
+            n: 'lang',
+            rq: true,
+            an: {
+              lp: 'lang',
+              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribeFrameworks',
+        tn: null,
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'frameworkURI',
+            en: 'FrameworkURI'
+          }]
+      }, {
+        ln: 'Columnset.FrameworkKey',
+        tn: null,
+        ps: [{
+            n: 'column',
+            rq: true,
+            col: true,
+            en: 'Column',
+            ti: '.Columnset.FrameworkKey.Column'
+          }, {
+            n: 'relationship',
+            rq: true,
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'relationship'
+            },
+            t: 'a'
+          }, {
+            n: 'complete',
+            rq: true,
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'complete'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetData',
+        tn: null,
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'frameworkURI',
+            rq: true,
+            en: 'FrameworkURI'
+          }, {
+            n: 'datasetURI',
+            rq: true,
+            en: 'DatasetURI'
+          }, {
+            n: 'attributes',
+            en: 'Attributes'
+          }, {
+            n: 'linkageKeys',
+            en: 'LinkageKeys'
+          }, {
+            n: 'filterColumn',
+            en: 'FilterColumn',
+            ti: 'AnyType'
+          }, {
+            n: 'filterValue',
+            en: 'FilterValue',
+            ti: 'AnyType'
+          }, {
+            n: 'xsl',
+            en: 'XSL',
+            ti: 'AnyType'
+          }, {
+            n: 'aid',
+            ti: 'Boolean',
+            an: {
+              lp: 'aid'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Dataset',
+        tn: null,
+        ps: [{
+            n: 'datasetURI',
+            rq: true,
+            en: 'DatasetURI'
+          }, {
+            n: 'organization',
+            rq: true,
+            en: 'Organization'
+          }, {
+            n: 'title',
+            rq: true,
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            rq: true,
+            en: 'Abstract',
+            ti: '.AbstractType'
+          }, {
+            n: 'referenceDate',
+            rq: true,
+            en: 'ReferenceDate',
+            ti: '.ReferenceDate'
+          }, {
+            n: 'version',
+            rq: true,
+            en: 'Version'
+          }, {
+            n: 'documentation',
+            en: 'Documentation'
+          }, {
+            n: 'columnset',
+            rq: true,
+            en: 'Columnset',
+            ti: '.Columnset'
+          }, {
+            n: 'rowset',
+            rq: true,
+            en: 'Rowset',
+            ti: '.Rowset'
+          }]
+      }, {
+        ln: 'DescribeData',
+        tn: null,
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'frameworkURI',
+            en: 'FrameworkURI'
+          }, {
+            n: 'datasetURI',
+            en: 'DatasetURI'
+          }, {
+            n: 'attributes',
+            en: 'Attributes'
+          }]
+      }, {
+        ln: 'RequestBaseType',
+        ps: [{
+            n: 'service',
+            rq: true,
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'language',
+            an: {
+              lp: 'language'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'FrameworkKey',
+        tn: null,
+        ps: [{
+            n: 'column',
+            rq: true,
+            col: true,
+            en: 'Column',
+            ti: '.FrameworkKey.Column'
+          }]
+      }, {
+        ln: 'Styling',
+        tn: null,
+        ps: [{
+            n: 'identifier',
+            rq: true,
+            en: 'Identifier'
+          }, {
+            n: 'title',
+            rq: true,
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            rq: true,
+            en: 'Abstract'
+          }, {
+            n: 'reference',
+            rq: true,
+            en: 'Reference'
+          }, {
+            n: 'schema',
+            en: 'Schema'
+          }]
+      }, {
+        ln: 'JoinDataResponse.JoinedOutputs.Output',
+        tn: null,
+        ps: [{
+            n: 'mechanism',
+            rq: true,
+            en: 'Mechanism',
+            ti: '.Mechanism'
+          }, {
+            n: 'resource',
+            rq: true,
+            en: 'Resource',
+            ti: '.JoinDataResponse.JoinedOutputs.Output.Resource'
+          }, {
+            n: 'exceptionReport',
+            rq: true,
+            en: 'ExceptionReport',
+            ti: '.JoinDataResponse.JoinedOutputs.Output.ExceptionReport'
+          }]
+      }, {
+        ln: 'Rowset.Row',
+        tn: null,
+        ps: [{
+            n: 'k',
+            rq: true,
+            col: true,
+            en: 'K',
+            ti: '.K'
+          }, {
+            n: 'v',
+            rq: true,
+            col: true,
+            en: 'V',
+            ti: '.Rowset.Row.V'
+          }]
+      }, {
+        ln: 'Columnset.FrameworkKey.Column',
+        tn: null,
+        ps: [{
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            rq: true,
+            an: {
+              lp: 'type'
+            },
+            t: 'a'
+          }, {
+            n: 'length',
+            rq: true,
+            ti: 'NonNegativeInteger',
+            an: {
+              lp: 'length'
+            },
+            t: 'a'
+          }, {
+            n: 'decimals',
+            ti: 'NonNegativeInteger',
+            an: {
+              lp: 'decimals'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DataDescriptions',
+        tn: null,
+        ps: [{
+            n: 'framework',
+            rq: true,
+            col: true,
+            en: 'Framework',
+            ti: '.FrameworkDatasetDescribeDataType'
+          }, {
+            n: 'service',
+            rq: true,
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            rq: true,
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'capabilities',
+            rq: true,
+            an: {
+              lp: 'capabilities'
+            },
+            t: 'a'
+          }, {
+            n: 'lang',
+            rq: true,
+            an: {
+              lp: 'lang',
+              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Rowset',
+        tn: null,
+        ps: [{
+            n: 'row',
+            rq: true,
+            col: true,
+            en: 'Row',
+            ti: '.Rowset.Row'
+          }]
+      }, {
         ln: 'Columnset.Attributes.Column',
         tn: null,
         ps: [{
@@ -1884,115 +1913,106 @@ var TJS_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Mechanism',
+        ln: 'GDAS',
         tn: null,
         ps: [{
-            n: 'identifier',
+            n: 'framework',
             rq: true,
-            en: 'Identifier'
+            en: 'Framework',
+            ti: '.GDAS.Framework'
           }, {
-            n: 'title',
+            n: 'service',
             rq: true,
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            rq: true,
-            en: 'Abstract'
-          }, {
-            n: 'reference',
-            rq: true,
-            en: 'Reference'
-          }]
-      }, {
-        ln: 'Ordinal.Classes',
-        tn: null,
-        ps: [{
-            n: 'title',
-            rq: true,
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            rq: true,
-            en: 'Abstract',
-            ti: '.AbstractType'
-          }, {
-            n: 'documentation',
-            en: 'Documentation'
-          }, {
-            n: 'value',
-            rq: true,
-            col: true,
-            en: 'Value',
-            ti: '.Ordinal.Classes.Value'
-          }]
-      }, {
-        ln: 'MeasureCountExceptions',
-        ps: [{
-            n: '_null',
-            rq: true,
-            col: true,
-            en: 'Null',
-            ti: '.MeasureCountExceptions.Null'
-          }]
-      }, {
-        ln: 'Dataset',
-        tn: null,
-        ps: [{
-            n: 'datasetURI',
-            rq: true,
-            en: 'DatasetURI'
-          }, {
-            n: 'organization',
-            rq: true,
-            en: 'Organization'
-          }, {
-            n: 'title',
-            rq: true,
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            rq: true,
-            en: 'Abstract',
-            ti: '.AbstractType'
-          }, {
-            n: 'referenceDate',
-            rq: true,
-            en: 'ReferenceDate',
-            ti: '.ReferenceDate'
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
           }, {
             n: 'version',
             rq: true,
-            en: 'Version'
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
           }, {
-            n: 'documentation',
-            en: 'Documentation'
-          }, {
-            n: 'columnset',
+            n: 'capabilities',
             rq: true,
-            en: 'Columnset',
-            ti: '.Columnset'
+            an: {
+              lp: 'capabilities'
+            },
+            t: 'a'
           }, {
-            n: 'rowset',
+            n: 'lang',
             rq: true,
-            en: 'Rowset',
-            ti: '.Rowset'
+            an: {
+              lp: 'lang',
+              ns: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'Rowset.Row',
+        ln: 'Measure',
         tn: null,
         ps: [{
-            n: 'k',
+            n: 'uom',
             rq: true,
-            col: true,
-            en: 'K',
-            ti: '.K'
+            en: 'UOM',
+            ti: '.UOM'
           }, {
-            n: 'v',
-            rq: true,
-            col: true,
-            en: 'V',
-            ti: '.Rowset.Row.V'
+            n: 'uncertainty',
+            en: 'Uncertainty',
+            ti: '.Uncertainty'
+          }, {
+            n: 'exceptions',
+            en: 'Exceptions',
+            ti: '.MeasureCountExceptions'
           }]
+      }, {
+        ln: 'Values',
+        tn: null,
+        ps: [{
+            n: 'nominal',
+            rq: true,
+            en: 'Nominal',
+            ti: '.Nominal'
+          }, {
+            n: 'ordinal',
+            rq: true,
+            en: 'Ordinal',
+            ti: '.Ordinal'
+          }, {
+            n: 'count',
+            rq: true,
+            en: 'Count',
+            ti: '.Count'
+          }, {
+            n: 'measure',
+            rq: true,
+            en: 'Measure',
+            ti: '.Measure'
+          }]
+      }, {
+        t: 'enum',
+        ln: 'DescribeDataValueType',
+        vs: ['DescribeData']
+      }, {
+        t: 'enum',
+        ln: 'DescribeJoinAbilitiesValueType',
+        vs: ['DescribeJoinAbilities']
+      }, {
+        t: 'enum',
+        ln: 'DescribeKeyValueType',
+        vs: ['DescribeKey']
+      }, {
+        t: 'enum',
+        ln: 'GetCapabilitiesValueType',
+        vs: ['GetCapabilities']
+      }, {
+        t: 'enum',
+        ln: 'RequestServiceType',
+        vs: ['TJS']
       }, {
         t: 'enum',
         ln: 'GetDataValueType',
@@ -2003,103 +2023,62 @@ var TJS_1_0_Module_Factory = function () {
         vs: ['1.0']
       }, {
         t: 'enum',
-        ln: 'GetCapabilitiesValueType',
-        vs: ['GetCapabilities']
-      }, {
-        t: 'enum',
-        ln: 'DescribeJoinAbilitiesValueType',
-        vs: ['DescribeJoinAbilities']
+        ln: 'DescribeDatasetsValueType',
+        vs: ['DescribeDatasets']
       }, {
         t: 'enum',
         ln: 'JoinDataValueType',
         vs: ['JoinData']
       }, {
         t: 'enum',
-        ln: 'DescribeKeyValueType',
-        vs: ['DescribeKey']
-      }, {
-        t: 'enum',
         ln: 'DescribeFrameworksValueType',
         vs: ['DescribeFrameworks']
-      }, {
-        t: 'enum',
-        ln: 'DescribeDatasetsValueType',
-        vs: ['DescribeDatasets']
-      }, {
-        t: 'enum',
-        ln: 'DescribeDataValueType',
-        vs: ['DescribeData']
-      }, {
-        t: 'enum',
-        ln: 'RequestServiceType',
-        vs: ['TJS']
       }],
     eis: [{
-        en: 'AttributeLimit',
-        ti: 'PositiveInteger'
+        en: 'DescribeDataRequest',
+        ti: '.DescribeDataRequest'
+      }, {
+        en: 'Documentation'
       }, {
         en: 'Capabilities',
         ti: '.TjsCapabilitiesType'
       }, {
-        en: 'DescribeDatasetsRequest',
-        ti: '.DescribeDatasetsRequest'
-      }, {
-        en: 'DatasetURI'
-      }, {
-        en: 'Count',
-        ti: '.Count'
-      }, {
-        en: 'SpatialFrameworks',
-        ti: '.SpatialFrameworks'
-      }, {
-        en: 'Mechanism',
-        ti: '.Mechanism'
-      }, {
-        en: 'GetDataRequest',
-        ti: '.GetDataRequest'
-      }, {
-        en: 'FrameworkURI'
-      }, {
-        en: 'Documentation'
-      }, {
-        en: 'Nominal',
-        ti: '.Nominal'
-      }, {
-        en: 'DescribeDataRequest',
-        ti: '.DescribeDataRequest'
+        en: 'Rowset',
+        ti: '.Rowset'
       }, {
         en: 'Columnset',
         ti: '.Columnset'
       }, {
-        en: 'Uncertainty',
-        ti: '.Uncertainty'
+        en: 'Count',
+        ti: '.Count'
+      }, {
+        en: 'AttributeLimit',
+        ti: 'PositiveInteger'
+      }, {
+        en: 'GetDataRequest',
+        ti: '.GetDataRequest'
       }, {
         en: 'Title'
       }, {
-        en: 'DataDescriptions',
-        ti: '.DataDescriptions'
-      }, {
-        en: 'FrameworkDescriptions',
-        ti: '.FrameworkDescriptions'
+        en: 'GetCapabilities',
+        ti: '.GetCapabilities'
       }, {
         en: 'Ordinal',
         ti: '.Ordinal'
       }, {
-        en: 'Styling',
-        ti: '.Styling'
-      }, {
-        en: 'JoinDataResponse',
-        ti: '.JoinDataResponse'
-      }, {
-        en: 'FrameworkKeyDescription',
-        ti: '.FrameworkKeyDescription'
-      }, {
         en: 'Attributes'
       }, {
-        en: 'Values',
-        ti: '.Values'
+        en: 'FrameworkDescriptions',
+        ti: '.FrameworkDescriptions'
       }, {
-        en: 'Organization'
+        en: 'Nominal',
+        ti: '.Nominal'
+      }, {
+        en: 'DescribeDatasetsRequest',
+        ti: '.DescribeDatasetsRequest'
+      }, {
+        en: 'Uncertainty',
+        ti: '.Uncertainty'
       }, {
         en: 'DescribeKey',
         ti: '.DescribeKey'
@@ -2110,67 +2089,88 @@ var TJS_1_0_Module_Factory = function () {
         en: 'Framework',
         ti: '.Framework'
       }, {
-        en: 'Measure',
-        ti: '.Measure'
-      }, {
-        en: 'DescribeJoinAbilities',
-        ti: '.RequestBaseType'
-      }, {
-        en: 'K',
-        ti: '.K'
-      }, {
-        en: 'GetData',
-        ti: '.GetData'
-      }, {
-        en: 'Rowset',
-        ti: '.Rowset'
-      }, {
-        en: 'BoundingCoordinates',
-        ti: '.BoundingCoordinates'
-      }, {
-        en: 'DescribeDatasets',
-        ti: '.DescribeDatasets'
-      }, {
-        en: 'Version'
-      }, {
-        en: 'Abstract',
-        ti: '.AbstractType'
-      }, {
-        en: 'DataClass'
+        en: 'SpatialFrameworks',
+        ti: '.SpatialFrameworks'
       }, {
         en: 'ReferenceDate',
         ti: '.ReferenceDate'
       }, {
-        en: 'FrameworkKey',
-        ti: '.FrameworkKey'
-      }, {
-        en: 'GetCapabilities',
-        ti: '.GetCapabilities'
-      }, {
-        en: 'JoinAbilities',
-        ti: '.JoinAbilities'
-      }, {
-        en: 'LinkageKeys'
-      }, {
-        en: 'GDAS',
-        ti: '.GDAS'
-      }, {
-        en: 'Identifier'
-      }, {
         en: 'DescribeFrameworks',
         ti: '.DescribeFrameworks'
-      }, {
-        en: 'UOM',
-        ti: '.UOM'
-      }, {
-        en: 'DatasetDescriptions',
-        ti: '.DatasetDescriptions'
       }, {
         en: 'Dataset',
         ti: '.Dataset'
       }, {
+        en: 'BoundingCoordinates',
+        ti: '.BoundingCoordinates'
+      }, {
+        en: 'FrameworkKeyDescription',
+        ti: '.FrameworkKeyDescription'
+      }, {
+        en: 'DescribeJoinAbilities',
+        ti: '.RequestBaseType'
+      }, {
+        en: 'JoinDataResponse',
+        ti: '.JoinDataResponse'
+      }, {
+        en: 'DatasetDescriptions',
+        ti: '.DatasetDescriptions'
+      }, {
+        en: 'Version'
+      }, {
         en: 'DescribeData',
         ti: '.DescribeData'
+      }, {
+        en: 'GetData',
+        ti: '.GetData'
+      }, {
+        en: 'UOM',
+        ti: '.UOM'
+      }, {
+        en: 'DescribeDatasets',
+        ti: '.DescribeDatasets'
+      }, {
+        en: 'DatasetURI'
+      }, {
+        en: 'LinkageKeys'
+      }, {
+        en: 'Abstract',
+        ti: '.AbstractType'
+      }, {
+        en: 'JoinAbilities',
+        ti: '.JoinAbilities'
+      }, {
+        en: 'FrameworkKey',
+        ti: '.FrameworkKey'
+      }, {
+        en: 'K',
+        ti: '.K'
+      }, {
+        en: 'Values',
+        ti: '.Values'
+      }, {
+        en: 'DataClass'
+      }, {
+        en: 'GDAS',
+        ti: '.GDAS'
+      }, {
+        en: 'Styling',
+        ti: '.Styling'
+      }, {
+        en: 'FrameworkURI'
+      }, {
+        en: 'Identifier'
+      }, {
+        en: 'DataDescriptions',
+        ti: '.DataDescriptions'
+      }, {
+        en: 'Mechanism',
+        ti: '.Mechanism'
+      }, {
+        en: 'Measure',
+        ti: '.Measure'
+      }, {
+        en: 'Organization'
       }]
   };
   return {

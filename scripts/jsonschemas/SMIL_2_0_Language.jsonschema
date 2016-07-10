@@ -2,403 +2,6 @@
 {
     "id":"http://www.w3.org/2001/SMIL20/Language#",
     "definitions":{
-        "AnimateColorType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/AnimateColorPrototype"
-                },
-                {
-                    "type":"object",
-                    "title":"AnimateColorType",
-                    "properties":{
-                        "otherAttributes":{
-                            "title":"otherAttributes",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "additionalProperties":{
-                                        "type":"string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"anyAttribute"
-                        },
-                        "any":{
-                            "title":"any",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "anyOf":[
-                                            {
-                                                "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
-                                            },
-                                            {
-                                                "type":"object",
-                                                "properties":{
-                                                    "name":{
-                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                                    },
-                                                    "value":{
-                                                    }
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"anyElement"
-                        },
-                        "id":{
-                            "title":"id",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"id",
-                                "namespaceURI":""
-                            }
-                        },
-                        "clazz":{
-                            "title":"clazz",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"class",
-                                "namespaceURI":""
-                            }
-                        },
-                        "lang":{
-                            "title":"lang",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"lang",
-                                "namespaceURI":"http://www.w3.org/XML/1998/namespace"
-                            }
-                        },
-                        "alt":{
-                            "title":"alt",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"alt",
-                                "namespaceURI":""
-                            }
-                        },
-                        "longdesc":{
-                            "title":"longdesc",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"longdesc",
-                                "namespaceURI":""
-                            }
-                        },
-                        "targetElement":{
-                            "title":"targetElement",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"targetElement",
-                                "namespaceURI":""
-                            }
-                        },
-                        "skipContent":{
-                            "title":"skipContent",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"skip-content",
-                                "namespaceURI":""
-                            }
-                        },
-                        "calcMode":{
-                            "title":"calcMode",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"calcMode",
-                                "namespaceURI":""
-                            }
-                        },
-                        "syncBehavior":{
-                            "title":"syncBehavior",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/SyncBehaviorType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"syncBehavior",
-                                "namespaceURI":""
-                            }
-                        },
-                        "syncTolerance":{
-                            "title":"syncTolerance",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"syncTolerance",
-                                "namespaceURI":""
-                            }
-                        },
-                        "fill":{
-                            "title":"fill",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillTimingAttrsType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"fill",
-                                "namespaceURI":""
-                            }
-                        },
-                        "syncBehaviorDefault":{
-                            "title":"syncBehaviorDefault",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/SyncBehaviorDefaultType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"syncBehaviorDefault",
-                                "namespaceURI":""
-                            }
-                        },
-                        "syncToleranceDefault":{
-                            "title":"syncToleranceDefault",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"syncToleranceDefault",
-                                "namespaceURI":""
-                            }
-                        },
-                        "restart":{
-                            "title":"restart",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/RestartTimingType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"restart",
-                                "namespaceURI":""
-                            }
-                        },
-                        "begin":{
-                            "title":"begin",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"begin",
-                                "namespaceURI":""
-                            }
-                        },
-                        "end":{
-                            "title":"end",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"end",
-                                "namespaceURI":""
-                            }
-                        },
-                        "repeat":{
-                            "title":"repeat",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"repeat",
-                                "namespaceURI":""
-                            }
-                        },
-                        "dur":{
-                            "title":"dur",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"dur",
-                                "namespaceURI":""
-                            }
-                        },
-                        "min":{
-                            "title":"min",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"min",
-                                "namespaceURI":""
-                            }
-                        },
-                        "max":{
-                            "title":"max",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"max",
-                                "namespaceURI":""
-                            }
-                        },
-                        "repeatDur":{
-                            "title":"repeatDur",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"repeatDur",
-                                "namespaceURI":""
-                            }
-                        },
-                        "repeatCount":{
-                            "title":"repeatCount",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"repeatCount",
-                                "namespaceURI":""
-                            }
-                        },
-                        "fillDefault":{
-                            "title":"fillDefault",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillDefaultType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"fillDefault",
-                                "namespaceURI":""
-                            }
-                        },
-                        "restartDefault":{
-                            "title":"restartDefault",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/RestartDefaultType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"restartDefault",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"animateColorType",
-                "namespaceURI":"http://www.w3.org/2001/SMIL20/Language"
-            },
-            "propertiesOrder":[
-                "otherAttributes",
-                "any",
-                "id",
-                "clazz",
-                "lang",
-                "alt",
-                "longdesc",
-                "targetElement",
-                "skipContent",
-                "calcMode",
-                "syncBehavior",
-                "syncTolerance",
-                "fill",
-                "syncBehaviorDefault",
-                "syncToleranceDefault",
-                "restart",
-                "begin",
-                "end",
-                "repeat",
-                "dur",
-                "min",
-                "max",
-                "repeatDur",
-                "repeatCount",
-                "fillDefault",
-                "restartDefault"
-            ]
-        },
         "SetType":{
             "allOf":[
                 {
@@ -447,16 +50,211 @@
                             ],
                             "propertyType":"anyElement"
                         },
-                        "skipContent":{
-                            "title":"skipContent",
+                        "syncBehaviorDefault":{
+                            "title":"syncBehaviorDefault",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/SyncBehaviorDefaultType"
                                 }
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"skip-content",
+                                "localPart":"syncBehaviorDefault",
+                                "namespaceURI":""
+                            }
+                        },
+                        "syncToleranceDefault":{
+                            "title":"syncToleranceDefault",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"syncToleranceDefault",
+                                "namespaceURI":""
+                            }
+                        },
+                        "syncBehavior":{
+                            "title":"syncBehavior",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/SyncBehaviorType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"syncBehavior",
+                                "namespaceURI":""
+                            }
+                        },
+                        "syncTolerance":{
+                            "title":"syncTolerance",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"syncTolerance",
+                                "namespaceURI":""
+                            }
+                        },
+                        "restart":{
+                            "title":"restart",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/RestartTimingType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"restart",
+                                "namespaceURI":""
+                            }
+                        },
+                        "repeatDur":{
+                            "title":"repeatDur",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"repeatDur",
+                                "namespaceURI":""
+                            }
+                        },
+                        "repeatCount":{
+                            "title":"repeatCount",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"repeatCount",
+                                "namespaceURI":""
+                            }
+                        },
+                        "dur":{
+                            "title":"dur",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"dur",
+                                "namespaceURI":""
+                            }
+                        },
+                        "min":{
+                            "title":"min",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"min",
+                                "namespaceURI":""
+                            }
+                        },
+                        "max":{
+                            "title":"max",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"max",
+                                "namespaceURI":""
+                            }
+                        },
+                        "begin":{
+                            "title":"begin",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"begin",
+                                "namespaceURI":""
+                            }
+                        },
+                        "end":{
+                            "title":"end",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"end",
+                                "namespaceURI":""
+                            }
+                        },
+                        "repeat":{
+                            "title":"repeat",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"repeat",
+                                "namespaceURI":""
+                            }
+                        },
+                        "restartDefault":{
+                            "title":"restartDefault",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/RestartDefaultType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"restartDefault",
+                                "namespaceURI":""
+                            }
+                        },
+                        "fill":{
+                            "title":"fill",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillTimingAttrsType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"fill",
+                                "namespaceURI":""
+                            }
+                        },
+                        "fillDefault":{
+                            "title":"fillDefault",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillDefaultType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"fillDefault",
                                 "namespaceURI":""
                             }
                         },
@@ -470,6 +268,19 @@
                             "propertyType":"attribute",
                             "attributeName":{
                                 "localPart":"targetElement",
+                                "namespaceURI":""
+                            }
+                        },
+                        "skipContent":{
+                            "title":"skipContent",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"skip-content",
                                 "namespaceURI":""
                             }
                         },
@@ -537,214 +348,6 @@
                                 "localPart":"longdesc",
                                 "namespaceURI":""
                             }
-                        },
-                        "syncBehavior":{
-                            "title":"syncBehavior",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/SyncBehaviorType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"syncBehavior",
-                                "namespaceURI":""
-                            }
-                        },
-                        "syncTolerance":{
-                            "title":"syncTolerance",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"syncTolerance",
-                                "namespaceURI":""
-                            }
-                        },
-                        "fill":{
-                            "title":"fill",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillTimingAttrsType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"fill",
-                                "namespaceURI":""
-                            }
-                        },
-                        "syncBehaviorDefault":{
-                            "title":"syncBehaviorDefault",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/SyncBehaviorDefaultType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"syncBehaviorDefault",
-                                "namespaceURI":""
-                            }
-                        },
-                        "syncToleranceDefault":{
-                            "title":"syncToleranceDefault",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"syncToleranceDefault",
-                                "namespaceURI":""
-                            }
-                        },
-                        "restart":{
-                            "title":"restart",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/RestartTimingType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"restart",
-                                "namespaceURI":""
-                            }
-                        },
-                        "begin":{
-                            "title":"begin",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"begin",
-                                "namespaceURI":""
-                            }
-                        },
-                        "end":{
-                            "title":"end",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"end",
-                                "namespaceURI":""
-                            }
-                        },
-                        "repeat":{
-                            "title":"repeat",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"repeat",
-                                "namespaceURI":""
-                            }
-                        },
-                        "dur":{
-                            "title":"dur",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"dur",
-                                "namespaceURI":""
-                            }
-                        },
-                        "min":{
-                            "title":"min",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"min",
-                                "namespaceURI":""
-                            }
-                        },
-                        "max":{
-                            "title":"max",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"max",
-                                "namespaceURI":""
-                            }
-                        },
-                        "repeatDur":{
-                            "title":"repeatDur",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"repeatDur",
-                                "namespaceURI":""
-                            }
-                        },
-                        "repeatCount":{
-                            "title":"repeatCount",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"repeatCount",
-                                "namespaceURI":""
-                            }
-                        },
-                        "fillDefault":{
-                            "title":"fillDefault",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillDefaultType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"fillDefault",
-                                "namespaceURI":""
-                            }
-                        },
-                        "restartDefault":{
-                            "title":"restartDefault",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/RestartDefaultType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"restartDefault",
-                                "namespaceURI":""
-                            }
                         }
                     }
                 }
@@ -757,39 +360,39 @@
             "propertiesOrder":[
                 "otherAttributes",
                 "any",
-                "skipContent",
+                "syncBehaviorDefault",
+                "syncToleranceDefault",
+                "syncBehavior",
+                "syncTolerance",
+                "restart",
+                "repeatDur",
+                "repeatCount",
+                "dur",
+                "min",
+                "max",
+                "begin",
+                "end",
+                "repeat",
+                "restartDefault",
+                "fill",
+                "fillDefault",
                 "targetElement",
+                "skipContent",
                 "id",
                 "clazz",
                 "lang",
                 "alt",
-                "longdesc",
-                "syncBehavior",
-                "syncTolerance",
-                "fill",
-                "syncBehaviorDefault",
-                "syncToleranceDefault",
-                "restart",
-                "begin",
-                "end",
-                "repeat",
-                "dur",
-                "min",
-                "max",
-                "repeatDur",
-                "repeatCount",
-                "fillDefault",
-                "restartDefault"
+                "longdesc"
             ]
         },
-        "AnimateMotionType":{
+        "AnimateColorType":{
             "allOf":[
                 {
-                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/AnimateMotionPrototype"
+                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/AnimateColorPrototype"
                 },
                 {
                     "type":"object",
-                    "title":"AnimateMotionType",
+                    "title":"AnimateColorType",
                     "properties":{
                         "otherAttributes":{
                             "title":"otherAttributes",
@@ -830,6 +433,32 @@
                             ],
                             "propertyType":"anyElement"
                         },
+                        "skipContent":{
+                            "title":"skipContent",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"skip-content",
+                                "namespaceURI":""
+                            }
+                        },
+                        "targetElement":{
+                            "title":"targetElement",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"targetElement",
+                                "namespaceURI":""
+                            }
+                        },
                         "id":{
                             "title":"id",
                             "allOf":[
@@ -895,45 +524,6 @@
                                 "namespaceURI":""
                             }
                         },
-                        "syncBehavior":{
-                            "title":"syncBehavior",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/SyncBehaviorType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"syncBehavior",
-                                "namespaceURI":""
-                            }
-                        },
-                        "syncTolerance":{
-                            "title":"syncTolerance",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"syncTolerance",
-                                "namespaceURI":""
-                            }
-                        },
-                        "fill":{
-                            "title":"fill",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillTimingAttrsType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"fill",
-                                "namespaceURI":""
-                            }
-                        },
                         "syncBehaviorDefault":{
                             "title":"syncBehaviorDefault",
                             "allOf":[
@@ -960,6 +550,32 @@
                                 "namespaceURI":""
                             }
                         },
+                        "syncBehavior":{
+                            "title":"syncBehavior",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/SyncBehaviorType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"syncBehavior",
+                                "namespaceURI":""
+                            }
+                        },
+                        "syncTolerance":{
+                            "title":"syncTolerance",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"syncTolerance",
+                                "namespaceURI":""
+                            }
+                        },
                         "restart":{
                             "title":"restart",
                             "allOf":[
@@ -973,8 +589,8 @@
                                 "namespaceURI":""
                             }
                         },
-                        "begin":{
-                            "title":"begin",
+                        "repeatDur":{
+                            "title":"repeatDur",
                             "allOf":[
                                 {
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -982,33 +598,20 @@
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"begin",
+                                "localPart":"repeatDur",
                                 "namespaceURI":""
                             }
                         },
-                        "end":{
-                            "title":"end",
+                        "repeatCount":{
+                            "title":"repeatCount",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
                                 }
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"end",
-                                "namespaceURI":""
-                            }
-                        },
-                        "repeat":{
-                            "title":"repeat",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"repeat",
+                                "localPart":"repeatCount",
                                 "namespaceURI":""
                             }
                         },
@@ -1051,8 +654,8 @@
                                 "namespaceURI":""
                             }
                         },
-                        "repeatDur":{
-                            "title":"repeatDur",
+                        "begin":{
+                            "title":"begin",
                             "allOf":[
                                 {
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -1060,33 +663,33 @@
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"repeatDur",
+                                "localPart":"begin",
                                 "namespaceURI":""
                             }
                         },
-                        "repeatCount":{
-                            "title":"repeatCount",
+                        "end":{
+                            "title":"end",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                 }
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"repeatCount",
+                                "localPart":"end",
                                 "namespaceURI":""
                             }
                         },
-                        "fillDefault":{
-                            "title":"fillDefault",
+                        "repeat":{
+                            "title":"repeat",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillDefaultType"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
                                 }
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"fillDefault",
+                                "localPart":"repeat",
                                 "namespaceURI":""
                             }
                         },
@@ -1103,16 +706,29 @@
                                 "namespaceURI":""
                             }
                         },
-                        "targetElement":{
-                            "title":"targetElement",
+                        "fill":{
+                            "title":"fill",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillTimingAttrsType"
                                 }
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"targetElement",
+                                "localPart":"fill",
+                                "namespaceURI":""
+                            }
+                        },
+                        "fillDefault":{
+                            "title":"fillDefault",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillDefaultType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"fillDefault",
                                 "namespaceURI":""
                             }
                         },
@@ -1128,55 +744,42 @@
                                 "localPart":"calcMode",
                                 "namespaceURI":""
                             }
-                        },
-                        "skipContent":{
-                            "title":"skipContent",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"skip-content",
-                                "namespaceURI":""
-                            }
                         }
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"animateMotionType",
+                "localPart":"animateColorType",
                 "namespaceURI":"http://www.w3.org/2001/SMIL20/Language"
             },
             "propertiesOrder":[
                 "otherAttributes",
                 "any",
+                "skipContent",
+                "targetElement",
                 "id",
                 "clazz",
                 "lang",
                 "alt",
                 "longdesc",
-                "syncBehavior",
-                "syncTolerance",
-                "fill",
                 "syncBehaviorDefault",
                 "syncToleranceDefault",
+                "syncBehavior",
+                "syncTolerance",
                 "restart",
-                "begin",
-                "end",
-                "repeat",
+                "repeatDur",
+                "repeatCount",
                 "dur",
                 "min",
                 "max",
-                "repeatDur",
-                "repeatCount",
-                "fillDefault",
+                "begin",
+                "end",
+                "repeat",
                 "restartDefault",
-                "targetElement",
-                "calcMode",
-                "skipContent"
+                "fill",
+                "fillDefault",
+                "calcMode"
             ]
         },
         "AnimateType":{
@@ -1227,16 +830,29 @@
                             ],
                             "propertyType":"anyElement"
                         },
-                        "targetElement":{
-                            "title":"targetElement",
+                        "syncBehaviorDefault":{
+                            "title":"syncBehaviorDefault",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/SyncBehaviorDefaultType"
                                 }
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"targetElement",
+                                "localPart":"syncBehaviorDefault",
+                                "namespaceURI":""
+                            }
+                        },
+                        "syncToleranceDefault":{
+                            "title":"syncToleranceDefault",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"syncToleranceDefault",
                                 "namespaceURI":""
                             }
                         },
@@ -1266,45 +882,6 @@
                                 "namespaceURI":""
                             }
                         },
-                        "fill":{
-                            "title":"fill",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillTimingAttrsType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"fill",
-                                "namespaceURI":""
-                            }
-                        },
-                        "syncBehaviorDefault":{
-                            "title":"syncBehaviorDefault",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/SyncBehaviorDefaultType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"syncBehaviorDefault",
-                                "namespaceURI":""
-                            }
-                        },
-                        "syncToleranceDefault":{
-                            "title":"syncToleranceDefault",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"syncToleranceDefault",
-                                "namespaceURI":""
-                            }
-                        },
                         "restart":{
                             "title":"restart",
                             "allOf":[
@@ -1318,8 +895,8 @@
                                 "namespaceURI":""
                             }
                         },
-                        "begin":{
-                            "title":"begin",
+                        "repeatDur":{
+                            "title":"repeatDur",
                             "allOf":[
                                 {
                                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -1327,33 +904,20 @@
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"begin",
+                                "localPart":"repeatDur",
                                 "namespaceURI":""
                             }
                         },
-                        "end":{
-                            "title":"end",
+                        "repeatCount":{
+                            "title":"repeatCount",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
                                 }
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"end",
-                                "namespaceURI":""
-                            }
-                        },
-                        "repeat":{
-                            "title":"repeat",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"repeat",
+                                "localPart":"repeatCount",
                                 "namespaceURI":""
                             }
                         },
@@ -1396,6 +960,338 @@
                                 "namespaceURI":""
                             }
                         },
+                        "begin":{
+                            "title":"begin",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"begin",
+                                "namespaceURI":""
+                            }
+                        },
+                        "end":{
+                            "title":"end",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"end",
+                                "namespaceURI":""
+                            }
+                        },
+                        "repeat":{
+                            "title":"repeat",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"repeat",
+                                "namespaceURI":""
+                            }
+                        },
+                        "restartDefault":{
+                            "title":"restartDefault",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/RestartDefaultType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"restartDefault",
+                                "namespaceURI":""
+                            }
+                        },
+                        "fill":{
+                            "title":"fill",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillTimingAttrsType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"fill",
+                                "namespaceURI":""
+                            }
+                        },
+                        "fillDefault":{
+                            "title":"fillDefault",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillDefaultType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"fillDefault",
+                                "namespaceURI":""
+                            }
+                        },
+                        "skipContent":{
+                            "title":"skipContent",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"skip-content",
+                                "namespaceURI":""
+                            }
+                        },
+                        "id":{
+                            "title":"id",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"id",
+                                "namespaceURI":""
+                            }
+                        },
+                        "clazz":{
+                            "title":"clazz",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"class",
+                                "namespaceURI":""
+                            }
+                        },
+                        "lang":{
+                            "title":"lang",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"lang",
+                                "namespaceURI":"http://www.w3.org/XML/1998/namespace"
+                            }
+                        },
+                        "alt":{
+                            "title":"alt",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"alt",
+                                "namespaceURI":""
+                            }
+                        },
+                        "longdesc":{
+                            "title":"longdesc",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"longdesc",
+                                "namespaceURI":""
+                            }
+                        },
+                        "calcMode":{
+                            "title":"calcMode",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"calcMode",
+                                "namespaceURI":""
+                            }
+                        },
+                        "targetElement":{
+                            "title":"targetElement",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"targetElement",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"animateType",
+                "namespaceURI":"http://www.w3.org/2001/SMIL20/Language"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "any",
+                "syncBehaviorDefault",
+                "syncToleranceDefault",
+                "syncBehavior",
+                "syncTolerance",
+                "restart",
+                "repeatDur",
+                "repeatCount",
+                "dur",
+                "min",
+                "max",
+                "begin",
+                "end",
+                "repeat",
+                "restartDefault",
+                "fill",
+                "fillDefault",
+                "skipContent",
+                "id",
+                "clazz",
+                "lang",
+                "alt",
+                "longdesc",
+                "calcMode",
+                "targetElement"
+            ]
+        },
+        "AnimateMotionType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/AnimateMotionPrototype"
+                },
+                {
+                    "type":"object",
+                    "title":"AnimateMotionType",
+                    "properties":{
+                        "otherAttributes":{
+                            "title":"otherAttributes",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "additionalProperties":{
+                                        "type":"string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"anyAttribute"
+                        },
+                        "any":{
+                            "title":"any",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "anyOf":[
+                                            {
+                                                "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
+                                            },
+                                            {
+                                                "type":"object",
+                                                "properties":{
+                                                    "name":{
+                                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                                    },
+                                                    "value":{
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"anyElement"
+                        },
+                        "syncBehaviorDefault":{
+                            "title":"syncBehaviorDefault",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/SyncBehaviorDefaultType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"syncBehaviorDefault",
+                                "namespaceURI":""
+                            }
+                        },
+                        "syncToleranceDefault":{
+                            "title":"syncToleranceDefault",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"syncToleranceDefault",
+                                "namespaceURI":""
+                            }
+                        },
+                        "syncBehavior":{
+                            "title":"syncBehavior",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/SyncBehaviorType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"syncBehavior",
+                                "namespaceURI":""
+                            }
+                        },
+                        "syncTolerance":{
+                            "title":"syncTolerance",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"syncTolerance",
+                                "namespaceURI":""
+                            }
+                        },
+                        "restart":{
+                            "title":"restart",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/RestartTimingType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"restart",
+                                "namespaceURI":""
+                            }
+                        },
                         "repeatDur":{
                             "title":"repeatDur",
                             "allOf":[
@@ -1422,16 +1318,81 @@
                                 "namespaceURI":""
                             }
                         },
-                        "fillDefault":{
-                            "title":"fillDefault",
+                        "dur":{
+                            "title":"dur",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillDefaultType"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                 }
                             ],
                             "propertyType":"attribute",
                             "attributeName":{
-                                "localPart":"fillDefault",
+                                "localPart":"dur",
+                                "namespaceURI":""
+                            }
+                        },
+                        "min":{
+                            "title":"min",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"min",
+                                "namespaceURI":""
+                            }
+                        },
+                        "max":{
+                            "title":"max",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"max",
+                                "namespaceURI":""
+                            }
+                        },
+                        "begin":{
+                            "title":"begin",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"begin",
+                                "namespaceURI":""
+                            }
+                        },
+                        "end":{
+                            "title":"end",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"end",
+                                "namespaceURI":""
+                            }
+                        },
+                        "repeat":{
+                            "title":"repeat",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"repeat",
                                 "namespaceURI":""
                             }
                         },
@@ -1445,6 +1406,45 @@
                             "propertyType":"attribute",
                             "attributeName":{
                                 "localPart":"restartDefault",
+                                "namespaceURI":""
+                            }
+                        },
+                        "fill":{
+                            "title":"fill",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillTimingAttrsType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"fill",
+                                "namespaceURI":""
+                            }
+                        },
+                        "fillDefault":{
+                            "title":"fillDefault",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.w3.org/2001/SMIL20/#/definitions/FillDefaultType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"fillDefault",
+                                "namespaceURI":""
+                            }
+                        },
+                        "targetElement":{
+                            "title":"targetElement",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"targetElement",
                                 "namespaceURI":""
                             }
                         },
@@ -1544,29 +1544,29 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"animateType",
+                "localPart":"animateMotionType",
                 "namespaceURI":"http://www.w3.org/2001/SMIL20/Language"
             },
             "propertiesOrder":[
                 "otherAttributes",
                 "any",
-                "targetElement",
-                "syncBehavior",
-                "syncTolerance",
-                "fill",
                 "syncBehaviorDefault",
                 "syncToleranceDefault",
+                "syncBehavior",
+                "syncTolerance",
                 "restart",
-                "begin",
-                "end",
-                "repeat",
+                "repeatDur",
+                "repeatCount",
                 "dur",
                 "min",
                 "max",
-                "repeatDur",
-                "repeatCount",
-                "fillDefault",
+                "begin",
+                "end",
+                "repeat",
                 "restartDefault",
+                "fill",
+                "fillDefault",
+                "targetElement",
                 "calcMode",
                 "id",
                 "clazz",
@@ -1578,74 +1578,6 @@
         }
     },
     "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "animateColor"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.w3.org/2001/SMIL20/Language"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/AnimateColorType"
-                }
-            },
-            "elementName":{
-                "localPart":"animateColor",
-                "namespaceURI":"http://www.w3.org/2001/SMIL20/Language"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "set"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.w3.org/2001/SMIL20/Language"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/SetType"
-                }
-            },
-            "elementName":{
-                "localPart":"set",
-                "namespaceURI":"http://www.w3.org/2001/SMIL20/Language"
-            }
-        },
         {
             "type":"object",
             "properties":{
@@ -1693,6 +1625,40 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
+                                        "animateColor"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.w3.org/2001/SMIL20/Language"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/AnimateColorType"
+                }
+            },
+            "elementName":{
+                "localPart":"animateColor",
+                "namespaceURI":"http://www.w3.org/2001/SMIL20/Language"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
                                         "animateMotion"
                                     ]
                                 },
@@ -1711,6 +1677,40 @@
             },
             "elementName":{
                 "localPart":"animateMotion",
+                "namespaceURI":"http://www.w3.org/2001/SMIL20/Language"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "set"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.w3.org/2001/SMIL20/Language"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SetType"
+                }
+            },
+            "elementName":{
+                "localPart":"set",
                 "namespaceURI":"http://www.w3.org/2001/SMIL20/Language"
             }
         }

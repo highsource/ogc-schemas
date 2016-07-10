@@ -13,28 +13,13 @@ var WCS_Scaling_1_0_Module_Factory = function () {
             ti: 'Decimal'
           }]
       }, {
-        ln: 'ScaleAxisType',
+        ln: 'ScaleToExtentType',
         ps: [{
-            n: 'axis',
-            rq: true
-          }, {
-            n: 'scaleFactor',
+            n: 'targetAxisExtent',
             rq: true,
-            ti: 'Decimal'
-          }]
-      }, {
-        ln: 'TargetAxisExtentType',
-        ps: [{
-            n: 'axis',
-            rq: true
-          }, {
-            n: 'low',
-            rq: true,
-            ti: 'Decimal'
-          }, {
-            n: 'high',
-            rq: true,
-            ti: 'Decimal'
+            col: true,
+            en: 'TargetAxisExtent',
+            ti: '.TargetAxisExtentType'
           }]
       }, {
         ln: 'ScaleToSizeType',
@@ -69,18 +54,16 @@ var WCS_Scaling_1_0_Module_Factory = function () {
             ti: '.ScaleToExtentType'
           }]
       }, {
-        ln: 'ScaleToExtentType',
+        ln: 'TargetAxisExtentType',
         ps: [{
-            n: 'targetAxisExtent',
+            n: 'axis',
+            rq: true
+          }, {
+            n: 'low',
             rq: true,
-            col: true,
-            en: 'TargetAxisExtent',
-            ti: '.TargetAxisExtentType'
-          }]
-      }, {
-        ln: 'ScaleByFactorType',
-        ps: [{
-            n: 'scaleFactor',
+            ti: 'Decimal'
+          }, {
+            n: 'high',
             rq: true,
             ti: 'Decimal'
           }]
@@ -92,6 +75,23 @@ var WCS_Scaling_1_0_Module_Factory = function () {
             col: true,
             en: 'ScaleAxis',
             ti: '.ScaleAxisType'
+          }]
+      }, {
+        ln: 'ScaleAxisType',
+        ps: [{
+            n: 'axis',
+            rq: true
+          }, {
+            n: 'scaleFactor',
+            rq: true,
+            ti: 'Decimal'
+          }]
+      }, {
+        ln: 'ScaleByFactorType',
+        ps: [{
+            n: 'scaleFactor',
+            rq: true,
+            ti: 'Decimal'
           }]
       }],
     eis: [{

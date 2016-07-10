@@ -12,15 +12,6 @@ var GML_XBT_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LanguageStringType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'lang',
-            t: 'a'
-          }]
-      }, {
         ln: 'CodeType',
         bti: '.LanguageStringType',
         ps: [{
@@ -33,19 +24,28 @@ var GML_XBT_3_3_Module_Factory = function () {
       }, {
         ln: 'CodeWithAuthorityType',
         bti: '.CodeType'
+      }, {
+        ln: 'LanguageStringType',
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'lang',
+            t: 'a'
+          }]
       }],
     eis: [{
-        en: 'remarks',
-        ti: '.LanguageStringType',
-        sh: {
-          lp: 'remarks',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
         en: 'description',
         ti: '.LanguageStringAuxType',
         sh: {
           lp: 'description',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'remarks',
+        ti: '.LanguageStringType',
+        sh: {
+          lp: 'remarks',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }]
