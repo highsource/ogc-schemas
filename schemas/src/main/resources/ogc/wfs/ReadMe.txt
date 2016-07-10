@@ -17,6 +17,10 @@ The most current schema are available at http://schemas.opengis.net/ .
 
 -----------------------------------------------------------------------
 
+2016-07-05  Clemens Portele, Panagiotis (Peter) A. Vretanos
+  * v2.0: Update Query element in LockFeature to be optional
+    per 09-025r2 corrigendum.  No version change.
+
 2015-10-13  Panagiotis (Peter) A. Vretanos
   * v2.0: Update ReturnFeatureType to be optional.   No version change 
     per 09-025r2 corrigendum. 

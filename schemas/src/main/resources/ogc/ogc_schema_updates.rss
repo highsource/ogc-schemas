@@ -18,17 +18,18 @@
    geospatial and location based services.</description>
 <dc:language>en-us</dc:language>
 <dc:rights>Copyright 1994-2010, Open Geospatial Consortium.</dc:rights>
-<dc:date>2016-06-10T16:51:37:+00:00
+<dc:date>2016-07-05T19:34:26:+00:00
 </dc:date>
 <dc:publisher>Open Geospatial Consortium</dc:publisher>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:subject>OGC Standards</dc:subject>
-<syn:updateBase>2016-06-10T16:51:37:+00:00
+<syn:updateBase>2016-07-05T19:34:26:+00:00
 </syn:updateBase>
 <syn:updateFrequency>2</syn:updateFrequency>
 <syn:updatePeriod>hourly</syn:updatePeriod>
 <items>
  <rdf:Seq>
+  <rdf:li rdf:resource="http://schemas.opengis.net/wfs/ReadMe.txt#20160705t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/gmljp2/ReadMe.txt#20160610t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/cat/ReadMe.txt#20160610t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/eompom/ReadMe.txt#20160608t15" />
@@ -107,6 +108,16 @@
 <url>http://www.opengeospatial.org/themes/ogc/logo.png</url>
 <link>http://www.opengeospatial.org/</link>
 </image>
+<item rdf:about="http://schemas.opengis.net/wfs/ReadMe.txt#20160705t15">
+<title>OGC WFS 2.0 - Schema updated</title>
+<link>http://schemas.opengis.net/wfs/ReadMe.txt#20160705t15</link>
+<description>The OGC WFS 2.0 schema described in OGC document 09-025r2 has been updated.  Changed the cardinality constraint of LockFeatureType to be optional.
+  No version change per the 09-025r2 corrigendum. See http://www.opengeospatial.org/standards/wfs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-07-05T15:46:12:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC WFS 2.0 Standard Schema Updated</dc:subject>
+</item>
 <item rdf:about="http://schemas.opengis.net/gmljp2/ReadMe.txt#20160610t15">
 <title>OGC GMLJP2 2.0.1 - Schema Examples Updated</title>
 <link>http://schemas.opengis.net/gmljp2/ReadMe.txt#20160610t15</link>
