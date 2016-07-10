@@ -156,26 +156,26 @@
    <xsd:complexType name="RequestType">
       <xsd:choice maxOccurs="unbounded">
          <xsd:element name="GetCapabilities"
-                      type="wfs:GetCapabilitiesType"/>
+                      type="wfs:Capabilities_GetCapabilitiesType"/>
          <xsd:element name="DescribeFeatureType"
-                      type="wfs:DescribeFeatureTypeType"/>
+                      type="wfs:Capabilities_DescribeFeatureTypeType"/>
          <xsd:element name="Transaction"
-                      type="wfs:TransactionType"/>
+                      type="wfs:Capabilities_TransactionType"/>
          <xsd:element name="GetFeature"
-                      type="wfs:GetFeatureTypeType"/>
+                      type="wfs:Capabilities_GetFeatureTypeType"/>
          <xsd:element name="GetFeatureWithLock"
-                      type="wfs:GetFeatureTypeType"/>
+                      type="wfs:Capabilities_GetFeatureTypeType"/>
          <xsd:element name="LockFeature"
-                      type="wfs:LockFeatureTypeType"/>
+                      type="wfs:Capabilities_LockFeatureTypeType"/>
       </xsd:choice>
    </xsd:complexType>
-   <xsd:complexType name="GetCapabilitiesType">
+   <xsd:complexType name="Capabilities_GetCapabilitiesType">
       <xsd:sequence>
          <xsd:element name="DCPType"
                       type="wfs:DCPTypeType" maxOccurs="unbounded"/>
       </xsd:sequence>
    </xsd:complexType>
-   <xsd:complexType name="DescribeFeatureTypeType">
+   <xsd:complexType name="Capabilities_DescribeFeatureTypeType">
       <xsd:sequence>
          <xsd:element name="SchemaDescriptionLanguage"
                       type="wfs:SchemaDescriptionLanguageType"/>
@@ -183,13 +183,13 @@
                       type="wfs:DCPTypeType" maxOccurs="unbounded"/>
       </xsd:sequence>
    </xsd:complexType>
-   <xsd:complexType name="TransactionType">
+   <xsd:complexType name="Capabilities_TransactionType">
       <xsd:sequence>
          <xsd:element name="DCPType"
                       type="wfs:DCPTypeType" maxOccurs="unbounded"/>
       </xsd:sequence>
    </xsd:complexType>
-   <xsd:complexType name="GetFeatureTypeType">
+   <xsd:complexType name="Capabilities_GetFeatureTypeType">
       <xsd:sequence>
          <xsd:element name="ResultFormat"
                       type="wfs:ResultFormatType"/>
@@ -197,7 +197,7 @@
                       type="wfs:DCPTypeType" maxOccurs="unbounded"/>
       </xsd:sequence>
    </xsd:complexType>
-   <xsd:complexType name="LockFeatureTypeType">
+   <xsd:complexType name="Capabilities_LockFeatureTypeType">
       <xsd:sequence>
          <xsd:element name="DCPType"
                       type="wfs:DCPTypeType" maxOccurs="unbounded"/>
