@@ -3,18 +3,45 @@ var GML_TIN_3_3_Module_Factory = function () {
     n: 'GML_TIN_3_3',
     dens: 'http:\/\/www.opengis.net\/gml\/3.3\/tin',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1'],
+    deps: ['GML_3_2_1', 'XLink_1_0'],
     tis: [{
-        ln: 'TINType',
-        bti: 'GML_3_2_1.SurfaceType',
+        ln: 'SimpleTrianglePatchType',
+        bti: 'GML_3_2_1.AbstractSurfacePatchType',
         ps: [{
-            n: 'tinElement',
-            mno: 0,
+            n: 'posOrPointProperty',
+            rq: true,
+            mno: 3,
+            mxo: 3,
             col: true,
-            ti: '.TINElementPropertyType'
+            etis: [{
+                en: {
+                  lp: 'pos',
+                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+                },
+                ti: 'GML_3_2_1.DirectPositionType'
+              }, {
+                en: {
+                  lp: 'pointProperty',
+                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+                },
+                ti: 'GML_3_2_1.PointPropertyType'
+              }],
+            t: 'es'
           }, {
-            n: 'maxLength',
-            ti: 'GML_3_2_1.LengthType'
+            n: 'posList',
+            rq: true,
+            en: {
+              lp: 'posList',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.DirectPositionListType'
+          }, {
+            n: 'interpolation',
+            ti: 'GML_3_2_1.SurfaceInterpolationType',
+            an: {
+              lp: 'interpolation'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'TINElementType',
@@ -81,56 +108,29 @@ var GML_TIN_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SimpleTrianglePatchType',
-        bti: 'GML_3_2_1.AbstractSurfacePatchType',
+        ln: 'TINType',
+        bti: 'GML_3_2_1.SurfaceType',
         ps: [{
-            n: 'posOrPointProperty',
-            rq: true,
-            mno: 3,
-            mxo: 3,
+            n: 'tinElement',
+            mno: 0,
             col: true,
-            etis: [{
-                en: {
-                  lp: 'pos',
-                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-                },
-                ti: 'GML_3_2_1.DirectPositionType'
-              }, {
-                en: {
-                  lp: 'pointProperty',
-                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-                },
-                ti: 'GML_3_2_1.PointPropertyType'
-              }],
-            t: 'es'
+            ti: '.TINElementPropertyType'
           }, {
-            n: 'posList',
-            rq: true,
-            en: {
-              lp: 'posList',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.DirectPositionListType'
-          }, {
-            n: 'interpolation',
-            ti: 'GML_3_2_1.SurfaceInterpolationType',
-            an: {
-              lp: 'interpolation'
-            },
-            t: 'a'
+            n: 'maxLength',
+            ti: 'GML_3_2_1.LengthType'
           }]
       }],
     eis: [{
+        en: 'TINElement',
+        ti: '.TINElementType',
+        sh: {
+          lp: 'AbstractObject',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
         en: 'TIN',
         ti: '.TINType',
         sh: 'TriangulatedSurface'
-      }, {
-        en: 'TriangulatedSurface',
-        ti: 'GML_3_2_1.SurfaceType',
-        sh: {
-          lp: 'Surface',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
       }, {
         en: 'SimpleTrianglePatch',
         ti: '.SimpleTrianglePatchType',
@@ -139,10 +139,10 @@ var GML_TIN_3_3_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'TINElement',
-        ti: '.TINElementType',
+        en: 'TriangulatedSurface',
+        ti: 'GML_3_2_1.SurfaceType',
         sh: {
-          lp: 'AbstractObject',
+          lp: 'Surface',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }]

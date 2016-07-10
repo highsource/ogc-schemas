@@ -71,6 +71,7 @@
 	<!-- ====================================================================== -->
 	<!-- ===== property for feature association ==== -->
 	<element name="featureMember" type="gml:FeaturePropertyType"/>
+	<element name="otherFeatureMember" type="gml:FeaturePropertyType" substitutionGroup="gml:featureMember"/>
 	<element name="featureProperty" type="gml:FeaturePropertyType"/>
 	<!-- ============================================================== -->
 	<complexType name="FeaturePropertyType">
@@ -85,6 +86,7 @@
 	<!-- ============================================================== -->
 	<!-- ===== property for association of an array of features ===== -->
 	<element name="featureMembers" type="gml:FeatureArrayPropertyType"/>
+	<element name="otherFeatureMembers" type="gml:FeatureArrayPropertyType" substitutionGroup="gml:featureMembers"/>
 	<!-- =========================================================== -->
 	<complexType name="FeatureArrayPropertyType">
 		<annotation>

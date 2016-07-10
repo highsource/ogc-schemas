@@ -4,29 +4,6 @@ var SMIL_2_0_Module_Factory = function () {
     dens: 'http:\/\/www.w3.org\/2001\/SMIL20\/',
     deps: ['SMIL_2_0_Language'],
     tis: [{
-        ln: 'SetPrototype',
-        tn: 'setPrototype',
-        ps: [{
-            n: 'to',
-            an: {
-              lp: 'to'
-            },
-            t: 'a'
-          }, {
-            n: 'attributeName',
-            rq: true,
-            an: {
-              lp: 'attributeName'
-            },
-            t: 'a'
-          }, {
-            n: 'attributeType',
-            an: {
-              lp: 'attributeType'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'AnimateColorPrototype',
         tn: 'animateColorPrototype',
         ps: [{
@@ -54,6 +31,19 @@ var SMIL_2_0_Module_Factory = function () {
             },
             t: 'a'
           }, {
+            n: 'attributeName',
+            rq: true,
+            an: {
+              lp: 'attributeName'
+            },
+            t: 'a'
+          }, {
+            n: 'attributeType',
+            an: {
+              lp: 'attributeType'
+            },
+            t: 'a'
+          }, {
             n: 'additive',
             an: {
               lp: 'additive'
@@ -63,6 +53,46 @@ var SMIL_2_0_Module_Factory = function () {
             n: 'accumulate',
             an: {
               lp: 'accumulate'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AnimatePrototype',
+        tn: 'animatePrototype',
+        ps: [{
+            n: 'additive',
+            an: {
+              lp: 'additive'
+            },
+            t: 'a'
+          }, {
+            n: 'accumulate',
+            an: {
+              lp: 'accumulate'
+            },
+            t: 'a'
+          }, {
+            n: 'from',
+            an: {
+              lp: 'from'
+            },
+            t: 'a'
+          }, {
+            n: 'by',
+            an: {
+              lp: 'by'
+            },
+            t: 'a'
+          }, {
+            n: 'values',
+            an: {
+              lp: 'values'
+            },
+            t: 'a'
+          }, {
+            n: 'to',
+            an: {
+              lp: 'to'
             },
             t: 'a'
           }, {
@@ -76,6 +106,29 @@ var SMIL_2_0_Module_Factory = function () {
             n: 'attributeType',
             an: {
               lp: 'attributeType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SetPrototype',
+        tn: 'setPrototype',
+        ps: [{
+            n: 'attributeName',
+            rq: true,
+            an: {
+              lp: 'attributeName'
+            },
+            t: 'a'
+          }, {
+            n: 'attributeType',
+            an: {
+              lp: 'attributeType'
+            },
+            t: 'a'
+          }, {
+            n: 'to',
+            an: {
+              lp: 'to'
             },
             t: 'a'
           }]
@@ -89,59 +142,6 @@ var SMIL_2_0_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'additive',
-            an: {
-              lp: 'additive'
-            },
-            t: 'a'
-          }, {
-            n: 'accumulate',
-            an: {
-              lp: 'accumulate'
-            },
-            t: 'a'
-          }, {
-            n: 'from',
-            an: {
-              lp: 'from'
-            },
-            t: 'a'
-          }, {
-            n: 'by',
-            an: {
-              lp: 'by'
-            },
-            t: 'a'
-          }, {
-            n: 'values',
-            an: {
-              lp: 'values'
-            },
-            t: 'a'
-          }, {
-            n: 'to',
-            an: {
-              lp: 'to'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AnimatePrototype',
-        tn: 'animatePrototype',
-        ps: [{
-            n: 'attributeName',
-            rq: true,
-            an: {
-              lp: 'attributeName'
-            },
-            t: 'a'
-          }, {
-            n: 'attributeType',
-            an: {
-              lp: 'attributeType'
-            },
-            t: 'a'
-          }, {
             n: 'from',
             an: {
               lp: 'from'
@@ -180,28 +180,28 @@ var SMIL_2_0_Module_Factory = function () {
           }]
       }, {
         t: 'enum',
-        ln: 'RestartDefaultType',
-        vs: ['never', 'always', 'whenNotActive', 'inherit']
-      }, {
-        t: 'enum',
-        ln: 'FillTimingAttrsType',
-        vs: ['remove', 'freeze', 'hold', 'auto', 'default', 'transition']
+        ln: 'RestartTimingType',
+        vs: ['never', 'always', 'whenNotActive', 'default']
       }, {
         t: 'enum',
         ln: 'FillDefaultType',
         vs: ['remove', 'freeze', 'hold', 'auto', 'inherit', 'transition']
       }, {
         t: 'enum',
-        ln: 'SyncBehaviorDefaultType',
-        vs: ['canSlip', 'locked', 'independent', 'inherit']
+        ln: 'FillTimingAttrsType',
+        vs: ['remove', 'freeze', 'hold', 'auto', 'default', 'transition']
       }, {
         t: 'enum',
         ln: 'SyncBehaviorType',
         vs: ['canSlip', 'locked', 'independent', 'default']
       }, {
         t: 'enum',
-        ln: 'RestartTimingType',
-        vs: ['never', 'always', 'whenNotActive', 'default']
+        ln: 'RestartDefaultType',
+        vs: ['never', 'always', 'whenNotActive', 'inherit']
+      }, {
+        t: 'enum',
+        ln: 'SyncBehaviorDefaultType',
+        vs: ['canSlip', 'locked', 'independent', 'inherit']
       }],
     eis: [{
         en: 'animateMotion',
@@ -218,17 +218,17 @@ var SMIL_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
         }
       }, {
-        en: 'animate',
-        ti: 'SMIL_2_0_Language.AnimateType',
-        sh: {
-          lp: 'animate',
-          ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
-        }
-      }, {
         en: 'animateColor',
         ti: 'SMIL_2_0_Language.AnimateColorType',
         sh: {
           lp: 'animateColor',
+          ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
+        }
+      }, {
+        en: 'animate',
+        ti: 'SMIL_2_0_Language.AnimateType',
+        sh: {
+          lp: 'animate',
           ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
         }
       }]

@@ -3,7 +3,7 @@ var GML_LRTR_3_3_Module_Factory = function () {
     n: 'GML_LRTR_3_3',
     dens: 'http:\/\/www.opengis.net\/gml\/3.3\/lrtr',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_LR_3_3', 'XLink_1_0'],
+    deps: ['XLink_1_0', 'GML_LR_3_3'],
     tis: [{
         ln: 'DualAlongReferentPropertyType',
         ps: [{

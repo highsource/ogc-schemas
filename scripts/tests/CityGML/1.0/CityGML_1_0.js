@@ -16,6 +16,7 @@ var CityGML_Transportation_1_0 = require('../../../ogc-schemas').CityGML_Transpo
 var CityGML_Vegetation_1_0 = require('../../../ogc-schemas').CityGML_Vegetation_1_0;
 var CityGML_Waterbody_1_0 = require('../../../ogc-schemas').CityGML_Waterbody_1_0;
 var xAL_2_0 = require('../../../ogc-schemas').xAL_2_0;
+var fs = require("fs");
 
 var roundtripsWithContext = require('../../roundtrip').roundtripsWithContext;
 
@@ -31,5 +32,15 @@ var context = new Jsonix.Context(mappings, {
 });
 
 module.exports = {
-	"Roundtrips" : roundtripsWithContext(context, __dirname)
+	"Roundtrips" : roundtripsWithContext(context, __dirname),
+	"Issue #168" : function (test)
+	{
+
+		var unmarshaller = context.createUnmarshaller();
+		unmarshaller.unmarshalFile(__dirname + "/3840_5820.xml", function (result)
+		{
+			test.equal(5, result.value.featureMember.length);
+			test.done();
+		});
+	}
 };
