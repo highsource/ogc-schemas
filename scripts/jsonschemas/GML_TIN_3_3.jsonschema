@@ -2,6 +2,96 @@
 {
     "id":"http://www.opengis.net/gml/3.3/tin#",
     "definitions":{
+        "SimpleTrianglePatchType":{
+            "required":[
+                "posOrPointProperty",
+                "posList"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractSurfacePatchType"
+                },
+                {
+                    "type":"object",
+                    "title":"SimpleTrianglePatchType",
+                    "properties":{
+                        "posOrPointProperty":{
+                            "title":"posOrPointProperty",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "anyOf":[
+                                            {
+                                                "anyOf":[
+                                                    {
+                                                        "$ref":"#/definitions/DirectPositionType"
+                                                    }
+                                                ],
+                                                "elementName":{
+                                                    "localPart":"pos",
+                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
+                                                }
+                                            },
+                                            {
+                                                "anyOf":[
+                                                    {
+                                                        "$ref":"#/definitions/PointPropertyType"
+                                                    }
+                                                ],
+                                                "elementName":{
+                                                    "localPart":"pointProperty",
+                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "maxItems":3,
+                                    "minItems":3
+                                }
+                            ],
+                            "propertyType":"elements"
+                        },
+                        "posList":{
+                            "title":"posList",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/DirectPositionListType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"posList",
+                                "namespaceURI":"http://www.opengis.net/gml/3.2"
+                            }
+                        },
+                        "interpolation":{
+                            "title":"interpolation",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/SurfaceInterpolationType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"interpolation",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SimpleTrianglePatchType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
+            },
+            "propertiesOrder":[
+                "posOrPointProperty",
+                "posList",
+                "interpolation"
+            ]
+        },
         "TINElementType":{
             "required":[
                 "elementType",
@@ -132,96 +222,6 @@
             "propertiesOrder":[
                 "tinElement",
                 "maxLength"
-            ]
-        },
-        "SimpleTrianglePatchType":{
-            "required":[
-                "posOrPointProperty",
-                "posList"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractSurfacePatchType"
-                },
-                {
-                    "type":"object",
-                    "title":"SimpleTrianglePatchType",
-                    "properties":{
-                        "posOrPointProperty":{
-                            "title":"posOrPointProperty",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "anyOf":[
-                                            {
-                                                "anyOf":[
-                                                    {
-                                                        "$ref":"#/definitions/DirectPositionType"
-                                                    }
-                                                ],
-                                                "elementName":{
-                                                    "localPart":"pos",
-                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
-                                                }
-                                            },
-                                            {
-                                                "anyOf":[
-                                                    {
-                                                        "$ref":"#/definitions/PointPropertyType"
-                                                    }
-                                                ],
-                                                "elementName":{
-                                                    "localPart":"pointProperty",
-                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    "maxItems":3,
-                                    "minItems":3
-                                }
-                            ],
-                            "propertyType":"elements"
-                        },
-                        "posList":{
-                            "title":"posList",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DirectPositionListType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"posList",
-                                "namespaceURI":"http://www.opengis.net/gml/3.2"
-                            }
-                        },
-                        "interpolation":{
-                            "title":"interpolation",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/SurfaceInterpolationType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"interpolation",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SimpleTrianglePatchType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
-            },
-            "propertiesOrder":[
-                "posOrPointProperty",
-                "posList",
-                "interpolation"
             ]
         },
         "TINElementPropertyType":{
@@ -398,7 +398,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "TINElement"
+                                        "SimpleTrianglePatch"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -411,11 +411,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/TINElementType"
+                    "$ref":"#/definitions/SimpleTrianglePatchType"
                 }
             },
             "elementName":{
-                "localPart":"TINElement",
+                "localPart":"SimpleTrianglePatch",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
             }
         },
@@ -466,7 +466,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SimpleTrianglePatch"
+                                        "TINElement"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -479,11 +479,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SimpleTrianglePatchType"
+                    "$ref":"#/definitions/TINElementType"
                 }
             },
             "elementName":{
-                "localPart":"SimpleTrianglePatch",
+                "localPart":"TINElement",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/tin"
             }
         },

@@ -5,70 +5,17 @@ var GML_RGRID_3_3_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_2_1'],
     tis: [{
-        ln: 'AbstractReferenceableGridType',
-        bti: 'GML_3_2_1.GridType',
-        ps: [{
-            n: 'gridCRS',
-            ti: '.GridCRSPropertyType'
-          }]
-      }, {
-        ln: 'GeneralGridAxisType',
-        ps: [{
-            n: 'offsetVector',
-            rq: true,
-            ti: 'GML_3_2_1.VectorType'
-          }, {
-            n: 'coefficients',
-            rq: true,
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'gridAxesSpanned',
-            rq: true,
-            ti: {
-              t: 'l',
-              bti: 'NCName'
-            }
-          }, {
-            n: 'sequenceRule',
-            rq: true,
-            ti: 'GML_3_2_1.SequenceRuleType'
-          }]
-      }, {
-        ln: 'ReferenceableGridByArrayType',
+        ln: 'ReferenceableGridByVectorsType',
         bti: '.AbstractReferenceableGridType',
         ps: [{
-            n: 'posList',
+            n: 'origin',
             rq: true,
-            en: {
-              lp: 'posList',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.DirectPositionListType'
+            ti: 'GML_3_2_1.PointPropertyType'
           }, {
-            n: 'geometricPositionGroup',
+            n: 'generalGridAxis',
             rq: true,
             col: true,
-            etis: [{
-                en: {
-                  lp: 'pos',
-                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-                },
-                ti: 'GML_3_2_1.DirectPositionType'
-              }, {
-                en: {
-                  lp: 'pointProperty',
-                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-                },
-                ti: 'GML_3_2_1.PointPropertyType'
-              }],
-            t: 'es'
-          }, {
-            n: 'sequenceRule',
-            rq: true,
-            ti: 'GML_3_2_1.SequenceRuleType'
+            ti: '.GeneralGridAxisPropertyType'
           }]
       }, {
         ln: 'GridCRSPropertyType',
@@ -85,12 +32,38 @@ var GML_RGRID_3_3_Module_Factory = function () {
             t: 'er'
           }]
       }, {
+        ln: 'AbstractReferenceableGridType',
+        bti: 'GML_3_2_1.GridType',
+        ps: [{
+            n: 'gridCRS',
+            ti: '.GridCRSPropertyType'
+          }]
+      }, {
+        ln: 'ReferenceableGridByTransformationType',
+        bti: '.AbstractReferenceableGridType',
+        ps: [{
+            n: 'transformation',
+            rq: true,
+            ti: 'GML_3_2_1.TransformationPropertyType'
+          }, {
+            n: 'concatenatedOperation',
+            rq: true,
+            ti: 'GML_3_2_1.ConcatenatedOperationPropertyType'
+          }]
+      }, {
         ln: 'GeneralGridAxisPropertyType',
         ps: [{
             n: 'generalGridAxis',
             rq: true,
             en: 'GeneralGridAxis',
             ti: '.GeneralGridAxisType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }, {
             n: 'nilReason',
             ti: {
@@ -131,13 +104,40 @@ var GML_RGRID_3_3_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
+          }]
+      }, {
+        ln: 'ReferenceableGridByArrayType',
+        bti: '.AbstractReferenceableGridType',
+        ps: [{
+            n: 'posList',
+            rq: true,
+            en: {
+              lp: 'posList',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
             },
-            t: 'a'
+            ti: 'GML_3_2_1.DirectPositionListType'
+          }, {
+            n: 'geometricPositionGroup',
+            rq: true,
+            col: true,
+            etis: [{
+                en: {
+                  lp: 'pos',
+                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+                },
+                ti: 'GML_3_2_1.DirectPositionType'
+              }, {
+                en: {
+                  lp: 'pointProperty',
+                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+                },
+                ti: 'GML_3_2_1.PointPropertyType'
+              }],
+            t: 'es'
+          }, {
+            n: 'sequenceRule',
+            rq: true,
+            ti: 'GML_3_2_1.SequenceRuleType'
           }]
       }, {
         ln: 'ReferenceableGridPropertyType',
@@ -198,44 +198,41 @@ var GML_RGRID_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ReferenceableGridByTransformationType',
-        bti: '.AbstractReferenceableGridType',
+        ln: 'GeneralGridAxisType',
         ps: [{
-            n: 'transformation',
+            n: 'offsetVector',
             rq: true,
-            ti: 'GML_3_2_1.TransformationPropertyType'
+            ti: 'GML_3_2_1.VectorType'
           }, {
-            n: 'concatenatedOperation',
+            n: 'coefficients',
             rq: true,
-            ti: 'GML_3_2_1.ConcatenatedOperationPropertyType'
-          }]
-      }, {
-        ln: 'ReferenceableGridByVectorsType',
-        bti: '.AbstractReferenceableGridType',
-        ps: [{
-            n: 'origin',
-            rq: true,
-            ti: 'GML_3_2_1.PointPropertyType'
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
           }, {
-            n: 'generalGridAxis',
+            n: 'gridAxesSpanned',
             rq: true,
-            col: true,
-            ti: '.GeneralGridAxisPropertyType'
+            ti: {
+              t: 'l',
+              bti: 'NCName'
+            }
+          }, {
+            n: 'sequenceRule',
+            rq: true,
+            ti: 'GML_3_2_1.SequenceRuleType'
           }]
       }],
     eis: [{
+        en: 'ReferenceableGridByTransformation',
+        ti: '.ReferenceableGridByTransformationType',
+        sh: 'AbstractReferenceableGrid'
+      }, {
         en: 'GeneralGridAxis',
         ti: '.GeneralGridAxisType'
       }, {
         en: 'gridCRS',
         ti: '.GridCRSPropertyType'
-      }, {
-        en: 'referenceableGridProperty',
-        ti: '.ReferenceableGridPropertyType'
-      }, {
-        en: 'ReferenceableGridByTransformation',
-        ti: '.ReferenceableGridByTransformationType',
-        sh: 'AbstractReferenceableGrid'
       }, {
         en: 'AbstractReferenceableGrid',
         ti: '.AbstractReferenceableGridType',
@@ -244,13 +241,16 @@ var GML_RGRID_3_3_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
+        en: 'ReferenceableGridByArray',
+        ti: '.ReferenceableGridByArrayType',
+        sh: 'AbstractReferenceableGrid'
+      }, {
         en: 'ReferenceableGridByVectors',
         ti: '.ReferenceableGridByVectorsType',
         sh: 'AbstractReferenceableGrid'
       }, {
-        en: 'ReferenceableGridByArray',
-        ti: '.ReferenceableGridByArrayType',
-        sh: 'AbstractReferenceableGrid'
+        en: 'referenceableGridProperty',
+        ti: '.ReferenceableGridPropertyType'
       }]
   };
   return {

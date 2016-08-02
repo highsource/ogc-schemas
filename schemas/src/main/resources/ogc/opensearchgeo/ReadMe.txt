@@ -17,6 +17,12 @@ http://schemas.opengis.net/SCHEMAS_OPENGIS_NET.zip
 
 -----------------------------------------------------------------------
 
+2016-04-05  Pedro Pereira Goncalves
+  *  v1.0.1: Updated OpenSearch Geo 1.0.1 as opensearchgeo/1.0
+     + Corrected the cardinality of Language, InputEncoding and OutputEncoding elements (changed ? to *)
+     + Tags max length set to 256 characters
+     + Increment version to 1.0.1
+
 2014-04-24
   *  v1.0.0: Post OpenSearch Geo 1.0.0 as opensearchgeo/1.0 from (OGC 10-032r8)
 
@@ -27,7 +33,7 @@ http://schemas.opengis.net/SCHEMAS_OPENGIS_NET.zip
 Policies, Procedures, Terms, and Conditions of OGC(r) are available
   http://www.opengeospatial.org/ogc/legal/ .
 
-Copyright (c) 2014 Open Geospatial Consortium.
+Copyright (c) 2016 Open Geospatial Consortium.
 
 -----------------------------------------------------------------------
 

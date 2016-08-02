@@ -2,6 +2,46 @@
 {
     "id":"http://docs.oasis-open.org/wsn/t-1#",
     "definitions":{
+        "ExtensibleDocumented":{
+            "type":"object",
+            "title":"ExtensibleDocumented",
+            "properties":{
+                "otherAttributes":{
+                    "title":"otherAttributes",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "additionalProperties":{
+                                "type":"string"
+                            }
+                        }
+                    ],
+                    "propertyType":"anyAttribute"
+                },
+                "documentation":{
+                    "title":"documentation",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Documentation"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"documentation",
+                        "namespaceURI":"http://docs.oasis-open.org/wsn/t-1"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ExtensibleDocumented",
+                "namespaceURI":"http://docs.oasis-open.org/wsn/t-1"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "documentation"
+            ]
+        },
         "TopicType":{
             "required":[
                 "name"
@@ -136,6 +176,49 @@
                 "_final"
             ]
         },
+        "TopicNamespaceType.Topic":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/TopicType"
+                },
+                {
+                    "type":"object",
+                    "title":"TopicNamespaceType.Topic",
+                    "properties":{
+                        "otherAttributes":{
+                            "title":"otherAttributes",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "additionalProperties":{
+                                        "type":"string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"anyAttribute"
+                        },
+                        "parent":{
+                            "title":"parent",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/token"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"parent",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "otherAttributes",
+                "parent"
+            ]
+        },
         "QueryExpressionType":{
             "type":"object",
             "title":"QueryExpressionType",
@@ -194,49 +277,6 @@
             "propertiesOrder":[
                 "content",
                 "dialect"
-            ]
-        },
-        "Documentation":{
-            "type":"object",
-            "title":"Documentation",
-            "properties":{
-                "content":{
-                    "title":"content",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    {
-                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
-                                    },
-                                    {
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                            }
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "propertyType":"anyElement"
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"Documentation",
-                "namespaceURI":"http://docs.oasis-open.org/wsn/t-1"
-            },
-            "propertiesOrder":[
-                "content"
             ]
         },
         "TopicNamespaceType":{
@@ -424,87 +464,47 @@
                 "any"
             ]
         },
-        "ExtensibleDocumented":{
+        "Documentation":{
             "type":"object",
-            "title":"ExtensibleDocumented",
+            "title":"Documentation",
             "properties":{
-                "otherAttributes":{
-                    "title":"otherAttributes",
+                "content":{
+                    "title":"content",
                     "allOf":[
                         {
-                            "type":"object",
-                            "additionalProperties":{
-                                "type":"string"
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    {
+                                        "$ref":"http://www.jsonix.org/jsonschemas/jsonix/Jsonix.jsonschema#/definitions/dom"
+                                    },
+                                    {
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                            }
+                                        }
+                                    }
+                                ]
                             }
                         }
                     ],
-                    "propertyType":"anyAttribute"
-                },
-                "documentation":{
-                    "title":"documentation",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Documentation"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"documentation",
-                        "namespaceURI":"http://docs.oasis-open.org/wsn/t-1"
-                    }
+                    "propertyType":"anyElement"
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ExtensibleDocumented",
+                "localPart":"Documentation",
                 "namespaceURI":"http://docs.oasis-open.org/wsn/t-1"
             },
             "propertiesOrder":[
-                "otherAttributes",
-                "documentation"
-            ]
-        },
-        "TopicNamespaceType.Topic":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/TopicType"
-                },
-                {
-                    "type":"object",
-                    "title":"TopicNamespaceType.Topic",
-                    "properties":{
-                        "otherAttributes":{
-                            "title":"otherAttributes",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "additionalProperties":{
-                                        "type":"string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"anyAttribute"
-                        },
-                        "parent":{
-                            "title":"parent",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/token"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"parent",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "otherAttributes",
-                "parent"
+                "content"
             ]
         }
     },

@@ -7,36 +7,84 @@ var CityGML_Building_1_0_Module_Factory = function () {
         ln: 'BoundarySurfacePropertyType',
         bti: 'GML_3_1_1.AssociationType'
       }, {
-        ln: 'CeilingSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
+        ln: 'BuildingFurnitureType',
+        bti: 'CityGML_1_0.AbstractCityObjectType',
         ps: [{
-            n: 'genericApplicationPropertyOfCeilingSurface',
+            n: 'clazz',
+            en: 'class'
+          }, {
+            n: 'function',
+            mno: 0,
+            col: true
+          }, {
+            n: 'usage',
+            mno: 0,
+            col: true
+          }, {
+            n: 'lod4Geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'lod4ImplicitRepresentation',
+            ti: 'CityGML_1_0.ImplicitRepresentationPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfBuildingFurniture',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfCeilingSurface',
+            en: '_GenericApplicationPropertyOfBuildingFurniture',
             ti: 'AnyType'
           }]
       }, {
-        ln: 'BuildingPartPropertyType',
+        ln: 'InteriorRoomPropertyType',
         bti: 'GML_3_1_1.AssociationType'
       }, {
-        ln: 'RoofSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
+        ln: 'IntBuildingInstallationType',
+        bti: 'CityGML_1_0.AbstractCityObjectType',
         ps: [{
-            n: 'genericApplicationPropertyOfRoofSurface',
+            n: 'clazz',
+            en: 'class'
+          }, {
+            n: 'function',
+            mno: 0,
+            col: true
+          }, {
+            n: 'usage',
+            mno: 0,
+            col: true
+          }, {
+            n: 'lod4Geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfIntBuildingInstallation',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfRoofSurface',
+            en: '_GenericApplicationPropertyOfIntBuildingInstallation',
             ti: 'AnyType'
           }]
       }, {
-        ln: 'GroundSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
+        ln: 'IntBuildingInstallationPropertyType',
+        bti: 'GML_3_1_1.AssociationType'
+      }, {
+        ln: 'AbstractBoundarySurfaceType',
+        bti: 'CityGML_1_0.AbstractCityObjectType',
         ps: [{
-            n: 'genericApplicationPropertyOfGroundSurface',
+            n: 'lod2MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'lod3MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'lod4MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'opening',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfGroundSurface',
+            ti: '.OpeningPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfBoundarySurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfBoundarySurface',
             ti: 'AnyType'
           }]
       }, {
@@ -83,109 +131,18 @@ var CityGML_Building_1_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'BuildingInstallationPropertyType',
-        bti: 'GML_3_1_1.AssociationType'
-      }, {
-        ln: 'InteriorRoomPropertyType',
-        bti: 'GML_3_1_1.AssociationType'
-      }, {
-        ln: 'BuildingFurnitureType',
-        bti: 'CityGML_1_0.AbstractCityObjectType',
-        ps: [{
-            n: 'clazz',
-            en: 'class'
-          }, {
-            n: 'function',
-            mno: 0,
-            col: true
-          }, {
-            n: 'usage',
-            mno: 0,
-            col: true
-          }, {
-            n: 'lod4Geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'lod4ImplicitRepresentation',
-            ti: 'CityGML_1_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfBuildingFurniture',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfBuildingFurniture',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'InteriorWallSurfaceType',
+        ln: 'GroundSurfaceType',
         bti: '.AbstractBoundarySurfaceType',
         ps: [{
-            n: 'genericApplicationPropertyOfInteriorWallSurface',
+            n: 'genericApplicationPropertyOfGroundSurface',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfInteriorWallSurface',
+            en: '_GenericApplicationPropertyOfGroundSurface',
             ti: 'AnyType'
           }]
       }, {
-        ln: 'InteriorFurniturePropertyType',
+        ln: 'BuildingPartPropertyType',
         bti: 'GML_3_1_1.AssociationType'
-      }, {
-        ln: 'IntBuildingInstallationType',
-        bti: 'CityGML_1_0.AbstractCityObjectType',
-        ps: [{
-            n: 'clazz',
-            en: 'class'
-          }, {
-            n: 'function',
-            mno: 0,
-            col: true
-          }, {
-            n: 'usage',
-            mno: 0,
-            col: true
-          }, {
-            n: 'lod4Geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfIntBuildingInstallation',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfIntBuildingInstallation',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'ClosureSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
-        ps: [{
-            n: 'genericApplicationPropertyOfClosureSurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfClosureSurface',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AbstractBoundarySurfaceType',
-        bti: 'CityGML_1_0.AbstractCityObjectType',
-        ps: [{
-            n: 'lod2MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'lod3MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'lod4MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'opening',
-            mno: 0,
-            col: true,
-            ti: '.OpeningPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfBoundarySurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfBoundarySurface',
-            ti: 'AnyType'
-          }]
       }, {
         ln: 'WallSurfaceType',
         bti: '.AbstractBoundarySurfaceType',
@@ -197,8 +154,38 @@ var CityGML_Building_1_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'OpeningPropertyType',
+        ln: 'RoofSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfRoofSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfRoofSurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'BuildingType',
+        bti: '.AbstractBuildingType',
+        ps: [{
+            n: 'genericApplicationPropertyOfBuilding',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfBuilding',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'BuildingInstallationPropertyType',
         bti: 'GML_3_1_1.AssociationType'
+      }, {
+        ln: 'BuildingPartType',
+        bti: '.AbstractBuildingType',
+        ps: [{
+            n: 'genericApplicationPropertyOfBuildingPart',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfBuildingPart',
+            ti: 'AnyType'
+          }]
       }, {
         ln: 'FloorSurfaceType',
         bti: '.AbstractBoundarySurfaceType',
@@ -210,15 +197,8 @@ var CityGML_Building_1_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'WindowType',
-        bti: '.AbstractOpeningType',
-        ps: [{
-            n: 'genericApplicationPropertyOfWindow',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfWindow',
-            ti: 'AnyType'
-          }]
+        ln: 'OpeningPropertyType',
+        bti: 'GML_3_1_1.AssociationType'
       }, {
         ln: 'AbstractBuildingType',
         bti: 'CityGML_1_0.AbstractSiteType',
@@ -340,13 +320,33 @@ var CityGML_Building_1_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'BuildingType',
-        bti: '.AbstractBuildingType',
+        ln: 'InteriorWallSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
         ps: [{
-            n: 'genericApplicationPropertyOfBuilding',
+            n: 'genericApplicationPropertyOfInteriorWallSurface',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfBuilding',
+            en: '_GenericApplicationPropertyOfInteriorWallSurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'ClosureSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfClosureSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfClosureSurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'WindowType',
+        bti: '.AbstractOpeningType',
+        ps: [{
+            n: 'genericApplicationPropertyOfWindow',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfWindow',
             ti: 'AnyType'
           }]
       }, {
@@ -362,22 +362,6 @@ var CityGML_Building_1_0_Module_Factory = function () {
             mno: 0,
             col: true,
             en: '_GenericApplicationPropertyOfDoor',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AbstractOpeningType',
-        bti: 'CityGML_1_0.AbstractCityObjectType',
-        ps: [{
-            n: 'lod3MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'lod4MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfOpening',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfOpening',
             ti: 'AnyType'
           }]
       }, {
@@ -411,49 +395,39 @@ var CityGML_Building_1_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'BuildingPartType',
-        bti: '.AbstractBuildingType',
+        ln: 'AbstractOpeningType',
+        bti: 'CityGML_1_0.AbstractCityObjectType',
         ps: [{
-            n: 'genericApplicationPropertyOfBuildingPart',
+            n: 'lod3MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'lod4MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfOpening',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfBuildingPart',
+            en: '_GenericApplicationPropertyOfOpening',
             ti: 'AnyType'
           }]
       }, {
-        ln: 'IntBuildingInstallationPropertyType',
+        ln: 'CeilingSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfCeilingSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfCeilingSurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'InteriorFurniturePropertyType',
         bti: 'GML_3_1_1.AssociationType'
       }],
     eis: [{
-        en: '_GenericApplicationPropertyOfRoom',
-        ti: 'AnyType'
-      }, {
-        en: '_BoundarySurface',
-        ti: '.AbstractBoundarySurfaceType',
-        sh: {
-          lp: '_CityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
-        }
-      }, {
-        en: 'Door',
-        ti: '.DoorType',
-        sh: '_Opening'
-      }, {
-        en: '_GenericApplicationPropertyOfOpening',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfBuilding',
-        ti: 'AnyType'
-      }, {
-        en: 'BuildingPart',
-        ti: '.BuildingPartType',
-        sh: '_AbstractBuilding'
-      }, {
-        en: '_GenericApplicationPropertyOfWindow',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfFloorSurface',
-        ti: 'AnyType'
+        en: 'ClosureSurface',
+        ti: '.ClosureSurfaceType',
+        sh: '_BoundarySurface'
       }, {
         en: 'Room',
         ti: '.RoomType',
@@ -462,78 +436,40 @@ var CityGML_Building_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
         }
       }, {
-        en: '_GenericApplicationPropertyOfRoofSurface',
+        en: '_GenericApplicationPropertyOfInteriorWallSurface',
         ti: 'AnyType'
       }, {
-        en: 'Building',
-        ti: '.BuildingType',
-        sh: '_AbstractBuilding'
-      }, {
-        en: 'IntBuildingInstallation',
-        ti: '.IntBuildingInstallationType',
-        sh: {
-          lp: '_CityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
-        }
-      }, {
-        en: '_GenericApplicationPropertyOfDoor',
+        en: '_GenericApplicationPropertyOfWindow',
         ti: 'AnyType'
       }, {
-        en: '_GenericApplicationPropertyOfIntBuildingInstallation',
+        en: '_GenericApplicationPropertyOfOpening',
         ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfBoundarySurface',
-        ti: 'AnyType'
-      }, {
-        en: '_AbstractBuilding',
-        ti: '.AbstractBuildingType',
-        sh: {
-          lp: '_Site',
-          ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
-        }
-      }, {
-        en: 'RoofSurface',
-        ti: '.RoofSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: 'InteriorWallSurface',
-        ti: '.InteriorWallSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: 'BuildingFurniture',
-        ti: '.BuildingFurnitureType',
-        sh: {
-          lp: '_CityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
-        }
-      }, {
-        en: '_GenericApplicationPropertyOfBuildingInstallation',
-        ti: 'AnyType'
-      }, {
-        en: 'Window',
-        ti: '.WindowType',
-        sh: '_Opening'
       }, {
         en: 'FloorSurface',
         ti: '.FloorSurfaceType',
         sh: '_BoundarySurface'
       }, {
-        en: 'CeilingSurface',
-        ti: '.CeilingSurfaceType',
-        sh: '_BoundarySurface'
+        en: 'BuildingPart',
+        ti: '.BuildingPartType',
+        sh: '_AbstractBuilding'
       }, {
-        en: '_Opening',
-        ti: '.AbstractOpeningType',
+        en: 'Building',
+        ti: '.BuildingType',
+        sh: '_AbstractBuilding'
+      }, {
+        en: 'Window',
+        ti: '.WindowType',
+        sh: '_Opening'
+      }, {
+        en: '_BoundarySurface',
+        ti: '.AbstractBoundarySurfaceType',
         sh: {
           lp: '_CityObject',
           ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
         }
       }, {
-        en: '_GenericApplicationPropertyOfWallSurface',
-        ti: 'AnyType'
-      }, {
-        en: 'BuildingInstallation',
-        ti: '.BuildingInstallationType',
+        en: '_Opening',
+        ti: '.AbstractOpeningType',
         sh: {
           lp: '_CityObject',
           ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
@@ -543,33 +479,97 @@ var CityGML_Building_1_0_Module_Factory = function () {
         ti: '.WallSurfaceType',
         sh: '_BoundarySurface'
       }, {
-        en: '_GenericApplicationPropertyOfAbstractBuilding',
+        en: 'IntBuildingInstallation',
+        ti: '.IntBuildingInstallationType',
+        sh: {
+          lp: '_CityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
+        }
+      }, {
+        en: '_GenericApplicationPropertyOfCeilingSurface',
         ti: 'AnyType'
       }, {
-        en: '_GenericApplicationPropertyOfBuildingFurniture',
+        en: '_GenericApplicationPropertyOfRoofSurface',
         ti: 'AnyType'
       }, {
-        en: '_GenericApplicationPropertyOfBuildingPart',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfInteriorWallSurface',
+        en: '_GenericApplicationPropertyOfClosureSurface',
         ti: 'AnyType'
       }, {
         en: 'GroundSurface',
         ti: '.GroundSurfaceType',
         sh: '_BoundarySurface'
       }, {
+        en: 'BuildingFurniture',
+        ti: '.BuildingFurnitureType',
+        sh: {
+          lp: '_CityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
+        }
+      }, {
+        en: '_GenericApplicationPropertyOfIntBuildingInstallation',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfBoundarySurface',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfBuildingPart',
+        ti: 'AnyType'
+      }, {
+        en: 'Door',
+        ti: '.DoorType',
+        sh: '_Opening'
+      }, {
+        en: '_GenericApplicationPropertyOfRoom',
+        ti: 'AnyType'
+      }, {
+        en: 'InteriorWallSurface',
+        ti: '.InteriorWallSurfaceType',
+        sh: '_BoundarySurface'
+      }, {
+        en: 'CeilingSurface',
+        ti: '.CeilingSurfaceType',
+        sh: '_BoundarySurface'
+      }, {
+        en: 'BuildingInstallation',
+        ti: '.BuildingInstallationType',
+        sh: {
+          lp: '_CityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
+        }
+      }, {
+        en: '_GenericApplicationPropertyOfDoor',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfWallSurface',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfAbstractBuilding',
+        ti: 'AnyType'
+      }, {
+        en: 'RoofSurface',
+        ti: '.RoofSurfaceType',
+        sh: '_BoundarySurface'
+      }, {
+        en: '_AbstractBuilding',
+        ti: '.AbstractBuildingType',
+        sh: {
+          lp: '_Site',
+          ns: 'http:\/\/www.opengis.net\/citygml\/1.0'
+        }
+      }, {
+        en: '_GenericApplicationPropertyOfBuilding',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfBuildingInstallation',
+        ti: 'AnyType'
+      }, {
         en: '_GenericApplicationPropertyOfGroundSurface',
         ti: 'AnyType'
       }, {
-        en: 'ClosureSurface',
-        ti: '.ClosureSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: '_GenericApplicationPropertyOfClosureSurface',
+        en: '_GenericApplicationPropertyOfBuildingFurniture',
         ti: 'AnyType'
       }, {
-        en: '_GenericApplicationPropertyOfCeilingSurface',
+        en: '_GenericApplicationPropertyOfFloorSurface',
         ti: 'AnyType'
       }]
   };

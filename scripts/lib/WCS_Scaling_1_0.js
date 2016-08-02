@@ -3,18 +3,32 @@ var WCS_Scaling_1_0_Module_Factory = function () {
     n: 'WCS_Scaling_1_0',
     dens: 'http:\/\/www.opengis.net\/wcs\/scaling\/1.0',
     tis: [{
-        ln: 'TargetAxisExtentType',
+        ln: 'TargetAxisSizeType',
         ps: [{
             n: 'axis',
             rq: true
           }, {
-            n: 'low',
+            n: 'targetSize',
             rq: true,
             ti: 'Decimal'
-          }, {
-            n: 'high',
+          }]
+      }, {
+        ln: 'ScaleToExtentType',
+        ps: [{
+            n: 'targetAxisExtent',
             rq: true,
-            ti: 'Decimal'
+            col: true,
+            en: 'TargetAxisExtent',
+            ti: '.TargetAxisExtentType'
+          }]
+      }, {
+        ln: 'ScaleToSizeType',
+        ps: [{
+            n: 'targetAxisSize',
+            rq: true,
+            col: true,
+            en: 'TargetAxisSize',
+            ti: '.TargetAxisSizeType'
           }]
       }, {
         ln: 'ScalingType',
@@ -40,21 +54,16 @@ var WCS_Scaling_1_0_Module_Factory = function () {
             ti: '.ScaleToExtentType'
           }]
       }, {
-        ln: 'ScaleToExtentType',
-        ps: [{
-            n: 'targetAxisExtent',
-            rq: true,
-            col: true,
-            en: 'TargetAxisExtent',
-            ti: '.TargetAxisExtentType'
-          }]
-      }, {
-        ln: 'TargetAxisSizeType',
+        ln: 'TargetAxisExtentType',
         ps: [{
             n: 'axis',
             rq: true
           }, {
-            n: 'targetSize',
+            n: 'low',
+            rq: true,
+            ti: 'Decimal'
+          }, {
+            n: 'high',
             rq: true,
             ti: 'Decimal'
           }]
@@ -66,15 +75,6 @@ var WCS_Scaling_1_0_Module_Factory = function () {
             col: true,
             en: 'ScaleAxis',
             ti: '.ScaleAxisType'
-          }]
-      }, {
-        ln: 'ScaleToSizeType',
-        ps: [{
-            n: 'targetAxisSize',
-            rq: true,
-            col: true,
-            en: 'TargetAxisSize',
-            ti: '.TargetAxisSizeType'
           }]
       }, {
         ln: 'ScaleAxisType',

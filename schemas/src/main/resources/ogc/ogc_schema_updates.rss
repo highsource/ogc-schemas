@@ -18,17 +18,24 @@
    geospatial and location based services.</description>
 <dc:language>en-us</dc:language>
 <dc:rights>Copyright 1994-2010, Open Geospatial Consortium.</dc:rights>
-<dc:date>2015-10-22T17:13:53:+00:00
+<dc:date>2016-07-05T19:34:26:+00:00
 </dc:date>
 <dc:publisher>Open Geospatial Consortium</dc:publisher>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:subject>OGC Standards</dc:subject>
-<syn:updateBase>2015-10-22T17:13:53:+00:00
+<syn:updateBase>2016-07-05T19:34:26:+00:00
 </syn:updateBase>
 <syn:updateFrequency>2</syn:updateFrequency>
 <syn:updatePeriod>hourly</syn:updatePeriod>
 <items>
  <rdf:Seq>
+  <rdf:li rdf:resource="http://schemas.opengis.net/wfs/ReadMe.txt#20160705t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/gmljp2/ReadMe.txt#20160610t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/cat/ReadMe.txt#20160610t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/eompom/ReadMe.txt#20160608t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/opensearchgeo/ReadMe.txt#20160405t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20160203t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/wmts/ReadMe.txt#20160122t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/waterml/ReadMe.txt#20151022t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/kml/2.3/ReadMe.txt#20151022t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wfs/ReadMe.txt#20151013t15" />
@@ -101,6 +108,74 @@
 <url>http://www.opengeospatial.org/themes/ogc/logo.png</url>
 <link>http://www.opengeospatial.org/</link>
 </image>
+<item rdf:about="http://schemas.opengis.net/wfs/ReadMe.txt#20160705t15">
+<title>OGC WFS 2.0 - Schema updated</title>
+<link>http://schemas.opengis.net/wfs/ReadMe.txt#20160705t15</link>
+<description>The OGC WFS 2.0 schema described in OGC document 09-025r2 has been updated.  Changed the cardinality constraint of LockFeatureType to be optional.
+  No version change per the 09-025r2 corrigendum. See http://www.opengeospatial.org/standards/wfs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-07-05T15:46:12:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC WFS 2.0 Standard Schema Updated</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/gmljp2/ReadMe.txt#20160610t15">
+<title>OGC GMLJP2 2.0.1 - Schema Examples Updated</title>
+<link>http://schemas.opengis.net/gmljp2/ReadMe.txt#20160610t15</link>
+<description>The GMLJP2 online examples have been updated. The OGC GML JPEG2 XML encoding 2.0.1 examples described in OGC document 08-085r5 has been posted.  See http://www.opengeospatial.org/standards/gmljp2 for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-06-10T15:46:11:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC GMLJP2 2.01 Standard Schema Examples Posted</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/cat/ReadMe.txt#20160610t15">
+<title>OGC Catalogue Services 3.0 Specification - HTTP Protocol Binding 3.0.0 Schema Posted</title>
+<link>http://schemas.opengis.net/cat/ReadMe.txt#20160610t15</link>
+<description>The OGC Catalogue CSW 3.0 schema described in OGC document 12-176r7 has been added.  
+See http://www.opengeospatial.org/standards/cat for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-06-10T15:46:10:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC Catalogue CSW 3.0 Standard Schema Posted</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/eompom/ReadMe.txt#20160608t15">
+<title>OGC Earth Observation Metadata profile of Observations &#x26; Measurements 1.1 Schema Posted</title>
+<link>http://schemas.opengis.net/eompom/ReadMe.txt#20160608t15</link>
+<description>The OGC EOMPOM 1.1 schema described in OGC document 10-157r4 has been added.  
+See http://www.opengeospatial.org/standards/om for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-06-07T15:46:09:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC EOMPOM 1.1 Standard Schema Posted</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/opensearchgeo/ReadMe.txt#20160405t15">
+<title>OGC OpenSearch Geo Schema Updated</title>
+<link>http://schemas.opengis.net/opensearchgeo/ReadMe.txt#20160405t15</link>
+<description>The OGC OpenSearch Geo 1.0 schema have been updated to correct the cardinality of Language, InputEncoding and OutputEncoding elements (changed ? to *), change Tags max length set to 256 characters, and Increment version to 1.0.1.  See http://www.opengeospatial.org/standards/opensearchgeo for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-04-05T15:46:08:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC OpenSearch Geo 1.0 Standard Schema Updated</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/wcs/ReadMe.txt#20160203t15">
+<title>OGC WCS 2.0 CRS Extension 1.0.0 Schema Added</title>
+<link>http://schemas.opengis.net/wcs/ReadMe.txt#20160203t15</link>
+<description>The OGC WCS 2.0 CRS Extension 1.0 schema described in OGC document 11-053r1 has been added.  
+See http://www.opengeospatial.org/standards/wcs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-02-03T15:46:07:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC WCS 2.0 CRS Extension 1.0 Schema Added</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/wmts/ReadMe.txt#20160122t15">
+<title>OGC WMTS Simple Profile 1.0 - Schema Added</title>
+<link>http://schemas.opengis.net/wmts/ReadMe.txt#20160122t15</link>
+<description>The OGC WMTS Simple Profile 1.0 schema described in OGC document 13-082r2 has been added.  
+See http://www.opengeospatial.org/standards/wmts for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2015-10-22T15:46:06:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC WMTS Simple Profile 1.0 Standard Schema Added</dc:subject>
+</item>
 <item rdf:about="http://schemas.opengis.net/waterml/ReadMe.txt#20151022t15">
 <title>OGC WaterML 2.0 Part 2 1.0 - Schema Added</title>
 <link>http://schemas.opengis.net/waterml/ReadMe.txt#20151022t15</link>

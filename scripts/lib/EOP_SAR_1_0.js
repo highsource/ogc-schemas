@@ -30,14 +30,17 @@ var EOP_SAR_1_0_Module_Factory = function () {
         bti: 'EOP_1_0.EarthObservationType'
       }, {
         t: 'enum',
-        ln: 'PolarisationChannelsPropertyType',
-        vs: ['HH', 'HV', 'VH', 'VV', 'HH, VV', 'HH, VH', 'HH, HV', 'VH, VV', 'VH, HV', 'VV, HV', 'HH, VV, HV, VH', 'UNDEFINED']
-      }, {
-        t: 'enum',
         ln: 'PolarisationModePropertyType',
         vs: ['D', 'Q', 'S', 'T', 'UNDEFINED']
+      }, {
+        t: 'enum',
+        ln: 'PolarisationChannelsPropertyType',
+        vs: ['HH', 'HV', 'VH', 'VV', 'HH, VV', 'HH, VH', 'HH, HV', 'VH, VV', 'VH, HV', 'VV, HV', 'HH, VV, HV, VH', 'UNDEFINED']
       }],
     eis: [{
+        en: 'dopplerFrequency',
+        ti: 'GML_3_1_1.MeasureType'
+      }, {
         en: 'EarthObservation',
         ti: '.EarthObservationType',
         sh: {
@@ -45,16 +48,20 @@ var EOP_SAR_1_0_Module_Factory = function () {
           ns: 'http:\/\/earth.esa.int\/eop'
         }
       }, {
-        en: 'maximumIncidenceAngle',
-        ti: 'GML_3_1_1.AngleType'
+        en: 'polarisationMode'
+      }, {
+        en: 'polarisationChannels'
+      }, {
+        en: 'antennaLookDirection'
       }, {
         en: 'incidenceAngleVariation',
         ti: 'GML_3_1_1.AngleType'
       }, {
-        en: 'minimumIncidenceAngle',
+        en: 'maximumIncidenceAngle',
         ti: 'GML_3_1_1.AngleType'
       }, {
-        en: 'polarisationMode'
+        en: 'minimumIncidenceAngle',
+        ti: 'GML_3_1_1.AngleType'
       }, {
         en: 'Acquisition',
         ti: '.AcquisitionType',
@@ -62,13 +69,6 @@ var EOP_SAR_1_0_Module_Factory = function () {
           lp: 'Acquisition',
           ns: 'http:\/\/earth.esa.int\/eop'
         }
-      }, {
-        en: 'polarisationChannels'
-      }, {
-        en: 'dopplerFrequency',
-        ti: 'GML_3_1_1.MeasureType'
-      }, {
-        en: 'antennaLookDirection'
       }]
   };
   return {

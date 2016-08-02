@@ -27,6 +27,9 @@ this Schema gmljp2.xsd.
 
 -----------------------------------------------------------------------
 
+2016-06-10  Lucio Colaiacomo & Joan Maso & Emmanuel Devys
+  + v2.0.1: Add GMLJP2 2.0.1 examples to gmljp2/2.0/examples (OGC 08-085r5)
+
 2014-10-14  Lucio Colaiacomo & Joan Maso
   + v2.0: Add/update examples.
 
@@ -45,7 +48,7 @@ Policies, Procedures, Terms, and Conditions of OGC(r) are available
 
 OGC and OpenGIS are registered trademarks of Open Geospatial Consortium.
 
-Copyright (c) 2014 Open Geospatial Consortium.
+Copyright (c) 2014, 2016 Open Geospatial Consortium.
 
 -----------------------------------------------------------------------
 

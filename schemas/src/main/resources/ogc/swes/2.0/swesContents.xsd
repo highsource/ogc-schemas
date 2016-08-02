@@ -16,6 +16,8 @@
       <documentation>contains metadata about a procedure / sensor hosted by the service</documentation>
     </annotation>
   </element>
+  <!-- Other AbstractOffering element to force XJC generate element reference property -->
+  <element name="OtherOffering" type="swes:AbstractOfferingType" abstract="true" substitutionGroup="swes:AbstractOffering"/>
   <complexType name="AbstractOfferingType" abstract="true">
     <complexContent>
       <extension base="swes:AbstractSWESType">

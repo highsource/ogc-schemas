@@ -188,47 +188,6 @@
                 "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/1.0"
             }
         },
-        "TexturedSurfaceType":{
-            "required":[
-                "appearance"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/OrientableSurfaceType"
-                },
-                {
-                    "type":"object",
-                    "title":"TexturedSurfaceType",
-                    "properties":{
-                        "appearance":{
-                            "title":"appearance",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/AppearancePropertyType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"appearance",
-                                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TexturedSurfaceType",
-                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/1.0"
-            },
-            "propertiesOrder":[
-                "appearance"
-            ]
-        },
         "SimpleTextureType":{
             "required":[
                 "textureMap",
@@ -425,6 +384,47 @@
                 "emissiveColor"
             ]
         },
+        "TexturedSurfaceType":{
+            "required":[
+                "appearance"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/OrientableSurfaceType"
+                },
+                {
+                    "type":"object",
+                    "title":"TexturedSurfaceType",
+                    "properties":{
+                        "appearance":{
+                            "title":"appearance",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/AppearancePropertyType"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"appearance",
+                                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TexturedSurfaceType",
+                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/1.0"
+            },
+            "propertiesOrder":[
+                "appearance"
+            ]
+        },
         "TextureTypeType":{
             "allOf":[
                 {
@@ -439,74 +439,6 @@
         }
     },
     "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "TexturedSurface"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/citygml/texturedsurface/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/TexturedSurfaceType"
-                }
-            },
-            "elementName":{
-                "localPart":"TexturedSurface",
-                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Material"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/citygml/texturedsurface/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MaterialType"
-                }
-            },
-            "elementName":{
-                "localPart":"Material",
-                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/1.0"
-            }
-        },
         {
             "type":"object",
             "properties":{
@@ -554,6 +486,40 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
+                                        "TexturedSurface"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/texturedsurface/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/TexturedSurfaceType"
+                }
+            },
+            "elementName":{
+                "localPart":"TexturedSurface",
+                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
                                         "SimpleTexture"
                                     ]
                                 },
@@ -572,6 +538,40 @@
             },
             "elementName":{
                 "localPart":"SimpleTexture",
+                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Material"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/texturedsurface/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MaterialType"
+                }
+            },
+            "elementName":{
+                "localPart":"Material",
                 "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/1.0"
             }
         },

@@ -1,0 +1,6 @@
+<ogc:Filter xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml">
+	<ogc:Equals>
+		<ogc:PropertyName>test1</ogc:PropertyName>
+		<ogc:PropertyName>test2</ogc:PropertyName>
+	</ogc:Equals>
+</ogc:Filter>

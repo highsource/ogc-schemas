@@ -11,13 +11,6 @@
 			<jaxb:package name="net.opengis.filter.v_1_1_0"/>
 		</jaxb:schemaBindings>
 
-		<jaxb:bindings node="xs:complexType[@name='BinarySpatialOpType']//xs:sequence/xs:element[@ref='ogc:PropertyName']">
-			<jaxb:property name="PropertyName1"/>
-		</jaxb:bindings>
-		<jaxb:bindings node="xs:complexType[@name='BinarySpatialOpType']//xs:choice/xs:element[@ref='ogc:PropertyName']">
-			<jaxb:property name="PropertyName2"/>
-		</jaxb:bindings>
-
 		<jaxb:bindings node="xs:complexType[@name='BinaryLogicOpType']//xs:choice">
 			<jaxb:property name="Ops"/>
 		</jaxb:bindings>

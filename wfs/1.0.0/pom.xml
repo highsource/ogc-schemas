@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>org.jvnet.ogc</groupId>
 		<artifactId>ogc-schema-parent</artifactId>
-		<version>2.6.1-SNAPSHOT</version>
+		<version>2.6.2-SNAPSHOT</version>
 		<relativePath>../../schema-parent/pom.xml</relativePath>
 	</parent>
 	<dependencies>
@@ -37,6 +37,9 @@
 					<schemas>
 						<schema>
 							<url>http://schemas.opengis.net/wfs/1.0.0/wfs.xsd</url>
+						</schema>
+						<schema>
+							<url>http://schemas.opengis.net/wfs/1.0.0/WFS-capabilities.xsd</url>
 						</schema>
 						<schema>
 							<url>http://schemas.opengis.net/filter/1.0.0/filter.xsd</url>

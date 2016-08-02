@@ -54,12 +54,13 @@
    <!-- A human-readable title to briefly identify
         this server in menus. -->
    <xsd:element name="Title" type="xsd:string"/>
-
+   <!--
    <xsd:element name="Query"  type="wfs:EmptyType"/>
    <xsd:element name="Insert" type="wfs:EmptyType"/>
    <xsd:element name="Update" type="wfs:EmptyType"/>
    <xsd:element name="Delete" type="wfs:EmptyType"/>
    <xsd:element name="Lock"   type="wfs:EmptyType"/>
+   -->
 
    <!-- REDEFINE THIS ELEMENT AS NEEDED IN YOUR XML  -->
    <xsd:element name="VendorSpecificCapabilities" type="xsd:string"/>
@@ -155,26 +156,26 @@
    <xsd:complexType name="RequestType">
       <xsd:choice maxOccurs="unbounded">
          <xsd:element name="GetCapabilities"
-                      type="wfs:GetCapabilitiesType"/>
+                      type="wfs:Capabilities_GetCapabilitiesType"/>
          <xsd:element name="DescribeFeatureType"
-                      type="wfs:DescribeFeatureTypeType"/>
+                      type="wfs:Capabilities_DescribeFeatureTypeType"/>
          <xsd:element name="Transaction"
-                      type="wfs:TransactionType"/>
+                      type="wfs:Capabilities_TransactionType"/>
          <xsd:element name="GetFeature"
-                      type="wfs:GetFeatureTypeType"/>
+                      type="wfs:Capabilities_GetFeatureTypeType"/>
          <xsd:element name="GetFeatureWithLock"
-                      type="wfs:GetFeatureTypeType"/>
+                      type="wfs:Capabilities_GetFeatureTypeType"/>
          <xsd:element name="LockFeature"
-                      type="wfs:LockFeatureTypeType"/>
+                      type="wfs:Capabilities_LockFeatureTypeType"/>
       </xsd:choice>
    </xsd:complexType>
-   <xsd:complexType name="GetCapabilitiesType">
+   <xsd:complexType name="Capabilities_GetCapabilitiesType">
       <xsd:sequence>
          <xsd:element name="DCPType"
                       type="wfs:DCPTypeType" maxOccurs="unbounded"/>
       </xsd:sequence>
    </xsd:complexType>
-   <xsd:complexType name="DescribeFeatureTypeType">
+   <xsd:complexType name="Capabilities_DescribeFeatureTypeType">
       <xsd:sequence>
          <xsd:element name="SchemaDescriptionLanguage"
                       type="wfs:SchemaDescriptionLanguageType"/>
@@ -182,13 +183,13 @@
                       type="wfs:DCPTypeType" maxOccurs="unbounded"/>
       </xsd:sequence>
    </xsd:complexType>
-   <xsd:complexType name="TransactionType">
+   <xsd:complexType name="Capabilities_TransactionType">
       <xsd:sequence>
          <xsd:element name="DCPType"
                       type="wfs:DCPTypeType" maxOccurs="unbounded"/>
       </xsd:sequence>
    </xsd:complexType>
-   <xsd:complexType name="GetFeatureTypeType">
+   <xsd:complexType name="Capabilities_GetFeatureTypeType">
       <xsd:sequence>
          <xsd:element name="ResultFormat"
                       type="wfs:ResultFormatType"/>
@@ -196,7 +197,7 @@
                       type="wfs:DCPTypeType" maxOccurs="unbounded"/>
       </xsd:sequence>
    </xsd:complexType>
-   <xsd:complexType name="LockFeatureTypeType">
+   <xsd:complexType name="Capabilities_LockFeatureTypeType">
       <xsd:sequence>
          <xsd:element name="DCPType"
                       type="wfs:DCPTypeType" maxOccurs="unbounded"/>
@@ -322,11 +323,11 @@
    </xsd:complexType>
    <xsd:complexType name="OperationsType">
       <xsd:choice maxOccurs="unbounded">
-         <xsd:element ref="wfs:Insert"/>
-         <xsd:element ref="wfs:Update"/>
-         <xsd:element ref="wfs:Delete"/>
-         <xsd:element ref="wfs:Query"/>
-         <xsd:element ref="wfs:Lock"/>
+         <xsd:element name="Insert" type="wfs:EmptyType"/>
+         <xsd:element name="Update" type="wfs:EmptyType"/>
+         <xsd:element name="Delete" type="wfs:EmptyType"/>
+         <xsd:element name="Query" type="wfs:EmptyType"/>
+         <xsd:element name="Lock" type="wfs:EmptyType"/>
       </xsd:choice>
    </xsd:complexType>
    <xsd:complexType name="PostType">
@@ -355,5 +356,7 @@
          <xsd:element ref="wfs:XMLSCHEMA"/>
       </xsd:sequence>
    </xsd:complexType>
+   <!--
    <xsd:complexType name="EmptyType" />
+   -->
 </xsd:schema>

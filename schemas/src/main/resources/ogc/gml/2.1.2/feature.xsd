@@ -24,6 +24,7 @@
   <element name="_Feature" type="gml:AbstractFeatureType" abstract="true"/>
   <element name="_FeatureCollection" type="gml:AbstractFeatureCollectionType" abstract="true" substitutionGroup="gml:_Feature"/>
   <element name="featureMember" type="gml:FeatureAssociationType"/>
+  <element name="otherFeatureMember" type="gml:FeatureAssociationType" substitutionGroup="gml:featureMember"/>
   <!-- some basic geometric properties of features -->
   <element name="_geometryProperty" type="gml:GeometryAssociationType" abstract="true"/>
   <element name="geometryProperty" type="gml:GeometryAssociationType"/>

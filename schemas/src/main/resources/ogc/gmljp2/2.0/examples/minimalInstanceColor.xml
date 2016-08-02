@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmljp2:GMLJP2CoverageCollection gml:id="CCID1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:gmljp2="http://www.opengis.net/gmljp2/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/gmljp2/2.0 http://schemas.opengis.net/gmljp2/2.0/gmljp2.xsd">
+	<!-- Note: The Coverage container defines a coverage whose domainSet is populated with 'inapplicable' value, rangeSet with a meaningless DataBlock, and rangeType field name is "Collection"  (according to Requirement 11) -->
+	<gml:domainSet nilReason="inapplicable"/>
+	<gml:rangeSet>
+		<gml:DataBlock>
+			<gml:rangeParameters nilReason="inapplicable"/>
+			<gml:doubleOrNilReasonTupleList>inapplicable</gml:doubleOrNilReasonTupleList>
+		</gml:DataBlock>
+	</gml:rangeSet>
+	<gmlcov:rangeType>
+		<swe:DataRecord>
+			<swe:field name="Collection"/>
+		</swe:DataRecord>
+	</gmlcov:rangeType>
+	<gmljp2:featureMember>
+		<gmljp2:GMLJP2RectifiedGridCoverage gml:id="RGC01_CCID1">
+			<gml:boundedBy>
+				<!-- Note: This boundedBy element for each Coverage member is recommended. -->
+				<!-- Note: The srsName attribute of the Envelope element shall be used as the default coordinate reference system for "all geometric objects encoded inline" [GML 3.2.1], i.e.: for all range set values. -->
+				<gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326" srsDimension="2" axisLabels="Lat Long" uomLabels="deg deg">
+					<gml:lowerCorner>1.0 1.0</gml:lowerCorner>
+					<gml:upperCorner>3.0 10.0</gml:upperCorner>
+				</gml:Envelope>
+			</gml:boundedBy>
+			<gml:domainSet>
+				<gml:RectifiedGrid gml:id="RG_RGC01_CCID1" dimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326" axisLabels="Lat Long" uomLabels="deg deg">
+					<gml:limits>
+						<gml:GridEnvelope>
+							<gml:low>0 0</gml:low>
+							<gml:high>99 29</gml:high>
+						</gml:GridEnvelope>
+					</gml:limits>
+					<gml:axisLabels>Lat Long</gml:axisLabels>
+					<gml:origin>
+						<gml:Point gml:id="P0001_RGC01_CCID1">
+							<!-- "Upper-left" image origin -->
+							<gml:pos>2.95 1.05</gml:pos>
+						</gml:Point>
+					</gml:origin>
+					<gml:offsetVector>0 0.1</gml:offsetVector>
+					<gml:offsetVector>-0.1 0</gml:offsetVector>
+				</gml:RectifiedGrid>
+			</gml:domainSet>
+			<gml:rangeSet>
+				<gml:File>
+					<gml:rangeParameters/>
+					<gml:fileName>gmljp2://codestream/0</gml:fileName>
+					<gml:fileStructure>Record Interleaved</gml:fileStructure>
+				</gml:File>
+			</gml:rangeSet>
+			<gmlcov:rangeType>
+				<swe:DataRecord>
+					<swe:field name="Color">		<!-- Note: Here use of OGC-EO instrument domain definition ; for an orthoimage, or raster map, the intent is to indicate color (Reg, Green, blue ) pixel values -->
+						<swe:Quantity definition="http://www.opengis.net/def/ogc-eo/opt/SpectralMode/Color">
+							<swe:description>Color image</swe:description>
+							<swe:uom code="unity"/>
+							<!-- Unity for value without unit of measures -->
+						</swe:Quantity>
+					</swe:field>
+				</swe:DataRecord>
+			</gmlcov:rangeType>
+		</gmljp2:GMLJP2RectifiedGridCoverage>
+	</gmljp2:featureMember>
+</gmljp2:GMLJP2CoverageCollection>

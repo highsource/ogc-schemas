@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================
+     * Topic: Sample Capabilities document for CSW 3.0               *
+     * Last update:08.01.2013                                        *
+     * Author:Uwe Voges (con terra GmbH)                             *
+     ==================================================================== -->
+<csw:Capabilities
+   version="3.0.0"
+   xmlns="http://www.opengis.net/cat/csw/3.0"
+   xmlns:csw="http://www.opengis.net/cat/csw/3.0"
+   xmlns:fes="http://www.opengis.net/fes/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:ows20="http://www.opengis.net/ows/2.0"
+   xmlns:gmd="http://www.isotc211.org/2005/gmd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.opengis.net/cat/csw/3.0
+                       http://schemas.opengis.net/cat/csw/3.0/cswAll.xsd
+                       http://www.opengis.net/gml/3.2
+                       http://schemas.opengis.net/gml/3.2.1/gml.xsd
+                       http://www.w3.org/1999/xlink
+                       http://www.w3.org/1999/xlink.xsd">
+   <ows20:ServiceIdentification>
+      <ows20:Title>Catalogue Service for Spatial Information</ows20:Title>
+      <ows20:Abstract>terraCatalog 3.2 based OGC CSW 3.0 Catalogue Service for OGC core and ISO metadata (describing geospatial services, datasets and series)</ows20:Abstract>
+      <ows20:Keywords>
+         <ows20:Keyword>OGC</ows20:Keyword>
+         <ows20:Keyword>CSW</ows20:Keyword>
+         <ows20:Keyword>Catalog Service</ows20:Keyword>
+         <ows20:Keyword>metadata</ows20:Keyword>
+         <ows20:Keyword>CSW</ows20:Keyword>
+         <ows20:Type codeSpace="http://www.someGeospatialVocabulary.com">theme</ows20:Type>
+      </ows20:Keywords>
+      <ows20:ServiceType>CSW</ows20:ServiceType>
+      <ows20:ServiceTypeVersion>3.0.0</ows20:ServiceTypeVersion>
+   </ows20:ServiceIdentification>
+   <ows20:ServiceProvider>
+      <ows20:ProviderName>con terra GmbH</ows20:ProviderName>
+      <ows20:ProviderSite xlink:type="simple"
+         xlink:href="http://www.conterra.de"/>
+      <ows20:ServiceContact>
+         <ows20:IndividualName/>
+         <ows20:PositionName/>
+         <ows20:ContactInfo>
+            <ows20:Phone>
+               <ows20:Voice>+49-251-7474-400</ows20:Voice>
+               <ows20:Facsimile>+49-251-7474-100</ows20:Facsimile>
+            </ows20:Phone>
+            <ows20:Address>
+               <ows20:DeliveryPoint>Marting-Luther-King-Weg 24</ows20:DeliveryPoint>
+               <ows20:City>Muenster</ows20:City>
+               <ows20:AdministrativeArea>NRW</ows20:AdministrativeArea>
+               <ows20:PostalCode>48165</ows20:PostalCode>
+               <ows20:Country>Germany</ows20:Country>
+               <ows20:ElectronicMailAddress>conterra@conterra.de</ows20:ElectronicMailAddress>
+            </ows20:Address>
+            <ows20:OnlineResource xlink:href="mailto:conterra@conterra.de"/>
+         </ows20:ContactInfo>
+      </ows20:ServiceContact>
+   </ows20:ServiceProvider>
+   <ows20:OperationsMetadata>
+      <ows20:Operation name="GetCapabilities">
+         <ows20:DCP>
+            <ows20:HTTP>
+               <ows20:Post
+                  xlink:href="http://www.sdisuite.de/terraCatalog/soapService/services/CSWDiscovery"/>
+               <ows20:Get
+                  xlink:href="http://www.sdisuite.de/terraCatalog/soapServices/CSWStartup?"/>
+            </ows20:HTTP>
+         </ows20:DCP>
+         <ows20:Parameter name="AcceptVersions">
+            <ows20:AllowedValues>
+               <ows20:Value>3.0.0</ows20:Value>
+               <ows20:Value>2.0.2</ows20:Value>
+            </ows20:AllowedValues>
+         </ows20:Parameter>
+      </ows20:Operation>
+      <ows20:Operation name="GetRecords">
+         <ows20:DCP>
+            <ows20:HTTP>
+               <ows20:Post
+                  xlink:href="http://www.sdisuite.de/terraCatalog/soapService/services/CSWDiscovery"/>
+            </ows20:HTTP>
+         </ows20:DCP>
+         <ows20:Parameter name="typeName">
+            <ows20:AllowedValues>
+               <ows20:Value>csw:Record</ows20:Value>
+               <ows20:Value>gmd:MD_Metadata</ows20:Value>
+            </ows20:AllowedValues>
+         </ows20:Parameter>
+         <ows20:Parameter name="outputFormat">
+            <ows20:AllowedValues>
+               <ows20:Value>application/xml</ows20:Value>
+            </ows20:AllowedValues>
+         </ows20:Parameter>
+         <ows20:Parameter name="outputSchema">
+            <ows20:AllowedValues>
+               <ows20:Value>http://www.opengis.net/cat/csw/3.0</ows20:Value>
+               <ows20:Value>http://www.isotc211.org/2005/gmd</ows20:Value>
+            </ows20:AllowedValues>
+         </ows20:Parameter>
+         <ows20:Parameter name="ElementSetName">
+            <ows20:AllowedValues>
+               <ows20:Value>brief</ows20:Value>
+               <ows20:Value>summary</ows20:Value>
+               <ows20:Value>full</ows20:Value>
+            </ows20:AllowedValues>
+         </ows20:Parameter>
+         <ows20:Constraint name="SupportedGMLVersions">
+            <ows20:AllowedValues>
+               <ows20:Value>http://www.opengis.net/gml/3.2</ows20:Value>
+               <ows20:Value>http://www.opengis.net/gml</ows20:Value>
+            </ows20:AllowedValues>
+         </ows20:Constraint>
+         <ows20:Constraint name="OpenSearchDescriptionDocument">
+            <ows20:AllowedValues>
+               <ows20:Value>http://www.sdisuite.de/descriptionDocument.xml</ows20:Value>
+            </ows20:AllowedValues>
+         </ows20:Constraint>
+      </ows20:Operation>
+      <ows20:Operation name="GetRecordById">
+         <ows20:DCP>
+            <ows20:HTTP>
+               <ows20:Post
+                  xlink:href="http://www.sdisuite.de/terraCatalog/soapServiceURL">
+                  <ows20:Constraint name="PostEncoding">
+                     <ows20:AllowedValues>
+                        <ows20:Value>SOAP</ows20:Value>
+                     </ows20:AllowedValues>
+                  </ows20:Constraint>
+               </ows20:Post>
+               <ows20:Post
+                  xlink:href="http://www.sdisuite.de/terraCatalog/postServiceURL">
+                  <ows20:Constraint name="PostEncoding">
+                     <ows20:AllowedValues>
+                        <ows20:Value>XML</ows20:Value>
+                     </ows20:AllowedValues>
+                  </ows20:Constraint>
+               </ows20:Post>
+               <ows20:Get
+                  xlink:href="http://www.sdisuite.de/terraCatalog/soapServices/CSWStartup?"/>
+            </ows20:HTTP>
+         </ows20:DCP>
+         <ows20:Parameter name="ElementSetName">
+            <ows20:AllowedValues>
+               <ows20:Value>brief</ows20:Value>
+               <ows20:Value>summary</ows20:Value>
+               <ows20:Value>full</ows20:Value>
+            </ows20:AllowedValues>
+         </ows20:Parameter>
+         <ows20:Parameter name="outputSchema">
+            <ows20:AllowedValues>
+               <ows20:Value>http://www.opengis.net/cat/csw/2.0.2</ows20:Value>
+            </ows20:AllowedValues>
+         </ows20:Parameter>
+      </ows20:Operation>
+      <ows20:Operation name="DescribeRecord">
+         <ows20:DCP>
+            <ows20:HTTP>
+               <ows20:Post
+                  xlink:href="http://www.sdisuite.de/terraCatalog/soapService/services/CSWDiscovery"/>
+            </ows20:HTTP>
+         </ows20:DCP>
+         <ows20:Parameter name="typeName">
+            <ows20:AllowedValues>
+               <ows20:Value>gmd:MD_Metadata</ows20:Value>
+               <ows20:Value>csw:Record</ows20:Value>
+            </ows20:AllowedValues>
+         </ows20:Parameter>
+         <ows20:Parameter name="outputFormat">
+            <ows20:AllowedValues>
+               <ows20:Value>application/xml</ows20:Value>
+            </ows20:AllowedValues>
+         </ows20:Parameter>
+         <ows20:Parameter name="schemaLanguage">
+            <ows20:AllowedValues>
+               <ows20:Value>http://www.w3.org/XML/Schema</ows20:Value>
+            </ows20:AllowedValues>
+         </ows20:Parameter>
+      </ows20:Operation>
+      <ows20:Operation name="GetDomain">
+         <ows20:DCP>
+            <ows20:HTTP>
+               <ows20:Post
+                  xlink:href="http://www.sdisuite.de/terraCatalog/soapService/services/CSWDiscovery"/>
+            </ows20:HTTP>
+         </ows20:DCP>
+      </ows20:Operation>
+      <ows20:Operation name="Transaction">
+         <ows20:DCP>
+            <ows20:HTTP>
+               <ows20:Post
+                  xlink:href="http://www.sdisuite.de/terraCatalog/soapService/services/CSWManager"/>
+            </ows20:HTTP>
+         </ows20:DCP>
+         <ows20:Constraint name="TransactionSchemas">
+            <ows20:AllowedValues>
+               <ows20:Value>http://www.isotc211.org/2005/gmd</ows20:Value>
+            </ows20:AllowedValues>
+         </ows20:Constraint>
+      </ows20:Operation>
+      <ows20:Operation name="Harvest">
+         <ows20:DCP>
+            <ows20:HTTP>
+               <ows20:Post
+                  xlink:href="http://www.sdisuite.de/terraCatalog/soapService/services/CSWManager"/>
+            </ows20:HTTP>
+         </ows20:DCP>
+      </ows20:Operation>
+      <ows20:Parameter name="srsName">
+         <ows20:AllowedValues>
+            <ows20:Value>http://www.opengis.net/def/crs/EPSG/4326</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Parameter>
+      <!-- OpenSearch support ? -->
+      <ows20:Constraint name="OpenSearch">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- GetCapabilities-XML support ? -->
+      <ows20:Constraint name="GetCapabilities-XML">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- GetRecordById-XML support ? -->
+      <ows20:Constraint name="GetRecordById-XML">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- GetRecords-Basic-XML support ? -->
+      <ows20:Constraint name="GetRecords-Basic-XML">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- GetRecords-Distributed-XML support ? -->
+      <ows20:Constraint name="GetRecords-Distributed-XML">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- GetRecords-Distributed-KVP support ? -->
+      <ows20:Constraint name="GetRecords-Distributed-KVP">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- GetRecords-Async-XML support ? -->
+      <ows20:Constraint name="GetRecords-Async-XML">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- GetRecords-Async-KVP support ? -->
+      <ows20:Constraint name="GetRecords-Async-KVP">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- GetDomain-XML support ? -->
+      <ows20:Constraint name="GetDomain-XML">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- GetDomain-KVP support ? -->
+      <ows20:Constraint name="GetDomain-KVP">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- Harvest-Basic-XML support ? -->
+      <ows20:Constraint name="Harvest-Basic-XML">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- Harvest-Basic-KVP support ? -->
+      <ows20:Constraint name="Harvest-Basic-KVP">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- Harvest-Async-XML support ? -->
+      <ows20:Constraint name="Harvest-Async-XML">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- Harvest-Async-KVP support ? -->
+      <ows20:Constraint name="Harvest-Async-KVP">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- Harvest-Periodic-XML support ? -->
+      <ows20:Constraint name="Harvest-Periodic-XML">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- Harvest-Periodic-KVP support ? -->
+      <ows20:Constraint name="Harvest-Periodic-KVP">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- Filter-CQL support ? -->
+      <ows20:Constraint name="Filter-CQL">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- Filter-FES support ? -->
+      <ows20:Constraint name="Filter-FES">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- Filter-KVP support ? -->
+      <ows20:Constraint name="Filter-KVP">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- CSW-Response support ? -->
+      <ows20:Constraint name="CSW-Response">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- ATOM-response support ? -->
+      <ows20:Constraint name="ATOM-response">
+         <ows20:AllowedValues>
+            <ows20:Value>true</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <ows20:Constraint name="PostEncoding">
+         <ows20:AllowedValues>
+            <ows20:Value>SOAP</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <ows20:Constraint name="CoreQueryables">
+         <ows20:AllowedValues>
+            <ows20:Value>Title</ows20:Value>
+            <ows20:Value>Subject</ows20:Value>
+            <ows20:Value>Abstract</ows20:Value>
+            <ows20:Value>AnyText</ows20:Value>
+            <ows20:Value>Type</ows20:Value>
+            <ows20:Value>Identifier</ows20:Value>
+            <ows20:Value>Modified</ows20:Value>
+            <ows20:Value>TemporalExtent</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <ows20:Constraint name="CoreSortables">
+         <ows20:AllowedValues>
+            <ows20:Value>Title</ows20:Value>
+            <ows20:Value>Type</ows20:Value>
+            <ows20:Value>Modified</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <ows20:Constraint name="DefaultSortingAlgorithm">
+         <ows20:AllowedValues>
+            <ows20:Value>http://www.sdisuite.de/terraCatalog/documentation/descriprionOfSortalgorithm.html</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <!-- enter the supported federated catalogues for distributed search as values below -->
+      <ows20:Constraint name="FedeartedCatalogues">
+         <ows20:AllowedValues>
+            <ows20:Value/>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <ows20:Constraint name="WSDL">
+         <ows20:AllowedValues>
+            <ows20:Value>http://www.sdisuite.de/terraCatalog/soapService/services/CSWDiscovery?wsdl</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+      <ows20:Constraint name="OpenSearch">
+         <ows20:AllowedValues>
+            <ows20:Value>http://www.sdisuite.de/terraCatalog</ows20:Value>
+         </ows20:AllowedValues>
+      </ows20:Constraint>
+   </ows20:OperationsMetadata>
+   <fes:Filter_Capabilities xmlns:ows11="http://www.opengis.net/ows/1.1">
+      <fes:Conformance>
+         <fes:Constraint name="">
+            <ows11:AllowedValues>
+               <ows11:Value/>
+            </ows11:AllowedValues>
+         </fes:Constraint>
+      </fes:Conformance>
+      <fes:Spatial_Capabilities>
+         <fes:GeometryOperands>
+            <fes:GeometryOperand name="gml:Envelope"/>
+            <fes:GeometryOperand name="gml:Point"/>
+            <fes:GeometryOperand name="gml:LineString"/>
+            <fes:GeometryOperand name="gml:Polygon"/>
+         </fes:GeometryOperands>
+         <fes:SpatialOperators>
+            <fes:SpatialOperator name="BBOX"/>
+            <fes:SpatialOperator name="Beyond"/>
+            <fes:SpatialOperator name="Contains"/>
+            <fes:SpatialOperator name="Crosses"/>
+            <fes:SpatialOperator name="Disjoint"/>
+            <fes:SpatialOperator name="DWithin"/>
+            <fes:SpatialOperator name="Equals"/>
+            <fes:SpatialOperator name="Intersects"/>
+            <fes:SpatialOperator name="Overlaps"/>
+            <fes:SpatialOperator name="Touches"/>
+            <fes:SpatialOperator name="Within"/>
+         </fes:SpatialOperators>
+      </fes:Spatial_Capabilities>
+      <fes:Extended_Capabilities>
+         <fes:AdditionalOperators>
+            <fes:Operator name="Between"/>
+            <fes:Operator name="EqualTo"/>
+            <fes:Operator name="GreaterThan"/>
+            <fes:Operator name="GreaterThanEqualTo"/>
+            <fes:Operator name="LessThan"/>
+            <fes:Operator name="LessThanEqualTo"/>
+            <fes:Operator name="Like"/>
+            <fes:Operator name="NotEqualTo"/>
+            <fes:Operator name="NullCheck"/>
+         </fes:AdditionalOperators>
+      </fes:Extended_Capabilities>
+   </fes:Filter_Capabilities>
+</csw:Capabilities>

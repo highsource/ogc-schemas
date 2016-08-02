@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:lmb="http://www.opengis.net/lmb/2.1" xmlns:eop="http://www.opengis.net/eop/2.1" targetNamespace="http://www.opengis.net/lmb/2.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.0">
+	<annotation>
+		<documentation>Limb looking products application schema
+        Earth Observation Metadata profile of Observations and Measurements is an OGC Standard.
+        Copyright (c) 2013, 2016 Open Geospatial Consortium. 
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .		
+		</documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/eop/2.1" schemaLocation="eop.xsd"/>
+	<import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsAll.xsd"/>
+	<element name="EarthObservationEquipment" type="lmb:EarthObservationEquipmentType" substitutionGroup="eop:EarthObservationEquipment">
+		<annotation>
+			<documentation>Extends EOP EarthObservationEquipment for Limb Looking products.</documentation>
+		</annotation>
+	</element>
+	<complexType name="EarthObservationEquipmentType">
+		<complexContent>
+			<extension base="eop:EarthObservationEquipmentType">
+				<sequence>
+					<element name="acquisitionParameters" type="eop:AcquisitionPropertyType">
+						<annotation>
+							<documentation>Uses the extended Acquisition type</documentation>
+						</annotation>
+					</element>
+					<element name="sensor" type="eop:SensorPropertyType">
+						<annotation>
+							<documentation>Uses the extended Sensor type</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="EarthObservationEquipmentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lmb:EarthObservationEquipment"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="Footprint" type="lmb:FootprintType" substitutionGroup="eop:Footprint">
+		<annotation>
+			<documentation>Extends EOP footprint for limb looking profiles</documentation>
+		</annotation>
+	</element>
+	<complexType name="FootprintType">
+		<complexContent>
+			<extension base="eop:FootprintType">
+				<sequence>
+					<element name="maximumAltitude" type="gml:MeasureType" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Upper bound of measurements in vertical dimension. Must be gml Measure</documentation>
+						</annotation>
+					</element>
+					<element name="minimumAltitude" type="gml:MeasureType" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Lower bound of measurements in vertical dimension. Must be gml Measure</documentation>
+						</annotation>
+					</element>
+					<element name="nominalTrack" type="gml:MultiCurvePropertyType" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>A geometry of type GM_Multicurve is used to define the nominal track on the earths surface. This track is essentially a line that is representative of the product but does not include points for every value. 
+The use of GM_MultiCurve allows for multiple lines and breaks in lines.</documentation>
+						</annotation>
+					</element>
+					<element name="occultationPoints" type="gml:MultiPointPropertyType" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>A set of unstructured occultation points (e.g. with non-astronomical bodies like GPS satellites) at which atmospheric profiles are available within the product.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="FootprintPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lmb:Footprint"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="EarthObservation" type="lmb:EarthObservationType" substitutionGroup="eop:EarthObservation">
+		<annotation>
+			<documentation>Extends eop:EarthObservation for Limb Looking products</documentation>
+		</annotation>
+	</element>
+	<complexType name="EarthObservationType">
+		<complexContent>
+			<extension base="eop:EarthObservationType"/>
+		</complexContent>
+	</complexType>
+	<complexType name="EarthObservationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lmb:EarthObservation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="Sensor" type="lmb:SensorType" substitutionGroup="eop:Sensor">
+		<annotation>
+			<documentation>Extends EOP Sensor for Limb Looking products.</documentation>
+		</annotation>
+	</element>
+	<complexType name="SensorType">
+		<complexContent>
+			<extension base="eop:SensorType">
+				<sequence>
+					<element name="measurementType" type="lmb:MeasurementTypeValueType" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Measurement type - ABSORPTION or EMISSION</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SensorPropertyType">
+		<sequence>
+			<element ref="lmb:Sensor"/>
+		</sequence>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="Acquisition" type="lmb:AcquisitionType" substitutionGroup="eop:Acquisition">
+		<annotation>
+			<documentation>xtension of eop:Acquisition, extended for LMB to add observation mode.</documentation>
+		</annotation>
+	</element>
+	<complexType name="AcquisitionType">
+		<complexContent>
+			<extension base="eop:AcquisitionType">
+				<sequence>
+					<element name="observationMode" type="string" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Observation mode used in acquisition. e.g 'UTLS-1' is one of the seven MIPAS observation modes which determine the sampling regime. Not constrained to codelist at the limb-looking level as these modes are instrument specific.</documentation>
+						</annotation>
+					</element>
+					<element name="verticalResolution" type="gml:MeasureType" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Vertical spacing of data (if regular)</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AcquisitionPropertyType">
+		<sequence>
+			<element ref="lmb:Acquisition"/>
+		</sequence>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<simpleType name="MeasurementTypeValueType">
+		<restriction base="string">
+			<enumeration value="EMISSION">
+				<annotation>
+					<documentation>Indicates emitted radiation is measured</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="ABSORPTION">
+				<annotation>
+					<documentation>Indicates absorbed radiation is measured</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+</schema>

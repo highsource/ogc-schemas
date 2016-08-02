@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:csw30-wsdl="http://www.opengis.net/cat/csw/3.0/wsdl"
+   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+   targetNamespace="http://www.opengis.net/cat/csw/3.0/wsdl">
+   <wsdl:import namespace="http://www.opengis.net/cat/csw/3.0/wsdl"
+      location="./xml-interfaces.wsdl"/>
+   <wsdl:documentation xmlns:dc="http://purl.org/dc/elements/1.1/">
+      <dc:description>HTTP/1.1 protocol bindings for CSW interfaces.</dc:description>
+      <dc:date>2012-11-26</dc:date>
+   </wsdl:documentation>
+   <wsdl:binding name="csw-Discovery-POST" type="csw30-wsdl:cswDiscovery">
+      <http:binding verb="POST"/>
+      <wsdl:documentation>CSW discovery interface bound to the HTTP/1.1 POST method.</wsdl:documentation>
+      <wsdl:operation name="cswGetCapabilities">
+         <http:operation location="GetCapabilities"/>
+         <wsdl:input>
+            <mime:mimeXml/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:mimeXml/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceExceptionReport">
+            <soap:fault name="ServiceExceptionReport" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="cswGetRecords">
+         <http:operation location="GetRecords"/>
+         <wsdl:input>
+            <mime:mimeXml/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:mimeXml/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceExceptionReport">
+            <soap:fault name="ServiceExceptionReport" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="cswGetRecordById">
+         <http:operation location="GetRecordById"/>
+         <wsdl:input>
+            <mime:mimeXml/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:mimeXml/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceExceptionReport">
+            <soap:fault name="ServiceExceptionReport" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="cswGetDomain">
+         <http:operation location="GetDomain"/>
+         <wsdl:input>
+            <mime:mimeXml/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:mimeXml/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceExceptionReport">
+            <soap:fault name="ServiceExceptionReport" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="csw-Transaction-POST" type="csw30-wsdl:cswTransaction">
+      <http:binding verb="POST"/>
+      <wsdl:documentation>CSW transaction interface bound to the HTTP/1.1 POST method.</wsdl:documentation>
+      <wsdl:operation name="cswHarvest">
+         <http:operation location="Harvest"/>
+         <wsdl:input>
+            <mime:mimeXml/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:mimeXml/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceExceptionReport">
+            <soap:fault name="ServiceExceptionReport" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="cswUnHarvest">
+         <http:operation location="UnHarvest"/>
+         <wsdl:input>
+            <mime:mimeXml/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:mimeXml/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceExceptionReport">
+            <soap:fault name="ServiceExceptionReport" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="cswTransaction">
+         <http:operation location="Transaction"/>
+         <wsdl:input>
+            <mime:mimeXml/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:mimeXml/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceExceptionReport">
+            <soap:fault name="ServiceExceptionReport" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+</wsdl:definitions>

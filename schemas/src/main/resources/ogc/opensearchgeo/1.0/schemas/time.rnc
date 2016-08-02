@@ -6,7 +6,7 @@
    # Copyright (c) 2014 Open Geospatial Consortium.
    # To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
    #
-   # Version: 1.0.0
+   # Version: 1.0.1
    #
 
 namespace time = "http://a9.com/-/opensearch/extensions/time/1.0/" 

@@ -807,6 +807,7 @@
 			<appinfo>deprecated</appinfo>
 		</annotation>
 	</element>
+	<element name="otherFeatureMember" type="gml:FeaturePropertyType" substitutionGroup="gml:featureMember"/>
 	<element name="featureProperty" type="gml:FeaturePropertyType">
 		<annotation>
 			<appinfo>deprecated</appinfo>
@@ -825,6 +826,7 @@
 			<appinfo>deprecated</appinfo>
 		</annotation>
 	</element>
+	<element name="otherFeatureMembers" type="gml:FeatureArrayPropertyType" substitutionGroup="gml:featureMembers"/>
 	<complexType name="BoundedFeatureType" abstract="true">
 		<annotation>
 			<appinfo>deprecated</appinfo>

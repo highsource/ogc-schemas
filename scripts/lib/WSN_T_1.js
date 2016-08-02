@@ -3,6 +3,15 @@ var WSN_T_1_Module_Factory = function () {
     n: 'WSN_T_1',
     dens: 'http:\/\/docs.oasis-open.org\/wsn\/t-1',
     tis: [{
+        ln: 'ExtensibleDocumented',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'documentation',
+            ti: '.Documentation'
+          }]
+      }, {
         ln: 'TopicType',
         bti: '.ExtensibleDocumented',
         ps: [{
@@ -52,6 +61,21 @@ var WSN_T_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'TopicNamespaceType.Topic',
+        tn: null,
+        bti: '.TopicType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'parent',
+            ti: 'Token',
+            an: {
+              lp: 'parent'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'QueryExpressionType',
         ps: [{
             n: 'content',
@@ -64,13 +88,6 @@ var WSN_T_1_Module_Factory = function () {
               lp: 'Dialect'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'Documentation',
-        ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
           }]
       }, {
         ln: 'TopicNamespaceType',
@@ -126,28 +143,11 @@ var WSN_T_1_Module_Factory = function () {
             t: 'ae'
           }]
       }, {
-        ln: 'ExtensibleDocumented',
+        ln: 'Documentation',
         ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'documentation',
-            ti: '.Documentation'
-          }]
-      }, {
-        ln: 'TopicNamespaceType.Topic',
-        tn: null,
-        bti: '.TopicType',
-        ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'parent',
-            ti: 'Token',
-            an: {
-              lp: 'parent'
-            },
-            t: 'a'
+            n: 'content',
+            col: true,
+            t: 'ae'
           }]
       }],
     eis: [{

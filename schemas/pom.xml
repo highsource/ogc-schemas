@@ -1,143 +1,124 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <artifactId>ogc-schemas</artifactId>
-    <packaging>jar</packaging>
-    <name>OGC Schemas</name>
-    <parent>
-        <groupId>org.jvnet.ogc</groupId>
-        <artifactId>ogc-schemas-project</artifactId>
-        <version>2.6.1-SNAPSHOT</version>
-    </parent>
-    <properties>
-        <schemas.zip>SCHEMAS_OPENGIS_NET.zip</schemas.zip>
-    </properties>
-    <build>
-        <defaultGoal>install</defaultGoal>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>wagon-maven-plugin</artifactId>
-                <version>1.0</version>
-                <executions>
-                    <execution>
-                        <id>download-schemas</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>download-single</goal>
-                        </goals>
-                        <configuration>
-                            <url>http://schemas.opengis.net/</url>
-                            <fromFile>${schemas.zip}</fromFile>
-                            <toDir>src/main/etc/</toDir>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <!-- <execution> TODO: submit pull request to use wagon instead of ant -->
-                    <!--    <id>download-schemas</id> -->
-                    <!--    <phase>generate-sources</phase> -->
-                    <!--    <configuration> -->
-                    <!--        <target> -->
-                    <!--            <get src="http://schemas.opengis.net/${schemas.zip}" dest="src/main/etc/${schemas.zip}" usetimestamp="true"/> -->
-                    <!--        </target> -->
-                    <!--    </configuration> -->
-                    <!--    <goals> -->
-                    <!--        <goal>run</goal> -->
-                    <!--    </goals> -->
-                    <!-- </execution> -->
-                    <execution>
-                        <id>unpack</id>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <target>
-                                <unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources-original/ogc">
-                                    <patternset>
-                                        <exclude name="**/*.zip"/>
-                                    </patternset>
-                                </unzip>
-                                <unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources-original/ogc">
-                                    <patternset>
-                                        <include name="eop/eop-1_0_0.zip"/>
-                                    </patternset>
-                                </unzip>
-                                <unzip src="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip" dest="src/main/resources-original/ogc"/>
-                                <delete file="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip"/>
-                                <move file="${basedir}/src/main/resources-original/ogc/eop/1.0.0" tofile="src/main/resources-original/ogc/eop/1.0"/>
-                            </target>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                    <!--execution>
-                        <id>unpack-eop</id>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <target>
-                                <unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources-original/ogc">
-                                    <patternset>
-                                        <include name="eop/eop-1_0_0.zip"/>
-                                    </patternset>
-                                </unzip>
-                                <unzip src="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip" dest="src/main/resources-original/ogc"/>
-                                <delete file="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip"/>
-                            </target>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution-->
-                    <execution>
-                        <id>copy-original-resources</id>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <target>
-                                <copy todir="${basedir}/src/main/resources" overwrite="true">
-                                    <fileset dir="src/main/resources-original">
-                                        <include name="**/*.*"/>
-                                    </fileset>
-                                </copy>
-                            </target>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-patch-plugin</artifactId>
-                <version>1.1.1</version>
-                <configuration>
-                    <skipApplication>false</skipApplication>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>patch-sources</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>apply</goal>
-                        </goals>
-                        <configuration>
-                            <patchDirectory>src/main/patches/</patchDirectory>
-                            <targetDirectory>src/main/resources</targetDirectory>
-                            <patches>
-                                <patch>ogc.patch</patch>
-                                <patch>geoserver.patch</patch>
-                            </patches>
-                            <optimizations>false</optimizations>
-                            <!--patchTrackingFile>${project.build.directory}/patch-log.txt</patchTrackingFile-->
-                            <naturalOrderProcessing>true</naturalOrderProcessing>
-                            <ignoreWhitespace>true</ignoreWhitespace>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ogc-schemas</artifactId>
+	<packaging>jar</packaging>
+	<name>OGC Schemas</name>
+	<parent>
+		<groupId>org.jvnet.ogc</groupId>
+		<artifactId>ogc-schemas-project</artifactId>
+		<version>2.6.2-SNAPSHOT</version>
+	</parent>
+	<properties>
+		<schemas.zip>SCHEMAS_OPENGIS_NET.zip</schemas.zip>
+	</properties>
+	<build>
+		<defaultGoal>install</defaultGoal>
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>download-schemas</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<target>
+								<get src="http://schemas.opengis.net/${schemas.zip}" dest="src/main/etc/${schemas.zip}" usetimestamp="true"/>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>unpack</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<target>
+								<unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources-original/ogc">
+									<patternset>
+										<exclude name="**/*.zip"/>
+									</patternset>
+								</unzip>
+								<unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources-original/ogc">
+									<patternset>
+										<include name="eop/eop-1_0_0.zip"/>
+									</patternset>
+								</unzip>
+								<unzip src="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip" dest="src/main/resources-original/ogc"/>
+								<delete file="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip"/>
+								<move file="${basedir}/src/main/resources-original/ogc/eop/1.0.0" tofile="src/main/resources-original/ogc/eop/1.0"/>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<!--execution>
+						<id>unpack-eop</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<target>
+								<unzip src="${basedir}/src/main/etc/${schemas.zip}" dest="src/main/resources-original/ogc">
+									<patternset>
+										<include name="eop/eop-1_0_0.zip"/>
+									</patternset>
+								</unzip>
+								<unzip src="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip" dest="src/main/resources-original/ogc"/>
+								<delete file="${basedir}/src/main/resources-original/ogc/eop/eop-1_0_0.zip"/>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution-->
+					<execution>
+						<id>copy-original-resources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<target>
+								<copy todir="${basedir}/src/main/resources" overwrite="true">
+									<fileset dir="src/main/resources-original">
+										<include name="**/*.*"/>
+									</fileset>
+								</copy>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-patch-plugin</artifactId>
+				<version>1.1.1</version>
+				<configuration>
+					<skipApplication>false</skipApplication>
+				</configuration>
+				<executions>
+					<execution>
+						<id>patch-sources</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>apply</goal>
+						</goals>
+						<configuration>
+							<patchDirectory>src/main/patches/</patchDirectory>
+							<targetDirectory>src/main/resources</targetDirectory>
+							<patches>
+								<patch>ogc.patch</patch>
+								<patch>geoserver.patch</patch>
+							</patches>
+							<optimizations>false</optimizations>
+							<!--patchTrackingFile>${project.build.directory}/patch-log.txt</patchTrackingFile-->
+							<naturalOrderProcessing>true</naturalOrderProcessing>
+							<ignoreWhitespace>true</ignoreWhitespace>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

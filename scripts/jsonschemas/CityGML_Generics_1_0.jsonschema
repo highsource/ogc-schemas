@@ -2,43 +2,6 @@
 {
     "id":"http://www.opengis.net/citygml/generics/1.0#",
     "definitions":{
-        "DateAttributeType":{
-            "required":[
-                "value"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractGenericAttributeType"
-                },
-                {
-                    "type":"object",
-                    "title":"DateAttributeType",
-                    "properties":{
-                        "value":{
-                            "title":"value",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/date"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"value",
-                                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DateAttributeType",
-                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
-            },
-            "propertiesOrder":[
-                "value"
-            ]
-        },
         "DoubleAttributeType":{
             "required":[
                 "value"
@@ -76,78 +39,34 @@
                 "value"
             ]
         },
-        "StringAttributeType":{
+        "AbstractGenericAttributeType":{
+            "type":"object",
+            "title":"AbstractGenericAttributeType",
             "required":[
-                "value"
+                "name"
             ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractGenericAttributeType"
-                },
-                {
-                    "type":"object",
-                    "title":"StringAttributeType",
-                    "properties":{
-                        "value":{
-                            "title":"value",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"value",
-                                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
-                            }
+            "properties":{
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"name",
+                        "namespaceURI":""
                     }
                 }
-            ],
+            },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"StringAttributeType",
+                "localPart":"AbstractGenericAttributeType",
                 "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
             },
             "propertiesOrder":[
-                "value"
-            ]
-        },
-        "UriAttributeType":{
-            "required":[
-                "value"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractGenericAttributeType"
-                },
-                {
-                    "type":"object",
-                    "title":"UriAttributeType",
-                    "properties":{
-                        "value":{
-                            "title":"value",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"value",
-                                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"UriAttributeType",
-                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
-            },
-            "propertiesOrder":[
-                "value"
+                "name"
             ]
         },
         "GenericCityObjectType":{
@@ -430,34 +349,78 @@
                 "lod4ImplicitRepresentation"
             ]
         },
-        "AbstractGenericAttributeType":{
-            "type":"object",
-            "title":"AbstractGenericAttributeType",
+        "StringAttributeType":{
             "required":[
-                "name"
+                "value"
             ],
-            "properties":{
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractGenericAttributeType"
+                },
+                {
+                    "type":"object",
+                    "title":"StringAttributeType",
+                    "properties":{
+                        "value":{
+                            "title":"value",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"value",
+                                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
+                            }
                         }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"name",
-                        "namespaceURI":""
                     }
                 }
-            },
+            ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AbstractGenericAttributeType",
+                "localPart":"StringAttributeType",
                 "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
             },
             "propertiesOrder":[
-                "name"
+                "value"
+            ]
+        },
+        "UriAttributeType":{
+            "required":[
+                "value"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractGenericAttributeType"
+                },
+                {
+                    "type":"object",
+                    "title":"UriAttributeType",
+                    "properties":{
+                        "value":{
+                            "title":"value",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"value",
+                                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"UriAttributeType",
+                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
+            },
+            "propertiesOrder":[
+                "value"
             ]
         },
         "IntAttributeType":{
@@ -496,43 +459,46 @@
             "propertiesOrder":[
                 "value"
             ]
+        },
+        "DateAttributeType":{
+            "required":[
+                "value"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractGenericAttributeType"
+                },
+                {
+                    "type":"object",
+                    "title":"DateAttributeType",
+                    "properties":{
+                        "value":{
+                            "title":"value",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/date"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"value",
+                                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DateAttributeType",
+                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
+            },
+            "propertiesOrder":[
+                "value"
+            ]
         }
     },
     "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "dateAttribute"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/citygml/generics/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/DateAttributeType"
-                }
-            },
-            "elementName":{
-                "localPart":"dateAttribute",
-                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
-            }
-        },
         {
             "type":"object",
             "properties":{
@@ -564,40 +530,6 @@
             },
             "elementName":{
                 "localPart":"stringAttribute",
-                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "uriAttribute"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/citygml/generics/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/UriAttributeType"
-                }
-            },
-            "elementName":{
-                "localPart":"uriAttribute",
                 "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
             }
         },
@@ -648,7 +580,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "_genericAttribute"
+                                        "uriAttribute"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -661,11 +593,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/AbstractGenericAttributeType"
+                    "$ref":"#/definitions/UriAttributeType"
                 }
             },
             "elementName":{
-                "localPart":"_genericAttribute",
+                "localPart":"uriAttribute",
                 "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
             }
         },
@@ -700,6 +632,74 @@
             },
             "elementName":{
                 "localPart":"doubleAttribute",
+                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "dateAttribute"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/generics/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/DateAttributeType"
+                }
+            },
+            "elementName":{
+                "localPart":"dateAttribute",
+                "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_genericAttribute"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/generics/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractGenericAttributeType"
+                }
+            },
+            "elementName":{
+                "localPart":"_genericAttribute",
                 "namespaceURI":"http://www.opengis.net/citygml/generics/1.0"
             }
         },

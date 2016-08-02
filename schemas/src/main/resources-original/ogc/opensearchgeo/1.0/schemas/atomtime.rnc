@@ -7,7 +7,7 @@
    # Copyright (c) 2014 Open Geospatial Consortium.
    # To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
    #
-   # Version: 1.0.0
+   # Version: 1.0.1
    #
 
 namespace atom = "http://www.w3.org/2005/Atom"
