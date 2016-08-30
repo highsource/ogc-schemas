@@ -108,7 +108,6 @@
 		<module>wmts</module>
 		<module>wps</module>
 		<module>xal</module>
-		<module>scripts</module>
 		<module>dist</module>
         -->
         <module>schemas</module>
@@ -117,6 +116,7 @@
         <module>om/2.0</module>
         <module>gml/3.2.1</module>
         <module>geodesyml/0.3</module>
+        <module>scripts</module>
 	</modules>
 	<profiles>
 		<profile>
