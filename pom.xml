@@ -313,7 +313,7 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>nexus.gadevs</id>
-			<url>https://nexus.gadevs.ga./repository/maven-snapshots/</url>
+			<url>https://nexus.gadevs.ga/repository/maven-snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
