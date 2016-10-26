@@ -249,18 +249,6 @@ diff -urN ../resources-original/ogc/gml/3.2.1/deprecatedTypes.xsd ogc/gml/3.2.1/
  	<complexType name="BoundedFeatureType" abstract="true">
  		<annotation>
  			<appinfo>deprecated</appinfo>
-diff -urN ../resources-original/ogc/indoorgml/1.0/indoorgmlnavi.xsd ogc/indoorgml/1.0/indoorgmlnavi.xsd
---- ../resources-original/ogc/indoorgml/1.0/indoorgmlnavi.xsd	Wed Dec  3 21:21:25 2014
-+++ ogc/indoorgml/1.0/indoorgmlnavi.xsd	Sun Jul 10 18:00:58 2016
-@@ -8,7 +8,7 @@
- 		</xs:documentation>
- 	</xs:annotation>
- 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
--	<xs:import namespace="http://www.opengis.net/indoorgml/1.0/core" schemaLocation="http://schemas.opengis.net/indoorgml/1.0/core/indoorgmlcore.xsd"/>
-+	<xs:import namespace="http://www.opengis.net/indoorgml/1.0/core" schemaLocation="http://schemas.opengis.net/indoorgml/1.0/indoorgmlcore.xsd"/>
- 	<!-- ====================================================================== -->
- 	<xs:element name="NavigableSpace" type="NavigableSpaceType" substitutionGroup="IndoorCore:CellSpace">
- 		<xs:annotation>
 diff -urN ../resources-original/ogc/kml/2.3/ogckml23.xsd ogc/kml/2.3/ogckml23.xsd
 --- ../resources-original/ogc/kml/2.3/ogckml23.xsd	Thu Oct 22 16:14:09 2015
 +++ ogc/kml/2.3/ogckml23.xsd	Sun Jul 10 18:00:58 2016
