@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.opengis.net/wcs_service-extension_transaction/2.0"
+    xmlns:wcst="http://www.opengis.net/wcs_service-extension_transaction/2.0"
+    xmlns:wcs="http://www.opengis.net/wcs/2.0"
+    xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2.1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    version="2.0.0"
+    xml:lang="en">
+    <xs:annotation>
+        <xs:appinfo>wcsTransaction.xsd</xs:appinfo>
+        <xs:documentation>
+            This schema defines the WCS InsertCoverage, DeleteCoverage, and UpdateCoverage operation request elements and types, used by an OGC Web Coverage Service (WCS) Transaction Extension [OGC 13-057r1].
+            WCS-T is and OGC standard.
+            Last updated: 2016-11-17
+            Copyright (c) 2014, 2016 Open Geospatial Consortium.
+            To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+        </xs:documentation>
+    </xs:annotation>
+
+    <!-- =============================================================
+    includes and imports
+    ============================================================== -->
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+    <xs:import namespace="http://www.opengis.net/gmlcov/1.0" schemaLocation="http://schemas.opengis.net/gmlcov/1.0/gmlcovAll.xsd"/>
+    <xs:import namespace="http://www.opengis.net/wcs/2.0" schemaLocation="http://schemas.opengis.net/wcs/2.0/wcsAll.xsd"/>
+
+    <!-- ==============================================================
+    elements and types
+    =============================================================== -->
+    <xs:element name="InsertCoverage" type="wcst:InsertCoverageType">
+        <xs:annotation>
+            <xs:documentation>Request to a WCS, which must implement WCS-T, to perform an InsertCoverage operation.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:complexType name="InsertCoverageType">
+        <xs:complexContent>
+            <xs:extension base="wcs:RequestBaseType">
+            <xs:sequence>
+                <xs:choice>
+                    <xs:element name="coverage" type="gmlcov:AbstractCoverageType"/>
+                    <xs:element name="coverageRef" type="xs:anyURI"/>
+                </xs:choice>
+                <xs:element name="useId" minOccurs="0">
+                    <xs:complexType/>
+                </xs:element>
+                <xs:element name="isExtensible" type="xs:boolean" minOccurs="0"/>
+            </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="InsertCoverageResponse" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Response of a WCS to a successful InsertCoverage request.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:element name="DeleteCoverage" type="wcst:DeleteCoverageType">
+        <xs:annotation>
+            <xs:documentation>Request to a WCS, which must implement WCS-T, to perform a DeleteCoverage operation.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:complexType name="DeleteCoverageType">
+        <xs:complexContent>
+            <xs:extension base="wcs:RequestBaseType">
+            <xs:sequence>
+                <xs:element name="coverageId" type="xs:NCName" maxOccurs="unbounded"/>
+            </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="UpdateCoverage" type="wcst:UpdateCoverageType">
+        <xs:annotation>
+            <xs:documentation>Request to a WCS, which must implement WCS-T, to perform an UpdateCoverage operation.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:complexType name="UpdateCoverageType">
+        <xs:complexContent>
+            <xs:extension base="wcs:RequestBaseType">
+            <xs:sequence>
+                <xs:element name="coverageId" type="xs:NCName"/>
+                <xs:choice>
+                    <xs:element name="inputCoverage" type="gmlcov:AbstractCoverageType"/>
+                    <xs:element name="inputCoverageRef" type="xs:anyURI"/>
+                </xs:choice>
+                <xs:element ref="wcs:DimensionSubset" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="rangeComponent" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="inputRangeComponent" type="xs:string"/>
+                            <xs:element name="updatedRangeComponent" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:choice>
+                    <xs:element name="mask" type="gmlcov:AbstractCoverageType" minOccurs="0"/>
+                    <xs:element name="maskRef" type="xs:anyURI" minOccurs="0"/>
+                </xs:choice>
+            </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+</xs:schema>
+

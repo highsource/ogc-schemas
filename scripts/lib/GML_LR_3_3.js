@@ -5,155 +5,17 @@ var GML_LR_3_3_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_2_1'],
     tis: [{
-        ln: 'LinearElementPropertyType',
+        ln: 'LinearSRSType',
+        bti: 'GML_3_2_1.IdentifiedObjectType',
         ps: [{
             n: 'linearElement',
             rq: true,
-            en: 'LinearElement',
-            ti: '.LinearElementType'
+            ti: '.LinearElementPropertyType'
           }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AlongReferentPropertyType',
-        ps: [{
-            n: 'alongReferent',
+            n: 'lrm',
             rq: true,
-            mx: false,
-            dom: false,
-            en: 'AlongReferent',
-            ti: '.AlongReferentType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            ti: '.LinearReferencingMethodPropertyType'
           }]
-      }, {
-        ln: 'PositionExpressionPropertyType',
-        ps: [{
-            n: 'positionExpression',
-            rq: true,
-            en: 'PositionExpression',
-            ti: '.PositionExpressionType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'LRMTypeType',
-        bti: 'GML_3_2_1.CodeType'
       }, {
         ln: 'PositionExpressionType',
         bti: 'GML_3_2_1.AbstractGMLType',
@@ -171,23 +33,82 @@ var GML_LR_3_3_Module_Factory = function () {
             ti: '.DistanceExpressionPropertyType'
           }]
       }, {
-        ln: 'AlongReferentType',
+        ln: 'LinearElementType',
         bti: 'GML_3_2_1.AbstractGMLType',
         ps: [{
-            n: 'fromReferent',
+            n: 'feature',
             rq: true,
-            ti: '.ReferentPropertyType'
+            ti: 'GML_3_2_1.FeaturePropertyType'
+          }, {
+            n: 'curve',
+            rq: true,
+            ti: 'GML_3_2_1.CurvePropertyType'
+          }, {
+            n: 'edge',
+            rq: true,
+            ti: 'GML_3_2_1.DirectedEdgePropertyType'
+          }, {
+            n: 'defaultLRM',
+            rq: true,
+            ti: '.LinearReferencingMethodPropertyType'
+          }, {
+            n: 'measure',
+            rq: true,
+            ti: 'GML_3_2_1.MeasureType'
+          }, {
+            n: 'startValue',
+            mno: 0,
+            col: true,
+            ti: '.StartValueType'
           }]
       }, {
-        ln: 'LRMNameType',
-        bti: 'GML_3_2_1.CodeType'
-      }, {
-        ln: 'ReferentPropertyType',
+        ln: 'LinearReferencingMethodType',
+        bti: 'GML_3_2_1.AbstractGMLType',
         ps: [{
-            n: 'referent',
+            n: 'linearReferencingMethodName',
             rq: true,
-            en: 'Referent',
-            ti: '.ReferentType'
+            en: 'name',
+            ti: '.LRMNameType'
+          }, {
+            n: 'type',
+            rq: true,
+            ti: '.LRMTypeType'
+          }, {
+            n: 'units',
+            rq: true
+          }, {
+            n: 'constraint'
+          }]
+      }, {
+        ln: 'StartValueType',
+        ps: [{
+            n: 'value',
+            ti: 'Double',
+            t: 'v'
+          }, {
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }, {
+            n: 'lrm',
+            rq: true,
+            an: {
+              lp: 'lrm'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AlongReferentPropertyType',
+        ps: [{
+            n: 'alongReferent',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'AlongReferent',
+            ti: '.AlongReferentType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {
@@ -281,52 +202,51 @@ var GML_LR_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LinearReferencingMethodType',
-        bti: 'GML_3_2_1.AbstractGMLType',
+        ln: 'LinearElementPropertyType',
         ps: [{
-            n: 'linearReferencingMethodName',
+            n: 'linearElement',
             rq: true,
-            en: 'name',
-            ti: '.LRMNameType'
+            en: 'LinearElement',
+            ti: '.LinearElementType'
           }, {
-            n: 'type',
-            rq: true,
-            ti: '.LRMTypeType'
-          }, {
-            n: 'units',
-            rq: true
-          }, {
-            n: 'constraint'
-          }]
-      }, {
-        ln: 'DistanceExpressionType',
-        bti: 'GML_3_2_1.AbstractGMLType',
-        ps: [{
-            n: 'distanceAlong',
-            rq: true,
-            ti: '.MeasureType'
-          }, {
-            n: 'referent',
-            ti: '.AlongReferentPropertyType'
-          }]
-      }, {
-        ln: 'StartValueType',
-        ps: [{
-            n: 'value',
-            ti: 'Double',
-            t: 'v'
-          }, {
-            n: 'uom',
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
             an: {
-              lp: 'uom'
+              lp: 'nilReason'
             },
             t: 'a'
           }, {
-            n: 'lrm',
-            rq: true,
+            n: 'remoteSchema',
             an: {
-              lp: 'lrm'
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
             },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
@@ -343,45 +263,88 @@ var GML_LR_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LinearSRSType',
-        bti: 'GML_3_2_1.IdentifiedObjectType',
+        ln: 'PositionExpressionPropertyType',
         ps: [{
-            n: 'linearElement',
+            n: 'positionExpression',
             rq: true,
-            ti: '.LinearElementPropertyType'
+            en: 'PositionExpression',
+            ti: '.PositionExpressionType'
           }, {
-            n: 'lrm',
-            rq: true,
-            ti: '.LinearReferencingMethodPropertyType'
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'LinearElementType',
+        ln: 'LRMTypeType',
+        bti: 'GML_3_2_1.CodeType'
+      }, {
+        ln: 'DistanceExpressionType',
         bti: 'GML_3_2_1.AbstractGMLType',
         ps: [{
-            n: 'feature',
+            n: 'distanceAlong',
+            rq: true,
+            ti: '.MeasureType'
+          }, {
+            n: 'referent',
+            ti: '.AlongReferentPropertyType'
+          }]
+      }, {
+        ln: 'ReferentType',
+        bti: 'GML_3_2_1.AbstractGMLType',
+        ps: [{
+            n: 'referentName',
+            rq: true,
+            en: 'name',
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'type',
+            rq: true
+          }, {
+            n: 'position',
+            ti: 'GML_3_2_1.PointPropertyType'
+          }, {
+            n: 'location',
+            ti: '.PositionExpressionPropertyType'
+          }, {
+            n: 'ownedBy',
             rq: true,
             ti: 'GML_3_2_1.FeaturePropertyType'
-          }, {
-            n: 'curve',
-            rq: true,
-            ti: 'GML_3_2_1.CurvePropertyType'
-          }, {
-            n: 'edge',
-            rq: true,
-            ti: 'GML_3_2_1.DirectedEdgePropertyType'
-          }, {
-            n: 'defaultLRM',
-            rq: true,
-            ti: '.LinearReferencingMethodPropertyType'
-          }, {
-            n: 'measure',
-            rq: true,
-            ti: 'GML_3_2_1.MeasureType'
-          }, {
-            n: 'startValue',
-            mno: 0,
-            col: true,
-            ti: '.StartValueType'
           }]
       }, {
         ln: 'DistanceExpressionPropertyType',
@@ -435,26 +398,55 @@ var GML_LR_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ReferentType',
-        bti: 'GML_3_2_1.AbstractGMLType',
+        ln: 'LRMNameType',
+        bti: 'GML_3_2_1.CodeType'
+      }, {
+        ln: 'ReferentPropertyType',
         ps: [{
-            n: 'referentName',
+            n: 'referent',
             rq: true,
-            en: 'name',
-            ti: 'GML_3_2_1.CodeType'
+            en: 'Referent',
+            ti: '.ReferentType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
           }, {
             n: 'type',
-            rq: true
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
           }, {
-            n: 'position',
-            ti: 'GML_3_2_1.PointPropertyType'
+            n: 'href',
+            t: 'a'
           }, {
-            n: 'location',
-            ti: '.PositionExpressionPropertyType'
+            n: 'role',
+            t: 'a'
           }, {
-            n: 'ownedBy',
-            rq: true,
-            ti: 'GML_3_2_1.FeaturePropertyType'
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
         ln: 'LinearReferencingMethodPropertyType',
@@ -508,20 +500,21 @@ var GML_LR_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'AlongReferentType',
+        bti: 'GML_3_2_1.AbstractGMLType',
+        ps: [{
+            n: 'fromReferent',
+            rq: true,
+            ti: '.ReferentPropertyType'
+          }]
+      }, {
         t: 'enum',
         ln: 'ReferentTypeType',
         vs: ['referenceMarker', 'intersection', 'boundary', 'landmark']
       }],
     eis: [{
-        en: 'AlongReferent',
-        ti: '.AlongReferentType',
-        sh: {
-          lp: 'AbstractGML',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'PositionExpression',
-        ti: '.PositionExpressionType',
+        en: 'LinearElement',
+        ti: '.LinearElementType',
         sh: {
           lp: 'AbstractGML',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
@@ -534,15 +527,22 @@ var GML_LR_3_3_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'DistanceExpression',
-        ti: '.DistanceExpressionType',
+        en: 'Referent',
+        ti: '.ReferentType',
         sh: {
           lp: 'AbstractGML',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'Referent',
-        ti: '.ReferentType',
+        en: 'PositionExpression',
+        ti: '.PositionExpressionType',
+        sh: {
+          lp: 'AbstractGML',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'AlongReferent',
+        ti: '.AlongReferentType',
         sh: {
           lp: 'AbstractGML',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
@@ -555,8 +555,8 @@ var GML_LR_3_3_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'LinearElement',
-        ti: '.LinearElementType',
+        en: 'DistanceExpression',
+        ti: '.DistanceExpressionType',
         sh: {
           lp: 'AbstractGML',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'

@@ -2,9 +2,257 @@
 {
     "id":"http://www.opengis.net/eosps/2.0#",
     "definitions":{
-        "GetSensorAvailabilityResponseType.AvailabilityPeriod":{
+        "ValidateResponseType":{
+            "required":[
+                "result"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/swes/2.0#/definitions/ExtensibleResponseType"
+                },
+                {
+                    "type":"object",
+                    "title":"ValidateResponseType",
+                    "properties":{
+                        "result":{
+                            "title":"result",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/StatusReportPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"result",
+                                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ValidateResponseType",
+                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+            },
+            "propertiesOrder":[
+                "result"
+            ]
+        },
+        "GetSensorAvailabilityPropertyType":{
             "type":"object",
-            "title":"GetSensorAvailabilityResponseType.AvailabilityPeriod",
+            "title":"GetSensorAvailabilityPropertyType",
+            "required":[
+                "getSensorAvailability"
+            ],
+            "properties":{
+                "getSensorAvailability":{
+                    "title":"getSensorAvailability",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/GetSensorAvailabilityType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"GetSensorAvailability",
+                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":""
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml/3.2"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GetSensorAvailabilityPropertyType",
+                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+            },
+            "propertiesOrder":[
+                "getSensorAvailability",
+                "nilReason",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "GetSensorAvailabilityType":{
+            "required":[
+                "sensor",
+                "requestPeriod"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/swes/2.0#/definitions/ExtensibleRequestType"
+                },
+                {
+                    "type":"object",
+                    "title":"GetSensorAvailabilityType",
+                    "properties":{
+                        "sensor":{
+                            "title":"sensor",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"sensor",
+                                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                            }
+                        },
+                        "requestPeriod":{
+                            "title":"requestPeriod",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/GetSensorAvailabilityType.RequestPeriod"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"requestPeriod",
+                                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GetSensorAvailabilityType",
+                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+            },
+            "propertiesOrder":[
+                "sensor",
+                "requestPeriod"
+            ]
+        },
+        "GetSensorAvailabilityResponseType.ResponsePeriod":{
+            "type":"object",
+            "title":"GetSensorAvailabilityResponseType.ResponsePeriod",
             "required":[
                 "timePeriod"
             ],
@@ -26,6 +274,66 @@
             "typeType":"classInfo",
             "propertiesOrder":[
                 "timePeriod"
+            ]
+        },
+        "GridCellPropertyType":{
+            "type":"object",
+            "title":"GridCellPropertyType",
+            "required":[
+                "gridCell"
+            ],
+            "properties":{
+                "gridCell":{
+                    "title":"gridCell",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/GridCellType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"GridCell",
+                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GridCellPropertyType",
+                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+            },
+            "propertiesOrder":[
+                "gridCell"
+            ]
+        },
+        "FeasibilityStudyPropertyType":{
+            "type":"object",
+            "title":"FeasibilityStudyPropertyType",
+            "required":[
+                "feasibilityStudy"
+            ],
+            "properties":{
+                "feasibilityStudy":{
+                    "title":"feasibilityStudy",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/FeasibilityStudyType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"FeasibilityStudy",
+                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"FeasibilityStudyPropertyType",
+                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+            },
+            "propertiesOrder":[
+                "feasibilityStudy"
             ]
         },
         "SegmentType":{
@@ -195,32 +503,6 @@
                 "timePeriod"
             ]
         },
-        "GetSensorAvailabilityResponseType.ResponsePeriod":{
-            "type":"object",
-            "title":"GetSensorAvailabilityResponseType.ResponsePeriod",
-            "required":[
-                "timePeriod"
-            ],
-            "properties":{
-                "timePeriod":{
-                    "title":"timePeriod",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TimePeriodType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TimePeriod",
-                        "namespaceURI":"http://www.opengis.net/gml/3.2"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "timePeriod"
-            ]
-        },
         "SegmentPropertyType":{
             "type":"object",
             "title":"SegmentPropertyType",
@@ -251,564 +533,34 @@
                 "segment"
             ]
         },
-        "GridCellType.Footprint":{
+        "ProgrammingStatusPropertyType":{
             "type":"object",
-            "title":"GridCellType.Footprint",
+            "title":"ProgrammingStatusPropertyType",
             "required":[
-                "polygon"
+                "programmingStatus"
             ],
             "properties":{
-                "polygon":{
-                    "title":"polygon",
+                "programmingStatus":{
+                    "title":"programmingStatus",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/PolygonType"
+                            "$ref":"#/definitions/ProgrammingStatusType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Polygon",
-                        "namespaceURI":"http://www.opengis.net/gml/3.2"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "polygon"
-            ]
-        },
-        "SubmitSegmentByIDPropertyType":{
-            "type":"object",
-            "title":"SubmitSegmentByIDPropertyType",
-            "required":[
-                "submitSegmentByID"
-            ],
-            "properties":{
-                "submitSegmentByID":{
-                    "title":"submitSegmentByID",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SubmitSegmentByIDType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SubmitSegmentByID",
-                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":""
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml/3.2"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SubmitSegmentByIDPropertyType",
-                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-            },
-            "propertiesOrder":[
-                "submitSegmentByID",
-                "nilReason",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "GetSensorAvailabilityPropertyType":{
-            "type":"object",
-            "title":"GetSensorAvailabilityPropertyType",
-            "required":[
-                "getSensorAvailability"
-            ],
-            "properties":{
-                "getSensorAvailability":{
-                    "title":"getSensorAvailability",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/GetSensorAvailabilityType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"GetSensorAvailability",
-                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":""
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml/3.2"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GetSensorAvailabilityPropertyType",
-                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-            },
-            "propertiesOrder":[
-                "getSensorAvailability",
-                "nilReason",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "ValidateResponseType":{
-            "required":[
-                "result"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/swes/2.0#/definitions/ExtensibleResponseType"
-                },
-                {
-                    "type":"object",
-                    "title":"ValidateResponseType",
-                    "properties":{
-                        "result":{
-                            "title":"result",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/StatusReportPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"result",
-                                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ValidateResponseType",
-                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-            },
-            "propertiesOrder":[
-                "result"
-            ]
-        },
-        "FeasibilityStudyPropertyType":{
-            "type":"object",
-            "title":"FeasibilityStudyPropertyType",
-            "required":[
-                "feasibilityStudy"
-            ],
-            "properties":{
-                "feasibilityStudy":{
-                    "title":"feasibilityStudy",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/FeasibilityStudyType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"FeasibilityStudy",
+                        "localPart":"ProgrammingStatus",
                         "namespaceURI":"http://www.opengis.net/eosps/2.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"FeasibilityStudyPropertyType",
+                "localPart":"ProgrammingStatusPropertyType",
                 "namespaceURI":"http://www.opengis.net/eosps/2.0"
             },
             "propertiesOrder":[
-                "feasibilityStudy"
-            ]
-        },
-        "GridCellType":{
-            "type":"object",
-            "title":"GridCellType",
-            "required":[
-                "footprint",
-                "status",
-                "successRate",
-                "id"
-            ],
-            "properties":{
-                "footprint":{
-                    "title":"footprint",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/GridCellType.Footprint"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"footprint",
-                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                    }
-                },
-                "status":{
-                    "title":"status",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"status",
-                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                    }
-                },
-                "successRate":{
-                    "title":"successRate",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"successRate",
-                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                    }
-                },
-                "estimatedSuccessDate":{
-                    "title":"estimatedSuccessDate",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/dateTime"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"estimatedSuccessDate",
-                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                    }
-                },
-                "lastAttemptDate":{
-                    "title":"lastAttemptDate",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/dateTime"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"lastAttemptDate",
-                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                    }
-                },
-                "nextAttemptDate":{
-                    "title":"nextAttemptDate",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/dateTime"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"nextAttemptDate",
-                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                    }
-                },
-                "remainingAttempts":{
-                    "title":"remainingAttempts",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"remainingAttempts",
-                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                    }
-                },
-                "extension":{
-                    "title":"extension",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"extension",
-                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                    }
-                },
-                "id":{
-                    "title":"id",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"id",
-                        "namespaceURI":"http://www.opengis.net/gml/3.2"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GridCellType",
-                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-            },
-            "propertiesOrder":[
-                "footprint",
-                "status",
-                "successRate",
-                "estimatedSuccessDate",
-                "lastAttemptDate",
-                "nextAttemptDate",
-                "remainingAttempts",
-                "extension",
-                "id"
+                "programmingStatus"
             ]
         },
         "GetSensorAvailabilityResponseType":{
@@ -866,13 +618,127 @@
                 "availabilityPeriod"
             ]
         },
-        "ProgrammingStatusType":{
-            "type":"object",
-            "title":"ProgrammingStatusType",
+        "SubmitSegmentByIDType":{
             "required":[
-                "segment"
+                "task",
+                "segmentID"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/swes/2.0#/definitions/ExtensibleRequestType"
+                },
+                {
+                    "type":"object",
+                    "title":"SubmitSegmentByIDType",
+                    "properties":{
+                        "task":{
+                            "title":"task",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"task",
+                                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                            }
+                        },
+                        "segmentID":{
+                            "title":"segmentID",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/NCName"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"segmentID",
+                                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SubmitSegmentByIDType",
+                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+            },
+            "propertiesOrder":[
+                "task",
+                "segmentID"
+            ]
+        },
+        "FeasibilityStudyType":{
+            "type":"object",
+            "title":"FeasibilityStudyType",
+            "required":[
+                "expirationDate",
+                "successRate",
+                "informationUsed"
             ],
             "properties":{
+                "expirationDate":{
+                    "title":"expirationDate",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/dateTime"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"expirationDate",
+                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                    }
+                },
+                "estimatedCost":{
+                    "title":"estimatedCost",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/MeasureType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"estimatedCost",
+                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                    }
+                },
+                "successRate":{
+                    "title":"successRate",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"successRate",
+                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                    }
+                },
+                "informationUsed":{
+                    "title":"informationUsed",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"informationUsed",
+                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                    }
+                },
                 "extension":{
                     "title":"extension",
                     "allOf":[
@@ -898,7 +764,7 @@
                             "items":{
                                 "$ref":"#/definitions/SegmentPropertyType"
                             },
-                            "minItems":1
+                            "minItems":0
                         }
                     ],
                     "propertyType":"element",
@@ -940,14 +806,74 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ProgrammingStatusType",
+                "localPart":"FeasibilityStudyType",
                 "namespaceURI":"http://www.opengis.net/eosps/2.0"
             },
             "propertiesOrder":[
+                "expirationDate",
+                "estimatedCost",
+                "successRate",
+                "informationUsed",
                 "extension",
                 "segment",
                 "cell",
                 "id"
+            ]
+        },
+        "ValidateType":{
+            "required":[
+                "task",
+                "segmentID"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/swes/2.0#/definitions/ExtensibleRequestType"
+                },
+                {
+                    "type":"object",
+                    "title":"ValidateType",
+                    "properties":{
+                        "task":{
+                            "title":"task",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"task",
+                                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                            }
+                        },
+                        "segmentID":{
+                            "title":"segmentID",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/NCName"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"segmentID",
+                                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ValidateType",
+                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+            },
+            "propertiesOrder":[
+                "task",
+                "segmentID"
             ]
         },
         "GetSensorAvailabilityResponsePropertyType":{
@@ -1109,307 +1035,6 @@
                 "actuate"
             ]
         },
-        "ValidatePropertyType":{
-            "type":"object",
-            "title":"ValidatePropertyType",
-            "required":[
-                "validate"
-            ],
-            "properties":{
-                "validate":{
-                    "title":"validate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ValidateType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Validate",
-                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":""
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml/3.2"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ValidatePropertyType",
-                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-            },
-            "propertiesOrder":[
-                "validate",
-                "nilReason",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "SubmitSegmentByIDType":{
-            "required":[
-                "task",
-                "segmentID"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/swes/2.0#/definitions/ExtensibleRequestType"
-                },
-                {
-                    "type":"object",
-                    "title":"SubmitSegmentByIDType",
-                    "properties":{
-                        "task":{
-                            "title":"task",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"task",
-                                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                            }
-                        },
-                        "segmentID":{
-                            "title":"segmentID",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/NCName"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"segmentID",
-                                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SubmitSegmentByIDType",
-                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-            },
-            "propertiesOrder":[
-                "task",
-                "segmentID"
-            ]
-        },
-        "ValidateType":{
-            "required":[
-                "task",
-                "segmentID"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/swes/2.0#/definitions/ExtensibleRequestType"
-                },
-                {
-                    "type":"object",
-                    "title":"ValidateType",
-                    "properties":{
-                        "task":{
-                            "title":"task",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"task",
-                                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                            }
-                        },
-                        "segmentID":{
-                            "title":"segmentID",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/NCName"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"segmentID",
-                                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ValidateType",
-                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-            },
-            "propertiesOrder":[
-                "task",
-                "segmentID"
-            ]
-        },
-        "ProgrammingStatusPropertyType":{
-            "type":"object",
-            "title":"ProgrammingStatusPropertyType",
-            "required":[
-                "programmingStatus"
-            ],
-            "properties":{
-                "programmingStatus":{
-                    "title":"programmingStatus",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ProgrammingStatusType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ProgrammingStatus",
-                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ProgrammingStatusPropertyType",
-                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-            },
-            "propertiesOrder":[
-                "programmingStatus"
-            ]
-        },
         "ValidateResponsePropertyType":{
             "type":"object",
             "title":"ValidateResponsePropertyType",
@@ -1569,64 +1194,198 @@
                 "actuate"
             ]
         },
-        "SegmentType.Footprint":{
+        "SubmitSegmentByIDPropertyType":{
             "type":"object",
-            "title":"SegmentType.Footprint",
+            "title":"SubmitSegmentByIDPropertyType",
             "required":[
-                "polygon"
+                "submitSegmentByID"
             ],
             "properties":{
-                "polygon":{
-                    "title":"polygon",
+                "submitSegmentByID":{
+                    "title":"submitSegmentByID",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/PolygonType"
+                            "$ref":"#/definitions/SubmitSegmentByIDType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Polygon",
+                        "localPart":"SubmitSegmentByID",
+                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":""
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
                         "namespaceURI":"http://www.opengis.net/gml/3.2"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
                 }
             },
             "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SubmitSegmentByIDPropertyType",
+                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+            },
             "propertiesOrder":[
-                "polygon"
+                "submitSegmentByID",
+                "nilReason",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
             ]
         },
-        "FeasibilityStudyType":{
+        "GridCellType":{
             "type":"object",
-            "title":"FeasibilityStudyType",
+            "title":"GridCellType",
             "required":[
-                "expirationDate",
+                "footprint",
+                "status",
                 "successRate",
-                "informationUsed"
+                "id"
             ],
             "properties":{
-                "expirationDate":{
-                    "title":"expirationDate",
+                "footprint":{
+                    "title":"footprint",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/dateTime"
+                            "$ref":"#/definitions/GridCellType.Footprint"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"expirationDate",
+                        "localPart":"footprint",
                         "namespaceURI":"http://www.opengis.net/eosps/2.0"
                     }
                 },
-                "estimatedCost":{
-                    "title":"estimatedCost",
+                "status":{
+                    "title":"status",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/MeasureType"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"estimatedCost",
+                        "localPart":"status",
                         "namespaceURI":"http://www.opengis.net/eosps/2.0"
                     }
                 },
@@ -1643,23 +1402,113 @@
                         "namespaceURI":"http://www.opengis.net/eosps/2.0"
                     }
                 },
-                "informationUsed":{
-                    "title":"informationUsed",
+                "estimatedSuccessDate":{
+                    "title":"estimatedSuccessDate",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            },
-                            "minItems":1
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/dateTime"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"informationUsed",
+                        "localPart":"estimatedSuccessDate",
                         "namespaceURI":"http://www.opengis.net/eosps/2.0"
                     }
                 },
+                "lastAttemptDate":{
+                    "title":"lastAttemptDate",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/dateTime"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"lastAttemptDate",
+                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                    }
+                },
+                "nextAttemptDate":{
+                    "title":"nextAttemptDate",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/dateTime"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"nextAttemptDate",
+                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                    }
+                },
+                "remainingAttempts":{
+                    "title":"remainingAttempts",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"remainingAttempts",
+                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                    }
+                },
+                "extension":{
+                    "title":"extension",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"extension",
+                        "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                    }
+                },
+                "id":{
+                    "title":"id",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"id",
+                        "namespaceURI":"http://www.opengis.net/gml/3.2"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"GridCellType",
+                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+            },
+            "propertiesOrder":[
+                "footprint",
+                "status",
+                "successRate",
+                "estimatedSuccessDate",
+                "lastAttemptDate",
+                "nextAttemptDate",
+                "remainingAttempts",
+                "extension",
+                "id"
+            ]
+        },
+        "ProgrammingStatusType":{
+            "type":"object",
+            "title":"ProgrammingStatusType",
+            "required":[
+                "segment"
+            ],
+            "properties":{
                 "extension":{
                     "title":"extension",
                     "allOf":[
@@ -1685,7 +1534,7 @@
                             "items":{
                                 "$ref":"#/definitions/SegmentPropertyType"
                             },
-                            "minItems":0
+                            "minItems":1
                         }
                     ],
                     "propertyType":"element",
@@ -1727,113 +1576,252 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"FeasibilityStudyType",
+                "localPart":"ProgrammingStatusType",
                 "namespaceURI":"http://www.opengis.net/eosps/2.0"
             },
             "propertiesOrder":[
-                "expirationDate",
-                "estimatedCost",
-                "successRate",
-                "informationUsed",
                 "extension",
                 "segment",
                 "cell",
                 "id"
             ]
         },
-        "GridCellPropertyType":{
+        "ValidatePropertyType":{
             "type":"object",
-            "title":"GridCellPropertyType",
+            "title":"ValidatePropertyType",
             "required":[
-                "gridCell"
+                "validate"
             ],
             "properties":{
-                "gridCell":{
-                    "title":"gridCell",
+                "validate":{
+                    "title":"validate",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/GridCellType"
+                            "$ref":"#/definitions/ValidateType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"GridCell",
+                        "localPart":"Validate",
                         "namespaceURI":"http://www.opengis.net/eosps/2.0"
                     }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"GridCellPropertyType",
-                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-            },
-            "propertiesOrder":[
-                "gridCell"
-            ]
-        },
-        "GetSensorAvailabilityType":{
-            "required":[
-                "sensor",
-                "requestPeriod"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/swes/2.0#/definitions/ExtensibleRequestType"
                 },
-                {
-                    "type":"object",
-                    "title":"GetSensorAvailabilityType",
-                    "properties":{
-                        "sensor":{
-                            "title":"sensor",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"sensor",
-                                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-                            }
-                        },
-                        "requestPeriod":{
-                            "title":"requestPeriod",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/GetSensorAvailabilityType.RequestPeriod"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"requestPeriod",
-                                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                             }
                         }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":""
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml/3.2"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
                 }
-            ],
+            },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"GetSensorAvailabilityType",
+                "localPart":"ValidatePropertyType",
                 "namespaceURI":"http://www.opengis.net/eosps/2.0"
             },
             "propertiesOrder":[
-                "sensor",
-                "requestPeriod"
+                "validate",
+                "nilReason",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
             ]
         },
-        "InformationTypeEnumerationType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
+        "GridCellType.Footprint":{
+            "type":"object",
+            "title":"GridCellType.Footprint",
+            "required":[
+                "polygon"
             ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"InformationTypeEnumerationType",
-                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-            }
+            "properties":{
+                "polygon":{
+                    "title":"polygon",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/PolygonType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Polygon",
+                        "namespaceURI":"http://www.opengis.net/gml/3.2"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "polygon"
+            ]
+        },
+        "SegmentType.Footprint":{
+            "type":"object",
+            "title":"SegmentType.Footprint",
+            "required":[
+                "polygon"
+            ],
+            "properties":{
+                "polygon":{
+                    "title":"polygon",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/PolygonType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Polygon",
+                        "namespaceURI":"http://www.opengis.net/gml/3.2"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "polygon"
+            ]
+        },
+        "GetSensorAvailabilityResponseType.AvailabilityPeriod":{
+            "type":"object",
+            "title":"GetSensorAvailabilityResponseType.AvailabilityPeriod",
+            "required":[
+                "timePeriod"
+            ],
+            "properties":{
+                "timePeriod":{
+                    "title":"timePeriod",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TimePeriodType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TimePeriod",
+                        "namespaceURI":"http://www.opengis.net/gml/3.2"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "timePeriod"
+            ]
         },
         "StatusCodeEnumerationType":{
             "allOf":[
@@ -1858,6 +1846,18 @@
                 "localPart":"FeasibilityLevelEnumerationType",
                 "namespaceURI":"http://www.opengis.net/eosps/2.0"
             }
+        },
+        "InformationTypeEnumerationType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"InformationTypeEnumerationType",
+                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+            }
         }
     },
     "anyOf":[
@@ -1874,7 +1874,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "ProgrammingStatus"
+                                        "GetSensorAvailability"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1887,113 +1887,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/ProgrammingStatusType"
+                    "$ref":"#/definitions/GetSensorAvailabilityType"
                 }
             },
             "elementName":{
-                "localPart":"ProgrammingStatus",
-                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Validate"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/eosps/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/ValidateType"
-                }
-            },
-            "elementName":{
-                "localPart":"Validate",
-                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "GetSensorAvailabilityResponse"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/eosps/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GetSensorAvailabilityResponseType"
-                }
-            },
-            "elementName":{
-                "localPart":"GetSensorAvailabilityResponse",
-                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "SubmitSegmentByID"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/eosps/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/SubmitSegmentByIDType"
-                }
-            },
-            "elementName":{
-                "localPart":"SubmitSegmentByID",
+                "localPart":"GetSensorAvailability",
                 "namespaceURI":"http://www.opengis.net/eosps/2.0"
             }
         },
@@ -2044,7 +1942,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "ReferenceFeasibilityID"
+                                        "FeasibilityStudy"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2057,11 +1955,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                    "$ref":"#/definitions/FeasibilityStudyType"
                 }
             },
             "elementName":{
-                "localPart":"ReferenceFeasibilityID",
+                "localPart":"FeasibilityStudy",
                 "namespaceURI":"http://www.opengis.net/eosps/2.0"
             }
         },
@@ -2078,7 +1976,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Segment"
+                                        "FeasibilityLevel"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2091,11 +1989,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SegmentType"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                 }
             },
             "elementName":{
-                "localPart":"Segment",
+                "localPart":"FeasibilityLevel",
                 "namespaceURI":"http://www.opengis.net/eosps/2.0"
             }
         },
@@ -2112,7 +2010,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "GetSensorAvailability"
+                                        "Validate"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2125,11 +2023,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/GetSensorAvailabilityType"
+                    "$ref":"#/definitions/ValidateType"
                 }
             },
             "elementName":{
-                "localPart":"GetSensorAvailability",
+                "localPart":"Validate",
                 "namespaceURI":"http://www.opengis.net/eosps/2.0"
             }
         },
@@ -2180,7 +2078,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "FeasibilityStudy"
+                                        "Segment"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2193,11 +2091,147 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/FeasibilityStudyType"
+                    "$ref":"#/definitions/SegmentType"
                 }
             },
             "elementName":{
-                "localPart":"FeasibilityStudy",
+                "localPart":"Segment",
+                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "ProgrammingStatus"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/eosps/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/ProgrammingStatusType"
+                }
+            },
+            "elementName":{
+                "localPart":"ProgrammingStatus",
+                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "ReferenceFeasibilityID"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/eosps/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                }
+            },
+            "elementName":{
+                "localPart":"ReferenceFeasibilityID",
+                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SubmitSegmentByID"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/eosps/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SubmitSegmentByIDType"
+                }
+            },
+            "elementName":{
+                "localPart":"SubmitSegmentByID",
+                "namespaceURI":"http://www.opengis.net/eosps/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "GetSensorAvailabilityResponse"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/eosps/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GetSensorAvailabilityResponseType"
+                }
+            },
+            "elementName":{
+                "localPart":"GetSensorAvailabilityResponse",
                 "namespaceURI":"http://www.opengis.net/eosps/2.0"
             }
         },
@@ -2232,40 +2266,6 @@
             },
             "elementName":{
                 "localPart":"ManualValidation",
-                "namespaceURI":"http://www.opengis.net/eosps/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "FeasibilityLevel"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/eosps/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"FeasibilityLevel",
                 "namespaceURI":"http://www.opengis.net/eosps/2.0"
             }
         }

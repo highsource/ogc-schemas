@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GUF_FeedbackItem
+				xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
+				xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0" 
+				xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0" 
+				xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0" 
+				xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" 
+				xmlns:qcm="http://www.opengis.net/guf/1.0/common" 
+				xmlns="http://www.opengis.net/guf/1.0/core"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xmlns:xlink="http://www.w3.org/1999/xlink" 
+				xsi:schemaLocation="http://www.opengis.net/guf/1.0/core ../guf.xsd">
+	<itemIdentifier>
+		<mcc:MD_Identifier>
+			<mcc:code>
+				<gco:CharacterString>GCL2000_feedack_item_1</gco:CharacterString>
+			</mcc:code>
+		</mcc:MD_Identifier>
+	</itemIdentifier>
+	<abstract>
+		<gco:CharacterString>Comparson with other land cover products is difficults because legends are not compatible</gco:CharacterString>
+	</abstract>
+	<contactRole>
+		<GUF_UserRoleCode codeListValue="researchEndUser" codeList="">researchEndUser</GUF_UserRoleCode>
+	</contactRole>
+	<dateInfo>
+		<cit:CI_Date>
+			<cit:date><gco:DateTime>2006-03-01T00:00:00Z</gco:DateTime></cit:date>
+			<cit:dateType>
+				<cit:CI_DateTypeCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_DateTypeCode" codeListValue="creation"/>
+			</cit:dateType>
+		</cit:CI_Date>				
+	</dateInfo>
+	<citation>
+		<cit:CI_Citation>
+			<cit:title>
+				<gco:CharacterString>Towards the global monitoring of biodiversity change</gco:CharacterString>
+			</cit:title>
+			<cit:date>
+				<cit:CI_Date>
+					<cit:date>
+						<gco:DateTime>2006-03-01T00:00:00Z</gco:DateTime>
+					</cit:date>
+					<cit:dateType>
+						<cit:CI_DateTypeCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_DateTypeCode" codeListValue="creation"/>
+					</cit:dateType>
+				</cit:CI_Date>
+			</cit:date>
+			<cit:series>
+				<cit:CI_Series>
+					<cit:name>
+						<gco:CharacterString>TRENDS in Ecology and Evolution</gco:CharacterString>
+					</cit:name>
+				</cit:CI_Series>
+			</cit:series>
+			<cit:otherCitationDetails>
+				<gco:CharacterString>Vol.21 No.3</gco:CharacterString>
+			</cit:otherCitationDetails>
+		</cit:CI_Citation>
+	</citation>
+	<contact>
+		<GUF_UserInformation>
+			<userDetails>
+				<cit:CI_Responsibility>
+					<cit:role>
+						<cit:CI_RoleCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_RoleCode" codeListValue="user"/>
+					</cit:role>
+					<cit:party>
+						<cit:CI_Individual>
+							<cit:name>
+								<gco:CharacterString>Henrique M. Pereira</gco:CharacterString>
+							</cit:name>
+						</cit:CI_Individual>
+					</cit:party>
+				</cit:CI_Responsibility>
+			</userDetails>
+			<expertiseLevel>
+				<GUF_RatingCode codeListValue="5" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_RatingCode"></GUF_RatingCode>
+			</expertiseLevel>
+		</GUF_UserInformation>
+	</contact>
+	<userComment>
+		<GUF_UserComment>
+			<comment>
+				<gco:CharacterString>Surprisingly,  there  are  no  directly comparable sets of global land-cover data for two different
+dates. For instance, the Global Land Cover for the year 2000 (GLC 2000) based on SPOT VEGETATION (http://www-gvm.jrc.it/glc2000) is not directly comparable
+with the International Geosphere–Biosphere Programme (IGBP) Land Cover (1992–1993, http://edcdaac.usgs.gov/glcc/globdoc2_0.asp)  based  on  the  National  Oceanic
+and  Atmospheric  Administration  Advanced  Very  High Resolution Radiometer (NOAA-AVHRR). The difﬁculties arise from the use of different sensors, different land-cover
+classiﬁcation  systems  (including  different  deﬁnitions  of forest)  and  different  classiﬁcation  methods. </gco:CharacterString>
+			</comment>
+		</GUF_UserComment>
+	</userComment>
+	<target>
+		<GUF_FeedbackTarget>
+			<resourceRef xlink:href="http://www-gvm.jrc.it/glc2000">
+				<cit:CI_Citation>
+					<cit:title></cit:title>
+					<cit:identifier>
+						<mcc:MD_Identifier>
+							<mcc:code>
+								<gco:CharacterString>GLC2000</gco:CharacterString>
+							</mcc:code>
+							<mcc:codeSpace>
+								<gco:CharacterString>jrc.ec.europa.eu</gco:CharacterString>
+							</mcc:codeSpace>
+						</mcc:MD_Identifier>
+					</cit:identifier>
+				</cit:CI_Citation>
+			</resourceRef>
+			<scope>
+				<mcc:MD_Scope>
+					<mcc:level>
+						<mcc:MD_ScopeCode codeListValue="dataset" codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#MD_ScopeCode"/>							
+					</mcc:level>
+				</mcc:MD_Scope>
+			</scope>
+			<role>
+				<GUF_TargetRoleCode codeListValue="primary" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_TargetRoleCode"></GUF_TargetRoleCode>
+			</role>
+		</GUF_FeedbackTarget>
+	</target>
+	<target>
+		<GUF_FeedbackTarget>
+			<resourceRef xlink:href="http://edcdaac.usgs.gov/glcc/globdoc2_0.asp"/>
+			<scope>
+				<mcc:MD_Scope>
+					<mcc:level>
+						<mcc:MD_ScopeCode codeListValue="dataset" codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#MD_ScopeCode"/>
+					</mcc:level>
+				</mcc:MD_Scope>
+			</scope>
+			<role>
+				<GUF_TargetRoleCode codeListValue="primary" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_TargetRoleCode"></GUF_TargetRoleCode>
+			</role>
+		</GUF_FeedbackTarget>
+	</target>
+</GUF_FeedbackItem>

@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+   targetNamespace="http://www.opengis.net/wfs"
+   xmlns:wfs="http://www.opengis.net/wfs"
+   xmlns:ogc="http://www.opengis.net/ogc"
+   xmlns:ows="http://www.opengis.net/ows"
+   xmlns:gml="http://www.opengis.net/gml"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   elementFormDefault="qualified"
+   version="1.1.3">
+
+   <!--
+      WFS is an OGC Standard.
+      Copyright (c) 2002,2010,2014,2016 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+   -->
+
+   <!-- ==============================================================
+        Includes and Imports
+        ============================================================== -->
+   <xsd:import namespace="http://www.opengis.net/gml"
+      schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+   <xsd:import namespace="http://www.opengis.net/ogc"
+      schemaLocation="http://schemas.opengis.net/filter/1.1.0/filter.xsd"/>
+   <xsd:import namespace="http://www.opengis.net/ows"
+      schemaLocation="http://schemas.opengis.net/ows/1.0.0/owsAll.xsd"/>
+
+   <!-- ================================================================== -->
+   <!-- =   BASE REQUEST TYPE                                            = -->
+   <!-- ================================================================== -->
+   <xsd:complexType name="BaseRequestType" abstract="true">
+      <xsd:attribute name="service" type="ows:ServiceType"
+                     use="optional" default="WFS"/>
+      <xsd:attribute name="version" type="xsd:string"
+                     use="optional" default="1.1.3"/>
+      <xsd:attribute name="handle" type="xsd:string" use="optional"/>
+   </xsd:complexType>
+
+   <!-- ============================================================== -->
+   <!-- = PROPERTY NAME ELEMENT                                      = -->
+   <!-- ============================================================== -->
+   <xsd:element name="PropertyName" type="xsd:string"/>
+   <xsd:element name="XlinkPropertyName">
+      <xsd:complexType>
+         <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+               <xsd:attribute name="traverseXlinkDepth"
+                              type="wfs:TraverseXLinkDepthType" use="required"/>
+               <xsd:attribute name="traverseXlinkExpiry"
+                              type="xsd:positiveInteger" use="optional"/>
+            </xsd:extension>
+         </xsd:simpleContent>
+      </xsd:complexType>
+   </xsd:element>
+   <xsd:simpleType name="TraverseXLinkDepthType">
+      <xsd:union memberTypes="xsd:nonNegativeInteger wfs:StarStringType"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="StarStringType">
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="*"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+
+   <!-- ================================================================== -->
+   <!-- =   GETCAPABILITIES Request and Response                         = -->
+   <!-- ================================================================== -->
+   <!-- REQUEST -->
+   <xsd:element name="GetCapabilities" type="wfs:GetCapabilitiesType"/>
+   <xsd:complexType name="GetCapabilitiesType">
+      <xsd:complexContent>
+         <xsd:extension base="ows:GetCapabilitiesType">
+            <xsd:attribute name="service" type="ows:ServiceType"
+                           use="optional" default="WFS"/>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <!-- RESPONSE -->
+   <xsd:element name="WFS_Capabilities" type="wfs:WFS_CapabilitiesType"/>
+   <xsd:complexType name="WFS_CapabilitiesType">
+      <xsd:complexContent>
+         <xsd:extension base="ows:CapabilitiesBaseType">
+            <xsd:sequence>
+               <xsd:element ref="wfs:FeatureTypeList" minOccurs="0"/>
+               <xsd:element ref="wfs:ServesGMLObjectTypeList" minOccurs="0"/>
+               <xsd:element ref="wfs:SupportsGMLObjectTypeList" minOccurs="0"/>
+               <xsd:element ref="ogc:Filter_Capabilities"/>
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:element name="FeatureTypeList" type="wfs:FeatureTypeListType"/>
+   <xsd:complexType name="FeatureTypeListType">
+      <xsd:sequence>
+         <xsd:element name="Operations"
+                      type="wfs:OperationsType" minOccurs="0"/>
+         <xsd:element name="FeatureType" type="wfs:FeatureTypeType"
+                      maxOccurs="unbounded"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="FeatureTypeType">
+      <xsd:sequence>
+         <xsd:element name="Name" type="xsd:QName"/>
+         <xsd:element name="Title" type="xsd:string"/>
+         <xsd:element name="Abstract" type="xsd:string" minOccurs="0"/>
+         <xsd:element ref="ows:Keywords" minOccurs="0" maxOccurs="unbounded"/>
+         <xsd:choice>
+            <xsd:sequence>
+               <xsd:element name="DefaultSRS" type="xsd:anyURI"/>
+               <xsd:element name="OtherSRS" type="xsd:anyURI"
+                            minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:element name="NoSRS">
+               <xsd:complexType/>
+            </xsd:element>
+         </xsd:choice>
+         <xsd:element name="Operations" type="wfs:OperationsType"
+                      minOccurs="0"/>
+         <xsd:element name="OutputFormats" type="wfs:OutputFormatListType"
+                      minOccurs="0"/>
+         <xsd:element ref="ows:WGS84BoundingBox"
+                      minOccurs="0" maxOccurs="unbounded"/>
+         <xsd:element name="MetadataURL" type="wfs:MetadataURLType"
+                      minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="OperationsType">
+      <xsd:sequence>
+         <xsd:element name="Operation" type="wfs:OperationType"
+                      maxOccurs="unbounded"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:simpleType name="OperationType">
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="Insert"/>
+         <xsd:enumeration value="Update"/>
+         <xsd:enumeration value="Delete"/>
+         <xsd:enumeration value="Query"/>
+         <xsd:enumeration value="Lock"/>
+         <xsd:enumeration value="GetGmlObject"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:complexType name="OutputFormatListType">
+      <xsd:sequence maxOccurs="unbounded">
+         <xsd:element name="Format" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="MetadataURLType">
+      <xsd:simpleContent>
+         <xsd:extension base="xsd:string">
+            <xsd:attribute name="type" use="required">
+               <xsd:simpleType>
+                  <xsd:restriction base="xsd:string">
+                     <xsd:enumeration value="TC211"/>
+                     <xsd:enumeration value="FGDC"/>
+                     <xsd:enumeration value="19115"/>
+                     <xsd:enumeration value="19139"/>
+                  </xsd:restriction>
+               </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="format" use="required">
+               <xsd:simpleType>
+                  <xsd:restriction base="xsd:string">
+                     <xsd:enumeration value="text/xml"/>
+                     <xsd:enumeration value="text/html"/>
+                     <xsd:enumeration value="text/sgml"/>
+                     <xsd:enumeration value="text/plain"/>
+                  </xsd:restriction>
+               </xsd:simpleType>
+            </xsd:attribute>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:element name="ServesGMLObjectTypeList"
+                type="wfs:GMLObjectTypeListType"/>
+   <xsd:element name="SupportsGMLObjectTypeList"
+                type="wfs:GMLObjectTypeListType"/>
+   <xsd:complexType name="GMLObjectTypeListType">
+      <xsd:sequence>
+         <xsd:element name="GMLObjectType" type="wfs:GMLObjectTypeType"
+                      maxOccurs="unbounded"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="GMLObjectTypeType">
+      <xsd:sequence>
+         <xsd:element name="Name" type="xsd:QName"/>
+         <xsd:element name="Title" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="Abstract" type="xsd:string" minOccurs="0"/>
+         <xsd:element ref="ows:Keywords" minOccurs="0" maxOccurs="unbounded"/>
+         <xsd:element name="OutputFormats" type="wfs:OutputFormatListType"
+                      minOccurs="0"/>
+      </xsd:sequence>
+   </xsd:complexType>
+
+   <!-- ================================================================== -->
+   <!-- =   DESCRIBEFEATURETYPE Request and Response                     = -->
+   <!-- ================================================================== -->
+   <!-- REQUEST -->
+   <xsd:element name="DescribeFeatureType" type="wfs:DescribeFeatureTypeType"/>
+   <xsd:complexType name="DescribeFeatureTypeType">
+      <xsd:complexContent>
+         <xsd:extension base="wfs:BaseRequestType">
+            <xsd:sequence>
+               <xsd:element name="TypeName" type="xsd:QName"
+                            minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="outputFormat" type="xsd:string" use="optional"
+                           default="application/gml+xml; version=3.1"/>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <!-- RESPONSE -->
+   <!-- ================================================================== -->
+   <!-- For the outputFormat value of 'application/gml+xml; version=3.1' a -->
+   <!-- WFS must generate a valid XML-Schema/GML3 application schema that  -->
+   <!-- describes that requested feature type(s).                          -->
+   <!-- ================================================================== -->
+
+   <!-- ================================================================== -->
+   <!-- =   GETFEATURES Request and Response                             = -->
+   <!-- ================================================================== -->
+   <xsd:element name="GetFeature" type="wfs:GetFeatureType"/>
+   <xsd:complexType name="GetFeatureType">
+      <xsd:complexContent>
+         <xsd:extension base="wfs:BaseRequestType">
+            <xsd:sequence>
+               <xsd:element ref="wfs:Query" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="resultType" type="wfs:ResultTypeType"
+                           use="optional" default="results"/>
+            <xsd:attribute name="outputFormat" type="xsd:string" use="optional"
+                           default="application/gml+xml; version=3.1"/>
+            <xsd:attribute name="maxFeatures" type="xsd:positiveInteger"
+                           use="optional"/>
+            <xsd:attribute name="traverseXlinkDepth"
+                           type="wfs:TraverseXLinkDepthType" use="optional"/>
+            <xsd:attribute name="traverseXlinkExpiry" type="xsd:positiveInteger"
+                           use="optional"/>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:simpleType name="ResultTypeType">
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="results"/>
+         <xsd:enumeration value="hits"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:element name="Query" type="wfs:QueryType"/>
+   <xsd:complexType name="QueryType">
+      <xsd:sequence>
+         <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element ref="wfs:PropertyName"/>
+            <xsd:element ref="wfs:XlinkPropertyName"/>
+            <xsd:element ref="ogc:Function"/>
+         </xsd:choice>
+         <xsd:element ref="ogc:Filter" minOccurs="0" maxOccurs="1"/>
+         <xsd:element ref="ogc:SortBy" minOccurs="0" maxOccurs="1"/>
+      </xsd:sequence>
+      <xsd:attribute name="handle" type="xsd:string" use="optional"/>
+      <xsd:attribute name="typeName" type="wfs:TypeNameListType"
+                     use="required"/>
+      <xsd:attribute name="featureVersion" type="xsd:string" use="optional"/>
+      <xsd:attribute name="srsName" type="xsd:anyURI" use="optional"/>
+   </xsd:complexType>
+   <xsd:simpleType name="TypeNameListType">
+      <xsd:restriction base="xsd:string">
+         <xsd:pattern
+            value="([\i-[:]][\c-[:]]*:)?[\i-[:]][\c-[:]]*(=\w+)?(,\s*([\i-[:]][\c-[:]]*:)?[\i-[:]][\c-[:]]*(=\w+)?)*"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <!-- RESPONSE -->
+   <xsd:element name="FeatureCollection" type="wfs:FeatureCollectionType"
+                substitutionGroup="gml:_FeatureCollection"/>
+   <xsd:complexType name="FeatureCollectionType">
+      <xsd:complexContent>
+         <xsd:extension base="gml:AbstractFeatureCollectionType">
+            <xsd:attribute name="lockId" type="xsd:string" use="optional"/>
+            <xsd:attribute name="timeStamp" type="xsd:dateTime" use="optional"/>
+            <xsd:attribute name="numberOfFeatures" type="xsd:nonNegativeInteger"
+                           use="optional"/>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+
+   <!-- ================================================================== -->
+   <!-- =   GETGMLOBJECT Request and Response                            = -->
+   <!-- ================================================================== -->
+   <xsd:element name="GetGmlObject" type="wfs:GetGmlObjectType"/>
+   <xsd:complexType name="GetGmlObjectType">
+      <xsd:complexContent>
+         <xsd:extension base="wfs:BaseRequestType">
+            <xsd:sequence>
+               <xsd:element ref="ogc:GmlObjectId"/>
+            </xsd:sequence>
+            <xsd:attribute name="outputFormat" type="xsd:string" use="optional"
+                           default="application/gml+xml; version=3.1"/>
+            <xsd:attribute name="traverseXlinkDepth"
+                           type="wfs:TraverseXLinkDepthType" use="required"/>
+            <xsd:attribute name="traverseXlinkExpiry"
+                           type="xsd:positiveInteger" use="optional"/>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <!-- RESPONSE -->
+   <!-- ================================================================= -->
+   <!-- The response to a GetGMLObject request is a GML3 fragment(s) that -->
+   <!-- has (have) the gml:id('s) specified in the request.               -->
+   <!-- ================================================================= -->
+
+   <!-- ================================================================== -->
+   <!-- =   GETFEATUREWITHLOCK Request and Response                      = -->
+   <!-- ================================================================== -->
+   <!-- REQUEST -->
+   <xsd:element name="GetFeatureWithLock" type="wfs:GetFeatureWithLockType"/>
+   <xsd:complexType name="GetFeatureWithLockType">
+      <xsd:complexContent>
+         <xsd:extension base="wfs:BaseRequestType">
+            <xsd:sequence>
+               <xsd:element ref="wfs:Query" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="expiry" type="xsd:positiveInteger"
+                           use="optional" default="5"/>
+            <xsd:attribute name="resultType" type="wfs:ResultTypeType"
+                           use="optional" default="results"/>
+            <xsd:attribute name="outputFormat" type="xsd:string" use="optional"
+                           default="application/gml+xml; version=3.1"/>
+            <xsd:attribute name="maxFeatures" type="xsd:positiveInteger"
+                           use="optional"/>
+            <xsd:attribute name="traverseXlinkDepth"
+                           type="wfs:TraverseXLinkDepthType" use="optional"/>
+            <xsd:attribute name="traverseXlinkExpiry"
+                           type="xsd:positiveInteger" use="optional"/>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+
+   <!-- ================================================================== -->
+   <!-- =   LOCKFEATURE Request and Response                             = -->
+   <!-- ================================================================== -->
+   <!-- REQUEST -->
+   <xsd:element name="LockFeature" type="wfs:LockFeatureType"/>
+   <xsd:complexType name="LockFeatureType">
+      <xsd:complexContent>
+         <xsd:extension base="wfs:BaseRequestType">
+            <xsd:sequence>
+               <xsd:element name="Lock" type="wfs:LockType"
+                            maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="expiry" type="xsd:positiveInteger"
+                           use="optional" default="5"/>
+            <xsd:attribute name="lockAction" type="wfs:AllSomeType"
+                           use="optional" default="ALL"/>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:simpleType name="AllSomeType">
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="ALL"/>
+         <xsd:enumeration value="SOME"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:complexType name="LockType">
+      <xsd:sequence>
+         <xsd:element ref="ogc:Filter" minOccurs="0" maxOccurs="1"/>
+      </xsd:sequence>
+      <xsd:attribute name="handle" type="xsd:string" use="optional"/>
+      <xsd:attribute name="typeName" type="xsd:QName" use="required"/>
+   </xsd:complexType>
+   <!-- RESPONSE -->
+   <xsd:element name="LockFeatureResponse" type="wfs:LockFeatureResponseType"/>
+   <xsd:complexType name="LockFeatureResponseType">
+      <xsd:sequence>
+         <xsd:element ref="wfs:LockId"/>
+         <xsd:element name="FeaturesLocked"
+                      type="wfs:FeaturesLockedType" minOccurs="0"/>
+         <xsd:element name="FeaturesNotLocked"
+                      type="wfs:FeaturesNotLockedType" minOccurs="0"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="FeaturesLockedType">
+      <xsd:sequence maxOccurs="unbounded">
+         <xsd:element ref="ogc:FeatureId"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="FeaturesNotLockedType">
+      <xsd:sequence maxOccurs="unbounded">
+         <xsd:element ref="ogc:FeatureId"/>
+      </xsd:sequence>
+   </xsd:complexType>
+
+   <!-- ================================================================== -->
+   <!-- =   TRANSACTION Request and Response                             = -->
+   <!-- ================================================================== -->
+   <!-- REQUEST -->
+   <xsd:element name="Transaction" type="wfs:TransactionType"/>
+   <xsd:complexType name="TransactionType">
+      <xsd:complexContent>
+         <xsd:extension base="wfs:BaseRequestType">
+            <xsd:sequence>
+               <xsd:element ref="wfs:LockId" minOccurs="0"/>
+               <xsd:choice minOccurs="0" maxOccurs="unbounded">
+                  <xsd:element ref="wfs:Insert"/>
+                  <xsd:element ref="wfs:Update"/>
+                  <xsd:element ref="wfs:Delete"/>
+                  <xsd:element ref="wfs:Native"/>
+               </xsd:choice>
+            </xsd:sequence>
+            <xsd:attribute name="releaseAction"
+                           type="wfs:AllSomeType" use="optional"/>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:element name="LockId" type="xsd:string"/>
+   <xsd:element name="Insert" type="wfs:InsertElementType"/>
+   <xsd:complexType name="InsertElementType">
+      <xsd:sequence>
+         <xsd:element ref="gml:_Feature" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="idgen" type="wfs:IdentifierGenerationOptionType"
+                     use="optional" default="GenerateNew"/>
+      <xsd:attribute name="handle" type="xsd:string" use="optional"/>
+      <xsd:attribute name="inputFormat" type="xsd:string" use="optional"
+                     default="application/gml+xml; version=3.1"/>
+      <xsd:attribute name="srsName" type="xsd:anyURI" use="optional"/>
+   </xsd:complexType>
+   <xsd:simpleType name="IdentifierGenerationOptionType">
+      <xsd:restriction base="xsd:string">
+         <xsd:enumeration value="UseExisting"/>
+         <xsd:enumeration value="ReplaceDuplicate"/>
+         <xsd:enumeration value="GenerateNew"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:element name="Update" type="wfs:UpdateElementType"/>
+   <xsd:complexType name="UpdateElementType">
+      <xsd:sequence>
+         <xsd:element ref="wfs:Property" maxOccurs="unbounded"/>
+         <xsd:element ref="ogc:Filter" minOccurs="0" maxOccurs="1"/>
+      </xsd:sequence>
+      <xsd:attribute name="handle" type="xsd:string" use="optional"/>
+      <xsd:attribute name="typeName" type="xsd:QName" use="required"/>
+      <xsd:attribute name="inputFormat" type="xsd:string" use="optional"
+                     default="application/gml+xml; version=3.1"/>
+      <xsd:attribute name="srsName" type="xsd:anyURI" use="optional"/>
+   </xsd:complexType>
+   <xsd:element name="Property" type="wfs:PropertyType"/>
+   <xsd:complexType name="PropertyType">
+      <xsd:sequence>
+         <xsd:element name="Name" type="xsd:QName"/>
+         <xsd:element name="Value" minOccurs="0"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="Delete" type="wfs:DeleteElementType"/>
+   <xsd:complexType name="DeleteElementType">
+      <xsd:sequence>
+         <xsd:element ref="ogc:Filter" minOccurs="1" maxOccurs="1"/>
+      </xsd:sequence>
+      <xsd:attribute name="handle" type="xsd:string" use="optional"/>
+      <xsd:attribute name="typeName" type="xsd:QName" use="required"/>
+   </xsd:complexType>
+   <xsd:element name="Native" type="wfs:NativeType"/>
+   <xsd:complexType name="NativeType" mixed="true">
+      <xsd:sequence>
+         <xsd:any processContents="lax" namespace="##other" minOccurs="0"/>
+      </xsd:sequence>
+      <xsd:attribute name="vendorId" type="xsd:string" use="required"/>
+      <xsd:attribute name="safeToIgnore" type="xsd:boolean" use="required"/>
+   </xsd:complexType>
+   <!-- REPONSE -->
+   <xsd:element name="TransactionResponse" type="wfs:TransactionResponseType"/>
+   <xsd:complexType name="TransactionResponseType">
+      <xsd:sequence>
+         <xsd:element name="TransactionSummary"
+                      type="wfs:TransactionSummaryType"/>
+         <xsd:element name="TransactionResults"
+                      type="wfs:TransactionResultsType" minOccurs="0"/>
+         <xsd:element name="InsertResults"
+                      type="wfs:InsertResultsType" minOccurs="0"/>
+      </xsd:sequence>
+      <xsd:attribute name="version" type="xsd:string" use="required"
+         fixed="1.1.3"/>
+   </xsd:complexType>
+   <xsd:complexType name="TransactionSummaryType">
+      <xsd:sequence>
+         <xsd:element name="totalInserted"
+                      type="xsd:nonNegativeInteger" minOccurs="0"/>
+         <xsd:element name="totalUpdated"
+                      type="xsd:nonNegativeInteger" minOccurs="0"/>
+         <xsd:element name="totalDeleted"
+                      type="xsd:nonNegativeInteger" minOccurs="0"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="TransactionResultsType">
+      <xsd:sequence>
+         <xsd:element name="Action" type="wfs:ActionType"
+                      minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="ActionType">
+      <xsd:sequence>
+         <xsd:element name="Message" type="xsd:string"
+                      minOccurs="0" maxOccurs="1"/>
+      </xsd:sequence>
+      <xsd:attribute name="locator" type="xsd:string" use="required"/>
+      <xsd:attribute name="code" type="xsd:string" use="optional"/>
+   </xsd:complexType>
+   <xsd:complexType name="InsertResultsType">
+      <xsd:sequence>
+         <xsd:element name="Feature"
+                      type="wfs:InsertedFeatureType" maxOccurs="unbounded"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="InsertedFeatureType">
+      <xsd:sequence>
+         <xsd:element ref="ogc:FeatureId" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="handle" type="xsd:string" use="optional"/>
+   </xsd:complexType>
+</xsd:schema>

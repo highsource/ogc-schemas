@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap11:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:wsrf-bf="http://docs.oasis-open.org/wsrf/bf-2"
+    xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" 
+    xmlns:wsa="http://www.w3.org/2005/08/addressing"
+    xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2"
+    xmlns:pubsub="http://www.opengis.net/pubsub/1.0"
+    xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/
+    http://www.opengis.net/pubsub/1.0 http://schemas.opengis.net/pubsub/1.0/pubsubAll.xsd
+    http://docs.oasis-open.org/wsn/b-2 http://docs.oasis-open.org/wsn/b-2.xsd">
+    <soap11:Header>
+        <wsa:Action>http://docs.oasis-open.org/wsn/fault</wsa:Action>
+    </soap11:Header>
+    <soap11:Body>
+        <soap11:Fault>
+            <faultcode>soap11:Client</faultcode>
+            <faultstring>The publication identifier 'xyz' is invalid</faultstring>
+            <detail>
+                <wsnt:SubscribeCreationFailedFault>
+                    <wsrf-bf:Timestamp>
+                        2005-05-04T20:18:44.970Z
+                    </wsrf-bf:Timestamp>
+                    <wsrf-bf:FaultCause>
+                        <ows:ExceptionReport version="1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1">
+                            <ows:Exception exceptionCode="InvalidPublicationIdentifier" locator="xyz">
+                                <ows:ExceptionText>
+                                    The publication identifier 'xyz' is invalid
+                                </ows:ExceptionText>
+                            </ows:Exception>
+                        </ows:ExceptionReport>
+                    </wsrf-bf:FaultCause>
+                </wsnt:SubscribeCreationFailedFault>
+            </detail>
+        </soap11:Fault>
+    </soap11:Body>
+</soap11:Envelope>

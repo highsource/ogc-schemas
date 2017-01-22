@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tsml:Collection gml:id="KI.Col.1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:tsml="http://www.opengis.net/tsml/1.0" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sa="http://www.opengis.net/sampling/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/tsml/1.0 http://schemas.opengis.net/tsml/1.0/timeseriesML.xsd">
+	<gml:description>KISTERS WaterML2.0 demonstration based on GRDC data</gml:description>
+	<tsml:generationDate>2011-10-19T00:00:00Z</tsml:generationDate>
+	<tsml:generationSystem>KISTERS KiWIS</tsml:generationSystem>
+	<tsml:observationMember>
+		<om:OM_Observation gml:id="Ki.Obs.1">
+			<om:phenomenonTime>
+				<gml:TimePeriod gml:id="Ki.Wml2.pTime.1">
+					<gml:beginPosition>2000-01-01T00:00:00Z</gml:beginPosition>
+					<gml:endPosition>2000-01-10T00:00:00Z</gml:endPosition>
+				</gml:TimePeriod>
+			</om:phenomenonTime>
+			<om:resultTime>
+				<gml:TimeInstant gml:id="Ki.Wml2.rTime.1">
+					<gml:timePosition>2000-01-10T00:00:00Z</gml:timePosition>
+				</gml:TimeInstant>
+			</om:resultTime>
+			<om:procedure>
+				<!-- This can also be a simple href/title procedure without detailed data -->
+				<tsml:ObservationProcess gml:id="Ki.Proc.1">
+					<tsml:processType xlink:href="http://www.opengis.net/def/timeseriesml/1.0/processType/Algorithm" xlink:title="Algorithm"/>
+					<tsml:aggregationDuration>P1D</tsml:aggregationDuration>
+				</tsml:ObservationProcess>
+			</om:procedure>
+			<om:observedProperty xlink:href="http://kiwis.kisters.de/parameters/Q" xlink:title="Discharge"/>
+			<om:featureOfInterest>
+				<tsml:MonitoringFeature gml:id="Ki.Sta.6731310">
+					<gml:identifier codeSpace="http://kiwis.kisters.de/datasource/0/stations">6731310</gml:identifier>
+					<sa:sampledFeature xlink:href="http://kiwis.kisters.de/datasource/0/sampledFeatures/3670" xlink:title="Dramselva"/>
+					<sa:parameter>
+						<om:NamedValue>
+							<om:name xlink:href="http://kiwis.kisters.de/definitions/catchment" xlink:title="Catchment"/>
+							<om:value>
+								<CharacterString>Dramselv</CharacterString>
+							</om:value>
+						</om:NamedValue>
+					</sa:parameter>
+					<sa:parameter>
+						<om:NamedValue>
+							<om:name xlink:href="http://kiwis.kisters.de/definitions/site" xlink:title="Site"/>
+							<om:value>
+								<CharacterString>Norway</CharacterString>
+							</om:value>
+						</om:NamedValue>
+					</sa:parameter>
+					<sa:parameter>
+						<om:NamedValue>
+							<om:name xlink:href="http://kiwis.kisters.de/definitions/site_no" xlink:title="Site Number"/>
+							<om:value>
+								<CharacterString>NO</CharacterString>
+							</om:value>
+						</om:NamedValue>
+					</sa:parameter>
+					<sa:parameter>
+						<om:NamedValue>
+							<om:name xlink:href="http://kiwis.kisters.de/definitions/provider" xlink:title="Provider"/>
+							<om:value>
+								<CharacterString>Norwegian Water Resources and Energy Directorate</CharacterString>
+							</om:value>
+						</om:NamedValue>
+					</sa:parameter>
+					<sams:shape>
+						<gml:Point gml:id="Ki.Loc.6731310">
+							<gml:pos srsName="EPSG:4326">9.908 59.881</gml:pos>
+						</gml:Point>
+					</sams:shape>
+					<tsml:monitoringType xlink:href="http://kiwis.kisters.de/definitions/surfaceWater" xlink:title="Surface Water"/>
+					<tsml:descriptionReference xlink:href="http://kiwis.kisters.de/datasource/0/stations/6731310" xlink:title="DOVIKFOSS"/>
+					<tsml:timeZone>
+						<tsml:TimeZone>
+							<tsml:zoneOffset>+1</tsml:zoneOffset>
+						</tsml:TimeZone>
+					</tsml:timeZone>
+				</tsml:MonitoringFeature>
+			</om:featureOfInterest>
+			<om:result>
+				<tsml:Timeseries gml:id="Ki.Ts.1">
+					<tsml:metadata>
+						<tsml:TimeseriesMetadata>
+							<tsml:temporalExtent xlink:href="#Ki.Wml2.pTime.1"/>
+							<tsml:cumulative>false</tsml:cumulative>
+						</tsml:TimeseriesMetadata>
+					</tsml:metadata>
+					<tsml:defaultPointMetadata>
+						<tsml:PointMetadata>
+							<tsml:quality xlink:href="http://www.opengis.net/def/WaterML/2.0/quality/good" xlink:title="Good"/>
+							<tsml:uom code="m3/s"/>
+							<tsml:interpolationType xlink:href="http://www.opengis.net/def/waterml/2.0/interpolationType/AveragePrec" xlink:title="Average In Preceeding Interval"/>
+							<tsml:aggregationDuration>P1D</tsml:aggregationDuration>
+						</tsml:PointMetadata>
+					</tsml:defaultPointMetadata>
+					<tsml:point>
+						<tsml:MeasurementTVP>
+							<tsml:time>2000-01-01T00:00:00.000Z</tsml:time>
+							<tsml:value>266</tsml:value>
+						</tsml:MeasurementTVP>
+					</tsml:point>
+					<tsml:point>
+						<tsml:MeasurementTVP>
+							<tsml:time>2000-01-02T00:00:00.000Z</tsml:time>
+							<tsml:value>266</tsml:value>
+						</tsml:MeasurementTVP>
+					</tsml:point>
+					<tsml:point>
+						<tsml:MeasurementTVP>
+							<tsml:time>2000-01-03T00:00:00.000Z</tsml:time>
+							<tsml:value>255</tsml:value>
+						</tsml:MeasurementTVP>
+					</tsml:point>
+					<tsml:point>
+						<tsml:MeasurementTVP>
+							<tsml:time>2000-01-04T00:00:00.000Z</tsml:time>
+							<tsml:value>266</tsml:value>
+						</tsml:MeasurementTVP>
+					</tsml:point>
+					<tsml:point>
+						<tsml:MeasurementTVP>
+							<tsml:time>2000-01-05T00:00:00.000Z</tsml:time>
+							<tsml:value>258</tsml:value>
+						</tsml:MeasurementTVP>
+					</tsml:point>
+					<tsml:point>
+						<tsml:MeasurementTVP>
+							<tsml:time>2000-01-06T00:00:00.000Z</tsml:time>
+							<tsml:value>265</tsml:value>
+						</tsml:MeasurementTVP>
+					</tsml:point>
+					<tsml:point>
+						<tsml:MeasurementTVP>
+							<tsml:time>2000-01-07T00:00:00.000Z</tsml:time>
+							<tsml:value>268</tsml:value>
+						</tsml:MeasurementTVP>
+					</tsml:point>
+					<tsml:point>
+						<tsml:MeasurementTVP>
+							<tsml:time>2000-01-08T00:00:00.000Z</tsml:time>
+							<tsml:value>275</tsml:value>
+						</tsml:MeasurementTVP>
+					</tsml:point>
+					<tsml:point>
+						<tsml:MeasurementTVP>
+							<tsml:time>2000-01-09T00:00:00.000Z</tsml:time>
+							<tsml:value>275</tsml:value>
+						</tsml:MeasurementTVP>
+					</tsml:point>
+					<tsml:point>
+						<tsml:MeasurementTVP>
+							<tsml:time>2000-01-10T00:00:00.000Z</tsml:time>
+							<tsml:value>275</tsml:value>
+						</tsml:MeasurementTVP>
+					</tsml:point>
+				</tsml:Timeseries>
+			</om:result>
+		</om:OM_Observation>
+	</tsml:observationMember>
+</tsml:Collection>

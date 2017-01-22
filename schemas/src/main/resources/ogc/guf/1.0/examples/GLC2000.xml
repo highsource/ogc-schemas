@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ufc:UFC_FeedbackCollection 
+				xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
+				xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0" 
+				xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0" 
+				xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0" 
+				xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0" 
+				xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" 
+				xmlns:qcm="http://www.opengis.net/guf/1.0/common" 
+				xmlns:guf="http://www.opengis.net/guf/1.0/core" 
+				xmlns:ufc="http://www.opengis.net/guf/1.0/collection" 
+				xmlns:ufs="http://www.opengis.net/guf/1.0/summary" 
+				xmlns:pqm="http://www.geoviqua.org/gvq/1.0" 
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" 
+				xsi:schemaLocation="http://www.opengis.net/guf/1.0/collection ../ufc.xsd http://www.geoviqua.org/gvq/1.0 ../pqm.xsd">
+	<ufc:target>
+		<cit:CI_Citation>
+			<cit:title></cit:title>
+			<cit:identifier>
+				<mcc:MD_Identifier>
+					<!--Why are we using a id instead of a guf:GUF_FeedbackTarget, that allow for <guf:scope> ?-->
+					<!-- fileIdentifier: c0dc2fd0-88fd-11da-a88f-000d939bc5d8 -->
+					<mcc:code>
+						<gco:CharacterString>GLC2000</gco:CharacterString>
+					</mcc:code>
+					<mcc:codeSpace>
+						<gco:CharacterString>jrc.ec.europa.eu</gco:CharacterString>
+					</mcc:codeSpace>
+				</mcc:MD_Identifier>
+			</cit:identifier>
+		</cit:CI_Citation>
+	</ufc:target>
+	<ufc:item>
+		<guf:GUF_FeedbackItem>
+			<guf:itemIdentifier>
+				<mcc:MD_Identifier>
+					<mcc:code>
+						<gco:CharacterString>GCL2000_feedack_item_1</gco:CharacterString>
+					</mcc:code>
+				</mcc:MD_Identifier>
+			</guf:itemIdentifier>
+			<guf:abstract>
+				<gco:CharacterString>Comparson with other land cover products is difficults because legends are not compatible</gco:CharacterString>
+			</guf:abstract>
+			<guf:contactRole>
+				<guf:GUF_UserRoleCode codeListValue="researchEndUser" codeList="">researchEndUser</guf:GUF_UserRoleCode>
+			</guf:contactRole>
+			<guf:dateInfo>
+				<cit:CI_Date>
+					<cit:date><gco:DateTime>2006-03-01T00:00:00Z</gco:DateTime></cit:date>
+					<cit:dateType>
+						<cit:CI_DateTypeCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_DateTypeCode" codeListValue="creation"/>
+					</cit:dateType>
+				</cit:CI_Date>				
+			</guf:dateInfo>
+			<guf:citation>
+				<cit:CI_Citation>
+					<cit:title>
+						<gco:CharacterString>Towards the global monitoring of biodiversity change</gco:CharacterString>
+					</cit:title>
+					<cit:date>
+						<cit:CI_Date>
+							<cit:date>
+								<gco:DateTime>2006-03-01T00:00:00Z</gco:DateTime>
+							</cit:date>
+							<cit:dateType>
+								<cit:CI_DateTypeCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_DateTypeCode" codeListValue="creation"/>
+							</cit:dateType>
+						</cit:CI_Date>
+					</cit:date>
+					<cit:series>
+						<cit:CI_Series>
+							<cit:name>
+								<gco:CharacterString>TRENDS in Ecology and Evolution</gco:CharacterString>
+							</cit:name>
+						</cit:CI_Series>
+					</cit:series>
+					<cit:otherCitationDetails>
+						<gco:CharacterString>Vol.21 No.3</gco:CharacterString>
+					</cit:otherCitationDetails>
+				</cit:CI_Citation>
+			</guf:citation>
+			<guf:contact>
+				<guf:GUF_UserInformation>
+					<guf:userDetails>
+						<cit:CI_Responsibility>
+							<cit:role>
+								<cit:CI_RoleCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_RoleCode" codeListValue="user"/>
+							</cit:role>
+							<cit:party>
+								<cit:CI_Individual>
+									<cit:name>
+										<gco:CharacterString>Henrique M. Pereira</gco:CharacterString>
+									</cit:name>
+								</cit:CI_Individual>
+							</cit:party>
+						</cit:CI_Responsibility>
+					</guf:userDetails>
+					<guf:expertiseLevel>
+						<guf:GUF_RatingCode codeListValue="5" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_RatingCode"></guf:GUF_RatingCode>
+					</guf:expertiseLevel>
+				</guf:GUF_UserInformation>
+			</guf:contact>
+			<guf:userComment>
+				<guf:GUF_UserComment>
+					<guf:comment>
+						<gco:CharacterString>Surprisingly,  there  are  no  directly comparable sets of global land-cover data for two different
+dates. For instance, the Global Land Cover for the year 2000 (GLC 2000) based on SPOT VEGETATION (http://www-gvm.jrc.it/glc2000) is not directly comparable
+with the International Geosphere–Biosphere Programme (IGBP) Land Cover (1992–1993, http://edcdaac.usgs.gov/glcc/globdoc2_0.asp)  based  on  the  National  Oceanic
+and  Atmospheric  Administration  Advanced  Very  High Resolution Radiometer (NOAA-AVHRR). The difficulties arise from the use of different sensors, different land-cover
+classification  systems  (including  different  definitions  of forest)  and  different  classification  methods. </gco:CharacterString>
+					</guf:comment>
+				</guf:GUF_UserComment>
+			</guf:userComment>
+			<guf:target>
+				<guf:GUF_FeedbackTarget>
+					<guf:resourceRef xlink:href="http://www-gvm.jrc.it/glc2000">
+						<cit:CI_Citation>
+							<cit:title></cit:title>
+							<cit:identifier>
+								<mcc:MD_Identifier>
+									<mcc:code>
+										<gco:CharacterString>GLC2000</gco:CharacterString>
+									</mcc:code>
+									<mcc:codeSpace>
+										<gco:CharacterString>jrc.ec.europa.eu</gco:CharacterString>
+									</mcc:codeSpace>
+								</mcc:MD_Identifier>
+							</cit:identifier>
+						</cit:CI_Citation>
+					</guf:resourceRef>
+					<guf:scope>
+						<mcc:MD_Scope>
+							<mcc:level>
+								<mcc:MD_ScopeCode codeListValue="dataset" codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#MD_ScopeCode"/>							
+							</mcc:level>
+						</mcc:MD_Scope>
+					</guf:scope>
+					<guf:role>
+						<guf:GUF_TargetRoleCode codeListValue="primary" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_TargetRoleCode"></guf:GUF_TargetRoleCode>
+					</guf:role>
+				</guf:GUF_FeedbackTarget>
+			</guf:target>
+			<guf:target>
+				<guf:GUF_FeedbackTarget>
+					<guf:resourceRef xlink:href="http://edcdaac.usgs.gov/glcc/globdoc2_0.asp"/>
+					<guf:scope>
+						<mcc:MD_Scope>
+							<mcc:level>
+								<mcc:MD_ScopeCode codeListValue="dataset" codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#MD_ScopeCode"/>
+							</mcc:level>
+						</mcc:MD_Scope>
+					</guf:scope>
+					<guf:role>
+						<guf:GUF_TargetRoleCode codeListValue="primary" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_TargetRoleCode"></guf:GUF_TargetRoleCode>
+					</guf:role>
+				</guf:GUF_FeedbackTarget>
+			</guf:target>
+		</guf:GUF_FeedbackItem>
+	</ufc:item>
+	<ufc:item>
+		<guf:GUF_FeedbackItem>
+			<guf:itemIdentifier>
+				<mcc:MD_Identifier>
+					<mcc:code>
+						<gco:CharacterString>GCL2000_feedack_item_2</gco:CharacterString>
+					</mcc:code>
+				</mcc:MD_Identifier>
+			</guf:itemIdentifier>
+			<guf:abstract>
+				<gco:CharacterString>Comparing several global land cover products, i.e. the Global Land Cover Characterization Database (GLCC), Global Land Cover 2000 (GLC2000), and the MODIS land cover product, reveil individual strengths and weaknesses of mapping approaches.</gco:CharacterString>
+			</guf:abstract>
+			<guf:contactRole>
+				<guf:GUF_UserRoleCode codeListValue="researchEndUser" codeList="">researchEndUser</guf:GUF_UserRoleCode>
+			</guf:contactRole>
+			<guf:dateInfo>
+				<cit:CI_Date>
+					<cit:date>
+						<gco:DateTime>2006-01-01T00:00:00Z</gco:DateTime>						
+					</cit:date>
+					<cit:dateType>
+						<cit:CI_DateTypeCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_DateTypeCode" codeListValue="creation"/>
+					</cit:dateType>
+				</cit:CI_Date>
+			</guf:dateInfo>
+			<guf:citation>
+				<cit:CI_Citation>
+					<cit:title>
+						<gco:CharacterString>Exploiting synergies of global land cover products for carbon cycle modeling</gco:CharacterString>
+					</cit:title>
+					<cit:date>
+						<cit:CI_Date>
+							<cit:date>
+								<gco:DateTime>2006-01-01T00:00:00Z</gco:DateTime>
+							</cit:date>
+							<cit:dateType>
+								<cit:CI_DateTypeCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_DateTypeCode" codeListValue="creation"/>
+							</cit:dateType>
+						</cit:CI_Date>
+					</cit:date>
+					<cit:series>
+						<cit:CI_Series>
+							<cit:name>
+								<gco:CharacterString>Remote Sensing of Environment</gco:CharacterString>
+							</cit:name>
+						</cit:CI_Series>
+					</cit:series>
+					<cit:otherCitationDetails>
+						<gco:CharacterString>101 (2006) 534–553</gco:CharacterString>
+					</cit:otherCitationDetails>
+				</cit:CI_Citation>
+			</guf:citation>
+			<guf:additionalQuality>
+				<mdq:DQ_DataQuality><mdq:scope><mcc:MD_Scope>
+					<mcc:level><mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#MD_ScopeCode"  codeListValue="dataset"/></mcc:level>
+				</mcc:MD_Scope></mdq:scope>
+				<mdq:report><mdq:DQ_DomainConsistency>
+					<mdq:result>
+						<mdq:DQ_DescriptiveResult>
+							<mdq:statement><gco:CharacterString>14% of the area of the GLCC, GLC2000, and MODIS land cover maps, reclassified to the SIMPLE legend disagree in the all three land cover maps. Areas where all maps disagree or only two maps agree seem to be associated with mainly transitional ecozones with mixtures of the three main components trees, shrubs and grasses  such  as  tropical  savannas  including  the  Sahel, Mediterranean Europe, and tundra.</gco:CharacterString></mdq:statement>
+						</mdq:DQ_DescriptiveResult>
+					</mdq:result>
+				</mdq:DQ_DomainConsistency></mdq:report>
+				</mdq:DQ_DataQuality>
+			</guf:additionalQuality>
+			<guf:usage>
+				<guf:GUF_UsageReport>
+					<guf:usageDescription>
+						<mri:MD_Usage>
+							<mri:specificUsage><gco:CharacterString>GLCC, GLC2000 and MODIS land cover products comparison</gco:CharacterString></mri:specificUsage>
+						</mri:MD_Usage>
+					</guf:usageDescription>
+					<guf:discoveredIssue>
+						<qcm:QCM_DiscoveredIssue>
+							<qcm:knownProblem>
+								<gco:CharacterString>None of legends  of  all  three  global  land  cover  products  are  easily translated  into  the  land  cover  classes  of  vegetation  models without introducing uncertainty due to poor definition of mixed
+classes or a lack of information about leaf type and phenology.</gco:CharacterString>
+							</qcm:knownProblem>
+						</qcm:QCM_DiscoveredIssue>
+					</guf:discoveredIssue>
+				</guf:GUF_UsageReport>
+			</guf:usage>
+			<guf:contact>
+				<guf:GUF_UserInformation>
+					<guf:userDetails>
+						<cit:CI_Responsibility>
+							<cit:role>
+								<cit:CI_RoleCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_RoleCode" codeListValue="user"/>
+							</cit:role>
+							<cit:party>
+								<cit:CI_Individual>
+									<cit:name>
+										<gco:CharacterString>Martin Jung</gco:CharacterString>
+									</cit:name>
+								</cit:CI_Individual>
+							</cit:party>
+						</cit:CI_Responsibility>
+					</guf:userDetails>
+					<guf:expertiseLevel>
+						<guf:GUF_RatingCode codeListValue="5" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_RatingCode"></guf:GUF_RatingCode>
+					</guf:expertiseLevel>
+				</guf:GUF_UserInformation>
+			</guf:contact>
+			<guf:userComment>
+				<guf:GUF_UserComment>
+					<guf:comment>
+						<gco:CharacterString> GLCC is based on poorly or uncorrected raw data, using only monthly NDVI composites that also have
+some geometric problems. The VEGA data set of GLC2000 with daily composites of calibrated spectral bands and NDVI offers  significantly  improved  data  and  more  flexibility  for
+classification. A further advantage of the VEGA2000 is the effective  geometric  correction  procedures  (Bartholomé  &amp; Belward, 2005). The input data sets of the MODIS product
+supersede  GLCC  and  GLC2000  in  terms  of  the  spectral properties of the MODIS instrument, specifically designed for land surface mapping. Also, the MODIS data are based on
+higher  spatial  resolution  of the  raw data  (250m/500m) and comprehensive  strategies  of  data  correction  and  calibration. Regarding  the  applied  classification  methods,  MLCCA (MODIS land cover classification algorithm)
+clearly seems the most sophisticated algorithm. In contrast to GLCC and GLC2000, it is purely objective, reproducible and operational for the whole globe, thus seems most suitable for change  detection.  GLCC offers the most flexibility for users in terms
+of available reclassifications including the Olsen classification with 94 classes. MODIS is also available in different legends, which is not the case for GLC2000. LCCS of GLC2000 is the
+most advanced and flexible classification system with a clear rationale and standardized definition of the classes. Although GLC2000 benefits strongly
+from the use of LCCS and its regional bottom-up approach, its global map lacks some internal consistency associated with the individual mapping initiatives by different project participants.</gco:CharacterString>
+					</guf:comment>
+				</guf:GUF_UserComment>
+			</guf:userComment>
+			<guf:target>
+				<guf:GUF_FeedbackTarget>
+					<guf:resourceRef xlink:href="http://www-gvm.jrc.it/glc2000">
+						<cit:CI_Citation>
+							<cit:title></cit:title>
+							<cit:identifier>				
+								<mcc:MD_Identifier>
+									<mcc:code>
+										<gco:CharacterString>GLC2000</gco:CharacterString>
+									</mcc:code>
+									<mcc:codeSpace>
+										<gco:CharacterString>jrc.ec.europa.eu</gco:CharacterString>
+									</mcc:codeSpace>
+								</mcc:MD_Identifier>
+							</cit:identifier>
+						</cit:CI_Citation>
+					</guf:resourceRef>
+					<guf:scope>
+						<mcc:MD_Scope>
+							<mcc:level>
+								<mcc:MD_ScopeCode codeListValue="dataset" codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#MD_ScopeCode"/>
+							</mcc:level>
+						</mcc:MD_Scope>
+					</guf:scope>
+					<guf:role>
+						<guf:GUF_TargetRoleCode codeListValue="primary" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_TargetRoleCode"></guf:GUF_TargetRoleCode>
+					</guf:role>
+				</guf:GUF_FeedbackTarget>
+			</guf:target>
+			<guf:target>
+				<guf:GUF_FeedbackTarget>
+					<guf:resourceRef xlink:href="http://edcdaac.usgs.gov/glcc/globdoc2_0.asp">
+						<cit:CI_Citation>
+							<cit:title></cit:title>
+							<cit:identifier>
+								<mcc:MD_Identifier>
+									<mcc:code>
+										<gco:CharacterString>Global Land Cover Characterization DataBase (GLCC)</gco:CharacterString>
+									</mcc:code>
+								</mcc:MD_Identifier>
+							</cit:identifier>
+						</cit:CI_Citation>
+					</guf:resourceRef>
+					<guf:scope>
+						<mcc:MD_Scope>
+							<mcc:level>
+								<mcc:MD_ScopeCode codeListValue="dataset" codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#MD_ScopeCode"/>
+							</mcc:level>
+						</mcc:MD_Scope>
+					</guf:scope>
+					<guf:role>
+						<guf:GUF_TargetRoleCode codeListValue="primary" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_TargetRoleCode"></guf:GUF_TargetRoleCode>
+					</guf:role>
+				</guf:GUF_FeedbackTarget>
+			</guf:target>
+			<guf:target>
+				<guf:GUF_FeedbackTarget>
+					<guf:resourceRef>
+						<cit:CI_Citation>
+							<cit:title></cit:title>
+							<cit:identifier>
+								<mcc:MD_Identifier>
+									<mcc:code>
+										<gco:CharacterString>The  MODIS  land  cover  product</gco:CharacterString>
+									</mcc:code>
+								</mcc:MD_Identifier>
+							</cit:identifier>
+						</cit:CI_Citation>
+					</guf:resourceRef>
+					<guf:scope>
+						<mcc:MD_Scope>
+							<mcc:level>
+								<mcc:MD_ScopeCode codeListValue="dataset" codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#MD_ScopeCode"/>
+							</mcc:level>
+						</mcc:MD_Scope>
+					</guf:scope>
+					<guf:role>
+						<guf:GUF_TargetRoleCode codeListValue="primary" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_TargetRoleCode"></guf:GUF_TargetRoleCode>
+					</guf:role>
+				</guf:GUF_FeedbackTarget>
+			</guf:target>
+		</guf:GUF_FeedbackItem>
+	</ufc:item>
+	<ufc:item>
+		<guf:GUF_FeedbackItem>
+			<guf:itemIdentifier>
+				<mcc:MD_Identifier>
+					<mcc:code>
+						<gco:CharacterString>GCL2000_feedack_item_3</gco:CharacterString>
+					</mcc:code>
+				</mcc:MD_Identifier>
+			</guf:itemIdentifier>
+			<guf:abstract>
+				<gco:CharacterString>The disagreement in cropland and forest cover between a given pair of land cover maps.</gco:CharacterString>
+			</guf:abstract>
+			<guf:contactRole>
+				<guf:GUF_UserRoleCode codeListValue="researchEndUser" codeList="">researchEndUser</guf:GUF_UserRoleCode>
+			</guf:contactRole>
+			<guf:dateInfo>
+				<cit:CI_Date>
+					<cit:date>
+						<gco:DateTime>2006-01-01T00:00:00Z</gco:DateTime>
+					</cit:date>
+					<cit:dateType>
+						<cit:CI_DateTypeCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_DateTypeCode" codeListValue="creation"/>
+					</cit:dateType>
+				</cit:CI_Date>				
+			</guf:dateInfo>
+			<guf:citation>
+				<cit:CI_Citation>
+					<cit:title>
+						<gco:CharacterString>Highlighting continued uncertainty in global land cover maps for the user community</gco:CharacterString>
+					</cit:title>
+					<cit:date>
+						<cit:CI_Date>
+							<cit:date>
+								<gco:DateTime>2011-01-01T00:00:00Z</gco:DateTime>
+							</cit:date>
+							<cit:dateType>
+								<cit:CI_DateTypeCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_DateTypeCode" codeListValue="creation"/>
+							</cit:dateType>
+						</cit:CI_Date>
+					</cit:date>
+					<cit:series>
+						<cit:CI_Series>
+							<cit:name>
+								<gco:CharacterString>Environmental Research Letters</gco:CharacterString>
+							</cit:name>
+						</cit:CI_Series>
+					</cit:series>
+					<cit:otherCitationDetails>
+						<gco:CharacterString>6 (2011) 044005 (6pp)</gco:CharacterString>
+					</cit:otherCitationDetails>
+				</cit:CI_Citation>
+			</guf:citation>
+			<guf:additionalQuality>
+				<mdq:DQ_DataQuality>
+					<mdq:scope><mcc:MD_Scope>
+						<mcc:level><mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#MD_ScopeCode"  codeListValue="dataset"/></mcc:level>
+					</mcc:MD_Scope></mdq:scope>
+					<mdq:report>
+						<mdq:DQ_NonQuantitativeAttributeCorrectness>
+							<mdq:result>
+								<mdq:DQ_DescriptiveResult>
+									<mdq:statement><gco:CharacterString>The total areas under cropland based on GLC-2000, GlobCover and  MODIS v.5  are  1621  Mha,  1589  Mha and  1311  Mha, respectively while the corresponding figures for forest cover are 3876 Mha, 4029 Mha and 4241 Mha. The overall accuracy for the cropland/cultivated/cultivated and managed  class for the GLC-2000 (classes 16–18) is 76%, MODIS v.5 (class 14 and 16) is 77% while GlobCover 2005 (class 11, 14, 20 and 30) decreases to 57.6%.  Similarly, for the aggregated forest classes, the GLC-2000 (classes 1–9) has an accuracy of 81%, for MODIS v.5 (classes 1–5) it is 80%, and for GlobCover 2005 (classes 40–120) it drops to 60%. Areas of high disagreement are visible across North America, Russia  and  across  the  tropical   world. Large  cropland disagreements are evident in China, North America and many countries in Africa.  </gco:CharacterString></mdq:statement>
+								</mdq:DQ_DescriptiveResult>
+							</mdq:result>
+						</mdq:DQ_NonQuantitativeAttributeCorrectness>
+					</mdq:report>
+				</mdq:DQ_DataQuality>
+			</guf:additionalQuality>
+			<guf:usage>
+				<guf:GUF_UsageReport>
+					<guf:usageDescription>
+						<mri:MD_Usage>
+							<mri:specificUsage><gco:CharacterString>GlobCover, GLC2000 and MODIS land cover products for change detection</gco:CharacterString></mri:specificUsage>
+						</mri:MD_Usage>
+					</guf:usageDescription>
+					<guf:discoveredIssue>
+						<qcm:QCM_DiscoveredIssue>
+							<qcm:knownProblem>
+								<gco:CharacterString>These maps cannot be used for land cover change detection since the error in the original map is higher than the change detected (e.g. GLC-2000 versus GlobCover). Due  to  the  large  disagreements  between  these  land  cover products, we recommend that the user community does not, by default, use the latest product with the highest resolution, but carefully examines the sensitivity of these products within a specific application..</gco:CharacterString>
+							</qcm:knownProblem>
+							<qcm:workAround>
+								<gco:CharacterString> In the situation where the maps are used for national and regional applications, we would recommend examining the disagreement of the products in the areas  of interest and also to compare them with high resolution ground data or aerial photography. One way to do this would be to use geo-wiki.org (Fritz et al 2009), a global land cover validation tool,  which  can  be  used  to  visualize  the  global  land  cover products and the disagreement directly on top of Google Earth. By exploring the discrepancies at the level of an individual country in combination with local knowledge, the user can gain insight into which product is better in a specific region and which product is better suited for a particular application.  Crowd-sourced  data  in  the  form  of  geo-tagged photos and information collected through Web 2.0 applications like  geo-wiki  and  smart  phones  could  also  be  harnessed as  a  rich  source  of  training  and  calibration  data  for  global land  cover  algorithms. </gco:CharacterString>
+							</qcm:workAround>
+						</qcm:QCM_DiscoveredIssue>
+					</guf:discoveredIssue>
+				</guf:GUF_UsageReport>
+			</guf:usage>
+			<guf:contact>
+				<guf:GUF_UserInformation>
+					<guf:userDetails>
+						<cit:CI_Responsibility>
+							<cit:role>
+								<cit:CI_RoleCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_RoleCode" codeListValue="user"/>
+							</cit:role>
+							<cit:party>
+								<cit:CI_Individual>
+									<cit:name>
+										<gco:CharacterString>Steffen Fritz</gco:CharacterString>
+									</cit:name>
+								</cit:CI_Individual>
+							</cit:party>
+						</cit:CI_Responsibility>
+					</guf:userDetails>
+					<guf:expertiseLevel>
+						<guf:GUF_RatingCode codeListValue="5" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_RatingCode"></guf:GUF_RatingCode>
+					</guf:expertiseLevel>
+				</guf:GUF_UserInformation>
+			</guf:contact>
+			<guf:userComment>
+				<guf:GUF_UserComment>
+					<guf:comment>
+						<gco:CharacterString>More research efforts should be directed towards finding ways  to  improve  global  land  cover. There  are  promising developments  on  the  horizon  such  as  open  access  to  the Landsat archive, the development of a new 30 m global land cover product being developed  by  the  USA  and  China, and the launch of the Sentinel satellites over the next decade with a finer temporal and spatial resolution.  However, validation of future products will remain a crucial issue. This will require greater involvement of experts on the ground and the collection of a larger quantity of in situ data. Cal Val land cover validation subgroup, which advocates the collection of more 'authorized' validation data.  </gco:CharacterString>
+					</guf:comment>
+				</guf:GUF_UserComment>
+			</guf:userComment>
+			<guf:target>
+				<guf:GUF_FeedbackTarget>
+					<guf:resourceRef xlink:href="http://www-gvm.jrc.it/glc2000">
+						<cit:CI_Citation>
+							<cit:title></cit:title>
+							<cit:identifier>
+								<mcc:MD_Identifier>
+									<mcc:code>
+										<gco:CharacterString>GLC2000</gco:CharacterString>
+									</mcc:code>
+									<mcc:codeSpace>
+										<gco:CharacterString>jrc.ec.europa.eu</gco:CharacterString>
+									</mcc:codeSpace>
+								</mcc:MD_Identifier>
+							</cit:identifier>
+						</cit:CI_Citation>
+					</guf:resourceRef>
+					<guf:scope>
+						<mcc:MD_Scope>
+							<mcc:level>
+								<mcc:MD_ScopeCode codeListValue="dataset" codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#MD_ScopeCode"/>
+							</mcc:level>
+						</mcc:MD_Scope>
+					</guf:scope>
+					<guf:role>
+						<guf:GUF_TargetRoleCode codeListValue="primary" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_TargetRoleCode"></guf:GUF_TargetRoleCode>
+					</guf:role>
+				</guf:GUF_FeedbackTarget>
+			</guf:target>
+			<guf:target>
+				<guf:GUF_FeedbackTarget>
+					<guf:resourceRef>
+						<cit:CI_Citation>
+							<cit:title></cit:title>
+							<cit:identifier>
+								<mcc:MD_Identifier>
+									<mcc:code>
+										<gco:CharacterString>GlobCover</gco:CharacterString>
+									</mcc:code>
+								</mcc:MD_Identifier>
+							</cit:identifier>
+						</cit:CI_Citation>
+					</guf:resourceRef>
+					<guf:scope>
+						<mcc:MD_Scope>
+							<mcc:level>
+								<mcc:MD_ScopeCode codeListValue="dataset" codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#MD_ScopeCode"/>
+							</mcc:level>
+						</mcc:MD_Scope>
+					</guf:scope>
+					<guf:role>
+						<guf:GUF_TargetRoleCode codeListValue="primary" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_TargetRoleCode"></guf:GUF_TargetRoleCode>
+					</guf:role>
+				</guf:GUF_FeedbackTarget>
+			</guf:target>
+			<guf:target>
+				<guf:GUF_FeedbackTarget>
+					<guf:resourceRef>
+						<cit:CI_Citation>
+							<cit:title></cit:title>
+							<cit:identifier>
+								<mcc:MD_Identifier>
+									<mcc:code>
+										<gco:CharacterString>The  MODIS  land  cover  product v5</gco:CharacterString>
+									</mcc:code>
+								</mcc:MD_Identifier>
+							</cit:identifier>
+						</cit:CI_Citation>
+					</guf:resourceRef>
+					<guf:scope>
+						<mcc:MD_Scope>
+							<mcc:level>
+								<mcc:MD_ScopeCode codeListValue="dataset" codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#MD_ScopeCode"/>
+							</mcc:level>
+						</mcc:MD_Scope>
+					</guf:scope>
+					<guf:role>
+						<guf:GUF_TargetRoleCode codeListValue="primary" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_TargetRoleCode"></guf:GUF_TargetRoleCode>
+					</guf:role>
+				</guf:GUF_FeedbackTarget>
+			</guf:target>
+		</guf:GUF_FeedbackItem>
+	</ufc:item>
+	<ufc:item>
+		<guf:GUF_FeedbackItem>
+			<guf:itemIdentifier>
+				<mcc:MD_Identifier>
+					<mcc:code>
+						<gco:CharacterString>GCL2000_feedack_item_4</gco:CharacterString>
+					</mcc:code>
+				</mcc:MD_Identifier>
+			</guf:itemIdentifier>
+			<guf:abstract>
+				<gco:CharacterString>Comparing GLC2000 with CIRCA.</gco:CharacterString>
+			</guf:abstract>
+			<guf:contactRole>
+				<guf:GUF_UserRoleCode codeListValue="researchEndUser" codeList="">researchEndUser</guf:GUF_UserRoleCode>
+			</guf:contactRole>
+			<guf:dateInfo>
+				<cit:CI_Date>
+					<cit:date>
+						<gco:DateTime>2011-06-01T00:00:00Z</gco:DateTime>
+					</cit:date>
+					<cit:dateType>
+						<cit:CI_DateTypeCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_DateTypeCode" codeListValue="creation"/>
+					</cit:dateType>
+				</cit:CI_Date>				
+			</guf:dateInfo>
+			<guf:citation>
+				<cit:CI_Citation>
+					<cit:title>
+						<gco:CharacterString>Evaluation of the GLC2000 and NALC2005 land cover products for LAI retrieval over Canada</gco:CharacterString>
+					</cit:title>
+					<cit:date>
+						<cit:CI_Date>
+							<cit:date>
+								<gco:DateTime>2011-06-01T00:00:00Z</gco:DateTime>
+							</cit:date>
+							<cit:dateType>
+								<cit:CI_DateTypeCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_DateTypeCode" codeListValue="creation"/>
+							</cit:dateType>
+						</cit:CI_Date>
+					</cit:date>
+					<cit:series>
+						<cit:CI_Series>
+							<cit:name>
+								<gco:CharacterString>Canadian Journal of Remote Sensing</gco:CharacterString>
+							</cit:name>
+						</cit:CI_Series>
+					</cit:series>
+					<cit:otherCitationDetails>
+						<gco:CharacterString>, Vol. 37, No. 3, pp. 302-313</gco:CharacterString>
+					</cit:otherCitationDetails>
+				</cit:CI_Citation>
+			</guf:citation>
+			<guf:additionalQuality>
+				<mdq:DQ_DataQuality>
+					<mdq:scope><mcc:MD_Scope>
+						<mcc:level><mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#MD_ScopeCode"  codeListValue="dataset"/></mcc:level>
+						<mcc:extent><gex:EX_Extent><gex:geographicElement><gex:EX_GeographicDescription>
+							<gex:geographicIdentifier><mcc:MD_Identifier>
+								<mcc:code><gco:CharacterString>Canada</gco:CharacterString></mcc:code>
+							</mcc:MD_Identifier></gex:geographicIdentifier>
+						</gex:EX_GeographicDescription></gex:geographicElement></gex:EX_Extent></mcc:extent>
+					</mcc:MD_Scope></mdq:scope>
+					<mdq:report>
+						<mdq:DQ_NonQuantitativeAttributeCorrectness>
+							<mdq:evaluationMethod><pqm:GVQ_FullInspection><pqm:referenceDataset><mri:MD_AssociatedResource>
+							<mri:name>
+								<cit:CI_Citation>
+								<cit:title><gco:CharacterString>30 m Circa 2000 Land Cover from agricultural regions of Canada</gco:CharacterString></cit:title>
+								<cit:identifier><mcc:MD_Identifier>
+									<mcc:code><gco:CharacterString>CIRCA2000</gco:CharacterString></mcc:code>
+								</mcc:MD_Identifier></cit:identifier></cit:CI_Citation></mri:name>
+								<mri:associationType><mri:DS_AssociationTypeCode codeListValue="reference" codeList="">reference dataset</mri:DS_AssociationTypeCode></mri:associationType>								
+								</mri:MD_AssociatedResource></pqm:referenceDataset></pqm:GVQ_FullInspection></mdq:evaluationMethod>
+							<mdq:result>
+								<mdq:DQ_QuantitativeResult>
+									<mdq:value><gco:Record><gco:Decimal>0.492</gco:Decimal></gco:Record></mdq:value>
+									<mdq:valueUnit/>
+									<mdq:valueRecordType><gco:RecordType xlink:href="http://qualityml.geoviqua.org/1.0/metrics/KappaCoefficient">Kappa coefficient</gco:RecordType></mdq:valueRecordType>
+								</mdq:DQ_QuantitativeResult>
+							</mdq:result>
+						</mdq:DQ_NonQuantitativeAttributeCorrectness>
+					</mdq:report>
+				</mdq:DQ_DataQuality>
+			</guf:additionalQuality>
+			<guf:contact>
+				<guf:GUF_UserInformation>
+					<guf:userDetails>
+						<cit:CI_Responsibility>
+							<cit:role>
+								<cit:CI_RoleCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_RoleCode" codeListValue="user"/>
+							</cit:role>
+							<cit:party>
+								<cit:CI_Individual>
+									<cit:name>
+										<gco:CharacterString>Alemu Gonsamo</gco:CharacterString>
+									</cit:name>
+								</cit:CI_Individual>
+							</cit:party>
+						</cit:CI_Responsibility>
+					</guf:userDetails>
+					<guf:expertiseLevel>
+						<guf:GUF_RatingCode codeListValue="5" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_RatingCode"></guf:GUF_RatingCode>
+					</guf:expertiseLevel>
+				</guf:GUF_UserInformation>
+			</guf:contact>
+			<guf:target>
+				<guf:GUF_FeedbackTarget>
+					<guf:resourceRef xlink:href="http://www-gvm.jrc.it/glc2000">
+						<cit:CI_Citation>
+							<cit:title></cit:title>
+							<cit:identifier>
+								<mcc:MD_Identifier>
+									<mcc:code>
+										<gco:CharacterString>GLC2000</gco:CharacterString>
+									</mcc:code>
+									<mcc:codeSpace>
+										<gco:CharacterString>jrc.ec.europa.eu</gco:CharacterString>
+									</mcc:codeSpace>
+								</mcc:MD_Identifier>
+							</cit:identifier>
+						</cit:CI_Citation>
+					</guf:resourceRef>
+					<guf:scope>
+						<mcc:MD_Scope>
+							<mcc:level>
+								<mcc:MD_ScopeCode codeListValue="dataset" codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#MD_ScopeCode"/>
+							</mcc:level>
+						</mcc:MD_Scope>
+					</guf:scope>
+					<guf:role>
+						<guf:GUF_TargetRoleCode codeListValue="primary" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_TargetRoleCode"></guf:GUF_TargetRoleCode>
+					</guf:role>
+				</guf:GUF_FeedbackTarget>
+			</guf:target>
+			<guf:target>
+				<guf:GUF_FeedbackTarget>
+					<guf:resourceRef>
+						<cit:CI_Citation>
+							<cit:title></cit:title>
+							<cit:identifier>
+								<mcc:MD_Identifier>
+									<mcc:code>
+										<gco:CharacterString>CIRCA2000</gco:CharacterString>
+									</mcc:code>
+								</mcc:MD_Identifier>
+							</cit:identifier>
+						</cit:CI_Citation>
+					</guf:resourceRef>
+					<guf:scope>
+						<mcc:MD_Scope>
+							<mcc:level>
+								<mcc:MD_ScopeCode codeListValue="dataset" codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#MD_ScopeCode"/>
+							</mcc:level>
+						</mcc:MD_Scope>
+					</guf:scope>
+					<guf:role>
+						<guf:GUF_TargetRoleCode codeListValue="secondary" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#GUF_TargetRoleCode"></guf:GUF_TargetRoleCode>
+					</guf:role>
+				</guf:GUF_FeedbackTarget>
+			</guf:target>
+		</guf:GUF_FeedbackItem>
+	</ufc:item>
+	<ufc:pagination>
+		<ufc:UFC_ResponsePagination>
+			<ufc:numberOfFeedbackItems><gco:Integer>4</gco:Integer></ufc:numberOfFeedbackItems>
+			<ufc:count><gco:Integer>4</gco:Integer></ufc:count>
+		</ufc:UFC_ResponsePagination>
+	</ufc:pagination>
+	<ufc:summary>
+		<ufs:UFS_FeedbackSummary>
+			<ufs:numberOfFeedbackItems><gco:Integer>4</gco:Integer></ufs:numberOfFeedbackItems>
+			<ufs:minimumPossibleRating><gco:Real>1.0</gco:Real></ufs:minimumPossibleRating>
+			<ufs:maximumPossibleRating><gco:Real>5.0</gco:Real></ufs:maximumPossibleRating>
+			<ufs:averageRating><gco:Real>5.0</gco:Real></ufs:averageRating>
+			<ufs:numberOfRatings><gco:Integer>0</gco:Integer></ufs:numberOfRatings>
+			<ufs:numberOfUserComments><gco:Integer>3</gco:Integer></ufs:numberOfUserComments>
+			<ufs:numberOfUsageReports><gco:Integer>2</gco:Integer></ufs:numberOfUsageReports>
+			<ufs:numberOfCitations><gco:Integer>4</gco:Integer></ufs:numberOfCitations>
+			<ufs:numberOfAdditionalQualities><gco:Integer>3</gco:Integer></ufs:numberOfAdditionalQualities>
+			<ufs:numberOfAdditionalLineages><gco:Integer>0</gco:Integer></ufs:numberOfAdditionalLineages>
+			<ufs:numberOfSignificantEvents><gco:Integer>0</gco:Integer></ufs:numberOfSignificantEvents>
+		</ufs:UFS_FeedbackSummary>
+	</ufc:summary>
+</ufc:UFC_FeedbackCollection>

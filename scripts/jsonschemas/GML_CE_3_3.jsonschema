@@ -78,360 +78,192 @@
                 "posList"
             ]
         },
-        "SimplePolygonType":{
+        "MultiPointPropertyType":{
+            "type":"object",
+            "title":"MultiPointPropertyType",
             "required":[
-                "posOrPointProperty",
-                "posList"
+                "multiPoint",
+                "simpleMultiPoint"
             ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractSurfaceType"
+            "properties":{
+                "multiPoint":{
+                    "title":"multiPoint",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/MultiPointType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MultiPoint",
+                        "namespaceURI":"http://www.opengis.net/gml/3.2"
+                    }
                 },
-                {
-                    "type":"object",
-                    "title":"SimplePolygonType",
-                    "properties":{
-                        "posOrPointProperty":{
-                            "title":"posOrPointProperty",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "anyOf":[
-                                            {
-                                                "anyOf":[
-                                                    {
-                                                        "$ref":"#/definitions/DirectPositionType"
-                                                    }
-                                                ],
-                                                "elementName":{
-                                                    "localPart":"pos",
-                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
-                                                }
-                                            },
-                                            {
-                                                "anyOf":[
-                                                    {
-                                                        "$ref":"#/definitions/PointPropertyType"
-                                                    }
-                                                ],
-                                                "elementName":{
-                                                    "localPart":"pointProperty",
-                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    "minItems":3
-                                }
-                            ],
-                            "propertyType":"elements"
-                        },
-                        "posList":{
-                            "title":"posList",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DirectPositionListType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"posList",
-                                "namespaceURI":"http://www.opengis.net/gml/3.2"
+                "simpleMultiPoint":{
+                    "title":"simpleMultiPoint",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SimpleMultiPointType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SimpleMultiPoint",
+                        "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                             }
                         }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":""
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml/3.2"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "owns":{
+                    "title":"owns",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"owns",
+                        "namespaceURI":""
                     }
                 }
-            ],
+            },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SimplePolygonType",
+                "localPart":"MultiPointPropertyType",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
             },
             "propertiesOrder":[
-                "posOrPointProperty",
-                "posList"
-            ]
-        },
-        "SimpleArcStringType":{
-            "required":[
-                "posOrPointProperty",
-                "posList"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractCurveType"
-                },
-                {
-                    "type":"object",
-                    "title":"SimpleArcStringType",
-                    "properties":{
-                        "posOrPointProperty":{
-                            "title":"posOrPointProperty",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "anyOf":[
-                                            {
-                                                "anyOf":[
-                                                    {
-                                                        "$ref":"#/definitions/DirectPositionType"
-                                                    }
-                                                ],
-                                                "elementName":{
-                                                    "localPart":"pos",
-                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
-                                                }
-                                            },
-                                            {
-                                                "anyOf":[
-                                                    {
-                                                        "$ref":"#/definitions/PointPropertyType"
-                                                    }
-                                                ],
-                                                "elementName":{
-                                                    "localPart":"pointProperty",
-                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    "minItems":3
-                                }
-                            ],
-                            "propertyType":"elements"
-                        },
-                        "posList":{
-                            "title":"posList",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DirectPositionListType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"posList",
-                                "namespaceURI":"http://www.opengis.net/gml/3.2"
-                            }
-                        },
-                        "interpolation":{
-                            "title":"interpolation",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CurveInterpolationType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"interpolation",
-                                "namespaceURI":""
-                            }
-                        },
-                        "numArc":{
-                            "title":"numArc",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"numArc",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SimpleArcStringType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
-            },
-            "propertiesOrder":[
-                "posOrPointProperty",
-                "posList",
-                "interpolation",
-                "numArc"
-            ]
-        },
-        "SimpleMultiPointType":{
-            "required":[
-                "posList"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractGeometricAggregateType"
-                },
-                {
-                    "type":"object",
-                    "title":"SimpleMultiPointType",
-                    "properties":{
-                        "posList":{
-                            "title":"posList",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DirectPositionListType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"posList",
-                                "namespaceURI":"http://www.opengis.net/gml/3.2"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SimpleMultiPointType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
-            },
-            "propertiesOrder":[
-                "posList"
-            ]
-        },
-        "SimpleArcStringByBulgeType":{
-            "required":[
-                "posOrPointProperty",
-                "posList",
-                "bulge",
-                "normal"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractCurveType"
-                },
-                {
-                    "type":"object",
-                    "title":"SimpleArcStringByBulgeType",
-                    "properties":{
-                        "posOrPointProperty":{
-                            "title":"posOrPointProperty",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "anyOf":[
-                                            {
-                                                "anyOf":[
-                                                    {
-                                                        "$ref":"#/definitions/DirectPositionType"
-                                                    }
-                                                ],
-                                                "elementName":{
-                                                    "localPart":"pos",
-                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
-                                                }
-                                            },
-                                            {
-                                                "anyOf":[
-                                                    {
-                                                        "$ref":"#/definitions/PointPropertyType"
-                                                    }
-                                                ],
-                                                "elementName":{
-                                                    "localPart":"pointProperty",
-                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    "minItems":2
-                                }
-                            ],
-                            "propertyType":"elements"
-                        },
-                        "posList":{
-                            "title":"posList",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DirectPositionListType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"posList",
-                                "namespaceURI":"http://www.opengis.net/gml/3.2"
-                            }
-                        },
-                        "bulge":{
-                            "title":"bulge",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"bulge",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
-                            }
-                        },
-                        "normal":{
-                            "title":"normal",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/VectorType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"normal",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
-                            }
-                        },
-                        "interpolation":{
-                            "title":"interpolation",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CurveInterpolationType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"interpolation",
-                                "namespaceURI":""
-                            }
-                        },
-                        "numArc":{
-                            "title":"numArc",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"numArc",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SimpleArcStringByBulgeType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
-            },
-            "propertiesOrder":[
-                "posOrPointProperty",
-                "posList",
-                "bulge",
-                "normal",
-                "interpolation",
-                "numArc"
+                "multiPoint",
+                "simpleMultiPoint",
+                "nilReason",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate",
+                "owns"
             ]
         },
         "SimpleArcType":{
@@ -680,7 +512,44 @@
                 "numARC"
             ]
         },
-        "SimpleRectangleType":{
+        "SimpleMultiPointType":{
+            "required":[
+                "posList"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractGeometricAggregateType"
+                },
+                {
+                    "type":"object",
+                    "title":"SimpleMultiPointType",
+                    "properties":{
+                        "posList":{
+                            "title":"posList",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/DirectPositionListType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"posList",
+                                "namespaceURI":"http://www.opengis.net/gml/3.2"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SimpleMultiPointType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
+            },
+            "propertiesOrder":[
+                "posList"
+            ]
+        },
+        "SimplePolygonType":{
             "required":[
                 "posOrPointProperty",
                 "posList"
@@ -691,7 +560,7 @@
                 },
                 {
                     "type":"object",
-                    "title":"SimpleRectangleType",
+                    "title":"SimplePolygonType",
                     "properties":{
                         "posOrPointProperty":{
                             "title":"posOrPointProperty",
@@ -724,8 +593,7 @@
                                             }
                                         ]
                                     },
-                                    "maxItems":4,
-                                    "minItems":4
+                                    "minItems":3
                                 }
                             ],
                             "propertyType":"elements"
@@ -748,200 +616,12 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SimpleRectangleType",
+                "localPart":"SimplePolygonType",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
             },
             "propertiesOrder":[
                 "posOrPointProperty",
                 "posList"
-            ]
-        },
-        "MultiPointPropertyType":{
-            "type":"object",
-            "title":"MultiPointPropertyType",
-            "required":[
-                "multiPoint",
-                "simpleMultiPoint"
-            ],
-            "properties":{
-                "multiPoint":{
-                    "title":"multiPoint",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/MultiPointType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MultiPoint",
-                        "namespaceURI":"http://www.opengis.net/gml/3.2"
-                    }
-                },
-                "simpleMultiPoint":{
-                    "title":"simpleMultiPoint",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SimpleMultiPointType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SimpleMultiPoint",
-                        "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
-                    }
-                },
-                "owns":{
-                    "title":"owns",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"owns",
-                        "namespaceURI":""
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":""
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml/3.2"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"MultiPointPropertyType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
-            },
-            "propertiesOrder":[
-                "multiPoint",
-                "simpleMultiPoint",
-                "owns",
-                "nilReason",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
             ]
         },
         "SimpleArcByCenterPointType":{
@@ -1084,43 +764,329 @@
                 "interpolation",
                 "numARC"
             ]
+        },
+        "SimpleArcStringByBulgeType":{
+            "required":[
+                "posOrPointProperty",
+                "posList",
+                "bulge",
+                "normal"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractCurveType"
+                },
+                {
+                    "type":"object",
+                    "title":"SimpleArcStringByBulgeType",
+                    "properties":{
+                        "posOrPointProperty":{
+                            "title":"posOrPointProperty",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "anyOf":[
+                                            {
+                                                "anyOf":[
+                                                    {
+                                                        "$ref":"#/definitions/DirectPositionType"
+                                                    }
+                                                ],
+                                                "elementName":{
+                                                    "localPart":"pos",
+                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
+                                                }
+                                            },
+                                            {
+                                                "anyOf":[
+                                                    {
+                                                        "$ref":"#/definitions/PointPropertyType"
+                                                    }
+                                                ],
+                                                "elementName":{
+                                                    "localPart":"pointProperty",
+                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "minItems":2
+                                }
+                            ],
+                            "propertyType":"elements"
+                        },
+                        "posList":{
+                            "title":"posList",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/DirectPositionListType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"posList",
+                                "namespaceURI":"http://www.opengis.net/gml/3.2"
+                            }
+                        },
+                        "bulge":{
+                            "title":"bulge",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"bulge",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
+                            }
+                        },
+                        "normal":{
+                            "title":"normal",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/VectorType"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"normal",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
+                            }
+                        },
+                        "interpolation":{
+                            "title":"interpolation",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CurveInterpolationType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"interpolation",
+                                "namespaceURI":""
+                            }
+                        },
+                        "numArc":{
+                            "title":"numArc",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"numArc",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SimpleArcStringByBulgeType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
+            },
+            "propertiesOrder":[
+                "posOrPointProperty",
+                "posList",
+                "bulge",
+                "normal",
+                "interpolation",
+                "numArc"
+            ]
+        },
+        "SimpleRectangleType":{
+            "required":[
+                "posOrPointProperty",
+                "posList"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractSurfaceType"
+                },
+                {
+                    "type":"object",
+                    "title":"SimpleRectangleType",
+                    "properties":{
+                        "posOrPointProperty":{
+                            "title":"posOrPointProperty",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "anyOf":[
+                                            {
+                                                "anyOf":[
+                                                    {
+                                                        "$ref":"#/definitions/DirectPositionType"
+                                                    }
+                                                ],
+                                                "elementName":{
+                                                    "localPart":"pos",
+                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
+                                                }
+                                            },
+                                            {
+                                                "anyOf":[
+                                                    {
+                                                        "$ref":"#/definitions/PointPropertyType"
+                                                    }
+                                                ],
+                                                "elementName":{
+                                                    "localPart":"pointProperty",
+                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "maxItems":4,
+                                    "minItems":4
+                                }
+                            ],
+                            "propertyType":"elements"
+                        },
+                        "posList":{
+                            "title":"posList",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/DirectPositionListType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"posList",
+                                "namespaceURI":"http://www.opengis.net/gml/3.2"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SimpleRectangleType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
+            },
+            "propertiesOrder":[
+                "posOrPointProperty",
+                "posList"
+            ]
+        },
+        "SimpleArcStringType":{
+            "required":[
+                "posOrPointProperty",
+                "posList"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractCurveType"
+                },
+                {
+                    "type":"object",
+                    "title":"SimpleArcStringType",
+                    "properties":{
+                        "posOrPointProperty":{
+                            "title":"posOrPointProperty",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "anyOf":[
+                                            {
+                                                "anyOf":[
+                                                    {
+                                                        "$ref":"#/definitions/DirectPositionType"
+                                                    }
+                                                ],
+                                                "elementName":{
+                                                    "localPart":"pos",
+                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
+                                                }
+                                            },
+                                            {
+                                                "anyOf":[
+                                                    {
+                                                        "$ref":"#/definitions/PointPropertyType"
+                                                    }
+                                                ],
+                                                "elementName":{
+                                                    "localPart":"pointProperty",
+                                                    "namespaceURI":"http://www.opengis.net/gml/3.2"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "minItems":3
+                                }
+                            ],
+                            "propertyType":"elements"
+                        },
+                        "posList":{
+                            "title":"posList",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/DirectPositionListType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"posList",
+                                "namespaceURI":"http://www.opengis.net/gml/3.2"
+                            }
+                        },
+                        "interpolation":{
+                            "title":"interpolation",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CurveInterpolationType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"interpolation",
+                                "namespaceURI":""
+                            }
+                        },
+                        "numArc":{
+                            "title":"numArc",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"numArc",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SimpleArcStringType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
+            },
+            "propertiesOrder":[
+                "posOrPointProperty",
+                "posList",
+                "interpolation",
+                "numArc"
+            ]
         }
     },
     "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "SimpleArcByCenterPoint"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml/3.3/ce"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/SimpleArcByCenterPointType"
-                }
-            },
-            "elementName":{
-                "localPart":"SimpleArcByCenterPoint",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
-            }
-        },
         {
             "type":"object",
             "properties":{
@@ -1168,7 +1134,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SimpleArc"
+                                        "SimpleTriangle"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1181,11 +1147,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SimpleArcType"
+                    "$ref":"#/definitions/SimpleTriangleType"
                 }
             },
             "elementName":{
-                "localPart":"SimpleArc",
+                "localPart":"SimpleTriangle",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
             }
         },
@@ -1202,7 +1168,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SimpleCircleByCenterPoint"
+                                        "SimpleArcByCenterPoint"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1219,7 +1185,7 @@
                 }
             },
             "elementName":{
-                "localPart":"SimpleCircleByCenterPoint",
+                "localPart":"SimpleArcByCenterPoint",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
             }
         },
@@ -1270,7 +1236,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "AbstractSimplePolygon"
+                                        "SimpleMultiPoint"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1283,11 +1249,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/AbstractSurfaceType"
+                    "$ref":"#/definitions/SimpleMultiPointType"
                 }
             },
             "elementName":{
-                "localPart":"AbstractSimplePolygon",
+                "localPart":"SimpleMultiPoint",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
             }
         },
@@ -1304,7 +1270,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SimpleRectangle"
+                                        "SimplePolygon"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1317,11 +1283,45 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SimpleRectangleType"
+                    "$ref":"#/definitions/SimplePolygonType"
                 }
             },
             "elementName":{
-                "localPart":"SimpleRectangle",
+                "localPart":"SimplePolygon",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SimpleArc"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml/3.3/ce"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SimpleArcType"
+                }
+            },
+            "elementName":{
+                "localPart":"SimpleArc",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
             }
         },
@@ -1440,7 +1440,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SimpleMultiPoint"
+                                        "SimpleRectangle"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1453,11 +1453,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SimpleMultiPointType"
+                    "$ref":"#/definitions/SimpleRectangleType"
                 }
             },
             "elementName":{
-                "localPart":"SimpleMultiPoint",
+                "localPart":"SimpleRectangle",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
             }
         },
@@ -1474,7 +1474,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SimplePolygon"
+                                        "SimpleCircleByCenterPoint"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1487,11 +1487,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SimplePolygonType"
+                    "$ref":"#/definitions/SimpleArcByCenterPointType"
                 }
             },
             "elementName":{
-                "localPart":"SimplePolygon",
+                "localPart":"SimpleCircleByCenterPoint",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
             }
         },
@@ -1508,7 +1508,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SimpleTriangle"
+                                        "AbstractSimplePolygon"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1521,11 +1521,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SimpleTriangleType"
+                    "$ref":"#/definitions/AbstractSurfaceType"
                 }
             },
             "elementName":{
-                "localPart":"SimpleTriangle",
+                "localPart":"AbstractSimplePolygon",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/ce"
             }
         }

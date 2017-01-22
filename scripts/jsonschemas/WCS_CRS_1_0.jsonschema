@@ -15,40 +15,6 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "supportedCrs"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/wcs/crs/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                }
-            },
-            "elementName":{
-                "localPart":"supportedCrs",
-                "namespaceURI":"http://www.opengis.net/wcs/crs/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
                                         "subsettingCrs"
                                     ]
                                 },
@@ -101,6 +67,40 @@
             },
             "elementName":{
                 "localPart":"outputCrs",
+                "namespaceURI":"http://www.opengis.net/wcs/crs/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "supportedCrs"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/wcs/crs/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                }
+            },
+            "elementName":{
+                "localPart":"supportedCrs",
                 "namespaceURI":"http://www.opengis.net/wcs/crs/1.0"
             }
         }

@@ -2,35 +2,41 @@
 {
     "id":"http://www.opengis.net/ows-context#",
     "definitions":{
-        "ResourceListType":{
+        "FormatType":{
             "type":"object",
-            "title":"ResourceListType",
+            "title":"FormatType",
             "properties":{
-                "layer":{
-                    "title":"layer",
+                "value":{
+                    "title":"value",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/LayerType"
-                            },
-                            "minItems":0
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Layer",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    "propertyType":"value"
+                },
+                "current":{
+                    "title":"current",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"current",
+                        "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ResourceListType",
+                "localPart":"FormatType",
                 "namespaceURI":"http://www.opengis.net/ows-context"
             },
             "propertiesOrder":[
-                "layer"
+                "value",
+                "current"
             ]
         },
         "LayerType":{
@@ -249,76 +255,38 @@
                 "queryable"
             ]
         },
-        "URLType":{
-            "type":"object",
-            "title":"URLType",
-            "required":[
-                "onlineResource"
-            ],
-            "properties":{
-                "onlineResource":{
-                    "title":"onlineResource",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/OnlineResourceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OnlineResource",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
-                    }
+        "OnlineResourceType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/ows#/definitions/OnlineResourceType"
                 },
-                "width":{
-                    "title":"width",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                {
+                    "type":"object",
+                    "title":"OnlineResourceType",
+                    "properties":{
+                        "method":{
+                            "title":"method",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MethodType"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"method",
+                                "namespaceURI":""
+                            }
                         }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"width",
-                        "namespaceURI":""
-                    }
-                },
-                "height":{
-                    "title":"height",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"height",
-                        "namespaceURI":""
-                    }
-                },
-                "format":{
-                    "title":"format",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"format",
-                        "namespaceURI":""
                     }
                 }
-            },
+            ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"URLType",
+                "localPart":"OnlineResourceType",
                 "namespaceURI":"http://www.opengis.net/ows-context"
             },
             "propertiesOrder":[
-                "onlineResource",
-                "width",
-                "height",
-                "format"
+                "method"
             ]
         },
         "DimensionType":{
@@ -460,153 +428,6 @@
                 "current"
             ]
         },
-        "InlineFeatureCollectionType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractFeatureCollectionType"
-                },
-                {
-                    "type":"object",
-                    "title":"InlineFeatureCollectionType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"InlineFeatureCollectionType",
-                "namespaceURI":"http://www.opengis.net/ows-context"
-            }
-        },
-        "ServerType":{
-            "type":"object",
-            "title":"ServerType",
-            "required":[
-                "onlineResource",
-                "service",
-                "version"
-            ],
-            "properties":{
-                "onlineResource":{
-                    "title":"onlineResource",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/OnlineResourceType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OnlineResource",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
-                    }
-                },
-                "_default":{
-                    "title":"_default",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"default",
-                        "namespaceURI":""
-                    }
-                },
-                "service":{
-                    "title":"service",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ServiceType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"service",
-                        "namespaceURI":""
-                    }
-                },
-                "version":{
-                    "title":"version",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"version",
-                        "namespaceURI":""
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ServerType",
-                "namespaceURI":"http://www.opengis.net/ows-context"
-            },
-            "propertiesOrder":[
-                "onlineResource",
-                "_default",
-                "service",
-                "version",
-                "title"
-            ]
-        },
-        "FormatType":{
-            "type":"object",
-            "title":"FormatType",
-            "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "current":{
-                    "title":"current",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"current",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"FormatType",
-                "namespaceURI":"http://www.opengis.net/ows-context"
-            },
-            "propertiesOrder":[
-                "value",
-                "current"
-            ]
-        },
         "ExtensionType":{
             "type":"object",
             "title":"ExtensionType",
@@ -647,372 +468,23 @@
                 "any"
             ]
         },
-        "ParameterListType":{
-            "type":"object",
-            "title":"ParameterListType",
-            "properties":{
-                "parameter":{
-                    "title":"parameter",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/ExtensionType"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Parameter",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ParameterListType",
-                "namespaceURI":"http://www.opengis.net/ows-context"
-            },
-            "propertiesOrder":[
-                "parameter"
-            ]
-        },
-        "OnlineResourceType":{
+        "InlineFeatureCollectionType":{
             "allOf":[
                 {
-                    "$ref":"http://www.opengis.net/ows#/definitions/OnlineResourceType"
+                    "$ref":"#/definitions/AbstractFeatureCollectionType"
                 },
                 {
                     "type":"object",
-                    "title":"OnlineResourceType",
+                    "title":"InlineFeatureCollectionType",
                     "properties":{
-                        "method":{
-                            "title":"method",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MethodType"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"method",
-                                "namespaceURI":""
-                            }
-                        }
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"OnlineResourceType",
+                "localPart":"InlineFeatureCollectionType",
                 "namespaceURI":"http://www.opengis.net/ows-context"
-            },
-            "propertiesOrder":[
-                "method"
-            ]
-        },
-        "SLDType":{
-            "type":"object",
-            "title":"SLDType",
-            "required":[
-                "onlineResource",
-                "styledLayerDescriptor",
-                "featureTypeStyle"
-            ],
-            "properties":{
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Name",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Title",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
-                    }
-                },
-                "legendURL":{
-                    "title":"legendURL",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/URLType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"LegendURL",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
-                    }
-                },
-                "onlineResource":{
-                    "title":"onlineResource",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/OnlineResourceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OnlineResource",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
-                    }
-                },
-                "styledLayerDescriptor":{
-                    "title":"styledLayerDescriptor",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/sld#/definitions/StyledLayerDescriptor"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"StyledLayerDescriptor",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                },
-                "featureTypeStyle":{
-                    "title":"featureTypeStyle",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.opengis.net/sld#/definitions/FeatureTypeStyle"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"FeatureTypeStyle",
-                        "namespaceURI":"http://www.opengis.net/sld"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SLDType",
-                "namespaceURI":"http://www.opengis.net/ows-context"
-            },
-            "propertiesOrder":[
-                "name",
-                "title",
-                "legendURL",
-                "onlineResource",
-                "styledLayerDescriptor",
-                "featureTypeStyle"
-            ]
-        },
-        "StyleListType":{
-            "type":"object",
-            "title":"StyleListType",
-            "properties":{
-                "style":{
-                    "title":"style",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/StyleType"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Style",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"StyleListType",
-                "namespaceURI":"http://www.opengis.net/ows-context"
-            },
-            "propertiesOrder":[
-                "style"
-            ]
-        },
-        "FormatListType":{
-            "type":"object",
-            "title":"FormatListType",
-            "required":[
-                "format"
-            ],
-            "properties":{
-                "format":{
-                    "title":"format",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/FormatType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Format",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"FormatListType",
-                "namespaceURI":"http://www.opengis.net/ows-context"
-            },
-            "propertiesOrder":[
-                "format"
-            ]
-        },
-        "StyleType":{
-            "type":"object",
-            "title":"StyleType",
-            "required":[
-                "name",
-                "title"
-            ],
-            "properties":{
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Name",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Title",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
-                    }
-                },
-                "_abstract":{
-                    "title":"_abstract",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Abstract",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
-                    }
-                },
-                "legendURL":{
-                    "title":"legendURL",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/URLType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"LegendURL",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
-                    }
-                },
-                "sld":{
-                    "title":"sld",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SLDType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SLD",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
-                    }
-                },
-                "current":{
-                    "title":"current",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"current",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"StyleType",
-                "namespaceURI":"http://www.opengis.net/ows-context"
-            },
-            "propertiesOrder":[
-                "name",
-                "title",
-                "_abstract",
-                "legendURL",
-                "sld",
-                "current"
-            ]
-        },
-        "DimensionListType":{
-            "type":"object",
-            "title":"DimensionListType",
-            "required":[
-                "dimension"
-            ],
-            "properties":{
-                "dimension":{
-                    "title":"dimension",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/DimensionType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Dimension",
-                        "namespaceURI":"http://www.opengis.net/ows-context"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DimensionListType",
-                "namespaceURI":"http://www.opengis.net/ows-context"
-            },
-            "propertiesOrder":[
-                "dimension"
-            ]
+            }
         },
         "WindowType":{
             "type":"object",
@@ -1057,6 +529,40 @@
             "propertiesOrder":[
                 "width",
                 "height"
+            ]
+        },
+        "FormatListType":{
+            "type":"object",
+            "title":"FormatListType",
+            "required":[
+                "format"
+            ],
+            "properties":{
+                "format":{
+                    "title":"format",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/FormatType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Format",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"FormatListType",
+                "namespaceURI":"http://www.opengis.net/ows-context"
+            },
+            "propertiesOrder":[
+                "format"
             ]
         },
         "AbstractResourceType":{
@@ -1269,6 +775,288 @@
                 "opacity"
             ]
         },
+        "OWSContextType":{
+            "type":"object",
+            "title":"OWSContextType",
+            "required":[
+                "general",
+                "resourceList",
+                "version",
+                "id"
+            ],
+            "properties":{
+                "general":{
+                    "title":"general",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/GeneralType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"General",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                },
+                "resourceList":{
+                    "title":"resourceList",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ResourceListType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ResourceList",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                },
+                "version":{
+                    "title":"version",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"version",
+                        "namespaceURI":""
+                    }
+                },
+                "id":{
+                    "title":"id",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"id",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"OWSContextType",
+                "namespaceURI":"http://www.opengis.net/ows-context"
+            },
+            "propertiesOrder":[
+                "general",
+                "resourceList",
+                "version",
+                "id"
+            ]
+        },
+        "URLType":{
+            "type":"object",
+            "title":"URLType",
+            "required":[
+                "onlineResource"
+            ],
+            "properties":{
+                "onlineResource":{
+                    "title":"onlineResource",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/OnlineResourceType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OnlineResource",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                },
+                "width":{
+                    "title":"width",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"width",
+                        "namespaceURI":""
+                    }
+                },
+                "height":{
+                    "title":"height",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/integer"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"height",
+                        "namespaceURI":""
+                    }
+                },
+                "format":{
+                    "title":"format",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"format",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"URLType",
+                "namespaceURI":"http://www.opengis.net/ows-context"
+            },
+            "propertiesOrder":[
+                "onlineResource",
+                "width",
+                "height",
+                "format"
+            ]
+        },
+        "StyleType":{
+            "type":"object",
+            "title":"StyleType",
+            "required":[
+                "name",
+                "title"
+            ],
+            "properties":{
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Name",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Title",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                },
+                "_abstract":{
+                    "title":"_abstract",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Abstract",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                },
+                "legendURL":{
+                    "title":"legendURL",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/URLType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LegendURL",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                },
+                "sld":{
+                    "title":"sld",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SLDType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SLD",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                },
+                "current":{
+                    "title":"current",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"current",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"StyleType",
+                "namespaceURI":"http://www.opengis.net/ows-context"
+            },
+            "propertiesOrder":[
+                "name",
+                "title",
+                "_abstract",
+                "legendURL",
+                "sld",
+                "current"
+            ]
+        },
+        "DimensionListType":{
+            "type":"object",
+            "title":"DimensionListType",
+            "required":[
+                "dimension"
+            ],
+            "properties":{
+                "dimension":{
+                    "title":"dimension",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/DimensionType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Dimension",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DimensionListType",
+                "namespaceURI":"http://www.opengis.net/ows-context"
+            },
+            "propertiesOrder":[
+                "dimension"
+            ]
+        },
         "GeneralType":{
             "type":"object",
             "title":"GeneralType",
@@ -1451,40 +1239,220 @@
                 "extension"
             ]
         },
-        "OWSContextType":{
+        "ParameterListType":{
             "type":"object",
-            "title":"OWSContextType",
-            "required":[
-                "general",
-                "resourceList",
-                "version",
-                "id"
-            ],
+            "title":"ParameterListType",
             "properties":{
-                "general":{
-                    "title":"general",
+                "parameter":{
+                    "title":"parameter",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/GeneralType"
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/ExtensionType"
+                            },
+                            "minItems":0
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"General",
+                        "localPart":"Parameter",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ParameterListType",
+                "namespaceURI":"http://www.opengis.net/ows-context"
+            },
+            "propertiesOrder":[
+                "parameter"
+            ]
+        },
+        "ResourceListType":{
+            "type":"object",
+            "title":"ResourceListType",
+            "properties":{
+                "layer":{
+                    "title":"layer",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/LayerType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Layer",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ResourceListType",
+                "namespaceURI":"http://www.opengis.net/ows-context"
+            },
+            "propertiesOrder":[
+                "layer"
+            ]
+        },
+        "SLDType":{
+            "type":"object",
+            "title":"SLDType",
+            "required":[
+                "onlineResource",
+                "styledLayerDescriptor",
+                "featureTypeStyle"
+            ],
+            "properties":{
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Name",
                         "namespaceURI":"http://www.opengis.net/ows-context"
                     }
                 },
-                "resourceList":{
-                    "title":"resourceList",
+                "title":{
+                    "title":"title",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/ResourceListType"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"ResourceList",
+                        "localPart":"Title",
                         "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                },
+                "legendURL":{
+                    "title":"legendURL",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/URLType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LegendURL",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                },
+                "onlineResource":{
+                    "title":"onlineResource",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/OnlineResourceType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OnlineResource",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                },
+                "styledLayerDescriptor":{
+                    "title":"styledLayerDescriptor",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/sld#/definitions/StyledLayerDescriptor"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"StyledLayerDescriptor",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                },
+                "featureTypeStyle":{
+                    "title":"featureTypeStyle",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.opengis.net/sld#/definitions/FeatureTypeStyle"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"FeatureTypeStyle",
+                        "namespaceURI":"http://www.opengis.net/sld"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SLDType",
+                "namespaceURI":"http://www.opengis.net/ows-context"
+            },
+            "propertiesOrder":[
+                "name",
+                "title",
+                "legendURL",
+                "onlineResource",
+                "styledLayerDescriptor",
+                "featureTypeStyle"
+            ]
+        },
+        "ServerType":{
+            "type":"object",
+            "title":"ServerType",
+            "required":[
+                "onlineResource",
+                "service",
+                "version"
+            ],
+            "properties":{
+                "onlineResource":{
+                    "title":"onlineResource",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/OnlineResourceType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"OnlineResource",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                },
+                "_default":{
+                    "title":"_default",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"default",
+                        "namespaceURI":""
+                    }
+                },
+                "service":{
+                    "title":"service",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ServiceType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"service",
+                        "namespaceURI":""
                     }
                 },
                 "version":{
@@ -1500,8 +1468,8 @@
                         "namespaceURI":""
                     }
                 },
-                "id":{
-                    "title":"id",
+                "title":{
+                    "title":"title",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -1509,21 +1477,53 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"id",
+                        "localPart":"title",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"OWSContextType",
+                "localPart":"ServerType",
                 "namespaceURI":"http://www.opengis.net/ows-context"
             },
             "propertiesOrder":[
-                "general",
-                "resourceList",
+                "onlineResource",
+                "_default",
+                "service",
                 "version",
-                "id"
+                "title"
+            ]
+        },
+        "StyleListType":{
+            "type":"object",
+            "title":"StyleListType",
+            "properties":{
+                "style":{
+                    "title":"style",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/StyleType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Style",
+                        "namespaceURI":"http://www.opengis.net/ows-context"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"StyleListType",
+                "namespaceURI":"http://www.opengis.net/ows-context"
+            },
+            "propertiesOrder":[
+                "style"
             ]
         },
         "MethodType":{
@@ -1552,6 +1552,40 @@
         }
     },
     "anyOf":[
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "OWSContext"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/ows-context"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/OWSContextType"
+                }
+            },
+            "elementName":{
+                "localPart":"OWSContext",
+                "namespaceURI":"http://www.opengis.net/ows-context"
+            }
+        },
         {
             "type":"object",
             "properties":{
@@ -1617,40 +1651,6 @@
             },
             "elementName":{
                 "localPart":"Layer",
-                "namespaceURI":"http://www.opengis.net/ows-context"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "OWSContext"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/ows-context"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/OWSContextType"
-                }
-            },
-            "elementName":{
-                "localPart":"OWSContext",
                 "namespaceURI":"http://www.opengis.net/ows-context"
             }
         }

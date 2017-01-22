@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=====================================================================
+Example Instance for PubSub SOAP Binding (PSSB) 1.0 GetCapabilities response
+=======================================================================-->
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:ows="http://www.opengis.net/ows/1.1"
+    xmlns:pubsub="http://www.opengis.net/pubsub/1.0" xmlns:fes="http://www.opengis.net/fes/2.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+    http://www.opengis.net/pubsub/1.0 http://schemas.opengis.net/pubsub/1.0/pubsubAll.xsd">
+    <soap12:Header>
+        <wsa:To>http://www.w3.org/2005/08/addressing/anonymous</wsa:To>
+        <wsa:Action>http://www.opengis.net/def/serviceOperation/pubsub/1.0/GetCapabilitiesResponse</wsa:Action>
+        <wsa:RelatesTo>http://my.client.com/uid/msg-0010</wsa:RelatesTo>
+    </soap12:Header>
+    <soap12:Body>
+        <pubsub:PublisherCapabilities version="1.0.0">
+            <!-- ServiceIdentification contains general information about the service like title, type and version as well as information about supported profiles of the service-->
+            <ows:ServiceIdentification>
+                <ows:Title>My PubSub Service</ows:Title>
+                <ows:Abstract>My Service with publications</ows:Abstract>
+                <ows:Keywords>
+                    <ows:Keyword>Publish</ows:Keyword>
+                    <ows:Keyword>Subscribe</ows:Keyword>
+                </ows:Keywords>
+                <ows:ServiceType codeSpace="http://opengeospatial.net">OGC:PubSub</ows:ServiceType>
+                <ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
+                <ows:Profile>http://www.opengis.net/spec/pubsub/1.0/conf/soap/standalone-publisher</ows:Profile>
+                <ows:Fees>NONE</ows:Fees>
+                <ows:AccessConstraints>NONE</ows:AccessConstraints>
+            </ows:ServiceIdentification>
+            <!-- ServiceProvider section contains information about service provider like contact, adress, etc. -->
+            <ows:ServiceProvider>
+                <ows:ProviderName>My Provider</ows:ProviderName>
+                <ows:ProviderSite xlink:href="http://my.organization.org/pubsub"/>
+                <ows:ServiceContact>
+                    <ows:ContactInfo>
+                        <ows:Phone>
+                            <ows:Voice>...</ows:Voice>
+                            <ows:Facsimile>...</ows:Facsimile>
+                        </ows:Phone>
+                        <ows:Address>
+                            <ows:DeliveryPoint>My Street 24</ows:DeliveryPoint>
+                            <ows:City>MyCity</ows:City>
+                            <ows:PostalCode>12345</ows:PostalCode>
+                            <ows:Country>MyCountry</ows:Country>
+                            <ows:ElectronicMailAddress>info@my.organization.org</ows:ElectronicMailAddress>
+                        </ows:Address>
+                    </ows:ContactInfo>
+                    <ows:Role/>
+                </ows:ServiceContact>
+            </ows:ServiceProvider>
+
+            <ows:OperationsMetadata>
+
+                <ows:Operation name="GetCapabilities">
+                    <ows:DCP>
+                        <ows:HTTP>
+                            <ows:Post xlink:href="http://www.publisher.org/pubsub"/>
+                        </ows:HTTP>
+                    </ows:DCP>
+                    <ows:Parameter name="AcceptVersions">
+                        <ows:AllowedValues>
+                            <ows:Value>1.0.0</ows:Value>
+                        </ows:AllowedValues>
+                    </ows:Parameter>
+                    <ows:Parameter name="AcceptFormats">
+                        <ows:AllowedValues>
+                            <ows:Value>text/xml</ows:Value>
+                        </ows:AllowedValues>
+                    </ows:Parameter>
+                    <ows:Parameter name="Sections">
+                        <ows:AllowedValues>
+                            <ows:Value>ServiceIdentification</ows:Value>
+                            <ows:Value>ServiceProvider</ows:Value>
+                            <ows:Value>OperationsMetadata</ows:Value>
+                            <ows:Value>Contents</ows:Value>
+                            <ows:Value>FilterCapabilities</ows:Value>
+                            <ows:Value>DeliveryCapabilities</ows:Value>
+                        </ows:AllowedValues>
+                    </ows:Parameter>
+                </ows:Operation>
+                <ows:Operation name="DescribePublicationType">
+                    <ows:DCP>
+                        <ows:HTTP>
+                            <ows:Post xlink:href="http://www.publisher.org/pubsub"/>
+                        </ows:HTTP>
+                    </ows:DCP>
+                </ows:Operation>
+                <ows:Operation name="DescribeSubscription">
+                    <ows:DCP>
+                        <ows:HTTP>
+                            <ows:Post xlink:href="http://www.publisher.org/pubsub"/>
+                        </ows:HTTP>
+                    </ows:DCP>
+                </ows:Operation>
+                <ows:Operation name="Subscribe">
+                    <ows:DCP>
+                        <ows:HTTP>
+                            <ows:Post xlink:href="http://www.publisher.org/pubsub"/>
+                        </ows:HTTP>
+                    </ows:DCP>
+                </ows:Operation>
+                <ows:Operation name="Unsubscribe">
+                    <ows:DCP>
+                        <ows:HTTP>
+                            <ows:Post xlink:href="http://www.publisher.org/pubsub"/>
+                        </ows:HTTP>
+                    </ows:DCP>
+                </ows:Operation>
+                <ows:Operation name="Renew">
+                    <ows:DCP>
+                        <ows:HTTP>
+                            <ows:Post xlink:href="http://www.publisher.org/pubsub"/>
+                        </ows:HTTP>
+                    </ows:DCP>
+                </ows:Operation>
+
+            </ows:OperationsMetadata>
+
+            <!-- the filterCapabilities section lists the filters and operands which are supported for subscriptions -->
+            <pubsub:FilterCapabilities>
+                
+                <pubsub:FilterLanguage>
+                    <ows:Abstract>
+                        OGC Filter Encoding Spec 2.0
+                    </ows:Abstract>
+                    <pubsub:Identifier>http://www.opengis.net/fes/2.0</pubsub:Identifier>
+                    <pubsub:SupportedCapabilities>
+                        <fes:Filter_Capabilities>
+                            <fes:Conformance>
+                                <fes:Constraint name="ImplementsMinSpatialFilter">
+                                    <ows:NoValues/>
+                                    <ows:DefaultValue>true</ows:DefaultValue>
+                                </fes:Constraint>
+                                <fes:Constraint name="ImplementsTemporalFilter">
+                                    <ows:NoValues/>
+                                    <ows:DefaultValue>true</ows:DefaultValue>
+                                </fes:Constraint>
+                                <!-- Other FES conformance information here -->
+                            </fes:Conformance>
+                        </fes:Filter_Capabilities>
+                    </pubsub:SupportedCapabilities>
+                </pubsub:FilterLanguage>
+
+                <pubsub:FilterLanguage>
+                    <ows:Abstract>
+                        OGC WCS 1.1 filtering support
+                    </ows:Abstract>
+                    <pubsub:Identifier>http://www.opengis.net/wcs/1.1</pubsub:Identifier>
+                </pubsub:FilterLanguage>
+            </pubsub:FilterCapabilities>
+
+            <!-- The methods by which messages are delivered to Receivers -->
+            <pubsub:DeliveryCapabilities>
+                <pubsub:DeliveryMethod>
+                    <ows:Abstract>SOAP over HTTP - Messages delivered via HTTP POST with SOAP contents (push-based)</ows:Abstract>
+                    <pubsub:Identifier>http://schemas.xmlsoap.org/soap/http</pubsub:Identifier>
+                </pubsub:DeliveryMethod>
+                <!-- More than one delivery method may be advertised -->
+            </pubsub:DeliveryCapabilities>
+            
+            <!-- Information about the publications offered by the service -->
+            <pubsub:Publications>
+                <pubsub:Publication>
+                    <ows:Abstract>My publication</ows:Abstract>
+                    <pubsub:Identifier>http://www.publisher.org/pubsub/myPublication</pubsub:Identifier>
+                    <!-- The publication is offered in two formats - XML and netCDF.  The requested format is supplied in the Subscribe request -->
+                    <pubsub:ContentType>text/xml</pubsub:ContentType>
+                    <pubsub:ContentType>application/x+netcdf</pubsub:ContentType>
+                    <pubsub:SupportedFilterLanguage>http://www.opengis.net/wcs/1.1</pubsub:SupportedFilterLanguage>
+                    <pubsub:SupportedDeliveryMethod>http://schemas.xmlsoap.org/soap/http</pubsub:SupportedDeliveryMethod>
+                    <ows:BoundingBox crs="urn:ogc:def:crs:OGC:2:84">
+                      <ows:LowerCorner>-106 42</ows:LowerCorner>
+                      <ows:UpperCorner>-103 40</ows:UpperCorner>
+                    </ows:BoundingBox>
+                </pubsub:Publication>
+            </pubsub:Publications>
+
+            <pubsub:Extension>
+                <!-- extension elements may be used for providing extensions to PubSub Core -->
+            </pubsub:Extension>
+        </pubsub:PublisherCapabilities>
+    </soap12:Body>
+</soap12:Envelope>

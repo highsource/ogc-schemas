@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mf:MovingFeatures xmlns:mf="http://www.opengis.net/movingfeatures/1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/movingfeatures/1.0
+  http://schemas.opengis.net/movingfeatures/1.0/mf-xmlcore.xsd"
+  gml:id="MFC_0001">
+  <mf:sTBoundedBy offset="sec">
+    <gml:EnvelopeWithTimePeriod srsName="urn:x-ogc:def:crs:EPSG:6.6:4326">
+      <gml:lowerCorner>50.23
+  9.23</gml:lowerCorner>
+      <gml:upperCorner>50.31
+  9.27</gml:upperCorner>
+
+      <gml:beginPosition>2012-01-17T12:33:41Z
+  </gml:beginPosition>
+
+      <gml:endPosition>2012-01-17T12:37:00Z </gml:endPosition>
+
+    </gml:EnvelopeWithTimePeriod>
+  </mf:sTBoundedBy>
+  <mf:member xlink:href="#pointerToGmlIdOfMovingFeature_a"/>
+  <mf:member xlink:href="#pointerToGmlIdOfMovingFeature_b"/>
+  <mf:member>
+    <mf:MovingFeature gml:id="a">
+      <gml:name>Joe
+  Blow</gml:name>
+    </mf:MovingFeature>
+  </mf:member>
+  <mf:member>
+    <mf:MovingFeature gml:id="b">
+      <gml:name>Jane
+  Doe</gml:name>
+    </mf:MovingFeature>
+  </mf:member>
+  <mf:header>
+    <mf:VaryingAttrDefs>
+      <mf:attrDef>
+        <xsd:simpleType name="state">
+          <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="walking"/>
+            <xsd:enumeration value="staying"/>
+            <xsd:enumeration value="running"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </mf:attrDef>
+      <mf:attrDef>
+        <xsd:simpleType name="typecode">
+          <xsd:restriction base="xsd:integer">
+            <xsd:enumeration value="1"/>
+            <xsd:enumeration value="2"/>
+            <xsd:enumeration value="97"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </mf:attrDef>
+    </mf:VaryingAttrDefs>
+  </mf:header>
+  <mf:foliation>
+    <mf:LinearTrajectory gml:id="LT0001" mfIdRef="a" start="10" end="150">
+      <gml:posList>11.0 2.0
+  12.0 3.0</gml:posList>
+      <mf:Attr>walking,1</mf:Attr>
+    </mf:LinearTrajectory>
+    <mf:LinearTrajectory gml:id="LT0002" mfIdRef="b" start="10" end="190">
+      <gml:posList>10.0 2.0
+  11.0 3.0</gml:posList>
+
+      <mf:Attr>walking,2</mf:Attr>
+    </mf:LinearTrajectory>
+    <mf:LinearTrajectory gml:id="LT0003" mfIdRef="a" start="150" end="190">
+      <gml:posList>12.0 3.0
+  10.0 3.0</gml:posList>
+
+      <mf:Attr>walking,2</mf:Attr>
+    </mf:LinearTrajectory>
+  </mf:foliation>
+</mf:MovingFeatures>

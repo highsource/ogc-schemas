@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wfs:WFS_Capabilities xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:ows="http://www.opengis.net/ows/1.1"
+	xmlns:pubsub="http://www.opengis.net/pubsub/1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+    xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd
+    http://www.opengis.net/ows/1.1 http://schemas.opengis.net/ows/1.1.0/owsAll.xsd
+    http://www.opengis.net/pubsub/1.0 http://schemas.opengis.net/pubsub/1.0/pubsubAll.xsd"
+    version="2.0.0">
+	<ows:ServiceIdentification>
+		<ows:ServiceType>WFS</ows:ServiceType>
+		<ows:ServiceTypeVersion>2.0.0</ows:ServiceTypeVersion>
+	</ows:ServiceIdentification>
+	<!-- ServiceProvider omitted for brevity -->
+	<ows:OperationsMetadata>
+		<ows:Operation name="GetCapabilities">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Get  xlink:href="http://mywfs.com/wfs?"/>
+					<ows:Post xlink:href="http://mywfs.com/wfs"/>
+				</ows:HTTP>
+			</ows:DCP>
+			<ows:Parameter name="AcceptVersions">
+				<ows:AllowedValues>
+					<ows:Value>2.0.0</ows:Value>
+				</ows:AllowedValues>
+			</ows:Parameter>
+			<ows:Parameter name="AcceptFormats">
+				<ows:AllowedValues>
+					<ows:Value>text/xml</ows:Value>
+				</ows:AllowedValues>
+			</ows:Parameter>
+			<ows:Parameter name="Sections">
+				<ows:AllowedValues>
+					<ows:Value>ServiceIdentification</ows:Value>
+					<ows:Value>ServiceProvider</ows:Value>
+					<ows:Value>OperationsMetadata</ows:Value>
+					<ows:Value>FeatureTypeList</ows:Value>
+					<ows:Value>Filter_Capabilities</ows:Value>
+				</ows:AllowedValues>
+			</ows:Parameter>
+		</ows:Operation>
+		<ows:Operation name="DescribeFeatureType">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Get xlink:href="http://mywfs.com/wfs?"/>
+					<ows:Post xlink:href="http://mywfs.com/wfs"/>
+				</ows:HTTP>
+			</ows:DCP>
+		</ows:Operation>
+		<!-- additional operations, constraints and parameters omitted for brevity -->
+		<ows:ExtendedCapabilities>
+			<!-- PublisherReference points to a specific Publisher endpoint. The WFS publishes feature changes to this endpoint. The endpoint implements the Subscribe operation. -->
+			<!-- The Publisher WSDL may look like this:
+				  <wsdl:service name="examplePublisher">
+					<wsdl:port name="examplePublisherPort" binding="myns:examplePublisherBinding">
+					  <wsdl-s12:address location="http://mypublisher.com/publisher"/>
+					</wsdl:port>
+				  </wsdl:service>
+			-->
+			<pubsub:PublisherReferences>
+
+				<pubsub:PublisherReference>
+					<pubsub:ServiceName>WFS PubSub 1.0 Service</pubsub:ServiceName>
+					<pubsub:ServiceMetadataDocument>http://mypublisher.com/publisher?capabilities</pubsub:ServiceMetadataDocument>
+				</pubsub:PublisherReference>
+
+			</pubsub:PublisherReferences>
+		</ows:ExtendedCapabilities>
+	</ows:OperationsMetadata>
+	<!-- WSDL, feature type list and filter capabilities omitted for brevity -->
+</wfs:WFS_Capabilities>

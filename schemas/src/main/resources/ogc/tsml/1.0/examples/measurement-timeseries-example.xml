@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tsml:TimeseriesTVP xmlns:tsml="http://www.opengis.net/tsml/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/tsml/1.0 http://schemas.opengis.net/tsml/1.0/timeseriesML.xsd" gml:id="ts_id33">
+	<gml:description>This is an example showing a measure time series in TimeSeriesML. 
+    The series uses the measure-specific value types. </gml:description>
+	<tsml:metadata>
+		<tsml:TimeseriesMetadata>
+			<tsml:temporalExtent>
+				<gml:TimePeriod gml:id="tp_1">
+					<gml:beginPosition>2011-11-16T00:00:00+11:00</gml:beginPosition>
+					<gml:endPosition>2011-04-08T00:00:00+11:00</gml:endPosition>
+				</gml:TimePeriod>
+			</tsml:temporalExtent>
+			<!--      <tsml:cumulative>false</tsml:cumulative> -->
+		</tsml:TimeseriesMetadata>
+	</tsml:metadata>
+	<tsml:defaultPointMetadata>
+		<tsml:PointMetadata>
+			<tsml:quality xlink:href="http://www.opengis.net/def/tsml/1.0/quality/suspect" xlink:title="suspect"/>
+			<tsml:uom code="m"/>
+			<tsml:interpolationType xlink:href="http://www.opengis.net/def/waterml/2.0/interpolationType/Continuous" xlink:title="continuous"/>
+		</tsml:PointMetadata>
+	</tsml:defaultPointMetadata>
+	<tsml:point>
+		<tsml:MeasurementTVP>
+			<tsml:metadata>
+				<tsml:PointMetadata>
+					<tsml:quality xlink:href="http://www.opengis.net/def/waterml/2.0/quality/suspect" xlink:title="suspect"/>
+					<tsml:interpolationType/>
+					<tsml:uncertainty>
+						<swe:Quantity>
+							<swe:uom code="m"/>
+							<swe:value>0.1</swe:value>
+						</swe:Quantity>
+					</tsml:uncertainty>
+				</tsml:PointMetadata>
+			</tsml:metadata>
+			<tsml:time>2011-11-16T00:00:00+11:00</tsml:time>
+			<tsml:value>2.2</tsml:value>
+		</tsml:MeasurementTVP>
+	</tsml:point>
+	<tsml:point>
+		<tsml:MeasurementTVP>
+			<tsml:time>2011-11-17T00:00:00+11:00</tsml:time>
+			<tsml:value>2.0</tsml:value>
+		</tsml:MeasurementTVP>
+	</tsml:point>
+	<tsml:point>
+		<tsml:MeasurementTVP>
+			<tsml:time>2011-11-18T00:00:00+11:00</tsml:time>
+			<tsml:value>3.0</tsml:value>
+		</tsml:MeasurementTVP>
+	</tsml:point>
+</tsml:TimeseriesTVP>
+

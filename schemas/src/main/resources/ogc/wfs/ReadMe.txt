@@ -17,13 +17,16 @@ The most current schema are available at http://schemas.opengis.net/ .
 
 -----------------------------------------------------------------------
 
+2016-10-26  Panagiotis (Peter) A. Vretanos
+  * v1.1: Published OGC WFS 1.1.3 from corrigendum 04-094r1.
+
 2016-07-05  Clemens Portele, Panagiotis (Peter) A. Vretanos
   * v2.0: Update Query element in LockFeature to be optional
     per 09-025r2 corrigendum.  No version change.
 
 2015-10-13  Panagiotis (Peter) A. Vretanos
-  * v2.0: Update ReturnFeatureType to be optional.   No version change 
-    per 09-025r2 corrigendum. 
+  * v2.0: Update ReturnFeatureType to be optional.   No version change
+    per 09-025r2 corrigendum.
 
 2014-10-02  Panagiotis (Peter) A. Vretanos
   * v2.0: Update examples.  No version change.
@@ -35,7 +38,7 @@ The most current schema are available at http://schemas.opengis.net/ .
   * v1.0 - v2.0: WARNING XLink change is NOT BACKWARD COMPATIBLE.
   * Changed OGC XLink (xlink:simpleLink) to W3C XLink (xlink:simpleAttrs)
     per an approved TC and PC motion during the Dec. 2011 Brussels meeting.
-    See http://www.opengeospatial.org/blog/1597 
+    See http://www.opengeospatial.org/blog/1597
   * v2.0: Updated xsd:schema/@version to 2.0.1 (06-135r7 s#13.4)
   * v1.1: Updated xsd:schema/@version to 1.1.2.0 (06-135r7 s#13.4)
   * v1.0: Updated xsd:schema/@version to 1.0.0.3 (06-135r7 s#13.4)
@@ -66,7 +69,7 @@ The most current schema are available at http://schemas.opengis.net/ .
 2005-11-22  Arliss Whiteside
   * v1.1.0, v1.0.0: The sets of XML Schema Documents for WFS versions have been
     edited to reflect the corrigenda to documents OGC 02-058 (WFS 1.0.0) and
-    OGC 04-09 (WFS 1.1.0) that are based on the change requests: 
+    OGC 04-09 (WFS 1.1.0) that are based on the change requests:
      OGC 05-068r1 "Store xlinks.xsd file at a fixed location"
      OGC 05-081r2 "Change to use relative paths"
 
@@ -85,19 +88,19 @@ The most current schema are available at http://schemas.opengis.net/ .
   which will be used to signify that there has been a change to the
   schema. Each previous revision will be available online in a ZIP
   archive.
-  
-  The LATEST version is the M.N directory where 
+
+  The LATEST version is the M.N directory where
    * M is the major version
    * N is the minor version
-  The latest bugfix version now is always in the M.N directory and 
+  The latest bugfix version now is always in the M.N directory and
   documented in the version attribute on the schema element. The older
   versions are now archived in the -M_N_X.zip files.
-  
+
   Previously the OGC used M.N.C where
    * M is the major version
    * N is the minor version
    * C is the corrigendum version
-  These older M.N.C versions will be updated using M.N.C.X where 
+  These older M.N.C versions will be updated using M.N.C.X where
   X may be a bugfix version. These schema will also be .zip archived.
 
 -- 2010-01-21  Kevin Stegemoller  updated 2012-07-21
@@ -107,7 +110,7 @@ The most current schema are available at http://schemas.opengis.net/ .
 Policies, Procedures, Terms, and Conditions of OGC(r) are available
   http://www.opengeospatial.org/ogc/legal/ .
 
-Copyright (c) 2012 Open Geospatial Consortium.
+Copyright (c) 2012,2014,2015,2016 Open Geospatial Consortium.
 
 -----------------------------------------------------------------------
 

@@ -16,6 +16,9 @@ The most current schema are available at http://schemas.opengis.net/ .
 
 -----------------------------------------------------------------------
 
+2016-11-17  Peter Baumann
+  * wcs/transaction/2.0: added WCS 2.0 Transaction Extension 2.0.0 (OGC 13-057r1)
+
 2016-02-03  Peter Baumann
   * wcs/crs/1.0: added WCS 2.0 CRS Extension 1.0.0 (OGC 11-053r1)
 
@@ -41,14 +44,14 @@ NOTE: wcs/1.1.0 is WCS 1.1.0 (circa 2007) plus the W3C XLink changes (2012-07-21
   * v2.0: Updates according to WCS 2.0.1
     + Updated xsd:schema/@version to 2.0.1
     + Adjusted examples to updated schema.
-    + Corrected type of "SlicePoint", "TrimLow", and "TrimHigh" elements to 
+    + Corrected type of "SlicePoint", "TrimLow", and "TrimHigh" elements to
     "string".
     + Added "format" and "mediaType" elements to "GetCoverageType".
     + Added reference to "CoverageSubtypeParent" to "CoverageSummaryType".
     + Added reference to "Extension" element to "ContentsType".
-    + Added "CoverageSubtypeParent" and "Extension" elements and corresponding 
+    + Added "CoverageSubtypeParent" and "Extension" elements and corresponding
       type definitions to wcsCommon.xsd
-    + Added "nativeFormat" element and reference to "CoverageSubtypeParent" 
+    + Added "nativeFormat" element and reference to "CoverageSubtypeParent"
       element to "ServiceParametersType".
     + Corrected "ServiceMetadataType" to not extend "ows:CapabilitiesBaseType".
     + Added "formatSupported" element to "ServiceMetadataType".
@@ -61,10 +64,10 @@ NOTE: wcs/1.1.0 is WCS 1.1.0 (circa 2007) plus the W3C XLink changes (2012-07-21
   * v1.0 - v1.1.0: WARNING XLink change is NOT BACKWARD COMPATIBLE.
   * Changed OGC XLink (xlink:simpleLink) to W3C XLink (xlink:simpleAttrs)
     per an approved TC and PC motion during the Dec. 2011 Brussels meeting.
-    See http://www.opengeospatial.org/blog/1597 
-  * wcs/1.1/GMLprofileForWCS: XLink changes 
+    See http://www.opengeospatial.org/blog/1597
+  * wcs/1.1/GMLprofileForWCS: XLink changes
   * v1.1: No Changes except copyright changes
-  * v1.0.0, v1.1.0, v2.0: Per 11-025, all leaf documents of a namespace shall 
+  * v1.0.0, v1.1.0, v2.0: Per 11-025, all leaf documents of a namespace shall
     retroactively and explicitly require/add an <include/> of the all-components schema.
   * v1.1.0: Updated xsd:schema/@version to 1.1.0.2
   * v1.0.0: Updated xsd:schema/@version to 1.0.0.3
@@ -89,7 +92,7 @@ NOTE: wcs/1.1.0 is WCS 1.1.0 (circa 2007) plus the W3C XLink changes (2012-07-21
   * v1.1: The Web Coverage Service (WCS) Implementation Standard version
     1.1.2 is defined in the OGC document 07-067r5.  WCS 1.1.2 is amended
     in the OGC Corrigendum document 07-066r5 .
-  * v1.1.0: wcs/1.1.0 is deprecated. The directory only remains to 
+  * v1.1.0: wcs/1.1.0 is deprecated. The directory only remains to
     preserve wcs/1.1.0/owcsAll.xsd .
 
 2008-01-30
@@ -123,8 +126,8 @@ NOTE: wcs/1.1.0 is WCS 1.1.0 (circa 2007) plus the W3C XLink changes (2012-07-21
 2005-11-22  Arliss Whiteside
   * v1.0.0: This set of XML Documents for WCS Version 1.0.0 has been
   edited to reflect the corrigendum to document OGC 03-065r6 that is
-  specified in document OGC 05-076 plus the corrigendum based on the 
-  change requests: 
+  specified in document OGC 05-076 plus the corrigendum based on the
+  change requests:
     OGC 05-068r1 "Store xlinks.xsd file at a fixed location"
     OGC 05-081r2 "Change to use relative paths"
 

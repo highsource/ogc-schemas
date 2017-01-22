@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCM_Publication 
+				xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0" 
+				xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" 
+				xmlns="http://www.opengis.net/guf/1.0/common" 
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:schemaLocation="http://www.opengis.net/guf/1.0/common ../qcm.xsd">
+	<cit:title>
+		<gco:CharacterString>Exploiting synergies of global land cover products for carbon cycle modeling</gco:CharacterString>
+	</cit:title>
+	<cit:date>
+		<cit:CI_Date>
+			<cit:date>
+				<gco:DateTime>2006-01-01T00:00:00Z</gco:DateTime>
+			</cit:date>
+			<cit:dateType>
+				<cit:CI_DateTypeCode codeList="http://wis.wmo.int/2008/catalogues/draft_version_1-1/WMO_Codelists_ver1_1.xml#CI_DateTypeCode" codeListValue="creation"/>
+			</cit:dateType>
+		</cit:CI_Date>
+	</cit:date>
+	<cit:series>
+		<cit:CI_Series>
+			<cit:name>
+				<gco:CharacterString>Remote Sensing of Environment</gco:CharacterString>
+			</cit:name>
+		</cit:CI_Series>
+	</cit:series>
+	<cit:otherCitationDetails>
+		<gco:CharacterString>101 (2006) 534–553</gco:CharacterString>
+	</cit:otherCitationDetails>
+	<motivation><QCM_CitationMotivationCode codeListValue="descrive" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#QCM_PublicationCategoryCode"></QCM_CitationMotivationCode></motivation>
+	<category><QCM_PublicationCategoryCode codeListValue="journalArticle" codeList="http://www.opengis.net/guf/1.0/resources/codeList.xml#QCM_PublicationCategoryCode"></QCM_PublicationCategoryCode></category>
+</QCM_Publication>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wfs-soap="http://www.opengis.net/wfs/soap/2.0" 
+    xmlns:wsn-bw="http://docs.oasis-open.org/wsn/bw-2" xmlns:wsn-bw-soap="http://docs.oasis-open.org/wsn/bw-2/soap" 
+    xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+    
+    targetNamespace="http://host.org/receiver" >
+    
+    <wsdl:documentation xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <dc:date>2012-12-20</dc:date>
+        <dc:description>
+            A SOAP-based Receiver of Publish/Subscribe messages (message consumer).  A Receiver may or may not also be the Subscriber
+        </dc:description>
+    </wsdl:documentation>
+    
+    <!-- ============================  Bindings Section ================================ --> 
+    
+    <!-- 
+     Import or declare soap binding information. In the case of the standard
+     WFS interface, a basic soap bindings is provided online by OGC. In the case
+     of the WS-Notification, there is no online SOAP binding, so the information
+     is included in this file.
+   -->
+    
+    <!-- WS-BaseNotification -->
+    <wsdl:import namespace="http://docs.oasis-open.org/wsn/bw-2" location="http://docs.oasis-open.org/wsn/bw-2.wsdl"/>
+    
+    <wsdl:binding name="NotificationConsumerSOAPBinding" type="wsn-bw:NotificationConsumer">
+        
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        
+        <wsdl:operation name="Notify">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ResourceUnknownFault">
+                <soap:fault name="ResourceUnknownFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        
+    </wsdl:binding>
+    
+</wsdl:definitions>

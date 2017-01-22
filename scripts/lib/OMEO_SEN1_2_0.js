@@ -5,6 +5,23 @@ var OMEO_SEN1_2_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'OMEO_SAR_2_0', 'ISO19139_GMD_20070417', 'OMEO_EOP_2_0'],
     tis: [{
+        ln: 'AcquisitionType',
+        bti: 'OMEO_SAR_2_0.AcquisitionType',
+        ps: [{
+            n: 'rest',
+            mno: 0,
+            mxo: 2,
+            col: true,
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'polarisationMode'
+              }, {
+                en: 'polarisationChannels'
+              }],
+            t: 'ers'
+          }]
+      }, {
         ln: 'EarthObservationMetadataPropertyType',
         ps: [{
             n: 'earthObservationMetadata',
@@ -20,23 +37,12 @@ var OMEO_SEN1_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DQElementPropertyType',
-        tn: 'DQ_Element_PropertyType',
-        bti: 'ISO19139_GMD_20070417.DQElementPropertyType',
+        ln: 'EarthObservationPropertyType',
         ps: [{
-            n: 'qualityDisclaimer',
-            ti: '.QualityDisclaimerType'
-          }]
-      }, {
-        ln: 'EarthObservationType',
-        bti: 'OMEO_SAR_2_0.EarthObservationType'
-      }, {
-        ln: 'EarthObservationResultPropertyType',
-        ps: [{
-            n: 'earthObservationResult',
+            n: 'earthObservation',
             rq: true,
-            en: 'EarthObservationResult',
-            ti: '.EarthObservationResultType'
+            en: 'EarthObservation',
+            ti: '.EarthObservationType'
           }, {
             n: 'nilReason',
             ti: {
@@ -86,27 +92,19 @@ var OMEO_SEN1_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'EarthObservationResultType',
-        bti: 'OMEO_EOP_2_0.EarthObservationResultType',
+        ln: 'AcquisitionPropertyType',
         ps: [{
-            n: 'timeliness'
-          }]
-      }, {
-        ln: 'AcquisitionType',
-        bti: 'OMEO_SAR_2_0.AcquisitionType',
-        ps: [{
-            n: 'rest',
-            mno: 0,
-            mxo: 2,
-            col: true,
-            mx: false,
-            dom: false,
-            etis: [{
-                en: 'polarisationChannels'
-              }, {
-                en: 'polarisationMode'
-              }],
-            t: 'ers'
+            n: 'acquisition',
+            rq: true,
+            en: 'Acquisition',
+            ti: '.AcquisitionType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'QualityDisclaimerType',
@@ -131,25 +129,21 @@ var OMEO_SEN1_2_0_Module_Factory = function () {
             en: 'Disclaimer'
           }]
       }, {
-        ln: 'EarthObservationMetadataType',
-        bti: 'OMEO_EOP_2_0.EarthObservationMetaDataType',
+        ln: 'EarthObservationType',
+        bti: 'OMEO_SAR_2_0.EarthObservationType'
+      }, {
+        ln: 'EarthObservationResultType',
+        bti: 'OMEO_EOP_2_0.EarthObservationResultType',
         ps: [{
-            n: 'rest',
-            rq: true,
-            mxo: 1,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'parentIdentifier',
-            t: 'er'
+            n: 'timeliness'
           }]
       }, {
-        ln: 'EarthObservationPropertyType',
+        ln: 'EarthObservationResultPropertyType',
         ps: [{
-            n: 'earthObservation',
+            n: 'earthObservationResult',
             rq: true,
-            en: 'EarthObservation',
-            ti: '.EarthObservationType'
+            en: 'EarthObservationResult',
+            ti: '.EarthObservationResultType'
           }, {
             n: 'owns',
             ti: 'Boolean',
@@ -199,20 +193,34 @@ var OMEO_SEN1_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AcquisitionPropertyType',
+        ln: 'DQElementPropertyType',
+        tn: 'DQ_Element_PropertyType',
+        bti: 'ISO19139_GMD_20070417.DQElementPropertyType',
         ps: [{
-            n: 'acquisition',
-            rq: true,
-            en: 'Acquisition',
-            ti: '.AcquisitionType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
+            n: 'qualityDisclaimer',
+            ti: '.QualityDisclaimerType'
           }]
+      }, {
+        ln: 'EarthObservationMetadataType',
+        bti: 'OMEO_EOP_2_0.EarthObservationMetaDataType',
+        ps: [{
+            n: 'rest',
+            rq: true,
+            mxo: 1,
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'parentIdentifier',
+            t: 'er'
+          }]
+      }, {
+        t: 'enum',
+        ln: 'PolarisationModeValueEnumerationType',
+        vs: ['UNDEFINED', 'S', 'D']
+      }, {
+        t: 'enum',
+        ln: 'TimelinessType',
+        vs: ['NRT_10M', 'NRT_1H', 'NRT_3H', 'FAST_24H', 'ARCH_6H', 'ARCH_RUSH', 'ARCH_NORMAL']
       }, {
         t: 'enum',
         ln: 'QCResultType',
@@ -221,32 +229,20 @@ var OMEO_SEN1_2_0_Module_Factory = function () {
         t: 'enum',
         ln: 'PolarisationChannelsValueEnumerationType',
         vs: ['UNDEFINED', 'HH', 'HV', 'HH, HV', 'VV, VH']
-      }, {
-        t: 'enum',
-        ln: 'TimelinessType',
-        vs: ['NRT_10M', 'NRT_1H', 'NRT_3H', 'FAST_24H', 'ARCH_6H', 'ARCH_RUSH', 'ARCH_NORMAL']
-      }, {
-        t: 'enum',
-        ln: 'PolarisationModeValueEnumerationType',
-        vs: ['UNDEFINED', 'S', 'D']
       }],
     eis: [{
         en: 'parentIdentifier',
         sc: '.EarthObservationMetadataType'
       }, {
-        en: 'EarthObservation',
-        ti: '.EarthObservationType',
+        en: 'Acquisition',
+        ti: '.AcquisitionType',
         sh: {
-          lp: 'EarthObservation',
+          lp: 'Acquisition',
           ns: 'http:\/\/www.opengis.net\/sar\/2.0'
         }
       }, {
-        en: 'EarthObservationResult',
-        ti: '.EarthObservationResultType',
-        sh: {
-          lp: 'EarthObservationResult',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
+        en: 'polarisationMode',
+        sc: '.AcquisitionType'
       }, {
         en: 'EarthObservationMetadata',
         ti: '.EarthObservationMetadataType',
@@ -255,17 +251,21 @@ var OMEO_SEN1_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/eop\/2.0'
         }
       }, {
-        en: 'polarisationMode',
-        sc: '.AcquisitionType'
+        en: 'EarthObservation',
+        ti: '.EarthObservationType',
+        sh: {
+          lp: 'EarthObservation',
+          ns: 'http:\/\/www.opengis.net\/sar\/2.0'
+        }
       }, {
         en: 'polarisationChannels',
         sc: '.AcquisitionType'
       }, {
-        en: 'Acquisition',
-        ti: '.AcquisitionType',
+        en: 'EarthObservationResult',
+        ti: '.EarthObservationResultType',
         sh: {
-          lp: 'Acquisition',
-          ns: 'http:\/\/www.opengis.net\/sar\/2.0'
+          lp: 'EarthObservationResult',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
         }
       }]
   };

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+  xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:pubsub="http://www.opengis.net/pubsub/1.0"
+  elementFormDefault="qualified" attributeFormDefault="unqualified"
+  targetNamespace="http://www.opengis.net/pubsub/1.0" version="1.0.0">
+  <annotation>
+    <documentation>
+      OGC Publish/Subscribe (PubSub) Interface Standard
+      
+      PubSub is an OGC Standard.
+      Copyright (c) 2016 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+    </documentation>
+  </annotation>
+  
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+  
+  <element name="Publication" type="pubsub:PublicationType"/>
+  <complexType name="PublicationType">
+    <complexContent>
+      <extension base="ows:DescriptionType">
+        <sequence>
+          <element name="Identifier" type="pubsub:PublicationIdentifierType" minOccurs="1" maxOccurs="1"/>
+          <element name="ContentType" type="ows:MimeType" minOccurs="1" maxOccurs="unbounded"/>
+          <element name="SupportedFilterLanguage" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
+          <element name="SupportedDeliveryMethod" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="ows:BoundingBox" minOccurs="0" maxOccurs="unbounded"/>
+          <element name="FormalContentDefinitionLanguage" type="anyURI" minOccurs="0" maxOccurs="1"/>
+          <element name="FormalContentDefinition" type="anyType" minOccurs="0" maxOccurs="1"/>
+          <element ref="ows:Metadata" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  
+  <element name="DerivedPublication" type="pubsub:DerivedPublicationType" substitutionGroup="pubsub:Publication"/>
+  <complexType name="DerivedPublicationType">
+    <complexContent>
+      <extension base="pubsub:PublicationType">
+        <sequence>
+          <element name="BasePublicationIdentifier" type="pubsub:PublicationIdentifierType" minOccurs="1" maxOccurs="1"/>
+          <element name="Filter" type="anyType" minOccurs="0" maxOccurs="1"/>
+          <element name="FilterLanguageId" type="anyURI" minOccurs="0" maxOccurs="1"/>
+          <element name="ProcessingExpression" type="anyType" minOccurs="0" maxOccurs="1"/>
+          <element name="ProcessingLanguageId" type="anyURI" minOccurs="0" maxOccurs="1"/>
+          <!-- Extension is carried by base type -->
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  
+  <element name="Subscription" type="pubsub:SubscriptionType"/>
+  <complexType name="SubscriptionType">
+    <sequence>
+      <element ref="pubsub:SubscriptionIdentifier" minOccurs="1" maxOccurs="1"/>
+      <element name="PublicationIdentifier" type="pubsub:PublicationIdentifierType" minOccurs="1" maxOccurs="1"/>
+      <element name="TerminationTime" type="gml:TimeInstantType" minOccurs="1" maxOccurs="1"/>
+      <element name="FilterLanguageId" type="anyURI" minOccurs="0" maxOccurs="1"/>
+      <element name="Filter" type="anyType" minOccurs="0" maxOccurs="1"/>
+      <element name="DeliveryLocation" type="anyType" minOccurs="1" maxOccurs="1"/>
+      <element name="DeliveryMethod" type="anyURI" minOccurs="1" maxOccurs="1"/>
+      <element name="DeliveryParameter" type="anyType" minOccurs="0" maxOccurs="unbounded"/>
+      <element name="ContentType" type="ows:MimeType" minOccurs="1" maxOccurs="1"/>
+      <element name="Paused" type="boolean" minOccurs="0" maxOccurs="1"/>
+      <element ref="pubsub:MessageBatchingCriteria" minOccurs="0" maxOccurs="1"/>
+      <element ref="pubsub:HeartbeatCriteria" minOccurs="0" maxOccurs="1"/>
+      <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  
+  <element name="MessageBatchingCriteria" type="pubsub:MessageBatchingCriteriaType"/>
+  <complexType name="MessageBatchingCriteriaType">
+    <sequence>
+      <element name="MaxDelay" type="duration" maxOccurs="1" minOccurs="0"/>
+      <element name="MaxBatchSize" type="positiveInteger" maxOccurs="1" minOccurs="0"/>
+      <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  
+  <element name="HeartbeatCriteria" type="pubsub:HeartbeatCriteriaType"/>
+  <complexType name="HeartbeatCriteriaType">
+    <sequence>
+      <element name="HeartbeatRate" type="duration" minOccurs="1" maxOccurs="1"/>
+      <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  
+  <element name="Heartbeat" type="pubsub:HeartbeatType"/>
+  <complexType name="HeartbeatType">
+    <attribute name="currentTime" type="dateTime"/>
+  </complexType>
+  
+  <element name="PublicationIdentifier" type="pubsub:PublicationIdentifierType" />
+  <simpleType name="PublicationIdentifierType">
+    <restriction base="anyURI"/>
+  </simpleType>
+  
+  <element name="SubscriptionIdentifier" type="pubsub:SubscriptionIdentifierType" />
+  <simpleType name="SubscriptionIdentifierType">
+    <restriction base="anyURI"/>
+  </simpleType>
+  
+  <element name="Extension" type="anyType"/>
+  
+</schema>

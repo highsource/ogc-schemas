@@ -22,6 +22,12 @@ http://schemas.opengis.net/SCHEMAS_OPENGIS_NET.zip
 
 -----------------------------------------------------------------------
 
+2016-08-31  Jiyeong Lee, Ki-Joune Li, Sisi Zlatanova, Thomas H. Kolbe,
+            Claus Nagel, Thomas Becker
+
+  + v1.0: updated xsd:schema/@version to 1.0.2 (06-135r7 s#13.4)
+  + v1.0: applied corrections from corrigendum OGC 14-005r4.
+
 2014-12-03  Ki-Joune Li
 
   * v1.0: Moved indoorGML/1.0 to indoorgml/1.0 per OGC-NA recommendations.
@@ -42,7 +48,7 @@ Policies, Procedures, Terms, and Conditions of OGC(r) are available
 
 OGC and OpenGIS are registered trademarks of Open Geospatial Consortium.
 
-Copyright (c) 2014 Open Geospatial Consortium.
+Copyright (c) 2014,2015,2016 Open Geospatial Consortium.
 
 -----------------------------------------------------------------------
 

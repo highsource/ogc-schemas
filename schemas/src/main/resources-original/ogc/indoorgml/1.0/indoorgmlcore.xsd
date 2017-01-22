@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://www.opengis.net/indoorgml/1.0/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.opengis.net/indoorgml/1.0/core" elementFormDefault="qualified" version="1.0.1">
+<xs:schema xmlns="http://www.opengis.net/indoorgml/1.0/core"
+	targetNamespace="http://www.opengis.net/indoorgml/1.0/core"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	version="1.0.2"
+	elementFormDefault="qualified">
 	<xs:annotation>
 		<xs:documentation>
 			IndoorGML is an OGC Standard. 
-			Copyright (c) 2014 Open Geospatial Consortium.
+			Copyright (c) 2014,2015,2016  Open Geospatial Consortium.
 			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
 		</xs:documentation>
 	</xs:annotation>
+	<!-- ====================================================================== -->
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
 	<!-- ====================================================================== -->
 	<xs:element name="IndoorFeatures" type="IndoorFeaturesType" substitutionGroup="gml:AbstractFeature"/>
@@ -16,7 +23,7 @@
 			<xs:extension base="gml:AbstractFeatureType">
 				<xs:sequence>
 					<xs:element name="primalSpaceFeatures" type="PrimalSpaceFeaturesPropertyType" minOccurs="0" maxOccurs="1"/>
-					<xs:element ref="MultiLayeredGraph"/>
+					<xs:element name="multiLayeredGraph" type="MultiLayeredGraphPropertyType" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -35,8 +42,8 @@
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractFeatureType">
 				<xs:sequence>
-					<xs:element name="cellSpaceMember" type="gml:FeaturePropertyType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="cellSpaceBoundaryMember" type="gml:FeaturePropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="cellSpaceMember" type="CellSpaceMemberType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="cellSpaceBoundaryMember" type="CellSpaceBoundaryMemberType" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 				<xs:attributeGroup ref="gml:AggregationAttributeGroup"/>
 			</xs:extension>
@@ -67,7 +74,10 @@
 	<!-- ====================================================================== -->
 	<xs:element name="MultiLayeredGraph" type="MultiLayeredGraphType" substitutionGroup="gml:AbstractFeature">
 		<xs:annotation>
-			<xs:documentation>The overall structure of the Multilayered Space Model constitutes a multilayered graph, where all the nodes from all n layers are included but are separated into n partitions which are connected by the inter-space connections. Furthermore the graph also contains the state transition edges (intra-space connections)
+			<xs:documentation> 
+The overall structure of the Multilayered Space Model constitutes a multilayered graph, where all the nodes 
+from all n layers are included but are separated into n partitions which are connected by the inter-space connections. 
+Furthermore the graph also contains the state transition edges (intra-space connections)
 			</xs:documentation>
 		</xs:annotation>
 	</xs:element>
@@ -148,7 +158,6 @@
 					<xs:element name="typeOfTopoExpression" type="typeOfTopoExpressionCodeType" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="comment" type="xs:string" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="interConnects" type="StatePropertyType" minOccurs="2" maxOccurs="2"/>
-					<xs:element name="ConnectedLayers" type="SpaceLayerPropertyType" minOccurs="2" maxOccurs="2"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -163,7 +172,10 @@
 	<!-- ====================================================================== -->
 	<xs:element name="SpaceLayer" type="SpaceLayerType" substitutionGroup="gml:AbstractFeature">
 		<xs:annotation>
-			<xs:documentation>&lt;SpaceLayer&gt;s represent various space concepts such as topography, sensor, security, etc. A SpaceLayer aggregates  &lt;State&gt; and &lt;Transition&gt; which are directly associated with the corresponding geometry classes.</xs:documentation>
+			<xs:documentation>
+				<SpaceLayer/>s represent various space concepts such as topography, sensor, security, etc. A SpaceLayer aggregates
+  <State/> and <Transition/> which are directly associated with the corresponding geometry classes.
+</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<!-- ====================================================================== -->
@@ -181,13 +193,6 @@
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
-	</xs:complexType>
-	<!-- ====================================================================== -->
-	<xs:complexType name="SpaceLayerPropertyType">
-		<xs:sequence minOccurs="0">
-			<xs:element ref="SpaceLayer"/>
-		</xs:sequence>
-		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
 	</xs:complexType>
 	<!-- ====================================================================== -->
 	<xs:complexType name="NodesType">
@@ -266,7 +271,9 @@ Within the dual graph structure of one layer a node in dual space represents a s
 	<!-- ====================================================================== -->
 	<xs:element name="Transition" type="TransitionType" substitutionGroup="gml:AbstractFeature">
 		<xs:annotation>
-			<xs:documentation>Within the dual graph structure of one layer, an edge in dual space represents the adjacencies or connections (e.g. doors or passages as intra-space connections) </xs:documentation>
+			<xs:documentation>
+Within the dual graph structure of one layer, an edge in dual space represents the adjacencies or connections (e.g. doors or passages as intra-space connections) 
+</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<!-- ====================================================================== -->
@@ -294,7 +301,7 @@ Within the dual graph structure of one layer a node in dual space represents a s
 	<xs:element name="CellSpace" type="CellSpaceType" substitutionGroup="gml:AbstractFeature">
 		<xs:annotation>
 			<xs:documentation>
-				Within the dual graph structure of one layer a node in dual space represents a space (e.g. a room within a building) in primal space
+Within the dual graph structure of one layer a node in dual space represents a space (e.g. a room within a building) in primal space
 			</xs:documentation>
 		</xs:annotation>
 	</xs:element>
@@ -303,7 +310,7 @@ Within the dual graph structure of one layer a node in dual space represents a s
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractFeatureType">
 				<xs:sequence>
-					<xs:group ref="CellSpaceGeometry" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="cellSpaceGeometry" type="CellSpaceGeometryType" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="duality" type="StatePropertyType" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="externalReference" type="ExternalReferenceType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="partialboundedBy" type="CellSpaceBoundaryPropertyType" minOccurs="0" maxOccurs="unbounded"/>
@@ -319,16 +326,17 @@ Within the dual graph structure of one layer a node in dual space represents a s
 		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
 	</xs:complexType>
 	<!-- ====================================================================== -->
-	<xs:group name="CellSpaceGeometry">
+	<xs:complexType name="CellSpaceGeometryType">
 		<xs:choice>
 			<xs:element name="Geometry3D" type="gml:SolidPropertyType"/>
 			<xs:element name="Geometry2D" type="gml:SurfacePropertyType"/>
 		</xs:choice>
-	</xs:group>
+	</xs:complexType>
 	<!-- ====================================================================== -->
 	<xs:element name="CellSpaceBoundary" type="CellSpaceBoundaryType" substitutionGroup="gml:AbstractFeature">
 		<xs:annotation>
-			<xs:documentation>  Within the dual graph structure of one layer a edge in dual space represents a spaceboundary (e.g. a wall between adjacenced rooms in a building) in primal spac
+			<xs:documentation>
+ Within the dual graph structure of one layer a edge in dual space represents a spaceboundary (e.g. a wall between adjacenced rooms in a building) in primal space
 		</xs:documentation>
 		</xs:annotation>
 	</xs:element>
@@ -338,22 +346,22 @@ Within the dual graph structure of one layer a node in dual space represents a s
 			<xs:extension base="gml:AbstractFeatureType">
 				<xs:sequence>
 					<xs:element name="duality" type="TransitionPropertyType" minOccurs="0" maxOccurs="1"/>
-					<xs:group ref="CellSpaceBoundaryGeometry" minOccurs="0"/>
+					<xs:element name="cellSpaceBoundaryGeometry" type="CellSpaceBoundaryGeometryType" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="externalReference" type="ExternalReferenceType" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ====================================================================== -->
-	<xs:group name="CellSpaceBoundaryGeometry">
+	<xs:complexType name="CellSpaceBoundaryGeometryType">
 		<xs:choice>
 			<xs:element name="geometry3D" type="gml:SurfacePropertyType"/>
 			<xs:element name="geometry2D" type="gml:CurvePropertyType"/>
 		</xs:choice>
-	</xs:group>
+	</xs:complexType>
 	<!-- ====================================================================== -->
 	<xs:complexType name="CellSpaceBoundaryPropertyType">
-		<xs:sequence minOccurs="0">
+		<xs:sequence>
 			<xs:element ref="CellSpaceBoundary"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
@@ -379,13 +387,13 @@ Within the dual graph structure of one layer a node in dual space represents a s
 			<xs:enumeration value="SENSOR"/>
 			<xs:enumeration value="LOGICAL"/>
 			<xs:enumeration value="TAGS"/>
-			<xs:enumeration value="LOGICAL"/>
 			<xs:enumeration value="UNKNOWN"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<!-- ====================================================================== -->
 	<xs:simpleType name="typeOfTopoExpressionCodeType">
-		<xs:union memberTypes="typeOfTopoExpressionCodeEnumerationType typeOfTopoExpressionCodeOtherType"/>
+		<xs:union memberTypes="typeOfTopoExpressionCodeEnumerationType 
+                         typeOfTopoExpressionCodeOtherType"/>
 	</xs:simpleType>
 	<!-- ====================================================================== -->
 	<xs:simpleType name="typeOfTopoExpressionCodeEnumerationType">

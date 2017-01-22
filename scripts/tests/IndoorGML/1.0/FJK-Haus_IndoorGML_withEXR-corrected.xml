@@ -7,7 +7,7 @@
 	        <cellSpaceMember>
 	    		<CellSpace gml:id="C1">
 	    			<gml:name>002</gml:name>
-	    			<Geometry3D>
+	    			<cellSpaceGeometry><Geometry3D>
 	    				<gml:Solid gml:id="sl1">
 	    					<gml:exterior>
 	    						<gml:Shell>
@@ -226,7 +226,7 @@
 	    						</gml:Shell>
 	    					</gml:exterior>
 	    				</gml:Solid>
-	    			</Geometry3D>
+	    			</Geometry3D></cellSpaceGeometry>
 	    			<duality xlink:href="#R1" />
 	    			<externalReference>
 	    				<informationSystem>FJK-Haus-LoD4-V3.gml</informationSystem>
@@ -239,7 +239,7 @@
 	    	<cellSpaceMember>
 	    		<CellSpace gml:id="C3">
 	    			<gml:name>001</gml:name>
-	    			<Geometry3D>
+	    			<cellSpaceGeometry><Geometry3D>
 	    				<gml:Solid gml:id="sl3">
 	    					<gml:exterior>
 	    						<gml:Shell>
@@ -804,7 +804,7 @@
 	    						</gml:Shell>
 	    					</gml:exterior>
 	    				</gml:Solid>
-	    			</Geometry3D>
+	    			</Geometry3D></cellSpaceGeometry>
 	    			<duality xlink:href="#R3" />
 	    			<externalReference>
 	    				<informationSystem>FJK-Haus-LoD4-V3.gml</informationSystem>
@@ -817,7 +817,7 @@
 	    	<cellSpaceMember>
 	    		<CellSpace gml:id="C4">
 	    			<gml:name>006</gml:name>
-	    			<Geometry3D>
+	    			<cellSpaceGeometry><Geometry3D>
 	    				<gml:Solid gml:id="sl4">
 	    					<gml:exterior>
 	    						<gml:Shell>
@@ -962,7 +962,7 @@
 	    						</gml:Shell>
 	    					</gml:exterior>
 	    				</gml:Solid>
-	    			</Geometry3D>
+	    			</Geometry3D></cellSpaceGeometry>
 	    			<duality xlink:href="#R4" />
 	    			<externalReference>
 	    				<informationSystem>FJK-Haus-LoD4-V3.gml</informationSystem>
@@ -975,7 +975,7 @@
 	    	<cellSpaceMember>
 	    		<CellSpace gml:id="C6">
 	    			<gml:name>005</gml:name>
-	    			<Geometry3D>
+	    			<cellSpaceGeometry><Geometry3D>
 	    				<gml:Solid gml:id="sl6">
 	    					<gml:exterior>
 	    						<gml:Shell>
@@ -1194,7 +1194,7 @@
 	    						</gml:Shell>
 	    					</gml:exterior>
 	    				</gml:Solid>
-	    			</Geometry3D>
+	    			</Geometry3D></cellSpaceGeometry>
 	    			<duality xlink:href="#R6" />
 	    			<externalReference>
 	    				<informationSystem>FJK-Haus-LoD4-V3.gml</informationSystem>
@@ -1207,7 +1207,7 @@
 	    	<cellSpaceMember>
 	    		<CellSpace gml:id="C8">
 	    			<gml:name>003</gml:name>
-	    			<Geometry3D>
+	    			<cellSpaceGeometry><Geometry3D>
 	    				<gml:Solid gml:id="sl8">
 	    					<gml:exterior>
 	    						<gml:Shell>
@@ -1426,7 +1426,7 @@
 	    						</gml:Shell>
 	    					</gml:exterior>
 	    				</gml:Solid>
-	    			</Geometry3D>
+	    			</Geometry3D></cellSpaceGeometry>
 	    			<duality xlink:href="#R8" />
 	    			<externalReference>
 	    				<informationSystem>FJK-Haus-LoD4-V3.gml</informationSystem>
@@ -1439,7 +1439,7 @@
 	    	<cellSpaceMember>
 	    		<CellSpace gml:id="C10">
 	    			<gml:name>004</gml:name>
-	    			<Geometry3D>
+	    			<cellSpaceGeometry><Geometry3D>
 	    				<gml:Solid gml:id="sl10">
 	    					<gml:exterior>
 	    						<gml:Shell>
@@ -1732,7 +1732,7 @@
 	    						</gml:Shell>
 	    					</gml:exterior>
 	    				</gml:Solid>
-	    			</Geometry3D>
+	    			</Geometry3D></cellSpaceGeometry>
 	    			<duality xlink:href="#R10" />
 	    			<externalReference>
 	    				<informationSystem>FJK-Haus-LoD4-V3.gml</informationSystem>
@@ -1745,7 +1745,7 @@
 	    	<cellSpaceMember>
 				<CellSpace gml:id="C12">
 					<gml:name>101</gml:name>
-					<Geometry3D>
+					<cellSpaceGeometry><Geometry3D>
 						<gml:Solid gml:id="sl12">
 							<gml:exterior>
 								<gml:Shell>
@@ -2444,7 +2444,7 @@
 								</gml:Shell>
 							</gml:exterior>
 						</gml:Solid>
-					</Geometry3D>
+					</Geometry3D></cellSpaceGeometry>
 					<duality xlink:href="#R12" />
 					<externalReference>
 						<informationSystem>FJK-Haus-LoD4-V3.gml</informationSystem>
@@ -2457,7 +2457,7 @@
 		    <cellSpaceMember>
 		       <CellSpace gml:id="C13">
 		           <gml:name>104</gml:name>
-		           <Geometry3D>
+		           <cellSpaceGeometry><Geometry3D>
 		               <gml:Solid gml:id="sl13">
 		                   <gml:exterior>
 		                       <gml:Shell>
@@ -2676,7 +2676,7 @@
 		                       </gml:Shell>
 		                   </gml:exterior>
 		               </gml:Solid>
-		           </Geometry3D>
+		           </Geometry3D></cellSpaceGeometry>
 			       	<duality xlink:href="#R13" />
 			       	<externalReference>
 			       		<informationSystem>FJK-Haus-LoD4-V3.gml</informationSystem>
@@ -2689,7 +2689,7 @@
 	        <cellSpaceMember>
 	            <CellSpace gml:id="C15">
 	                <gml:name>102</gml:name>
-					<Geometry3D>
+					<cellSpaceGeometry><Geometry3D>
 						<gml:Solid gml:id="sl15">
 							<gml:exterior>
 								<gml:Shell>
@@ -3298,7 +3298,7 @@
 								</gml:Shell>
 							</gml:exterior>
 						</gml:Solid>
-					</Geometry3D>
+					</Geometry3D></cellSpaceGeometry>
 	            	<duality xlink:href="#R15" />
 	            	<externalReference>
 	            		<informationSystem>FJK-Haus-LoD4-V3.gml</informationSystem>
@@ -3311,7 +3311,7 @@
 	        <cellSpaceMember>
 	            <CellSpace gml:id="C19">
 	                <gml:name>103</gml:name>
-	                <Geometry3D>
+	                <cellSpaceGeometry><Geometry3D>
 	                    <gml:Solid gml:id="sl19">
 	                        <gml:exterior>
 	                            <gml:Shell>
@@ -3590,7 +3590,7 @@
 	                            </gml:Shell>
 	                        </gml:exterior>
 	                    </gml:Solid>
-	                </Geometry3D>
+	                </Geometry3D></cellSpaceGeometry>
 	            	<duality xlink:href="#R19" />
 	            	<externalReference>
 	            		<informationSystem>FJK-Haus-LoD4-V3.gml</informationSystem>
@@ -3603,7 +3603,7 @@
 	        <cellSpaceMember>
 	            <CellSpace gml:id="C21">
 	                <gml:name>202</gml:name>
-					<Geometry3D>
+					<cellSpaceGeometry><Geometry3D>
 						<gml:Solid gml:id="sl21">
 							<gml:exterior>
 								<gml:Shell>
@@ -4048,7 +4048,7 @@
 								</gml:Shell>
 							</gml:exterior>
 						</gml:Solid>
-					</Geometry3D>
+					</Geometry3D></cellSpaceGeometry>
 	            	<duality xlink:href="#R21" />
 	            	<externalReference>
 	            		<informationSystem>FJK-Haus-LoD4-V3.gml</informationSystem>
@@ -4061,7 +4061,7 @@
 	        <cellSpaceMember>
 	            <CellSpace gml:id="C23">
 	                <gml:name>201</gml:name>
-	    			<Geometry3D>
+	    			<cellSpaceGeometry><Geometry3D>
 	    				<gml:Solid gml:id="sl23">
 	    					<gml:exterior>
 	    						<gml:Shell>
@@ -4833,7 +4833,7 @@
 	    						</gml:Shell>
 	    					</gml:exterior>
 	    				</gml:Solid>
-	    			</Geometry3D>
+	    			</Geometry3D></cellSpaceGeometry>
 	            	<duality xlink:href="#R23" />
 	            	<externalReference>
 	            		<informationSystem>FJK-Haus-LoD4-V3.gml</informationSystem>
@@ -4846,7 +4846,7 @@
 	        <cellSpaceMember>
 	            <CellSpace gml:id="C25">
 	                <gml:name>204</gml:name>
-					<Geometry3D>
+					<cellSpaceGeometry><Geometry3D>
 						<gml:Solid gml:id="sl25">
 							<gml:exterior>
 								<gml:Shell>
@@ -5156,7 +5156,7 @@
 								</gml:Shell>
 							</gml:exterior>
 						</gml:Solid>
-					</Geometry3D>
+					</Geometry3D></cellSpaceGeometry>
 	            	<duality xlink:href="#R25" />
 	            	<externalReference>
 	            		<informationSystem>FJK-Haus-LoD4-V3.gml</informationSystem>
@@ -5169,7 +5169,7 @@
 	        <cellSpaceMember>
 	            <CellSpace gml:id="C26">
 	                <gml:name>203</gml:name>
-	                <Geometry3D>
+	                <cellSpaceGeometry><Geometry3D>
 	                    <gml:Solid gml:id="sl26">
 	                        <gml:exterior>
 	                            <gml:Shell>
@@ -5448,7 +5448,7 @@
 	                            </gml:Shell>
 	                        </gml:exterior>
 	                    </gml:Solid>
-	                </Geometry3D>
+	                </Geometry3D></cellSpaceGeometry>
 	            	<duality xlink:href="#R26" />
 	            	<externalReference>
 	            		<informationSystem>FJK-Haus-LoD4-V3.gml</informationSystem>

@@ -4,10 +4,10 @@
 		"wmts": "http://www.opengis.net/wmts/1.0/",
 		"wmtss": "http://www.opengis.net/spec/wmts-simple/1.0/conf/simple-profile/",
 		"xsd": "http://www.w3.org/2001/XMLSchema#",
-		
+
 		"id": "@id",
 		"type": "@type",
-		
+
 		"tileMatrixSet": "wmts:tileMatrixSet",
 		"title": "ows:title",
 		"CRSbbox": "ows:BoundingBox",
@@ -24,7 +24,7 @@
 		"matrixWidth": {"@id": "wmts:matrixWidth", "@type": "xsd:positiveInteger"},
 		"matrixHeight": {"@id": "wmts:matrixHeight", "@type": "xsd:positiveInteger"}
 	},
-	"id": "wmtss:",	
+	"id": "wmtss:",
 	"tileMatrixSet": [{
 		"type": "wmts:TileMatrixSet",
 		"title": "Google Maps Compatible for the World",
@@ -32,7 +32,7 @@
 		"CRSbbox":
 		{
 			"type": "ows:CRSbbox",
-			"id": "wmtss:WorldWebMercatorQuad/CRSbbox",			
+			"id": "wmtss:WorldWebMercatorQuad/CRSbbox",
 			"crs": "http://www.opengis.net/def/crs/EPSG/0/3857",
 			"lowerCorner": "POINT(-20037508.3427892, -20037508.3427892)",
 			"upperCorner": "POINT(20037508.3427892, 20037508.3427892)"

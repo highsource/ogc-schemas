@@ -5,45 +5,6 @@ var GML_TIN_3_3_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['GML_3_2_1', 'XLink_1_0'],
     tis: [{
-        ln: 'SimpleTrianglePatchType',
-        bti: 'GML_3_2_1.AbstractSurfacePatchType',
-        ps: [{
-            n: 'posOrPointProperty',
-            rq: true,
-            mno: 3,
-            mxo: 3,
-            col: true,
-            etis: [{
-                en: {
-                  lp: 'pos',
-                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-                },
-                ti: 'GML_3_2_1.DirectPositionType'
-              }, {
-                en: {
-                  lp: 'pointProperty',
-                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-                },
-                ti: 'GML_3_2_1.PointPropertyType'
-              }],
-            t: 'es'
-          }, {
-            n: 'posList',
-            rq: true,
-            en: {
-              lp: 'posList',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.DirectPositionListType'
-          }, {
-            n: 'interpolation',
-            ti: 'GML_3_2_1.SurfaceInterpolationType',
-            an: {
-              lp: 'interpolation'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'TINElementType',
         bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
@@ -119,19 +80,58 @@ var GML_TIN_3_3_Module_Factory = function () {
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
+      }, {
+        ln: 'SimpleTrianglePatchType',
+        bti: 'GML_3_2_1.AbstractSurfacePatchType',
+        ps: [{
+            n: 'posOrPointProperty',
+            rq: true,
+            mno: 3,
+            mxo: 3,
+            col: true,
+            etis: [{
+                en: {
+                  lp: 'pos',
+                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+                },
+                ti: 'GML_3_2_1.DirectPositionType'
+              }, {
+                en: {
+                  lp: 'pointProperty',
+                  ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+                },
+                ti: 'GML_3_2_1.PointPropertyType'
+              }],
+            t: 'es'
+          }, {
+            n: 'posList',
+            rq: true,
+            en: {
+              lp: 'posList',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.DirectPositionListType'
+          }, {
+            n: 'interpolation',
+            ti: 'GML_3_2_1.SurfaceInterpolationType',
+            an: {
+              lp: 'interpolation'
+            },
+            t: 'a'
+          }]
       }],
     eis: [{
-        en: 'SimpleTrianglePatch',
-        ti: '.SimpleTrianglePatchType',
-        sh: {
-          lp: 'AbstractSurfacePatch',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
         en: 'TriangulatedSurface',
         ti: 'GML_3_2_1.SurfaceType',
         sh: {
           lp: 'Surface',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'SimpleTrianglePatch',
+        ti: '.SimpleTrianglePatchType',
+        sh: {
+          lp: 'AbstractSurfacePatch',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {

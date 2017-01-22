@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<wsdl:definitions
+    targetNamespace="http://host.org/publisher"
+    xmlns:pubns="http://host.org/receiver"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:wsn-bw="http://docs.oasis-open.org/wsn/bw-2"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:documentation xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <dc:date>2008-08-31</dc:date>
+        <dc:description>
+            This WSDL document defines the service-specific properties
+            of a MyService WFS implementation; it specifies available endpoints
+            and alternative bindings.
+        </dc:description>
+    </wsdl:documentation>
+    
+    <wsdl:import namespace="http://host.org/receiver" location="wfs-soap-receiver-bindings.wsdl"/>
+    <wsdl:import namespace="http://docs.oasis-open.org/wsn/bw-2" location="http://docs.oasis-open.org/wsn/bw-2.wsdl"/>
+    
+    <!-- ============================  Service Section ================================ --> 
+    
+    <!-- 
+     Set the endpoint for each interface (port), the WS-Notification-related interfaces
+    -->
+    <wsdl:service name="receiver-www.host.org">
+        
+        <wsdl:documentation>A Pub/Sub Receiver that utilizes a SOAP binding.</wsdl:documentation>
+        
+        <wsdl:port name="receiverPort" binding="pubns:NotificationConsumerSOAPBinding">
+            <soap:address location="http://host.org/receiver"/>
+        </wsdl:port>
+        
+    </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tsml:TimeseriesTVP gml:id="xsd-measurement-timeseries-tvp.example" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:tsml="http://www.opengis.net/tsml/1.0" xmlns:swe="http://www.opengis.net/swe/2.0" xsi:schemaLocation="http://www.opengis.net/tsml/1.0 http://schemas.opengis.net/tsml/1.0/timeseriesML.xsd">
+	<gml:description>Example timeseries for XML encoding http://www.opengis.net/spec/waterml/2.0/req/xsd-timeseries-time-value-pair</gml:description>
+	<tsml:metadata>
+		<tsml:TimeseriesMetadata>
+			<tsml:temporalExtent>
+				<gml:TimePeriod gml:id="time-period.1">
+					<gml:beginPosition>2011-11-21T12:27:00+10:00</gml:beginPosition>
+					<gml:endPosition>2011-11-21T12:30:00+10:00</gml:endPosition>
+				</gml:TimePeriod>
+			</tsml:temporalExtent>
+			<tsml:baseTime>2011-11-21T12:27:00+10:00</tsml:baseTime>
+			<tsml:spacing>PT1M</tsml:spacing>
+		</tsml:TimeseriesMetadata>
+	</tsml:metadata>
+	<tsml:defaultPointMetadata>
+		<tsml:PointMetadata>
+			<tsml:uom code="ms"/>
+			<tsml:interpolationType xlink:href="http://www.opengis.net/def/waterml/2.0/interpolationType/continuous" xlink:title="Instantaneous"/>
+			<tsml:aggregationDuration>P1M</tsml:aggregationDuration>
+		</tsml:PointMetadata>
+	</tsml:defaultPointMetadata>
+	<tsml:point>
+		<tsml:MeasurementTVP>
+			<tsml:value>3.0</tsml:value>
+		</tsml:MeasurementTVP>
+	</tsml:point>
+	<tsml:point>
+		<tsml:MeasurementTVP>
+			<tsml:metadata>
+				<tsml:PointMetadata>
+					<tsml:uncertainty>
+						<swe:Quantity>
+							<swe:uom code="m"/>
+							<swe:value>0.1</swe:value>
+						</swe:Quantity>
+					</tsml:uncertainty>
+				</tsml:PointMetadata>
+			</tsml:metadata>
+			<tsml:value>3.2</tsml:value>
+		</tsml:MeasurementTVP>
+	</tsml:point>
+	<tsml:point>
+		<tsml:MeasurementTVP>
+			<tsml:metadata>
+				<tsml:PointMetadata>
+					<tsml:nilReason xlink:href="http://www.opengis.net/def/nil/OGC/0/missing" xlink:title="missing"/>
+				</tsml:PointMetadata>
+			</tsml:metadata>
+			<tsml:value xsi:nil="true"/>
+		</tsml:MeasurementTVP>
+	</tsml:point>
+	<tsml:point>
+		<tsml:MeasurementTVP>
+			<tsml:value>3.63</tsml:value>
+		</tsml:MeasurementTVP>
+	</tsml:point>
+</tsml:TimeseriesTVP>

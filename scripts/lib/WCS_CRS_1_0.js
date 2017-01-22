@@ -4,11 +4,11 @@ var WCS_CRS_1_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/wcs\/crs\/1.0',
     tis: [],
     eis: [{
-        en: 'supportedCrs'
-      }, {
         en: 'subsettingCrs'
       }, {
         en: 'outputCrs'
+      }, {
+        en: 'supportedCrs'
       }]
   };
   return {

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mf:MovingFeatures xmlns:mf="http://www.opengis.net/movingfeatures/1.0"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/movingfeatures/1.0
+  http://schemas.opengis.net/movingfeatures/1.0/mf-xmlcore.xsd"
+  gml:id="MFC_0002">
+
+  <mf:sTBoundedBy offset="sec">
+    <gml:EnvelopeWithTimePeriod srsName="urn:x-ogc:def:crs:EPSG:6.6:4326">
+      <gml:lowerCorner>150
+  0</gml:lowerCorner>
+      <gml:upperCorner>250
+  50</gml:upperCorner>
+
+      <gml:beginPosition>2013-05-01T10:33:41Z
+  </gml:beginPosition>
+
+      <gml:endPosition>2013-05-01T10:37:41Z </gml:endPosition>
+    </gml:EnvelopeWithTimePeriod>
+  </mf:sTBoundedBy>
+
+  <mf:member xlink:href="#pointerToGmlIdOfMovingFeature_a"/>
+  <mf:member xlink:href="#pointerToGmlIdOfMovingFeature_b"/>
+  <mf:member>
+    <mf:MovingFeature gml:id="a">
+      <gml:description>Nissan
+  Sentra - License plate ABC 123. Five passengers.</gml:description>
+
+      <gml:name>NissanA</gml:name>
+    </mf:MovingFeature>
+  </mf:member>
+  <mf:member>
+    <mf:MovingFeature gml:id="b">
+
+      <gml:description>Nishiki 21 speed racer</gml:description>
+
+      <gml:name>BicycleB</gml:name>
+    </mf:MovingFeature>
+  </mf:member>
+  <mf:header>
+    <mf:VaryingAttrDefs>
+      <mf:attrDef name="direction" type="xsd:double">
+        <mf:AttrAnnotation>
+              The direction of the
+  vehicle: the attribute value is the angle between the north direction and the
+  vehicle direction. Unit of angle is radian.
+              For example, North is
+  0[rad], East is 1.57[rad] and West is -1.57[rad].
+           
+  </mf:AttrAnnotation>
+      </mf:attrDef>
+    </mf:VaryingAttrDefs>
+  </mf:header>
+  <mf:foliation>
+    <mf:LinearTrajectory gml:id="LT0001" mfIdRef="a" start="0" end="50">
+      <gml:posList>161 5 172
+  5</gml:posList>
+
+      <mf:Attr>0.0</mf:Attr>
+    </mf:LinearTrajectory>
+    <mf:LinearTrajectory gml:id="LT0002" mfIdRef="b" start="0" end="50">
+      <gml:posList>158 20 158
+  50 159 60</gml:posList>
+
+      <mf:Attr>1.57</mf:Attr>
+    </mf:LinearTrajectory>
+    <mf:LinearTrajectory gml:id="LT0003" mfIdRef="a" start="50" end="100">
+      <gml:posList>172 5 172
+  1</gml:posList>
+
+      <mf:Attr>-1.57</mf:Attr>
+    </mf:LinearTrajectory>
+    <mf:LinearTrajectory gml:id="LT0004" mfIdRef="b" start="50" end="100">
+      <gml:posList>159 60 166
+  50</gml:posList>
+
+      <mf:Attr>0</mf:Attr>
+    </mf:LinearTrajectory>
+  </mf:foliation>
+</mf:MovingFeatures>

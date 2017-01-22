@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by GO Publisher. Snowflake Software Ltd. (http://www.snowflakesoftware.com). -->
+<tsml:Collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:tsml="http://www.opengis.net/tsml/1.0"
+                 xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:om="http://www.opengis.net/om/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"
+                 xmlns:sam="http://www.opengis.net/sampling/2.0" xsi:schemaLocation="http://www.opengis.net/tsml/1.0 http://schemas.opengis.net/tsml/1.0/timeseriesML.xsd"
+                 gml:id="tsml.collection.example.nzl.beacon-farm">
+  <gml:description>This is an example TimeSeriesML1.0 (draft) encoding of sensor data for multiple phenomena from a greenhouse gas flux monitoring station (Beacon Farm, North Canterbury, New Zealand). These are actual data. Auth: Alistair Ritchie, Landcare Research (NZ) Ltd.</gml:description>
+  <tsml:generationDate>2015-03-24T08:33:13</tsml:generationDate>
+  <tsml:generationSystem>Snowflake GO Publisher Desktop</tsml:generationSystem>
+  <tsml:samplingFeatureMember>
+    <tsml:MonitoringFeature gml:id="sams.sf_spatialsamplingfeature.bf-ghg.20001">
+      <gml:description>Sensor Platform located on the Beacon Farm wet (centre pivot irrigated) paddock.</gml:description>
+      <gml:identifier codeSpace="http://www.landcareresearch.co.nz">http://dev.data.scinfo.org.nz/x/id/sams/sf_spatialsamplingfeature/bf-ghg/20001</gml:identifier>
+      <gml:name codeSpace="http://www.landcareresearch.co.nz">Beacon Farm Sensor Platform (wet paddock)</gml:name>
+      <sam:type xlink:href="http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingPoint"/>
+      <sam:sampledFeature xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xsi:nil="true"/>
+      <sams:shape>
+        <gml:Point srsName=" http://www.opengis.net/def/crs/EPSG/0/4326" gml:id="LOCAL_ID_0">
+          <gml:pos>171.929995 -43.593582</gml:pos>
+        </gml:Point>
+      </sams:shape>
+      <tsml:verticalDatum xlink:href=" http://www.opengis.net/def/crs/EPSG/0/4440" xlink:title="New Zealand Vertical Datum 2009"/>
+      <tsml:timeZone>
+        <tsml:TimeZone>
+          <tsml:zoneOffset>+12:00</tsml:zoneOffset>
+          <tsml:zoneAbbreviation>NZT</tsml:zoneAbbreviation>
+        </tsml:TimeZone>
+      </tsml:timeZone>
+    </tsml:MonitoringFeature>
+  </tsml:samplingFeatureMember>
+  <tsml:observationMember>
+    <om:OM_Observation gml:id="om.observation.20001.met.windspeed_ms1">
+      <om:phenomenonTime>
+        <gml:TimePeriod gml:id="om.phenomenontime.20001.met.windspeed_ms1">
+          <gml:beginPosition>2012-06-13T00:00:00.000+12:00</gml:beginPosition>
+          <gml:endPosition>2012-06-14T00:00:00.000+12:00</gml:endPosition>
+        </gml:TimePeriod>
+      </om:phenomenonTime>
+      <om:resultTime>
+        <gml:TimeInstant gml:id="om.resulttime.20001.met.windspeed_ms1">
+          <gml:timePosition>2015-03-24T08:33:13</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/template" xsi:nil="true"/>
+      <om:observedProperty xlink:href="http://dev.data.scinfo.org.nz/x/def/property/ghg/met/windspeed_ms1"/>
+      <om:featureOfInterest xlink:href="#sams.sf_spatialsamplingfeature.bf-ghg.20001"/>
+      <om:result>
+        <tsml:TimeseriesTVP gml:id="tsml.measurementimeseries.20001.met.windspeed_ms1">
+          <tsml:metadata>
+            <tsml:TimeseriesMetadata>
+              <tsml:temporalExtent xlink:href="#om.phenomenontime.20001.met.windspeed_ms1"/>
+            </tsml:TimeseriesMetadata>
+          </tsml:metadata>
+          <tsml:defaultPointMetadata>
+            <tsml:PointMetadata>
+              <tsml:uom code="%"/>
+              <tsml:interpolationType xlink:href="http://www.opengis.net/def/waterml/2.0/interpolationType/AveragePrec" xlink:title="Average in Preceding Interval"/>
+              <tsml:aggregationDuration>PT30M</tsml:aggregationDuration>
+            </tsml:PointMetadata>
+          </tsml:defaultPointMetadata>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T00:30:00.000+12:00</tsml:time>
+              <tsml:value>2.04</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T01:00:00.000+12:00</tsml:time>
+              <tsml:value>1.50</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T01:30:00.000+12:00</tsml:time>
+              <tsml:value>2.17</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T02:00:00.000+12:00</tsml:time>
+              <tsml:value>2.55</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T02:30:00.000+12:00</tsml:time>
+              <tsml:value>2.48</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T03:00:00.000+12:00</tsml:time>
+              <tsml:value>2.62</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T03:30:00.000+12:00</tsml:time>
+              <tsml:value>2.07</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T04:00:00.000+12:00</tsml:time>
+              <tsml:value>1.89</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+        </tsml:TimeseriesTVP>
+      </om:result>
+    </om:OM_Observation>
+  </tsml:observationMember>
+  <tsml:observationMember>
+    <om:OM_Observation gml:id="om.observation.20001.met.windspeed_ms1_max">
+      <om:phenomenonTime>
+        <gml:TimePeriod gml:id="om.phenomenontime.20001.met.windspeed_ms1_max">
+          <gml:beginPosition>2012-06-13T00:00:00.000+12:00</gml:beginPosition>
+          <gml:endPosition>2012-06-14T00:00:00.000+12:00</gml:endPosition>
+        </gml:TimePeriod>
+      </om:phenomenonTime>
+      <om:resultTime>
+        <gml:TimeInstant gml:id="om.resulttime.20001.met.windspeed_ms1_max">
+          <gml:timePosition>2015-03-24T08:33:13</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/template" xsi:nil="true"/>
+      <om:observedProperty xlink:href="http://dev.data.scinfo.org.nz/x/def/property/ghg/met/windspeed_ms1_max"/>
+      <om:featureOfInterest xlink:href="#sams.sf_spatialsamplingfeature.bf-ghg.20001"/>
+      <om:result>
+        <tsml:TimeseriesTVP gml:id="tsml.measurementimeseries.20001.met.windspeed_ms1_max">
+          <tsml:metadata>
+            <tsml:TimeseriesMetadata>
+              <tsml:temporalExtent xlink:href="#om.phenomenontime.20001.met.windspeed_ms1_max"/>
+            </tsml:TimeseriesMetadata>
+          </tsml:metadata>
+          <tsml:defaultPointMetadata>
+            <tsml:PointMetadata>
+              <tsml:uom code="%"/>
+              <tsml:interpolationType xlink:href="http://www.opengis.net/def/timesereiesml/1.0/interpolationType/AveragePrec" xlink:title="Average in Preceding Interval"/>
+              <tsml:aggregationDuration>PT30M</tsml:aggregationDuration>
+            </tsml:PointMetadata>
+          </tsml:defaultPointMetadata>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T00:30:00.000+12:00</tsml:time>
+              <tsml:value>3.23</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T01:00:00.000+12:00</tsml:time>
+              <tsml:value>2.07</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T01:30:00.000+12:00</tsml:time>
+              <tsml:value>3.03</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T02:00:00.000+12:00</tsml:time>
+              <tsml:value>3.83</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T02:30:00.000+12:00</tsml:time>
+              <tsml:value>3.73</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T03:00:00.000+12:00</tsml:time>
+              <tsml:value>3.87</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T03:30:00.000+12:00</tsml:time>
+              <tsml:value>2.93</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+          <tsml:point>
+            <tsml:MeasurementTVP>
+              <tsml:time>2012-06-13T04:00:00.000+12:00</tsml:time>
+              <tsml:value>2.57</tsml:value>
+            </tsml:MeasurementTVP>
+          </tsml:point>
+        </tsml:TimeseriesTVP>
+      </om:result>
+    </om:OM_Observation>
+  </tsml:observationMember>
+</tsml:Collection>

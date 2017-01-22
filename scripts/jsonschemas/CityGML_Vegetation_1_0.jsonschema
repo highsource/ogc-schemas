@@ -475,74 +475,6 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "PlantCover"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/citygml/vegetation/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/PlantCoverType"
-                }
-            },
-            "elementName":{
-                "localPart":"PlantCover",
-                "namespaceURI":"http://www.opengis.net/citygml/vegetation/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "_GenericApplicationPropertyOfPlantCover"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/citygml/vegetation/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GenericApplicationPropertyOfPlantCover",
-                "namespaceURI":"http://www.opengis.net/citygml/vegetation/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
                                         "_VegetationObject"
                                     ]
                                 },
@@ -561,6 +493,74 @@
             },
             "elementName":{
                 "localPart":"_VegetationObject",
+                "namespaceURI":"http://www.opengis.net/citygml/vegetation/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_GenericApplicationPropertyOfSolitaryVegetationObject"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/vegetation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GenericApplicationPropertyOfSolitaryVegetationObject",
+                "namespaceURI":"http://www.opengis.net/citygml/vegetation/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "PlantCover"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/citygml/vegetation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/PlantCoverType"
+                }
+            },
+            "elementName":{
+                "localPart":"PlantCover",
                 "namespaceURI":"http://www.opengis.net/citygml/vegetation/1.0"
             }
         },
@@ -611,7 +611,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "_GenericApplicationPropertyOfSolitaryVegetationObject"
+                                        "_GenericApplicationPropertyOfPlantCover"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -628,7 +628,7 @@
                 }
             },
             "elementName":{
-                "localPart":"_GenericApplicationPropertyOfSolitaryVegetationObject",
+                "localPart":"_GenericApplicationPropertyOfPlantCover",
                 "namespaceURI":"http://www.opengis.net/citygml/vegetation/1.0"
             }
         },

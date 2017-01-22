@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wcst:DeleteCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0"
+    xmlns:wcst="http://www.opengis.net/wcs_service-extension_transaction/2.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/wcs_service-extension_transaction/2.0 http://schemas.opengis.net/wcs/transaction/2.0/wcsTransaction.xsd"
+    service="WCS" version="2.0.0">
+    <wcst:coverageId>GoodByeCoverage</wcst:coverageId>
+</wcst:DeleteCoverage>
+

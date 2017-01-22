@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UFS_FeedbackSummary
+				xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
+				xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0" 
+				xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0" 
+				xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" 
+				xmlns:guf="http://www.opengis.net/guf/1.0/core" 
+				xmlns="http://www.opengis.net/guf/1.0/summary" 
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" 
+				xsi:schemaLocation="http://www.opengis.net/guf/1.0/summary ../ufs.xsd">
+	<target>
+		<cit:CI_Citation>
+			<cit:title></cit:title>
+			<cit:identifier>
+				<mcc:MD_Identifier>
+					<mcc:code>
+						<gco:CharacterString>GLC2000</gco:CharacterString>
+					</mcc:code>
+					<mcc:codeSpace>
+						<gco:CharacterString>jrc.ec.europa.eu</gco:CharacterString>
+					</mcc:codeSpace>
+				</mcc:MD_Identifier>
+			</cit:identifier>
+		</cit:CI_Citation>
+	</target>
+	<numberOfFeedbackItems><gco:Integer>4</gco:Integer></numberOfFeedbackItems>
+	<minimumPossibleRating><gco:Real>1.0</gco:Real></minimumPossibleRating>
+	<maximumPossibleRating><gco:Real>5.0</gco:Real></maximumPossibleRating>
+	<averageRating><gco:Real>5.0</gco:Real></averageRating>
+	<numberOfRatings><gco:Integer>0</gco:Integer></numberOfRatings>
+	<numberOfUserComments><gco:Integer>3</gco:Integer></numberOfUserComments>
+	<numberOfUsageReports><gco:Integer>2</gco:Integer></numberOfUsageReports>
+	<numberOfCitations><gco:Integer>4</gco:Integer></numberOfCitations>
+	<numberOfAdditionalQualities><gco:Integer>3</gco:Integer></numberOfAdditionalQualities>
+	<numberOfAdditionalLineages><gco:Integer>0</gco:Integer></numberOfAdditionalLineages>
+	<numberOfSignificantEvents><gco:Integer>0</gco:Integer></numberOfSignificantEvents>
+</UFS_FeedbackSummary>

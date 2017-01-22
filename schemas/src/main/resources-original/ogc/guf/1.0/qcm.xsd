@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0" xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0" xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0" xmlns:qcm="http://www.opengis.net/guf/1.0/common" targetNamespace="http://www.opengis.net/guf/1.0/common" elementFormDefault="qualified" version="1.0.0">
+	
+	<annotation>
+		<documentation>Geospatial User Feedback (GUF) is an OGC standard.
+			Copyright (c) 2016 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	
+	<import namespace="http://standards.iso.org/iso/19115/-3/cit/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/cit/1.0/citation.xsd"/>
+	<import namespace="http://standards.iso.org/iso/19115/-3/gco/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/gco/1.0/gco.xsd"/>
+	<import namespace="http://standards.iso.org/iso/19115/-3/mcc/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/mcc/1.0/mcc.xsd"/>
+	<import namespace="http://standards.iso.org/iso/19157/-2/mdq/1.0" schemaLocation="http://standards.iso.org/iso/19157/-2/mdq/1.0/mdq.xsd"/>
+	<!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+	<element name="QCM_CitationMotivationCode" type="gco:CodeListValue_Type" substitutionGroup="gco:CharacterString"/>
+	<complexType name="QCM_CitationMotivationCode_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="qcm:QCM_CitationMotivationCode"/>
+		</sequence>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="QCM_DiscoveredIssue" type="qcm:QCM_DiscoveredIssue_Type" substitutionGroup="gco:AbstractObject">
+		<annotation>
+			<documentation>Collects summary information about known
+problems with the dataset</documentation>
+		</annotation>
+	</element>
+	<complexType name="QCM_DiscoveredIssue_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="target" type="cit:CI_Citation_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="knownProblem" type="gco:CharacterString_PropertyType">
+						<annotation>
+							<documentation>Known issue with the target</documentation>
+						</annotation>
+					</element>
+					<element name="problemDateTime" type="cit:CI_Date_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Possible way to work around the problem</documentation>
+						</annotation>
+					</element>
+					<element name="workAround" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Possible way to work around the problem</documentation>
+						</annotation>
+					</element>
+					<element name="referenceDoc" type="qcm:QCM_Publication_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>A publication that exposes the issue and eventually suggest a solution</documentation>
+						</annotation>
+					</element>
+					<element name="expectedFixDate" type="cit:CI_Date_PropertyType" minOccurs="0">
+						<annotation>
+							<documentation>Date when a solution is expected to be released by the provider in the form of a fixedResource or directly as a fix in the original target resource.</documentation>
+						</annotation>
+					</element>
+					<element name="fixedResource" type="cit:CI_Citation_PropertyType" minOccurs="0">
+						<annotation>
+							<documentation>A new version of the target resource with the knownProblem is no longer present.</documentation>
+						</annotation>
+					</element>
+					<element name="alternativeResource" type="cit:CI_Citation_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>An alternative resource that can be used instead of the target for similar purposes but does not present the knownProblem</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="QCM_DiscoveredIssue_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="qcm:QCM_DiscoveredIssue"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="QCM_Publication" type="qcm:QCM_Publication_Type" substitutionGroup="cit:CI_Citation"/>
+	<complexType name="QCM_Publication_Type">
+		<complexContent>
+			<extension base="cit:CI_Citation_Type">
+				<sequence>
+					<element name="target" type="cit:CI_Citation_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Link to the actual resource the publication is about. If the target of the citation is specified by another part of the data model this parameter should not be used.</documentation>
+						</annotation>
+					</element>
+					<element name="abstract" type="gco:CharacterString_PropertyType" minOccurs="0">
+						<annotation>
+							<documentation>Abstract of the publication. The inclusion of an abstract in CI_Citation was also observed by the ISO19157 that defines a StandAloneQualityReport that has a summary and a CI_Citation as parameters</documentation>
+						</annotation>
+					</element>
+					<element name="motivation" type="qcm:QCM_CitationMotivationCode_PropertyType" minOccurs="0">
+						<annotation>
+							<documentation>Motivation of providing the citation. Why the citation is provided in relation to the parent class or the target</documentation>
+						</annotation>
+					</element>
+					<element name="relatedResource" type="cit:CI_Citation_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Other resources that are mentioned by the publication cited.</documentation>
+						</annotation>
+					</element>
+					<element name="scope" type="mcc:MD_Scope_PropertyType" minOccurs="0">
+						<annotation>
+							<documentation>Scope of the citation (e.g. the extent the citation is covering).</documentation>
+						</annotation>
+					</element>
+					<element name="category" type="qcm:QCM_PublicationCategoryCode_PropertyType">
+						<annotation>
+							<documentation>Type of publication</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="QCM_Publication_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="qcm:QCM_Publication"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="QCM_PublicationCategoryCode" type="gco:CodeListValue_Type" substitutionGroup="gco:CharacterString"/>
+	<complexType name="QCM_PublicationCategoryCode_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="qcm:QCM_PublicationCategoryCode"/>
+		</sequence>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+</schema>

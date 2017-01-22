@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tsml:TimeseriesDomainRange xmlns:tsml="http://www.opengis.net/tsml/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/tsml/1.0 http://schemas.opengis.net/tsml/1.0/timeseriesML.xsd" gml:id="ts_dr_ex">
+	<gml:description>An example of a domain-range style timeseries.</gml:description>
+	<gml:domainSet>
+		<tsml:TimePositionList gml:id="temporal_domain">
+			<tsml:timePositionList>2001-01-01T00:00:00Z 2001-01-02T00:00:00Z 2001-01-03T00:00:00Z 2001-01-04T00:00:00Z 2001-01-05T00:00:00Z
+			2001-01-06T00:00:00Z</tsml:timePositionList>
+		</tsml:TimePositionList>
+	</gml:domainSet>
+						<gml:rangeSet>
+						<gml:ValueArray gml:id="comment_array1">
+							<gml:valueComponents>
+								<gml:Category>This is a free text comment</gml:Category>
+								<gml:Category xsi:nil="true"/>
+								<gml:Category>Example comment</gml:Category>
+								<gml:Category>Another one</gml:Category>
+								<gml:Category>Has to be one for each point</gml:Category>
+							</gml:valueComponents>
+						</gml:ValueArray>
+					</gml:rangeSet>
+	<gmlcov:rangeType>
+		<swe:DataRecord>
+			<swe:field name="range_set">
+				<swe:Quantity>
+					<swe:uom code="m"/>
+				</swe:Quantity>
+			</swe:field>
+		</swe:DataRecord>
+	</gmlcov:rangeType>
+	<gmlcov:metadata>
+		<gmlcov:Extension>
+			<tsml:TimeseriesMetadataExtension>
+				<tsml:defaultPointMetadata>
+					<tsml:PointMetadata>
+						<tsml:quality xlink:href="http://opengis.net/def/waterml/2.0/quality/good"/>
+						<tsml:interpolationType xlink:href="http://opengis.net/def/waterml/2.0/interpolationType/continuous"/>
+					</tsml:PointMetadata>
+				</tsml:defaultPointMetadata>
+			</tsml:TimeseriesMetadataExtension>
+		</gmlcov:Extension>
+	</gmlcov:metadata>
+</tsml:TimeseriesDomainRange>

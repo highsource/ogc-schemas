@@ -2,54 +2,6 @@
 {
     "id":"http://www.opengis.net/wcs/interpolation/1.0#",
     "definitions":{
-        "InterpolationType":{
-            "type":"object",
-            "title":"InterpolationType",
-            "required":[
-                "globalInterpolation"
-            ],
-            "properties":{
-                "globalInterpolation":{
-                    "title":"globalInterpolation",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"globalInterpolation",
-                        "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
-                    }
-                },
-                "interpolationPerAxis":{
-                    "title":"interpolationPerAxis",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/InterpolationPerAxisType"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"InterpolationPerAxis",
-                        "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"InterpolationType",
-                "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
-            },
-            "propertiesOrder":[
-                "globalInterpolation",
-                "interpolationPerAxis"
-            ]
-        },
         "InterpolationPerAxisType":{
             "type":"object",
             "title":"InterpolationPerAxisType",
@@ -125,43 +77,57 @@
             "propertiesOrder":[
                 "interpolationSupported"
             ]
+        },
+        "InterpolationType":{
+            "type":"object",
+            "title":"InterpolationType",
+            "required":[
+                "globalInterpolation"
+            ],
+            "properties":{
+                "globalInterpolation":{
+                    "title":"globalInterpolation",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"globalInterpolation",
+                        "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
+                    }
+                },
+                "interpolationPerAxis":{
+                    "title":"interpolationPerAxis",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/InterpolationPerAxisType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"InterpolationPerAxis",
+                        "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"InterpolationType",
+                "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
+            },
+            "propertiesOrder":[
+                "globalInterpolation",
+                "interpolationPerAxis"
+            ]
         }
     },
     "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Interpolation"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/wcs/interpolation/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/InterpolationType"
-                }
-            },
-            "elementName":{
-                "localPart":"Interpolation",
-                "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
-            }
-        },
         {
             "type":"object",
             "properties":{
@@ -193,6 +159,40 @@
             },
             "elementName":{
                 "localPart":"InterpolationMetadata",
+                "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Interpolation"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/wcs/interpolation/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/InterpolationType"
+                }
+            },
+            "elementName":{
+                "localPart":"Interpolation",
                 "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
             }
         }

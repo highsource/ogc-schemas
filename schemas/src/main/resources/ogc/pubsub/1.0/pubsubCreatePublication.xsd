@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+    xmlns:pubsub="http://www.opengis.net/pubsub/1.0"
+    xmlns:ows="http://www.opengis.net/ows/1.1" 
+    elementFormDefault="qualified" attributeFormDefault="unqualified"
+    targetNamespace="http://www.opengis.net/pubsub/1.0" version="1.0.0">
+    <annotation>
+        <documentation>
+            OGC Publish/Subscribe (PubSub) Interface Standard
+            
+            PubSub is an OGC Standard.
+            Copyright (c) 2016 Open Geospatial Consortium.
+            To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    
+    <import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+    <include schemaLocation="pubsubCommon.xsd"/>
+    
+    <element name="CreatePublication" type="pubsub:CreatePublicationType"/>
+    <complexType name="CreatePublicationType">
+        <sequence>
+            <element name="Identifier" type="pubsub:PublicationIdentifierType" minOccurs="1" maxOccurs="1"/>
+            <element name="BasePublicationIdentifier" type="pubsub:PublicationIdentifierType" minOccurs="1" maxOccurs="1"/>
+            <element name="Description" minOccurs="1" maxOccurs="1" type="ows:DescriptionType"/>
+            <element name="Filter" type="anyType" minOccurs="0" maxOccurs="1"/>
+            <element name="FilterLanguageId" type="anyURI" minOccurs="0" maxOccurs="1"/>
+            <element name="ProcessingExpression" type="anyType" minOccurs="0" maxOccurs="1"/>
+            <element name="ProcessingLanguageId" type="anyURI" minOccurs="0" maxOccurs="1"/>
+            <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    
+    <element name="CreatePublicationResponse" type="pubsub:CreatePublicationResponseType"/>
+    <complexType name="CreatePublicationResponseType">
+        <sequence>
+            <element ref="pubsub:DerivedPublication" minOccurs="1" maxOccurs="1"/>
+            <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+</schema>

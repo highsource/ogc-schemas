@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+  xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:pubsub="http://www.opengis.net/pubsub/1.0"
+  elementFormDefault="qualified" attributeFormDefault="unqualified"
+  targetNamespace="http://www.opengis.net/pubsub/1.0" version="1.0.0">
+  <annotation>
+    <documentation>
+      OGC Publish/Subscribe (PubSub) Interface Standard
+      
+      PubSub is an OGC Standard.
+      Copyright (c) 2016 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+    </documentation>
+  </annotation>
+  
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+  <include schemaLocation="pubsubCommon.xsd"/>
+
+  <element name="Subscribe" type="pubsub:SubscribeType"/>
+  <complexType name="SubscribeType">
+    <sequence>
+      <element ref="pubsub:PublicationIdentifier" minOccurs="1" maxOccurs="1"/>
+      <element name="TerminationTime" type="gml:TimeInstantType" minOccurs="0" maxOccurs="1"/>
+      <element name="FilterLanguageId" type="anyURI" minOccurs="0" maxOccurs="1"/>
+      <element name="Filter" type="anyURI" minOccurs="0" maxOccurs="1"/>
+      <element name="DeliveryLocation" type="anyType" minOccurs="0" maxOccurs="1"/>
+      <element name="DeliveryMethod" type="anyURI" minOccurs="0" maxOccurs="1"/>
+      <element name="DeliveryParameter" type="anyType" minOccurs="0" maxOccurs="unbounded"/>
+      <element name="ContentType" type="ows:MimeType" minOccurs="0" maxOccurs="1"/>
+      <element ref="pubsub:MessageBatchingCriteria" minOccurs="0" maxOccurs="1"/>
+      <element ref="pubsub:HeartbeatCriteria" minOccurs="0" maxOccurs="1"/>
+      <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  
+  <element name="SubscribeResponse" type="pubsub:SubscribeResponseType"/>
+  <complexType name="SubscribeResponseType">
+    <sequence>
+      <element ref="pubsub:Subscription" minOccurs="1" maxOccurs="1"/>
+      <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+</schema>

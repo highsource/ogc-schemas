@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   The messages and port types for HTTP-based SOAP communication for a Pub/Sub Publisher.  The WS-N operations are not specified here, this WSDL
+   only includes those operations unique to OGC Pub/Sub Publishers such as GetCapabilities
+-->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsn-bw="http://docs.oasis-open.org/wsn/bw-2"
+    xmlns:wsn-bw-soap="http://docs.oasis-open.org/wsn/bw-2/soap"
+    xmlns:wsrf-rw="http://docs.oasis-open.org/wsrf/rw-2"
+    xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:pubsub="http://www.opengis.net/pubsub/1.0"
+    xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ows="http://www.opengis.net/ows/1.1"
+    targetNamespace="http://www.opengis.net/pubsub/1.0" >
+
+    <wsdl:types>
+        <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.opengis.net/pubsub/1.0">
+
+            <xsd:include schemaLocation="../../../pubsubAll.xsd"/>
+
+            <xsd:import namespace="http://www.opengis.net/ows/1.1"
+                schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsExceptionReport.xsd"/>
+
+        </xsd:schema>
+
+    </wsdl:types>
+
+    <!-- ====================================================== -->
+    <!-- ====================== Messages ====================== -->
+    <!-- ====================================================== -->
+
+    <!-- =================== GetCapabilities ================== -->
+    <wsdl:message name="GetCapabilitiesRequestMessage">
+        <wsdl:part name="body" element="pubsub:GetCapabilities"/>
+    </wsdl:message>
+    <wsdl:message name="PublisherCapabilitiesMessage">
+        <wsdl:part name="body" element="pubsub:PublisherCapabilities"/>
+    </wsdl:message>
+
+    <!-- ================== GetSubscription ================= -->
+    <wsdl:message name="GetSubscriptionRequestMessage">
+        <wsdl:part name="body" element="pubsub:GetSubscription"/>
+    </wsdl:message>
+    <wsdl:message name="GetSubscriptionResponseMessage">
+        <wsdl:part name="body" element="pubsub:GetSubscriptionResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="ServiceExceptionReport">
+        <wsdl:part element="ows:ExceptionReport" name="Body"/>
+    </wsdl:message>
+
+    <!-- ====================================================== -->
+    <!-- ===================== Port types ===================== -->
+    <!-- ====================================================== -->
+    <wsdl:portType name="PublisherInterface">
+        <wsdl:operation name="GetCapabilities">
+            <wsdl:input wsam:Action="http://www.opengis.net/pubsub/1.0/GetCapabilities" message="pubsub:GetCapabilitiesRequestMessage"/>
+            <wsdl:output wsam:Action="http://www.opengis.net/pubsub/1.0/PublisherCapabilities" message="pubsub:PublisherCapabilitiesMessage"/>
+            <wsdl:fault name="ServiceExceptionReport" message="pubsub:ServiceExceptionReport"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubscription">
+            <wsdl:input wsam:Action="http://www.opengis.net/pubsub/1.0/GetSubscription" message="pubsub:GetSubscriptionRequestMessage"/>
+            <wsdl:output wsam:Action="http://www.opengis.net/pubsub/1.0/GetSubscriptionResponse" message="pubsub:GetSubscriptionResponseMessage"/>
+            <wsdl:fault name="ServiceExceptionReport" message="pubsub:ServiceExceptionReport"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+</wsdl:definitions>

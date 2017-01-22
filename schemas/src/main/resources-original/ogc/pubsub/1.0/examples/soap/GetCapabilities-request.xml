@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=====================================================================
+Example SOAP Request for GetCapabilities operation.
+=======================================================================-->
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"
+    xmlns:ows="http://www.opengis.net/ows/1.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:wsa="http://www.w3.org/2005/08/addressing" 
+    xmlns:pubsub="http://www.opengis.net/pubsub/1.0"  
+    xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd
+    http://www.opengis.net/pubsub/1.0 http://schemas.opengis.net/pubsub/1.0/pubsubAll.xsd" >
+    <soap12:Header>
+        <wsa:To>http://www.publisher.org/PubSub</wsa:To>
+        <wsa:Action>http://www.opengis.net/def/serviceOperation/pubsub/1.0/GetCapabilities</wsa:Action>
+        <wsa:ReplyTo>
+            <wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</wsa:Address>
+        </wsa:ReplyTo>
+        <wsa:MessageID>http://my.client.com/uid/msg-0010</wsa:MessageID>
+    </soap12:Header>
+    <soap12:Body>
+        <pubsub:GetCapabilities service="PubSub">
+            <ows:AcceptVersions>
+                <ows:Version>1.0.0</ows:Version>
+            </ows:AcceptVersions>
+        </pubsub:GetCapabilities>
+    </soap12:Body>
+</soap12:Envelope>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+    xmlns:pubsub="http://www.opengis.net/pubsub/1.0"
+    elementFormDefault="qualified" attributeFormDefault="unqualified"
+    targetNamespace="http://www.opengis.net/pubsub/1.0" version="1.0.0">
+    <annotation>
+        <documentation>
+            OGC Publish/Subscribe (PubSub) Interface Standard
+            
+            PubSub is an OGC Standard.
+            Copyright (c) 2016 Open Geospatial Consortium.
+            To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    
+    <include schemaLocation="pubsubCommon.xsd"/>
+    
+    <element name="Resume" type="pubsub:ResumeType"/>
+    <complexType name="ResumeType">
+        <sequence>
+            <element ref="pubsub:SubscriptionIdentifier" minOccurs="1" maxOccurs="1"/>
+            <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    
+    <element name="ResumeResponse" type="pubsub:ResumeResponseType"/>
+    <complexType name="ResumeResponseType">
+        <sequence>
+            <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+</schema>

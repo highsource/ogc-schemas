@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema targetNamespace="http://www.opengis.net/movingfeatures/1.0"
+  xmlns:mf="http://www.opengis.net/movingfeatures/1.0" 
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:gml="http://www.opengis.net/gml/3.2" 
+  version="1.0.1"
+  elementFormDefault="qualified">
+  <annotation>
+    <documentation>
+      Moving Features is an OGC Standard.
+      Copyright (c) 2014,2015,2016  Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+    </documentation>
+  </annotation>
+  <import namespace="http://www.opengis.net/gml/3.2"
+    schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <import namespace="http://www.w3.org/2001/XMLSchema"
+    schemaLocation="http://www.w3.org/2001/XMLSchema.xsd"/>
+  <element name="MovingFeatures" type="mf:MovingFeaturesType" substitutionGroup="gml:AbstractFeature"/>
+  <complexType name="MovingFeaturesType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element ref="mf:member" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="mf:header" minOccurs="1" maxOccurs="1"/>
+          <element ref="mf:foliation" minOccurs="1" maxOccurs="1"/>
+        </sequence>
+      </extension>      
+    </complexContent>
+  </complexType>
+  <element name="MovingFeature" type="mf:MovingFeatureType" substitutionGroup="gml:AbstractFeature"/>
+  <complexType name="MovingFeatureType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType"/>            
+    </complexContent>
+  </complexType>
+  <element name="member" type="mf:FeaturePropertyType"/>
+  <complexType name="FeaturePropertyType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureMemberType">
+        <sequence minOccurs="0">
+          <element ref="gml:AbstractFeature"/>
+        </sequence>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+      </extension>
+    </complexContent>
+  </complexType>
+  
+  <element name="header" type="mf:HeaderType"/>
+  <complexType name="HeaderType">
+    <sequence>
+      <element ref="mf:Hints" minOccurs="0" maxOccurs="1"/>
+      <element ref="mf:VaryingAttrDefs" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <element name="Hint" type="mf:HintType"/>
+  <complexType name="HintType">
+    <simpleContent>
+      <extension base="string">
+        <attribute use="optional" name="type" type="mf:hintType"/>
+      </extension>
+    </simpleContent>
+  </complexType>
+  
+  <simpleType name="hintType">
+    <restriction base="string">
+      <enumeration value="TrajectoryAppearance"/>
+      <enumeration value="TrajecotryLifetime"/>
+    </restriction>
+  </simpleType>
+  <element name="Hints" type="mf:HintsType"/>
+  <complexType name="HintsType">
+    <sequence>
+      <element ref="mf:Hint" minOccurs="1" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <element name="VaryingAttrDefs" type="mf:VaryingAttrDefsType"/>
+  <complexType name="VaryingAttrDefsType">
+    <sequence>
+      <element ref="mf:attrDef" minOccurs="1" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <element name="attrDef" type="mf:AttrDefType"/>
+  <complexType name="AttrDefType">
+    <sequence>
+      <element ref="simpleType" minOccurs="0" maxOccurs="1"/>
+      <element ref="mf:AttrAnnotation" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+    <attribute name="name" use="optional" type="string"/>
+    <attribute name="type" use="optional" type="string"/>
+  </complexType>
+  <element name="AttrAnnotation" type="string"/>
+  <element name="foliation" type="mf:FoliationType"/>
+  <complexType name="FoliationType">
+    <sequence>
+      <element ref="mf:sTBoundedBy" minOccurs="1" maxOccurs="1"/>
+      <element ref="mf:AbstractTrajectory" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+    <attribute use="optional" name="order" type="mf:OrderType"/>
+  </complexType>
+  <simpleType name="OrderType">
+    <restriction base="string">
+      <enumeration value="Time"/>
+      <enumeration value="Sequential"/>
+    </restriction>
+  </simpleType>
+  <element name="sTBoundedBy" type="mf:STBoundedByType" substitutionGroup="gml:boundedBy"/>
+  <complexType name="STBoundedByType">
+    <complexContent>
+      <extension base="gml:BoundingShapeType">
+        <attribute use="optional" name="offset" type="mf:UnitOfTimeType"/>        
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <simpleType name="UnitOfTimeType">
+    <restriction base="string">
+      <enumeration value="sec"/>
+      <enumeration value="min"/>
+      <enumeration value="absolute"/>
+    </restriction>
+  </simpleType>
+  <element name="AbstractTrajectory" type="mf:AbstractTrajectoryType" abstract="true" substitutionGroup="gml:AbstractCurve"/>
+  <complexType name="AbstractTrajectoryType">
+    <complexContent>
+      <extension base="gml:AbstractCurveType">
+        <sequence>
+          <choice minOccurs="1" maxOccurs="1">
+            <element ref="gml:posList" minOccurs="1" maxOccurs="1"/>
+            <choice minOccurs="2" maxOccurs="unbounded">
+              <element ref="gml:pos" minOccurs="1" maxOccurs="1"/>
+              <element ref="gml:pointProperty" minOccurs="1" maxOccurs="1"/>
+            </choice>
+          </choice>
+          <element ref="mf:Attr" minOccurs="1" maxOccurs="1"/>
+        </sequence>
+        <attribute name="end" use="required" type="positiveInteger"/>
+        <attribute name="mfIdRef" use="required" type="string"/>
+        <attribute name="start" use="required" type="nonNegativeInteger"/>
+        <attribute name="interpolation" type="mf:InterpolationType" use="optional"/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <simpleType name="InterpolationType">
+    <restriction base="string">
+      <enumeration value="Linear"/>
+    </restriction>
+  </simpleType>
+  <element name="LinearTrajectory" type="mf:LinearTrajectoryType" substitutionGroup="mf:AbstractTrajectory"/>
+  <complexType name="LinearTrajectoryType">
+    <complexContent>
+      <restriction base="mf:AbstractTrajectoryType">
+        <sequence>
+          <element ref="gml:posList" minOccurs="1" maxOccurs="1"/>
+          <element ref="mf:Attr" minOccurs="1" maxOccurs="1"/>
+        </sequence>
+        <attribute name="end" use="required" type="positiveInteger"/>
+        <attribute name="mfIdRef" use="required" type="string"/>
+        <attribute name="start" use="required" type="nonNegativeInteger"/>
+        <attribute name="interpolation" type="mf:InterpolationType" use="optional"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <element name="Attr" type="string"/>
+</schema>

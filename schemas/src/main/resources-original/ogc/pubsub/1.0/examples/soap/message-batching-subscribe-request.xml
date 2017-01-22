@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    The Subscriber is subscribing to the Publisher with message batching criteria.  This is identical to
+    a normal Subscription aside from the additional message batching portion of the Subscribe request
+-->
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:wsn="http://docs.oasis-open.org/wsn/b-2" xmlns:wsa="http://www.w3.org/2005/08/addressing"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:fes="http://www.opengis.net/fes/2.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:pubsub="http://www.opengis.net/pubsub/1.0"
+
+    xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/
+    http://docs.oasis-open.org/wsn/b-2 http://docs.oasis-open.org/wsn/b-2.xsd
+    http://www.w3.org/2005/08/addressing http://www.w3.org/2006/03/addressing/ws-addr.xsd
+    http://www.opengis.net/fes/2.0 http://schemas.opengis.net/filter/2.0/filterAll.xsd
+    http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd
+    http://www.opengis.net/pubsub/1.0 http://schemas.opengis.net/pubsub/1.0/pubsubAll.xsd">
+
+    <s:Header>
+        <wsa:Action>http://docs.oasis-open.org/wsn/bw-2/NotificationProducer/SubscribeRequest</wsa:Action>
+    </s:Header>
+
+    <s:Body>
+
+        <wsn:Subscribe>
+            <!--
+                Identifier and location for the message consumer (receiver).  Messages (notifications) will be delivered here
+            -->
+            <wsn:ConsumerReference>
+                <wsa:Address>http://receiver.org/consumer</wsa:Address>
+            </wsn:ConsumerReference>
+
+            <wsn:Filter>
+
+                <!-- Filter expression resulting to true/false when applied to message contents -->
+                <wsn:MessageContent Dialect="http://www.opengis.net/fes/2.0">
+                    <fes:Filter>
+                        <fes:BBOX>
+                            <fes:ValueReference>location</fes:ValueReference>
+                            <gml:Envelope srsName="urn:ogc:def:crs:EPSG::4326">
+                                <gml:lowerCorner>13.0983 31.5899</gml:lowerCorner>
+                                <gml:upperCorner>35.5472 42.8143</gml:upperCorner>
+                            </gml:Envelope>
+                        </fes:BBOX> 
+                    </fes:Filter>
+                </wsn:MessageContent>
+
+            </wsn:Filter>
+
+            <wsn:InitialTerminationTime>2012-09-16T00:00:00Z</wsn:InitialTerminationTime>
+
+            <wsn:SubscriptionPolicy>
+                <!-- When true, deliver raw content without the wsn:Notify wrapper -->
+                <!--wsn:UseRaw/-->
+            </wsn:SubscriptionPolicy>
+
+            <!-- Required for subscription creation -->
+            <pubsub:PublicationIdentifier>http://host.org/pubsub/publication/aircraft</pubsub:PublicationIdentifier>
+          
+            <pubsub:DeliveryMethod>
+                <pubsub:Identifier>http://docs.oasis-open.org/wsn/b-2/NotificationConsumer</pubsub:Identifier>
+            </pubsub:DeliveryMethod>
+          
+            <!-- These parameters are included as examples and are not used in this case
+            <pubsub:DeliveryParameter name="httpMethod">POST</pubsub:DeliveryParameter>
+            <pubsub:DeliveryParameter name="timeoutSec">60</pubsub:DeliveryParameter>
+             -->
+          
+            <!-- Message batching criteria - batch into 15 minute groups -->
+            <pubsub:MessageBatchingCriteria>
+              <pubsub:MaxDelay>PT15M</pubsub:MaxDelay>
+            </pubsub:MessageBatchingCriteria>
+            
+        </wsn:Subscribe>
+
+    </s:Body>
+</s:Envelope>

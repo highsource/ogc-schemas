@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+  xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:pubsub="http://www.opengis.net/pubsub/1.0"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" 
+  targetNamespace="http://www.opengis.net/pubsub/1.0" version="1.0.0">
+  <annotation>
+    <documentation>
+      OGC Publish/Subscribe (PubSub) Interface Standard
+      
+      PubSub is an OGC Standard.
+      Copyright (c) 2016 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+    </documentation>
+  </annotation>
+  
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+  <include schemaLocation="pubsubCommon.xsd"/>
+  
+  <element name="GetCapabilities" type="pubsub:GetCapabilitiesType"/>
+  <complexType name="GetCapabilitiesType">
+    <complexContent>
+      <extension base="ows:GetCapabilitiesType">
+        <sequence>
+          <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="service" type="ows:ServiceType" use="required" fixed="PubSub"/>
+      </extension>
+    </complexContent>
+  </complexType>
+  
+  <element name="PublisherCapabilities" type="pubsub:PublisherCapabilitiesType"/>
+  <complexType name="PublisherCapabilitiesType">
+    <complexContent>
+      <extension base="ows:CapabilitiesBaseType">
+        <sequence>
+          <element ref="pubsub:FilterCapabilities" minOccurs="1" maxOccurs="1"/>
+          <element ref="pubsub:DeliveryCapabilities" minOccurs="1" maxOccurs="1"/>
+          <element ref="pubsub:Publications" minOccurs="1" maxOccurs="1"/>
+          <element ref="pubsub:ProcessingCapabilities" minOccurs="0" maxOccurs="1"/>
+          <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="FilterCapabilities" type="pubsub:FilterCapabilitiesType"/>
+  <complexType name="FilterCapabilitiesType">
+    <sequence>
+      <element ref="pubsub:FilterLanguage" minOccurs="0" maxOccurs="unbounded"/>
+      <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <element name="FilterLanguage" type="pubsub:FilterLanguageType"/>
+  <complexType name="FilterLanguageType">
+    <complexContent>
+      <extension base="ows:DescriptionType">
+        <sequence>
+          <element name="Identifier" type="anyURI" minOccurs="1" maxOccurs="1"/>
+          <element name="SupportedCapabilities" type="anyType" minOccurs="0" maxOccurs="1"/>
+          <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="DeliveryCapabilities" type="pubsub:DeliveryCapabilitiesType"/>
+  <complexType name="DeliveryCapabilitiesType">
+    <sequence>
+      <element ref="pubsub:DeliveryMethod" minOccurs="1" maxOccurs="unbounded"/>
+      <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <element name="DeliveryMethod" type="pubsub:DeliveryMethodType"/>
+  <complexType name="DeliveryMethodType">
+    <complexContent>
+      <extension base="ows:DescriptionType">
+        <sequence>
+          <element name="Identifier" type="anyURI" minOccurs="1" maxOccurs="1"/>
+          <element name="SupportedCapabilities" type="anyType" minOccurs="0" maxOccurs="1"/>
+          <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+    
+    <element name="ProcessingCapabilities" type="pubsub:ProcessingCapabilitiesType"/>
+    <complexType name="ProcessingCapabilitiesType">
+        <sequence>
+            <element ref="pubsub:ProcessingLanguage" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    
+    <element name="ProcessingLanguage" type="pubsub:ProcessingLanguageType"/>
+    <complexType name="ProcessingLanguageType">
+        <complexContent>
+            <extension base="ows:DescriptionType">
+                <sequence>
+                    <element name="Identifier" type="anyURI" minOccurs="1" maxOccurs="1"/>
+                    <element name="SupportedCapabilities" type="anyType" minOccurs="0" maxOccurs="1"/>
+                    <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+  <element name="Publications" type="pubsub:PublicationsType"/>
+  <complexType name="PublicationsType">
+    <sequence>
+      <element ref="pubsub:Publication" minOccurs="0" maxOccurs="unbounded"/>
+      <element ref="pubsub:Extension" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+</schema>

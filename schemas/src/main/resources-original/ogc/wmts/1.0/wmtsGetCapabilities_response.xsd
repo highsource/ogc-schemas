@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema targetNamespace="http://www.opengis.net/wmts/1.0"
-	xmlns="http://www.w3.org/2001/XMLSchema" 
-	xmlns:wmts="http://www.opengis.net/wmts/1.0" 
-	xmlns:ows="http://www.opengis.net/ows/1.1" 
-	xmlns:gml="http://www.opengis.net/gml" 
-	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:wmts="http://www.opengis.net/wmts/1.0"
+	xmlns:ows="http://www.opengis.net/ows/1.1"
+	xmlns:gml="http://www.opengis.net/gml"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
 	elementFormDefault="qualified" xml:lang="en"
-	version="1.0.1">
+	version="1.0.2">
 	<annotation>
 		<appinfo>wmtsGetCapabilities_response</appinfo>
 		<documentation>
-			This XML Schema Document encodes the WMTS GetCapabilities 
+			This XML Schema Document encodes the WMTS GetCapabilities
 			operations response message.
-			
+
 			WMTS is an OGC Standard.
 			Copyright (c) 2009,2010 Open Geospatial Consortium.
 			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
 		</documentation>
 	</annotation>
 	<!-- *********************************************************************
-	             Includes and imports.                            
+	             Includes and imports.
           ********************************************************************* -->
 	<include schemaLocation="wmts.xsd"/>
 	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
 	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
 	<!-- *********************************************************************
-	          The top-level Capabilities element.                            
+	          The top-level Capabilities element.
           ********************************************************************* -->
 	<element name="Capabilities">
 		<annotation>
-			<documentation>XML defines the WMTS GetCapabilities operation response. 
-			ServiceMetadata document provides clients with service metadata about a specific service 
-			instance, including metadata about the tightly-coupled data served. If the server 
-			does not implement the updateSequence parameter, the server SHALL always 
-			return the complete Capabilities document, without the updateSequence parameter. 
-			When the server implements the updateSequence parameter and the 
-			GetCapabilities operation request included the updateSequence parameter 
-			with the current value, the server SHALL return this element with only the 
-			"version" and "updateSequence" attributes. Otherwise, all optional elements 
-			SHALL be included or not depending on the actual value of the Contents 
+			<documentation>XML defines the WMTS GetCapabilities operation response.
+			ServiceMetadata document provides clients with service metadata about a specific service
+			instance, including metadata about the tightly-coupled data served. If the server
+			does not implement the updateSequence parameter, the server SHALL always
+			return the complete Capabilities document, without the updateSequence parameter.
+			When the server implements the updateSequence parameter and the
+			GetCapabilities operation request included the updateSequence parameter
+			with the current value, the server SHALL return this element with only the
+			"version" and "updateSequence" attributes. Otherwise, all optional elements
+			SHALL be included or not depending on the actual value of the Contents
 			parameter in the GetCapabilities operation request.
 			</documentation>
 		</annotation>
@@ -48,8 +48,8 @@
 					<sequence>
 						<element name="Contents" type="wmts:ContentsType" minOccurs="0">
 							<annotation>
-								<documentation>Metadata about the data served by this server. 
-								For WMTS, this section SHALL contain data about layers and 
+								<documentation>Metadata about the data served by this server.
+								For WMTS, this section SHALL contain data about layers and
 								TileMatrixSets</documentation>
 							</annotation>
 						</element>
@@ -68,7 +68,7 @@
 						<element name="ServiceMetadataURL" type="ows:OnlineResourceType" minOccurs="0" maxOccurs="unbounded">
 							<annotation>
 								<documentation>
-								Reference to a ServiceMetadata resource on resource 
+								Reference to a ServiceMetadata resource on resource
 								oriented architectural style
 								</documentation>
 							</annotation>
@@ -112,7 +112,7 @@
 					<element name="InfoFormat" type="ows:MimeType" minOccurs="0" maxOccurs="unbounded">
 						<annotation>
 							<documentation>
-							Supported valid output MIME types for a FeatureInfo. 
+							Supported valid output MIME types for a FeatureInfo.
 							If there isn't any, The server do not support FeatureInfo requests
 							for this layer.</documentation>
 						</annotation>
@@ -127,11 +127,11 @@
 							<documentation>Reference to a tileMatrixSet and limits</documentation>
 						</annotation>
 					</element>
-					<element name="ResourceURL" type="wmts:URLTemplateType" 
+					<element name="ResourceURL" type="wmts:URLTemplateType"
 														minOccurs="0" maxOccurs="unbounded">
 						<annotation>
 							<documentation>
-								URL template to a tile or a FeatureInfo resource on 
+								URL template to a tile or a FeatureInfo resource on
 								resource oriented architectural style
 							</documentation>
 						</annotation>
@@ -151,14 +151,14 @@
 						<element ref="ows:Identifier">
 							<annotation>
 								<documentation>
-									An unambiguous reference to this style, identifying 
+									An unambiguous reference to this style, identifying
 									a specific version when needed, normally used by software
 								</documentation>
 							</annotation>
 						</element>
 						<element ref="wmts:LegendURL" minOccurs="0" maxOccurs="unbounded">
 							<annotation>
-								<documentation>Description of an image that represents 
+								<documentation>Description of an image that represents
 								the legend of the map</documentation>
 							</annotation>
 						</element>
@@ -228,7 +228,7 @@
 	<element name="Dimension">
 		<annotation>
 			<documentation>
-				Metadata about a particular dimension that the tiles of 
+				Metadata about a particular dimension that the tiles of
 				a layer are available.
 			</documentation>
 		</annotation>
@@ -254,7 +254,7 @@
 						<element name="Default" type="string" minOccurs="0">
 							<annotation>
 								<documentation>
-									Default value that will be used if a tile request does 
+									Default value that will be used if a tile request does
 									not specify a value or uses the keyword 'default'.
 								</documentation>
 							</annotation>
@@ -262,8 +262,8 @@
 						<element name="Current" type="boolean" minOccurs="0">
 							<annotation>
 								<documentation>
-									A value of 1 (or 'true') indicates (a) that temporal data are 
-									normally kept current and (b) that the request value of this 
+									A value of 1 (or 'true') indicates (a) that temporal data are
+									normally kept current and (b) that the request value of this
 									dimension accepts the keyword 'current'.
 								</documentation>
 							</annotation>
@@ -294,8 +294,8 @@
 				</element>
 				<element ref="wmts:TileMatrixSetLimits" minOccurs="0">
 					<annotation>
-						<documentation>Indices limits for this tileMatrixSet. The absence of this 
-						element means that tile row and tile col indices are only limited by 0 
+						<documentation>Indices limits for this tileMatrixSet. The absence of this
+						element means that tile row and tile col indices are only limited by 0
 						and the corresponding tileMatrixSet maximum definitions.</documentation>
 					</annotation>
 				</element>
@@ -313,8 +313,8 @@
 				<element ref="wmts:TileMatrixLimits" maxOccurs="unbounded">
 					<annotation>
 						<documentation>
-							Metadata describing the limits of the TileMatrixSet indices. 
-							Multiplicity must be the multiplicity of TileMatrix in this 
+							Metadata describing the limits of the TileMatrixSet indices.
+							Multiplicity must be the multiplicity of TileMatrix in this
 							TileMatrixSet.
 						</documentation>
 					</annotation>
@@ -324,7 +324,7 @@
 	</element>
 	<element name="TileMatrixLimits">
 		<annotation>
-			<documentation>Metadata describing the limits of a TileMatrix 
+			<documentation>Metadata describing the limits of a TileMatrix
 						for this layer.</documentation>
 		</annotation>
 		<complexType>
@@ -334,65 +334,66 @@
 						<documentation>Reference to a TileMatrix identifier</documentation>
 					</annotation>
 				</element>
-				<element name="MinTileRow" type="positiveInteger">
+				<element name="MinTileRow" type="nonNegativeInteger">
 					<annotation>
-						<documentation>Minimum tile row index valid for this 
+						<documentation>Minimum tile row index valid for this
 						layer. From 0 to maxTileRow</documentation>
 					</annotation>
 				</element>
 				<element name="MaxTileRow" type="positiveInteger">
 					<annotation>
-						<documentation>Maximim tile row index valid for this 
-						layer. From minTileRow to matrixWidth-1 of the tileMatrix 
+						<documentation>Maximim tile row index valid for this
+						layer. From minTileRow to matrixWidth-1 of the tileMatrix
 						section of this tileMatrixSet</documentation>
 					</annotation>
 				</element>
-				<element name="MinTileCol" type="positiveInteger">
+				<element name="MinTileCol" type="nonNegativeInteger">
 					<annotation>
-						<documentation>Minimum tile column index valid for this 
+						<documentation>Minimum tile column index valid for this
 						layer. From 0 to maxTileCol</documentation>
 					</annotation>
 				</element>
 				<element name="MaxTileCol" type="positiveInteger">
 					<annotation>
-						<documentation>Maximim tile column index valid for this layer. 
-						From minTileCol to tileHeight-1 of the tileMatrix section 
+						<documentation>Maximim tile column index valid for this layer.
+						From minTileCol to tileHeight-1 of the tileMatrix section
 						of this tileMatrixSet.</documentation>
 					</annotation>
 				</element>
 			</sequence>
 		</complexType>
 	</element>
+	<simpleType name="KnownResourceTypeCodeType">
+		<annotation>
+			<documentation>Resource type to be retrieved. The WMTS main standard only defines "tile" or "FeatureInfo" but others can be incorporated in the future.</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="tile"/>
+			<enumeration value="FeatureInfo"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="ResourceTypeCodeType">
+		<union memberTypes="wmts:KnownResourceTypeCodeType string"/>
+	</simpleType>
 	<!-- ********************************************* -->
 	<!-- **  The URLTemplateType data type. ** -->
 	<!-- ********************************************* -->
 	<complexType name="URLTemplateType">
 		<attribute name="format" type="ows:MimeType" use="required">
 			<annotation>
-				<documentation>Format of the resource representation that can 
+				<documentation>Format of the resource representation that can
 				be retrieved one resolved the URL template.</documentation>
 			</annotation>
 		</attribute>
-		<attribute name="resourceType" use="required">
-			<annotation>
-				<documentation>Resource type to be retrieved. It can only 
-				be "tile" or "FeatureInfo"</documentation>
-			</annotation>
-			<simpleType>
-				<restriction base="string">
-					<enumeration value="tile"/>
-					<enumeration value="FeatureInfo"/>
-				</restriction>
-			</simpleType>
-		</attribute>
+		<attribute name="resourceType" type="wmts:ResourceTypeCodeType" use="required"/>
 		<attribute name="template" use="required">
 			<annotation>
-				<documentation>URL template. A template processor will be 
+				<documentation>URL template. A template processor will be
 				applied to substitute some variables between {} for their values
-				and get a URL to a resource. 
-				We cound not use a anyURI type (that conforms the character 
-				restrictions specified in RFC2396 and excludes '{' '}' characters 
-				in some XML parsers) because this attribute must accept the 
+				and get a URL to a resource.
+				We cound not use a anyURI type (that conforms the character
+				restrictions specified in RFC2396 and excludes '{' '}' characters
+				in some XML parsers) because this attribute must accept the
 				'{' '}' caracters.</documentation>
 			</annotation>
 			<simpleType>
@@ -421,25 +422,25 @@
 						<element ref="ows:BoundingBox" minOccurs="0">
 							<annotation>
 								<documentation>
-									Minimum bounding rectangle surrounding 
-									the visible layer presented by this tile matrix 
+									Minimum bounding rectangle surrounding
+									the visible layer presented by this tile matrix
 									set, in the supported CRS </documentation>
 							</annotation>
 						</element>
 						<element ref="ows:SupportedCRS">
 							<annotation>
-								<documentation>Reference to one coordinate reference 
+								<documentation>Reference to one coordinate reference
 								system (CRS).</documentation>
 							</annotation>
 						</element>
 						<element name="WellKnownScaleSet" type="anyURI" minOccurs="0">
 							<annotation>
 								<documentation>Reference to a well known scale set.
-									urn:ogc:def:wkss:OGC:1.0:GlobalCRS84Scale, 
-									urn:ogc:def:wkss:OGC:1.0:GlobalCRS84Pixel, 
-									urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad and 
-									urn:ogc:def:wkss:OGC:1.0:GoogleMapsCompatible are 
-								possible values that are defined in Annex E. It has to be consistent with the 
+									urn:ogc:def:wkss:OGC:1.0:GlobalCRS84Scale,
+									urn:ogc:def:wkss:OGC:1.0:GlobalCRS84Pixel,
+									urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad and
+									urn:ogc:def:wkss:OGC:1.0:GoogleMapsCompatible are
+								possible values that are defined in Annex E. It has to be consistent with the
 								SupportedCRS and with the ScaleDenominators of the TileMatrix elements.
 								</documentation>
 							</annotation>
@@ -467,7 +468,7 @@
 					<sequence>
 						<element ref="ows:Identifier">
 							<annotation>
-								<documentation>Tile matrix identifier. Typically an abreviation of 
+								<documentation>Tile matrix identifier. Typically an abreviation of
 								the ScaleDenominator value or its equivalent pixel size</documentation>
 							</annotation>
 						</element>
@@ -479,8 +480,8 @@
 						<element name="TopLeftCorner" type="ows:PositionType">
 							<annotation>
 								<documentation>
-									Position in CRS coordinates of the top-left corner of this tile matrix. 
-									This are the  precise coordinates of the top left corner of top left 
+									Position in CRS coordinates of the top-left corner of this tile matrix.
+									This are the  precise coordinates of the top left corner of top left
 									pixel of the 0,0 tile in SupportedCRS coordinates of this TileMatrixSet.
 								</documentation>
 							</annotation>
@@ -516,7 +517,7 @@
 	<element name="Themes">
 		<annotation>
 			<documentation>
-				Provides a set of hierarchical themes that the 
+				Provides a set of hierarchical themes that the
 				client can use to categorize the layers by.
 			</documentation>
 		</annotation>
@@ -525,7 +526,7 @@
 				<element ref="wmts:Theme" minOccurs="0" maxOccurs="unbounded">
 					<annotation>
 						<documentation>
-							Metadata describing the top-level themes where 
+							Metadata describing the top-level themes where
 							layers available on this server can be classified.
 						</documentation>
 					</annotation>
@@ -546,8 +547,8 @@
 						<element ref="wmts:Theme" minOccurs="0" maxOccurs="unbounded">
 							<annotation>
 								<documentation>
-									Metadata describing the child (subordinate) themes 
-									of this theme where layers available on this server 
+									Metadata describing the child (subordinate) themes
+									of this theme where layers available on this server
 									can be classified
 								</documentation>
 							</annotation>

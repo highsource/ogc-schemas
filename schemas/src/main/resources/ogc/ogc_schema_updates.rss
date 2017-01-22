@@ -3,11 +3,11 @@
 <rdf:RDF
  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
  xmlns="http://purl.org/rss/1.0/"
+ xmlns:admin="http://webns.net/mvcb/"
  xmlns:content="http://purl.org/rss/1.0/modules/content/"
- xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
  xmlns:dc="http://purl.org/dc/elements/1.1/"
  xmlns:syn="http://purl.org/rss/1.0/modules/syndication/"
- xmlns:admin="http://webns.net/mvcb/"
+ xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
 >
 
 <channel rdf:about="http://www.opengeospatial.org/">
@@ -18,17 +18,25 @@
    geospatial and location based services.</description>
 <dc:language>en-us</dc:language>
 <dc:rights>Copyright 1994-2010, Open Geospatial Consortium.</dc:rights>
-<dc:date>2016-07-05T19:34:26:+00:00
+<dc:date>2017-01-16T21:01:53:+00:00
 </dc:date>
 <dc:publisher>Open Geospatial Consortium</dc:publisher>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:subject>OGC Standards</dc:subject>
-<syn:updateBase>2016-07-05T19:34:26:+00:00
+<syn:updateBase>2017-01-16T21:01:53:+00:00
 </syn:updateBase>
 <syn:updateFrequency>2</syn:updateFrequency>
 <syn:updatePeriod>hourly</syn:updatePeriod>
 <items>
  <rdf:Seq>
+  <rdf:li rdf:resource="http://schemas.opengis.net/cis/ReadMe.txt#20170116t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/guf/ReadMe.txt#20161122t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20161117t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/wfs/ReadMe.txt#20161026t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/wfs/ReadMe.txt#20160831t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/movingfeatures/ReadMe.txt#20160825t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/tsml/ReadMe.txt#20160819t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/pubsub/ReadMe.txt#20160810t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wfs/ReadMe.txt#20160705t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/gmljp2/ReadMe.txt#20160610t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/cat/ReadMe.txt#20160610t15" />
@@ -108,6 +116,88 @@
 <url>http://www.opengeospatial.org/themes/ogc/logo.png</url>
 <link>http://www.opengeospatial.org/</link>
 </image>
+<item rdf:about="http://schemas.opengis.net/cis/ReadMe.txt#20170116t15">
+<title>OGC CIS 1.0 - Schema Updated</title>
+<link>http://schemas.opengis.net/cis/ReadMe.txt#20170116t15</link>
+<description>The OGC Coverage Service Interface Standard 1.0 (CIS 1.0.2) schema described in OGC document 13-057r1 has been published.
+  See http://www.opengeospatial.org/standards/cis for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2017-01-16T15:46:20:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC CIS 1.0 Standard Schema added</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/guf/ReadMe.txt#20161122t15">
+<title>OGC GUF 1.0 - Schema added</title>
+<link>http://schemas.opengis.net/guf/ReadMe.txt#20161122t15</link>
+<description>The OGC Geospatial User Feedback Standard: XML Encoding Extension 1.0 (GUF 1.0.0) schema described in OGC document 15-098r1 has been published.
+  See http://www.opengeospatial.org/standards/guf for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-12-22T15:46:19:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC GUF 1.0 Standard Schema added</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/wcs/ReadMe.txt#20161117t15">
+<title>OGC WCS Transaction 2.0 - Schema added</title>
+<link>http://schemas.opengis.net/wcs/ReadMe.txt#20161117t15</link>
+<description>The OGC WCS Transaction 2.0 (2.0.0) schema described in OGC document 13-057r1 has been published.
+  See http://www.opengeospatial.org/standards/wcs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-11-17T15:46:18:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC WCS Transaction 2.0 Standard Schema added</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/wfs/ReadMe.txt#20161026t15">
+<title>OGC WFS 1.1 - Schema updated</title>
+<link>http://schemas.opengis.net/wfs/ReadMe.txt#20161026t15</link>
+<description>The OGC WFS 1.1 (1.1.3) schema described in OGC document 04-094r1 has been published.
+  See http://www.opengeospatial.org/standards/wfs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-10-26T15:46:17:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC WFS 1.1 Standard Schema Updated</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/wfs/ReadMe.txt#20160831t15">
+<title>OGC IndoorGML 1.0 - Schema updated</title>
+<link>http://schemas.opengis.net/wfs/ReadMe.txt#20160831t15</link>
+<description>The OGC IndoorGML 1.0 schema described in OGC document 14-005r4 has been updated.
+  See http://www.opengeospatial.org/standards/indoorgml for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-08-31T15:46:16:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC IndoorGML 1.0 Standard Schema Updated</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/movingfeatures/ReadMe.txt#20160825t15">
+<title>OGC Moving Features Standard 1.0 Schema Posted</title>
+<link>http://schemas.opengis.net/movingfeatures/ReadMe.txt#20160825t15</link>
+<description>The OGC Moving Features Encoding Part I: XML Core 1.0 Standard 
+schema described in OGC document 14-083r2 has been added.  
+See http://www.opengeospatial.org/standards/movingfeatures for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-08-25T15:46:15:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC Moving Features Standard 1.0 Schema Posted</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/tsml/ReadMe.txt#20160819t15">
+<title>OGC TimeseriesML Standard 1.0 Schema Posted</title>
+<link>http://schemas.opengis.net/tsml/ReadMe.txt#20160819t15</link>
+<description>The OGC TimeseriesML 1.0 - XML Encoding of the Timeseries Profile of Observations and Measurements Implementation Standard 
+schema described in OGC document 15-042r3 has been added.  
+See http://www.opengeospatial.org/standards/tsml for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-08-19T15:46:14:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC TimeseriesML Standard 1.0 Schema Posted</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/pubsub/ReadMe.txt#20160810t15">
+<title>OGC Publish/Subscribe Interface Standard 1.0 - Core Schema Posted</title>
+<link>http://schemas.opengis.net/pubsub/ReadMe.txt#20160810t15</link>
+<description>The OGC Publish/Subscribe Interface Standard 1.0 - Core schema described in OGC document 13-131 has been added.  
+See http://www.opengeospatial.org/standards/pubsub for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2016-08-10T15:46:13:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC Publish/Subscribe Interface Standard 1.0 - Core Schema Posted</dc:subject>
+</item>
 <item rdf:about="http://schemas.opengis.net/wfs/ReadMe.txt#20160705t15">
 <title>OGC WFS 2.0 - Schema updated</title>
 <link>http://schemas.opengis.net/wfs/ReadMe.txt#20160705t15</link>

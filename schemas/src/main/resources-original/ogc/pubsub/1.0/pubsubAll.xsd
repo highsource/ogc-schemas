@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified" attributeFormDefault="unqualified" 
+    targetNamespace="http://www.opengis.net/pubsub/1.0" version="1.0.0">
+    <annotation>
+        <documentation>This XML Schema Document includes and imports,
+            directly or indirectly, all the XML Schemas defined by the
+            OGC Publish/Subscribe (PubSub) Interface Standard.
+            
+            PubSub is an OGC Standard.
+            Copyright (c) 2016 Open Geospatial Consortium.
+            To obtain additional rights of use, 
+            visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+    </annotation>
+    
+    <include schemaLocation="pubsubCommon.xsd"/>
+    <include schemaLocation="pubsubCreatePublication.xsd"/>
+    <include schemaLocation="pubsubGetCapabilities.xsd"/>
+    <include schemaLocation="pubsubGetSubscription.xsd"/>
+    <include schemaLocation="pubsubPause.xsd"/>
+    <include schemaLocation="pubsubRemovePublication.xsd"/>
+    <include schemaLocation="pubsubRenew.xsd"/>
+    <include schemaLocation="pubsubResume.xsd"/>
+    <include schemaLocation="pubsubSubscribe.xsd"/>
+    <include schemaLocation="pubsubUnsubscribe.xsd"/>
+</schema>

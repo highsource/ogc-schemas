@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0" xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:guf="http://www.opengis.net/guf/1.0/core" xmlns:ufc="http://www.opengis.net/guf/1.0/collection" xmlns:ufs="http://www.opengis.net/guf/1.0/summary" targetNamespace="http://www.opengis.net/guf/1.0/collection" elementFormDefault="qualified" version="1.0.0">
+	
+	<annotation>
+		<documentation>Geospatial User Feedback (GUF) is an OGC standard.
+			Copyright (c) 2016 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	
+	<import namespace="http://standards.iso.org/iso/19115/-3/cit/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/cit/1.0/citation.xsd"/>
+	<import namespace="http://standards.iso.org/iso/19115/-3/gco/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/gco/1.0/gco.xsd"/>
+	<import namespace="http://www.opengis.net/guf/1.0/core" schemaLocation="http://schemas.opengis.net/guf/1.0/guf.xsd"/>
+	<import namespace="http://www.opengis.net/guf/1.0/summary" schemaLocation="http://schemas.opengis.net/guf/1.0/ufs.xsd"/>
+
+	<element name="UFC_FeedbackCollection" type="ufc:UFC_FeedbackCollection_Type" substitutionGroup="gco:AbstractObject"/>
+	<complexType name="UFC_FeedbackCollection_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="target" type="cit:CI_Citation_PropertyType" minOccurs="0"/>
+					<element name="item" type="guf:GUF_FeedbackItem_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="pagination" type="ufc:UFC_ResponsePagination_PropertyType" minOccurs="0"/>
+					<element name="summary" type="ufs:UFS_FeedbackSummary_PropertyType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="UFC_FeedbackCollection_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="ufc:UFC_FeedbackCollection"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="UFC_FeedbackResponse" type="ufc:UFC_FeedbackResponse_Type" substitutionGroup="gco:AbstractObject"/>
+	<complexType name="UFC_FeedbackResponse_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="collection" type="ufc:UFC_FeedbackCollection_PropertyType" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="UFC_FeedbackResponse_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="ufc:UFC_FeedbackResponse"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="UFC_ResponsePagination" type="ufc:UFC_ResponsePagination_Type" substitutionGroup="gco:AbstractObject"/>
+	<complexType name="UFC_ResponsePagination_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="numberOfFeedbackItems" type="gco:Integer_PropertyType">
+						<annotation>
+							<documentation>total number of items available</documentation>
+						</annotation>
+					</element>
+					<element name="limit" type="gco:Integer_PropertyType" minOccurs="0">
+						<annotation>
+							<documentation>limit of items per page</documentation>
+						</annotation>
+					</element>
+					<element name="offset" type="gco:Integer_PropertyType" minOccurs="0">
+						<annotation>
+							<documentation>If missing, offset 0 is assumed</documentation>
+						</annotation>
+					</element>
+					<element name="count" type="gco:Integer_PropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="UFC_ResponsePagination_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="ufc:UFC_ResponsePagination"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+</schema>

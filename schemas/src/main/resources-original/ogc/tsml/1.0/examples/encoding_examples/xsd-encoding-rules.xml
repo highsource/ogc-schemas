@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tsml:Timeseries gml:id="xsd-encoding-rules.example" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:tsml="http://www.opengis.net/tsml/1.0" xsi:schemaLocation="http://www.opengis.net/tsml/1.0 http://schemas.opengis.net/tsml/1.0/timeseriesML.xsd">
+	<gml:description>Example timeseries for XML encoding http://www.opengis.net/spec/waterml/2.0/req/xsd-encoding-rules</gml:description>
+	<tsml:metadata>
+		<tsml:TimeseriesMetadata>
+			<tsml:temporalExtent>
+				<gml:TimePeriod gml:id="time-period.1">
+					<gml:beginPosition>2011-11-21T12:26:00+10:00</gml:beginPosition>
+					<gml:endPosition>2011-11-21T12:27:00+10:00</gml:endPosition>
+				</gml:TimePeriod>
+			</tsml:temporalExtent>
+		</tsml:TimeseriesMetadata>
+	</tsml:metadata>
+	<tsml:defaultPointMetadata>
+		<tsml:PointMetadata>
+			<tsml:uom code="m"/>
+		</tsml:PointMetadata>
+	</tsml:defaultPointMetadata>
+	<tsml:point>
+		<tsml:MeasurementTVP>
+			<tsml:time>2011-11-21T12:27:00+10:00</tsml:time>
+			<tsml:value>3.45</tsml:value>
+			<tsml:metadata>
+				<tsml:PointMetadata>
+					<tsml:interpolationType xlink:href="http://www.opengis.net/def/waterml/2.0/interpolationType/Continuous" xlink:title="Instantaneous"/>
+				</tsml:PointMetadata>
+			</tsml:metadata>
+		</tsml:MeasurementTVP>
+	</tsml:point>
+</tsml:Timeseries>

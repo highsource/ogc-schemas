@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0" xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0" xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0" xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0" xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0" xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0" xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/1.0" xmlns:guf="http://www.opengis.net/guf/1.0/core" xmlns:qcm="http://www.opengis.net/guf/1.0/common" targetNamespace="http://www.opengis.net/guf/1.0/core" elementFormDefault="qualified" version="1.0.0">
+	
+	<annotation>
+		<documentation>Geospatial User Feedback (GUF) is an OGC standard.
+			Copyright (c) 2016 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	
+	<import namespace="http://standards.iso.org/iso/19115/-3/cit/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/cit/1.0/citation.xsd"/>
+	<import namespace="http://standards.iso.org/iso/19115/-3/gco/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/gco/1.0/gco.xsd"/>
+	<import namespace="http://standards.iso.org/iso/19115/-3/gex/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/gex/1.0/extent.xsd"/>
+	<import namespace="http://standards.iso.org/iso/19115/-3/lan/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/lan/1.0/language.xsd"/>
+	<import namespace="http://standards.iso.org/iso/19115/-3/mcc/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/mcc/1.0/commonClasses.xsd"/>
+	<import namespace="http://standards.iso.org/iso/19157/-2/mdq/1.0" schemaLocation="http://standards.iso.org/iso/19157/-2/mdq/1.0/mdq.xsd"/>
+	<import namespace="http://standards.iso.org/iso/19115/-3/mri/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/mri/1.0/identification.xsd"/>
+	<import namespace="http://standards.iso.org/iso/19115/-3/mrl/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/mrl/1.0/lineage.xsd"/>
+	<import namespace="http://www.opengis.net/guf/1.0/common" schemaLocation="http://schemas.opengis.net/guf/1.0/qcm.xsd"/>
+
+	<element name="GUF_FeedbackItem" type="guf:GUF_FeedbackItem_Type" substitutionGroup="gco:AbstractObject">
+		<annotation>
+			<documentation>The feedback item is the container of the actual feedback. Every item is set into context by a combination of target citations and scopes.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GUF_FeedbackItem_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="itemIdentifier" type="mcc:MD_Identifier_PropertyType">
+						<annotation>
+							<documentation>Identifier for the feedback item. It needs to be locally unique.</documentation>
+						</annotation>
+					</element>
+					<element name="abstract" type="gco:CharacterString_PropertyType">
+						<annotation>
+							<documentation>Brief narrative description of this item, normally for display to a human</documentation>
+						</annotation>
+					</element>
+					<element name="purpose" type="gco:CharacterString_PropertyType" minOccurs="0">
+						<annotation>
+							<documentation>Summary of the intentions with which the feedback was provided</documentation>
+						</annotation>
+					</element>
+					<element name="contactRole" type="guf:GUF_UserRoleCode_PropertyType">
+						<annotation>
+							<documentation>User's role in the context of this feedback item. A user may have several roles recorded in the GUF_UserInformation, but this is the one that apply for this feedback. The idea is for a single user to be able to embody more than one role, but only one in each item. Thus, a data producer employee may comment and normally speak freely as a end user, but e.g. issue a metadata override on behalf of the data provider if he explicitly chooses that role. He would only be allowed to choose roles from his user information, and maybe there could be additional restrictions. So users seeking reliable but "semi-official" metadata could look for overrides issued by the provider in that role.</documentation>
+						</annotation>
+					</element>
+					<element name="dateInfo" type="cit:CI_Date_PropertyType" maxOccurs="unbounded">
+						<annotation>
+							<documentation>The date when the feedback item was created, updated etc.</documentation>
+						</annotation>
+					</element>
+					<element name="itemIsReplyTo" type="mcc:MD_Identifier_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Identifiers of one or more items of feedback to which this item is a response. Populate only if the feedback item is responding to another feedback item (e.g. a comment about a previous comment).</documentation>
+						</annotation>
+					</element>
+					<element name="descriptiveKeywords" type="mri:MD_Keywords_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Maps to 1 or more themes or scientific domains within which the feedback was generated and is relevant. We identify EO domains using selected ontologies such as GEMET concepts. These are domain focus and unlike "tags", uses domain URNs defined in some ontology.</documentation>
+						</annotation>
+					</element>
+					<element name="tag" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>&lt;b&gt;tag:&lt;/b&gt; keyword-type additions to narrow down the context. The tag qualifier associates tags parts of a so-called folksonomy to the feedback item. Such free-form memes are often aggregated in "tag clouds", allowing a community to reach an informal understanding of these tags. The precision of such features is debateable, but in social networks they are often considered essential.</documentation>
+						</annotation>
+					</element>
+					<element name="locale" type="lan:PT_Locale_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>language and character set used for documenting metadata</documentation>
+						</annotation>
+					</element>
+					<element name="externalFeedback" type="cit:CI_Citation_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Link to a item in an extenal repository that contains the feedback (not described inline).</documentation>
+						</annotation>
+					</element>
+					<element name="citation" type="cit:CI_Citation_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="additionalLineageSteps" type="mrl:LI_Lineage_PropertyType" minOccurs="0"/>
+					<element name="additionalQuality" type="mdq:DQ_DataQuality_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="rating" type="guf:GUF_Rating_PropertyType" minOccurs="0"/>
+					<element name="usage" type="guf:GUF_UsageReport_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="contact" type="guf:GUF_UserInformation_PropertyType"/>
+					<element name="userComment" type="guf:GUF_UserComment_PropertyType" minOccurs="0"/>
+					<element name="significantEvent" type="guf:GUF_SignificantEvent_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="target" type="guf:GUF_FeedbackTarget_PropertyType" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GUF_FeedbackItem_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="guf:GUF_FeedbackItem"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="GUF_FeedbackTarget" type="guf:GUF_FeedbackTarget_Type" substitutionGroup="gco:AbstractObject">
+		<annotation>
+			<documentation>The Target unambiguously refers to pretext in the domain of discourse, such as a dataset, a sensor, a metadata document, etc. This should match a datasetURI or MD_Identifier for that resource.
+
+The parent is intended to model containment such as "this sensor is contained in this SOS". This is redundant, but avoids having to understand e.g. SensorML to uncover the relationship. Obviously, the parent should not have finer granularity than the child.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GUF_FeedbackTarget_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="resourceRef" type="cit:CI_Citation_PropertyType" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Resource (could be the identifier of a dataset in a metadata catalog) to the geospatial target of the feedback. 
+
+Actually, the feedback model does not depend on the target's type, it just postulates a canonicalized or otherwise "matchable" identifier in this field. This could take the form of an outside service to provide the necessary matching capability.
+
+resourceRef could be used to define the title of a group of targets (children) or to cite a target in a reporitory</documentation>
+						</annotation>
+					</element>
+					<element name="metadataIdentifier" type="mcc:MD_Identifier_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Resource (could be the identifier of a dataset in a metadata catalog) to the geospatial target of the feedback. 
+
+Actually, the feedback model does not depend on the target's type, it just postulates a canonicalized or otherwise "matchable" identifier in this field. This could take the form of an outside service to provide the necessary matching capability.
+
+resourceRef could be used to define the title of a group of targets (children) or to cite a target in a reporitory</documentation>
+						</annotation>
+					</element>
+					<element name="scope" type="mcc:MD_Scope_PropertyType" minOccurs="0">
+						<annotation>
+							<documentation>Describes a type of resource the feedback is about; typically a dataset, a metadata record, a feature... or a subsets of a dataset or resource.</documentation>
+						</annotation>
+					</element>
+					<element name="role" type="guf:GUF_TargetRoleCode_PropertyType">
+						<annotation>
+							<documentation>Type of object the identifier points at, typically a dataset, a metadata record, a feature... A data centric focus describes sub-sets of a dataset or resource. It is to be interpreted as the intersection of the attributes which are specified, i.e. an unspecified attribute does not constrain the focus.</documentation>
+						</annotation>
+					</element>
+					<element name="parent" type="guf:GUF_FeedbackTarget_PropertyType" minOccurs="0"/>
+					<element name="child" type="guf:GUF_FeedbackTarget_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GUF_FeedbackTarget_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="guf:GUF_FeedbackTarget"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="GUF_MotivationCode" type="gco:CodeListValue_Type" substitutionGroup="gco:CharacterString"/>
+	<complexType name="GUF_MotivationCode_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="guf:GUF_MotivationCode"/>
+		</sequence>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="GUF_Rating" type="guf:GUF_Rating_Type" substitutionGroup="gco:AbstractObject">
+		<annotation>
+			<documentation>A rating is intended to cover star-like low information content ratings. Unlike e.g. a report, it is aggregable by nature.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GUF_Rating_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="rating" type="guf:GUF_RatingCode_PropertyType">
+						<annotation>
+							<documentation>To be restricted between 1 and 5</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GUF_Rating_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="guf:GUF_Rating"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="GUF_RatingCode" type="gco:CodeListValue_Type" substitutionGroup="gco:CharacterString"/>
+	<complexType name="GUF_RatingCode_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="guf:GUF_RatingCode"/>
+		</sequence>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="GUF_ReportAspectCode" type="gco:CodeListValue_Type" substitutionGroup="gco:CharacterString"/>
+	<complexType name="GUF_ReportAspectCode_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="guf:GUF_ReportAspectCode"/>
+		</sequence>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="GUF_SignificantEvent" type="guf:GUF_SignificantEvent_Type" substitutionGroup="gco:AbstractObject"/>
+	<complexType name="GUF_SignificantEvent_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="abstract" type="gco:CharacterString_PropertyType"/>
+					<element name="citation" type="cit:CI_Citation_PropertyType" minOccurs="0"/>
+					<element name="extent" type="gex:EX_Extent_PropertyType"/>
+					<element name="eventType" type="guf:GUF_SignificantEventTypeCode_PropertyType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GUF_SignificantEvent_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="guf:GUF_SignificantEvent"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="GUF_SignificantEventTypeCode" type="gco:CodeListValue_Type" substitutionGroup="gco:CharacterString">
+		<annotation>
+			<documentation>Inspired in https://software.ecmwf.int/wiki/display/CHAR/Significant+Events
+
+Focus on global climatic events.
+
+Do we change this to Keywords?</documentation>
+		</annotation>
+	</element>
+	<complexType name="GUF_SignificantEventTypeCode_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="guf:GUF_SignificantEventTypeCode"/>
+		</sequence>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="GUF_TargetRoleCode" type="gco:CodeListValue_Type" substitutionGroup="gco:CharacterString">
+		<annotation>
+			<documentation>The targets of an item describe its context, guided by one of the three possible roles primary, secondary and supplementary which define how a target is relevant to an item. Targets are intended to be comparable to each other, resulting in a comparison results such as "identical", "overlapping" or "disjoint", helping to establish an order of how relevant feedback is to a circumscribed issue.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GUF_TargetRoleCode_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="guf:GUF_TargetRoleCode"/>
+		</sequence>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="GUF_UsageReport" type="guf:GUF_UsageReport_Type" substitutionGroup="gco:AbstractObject"/>
+	<complexType name="GUF_UsageReport_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="reportAspect" type="guf:GUF_ReportAspectCode_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="usageDescription" type="mri:MD_Usage_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>For supplementary information on the exact procedure carried out.</documentation>
+						</annotation>
+					</element>
+					<element name="discoveredIssue" type="qcm:QCM_DiscoveredIssue_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GUF_UsageReport_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="guf:GUF_UsageReport"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="GUF_UserComment" type="guf:GUF_UserComment_Type" substitutionGroup="gco:AbstractObject">
+		<annotation>
+			<documentation>The comment is the most generic feedback type. Depending on the foci, it may serve as answer, rating justification, or general comment.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GUF_UserComment_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="comment" type="gco:CharacterString_PropertyType">
+						<annotation>
+							<documentation>The user comment's body.</documentation>
+						</annotation>
+					</element>
+					<element name="motivation" type="guf:GUF_MotivationCode_PropertyType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GUF_UserComment_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="guf:GUF_UserComment"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="GUF_UserInformation" type="guf:GUF_UserInformation_Type" substitutionGroup="gco:AbstractObject">
+		<annotation>
+			<documentation>Describes a user</documentation>
+		</annotation>
+	</element>
+	<complexType name="GUF_UserInformation_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="userDetails" type="cit:CI_Responsibility_PropertyType">
+						<annotation>
+							<documentation>Contact details about the user and its organization.</documentation>
+						</annotation>
+					</element>
+					<element name="applicationDomain" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Application domains a user work in.</documentation>
+						</annotation>
+					</element>
+					<element name="expertiseLevel" type="guf:GUF_RatingCode_PropertyType">
+						<annotation>
+							<documentation>User's expertise level in this particular context, will be restricted by a codelist</documentation>
+						</annotation>
+					</element>
+					<element name="userRole" type="guf:GUF_UserRoleCode_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>The roles the user can play.</documentation>
+						</annotation>
+					</element>
+					<element name="externalUserID" type="mcc:MD_Identifier_PropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>User ID in an external system such as an ORCHID.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GUF_UserInformation_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="guf:GUF_UserInformation"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="GUF_UserRoleCode" type="gco:CodeListValue_Type" substitutionGroup="gco:CharacterString"/>
+	<complexType name="GUF_UserRoleCode_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="guf:GUF_UserRoleCode"/>
+		</sequence>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+</schema>

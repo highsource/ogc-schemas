@@ -5,13 +5,6 @@ var GML_XBT_3_3_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/XML\/1998\/namespace',
     deps: ['GML_3_2_1'],
     tis: [{
-        ln: 'LanguageStringAuxType',
-        bti: 'GML_3_2_1.StringOrRefType',
-        ps: [{
-            n: 'lang',
-            t: 'a'
-          }]
-      }, {
         ln: 'CodeType',
         bti: '.LanguageStringType',
         ps: [{
@@ -19,6 +12,13 @@ var GML_XBT_3_3_Module_Factory = function () {
             an: {
               lp: 'codeSpace'
             },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LanguageStringAuxType',
+        bti: 'GML_3_2_1.StringOrRefType',
+        ps: [{
+            n: 'lang',
             t: 'a'
           }]
       }, {
@@ -35,17 +35,17 @@ var GML_XBT_3_3_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'description',
-        ti: '.LanguageStringAuxType',
-        sh: {
-          lp: 'description',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
         en: 'remarks',
         ti: '.LanguageStringType',
         sh: {
           lp: 'remarks',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'description',
+        ti: '.LanguageStringAuxType',
+        sh: {
+          lp: 'description',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }]

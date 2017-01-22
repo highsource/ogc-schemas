@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0" xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0" xmlns:guf="http://www.opengis.net/guf/1.0/core" xmlns:ufs="http://www.opengis.net/guf/1.0/summary" targetNamespace="http://www.opengis.net/guf/1.0/summary" elementFormDefault="qualified" version="1.0.0">
+
+	<annotation>
+		<documentation>Geospatial User Feedback (GUF) is an OGC standard.
+			Copyright (c) 2016 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	
+	<import namespace="http://standards.iso.org/iso/19115/-3/cit/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/cit/1.0/citation.xsd"/>
+	<import namespace="http://standards.iso.org/iso/19115/-3/gco/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/gco/1.0/gco.xsd"/>
+	<import namespace="http://standards.iso.org/iso/19115/-3/mri/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/mri/1.0/identification.xsd"/>
+	<import namespace="http://www.opengis.net/guf/1.0/core" schemaLocation="http://schemas.opengis.net/guf/1.0/guf.xsd"/>
+
+	<element name="UFS_ExpertiseLevelCount" type="ufs:UFS_ExpertiseLevelCount_Type" substitutionGroup="gco:AbstractObject"/>
+	<complexType name="UFS_ExpertiseLevelCount_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="expertiseLevel" type="guf:GUF_RatingCode_PropertyType"/>
+					<element name="count" type="gco:Integer_PropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="UFS_ExpertiseLevelCount_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="ufs:UFS_ExpertiseLevelCount"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="UFS_FeedbackSummary" type="ufs:UFS_FeedbackSummary_Type" substitutionGroup="gco:AbstractObject"/>
+	<complexType name="UFS_FeedbackSummary_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="target" type="cit:CI_Citation_PropertyType" minOccurs="0"/>
+					<element name="numberOfFeedbackItems" type="gco:Integer_PropertyType"/>
+					<element name="latestItemDate" type="cit:CI_Date_PropertyType" minOccurs="0"/>
+					<element name="numberOfPrimaryTargets" type="gco:Integer_PropertyType" minOccurs="0"/>
+					<element name="numberOfSecondaryTargets" type="gco:Integer_PropertyType" minOccurs="0"/>
+					<element name="numberOfSupplementaryTargets" type="gco:Integer_PropertyType" minOccurs="0"/>
+					<element name="averageUserExpertiseLevel" type="gco:Real_PropertyType" minOccurs="0"/>
+					<element name="minimumPossibleRating" type="gco:Real_PropertyType"/>
+					<element name="maximumPossibleRating" type="gco:Real_PropertyType"/>
+					<element name="averageRating" type="gco:Real_PropertyType"/>
+					<element name="numberOfRatings" type="gco:Integer_PropertyType"/>
+					<element name="numberOfUserComments" type="gco:Integer_PropertyType"/>
+					<element name="numberOfUsageReports" type="gco:Integer_PropertyType"/>
+					<element name="numberOfCitations" type="gco:Integer_PropertyType"/>
+					<element name="numberOfAdditionalQualities" type="gco:Integer_PropertyType"/>
+					<element name="numberOfAdditionalLineages" type="gco:Integer_PropertyType"/>
+					<element name="numberOfSignificantEvents" type="gco:Integer_PropertyType"/>
+					<element name="feedbackItemsByExpertiseLevelCount" type="ufs:UFS_ExpertiseLevelCount_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="userByRoleCount" type="ufs:UFS_UserRoleCount_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="byKeywordCount" type="ufs:UFS_KeywordCount_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="byRatingCount" type="ufs:UFS_RatingCount_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="ratingByExpertiseLevelCount" type="ufs:UFS_RatingExpertiseLevelCount_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="byTagCount" type="ufs:UFS_TagCount_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="UFS_FeedbackSummary_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="ufs:UFS_FeedbackSummary"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="UFS_KeywordCount" type="ufs:UFS_KeywordCount_Type" substitutionGroup="gco:AbstractObject"/>
+	<complexType name="UFS_KeywordCount_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="keyword" type="mri:MD_Keywords_PropertyType"/>
+					<element name="count" type="gco:Integer_PropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="UFS_KeywordCount_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="ufs:UFS_KeywordCount"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="UFS_RatingCount" type="ufs:UFS_RatingCount_Type" substitutionGroup="gco:AbstractObject"/>
+	<complexType name="UFS_RatingCount_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="rating" type="guf:GUF_RatingCode_PropertyType"/>
+					<element name="count" type="gco:Integer_PropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="UFS_RatingCount_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="ufs:UFS_RatingCount"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="UFS_RatingExpertiseLevelCount" type="ufs:UFS_RatingExpertiseLevelCount_Type" substitutionGroup="gco:AbstractObject"/>
+	<complexType name="UFS_RatingExpertiseLevelCount_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="rating" type="guf:GUF_RatingCode_PropertyType"/>
+					<element name="expertiseLevel" type="guf:GUF_RatingCode_PropertyType"/>
+					<element name="count" type="gco:Integer_PropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="UFS_RatingExpertiseLevelCount_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="ufs:UFS_RatingExpertiseLevelCount"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="UFS_TagCount" type="ufs:UFS_TagCount_Type" substitutionGroup="gco:AbstractObject"/>
+	<complexType name="UFS_TagCount_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="tag" type="gco:CharacterString_PropertyType"/>
+					<element name="count" type="gco:Integer_PropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="UFS_TagCount_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="ufs:UFS_TagCount"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+	<element name="UFS_UserRoleCount" type="ufs:UFS_UserRoleCount_Type" substitutionGroup="gco:AbstractObject"/>
+	<complexType name="UFS_UserRoleCount_Type">
+		<complexContent>
+			<extension base="gco:AbstractObject_Type">
+				<sequence>
+					<element name="userRole" type="guf:GUF_UserRoleCode_PropertyType"/>
+					<element name="count" type="gco:Integer_PropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="UFS_UserRoleCount_PropertyType">
+		<sequence minOccurs="0">
+			<element ref="ufs:UFS_UserRoleCount"/>
+		</sequence>
+		<attributeGroup ref="gco:ObjectReference"/>
+		<attribute ref="gco:nilReason"/>
+	</complexType>
+</schema>

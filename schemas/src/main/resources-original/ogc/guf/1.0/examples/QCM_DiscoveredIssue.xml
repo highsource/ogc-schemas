@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCM_DiscoveredIssue
+				xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" 
+				xmlns="http://www.opengis.net/guf/1.0/common" 
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:schemaLocation="http://www.opengis.net/guf/1.0/common ../qcm.xsd">
+	<knownProblem>
+		<gco:CharacterString>These maps cannot be used for land cover change detection since the error in the original map is higher than the change detected (e.g. GLC-2000 versus GlobCover). Due  to  the  large  disagreements  between  these  land  cover products, we recommend that the user community does not, by default, use the latest product with the highest resolution, but carefully examines the sensitivity of these products within a speciﬁc application..</gco:CharacterString>
+	</knownProblem>
+	<workAround>
+		<gco:CharacterString> In the situation where the maps are used for national and regional applications, we would recommend examining the disagreement of the products in the areas  of interest and also to compare them with high resolution ground data or aerial photography. One way to do this would be to use geo-wiki.org (Fritz et al 2009), a global land cover validation tool,  which  can  be  used  to  visualize  the  global  land  cover products and the disagreement directly on top of Google Earth. By exploring the discrepancies at the level of an individual country in combination with local knowledge, the user can gain insight into which product is better in a speciﬁc region and which product is better suited for a particular application.  Crowd-sourced  data  in  the  form  of  geo-tagged photos and information collected through Web 2.0 applications like  geo-wiki  and  smart  phones  could  also  be  harnessed as  a  rich  source  of  training  and  calibration  data  for  global land  cover  algorithms. </gco:CharacterString>
+	</workAround>
+</QCM_DiscoveredIssue>

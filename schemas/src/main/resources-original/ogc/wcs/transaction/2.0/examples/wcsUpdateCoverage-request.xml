@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wcst:UpdateCoverage
+    xmlns:wcst="http://www.opengis.net/wcs_service-extension_transaction/2.0"
+    xmlns:wcs="http://www.opengis.net/wcs/2.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/wcs_service-extension_transaction/2.0 http://schemas.opengis.net/wcs/transaction/2.0/wcsTransaction.xsd"
+    service="WCS" version="2.0.0">
+    <wcst:coverageId>CoverageToBeUpdated</wcst:coverageId>
+    <wcst:inputCoverageRef>
+        http://www.acme.com/update.gml
+    </wcst:inputCoverageRef>
+    <wcs:DimensionTrim>
+        <wcs:Dimension>Lat</wcs:Dimension>
+        <wcs:TrimLow>5.0</wcs:TrimLow>
+        <wcs:TrimHigh>10.0</wcs:TrimHigh>
+    </wcs:DimensionTrim>
+    <wcs:DimensionSlice>
+        <wcs:Dimension>H</wcs:Dimension>
+        <wcs:SlicePoint>0.0</wcs:SlicePoint>
+    </wcs:DimensionSlice>
+    <wcst:rangeComponent>
+        <wcst:inputRangeComponent>
+            red
+        </wcst:inputRangeComponent>
+        <wcst:updatedRangeComponent>
+            band1
+        </wcst:updatedRangeComponent>
+    </wcst:rangeComponent>
+    <wcst:maskRef>
+        http://www.acme.com/mask.gml
+    </wcst:maskRef>
+</wcst:UpdateCoverage>
+

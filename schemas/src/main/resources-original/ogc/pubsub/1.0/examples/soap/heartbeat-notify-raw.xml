@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    The Publisher is notifying the Receiver in a raw form (no Notify wrappers).  This is used only when the Subscriber 
+    specifies wsn:UseRaw
+-->
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:wsn="http://docs.oasis-open.org/wsn/b-2" xmlns:wsa="http://www.w3.org/2005/08/addressing"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fes="http://www.opengis.net/fes/2.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:pubsub="http://www.opengis.net/pubsub/1.0"
+    xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/ 
+    http://docs.oasis-open.org/wsn/b-2 http://docs.oasis-open.org/wsn/b-2.xsd
+    http://www.w3.org/2005/08/addressing http://www.w3.org/2006/03/addressing/ws-addr.xsd
+    http://www.opengis.net/fes/2.0 http://schemas.opengis.net/filter/2.0/filterAll.xsd
+    http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd
+    http://www.opengis.net/pubsub/1.0 http://schemas.opengis.net/pubsub/1.0/pubsubAll.xsd">
+
+    <s:Header>
+        <wsa:Action>http://docs.oasis-open.org/wsn/bw-2/NotificationConsumer/Notify</wsa:Action>
+    </s:Header>
+
+    <s:Body>
+
+        <pubsub:Heartbeat currentTime="2015-01-01T11:23:45Z"/>
+
+    </s:Body>
+</s:Envelope>
