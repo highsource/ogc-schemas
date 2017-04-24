@@ -1,0 +1,569 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/REC-html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>DocFlex/XML XSDDoc, Version 2.8.1</title>
+
+<style type="text/css">
+
+body {
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+code {
+  white-space:nowrap;
+}
+
+.nowrap {
+  white-space:nowrap;
+}
+
+.note {
+  font-size:90%;
+  padding: 5px;
+  border: solid 1px #999999;
+  background-color:#F3F3F3;
+}
+
+.mrg0 {
+  margin-top:0pt;
+  margin-bottom:0pt;
+}
+
+.mrg8 {
+  margin-top:8pt;
+  margin-bottom:8pt;
+}
+
+.brdr1 { border-left: 1px solid #CCCCCC; border-top: 1px solid #CCCCCC; border-right: 1px solid #999999; border-bottom: 1px solid #999999; }
+.brdr2 { border-left: 1px solid #999999; border-top: 1px solid #999999; border-right: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC; padding: 5px 6px 5px 6px }
+.brdr3 { border-left: 1px solid #999999; border-top: 1px solid #999999; border-right: 1px solid #CCCCCC; padding: 5px 6px 0px 6px }
+.brdr4 { border-left: 1px solid #999999; border-right: 1px solid #CCCCCC; padding: 0px 6px 0px 6px }
+.brdr5 { border-left: 1px solid #999999; border-right: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC; padding: 0px 6px 5px 6px }
+.row1 { background-color:#F3F3F3;}
+.row2 { background-color:#FFFFFF;}
+
+</style>
+</head>
+
+<body>
+
+<center>
+  <h1>DocFlex/XML XSDDoc, Version 2.8.1</h1>
+</center>
+
+<hr>
+
+<h2>Table Of Contents</h2>
+<ul>
+  <li><a href="#about">What is XSDDoc?</a></li>
+  <li><a href="#contents">Content Files</a></li>
+  <li><a href="#requirements">Technical Requirements</a></li>
+  <li><a href="#licensing">Licensing</a>
+    <ul>
+      <li><a href="#limited_free_license">Limited Free License</a></li>
+      <li><a href="#commercial_license">Commercial License</a></li>
+      <li><a href="#trial_license">Trial License</a></li>
+    </ul>
+  </li>
+  <li><a href="#installation">Installation</a></li>
+  <li><a href="#running_xsddoc">Running XSDDoc</a></li>
+  <li><a href="#getting_help">Getting Help</a></li>
+  <li><a href="#change_log">Change Log</a></li>
+</ul>
+
+<hr>
+
+<h2>
+  <a name="about"></a>
+  What is XSDDoc?
+</h2>
+
+"DocFlex/XML XSDDoc" is a template application (template set) of <a href="http://www.filigris.com/docflex-xml/">DocFlex/XML</a>,
+which implements a high quality XML Schema Documentation Generator.
+You can use it to generate by any W3C XML schemas the following types of documentation:
+<ul>
+<li>
+  Framed multi-file (Javadoc-like) HTML documentation
+</li>
+<li>
+  Single-file HTML documentation
+</li>
+<li>
+  RTF documentation
+</li>
+</ul>
+
+The XSDDoc template set is included in DocFlex/XML software archive and found in the directory: <code>templates/XSDDoc/</code> 
+<p>
+XSDDoc is a commercial product, which requires separate <a href="#licensing">licensing</a>.
+
+<h2>
+  <a name="contents"></a>
+  Content Files
+</h2>
+
+The following files power <a href="#about">XSDDoc</a> (or are related to it):
+
+<p>
+<table cellspacing="0" cellpadding="0" border="0" class="brdr1">
+
+<!-- README -->
+
+<tr class="row1">
+  <td class="brdr2">
+    <code>README.html</code>
+  </td>
+  <td class="brdr2">
+    this file
+  </td>
+</tr>
+
+<!-- CHANGES -->
+
+<tr class="row2">
+  <td class="brdr2">
+    <code>CHANGES.html</code>
+  </td>
+  <td class="brdr2">
+    <a href="CHANGES.html">change log</a> of XSDDoc templates
+  </td>
+</tr>
+
+<!-- FramedDoc.tpl -->
+
+<tr class="row1" valign="top">
+  <td class="brdr2">
+    <a name="FramedDoc.tpl"></a>
+    <code>FramedDoc.tpl</code>
+  </td>
+  <td class="brdr2">
+    The main template to generate framed HTML documentation.
+  </td>  
+</tr>
+
+<!-- PlainDoc.tpl -->
+
+<tr class="row2" valign="top">
+  <td class="brdr2">
+    <a name="PlainDoc.tpl"></a>
+    <code>PlainDoc.tpl</code>
+  </td>
+  <td class="brdr2">
+    The main template to generate single-file documentation (in HTML or RTF format).
+  </td>  
+</tr>
+
+<!-- HELP -->
+
+<tr class="row1" valign="top">
+  <td class="brdr2">
+    <a name="lib_dir"></a>
+    <code>help/</code>
+  </td>
+  <td class="brdr2">
+    The descriptions of parameters of both main templates; used by the Parameter Inspector.
+  </td>
+</tr>
+
+<!-- LIB -->
+
+<tr class="row2" valign="top">
+  <td class="brdr2">
+    <a name="lib_dir"></a>
+    <code>lib/</code>
+  </td>
+  <td class="brdr2">
+    The directory containing all subtemplates (and icon files) that power the
+    <a href="#about">XSDDoc</a> template application.
+  </td>
+</tr>
+
+<!-- xsddoc.xmltype -->
+
+<tr class="row1" valign="top">
+  <td class="brdr2">
+    <code>
+      <a name="xsddoc.xmltype"></a>
+      xsddoc.xmltype
+    </code>
+  </td>
+  <td class="brdr2">
+    The configuration file that defines the <code>'xsddoc'</code> XML type,
+    on which all <a href="#about">XSDDoc</a> templates are based.
+  </td>  
+</tr>
+
+</table>
+
+<p>
+<i>Note: All files and directories are located in <code>'templates/XSDDoc/'</code> subdirectory of 
+<a href="http://www.filigris.com/docflex-xml/">DocFlex/XML</a> installation.</i>
+
+<h2>
+  <a name="requirements"></a>
+  Technical Requirements
+</h2>
+
+<a href="#about">XSDDoc</a> is just a set of templates (which are plain-text files).
+To execute it, you always need the <a href="http://www.filigris.com/docflex-xml/#template_processor">template processor</a> (generator)
+included in <a href="http://www.filigris.com/docflex-xml/">DocFlex/XML</a>.
+<p>
+Please note that some general functionality (i.e. template language) used in a particular version of <a href="#about">XSDDoc</a>
+may be available only since the specific version of <a href="http://www.filigris.com/docflex-xml/">DocFlex/XML</a>.
+For instance, <a href="#about">XSDDoc</a> version <b>2.8.1</b> requires 
+<a href="http://www.filigris.com/docflex-xml/">DocFlex/XML</a> version <b>1.9.5</b> or later.
+<p>
+<table><tr><td class="note">
+The execution of XSDDoc heavily depends on the entire DocFlex/XML Runtime Environment, which is everything found in the directory:
+<code>{docflex-xml}/lib/</code>
+<p class="mrg8"></p>
+For instance, the whole data processing in XSDDoc is based on the standard XML schema for XSD 1.0 (<code>http://www.w3.org/2001/XMLSchema.xsd</code>),
+which is specified in <code><a href="#xsddoc.xmltype">xsddoc.xmltype</a></code> file and
+must be loaded each time when running XSDDoc. But of course it is not loaded from the Internet.
+Rather, a local copy is used, which is stored in <code>{docflex-xml}/lib/resources/</code> directory.
+The default XML catalog <code>{docflex-xml}/lib/resources/catalog.xml</code> redirects the external schema URL to that copy.
+Its integrity is critical for running XSDDoc!
+</td></tr></table>
+
+<h2>
+  <a name="licensing"></a>
+  Licensing
+</h2>
+
+<a href="#about">XSDDoc</a> is a 
+<a href="http://www.filigris.com/licensing/#templates.cta">commercial template application</a>
+developed by FILIGRIS WORKS.
+It is covered by a separate
+"<a href="http://www.filigris.com/docflex-xml/#licenses.docflex-xml-xsddoc">DocFlex/XML XSDDoc</a>" license,
+which may be one of three types:
+<p>
+
+<table cellspacing="0" cellpadding="0" border="0" class="brdr1">
+<tr class="row1">
+  <th class="brdr2">License Type</th>
+  <th class="brdr2">Description</td>
+</tr>
+
+<tr class="row2" valign="top">
+<td class="brdr2">
+  <a name="limited_free_license"></a>
+  <i><a href="http://www.filigris.com/licensing/#limited_free_license">Limited Free License</a></i>
+</td>
+<td class="brdr2">
+  That license is activated by default when no other licenses for
+  "<a href="http://www.filigris.com/docflex-xml/#licenses.docflex-xml-xsddoc">DocFlex/XML XSDDoc</a>"
+  have been found. It allows you:
+  <ul class="mrg8">
+  <li>
+    To use the <a href="#FramedDoc.tpl">FramedDoc.tpl</a> main template 
+    to generate some general type of multi-framed HTML (Javadoc-like) documentation
+    by your XML schema project.
+  </li>
+  <li>
+    To use and distribute the generated documentation as you need (however, without
+    possibility to change anything in the generated HTML files manually!)
+  </li>
+  <li>
+    There is no limitation on the number of processed/documented XML schema files or XML schema components.
+  </li>
+  <li>
+    If you are using
+    <a href="http://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html">OASIS XML Catalogs</a>
+    in your XML schema project (to reference different schema files from each other),
+    you can specify the catalog files to the DocFlex/XML generator as well (to have the entire project processed correctly).
+  </li>
+  </ul>
+
+  The limitations:
+  <p class="mrg8"></p>
+  <ul class="mrg0">
+  <li>
+    Most of parameters of <a href="#FramedDoc.tpl">FramedDoc.tpl</a> template will be locked (disabled).
+    Therefore, you will have few possibilities to customize the generated documentation.
+  </li>
+  <li>
+    Although, you may freely use the output HTML files for any purposes (including commercial ones),
+    you are not allowed to change anything in them (especially, removing advertisement text
+    at the end of each file).
+  </li>
+  <li>
+    The <a href="#PlainDoc.tpl">PlainDoc.tpl</a> main template will be completely locked.
+    So, you cannot generate either single-file HTML or RTF documentation.
+  </li>
+  </ul>
+</td>
+</tr>
+
+<tr class="row2" valign="top">
+<td class="brdr2">
+  <a name="commercial_license"></a>
+  <i><a href="http://www.filigris.com/licensing/#commercial_license">Commercial License</a></i>
+</td>
+<td class="brdr2">
+  The commercial (or full) license unlocks all functionality of <a href="#about">XSDDoc</a> template set.
+  It allows you:
+  <ul class="mrg8">
+  <li>
+    To use <a href="#FramedDoc.tpl">FramedDoc.tpl</a> main template 
+    to generate any kind of multi-framed HTML (Javadoc-like) documentation
+    by your XML schema projects.
+  </li>
+  <li>
+    To use <a href="#PlainDoc.tpl">PlainDoc.tpl</a> main template 
+    to generate both single-file HTML and RTF documentation.
+  </li>
+  <li>
+    To use XHTML tags in your XML schema annotations.
+    They will be fully rendered in both HTML and RTF output
+    (including insertion of images specified with <code>&lt;img&gt;</code> tags).
+  </li>
+  <li>
+    All parameters of both <a href="#FramedDoc.tpl">FramedDoc.tpl</a> and
+    <a href="#PlainDoc.tpl">PlainDoc.tpl</a> main templates will be unlocked,
+    which gives you full control over the generated content.
+  </li>
+  <li>
+    No advertisement texts will be inserted (which is actually controlled by a template parameter).
+  </li>
+  <li>
+    No limitation on the number of processed/documented XML schema files or XML schema components as well as
+    the usage of 
+    <a href="http://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html">OASIS XML Catalogs</a>.
+  </li>
+  <li>
+    Any output files generated under a commercial license may be used for any purposes without limitations
+    (provided that no other trial licenses for DocFlex/XML software have been used at that).
+  </li>
+  <li>
+    The commercial license is both required and enough to run any modifications of
+    <a href="#about">XSDDoc</a> templates (however, not to make those modifications).
+  </li>
+  </ul>
+
+  The commercial license for <a href="#about">XSDDoc</a> does not cover:
+
+  <ul class="mrg8">
+  <li>
+    Template Designer:
+    If you want to modify <a href="#about">XSDDoc</a> templates, you will need an additional license for
+    "<a href="http://www.filigris.com/docflex-xml/#licenses.docflex-xml-sdk">DocFlex/XML SDK</a>".
+  </li>
+  <li>
+    XSD diagrams: Currently, any diagrams are generated via the integrations with third-party XML software
+    (e.g. <a href="http://www.filigris.com/docflex-xml/XMLSpy/">XMLSpy</a> or
+    <a href="http://www.filigris.com/docflex-xml/OxygenXML/">Oxygen XML</a>).
+    You will need a separate license for one of those integrations in order to include diagrams.
+  </li>
+  </ul>
+
+  See also:
+  <p class="mrg8"></p>
+  <ul class="mrg0">
+  <li>
+    <a href="http://www.filigris.com/licensing/#commercial_license">http://www.filigris.com/licensing/ | Commercial License</a>
+  </li>
+  <li>
+    <a href="http://www.filigris.com/licensing/#multiple_licenses">http://www.filigris.com/licensing/ | Multiple Licenses</a>
+  </li>
+  </ul>
+</td>
+</tr>
+
+<tr class="row2" valign="top">
+<td class="brdr2">
+  <a name="trial_license"></a>
+  <i><a href="http://www.filigris.com/licensing/#trial_license">Trial License</a></i>
+</td>
+<td class="brdr2">
+  The trial license is functionally the same as the <a href="#commercial_license">commercial</a> one.
+  The difference is that:
+
+  <ul class="mrg8">
+  <li>
+    It is valid only during the limited period of time.
+  </li>
+  <li>
+    Any output documents generated under a trial license will be specifically 
+    <a href="http://www.filigris.com/licensing/#trial_license.output">distorted</a>.
+    Such documents may be used only for evaluation of DocFlex software.
+    Any other usage is prohibited!
+  </li>
+  </ul>
+
+  You can obtain a trial license for <a href="#about">XSDDoc</a> by this link:
+  <a href="http://www.filigris.com/trial/?pid=docflex-xml-xsddoc2">http://www.filigris.com/trial/?pid=docflex-xml-xsddoc2</a>
+
+  <p class="mrg8"></p>
+  <table><tr><td class="note">
+    You can also request a trial of all DocFlex/XML features (<a href="http://www.filigris.com/docflex-xml/#products">products</a>)
+    together by this link:
+    <a href="http://www.filigris.com/trial/?pid=docflex-xml" class="nowrap">http://www.filigris.com/trial/?pid=docflex-xml</a>
+    <br>
+    Then, you will receive a single <code>'docflex-xml.license'</code> file with the XSDDoc trial license already included in it.
+    At that, you won't need to request any other trial licenses (e.g. for template designer or integrations).
+  </td></tr></table>
+</td>
+</tr>
+
+</table>
+
+<h2>
+  <a name="installation"></a>
+  Installation
+</h2>
+
+Since <a href="#about">XSDDoc</a> is a part of <a href="http://www.filigris.com/docflex-xml/">DocFlex/XML</a>
+software, you don't need to do anything special to install it.
+Once you have installed DocFlex/XML, you will find XSDDoc in the directory:
+<dl><dd>
+<code>{docflex-xml}/templates/XSDDoc/</code>
+</dd></dl>
+here <code>'{docflex-xml}'</code> denotes the directory where you installed DocFlex/XML. 
+<p>
+The only thing you may need to install specifically is the
+<code>'docflex-xml-xsddoc2.license'</code> file with your 
+"<a href="http://www.filigris.com/docflex-xml/#licenses.docflex-xml-xsddoc">DocFlex/XML XSDDoc</a>"
+license, which you should receive it by e-mail.
+That file should be stored in <code>'XSDDoc'</code> directory along with
+<code><a href="#FramedDoc.tpl">FramedDoc.tpl</a></code> and
+<code><a href="#PlainDoc.tpl">PlainDoc.tpl</a></code> main templates 
+(i.e. those called the first by the generator).
+After that, the <code>'XSDDoc'</code> directory will contain everything needed to
+run <a href="#about">XSDDoc</a>.
+
+<p>
+<table><tr><td class="note">
+The "DocFlex/XML XSDDoc" license may be also included in a combined
+<code>'docflex-xml.license'</code> file (along with other licenses), which should be installed in
+<code>{docflex-xml}/lib/</code> directory (near <code>docflex-xml.jar</code>).
+The <code>'docflex-xml-xsddoc2.license'</code> file may be also installed there.
+At those locations the license for XSDDoc is searched for by default.
+<p class="mrg8"></p>
+However, you can always specify any different location of your license file directly on the generator Java command line using 
+<code>'-license'</code> option. For more details, please see:
+<a href="http://www.filigris.com/docflex-xml/generator.php#license_option">www.filigris.com | DocFlex/XML | Documentation | Running Generator | ... | Configuration Options | -license</a>
+</td></tr></table>
+</p>
+
+Actually, the <a href="#about">XSDDoc</a> template application is quite autonomous.
+You can copy/move (or rename) the <code>'XSDDoc/'</code> directory to any other location
+and run the XSDDoc <a href="#FramedDoc.tpl">templates</a> directly from there.
+This may be particularly useful when you want to modify something in the original
+templates and derive your own version of <a href="#about">XSDDoc</a>.
+
+<h2>
+  <a name="running_xsddoc"></a>
+  Running XSDDoc
+</h2>
+
+To generate XML Schema documentation, please follow these steps:
+
+<ol>
+  <li>
+    Run <b><code>generator.bat</code></b> (found in the root directory of your DocFlex/XML 
+    installation). You will see the generator dialog.
+    <p>
+    <table><tr><td class="note">
+      While running <a href="#about">XSDDoc</a> templates for large XML schema projects, 
+      the template interpreter may require a lot of memory. The lack of memory may considerably
+      slow down the generation (or even cause the OutOfMemory exception)! 
+      To avoid this, make sure the maximum heap size available for JVM is 512Mb or more
+      (e.g. Java option <code>-Xmx512m</code> sets the maximum heap size to 512Mb).
+      Note also that on 64-bit OS (running 64-bit Java), that amount should be doubled!
+      So, on Windows 7 64-bit you should specify <code>-Xmx1024m</code>.
+    </td></tr></table>
+    </p>
+  </li>
+  <li>
+    In <b>"Template"</b> field, select <code><a href="#FramedDoc.tpl">FramedDoc.tpl</a></code> template.
+    <p>
+    <table><tr><td class="note">
+      You can choose this template from <code>'templates/XSDDoc'</code> directory using File Chooser.
+    </td></tr></table>
+    </p>
+  </li>
+  <li>
+    In <b>"XML File(s)"</b> field, specify one or many XSD files from which you want to generate
+    the XML schema documentation.
+    <p>
+    <table><tr><td class="note">
+      This field must contain one or several file specifications, which may be either:
+      <ul>
+        <li>local file pathname or <a href="http://www.filigris.com/docflex-xml/generator.php#file_pathname_patterns">pathname pattern</a></li>
+        <li>URL (e.g. <code>http://www.w3.org/2001/XMLSchema.xsd</code>)</li>
+      </ul>
+      Notes:
+      <ul>
+        <li>Multiple file specifications must be separated with spaces.</li>
+        <li>When a file specification contains spaces itself, it must be enclosed in double quotes.</li>
+        <li>You can combine any specification types together.</li>
+        <li>
+          The "pathname pattern" is an Ant-style pattern for local file pathnames. See:
+          <a href="http://www.filigris.com/docflex-xml/generator.php#file_pathname_patterns">www.filigris.com | DocFlex/XML | Documentation | Running Generator | ... | Using file pathname patterns</a>.
+        </li>
+        <li>
+          In case of URL, the generator will try to download such a file directly from the Internet (or elsewhere).
+          This, however, can be redirected using an
+          <a href="http://www.filigris.com/docflex-xml/generator.php#gui.xml_catalogs">XML catalog</a>.
+        </li>
+      </ul>
+    </td></tr></table>
+    </p>
+  </li>
+  <li>
+    In <b>"Output format"</b> field, select <b>HTML</b> format.
+    <p>
+    <table><tr><td class="note">
+      The <code><a href="#FramedDoc.tpl">FramedDoc.tpl</a></code> main template can generate only framed HTML documentation!
+    </td></tr></table>
+    </p>
+  </li>
+  <li>
+    Click <b>"Run"</b> button to start the generation.
+    <p>
+    <table><tr><td class="note">
+      Once all source XML Schema files are loaded, the generator enters into the <b><i>estimation phase</i></b>.
+      Lots of processing is being done during that, however, you will see only 
+      <i>"Scanning data source, please wait..."</i> message on the progress bar.
+      On large XML schemas this phase may take some time. Please wait!
+      After that, the generator passes into the <b><i>generation phase</i></b>.
+      The progress bar will show what's being generated.
+      <p class="mrg8"></p>
+      You can stop the generator at any time during any phase by clicking <b>&lt;Cancel&gt;</b> button.
+    </td></tr></table>
+    </p>
+  </li>
+</ol>
+
+<h2>
+  <a name="getting_help"></a>
+  Getting Help
+</h2>
+
+The most detailed and up-to-date information about the <a href="#about">DocFlex/XML XSDDoc</a> can be found
+on the product homepage:
+<a href="http://www.filigris.com/docflex-xml/xsddoc/" class="nowrap">www.filigris.com/docflex-xml/xsddoc/</a>
+<p>
+We are always happy to hear any questions, suggestions, comments, etc.
+about this product.<br>
+Please, e-mail us to:
+<a href="mailto:support@docflex.com">support@docflex.com</a> or
+<a href="mailto:contact@filigris.com">contact@filigris.com</a>
+
+<h2>
+  <a name="change_log"></a>
+  Change Log
+</h2>
+
+Please see: <a href="CHANGES.html"><code>{docflex-xml}/templates/XSDDoc/CHANGES.html</code></a>
+<p>
+
+
+<hr>
+<span style="font-family: Verdana, helvetica;font-size: 13px;">
+Copyright&copy; 2005-2014 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.
+</span>
+
+</body>
+</html>

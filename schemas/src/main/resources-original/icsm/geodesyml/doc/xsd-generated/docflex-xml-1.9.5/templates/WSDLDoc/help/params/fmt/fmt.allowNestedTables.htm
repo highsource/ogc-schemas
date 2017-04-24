@@ -1,0 +1,15 @@
+Specify if the generated output may contain nested tables.
+<p>
+WSDLDoc templates frequently use tables as layouts in order to fit data better on a page.
+In certain cases, however, this leads to the situation when one table is nested into a cell of another table.
+For some RTF reader, this may cause a problem.
+<p>
+Although RTF specification since v1.6 does support nested tables (as well as MS Word 2000 and the later),
+some modern and important RTF readers (such as OpenOffice.org 2.0) break on them.
+<p>
+To work around this problem, all WSDLDoc templates that use nested tables also contain alternative sections without them.
+Such sections will be activated instead of the primary ones, when this parameter is unchecked.
+Although, without nested tables some pieces of the documentation may look less compact and sleek,
+this still allows to generate a quite decently looking output.
+<p>
+Please, uncheck this parameter when your destination RTF reader has problems with nested tables!

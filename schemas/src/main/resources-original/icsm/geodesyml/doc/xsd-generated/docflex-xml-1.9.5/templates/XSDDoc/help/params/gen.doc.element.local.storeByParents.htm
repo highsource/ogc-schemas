@@ -1,0 +1,88 @@
+Specify how the documentation of local elements (and their diagrams) must be stored.
+
+<table border="1" style="margin-top:12pt; margin-bottom:12pt">
+<tr><td style="font-family: Dialog; font-size:12">
+NOTE: This parameter is enabled only when the parameter
+<i>"Generate Details | Elements | Local Elements | Unify By Type"</i> is unselected (<code>false</code>).
+</td></tr>
+</table>
+
+When this parameter is <b><code>true</code></b>,
+all documentation files for local elements will be stored in the subdirectory structure reproducing their parent components
+(in which they are defined).
+<p>
+Namely, for a local element <code><i>'localElementName'</i></code> defined in a <i>parent component</i>,
+its documentation file will be stored as follows:
+
+<table border="1" style="margin-top:16pt; margin-bottom:16pt">
+<tr bgcolor="#CCCCEE">
+  <td><b>Parent Component</b></td>
+  <td align="center"><b>Element Documentation File</b></td>
+</tr>
+<tr valign="top">
+  <td style="white-space:nowrap">global complex type<br><code><i>'typeName'</i></code></td>
+  <td style="white-space:nowrap"><code>.../schemas/schemaName_xsd/complexTypes/<i>typeName</i>/<i>localElementName</i>.html</code></td>
+</tr>
+<tr valign="top">
+  <td style="white-space:nowrap">global element group<br><code><i>'groupName'</i></code></td>
+  <td style="white-space:nowrap"><code>.../schemas/schemaName_xsd/groups/<i>groupName</i>/<i>localElementName</i>.html</code></td>
+</tr>
+<tr valign="top">
+  <td style="white-space:nowrap">global element<br><code><i>'elementName'</i></td>
+  <td style="white-space:nowrap"><code>.../schemas/schemaName_xsd/elements/<i>elementName</i>/<i>localElementName</i>.html</code></td>
+</tr>
+<tr valign="top">
+  <td style="white-space:nowrap">another local element<br><code><i>'elementName'</i></code></td>
+  <td>
+    <code style="white-space:nowrap">.../schemas/schemaName_xsd/.../<i>elementName</i>/<i>localElementName</i>.html</code>
+    <p style="margin-top:10pt; margin-bottom:0">
+    At that, the subdirectory structure of the parent element will be reproduced at any depth 
+    according to the rules above.
+  </td>
+</tr>
+</table>
+
+That system will allow you to know precisely where each element documentation (or diagram)
+file is located (according to where the element is defined in the schema).
+So, you will be able to reference it from outside.
+
+<table border="1" style="margin-top:16pt; margin-bottom:16pt">
+<tr><td style="font-family: Dialog; font-size:12">
+The component diagrams are stored in the same directory along with the component documentation files
+under the same names however with different extension (corresponding the image format), e.g.:
+<p style="margin-top:8pt">
+<code style="white-space:nowrap">.../schemas/schemaName_xsd/complexTypes/typeName/<i>localElementName</i>.html</code><br>
+<code style="white-space:nowrap">.../schemas/schemaName_xsd/complexTypes/typeName/<i>localElementName</i>.png</code>
+</td></tr>
+</table>
+
+When this parameter is <b><code>false</code></b>, all element documentation files
+are stored in the same directory:
+<dl><dd>
+<b><code>.../schemas/schemaName_xsd/elements/</code></b>
+</dd></dl>
+When the element name is repeating (which is possible for local elements),
+the file name will be extended with a numeric suffix, e.g.:
+<dl><dd>
+<code>.../schemas/schemaName_xsd/elements/<i>elementName</i>_3.html</code>
+</dd></dl>
+
+Which particular number is used in the suffix is unpredictable.
+(Its only purpose is to make the file name unique.)
+That will make impossible to reference the documentation/diagrams of such elements
+from outside!
+<p>
+However, if you don't need this, the produced HTML documentation files
+will be more compact (as all links to local element docs will be shorter).
+
+<p>
+<b>Note:</b>
+<blockquote>
+This parameter can be used only when the unification of local elements by type is disabled
+(see <i>"Generate Details | Elements | Local Elements | Unify By Type"</i> parameter).
+<p style="margin-top:16pt">
+When the unification by type is enabled, several local elements defined in different locations
+may get documented in the same documentation file. This breaks the whole idea of storing
+element docs according their definition locations!
+In that case, this parameter is disabled and <code>false</code>.
+</blockquote>

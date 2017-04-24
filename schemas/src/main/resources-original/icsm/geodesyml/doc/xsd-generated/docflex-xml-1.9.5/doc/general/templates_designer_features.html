@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex Technology - Overview - Templates / Template Designer Features</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex Technology - Overview - Templates / Template Designer Features
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ul>
+<li><a href="#template_components">Template Components</a></li>
+<li><a href="#component_properties">Component Properties</a></li>
+<li><a href="#expr_editors">FlexQuery Expression Editors and Assistant Dialog</a></li>
+<li><a href="#lpath_chooser">Location Path Chooser</a></li>
+<li><a href="#template_parameters">Template Parameters</a></li>
+<li><a href="#stock_sections">Stock-Sections</a></li>
+<li><a href="#subtemplates">Calling Subtemplates</a></li>
+</ul>
+<!-- END TABLE OF CONTENTS -->
+
+<h4>
+  <a name="template_components"></a>
+  Template Components
+</h4>
+
+<blockquote>
+<p>DocFlex templates can be considered as a sort of computer programs, containing instructions
+interpreted by <a href="about.html#generator">DocFlex Generator</a>.
+Such instructions are specified in the form of
+<a href="template_components.html#components">template components</a>.
+<p class="mrg8">
+Template components are the building blocks of templates and visualized in
+<a href="about.html#template_designer">DocFlex Template Designer</a>.
+Almost everything you can see on the following screenshot depicts some template components.
+<p>
+<a href="http://www.filigris.com/docflex/images/components_demo.html" target="_blank"><img src="images/components_demo_s.png" title="Template Components (demo)" border="0"></a>
+</blockquote>
+
+<h4>
+  <a name="component_properties"></a>
+  Component Properties
+</h4>
+
+<blockquote>
+<p>The interpretations of template components as well as their appearance in the
+Template Designer can be adjusted with
+<a href="template_components.html#component_properties">component properties</a>.
+<p class="mrg8">
+Most of the component properties are specified statically in templates using special <b>Property Inspectors</b>:
+<p>
+<img src="images/prop_inspector.png" title="Component Property Inspector">
+<p>
+Some of the component properties, however, can be calculated dynamically depending on the data being processed.
+Such <a name="dynamic_properties"></a><b>dynamic properties</b> are specified using
+<a href="data_processing_features.html#fq_expr">FlexQuery-expressions</a>.
+</blockquote>
+
+<h4>
+  <a name="expr_editors"></a>
+  FlexQuery Expression Editors and Assistant Dialog
+</h4>
+
+<blockquote>
+<p>For programming convenience, all input fields for
+<a href="data_processing_features.html#fq_expr">FlexQuery-expressions</a> in the
+<a href="about.html#template_designer">DocFlex Template Designer</a>
+are implemented with the special <b>Expression Editors</b> supplied with the
+<b>expression quick-check button</b>:
+<p>
+<img src="images/expr_editor.png" title="Expression Editor">
+<p>
+and the button invoking the FlexQuery <b>Expression Assistant Dialog</b>:
+<p>
+<a href="http://www.filigris.com/docflex/images/expr_assistant.html" target="_blank"><img src="images/expr_assistant_s.png" title="Expression Assistant Dialog" border="0"></a>
+<p>
+which provides a lot of information about everything that can be used in the expression:
+<ul>
+<li>All available <a href="functions.html">utility functions</a>
+    together with their descriptions
+<li>The <a href="gom.html#generator_variables">generator variables</a>
+    in the form of objects and properties of the
+    <a href="gom.html">Generator Object Model</a>
+<li>The <a href="#template_parameters">template parameters</a>
+<li>All available <a href="about.html#element_type">Element Types</a> and their attributes
+</ul>
+This information is always up-to-date as it is obtained mostly not from the static help
+files but collected dynamically from all available resources.
+Here, you can also select a necessary identifier and insert it directly into
+the edited expression.
+</blockquote>
+
+<h4>
+  <a name="lpath_chooser"></a>
+  Location Path Chooser
+</h4>
+
+<blockquote>
+<p><a href="data_processing_features.html#location_paths">Location Paths</A>,
+which are XPath-like expressions used in many settings within templates, can be selected
+using the special <b>Location Path Chooser</b> dialog:
+<p>
+<img src="images/lpath_chooser.png" title="Location Path Chooser">
+</blockquote>
+
+<h4>
+  <a name="template_parameters"></a>
+  Template Parameters
+</h4>
+
+<blockquote>
+<p>
+DocFlex provides elaborated methods to handle template parameters.
+<p>
+The following parameter types are supported:
+<p class="mrg8">
+<table cellpadding="4" cellspacing="1" border="1">
+<tr align="center">
+  <th><b>Parameter&nbspType</b></th>
+  <th><b>Usage</b></th>
+</tr>
+<tr>
+  <td><code><b>string</b></code></td>
+  <td>string parameters</td>
+</tr>
+<tr>
+  <td><code><b>number</b></code></td>
+  <td>numeric parameters (both integer and float)</td>
+</tr>
+<tr>
+  <td><code><b>boolean</b></code></td>
+  <td>boolean parameters (to specify <i>yes/no</i> or <i>true/false</i> settings)</td>
+</tr>
+<tr>
+  <td><code><b>enum</b></code></td>
+  <td>string parameters whose value can be selected only among specified strings<br>
+      (e.g. "red", "yellow", "blue")</td>
+</tr>
+<tr>
+  <td><code><b>text</b></code></td>
+  <td>same as <code>string</code> type, but allows to enter multiline text</td>
+</tr>
+<tr>
+  <td><code><b>object</b></code></td>
+  <td>this type is intended mostly for internal use<br>(e.g. to program passing parameters between templates)</td>
+</tr>
+</table>
+<p>
+In the <b>Template Properties Dialog</b> of any template, it is possible to declare a list of template parameters:
+<p>
+<img src="images/template_params.png" title="Parameter Inspector Dialog">
+<p>
+Each parameter declaration consists of
+<ol class="mrg8">
+  <li> parameter name
+  <li> description
+  <li> data type
+  <li> for the <code>enum</code>-parameter, the list of the possible values
+  <li> default value
+  <li> other settings
+</ol>
+<p>
+<img src="images/template_param.png" title="defining a template parameter">
+<p>
+When starting the <a href="about.html#generator">generator</a>,
+the template parameters can be either specified in the <b>Template Parameter Inspector</b> dialog:
+<p>
+<img src="images/param_inspector.png" title="Parameter Inspector Dialog">
+<p>
+or passed programmatically, using <a href="about.html#api">DocFlex API</a>.
+<p>
+Within templates, the values of passed parameters can be obtained in
+<a href="flexquery_reference.html">FlexQuery-expressions</a>
+using <code><a href="functions.html#getParam()" class="nowrap">getParam()</a></code> function.
+</blockquote>
+
+<h4>
+  <a name="stock_sections"></a>
+  Stock-Sections
+</h4>
+
+<blockquote>
+<p>The small repeatable fragments of a template can be designed only once and, then,
+be put into the special template part called <b>Template Stock</b>
+in the form of
+<a href="template_components.html#stock_sections">stock-sections</a>.
+<p>
+<img src="images/template_stock.png" title="Template Stock">
+<p>
+Such stock-sections can be called many times from the different template's locations
+and even from within themselves.
+<p>
+<a href="http://www.filigris.com/docflex/images/call_ss_demo.html" target="_blank"><img src="images/call_ss_demo_s.png" title="Call Stock-Section (demo)" border="0"></a>
+<p>
+Each stock-section call produces the same fragment of the output document
+as if the stock-section's content was in the place of its call. Stock-sections can be considered as an
+equivalent of procedures in a typical programming language.
+<p>
+For more information, see documentation:
+<a href="template_components.html#components">Template Components</a>,
+<a href="template_components.html#stock_sections">Stock-Sections</a>,
+<a href="template_components.html#call_stock_section">Call Stock-Section</a>.
+</blockquote>
+
+<h4>
+  <a name="subtemplates"></a>
+  Calling Subtemplates
+</h4>
+
+<blockquote>
+<p>DocFlex allows to call from one templates another templates
+(<a href="template_components.html#subtemplate">subtemplates</a>).
+Each called subtemplate can produce either the separate document or a fragment of the common
+document being generated by the calling one. This allows
+<ul>
+  <li class="mrg8">
+      having a set of specifically designed templates, to generate any number of logically
+      connected documents, whose creation, names and locations can be controlled by the processed data.
+      In particular, this allows to generate a
+      <a href="data_processing_features.html#framed_doc">framed (HTML) documentation</a>.
+  <li class="mrg8">
+      to create a <b>library</b> of subtemplates which can be reused many times by calling them
+      from the different application templates. This may help to reduce the project development
+      time as well as to simplify its further maintenance and modifications.
+  <li class="mrg8">
+      to generate single (RTF) documents containing section with their own sets of
+      <a href="formatting_features.html#page_formatting">page header/footer</a>.
+</ul>
+<p class="mrg8">
+For more details, see documentation:
+<a href="template_components.html#call_template">Template Components | Call Template</a>.
+</blockquote>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2003-2009 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

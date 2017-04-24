@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.3" targetNamespace="urn:xml-gov-au:icsm:egeodesy:0.3" elementFormDefault="qualified" version="0.3" xml:lang="en">
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<include schemaLocation="observationSystem.xsd"/>
+	<annotation>
+		<documentation>
+	Author       : Michael Scharber
+	Organization : Scripps Orbit and Permanent Array Center (SOPAC)
+	Date 	     : August 7, 2003
+	Description  : This schema was desgined to encapsulate and validate
+	             : a single, uniquely-identifiable,
+		     : Geodetic Monument.
+	             :
+	Notes        : All distance measurements/values are assumed to be in meters.
+    </documentation>
+	</annotation>
+	<simpleType name="geodeticMonumentTypeOfType">
+		<restriction base="string">
+			<enumeration value="pillar"/>
+			<enumeration value="brass plate"/>
+			<enumeration value="steel mast"/>
+			<enumeration value="shallow rod / braced antenna mount"/>
+			<enumeration value="removeable tripod / concrete pad"/>
+			<enumeration value="Wyatt/Agnew drilled-braced"/>
+			<enumeration value="Wyatt/Agnew driven braced"/>
+			<enumeration value="rock-pin/metal-tripod"/>
+			<enumeration value="rock-pin"/>
+			<enumeration value="glued-rod"/>
+			<enumeration value="wall"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="geodeticMonumentFoundationTypeOfType">
+		<restriction base="string">
+			<enumeration value="roof"/>
+			<enumeration value="concrete block"/>
+			<enumeration value="steel rods"/>
+		</restriction>
+	</simpleType>
+	<!--  -->
+	<element name="geodeticMonument" type="geo:baseGeodeticMonumentType" substitutionGroup="gml:AbstractFeature"/>
+	<!--  -->
+	<complexType name="geodeticMonumentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="geo:geodeticMonument"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--  -->
+	<complexType name="baseGeodeticMonumentType" abstract="false" block="#all">
+		<annotation>
+			<documentation>
+         Base geodetic monument class.  Can be extended..
+         Cannot be substituted and is instantiable.
+			</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<!-- Monument Type -->
+                    <!-- TODO: use gco -->
+                    <element name="type" type="gml:CodeType" minOccurs="0"/>
+					<!-- Common Name -->
+					<element name="commonName" type="string" minOccurs="0"/>
+					<!-- Common Character Identifier -->
+					<element name="characterIdentifier">
+						<simpleType>
+							<restriction base="string">
+								<length value="4"/>
+							</restriction>
+						</simpleType>
+					</element>
+					<!-- Inscription -->
+					<element name="inscription" type="string" minOccurs="0"/>
+					<!-- IERS Domes Number -->
+					<element name="iersDomesNumber" type="string" minOccurs="0"/>
+					<!-- CDP Number -->
+					<element name="cdpNumber" type="string" minOccurs="0"/>
+					<!-- NGS PID -->
+					<element name="ngsPID" minOccurs="0">
+						<simpleType>
+							<restriction base="string">
+								<length value="6"/>
+							</restriction>
+						</simpleType>
+					</element>
+					<!-- Verbal Location -->
+					<element name="verbalLocation" type="string" minOccurs="0"/>
+					<!-- Geodetic Position -->
+					<element name="geodeticPosition" type="geo:PositionPropertyType"/>
+					<!--
+					<element name="geodeticPosition">
+						<complexType>
+							<sequence>
+								<element name="longitude">
+									<simpleType>
+										<restriction base="decimal">
+											<totalDigits value="11"/>
+											<fractionDigits value="8"/>
+										</restriction>
+									</simpleType>
+								</element>
+								<element name="latitude">
+									<simpleType>
+										<restriction base="decimal">
+											<totalDigits value="10"/>
+											<fractionDigits value="8"/>
+										</restriction>
+									</simpleType>
+								</element>
+								<element name="elevation">
+									<simpleType>
+										<restriction base="decimal">
+											<totalDigits value="9"/>
+											<fractionDigits value="4"/>
+										</restriction>
+									</simpleType>
+								</element>
+							</sequence>
+						</complexType>
+					</element>
+					-->
+					<!-- City (nearest) -->
+					<element name="nearestCity" type="string" minOccurs="0"/>
+					<!-- State, Province, Region, Territory -->
+					<element name="territory" type="string" minOccurs="0"/>
+					<!-- Country -->
+					<element name="country" type="string"/>
+					<!-- Height (of the monument, in meters) -->
+					<element name="monumentHeight" minOccurs="0">
+						<simpleType>
+							<restriction base="decimal">
+								<totalDigits value="6"/>
+								<fractionDigits value="4"/>
+							</restriction>
+						</simpleType>
+					</element>
+					<!-- Foundation -->
+                    <!-- TODO: use gco -->
+                    <element name="monumentFoundation" type="gml:CodeType" minOccurs="0"/>
+					<!-- Foundation Depth -->
+					<element name="monumentFoundationDepth" minOccurs="0">
+						<simpleType>
+							<restriction base="decimal">
+								<totalDigits value="6"/>
+								<fractionDigits value="4"/>
+							</restriction>
+						</simpleType>
+					</element>
+					<!-- Geologic Characteristics -->
+					<element name="geologicCharacteristics" type="string" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

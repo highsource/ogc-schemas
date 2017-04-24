@@ -1,0 +1,2110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex/XML - Documentation - Designing Templates</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/XML - Documentation - Designing Templates
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+  <li class="mrg4"><a href="#creating_template"><b>How to Create a Template?</b></a>
+  <li class="mrg4"><a href="#xmltype"><b>Defining XML Type</b></a>
+    <ul class="mrg4">
+      <li><a href="#xmltype.config">XML Type Configuration File</a></li>
+      <li><a href="#xmltype.dtd">Assigning DTD</a>
+        <ul>
+          <li><a href="#xmltype.dtd.file">dtd.file</a></li>
+          <li><a href="#xmltype.dtd.systemID">dtd.systemID</a></li>
+          <li><a href="#xmltype.dtd.publicID">dtd.publicID</a></li>
+        </ul>
+      </li>
+      <li><a href="#xmltype.xsd">Assigning XML Schemas</a>
+        <ul>
+          <li><a href="#xmltype.xsd.files">xsd.files</a></li>
+          <li><a href="#xmltype.xsd.catalogs">xsd.catalogs</a></li>
+          <li><a href="#xmltype.xsd.includeAbstractTypes">xsd.includeAbstractTypes</a></li>
+          <li><a href="#xmltype.local_element_types">Local Element Types</a></li>
+        </ul>
+      </li>
+      <li><a href="#xmltype.ns">Declaring Namespaces</a>
+        <ul>
+          <li><a href="#xmltype.ns.uri">ns.<i>&lt;n&gt;</i>.uri</a></li>
+          <li><a href="#xmltype.ns.prefix">ns.<i>&lt;n&gt;</i>.prefix</a></li>
+          <li><a href="#xmltype.ns.default">ns.<i>&lt;n&gt;</i>.default</a></li>
+          <li><a href="#xmltype.ns_example">Example</a></li>
+        </ul>
+      </li>
+      <li><a href="#xmltype.pseudo_elements">Pseudo-elements</a>
+        <ul>
+          <li><a href="#xmltype.pseudo-elements.all">pseudo-elements.all</a></li>
+          <li><a href="#xmltype.pseudo-elements.NAME">pseudo-elements.<i>&lt;NAME&gt;</i></a></li>
+          <li><a href="#xmltype.defaultRootElement">defaultRootElement</a></li>
+          <li><a href="#xmltype.CDATA">#CDATA</a></li>
+          <li><a href="#xmltype.COMMENT">#COMMENT</a></li>
+          <li><a href="#xmltype.CUSTOM">#CUSTOM</a></li>
+          <li><a href="#xmltype.DOCTYPE">#DOCTYPE</a></li>
+          <li><a href="#xmltype.DOCUMENT">#DOCUMENT</a></li>
+          <li><a href="#xmltype.DOCUMENTS">#DOCUMENTS</a></li>
+          <li><a href="#xmltype.NAMESPACE">#NAMESPACE</a></li>
+          <li><a href="#xmltype.PI">#PI</a></li>
+          <li><a href="#xmltype.TEXT">#TEXT</a></li>
+        </ul>
+      </li>
+      <li><a href="#xmltype.imageProvider">Element Image Provider</a></li>
+      <li><a href="#using_macros">Using Macros</a></li>
+    </ul>
+  <li class="mrg4"><a href="#designer"><b>Running Template Designer</b></a>
+    <ul class="mrg4">
+      <li><a href="#designer.options">Command Line Options</a>
+      <li><a href="#designer.new_template">Creating a New Template</a>
+      <li><a href="#designer.invoking_generator">Invoking Generator from Template Designer</a>
+    </ul>
+  </li>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<h2>
+  <a name="creating_template"></a>
+  1.&nbsp; How to Create a Template?
+</h2>
+
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  For general information about DocFlex templates, please see
+  <a href="../general/about.html#templates">DocFlex Technology | What are Templates?</a>
+</td></tr>
+</table>
+<p>
+Your task is the following.
+You have some XML files and now you want to produce from them some report or documentation
+using <a href="about.html">DocFlex/XML</a>. What should you do?
+<p>
+Here are your steps:
+<ol>
+<li class="mrg8">
+You should start from creating an <a href="http://www.w3.org/XML/Schema" target="_blank">XML schema</a>
+that describes your XML files (that is, with which all your XML files must conform).
+<p class="mrg8">
+(Instead of the XML schema, you may also create a <a href="http://www.w3schools.com/dtd/" target="_blank">DTD</a>
+file, which will serve the same role. However, XML schema is a better and more modern alternative
+with a lot more capabilities.)
+<p class="mrg8">
+Why is <a href="http://www.w3.org/XML/Schema" target="_blank">XML schema</a> needed?
+<p class="mrg8">
+Because it will provide DocFlex/XML with the data structure and type information about your XML files.
+Without it, you will not be able to program much of the processing in your templates.
+Everything will be limited only to the case of
+<a href="samples/xmldoc/index.html#xml_type">Generic XML Files</a>
+used in <a href="samples/xmldoc/index.html">XMLDoc</a> templates. If your processing is supposed
+to be something more than that, an XML schema is the must!
+</li>
+<li class="mrg8">
+Once your XML schema is ready, you should define an <a href="#xmltype">XML Type</a>.
+<p class="mrg8">
+In short, <a href="#xmltype">XML Type</a> is a group of records in an
+<a href="#xmltype.config">XML Type configuration file</a>,
+which provide <a href="about.html">DocFlex/XML</a>
+with all information necessary for processing a specific set of XML files.
+In particular, this will include the location of your XML schema (XSD) file and some other
+settings.
+<p class="mrg8">
+For further details about how to specify your XML Type,
+please see <a href="#xmltype">Defining XML Type</a> (below).
+</li>
+<li class="mrg8">
+Having prepared the <a href="#xmltype">XML Type</a>, you can start the
+<a href="#designer">Template Designer</a> and create a 
+<a href="#designer.new_template">new template</a> (or a set of templates) basing on that XML Type.
+In that template, you should program/design all the processing you need.
+</li>
+<li class="mrg8">
+After finishing the template, you can run the
+<a href="generator.html">generator</a>
+and process your XML files using your template.
+</li>
+</ol>
+
+Actually, the last two steps are a repetitive process. To help to accelerate it,
+DocFlex/XML allows invoking the generator
+<a href="#designer.invoking_generator">directly from Template Designer</a>.
+So, after making any changes in your templates, you can immediately see what a result they produce.
+<p>
+For a detailed example of creating a sample template from scratch,
+please see <a target="_blank" href="http://www.filigris.com/docflex-xml/tutorials/">DocFlex/XML | Tutorials</a>.
+
+<h2>
+  <a name="xmltype"></a>
+  2.&nbsp; Defining XML Type
+</h2>
+
+To make <a href="about.html">DocFlex/XML</a> able to process
+a certain type of XML file with a specific structure, you should define an XML Type.
+<p>
+Each <b>XML Type</b> is associated with a certain class of XML documents with
+the same data structure. Such a class is normally based on a certain
+<a href="http://www.w3schools.com/dtd/" target="_blank">DTD</a> or
+<a href="http://www.w3schools.com/schema/" target="_blank">W3C XML Schema</a> file
+(see <a href="#xmltype.dtd">Assigning DTD</a> and <a href="#xmltype.xsd">Assigning XML Schemas</a> respectively).
+However, some additional settings may be added.
+<p>
+The information provided by the XML Type is used both by the <a href="#designer">Template Designer</a>
+during designing the templates and by the <a href="generator.html">generator</a>
+during processing those templates and generating output documents.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  In a more general terminology of the <a href="../general/about.html">DocFlex Technology</a>,
+  each XML Type is actually a special kind of 
+  <a href="../general/about.html#dsm_type">DSM Type</a> (Data Source Model Type),
+  which is limited to a certain class of XML file data sources.
+</td></tr>
+</table>
+
+<h3>
+  <a name="xmltype.config"></a>
+  XML Type Configuration File
+</h3>
+
+Each <a href="#xmltype">XML Type</a> is defined in a special <b><i>XML Type Configuration File</i></b>
+in the form of a number of properties.
+(In fact, the file itself is an ordinary Java properties file processed with
+<code><a href="http://java.sun.com/javase/6/docs/api/java/util/Properties.html" target="_blank">java.util.Properties</a></code>
+class.)
+<p>
+<a name="xmltype.id"></a>
+The XML Type is identified by a short name called <b><i>XML Type Identifier</i></b>,
+which we shall refer as <b><i>&lt;typeId&gt;</i></b>.
+(The identifier must contain only letters, digits and <code>'_'</code> sign.
+No other characters should be used!)
+<p>
+Once the XML Type identifier name is chosen, it must be used everywhere as a prefix of
+each property related to the definition of this XML Type.
+<p>
+<a name="xmltype.name"></a>
+Besides the identifier, the XML Type must have a certain <b><i>display name</i></b>, which is specified
+using <b>'<i>&lt;typeId&gt;</i>.name'</b> property.
+That display name will be shown in the <a href="#designer">Template Designer</a>.
+<p>
+You may also add a short description to your XML Type using <b>'<i>&lt;typeId&gt;</i>.doc'</b>
+property.
+<p>
+For example, let our XML Type has an identifier <i>'my_xml'</i>.
+Then, the whole XML Type definition may look like the following:
+<blockquote>
+<pre>my_xml.name = My XML Files
+my_xml.doc = Describes the XML files I use in my project
+my_xml.xsd.files = C:/myproject/xml/myxml.xsd
+my_xml.ns.1.prefix = myxml
+my_xml.ns.1.uri = http://www.company.com/MyProject/
+</pre>
+</blockquote>
+
+An XML Type normally should be based on some
+<a href="http://www.w3schools.com/dtd/" target="_blank">DTD</a> or
+<a href="http://www.w3schools.com/schema/" target="_blank">XSD</a> (W3C XML Schema) files,
+which is where the actual XML data structure and type information is obtained by
+<a href="about.html">DocFlex/XML</a>.
+(When both DTD and XSD are specified, the XSD will have a higher priority.)
+<p>
+It is also possible to specify neither
+<a href="http://www.w3schools.com/dtd/" target="_blank">DTD</a> nor
+<a href="http://www.w3schools.com/schema/" target="_blank">XSD</a> files.
+However, in that case, you will be limited to a very general
+case of XML files with few capabilities to process them
+(see <a href="samples/xmldoc/index.html">XMLDoc</a>).
+<p>
+A single XML Type Configuration File may contain definitions of any number of 
+different <a href="#xmltype">XML Types</a>.
+Alternatively, you can place a particular <a href="#xmltype">XML Type</a> definition
+in a separate XML Type Configuration File and store it near the templates based on that type.
+<p>
+How does <a href="about.html">DocFlex/XML</a>
+use <a href="#xmltype">XML Types</a>?
+<p>
+To open any particular template in the <a href="#designer">Template Designer</a>
+or to process it with the <a href="generator.html">generator</a>
+(in order to generate some output), DocFlex/XML needs the XML Type on which that template is based.
+It searches for the necessary XML Type (by the <a href="#xmltype.id">XML Type Identifier</a> 
+found in the template) among those XML Types that have been loaded from all known
+XML Type Configuration Files.
+<p>
+DocFlex/XML supports a number of ways to specify locations of XML Type Configuration Files:
+<ul>
+<li class="mrg8">
+  You may specify the locations of all XML Type Configuration Files at once statically 
+  within the DocFlex 
+  <a href="setup.html#docflex.config">main configuration file</a>.
+  In that case, any such files will be load automatically both by the 
+  <a href="#designer">Template Designer</a> and the 
+  <a href="generator.html">generator</a>.
+</li>
+<li class="mrg8">
+  Additionally, the XML Type Configuration Files can be specified
+  directly on the <a href="generator.html#cmdline">command line</a>
+  of both <a href="#designer">Template Designer</a> and
+  <a href="generator.html#cmdline">generator</a>
+  using the
+  -<a href="generator.html#xmltype_option">xmltype</a>
+  option.
+</li>
+<li class="mrg8">
+  You can place an XML Type Configuration File in the same directory 
+  where the templates based on it are located.
+  In that case, the <a href="#xmltype.id">XML Type Identifier</a> must be used as the name of 
+  that file and <code>".xmltype"</code> as the extension (e.g. <code>'my_xml.xmltype'</code>).
+  <p class="mrg8">
+  When the <a href="#designer">Template Designer</a> or 
+  <a href="generator.html">generator</a> open a template
+  from this directory and the necessary <a href="#xmltype">XML Type</a> is unknown,
+  it will be loaded from that configuration file.
+</li>
+<li class="mrg8">
+  In the case when the XML Type configuration file will be stored together with the templates
+  and loaded completely dynamically, to bootstrap the whole process of designing new
+  templates, you can preload that config file in the Template Designer directly in the
+  &ldquo;<a href="#designer.new_template">New Template</a>&rdquo; dialog.
+</li>
+</ul>
+
+<h3>
+  <a name="xmltype.dtd"></a>
+  Assigning DTD
+</h3>
+
+<p>An XML <a href="http://www.w3schools.com/dtd/" target="_blank">DTD</a> (Document Type Definition),
+which you want to use as a base for your <a href="#xmltype">XML Type</a>,
+should be specified with the following settings:
+
+<ul>
+  <li><a href="#xmltype.dtd.file">dtd.file</a></li>
+  <li><a href="#xmltype.dtd.systemID">dtd.systemID</a></li>
+  <li><a href="#xmltype.dtd.publicID">dtd.publicID</a></li>
+</ul>
+
+<dl>
+<dt><a name="xmltype.dtd.file"></a>
+    <b><i>&lt;typeId&gt;</i>.dtd.file</b>=<i>&lt;DTD file&gt;</i></dt>
+<dd>Specifies the DTD file which contains the data type information that describes your XML files.
+    <p class="mrg8">
+    Any XML documents which you want to associate with this XML Type (and process with the
+    templates based on it) should be based on this DTD!
+    <dl class="mrg8">
+      <dt><u>Example</u>:</dt>
+      <dd><code>my_xml.dtd.file=C:/xml/myxml.dtd</code></dd>
+    </dl>
+</dd>
+<dt></a><a name="xmltype.dtd.systemID"></a>
+    <b><i>&lt;typeId&gt;</i>.dtd.systemID</b>=<i>&lt;URI&gt;</i></dt>
+<dd>This optional property may be used to bind your XML files to the DTD specified with
+    the <a href="#xmltype.dtd.file">dtd.file</a> setting so as when the XML files are parsed,
+    this DTD file will be used by the parser.
+
+    <dl class="mrg8">
+      <dt><u>Example</u>:
+          <p class="mrg8">Let's suppose your XML files contain
+          the following &lt;!DOCTYPE&gt; instruction:
+      </dt>
+      <dd><pre class="mrg8">&lt;!DOCTYPE SYSTEM "http://www.myorg.org/dtd/myxml.dtd"&gt;</pre></dd>
+      <dt>Then, to bind your XML files to the local DTD, you may use the following settings:</dt>
+      <dd><pre class="mrg8">my_xml.dtd.file=C:/xml/myxml.dtd</code>
+my_xml.dtd.systemID=http://www.myorg.org/dtd/myxml.dtd</pre>
+      </dd>
+    </dl>
+</dd>
+<dt></a><a name="xmltype.dtd.publicID"></a>
+    <b><i>&lt;typeId&gt;</i>.dtd.publicID</b>=<i>&lt;name&gt;</i></dt>
+<dd>This optional property may be used to bind your XML files to the DTD specified with
+    the <a href="#xmltype.dtd.file">dtd.file</a> setting so as when the XML files are parsed,
+    this DTD file will be used by the parser.
+
+    <dl class="mrg8">
+      <dt><u>Example</u>:
+          <p class="mrg8">Let's suppose your XML files contain
+          the following &lt;!DOCTYPE&gt; instruction:</dt>
+      <dd><pre class="mrg8">&lt;!DOCTYPE PUBLIC "-//MYORG//DTD My special XML 1.x//EN"&gt;</pre></dd>
+      <dt>Then, to bind your XML files to the local DTD, you may use the following settings:</dt>
+      <dd><pre class="mrg8">my_xml.dtd.file=C:/xml/myxml.dtd</code>
+my_xml.dtd.publicID=-//MYORG//DTD My special XML 1.x//EN</pre>
+      </dd>
+    </dl>
+</dd>
+</dl>
+
+<h3>
+  <a name="xmltype.xsd"></a>
+  Assigning XML Schemas
+</h3>
+
+Alternatively to a DTD, you may base your XML Type on a single or multiple
+<a href="http://www.w3.org/XML/Schema" target="_blank">W3C XML Schemas</a>
+(which, in fact, would provide a lot more capabilities).
+The following settings in your <a href="#xmltype.config">XML Type Configuration File</a>
+should be used in that case:
+
+<ul>
+  <li><a href="#xmltype.xsd.files">xsd.files</a></li>
+  <li><a href="#xmltype.xsd.catalogs">xsd.catalogs</a></li>
+  <li><a href="#xmltype.xsd.includeAbstractTypes">xsd.includeAbstractTypes</a></li>
+</ul>
+
+<dl>
+<dt><a name="xmltype.xsd.files"></a>
+    <b><i>&lt;typeId&gt;</i>.xsd.files</b>=<i>&lt;XSD file1&gt;</i>;<i>&lt;XSD file2&gt;</i>;...</dt>
+<dd>Specifies one or several XSD (XML Schema) files which contain the data type information
+    describing your XML Type.
+    <p class="mrg8">
+    <b>Notes:</b>
+    <ul class="mrg8">
+      <li>
+        Any XML documents which you want to associate with this XML Type (and process with the
+        templates designed for it) should be consistent with the specified XML Schemas!
+      </li>
+      <li>
+        If you specify several schema files, all of them will be loaded, so you will see
+        the element types from all of them in the Template Designer.
+      </li>
+    </ul>
+    <dl class="mrg8">
+      <dt><u>Example</u>:</dt>
+      <dd><code>my_xml.xsd.files=C:/xml/myschema.xsd</code><br>
+          <code>my_xml.xsd.files=C:/xml/myschema1.xsd;C:/xml/myschema2.xsd</code>
+      </dd>
+    </dl>
+</dd>
+
+<dt><a name="xmltype.xsd.catalogs"></a>
+    <b><i>&lt;typeId&gt;</i>.xsd.catalogs</b>=<i>&lt;catalog file1&gt;</i>;<i>&lt;catalog file2&gt;</i>;...</dt>
+<dd>Specifies one or many 
+    <a href="http://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html" target="_blank">OASIS XML Catalog</a>
+    files that will be used to find locations of the XML schemas imported by those XML schemas that you have specified in 
+    <a href="#xmltype.xsd.files">xsd.files</a> property.
+    <p class="mrg8">
+    For example, suppose the initial schema that describes the XML Type contains a line like the following:
+    <blockquote class="mrg8">
+      <code>
+        &lt;xs:import namespace="http://www.w3.org/XML/1998/namespace"<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;schemaLocation="http://www.w3.org/2001/xml.xsd"/&gt;
+      </code>
+    </blockquote>
+    For such a schema to be processed correctly, the <code>'xml.xsd'</code> schema must also be loaded.
+    However, according to the <code>&lt;xs:import&gt;</code> element, that schema will be searched in Internet. 
+    In order to avoid loading it from Internet all the time, the <code>xml.xsd</code> file should be placed
+    near the initial schema, so as to have it loaded from the local drive.
+    But to make it work, the <code>schemaLocation</code> attribute needs to be changed.
+    However, modifying the initial main schema(s) may be not very good, especially when there are many 
+    <code>&lt;xs:import&gt;</code> elements 
+    (as well as possibly <code>&lt;xs:include&gt;</code> and <code>&lt;xs:redefine&gt;</code> 
+    elements, which also load subschemas)
+    and you want frequently to upgrade the initial schemas with new versions, 
+    or the initial schemas must not be changed for some reasons.
+    <p class="mrg8">
+    XML catalogs provide a workaround of that problem.
+    Instead of changing the schemas, you just need to create a <code>catalog.xml</code> file 
+    with the content like this:
+    <blockquote class="mrg8">
+      <code>
+        &lt;?xml version="1.0"?&gt;<br>
+        &lt;catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"&gt;<br>
+        &nbsp;&nbsp;&lt;system systemId="http://www.w3.org/2001/xml.xsd" uri="xml.xsd"/&gt;<br>
+        &lt;/catalog&gt;
+      </code>
+    </blockquote>
+
+    Then, place that file along with the both schemas and specify it in
+    <a href="#xmltype.xsd.catalogs">xsd.catalogs</a> property:
+    <blockquote class="mrg8">
+      <code>
+        my_xml.xsd.files=C:/xml/myschema.xsd<br>
+        my_xml.xsd.catalogs=C:/xml/catalog.xml
+      </code>
+    </blockquote>
+
+    Note, if the <code>schemaLocation</code> attribute is not specified in the mentioned above 
+    <code>&lt;xs:import&gt;</code> element at all, the following catalog file should be used:
+    <blockquote class="mrg8">
+      <code>
+        &lt;?xml version="1.0"?&gt;<br>
+        &lt;catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"&gt;<br>
+        &nbsp;&nbsp;&lt;uri name="http://www.w3.org/2001/xml.xsd" uri="xml.xsd"/&gt;<br>
+        &lt;/catalog&gt;
+      </code>
+    </blockquote>
+
+    See also: <a href="setup.html#xml_catalogs">DocFlex/XML | Documentation | Installation / Configuration Files | XML Catalogs</a>
+</dd>
+
+<dt><a name="xmltype.xsd.includeAbstractTypes"></a>
+    <b><i>&lt;typeId&gt;</i>.xsd.includeAbstractTypes</b>=<i>&lt;true | false&gt;</i></dt>
+<dd>To understand this setting, you need to know a little bit about what is described in XML Schemas
+    (see also <a href="xsddoc/faq.html#xmlschema.resources" class="nowrap">XSDDoc | FAQ | Where can I learn more about XML schemas?</a>).
+    <p class="mrg8">
+    XML Schemas contain definitions basically about two major things:
+    <b><i>elements</i></b> (e.g. <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/element.html" target="_blank">&lt;xs:element&gt;</a></code>) and
+    <b><i>types</i></b> (e.g. <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/complexType.html" target="_blank">&lt;xs:complexType&gt;</a></code> or
+    <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/simpleType.html" target="_blank">&lt;xs:simpleType&gt;</a></code>).
+
+    <p class="mrg8">
+    Each <b>element definition</b> describes a class of the XML elements identified by a certain name
+    (which is the one used as the element tag in XML documents).
+
+    <p class="mrg8">
+    Unlike the pure elements, <b>element type definitions</b> generally are not bound to
+    specific XML elements with the specific names.
+    Instead, they serve as the abstract definitions of element data structures, which can extend one another,
+    and eventually should be used as bases in particular definitions of elements.
+
+    <p class="mrg8">
+    From the DocFlex/XML's point of view, both notions are considered as <b>Element Types</b> because they describes
+    certain classes of elements rather than particular element instances, which are things contained
+    in XML documents and carrying the data to be processed.
+
+    <p class="mrg8">
+    XML Schemas allow two kinds of element type definitions: <i>local</i> and <i>global</i> ones.
+
+    <p class="mrg8">
+    <b>Local type</b> definitions are nested within the definitions of elements. DocFlex/XML considers them
+    simply as parts of the corresponding element definitions.
+
+    <p class="mrg8">
+    <b>Global type</b> definitions always have individual names.
+    Each global type definition may be used as a base for different element definitions simultaneously.
+    Effectively, it represents a certain abstract Element Type which can be specifically recognized
+    by DocFlex so as by that Element Type a specific processing in templates may be organized (e.g.
+    filtering or iterations).
+
+    <p class="mrg8">
+    When <b><code>'xsd.includeAbstractTypes'</code></b> property is specified as <b><code>true</code></b>,
+    all global types declared in the XML Schema will be treated as separate Element Types and appear
+    in various dialogs and treeviews in Template Designer. The names of such Element Types are produced
+    from the original names started from '%' (to ensure they are different from any global element names).
+
+    <p class="mrg8">
+    When this property is specified as <b><code>false</code></b> (which is assumed by default),
+    all global types will be treated the same way as the local ones. That is, anything declared with
+    them will be considered as parts of element definitions to which those types are applied.
+
+    <p class="mrg8">
+    Here is how the Element Types treeview looks with the inclusion of global types (left picture)
+    and without them (right picture):
+
+    <p class="nowrap"><a name="local_ets"></a>
+    <img src="images/includeAbstractTypes_true.png" width="288" height="350" title="includeAbstractTypes=true">
+    &nbsp;
+    <img src="images/includeAbstractTypes_false.png" width="303" height="350" title="includeAbstractTypes=false">
+    </p>
+
+    <p class="mrg8">
+    The Element Types produced from XML Schema's global type definitions are considered as
+    <b>abstract Element Types</b> (shown with '%'). That means, neither of them, as it is, can be assumed
+    by any XML element. Anyway, you may find this notion useful to program specific processing for the whole set
+    of different physical Element Types derived from the same global type definition in the schema.
+</dd>
+</dl>
+
+<h4>
+  <a name="xmltype.local_element_types"></a>
+  Local Element Types
+</h4>
+
+Unlike <a href="#xmltype.dtd">DTDs</a>, where all defined XML elements have global scope,
+<a href="#xmltype.xsd">XML Schemas</a> allow defining XML elements locally within the definitions of
+<ol>
+<li>any other elements (both global and local ones)</li>
+<li>global complex types</li>
+<li>global model groups</li>
+</ol>
+<p>
+In an XML document, the names of the locally defined elements are guaranteed
+to be unique only within the scope of their parent elements.
+That means, in the same XML document, there may be several absolutely different
+local XML elements (possibly having even different structures) sharing the same name.
+That situation presents a problem with referencing such elements.
+<p>
+<a href="about.html">DocFlex/XML</a>
+resolves this problem by introducing <b>Local Element Types</b>.
+<p>
+For every local element definition in the XML schema, there is a certain logical Local Element Type
+representing it in the <a href="#xmltype">XML Type</a>.
+In various treeviews in the Template Designer, the Local Element Types are shown as child nodes
+of their parent Element Types (see the right picture <a href="#local_ets">above</a>).
+<p>
+The logical Element Types representing the XML schema's global element definitions as well as the definitions
+of global types (see <a href="#xmltype.xsd.includeAbstractTypes">xsd.includeAbstractTypes</a> option)
+are called <b>Global Element Types</b>.
+<p>
+Since the names of Local Element Types are not guaranteed to be unique anymore, to distinguish
+all logical Element Types from one another, DocFlex/XML generates for each Element Type a special
+<b><i>global name</i></b>, which is unique for the whole <a href="#xmltype">XML Type</a>.
+Further, the Element Type is referred by that global name in every situation that may be ambiguous.
+<p>
+The global name of a Global Element Type is always the same as its normal (local) name.
+<p>
+For a Local Element Type, its global name is generated according to the following rules:
+<ol type="I">
+
+<li>
+  When the Element Type's local name is unique for the whole <a href="#xmltype">XML Type</a>,
+  that name will be also the global name of that Element Type.
+  <p>
+</li>
+
+<li>
+  When the corresponding 
+  <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/element_1.html" target="_blank">&lt;xs:element&gt;</a></code>
+  definition is based entirely on a certain global complexType/simpleType and looks like:
+
+  <blockquote class="mrg8">
+    <code>&lt;xs:element name="<i>name</i>" type="<i>typeName</i>"/&gt;</code>
+  </blockquote>
+
+  the Element Type's global name will be produced as the following:
+
+  <blockquote class="mrg8">
+    <code><i>name</i>%<i>typeName</i></code>
+  </blockquote>
+</li>
+
+<li>
+  When the type of the local element
+  is defined anonymously within the
+  <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/element_1.html" target="_blank">&lt;xs:element&gt;</a></code>,
+  which may look like this:
+
+  <blockquote class="mrg8"><pre>
+&lt;xs:element name="<i>name</i>"&gt;
+  &lt;xs:complexType&gt; ... &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</pre></blockquote>
+
+  the global name of the corresponding Element Type will be generated according to where
+  that definition is located:
+  <ol class="mrg8">
+    <li>
+      When it is nested within a certain global 
+      <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/complexType.html" target="_blank">&lt;xs:complexType&gt;</a></code>
+      with the name <code><i>'type_name'</i></code>, the Element Type's global name will be this:
+
+      <blockquote class="mrg8">
+        <code>%<i>type_name</i>$<i>name</i></code>
+      </blockquote>
+    </li>
+    <li>
+      When it is nested within a certain global 
+      <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/group.html" target="_blank">&lt;xs:group&gt;</a></code>
+      with the name <code><i>'group_name'</i></code>, the Element Type's global name will be this:
+      <blockquote class="mrg8">
+        <code>!<i>group_name</i>$<i>name</i></code>
+      </blockquote>
+    </li>
+    <li>
+      At last, when the local
+      <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/element_1.html" target="_blank">&lt;xs:element&gt;</a></code>
+      definition is nested within another 
+      <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/element.html" target="_blank">&lt;xs:element&gt;</a></code>
+      definition whose corresponding Element Type has the global name <code><i>'parent_global_game'</i></code>, 
+      then the global name of the given local Element Type will be produced as:
+      <blockquote class="mrg8">
+        <code><i>parent_global_name</i>$<i>name</i></code>
+      </blockquote>
+      That is, it will be represented as the full paths formed from names of nested schema components 
+      separated with '$' starting from a certain global component until the given local
+      <code><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/elements/element_1.html" target="_blank">&lt;xs:element&gt;</a></code>
+      definition. For example:
+      <blockquote class="mrg8">
+        <code>DeliveryContact$Address$City</code>
+      </blockquote>
+    </li>
+  </ol>
+</li>
+</ol>
+
+DocFlex/XML uses global (or full) names of Element Types to reference to them internally
+(you can also see them in the template files).
+However, you may rarely need to use such a representation.
+When the context is known, local names will normally suffice.
+<p>
+See also
+<a href="xsddoc/features.html#local_elements">XSDDoc | Documentation Features | Local Elements</a>,
+which is related to this topic.
+
+<h3>
+  <a name="xmltype.ns"></a>
+  Declaring Namespaces
+</h3>
+
+When namespaces are used, they transform each XML name (of an XML element or attribute)
+into three entities:
+<ol>
+<li>Namespace URI</li>
+<li>Prefix</li>
+<li>Local Name</li>
+</ol>
+
+It is the {<i>NamespaceURI</i>;<i>LocalName</i>} pare which now constitutes the real name.
+But because URIs tend to be long strings (and normally contain characters prohibited in XML names),
+they cannot be used in XML documents directly.
+
+<p class="mrg8">
+Instead of URIs, in XML documents, the namespace prefixes are used. Now, an XML name should be written in the
+following form:
+
+<blockquote>
+<i>Prefix</i>:<i>LocalName</i>
+</blockquote>
+
+That form is called <b>Qualified Name</b>.
+<p>Each <i>Prefix</i> is simply a shortcut to a particular namespace URI. Namespace prefixes
+are specified in XML documents locally and may vary from one XML to another.
+For instance, one XML document may contain <i>&lt;<b>xsd</b>:complexType&gt;</i> element tags,
+whereas other document will call the same things as <i>&lt;<b>xs</b>:complexType&gt;</i>.
+<p>
+Because namespaces were introduced above the initial XML 1.0 standard, all possible XML documents
+now are subdivided into <b>namespace-aware</b> and <b>namespace-unaware</b> ones.
+<p>
+When an XML document is namespace-unaware, nothing prevents it to use the XML names looking
+as <i>prefix</i>:<i>name</i>. However, in that case, the whole such a name will be considered as
+a local one (no binding to a namespace URI occurs). DTDs are namespace-unaware by default (however,
+they may still define XML names with prefixes which can be treated as references to actual
+namespaces in the XML documents).
+<p>
+DocFlex/XML handles namespaces in the following way.
+<p>
+By default, any <a href="#xmltype">XML Type</a> is namespace-unaware. That means,
+any XML files will be parsed in namespace-unaware mode and any XML names will be treated
+exactly as they are written.
+<p>
+To make an <a href="#xmltype">XML Type</a> namespace-aware, you should declare certain namespaces
+associated with it. Each namespace should be declared with the following settings:
+
+<ul>
+  <li><a href="#xmltype.ns.uri">ns.<i>&lt;n&gt;</i>.uri</a></li>
+  <li><a href="#xmltype.ns.prefix">ns.<i>&lt;n&gt;</i>.prefix</a></li>
+  <li><a href="#xmltype.ns.default">ns.<i>&lt;n&gt;</i>.default</a></li>
+</ul>
+
+Where <i>&lt;n&gt;</i> is a number identifying the namespace declaration
+(which is actually used to connect the declaration's properties together).
+
+<dl>
+<dt><a name="xmltype.ns.uri"></a>
+    <b><i>&lt;typeId&gt;</i>.ns.<i>&lt;n&gt;</i>.uri</b>=<i>&lt;URI&gt;</i></dt>
+<dd>Specifies the namespace URI.</dd>
+
+<dt><a name="xmltype.ns.prefix"></a>
+    <b><i>&lt;typeId&gt;</i>.ns.<i>&lt;n&gt;</i>.prefix</b>=<i>&lt;prefix1&gt;</i>;<i>&lt;prefix2&gt;</i>;...</dt>
+<dd>Specifies one or more prefixes associated with this namespace.
+    <p class="mrg8">
+    Like XML documents, DocFlex/XML also needs some shortcuts to refer to particular namespaces.
+    The first prefix specified with this setting (<i>prefix1</i>) will be used as the one.
+    That prefix will appear in the Template Designer and will be stored in DocFlex templates
+    (as part of qualified names).
+    <p class="mrg8">
+    Each namespace's URI, on the contrary, is specified only once in the
+    <a href="#xmltype.config">XML Type config file</a> and never stored anywhere else.
+    The binding between prefixes and URIs occurs dynamically.
+    <p class="mrg8">
+    That system makes your templates absolutely independent on anything. You may use different
+    namespace prefixes in your XML Schema files (or DTD) assigned to this <a href="#xmltype">XML Type</a>.
+    And you may quickly change any namespace URI itself without changing any templates.
+    <p class="mrg8">
+    Other prefixes specified with this property are used only together with DTDs
+    (see <a href="#xmltype.dtd">Assigning DTD</a>).
+    <p class="mrg8">
+    Actually, nothing prevents you from using namespace prefixes in your DTD (so that XML names
+    will look as qualified ones). But since DTDs are namespace-unaware, XML parser will not recognize
+    those prefixes and bind them automatically to the particular URIs. However, DocFlex/XML can
+    do this for you. The only what you need is to specify with the
+    <a href="#xmltype.ns.prefix">ns.<i>&lt;n&gt;</i>.prefix</a>
+    property all possible prefixes used in your DTD which you want to bind to the specified URI.
+</dd>
+<dt><a name="xmltype.ns.default"></a>
+    <b><i>&lt;typeId&gt;</i>.ns.<i>&lt;n&gt;</i>.default</b>=<i>&lt;true | <u>false</u>&gt;</i></dt>
+<dd>If <code>true</code>, indicates that this is the <i>default</i> namespace for the given
+    <a href="#xmltype">XML Type</a>.
+    <p class="mrg8">
+    When a namespace is declared as default, any XML names associated with it will be used in templates (and
+    shown in the Template Designer) without namespace prefixes. You may use this setting to quickly transform
+    your namespace-unaware templates into namespace-aware ones. Just specify in your
+    <a href="#xmltype">XML Type</a> the default namespace, and your templates will be ready to process the
+    namespace-aware XML files.
+    <p class="mrg8">
+    By default, this setting is <code>false</code>.
+</dd>
+</dl>
+
+<a name="xmltype.ns_example"></a>
+<b><u>Example</u>:</b>
+<p>
+Let's suppose your XML files will be starting from something like this:
+<blockquote>
+<pre class="small">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns="http://purl.org/rss/1.0/"
+&gt;
+...</pre>
+</blockquote>
+
+Then, to process such files with DocFlex/XML you may define the following <a href="#xmltype">XML Type</a>:
+
+<blockquote>
+<pre class="small">rss.name = My RSS
+rss.xsd.files = C:/xsd/rss-1_0.xsd;C:/xsd/rdf.xsd;C:/xsd/dc.xsd
+rss.ns.1.uri = http://purl.org/rss/1.0/
+rss.ns.1.default = true
+rss.ns.2.uri = http://www.w3.org/1999/02/22-rdf-syntax-ns\#
+rss.ns.2.prefix = rdf
+rss.ns.3.uri = http://purl.org/dc/elements/1.1/
+rss.ns.3.prefix = dc</pre>
+</blockquote>
+
+Basing on this <a href="#xmltype">XML Type</a>, your templates will be using exactly the same XML names
+as contained in your XML files.
+
+<h3>
+  <a name="xmltype.pseudo_elements"></a>
+  Pseudo-elements
+</h3>
+
+When the DocFlex/XML <a href="generator.html>Generator</a>
+receives an XML file, it calls the
+<a href="http://xerces.apache.org/xerces2-j/" target="_blank">XML parser</a>
+which parses it into the <a href="http://www.w3.org/DOM/" target="_blank">DOM</a>
+(<i>Document Object Model</i>).
+<p>
+The <a href="http://www.w3.org/DOM/" target="_blank">DOM</a> is basically a tree whose nodes
+represent everything contained in the source XML file.
+Most of those nodes are just dedicated to XML elements and their attributes.
+However, some of DOM nodes represent other things contained in the XML document,
+such as <i>Text</i>, <i>Comments</i>, <i>Processing Instructions</i> and so on.
+<p>
+<a name="document_node"></a><a name="document_element"></a>
+The <a href="http://www.w3.org/DOM/" target="_blank">DOM</a>
+tree starts from a special root node called <b><i>Document</i></b> node.
+This node represents the whole XML document. The Document node, among other things,
+always contains the <b><i>Document Element</i></b> node which represents the root element
+of the XML document.
+<p>
+DocFlex/XML provides access to almost all types of DOM nodes.
+It does this by representing the original XML <a href="http://www.w3.org/DOM/" target="_blank">DOM</a>
+in a bit extended form called XML <a href="../general/about.html#dsm">DSM</a> (<i>Data Source Model</i>).
+Each XML <a href="../general/about.html#dsm">DSM</a> is linked to the original DOM
+provided by the XML parser. It maps all XML element into
+<a href="../general/about.html#dsm_element">DSM elements</a>
+and all XML attributes into <a href="../general/about.html#dsm_attribute">DSM attributes</a>.
+<p>
+Besides this, the XML <a href="../general/about.html#dsm">DSM</a> maps all other
+(non-element/attribute) DOM nodes into
+<a href="../general/about.html#dsm_element">DSM elements</a>
+of special <b>Pseudo-Element Types</b>.
+We shall call those extra elements simply <b>pseudo-elements</b>.
+<p>
+All pseudo-elements have their names started with '#'.
+<p>
+Each Pseudo-Element Type is linked to a certain type of non-element/attribute
+<a href="http://www.w3.org/DOM/" target="_blank">DOM</a> nodes.
+Depending on that type, a pseudo-element may contain specific
+<a href="../general/about.html#dsm_attribute">DSM attributes</a>
+representing the original node's properties. Some pseudo-elements may also have
+children (which can be both pseudo-elements and normal ones) and be children
+themselves of normal XML elements.
+<p>
+DocFlex/XML treats pseudo-elements in the same way as the normal XML elements.
+You can organize iterations by pseudo-elements, access their attributes, reference to them within
+<a href="../general/element_iterator_details.html#location_path">Location Paths</a>
+and do anything else.
+As an example of an application where pseudo-elements are heavily used, see
+<a href="samples/xmldoc/index.html">XMLDoc</a>.
+<p>
+Currently, DocFlex/XML supports the following types of pseudo-elements:
+
+<ul>
+  <li><a href="#xmltype.CDATA">#CDATA</a></li>
+  <li><a href="#xmltype.COMMENT">#COMMENT</a></li>
+  <li><a href="#xmltype.CUSTOM">#CUSTOM</a></li>
+  <li><a href="#xmltype.DOCTYPE">#DOCTYPE</a></li>
+  <li><a href="#xmltype.DOCUMENT">#DOCUMENT</a></li>
+  <li><a href="#xmltype.DOCUMENTS">#DOCUMENTS</a></li>
+  <li><a href="#xmltype.NAMESPACE">#NAMESPACE</a></li>
+  <li><a href="#xmltype.PI">#PI</a></li>
+  <li><a href="#xmltype.TEXT">#TEXT</a></li>
+</ul>
+
+Since some pseudo-elements are useful only in rather special situations, by default,
+not all pseudo-elements are included automatically in every <a href="#xmltype">XML Type</a>.
+The following <a href="#xmltype.config">XML Types config</a> properties control pseudo-elements:
+
+<dl class="mrg8">
+<dt><a name="xmltype.pseudo-elements.all"></a>
+    <b><i>&lt;typeId&gt;</i>.pseudo-elements.all</b>=<i>&lt;true | <u>false</u>&gt;</i></dt>
+<dd>If <code>true</code>, enables all Pseudo-Element Types at once.</dd>
+
+<dt><a name="xmltype.pseudo-elements.NAME"></a>
+    <b><i>&lt;typeId&gt;</i>.pseudo-elements.<i>&lt;NAME&gt;</i></b>=<i>&lt;true | false&gt;</i></dt>
+<dd>Enables/disables an individual Pseudo-Element Type with the name <i>#NAME</i>.
+    This setting overrides the <a href="#xmltype.pseudo-elements.all">pseudo-elements.all</a> property.
+</dd>
+<dt><a name="xmltype.defaultRootElement"></a>
+    <b><i>&lt;typeId&gt;</i>.defaultRootElement</b>=<i>&lt;<u>DocumentElement</u> | Document | Documents&gt;</i></dt>
+<dd>Specifies from which element the <a href="generator.html">generator</a>
+    starts processing an XML document (that is, which element will be used as the
+    <a href="../general/template_components.html#root_element">root element</a>
+    for a template processing the whole XML document):
+    <dl class="mrg8">
+      <dt><i>DocumentElement</i></dt>
+      <dd>This is the default setting. The <a href="#document_element"><i>Document Element</i></a>
+          becomes the template's
+          <a href="../general/template_components.html#root_element">root element</a>.
+      </dd>
+      <dt><i>Document</i></dt>
+      <dd>The template's
+          <a href="../general/template_components.html#root_element">root element</a>
+          is the <a href="#xmltype.DOCUMENT">#DOCUMENT</a> pseudo-element.
+          Use this settings when you need to process all nodes of a single XML document.
+      </dd>
+      <dt><i>Documents</i></dt>
+      <dd>This setting allows processing multiple XML files in a single pass
+          so as to generate a single documentation from all of them.
+          <p class="mrg8">
+          In that case, the <a href="generator.html#gui.template">main template</a> will receive will be the
+          <a href="#xmltype.DOCUMENTS">#DOCUMENTS</a> pseudo-element as its
+          <a href="../general/template_components.html#root_element">root element</a>.
+          This pseudo-element represents the list of all XML files specified to process by the generator
+          (i.e. in the <a href="generator.html#gui.xml_files">&ldquo;XML File(s)&rdquo;</a> field of the
+          <a href="generator.html#gui">generator dialog</a> or on the
+          <a href="generator.html#cmdline">command line</a>).
+          <p class="mrg8">
+          For more information about processing multiple XML files, see description for
+          <a href="#xmltype.DOCUMENTS">#DOCUMENTS</a> pseudo-element and
+          <a href="samples/xmldoc/index.html" class="nowrap">XMLDoc | Templates</a>
+          as an example of using it.
+      </dd>
+    </dl>
+</dl>
+<p class="mrg8">
+<u>Example</u>:
+<p class="mrg8">
+The following settings enable all pseudo-elements except <a href="#xmltype.CDATA">#CDATA</a>
+and tell the generator to start the processing of each XML document from the
+<a href="#xmltype.DOCUMENT">#DOCUMENT</a> pseudo-element:
+<blockquote class="mrg8">
+<pre class="mrg8">my_xml.pseudo-elements.all=true
+my_xml.pseudo-elements.CDATA=false
+my_xml.defaultRootElement=Document</pre>
+</blockquote>
+<p>
+
+<p class="mrg8">This table provides details about all Pseudo-Element Types:</p>
+
+<table width="100%" cellspacing="1" cellpadding="4" border="1">
+<tr bgcolor="#E0E0E0">
+  <td width="5%">
+    <p align="center" class="padding2"><b class="nowrap">Pseudo-Element</b></p>
+  </td>
+  <td width="95%">
+    <p align="center" class="padding2"><b>Description</b></p>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><span class="nowrap"><a name="xmltype.CDATA"></a>
+      <img src="images/et.gif" width="16" height="16" align="top">&nbsp;<b>#CDATA</b></span>
+  </td>
+  <td>
+    Represents CDATA sections of the XML document. CDATA sections are used to escape blocks
+    of text containing characters that would otherwise be regarded as markup.
+    <p class="mrg80">
+    By default, CDATA sections are parsed into the normal TEXT nodes. However, when #CDATA pseudo-elements
+    are enabled, the CDATA sections will be recognized separately and produce #CDATA pseudo-elements.
+    <p class="mrg80">
+    This feature may rarely be used, mostly when you need to reproduce the original content of an XML file
+    (see <a href="samples/xmldoc/index.html" class="nowrap">XMLDoc | Templates</a> as example).
+
+    <dl class="mrg80">
+      <dt class="mrg80"><b>Value:</b></dt>
+      <dd class="mrg80">Content of the CDATA section.</dd>
+
+      <dt class="mrg80"><b>Note:</b></dt>
+      <dd class="mrg80">
+        When an XML element (i.e. its data type) has a declared value, that value is produced from
+        the content of all element's child TEXT and CDATA nodes merged together.
+        This, however, does not affect the appearance of those TEXT and CDATA nodes as the element's
+        children of <a href="#xmltype.TEXT">#TEXT</a> and <a href="#xmltype.CDATA">#CDATA</a> types.
+      </dd>
+    </dl>
+
+    <p class="mrg80"><u>Example</u>:
+    <p class="mrg80">
+    The following CDATA section in an XML file:
+    <blockquote class="mrg80">
+      <pre class="mrg80">&lt;![CDATA[<br>   <i>write '&lt;' instead of '&amp;lt;' here</i><br>]]&gt;</pre>
+    </blockquote>
+    <p class="mrg80">
+    will produce a <a href="#xmltype.CDATA">#CDATA</a> pseudo-element with the value:
+    <blockquote class="mrg80">
+      <code><i>"write '&lt;' instead of '&amp;lt;' here"</i></code>
+    </blockquote>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><span class="nowrap"><a name="xmltype.COMMENT"></a>
+      <img src="images/et.gif" width="16" height="16" align="top">&nbsp;<b>#COMMENT</b></span>
+  </td>
+  <td>
+    Represents a COMMENT node. If enabled, #COMMENT pseudo-elements may appear as children
+    of any normal XML elements as well as within the pseudo-element <a href="#xmltype.DOCUMENT">#DOCUMENT</a>.
+
+    <dl class="mrg80">
+      <dt class="mrg80"><b>Value:</b></dt>
+      <dd class="mrg80">Content of the comment.</dd>
+    </dl>
+
+    <p class="mrg80"><u>Example</u>:
+    <p class="mrg80">
+    The following comments in an XML file:
+    <blockquote class="mrg80">
+      <code>&lt;!-- <i>my comments</i> --&gt;</code>
+    </blockquote>
+    <p class="mrg80">
+    will produce a <a href="#xmltype.COMMENT">#COMMENT</a> pseudo-element with the value <code><i>"my comments"</i></code>.
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><span class="nowrap"><a name="xmltype.CUSTOM"></a>
+      <img src="images/et.gif" width="16" height="16" align="top">&nbsp;<b>#CUSTOM</b></span>
+  </td>
+  <td>
+    Represents a custom pseudo-element.
+    <p class="mrg8">
+    <u>About Custom Elements</u>
+    </p>
+    Most of the data processed by a template come from some external data source
+    via its virtual XML-like representation called <i>Data Source Model (DSM)</i>,
+    which maps everything onto some elements and their attributes.
+    <p class="mrg8">
+    Therefore, most of the functionality available in templates (such as iterators, 
+    hash-maps and so on) is intended for processing of elements and attributes.
+    <p class="mrg8">
+    But what if you want to use that functionality to process some different data,
+    for instance, those coming from template parameters or elsewhere?
+    <p class="mrg8">
+    Custom elements allow you to do that!
+    Using custom elements, you can wrap any your data in the form of elements 
+    and attributes. Further, you can process such elements using
+    standard means either separately or together with some
+    elements from the main data source.
+
+    <p class="mrg8">
+    <table cellspacing="0" cellpadding="5" CLASS="brdr1">
+    <tr><td bgcolor="#F6F6F6" class="inset">
+    Basically, you may need custom elements in two situations:
+    <p class="inset"></p>
+    <b>1).&nbsp; Extending or completing a set of ordinary elements of the main data source.</b>
+    <p class="inset"></p>
+    Suppose you have some set of references (coming, for instance, 
+    from the values of attributes of other elements).
+    Those references contain the qualified names of some elements 
+    that you need to print.
+    <p class="inset"></p>
+    At minimum, you should print just the element names.
+    But it will be much better if you add some extended information
+    about each element.
+    <p class="inset"></p>
+    Most of the referenced elements can be found in the data source. 
+    The problem is that a few of them may not exist there.
+    That's because those few elements represent some well-known entities,
+    which do not need to be copied everywhere (e.g. this may be some built-in
+    predefined data types and so on). Everyone who knows the subject of that 
+    external data source must also know about those basic things.
+    <p class="inset"></p>
+    Well. Everyone, but not your templates!
+    If all the references could be resolved into elements, you would just
+    feed those elements to an 
+    <a href="../general/template_components.html#element_iterator">Element Iterator</a>,
+    sort them as needed and print everything about each element. But a few elements may be not found, 
+    and yet you should print something about them too.
+    At least their names... Well, you have those names from the references! 
+    But how can you feed the names, which are strings, to the 
+    <a href="../general/template_components.html#element_iterator">Element Iterator</a>?
+    <p class="inset"></p>
+    Very simply. You should wrap each string with the name in a custom element 
+    and pass that element to the Iterator along with the elements from the data source.
+    You can even construct such custom elements so that they will look like real ones
+    (e.g. contain some attributes expected from the real elements).
+    For instance, you may assign the name taken from the reference
+    to the "name" attribute. This may allow you to specify sorting of
+    all elements uniformly (e.g. by the values of "name" attributes contained
+    in both real and custom elements).
+    <p class="inset"></p>
+    <b>2).&nbsp; Using element/attribute functionality for non-DSM data.</b>
+    <p class="inset"></p>
+    Another situation is when you have some data completely different from
+    the main data source. However, you want to process them with some functionality 
+    available only for elements and attributes.
+    <p class="inset"></p>
+    Here is an example.
+    <p class="inset"></p>
+    Suppose you need to design a template to process (document) certain "custom tags" 
+    coming from the external data source.
+    Those tags describe some data source specific things. 
+    To a template, all such tags will appear as ordinary DSM elements of the same type 
+    and all the properties of the tags will be represented by the values of the element
+    attributes.
+    <p class="inset"></p>
+    The "custom" means that some critical properties of those tags (such as possible
+    tag names and their meanings) are unknown in advance. Instead, they are created 
+    by the user who produces the data source. 
+    In fact, the same person may be using your template to document his/her data source
+    (which may be actually a representation of some project written in Java or other language).
+    What is more, the user may want to be able to customize easily the appearance of 
+    specific custom tags in the output documentation, for instance, to provide 
+    the tag title and so on. At that, the user does not want to customize your template 
+    each time he or she introduces a new tag. How can you implement such requirements?
+    <p class="inset"></p>
+    You can do this by introducing a special template parameter 
+    <code class="small">'customTag'</code>
+    using which the user can specify how to document each particular custom tag. 
+    The parameter would accept a multiple (list) value. 
+    Each value item would specify a tag name and how to document that tag
+    (e.g. the tag title and other things).
+    <p class="inset"></p>
+    Further, in your template, the first thing you may program to do will be
+    parsing all the tag specifications passed via 
+    <code class="small">'customTag'</code> parameter.
+    By each tag specification, you can create a custom element and store
+    all the settings from the specification as element attributes.
+    You can put each element in some <code class="small">'custom-tags'</code>
+    <b>element map</b> (which is a special kind of hash-maps adopted for DSM elements)
+    using the tag name as the hash key.
+    <p class="inset"></p>
+    What is the advantage of all of this?
+    Using the <code class="small">'custom-tags'</code> element map,
+    you can find very quickly for each custom tag all the user-provided information
+    about how to document that tag! Without the element map, you would need
+    to re-parse the entire <code class="small">'customTag'</code> parameter 
+    value each time you needed to process a particular tag. 
+    That would slow down the processing very much (if not making it impossible)!
+    </td></tr>
+    </table>
+
+    <p class="mrg8">
+    <u>Using Custom Elements</u>
+    </p>
+
+    Custom elements are created with <code><b>CustomElement()</b></code> function.
+    <p class="mrg8">
+    You can load a custom element with some useful data by specifying its value when you create it:
+
+<blockquote class="mrg8"><pre>
+myData = ...; // some your data
+...
+el = CustomElement (myData);
+</pre></blockquote>
+
+    Later, you can access the data via the <code>GOMElement.value</code> property:
+
+    <blockquote class="mrg8"><code>echo ("My data: " + el.value);</code></blockquote>
+
+    Additionally, you can attach to your custom element 
+    any number of other pieces of information using attributes.
+    You can do it immediately, when you create the element:
+
+<blockquote class="mrg8"><pre class="mrg8">
+value0 = ...;  // some data
+value1 = ...;  // you want to associate
+value2 = ...;  // with a custom element
+...
+el = CustomElement (value0,
+       Array (
+         Attr ("item1", value1),
+         Attr ("item2", value2)
+       )
+     );
+</pre></blockquote>
+
+    or you can add the attributes sometime later:
+
+<blockquote class="mrg8"><pre class="mrg8">
+el.setAttr ("item1", value1);
+el.setAttr ("item2", value2);
+</pre></blockquote>
+
+    Further, you can access the values of such attributes
+    using any of the functions available for it:
+
+    <blockquote class="mrg8">
+      <code>echo ("value1: " + el.getAttrValue ("item1"));</code>
+    </blockquote>
+
+    A custom element may have unlimited number of attributes.
+    Using <code>setAttr()</code> function, at any time, you can add new attributes 
+    or change the values of existing ones.
+    You can equally remove any of the attributes:
+
+    <blockquote class="mrg8"><code>el.removeAttr ("item1");</code></blockquote>
+
+    Effectively, each custom element serves as a hash-table of its attributes.
+
+    <p class="mrg8">
+    <u>Custom Element Features</u>
+    </p>
+
+    <ul>
+    <li>
+      Custom elements are created with <code>CustomElement()</code>
+      function, which returns an instance of <code>GOMElement</code> type.
+      <p class="mrg8">
+    </li>
+    <li>
+      Each instance returned by <code>CustomElement()</code> function represents 
+      a separate DSM element assigned with a unique ID irrelevant of what the element content
+      might be. For example, the following expression is always true:
+      <blockquote class="mrg8">
+        <code>CustomElement("one").id != CustomElement("one").id</code>
+      </blockquote>
+      You can retrieve a particular custom element by its ID using <code>findElementByID()</code> function.
+      <p class="mrg8">
+    </li>
+    <li>
+      All custom elements have <a href="#xmltype.CUSTOM">#CUSTOM</a> element type,
+      by which you can find or filter them for specific processing.
+      <p class="mrg8">
+    </li>
+    <li>
+      Although custom elements are considered to be part of the DSM and
+      maintained by the DSM driver, they are not connected in any way to the external 
+      data source (represented by that DSM).
+      <p class="mrg8">
+      Any data possible to obtain from a custom element are only those
+      that have been assigned to it initially in the form of the element value 
+      and its attributes.
+      <p class="mrg8">
+    </li>
+    <li>
+      The values of custom elements and their attributes have 
+      <code>'Object'</code> data type and may be single-component only 
+      (no list values are possible). For instance, that means that for a custom element
+      the following expression is always true:
+      <blockquote class="mrg8">
+        <code>el.value == el.fullValue</code>
+      </blockquote>
+      However, you can assign the objects of any types (including <code>null</code>)
+      to values of custom elements and their attributes.
+      <p class="mrg8">
+    </li>
+    <li>
+      Custom elements have no children and cannot be children of any other elements.
+      <p class="mrg8">
+      Once all references to a custom element or its ID have been lost,
+      that element is lost too. After that, there is no way to retrieve it back!
+      <p class="mrg8">
+      The unused instances of custom elements may be automatically recycled and, then,
+      reappear back with the same IDs during the next <code>CustomElement()</code> 
+      function calls. However, any old data previously associated with the recycled
+      custom elements will be lost.
+    </li>
+    <li>
+      In any other respect, custom elements may be used 
+      the same way as ordinary once. For instance, you can feed them to
+      <a href="../general/template_components.html#element_iterator">Element Iterator</a>,
+      put in element maps and so on.
+    </li>
+    </ul>
+
+    <b>See Also:</b>
+    <blockquote class="mrg80">
+    <code>
+      GOMElement, CustomElement(), CustomElements(), Attr(), Array(), 
+      setAttr(), removeAttr(), getAttrValue(), findElementById()
+    </code>
+    </blockquote>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><span class="nowrap"><a name="xmltype.DOCTYPE"></a>
+      <img src="images/et.gif" width="16" height="16" align="top">&nbsp;<b>#DOCTYPE</b></span>
+  </td>
+  <td>
+    This pseudo-element represents the &lt;!DOCTYPE&gt; instruction of the XML file.
+    If enabled, it may appear only as a child of the <a href="#xmltype.DOCUMENT">#DOCUMENT</a>
+    pseudo-element.
+    <p class="mrg8">
+    <b>Attributes:</b>
+    <blockquote class="mrg80">
+    <table cellpadding="0" cellspacing="0">
+      <tr valign="top">
+        <td><span class="nowrap"><img src="images/attr.gif" width="16" height="16" align="top">&nbsp;<code>internalSubset</code></span></td>
+        <td><span class="nowrap">&nbsp;-&nbsp;</span></td>
+        <td>The internal subset as a string.</td>
+      </tr>
+      <tr valign="top">
+        <td><span class="nowrap"><img src="images/attr.gif" width="16" height="16" align="top">&nbsp;<code>name</code></span></td>
+        <td><span class="nowrap">&nbsp;-&nbsp;</span></td>
+        <td>The name of the <a href="http://www.w3schools.com/dtd/" target="_blank">DTD</a>;
+            i.e., the name immediately following the <code>DOCTYPE</code> keyword.</td>
+      </tr>
+      <tr valign="top">
+        <td><span class="nowrap"><img src="images/attr.gif" width="16" height="16" align="top">&nbsp;<code>publicId</code></span></td>
+        <td><span class="nowrap">&nbsp;-&nbsp;</span></td>
+        <td>The public identifier of the external subset.</td>
+      </tr>
+      <tr valign="top">
+        <td><span class="nowrap"><img src="images/attr.gif" width="16" height="16" align="top">&nbsp;<code>systemId</code></span></td>
+        <td><span class="nowrap">&nbsp;-&nbsp;</span></td>
+        <td>The system identifier of the external subset.</td>
+      </tr>
+    </table>
+    </blockquote>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><span class="nowrap"><a name="xmltype.DOCUMENT"></a>
+      <img src="images/et.gif" width="16" height="16" align="top">&nbsp;<b>#DOCUMENT</b></span>
+  </td>
+  <td>
+    This pseudo-element is linked to the DOM <a href="#document_node">Document</a> node and
+    represents the whole XML document (therefore, only one
+    instance of it may exist). If you need to process all possible nodes in the XML document,
+    you should start from this pseudo-element. See
+    <a href="#xmltype.defaultRootElement"><i>&lt;typeId&gt;</i>.defaultRootElement</a>
+    setting for more details.
+    <p class="mrg8">
+    <b>Attributes:</b>
+    <blockquote class="mrg8">
+    <table cellpadding="0" cellspacing="0">
+      <tr valign="top">
+        <td><span class="nowrap"><img src="images/attr.gif" width="16" height="16" align="top">&nbsp;<code>xmlName</code></span></td>
+        <td><span class="nowrap">&nbsp;-&nbsp;</span></td>
+        <td>The name of the XML file (e.g. <code>'sales.xml'</code>).</td>
+      </tr>
+      <tr valign="top">
+        <td><span class="nowrap"><img src="images/attr.gif" width="16" height="16" align="top">&nbsp;<code>xmlURI</code></span></td>
+        <td><span class="nowrap">&nbsp;-&nbsp;</span></td>
+        <td>The URI where the XML file is located (this may be a URL or an absolute pathname on the local system).</td>
+      </tr>
+      <tr valign="top">
+        <td><span class="nowrap"><img src="images/attr.gif" width="16" height="16" align="top">&nbsp;<code>xmlDecl</code></span></td>
+        <td><span class="nowrap">&nbsp;-&nbsp;</span></td>
+        <td>The text of the XML declaration from which the XML document starts (e.g.
+            <span class="nowrap"><code class="small">'&lt;?xml version="1.0" encoding="UTF-8"?&gt;'</code></span>).</td>
+      </tr>
+      <tr valign="top">
+        <td>
+        <a name="xmltype.DOCUMENT@namespaces"></a>
+           <span class="nowrap"><img src="images/attr.gif" width="16" height="16" align="top">&nbsp;<code>namespaces</code></span>
+        </td>
+        <td><span class="nowrap">&nbsp;-&nbsp;</span></td>
+        <td>This attribute provides all namespace bindings declared in the given XML document.
+            The attribute value is an array containing the unique identifier of
+            <a href="#xmltype.NAMESPACE">#NAMESPACE</a> pseudo-elements representing all namespace bindings.</td>
+      </tr>
+    </table>
+    </blockquote>
+
+    <b>Children:</b>
+    <blockquote class="mrg80">
+      <img src="images/et.gif" width="16" height="16" align="top">&nbsp;<a href="#document_element">Document&nbsp;Element</a>,
+      <img src="images/et.gif" width="16" height="16" align="top">&nbsp;<a href="#xmltype.DOCTYPE">#DOCTYPE</a>,
+      <img src="images/et.gif" width="16" height="16" align="top">&nbsp;<a href="#xmltype.COMMENT">#COMMENT</a>s,
+      <img src="images/et.gif" width="16" height="16" align="top">&nbsp;<a href="#xmltype.PI">#PI</a>s
+    </blockquote>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><span class="nowrap"><a name="xmltype.DOCUMENTS"></a>
+      <img src="images/et.gif" width="16" height="16" align="top">&nbsp;<b>#DOCUMENTS</b></span>
+  </td>
+  <td>
+    This pseudo-element represents the list of all open XML documents.
+    <p class="mrg8">
+    When <a href="#xmltype.defaultRootElement"><i>&lt;typeId&gt;</i>.defaultRootElement</a> property
+    of <a href="#xmltype.config">XML Type config</a> is set to <i>'Documents'</i>,
+    all XML files specified to process by the generator are passed to the
+    <a href="generator.html#gui.template">main template</a>
+    as children of #DOCUMENTS pseudo-element, which the template receives
+    as its <b><i>root element</i></b>.
+    <p class="mrg8">
+    Every XML file will be open, parsed and represented as <a href="#xmltype.DOCUMENT">#DOCUMENT</a> child element.
+    <p class="mrg8">
+    Further, within the template's root block, you can organize iteration by such children and
+    process every XML document as you need.
+    <p class="mrg8">
+    Function <code>loadXMLDocument()</code>, which opens an XML document dynamically
+    from within a template by a specified URI, alters the list of open XML documents and adds
+    a new document to the list of the #DOCUMENTS element's children.
+    <p class="mrg8">
+    All open XML documents together constitute a single
+    <a href="../general/about.html#dsm">DSM</a> (Data Source Model).
+    This allows processing everything as a single "meta" XML document. In particular, you can iterate
+    and access elements and attribute contained in different XML documents simultaneously
+    within the same <a href="../general/template_components.html#element_iterator">iterators</a>
+    and other <a href="../general/template_components.html">template components</a>. 
+    An identifier of each XML element will be unique for the whole DSM (see <code>GOMElement.id</code>).
+    <p class="mrg8">
+    See <a href="samples/xmldoc/index.html" class="nowrap">XMLDoc | Templates</a>
+    as an example of this kind of processing.
+
+    <p class="mrg8">
+    <b>Children:</b>
+    <blockquote class="mrg80">
+      <img src="images/et.gif" width="16" height="16" align="top">&nbsp;<a href="#xmltype.DOCUMENT">#DOCUMENT</a>
+    </blockquote>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><span class="nowrap"><a name="xmltype.NAMESPACE"></a>
+      <img src="images/et.gif" width="16" height="16" align="top">&nbsp;<b>#NAMESPACE</b></span>
+  </td>
+  <td>
+    Represents a namespace binding specified in an XML element.
+    <p class="mrg8">
+    If this pseudo-element type is enabled, each namespace binding specified in
+    an element with one of
+
+    <blockquote class="mrg8">
+      <code>xmlns &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= "..."<br>xmlns:<i>prefix</i> = "..."</code>
+    </blockquote>
+
+    <p class="mrg8">
+    declarations will produce a #NAMESPACE pseudo-element describing this binding.
+    That element will be added to the children of the given XML element.
+    <p class="mrg8">
+    If an XML element contains several namespace binding declarations, there will be as many
+    #NAMESPACE pseudo-elements added to the element's real children.
+    <p class="mrg8">
+    All namespace bindings declared in an XML document can be obtained via
+    <a href="#xmltype.DOCUMENT@namespaces">namespaces</a> attribute of
+    <a href="#xmltype.DOCUMENT">#DOCUMENT</a> pseudo-element.
+
+    <p class="mrg80">
+    As an example of using #NAMESPACE pseudo-elements, see
+    <a href="samples/xmldoc/index.html#xmlns-bindings.tpl" class="nowrap">XMLDoc | xmlns-bindings.tpl</a>
+    template.
+
+    <p class="mrg8">
+    <b>Attributes:</b>
+    <blockquote class="mrg80">
+    <table cellpadding="0" cellspacing="0">
+      <tr valign="top">
+        <td><span class="nowrap"><img src="images/attr.gif" width="16" height="16" align="top">&nbsp;<code>elementId</code></span></td>
+        <td><span class="nowrap">&nbsp;-&nbsp;</span></td>
+        <td>The unique identifier of the XML element where this namespace binding is declared.</td>
+      </tr>
+      <tr valign="top">
+        <td><span class="nowrap"><img src="images/attr.gif" width="16" height="16" align="top">&nbsp;<code>namespaceURI</code></span></td>
+        <td><span class="nowrap">&nbsp;-&nbsp;</span></td>
+        <td>The namespace URI of the binding.</td>
+      </tr>
+      <tr valign="top">
+        <td><span class="nowrap"><img src="images/attr.gif" width="16" height="16" align="top">&nbsp;<code>prefix</code></span></td>
+        <td><span class="nowrap">&nbsp;-&nbsp;</span></td>
+        <td>The namespace prefix to which the namespace is bound.
+            If the namespace binding was declared as <code>xmlns="..."</code>,
+            the value of this attribute is an empty string.
+        </td>
+      </tr>
+    </table>
+    </blockquote>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><span class="nowrap"><a name="xmltype.PI"></a>
+      <img src="images/et.gif" width="16" height="16" align="top">&nbsp;<b>#PI</b></span>
+  </td>
+  <td>
+    Represents a Processing Instruction. If enabled, #PI pseudo-elements may appear as children
+    of any normal XML elements as well as within the pseudo-element <a href="#xmltype.DOCUMENT">#DOCUMENT</a>.
+    <dl class="mrg80">
+      <dt class="mrg80"><b>Value:</b>
+      <dd class="mrg80">The content of this Processing Instruction.
+
+      <dt class="mrg80"><b>Attribute:</b>
+      <dd class="mrg80">
+      <img src="images/attr.gif" width="16" height="16" align="top">&nbsp;<code>target</code> -
+      The target of this processing instruction.
+    </dl>
+
+    <p class="mrg8">
+    <u>Example</u>:
+    <p class="mrg8">
+    The following Processing Instruction in an XML file:
+    <blockquote class="mrg8">
+      <code>&lt;?php include("header.php");?&gt;</code>
+    </blockquote>
+    will produce a <a href="#xmltype.PI">#PI</a> pseudo-element which, if it was a normal XML element, would be written
+    as the following:
+    <blockquote class="mrg8">
+      <code>&lt;#PI target="php"&gt;include("header.php");&lt;/#PI&gt;</code>
+    </blockquote>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td><span class="nowrap"><a name="xmltype.TEXT"></a>
+      <img src="images/et.gif" width="16" height="16" align="top">&nbsp;<b>#TEXT</b></span>
+  </td>
+  <td>
+    Represents a TEXT node. If enabled, #TEXT pseudo-elements may appear as one or multiple children
+    of any normal XML element.
+
+    <dl class="mrg80">
+      <dt class="mrg80"><b>Value:</b>
+      <dd class="mrg80">The text contained in the node.
+    </dl>
+
+    <p class="mrg80">
+    <b>Notes:</b>
+    <ol class="mrg8">
+      <li class="mrg8">
+        When an XML element (i.e. its data type) has a declared value, that value is produced from
+        the content of all element's child TEXT and CDATA nodes merged together.
+        This, however, does not affect the appearance of those TEXT and CDATA nodes as the element's
+        children of <a href="#xmltype.TEXT">#TEXT</a> and <a href="#xmltype.CDATA">#CDATA</a> types.
+      </li>
+      <li class="mrg8">
+        When the parent XML element has mixed model (that is, it contains both text and other XML elements),
+        several <a href="#xmltype.TEXT">#TEXT</a> pseudo-elements will appear as its children.
+      </li>
+    </ol>
+
+    <p class="mrg80"><u>Example</u>:
+    <p class="mrg80">
+    The following piece of an XML:
+    <blockquote class="mrg80">
+      <code>&lt;par&gt;text one&lt;nl/&gt;text two&lt;/par&gt;</code>
+    </blockquote>
+    <p class="mrg80">
+    will produce a single <code>'par'</code> element with the three children:
+    <blockquote class="mrg80">
+      <code>#TEXT('text one'); nl; #TEXT('text two')</code>
+    </blockquote>
+  </td>
+</tr>
+
+</table>
+
+<h3>
+  <a name="xmltype.imageProvider"></a>
+  Element Image Provider
+</h3>
+
+DocFlex/XML <a href="#creating_template">templates</a> operate with abstract data entities called 
+<a href="../general/about.html#dsm_element">DSM elements</a>
+and <a href="../general/about.html#dsm_attribute">DSM attributes</a>,
+on which everything contained in XML files (as well as even the XML files themselves; see 
+<a href="#xmltype.DOCUMENTS">#DOCUMENTS</a>) is mapped.
+That mapping is maintained by a special module called XML <a href="../general/about.html#dsm">DSM</a> driver.
+<p>
+Each DSM element may have a certain graphic representation called 
+<b><i><a href="../general/template_components.html#element_image">element image</a></i></b>.
+Element images are typically some kind of diagrams, which may be supplied with hypertext imagemaps 
+that allow linking some image regions to anything else.
+<p>
+Element images (and imagemaps to them) are provided by a special extension of the DSM driver called
+<i><b>Element Image Provider</b></i>.
+Further, they can be easily operated in templates using 
+<a href="../general/template_components.html#image_control">Image Controls</a>,
+wich can insert the images in the output and hyperlink them to other parts of the documentation.
+<p>
+Since XML is a universal data markup language, there cannot be a single meaning of what &ldquo;element image&rdquo;
+actually is. It comes down to a particular XML-file data source, which is described by the given 
+<a href="#xmltype">XML Type</a>. So, any element image provider must be a part of the XML Type definition.
+It is specified with the following settings:
+<blockquote>
+  <b><i>&lt;typeId&gt;</i>.imageProvider.class</b>=<i>&lt;image_provider_class&gt;</i>
+</blockquote>
+where <i>&lt;image_provider_class&gt;</i> is a Java class that implements a special
+interface: <code>com.docflex.api.dsm.DSMImageProvider</code>
+<p>
+Generation of diagrams is not simple.
+So, the actual element image provider must be a large subsystem (or even separate piece of software).
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  <a href="about.html">DocFlex/XML</a> currently includes no its own diagramming engine.
+  So, any element image providers are implemented in the form of integrations with some other software,
+  e.g. see: <a href="integrations/XMLSpy.html">DocFlex/XML | Integrations | XMLSpy</a>
+</td></tr>
+</table>
+<p>
+The image provider class (specified in the <a href="#xmltype">XML Type</a> definition)
+is little more than a communication bridge to that subsystem, which may require additional
+settings to control it.
+Moreover, the same image provider implementation may actually serve different
+<a href="#xmltype">XML Types</a> and provide completely different types of diagrams to them.
+So, it may need to know in which context it works.
+This is conveyed via the image provider parameters.
+Any setting in the <a href="#xmltype">XML Type</a> definition that looks like:
+<blockquote>
+  <b><i>&lt;typeId&gt;</i>.imageProvider.<i>xxx</i></b> = <i>...</i>
+</blockquote>
+will be passed to an instance of the image provider class during its initialization,
+so it can be used as an image provider parameter.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  What such parameters are depends on a particular implementation.
+  In fact, the same XML Type definition may include even different sets of parameters
+  prepared for different image provider implementations (see below).
+  Each of them will find and use its own parameters.
+</td></tr>
+</table>
+
+<p>
+Although the meaning of the diagrams depicting elements of a particular XML data-source is always the same
+(e.g. all of them are <a href="xsddoc/features.html#complex_content.model.diagram">content model diagrams</a>),
+precisely how those diagrams look may be different as well as different external systems may generate such diagrams.
+So, the element image provider for a given <a href="#xmltype">XML Type</a> may actually have different
+implementations represented by different image provider classes.
+<p>
+To allow easily switching to any of those implementations, rather than being specified directly,
+the image provider class may be passed to the XML Type via a <a href="#using_macros">macro</a>, for example:
+<blockquote>
+  <i>&lt;typeId&gt;</i>.imageProvider.class=<b>%IMAGE_PROVIDER_CLASS%</b>
+</blockquote>
+
+Here, the <code>'IMAGE_PROVIDER_CLASS'</code> macro is expanded to the particular class name,
+which is assigned to it using -<a href="generator.html#m_option">m option</a>
+on the <a href="generator.html#cmdline">Generator</a> or
+<a href="#designer">Template Designer</a>
+command line. For example:
+<blockquote>
+  <code>-m:IMAGE_PROVIDER_CLASS=com.docflex.xml.xmlspy.SpyKit</code>
+</blockquote>
+
+<b>See Also:</b>
+<ul>
+  <li><a href="xsddoc/templates.html#xmltype">DocFlex/XML | XSDDoc | Templates | XML Type</a></li>
+  <li><a href="integrations/XMLSpy.html#how_it_works">DocFlex/XML | Integrations | XMLSpy | How Integration Works</a></li>
+</ul>
+
+<h3>
+  <a name="using_macros"></a>
+  Using Macros
+</h3>
+
+To avoid specifying the exact pathnames in your 
+<a href="#xmltype.config">XML Type Configuration File</a>, 
+you may use macros.
+<p>
+For example,
+in <a href="samples/sales_report/index.html">Samples | Sales Report</a>,
+you can see the following  definition of the
+<a href="samples/sales_report/index.html#xml_type">XML Type</a>
+used there:
+<blockquote>
+<pre>sales.name = Sales
+sales.xsd.files = %DFH%/samples/sales/sales.xsd</pre>
+</blockquote>
+
+Here, the <b><code>'DFH'</code></b> is a predefined macro whose value is the pathname of the DocFlex/XML home directory.
+So, if that value is equal to <code class="nowrap">'C:/docflex-xml'</code>,
+the last setting above will be expanded into:
+<blockquote>
+<pre>sales.xsd.files = C:/docflex-xml/samples/sales/sales.xsd</pre>
+</blockquote>
+<p>
+There are two predefined macros that you can use in your
+<a href="#xmltype.config">XML Type Configuration File</a>:
+<p>
+<table border="1" cellspacing="1" cellpadding="4">
+  <tr align="center">
+    <th><b>Macro</b></th>
+    <th><b>Description</b></th>
+  </tr>
+  <tr valign="top">
+    <td><code>DFH</code></td>
+    <td>
+      The pathname of the <a href="about.html">DocFlex/XML</a> home directory.
+      <p class="mrg8">
+      The initial value of this macro is the absolute pathname of the directory containing
+      the DocFlex/XML Java library <code class="nowrap">'docflex-xml.jar'</code>.
+      <p class="mrg8">
+      However, a different directory pathname can be assigned in
+      <a href="setup.html#docflex.config">docflex.config</a> file.
+      (Actually, this is already done in the default
+      <a href="setup.html#docflex.config">docflex.config</a>,
+      which specifies 'DocFlex/XML home directory' as the parent of the
+      <code>'lib'</code> directory containing <code class="nowrap">'docflex-xml.jar'</code>).
+      <p class="mrg80">
+      Such an arrangement is intended to allow easy distribution of the specific files
+      needed for running DocFlex/XML so as their locations would better fit for your entire project.
+    </td>
+  </tr>
+  <tr valign="top">
+    <td><code>THIS_DIR</code></td>
+    <td>
+      This macro is expanded into the absolute pathname of the directory containing the given file (where the macro is used).
+      The macro value is calculated dynamically and may not be redefined.
+      <p class="mrg8">
+      You may use this macro, for instance, in your <a href="#xmltype.config">XML Type Configuration File</a>
+      to specify an <a href="#xmltype.xsd">XML schema</a> file located in the same directory. For example:
+      <blockquote class="mrg8"><code>
+        my_xml.name = My XML Files<br>
+        my_xml.xsd.files = %THIS_DIR%/myxml.xsd
+      </code></blockquote>
+    </td>
+  </tr>
+</table>
+<p>
+You may use also your own macros, which you can define in two places:
+<ol>
+<li>In the <a href="setup.html#docflex.config">main configuration file</a>
+    of DocFlex/XML (<a href="setup.html#docflex.config">docflex.config</a>).
+</li>
+<li>
+  Using -<a href="generator.html#m_option">m option</a>
+  both on the <a href="generator.html#cmdline">Generator</a> and
+  <a href="#designer">Template Designer</a>
+  command line.
+</li>
+</ol>
+
+When a macro name is unknown, the macro call is remained as is (e.g. <code>'%blah-blah%'</code>
+will be expanded into <code>'%blah-blah%'</code>).
+
+<h2>
+  <a name="designer"></a>
+  3.&nbsp; Running Template Designer
+</h2>
+
+To start the Template Designer, just run <b><code>designer.bat</code></b> found
+in the <a href="about.html">DocFlex/XML</a> root directory.
+
+<p class="mrg8">
+Here is the exact command line to launch the Template Designer:
+
+<blockquote class="mrg8">
+<code>
+  <a class="latent" href="#designer.java">java</a>
+  <a class="latent" href="#designer.java_options">[java_options]</a>
+  <a class="latent" href="#designer.class_path">&lt;class_path&gt;</a>
+  <a class="latent" href="#designer.class">&lt;designer_class&gt;</a>
+  <a class="latent" href="#designer.options">[options]</a>
+  <a class="latent" href="#designer.template_files">[template files]</a>
+</code>
+</blockquote>
+
+where all arguments are explained in this table:
+
+<p class="mrg8">
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+
+<tr align="center">
+  <th width="1%"><b>Command/Arg</b></th>
+  <th width="99%"><b>Explanation</b></th>
+</tr>
+
+<tr valign="top">
+  <td>
+    <a name="designer.java"></a>
+    <code>java</code>
+  </td>
+  <td>
+    A system command that starts JVM (Java Virtual Machine).
+    <p class="mrg80">
+    On Windows, that command may be as simple as <code>'java'</code> (when you have installed 
+    <a href="http://java.sun.com/" target="_blank">Java</a> properly)
+    or, alternatively, may look like the following:
+    <p class="mrg80">
+    <code>"C:\Program Files\Java\jre6\bin\java"</code>
+    <p class="mrg80">
+    (Just do not forget to enclose it in double quotes, when the pathname contains spaces!)
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="designer.java_options"></a>
+    <code>[java_options]</code>
+  </td>
+  <td>
+    The JVM options.
+    <p class="mrg8">
+    If you are going to run <a href="generator.html">Generator</a> from the Template Designer
+    (see <a href="#designer.invoking_generator">Invoking Generator from Template Designer</a>),
+    use <b class="nowrap">-Xmx</b> option to set the maximum heap size allocated by JVM.
+    Otherwise, the available memory may be not enough for the generator -- it will be executed by the same JVM!
+    <p class="mrg8">
+    For example, setting <b>-Xmx512m</b> will allocate 512 Mb for the heap, which is OK
+    for most purposes (e.g. to run <a href="xsddoc/index.html">XSDDoc</a>) on 32-bit Java.
+    <p class="mrg80">
+    <table cellspacing="0" cellpadding="5" CLASS="brdr1">
+    <tr><td bgcolor="#F6F6F6" class="inset">
+      For 64-bit Java (running on 64-bit OS), we recommend to double the amount of allocated memory
+      since lots of internal things (like memory pointers) get doubled in size on 64-bit (as compared to 32-bit OS).
+      <p class="mrg8"></p>
+      So, on <b>Windows 7 64-bit</b> you should specify <b><code>-Xmx1024m</code></b>,
+      instead of <code>-Xmx512m</code>. (For instance, allocating 512 Mb for 64-bit Java heap size 
+      is no longer enough to document big XML schemas using <a href="xsddoc/index.html">XSDDoc</a>).
+    </td></tr>
+    </table>
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="designer.class_path"></a>
+    <code>&lt;class_path&gt;</code>
+  </td>
+  <td>
+    Specify DocFlex/XML class path, which should look as follows (Windows platform):
+    <p class="mrg8">
+    <code>-cp "%DFH%\lib\xml-apis.jar;%DFH%\lib\xercesImpl.jar;%DFH%\lib\resolver.jar;%DFH%\lib\docflex-xml.jar"</code>
+    <p class="mrg80">
+    where
+    <ul class="mrg0">
+      <li><code>'%DFH%'</code> must expand to the pathname of DocFlex/XML home directory (e.g. <code>C:\docflex-xml</code>)</li>
+      <li><code>xml-apis.jar</code>, <code>xercesImpl.jar</code>, <code>resolver.jar</code> 
+          are <a href="http://xerces.apache.org/xerces2-j/" target="_blank">Apache Xerces2</a> Java libraries</li>
+      <li><code>docflex-xml.jar</code> is DocFlex/XML Java library</li>
+    </ul>
+    <p class="mrg80">
+    Notes:
+    <ul class="mrg0">
+      <li>
+        The precise form of the class path depends on the OS.
+        (For instance, on Linux the name-separator is '/' and the path-separator is ':')
+      </li>
+      <li>
+        When an integration with other software system is used,
+        the above class path should also include all additional Java libraries necessary for that integration
+        (e.g. see <a href="integrations/XMLSpy.html">DocFlex/XML | Integrations | XMLSpy</a>)
+        and all of them should be specified before <code>docflex-xml.jar</code>!
+      </li>
+      <li>
+        When the file pathnames contain spaces, the entire class path should be enclosed in double quotes!
+        (Otherwise, it will be treated as separate arguments.)
+      </li>
+    </ul>
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="designer.class"></a>
+    <code>&lt;designer_class&gt;</code>
+  </td>
+  <td>
+    The qualified name of the Template Designer main Java class:
+    <b><code class="nowrap">com.docflex.xml.Designer</code></b>
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="designer.options"></a>
+    <code>[options]</code>
+  </td>
+  <td>
+    Template Designer command line <a href="#designer.options">options</a> (see below).
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="designer.template_files"></a>
+    <code>[template files]</code>
+  </td>
+  <td>
+    The pathnames of the template files to open.
+    If several templates are specified, all of them will be open in separate designer windows.
+    <p class="mrg80">
+    Template Designer uses settings contained in
+    <a href="setup.html#designer.config">designer.config</a> file.
+    If no templates has been specifed on the command line, the last edited template will be open automatically.
+  </td>
+</tr>
+</table>
+
+<h3>
+  <a name="designer.options"></a>
+  Command Line Options
+</h3>
+
+The Template Designer supports the following command line options:
+<p>
+<table cellspacing="0" cellpadding="0">
+<tr valign="top">
+  <td><table width="32" height="8" border="0"><tr><td></td></tr></table></td>
+  <td>
+    -<a href="#designer.config_option">config</a><br>
+    -<a href="#designer.defaultcatalog_option">defaultcatalog</a><br>
+    -<a href="#designer.docflexconfig_option">docflexconfig</a><br>
+    -<a href="#designer.license_option">license</a>
+  </td>
+  <td><table width="32" height="8" border="0"><tr><td></td></tr></table></td>
+  <td>
+    -<a href="#designer.m_option">m</a><br>
+    -<a href="#designer.r_option">r</a><br>
+    -<a href="#designer.updatetemplates_option">updatetemplates</a><br>
+    -<a href="#designer.xmltype_option">xmltype</a>
+  </td>
+</tr>
+</table>
+<p>
+
+<h4 class="spec"><i>Option Details</i></h4>
+
+<dl>
+
+<dt><a name="designer.config_option"></a><b>-config</b> <i>&lt;file&gt;</i></dt>
+<dd>Specifies an alternative Template Designer configuration file 
+    (<a href="setup.html#designer.config">designer.config</a>),
+    which is used instead of the default one (specified in the 
+    <a href="setup.html#docflex.config">docflex.config</a>).
+</dd>
+
+<dt><a name="designer.docflexconfig_option"></a><b>-docflexconfig</b> <i>&lt;file&gt;</i></dt>
+<dd>Specifies an alternative path to the DocFlex/XML main configuration file
+    (<a href="setup.html#docflex.config">docflex.config</a>).
+</dd>
+
+<dt><a name="designer.license_option"></a><b>-license</b> <i>&lt;files&gt;</i>
+<dd>Specifies the locations of one or many
+    <a href="setup.html#docflex.license">license files</a>.
+    <p class="mrg8">
+    The option value may include multiple file pathnames, which should be separated 
+    with the OS-specific path-separator character
+    (e.g. <code>';'</code> under MS Windows or <code>':'</code> under Linux).
+    Alternatively, you can specify different license files with any number of <code>-license</code> options 
+    on the command line.
+    <p class="mrg8">
+    The license files directly specified on the <a href="#designer">command line</a> with 
+    the <code>-license</code> options will be loaded (and used) before any other license files:
+    <ul class="mrg8">
+      <li>
+        Those assigned in the
+        <a href="setup.html#docflex.config">docflex.config</a>
+      </li>
+      <li>
+        The default license file found near the DocFlex/XML Java library file 'docflex-xml.jar'
+      </li>
+      <li>
+        The license files found near the main templates of
+        <a target="_blank" href="http://www.filigris.com/licensing/#templates.cta">commercial template applications</a>
+      </li>
+    </ul>
+    This means that when you have placed several licenses for the same product
+    in various files/locations (where the licenses are searched)
+    and one license specified on the command line using <code>-license</code> option, 
+    that one will be used.
+    <p class="mrg8">
+    See also <a target="_blank" href="http://www.filigris.com/licensing/#multiple_licenses">Multiple Licenses</a>.
+</dd>
+
+<dt><a name="designer.m_option"></a>
+    <b>-m:</b><i>&lt;macro&gt;=&lt;value&gt;</i>
+    <p style="margin:5px">or</p>
+    <b>-m:</b><i>&lt;macro&gt; &lt;value&gt;</i>
+</dt>
+<dd>Specifies the value of a <a href="#using_macros">macro</a>,
+    which can be used in
+    <a href="setup.html#docflex.config">docflex.config</a> and
+    <a href="#xmltype.config">XML Type Configuration</a>
+    files to allow configuring them from the command line.
+    <p class="mrg8">
+    <b>Notes:</b>
+    <ul class="mrg8">
+      <li>
+        When the macro value contains spaces, enclose it in double quotes
+        (for example: <code class="nowrap">-m:LIBPATH="C:\Program Files\..."</code>).
+      </li>
+      <li>
+        The first variant of this option allows you to specify the macro with a single command line argument,
+        the second variant breaks the option into two arguments (one for the macro name, another one for the macro value).
+      </li>
+    </ul>
+</dd>
+
+<dt><a name="designer.xmltype_option"></a><b>-xmltype</b> <i>&lt;files&gt;</i>
+    &nbsp;or&nbsp; <b>-xmlconfig</b> <i>&lt;files&gt;</i></dt>
+<dd>Specifies the locations of one or many
+    <a href="#xmltype.config">XML Type Configuration Files</a>.
+    <p class="mrg8">
+    The option value may include multiple file pathnames, which should be separated 
+    with the OS-specific path-separator character
+    (e.g. <code>';'</code> under MS Windows or <code>':'</code> under Linux).
+    Alternatively, you can specify different config files with any number of <code>-xmltype</code> options 
+    on the command line.
+    <p class="mrg8">
+    All <a href="#xmltype.config">XML Type Configuration Files</a>
+    specified with the <code>-xmltype</code> options are loaded in addition to 
+    those assigned statically in the 
+    <a href="setup.html#docflex.config">docflex.config</a>.
+    However, when an <a href="#xmltype">XML Type</a> happens to be defined simultaneously 
+    in several files, the definition contained in a file directly specified on the command line 
+    will be used the first.
+</dd>
+
+<dt><a name="designer.defaultcatalog_option"></a><b>-defaultcatalog</b> <i>&lt;file | URL&gt;</i></dt>
+<dd>
+    Specify the location of the 
+    <a href="setup.html#xml_catalogs.default">default XML catalog</a> file.
+    The option argument may be both the local file pathname and a URL.
+    <p class="mrg8">
+    For more details, please see:
+    <a href="setup.html#xml_catalogs.default">Installation / Configuration Files | XML Catalogs | Default XML Catalog</a>
+</dd>
+
+<dt><a name="designer.updatetemplates_option"></a><b>-updatetemplates</b> <i>&lt;dir&gt;</i></dt>
+<dd>Updates all DocFlex templates contained in the specified directory.
+    You can use this option to upgrade your old (existing) templates according to a new
+    <a href="about.html">DocFlex/XML</a> version or new license you are using now.
+    When this option specified, the designer works only in command mode and no GUI is started.
+</dd>
+
+<dt><a name="designer.r_option"></a><b>-r</b></dt>
+<dd>Recurse subdirectories. This option works only in conjunction with
+    <span class="nowrap">-<a href="#designer.updatetemplates_option">updatetemplates</a></span> option.
+</dd>
+
+</dl>
+
+<h3>
+  <a name="designer.new_template"></a>
+  Creating a New Template
+</h3>
+
+Once you have finished with defining the <a href="#xmltype">XML Type</a>
+(which will provide the datatype information about your XML files)
+you can start designing your template.
+<p>
+Run <b><code>designer.bat</code></b> and select in the main menu
+<b>&ldquo;File | New Template&rdquo;</b> item. You will see the following dialog:
+
+<blockquote>
+  <img src="images/new_template_dialog.png" title="New Template Dialog">
+</blockquote>
+
+The <b>&ldquo;Select DSM Types&rdquo;</b> list shows all <a href="#xmltype">XML Types</a>
+currently known to the Template Designer.
+(The XML Types are presented by their display names specified in
+the <a href="#xmltype.name"><i>&lt;typeId&gt;</i>.name</a> property.)
+<p>
+You should select the <a href="#xmltype">XML Type</a> on which your template will be based.
+(If the list does not include the necessary XML Type, you can load its definition from
+the corresponding <a href="#xmltype.config">XML Type Configuration File</a>
+by clicking the <b>&ldquo;Add&rdquo;</b> button.)
+<p>
+Each template is always linked to a certain <a href="#xmltype">XML Type</a>.
+That means, the template is programmed to process only those XML files which
+comply with that <a href="#xmltype">XML Type</a>. The XML Type's <a href="#xmltype.id">identifier</a>
+is stored in the template. So, each time the template is loaded in the Template Designer or processed
+by the generator, the corresponding <a href="#xmltype">XML Type</a> is dynamically bound to the template
+so as to provide the data type information necessary for the template processing.
+<p>
+To provide all the information required for the designing or processing of the template,
+the <a href="#xmltype">XML Type</a> needs to be initialized first.
+This happens when the XML Type is accessed for the first time.
+Any <a href="#xmltype.dtd">DTD</a> or <a href="#xmltype.xsd">XSD</a> files
+assigned to it are loaded and parsed.
+If during this an error occurs, the template will not be loaded!
+Another problem may happen when since the last modification of the template,
+the data type information specified in the XML Type, on which the template is based,
+was changed. In that case, the template will still be loaded in the Template Designer,
+however some settings specified in it may become incorrect. Such settings need to be fixed.
+Otherwise, the template may cause errors during processing by the 
+<a href="generator.html">generator</a>.
+<p>
+In the <b>&ldquo;Template Type&rdquo;</b> panel, you should select which type of the template 
+is to be created. The template type determines how the template is processed and what is generated by it
+(as well as some additional features related to this).
+Currently, there are three template types:
+<ol>
+<li class="mrg8">
+  <i><a href="../general/about.html#document_template">Document Template</a></i> 
+  generates a single document file (in any of the supported formats) or a part of the document file.
+</li>
+<li class="mrg8">
+  <i><a href="../general/about.html#frameset_template">Frameset Template</a></i>
+  generates a multi-file framed HTML documentation. This template normally calls from itself
+  many other document templates (subtemplates), which generate particular HTML files to be loaded in the frames.
+  This template also contains the definition of the HTML frameset, by which the <code>index.html</code> is generated.
+</li>
+<li class="mrg8">
+  <i><u>Procedure Template</u></i> does not generate any output. Instead, such templates
+  are called normally only once from the main templates to create specific global data structures 
+  (e.g. element maps) to be used further throughout the whole template set. 
+  In a procedure template, the data query capabilities of the
+  <a href="../general/template_components.html">template components</a>
+  (such as 
+  <a href="../general/template_components.html#element_iterator">Element Iterator</a>)
+  are employed to collect the specific information and represent it internally 
+  in a way convenient for a faster access later.
+</li>
+</ol>
+<p>
+After selecting the template type, click <b>&ldquo;OK&rdquo;</b> button 
+and an empty template will be created:
+
+<blockquote>
+  <img src="images/new_template.png" title="New Template">
+</blockquote>
+
+Now, you can start filling it with the
+<a href="../general/template_components.html">template components</a>
+and to program/design all the processing you need.
+<p>
+What exactly you should do the next is a topic vast enough to be discussed here.
+We refer you to the general <a target="_blank" href="http://www.filigris.com/docflex/docs.php">DocFlex Technology Documentation</a>.
+<p>
+Also, it is very much useful to investigate the Flash
+<a target="_blank" href="http://www.filigris.com/docflex-xml/tutorials/">tutorials</a> created specifically for
+<a href="about.html">DocFlex/XML</a>
+to show in every detail the whole process of designing of a sample template.
+
+<h3>
+  <a name="designer.invoking_generator"></a>
+  Invoking Generator from Template Designer
+</h3>
+
+To accelerate the processes of developing your template application,
+<a href="about.html">DocFlex/XML</a> allows launching
+the template interpreter (the <a href="generator.html">generator</a>)
+directly from the Template Designer.
+<p>
+To invoke the <a href="generator.html">generator</a>,
+just select the <b>&ldquo;Tools | Generator&rdquo;</b> item in the Template Designer main menu.
+You will see the <a href="generator.html#gui">Generator Dialog</a>
+as shown on the following screenshot:
+
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/images/invoking_generator.html" target="_blank"><img src="images/invoking_generator_s.png" title="Invoking Generator from Template Designer" border="0"></a>
+</blockquote>
+
+Click the <b>&ldquo;Run&rdquo;</b> button to start the generation.
+You can immediately see the result produced by your template(s) being designed.
+(DocFlex <a href="../general/templates_designer_features.html">templates</a> do not need
+any compilation or preprocessing to execute them!)
+<p>
+<b>Note:&nbsp;</b> Another possibility that may greatly help you when debugging your templates is the <code>echo()</code>
+function, which you can use in
+<a href="../general/data_processing_features.html#fq_expr">FlexQuery-expressions</a>
+within your templates. This function effectively does nothing, but it prints everything passed through it
+to the Java console window (i.e. Java <code>System.out</code> stream). This may help you to track how particular
+template components and settings are interpreted by the generator.
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

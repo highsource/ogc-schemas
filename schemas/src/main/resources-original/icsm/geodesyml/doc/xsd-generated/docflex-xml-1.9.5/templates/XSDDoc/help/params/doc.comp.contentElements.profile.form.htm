@@ -1,0 +1,25 @@
+Specify whether to document the form of the element name (i.e. if it should be namespace-qualified or not).
+<p>
+All globally declared elements have namespace-qualified names.
+<p>
+For locally declared elements, their namespace qualification is specified by the <b><code>'form'</code></b>
+attribute of the element component. When that attribute is absent, its default value is defined by the
+<b><code>'elementFormDefault'</code></b> attribute of the parent <b><code>&lt;xs:schema&gt;</code></b>.
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"any"</i>
+<blockquote>
+Document the namespace-qualified form for all element components (both global and local ones).
+</blockquote>
+
+<i>"non-default only"</i>
+<blockquote>
+Document the namespace-qualified form only for locally defined element components with the explicitly
+specified <code>'form'</code> attribute. (No default value of that attribute will be documented.)
+</blockquote>
+
+<i>"none"</i>
+<blockquote>
+Do not document the namespace-qualified form of the element.
+</blockquote>

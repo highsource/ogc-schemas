@@ -1,0 +1,19 @@
+This parameter specifies how the content elements should be sorted.
+<p>
+When selected (<b><code>true</code></b>) the elements will be sorted 
+in alphabetic order of their qualified names (with letter case ignored).
+<p>
+When unselected (<b><code>false</code></b>) the elements will follow according
+to some <b><i>natural order</i></b> determined by how and where those elements are declared:
+<ul>
+<li>
+In the simplest case, when all content elements are declared within the same component,
+that will be exactly the order of their declarations.
+</li>
+<li style="margin-top:10pt">
+When the given component (whose content elements are documented) is based on other components,
+some of its content elements may be inherited from the ancestor components.
+In that case, the result element ordering will appear from the subsequent
+interpretation of all involved components.
+</li>
+</ul>

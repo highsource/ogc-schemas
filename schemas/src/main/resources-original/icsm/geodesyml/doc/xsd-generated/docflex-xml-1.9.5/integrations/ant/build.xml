@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!-- This ANT buildfile demonstrates how to integrate -->
+<!-- DocFlex/XML generator with Apache Ant            -->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<project name="DocFlex/XML Ant Integration Demo" basedir=".">
+
+  <!-- This will generate an XML schema documentation -->
+  <target name="XSDDoc">
+
+    <!-- the location of the DocFlex/XML home directory -->
+    <property name="DFH" value="../.."/>
+
+    <!-- the DocFlex/XML Java class path -->
+    <property name="CP" value="${DFH}/lib/xml-apis.jar;${DFH}/lib/xercesImpl.jar;${DFH}/lib/resolver.jar;${DFH}/lib/docflex-xml.jar"/>
+
+    <!--
+       Execute the DocFlex/XML generator.
+
+       IMPORTANT: The 'maxmemory' attribute sets the maximum heap size
+       available to Java VM when running DocFlex/XML. 
+       Check this attribute when you need to process large quantities of data!
+
+       According to our tests, allowing 512 Mb heap size on 32-bit Java is OK
+       in most cases (e.g. running XSDDoc to document large XML schemas).
+       However, for 64-bit Java (running on 64-bit OS) this amount must be doubled.
+       So, you should specify 1024m, instead of 512m.
+
+       The 'fork' attribute forces Ant to launch a separate instance of JVM.
+       This is needed to ensure that the memory specified in the 'maxmemory' 
+       attribute will be allocated indeed. (However, you may remain using Ant's 
+       JVM instance, if you have already specified for it that much of memory.)
+    -->
+    <java classname="com.docflex.xml.Generator" classpath="${CP}" 
+          maxmemory="1024m" fork="true">
+       <!--
+          All options you want to pass to the DocFlex/XML Generator
+          should be specified here with the <arg value="..."/> elements
+          in the same order as on the command line.
+       -->
+
+       <!-- the main template -->
+       <arg value="-template"/>
+       <arg value="${DFH}/templates/XSDDoc/FramedDoc.tpl"/>
+
+       <!-- pass the template parameter 'docTitle' (the documentation title) -->
+       <arg value="-p:docTitle"/> 
+       <arg value="XML Schema for XML Schemas"/> 
+
+       <!-- the output format -->
+       <arg value="-format"/>
+       <arg value="HTML"/>
+
+       <!-- the output directory -->
+       <arg value="-d"/>
+       <arg value="${DFH}/out"/>
+
+       <!-- do not launch the generator GUI -->
+       <arg value="-nodialog"/>
+
+       <!-- do not launch the default viewer for the output file -->
+       <arg value="-launchviewer=false"/>
+
+       <!-- 
+         Specify one or many data source XML files to be processed 
+         by the specified template. (Both local pathnames and URLs 
+         are allowed.)
+         In this example, it is an XML schema to be documented.
+       -->
+       <arg value="http://www.w3.org/2001/XMLSchema.xsd"/>
+
+       <!-- 
+         Use default XML catalog to load the above specified file
+         from DocFlex/XML resources (instead of W3C website)
+       -->
+       <arg value="-xmlcatalog"/>
+       <arg value="urn:docflex-com:xml:defaultcatalog"/>
+
+    </java>
+
+  </target>
+
+</project>

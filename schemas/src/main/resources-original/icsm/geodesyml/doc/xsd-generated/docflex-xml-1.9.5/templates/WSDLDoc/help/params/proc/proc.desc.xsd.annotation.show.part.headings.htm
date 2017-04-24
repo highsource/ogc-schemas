@@ -1,0 +1,38 @@
+Specify, whether to generate multipart annotation headings.
+<p>
+A human-written description of an XML schema or schema component is generated from the content of an <code>&lt;xs:documentation&gt;</code> element found within the <code>&lt;xs:annotation&gt;</code> element that is direct child of an XSD element defining the schema or component. For example:
+<blockquote>
+<pre><code>
+&lt;xs:element name="SomeElement"&gt;
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation&gt;
+      <font color="#008000"><i>element description</i></font>
+    &lt;xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  ...
+&lt;/xs:element&gt;
+</code></pre>
+</blockquote>
+However, <code>&lt;xs:annotation&gt;</code> elements are allowed to have multiple <code>&lt;xs:documentation&gt;</code> children (and <code>&lt;xs:schema&gt;</code> element may have even multiple <code>&lt;xs:annotation&gt;</code> children). In that case, the result description text will be produced from the content of all <code>&lt;xs:documentation&gt;</code> element found by the path:
+<dl><dd>
+<code><i>component</i>/annotation/documentation</code>
+</dd></dl>
+When the component description is generated from the content of multiple <code>&lt;xs:documentation&gt;</code> elements, each of them will produce a separate part of the entire description text. In that case, each part will have a separate heading, so the whole text will look like the following:
+<blockquote>
+<p>
+<b>Annotation 1:</b>
+<p>
+<i>Text 1...</i>
+<p>
+<b>Annotation 2:</b>
+<p>
+<i>Text 2 ...</i><br>
+...
+</blockquote>
+This parameter allows you to suppress the generation of part headings, so the result text will be:
+<blockquote>
+<p>
+<i>Text 1...</i><br>
+<i>Text 2 ...</i><br>
+...
+</blockquote>

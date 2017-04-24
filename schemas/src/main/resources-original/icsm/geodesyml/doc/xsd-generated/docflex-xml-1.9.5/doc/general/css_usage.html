@@ -1,0 +1,2185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex Technology - Documentation - Usage of CSS in generated HTML</title>
+</head>
+
+<body>
+
+<h1>
+DocFlex Technology - Documentation - Usage of CSS in generated HTML
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+  <li class="mrg4"><a href="#html_options"><b>HTML Generator Options for CSS</b></a></li>
+  <li class="mrg4"><a href="#css_rules"><b>Generated CSS Rules</b></a>
+    <ul class="mrg4">
+      <li><a href="#anonymous_rules">Anonymous Rules</a></li>
+      <li><a href="#named_rules">Named Rules</a>
+        <ul>
+          <li><a href="#named_rules_from_template_styles">CSS rules derived from template formatting styles</a></li>
+          <li><a href="#named_rule_class">Where does CSS class name come from?</a></li>
+          <li><a href="#named_rules_with_same_class">Multiple named rules with the same class selector</a></li>
+          <li><a href="#named_plus_anonymous_rules">Named + anonymous rules</a></li>
+          <li><a href="#two_named_plus_anonymous_rules">Named + named + anonymous rules</a></li>
+          <li><a href="#named_rules_other_cases">Other cases: Which template styles can produce named rules?</a></li>
+          <li><a href="#controlling_named_rules">Controlling named rules</a></li>
+        </ul>
+      </li>
+      <li><a href="#default_rules">Default Rules</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#style_sheets"><b>Generated Style Sheets</b></a>
+    <ul class="mrg4">
+      <li><a href="#local_style_sheet">Local Style Sheet</a></li>
+      <li><a href="#global_style_sheet">Global Style Sheet</a></li>
+      <li><a href="#multiple_style_sheets">Multiple Style Sheets</a></li>
+      <li><a href="#style_sheet_structure">Style Sheet Structure</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#custom_css"><b>Custom CSS Rules / CSS File</b></a>
+    <ul class="mrg4">
+      <li><a href="#custom_rules">How to substitute generated CSS rules with custom ones?</a>
+        <ul>
+          <li><a href="#custom_rules_find_which">Find which generated rules to substitute</a></li>
+          <li><a href="#custom_rules_declarations">Provide your own declarations</a></li>
+          <li><a href="#custom_default_rules">Custom default rules</a></li>
+          <li><a href="#custom_rules_relative_units">Case of relative length units</a></li>
+          <li><a href="#custom_rules_license">Which license required?</a></li>
+        </ul>
+      </li>
+      <li><a href="#css_pattern_file">CSS pattern file</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#appendix"><b>Appendix</b></a>
+    <ul class="mrg4">
+      <li><a href="#css_relative_length_units">The problem with relative length units</a></li>
+      <li><a href="#css_applying_multiple_rules">Applying multiple CSS rules to the same HTML element</a></li>
+    </ul>
+  </li>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<h2>
+  <a name="html_options"></a>
+  1.&nbsp; HTML Generator Options for CSS
+</h2>
+
+<blockquote>
+  <img src="images/html_options.png" alt="HTML Option Inspector" border="0" usemap="#html_options_map">
+  <map name="html_options_map">
+    <area shape="rect" coords="9,216,460,237" href="#html.output.css" alt="">
+    <area shape="rect" coords="9,239,460,260" href="#html.output.css.file" alt="">
+    <area shape="rect" coords="9,262,460,283" href="#html.output.css.file.pattern" alt="">
+    <area shape="rect" coords="9,285,460,306" href="#html.output.css.file.anonymRules" alt="">
+    <area shape="rect" coords="9,308,460,329" href="#html.output.css.namedRules" alt="">
+    <area shape="rect" coords="9,331,460,352" href="#html.output.css.namedRules.descriptions" alt="">
+    <area shape="rect" coords="9,354,460,375" href="#html.output.css.namedRules.customRuleFile" alt="">
+    <area shape="rect" coords="9,377,460,398" href="#html.output.css.units" alt="">
+    <area shape="rect" coords="9,400,460,421" href="#html.output.css.units.baseFontSize" alt="">
+  </map>
+</blockquote>
+
+<a name="html.output.css"></a>
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+
+<tr>
+  <th><b>Option/Group</b></td>
+  <th><b>Name / Type / Description</b></td>
+</tr>
+
+<tr align="left" valign="top">
+  <td class="nowrap">
+    <p class="mrg0">
+      <a name="html.output.css.file"></a>
+      Generate style sheet file
+    </p>
+  </td>
+  <td>
+    <code><b>html.output.css.file</b> : <span class="blue">boolean</span></code>
+    <p class="mrg8">
+    Specify whether to generate the external CSS file (<a href="#global_style_sheet">global style sheet</a>).
+    <p class="mrg8">
+    When this option is selected (<b><code>true</code></b>), an external CSS file will be generated,
+    which is placed in the output destination directory typically under the name <code>'stylesheet.css'</code>.
+    Most of the HTML formatting settings used in the generated documentation will be held in this file
+    referenced from each HTML document via 
+    a <code>&lt;link&gt;</code> tag, e.g.:
+
+    <blockquote class="mrg8">
+      <code>&lt;<span class="tag">link</span> <span class="attr">rel</span>="<span class="value">stylesheet</span>" <span class="attr">type</span>="<span class="value">text/css</span>" <span class="attr">href</span>="<span class="value">../../stylesheet.css</span>"></code>
+    </blockquote>
+
+    When this option is unselected (<b><code>false</code></b>),
+    no external style sheet file will be generated.
+    In that case, all <a href="#css_rules">CSS rules</a> used in the generated HTML will be defined
+    <a href="#local_style_sheet">locally</a> within those HTML files themselves,
+    inside <code>&lt;style&gt;</code> element.
+  </td>
+</tr>
+
+<tr align="left" valign="top">
+  <td class="nowrap">
+    <p class="mrg0" style="margin-left:18px">
+      <a name="html.output.css.file.pattern"></a>
+      CSS pattern file
+    </p>
+  </td>
+  <td>
+    <code><b>html.output.css.file.pattern</b> : <span class="blue">file pathname</span></code>
+    <p class="mrg80">
+    Specify a <a href="#css_pattern_file">CSS pattern file</a> to frame the generated
+    <a href="#global_style_sheet">global style sheet</a> into your own CSS file.
+  </td>
+</tr>
+
+<tr align="left" valign="top">
+  <td class="nowrap">
+    <p class="mrg0" style="margin-left:18px">
+      <a name="html.output.css.file.anonymRules"></a>
+      Include anonymous rules
+    </p>
+  </td>
+  <td>
+    <code><b>html.output.css.file.anonymRules</b> : <span class="blue">boolean</span></code>
+    <p class="mrg8">
+    Specify whether all generated <a href="#anonymous_rules">anonymous CSS rules</a>
+    must be stored in the external CSS file (<a href="#global_style_sheet">global style sheet</a>).
+    <p class="mrg8">
+    <table cellspacing="0" cellpadding="5" CLASS="brdr1">
+    <tr><td bgcolor="#F6F6F6" class="inset">
+    <b><i>Anonymous CSS rules</i></b> are CSS rules generated from the formatting settings
+    specified on template components. They are called "anonymous" because these are basically sets
+    of inline CSS properties initially generated for particular HTML tags and, then, moved to a style sheet
+    to eliminate their repeating across the HTML file(s).
+    Now, only class selectors assigned to those CSS rules are specified in the HTML tags
+    (instead of the original CSS properties).
+    But the class selectors are generated automatically, which depends on how early a particular
+    CSS property set was registered in the style sheet. That makes them completely unpredictable
+    and dependent on the data being documented, which prohibits substituting the anonymous rules
+    with any custom ones.
+    </td></tr>
+    </table>
+    </p>
+    When this option is selected (<b><code>true</code></b>),
+    all <a href="#anonymous_rules">anonymous rules</a> generated across all generated HTML files
+    will be collected in the <a href="#global_style_sheet">global style sheet</a>
+    (which is printed further as the external CSS file).
+    That produces the most compact documentation files, since many anonymous rules repeat themselves
+    across different HTML document. So, it is the default setting.
+    <p class="mrg8">
+    When this option is unselected (<b><code>false</code></b>),
+    the <a href="#anonymous_rules">anonymous rules</a> will be generated and stored
+    <a href="#local_style_sheet">locally</a> by each HTML document where they are used.
+    The <a href="#global_style_sheet">global style sheet</a> won't include anonymous rules.
+    You may want this in the following situations:
+    <ul class="mrg80">
+    <li class="mrg80">
+    Since <a href="#anonymous_rules">anonymous CSS rules</a> (i.e. their class selectors) are generated
+    completely unpredictably, even a little change in the input
+    data, which would affect just a single HTML file, may cause a great disturbance
+    in the naming of all anonymous rules stored in the <a href="#style_sheets">style sheet</a>
+    used by that HTML file.
+    When it is the <a href="#global_style_sheet">global style sheet</a>, all HTML files, where
+    any anonymous rules are used, will change too.
+    <p class="mrg80">
+    This won't be good, for instance, when you store your generated documentation in a repository system
+    that updates only changes of files relative to the previous version. Then, a massive disturbance in
+    the generated HTML (caused by just a few changes in the input data) will lead to a massive update of
+    your repository (particularly in the case of very large documentation).
+    So, keeping all anonymous rules locally would help!
+    </li>
+    <li class="mrg80">
+    If you substitute <b>all</b> generated 
+    <a href="#default_rules">default</a> and <a href="#named_rules">named</a> CSS rules
+    with your <a href="#custom_rules">custom CSS rules</a>
+    and exclude all <a href="#anonymous_rules">anonymous rules</a> from the
+    <a href="#global_style_sheet">global style sheet</a>, its content effectively becomes static.
+    Then, you can simply use a <a href="#css_pattern_file">CSS pattern file</a>
+    as a complete your CSS file.
+    </li>
+    </ul>
+  </td>
+</tr>
+
+<tr align="left" valign="top">
+  <td class="nowrap">
+    <p class="mrg0">
+      <a name="html.output.css.namedRules"></a>
+      Generate name rules
+    </p>
+  </td>
+  <td>
+    <code><b>html.output.css.namedRules</b> : <span class="blue">enum {"none", "all", "selected"}</span></code>
+    <p class="mrg8">
+    Specify whether to generate <a href="#named_rules">named CSS rules</a>.
+    <p class="mrg8">
+    <table cellspacing="0" cellpadding="5" CLASS="brdr1">
+    <tr><td bgcolor="#F6F6F6" class="inset">
+    <b><i>Named CSS rules</i></b> are CSS rules generated from the <a href="#template_styles">formatting styles</a>
+    defined in templates.
+    When such a style is assigned to a template component, the HTML tags generated
+    by that component can be assigned with the CSS rule generated from that style.
+    The class selector assigned to that CSS rule is specified in the template style itself (or derived from its name).
+    Therefore, it has a constant (predictable) relationship with both the particular CSS property set produced
+    from that style and the particular output structures where that CSS rule is applied.
+    This opens a possibility to substitute the generated named CSS rules with the 
+    <a href="#custom_rules">custom ones</a>.
+    <p class="mrg8"></p>
+    Please note that named CSS rules are not required for proper HTML output and will
+    only increase its size.
+    You need named rules only when you want to style the generated HTML documentation
+    with your own CSS properties/rules.
+    </td></tr>
+    </table>
+    </p>
+    <u>Possible Values</u>:
+    <dl class="mrg80">
+    <dt class="mrg8"><i>"none"</i></dt>
+    <dd class="mrg8">
+      Disable the generation of named CSS rules.
+    </dd>
+    <dt class="mrg8"><i>"all"</i></dt>
+    <dd class="mrg8">
+      Generate all named CSS rules possible.
+      <p class="mrg8">
+      When this setting is selected, almost all <a href="#template_styles">template formatting styles</a>
+      involved in the generation of the particular HTML output will be rendered into named CSS rules.
+      See also: <a href="#named_rules_other_cases">Which template styles can produce named rules?</a>
+    </dd>
+    <dt class="mrg8"><i>"selected"</i></dt>
+    <dd class="mrg80">
+      Generate only those named CSS rules, which come from the <a href="#template_styles">template formatting styles</a>
+      with the selected <i>"CSS | Allow named rule"</i> property.
+      <p class="mrg80">
+      See also: <a href="#controlling_named_rules">Controlling Named Rules</a>
+    </dd>
+    </dl>
+  </td>
+</tr>
+
+<tr align="left" valign="top">
+  <td class="nowrap">
+    <p class="mrg0" style="margin-left:18px">
+      <a name="html.output.css.namedRules.descriptions"></a>
+      Include descriptions
+    </p>
+  </td>
+  <td>
+    <code><b>html.output.css.namedRules.descriptions</b> : <span class="blue">boolean</span></code>
+    <p class="mrg8">
+    Specify whether to add the descriptions of <a href="#template_styles">template formatting styles</a>
+    to the <a href="#named_rules">named CSS rules</a> generated from them.
+    <p class="mrg8">
+    When this option is selected (<b><code>true</code></b>),
+    the descriptions of template styles (specified in templates)
+    will appear as CSS comments before the definitions of the respective
+    <a href="#named_rules">named CSS rule</a> generated from those styles.
+    For example:
+    <blockquote><pre>
+<span class="comment">/*
+ * Used for "About" section added at the bottom
+ * of each generated document.
+ */</span>
+<span class="rule">span.about</span> { font-family: "Arial", sans-serif; font-size: 84%; }</pre>
+    </blockquote>
+    Such descriptions may help you to understand the purpose of particular
+    <a href="#named_rules">named CSS rules</a>
+    and to decide whether and how to <a href="#custom_css">substitute</a> them.
+    <p class="mrg80">
+    When this options is unselected (<b><code>false</code></b>), no descriptions
+    will be added.
+  </td>
+</tr>
+
+<tr align="left" valign="top">
+  <td class="nowrap">
+    <p class="mrg0" style="margin-left:18px">
+      <a name="html.output.css.namedRules.customRuleFile"></a>
+      Custom rule file
+    </p>
+  </td>
+  <td>
+    <code><b>html.output.css.namedRules.customRuleFile</b> : <span class="blue">file pathname</span></code>
+    <p class="mrg8">
+    Specify a (CSS) file with custom definitions for some of the automatically generated
+    <a href="#default_rules">default</a> and <a href="#named_rules">named</a> CSS rules.
+    <p class="mrg80">
+    For more details, please see:
+    <a href="#custom_rules">How to substitute generated CSS rules with custom ones?</a>
+  </td>
+</tr>
+
+<tr align="left" valign="top">
+  <td class="nowrap">
+    <p class="mrg0">
+      <a name="html.output.css.units"></a>
+      Units
+    </p>
+  </td>
+  <td>
+    <code><b>html.output.css.units</b> : <span class="blue">enum {"relative", "points", "pixels"}</span></code>
+    <p class="mrg80">
+    Specify measurement units used in the generated HTML.
+    <p class="mrg8">
+    <table cellspacing="0" cellpadding="5" CLASS="brdr1">
+    <tr><td bgcolor="#F6F6F6" class="inset">
+      This applies to font sizes and most of length values (like spacing, margins, paddings etc.),
+      which are specified as properties of <a href="#css_rules">CSS rules</a>
+      generated directly from the formatting properties of
+      <a href="template_components.html">template components</a>
+      and <a href="#named_rules_from_template_styles">template formatting styles</a>.
+      <p class="mrg8"></p>
+      Note: A few length values are always specified in pixels (e.g. border width), because otherwise their
+      effect would be highly unpredictable.
+    </td></tr>
+    </table>
+    </p>
+    <u>Possible Values</u>:
+    <dl class="mrg80">
+    <dt class="mrg8">
+      <a name="html.output.css.units.relative"></a>
+      <i>"relative"</i>
+    </dt>
+    <dd class="mrg8">
+      This is the default setting.
+      All font sizes are specified in <b>percents</b> relatively to the document base font size
+      (determined by the HTML browser).
+      Other things like spacings, margins, paddings etc. are set in <b>em</b> units, which are also
+      interpreted against the base font size.
+      <p class="mrg8">
+      All values are computed from the corresponding formatting properties specified 
+      in templates according to the following formulas (for <i>em</i> and % values correspondingly): 
+      <dl class="mrg8">
+      <dd class="mrg8">
+        <code>value<sub><i>tpl</i></sub> / defaultFontSize<sub><i>tpl</i></sub></code><br>
+        <code>(value<sub><i>tpl</i></sub> / defaultFontSize<sub><i>tpl</i></sub>) * 100</code>
+      </dd>
+      <dt class="mrg8">where</dt>
+      <dd class="mrg8">
+        <table cellpadding="0" cellspacing="0" border="0">
+        <tr valign="top">
+          <td><code>value<sub><i>tpl</i></sub></code></td>
+          <td class="nowrap">&nbsp;-&nbsp;</td>
+          <td>the property value specified in the template</td>
+        </tr>
+        <tr valign="top">
+          <td><code>defaultFontSize<sub><i>tpl</i></sub></code></td>
+          <td class="nowrap">&nbsp;-&nbsp;</td>
+          <td>
+            the template default font size, which it is one provided by
+            the default paragraph style in the main template
+          </td>
+        </tr>
+        </table>
+      </dd>
+      </dl>
+
+      <table cellspacing="0" cellpadding="5" CLASS="brdr1">
+      <tr><td bgcolor="#F6F6F6" class="inset">
+        Relative units are considered most convenient for viewing HTML documentation in web-browsers.
+        However, there is one problem. According to CSS, the effective value of a CSS property specified 
+        in relative units is actually computed against the font size inherited from the parent element
+        where the property is applied.
+        This creates the problem of compounding, which requires special efforts to work around.
+        For more details, see <a href="#css_relative_length_units">Appendix | The problem with relative length units</a>.
+      </td></tr>
+      </table>
+    </dd>
+    <dt class="mrg8">
+      <a name="html.output.css.units.pixels"></a>
+      <i>"pixels"</i>
+    </dt>
+    <dd class="mrg80">
+      All font sizes, spacings, margins, paddings etc. will be set in pixels (<code>px</code>).
+      <p class="mrg8">
+      These values are produced from the corresponding formatting properties specified in templates
+      according to the formula:
+      <dl class="mrg80">
+      <dd>
+        <code>(value<sub><i>tpl</i></sub> / defaultFontSize<sub><i>tpl</i></sub>) * baseFontSize<sub><i>px</i></sub></code>
+      </dd>
+      <dt>where</dt>
+      <dd class="mrg80">
+        <table cellpadding="0" cellspacing="0" border="0">
+        <tr valign="top">
+          <td><code>value<sub><i>tpl</i></sub></code></td>
+          <td>&nbsp;-&nbsp;</td>
+          <td>the property value specified in the template</td>
+        </tr>
+        <tr valign="top">
+          <td><code>defaultFontSize<sub><i>tpl</i></sub></code></td>
+          <td class="nowrap">&nbsp;-&nbsp;</td>
+          <td>
+            the template default font size, which it is one provided by
+            the default paragraph style in the main template
+          </td>
+        </tr>
+        <tr valign="top">
+          <td><code>baseFontSize<sub><i>px</i></sub></code></td>
+          <td class="nowrap">&nbsp;-&nbsp;</td>
+          <td>
+            the value of "<a href="#html.output.css.units.baseFontSize.pixels">Base font size</a>"
+            option for pixels
+          </td>
+        </tr>
+        </table>
+      </dd>
+      </dl>
+    </dd>
+    <dt class="mrg8">
+      <a name="html.output.css.units.points"></a>
+      <i>"points"</i>
+    </dt>
+    <dd class="mrg80">
+      All font sizes, spacings, margins, paddings etc. will be set in points (<code>pt</code>).
+      <p class="mrg8"></p>
+      These values are produced from the corresponding formatting properties specified in templates,
+      which are typically set in points too.
+      But the point values that get in the generated HTML (i.e. <a href="#css_rules">CSS rules</a>)
+      are not exactly the same as those specified in templates.
+      Rather, they are computed according to the formula:
+      <dl class="mrg80">
+      <dd>
+        <code>(value<sub><i>tpl</i></sub> / defaultFontSize<sub><i>tpl</i></sub>) * baseFontSize<sub><i>pt</i></sub></code>
+      </dd>
+      <dt>where</dt>
+      <dd class="mrg80">
+        <table cellpadding="0" cellspacing="0" border="0">
+        <tr valign="top">
+          <td><code>value<sub><i>tpl</i></sub></code></td>
+          <td class="nowrap">&nbsp;-&nbsp;</td>
+          <td>the property value specified in the template</td>
+        </tr>
+        <tr valign="top">
+          <td><code>defaultFontSize<sub><i>tpl</i></sub></code></td>
+          <td class="nowrap">&nbsp;-&nbsp;</td>
+          <td>
+            the template default font size, which it is one provided by
+            the default paragraph style in the main template
+          </td>
+        </tr>
+        <tr valign="top">
+          <td><code>baseFontSize<sub><i>pt</i></sub></code></td>
+          <td class="nowrap">&nbsp;-&nbsp;</td>
+          <td>
+            the value of "<a href="#html.output.css.units.baseFontSize.points">Base font size</a>"
+            option for points
+          </td>
+        </tr>
+        </table>
+      </dd>
+      </dl>
+    </dd>
+    </dl>
+  </td>
+</tr>
+
+<tr align="left" valign="top">
+  <td class="nowrap">
+    <p class="mrg0" style="margin-left:18px">
+      <a name="html.output.css.units.baseFontSize"></a>
+      Base font size
+    </p>
+  </td>
+  <td>
+    This is actually not a single but two different options corresponding 
+    <i><a href="#html.output.css.units.pixels">pixel</a></i> and
+    <i><a href="#html.output.css.units.points">point</a></i>
+    units.
+    For <i><a href="#html.output.css.units.relative">relative</a></i> units this
+    option is not available.
+  </td>
+</tr>
+
+<tr align="left" valign="top">
+  <td class="nowrap">
+    <p class="mrg0" style="margin-left:36px">
+      <a name="html.output.css.units.baseFontSize.pixels"></a>
+      Base font size<br><i class="nav">(for pixels)</i>
+    </p>
+  </td>
+  <td>
+    <code><b>html.output.css.units.baseFontSize.pixels</b> : <span class="blue">integer (nonnegative)</span></code>
+    <p class="mrg80">
+    Specify the base font size in case of <i><a href="#html.output.css.units.pixels">pixel</a></i> units.
+    The default value is 16 (px).
+  </td>
+</tr>
+
+<tr align="left" valign="top">
+  <td class="nowrap">
+    <p class="mrg0" style="margin-left:36px">
+      <a name="html.output.css.units.baseFontSize.points"></a>
+      Base font size<br><i class="nav">(for points)</i>
+    </p>
+  </td>
+  <td>
+    <code><b>html.output.css.units.baseFontSize.points</b> : <span class="blue">number (nonnegative)</span></code>
+    <p class="mrg80">
+    Specify the base font size in case of <i><a href="#html.output.css.units.point">point</a></i> units.
+    The default value is 12 (pt).
+  </td>
+</tr>
+
+</table>
+
+<h2>
+  <a name="css_rules"></a>
+  2.&nbsp; Generated CSS Rules
+</h2>
+
+All informative content of HTML files (i.e. HTML tags and text) is generated by various 
+<a href="template_components.html">template components</a>
+through their interpretation.
+<p>
+When a template component is interpreted, it produces a piece of HTML output
+(which is typically represented by a certain HTML element).
+All formatting of that output comes in the form of CSS rules.
+The rules themselves are placed in the <a href="#style_sheets">style sheet</a>
+and the class selectors associated with them are specified in HTML tags.
+<p>
+The CSS rules generated by DocFlex fall into three categories:
+<p>
+<ol>
+<li><a href="#anonymous_rules">Anonymous Rules</a></li>
+<li><a href="#named_rules">Named Rules</a></li>
+<li><a href="#default_rules">Default Rules</a></li>
+</ol>
+
+Those categories determine how the rules are produced, applied and what you can do about them
+(see <a href="#custom_css">Custom CSS Rules / CSS File</a>).
+
+<h3 class="spec">
+  <a name="anonymous_rules"></a>
+  Anonymous Rules
+</h3>
+
+When a <a href="template_components.html">template component</a>
+is interpreted, every formatting property specified on it is rendered with a certain CSS property.
+So, a list of CSS properties is created.
+<p>
+<u>Example</u>:
+<p>
+The formatting properties specified on a
+<a href="template_components.html">template components</a>
+may look this:
+<blockquote>
+  <img src="images/control_format_props1.png" alt="">
+</blockquote>
+
+which will be rendered into the set of corresponding CSS properties:
+<blockquote>
+<code>
+font-family: "Arial", sans-serif; font-size: 130%; font-weight: bold; color: blue
+</code>
+</blockquote>
+
+Further, such a set must be applied to the HTML element generated by the component,
+which could be done inline. e.g.:
+
+<blockquote>
+<code>
+&lt;<span class="tag">span</span> <span class="attr">style</span>="<span class="value">font-family: "Arial", sans-serif; font-size: 130%; font-weight: bold; color: blue</span>"&gt; ... &lt;/<span class="tag">span</span>&gt;
+</code>
+</blockquote>
+
+That would produce a valid HTML with all formatting in place.
+<p>
+But, the same template component may generate another piece of output and many more.
+So, the same inline list of CSS properties will be repeating by every of them.
+That would potentially bloat the generated HTML file quite a lot.
+(Moreover, different template components may also produce equal CSS property sets.)
+<p>
+To avoid that repeating, each set of CSS properties is specified only once in the form of a CSS rule, 
+which is placed in a <a href="#style_sheets">style sheet</a>
+under a certain <b>class name</b> (selector), like this (here <code>'aXXX'</code> is the rule's class name):
+<blockquote>
+<code>
+&lt;<span class="tag">style</span>&gt;<br>
+&nbsp;&nbsp;<span class="rule">span.aXXX</span> { font-family: "Arial", sans-serif; font-size: 130%; font-weight: bold; color: blue }<br>
+&lt;/<span class="tag">style</span>&gt;<br>
+</code>
+</blockquote>
+
+So, now only the class name will be added to each HTML element where the given CSS property set
+is applied:
+
+<blockquote>
+<code>&lt;<span class="tag">span</span> <span class="attr">class</span>="<span class="value">aXXX</span>"&gt; ... &lt;/<span class="tag">span</span>&gt;</code>
+</blockquote>
+
+The rule's class name is used here only for linking purpose.
+So, it is generated automatically just to be unique in the given style sheet (and as short as possible).
+<p>
+Such CSS rules, which are produced by the generator automatically in order to replace with them 
+the inline CSS properties, we shall call <i><b>anonymous rules</b></i>.
+That's because the class names assigned to those CSS rules, besides being meaningless, have no constant
+relation with the particular lists of CSS properties they represent.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  Exactly how such class names are generated depends on the data being processed.
+  Another HTML document generated by the same template may contain similar anonymous CSS rules, but associated 
+  with different class names.
+  Even when a <a href="#global_style_sheet">global style sheet</a> is maintained,
+  the rule class names may be different when you generate another documentation for a different data source.
+</td></tr>
+</table>
+<p>
+That prohibits using any <a href="#custom_rules">custom CSS rules</a>
+to replace the anonymous ones.
+If you need to change something in the formatting of the generated HTML,
+you have to edit the corresponding templates and rely only on the formatting capabilities
+provided by DocFlex (via the template language and its rendering by the HTML generator).
+<p>
+That problem has been solved with the introduction of <a href="#named_rules">named CSS rules</a>.
+
+<h3 class="spec">
+  <a name="named_rules"></a>
+  Named Rules
+</h3>
+
+Since <a href="../docflex-xml/about.html">DocFlex/XML</a> 1.9 
+(<a target="_blank" href="http://www.filigris.com/docflex-javadoc/">DocFlex/Javadoc</a> 1.7),
+it is possible to associate with particular CSS rules some constant (and meaningful) class names.
+That is, whenever some HTML documentation is generated by a given template set,
+a particular CSS rule (i.e. a specific set of CSS properties) used across all generated HTML files
+will be always associated with the same CSS class name.
+<p>
+Such CSS rules associated with constant class names that are specified in templates,
+we shall call <b><i>named rules</i></b>.
+<p>
+Here is how it works.
+
+<h4>
+  <a name="named_rules_from_template_styles"></a>
+  <a name="template_styles"></a>
+  CSS rules derived from template formatting styles
+</h4>
+
+Template formatting styles are not CSS styles.
+Rather, they are another type of definitions stored in templates (besides components):
+<blockquote>
+  <img src="images/styles_highlighted_text.png" alt="">
+</blockquote>
+
+Basically, a template formatting style is a bunch of component formatting properties:
+<blockquote>
+  <img src="images/style_highlighted_text2.png" alt="">
+</blockquote>
+
+which is given a certain name:
+
+<blockquote>
+  <img src="images/style_highlighted_text.png" alt="">
+</blockquote>
+
+By that name the style can be assigned to any 
+<a href="template_components.html">component</a> in the template.
+When a component has a formatting style, those formatting properties not specified directly on the component
+are inherited from the style.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  Originally, template formatting styles were modeled on RTF styles.
+  When RTF output is generated, a template formatting style would be rendered with a corresponding RTF style.
+</td></tr>
+</table>
+<p>
+Let's look how template formatting styles are used to generate named CSS rules.
+<p>
+Suppose, a component C is assigned with a template formatting style <code>'Highlighted Text'</code>
+and there is no other formatting properties directly specified on it:
+<blockquote>
+  <img src="images/control_format_props2.png" alt="">
+</blockquote>
+
+When C is interpreted, the <code>'Highlighted Text'</code> style will produce
+a CSS rule encoding all formatting properties specified in that style.
+The rule will be assigned with the <code>'highlight'</code> <a href="#named_rule_class">class name</a>
+and registered in the style sheet:
+
+<blockquote>
+<code>
+&lt;<span class="tag">style</span>&gt;<br>
+&nbsp;&nbsp;<span class="rule">span.highlight</span> { color: #EE0000 }<br>
+&lt;/<span class="tag">style</span>&gt;
+</code>
+</blockquote>
+
+That <a href="#named_rule_class">class name</a> will be used to format the HTML output of the component:
+
+<blockquote>
+<code>&lt;<span class="tag">span</span> <span class="attr">class</span>="<span class="value">highlight</span>"&gt; ... &lt;/<span class="tag">span</span>&gt;</code>
+</blockquote>
+
+<h4>
+  <a name="named_rule_class"></a>
+  Where does CSS class name come from?
+</h4>
+
+The class name (selector) assigned to a named CSS rule comes
+from the corresponding <a href="#template_styles">template formatting style</a>, by which the rule is generated.
+The rule class name must be specified with the <i>"CSS | Class name"</i> property in the style definition:
+<blockquote>
+  <img src="images/style_css_class_name.png" alt="">
+</blockquote>
+
+When a template formatting style has no specified <i>"CSS | Class name"</i> property,
+the valid class selector will be generated automatically from the style name.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  Any template formatting style has a certain (primary) name, by which it is identified in the template.
+  That name may be a rather long string with spaces, which is unsuitable for immediate use as a CSS class name.
+  But a valid CSS class name may be produced automatically from that primary name using some conversion.
+  <p class="mrg80">
+  For example, the automatically generated CSS class name for the style shown on the screenshot will be
+  <code>"Highlighted-Text"</code>.
+</td></tr>
+</table>
+
+<h4>
+  <a name="named_rules_with_same_class"></a>
+  Multiple named rules with the same class selector
+</h4>
+
+As it was said early, <a href="#named_rules">named rules</a> are generated from 
+<a href="#template_styles">template formatting styles</a>,
+which have not been modeled on CSS and do not conform to it perfectly.
+<p>
+That means, some template styles cannot be expressed with a single CSS rule.
+Rather, they must be rendered with several CSS rules applied to different HTML elements
+nested in each other. 
+Such multiple CSS rules (produced from the same template style)
+will still have the same <a href="#named_rule_class">class name</a>
+(specified in the style). So, you can <a href="#custom_css">substitute</a>
+all of them with your custom rules as well.
+<p>
+In fact, there are quite a few specific situations when multiple <a href="#named_rules">named rules</a>
+with the same class selector are produced:
+<ul>
+<li><b>Ambiguous formatting properties</b>
+<p>
+Some formatting properties specified in templates have no direct analogues in CSS.
+For example, there is no special CSS property for background color of text.
+Of course, CSS has <code>'background-color'</code> property, but 
+when it is applied to a particular HTML element, it will color the whole object 
+described by that element.
+For instance, when that is a <code>&lt;div&gt;</code>,
+the entire strip on the page will be colored - not just the text contained in it!
+<p>
+In the following flash movie it is explained in full details (click on the picture):
+<p>
+<a href="http://www.filigris.com/docflex/images/ambiguous_properties.html" target="_blank"><img src="images/ambiguous_properties.png" border="0" alt=""></a>
+</p>
+</li>
+
+<li><a name="conflicting_properties"></a><b>Property conflicts caused by relative units</b>
+<p>
+Another problem arises, when relative units (for font sizes and lengths) are used.
+Then, the CSS rule like this (which might be generated from a template paragraph style <code>'heading'</code>):
+<blockquote>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr valign="top">
+<td class="nowrap">
+<code>
+  <span class="rule">div.heading</span> {&nbsp;
+</code>
+</td>
+<td>
+<code>
+  font-family: "Arial", sans-serif; font-size: 90%; font-weight: bold;
+  text-decoration: none; color: black; margin-top: .58em; margin-bottom: .25em;
+  white-space: nowrap; }
+</code>
+</td>
+</tr>
+</table>
+</blockquote>
+would not produce the top and bottom margins as intended in the template,
+because the values for those margins specified in the rule would be interpreted not against the document base font size,
+but against a new font size (reduced to 90%), which comes from the rule itself.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  Of course, the margins may be corrected according to that local font size too.
+  But such tricks would complicate everything enormously.
+</td></tr>
+</table>
+</p>
+To work around those problems, each template paragraph styles is rendered with two named CSS rules:
+one for paragraph properties and another one for text properties. For example:
+
+<blockquote>
+<table cellspacing="0" cellpadding="0" border="0">
+</tr>
+<tr valign="top">
+<td class="nowrap">
+<code>
+  <span class="rule">div.heading</span> &nbsp;{&nbsp;
+</code>
+</td>
+<td>
+<code>
+  margin-top: .58em; margin-bottom: .25em; white-space: nowrap; }
+</code>
+</td>
+</tr>
+<tr valign="top">
+<td class="nowrap">
+<code>
+  <span class="rule">span.heading</span> {&nbsp;
+</code>
+</td>
+<td>
+<code>
+  font-family: "Arial", sans-serif; font-size: 90%; font-weight: bold;
+  text-decoration: none; color: black; }
+</code>
+</td>
+</tr>
+</table>
+</blockquote>
+
+and here is how those rules are applied:
+
+<blockquote>
+<code>
+&lt;<span class="tag">div</span> <span class="attr">class</span>="<span class="value">heading</span>"&gt;&lt;<span class="tag">span</span> <span class="attr">class</span>="<span class="value">heading</span>"&gt;Heading Text&lt;/<span class="tag">span</span>&gt;&lt;/<span class="tag">div</span>&gt;
+</code>
+</blockquote>
+
+See also:
+<ul class="mrg8">
+<li>"<a href="#html.output.css.units">Output | CSS | Units</a>" option</li>
+<li><a href="#css_relative_length_units">Appendix | The problem with relative length units</a></li>
+<li><a href="#custom_rules_relative_units">How to substitute generated CSS rules with custom ones? | Case of relative length units</a></li>
+</ul>
+<p>
+
+</li>
+
+<li><a name="blended_in_hyperlink"></a><b>Blended-in hyperlinks</b>
+<p>
+Some hyperlinks must not be too prominent. 
+That is, they must look the same as the normal text, yet have something indicating the hyperlink (e.g. underlining).
+Another possibility is that the hyperlink must be hidden completely, so it appears as ordinary text 
+all the time, yet reveals itself when the mouse cursor hovers over it. 
+Both effects can be achieved by formatting the hyperlink as normal text and adding to it some extra-formatting
+(indicating the link either constantly or only during the mouse hovering).
+<p>
+Formatting of a hyperlink as normal text means applying to the <code>&lt;a&gt;</code> element
+the same CSS properties as for the normal text and having those properties override any default hyperlink formatting.
+<p>
+This is achieved by specifying that the CSS rule for text is also applicable for <code>&lt;a&gt;</code> elements.
+In the following example, two <a href="#named_rules">named CSS rules</a> are produced from the same
+<a href="#template_styles">template formatting styles</a> <code>'heading'</code>:
+<blockquote>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td colspan="2">
+<code>
+  <span class="comment">/* CSS rule to format the heading paragraph */</span>
+</code>
+</td>
+</tr>
+<tr valign="top">
+<td class="nowrap">
+<code>
+  <span class="rule">div.heading</span> {&nbsp;
+</code>
+</td>
+<td>
+<code>
+  margin-top: .58em; margin-bottom: .25em; white-space: nowrap; }
+</code>
+</td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td colspan="2">
+<code>
+  <br><span class="comment">/* CSS rule for both normal text and hyperlinks blended into it */</span>
+</code>
+</td>
+</tr>
+<tr>
+<tr valign="top">
+<td class="nowrap">
+<code>
+  <span class="rule">span.heading</span>, <span class="rule">a.heading</span> {&nbsp;
+</code>
+</td>
+<td>
+<code>
+  font-family: "Arial", sans-serif; font-size: 90%; font-weight: bold;
+  text-decoration: none; color: black; }
+</code>
+</td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td colspan="2">
+<code>
+  <br><span class="comment">/* CSS rule to indicate a hyperlink when mouse hovering */</span>
+</code>
+</td>
+<tr valign="top">
+<td class="nowrap">
+<code>
+  <span class="rule">a:hover.link</span> { text-decoration: underline; }
+</code>
+</td>
+</tr>
+</table>
+</blockquote>
+
+Now, the HTML code for a blended-in hyperlink will look like this:
+<blockquote>
+<pre>
+&lt;<span class="tag">div</span> <span class="attr">class</span>="<span class="value">heading</span>"&gt;
+  &lt;<span class="tag">a</span> <span class="attr">ref</span>="<span class="value">...</span>" <span class="attr">class</span>="<span class="value">heading link</span>"&gt;Heading Text/Link&lt;/<span class="tag">a</span>&gt;
+&lt;/<span class="tag">div</span>&gt;
+</pre>
+</blockquote>
+
+In the following flash movie you can see how this is programmed in a real doc-generator
+(click on the picture):
+<p>
+<a href="http://www.filigris.com/docflex/images/blended_in_hyperlinks.html" target="_blank"><img src="images/blended_in_hyperlinks.png" border="0" alt=""></a>
+</li>
+</ul>
+
+<h4>
+  <a name="named_plus_anonymous_rules"></a>
+  Named + anonymous rules
+</h4>
+
+So far, we discussed a situation when all formatting properties of a 
+template component come from a
+<a href="#template_styles">formatting style</a> (e.g. <code>'Highlighted Text'</code>)
+assigned to it. That will produce a named CSS rule (<code>'highlight'</code>)
+applied to the component's HTML output.
+<p>
+But what will happen when, besides the style <code>'Highlighted Text'</code>,
+the component has other formatting properties directly specified on it? For example, the bold font:
+
+<blockquote>
+  <img src="images/control_format_props3.png" alt="">
+</blockquote>
+
+Then, those properties will produce an additional CSS rule, now <a href="#anonymous_rules">anonymous</a> one,
+with an automatically-generated class name (e.g. <code>'aXXX'</code>).
+So, the style sheet now will include two rules:
+
+<blockquote>
+<pre>&lt;<span class="tag">style</span>&gt;
+  <span class="tag">span.highlight</span> { color: #EE0000 }
+  <span class="tag">span.aXXX</span> { font-weight: bold }
+&lt;/<span class="tag">style</span>&gt;
+</pre>
+</blockquote>
+
+Both class name will be applied in the component's HTML output:
+
+<blockquote>
+<code>
+&lt;<span class="tag">span</span>
+<span class="attr">class</span>="<span class="value">highlight aXXX</span>"&gt;
+... &lt;/<span class="tag">span</span>&gt;
+</code>
+</blockquote>
+
+The ordering of the rules in the style sheet is important!
+
+Since formatting properties specified directly on the template component override those
+defined in the template formatting style, to have the same effect in HTML,
+the CSS properties defined in the <a href="#anonymous_rules">anonymous rule</a> must override
+similar properties found in the <a href="#named_rules">named rule</a> (generated from the style).
+This works only when the anonymous rule appears in the style sheet later (below) the named one.
+
+<h4>
+  <a name="two_named_plus_anonymous_rules"></a>
+  Named + named + anonymous rules
+</h4>
+
+Now, let's look into even more complex situation, where, along with the formatting properties directly
+specified on the component, two <a href="#template_styles">formatting styles</a>
+are involved: one for paragraphs and one for text.
+<p>
+The following
+<a href="template_components.html#area_section">Area Section</a>
+(shown on the screenshot) would generate a certain message.
+It is a paragraph filled with a bright color and surrounded by the border to highlight the whole message.
+The message text is formatted mostly with the same font and color,
+however, a part of it is highlighted with a different color and the bold font.
+The panel on the right actually shows what that message would look like:
+
+<dl><dd>
+  <img src="images/area_section.png" alt="">
+</dd></dl>
+
+The formatting properties of that Area Section consist of just one setting:
+assigning to it the paragraph style <code>'Message'</code>. So, all paragraph formatting
+(including text) comes from that style:
+
+<dl><dd>
+  <img src="images/area_section_props.png" alt="">
+</dd></dl>
+
+Here is how the <code>'Message'</code> style is defined:
+
+<dl><dd>
+  <img src="images/style_message.png" alt="">
+</dd></dl>
+
+It provides the paragraph specific properties, which include the background color and border:
+
+<dl><dd>
+  <img src="images/style_message_props1.png" alt="">
+</dd></dl>
+
+and also some margins and paddings:
+
+<dl><dd>
+  <img src="images/style_message_props2.png" alt="">
+</dd></dl>
+
+The <code>'Message'</code> style also provides the text formatting properties,
+which include the font and its color:
+
+<dl><dd>
+  <img src="images/style_message_props3.png" alt="">
+</dd></dl>
+
+The specifically highlighted part of the message text is generated by a separate
+<a href="template_components.html#text_control">Text Control</a>:
+
+<dl><dd>
+  <img src="images/area_section2.png" alt="">
+</dd></dl>
+
+Its formatting settings are the same as described in the
+"<a href="#named_plus_anonymous_rules">Named + anonymous rules</a>" section
+(the <code>'Highlighted Text'</code> style plus the bold font specified directly on the control):
+
+<dl><dd>
+  <img src="images/control_format_props3.png" alt="">
+</dd></dl>
+
+Now, let's see what HTML/CSS output this everything will generate.
+The style sheet will include three <a href="#named_rules">named rules</a> and
+one <a href="#anonymous_rules">anonymous rule</a>:
+
+<blockquote>
+<pre>&lt;<span class="tag">style</span>&gt;
+  <span class="comment">/*
+   * Two named rules generated from 'Message' style
+   * (see also: <a href="#named_rules_with_same_class" class="comment">Multiple named rules with the same class selector</a>)
+   */</span>
+  <span class="rule">div.msg</span>  { background-color: #FFFFDD; border: solid 1px #FF0000; 
+             margin-top: .4em; margin-bottom: .4em; padding-top: .1em; padding-bottom: .1em; }
+  <span class="rule">span.msg</span> { font-family: "Verdana", sans-serif; font-size: 110%; color: #008000; }
+
+  <span class="comment">/* the named rule generated from 'Highlighted Text' style */</span>
+  <span class="rule">span.highlight</span> { color: #EE0000 }
+
+  <span class="comment">/* the anonymous rule generated by the direct settings on the control */</span>
+  <span class="rule">span.aXXX</span> { font-weight: bold }
+&lt;/<span class="tag">style</span>&gt;
+</pre>
+</blockquote>
+
+and here is what we'll get in HTML:
+<blockquote>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td colspan="2">
+<code>&lt;<span class="tag">div</span> <span class="attr">class</span>="<span class="value">msg</span>"&gt;</code>
+</td>
+</tr>
+<tr>
+<td><code>&nbsp;&nbsp;</code></td>
+<td>
+<code>
+&lt;<span class="tag">span</span> <span class="attr">class</span>="<span class="value">msg</span>"&gt;A message with the normal and 
+&lt;/<span class="tag">span</span>&gt;&lt;<span class="tag">span</span> <span class="attr">class</span>="<span class="value">msg highlight aXXX</span>"&gt;highlighted&lt;/<span class="tag">span</span>&gt;&lt;<span class="tag">span</span> <span class="attr">class</span>="<span class="value">msg</span>"&gt;
+text.&lt;/<span class="tag">span</span>&gt;
+</code>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<code>&lt;/<span class="tag">div</span>&gt;</code>
+</td>
+</tr>
+</table>
+</blockquote>
+
+You can see that the word "highlighted" is formatted with three CSS rules simultaneously.
+That's possible according to CSS and will work fine in any modern HTML browser!
+<p>
+But you may notice also that both <code>'msg'</code> and <code>'highlight'</code> rules specify the color property.
+So, which color will be used for "highlighted" then?
+According to how CSS works, it will be the color from the latest defined CSS rule, that is
+from <code>'highlight'</code>. That will be the same in any browser!
+See also: <a href="#css_applying_multiple_rules">Applying multiple CSS rules to the same HTML element</a>.
+
+<h4>
+  <a name="named_rules_other_cases"></a>
+  Other cases: Which template styles can produce named rules?
+</h4>
+
+In the previous section ("<a href="#two_named_plus_anonymous_rules">Named + named + anonymous rules</a>")
+we have seen how two <a href="#named_rules">named rules</a> generated from a paragraph and 
+character <a href="#template_styles">formatting styles</a>
+were applied together (along with an <a href="#anonymous_rules">anonymous rule</a>)
+to format the same piece of text output.
+<p>
+Now, one may assume that when even more <a href="#template_styles">formatting styles</a>
+are used in a chain, that will lead to an HTML output like this:
+<blockquote>
+<code class="small">
+  &lt;<span class="tag">span</span>
+  <span class="attr">class</span>="<span class="value">style1 style2 ... styleN aXXX</span>"&gt;
+  . . .
+  &lt;/<span class="tag">span</span>&gt;
+</code>
+</blockquote>
+No. Although templates do allow assigning <a href="#template_styles">formatting styles</a>
+to any parent/container components (or even having a style chain formed dynamically during the calls of
+<a href="template_components.html#stock_sections">stock-sections</a>
+or <a href="template_components.html#call_template">subtemplates</a>),
+the generator actually tracks only the <b>nearest paragraph style</b> and <b>nearest character style</b>
+(nearest to the component being interpreted).
+Only those styles may be rendered into <a href="#named_rules">named rules</a>.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  There is one exception, however. It is <b>hyperlink styles</b>.
+  Hyperlink styles are the character <a href="#template_styles">formatting styles</a> assigned
+  to the template <a href="template_components.html#controls">controls</a>
+  that may generate hyperlinks. When a hyperlink is generated, the hyperlink formatting style
+  will be applied to it, including in the form of a <a href="#named_rules">named rule</a>.
+  There are several methods of how hyperlinks are formatted.
+  One of them is <a href="#blended_in_hyperlink">blended-in hyperlink</a>
+  (i.e. the hyperlink always looks the same as the ordinary text at the given location,
+  however, with some extra feature indicating the hyperlink).
+  In that case, when a paragraph, character and hyperlink styles are involved together and all provide
+  some text formatting properties, all of them will be rendered into the corresponding
+  <a href="#named_rules">named rules</a> for the <code class="small">&lt;a&gt;</code> tag,
+  so that all the three rules are applied to the hyperlink.
+</td></tr>
+</table>
+<p>
+The formatting properties originating from any other styles will be treated the same as those assigned
+to the component directly (that is, they will get into the <a href="#anonymous_rules">anonymous rule</a>).
+That means that when a certain <a href="#template_styles">template formatting style</a>
+being involved in the generation of the output is always shadowed by other styles,
+it will never get visible as a <a href="#named_rules">named rule</a>.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  That's because when even more template styles are tracked simultaneously to become named rules,
+  the implementation of that gets so complicated that it isn't worth it.
+  Also, the formatting properties defined in those styles may override each other according to how
+  the styles are ordered in the chain. Replicating the same behavior in CSS would require
+  the equal ordering of the corresponding named rule definitions.
+  But what if the same styles are applied somewhere else in a different order?
+  In short, CSS simply doesn't support such things.
+  The object model of CSS rules is too rudimentary for this.
+</td></tr>
+</table>
+
+<h4>
+  <a name="controlling_named_rules"></a>
+  Controlling named rules
+</h4>
+
+Named CSS rules are not necessary for proper HTML output and will just bloat its size.
+You need named rules only when you want to substitute
+some of the generated CSS rules with your <a href="#custom_rules">own ones</a>.
+<p>
+Generation of named rules is controlled by the
+"<a href="#html.output.css.namedRules">Output | CSS | Generate named rules</a>" option:
+<ul>
+<li class="mrg8">
+When it is set <i>"none"</i>, no named rules will be generated.
+Then, all formatting properties of a template component will be treated the same, irrelevant where they originate.
+That will produce only <a href="#anonymous_rules">anonymous rules</a>.
+</li>
+<li class="mrg8">
+When the option is set <i>"all"</i>, all possible named rules will be generated.
+</li>
+<li class="mrg8">
+When the option is set <i>"selected"</i>, only those named CSS rules will be generated,
+which are produced from <a href="#template_styles">template formatting styles</a>
+with the selected <i>"CSS | Allow named rule"</i> property:
+<p>
+<img src="images/style_allow_named_rule.png" alt="">
+<p>
+This allows you to enable exactly those named CSS rules, which you are going to
+<a href="#custom_rules">substitute</a>.
+</li>
+</ul>
+
+<h3 class="spec">
+  <a name="default_rules"></a>
+  Default Rules
+</h3>
+
+Besides <a href="#anonymous_rules">anonymous</a> and <a href="#named_rules">named</a> CSS rules,
+the HTML generator produces one more type of rules, which we call <i><b>default rules</b></i>.
+These rules specify the CSS properties applied to particular HTML tags by default,
+that is without the use of class selectors, e.g.:
+
+<blockquote>
+<pre>&lt;<span class="tag">style</span>&gt;
+  <span class="rule">body</span> { background: #FFEEDD; }
+  <span class="rule">a:link</span> { color: #0066CC; }
+  <span class="rule">a:visited</span> { color: #800080; }
+  <span class="rule">div</span> { text-decoration: none; color: black; }
+  ...
+&lt;/<span class="tag">style</span>&gt;
+</pre>
+</blockquote>
+
+All of such rules are generated according to the settings specified on the <i>"Formatting"</i> tab 
+of the Template Properties dialog of the <b>main template</b> (the one specified to the generator) or those
+subtemplates producing whole HTML documents:
+<blockquote>
+  <img src="images/template_format_props.png" alt="">
+</blockquote>
+
+The rule for <code>&lt;div&gt;</code> tag is the most important of them,
+because it encodes the template's <b>default paragraph style</b>
+(see also <a href="#named_rules_from_template_styles">CSS rules derived from template formatting styles</a>).
+That style, which is always present in any template typically under the name <code>'Normal'</code>,
+provides the default paragraph and text formatting properties for any component in the given template:
+<blockquote>
+  <img src="images/styles_normal.png" alt="">
+</blockquote>
+
+When a template component is set to generate a paragraph or a piece of text
+and has no particular paragraph/text formatting property (specified either directly on the component
+or inherited from a template formatting style assigned to it), that property will be looked for
+in the template default paragraph style.
+<p>
+The default CSS rule for <code>&lt;div&gt;</code> tag:
+
+<blockquote style="margin-top:12pt;margin-bottom:12pt">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr valign="top">
+<td><code><span class="rule">div</span>&nbsp;{&nbsp;</code></td>
+<td><code><span class="comment">/* CSS properties produced from default paragraph style */</span> }</code></td>
+</tr>
+</table>
+</blockquote>
+perfectly serves the required interpretation of the template default paragraph style.
+That CSS rule is the same as the <a href="#named_rules">named rule</a>:
+<blockquote>
+<code><span class="rule">div.Normal</span> { ... }</code>
+</blockquote>
+which is actually never generated.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  Note that a <a href="#template_styles">formatting styles</a>
+  defined in the <b>main template</b> will override any equally-named style found in subtemplates.
+  This applies to the default paragraph style too!
+</td></tr>
+</table>
+<p>
+Like <a href="#named_rules">named rules</a>, the default CSS rules are always statically
+connected to what they format (that is particular HTML tags).
+So, you can easily substitute them with <a href="#custom_default_rules">your own default CSS rules</a>.
+
+<h2>
+  <a name="style_sheets"></a>
+  3.&nbsp; Generated Style Sheets
+</h2>
+
+Every <a href="#css_rules">CSS rule</a> produced during the generation of HTML output is registered (accounted)
+in a special table called <b><i>style sheet</i></b>,
+which is maintained by the HTML generator dynamically. That table will be
+printed eventually either as a part of some HTML file or in the form of a separate CSS file.
+<p>
+Correspondingly, there are two types of style sheets:
+<ol>
+  <li><a href="#local_style_sheet">Local Style Sheet</a></li>
+  <li><a href="#global_style_sheet">Global Style Sheet</a></li>
+</ol>
+
+<h3 class="spec">
+  <a name="local_style_sheet"></a>
+  Local Style Sheet
+</h3>
+
+Such a style sheet is associated with a particular HTML document and collects only CSS rules
+used in it. It will be printed inside the <code>&lt;style&gt;</code> element
+of the corresponding HTML file:
+
+<blockquote><pre>
+&lt;<span class="tag">html</span>&gt;
+&lt;<span class="tag">head</span>&gt;
+  ...
+  <span class="comment">&lt;!-- local style sheet --&gt;</span>
+  &lt;<span class="tag">style</span> <span class="attr">type</span>="<span class="value">text/css</span>"&gt;
+    ...
+  &lt;/<span class="tag">style</span>&gt;
+  ...
+&lt;/<span class="tag">head</span>&gt;
+&lt;<span class="tag">body</span>&gt;
+  ...
+&lt;/<span class="tag">body</span>&gt;
+&lt;/<span class="tag">html</span>&gt;
+</pre>
+</blockquote>
+
+<h3 class="spec">
+  <a name="global_style_sheet"></a>
+  Global Style Sheet
+</h3>
+
+This style sheet accounts all those CSS rules, which are commonly used across all generated HTML documents.
+<p>
+Once the generation of all HTML files is finished,
+the global style sheet is printed as a separate <b><i>CSS file</i></b>
+placed in the output destination directory typically under the name <code>'stylesheet.css'</code>.
+That CSS file is referenced from every HTML file via a <code>&lt;link&gt;</code> tag, e.g.:
+<blockquote>
+<code>
+&lt;<span class="tag">link</span> <span class="attr">rel</span>="<span class="value">stylesheet</span>"
+<span class="attr">type</span>="<span class="value">text/css</span>"
+<span class="attr">href</span>="<span class="value">../../stylesheet.css</span>"&gt;
+</code>
+</blockquote>
+
+The global style sheet is enabled when the option
+"<a href="#html.output.css.file">Output | CSS | Generate style sheet file</a>"
+is selected (<code>true</code>).
+When it is unselected (<code>false</code>), all CSS rules will be stored in 
+<a href="#local_style_sheet">local style sheets</a> (according to where they are used).
+
+<h3 class="spec">
+  <a name="multiple_style_sheets"></a>
+  Multiple Style Sheets
+</h3>
+
+Style sheets of both types may co-exist and used together in the same HTML:
+
+<blockquote><pre>
+&lt;<span class="tag">html</span>&gt;
+&lt;<span class="tag">head</span>&gt;
+  ...
+  <span class="comment">&lt;!-- link to the global style sheet --&gt;</span>
+  &lt;<span class="tag">link</span> <span class="attr">rel</span>="<span class="value">stylesheet</span>" <span class="attr">type</span>="<span class="value">text/css</span>" <span class="attr">href</span>="<span class="value">../../stylesheet.css</span>"&gt;
+
+  <span class="comment">&lt;!-- local style sheet --&gt;</span>
+  &lt;<span class="tag">style</span> <span class="attr">type</span>="<span class="value">text/css</span>"&gt;
+    ...
+  &lt;/<span class="tag">style</span>&gt;
+  ...
+&lt;/<span class="tag">head</span>&gt;
+&lt;<span class="tag">body</span>&gt;
+  ...
+&lt;/<span class="tag">body</span>&gt;
+&lt;/<span class="tag">html</span>&gt;
+</pre>
+</blockquote>
+
+For instance, <a href="#local_style_sheet">local style sheets</a> may hold only 
+<a href="#anonymous_rules">anonymous rules</a>,
+whereas <a href="#global_style_sheet">global style sheet</a>
+may be used for all <a href="#default_rules">default</a> and <a href="#named_rules">named</a> rules.
+<p>
+Which CSS rules go where depends on the options controlling what's included in the 
+<a href="#global_style_sheet">global style sheet</a>
+(i.e. CSS file).
+For instance, unselecting the option
+"<a href="#html.output.css.file.anonymRules">Output | CSS | Generate style sheet file | Include anonymous rules</a>"
+will cause all anonymous rules to be generated and stored locally by each HTML file
+where they are used.
+<p>
+By default, the <a href="#global_style_sheet">global style sheet</a> (CSS file)
+holds all <a href="#css_rules">CSS rules</a>.
+That makes the generated HTML documentation most compact.
+
+<h3 class="spec">
+  <a name="style_sheet_structure"></a>
+  Style Sheet Structure
+</h3>
+
+In its printed form, a <a href="#style_sheets">style sheet</a>
+generated by DocFlex consists of the following sections:
+
+<blockquote>
+<code>
+[<a href="#default_rules">Default Rules</a>]<br>
+[<a href="#named_rules">Named Rules</a>]<br>
+[<a href="#anonymous_rules">Anonymous Rules</a>]
+</code>
+</blockquote>
+
+The ordering of these sections is important.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+Basically, it is because, in order to achieve the formatting effects specified in a template,
+several <a href="#css_rules">CSS rules</a> may be applied together to the same HTML tag.
+At that, the properties specified in some of those rules must override the same properties specified in others.
+That can be achieved only by the specific ordering of the CSS rule definitions in the style sheet.
+See also: <a href="#css_applying_multiple_rules">Appendix | Applying multiple CSS rules to the same HTML element</a>.
+</td></tr>
+</table>
+<p>
+In particular, the definitions of <a href="#anonymous_rules">anonymous rules</a> must appear strictly
+<b>after</b> the definitions of <a href="#named_rules">named rules</a>.
+Because, when both <a href="#named_rules">named</a> and
+<a href="#named_rules">anonymous</a> rules are applied together,
+the CSS properties specified in the anonymous rule must override those specified in the named one.
+This works only when the anonymous rule appears in the style sheet later.
+See also: <a href="#named_plus_anonymous_rules">Named + anonymous rules</a>.
+<p>
+The [<a href="#named_rules">Named Rules</a>] section also has its own strict structure:
+<blockquote>
+<code>
+[Named Rules generated from paragraph styles]<br>
+[Named Rules generated from character styles]<br>
+[Named Rules generated from character styles for hyperlinks]
+</code>
+</blockquote>
+Here again, the CSS rules specified in a lower group in that list must have higher priority.
+See also: <a href="#two_named_plus_anonymous_rules">Named + named + anonymous rules</a>.
+
+<h2>
+  <a name="custom_css"></a>
+  4.&nbsp; Custom CSS Rules / CSS File
+</h2>
+
+Most of the said above actually has a single purpose:
+to allow the users to style the generated HTML documentation with their own CSS properties/rules.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  But please note, this is not the only (and even not the main) way how you can customize
+  the generated HTML!
+  <p class="mrg8"></p>
+  Since all ready-to-use documentation generators (available on this website) are implemented in the form of 
+  <a href="template_components.html">templates</a>,
+  you can always change everything (both how your documentation looks and what it contains)
+  by editing/modifying the templates.
+  <p class="mrg8"></p>
+  Basically, you may need a custom style sheet / custom CSS rules in the following situations:
+  <ul class="mrg80 inset_text">
+    <li class="inset_text">
+       You don't want (have no time) to learn much about how templates work.
+    </li>
+    <li class="inset_text">
+       You need a more quick (customary) way to modify the documentation formatting
+       (rather than editing templates).
+    </li>
+    <li class="inset_text">
+       You want to use some CSS features not supported directly in templates.
+    </li>
+  </ul>
+</td></tr>
+</table>
+<p>
+Since it is impossible to tell the HTML generator which CSS rules 
+must be used at which output locations,
+the only way to apply <a href="#custom_rules">custom CSS rules</a> is to substitute with them
+those produced automatically by the generator itself.
+That can be done only for the rules with a constant (predictable) connection to the specific
+output structures, which they are applied to.
+That is, whenever a given template set is used, the same pieces/structures of the output will be
+formatted with the CSS rules associated with the same tag/class selectors.
+This applies only to <a href="#named_rules">named</a> and <a href="#default_rules">default</a> rules!
+<p>
+The <a href="#anonymous_rules">anonymous rules</a>, which have no predictable relationship with the output,
+must be preserved in any case to keep the overall formatting integrity.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+Another complication is that in the style sheet 
+<a href="#named_rules">named rules</a> must be defined in a specific order,
+so that properties specified in one rules override properties specified in others (in case of collisions),
+and <a href="#anonymous_rules">anonymous rules</a> must be defined the last, because their properties must override
+anything else. See also: <a href="#style_sheet_structure">Style Sheet Structure</a>.
+</td></tr>
+</table>
+<p>
+All that means that replacing the automatically generated style sheet file with the static custom one
+may be rather tricky.
+<p>
+Much easier is to let the generator produce the result CSS file by itself, at that, feed to it those
+custom rules that must substitute the generated ones.
+Lastly, if something extra is needed not coming from the generator at all, that can be added to the result CSS
+file via <a href="#css_pattern_file">CSS pattern file</a>.
+
+<h3 class="spec">
+  <a name="custom_rules"></a>
+  How to substitute generated CSS rules with custom ones?
+</h3>
+
+Here is the step-by-step instruction.
+
+<h4>
+  <a name="custom_rules_find_which"></a>
+  Find which generated rules to substitute
+</h4>
+
+First, you need see which <a href="#named_rules">named</a> rules are actually generated
+by the given template set, so you can decide which of them to substitute.
+To do that:
+
+<ol>
+<li>
+Make sure that "<a href="#html.output.css.file">Output | CSS | Generate style sheet file</a>"
+option is selected. That will direct all CSS rules into a single CSS file.
+</li>
+<li class="mrg8">
+Set options:
+<ul class="mrg8">
+<li><a href="#html.output.css.file">Output | CSS | Generate name rules</a><code> = "all"</code></li>
+<li><a href="#html.output.css.file">Output | CSS | Generate name rules | Include descriptions</a><code> = true</code></li>
+</ul>
+</li>
+<li>
+Run the generator.
+</li>
+</ol>
+
+Once it's finished, look in the <b><code>stylesheet.css</code></b> file found in the output directory.
+You will see something like this:
+
+<blockquote>
+<div class="brdr1" style="width:650; height:400; overflow:auto; background: #F6F6F6; padding: 5;">
+<pre class="mrg0">
+<span class="comment">/* DocFlex styles; generated by DocFlex SDK 1.x on Fri Jul 19 06:00:15 CEST 2013 */</span>
+
+<span class="comment_highlight">/*===== NAMED RULES (generated from paragraph styles) =====*/</span>
+
+<span class="comment">/*
+ * Generated from style: "Derivation Tree Heading"
+ * References: 220
+ *
+ * Formats the heading of Type Derivation Tree
+ */</span>
+div.derivTreeHead { margin-bottom: .57em; }
+span.derivTreeHead { font-size: 90%; font-weight: bold; color: #990000; }
+
+...
+
+<span class="comment_highlight">/*===== NAMED RULES (generated from character styles) =====*/</span>
+
+<span class="comment">/*
+ * Generated from style: "XML Source"
+ * References: 3327
+ * 
+ * The default font for the reproduced XML source.
+ */</span>
+span.xml, a.xml { font-family: "Verdana", sans-serif; font-size: 83%; }
+
+<span class="comment">/*
+ * Generated from style: "XML Source Attribute Name"
+ * References: 3315
+ * 
+ * The font for the names of attributes in the reproduced XML source.
+ */</span>
+span.xmlAttrName { font-family: "Verdana", sans-serif; font-size: 83%; color: #990000; }
+
+<span class="comment">/*
+ * Generated from style: "XML Source Attribute Name (Reserved)"
+ * References: 8
+ * 
+ * The font for reserved attribute names in the reproduced XML source.
+ * 
+ * Reserved are namespace bindings (e.g. "xmlns:xs") and attributes from the XML
+ * namespace (e.g. "xml:lang").
+ */</span>
+span.xmlAttrName-reserved { font-family: "Verdana", sans-serif; font-size: 83%; color: #FF0000; }
+
+<span class="comment">/*
+ * Generated from style: "XML Source Attribute Value"
+ * References: 3307
+ * 
+ * The font for the values of attributes in the reproduced XML source.
+ */</span>
+span.xmlAttrVal, a.xmlAttrVal { font-family: "Verdana", sans-serif; font-size: 70%; font-weight: bold; color: black; }
+
+<span class="comment">/*
+ * Generated from style: "XML Source Attribute Value (Reserved)"
+ * References: 8
+ * 
+ * The font for the values of reserved attributes in the reproduced XML source.
+ * Reserved are namespace bindings (e.g. "xmlns:xs") and attributes from the XML
+ * namespace (e.g. "xml:lang").
+ */</span>
+span.xmlAttrVal-reserved { font-family: "Verdana", sans-serif; font-size: 70%; font-weight: bold; color: #FF0000; }
+
+<span class="comment">/*
+ * Generated from style: "XML Source Comment"
+ * References: 8
+ * 
+ * The font for XML source comments
+ */</span>
+span.xmlCom { font-family: "Courier New", monospace; font-size: 83%; color: #4D4D4D; }
+
+<span class="comment">/*
+ * Generated from style: "XML Source Comment Markup"
+ * References: 16
+ * 
+ * The font for XML comment markup ("&lt;!--" and "--&gt;") in the reproduced XML source
+ */</span>
+span.xmlComMrk { font-family: "Verdana", sans-serif; font-size: 83%; color: #0000FF; }
+
+<span class="comment">/*
+ * Generated from style: "XML Source DOCTYPE"
+ * References: 2
+ * 
+ * The font for &lt;!DOCTYPE&gt; declaration (except internal subset) in the reproduced
+ * XML source
+ */</span>
+span.xmlDOCTYPE { font-family: "Verdana", sans-serif; font-size: 83%; color: #0000FF; }
+
+<span class="comment">/*
+ * Generated from style: "XML Source Element Name"
+ * References: 3963
+ * 
+ * The font for the names of elements in the reproduced XML source.
+ */</span>
+span.xmlElemName { font-family: "Verdana", sans-serif; font-size: 83%; color: #990000; }
+
+<span class="comment">/*
+ * Generated from style: "XML Source Element Value"
+ * References: 138
+ * 
+ * The font for the values of elements in the reproduced XML source.
+ */</span>
+span.xmlElemVal { font-family: "Verdana", sans-serif; font-size: 70%; font-weight: bold; }
+
+<span class="comment">/*
+ * Generated from style: "XML Source Internal Subset"
+ * References: 3
+ * 
+ * The font for Internal Subset (embedded in &lt;!DOCTYPE&gt; declaration) in the
+ * reproduced XML source.
+ */</span>
+span.xmlIS { font-family: "Courier New", monospace; font-size: 83%; color: #0000FF; }
+
+<span class="comment">/*
+ * Generated from style: "XML Source Markup"
+ * References: 12512
+ * 
+ * The font for XML markup characters (such as angle brackets, quotes etc.)
+ */</span>
+span.xmlMrk { font-family: "Verdana", sans-serif; font-size: 83%; color: #0000FF; }
+
+<span class="comment">/*
+ * Generated from style: "XML Source Processing Instruction"
+ * References: 2
+ * 
+ * The font for Processing Instructions in the reproduced XML source.
+ */</span>
+span.xmlPI { font-family: "Verdana", sans-serif; font-size: 83%; color: #0000FF; }
+
+...
+
+<span class="comment_highlight">/*===== NAMED RULES (generated from character styles for hyperlinks) =====*/</span>
+
+<span class="comment">/*
+ * Generated from style: "Hyperlink (blended in)"
+ * References: 2370
+ * 
+ * Used to format hyperlinks blended into the text.
+ */</span>
+a.link { text-decoration: underline; }
+
+<span class="comment">/*
+ * Generated from style: "Hyperlink (blended in, hover)"
+ * References: 28
+ * 
+ * Used to format completely blended-in (latent) hyperlinks.
+ */</span>
+a:hover.link-hover { text-decoration: underline; }
+
+...
+
+<span class="comment_highlight">/*===== ANONYMOUS RULES =====*/</span>
+
+div.a0, span.a0 { font-size: medium; }
+div.a1 { margin-top: .67em; }
+span.a2 { font-weight: bold; }
+td.a3 { padding: .42em .25em .25em .25em; }
+...
+</pre>
+</div>
+</blockquote>
+
+Now, you will be able to find those <a href="#named_rules">named rules</a>,
+by substituting which you could achieve the result formatting you need.
+
+<h4>
+  <a name="custom_rules_declarations"></a>
+  Provide your own declarations
+</h4>
+
+When you know which automatically generated <a href="#named_rules">named rules</a>
+must be substituted, you can prepare your own declarations for them in a separate file.
+<p>
+As an example, suppose our goal is to change a little bit the style of
+XML schema documentation (generated by
+<a href="http://www.filigris.com/docflex-xml/xsddoc/" target="_blank">XSDDoc</a>),
+namely the coloring scheme of:
+<ul class="mrg8">
+<li>Reproduced XML source</li>
+<li>Normal hyperlinks</li>
+</ul>
+
+Here are our custom CSS rules for that (the purpose of each rule can be found in the inset above):
+
+<blockquote>
+<div class="brdr1" style="width:650; height:350; overflow:auto; background: #F6F6F6; padding: 5;">
+<pre class="mrg0">
+<span class="comment_highlight">/* default rules for normal hyperlinks */</span>
+
+a:link { color: #0066CC; }
+a:visited { color: #0066CC; }
+
+<span class="comment_highlight">/* named rules for XML source */</span>
+
+span.xml, a.xml { font-family: "Arial", sans-serif; font-size: 80%; }
+span.xmlMrk { font-family: "Arial", sans-serif; font-size: 80%; color: #000000; }
+
+span.xmlAttrName, span.xmlAttrName-reserved { font-family: "Arial", sans-serif; font-size: 80%; font-weight: bold; color: #000000; }
+span.xmlAttrVal, a.xmlAttrVal, span.xmlAttrVal-reserved { font-family: "Arial", sans-serif; font-size: 80%; color: #0066CC; }
+
+span.xmlCom, span.xmlComMrk { font-family: "Courier New", monospace; font-style: italic; font-size: 80%; color: #008800; }
+
+span.xmlElemName { font-family: "Arial", sans-serif; font-size: 80%; font-weight: bold; color: #800080; }
+span.xmlElemVal { font-family: "Arial", sans-serif; font-size: 80%; color: #000000; }
+
+span.xmlDOCTYPE, span.xmlIS { font-family: "Courier New", monospace; font-size: 80%; font-style: italic; font-weight: bold; color: #FF0000; }
+span.xmlPI { font-family: "Courier New", monospace; font-size: 80%; font-style: italic; color: #CC66CC; }
+span.xmlCDATA, span.xmlCDATAMrk { font-family: "Courier New", monospace; font-size: 80%; color: #CC0066; }
+</pre>
+</div>
+</blockquote>
+
+The custom CSS rules must be saved in a separate file (e.g. <code>mystyles.css</code>),
+which is specified in
+"<a href="#html.output.css.namedRules.customRuleFile">Output | CSS | Generate name rules | Custom rule file</a>"
+option:
+
+<dl><dd>
+  <img src="images/customRuleFileOption.png" alt="">
+</dd></dl>
+
+If you run <a href="http://www.filigris.com/docflex-xml/xsddoc/" target="_blank">XSDDoc</a> with now, you'll get a reproduced XML schema source
+like shown on the left screenshot (on the right is the same doc without applying the custom CSS rules; click on each
+screenshot to see the real HTML):
+
+<dl><dd>
+ <table border="0" cellpadding="0" cellspacing="0">
+ <tr>
+   <td><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/schema-source2.html" target="_blank"><img src="images/schema-source2.png" title="XML schema source formatted with custom CSS rules" border="0"></a></td>
+   <td><table width="22" height="8" border="0"><tr><td></td></tr></table></td>
+   <td><a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/schemas/XMLSchema_xsd/schema-source.html" target="_blank"><img src="images/schema-source.png" title="XML schema source with default formatting" border="0"></a></td>
+ </tr>
+ </table>
+</dd></dl>
+
+<h4>
+  <a name="custom_default_rules"></a>
+  Custom default rules
+</h4>
+
+Since <a href="#default_rules">default rules</a> implicitly apply to all HTML tags (for which they are declared),
+in order substitute the automatically generated ones you don't need to see which of them have been actually generated
+in a particular documentation.
+All you need is to know which <a href="#default_rules">default rules</a> the generator <b>can</b> generate.
+It is currently limited to only six:
+<blockquote>
+<code>
+  <span class="rule">html</span> { ... }<br>
+  <span class="rule">body</span> { ... }<br>
+  <span class="rule">a:link</span> { ... }<br>
+  <span class="rule">a:visited</span> { ... }<br>
+  <span class="rule">a:active</span> { ... }<br>
+  <span class="rule">div</span> { ... }
+</code>
+</blockquote>
+
+If you specify any of them in your 
+<a href="#html.output.css.namedRules.customRuleFile">custom rule file</a>,
+your definitions will be picked and inserted in the generated <a href="#style_sheets">style sheet</a>.
+That will happen in any case, whether or not the generator was to produce a given default rule of its own.
+<p>
+If you need to apply any other default CSS rules, you can do it via <a href="#css_pattern_file">CSS pattern file</a>.
+
+<h4>
+  <a name="custom_rules_relative_units"></a>
+  Case of relative length units
+</h4>
+
+When you use relative length units
+(see "<a href="#html.output.css.units">Output | CSS | Units</a>" option)
+and want to <a href="#custom_rules">substitute</a> some generated <a href="#named_rules">named CSS rules</a>
+with your own ones, you should be aware of the following:
+<ul>
+
+<li class="mrg8">
+Currently, DocFlex HTML generator uses only the following relative units:
+<ul class="mrg8">
+  <li>percent (%) for font sizes</li>
+  <li><b>em</b> for spacing, margins and paddings (and a few other things)</li>
+</ul>
+</li>
+
+<li class="mrg8">
+Although, these relative units are context-dependent 
+(that is, CSS computes property values specified in such units against the context font size
+inherited by the element where the property applied),
+that is incompatible with the most concepts, on which DocFlex 
+(<a href="about.html#templates">template language</a>) is based.
+<p class="mrg8">
+Because of this, DocFlex treats all CSS property values specified in relative units effectively
+against the document base font size.
+That requires periodic resetting of the context font size to the document base font size.
+For more details, please see: 
+<a href="#css_relative_length_units">Appendix | The problem with relative length units</a>.
+<p class="mrg8">
+Another consequence is that the same <a href="#css_rules">CSS rule</a> cannot specify
+both the font size and any other relative-unit properties.
+When it is actually needed (in the case of a <a href="#named_rules">named CSS rule</a> produced from
+a <a href="#template_styles">paragraph style</a>), such a CSS rule will be broken into two ones 
+applied to nested HTML tags (one for paragraph and one for text). For more details, please see:
+<a href="#conflicting_rules">Multiple named rules with the same class selector | Property conflicts caused by relative units</a>.
+</li>
+
+<li class="mrg8">
+Because of the said above, make sure that when your custom CSS rule contains some length-unit properties,
+the generated CSS rule it <a href="#custom_rules">substitutes</a>
+also contained that kind of properties.
+(Note that this is specified in the corresponding <a href="#template_style">template formatting style</a>,
+from which the given rule was generated).
+<p class="mrg8">
+For instance, you should avoid substituting a CSS rule without font size with the one that specifies the font size.
+That may result in unpredictable distortions of the entire document formatting!
+</li>
+
+</ul>
+
+If all this sounds too complicated for you, simply don't use relative units.
+
+<h4>
+  <a name="custom_rules_license"></a>
+  Which license required?
+</h4>
+
+Although, the possibility to customize CSS style sheets is ubiquitous in other doc-generators (even primitive ones),
+supporting it in DocFlex required some kind of breakthrough.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+The difference is that a typical doc-generator is developed from the start for a particular 
+destination format (i.e. HTML) in some general programming language (like Java)
+or XSLT, with very meticulous coding
+of how all formatting constructs are generated. All CSS rules are planned beforehand and everything
+is adjusted to them.
+<p class="mrg8"></p>
+In <a href="about.html">DocFlex</a>, the actual doc-generators are programmed in the form of
+<a href="about.html#templates">templates</a>,
+where the formatting is specified in a highly abstract way independent on the destination format.
+Then, it is rendered with suitable features available in a selected output format. 
+So, the concept of CSS rules (which is available only in HTML) is somewhat foreign to all this.
+</td></tr>
+</table>
+<p>
+That work took more than a half year and likely will be continued. So it needs to be compensated!
+<p>
+Moreover, if you plan to customize the <a href="#style_sheets">generated style sheets</a>,
+you will likely need also to change something in templates
+(as well as may require some special support about all this).
+<p>
+So currently, this feature is considered a deep customization of a doc-generator
+implemented by a given template set.
+Such customizations are covered by the <b>&ldquo;SDK license&rdquo;</b> 
+(that is the license covering the <a href="templates_designer_features.html">Template Designer</a>):
+<ul>
+<li>
+  In case of <a href="../docflex-xml/about.html">DocFlex/XML</a> product line, it is the 
+  &ldquo;<a href="../docflex-xml/about.html#docflex-xml-sdk">DocFlex/XML SDK</a>&rdquo; license.
+</li>
+<li>
+  In case of <a target="_blank" href="http://www.filigris.com/docflex-javadoc/">DocFlex/Javadoc</a> product line, it is the 
+  &ldquo;DocFlex/Javadoc&rdquo; license 
+  (that covers the <a target="_blank" href="http://www.filigris.com/docflex-javadoc/#full_edition">full edition</a>).
+</li>
+</ul>
+
+Therefore, you must have that license and use it at some point!
+<p>
+<b>This implies the following restriction:</b>
+<p>
+No matter how you specify the 
+&ldquo;<a href="#html.output.css.namedRules">Output | CSS | Generate named rules</a>&rdquo;
+option, the <a href="#named_rules">named CSS rules</a> may be actually generated only in two cases:
+<ol>
+<li>
+You have installed a
+<a target="_blank" href="http://www.filigris.com/licensing/#commercial_license">commercial</a> or
+<a target="_blank" href="http://www.filigris.com/licensing/#trial_license">trial</a> license covering the SDK functionality.
+</li>
+<li>
+You use templates customized under a 
+<a target="_blank" href="http://www.filigris.com/licensing/#commercial_license">commercial license</a>
+covering the SDK.
+In that case, <a href="#named_rules">named CSS rules</a> will be generated only by the
+<a href="#template_styles">formatting styles</a> defined in those templates that 
+have been modified the last time under that license.
+</li>
+</ol>
+
+If you have no SDK license and use a template set you never modified, no 
+<a href="#named_rules">named CSS rules</a> can be generated.
+Hence, no possibility to <a href="#custom_rules">substitute</a> anything!
+
+<h3 class="spec">
+  <a name="css_pattern_file"></a>
+  CSS pattern file
+</h3>
+
+The CSS pattern file allows you to frame the CSS declarations generated by DocFlex 
+into your own CSS file.
+<p>
+It may be useful when you need to add in the result style sheet some CSS rules
+not generated by DocFlex at all
+(for instance, to format the HTML markup embedded in your descriptions/annotations).
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+Those CSS rule that are generated can also be <a href="#custom_rules">substituted</a>
+with your own ones using <a href="#html.output.css.namedRules.customRuleFile">custom rule file</a>.
+</td></tr>
+</table>
+<p>
+The content of the CSS pattern file should look like the following:
+<blockquote>
+<code>
+  ...<br>
+  ...<br>
+  <b>/* docflex-styles */</b><br>
+  ...
+</code>
+</blockquote>
+
+Here, the dots depict some your content. All those lines will be copied as is to the result CSS file.
+<p>
+The line <code>'/* docflex-styles */'</code> is important. 
+All DocFlex-generated <a href="#css_rules">CSS rules</a> will be inserted in place of that comment.
+When it is absent, no automatically generated CSS rules will appear in the result CSS file.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+This opens a possibility to use the CSS pattern file as a complete your CSS file.
+You just need to provide your definitions for <b>all</b> generated 
+<a href="#default_rules">default</a> and <a href="#named_rules">named</a> CSS rules
+and exclude from the <a href="#global_style_sheet">global style sheet</a>
+all <a href="#anonymous_rules">anonymous rules</a> by unselecting the option:
+<a href="#html.output.css.file.anonymRules">Output | CSS | Generate style sheet file | Include anonymous rules</a>.
+See also: <a href="#style_sheet_structure">Style Sheet Structure</a>.
+</td></tr>
+</table>
+<p>
+The CSS pattern file can be applied only for the <a href="#global_style_sheet">global style sheet</a>.
+The <a href="#local_style_sheet">local style sheets</a> are not affected by it.
+<p>
+The name of the result CSS file (generated by DocFlex) will be the same as the name of your CSS pattern file.
+Thereby you can assign your own name to the result CSS file found in the generated documentation.
+
+<h2>
+  <a name="appendix"></a>
+  5.&nbsp; Appendix
+</h2>
+
+<h3 class="spec">
+  <a name="css_relative_length_units"></a>
+  The problem with relative length units
+</h3>
+
+According to CSS, relative units like <b>%</b> and <b>em</b>
+are interpreted actually not against some base font size chosen for the whole HTML document,
+but against the context font size inherited from the parent HTML element at the location where
+the property applied.
+<p>
+This creates a problem.
+When a CSS rule with the specified font size is applied to an HTML element, any values in relative units
+used within that element will be interpreted against that font size.
+This would make many of the generated <a href="#css_rules">CSS rules</a> context-dependent,
+which breaks the whole idea of <a href="#named_rules">named rules</a> (which are supposed to be independent
+of where they are used).
+<p>
+To work around that problem the context font size is reset to the document's base font size
+each time it was changed by applying a font-size-containing CSS rule and another font-size-dependent
+CSS rule needs to be applied within its scope.
+As a font size resetter, the following CSS rule is used:
+<blockquote>
+<code><span class="rule">div.a0</span> { font-size: medium; }</code>
+</blockquote>
+The <code>medium</code> keyword specifies the document base font size.
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  In a few cases, it is impossible to insert an intermediate tag with the font size resetting CSS rule.
+  So, if some length-unit values are applied down there, they must be adjusted to the context font size.
+</td></tr>
+</table>
+<p>
+For example, suppose the HTML code must define a numbered list with the following requirements:
+<ul>
+<li>The item numbers must be of a certain font size.</li>
+<li>The list items must have a certain spacing between them.</li>
+<li>The content of each list item may be complex with own font sizes, spacings etc.</li>
+</ul>
+Here's how all this achieved:
+<blockquote><pre>
+&lt;<span class="tag">html</span>&gt;
+&lt;<span class="tag">head</span>&gt;
+  ...
+  <span class="comment">&lt;!-- style sheet --&gt;</span>
+  &lt;<span class="tag">style</span> <span class="attr">type</span>="<span class="value">text/css</span>"&gt;
+    <span class="comment">/* the rule for the list item numbers */</span>
+    <span class="rule">ol.list</span> { font-family: "Verdana"; font-size: 80%; }
+
+    <span class="comment">/* the rule to make spacing between list items;
+     we want the spacings to be exactly 1em (relative the base font size),
+     but this rule will be applied in context of the 80% font size left from
+     the 'list' rule (above), so the spacings are adjusted accordingly */</span>
+    <span class="rule">li.item</span> { margin-top: 1.25em; margin-bottom: 1.25em; }
+
+    <span class="comment">/* the rule for a text within the list item */</span>
+    <span class="rule">span.text</span> { font-family: "Arial"; font-size: 80%; }
+
+    <span class="comment">/* the rule for spacing between text paragraphs within the list item */</span>
+    <span class="rule">div.spacing</span> { margin-top: .5em; }
+
+    <span class="comment">/* the font size resetter rule (generated automatically) */</span>
+    <span class="rule">div.a0</span> { font-size: medium; }
+    ...
+  &lt;/<span class="tag">style</span>&gt;
+&lt;/<span class="tag">head</span>&gt;
+&lt;<span class="tag">body</span>&gt;
+  ...
+  <span class="comment">&lt;!-- the list --&gt;</span>
+  &lt;<span class="tag">ol</span> <span class="attr">class</span>="<span class="value">list</span>"&gt;
+    <span class="comment">&lt;!-- a list item --&gt;</span>
+    &lt;<span class="tag">li</span> <span class="attr">class</span>="<span class="value">item</span>"&gt;
+      <span class="comment">&lt;!-- reset the context font size to the document's base one --&gt;</span>
+      &lt;<span class="tag">div</span> <span class="attr">class</span>="<span class="value">a0</span>"&gt;
+        <span class="comment">&lt;!-- first paragraph --&gt;</span>
+        &lt;<span class="tag">span</span> <span class="attr">class</span>="<span class="value">text</span>"&gt;TEXT 1&lt;/<span class="tag">span</span>&gt;
+        <span class="comment">&lt;!-- spacing between paragraphs --&gt;</span>
+        &lt;<span class="tag">div</span> <span class="attr">class</span>="<span class="value">spacing</span>"&gt;&lt;/<span class="tag">div</span>&gt;
+        <span class="comment">&lt;!-- second paragraph --&gt;</span>
+        &lt;<span class="tag">span</span> <span class="attr">class</span>="<span class="value">text</span>"&gt;TEXT 2&lt;/<span class="tag">span</span>&gt;
+      &lt;/<span class="tag">div</span>&gt;
+    &lt;/<span class="tag">li</span>&gt;
+    ...
+  &lt;/<span class="tag">ol</span>&gt;
+  ...
+&lt;/<span class="tag">body</span>&gt;
+&lt;/<span class="tag">html</span>&gt;
+</pre>
+</blockquote>
+
+However, those resettings and adjustments, besides slightly bloating the output, make it rather unstable when you want
+to use <a href="#custom_rules">custom CSS rules</a>.
+
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  There is a new relative unit planned in CSS: the <b>rem</b> (for "root em"),
+  which will be computed exactly against the document's base font size.
+  That would save us the day!
+  Unfortunately, that unit is not quite established yet and not supported by some browsers.
+</td></tr>
+</table>
+<p>
+See also:
+<ul class="mrg8">
+<li>"<a href="#html.output.css.units">Output | CSS | Units</a>" option</li>
+<li><a href="#conflicting_properties">Property conflicts caused by relative units</a></li>
+<li><a href="#custom_rules_relative_units">How to substitute generated CSS rules with custom ones? | Case of relative length units</a></li>
+</ul>
+
+<h3 class="spec">
+  <a name="css_applying_multiple_rules"></a>
+  Applying multiple CSS rules to the same HTML element
+</h3>
+
+CSS does not allow you to base one CSS rule on others.
+What is possible instead is to assign several CSS rules to the same HTML element (just by listing their class selectors
+in the value of <code>class</code> attribute), thereby creating an inline rule based on all the listed
+ones together.
+<p>
+The question is: When a CSS property is defined in several of those listed rules and has different values there,
+which of them will take effect?
+One could expect, it must be from the rule, whose class is listed the last.
+But that's wrong. Rather, that will be from the rule, which is defined the last!
+<p>
+For example, suppose you have two rules <code class="small">rule1</code> and <code class="small">rule2</code>
+defined in a style sheet like this:
+<blockquote class="mrg8">
+<code>
+  &lt;<span class="tag">style</span>&gt;<br>
+  &nbsp;&nbsp;<span class="rule">span.rule1</span> { color: red; }<br>
+  &nbsp;&nbsp;<span class="rule">span.rule2</span> { color: blue; }<br>
+  &nbsp;...<br>
+  &lt;/<span class="tag">style</span>&gt;
+</code>
+</blockquote>
+When you apply both rules to a <code class="small">&lt;span&gt;</code> tag:
+<blockquote class="mrg8">
+<code>
+  &lt;<span class="tag">span</span>
+  <span class="attr">class</span>="<span class="value">rule1 rule2</span>"&gt;
+  <i>text</i>
+  &lt;/<span class="tag">span</span>&gt;
+</code>
+</blockquote>
+what color will be of the <code class="small"><i>text</i></code>?
+It will be blue!
+<p class="mrg8"></p>
+Even when you reverse the ordering of the class selectors specified in the <code>class</code> attribute:
+<blockquote class="mrg8">
+<code>
+  &lt;<span class="tag">span</span>
+  <span class="attr">class</span>="<span class="value">rule2 rule1</span>"&gt;
+  <i>text</i>
+  &lt;/<span class="tag">span</span>&gt;
+</code>
+</blockquote>
+the color of the text will still be blue.
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2013 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

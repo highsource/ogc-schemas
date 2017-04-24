@@ -1,0 +1,1091 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex Technology - Documentation - Element Iterator (details)</title>
+</head>
+
+<body>
+
+<h1>
+DocFlex Technology - Documentation - Element Iterator (details)
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+  <li class="mrg4"><a href="#collecting_elements_by_location_rules"><b>Collecting Elements by Location Rules</b></a>
+    <ul class="mrg4">
+      <li><a href="#location_path">Location Paths</a></li>
+      <li><a href="#location_rule">Location Rules</a></li>
+      <li><a href="#recursive_location_rules">Recursive Location Rules</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#specifying_eis"><b>Generating Iteration Scope</b></a>
+    <ul class="mrg4">
+      <li><a href="#simple_location_rules">Simple Location Rules</a></li>
+      <li><a href="#advanced_location_rules">Advanced Location Rules</a></li>
+      <li><a href="#sequence">Sequence</a></li>
+      <li><a href="#custom">Custom</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#filtering"><b>Filtering</b></a>
+    <ul class="mrg4">
+      <li><a href="#filtering_by_key">Filtering By Key</a></li>
+      <li><a href="#filtering_by_expr">Filtering By Expression</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#sorting"><b>Sorting</b></a>
+    <ul class="mrg4">
+      <li><a href="#sorting_modes">Sorting Modes</a>
+        <ul>
+          <li><a href="#sorting_none">none (original order)</a></li>
+          <li><a href="#sorting_reverse_order">reverse original order</a></li>
+          <li><a href="#sorting_by_attribute">by element attribute</a></li>
+          <li><a href="#sorting_by_name">by element name</a></li>
+          <li><a href="#sorting_by_value">by element value</a></li>
+          <li><a href="#sorting_by_lpath">by location path</a></li>
+          <li><a href="#sorting_by_key_expr">by key expression</a></li>
+          <li><a href="#sorting_by_compound_key">by compound key</a></li>
+        </ul>
+      </li>
+      <li><a href="#sorting_condition">Sorting Condition</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#grouping"><b>Grouping</b></a></li>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<h2>
+  <a name="collecting_elements_by_location_rules"></a>
+  1.&nbsp; Collecting Elements by Location Rules
+</h2>
+
+This is the most important method used in DocFlex to obtain elements from the
+<a href="about.html#dsm">DSM</a> (Data Source Model).
+A collection of elements is produced from the
+<a href="template_components.html#context_element">context element</a>,
+according to a set of special <a href="#location_rule">Element Location Rules</a>.
+Location rules are made of <a href="#location_path">Location Paths</a>,
+which themselves are used also separately for different purposes.
+
+<h3>
+  <a name="location_path"></a>
+  Location Paths
+</h3>
+
+<i>Location Paths</i> are the expressions similar to 
+<a href="http://en.wikipedia.org/wiki/XPath" target="_blank">XPath</a>,
+which are used in DocFlex templates to specify the search of elements or attributes.
+<p>
+Although eventually they are string, when you design a template
+in the <a href="about.html#template_designer">Template Designer</a>,
+the Location Paths are normally not needed to be entered directly.
+Rather, they are constructed using special dialogs
+or can be selected in the <b>Location Path Chooser</b>, as shown on this screenshot:
+
+<blockquote>
+  <img src="images/lpath_chooser.png" title="Location Path Chooser">
+</blockquote>
+
+<a name="context_node"></a>
+Each Location Path is interpreted against a certain selected element (<i><b>context node</b></i>),
+which normally is the generator
+<a href="template_components.html#context_element">context element</a>.
+As the result of an interpretation, a set of elements (<i><b>Element Location Paths</b></i>)
+or attributes (<i><b>Attribute Location Paths</b></i>) is produced.
+<dl>
+   <dt>
+     The structure of each Location Path used in DocFlex is the same as in <b>XPath</b>
+     and looks as the following:
+   </dt>
+   <dd><code><i>Step1</i> / <i>Step2</i> / ... / <i>StepN</i></code></dd>
+   <dt>where</dt>
+   <dd>
+     <dl>
+       <dt><code><i>Step1</i>, ..., <i>StepN-1</i></code></dt>
+       <dd><i>Element Location Steps</i></dt>
+       <dt><code><i>StepN</i></code></dt>
+       <dd><i>Element Location Step</i> or <i>Attribute Location Step</i></dd>
+     </dl>
+   </dd>
+</dl>
+<p>
+The Location Path is interpreted by consecutive interpretations of all <b><i>Location Steps</i></b>
+defined in it.
+<p>
+The interpretation of a Location Step consists of taking some initial set of <a href="about.html#dsm">DSM</a> nodes
+(called <i>step input set</i>) and producing by it another set of <a href="about.html#dsm">DSM</a> nodes
+(called <i>step result set</i>). How exactly it is done depends on the step's settings
+(see <a href="#element_location_step">below</a>).
+Those settings, in fact, specify how the step is interpreted against only one initial node.
+The entire result set is produced as a union of the result sets of the step interpretations 
+against every node in the input set.
+<p>
+As a whole, the Location Path is interpreted as follows:
+
+<ol>
+<li>
+  The <i>Step1</i> is interpreted against the Location Path's initial context node.
+</li>
+<li>
+  Each <i>StepN</i> that follows is interpreted against the result set produced
+  on the previous <i>StepN-1</i>.
+</li>
+<li>
+  The result set of the last step becomes the result of the whole Location Path interpretation.
+</li>
+</ol>
+
+If during the interpretation of some step an empty set was produced, so will be the result of the
+whole Location Path.
+
+<a name="element_location_step"></a>
+<dl>
+<dt>Every <b>Element Location Step</b> has the following structure:</dt>
+<dd><code><i>axis</i> :: <i>ETs</i> [<i>filter</i>]</code></dd>
+<dt>where</dt>
+<dd>
+<dl>
+<dt><code><i>axis</i></code>
+<dd>
+Specifies the <i><b>search axis</b></i> that is a subset of
+<a href="about.html#dsm">DSM</a>'s nodes from which the
+step's result set is collected. Currently, DocFlex supports the following axes:
+<p>
+<dl>
+  <dt><b><code>child</code></b></dt>
+  <dd>
+    Includes children of the step's context node. This axis is used by default
+    (i.e. when no <code>axis::</code> prefix is specified in the location step).
+  </dd>
+
+  <dt><b><code>self</code></b></dt>
+  <dd>
+    Includes only the step's context node itself.
+  </dd>
+
+  <dt><b><code>child-or-self</code></b></dt>
+  <dd>
+    Includes the step's context node and all its children
+  </dd>
+
+  <dt><a name="descendant_axis"></a><b><code>descendant</code></b></dt>
+  <dd>
+    Includes all descendants of the step's context node (i.e. its children,
+    children of the children and so on).
+  </dd>
+
+  <dt><b><code>descendant-or-self</code></b><dt>
+  <dd>
+    Includes the step's context node and all its descendants.
+  </dd>
+
+  <dt><a name="link_axis"></a><b><code><i>attribute</i>^</code></b></dt>
+  <dd>
+    This axis, called <b>link-</b>axis, is an extension of the XPath standard introduced in DocFlex.
+    It includes those elements of the <a href="about.html#dsm">Data Source Model</a>
+    (which is a real or virtual XML-document) whose ID references are the values of the specified
+    context node attribute.
+    <p class="mrg8">
+    The <code><i>attribute</i></code> is the name of a certain context element's attribute
+    (whose type should be either <code>IDREF</code> or <code>IDREF[]</code>).
+    <p class="mrg8">
+    Such a specification is interpreted in the following way.
+    <p class="mrg8">
+    When the context element contains an attribute with <code><i>'attribute'</i></code> name,
+    all values of that attribute are interpreted as the identifiers of some elements contained
+    in the <a href="about.html#dsm">DSM</a>.
+    Each identifier is used to find a corresponding element, and, if found,
+    that element is added to the step's result set.
+    <p class="mrg8">
+    <u>Example</u>:
+    <blockquote class="mrg8">
+      <code>elementReference^::ClassDoc</code>
+    </blockquote>
+  </dd>
+
+  <dt><a name="formula_axis"></a><b><code>{ <i>expr</i> }</code></b></dt>
+  <dd>
+    This axis, called <b>formula-</b>axis, is another extension of XPath introduced
+    in DocFlex. In effect, it covers the functionally of all other axes and is probably
+    the ultimate axis imaginable.
+    <p class="mrg8">
+    The elements included in that axis are produced by a FlexQuery expression
+    specified between the curly brackets. The expression should return an enumeration
+    of new elements, which it may produce from the step's context node (the element)
+    passed to the expression as the
+    <a href="template_components.html#context_element">generator context element</a>
+    (accessible via the <code>contextElement</code> property).
+    <p class="mrg8">
+    For example, the step:
+    <blockquote class="mrg8">
+      <code>child::Person</code>
+    </blockquote>
+    will do the same as the step:
+    <blockquote class="mrg8">
+      <code>{ findChildren("Person") }::Person</code>
+    </blockquote>
+
+    The real power of formula-axis is that you can program within the embedded expression
+    any algorithms of collecting of elements (for instance, finding them using <i>element maps</i>).
+    That profoundly transforms the capabilities of the entire search possible to organize using
+    <a href="#location_path">Location Paths</a>!
+    <p class="mrg8">
+    <b>Note:</b> The expression specified in formula-axis should always return the
+    <code>Enumeration</code> type. Otherwise, the generator will raise an error.
+    <p class="mrg8">
+    The returned enumeration should contain objects of <code>GOMElement</code>
+    or <code>DSMElement</code> types (objects of other types will be ignored).
+    <p class="mrg8">
+    The <code>null</code> value returned by the expression will be interpreted as
+    an empty enumeration.
+  <dd>
+</dl>
+
+<dt><code><i>ETs</i></code><dt>
+<dd>
+  Specifies one or several <b><i>matching Element Types</i></b>.
+  Each element, to be included in the step's result set, should comply with
+  at least one of the specified matching Element Types.
+  The list of the matching Element Types can be defined as:
+  <ul class="mrg8">
+  <li>
+    A single Element Type name.
+  </li>
+  <li>
+    The following expression:
+    <code>(<i>ET1</i> | <i>ET1</i> | ... | <i>ETn</i>)</code>,
+    where each <code><i>ETn</i></code> is an Element Type name.
+  </li>
+  <li>
+    The asterisk wildcard (<code class="big">*</code>), which will include
+    all elements regardless of their type
+  </li>
+  </ul>
+</dd>
+
+<dt><code><i>filter</i></code><dt>
+<dd>
+  This is a boolean FlexQuery-expression which defines the subquery for the <b><i>location step filter</i></b>.
+  <p class="mrg8">
+  When specified, this subquery is executed for each element to be included in the step's result set.
+  The element is included only when the subquery returns <code>true</code>.
+  <p class="mrg8">
+  The tested element is accessible within the subquery as the
+  <a href="template_components.html#context_element">generator context element</a>
+  (via the <code>contextElement</code> property).
+  The previous context element is restored again after the Location Path processing is finished.
+</dd>
+</dl>
+</dl>
+
+Each <b>Attribute Location Step</b> has the following structure:
+<blockquote><code>@<i>attribute</i></code></dd></blockquote>
+where <code><i>attribute</i></code> is the name of the searched attribute.
+The Attribute Location Paths are normally used to collect values of
+the same attribute by a number of elements at once.
+The interpretation result of such a Location Path is a vector of all values of all attributes found.
+
+<h4>Compound Location Paths</h4>
+
+You may join several Location Paths using '|' separator into a single expression:
+<blockquote>
+<code><i>lpath1</i> | <i>lpath2</i> | ... | <i>lpathN</i></code>
+</blockquote>
+
+Such an expression is called <i>Compound Location Path</i> and interpreted by
+the successive interpretation of the Location Paths contained in it.
+The result is a union of the elements or attributes produced by each component
+Location Path.
+
+<h3>
+  <a name="location_rule"></a>
+  Location Rules
+</h3>
+
+<dl>
+  <dt>
+    <a name="element_location_rule"></a>Each <i><b>Element Location Rule</b></i> has the following structure:
+  </dt>
+  <dd><code><i>Matching Element Types</i> [<i>matching condition</i>] &#8594; <i>Element Location Path</i></code></dd>
+  <dt>where</dt>
+  <dd> 
+    <dl>
+      <dt><a name="lrule_matching_ets"></a><code><i>Matching Element Types</i></code></dt>
+      <dd>
+        The list of Element Types to which this rule is applied.
+        If the rule matches with <i>any</i> element type, the list can be replaced
+        with the wildcard: <code class="big">*</code>
+      </dd>
+      <dt><a name="lrule_matching_condition"></a><code><i>matching condition</i></code></dt>
+      <dd>
+        A boolean FlexQuery-expression that tests whether the rule should be interpreted
+        against a given element. If the expression returns <code>false</code>
+        the rule will be ignored.
+        This is similar to the <i>enabling condition</i> of
+        <a href="template_components.html#components">template components</a>.
+        <p class="mrg8">
+        The tested element is accessible within the expression as the
+        <a href="template_components.html#context_element">generator context element</a>
+        (via the <code>contextElement</code> property).
+      </dd>
+      <dt><a name="lrule_location_path"></a><code><i>Element Location Path</i></code></dt>
+      <dd>
+        The <a href="#location_path">Element Location Path</a>
+        specifying the set of the elements produced by the rule
+      </dd>
+    </dl>
+  </dd>
+</dl>
+
+Location Rules are intended to be used not alone, but organized in vectors made of several Location Rules.
+A vector of Location Rules is interpreted against some initial (input) set of elements,
+which produces another (result) set of elements.
+<p>
+Exactly, it works as the following:
+<p>
+<ol>
+<li>
+  An element from the input set is made the
+  <a href="template_components.html#context_element">generator context element</a>.
+</li>
+<li>
+  All Location Rules from the vector are iterated.
+  For each rule:
+  <ul>
+    <li>
+      The context element is tested whether it complies with any of the
+      <code><i><a href="#lrule_matching_ets">Matching Element Types</a></i></code>.
+    </li>
+    <li>
+      If <code><i><a href="#lrule_matching_condition">matching condition</a></i></code> specified,
+      the context element must also comply with it (i.e. the condition subquery returns <code>true</code>).
+    </li>
+    <li>
+      If all matching tests are passed, the
+      <code><i><a href="#lrule_location_path">Element Location Path</a></i></code>
+      specified in the rule is interpreted against the context element.
+      The new elements produced by it are added to the result set.
+    </li>
+  </ul>
+</li>
+</ol>
+
+That everything is repeated for each element from the input set, so the complete result set is generated.
+
+<p>
+<h5><u>Example</u></h5>
+<blockquote>
+Let's consider the data source that provides the basic information about a Java-project.
+It can be described with the following DTD:
+<blockquote>
+<pre class="small">
+&lt;!ELEMENT field&gt;
+&lt;!ELEMENT method&gt;
+&lt;!ELEMENT class (field*,method*,class*)&gt;
+&lt;!ELEMENT package (class*,package*)&gt;
+</pre>
+</blockquote>
+
+Here are the sample <a href="#element_location_rule">Element Location Rules</a>
+defined for this data source:
+<ol>
+  <li>
+    Collect all classes (including the inner classes) contained both in the
+    <a href="template_components.html#context_element">context element</a>
+    and in all its descendants:
+    <blockquote>
+      <code>* &#8594; descendant::class</code>
+    </blockquote>
+  </li>
+  <li>
+    If the context element is a package collect all top-level classes contained both in
+    it and in all its subpackages:
+    <blockquote>
+      <code>package &#8594; child-or-self::package/child::class</code>
+    </blockquote>
+  </li>
+</ol>
+</blockquote>
+
+<h3>
+  <a name="recursive_location_rules"></a>
+  Recursive Location Rules
+</h3>
+
+From the description above you can see that the only way to specify searching of elements
+in arbitrary depth from a given context node is using one of the
+<a href="#descendant_axis"><code><i>descendant</i></code></a>-axes.
+At that, the search will involve all the element subtree attached to the context node.
+<p>
+However, in some situations it may be needed to limit the search to only some branches of the subtree.
+Constructing <a href="#location_path">Element Location Paths</a>
+using only <code><i>descendant</i></code>-axes may be not enough to achieve the necessary effect.
+Even more difficulties arise when the search in indefinite depth need to involve
+<a href="#link_axis"><code><i>link</i></code></a>- or 
+<a href="#formula_axis"><code><i>formula</i></code></a>-axes.
+<p>
+That problem was solved in DocFlex by introducing <i>Recursive Location Rules</i>.
+<p>
+<b><i>Recursive Location Rules</i></b> are the same normal
+<a href="#element_location_rule">Element Location Rules</a>, but in addition marked with a special
+<b><i>recursive flag</i></b>
+<img style="vertical-align:bottom" src="images/recursive-rule.gif">.
+This affects how such rules are interpreted.
+<p>
+A vector of <a href="#element_location_rule">Element Location Rules</a>
+that includes some recursive rules is interpreted in repeating steps.
+On each step, some new elements are produced, which are added to the result set.
+Those new elements become also the input for the next step and so on, until no new elements are produced.
+<p>
+Precisely, this works as the following:
+<dl>
+<dt><i><b>Step 1</b></i>:</dt>
+<dd>
+  All the rules (recursive and not) are interpreted against the
+  <a href="template_components.html#context_element">context element</a>
+  received by the
+  <a href="template_components.html#element_iterator">Element Iterator</a>
+  as described in the previous section. As the result, some new elements are produced and added to the collected set.
+</dd>
+<dt><i><b>Step N+1</b></i>:</dt>
+<dd>
+  For the new element found on the previous <i>Step N</i>, all location rules
+  marked with the <b>recursive flag</b> are interpreted again
+  with each element successively selected as the rule's context element.
+  That produces more new elements, which are also added to the collected set.
+  <p class="mrg8">
+  Such steps are repeated until no new elements are found.
+</dd>
+</dl>
+
+<b>Note:</b>
+<blockquote class="mrg8">
+  DocFlex distinguishes elements by their ID. Therefore, only those
+  elements are considered the new ones whose IDs have not yet occured on the previous iterations.
+  Such an approach helps to prevent the infinite looping when the processed elements contains cyclic
+  references, however, it requires each element to have a unique ID.
+</blockquote>
+
+<h5><u>Example</u></h5>
+<blockquote>
+<p>
+Let's consider a little more complicated version of the previous example.
+Now, the data source providing the information about a Java-project allows you to know a parent
+of each class (if any it has) and the interfaces the class directly implements.
+<p>
+The new DTD will be the following:
+<blockquote>
+<pre class="small">
+&lt;!ELEMENT field&gt;
+&lt;!ELEMENT method&gt;
+&lt;!ELEMENT class (field*,method*,class*,interface*)&gt;
+&lt;!ELEMENT interface (field*,method*)&gt;
+&lt;!ELEMENT package (class*,interface*,package*)&gt;
+
+&lt;!ATTLIST class extends IDREF&gt;
+&lt;!ATTLIST interface extends IDREFS&gt;
+&lt;!ATTLIST class implements IDREFS&gt;
+</pre>
+</blockquote>
+<p>
+Let now our task is to collect all interfaces directly or indirectly implemented by a given class
+(this will include the interfaces directly implemented either by the class itself or by one of its
+ancestor classes and the interfaces that are the ancestors of those implemented directly).
+This can be done using the following set of
+<a href="#recursive_location_rules">Recursive Location Rules</a>:
+<blockquote>
+<pre class="small">
+<img style="vertical-align:bottom" src="images/recursive-rule.gif"> class     &#8594; extends^::class
+<img style="vertical-align:bottom" src="images/recursive-rule.gif"> class     &#8594; implements^::interface
+<img style="vertical-align:bottom" src="images/recursive-rule.gif"> interface &#8594; extends^::interface
+</pre>
+</blockquote>
+<p>
+The rules should be interpreted with the interested class as the initial context element.
+The result set should be filtered for the elements of <code>interface</code> type.
+</blockquote>
+
+<h2>
+  <a name="specifying_eis"></a>
+  2.&nbsp; Generating Iteration Scope
+</h2>
+
+<a href="template_components.html#element_iterator">Element Iterator</a>
+provides four methods to specify the generation of the
+<a href="template_components.html#eis">Element Iteration Scope (EIS)</a>
+-- that is how the elements for iterations are collected:
+
+<ul>
+  <li><a href="#simple_location_rules">Simple Location Rules</a></li>
+  <li><a href="#advanced_location_rules">Advanced Location Rules</a></li>
+  <li><a href="#sequence">Sequence</a></li>
+  <li><a href="#custom">Custom</a></li>
+</ul>
+
+<h3>
+  <a name="simple_location_rules"></a>
+  Simple Location Rules
+</h3>
+
+This is a simplified method, which allows you to quickly define a single
+<a href="#element_location_rule">Element Location Rule</a>. It may be just enough for many purposes.
+There are only three settings to fill in:
+
+<blockquote>
+<img src="images/ei_sope_simple.png" title="Specifying an Element Iteration Scope using Simple Location Rules">
+</blockquote>
+
+<dl>
+  <dt><b>Target Element Type(s)</b></dt>
+  <dd>
+    Specify one or many element types (<code><i>TargetETs</i></code>), which the elements included in the generated
+    <a href="template_components.html#eis">EIS</a> must comply with.
+  </dd>
+  <dt><b>Include Descendants</b></dt>
+  <dd>
+    Specifies if the search should include all descendants of the
+    <a href="template_components.html#context_element">context element</a>.
+  </dd>
+  <dt><b>Include Self</b></dt>
+  <dd>
+    Specifies if the <a href="template_components.html#context_element">context
+    element</a> itself can be included into the
+    <a href="template_components.html#eis">EIS</a>
+    (in the case its type is appropriate)
+  </dd>
+</dl>
+
+Assigning of those settings will result in the automatic building one of the following
+<a href="#element_location_rule">Element Location Rules</a>:
+<blockquote>
+<pre class="small">
+* &#8594; child::<i>TargetETs</i>
+* &#8594; descendant::<i>TargetETs</i>
+* &#8594; child-or-self::<i>TargetETs</i>
+* &#8594; descendant-or-self::<i>TargetET</i>
+</pre>
+</blockquote>
+
+<h3>
+  <a name="advanced_location_rules"></a>
+  Advanced Location Rules
+</h3>
+
+This is the most comprehensive method of defining <a href="#element_location_rule">Element Location Rules</a>.
+It gives access to all features implemented in DocFlex. The generation of the
+<a href="template_components.html#eis">EIS</a>
+is specified with the following settings:
+
+<blockquote>
+<img src="images/ei_sope_advanced.png" title="Specifying an Element Iteration Scope using Advanced Location Rules">
+</blockquote>
+
+<dl>
+  <dt><b>Target Element Type(s)</b></dt>
+  <dd>
+    Specify one or many element types, which the elements included in the generated
+    <a href="template_components.html#eis">EIS</a> must comply with.
+  </dd>
+  <dt><b>Location Rules</b></dt>
+  <dd>
+    The list of the <a href="#element_location_rule">Element Location Rules</a> specifying how the
+    <a href="template_components.html#eis">EIS</a> is generated
+    <p>
+    Defining a single <a href="#element_location_rule">Location Rule</a>:
+    <p>
+    <img src="images/element_location_rule.png" title="Defining a Location Rule">
+    <p>
+    Defining a <a href="#element_location_rule">Location Step</a>:
+    <p>
+    <img src="images/element_location_step.png" title="Defining a Location Step">
+  </dd>
+</dl>
+
+<h3>
+  <a name="sequence"></a>
+  Sequence
+</h3>
+
+An alternative method of the <a href="template_components.html#eis">EIS</a>
+generation not based on <a href="#element_location_rule">Element Location Rules</a>. The EIS is produced
+as the sequence of the connected elements, according to the following settings:
+
+<blockquote>
+<img src="images/ei_sope_sequence.png" title="Specifying an Element Iteration Scope using Sequence">
+</blockquote>
+
+<dl>
+  <dt><b>Target Element Type(s)</b></dt>
+  <dd>
+    Specify one or many element types, which the elements included in the generated
+    <a href="template_components.html#eis">EIS</a> must comply with.
+  </dd>
+  <dt><b>Expression for First Element</b></dt>
+  <dd>
+    The FlexQuery-expression calculating the first element for the
+    <a href="template_components.html#eis">EIS</a>.
+    The calculation normally should be based on the
+    <a href="template_components.html#context_element">context element</a>
+    received by the section and may involve other generator variables.
+  </dd>
+  <dt><b>Expression for Subsequent Element</b></dt>
+  <dd>
+    All other <a href="template_components.html#eis">EIS</a>
+    elements (except the first one) are calculated by this FlexQuery-expression. At each step, if the <i>previous</i>
+    element was not <code>null</code> it is made the
+    <a href="template_components.html#context_element">context element</a>.
+    Then, the expression is processed and the <i>next</i> element is produced.
+  </dd>
+  </dd>
+</dl>
+
+<h3>
+  <a name="custom"></a>
+  Custom
+</h3>
+
+This method allows you to iterate by any sequence of elements produced by the specified FlexQuery expression.
+It is particularly useful when the necessary elements have been already collected and stored
+in an <i>element map</i>, as shown on the screenshot:
+<blockquote>
+<img src="images/ei_sope_custom.png" title="Specifying a Custom Element Iteration Scope">
+</blockquote>
+
+<dl>
+  <dt><b>Target Element Type(s)</b></dt>
+  <dd>
+    Specify one or many element types (<code><i>TargetETs</i></code>), which the elements included in the generated
+    <a href="template_components.html#eis">EIS</a> must comply with.
+  </dd>
+  <dt><b>Expression for Element Enumeration</b></dt>
+  <dd>
+    A FlexQuery expression that should return an enumeration of elements,
+    which may be produced from the 
+    <a href="template_components.html#element_iterator">iterator</a>'s
+    context element passed to the expression as the
+    <a href="template_components.html#context_element">generator context element</a>
+    (accessible via the <code>contextElement</code> property).
+    <p class="mrg8">
+    The expression should return the <code>Enumeration</code> type.
+    The returned enumeration should contain objects of <code>GOMElement</code>
+    or <code>DSMElement</code> types (objects of other types will be ignored).
+    <p class="mrg8">
+    The <code>null</code> value returned by the expression will be interpreted as empty enumeration.
+  </dd>
+</dl>
+
+<table border="1" cellspacing="1" cellpadding="5">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  Effectively, this method covers all the other methods <a href="#specifying_eis">above</a>,
+  since all possibilities to collect elements (including by
+  <a href="#location_path">Location Paths</a> / <a href="#location_rule">Location Rules</a>)
+  are equally supported on the level of FlexQuery functions.
+  <p class="mrg8"></p>
+  On the other hand, it is an equivalent of the usage of <a href="#formula_axis"><code><i>formula</i></code></a>-axis
+  in a single <a href="#location_rule">Location Rule</a>:<code> * &#8594; { <i>expr</i> }::<i>TargetETs</i></code>
+</td></tr>
+</table>
+
+<h2>
+ <a name="filtering"></a>
+ 3.&nbsp; Filtering
+</h2>
+
+<a href="template_components.html#element_iterator">Element Iterator</a>
+provides two methods to filter the
+<a href="template_components.html#eis">Element Iteration Scope (EIS)</a>:
+
+<ul>
+  <li><a href="#filtering_by_key">Filtering By Key</a></li>
+  <li><a href="#filtering_by_expr">Filtering By Expression</a></li>
+</ul>
+
+Both methods can be used simultaneously. However, since in general these operations are not commutative,
+the <a href="#filtering_by_key">Filtering By Key</a> is always done the first.
+
+<h3>
+ <a name="filtering_by_key"></a>
+ Filtering By Key
+</h3>
+
+The idea of this filtering is the following. Each element is associated with a certain key
+produced from that element. The result (filtered) enumeration will contain only those elements,
+whose keys are unique. The elements from the original enumeration, whose keys are repeating,
+will be deleted.
+<p>
+Precisely, this type of filtering works as follows:
+<ol>
+<li>
+  All elements from the source enumeration are iterated.
+</li>
+<li>
+  For each element, a key is generated by the FlexQuery specified in
+  <b>&ldquo;Expression for Unique Key&rdquo;</b>.
+  The element is associated with that key.
+</li>
+<li>
+  Using a special hashmap, the key is checked if it has been already associated 
+  with some element on one of the previous iterations.
+</li>
+<li>
+  If not, the element is added to the result enumeration.
+</li>
+<li>
+  If yes and the <b>&ldquo;Preference Condition&rdquo;</b> specified,
+  it is executed against the current element.
+  If the condition returns <b><code>true</code></b>, the element previously associated with 
+  that key in the result enumeration is replaced with the current element.
+  Otherwise, the current element is skipped over and the processing goes to the next element.
+</li>
+</ol>
+
+<blockquote>
+<img src="images/ei_filtering_by_key.png" title="Specifying filtering by key">
+</blockquote>
+
+<dl>
+  <dt><b>Expression for Unique Key</b></dt>
+  <dd>
+    Specify a FlexQuery that will be execute for each initial element to generate 
+    the element's filtering key.
+    <p class="mrg8">
+    The element is passed to the query as the
+    <a href="template_components.html#context_element">generator context element</a>.
+    The value returned by the query should be an object good to be a hash key.
+    The <code>null</code> value is also allowed.
+    <p class="mrg8">
+    <b>Note:</b> When you need to filter elements by several keys
+    with different types so that only the whole set of keys generated for each element 
+    must be unique, you can do it by creating a single compound filtering key 
+    using <b><code>HashKey()</code></b> function.
+  </dd>
+  <dt><b>Preference Condition</b></dt>
+  <dd>
+    Specify a boolean FlexQuery that calculates the <b>&ldquo;Preference Condition&rdquo;</b> for the element.
+    <p class="mrg8">
+    When specified, this query will be executed for each initial element whose
+    key is repeating (that is, when there was an early processed element with the same key). 
+    The element is passed to the query as the
+    <a href="template_components.html#context_element">generator context element</a>.
+    <p class="mrg8">
+    If the query returns <b><code>true</code></b>, the old element will be replaced with the current element
+    in the result enumeration.
+    <p class="mrg8">
+    If the preference condition is not specified or returns <b><code>false</code></b>,
+    the current element with the repeating key will be filtered out (removed from the result enumeration).
+    <p class="mrg8">
+    Conversely, specifying in this field only <code>"true"</code>
+    (which will be also a valid expression) will have an effect that for all initial elements
+    associated with the same key only the last of them will appear in the result enumeration.
+  </dd>
+  </dd>
+</dl>
+
+<h3>
+ <a name="filtering_by_expr"></a>
+ Filtering By Expression
+</h3>
+
+This is what a normal filtering typically is.
+You specify a condition calculated for every initially collected element.
+Only those elements that comply with the condition are included in the result
+<a href="template_components.html#eis">Element Iteration Scope (EIS)</a>.
+
+<blockquote>
+<img src="images/ei_filtering_by_expr.png" title="Specifying filtering by expression">
+</blockquote>
+
+<dl>
+  <dt><b>Filter Expression</b></dt>
+  <dd>
+    Specify a boolean FlexQuery that will be processed against each initial element.
+    If the query returns <code>true</code>, the element is included in the result enumeration.
+    Otherwise, it will be skipped over.
+    <p class="mrg8">
+    The tested element is passed to the query as the
+    <a href="template_components.html#context_element">generator context element</a>.
+  </dd>
+  </dd>
+</dl>
+
+<h2>
+ <a name="sorting"></a>
+ 4.&nbsp; Sorting
+</h2>
+
+<h3>
+ <a name="sorting_modes"></a>
+ Sorting Modes
+</h3>
+
+There are following options to specify sorting of the
+<a href="template_components.html#eis">Element Iteration Scope (EIS)</a>:
+
+<ul>
+  <li><a href="#sorting_none">none (original order)</a></li>
+  <li><a href="#sorting_reverse_order">reverse original order</a></li>
+  <li><a href="#sorting_by_attribute">by element attribute</a></li>
+  <li><a href="#sorting_by_name">by element name</a></li>
+  <li><a href="#sorting_by_value">by element value</a></li>
+  <li><a href="#sorting_by_lpath">by location path</a></li>
+  <li><a href="#sorting_by_key_expr">by key expression</a></li>
+  <li><a href="#sorting_by_compound_key">by compound key</a></li>
+</ul>
+
+<h4>
+  <a name="sorting_none"></a>
+  none (original order)
+</h4>
+
+<blockquote>
+No sorting. The EIS is remained in the
+<a href="template_components.html#original_order">original order</a>
+(i.e. the one that is naturally formed when the elements are being inserted in the
+<a href="template_components.html#eis">EIS</a>).
+</blockquote>
+
+<h4>
+  <a name="sorting_reverse_order"></a>
+  reverse original order
+</h4>
+
+<blockquote>
+Reverses the
+<a href="template_components.html#original_order">original order</a>.
+This option may be particularly useful when the
+<a href="template_components.html#eis">EIS</a>
+is generated by <i><a href="#sequence">Sequence</a></i> method.
+</blockquote>
+
+<h4>
+  <a name="sorting_by_attribute"></a>
+  by element attribute
+</h4>
+
+<blockquote>
+<img src="images/ei_sorting_by_attr.png" title="Specifying sorting by an element attribute">
+<p>
+The elements of the <a href="template_components.html#eis">EIS</a>
+are sorted by the value of the specified attribute (according to its data type).
+<p>
+Additional settings:
+<ol>
+   <li> ordering: ascending/descending
+   <li> case sensitive (for character values only)
+</ol>
+</blockquote>
+
+<h4>
+  <a name="sorting_by_name"></a>
+  by element name
+</h4>
+
+<blockquote>
+<img src="images/ei_sorting_by_name.png" title="Specifying sorting by element name">
+<p>
+The elements of the <a href="template_components.html#eis">EIS</a>
+are sorted by their names (i.e. the names of their Element Types) in lexicographical order. This option
+makes sense when the <a href="template_components.html#eis">EIS</a>
+contains many elements of the different types.
+<p>
+Additional settings:
+<ol>
+   <li>ordering: ascending/descending</li>
+   <li>case sensitive (for character values only)</li>
+</ol>
+</blockquote>
+
+<h4>
+  <a name="sorting_by_value"></a>
+  by element value
+</h4>
+
+<blockquote>
+<img src="images/ei_sorting_by_value.png" title="Specifying sorting by element value">
+<p>
+The elements of the <a href="template_components.html#eis">EIS</a>
+are sorted by their values (regarding data types)
+<p>
+Additional settings:
+<ol>
+   <li> ordering: ascending/descending
+   <li> case sensitive (for character values only)
+</ol>
+</blockquote>
+
+<h4>
+  <a name="sorting_by_lpath"></a>
+  by location path
+</h4>
+
+<blockquote>
+<img src="images/ei_sorting_by_lpath.png" title="Specifying sorting by location path">
+</blockquote>
+
+<h4>
+  <a name="sorting_by_key_expr"></a>
+  by key expression
+</h4>
+
+<blockquote>
+<img src="images/ei_sorting_by_key_expr.png" title="Specifying sorting by key expression">
+</blockquote>
+
+<h4>
+  <a name="sorting_by_compound_key"></a>
+  by compound key
+</h4>
+
+<blockquote>
+<img src="images/ei_sorting_by_compound_key.png" title="Specifying sorting by compound key">
+<p>
+This is the most general method of sorting the
+<a href="template_components.html#eis">EIS</a>.
+It includes all previous methods and allows much more, though it might seem a little complicated.
+In this case, the elements of the
+<a href="template_components.html#eis">EIS</a>
+are sorted by an arbitrary <i>compound</i> key generated for each element.
+<p>
+Each compound key consists of a certain sequence of the subkeys:
+<blockquote>
+  <code><i>subkey1; subkey2; ...; subkeyN</i></code>
+</blockquote>
+<p>
+that is generated for each element before the sorting. The compound keys are compared by comparing
+consecutively their constituent subkeys in the order in which the subkeys follow.
+<p>
+Each subkey has its own method of calculation. This method also determines the subkey's data
+type, according to which the corresponding subkeys are compared.
+<p>
+The subkey calculation method can be specified as one of the following:
+<ol>
+   <li><i>by Location Path</i>
+     <p>
+     The value of the subkey is assigned from the value of an element or attribute retrieved
+     by the specified <a href="#location_path">Location Path</a>.
+     The Location Path is interpreted relatively to the
+     <a href="template_components.html#eis">EIS</a>
+     element for which the whole key is generated. The Location Path also determines the subkey's data type.
+     <p>
+   </li>
+   <li class="mrg8"><i>by Formula</i>
+     <p>
+     The value of the subkey is calculated by the specified FlexQuery-expression, which also
+     determines the subkey's data type. The expression should derive the subkey value from the
+     <a href="template_components.html#eis">EIS</a>
+     element for which the whole key is generated. For doing so, the element is temporarily made the generator's
+     <a href="template_components.html#context_element">context element</a>
+     and in this way can be accessed from within the expression.
+     <p>
+   </li>
+</ol>
+<p>
+In addition to the calculation method, the comparison of the subkeys may be adjusted with
+following settings:
+<ol>
+  <li>subkey ordering: ascending/descending</li>
+  <li>case sensitivity (for character subkeys only)</li>
+</ol>
+</blockquote>
+
+<h3>
+ <a name="sorting_condition"></a>
+ Sorting Condition
+</h3>
+
+Sometimes it is needed to switch off any sorting specified in the
+<a href="template_components.html#element_iterator">Element Iterator</a>
+and let elements
+follow in their <a href="template_components.html#original_order">original order</a>,
+as they have been produced.
+(For instance, this can be requested via settings of some 
+<a href="templates_designer_features.html#template_parameters">template parameters</a>.)
+<p class="mrg8">
+This is controlled by the <b>&ldquo;Sorting Condition&rdquo;</b> -- a boolean FlexQuery.
+When specified, it is calculated each time before 
+<a href="#sorting">sorting</a> starts.
+When the query returns <code>false</code>, no sorting is done.
+
+<blockquote>
+<img src="images/ei_sorting_condition.png" title="Specifying a sorting condition">
+</blockquote>
+
+<h2>
+ <a name="grouping"></a>
+ 5.&nbsp; Grouping
+</h2>
+
+Using <b>&ldquo;Expression for Grouping Key&rdquo;</b> setting of the
+<a href="template_components.html#element_iterator">Element Iterator</a>,
+you can break the iterated elements into groups so that to iterate first by the groups,
+and then by the elements within each group.
+
+<blockquote>
+<img src="images/ei_grouping.png" title="Specifying grouping key">
+</blockquote>
+
+When the grouping key expression is specified, it works as follows.
+<p class="mrg8">
+After the initial elements have been collected, filtered and sorted, the result sequence of elements
+is broken into groups according to the grouping keys generated for each element by the FlexQuery 
+specified in the &ldquo;Expression for Grouping Key&rdquo; of the
+<a href="template_components.html#element_iterator">Element Iterator</a>.
+<p class="mrg8">
+Each continuous subsequence of elements with equal grouping keys produces a group.
+As a result, the sequence of elements prepared for iterations is converted into a sequence of element groups.
+The ordering of elements in each group remains the same as in the initial sequence.
+<p class="mrg8">
+Since groups are not elements, the 
+<a href="template_components.html#element_iterator">Element Iterator</a>
+cannot iterate by them directly.
+So, it will iterate by the first elements taken from each group. 
+However, at that, on each iteration step, the
+<code>'iterator.groupElements'</code> property will be updated so as
+to provide the enumeration of all elements in the given group.
+This allows you to specify a nested iterator that will iterate by the elements in the group.
+<p class="mrg8">
+In the simplest case, the <a href="#specifying_eis">iteration scope</a> of the nested 
+<a href="template_components.html#element_iterator">Element Iterator</a>
+should be specified as 
+<i><a href="#custom">custom</a></i> with the following Expression for Element Enumeration:
+<blockquote class="mrg8">
+<code>parentIterator.groupElements</code>
+</blockquote>
+
+(Other possibilities of using <code>'GOMIterator.groupElements'</code> property are also possible.)
+
+<p class="mrg8">
+<b>Notes:</b>
+<ul class="mrg8">
+<li class="mrg8">
+  The grouping keys slice the prepared sequence of elements into groups.
+  But what groups are created is determined by the ordering of the elements in the initial sequence.
+  So, <a href="#grouping">grouping</a> should be defined along with <a href="#sorting">sorting</a>!
+</li>
+<li class="mrg8">
+  During processing of a group, the <code>'GOMIterator.groupElements'</code> property returns
+  a new element enumeration (i.e. a new 
+  <code><a href="http://www.filigris.com/docflex-javadoc/templates/JavadocPro/demo/html/java/util/Enumeration.html" target="_blank">java.util.Enumeration</a></code>
+  object) each time it is accessed.
+  But, the elements contained in the enumeration will be the same.
+  This allows you to specify several nested sibling
+  <a href="template_components.html#element_iterator">Element Iterators</a>
+  (within the same parent one) to iterate the elements of the same group in different ways.
+</li>
+</ul>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2003-2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

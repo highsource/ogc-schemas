@@ -1,0 +1,17 @@
+xsddoc.name = W3C XML Schema Files
+xsddoc.doc = Represents any number of W3C XML Schema Definition (XSD) files
+xsddoc.xsd.files = http://www.w3.org/2001/XMLSchema.xsd
+xsddoc.xsd.catalogs = urn:docflex-com:xml:defaultcatalog
+xsddoc.xsd.includeAbstractTypes = true
+xsddoc.ns.1.prefix = xs
+xsddoc.ns.1.uri = http://www.w3.org/2001/XMLSchema
+xsddoc.ns.2.prefix = xhtml
+xsddoc.ns.2.uri = http://www.w3.org/1999/xhtml
+xsddoc.pseudo-elements.all = on
+xsddoc.defaultRootElement = Documents
+xsddoc.imageProvider.class = %IMAGE_PROVIDER_CLASS%
+xsddoc.imageProvider.XMLSpy.version = %XMLSPY_VERSION%
+xsddoc.imageProvider.XMLSpy.classPath = %XMLSPY_CLASSPATH%
+xsddoc.imageProvider.XMLSpy.libPath = %XMLSPY_LIBPATH%
+xsddoc.imageProvider.OxygenXML.command = %OXYGENXML_COMMAND%
+xsddoc.imageProvider.OxygenXML.config = %OXYGENXML_CONFIG%

@@ -1,0 +1,4 @@
+xmldoc.name = Generic XML Files
+xmldoc.doc = Represents any number of XML files (that comply with XML 1.0 specification)
+xmldoc.pseudo-elements.all = true
+xmldoc.defaultRootElement = Documents

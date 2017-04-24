@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!-- This ANT buildfile demonstrates how to integrate -->
+<!-- DocFlex/XML generator + XMLSpy with Apache Ant   -->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<project name="DocFlex/XML+XMLSpy Ant Integration Demo" basedir=".">
+
+  <!-- This will generate an XML schema documentation -->
+  <target name="XSDDoc">
+
+    <!-- DocFlex/XML home directory -->
+    <property name="DFH" value="..\..\.."/>
+
+    <!-- DocFlex/XML Java class path -->
+    <property name="CLASSPATH" value="${DFH}\lib\xml-apis.jar;${DFH}\lib\xercesImpl.jar;${DFH}\lib\resolver.jar;${DFH}\lib\docflex-xml.jar"/>
+
+    <!-- XMLSpy home directory -->
+    <property name="XMLSPY_HOME" value="C:\Program Files\Altova\XMLSpy2014"/>
+
+    <!-- XMLSpy version -->
+    <property name="XMLSPY_VERSION" value="2014"/>
+
+    <!-- XMLSpy Java class path -->
+    <property name="XMLSPY_CLASSPATH" value="${XMLSPY_HOME}\XMLSpyInterface.jar;${XMLSPY_HOME}\JavaAPI\XMLSpyAPI.jar;${XMLSPY_HOME}\JavaAPI\AltovaAutomation.jar"/>
+
+    <!-- 
+      XMLSpy library path (the location of Windows DLLs that implement
+      the bridge between XMLSpy Java API v2012 and XMLSpy.exe)
+    -->
+    <property name="XMLSPY_LIBPATH" value="${XMLSPY_HOME}\JavaAPI"/>
+
+    <!--
+       Execute the DocFlex/XML generator.
+
+       IMPORTANT: The 'maxmemory' attribute sets the maximum heap size
+       available to Java VM when running DocFlex/XML. 
+       Check this attribute when you need to process large quantities of data!
+
+       According to our tests, allowing 512 Mb heap size on 32-bit Java is OK
+       in most cases (e.g. running XSDDoc to document large XML schemas).
+       However, for 64-bit Java (running on 64-bit OS) this amount must be doubled.
+       So, you should specify 1024m, instead of 512m.
+
+       The 'fork' attribute forces Ant to launch a separate instance of JVM.
+       This is needed to ensure that the memory specified in the 'maxmemory' attribute
+       will be allocated indeed.
+    -->
+    <java classname="com.docflex.xml.Generator" classpath="${CLASSPATH}" 
+          maxmemory="1024m" fork="true">
+
+       <!-- specify XMLSpy Integration class as element image provider -->
+       <arg value="-m:IMAGE_PROVIDER_CLASS=com.docflex.xml.xmlspy.SpyKit"/>
+
+       <!-- pass XMLSpy version to the integration -->
+       <arg value="-m:XMLSPY_VERSION=${XMLSPY_VERSION}"/>
+
+       <!-- pass XMLSpy class path -->
+       <arg value="-m:XMLSPY_CLASSPATH=${XMLSPY_CLASSPATH}"/>
+
+       <!-- pass XMLSpy library path -->
+       <arg value="-m:XMLSPY_LIBPATH=${XMLSPY_LIBPATH}"/>
+
+       <!-- specify the template -->
+       <arg value="-template"/>
+       <arg value="${DFH}\templates\XSDDoc\FramedDoc.tpl"/>
+
+       <!-- specify the output format -->
+       <arg value="-format"/>
+       <arg value="HTML"/>
+
+       <!-- specify the output directory -->
+       <arg value="-d"/>
+       <arg value="${DFH}\out"/>
+
+       <!-- specify to not launch the generator GUI -->
+       <arg value="-nodialog"/>
+
+       <!-- specify to not launch the default viewer for the output file -->
+       <arg value="-launchviewer=false"/>
+
+       <!-- pass the template parameter (the documentation title, in this case) -->
+       <arg value="-p:docTitle=XML Schema for XML Schemas"/> 
+
+       <!-- 
+         Specify the data source XML file to be processed by the specified template.
+         (Both local pathnames and URLs are allowed.)
+         In this case, it is an XML schema to be documented.
+       -->
+       <arg value="http://www.w3.org/2001/XMLSchema.xsd"/>
+
+       <!-- 
+         Use default XML catalog to load the above specified file
+         from the DocFlex/XML resources (instead of W3C website)
+       -->
+       <arg value="-xmlcatalog"/>
+       <arg value="urn:docflex-com:xml:defaultcatalog"/>
+
+    </java>
+
+  </target>
+
+</project>

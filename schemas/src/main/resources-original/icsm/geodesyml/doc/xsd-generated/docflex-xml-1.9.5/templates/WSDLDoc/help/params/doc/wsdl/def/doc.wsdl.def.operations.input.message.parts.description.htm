@@ -1,0 +1,29 @@
+Specify whether to include the <b>part description</b>.
+<p>
+The description text is obtained from the <code>&lt;wsdl:documentation&gt;</code> element found by the path:
+<dl><dd>
+<code>wsdl:part/wsdl:documentation</code>
+</dd></dl>
+However, when that description is absent, an alternative description may be used,
+which is searched for according to the settings in the nested parameter group.
+
+<table border="1" cellspacing="0" style="margin-top:16pt; margin-bottom:16pt">
+<tr><td style="font-family: Dialog; font-size:12pt">
+In some WSDL files, all important descriptions (about web-service operations etc.) 
+are found not in <code>&lt;wsdl:documentation&gt;</code> elements,
+but in annotations of XSD components (of the XML schema embedded in that WSDL),
+which define the data types of the WSDL message parts.
+<p style="margin-top:10pt; margin-bottom:0">
+When that is used, it would be interesting to show those XSD annotations as descriptions of the message parts.
+</td></tr>
+</table>
+
+<b>Nested Parameters:</b>
+<dl><dd>
+Specify where an alternative description can be copied from.
+</dd></dl>
+
+<b>See Also:</b>
+<dl><dd>
+<i>"Processing | Descriptions"</i> parameter group, where you can specify how descriptions are processed and displayed.
+</dd></dl>

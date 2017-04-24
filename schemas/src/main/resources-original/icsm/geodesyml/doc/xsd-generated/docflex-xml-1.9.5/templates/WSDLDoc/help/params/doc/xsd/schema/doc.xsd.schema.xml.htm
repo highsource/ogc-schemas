@@ -1,0 +1,47 @@
+Specifies whether to reproduce the XML source of the whole XML schema.
+<p>
+It appears as a part of the documentation
+with the XML markup highlighted with special colors and the values of some XML attributes
+hyperlinked to the related sections of the documentation.
+<p>
+The reproduced XML source is included as a section of the <i>Schema Overview</i> page/block.
+In case of framed HTML documentation, it may be also placed in a separate page (HTML file),
+which is controlled by the nested parameter: <i>"Separate File"</i>.
+<p>
+Although the reproduced XML source closely replicates the real one, it may be slightly different.
+For instance, ordering of XML attribute may be not the same. 
+Additionally, <code>&lt;xs:annotation&gt;</code> elements may be intentionally omitted,
+which is controlled by the nested parameter: <i>"Remove &lt;xs:annotation&gt;"</i>
+
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"all"</i>
+<dl><dd>
+The XML schema source will be reproduced in any case.
+<p style="margin-top:10pt">
+When the XML schema is embedded in a WSDL file, 
+only the <code>&lt;xs:schema&gt;</code> element and its content will be reproduced.
+However, since it is still a part the WSDL file, whose entire XML source may be reproduced separately
+(see the parameter <i>"Details | WSDL File Overview | XML Source"</i>),
+that will lead to the duplication.
+</dd></dl>
+
+<i>"XSD file only"</i>
+<dl><dd>
+The XML schema source will be reproduced only for XSD files
+(i.e. when the XML schema is defined in a separate XML file).
+<p style="margin-top:10pt">
+In that case, the entire XML schema file will be reproduced.
+</dd></dl>
+
+<i>"none"</i>
+<dl><dd>
+The XML source of the schema will not be reproduced.
+</dd></dl>
+
+<p>
+<b>Nested Parameters:</b>
+<dl><dd>
+Control how the reproduced XML source will look, where it is placed and what it will include.
+</dd></dl>

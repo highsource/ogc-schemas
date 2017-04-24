@@ -1,0 +1,2 @@
+sales.name = Sales Report
+sales.xsd.files = %THIS_DIR%/sales.xsd

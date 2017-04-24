@@ -1,0 +1,20 @@
+Specify whether to show which component redefines this component and where (see also below).
+<p>
+<b>Applies To:</b>
+<ul>
+<li>Complex Types</li>
+<li>Simple Types</li>
+<li>Element Groups</li>
+<li>Attribute Groups</li>
+</ul>
+
+<h3>Documenting of Redefined Components</h3>
+
+A schema component may <i>redefine</i> other component when it is declared within
+an XSD <code>&lt;xs:redefine&gt;</code> element.
+When the XML schema, which is being redefined by this element, also contains a component with that name,
+such a component becomes <i>redefined</i>.
+It will be completely replaced by the <i>redefining</i> component within the namespace scope targeted by the schema.
+<p>
+The redefining component is typically based on the original component it redefines (it just extends or restricts it).
+Because of this, DocFlex/XML WSDLDoc will document both components.

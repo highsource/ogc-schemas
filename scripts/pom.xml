@@ -58,6 +58,7 @@
 						</goals>
 						<configuration>
 							<artifactItems>
+                                <!--
 
 								<artifactItem><artifactId>arml-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 
@@ -200,6 +201,11 @@
 								<artifactItem><artifactId>wps-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 
 								<artifactItem><artifactId>xal-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
+                                -->
+								<artifactItem><artifactId>gml-v_3_2_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
+								<artifactItem><artifactId>iso19139-v_20070417</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
+								<artifactItem><artifactId>om-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
+								<artifactItem><artifactId>geodesyml-v_0_3</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>scripts</classifier><type>zip</type></artifactItem>
 							 </artifactItems>
 							<outputDirectory>lib</outputDirectory>
 							<includes>**/*.js</includes>
@@ -213,6 +219,7 @@
 						</goals>
 						<configuration>
 							<artifactItems>
+                                <!--
 
 								<artifactItem><artifactId>arml-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
 
@@ -354,6 +361,11 @@
 								<artifactItem><artifactId>wps-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
 
 								<artifactItem><artifactId>xal-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
+                                -->
+								<artifactItem><artifactId>gml-v_3_2_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
+								<artifactItem><artifactId>om-v_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
+								<artifactItem><artifactId>iso19139-v_20070417</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
+								<artifactItem><artifactId>geodesyml-v_0_3</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version><classifier>jsonschemas</classifier><type>zip</type></artifactItem>
 							 </artifactItems>
 							<outputDirectory>jsonschemas</outputDirectory>
 							<includes>**/*.jsonschema</includes>

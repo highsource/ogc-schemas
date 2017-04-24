@@ -1,0 +1,12 @@
+Specify whether to show the default value of the element content.
+<p>
+The default value is provided by the <code>'default'</code> attribute of the XSD element
+that declares the element component.
+For example:
+<dl><dd>
+<code>
+&lt;xs:element name="Language" type="LanguageType" <b>default="English"</b>/&gt;</code>
+</dd></dl>
+When the element (with simple content) is declared by reference, its default value may be specified both
+in the local reference component (which is being documented here) and in the global (referenced) element component.
+In that case, the actual default value will be looked for, first, in the reference component and, then, in the global one.

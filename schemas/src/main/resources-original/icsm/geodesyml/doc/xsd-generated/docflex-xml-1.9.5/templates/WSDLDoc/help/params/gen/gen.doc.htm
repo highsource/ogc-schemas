@@ -1,0 +1,66 @@
+This parameter group controls the overall content of the generated WSDL/XSD documentation.
+<p>
+The <i>"WSDLDoc"</i> template set generates documentation built of large independent
+<b><i>documentation blocks</i></b>.
+In framed HTML, each of those blocks becomes a separate HTML file (or page) displayed in the <i>"Detail Frame"</i>.
+In case of single file (HTML or RTF) documentation, the blocks become separate sections that follow one after another.
+Additionally, in RTF each of those sections may have its own page header/footer.
+<p>
+There are following types of documentation blocks:
+<ul>
+<li>
+  <b><i>Overview Summary</i></b>: This block is generated only once for the whole documentation.
+  It includes:
+  <ul style="margin-top:0;margin-bottom:0">
+    <li>Summary of namespaces</li>
+    <li>Summary of all WSDL files and XML schemas documented</li>
+  </ul>
+</li>
+<li style="margin-top:10pt">
+  <b><i>All Component Summary</i></b>: This block (also generated only once) contains summaries
+  of all WSDL definitions and XSD components throughout all WSDL files and XML schemas documented.
+</li>
+<li style="margin-top:10pt">
+  <b><i>Namespace Overview</i></b>: This block is generated for each documented namespace.
+  It includes:
+  <ul style="margin-top:0;margin-bottom:0">
+    <li>Summaries of all WSDL files and XML schemas targeting that namespace</li>
+    <li>Summaries of all WSDL definitions and XSD components defined in that namespace</li>
+  </ul>
+</li>
+<li style="margin-top:10pt">
+  <b><i>WSDL File Overview</i></b>: It is generated for every documented WSDL file and includes:
+  <ul style="margin-top:0;margin-bottom:0">
+    <li>General information about the WSDL file (profile)</li>
+    <li>Description</li>
+    <li>Summary of XML schemas embedded in this WSDL file</li>
+    <li>Summary of all WSDL definitions found in this WSDL file</li>
+  </ul>
+</li>
+<li style="margin-top:10pt">
+  <b><i>Schema Overview</i></b>: This block is generated for every documented XML schema (including embedded ones).
+  It contains:
+  <ul style="margin-top:0;margin-bottom:0">
+    <li>General information about this XML schema (profile)</li>
+    <li>Description (collected by all annotations of &lt;xs:schema&gt; element)</li>
+    <li>Summary of all XSD components found in this schema</li>
+  </ul>
+</li>
+<li style="margin-top:10pt">
+  <b><i>WSDL Definition Documentation</i></b>: This block is generated for particular WSDL definitions
+  (services, bindings, portTypes, messages).
+  It provides the detailed information about the given definition.
+</li>
+<li style="margin-top:10pt">
+  <b><i>XSD Component Documentation</i></b>: This block can be generated for global XSD components of any type
+  and local elements. It provides the detailed information about the given component.
+</li>
+<li style="margin-top:10pt">
+  <b><i>XML Namespace Bindings</i></b>: A special report, which can be generated only once.
+</li>
+</ul>
+
+With the parameters in this group you can specify which of those blocks will generated and,
+in case of WSDL definitions/XSD components, for which types of them.
+<p>
+What exactly is included in every of those blocks you should specify in the <b><i>"Details"</i></b> parameter group.

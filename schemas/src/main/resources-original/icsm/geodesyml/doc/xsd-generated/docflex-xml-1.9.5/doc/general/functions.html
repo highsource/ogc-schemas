@@ -1,0 +1,6472 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex Technology - FlexQuery Reference - General Utility Functions</title>
+
+<style type="text/css">
+
+p.part {
+  font-size: 120%;
+  font-weight: bold;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:3px;
+  padding-bottom:3px;
+  background-color:#F5E5E5;
+  border: 1px solid #E59999;
+
+  margin-top: 15pt;
+  margin-bottom: 15pt;
+}
+
+p.category {
+  font-size: 110%;
+  font-style: italic;
+  font-weight: bold;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:3px;
+  padding-bottom:3px;
+  background-color:#F5E5E5;
+  border: 1px solid #E59999;
+  margin-top: 15pt;
+}
+
+p.summary {
+  font-size: 110%;
+  font-weight: bold;
+  margin:1px;
+  text-align: left;
+}
+
+p.func {
+  font-size: 120%;
+  font-weight: bold;
+  margin-top: 8pt;
+  margin-bottom: 12pt;
+}
+
+pre.func_heading {
+  font-size: 90%;
+}
+
+font.type {
+  color: blue;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>DocFlex Technology - FlexQuery Reference - General Utility Functions</h1>
+
+<!-- TABLE OF CONTENTS -->
+
+<dl>
+<dt><b><a href="#functions_by_category">Functions by Category</a></b>
+<ul class="mrg8">
+  <li><a href="#category.conversions">Conversion Functions</a>
+  <li><a href="#category.string">String Functions</a>
+  <li><a href="#category.array_vector_enum">Array/Vector/Enumeration</a>
+  <li><a href="#category.element_attribute">Elements/Attributes</a>
+  <li><a href="#category.template_param">Template Parameter</a>
+  <li><a href="#category.stock_section">Call Stock-Section</a>
+  <li><a href="#category.hypertext">Hypertext Functions</a>
+  <li><a href="#category.default">Miscellaneous</a>
+</ul>
+<dt><b><a href="#all_functions_detail">All Functions Detail</a></b>
+</dl>
+
+<!-- END TABLE OF CONTENTS -->
+
+<a name="functions_by_category"></a>
+
+<!--~~~~~~~~ category.conversions ~~~~~~~~-->
+
+<p class="category">
+  <a name="category.conversions"></a>
+  Conversion Functions
+</p>
+
+<p>
+The functions for conversion objects from one data type into another.
+
+<p>
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="summary">Function Summary</p></th></tr>
+
+<!-- toArray -->
+
+<tr valign="top">
+<td>
+<code class="type">Object[]</code>
+</td>
+<td>
+<code>
+<b><a href="#toArray()">toArray</a></b>(<font class="type">Object</font> obj)
+</code>
+<p>
+Converts a specified object to Array.
+</td>
+</tr>
+
+<!-- toBoolean -->
+
+<tr valign="top">
+<td>
+<code class="type">Boolean</code>
+</td>
+<td>
+<code>
+<b><a href="#toBoolean()">toBoolean</a></b>(<font class="type">Object</font> obj)
+</code>
+<p>
+Converts a specified object to Boolean type.
+</td>
+</tr>
+
+<!-- toElement -->
+
+<tr valign="top">
+<td>
+<code><a href="gom.html#GOMElement">GOMElement</a></code>
+</td>
+<td>
+<code>
+<b><a href="#toElement()">toElement</a></b>(<font class="type">Object</font> obj)
+<br>
+<b><a href="#toElement()">toElement</a></b>(<font class="type">Object</font> obj,
+<font class="type">String</font> elementTypeNames)
+</code>
+<p>
+Converts an object to the <code><a href="gom.html#GOMElement">GOMElement</a></code> type.
+</td>
+</tr>
+
+<!-- toEnum -->
+
+<tr valign="top">
+<td>
+<code class="type">Enumeration</code>
+</td>
+<td>
+<code>
+<b><a href="#toEnum()">toEnum</a></b>(<font class="type">Object</font> obj)
+</code>
+<p>
+Converts a specified object to Enumeration.
+</td>
+</tr>
+
+<!-- toNumber -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#toNumber()">toNumber</a></b>(<font class="type">Object</font> obj)
+</code>
+<p>
+Converts a specified object to Number
+</td>
+</tr>
+
+<!-- toString -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#toString()">toString</a></b>(<font class="type">Object</font> obj)
+</code>
+<p>
+Converts a specified object to String.
+</td>
+</tr>
+
+<!-- toString -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#toString(Object[],...)">toString</a></b>(<font class="type">Object[]</font> a,
+<font class="type">String</font> delimiter)
+</code>
+<p>
+This function is a synonym for
+<code><a href="#mergeStrings()">mergeStrings()</a></code> function.
+</td>
+</tr>
+
+<!-- toVector -->
+
+<tr valign="top">
+<td>
+<code class="type">Vector</code>
+</td>
+<td>
+<code>
+<b><a href="#toVector()">toVector</a></b>(<font class="type">Object</font> obj)
+</code>
+<p>
+Converts a specified object to Vector.
+</td>
+</tr>
+
+</table>
+
+
+<!--~~~~~~~~ category.string ~~~~~~~~-->
+
+<p class="category">
+  <a name="category.string"></a>
+  String Functions
+</p>
+
+<p>
+The utility functions for manipulations with strings.
+
+<p>
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="summary">Function Summary</p></th></tr>
+
+<!-- breakString -->
+
+<tr valign="top">
+<td>
+<code class="type">Vector</code>
+</td>
+<td>
+<code>
+<b><a href="#breakString()">breakString</a></b>(<font class="type">String</font> str,
+<font class="type">String</font> delimiter)
+<br>
+<b><a href="#breakString()">breakString</a></b>(<font class="type">String</font> str,
+<font class="type">String</font> delimiter,
+<font class="type">Boolean</font> trimSpaces)
+<br>
+<b><a href="#breakString()">breakString</a></b>(<font class="type">String</font> str,
+<font class="type">Object[]</font> delimiters,
+<font class="type">Boolean</font> trimSpaces)
+</code>
+<p>
+Breaks the specified string into fragments divided by the specified delimiter
+and returns a Vector containing those fragments.
+</td>
+</tr>
+
+<!-- charAt -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#charAt()">charAt</a></b>(<font class="type">String</font> str,
+<font class="type">Number</font> index)
+</code>
+<p>
+Returns a string made of a single character taken from the specified string
+at the specified index.
+</td>
+</tr>
+
+<!-- collapseString -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#collapseString()">collapseString</a></b>(<font class="type">String</font> str)
+</code>
+<p>
+Returns a string produced from the specified one with the leading and trailing
+whitespace (except '\n') removed and all the other sequences of contiguous
+whitespace replaced by a single space.
+</td>
+</tr>
+
+<!-- dup -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#dup()">dup</a></b>(<font class="type">String</font> s,
+<font class="type">Number</font> num)
+</code>
+<p>
+Returns a string made of the specified string repeated <code>num</code> number of times.
+</td>
+</tr>
+
+<!-- endsWith -->
+
+<tr valign="top">
+<td>
+<code class="type">Boolean</code>
+</td>
+<td>
+<code>
+<b><a href="#endsWith()">endsWith</a></b>(<font class="type">String</font> str,
+<font class="type">String</font> suffix)
+<br>
+<b><a href="#endsWith()">endsWith</a></b>(<font class="type">String</font> str,
+<font class="type">Object[]</font> suffixes)
+</code>
+<p>
+Tests if the specified string ends with the specified suffix
+(or one among several specified suffixes).
+</td>
+</tr>
+
+<!-- firstSentence -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#firstSentence()">firstSentence</a></b>(<font class="type">String</font> doc)
+</code>
+<p>
+Return the first sentence of the text contained in the specified string parameter.
+</td>
+</tr>
+
+<!-- indexOf(String,...) -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#indexOf(String,...)">indexOf</a></b>(<font class="type">String</font> str,
+<font class="type">String</font> search)
+<br>
+<b><a href="#indexOf(String,...)">indexOf</a></b>(<font class="type">String</font> str,
+<font class="type">String</font> search,
+<font class="type">Number</font> fromIndex)
+</code>
+<p>
+Returns the index within the specified string of the first occurence of the specified substring,
+starting at the specified index.
+</td>
+</tr>
+
+<!-- lastIndexOf(String,...) -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#lastIndexOf(String,...)">lastIndexOf</a></b>(<font class="type">String</font> str,
+<font class="type">String</font> search)
+<br>
+<b><a href="#lastIndexOf(String,...)">lastIndexOf</a></b>(<font class="type">String</font> str,
+<font class="type">String</font> search,
+<font class="type">Number</font> fromIndex)
+</code>
+<p>
+Searches the string backwards for the specified substring, starting from the specified index,
+and returns an index to it.
+</td>
+</tr>
+
+<!-- len -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#len()">len</a></b>(<font class="type">String</font> s)
+</code>
+<p>
+Returns the length of the specified string.
+</td>
+</tr>
+
+<!-- mergeStrings -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#mergeStrings()">mergeStrings</a></b>(<font class="type">Object[]</font> strings,
+<font class="type">String</font> delimiter)
+<br>
+<b><a href="#mergeStrings()">mergeStrings</a></b>(<font class="type">Vector</font> strings,
+<font class="type">String</font> delimiter)
+</code>
+<p>
+Creates a new string made of fragments contained in the specified Vector or Array
+and delimited with the substring specified in the <code>delimiter</code> parameter.
+</td>
+</tr>
+
+<!-- replace -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#replace()">replace</a></b>(<font class="type">String</font> s,
+<font class="type">String</font> oldSubstr,
+<font class="type">String</font> newSubstr)
+</code>
+<p>
+Returns a new string that is the specified string in which
+all occurences of <code>oldSubstr</code> are replaced with the <code>newSubstr</code>.
+</td>
+</tr>
+
+<!-- startsWith -->
+
+<tr valign="top">
+<td>
+<code class="type">Boolean</code>
+</td>
+<td>
+<code>
+<b><a href="#startsWith()">startsWith</a></b>(<font class="type">String</font> str,
+<font class="type">String</font> prefix)
+<br>
+<b><a href="#startsWith()">startsWith</a></b>(<font class="type">String</font> str,
+<font class="type">String</font> prefix,
+<font class="type">Number</font> toffset)
+<br>
+<b><a href="#startsWith()">startsWith</a></b>(<font class="type">String</font> str,
+<font class="type">Object[]</font> prefixes)
+<br>
+<b><a href="#startsWith()">startsWith</a></b>(<font class="type">String</font> str,
+<font class="type">Object[]</font> prefixes,
+<font class="type">Number</font> toffset)
+</code>
+<p>
+Tests if the specified string starts with the specified prefix
+(or one among several specified prefixes) beginning a specified index.
+</td>
+</tr>
+
+<!-- substring -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#substring()">substring</a></b>(<font class="type">String</font> s,
+<font class="type">Number</font> beginIndex)
+<br>
+<b><a href="#substring()">substring</a></b>(<font class="type">String</font> s,
+<font class="type">Number</font> beginIndex,
+<font class="type">Number</font> endIndex)
+</code>
+<p>
+Returns a new string that is a substring of the specified string.
+</td>
+</tr>
+
+<!-- toLowerCase -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#toLowerCase()">toLowerCase</a></b>(<font class="type">String</font> s)
+</code>
+<p>
+Returns the specified string, converted to lowercase.
+</td>
+</tr>
+
+<!-- toString -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#toString()">toString</a></b>(<font class="type">Object</font> obj)
+</code>
+<p>
+Converts a specified object to String.
+</td>
+</tr>
+
+<!-- toString -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#toString(Object[],...)">toString</a></b>(<font class="type">Object[]</font> a,
+<font class="type">String</font> delimiter)
+</code>
+<p>
+This function is a synonym for
+<code><a href="#mergeStrings()">mergeStrings()</a></code> function.
+</td>
+</tr>
+
+<!-- toUpperCase -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#toUpperCase()">toUpperCase</a></b>(<font class="type">String</font> s)
+</code>
+<p>
+Returns the specified string, converted to uppercase.
+</td>
+</tr>
+
+<!-- trim -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#trim()">trim</a></b>(<font class="type">String</font> s)
+</code>
+<p>
+Returns the specified string with white space removed from the front and end.
+</td>
+</tr>
+
+</table>
+
+<!--~~~~~~~~ category.array_vector_enum ~~~~~~~~-->
+
+<p class="category">
+  <a name="category.array_vector_enum"></a>
+  Array / Vector / Enumeration
+</p>
+
+<p>
+The utility functions for manipulations with Arrays, Vectors and Enumerations.
+
+<p>
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="summary">Function Summary</p></th></tr>
+
+<!-- addElement -->
+
+<tr valign="top">
+<td>
+<code class="type">Vector</code>
+</td>
+<td>
+<code>
+<b><a href="#addElement()">addElement</a></b>(<font class="type">Vector</font> v,
+<font class="type">Object</font> element)
+<br>
+<b><a href="#addElement()">addElement</a></b>(<font class="type">Vector</font> v,
+<font class="type">Object</font> element, <font class="type">Number</font> index)
+</code>
+<p>
+Appends or inserts the specified element into the Vector.
+Returns the same Vector object.
+</td>
+</tr>
+
+<!-- Array -->
+
+<tr valign="top">
+<td class="nowrap">
+<code class="type">Object[]</code>
+</td>
+<td>
+<code>
+<b><a href="#Array()">Array</a></b>(...)
+</code>
+<p>
+This function creates an array from the elements passed in the function parameters.
+</td>
+</tr>
+
+<!-- compare -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#compare()">compare</a></b>(<font class="type">Object</font> o1,
+<font class="type">Object</font> o2)
+</code>
+<p>
+Compares two objects specified in the arguments and returns
+a negative integer, zero, or a positive integer as the first argument
+is less than, equal to, or greater than the second.
+</td>
+</tr>
+
+<!-- count -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#count()">count</a></b>(<font class="type">Enumeration</font> e)
+</code>
+<p>
+Counts the number of elements contained in the Enumeration.
+</td>
+</tr>
+
+<!-- elementAt -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#elementAt(Object[],...)">elementAt</a></b>(<font class="type">Object[]</font> a,
+<font class="type">Number</font> index)
+</code>
+<p>
+Returns the element of the Array at the specified index.
+</td>
+</tr>
+
+<!-- elementAt -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#elementAt(Vector,...)">elementAt</a></b>(<font class="type">Vector</font> a,
+<font class="type">Number</font> index)
+</code>
+<p>
+Returns the element of the Vector at the specified index.
+</td>
+</tr>
+
+<!-- generateVector -->
+
+<tr valign="top">
+<td>
+<code class="type">Vector</code>
+</td>
+<td>
+<code>
+<b><a href="#generateVector()">generateVector</a></b>(<font class="type">Enumeration</font> source,
+<font class="type">String</font> subqueryExpr)
+<br>
+<b><a href="#generateVector()">generateVector</a></b>(<font class="type">Object[]</font> source,
+<font class="type">String</font> subqueryExpr)
+<br>
+<b><a href="#generateVector()">generateVector</a></b>(<font class="type">Object[]</font> source,
+<font class="type">String</font> subqueryExpr,
+<font class="type">Number</font> fromIndex)
+<br>
+<b><a href="#generateVector()">generateVector</a></b>(<font class="type">Object[]</font> source,
+<font class="type">String</font> subqueryExpr,
+<font class="type">Number</font> fromIndex,
+<font class="type">Number</font> toIndex)
+<br>
+<b><a href="#generateVector()">generateVector</a></b>(<font class="type">Vector</font> source,
+<font class="type">String</font> subqueryExpr)
+<br>
+<b><a href="#generateVector()">generateVector</a></b>(<font class="type">Vector</font> source,
+<font class="type">String</font> subqueryExpr,
+<font class="type">Number</font> fromIndex)
+<br>
+<b><a href="#generateVector()">generateVector</a></b>(<font class="type">Vector</font> source,
+<font class="type">String</font> subqueryExpr,
+<font class="type">Number</font> fromIndex,
+<font class="type">Number</font> toIndex)
+</code>
+<p>
+Allows to generate a Vector from elements of another Vector, Array, or Enumeration.
+</td>
+</tr>
+
+<!-- indexOf(Object[],...) -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#indexOf(Object[],...)">indexOf</a></b>(<font class="type">Object[]</font> a,
+<font class="type">Object</font> obj)
+<br>
+<b><a href="#indexOf(Object[],...)">indexOf</a></b>(<font class="type">Object[]</font> a,
+<font class="type">Object</font> obj,
+<font class="type">Number</font> fromIndex)
+</code>
+<p>
+Returns the index within the specified Array of the first occurence of the
+given object, starting at the specified index, and testing for equality using the
+Java <code>java.lang.Object.equals()</code> method.
+</td>
+</tr>
+
+<!-- indexOf(Vector,...) -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#indexOf(Vector,...)">indexOf</a></b>(<font class="type">Vector</font> a,
+<font class="type">Object</font> obj)
+<br>
+<b><a href="#indexOf(Vector,...)">indexOf</a></b>(<font class="type">Vector</font> a,
+<font class="type">Object</font> obj,
+<font class="type">Number</font> fromIndex)
+</code>
+<p>
+Returns the index within the specified Vector of the first occurence of the
+given object, starting at the specified index, and testing for equality using the
+Java <code>java.lang.Object.equals()</code> method.
+</td>
+</tr>
+
+<!-- lastIndexOf(Object[],...) -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#lastIndexOf(Object[],...)">lastIndexOf</a></b>(<font class="type">Object[]</font> a,
+<font class="type">Object</font> obj)
+<br>
+<b><a href="#lastIndexOf(Object[],...)">lastIndexOf</a></b>(<font class="type">Object[]</font> a,
+<font class="type">Object</font> obj,
+<font class="type">Number</font> fromIndex)
+</code>
+<p>
+Searches the Array backwards for the specified object, starting from the specified index,
+and returns an index to it.
+</td>
+</tr>
+
+<!-- lastIndexOf(Vector,...) -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#lastIndexOf(Vector,...)">lastIndexOf</a></b>(<font class="type">Vector</font> a,
+<font class="type">Object</font> obj)
+<br>
+<b><a href="#lastIndexOf(Vector,...)">lastIndexOf</a></b>(<font class="type">Vector</font> a,
+<font class="type">Object</font> obj,
+<font class="type">Number</font> fromIndex)
+</code>
+<p>
+Searches the Vector backwards for the specified object, starting from the specified index,
+and returns an index to it.
+</td>
+</tr>
+
+<!-- length -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#length()">length</a></b>(<font class="type">Object[]</font> a)
+</code>
+<p>
+Returns the number of elements in the array.
+</td>
+</tr>
+
+<!-- max -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#max()">max</a></b>(<font class="type">Object</font> o1,
+<font class="type">Object</font> o2)
+</code>
+<p>
+This function is a shortcut of the following expression:<br>
+<code>compare(o1, o2) &gt;= 0 ? o1 : o2;</code>
+</td>
+</tr>
+
+<!-- maxElement -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#maxElement()">maxElement</a></b>(<font class="type">Object[]</font> a)
+<br>
+<b><a href="#maxElement()">maxElement</a></b>(<font class="type">Vector</font> v)
+</code>
+<p>
+Returns the maximum element of the given Array or Vector,
+according to the comparison rules described in
+<code><a href="#compare()">compare()</a></code> function.
+</td>
+</tr>
+
+<!-- mergeStrings -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#mergeStrings()">mergeStrings</a></b>(<font class="type">Object[]</font> strings,
+<font class="type">String</font> delimiter)
+<br>
+<b><a href="#mergeStrings()">mergeStrings</a></b>(<font class="type">Vector</font> strings,
+<font class="type">String</font> delimiter)
+</code>
+<p>
+Creates a new string made of fragments contained in the specified Vector or Array
+and delimited with the substring specified in the <code>delimiter</code> parameter.
+</td>
+</tr>
+
+<!-- min -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#min()">min</a></b>(<font class="type">Object</font> o1,
+<font class="type">Object</font> o2)
+</code>
+<p>
+This function is a shortcut of the following expression:<br>
+<code>compare(o1, o2) &lt;= 0 ? o1 : o2;</code>
+</td>
+</tr>
+
+<!-- minElement -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#minElement()">minElement</a></b>(<font class="type">Object[]</font> a)
+<br>
+<b><a href="#minElement()">minElement</a></b>(<font class="type">Vector</font> v)
+</code>
+<p>
+Returns the minimum element of the given Array or Vector,
+according to the comparison rules described in
+<code><a href="#compare()">compare()</a></code> function.
+</td>
+</tr>
+
+
+<!-- nextElement -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#nextElement()">nextElement</a></b>(<font class="type">Enumeration</font> e)
+</code>
+<p>
+Returns the next element of the enumeration.
+</td>
+</tr>
+
+<!-- removeElement -->
+
+<tr valign="top">
+<td>
+<code class="type">Vector</code>
+</td>
+<td>
+<code>
+<b><a href="#removeElement()">removeElement</a></b>(<font class="type">Vector</font> v,
+<font class="type">Number</font> index)
+</code>
+<p>
+Removes the element at the specified position in the Vector.
+</td>
+</tr>
+
+<!-- reverseVector -->
+
+<tr valign="top">
+<td>
+<code class="type">Vector</code>
+</td>
+<td>
+<code>
+<b><a href="#reverseVector()">reverseVector</a></b>(<font class="type">Vector</font> v)
+</code>
+<p>
+Reverses the order of the elements in the specified Vector.
+</td>
+</tr>
+
+<!-- size -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#size()">size</a></b>(<font class="type">Vector</font> v)
+</code>
+<p>
+Returns the number of elements in the Vector.
+</td>
+</tr>
+
+<!-- toArray -->
+
+<tr valign="top">
+<td class="nowrap">
+<code class="type">Object[]</code>
+</td>
+<td>
+<code>
+<b><a href="#toArray()">toArray</a></b>(<font class="type">Object</font> obj)
+</code>
+<p>
+Converts a specified object to Array.
+</td>
+</tr>
+
+<!-- toEnum -->
+
+<tr valign="top">
+<td>
+<code class="type">Enumeration</code>
+</td>
+<td>
+<code>
+<b><a href="#toEnum()">toEnum</a></b>(<font class="type">Object</font> obj)
+</code>
+<p>
+Converts a specified object to Enumeration.
+</td>
+</tr>
+
+<!-- toString -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#toString(Object[],...)">toString</a></b>(<font class="type">Object[]</font> a,
+<font class="type">String</font> delimiter)
+</code>
+<p>
+This function is a synonym for
+<code><a href="#mergeStrings()">mergeStrings()</a></code> function.
+</td>
+</tr>
+
+<!-- toVector -->
+
+<tr valign="top">
+<td>
+<code class="type">Vector</code>
+</td>
+<td>
+<code>
+<b><a href="#toVector()">toVector</a></b>(<font class="type">Object</font> obj)
+</code>
+<p>
+Converts a specified object to Vector.
+</td>
+</tr>
+
+<!-- Vector -->
+
+<tr valign="top">
+<td>
+<code class="type">Vector</code>
+</td>
+<td>
+<code>
+<b><a href="#Vector()">Vector</a></b>(...)
+</code>
+<p>
+This function creates a Vector from the elements passed in the function
+parameters.
+</td>
+</tr>
+
+</table>
+
+<!--~~~~~~~~ category.element_attribute ~~~~~~~~-->
+
+<p class="category">
+  <a name="category.element_attribute"></a>
+  Elements / Attributes
+</p>
+
+<p>
+The functions which help to access elements and attributes.
+
+<p>
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="summary">Function Summary</p></th></tr>
+
+<!-- filterElements -->
+
+<tr valign="top">
+<td>
+<code class="type">Enumeration</code>
+</td>
+<td>
+<code>
+<b><a href="#filterElements()">filterElements</a></b>(<font class="type">Enumeration</font> elementEnum,
+<font class="type">String</font> targetElementTypes,
+<font class="type">String</font> filterExpr)
+</code>
+<p>
+This function receives the specified enumeration of elements
+(i.e. <code><a href="gom.html#GOMElement">GOMElement</a></code> objects) and from those of them
+which satisfy the specified conditions forms another enumeration
+returned as the function result.
+</td>
+</tr>
+
+<!-- findElementById -->
+
+<tr valign="top">
+<td>
+<code class="type"><a href="gom.html#GOMElement">GOMElement</a></code>
+</td>
+<td>
+<code>
+<b><a href="#findElementById()">findElementById</a></b>(<font class="type">Object</font> elementId)
+</code>
+<p>
+Finds an element by the specified element <b><i>unique identifier</i></b>.
+</td>
+</tr>
+
+<!-- findElementsByIds -->
+
+<tr valign="top">
+<td>
+<code class="type">Enumeration</code>
+</td>
+<td>
+<code>
+<b><a href="#findElementsByIds()">findElementsByIds</a></b>(<font class="type">Object[]</font> elementIds)
+</code>
+<p>
+Finds elements by the element <b><i>unique identifiers</i></b> contained in the
+specified array and returns the enumeration of the found elements.
+</td>
+</tr>
+
+<!-- findElementByKey -->
+
+<tr valign="top">
+<td>
+<code class="type"><a href="gom.html#GOMElement">GOMElement</a></code>
+</td>
+<td>
+<code>
+<b><a href="#findElementByKey()">findElementByKey</a></b>(<font class="type">Object</font> elementMapId,
+<font class="type">Enumeration</font> elementEnum,
+<font class="type">String</font> keysExpr,
+<font class="type">Object</font> key)
+</code>
+<p>
+This function effectively does the same as the following call:
+<br>
+<code>findElementsByKey (elementMapId, elementEnum, keysExpr, key).nextElement()
+</code>
+</td>
+</tr>
+
+<!-- findElementsByKey -->
+
+<tr valign="top">
+<td>
+<code class="type">Enumeration</code>
+</td>
+<td>
+<code>
+<b><a href="#findElementsByKey()">findElementsByKey</a></b>(<font class="type">Object</font> elementMapId,
+<font class="type">Enumeration</font> elementEnum,
+<font class="type">String</font> keysExpr,
+<font class="type">Object</font> key)
+</code>
+<p>
+If you are going to process data sources with a large number of elements,
+this function might help you to make your templates work faster.
+</td>
+</tr>
+
+<!-- findElementByLPath -->
+
+<tr valign="top">
+<td>
+<code class="type"><a href="gom.html#GOMElement">GOMElement</a></code>
+</td>
+<td>
+<code>
+<b><a href="#findElementByLPath()">findElementByLPath</a></b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+<font class="type">String</font> lpath)
+<br>
+<b><a href="#findElementByLPath()">findElementByLPath</a></b>(<font class="type">String</font> lpath)
+</code>
+<p>
+Finds elements by the specified
+<a href="element_iterator_details.html#element_location_path">Element Location Path</a>
+interpreted against the specified context element and returns the first of the found elements.
+</td>
+</tr>
+
+<!-- findElementsByLPath -->
+
+<tr valign="top">
+<td>
+<code class="type">Enumeration</code>
+</td>
+<td>
+<code>
+<b><a href="#findElementsByLPath()">findElementsByLPath</a></b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+<font class="type">String</font> lpath)
+<br>
+<b><a href="#findElementsByLPath()">findElementsByLPath</a></b>(<font class="type">String</font> lpath)
+</code>
+<p>
+Finds elements by the specified
+<a href="element_iterator_details.html#element_location_path">Element Location Path</a>
+interpreted against the specified context element and returns an enumeration of the found elements.
+</td>
+</tr>
+
+<!-- findElementsByLRules -->
+
+<tr valign="top">
+<td>
+<code class="type">Enumeration</code>
+</td>
+<td>
+<code>
+<b><a href="#findElementsByLRules()">findElementsByLRules</a></b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+<font class="type">Object[]</font> locationRules,
+<font class="type">String</font> targetElementTypes,
+<font class="type">String</font> filterExpr)
+<br>
+<b><a href="#findElementsByLRules()">findElementsByLRules</a></b>(<font class="type">Object[]</font> locationRules,
+<font class="type">String</font> targetElementTypes,
+<font class="type">String</font> filterExpr)
+</code>
+<p>
+This function provides even more powerful way of collecting elements within
+<a href="about.html#dsm">DSM</a> (Data Source Model)
+as compared with the <code><a href="#findElementsByLPath()">findElementsByLPath()</a></code> function.
+</td>
+</tr>
+
+<!-- findElementType -->
+
+<tr valign="top">
+<td>
+<code class="type"><a href="gom.html#DSMElementType">DSMElementType</a></code>
+</td>
+<td>
+<code>
+<b><a href="#findElementType()">findElementType</a></b>(<font class="type">String</font> name)
+</code>
+<p>
+Finds an <a href="about.html#element_type">Element Type</a> with a given name.
+</td>
+</tr>
+
+<!-- getAttr -->
+
+<tr valign="top">
+<td>
+<code class="type"><a href="gom.html#GOMAttribute">GOMAttribute</a></code>
+</td>
+<td>
+<code>
+<b><a href="#getAttr()">getAttr</a></b>(<a href="gom.html#GOMElement">GOMElement</a> element,
+<font class="type">String</font> attrName)
+<br>
+<b><a href="#getAttr()">getAttr</a></b>(<font class="type">String</font> attrName)
+</code>
+<p>
+Returns a <code><a href="gom.html#GOMAttribute">GOMAttribute</a></code>
+object which represents the specified attribute contained in the specified element.
+</td>
+</tr>
+
+<!-- getAttrValue -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#getAttrValue()">getAttrValue</a></b>(<a href="gom.html#GOMElement">GOMElement</a> element,
+<font class="type">String</font> attrName)
+<br>
+<b><a href="#getAttrValue()">getAttrValue</a></b>(<font class="type">String</font> attrName)
+</code>
+<p>
+Returns a value of the specified attribute contained in the specified element.
+</td>
+</tr>
+
+<!-- getAttrValues -->
+
+<tr valign="top">
+<td class="nowrap">
+<code class="type">Object[]</code>
+</td>
+<td>
+<code>
+<b><a href="#getAttrValues()">getAttrValues</a></b>(<a href="gom.html#GOMElement">GOMElement</a> element,
+<font class="type">String</font> attrName)
+<br>
+<b><a href="#getAttrValues()">getAttrValues</a></b>(<font class="type">String</font> attrName)
+</code>
+<p>
+Returns an array of all values (a vector value) associated with the specified attribute
+of the specified element.
+</td>
+</tr>
+
+<!-- getAttrBooleanValue -->
+
+<tr valign="top">
+<td>
+<code class="type">Boolean</code>
+</td>
+<td>
+<code>
+<b><a href="#getAttrBooleanValue()">getAttrBooleanValue</a></b>(<a href="gom.html#GOMElement">GOMElement</a> element,<font class="type">String</font> attrName)
+<br>
+<b><a href="#getAttrBooleanValue()">getAttrBooleanValue</a></b>(<font class="type">String</font> attrName)
+</code>
+<p>
+This function works as a shortcut of one of the calls:
+<br>
+<code>getAttrValue(element, attrName).toBoolean()</code>
+<br>
+or
+<br>
+<code>getAttrValue(attrName).toBoolean()</code>
+</td>
+</tr>
+
+<!-- getAttrNumberValue -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#getAttrNumberValue()">getAttrNumberValue</a></b>(<a href="gom.html#GOMElement">GOMElement</a> element,
+<font class="type">String</font> attrName)
+<br>
+<b><a href="#getAttrNumberValue()">getAttrNumberValue</a></b>(<font class="type">String</font> attrName)
+</code>
+<p>
+This function works as a shortcut of one of the calls:
+<br>
+<code>getAttrValue(element, attrName).toNumber()</code>
+<br>
+or
+<br>
+<code>getAttrValue(attrName).toNumber()</code>
+</td>
+</tr>
+
+<!-- getAttrStringValue -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#getAttrStringValue()">getAttrStringValue</a></b>(<a href="gom.html#GOMElement">GOMElement</a> element,
+<font class="type">String</font> attrName)
+<br>
+<b><a href="#getAttrStringValue()">getAttrStringValue</a></b>(<font class="type">String</font> attrName)
+</code>
+<p>
+This function works as a shortcut of one of the calls:
+<br>
+<code>getAttrValue(element, attrName).toString()</code>
+<br>
+or
+<br>
+<code>getAttrValue(attrName).toString()</code>
+</td>
+</tr>
+
+<!-- getElementIds -->
+
+<tr valign="top">
+<td class="nowrap">
+<code class="type">Object[]</code>
+</td>
+<td>
+<code>
+<b><a href="#getElementIds()">getElementIds</a></b>(<font class="type">Enumeration</font> elementEnum)
+</code>
+<p>
+Returns an array containing <b><i>unique identifiers</i></b> of the elements
+contained in the specified enumeration.
+</td>
+</tr>
+
+<!-- getValueByLPath -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#getValueByLPath()">getValueByLPath</a></b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+<font class="type">String</font> lpath)
+<br>
+<b><a href="#getValueByLPath()">getValueByLPath</a></b>(<font class="type">String</font> lpath)
+</code>
+<p>
+Finds elements/attributes by the specified
+<a href="element_iterator_details.html#location_path">Location Path</a>
+interpreted against the specified context element.
+</td>
+</tr>
+
+<!-- getValuesByLPath -->
+
+<tr valign="top">
+<td class="nowrap">
+<code class="type">Object[]</code>
+</td>
+<td>
+<code>
+<b><a href="#getValuesByLPath()">getValuesByLPath</a></b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+<font class="type">String</font> lpath)
+<br>
+<b><a href="#getValuesByLPath()">getValuesByLPath</a></b>(<font class="type">String</font> lpath)
+</code>
+<p>
+Finds elements or attributes by the specified
+<a href="element_iterator_details.html#location_path">Location Path</a>
+interpreted against the specified context element and returns an array containing
+all values of the found elements or attributes.
+</td>
+</tr>
+
+<!-- HashKey -->
+
+<tr valign="top">
+<td>
+<code class="type">CompoundHashKey</code>
+</td>
+<td>
+<code>
+<b><a href="#HashKey()">HashKey</a></b>(<font class="type">Object</font> subkey1,
+<font class="type">Object</font> subkey2, ...)
+<br>
+<b><a href="#HashKey()">HashKey</a></b>(<font class="type">Object[]</font> subkeys)
+</code>
+<p>
+Creates a compound hash-key from the subkeys specified in the function parameters.
+</td>
+</tr>
+
+<!-- instanceOf -->
+
+<tr valign="top">
+<td>
+<code class="type">Boolean</code>
+</td>
+<td>
+<code>
+<b><a href="#instanceOf()">instanceOf</a></b>(<a href="gom.html#GOMElement">GOMElement</a> element,
+<font class="type">String</font> elementTypeName)
+<br>
+<b><a href="#instanceOf()">instanceOf</a></b>(<font class="type">String</font> elementTypeName)
+</code>
+<p>
+Tests if the specified element is an instance of the specified
+<a href="about.html#element_type">Element Type</a>.
+</td>
+</tr>
+
+<!-- LocationRule -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#LocationRule()">LocationRule</a></b>(<font class="type">String</font> ruleSpec,
+<font class="type">Boolean</font> recursive)
+<br>
+<b><a href="#LocationRule()">LocationRule</a></b>(<font class="type">String</font> ruleSpec,
+<font class="type">Boolean</font> recursive,
+<font class="type">String</font> enablingCondExpr)
+</code>
+<p>
+This function is used to specify parameters for the
+<code><a href="#findElementsByLRules()">findElementsByLRules()</a></code> function.
+</td>
+</tr>
+
+<!-- resolveElementType -->
+
+<tr valign="top">
+<td>
+<code class="type"><a href="gom.html#DSMElementType">DSMElementType</a></code>
+</td>
+<td>
+<code>
+<b><a href="#resolveElementType()">resolveElementType</a></b>()
+<br>
+<b><a href="#resolveElementType()">resolveElementType</a></b>(<a href="gom.html#GOMElement">GOMElement</a> element)
+<br>
+<b><a href="#resolveElementType()">resolveElementType</a></b>(<a href="gom.html#GOMElement">GOMElement</a> element,
+<font class="type">String</font> elementTypeNames)
+<br>
+<b><a href="#resolveElementType()">resolveElementType</a></b>(<font class="type">String</font> elementTypeNames)
+</code>
+<p>
+Finds an <a href="about.html#element_type">Element Type</a>
+associated with the given element.
+</td>
+</tr>
+
+<!-- toElement -->
+
+<tr valign="top">
+<td>
+<code><a href="gom.html#GOMElement">GOMElement</a></code>
+</td>
+<td>
+<code>
+<b><a href="#toElement()">toElement</a></b>(<font class="type">Object</font> obj)
+<br>
+<b><a href="#toElement()">toElement</a></b>(<font class="type">Object</font> obj,
+<font class="type">String</font> elementTypeNames)
+</code>
+<p>
+Converts an object to the <code><a href="gom.html#GOMElement">GOMElement</a></code> type.
+</td>
+</tr>
+
+</table>
+
+<!--~~~~~~~~ category.template_param ~~~~~~~~-->
+
+<p class="category">
+  <a name="category.template_param"></a>
+  Template Parameters
+</p>
+
+<p>
+The functions to access the
+<a href="templates_designer_features.html#template_parameters">template parameters</a>.
+
+<p>
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="summary">Function Summary</p></th></tr>
+
+<!-- getParam -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#getParam()">getParam</a></b>(<font class="type">String</font> paramName)
+</code>
+<p>
+Returns the <a href="templates_designer_features.html#template_parameters">template parameter</a>
+with the specified name.
+</td>
+</tr>
+
+<!-- getStringParam -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#getStringParam()">getStringParam</a></b>(<font class="type">String</font> paramName)
+</code>
+<p>
+This function is a shortcut of the following call:
+<br>
+<code>getParam(paramName).toString()</code>
+</td>
+</tr>
+
+<!-- getNumberParam -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#getNumberParam()">getNumberParam</a></b>(<font class="type">String</font> paramName)
+</code>
+<p>
+This function is a shortcut of the following call:
+<br>
+<code>getParam(paramName).toNumber()</code>
+</td>
+</tr>
+
+<!-- getBooleanParam -->
+
+<tr valign="top">
+<td>
+<code class="type">Boolean</code>
+</td>
+<td>
+<code>
+<b><a href="#getBooleanParam()">getBooleanParam</a></b>(<font class="type">String</font> paramName)
+</code>
+<p>
+This function is a shortcut of the following call:
+<br>
+<code>getParam(paramName).toBoolean()</code>
+</td>
+</tr>
+
+</table>
+
+<!--~~~~~~~~ category.stock_section ~~~~~~~~-->
+
+<p class="category">
+  <a name="category.stock_section"></a>
+  Call Stock-Section
+</p>
+
+<p>
+The functions to call <a href="template_components.html#stock_sections">Stock-Sections</a>
+from within expression.
+
+<p>
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="summary">Function Summary</p></th></tr>
+
+<!-- callStockSection -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#callStockSection()">callStockSection</a></b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+<font class="type">String</font> stockSectionName)
+<br>
+<b><a href="#callStockSection()">callStockSection</a></b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+<font class="type">String</font> stockSectionName,
+<font class="type">Object</font> param)
+<br>
+<b><a href="#callStockSection()">callStockSection</a></b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+<font class="type">String</font> stockSectionName,
+<font class="type">Object[]</font> params)
+<br>
+<b><a href="#callStockSection()">callStockSection</a></b>(<font class="type">String</font> stockSectionName)
+<br>
+<b><a href="#callStockSection()">callStockSection</a></b>(<font class="type">String</font> stockSectionName,
+<font class="type">Object</font> param)
+<br>
+<b><a href="#callStockSection()">callStockSection</a></b>(<font class="type">String</font> stockSectionName,
+<font class="type">Object[]</font> params)
+</code>
+<p>
+This function allows to call from within a FlexQuery expression any
+<a href="template_components.html#stock_sections">Stock-Section</a>
+defined in the given template.
+</td>
+</tr>
+
+<!-- checkStockSectionOutput -->
+
+<tr valign="top">
+<td>
+<code class="type">Boolean</code>
+</td>
+<td>
+<code>
+<b><a href="#checkStockSectionOutput()">checkStockSectionOutput</a></b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+<font class="type">String</font> stockSectionName)
+<br>
+<b><a href="#checkStockSectionOutput()">checkStockSectionOutput</a></b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+<font class="type">String</font> stockSectionName,
+<font class="type">Object</font> param)
+<br>
+<b><a href="#checkStockSectionOutput()">checkStockSectionOutput</a></b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+<font class="type">String</font> stockSectionName,
+<font class="type">Object[]</font> params)
+<br>
+<b><a href="#checkStockSectionOutput()">checkStockSectionOutput</a></b>(<font class="type">String</font> stockSectionName)
+<br>
+<b><a href="#checkStockSectionOutput()">checkStockSectionOutput</a></b>(<font class="type">String</font> stockSectionName,
+<font class="type">Object</font> param)
+<br>
+<b><a href="#checkStockSectionOutput()">checkStockSectionOutput</a></b>(<font class="type">String</font> stockSectionName,
+<font class="type">Object[]</font> params)
+</code>
+<p>
+This function allows to test whether a particular
+<a href="template_components.html#stock_sections">Stock-Section</a>
+would have a non-empty output if it was executed in the current generator context
+with the specified context element passed to it and the specified Stock-Section parameters.
+</td>
+</tr>
+
+</table>
+
+<!--~~~~~~~~ category.hypertext ~~~~~~~~-->
+
+<p class="category">
+  <a name="category.hypertext"></a>
+  Hypertext Functions
+</p>
+
+<p>
+The functions which allow to determine existence of specific hyper-targets
+within the whole generated documentation and to find particular document
+files by different criteria.
+
+<p>
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="summary">Function Summary</p></th></tr>
+
+<!-- documentByHyperTarget -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#documentByHyperTarget()">documentByHyperTarget</a></b>(<font class="type">Object</font> targetKey)
+<br>
+<b><a href="#documentByHyperTarget()">documentByHyperTarget</a></b>(<font class="type">Object[]</font> targetKey)
+<br>
+<b><a href="#documentByHyperTarget()">documentByHyperTarget</a></b>(<font class="type">Object[]</font> targetKey,
+<font class="type">Boolean</font> strict)
+</code>
+<p>
+Returns the absolute path name of a generated document file which
+contains a hypertarget with the specified set of keys.
+</td>
+</tr>
+
+<!-- documentByTemplate -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#documentByTemplate()">documentByTemplate</a></b>(<font class="type">String</font> templateNames)
+</code>
+<p>
+Returns the absolute path name of the first document file which was
+(or will be) produced by the specified template (or a list of templates).
+</td>
+</tr>
+
+<!-- hyperTargetExists -->
+
+<tr valign="top">
+<td>
+<code class="type">Boolean</code>
+</td>
+<td>
+<code>
+<b><a href="#hyperTargetExists()">hyperTargetExists</a></b>(<font class="type">Object</font> targetKey)
+<br>
+<b><a href="#hyperTargetExists()">hyperTargetExists</a></b>(<font class="type">Object[]</font> targetKeys)
+<br>
+<b><a href="#hyperTargetExists()">hyperTargetExists</a></b>(<font class="type">Object[]</font> targetKeys,
+<font class="type">Boolean</font> strict)
+</code>
+<p>
+Allows to determine, if a hypertarget with the specified set of keys
+exists somewhere in the whole generated documentation.
+</td>
+</tr>
+
+</table>
+
+<!--~~~~~~~~ category.default ~~~~~~~~-->
+
+<p class="category">
+  <a name="category.default"></a>
+  Miscellaneous
+</p>
+
+<p>
+Miscellaneous functions.
+
+<p>
+<table cellpadding="3" cellspacing="0" border="1" width="100%">
+<tr><th colspan="2"><p class="summary">Function Summary</p></th></tr>
+
+<!-- callForName -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#callForName()">callForName</a></b>(<font class="type">String</font> className)
+<br>
+<b><a href="#callForName()">callForName</a></b>(<font class="type">String</font> className,
+<font class="type">Object</font> param)
+<br>
+<b><a href="#callForName()">callForName</a></b>(<font class="type">String</font> className,
+<font class="type">Object[]</font> params)
+</code>
+<p>
+This function allows to call execution of external custom-written Java classes
+from within any FlexQuery-expressions specified in your templates.
+</td>
+</tr>
+
+<!-- clearVars -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#clearVars()">clearVars</a></b>(<font class="type">String</font> namePrefix)
+</code>
+
+</td>
+</tr>
+
+<!-- compare -->
+
+<tr valign="top">
+<td>
+<code class="type">Number</code>
+</td>
+<td>
+<code>
+<b><a href="#compare()">compare</a></b>(<font class="type">Object</font> o1,
+<font class="type">Object</font> o2)
+</code>
+<p>
+Compares two objects specified in the arguments and returns
+a negative integer, zero, or a positive integer as the first argument
+is less than, equal to, or greater than the second.
+</td>
+</tr>
+
+<!-- date -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#date()">date</a></b>()
+</code>
+
+</td>
+</tr>
+
+<!-- dateTime -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#dateTime()">dateTime</a></b>()
+</code>
+
+</td>
+</tr>
+
+<!-- echo -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#echo()">echo</a></b>(<font class="type">String</font> s)
+</code>
+<p>
+This function prints the argument it received into the standard system output
+and then returns the argument as the function result.
+</td>
+</tr>
+
+<!-- execSubquery -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#execSubquery()">execSubquery</a></b>(<font class="type">String</font> expr)
+</code>
+<p>
+Executes a subquery expression specified in the function parameter
+and returns the result returned by the subquery.
+</td>
+</tr>
+
+<!-- getVar -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#getVar()">getVar</a></b>(<font class="type">String</font> name)
+</code>
+
+</td>
+</tr>
+
+<!-- instanceOfClass -->
+
+<tr valign="top">
+<td>
+<code class="type">Boolean</code>
+</td>
+<td>
+<code>
+<b><a href="#instanceOfClass()">instanceOfClass</a></b>(<font class="type">Object</font> obj,
+<font class="type">String</font> className)
+</code>
+<p>
+Tests whether the specified object is an instance of the specified Java class.
+</td>
+</tr>
+
+<!-- max -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#max()">max</a></b>(<font class="type">Object</font> o1,
+<font class="type">Object</font> o2)
+</code>
+<p>
+This function is a shortcut of the following expression:<br>
+<code>compare(o1, o2) &gt;= 0 ? o1 : o2;</code>
+</td>
+</tr>
+
+<!-- min -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#min()">min</a></b>(<font class="type">Object</font> o1,
+<font class="type">Object</font> o2)
+</code>
+<p>
+This function is a shortcut of the following expression:<br>
+<code>compare(o1, o2) &lt;= 0 ? o1 : o2;</code>
+</td>
+</tr>
+
+<!-- resolveURL -->
+
+<tr valign="top">
+<td>
+<code class="type">String</code>
+</td>
+<td>
+<code>
+<b><a href="#resolveURL()">resolveURL</a></b>(<font class="type">String</font> spec,
+<font class="type">String</font> contextURL)
+</code>
+
+</td>
+</tr>
+
+<!-- setVar -->
+
+<tr valign="top">
+<td>
+<code class="type">Object</code>
+</td>
+<td>
+<code>
+<b><a href="#setVar()">setVar</a></b>(<font class="type">String</font> name,
+<font class="type">Object</font> value)
+</code>
+
+</td>
+</tr>
+
+</table>
+
+<!--~~~~~~~~ All Functions Detail ~~~~~~~~-->
+
+<p class="part">
+  <a name="all_functions_detail"></a>
+  All Functions Detail
+</p>
+
+<!--~~~ addElement ~~~-->
+
+<p class="func">
+  <a name="addElement()"></a>
+  addElement
+</p>
+
+<pre class="func_heading">
+<font class="type">Vector</font> <b>addElement</b>(<font class="type">Vector</font> v,
+                  <font class="type">Object</font> element)
+
+<font class="type">Vector</font> <b>addElement</b>(<font class="type">Vector</font> v,
+                  <font class="type">Object</font> element,
+                  <font class="type">Number</font> index)
+</pre>
+
+<p>Appends or inserts the specified element into the Vector.
+Returns the same Vector object.</p>
+
+<u>Parameters</u>:
+
+<dl>
+<dt><code>v</code>
+<dd>The Vector object.
+
+<dt><code>element</code>
+<dd>The element to be inserted.
+
+<dt><code>index</code>
+<dd>
+The index at which the specified element is to be inserted.<p>
+If not specified, the element will be added at the end of the Vector.<br>
+If less than 0, the element will be inserted at the first position.<br>
+If greater or equal the current Vector size, the element will be added at the end of the Vector.
+</dl>
+
+<p>
+<b>Tip:</b>
+<p>
+You may call this function in a more method-like style:
+<blockquote>
+<pre>v.addElement(element)</pre>
+</blockquote>
+That's why the operated Vector is returned as the function result.
+The following will append two elements to the Vector:
+<blockquote>
+<pre>v.addElement(element1).addElement(element2)</pre>
+</blockquote>
+<hr>
+
+<!--~~~ Array ~~~-->
+
+<p class="func">
+  <a name="Array()"></a>
+  Array
+</p>
+
+<pre class="func_heading">
+<font class="type">Object[]</font> <b>Array</b>(...)
+</pre>
+<p>
+This function creates an array from the elements passed in the function
+parameters. The number of parameters may be from zero to unlimited.
+<p>
+<u>Examples</u>:
+<p>
+The following call creates an empty array (same as in Java:<code> new&nbsp;Object[0]</code>):
+<blockquote>
+<pre><code>Array()</code></pre>
+</blockquote>
+
+The following creates an array of three Number objects:
+<blockquote>
+<pre><code>Array(1,2,3)</code></pre>
+</blockquote>
+
+This creates an array of three String objects:
+<blockquote>
+<pre><code>Array("1","2","3")</code></pre>
+</blockquote>
+<hr>
+
+<!--~~~ breakString ~~~-->
+
+<p class="func">
+  <a name="breakString()"></a>
+  breakString
+</p>
+
+<pre class="func_heading">
+<font class="type">Vector</font> <b>breakString</b>(<font class="type">String</font> str,
+                   <font class="type">String</font> delimiter)
+
+<font class="type">Vector</font> <b>breakString</b>(<font class="type">String</font> str,
+                   <font class="type">String</font> delimiter,
+                   <font class="type">Boolean</font> trimSpaces)
+
+<font class="type">Vector</font> <b>breakString</b>(<font class="type">String</font> str,
+                   <font class="type">Object[]</font> delimiters,
+                   <font class="type">Boolean</font> trimSpaces)
+</pre>
+<p>
+Breaks the specified string into fragments divided by the specified delimiter
+and returns a Vector containing those fragments.
+
+<p>
+<u>Parameters</u>:
+<p>
+
+<dl>
+<dt><code>str</code>
+<dd>The string to be broken
+
+<dt><code>delimiter</code><br><code>delimiters</code>
+<dd>
+The delimiter substring or an array of delimiters.
+<p>
+In the case of multiple delimiters, the one is used at each string breaking cycle,
+whose position occurs the first within the rest of the string.
+</dd>
+
+<dt><code>trimSpaces</code>
+<dd>
+Specifies whether the white spaces should be removed from each fragment's ends.
+Besides this, if <code>true</code>, the empty fragments and those consist of only white spaces will
+be ignored and not included in the result Vector.
+<p>
+If this parameter is not specified, it is assumed to be <code>false</code>.
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code><a href="#mergeStrings()">mergeStrings()</a></code>
+</blockquote>
+
+<p>
+<u>Examples</u>:
+<p>
+(1) The following call
+<blockquote>
+<pre>breakString("Vini -> vidi -> vici", "->");</pre>
+</blockquote>
+will produce Vector:
+<blockquote>
+<pre>{ "Vini ", " vidi ", " vici" }</pre>
+</blockquote>
+
+(2) The call
+<blockquote>
+<pre>breakString("one, two and three",
+            Array (",", "and"),
+            true);</pre>
+</blockquote>
+will return:
+<blockquote>
+<pre>{ "one", "two", "three" }</pre>
+</blockquote>
+<hr>
+
+<!--~~~ callForName ~~~-->
+
+<p class="func">
+  <a name="callForName()"></a>
+  callForName
+</p>
+
+<pre class="func_heading">
+<font class="type">Object</font> <b>callForName</b>(<font class="type">String</font> className)
+
+<font class="type">Object</font> <b>callForName</b>(<font class="type">String</font> className,
+                   <font class="type">Object</font> param)
+
+<font class="type">Object</font> <b>callForName</b>(<font class="type">String</font> className,
+                   <font class="type">Object[]</font> params)
+</pre>
+<p>
+This function allows to call execution of external <b>custom-written
+Java classes</b> from within any FlexQuery-expressions specified in your templates.
+Thus, it provides the ultimate way to extend functionality of DocFlex
+templates so as to meet your specific needs not supported by
+DocFlex directly.
+<p>
+The custom Java class should implement the
+<blockquote>
+<b><code><a href="../api/api.html#FlexCallHandler">com.docflex.api.generator.FlexCallHandler</a></code></b>
+</blockquote>
+interface provided by <a href="../api/api.html">DocFlex API</a>.
+<p>
+The function works the following way:
+<p>
+Once the class is called the <b>first time</b>, it is searched by
+the fully qualified name specified in the <code>className</code> parameter.
+If no class with such a name found or what is found does not implement the
+<code><a href="../api/api.html#FlexCallHandler">FlexCallHandler</a></code>
+interface, the generator rises an exception and
+then terminates.
+<p>
+As the specified class is successfully found, an instance of it is created
+and initialized with the
+<b><code><a href="../api/api.html#FlexCallHandler.initCallHandler(GOMContext)">initCallHandler(GOMContext context)</a></code></b>
+method.
+That instance is stored then by the generator during the rest of the generation
+session and reused each time the class is called again.
+<p>
+When the generation is about to finish (even at the time it is terminated
+by an exception or a user request), all created
+<code><a href="../api/api.html#FlexCallHandler">FlexCallHandler</a></code>
+instances are disposed with the
+<b><code><a href="../api/api.html#FlexCallHandler.disposeCallHandler()">disposeCallHandler()</a></code></b>
+method called for each instance object. This allows to release any resources you could
+associate with a particular call handler.
+<p>
+Having a <code><a href="../api/api.html#FlexCallHandler">FlexCallHandler</a></code>
+instance object, the generator invokes its
+<b><code><a href="../api/api.html#FlexCallHandler.execCall(GOMContext,Object[])">execCall(GOMContext context, Object[] params)</a></code></b>
+method each time the <code>callForName()</code> function is executed.
+The object returned by this method becomes the function result.
+
+<p>
+<u>Parameters</u>:
+<p>
+
+<dl>
+<dt><code>className</code>
+<dd>The fully qualified name of the call handler class.
+
+<dt><code>param<br>params</code>
+<dd>
+If specified, provides one or several parameters passed
+to the
+<code><a href="../api/api.html#FlexCallHandler.execCall(GOMContext,Object[])">FlexCallHandler.execCall()</a></code>
+method.
+<p>
+<b>Note:</b> In addition to those parameters,
+the
+<code><a href="../api/api.html#FlexCallHandler.execCall(GOMContext,Object[])">FlexCallHandler.execCall()</a></code>
+method always receives a <code><a href="gom.html#GOMContext">GOMContext</a></code>
+object which provides access to all generator's variables.
+</dl>
+<p>
+<u>Example</u>:
+<blockquote>
+<pre>toEnum (callForName(
+   "com.docflex.together.rwi.RWICallHandler",
+   "get_known_implementing_classes"))
+</pre>
+</blockquote>
+
+<b>Tip:</b>
+<p>
+You may use the <code>callForName()</code> function to generate your own sets
+of elements and then process them with an
+<a href="template_components.html#element_iterator">Element Iterator</a>
+defined in your template.
+<p>
+To do this, you should invoke the Element Iterator's properties dialog and
+specify in the 'Iteration Scope' tab the "Custom" Element Collecting Method.
+<p>
+Then, fill in the 'Expression for Element Enumeration' field the call to
+<code>callForName()</code> function generating the enumeration of the elements
+you want to iterate and enclose the call
+in <code><a href="#toEnum()">toEnum()</a></code> as parameter, like shown
+in the example above (it is needed, since this field accepts only enumerations).
+<p>
+For more details, see documentation:
+<a href="element_iterator_details.html#custom">Element Iterator (details) |
+Specifying Element Iteration Scope | Custom</a>.
+</p>
+<hr>
+
+<!--~~~ callStockSection ~~~-->
+
+<p class="func">
+  <a name="callStockSection()"></a>
+  callStockSection
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>callStockSection</b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+                        <font class="type">String</font> stockSectionName)
+
+<font class="type">String</font> <b>callStockSection</b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+                        <font class="type">String</font> stockSectionName,
+                        <font class="type">Object</font> param)
+
+<font class="type">String</font> <b>callStockSection</b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+                        <font class="type">String</font> stockSectionName,
+                        <font class="type">Object[]</font> params)
+
+<font class="type">String</font> <b>callStockSection</b>(<font class="type">String</font> stockSectionName)
+
+<font class="type">String</font> <b>callStockSection</b>(<font class="type">String</font> stockSectionName,
+                        <font class="type">Object</font> param)
+
+<font class="type">String</font> <b>callStockSection</b>(<font class="type">String</font> stockSectionName,
+                        <font class="type">Object[]</font> params)
+</pre>
+<p>
+This function allows to call from within a FlexQuery expression
+any <a href="template_components.html#stock_sections">Stock-Section</a>
+defined in the given template.
+<p>
+When called by this function, a Stock-Section is always executed in
+the <b><i>Text Output</i></b> formatting context independently on any formatting
+specified within the Stock-Section itself. So, everything the
+<a href="template_components.html#stock_sections">Stock-Section</a>
+produces will be a plain text which is returned as the function result.
+<p>
+In any other respect, calling the Stock-Section using this function will be identical
+to call it via a template component (e.g.
+<a href="template_components.html#call_stock_section">Call Stock-Section Section</a>
+or <a href="template_components.html#call_stock_section_control">Call Stock-Section Control</a>).
+<p>
+You can use this feature to program generating small text fragments that you may
+need in your FlexQuery scripts. This will allow to utilize capabilities
+of major template components and to employ the Stock-Sections as procedures enhancing
+FlexQuery scripts.
+
+<p>
+<u>Parameters</u>:
+
+<dl>
+<dt><code>contextElement</code>
+<dd>
+Specifies the context element passes to the Stock-Section
+(see <code><a href="gom.html#GOMStockSection.contextElement">stockSection.contextElement</a></code>
+generator variable).
+<p>
+If this parameter is not specified, the
+<a href="template_components.html#context_element">generator's context element</a>
+is used by default
+(see <code><a href="gom.html#GOMContext.contextElement">GOMContext.contextElement</a></code>).
+</dd>
+
+<dt><code>stockSectionName</code>
+<dd>
+The name of the <a href="template_components.html#stock_sections">Stock-Section</a>
+to call. (This should be the name under which the Stock-Section is defined in the template.)
+</dd>
+
+<dt><code>param<br>params</code>
+<dd>
+If specified, provides one or several (in the form of Array) objects
+passed as parameters to the Stock-Section.
+<p>
+The Stock-Section parameters can be accessed within the Stock-Section
+using the <code><a href="gom.html#GOMStockSection.params">stockSection.params</a></code>
+generator variable.
+</dl>
+
+<p>
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style, e.g.:
+<blockquote>
+<pre>methodElement.callStockSection("Method Header")</pre>
+</blockquote>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#checkStockSectionOutput()">checkStockSectionOutput()</a>,
+<a href="#Array()">Array()</a>,
+<a href="gom.html#GOMContext.stockSection">stockSection</a> </code>
+<a href="gom.html#generator_variables">generator variable</a>.
+</blockquote>
+<hr>
+
+<!--~~~ charAt ~~~-->
+
+<p class="func">
+  <a name="charAt()"></a>
+  charAt
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>charAt</b>(<font class="type">String</font> str,
+              <font class="type">Number</font> index)
+</pre>
+<p>
+Returns a string made of a single character taken from the specified string
+at the specified index.
+<p>
+An index should range from 0 to <code>str.length()-1</code>.
+The first character of the sequence is at index 0, the next at index 1, and so on.
+If index is out of that range, an empty string is returned.
+
+<p>
+<u>Example</u>:
+<blockquote>
+<pre>charAt("caramela",4);</pre>
+</blockquote>
+will return string:
+<blockquote>
+<pre>"m"</pre>
+</blockquote>
+
+<b>Tip:</b>
+<p>
+You may call this function in a more method-like style:
+<blockquote>
+<pre>s.charAt(index)</pre>
+</blockquote>
+<hr>
+
+<!--~~~ checkStockSectionOutput ~~~-->
+
+<p class="func">
+  <a name="checkStockSectionOutput()"></a>
+  checkStockSectionOutput
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>checkStockSectionOutput</b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+                               <font class="type">String</font> stockSectionName)
+
+<font class="type">String</font> <b>checkStockSectionOutput</b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+                               <font class="type">String</font> stockSectionName,
+                               <font class="type">Object</font> param)
+
+<font class="type">String</font> <b>checkStockSectionOutput</b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+                               <font class="type">String</font> stockSectionName,
+                               <font class="type">Object[]</font> params)
+
+<font class="type">String</font> <b>checkStockSectionOutput</b>(<font class="type">String</font> stockSectionName)
+
+<font class="type">String</font> <b>checkStockSectionOutput</b>(<font class="type">String</font> stockSectionName,
+                               <font class="type">Object</font> param)
+
+<font class="type">String</font> <b>checkStockSectionOutput</b>(<font class="type">String</font> stockSectionName,
+                               <font class="type">Object[]</font> params)
+</pre>
+<p>
+This function allows to test whether a particular
+<a href="template_components.html#stock_sections">Stock-Section</a> would have
+a non-empty output if it was executed in the current generator context with
+the specified context element passed to it and the specified
+Stock-Section parameters.
+<p>
+Technically, a call of this function is identical to the following expression:
+<blockquote>
+<pre>callStockSection(..) != ""</pre>
+</blockquote>
+However, <code>checkStockSectionOutput()</code> will work much faster
+than this since no actual output is generated. All what this function does
+is to find out whether the output from a particular Stock-Section exists
+or not.
+<p>
+You may find it helpful to use this function in the
+<i><a href="template_components.html#enabling_condition">Enabling Conditions</a></i>
+of some template components to program switching them on/off depending on
+whether some pieces of the output may or will be produced by this template
+somewhere else.
+
+<p>
+<u>Parameters</u>:
+
+<dl>
+<dt><code>contextElement</code>
+<dd>
+Specifies the context element passes to the Stock-Section
+(see <code><a href="gom.html#GOMStockSection.contextElement">stockSection.contextElement</a></code>
+generator variable).
+<p>
+If this parameter is not specified, the
+<a href="template_components.html#context_element">generator's context element</a>
+is used by default
+(see <code><a href="gom.html#GOMContext.contextElement">GOMContext.contextElement</a></code>).
+</dd>
+
+<dt><code>stockSectionName</code>
+<dd>
+The Stock-Section name. (This should be the name
+under which the Stock-Section is defined in the template.)
+</dd>
+
+<dt><code>param<br>params</code>
+<dd>
+If specified, provides one or several (in the form of Array) objects
+passed as parameters to the Stock-Section.
+<p>
+The Stock-Section parameters can be accessed within the Stock-Section
+using the
+<code><a href="gom.html#GOMStockSection.params">stockSection.params</a></code>
+generator variable.
+</dl>
+
+<p>
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style, e.g.:
+<blockquote>
+<pre>diagram.checkStockSectionOutput ("Diagram Doc",
+    Array("Use-Case Diagram", true));
+</pre>
+</blockquote>
+
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#callStockSection()">callStockSection()</a>,
+<a href="#Array()">Array()</a>,
+<a href="gom.html#GOMContext.stockSection">stockSection</a> </code>
+<a href="gom.html#generator_variables">generator variable</a>.
+</blockquote>
+<hr>
+
+<!--~~~ clearVars ~~~-->
+
+<p class="func">
+  <a name="clearVars()"></a>
+  clearVars
+</p>
+
+<pre class="func_heading">
+<font class="type">Number</font> <b>clearVars</b>(<font class="type">String</font> namePrefix)
+</pre>
+
+<hr>
+
+<!--~~~ collapseString ~~~-->
+
+<p class="func">
+  <a name="collapseString()"></a>
+  collapseString
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>collapseString</b>(<font class="type">String</font> str)
+</pre>
+<p>
+Returns a string produced from the specified one with the
+leading and trailing whitespace (except '\n') removed and all the other sequences
+of contiguous whitespace replaced by a single space.
+<p>
+You may use this function to remove all extra spaces from the string and remain all '\n',
+so when you print the result string, each line will never start or end with a space.
+<p>
+
+<hr>
+
+<!--~~~ compare ~~~-->
+
+<p class="func">
+  <a name="compare()"></a>
+  compare
+</p>
+
+<pre class="func_heading">
+<font class="type">Number</font> <b>compare</b>(<font class="type">Object</font> o1,
+               <font class="type">Object</font> o2)
+</pre>
+<p>
+Compares two objects specified in the arguments and returns
+a negative integer, zero, or a positive integer as the first argument
+is less than, equal to, or greater than the second.
+<p>
+The arguments are compared according to the following rules:
+<ol>
+<li>
+If some of the arguments is <b><code>null</code></b>, the one is considered
+greater which is not <code>null</code>.
+(If both arguments are <code>null</code> the function returns 0.)
+<p></li>
+<li>
+If both arguments are <b>Strings</b> they are compared
+as strings lexicographically.
+<p></li>
+<li>
+If arguments are <b>Numbers</b> they are compared
+as numbers.
+<p></li>
+<li>
+If both arguments are <b>Date</b> they are compared
+using <code>java.util.Date.compareTo()</code> method.
+<p></li>
+
+<li>
+If both arguments are <b>Arrays</b> they are compared by the following Java code:
+
+<pre>Object[] a1 = (Object[]) o1;
+Object[] a2 = (Object[]) o2;
+
+int n = Math.min (a1.length, a2.length);
+for (int i = 0; i &lt; n; i ++)
+{
+  int result = compare(a1[i], a2[i]);
+  if (result != 0)
+    return result;
+}
+
+return (a1.length &lt; a2.length) ? -1 :
+        (a1.length &gt; a2.length) ? 1 : 0;
+</pre>
+The <code>compare()</code> method used in this code does the same as the
+one being described here.
+<p></li>
+
+<li>
+If both arguments are <b>Vectors</b> they are compared by the following Java code:
+
+<pre>Vector v1 = (Vector) o1;
+Vector v2 = (Vector) o2;
+
+int n = Math.min (v1.size(), v2.size());
+for (int i = 0; i &lt; n; i ++)
+{
+  int result = compare(v1.get(i), v2.get(i));
+  if (result != 0)
+    return result;
+}
+
+return (v1.size() &lt; v2.size()) ? -1 :
+        (v1.size() &gt; v2.size()) ? 1 : 0;
+</pre>
+
+The <code>compare()</code> method used in this code does the same as the
+one being described here.
+<p></li>
+
+<li>
+If both arguments are instances of <b><code>java.lang.Comparable</code></b> interface
+the function returns result of the call:
+<pre>((Comparable) o1).compareTo (o2);</pre>
+<p></li>
+
+<li>
+At last, if <b>nothing of the above</b> is true,
+the function result is produced by the following:
+<pre>o1.toString().compareTo (o2.toString())</pre>
+</li>
+</ol>
+
+<b>See Also:</b>
+<p>
+This function is related to other comparison functions:
+<blockquote>
+<code>
+<a href="#min()">min()</a>,
+<a href="#max()">max()</a>,
+<a href="#minElement()">minElement()</a>,
+<a href="#maxElement()">maxElement()</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ count ~~~-->
+
+<p class="func">
+  <a name="count()"></a>
+  count
+</p>
+
+<pre class="func_heading">
+<font class="type">Number</font> <b>count</b>(<font class="type">Enumeration</font> e)
+</pre>
+<p>
+Counts the number of elements contained in the Enumeration.
+<p>
+This function works the following way:
+<blockquote>
+<pre>int counter = 0;
+
+while (e.hasMoreElements()) {
+  counter ++;
+  e.nextElement();
+}
+
+return counter;</pre>
+</blockquote>
+<hr>
+
+<!--~~~ date ~~~-->
+
+<p class="func">
+  <a name="date()"></a>
+  date
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>date</b>()
+</pre>
+<p>
+
+<hr>
+
+<!--~~~ dateTime ~~~-->
+
+<p class="func">
+  <a name="dateTime()"></a>
+  dateTime
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>dateTime</b>()
+</pre>
+
+<hr>
+
+<!--~~~ documentByHyperTarget ~~~-->
+
+<p class="func">
+  <a name="documentByHyperTarget()"></a>
+  documentByHyperTarget
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>documentByHyperTarget</b>(<font class="type">Object</font> targetKey)
+
+<font class="type">String</font> <b>documentByHyperTarget</b>(<font class="type">Object[]</font> targetKey)
+
+<font class="type">String</font> <b>documentByHyperTarget</b>(<font class="type">Object[]</font> targetKey,
+                             <font class="type">Boolean</font> strict)
+</pre>
+<p>
+Returns the absolute path name of a generated document file which
+contains a hypertarget with the specified set of keys.
+If such a document does not exist, the function returns an empty string.
+<p>
+This function returns the correct result only during the
+<i><a href="gom.html#generation_phase">generation phase</a></i>
+(even though the document may not have been physically generated yet).
+During the <i><a href="gom.html#estimation_phase">estimation phase</a></i>,
+the function will always return an empty string.
+<p>
+To know exactly which phase currently is,
+use the generator variable:
+<code><a href="gom.html#GOMContext.output">output</a>.<a href="gom.html#GOMOutputInfo.estimationPhase">estimationPhase</a></code>
+<p>
+This function may be especially helpful, when you need to setup the content
+of a frameset document generated by a
+<i><a href="data_processing_features.html#framed_doc">frameset template</a></i>
+(see 'Frameset Structure' tab in the frameset template's properties dialog).
+With the use of this function, you may specify which generated documents should
+be initially loaded into particular frame windows.
+
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>targetKey<br>targetKeys</code>
+<dd>
+Specifies one or several (in the form of Array) hypertarget keys
+by which the hypertarget is searched.
+<p>
+Each hypertarget is identified with a number of keys which may be objects of any type.
+The keys are generated automatically for each hypertarget during the
+<i><a href="gom.html#estimation_phase">estimation phase</a></i>
+by the FlexQuery expressions specified in hypertarget definitions within the properties
+of template components. The hypertarget keys are tested for equality using
+the Java <code>Object.equals()</code> method.
+<p>
+A hypertarget is considered matching to the specified keys when each key has a separate
+equal pair among the hypertarget's keys. In the case, a two specified keys are equal,
+they should match to different hypertarget's keys (that is, if the specified keys include
+"one", "one", the matching hypertarget should also contain two keys "one", "one").
+</dd>
+
+<dt><code>strict</code>
+<dd>
+If this parameter is <code>true</code>, in addition to the matching condition mentioned
+above, the hypertarget should have no other keys besides those matching to the
+specified ones.
+<p>
+If not specified, the parameter is assumed to be <code>false</code>.
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#hyperTargetExists()">hyperTargetExists()</a>,
+<a href="#documentByTemplate()">documentByTemplate()</a>,
+<a href="#Array()">Array()</a>,
+<a href="gom.html#GOMContext.output">output</a>.<a href="gom.html#GOMOutputInfo.estimationPhase">estimationPhase</a> </code>
+generator variable.
+</blockquote>
+<hr>
+
+<!--~~~ documentByTemplate ~~~-->
+
+<p class="func">
+  <a name="documentByTemplate()"></a>
+  documentByTemplate
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>documentByTemplate</b>(<font class="type">String</font> templateNames)
+</pre>
+<p>
+Returns the absolute path name of the first document file which was
+(or will be) produced by the specified template (or a list of templates).
+If such a document does not exist (i.e. neither of the specified templates
+will ever produce any document), the function returns an empty string.
+<p>
+This function returns the correct result only during the
+<i><a href="gom.html#generation_phase">generation phase</a></i>
+(even though the interested document may not have been physically generated yet).
+During the <i><a href="gom.html#estimation_phase">estimation phase</a></i>,
+the function will always return an empty string.
+<p>
+To know exactly which phase currently is,
+use the generator variable:
+<code><a href="gom.html#GOMContext.output">output</a>.<a href="gom.html#GOMOutputInfo.estimationPhase">estimationPhase</a></code>
+<p>
+This function may be especially helpful, when you need to setup the content
+of a frameset document generated by a
+<i><a href="data_processing_features.html#framed_doc">frameset template</a></i>
+(see 'Frameset Structure' tab in the frameset template's properties dialog).
+With the use of this function, you may specify which generated documents should
+be initially loaded into particular frame windows.
+
+<p>
+<u>Parameter</u>:
+<dl>
+<dt><code>templateNames</code>
+<dd>
+Specifies one or several template names (separated with ';').
+<p>
+Each specified template name should be the pure name of the template file.
+This is just the last name in the pathname's name sequence without extension
+(i.e. without ".tpl" suffix).
+<p>
+The function returns the pathname of the document which is generated the first by
+one of the specified templates during the whole generation session.
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#documentByHyperTarget()">documentByHyperTarget()</a>,
+<a href="gom.html#GOMContext.output">output</a>.<a href="gom.html#GOMOutputInfo.estimationPhase">estimationPhase</a> </code>
+generator variable.
+</blockquote>
+
+<p>
+<u>Example 1</u>
+<p>
+The following call will return the pathname of the document file which is generated the first
+either by <code>'overview-summary.tpl'</code> template or <code>'class.tpl'</code> template:
+<blockquote>
+<pre>documentByTemplate("overview-summary;class")</pre>
+</blockquote>
+Let's see where it is needed. Suppose, we construct a set of templates which can generated
+a framed documentation by a number of classes or a single class. Our documentation may contain
+detailed documents for each class (generated by <code>class.tpl</code>) plus a single
+overview summary document for all classes (generated by <code>overview-summary.tpl</code>).
+<p>
+Now, we want our documentation to display the summary document only when there are more than one
+documented classes (otherwise, the summary will contain just one item and will be
+redundant). If only one class documented, we would like to see its details immediately.
+<p>
+To achieve this, we construct/call the <code>overview-summary.tpl</code> in such
+a way that it will never produce any output when less than 2 classes are processed.
+Then, the <code>documentByTemplate()</code> call specified above would setup
+the main frame window as needed.
+
+<p>
+<u>Example 2</u>
+<p>
+Suppose, the template <code>'all-diagram-index.tpl'</code> is designed to produce
+a single document with an index of all diagrams in our documentation.
+We have constructed that template so that it never produces anything if there are
+no diagrams to be documented.
+<p>
+Now, in some other document, we would like to have a link to that diagram index,
+so we could invoke the index when we click on that link. However, in addition to that,
+we do not want the text of that link to appear when there is no index document!
+<p>
+Here is how this problem could be solved. We just need to specify in the component
+generating the link the following
+<i><a href="template_components.html#enabling_condition">Enabling Condition</a></i>:
+<blockquote>
+<pre>documentByTemplate("all-diagram-index") != ""</pre>
+</blockquote>
+<hr>
+
+<!--~~~ dup ~~~-->
+
+<p class="func">
+  <a name="dup()"></a>
+  dup
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>dup</b>(<font class="type">String</font> s,
+           <font class="type">Number</font> num)
+</pre>
+<p>
+Returns a string made of the specified string repeated <code>num</code> number of times.
+If <code>num</code> &lt;= 0, an empty string is returned.
+<p>
+<u>Example</u>:
+<blockquote>
+<pre>dup("blah-", 3)</pre>
+</blockquote>
+will return:
+<blockquote>
+<pre>"blah-blah-blah-"</pre>
+</blockquote>
+<hr>
+
+<!--~~~ echo ~~~-->
+
+<p class="func">
+  <a name="echo()"></a>
+  echo
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>echo</b>(<font class="type">String</font> s)
+</pre>
+<p>
+This function prints the argument it received into the standard system output
+and then returns the argument as the function result.
+<p>
+Effectively, it does nothing, but it may be helpful when debugging templates.
+</p>
+<hr>
+
+<!--~~~ elementAt ~~~-->
+
+<p class="func">
+  <a name="elementAt(Object[],...)"></a>
+  elementAt
+</p>
+
+<pre class="func_heading">
+<font class="type">Object</font> <b>elementAt</b>(<font class="type">Object[]</font> a,
+                 <font class="type">Number</font> index)
+</pre>
+<p>
+Returns the element of the Array at the specified index.
+If the <code>index</code> is negative or not less than the Array length
+then <code>null</code> is returned.
+<p>
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style:
+<blockquote>
+<pre>a.elementAt(index)</pre>
+</blockquote>
+<hr>
+
+<!--~~~ elementAt ~~~-->
+
+<p class="func">
+  <a name="elementAt(Vector,...)"></a>
+  elementAt
+</p>
+
+<pre class="func_heading">
+<font class="type">Object</font> <b>elementAt</b>(<font class="type">Vector</font> a,
+                 <font class="type">Number</font> index)
+</pre>
+<p>
+Returns the element of the Vector at the specified index.
+If the <code>index</code> is negative or not less than the current Vector size
+then <code>null</code> is returned.
+<p>
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style:
+<blockquote>
+<pre>v.elementAt(index)</pre>
+</blockquote>
+<hr>
+
+<!--~~~ endsWith ~~~-->
+
+<p class="func">
+  <a name="endsWith()"></a>
+  endsWith
+</p>
+
+<pre class="func_heading">
+<font class="type">Boolean</font> <b>endsWith</b>(<font class="type">String</font> str,
+                 <font class="type">String</font> suffix)
+
+<font class="type">Boolean</font> <b>endsWith</b>(<font class="type">String</font> str,
+                 <font class="type">Object[]</font> suffixes)
+</pre>
+<p>
+Tests if the specified string ends with the specified suffix
+(or one among several specified suffixes).
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>str</code>
+<dd>The string to be tested.
+
+<dt><code>suffix</code><br><code>suffixes</code>
+<dd>
+The suffix or an array of suffixes.
+<br>
+When an array of suffixes specified, the function returns
+<code>true</code> if the string ends with at least one of them.
+</dd>
+</dl>
+
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style:
+<blockquote>
+<pre>str.endsWith(suffix)</pre>
+</blockquote>
+<hr>
+
+<!--~~~ execSubquery ~~~-->
+
+<p class="func">
+  <a name="execSubquery()"></a>
+  execSubquery
+</p>
+
+<pre class="func_heading">
+<font class="type">Object</font> <b>execSubquery</b>(<font class="type">String</font> expr)
+</pre>
+
+Executes a subquery expression specified in the function parameter
+and returns the result returned by the subquery.
+<p>
+The specified subquery is executed as if it was inserted in place of the function
+call. You may use within the subquery any other variables assigned within the
+calling expressions before the call of this function.
+<p>
+You may use this function to construct necessary queries dynamically.
+(For instance, you may adjust the behavior of some subtemplate via passing
+to it a single compact subexpression testing some external condition
+instead of passing an equivalent batch of parameters representing that condition
+and then sorting them out using some cumbersome expression statically specified
+within that subtemplate.)
+<p>
+<b>Note: </b>The subquery expression is compiled dynamically within the implementation
+of this function. Thus, there is no way to check it before execution.
+Syntax errors within the subquery will cause an exception during the execution
+of this function.
+You may write and check the subquery separately using
+the <a href="flexquery_reference.html#subexpr_edit">Subexpression Editor</a>
+and, then, insert it as string into the main expression.
+</blockquote>
+
+<p>
+<u>Example</u>:
+<p>
+The following expression is an
+<a href="template_components.html#element_iterator">Element Iterator</a>
+filter specified within some subtemplate:
+<blockquote>
+<pre>getAttrStringValue("$shapeType") != "Note" &&
+(getStringParam("nodeFilter") == "" ||
+ <b>execSubquery(getStringParam("nodeFilter"))</b>.toBoolean())
+</pre>
+</blockquote>
+This filter has a static part (testing whether the value of the <code>'$shapeType'</code>
+attribute is not equal <code>"Note"</code>) and may include a dynamic part passed
+via the template parameter <code>'nodeFilter'</code>.
+</p>
+<hr>
+
+<!--~~~ filterElements ~~~-->
+
+<p class="func">
+  <a name="filterElements()"></a>
+  filterElements
+</p>
+
+<pre class="func_heading">
+<font class="type">Enumeration</font> <b>filterElements</b>(<font class="type">Enumeration</font> elementEnum,
+                           <font class="type">String</font> targetElementTypes,
+                           <font class="type">String</font> filterExpr)
+</pre>
+<p>
+This function receives the specified enumeration of elements
+(i.e. <code><a href="gom.html#GOMElement">GOMElement</a></code> objects) and from those of them
+which satisfy the specified conditions forms another enumeration
+returned as the function result.
+The initial element ordering is preserved.
+
+<p>
+<u>Parameters</u>:
+
+<dl>
+<dt><code>elementEnum</code>
+<dd>The source element enumeration
+
+<dt>targetElementTypes</code>
+<dd>
+The list of the ';' separated target
+<a href="about.html#element_type">Element Type</a> names.
+If this list is not empty (and specifies the valid Element Types),
+only those elements will be included in the result enumeration,
+which are instances of at least one of the specified target Element Types.
+</dd>
+
+<dt><code>filterExpr</code>
+<dd>
+The boolean subquery expression specifying an additional filtering
+conditions for the result elements.
+<p>
+When specified, this subquery is executed for each tested element.
+If the subquery returns <code>true</code>, the element is included in the result
+enumeration.
+<p>
+The tested element is accessible within the subquery as the generator's
+<a href="template_components.html#context_element">context element</a>
+(via <code><a href="gom.html#GOMContext.contextElement">contextElement</a></code> variable).
+The previous context element is overshadowed (it is restored again after this function finishes).
+<p>
+However, you may use within the filtering subquery any other variables assigned within the
+calling expressions before the call of this function. (Using this, you may pass into
+the filtering subquery the previous context element, if you need.)
+<p>
+<b>Note: </b>The filtering subquery is compiled dynamically within the implementation
+of this function. Thus, there is no way to check it before execution.
+Syntax errors within the subquery will cause an exception during the execution of this function.
+You may write and check the filtering subquery separately using the
+<a href="flexquery_reference.html#subexpr_edit">Subexpression Editor</a>
+and, then, insert it as string into the main expression.
+</dl>
+
+<p>
+<u>Example</u>:
+<blockquote>
+<pre>className = getAttrStringValue("name");
+e.filterElements("Method",
+    "getAttrStringValue('class') == className");
+</pre>
+</blockquote>
+This expression returns an enumeration of those elements contained
+in the source enumeration <code>'e'</code>
+<ol>
+<li>which are instances of <code>'Method'</code> <a href="about.html#element_type">Element Type</a>;</li>
+<li>whose <code>'class'</code> attribute has a value equal to the value
+    of the <code>'name'</code> attribute of the generator's current
+    <a href="template_components.html#context_element">context element</a>.</li>
+</ol>
+<hr>
+
+<!--~~~ findElementById ~~~-->
+
+<p class="func">
+  <a name="findElementById()"></a>
+  findElementById
+</p>
+
+<pre class="func_heading">
+<a href="gom.html#GOMElement">GOMElement</a> <b>findElementById</b>(<font class="type">Object</font> elementId)
+</pre>
+<p>
+Finds an element by the specified element <b><i>unique identifier</i></b>.
+<p>
+If no element with such an identifier exists in the current
+<a href="about.html#dsm">DSM</a> (Data Source Model),
+the function returns <code>null</code>.
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#findElementsByIds()">findElementsByIds()</a>,
+<a href="#getElementIds()">getElementIds()</a>,
+<a href="gom.html#GOMElement.id">GOMElement.id</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ findElementsByIds ~~~-->
+
+<p class="func">
+  <a name="findElementsByIds()"></a>
+  findElementsByIds
+</p>
+
+<pre class="func_heading">
+<font class="type">Enumeration</font> <b>findElementsByIds</b>(<font class="type">Object[]</font> elementIds)
+</pre>
+<p>
+Finds elements by the element <b><i>unique identifiers</i></b> contained in the
+specified array and returns the enumeration of the found elements.
+<p>
+Effectively, this function does the same as the following Java code would do:
+<blockquote>
+<pre>Vector v = new Vector();
+
+for (int i = 0; i &lt; elementIds.length; i ++)
+{
+  GOMElement element = findElementById(elementIds[i]);
+  if (element != null)
+    v.add(element);
+}
+
+return v.elements();
+</pre>
+</blockquote>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#findElementById()">findElementsById()</a>,
+<a href="#getElementIds()">getElementIds()</a>,
+<a href="gom.html#GOMElement.id">GOMElement.id</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ findElementByKey ~~~-->
+
+<p class="func">
+  <a name="findElementByKey()"></a>
+  findElementByKey
+</p>
+
+<pre class="func_heading">
+<a href="gom.html#GOMElement">GOMElement</a> <b>findElementByKey</b>(<font class="type">Object</font> elementMapId,
+                            <font class="type">Enumeration</font> elementEnum,
+                            <font class="type">String</font> keysExpr,
+                            <font class="type">Object</font> key)
+</pre>
+<p>
+This function effectively does the same as the following call:
+<blockquote>
+<pre>findElementsByKey (elementMapId,
+    elementEnum, keysExpr, key).nextElement()
+</pre>
+</blockquote>
+
+That is, it returns the first element of the enumeration returned
+by the similar call of
+<code><a href="#findElementsByKey()">findElementsByKey()</a></code>
+function.
+<p>
+However, calling <code>findElementByKey()</code> will work somewhat faster.
+So, if your element hash-map is not supposed to index multiple elements
+with the same key (or you always need only one element per a request),
+using this function will be preferable.
+<p>
+For more details, see description of
+<code><a href="#findElementsByKey()">findElementsByKey()</a></code>
+function.
+</p>
+<hr>
+
+<!--~~~ findElementsByKey ~~~-->
+
+<p class="func">
+  <a name="findElementsByKey()"></a>
+  findElementsByKey
+</p>
+
+<pre class="func_heading">
+<font class="type">Enumeration</font> <b>findElementsByKey</b>(<font class="type">Object</font> elementMapId,
+                              <font class="type">Enumeration</font> elementEnum,
+                              <font class="type">String</font> keysExpr,
+                              <font class="type">Object</font> key)
+</pre>
+<p>
+If you are going to process data sources with a large number of elements,
+this function might help you to make your templates work faster.
+<p>
+The idea of this function is that when you frequently need to obtain
+from a large number of elements some collections of them using rather complicated
+and varying query (which may depend on some external parameters), you may find that
+in many instances such a query can be actually presented as a composition of two subqueries:
+<ol>
+<li>The one which is still complicated enough but remains the same in all variations</li>
+<li>The another one which just varies but in essence is very simple and can be reduced
+    to finding something in a hash-map by a certain key. So, it is only that key what
+    will be varying there.</li>
+</ol>
+
+Following this, as soon as you have found such a representation,
+you can execute the invariable subquery only once, create a hash-map of the collected
+elements and then just look up the necessary elements in this hash-map rather
+than executing each time the whole original query from the start.
+<p>
+(Of course, such an approach may cost some memory, but given that during processing
+of a template some of its components may be implicitly executed a lot number of times,
+this will pay off and may considerably boost the generator performance.)
+<p>
+The FlexQuery engine incorporates an implementation of that idea provided
+via the <code>findElementsByKey()</code> function.
+We shall show how it can be used in the example below.
+But first, let's look into the function parameters.
+
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>elementMapId</code>
+<dd>
+This is a key which identifies the element hash-map.
+<p>
+FlexQuery engine is able to maintain a lot of such hash-maps.
+So, they themselves are stored in a hashtable and accessed via certain keys.
+<p>
+Therefore, any object representing a hash-map identifier should be good enough
+to be used as a hash-key. That is, it should have appropriately implemented method
+<code>Object.hashCode()</code> in the implementing Java class. The simple data types
+(like <code>String</code> and <code>Number</code>) do satisfy this. However,
+in certain situations, it might be tricky to find how to express a hash-map identifier
+in the form of a simple data type object. (Normally, this would involve writing
+some complicated expression that converts everything that identifies a hash-map
+into a single long string.)
+<p>
+The <b><code><a href="#HashKey()">HashKey()</a></code></b> function provides
+a way to solve this problem.
+Using it, you can create a compound hash-key object which encloses several
+simple ones.
+<p>
+For example, suppose you need to maintain a lot of hash-maps each of which
+is connected with a certain element and identified with the element's ID plus
+a "some-methods" string (that's because you may also have a similar set of hash-maps
+connected with the same elements but representing "some-fields" instead).
+Then, you can create identifiers for those hash-maps using the following call:
+<blockquote>
+<pre>HashKey(element.id, "some-methods")</pre>
+</blockquote>
+</dd>
+
+<dt><code>elementEnum</code>
+<dd>
+The enumeration of the elements to be included in the hash-map.
+<p>
+This enumeration should provide just those elements which might be produced with some
+"heavy" query, as described above. Now, you may wonder, how does any optimization happen
+here, if as a function parameter, that enumeration should be generated every time the
+function call is executed?
+<p>
+Actually, that's not the case. Here's how it works.
+<p>
+FlexQuery processor treats each parameter in a function call as a separate subexpression.
+Those parameter subexpressions are compiled into separate subqueries. When a function
+is called, the parameter subqueries are not automatically executed before the call.
+Instead, they are passed to the function implementation.
+So, it is the function implementation where the parameter subqueries are actually executed
+and the parameter values are obtained.
+<p>
+The <code>findElementsByKey()</code> function is implemented so that
+<p>
+<ol>
+<li>First, it obtains the value of the <code>elementMapId</code> parameter and searches
+the corresponding hash-map.</li>
+<li>Only when the hash-map is not found, the <code>elementEnum</code> parameter subquery
+is executed and the new hash-map is created.</li>
+</ol>
+<p>
+That means, the generation of <code>elementEnum</code> enumeration should be specified
+entirely within the parameter subexpression. For example, the call
+<blockquote>
+<pre>findElementsByKey (element.id,
+    element.findElementsByLPath("Field"), ...)
+</pre>
+</blockquote>
+will work differently (and presumably faster) rather than the expression:
+<blockquote>
+<pre>e = element.findElementsByLPath("Field");
+findElementsByKey(element.id, e, ...)
+</pre>
+</blockquote>
+Although, the returned result will be the same.
+</dd>
+
+<dt><code>keysExpr</code>
+<dd>
+Specifies the FlexQuery subexpression which generates the element hash-map keys.
+<p>
+When the hash-map is created, this subexpression is executed for each element
+included in the hash-map and should return an object which will be treated
+as the element's key.
+<p>
+The keys-subexpression may also return an array of different objects
+all of which will also be treated as the element's keys. In that case,
+the element will be presented in the hash-map by several keys simultaneously.
+<p>
+The element is accessible within the keys-subexpression as
+the <a href="template_components.html#context_element">generator's context element</a>
+(via the <code><a href="gom.html#GOMContext.contextElement">contextElement</a></code> variable).
+The previous context element is overshadowed at that moment
+(it is restored after this function finishes).
+You may also use within the keys-subexpression any other variables assigned
+within the calling expressions before the call of this function.
+<p>
+<b>Notes:</b>
+<p>
+<ol>
+<li>Like <code>elementEnum</code>, the parameter <code>keysExpr</code>
+is processed only when a new hash-map is created (see description of the
+<code>elementEnum</code> parameter).</li>
+<li>The keys-subexpression is compiled dynamically within the implementation
+of this function. Thus, there is no way to check it before execution.
+Syntax errors within the subexpression will cause an exception during
+the execution of this function.
+You may write and check the keys-subexpression separately using
+the <a href="flexquery_reference.html#subexpr_edit">Subexpression Editor</a>
+and, then, insert it as string into the main expression.
+</li>
+</ol>
+</dd>
+
+<dt><code>key</code>
+<dd>
+Specifies a key object by which the elements are searched in the hash-map.
+The function will return an enumeration containing all elements presented
+in the specified hash-map and associated with this key.
+</dl>
+
+<p>
+<u>Example</u>:
+<p>
+The following example was taken from the real template -- the <code>class.tpl</code>
+template included in the <i>DocFlex/Javadoc</i>.
+<p>
+The task was the following:
+<p>
+For an element representing a Java interface, we need to obtain all Java classes
+implementing that interface.
+<p>
+The list of interfaces implemented by a class includes:
+<ol>
+<li>All interface directly implemented by the given class.</li>
+<li>All interfaces directly implemented by all ancestors of the given class.</li>
+<li>All ancestors of all directly implemented interfaces.</li>
+</ol>
+
+This task is rather tricky. Even though it is imaginable to write a query
+which would collect all implementing classes for a particular interface,
+it is obvious that each time such a query is executed it would involve
+looking through something about all elements representing all classes and interfaces
+in the project. Clearly, without a special solution, this would just nearly stop
+executing of the template!
+<p>
+Using the <code>findElementsByKey()</code> function provides a necessary solution.
+Here's how this can be done:
+
+<blockquote>
+<pre>findElementsByKey (
+
+    "All Known Implementing Classes",
+
+    findElementsByLPath (mainContext.rootElement,
+        "classes^::ClassDoc[! getAttrBooleanValue('isInterface')]"),
+
+    'getElementIds(
+        findElementsByLRules (
+            Array (
+                LocationRule ("* -> interfaces^::ClassDoc", true),
+                LocationRule ("* -> superclass^::ClassDoc", true)
+            ),
+            "ClassDoc",
+            "getAttrBooleanValue(\'isInterface\')"
+        )
+    )',
+
+    interfaceElement.id
+);</pre>
+</blockquote>
+
+If the interested interface is presented by the <code>interfaceElement</code> element,
+this call will return all classes implementing that interface.
+Here's the explanation for all parameters:
+<p>
+<table>
+<tr>
+<td width=28 valign=top><b>(1)</b>&nbsp;&nbsp;</td>
+<td>
+<pre><b>"All Known Implementing Classes"</b></pre>
+<p>
+This specifies the hash-map identifier. It's just a string
+since that hash-map is the only one for the whole generation session.
+<p></p>
+</td>
+</tr>
+
+<tr>
+<td valign=top><b>(2)</b>&nbsp;&nbsp;</td>
+<td>
+<pre><b>findElementsByLPath (mainContext.rootElement,
+    "classes^::ClassDoc[! getAttrBooleanValue('isInterface')]")
+</b></pre>
+<p>
+This provides an enumeration of all classes in the project.
+<p></p>
+</td>
+</tr>
+
+<tr>
+<td valign=top><b>(3)</b>&nbsp;&nbsp;</td>
+<td>
+<pre><b>'getElementIds(
+   findElementsByLRules (
+       Array (
+           LocationRule ("* -> interfaces^::ClassDoc", true),
+           LocationRule ("* -> superclass^::ClassDoc", true)
+       ),
+       "ClassDoc",
+       "getAttrBooleanValue(\'isInterface\')"
+   )
+)'</b></pre>
+<p>
+This is a keys-subexpression which returns an array of the <i>unique identifiers</i>
+of all interfaces implemented by a given class. Those identifiers will be the
+keys associated with the class element in the hash-map.
+<p></p>
+</td>
+</tr>
+
+<tr>
+<td valign=top><b>(4)</b>&nbsp;&nbsp;</td>
+<td>
+<pre><b>interfaceElement.id</b></pre>
+<p>
+Specifies the key.
+This is just the <i>unique identifier</i> of the element representing the interface
+for which we want to know all classes implementing it.
+<p></p>
+</td>
+</tr>
+</table>
+
+<b>Tip:</b>
+<p>
+You may use the <code>findElementsByKey()</code> function to optimize processing
+of some <a href="template_components.html#element_iterator">Element Iterator</a>
+sections in your templates.
+<p>
+Some template components (and especially template sections) may be partially
+executed by the generator a lot of times with practically the same context parameters.
+This allows the generator to know whether certain components would have any output
+in the given context. (Generally, this is needed to fulfill some non-procedural
+capabilities presented in DocFlex template.)
+<p>
+If some of the <a href="template_components.html#element_iterator">Element Iterators</a>
+in your templates are specified so they collect the iterated elements using some complicated
+<a href="element_iterator_details.html#location_rule">Location Rules</a>
+whose processing may involve massive internal calculations, you may dramatically
+improve performance of your templates by switching those Element Iterators
+to use the <code>findElementsByKey()</code> function.
+<p>
+What you will need, in that case, is to rewrite the element collecting settings
+specified in those
+<a href="template_components.html#element_iterator">Element Iterators</a>
+in the form of <code>findElementsByKey()</code>
+function calls (like the one shown in the example). Then, in each the Element Iterator's
+properties you should specify the <i>"Custom"</i> Element Collecting Method
+in the 'Iteration Scope' tab and fill in the 'Expression for Element Enumeration'
+field the <code>findElementsByKey()</code> function call you prepared.
+<p>
+For more details about those settings, see documentation:
+<a href="element_iterator_details.html#custom">Element Iterator (details) |
+Specifying Element Iteration Scope | Custom</a>.
+</p>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#HashKey()">HashKey()</a>,
+<a href="#findElementByKey()">findElementByKey()</a>,
+<a href="#findElementsByLRules()">findElementsByLRules()</a>,
+<a href="#findElementsByLPath()">findElementsByLPath()</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ findElementByLPath ~~~-->
+
+<p class="func">
+  <a name="findElementByLPath()"></a>
+  findElementByLPath
+</p>
+
+<pre class="func_heading">
+<code class="type"><a href="gom.html#GOMElement">GOMElement</a></code> <b>findElementByLPath</b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+                             <font class="type">String</font> lpath)
+
+<code class="type"><a href="gom.html#GOMElement">GOMElement</a></code> <b>findElementByLPath</b>(<font class="type">String</font> lpath)
+</pre>
+<p>
+Finds elements by the specified
+<a href="element_iterator_details.html#element_location_path">Element Location Path</a>
+interpreted against the specified context element and returns the first of the found elements.
+If no elements found, the function returns <code>null</code>.
+<p>
+Effectively, this function does the same as one of the following calls
+(although, it will work faster):
+<blockquote>
+<pre>findElementsByLPath(contextElement, lpath).nextElement()</pre>
+</blockquote>
+or
+<blockquote>
+<pre>findElementsByLPath(lpath).nextElement()</pre>
+</blockquote>
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#findElementsByLPath()">findElementsByLPath()</a>,
+<a href="#nextElement()">nextElement()</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ findElementsByLPath ~~~-->
+
+<p class="func">
+  <a name="findElementsByLPath()"></a>
+  findElementsByLPath
+</p>
+
+<pre class="func_heading">
+<font class="type">Enumeration</font> <b>findElementsByLPath</b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+                                <font class="type">String</font> lpath)
+
+<font class="type">Enumeration</font> <b>findElementsByLPath</b>(<font class="type">String</font> lpath)
+</pre>
+<p>
+Finds elements by the specified
+<a href="element_iterator_details.html#element_location_path">Element Location Path</a>
+interpreted against the specified context element and returns an enumeration of the
+found elements.
+
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>contextElement</code>
+<dd>
+The context element against which the
+<a href="element_iterator_details.html#location_path">Location Path</a> is interpreted.
+<p>
+If this parameter is not specified, the
+<a href="element_iterator_details.html#location_path">Location Path</a>
+will be interpreted against the generator's
+<a href="template_components.html#context_element">context element</a>,
+which is the same as the call:
+<blockquote>
+<code>contextElement.findElementsByLocationPath(lpath)</code>
+</blockquote>
+<p>
+See Also: <code><a href="gom.html#GOMContext.contextElement">GOMContext.contextElement</a></code>
+</dd>
+
+<dt><code>lpath</code>
+<dd>
+The <a href="element_iterator_details.html#location_path">Location Path</a>
+expression specifying how the elements should be searched.
+<p>
+Use <a href="flexquery_reference.html#lpath_builder">Location Path Builder</a>
+to quickly construct a Location Path needed for this parameter.
+</dl>
+
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style, e.g.:
+<blockquote>
+<code>element.findElementsByLocationPath(lpath)</code>
+</blockquote>
+
+<p>
+<u>Location Paths Reference</u>
+<p>
+
+<b>Location Paths</b> are expressions similar to the expression of <i>XPath</i>.
+Each Location Path has the following structure:
+<blockquote>
+	<code><i>Step1</i> / <i>Step2</i> / ... / <i>StepN</i></code>
+</blockquote>
+<p>
+The Location Paths which specify the search of elements are called <i>Element Location Paths</i>.
+They consist of only <i>Element Location Steps</i>.
+<p>
+Those specifying the search of attributes are called <i>Attribute Location Paths</i>.
+The steps from <code><i>Step1</i></code> to <code><i>StepN-1</i></code> of an Attribute Location Path
+are also Element Location Steps. However, the last step is an <i>Attribute Location Step</i> (see below).
+<p>
+Each <b>Element Location Step</b> may have the following structure:
+<blockquote>
+	<code><i>axis</i> :: <i>ETs</i> [<i>filter</i>]</code>
+</blockquote>
+<p>where
+<blockquote>
+<dl>
+<dt><code><i>axis</i></code>
+<dd>
+Specifies a <b><i>search axis</i></b> -- i.e. a subset of the element
+tree from which the elements are collected at the particular step.
+DocFlex supports the following axes:
+<p>
+<table cellpadding="4" cellspacing="1" border="1">
+<tr>
+  <th><b>Axis</b></th>
+  <th><b>Description</b></th>
+</tr>
+<tr valign="top">
+  <td class="nowrap"><code>child</code></td>
+  <td>Includes children of the step's context node. This axis is used by default
+      (i.e. when no <code><i>axis</i>::</code> prefix is specified at the location step).
+  </td>
+</tr>
+<tr valign="top">
+  <td class="nowrap"><code>self</code></td>
+  <td>Includes only the step's context node itself</td>
+</tr>
+<tr valign="top">
+  <td class="nowrap"><code>child-or-self</code></td>
+  <td>Includes the step's context node and all its children</td>
+</tr>
+<tr valign="top">
+  <td class="nowrap"><code>descendant</code></td>
+  <td>Includes all descendants of the step's context node (i.e. its children,
+      children of the children and so on)
+  </td>
+</tr>
+<tr valign="top">
+  <td class="nowrap"><code>descendant-or-self</code></td>
+  <td>Includes the step's context node and all its descendants</td>
+</tr>
+<tr valign="top">
+  <td class="nowrap"><code><i>attribute</i>^</code></td>
+  <td>This is the <b>link-</b>axis, which is an extension of the XPath introduced by DocFlex.
+      It contains those elements of the whole <a href="about.html#dsm">DSM</a>
+      (Data Source Model) whose IDs (<i>unique identifiers</i>) are the values of the specified
+      <code><i>attribute</i></code> of the step's context node.
+      <p>
+      <b>See Also:</b><code> <a href="gom.html#GOMElement.id">GOMElement.id</a></code>
+  </td>
+</tr>
+</table>
+</dd>
+
+<dt><code><i>ETs</i></code>
+<dd>
+Specifies one or several <i>matching <a href="about.html#element_type">Element Types</a></i>.
+Each element, to be included in the step's result set, should conform to
+at least one of the specified matching Element Types.
+<p>
+The list of the matching Element Types can be defined:
+<p>
+<ul>
+<li>As a single Element Type name.</li>
+<li>As the following expression:
+    <blockquote>
+      <code>(<i>ET1</i> | <i>ET1</i> | ... | <i>ETn</i>)</code>
+    </blockquote>
+    where each <code><i>ET</i></code> is an
+    <a href="about.html#element_type">Element Type</a> name.
+</li>
+<li>As an asterisk (<code>*</code>), which allows to include
+    all elements regardless of their type
+</li>
+</ul>
+</dd>
+
+<dt><code><i>filter</i></code>
+<dd>
+This is a boolean FlexQuery-expression which defines the subquery for the <i>location step filter</i>.
+<p>
+When specified this subquery is executed for each element to be included in the step's result set.
+An element is included in the result set only when the subquery returns <code>true</code>.
+<p>
+The tested element is accessible within the subquery as the generator's
+<a href="template_components.html#context_element">context element</a>
+(via <code><a href="gom.html#GOMContext.contextElement">contextElement</a></code> variable).
+The previous context element is overshadowed (it is restored again after the Location Path
+processing is finished).
+<p>
+<b>Note: </b>The filtering subquery is compiled dynamically within the implementation
+of this function. Thus, there is no way to check it before execution.
+Syntax errors within the subquery will cause an exception during the processing of the Location Path.
+</dd>
+</dl>
+</blockquote>
+<p>
+Each <b>Attribute Location Step</b> has the following structure:
+<blockquote>
+	<code>@<i>attribute</i></code>
+</blockquote>
+where <code><i>attribute</i></code> is the name of the searched attribute.
+The Attribute Location Paths are normally used to collect values of
+the same attribute by a number of elements at once.
+
+<p>
+<b>Compound Location Paths</b>
+<p>
+You may join several Location Paths using '|' delimiter into a single expression:
+<blockquote>
+<code><i>lpath1</i> | <i>lpath2</i> | ... | <i>lpathN</i></code>
+</blockquote>
+
+Such an expression, called <i>Compound Location Path</i>, is interpreted by
+consecutive interpretation of the Location Paths contained in it.
+The result is a union of elements or attributes produced by each constituent
+Location Path.
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#findElementByLPath()">findElementByLPath()</a>,
+<a href="#findElementsByLRules()">findElementsByLRules()</a>,
+<a href="#getValuesByLPath()">getValuesByLPath()</a>
+</code>
+</blockquote>
+
+<p>
+<u>Examples</u>:
+<p>
+The following expression counts those children of the generator's current
+<a href="template_components.html#context_element">context element</a>,
+which are instances of 'Class' <a href="about.html#element_type">Element Type</a>:
+<blockquote>
+<pre>count (findElementsByLPath ("Class"))</pre>
+</blockquote>
+
+<p>
+This expression was taken from the real template:
+
+<blockquote>
+<pre>findElementsByLPath (rootElement,
+    "classes^::ClassDoc [getAttrBooleanValue('isInterface')]")</pre>
+</blockquote>
+
+It returns all those elements:
+<ol>
+<li>whose ID references are provided in the values of the 'classes' attribute
+    of the template's root element;
+<li>which are instances of 'ClassDoc' <a href="about.html#element_type">Element Type</a>;
+<li>whose 'isInterface' attribute is <code>true</code>
+</ol>
+<hr>
+
+<!--~~~ findElementsByLRules ~~~-->
+
+<p class="func">
+  <a name="findElementsByLRules()"></a>
+  findElementsByLRules
+</p>
+
+<pre class="func_heading">
+<font class="type">Enumeration</font> <b>findElementsByLRules</b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+                                 <font class="type">Object[]</font> locationRules,
+                                 <font class="type">String</font> targetElementTypes,
+                                 <font class="type">String</font> filterExpr)
+
+<font class="type">Enumeration</font> <b>findElementsByLRules</b>(<font class="type">Object[]</font> locationRules,
+                                 <font class="type">String</font> targetElementTypes,
+                                 <font class="type">String</font> filterExpr)
+</pre>
+<p>
+This function provides even more powerful way of collecting elements within
+<a href="about.html#dsm">DSM</a> (Data Source Model)
+as compared with the <code><a href="#findElementsByLPath()">findElementsByLPath()</a></code> function.
+It allows to collect elements using a whole bunch of
+<a href="element_iterator_details.html#location_path">Location Paths</a>
+whose processing may be automatically repeated during a single call.
+<p>
+Now, rather a single <a href="element_iterator_details.html#location_path">Location Path</a>,
+the search of elements is specified using an array of
+<a href="element_iterator_details.html#location_rule">Location Rules</a>.
+Each Location Rule consists of the following settings:
+<ol>
+  <li><i>Enabling Condition</i></li>
+  <li>List of <i>Matching <a href="about.html#element_type">Element Types</a></i></li>
+  <li><i><a href="element_iterator_details.html#element_location_path">Element Location Path</a></i>
+      (for more information, see
+       <code><a href="#findElementsByLPath()">findElementsByLPath()</a></code> function)</li>
+  <li><i>Recursive flag</i></li>
+</ol>
+
+Each Location Rule is processed relatively to a certain <b><i>context element</i></b>:
+<p>
+At first, the rule is tested for compatibility with the context element.
+That is
+<ol>
+<li><p>If the <b>Enabling Condition</b> specified, it is tested against the context element
+(which is temporary made the
+<a href="template_components.html#context_element">generator's context element</a>
+and can be accessed within the expression via the
+<code><a href="gom.html#GOMContext.contextElement">contextElement</a></code> variable);
+</p></li>
+<li><p>If there are <b>Matching Element Types</b>, the context element is tested
+    if it is an instance of at least one of them.</p></li>
+</ol>
+If both tests passed, the rule's <b>Element Location Path</b>
+is interpreted against the context element and a set of new elements is produced.
+<p>
+The whole set of Location Rules is interpreted according to the following steps:
+<dl>
+<dt><b>Step 1:</b>
+<dd>All specified rules are processed relatively to the initial context element
+(i.e. the one passed in the function parameter).
+The elements generated by each rule are added to the <b><i>total result set</i></b>.
+</dd>
+<dt><b>Step N+1:</b>
+<dd>
+For each new element generated at the previous step,
+all specified Location Rules whose <b>recursive flag</b> is <code>true</code>
+(they are called
+<i><a href="element_iterator_details.html#recursive_location_rules">Recursive Location Rules</a></i>)
+are processed with this element selected as the rule's context element.
+The new generated elements are added to the total result set.
+This step is repeated until at the previous step no new elements have been produced.
+<p>
+After that, the total result set is filtered according to the list of <b><i>Target Element Types</i></b>
+and the <b><i>filter expression</i></b> specified in the function parameters and, then, returned
+in the form of an enumeration as the function result.
+</dd>
+</dl>
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>contextElement</code>
+<dd>
+The initial context element against which the
+<a href="element_iterator_details.html#location_rule">Location Rules</a>
+are interpreted.
+<p>
+If this parameter is not specified, the
+<a href="template_components.html#context_element">generator's context element</a>
+is used by default.
+<p>
+See Also: <code><a href="gom.html#GOMContext.contextElement">GOMContext.contextElement</a></code>
+</dd>
+
+<dt><code>locationRules</code>
+<dd>
+Specifies an array of <b><i>Location Rules Definitions</i></b>.
+Each Location Rule Definition is an object created by the
+function<code><b> <a href="#LocationRule()">LocationRule()</a></b></code>.
+See this function for more detail.
+<p>
+Use <a href="flexquery_reference.html#lrule_builder">Location Rule Builder</a>
+to quickly construct a Location Rule needed for this parameter.
+</dd>
+
+<dt><code>targetElementTypes</code>
+<dd>
+The list of the ';' separated target
+<a href="about.html#element_type">Element Type</a> names.
+If this list is not empty (and specifies the valid Element Types),
+only those elements will be included in the result enumeration,
+which are instances of at least one of the specified target Element Types.
+</dd>
+
+<dt><code>filterExpr</code>
+<dd>
+The boolean subquery expression specifying an additional filtering
+conditions for the elements returned in the result enumeration.
+<p>
+When specified, this subquery is executed for each tested element.
+If the subquery returns <code>true</code>, the element is included in the result
+enumeration.
+<p>
+The tested element is accessible within the subquery as the
+<a href="template_components.html#context_element">generator's context element</a>
+(via the <code><a href="gom.html#GOMContext.contextElement">contextElement</a></code> variable).
+The previous context element is overshadowed (it is restored again after this function finishes).
+<p>
+You may use within the filtering subquery any other variables assigned within the
+calling expressions before the call of this function.
+<p>
+<b>Note: </b>The filtering subquery is compiled dynamically within the implementation
+of this function. Thus, there is no way to check it before execution.
+Syntax errors within the subquery will cause an exception during the execution of this function.
+You may write and check the filtering subquery separately using
+the <a href="flexquery_reference.html#subexpr_edit">Subexpression Editor</a>
+and, then, insert it as string into the main expression.
+</dd>
+</dl>
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#LocationRule()">LocationRule()</a>,
+<a href="#findElementsByLPath()">findElementsByLPath()</a>,
+<a href="#getValuesByLPath()">getValuesByLPath()</a>
+</code>
+</blockquote>
+
+<p>
+<u>Example</u>:
+<p>
+As example of usage of <code>findElementsByLRules()</code> function
+(together with <a href="element_iterator_details.html#location_rule">Location Rules</a>),
+let's consider the following model:
+<p>
+The model describes a certain Java project and may be built of elements of various types.
+We shall focus on only two <a href="about.html#element_type">Element Types</a>:
+<blockquote>
+<b><code>'Class'</code></b> -- represents a Java class<br>
+<b><code>'Interface'</code></b> -- represents a Java interface
+</blockquote>
+Java classes and interfaces have the following relationships:
+<blockquote>
+Classes/interfaces may extend other classes/interfaces, which is reflected
+by the <b><code>'extends'</code></b> attribute in both <code>'Class'</code>
+and <code>'Interface'</code> Element Types.
+</blockquote>
+<blockquote>
+Classes may also implement certain interfaces, which is reflected by the
+<b><code>'implements'</code></b> attribute in the <code>'Class'</code> Element Types.
+</blockquote>
+Using DTD specification, those attributes may be described as the following:
+<blockquote>
+<pre>&lt;!ATTLIST Class extends IDREF&gt;
+&lt;!ATTLIST Interface extends IDREFS&gt;
+&lt;!ATTLIST Class implements IDREFS&gt;
+</pre>
+</blockquote>
+</blockquote>
+
+Now, let's we want to collect all interfaces implemented by a certain class.
+This would include:
+<ol>
+<li>All interface directly implemented by the given class.</li>
+<li>All interfaces directly implemented by all ancestors of the given class.</li>
+<li>All ancestors of all directly implemented interfaces.</li>
+</ol>
+
+Here is the function call which will collect all interfaces implemented
+by a class specified in the <code>'classElement'</code> parameter:
+<blockquote>
+<pre>findElementsByLRule(classElement,
+  Array(
+    LocationRule("* -> extends^::(Class|Interface)", true),
+    LocationRule("Class -> implements^::Interace", true)
+  ),
+  "Interface",
+  null);
+</pre>
+</blockquote>
+<hr>
+
+<!--~~~ findElementType ~~~-->
+
+<p class="func">
+  <a name="findElementType()"></a>
+  findElementType
+</p>
+
+<pre class="func_heading">
+<a href="gom.html#DSMElementType">DSMElementType</a> <b>findElementType</b>(<font class="type">String</font> name)
+</pre>
+<p>
+Finds an <a href="about.html#element_type">Element Type</a> with a given name.
+If not found, returns <code>null</code>.
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#instanceOf()">instanceOf()</a>,
+<a href="#resolveElementType()">resolveElementType()</a>,
+<a href="gom.html#GOMElement.elementType">GOMElement.elementType</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ firstSentence ~~~-->
+
+<p class="func">
+  <a name="firstSentence()"></a>
+  firstSentence
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>firstSentence</b>(<font class="type">String</font> doc)
+</pre>
+<p>
+Return the first sentence of the text contained in the specified string parameter.
+<p>
+The sentence end is determined by calling
+<code>java.text.BreakIterator.getSentenceInstance()</code>
+method with the default locale. In addition, a line will be terminated by
+some embedded HTML tags: &lt;p&gt; &lt;/p&gt; &lt;h1&gt; &lt;h2&gt; &lt;h3&gt;
+&lt;h4&gt; &lt;h5&gt; &lt;h6&gt; &lt;hr&gt; &lt;pre&gt; or &lt;/pre&gt;.
+<p>
+This function is used to obtain an annotation text placed in summary tables.
+</p>
+<hr>
+
+<!--~~~ generateVector ~~~-->
+
+<p class="func">
+  <a name="generateVector()"></a>
+  generateVector
+</p>
+
+<pre class="func_heading">
+<font class="type">Vector</font> <b>generateVector</b>(<font class="type">Enumeration</font> source,
+                      <font class="type">String</font> subqueryExpr)
+
+<font class="type">Vector</font> <b>generateVector</b>(<font class="type">Object[]</font> source,
+                      <font class="type">String</font> subqueryExpr)
+
+<font class="type">Vector</font> <b>generateVector</b>(<font class="type">Object[]</font> source,
+                      <font class="type">String</font> subqueryExpr,
+                      <font class="type">Number</font> fromIndex)
+
+<font class="type">Vector</font> <b>generateVector</b>(<font class="type">Object[]</font> source,
+                      <font class="type">String</font> subqueryExpr,
+                      <font class="type">Number</font> fromIndex,
+                      <font class="type">Number</font> toIndex)
+
+<font class="type">Vector</font> <b>generateVector</b>(<font class="type">Vector</font> source,
+                      <font class="type">String</font> subqueryExpr)
+
+<font class="type">Vector</font> <b>generateVector</b>(<font class="type">Vector</font> source,
+                      <font class="type">String</font> subqueryExpr,
+                      <font class="type">Number</font> fromIndex)
+
+<font class="type">Vector</font> <b>generateVector</b>(<font class="type">Vector</font> source,
+                      <font class="type">String</font> subqueryExpr,
+                      <font class="type">Number</font> fromIndex,
+                      <font class="type">Number</font> toIndex)
+</pre>
+<p>
+Allows to generate a Vector from elements of another
+Vector, Array, or Enumeration.
+<p>
+This function iterates by the source's elements and for each one executes
+a subquery whose expression is provided in the <code>subqueryExpr</code> parameter.
+The object returned by the subquery is added to the new Vector.
+The subquery receives the original element in the <b><code>_element</code></b>
+variable accessible within it.
+Other variables created within the calling expressions (before this function call)
+are also accessible within the subquery.
+<p>
+Effectively, this function would be the same as the following block:
+
+<blockquote>
+<pre>v = Vector();
+i = fromIndex;
+
+while (i &lt; toIndex && i &lt; source.size())
+{
+  _element = source.elementAt(i);
+
+  newElement =
+    // the subquery operators generating
+    // a new element from _element variable
+
+  v.addElement(newElement);
+  i = i + 1;
+}
+
+return v;</pre>
+</blockquote>
+
+However, at the moment, <code><i>while</i></code> operator is not
+supported in FlexQuery expressions, hence the need of this function.
+
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>source</code>
+<dd>Provides the source elements
+
+<dt><code>subqueryExpr</code>
+<dd>
+The string containing the subquery operators.
+<p>
+<b>Note:</b> Since the subquery is compiled dynamically within
+the implementation of this function, there is no way to check it
+before execution. You may write and check the subquery separately
+using the <a href="flexquery_reference.html#subexpr_edit">Subexpression Editor</a>
+and, then, insert it as string into the main expression.
+</dd>
+
+<dt><code>fromIndex</code>
+<dd>Index of first iterated element. If not specified, 0 is assumed.
+
+<dt><code>toIndex</code>
+<dd>
+Index after the last iterated element. If not specified,
+the iteration will include all elements until the end.
+</dd>
+</dl>
+
+<p>
+<u>Example</u>:
+
+<p>
+The following script converts a sequence number like "1.2.5.9"
+(which initially is simply a string) into a Vector of its subnumbers
+having the <code>Number</code> type:
+
+<blockquote>
+<pre>s = getAttrStringValue ("sequenceNumber");
+v = breakString(s, ".");
+generateVector (v, "toNumber(_element)")</pre>
+</blockquote>
+
+(This may allow, for instance, to use a Vector representations
+to compare such sequence numbers according to their subnumbers.)
+</p>
+<hr>
+
+<!--~~~ getAttr ~~~-->
+
+<p class="func">
+  <a name="getAttr()"></a>
+  getAttr
+</p>
+
+<pre class="func_heading">
+<a href="gom.html#GOMAttribute">GOMAttribute</a> <b>getAttr</b>(<a href="gom.html#GOMElement">GOMElement</a> element,
+                     <font class="type">String</font> attrName)
+
+<font class="type">GOMAttribute</font> <b>getAttr</b>(<font class="type">String</font> attrName)
+</pre>
+<p>
+Returns a <code><a href="gom.html#GOMAttribute">GOMAttribute</a></code>
+object which represents the specified attribute contained in the specified element.
+If the element has no attribute with the given name, <code>null</code> is returned.
+<p>
+<code>GOMAttribute</code> type provides the most complete information about a particular
+attribute, which is obtained dynamically both from the
+<a href="about.html#dsm">DSM</a> (Data Source Model)
+representing the current data source and the
+<a href="about.html#dsm_type">DSM Type</a> providing the data type
+information about the whole class of data sources this template was designed for.
+<p>
+You may rarely need using this function. If the only what you need is to obtain
+a value of a particular attribute,
+use <code><a href="#getAttrValue()">getAttrValue()</a></code> or
+<code><a href="#getAttrValues()">getAttrValues()</a></code> functions instead.
+
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>element</code>
+<dd>
+The element whose attribute is requested. If not specified, the
+<a href="template_components.html#context_element">generator's context element</a>
+is assumed, i.e. the same as the call: <code>getAttr(contextElement, attrName)</code>
+</dd>
+
+<dt><code>attrName</code>
+<dd>
+The attribute name.
+<p>
+<b>Note: </b>Some <a href="about.html#dsm_type">DSM Types</a>
+may support <i>pseudo-</i> (or <i>formula-</i>) attributes.
+Such attributes are specified with the FlexQuery expressions which calculate
+the attributes' values from another (real) attributes, possible
+with the use of some functions.
+<p>
+Pseudo-attributes are treated the same way as the normal ones.
+(That's actually why the pseudo-attributes were introduced in the first place).
+Obtaining a value of a pseudo-attribute will just evoke the internal
+processing of its formula (therefore, if an error occurred during
+this, it will be reported accordingly). Externally, accessing
+pseudo-attributes looks the same as the accessing the normal ones.
+So does this function.
+</dd>
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#getAttrValue()">getAttrValue()</a>,
+<a href="#getAttrValues()">getAttrValues()</a>,
+<a href="gom.html#GOMAttribute">GOMAttribute</a>
+</code>
+</blockquote>
+
+<b>Tip:</b>
+<p>
+You may call this function in a more method-like style:
+<blockquote>
+<pre>element.getAttr(attrName)</pre>
+</blockquote>
+<hr>
+
+<!--~~~ getAttrValue ~~~-->
+
+<p class="func">
+  <a name="getAttrValue()"></a>
+  getAttrValue
+</p>
+
+<pre class="func_heading">
+<font class="type">Object</font> <b>getAttrValue</b>(<a href="gom.html#GOMElement">GOMElement</a> element,
+                    <font class="type">String</font> attrName)
+
+<font class="type">Object</font> <b>getAttrValue</b>(<font class="type">String</font> attrName)
+</pre>
+<p>
+Returns a value of the specified attribute contained in the specified element.
+In the case, the attribute has multiple values, the function returns the first one.
+<p>
+If the element has no attribute with the given name, <code>null</code> is returned.
+
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>element</code>
+<dd>
+The element whose attribute is requested. If not specified, the
+<a href="template_components.html#context_element">generator's context element</a>
+is assumed, i.e. the same as the call: <code>getAttrValue(contextElement, attrName)</code>
+</dd>
+
+<dt><code>attrName</code>
+<dd>
+The attribute name.
+<p>
+<b>Note: </b>Some <a href="about.html#dsm_type">DSM Types</a>
+may support <i>pseudo-</i> (or <i>formula-</i>) attributes.
+Such attributes are specified with the FlexQuery expressions which
+calculate the attributes' values from another (real) attributes, possible
+with the use of some functions.
+<p>
+Pseudo-attributes are treated the same way as the normal ones.
+(That's actually why the pseudo-attributes were introduced in the first place).
+Obtaining a value of a pseudo-attribute will just evoke the internal
+processing of its formula (therefore, if an error occurred during
+this, it will be reported accordingly). Externally, accessing
+pseudo-attributes looks the same as the accessing the normal ones.
+So does this function.
+</dd>
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="gom.html#GOMAttribute.value">GOMAttribute.value</a>,
+<a href="#getValueByLPath()">getValueByLPath()</a>
+</code>
+</blockquote>
+
+<b>Tip:</b>
+<p>
+You may call this function in a more method-like style:
+<blockquote>
+<pre>element.getAttrValue(attrName)</pre>
+</blockquote>
+<hr>
+
+<!--~~~ getAttrValues ~~~-->
+
+<p class="func">
+  <a name="getAttrValues()"></a>
+  getAttrValues
+</p>
+
+<pre class="func_heading">
+<font class="type">Object[]</font> <b>getAttrValues</b>(<a href="gom.html#GOMElement">GOMElement</a> element,
+                       <font class="type">String</font> attrName)
+
+<font class="type">Object[]</font> <b>getAttrValues</b>(<font class="type">String</font> attrName)
+</pre>
+<p>
+Returns an array of all values (a vector value) associated with the specified attribute
+of the specified element. In the case of a single-value attribute, the function returns
+a single-element array containing the attribute's value.
+<p>
+If the element has no attribute with the given name, an empty array is returned.
+
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>element</code>
+<dd>
+The element whose attribute is requested. If not specified, the
+<a href="template_components.html#context_element">generator's context element</a>
+is assumed, i.e. the same as the call: <code>getAttrValues(contextElement, attrName)</code>
+</dd>
+
+<dt><code>attrName</code>
+<dd>
+The attribute name.
+<p>
+<b>Note: </b>Some <a href="about.html#dsm_type">DSM Types</a>
+may support <i>pseudo-</i> (or <i>formula-</i>) attributes.
+Such attributes are specified with the FlexQuery expressions which calculate
+the attributes' values from another (real) attributes, possible
+with the use of some functions.
+<p>
+Pseudo-attributes are treated the same way as the normal ones.
+(That's actually why the pseudo-attributes were introduced in the first place).
+Obtaining a value of a pseudo-attribute will just evoke the internal
+processing of its formula (therefore, if an error occurred during
+this, it will be reported accordingly). Externally, accessing
+pseudo-attributes looks the same as the accessing the normal ones.
+So does this function.
+</dd>
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="gom.html#GOMAttribute.values">GOMAttribute.values</a>,
+<a href="#getValuesByLPath()">getValuesByLPath()</a>
+</code>
+</blockquote>
+
+<b>Tip:</b>
+<p>
+You may call this function in a more method-like style:
+<blockquote>
+<pre>element.getAttrValues(attrName)</pre>
+</blockquote>
+<hr>
+
+<!--~~~ getAttrBooleanValue ~~~-->
+
+<p class="func">
+  <a name="getAttrBooleanValue()"></a>
+  getAttrBooleanValue
+</p>
+
+<pre class="func_heading">
+<font class="type">Boolean</font> <b>getAttrBooleanValue</b>(<a href="gom.html#GOMElement">GOMElement</a> element,
+                            <font class="type">String</font> attrName)
+
+<font class="type">Boolean</font> <b>getAttrBooleanValue</b>(<font class="type">String</font> attrName)
+</pre>
+<p>
+This function works as a shortcut of one of the calls:
+<blockquote>
+<code>getAttrValue(element, attrName).toBoolean()</code>
+</blockquote>
+or
+<blockquote>
+<code>getAttrValue(attrName).toBoolean()</code>
+</blockquote>
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#getAttrValue()">getAttrValue()</a>,
+<a href="#toBoolean()">toBoolean()</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ getAttrNumberValue ~~~-->
+
+<p class="func">
+  <a name="getAttrNumberValue()"></a>
+  getAttrNumberValue
+</p>
+
+<pre class="func_heading">
+<font class="type">Number</font> <b>getAttrNumberValue</b>(<a href="gom.html#GOMElement">GOMElement</a> element,
+                          <font class="type">String</font> attrName)
+
+<font class="type">Number</font> <b>getAttrNumberValue</b>(<font class="type">String</font> attrName)
+</pre>
+<p>
+This function works as a shortcut of one of the calls:
+<blockquote>
+<code>getAttrValue(element, attrName).toNumber()</code>
+</blockquote>
+or
+<blockquote>
+<code>getAttrValue(attrName).toNumber()</code>
+</blockquote>
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#getAttrValue()">getAttrValue()</a>,
+<a href="#toNumber()">toNumber()</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ getAttrStringValue ~~~-->
+
+<p class="func">
+  <a name="getAttrStringValue()"></a>
+  getAttrStringValue
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>getAttrStringValue</b>(<a href="gom.html#GOMElement">GOMElement</a> element,
+                          <font class="type">String</font> attrName)
+
+<font class="type">String</font> <b>getAttrStringValue</b>(<font class="type">String</font> attrName)
+</pre>
+<p>
+This function works as a shortcut of one of the calls:
+<blockquote>
+<code>getAttrValue(element, attrName).toString()</code>
+</blockquote>
+or
+<blockquote>
+<code>getAttrValue(attrName).toString()</code>
+</blockquote>
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#getAttrValue()">getAttrValue()</a>,
+<a href="#toString()">toString()</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ getElementIds ~~~-->
+
+<p class="func">
+  <a name="getElementIds()"></a>
+  getElementIds
+</p>
+
+<pre class="func_heading">
+<font class="type">Object[]</font> <b>getElementIds</b>(<font class="type">Enumeration</font> elementEnum)
+</pre>
+<p>
+Returns an array containing <b><i>unique identifiers</i></b> of the elements
+contained in the specified enumeration.
+<p>
+This function works as the opposite to the function
+<code><a href="#findElementsByIds()">findElementsByIds()</a></code>.
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#findElementsByIds()">findElementsByIds()</a>,
+<a href="gom.html#GOMElement.id">GOMElement.id</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ getParam ~~~-->
+
+<p class="func">
+  <a name="getParam()"></a>
+  getParam
+</p>
+
+<pre class="func_heading">
+<font class="type">Object</font> <b>getParam</b>(<font class="type">String</font> paramName)
+</pre>
+<p>
+Returns the <a href="templates_designer_features.html#template_parameters">template parameter</a>
+with the specified name.
+If there is no parameter with such a name, the function returns <code>null</code>.
+<p>
+The <a href="templates_designer_features.html#template_parameters">template parameters</a>
+should be declared within the template's properties (see Template Properties dialog).
+<p>
+The values of template parameters are represented by instances of the following Java types:
+<p>
+<table cellpadding="4" cellspacing="1" border="1">
+<tr>
+  <th><b>Parameter Type</b></th>
+  <th><b>Representing Java Class</b></th>
+</tr>
+<tr>
+  <td><code>string</code></td>
+  <td class="nowrap"><code>java.lang.String</code></td>
+</tr>
+<tr>
+  <td><code>number</code></td>
+  <td class="nowrap"><code>java.lang.Number</code></td>
+</tr>
+<tr>
+  <td><code>boolean</code></td>
+  <td class="nowrap"><code>java.lang.Boolean</code></td>
+</tr>
+<tr>
+  <td><code>enum</code></td>
+  <td class="nowrap"><code>java.lang.String</code></td>
+</tr>
+<tr>
+  <td><code>text</code></td>
+  <td class="nowrap"><code>java.lang.String</code></td>
+</tr>
+<tr>
+  <td><code>object</code></td>
+  <td class="nowrap"><code>java.lang.Object</code></td>
+</tr>
+</table>
+</p>
+
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#getStringParam()">getStringParam()</a>,
+<a href="#getNumberParam()">getNumberParam()</a>,
+<a href="#getBooleanParam()">getBooleanParam()</a>
+</code>
+</blockquote>
+
+<hr>
+
+<!--~~~ getStringParam ~~~-->
+
+<p class="func">
+  <a name="getStringParam()"></a>
+  getStringParam
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>getStringParam</b>(<font class="type">String</font> paramName)
+</pre>
+<p>
+This function is a shortcut of the following call:
+<blockquote>
+<pre>getParam(paramName).toString()</pre>
+</blockquote>
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#getParam()">getParam()</a>,
+<a href="#toString()">toString()</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ getNumberParam ~~~-->
+
+<p class="func">
+  <a name="getNumberParam()"></a>
+  getNumberParam
+</p>
+
+<pre class="func_heading">
+<font class="type">Number</font> <b>getNumberParam</b>(<font class="type">String</font> paramName)
+</pre>
+<p>
+This function is a shortcut of the following call:
+<blockquote>
+<pre>getParam(paramName).toNumber()</pre>
+</blockquote>
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#getParam()">getParam()</a>,
+<a href="#toNumber()">toNumber()</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ getBooleanParam ~~~-->
+
+<p class="func">
+  <a name="getBooleanParam()"></a>
+  getBooleanParam
+</p>
+
+<pre class="func_heading">
+<font class="type">Boolean</font> <b>getBooleanParam</b>(<font class="type">String</font> paramName)
+</pre>
+<p>
+This function is a shortcut of the following call:
+<blockquote>
+<code>getParam(paramName).toBoolean()</code>
+</blockquote>
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#getParam()">getParam()</a>,
+<a href="#toBoolean()">toBoolean()</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ getValueByLPath ~~~-->
+
+<p class="func">
+  <a name="getValueByLPath()"></a>
+  getValueByLPath
+</p>
+
+<pre class="func_heading">
+<font class="type">Object</font> <b>getValueByLPath</b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+                       <font class="type">String</font> lpath)
+
+<font class="type">Object</font> <b>getValueByLPath</b>(<font class="type">String</font> lpath)
+</pre>
+<p>
+Finds elements/attributes by the specified
+<a href="element_iterator_details.html#location_path">Location Path</a>
+interpreted against the specified context element. As soon as an element/attribute with
+a non-<code>null</code> value found, that value is returned as the function result.
+If no such elements/attributes exist, the function returns <code>null</code>.
+<p>
+Effectively, this function does the same as one of the following calls
+(although, it will work faster):
+<blockquote>
+<pre>getValuesByLPath(contextElement, lpath).elementAt(0)</pre>
+</blockquote>
+or
+<blockquote>
+<pre>getValuesByLPath(lpath).elementAt(0)</pre>
+</blockquote>
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#getValuesByLPath()">getValuesByLPath()</a>,
+<a href="#elementAt()">elementAt()</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ getValuesByLPath ~~~-->
+
+<p class="func">
+  <a name="getValuesByLPath()"></a>
+  getValuesByLPath
+</p>
+
+<pre class="func_heading">
+<font class="type">Object[]</font> <b>getValuesByLPath</b>(<a href="gom.html#GOMElement">GOMElement</a> contextElement,
+                          <font class="type">String</font> lpath)
+
+<font class="type">Object[]</font> <b>getValuesByLPath</b>(<font class="type">String</font> lpath)
+</pre>
+<p>
+Finds elements or attributes by the specified
+<a href="element_iterator_details.html#location_path">Location Path</a>
+interpreted against the specified context element and returns an array containing
+all values of the found elements or attributes.
+
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>contextElement</code>
+<dd>
+The context element against which the
+<a href="element_iterator_details.html#location_path">Location Path</a>
+is interpreted.
+<p>
+If this parameter is not specified, the Location Path will be interpreted
+against the <a href="template_components.html#context_element">generator's context element</a>,
+which is the same as the call:
+<blockquote>
+<code>contextElement.getValuesByLocationPath(lpath)</code>
+</blockquote>
+<p>
+See Also: <code><a href="gom.html#GOMContext.contextElement">GOMContext.contextElement</a></code>
+</dd>
+
+<dt><code>lpath</code>
+<dd>
+The <a href="element_iterator_details.html#location_path">Location Path</a>
+expression specifying how the elements should be searched.
+<p>
+Use <a href="flexquery_reference.html#lpath_builder">Location Path Builder</a>
+to quickly construct a Location Path needed for this parameter.
+</dd>
+</dl>
+
+<p>
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style, e.g.:
+<blockquote>
+<code>element.getValuesByLocationPath(lpath)</code>
+</blockquote>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#getValueByLPath()">getValueByLPath()</a>,
+<a href="#findElementsByLPath()">findElementsByLPath()</a>
+</code>
+</blockquote>
+
+<p>
+<u>Examples</u>:
+<blockquote>
+<pre>getValuesByLPath("link/@boss|link/@workers")</pre>
+</blockquote>
+This call will return all values of <code>'boss'</code> and <code>'workers'</code> attributes
+contained in all <code>'link'</code> children of the generator's current
+<a href="template_components.html#context_element">context element</a>.
+</p>
+<hr>
+
+<!--~~~ getVar ~~~-->
+
+<p class="func">
+  <a name="getVar()"></a>
+  getVar
+</p>
+
+<pre class="func_heading">
+<font class="type">Object</font> <b>getVar</b>(<font class="type">String</font> name)
+</pre>
+<p>
+
+<hr>
+
+<!--~~~ HashKey ~~~-->
+
+<p class="func">
+  <a name="HashKey()"></a>
+  HashKey
+</p>
+
+<pre class="func_heading">
+<font class="type">CompoundHashKey</font> <b>HashKey</b>(<font class="type">Object</font> subkey1,
+                        <font class="type">Object</font> subkey2,
+                        ...)
+
+<font class="type">CompoundHashKey</font> <b>HashKey</b>(<font class="type">Object[]</font> subkeys)
+</pre>
+<p>
+Creates a compound hash-key from the subkeys specified in the function parameters.
+<p>
+Specifically, it is an object which may serve as a hash-map key identified solely
+by the subkeys enclosed in it, provided that the subkey objects themselves are good
+to be used as hash-keys (for example, all simple data types well fit to this condition).
+<p>
+That means the following:
+<p>
+Suppose we have two subkeys: <code>subkey1</code> and <code>subkey2</code>.
+Then, any Java implementation of compound hash-keys should satisfy the following
+conditions:
+
+<ol>
+<li>
+For any two different keys created as:
+<blockquote>
+<pre>key1 = HashKey (subkey1, subkey2);
+key2 = HashKey (subkey1, subkey2);
+</pre>
+</blockquote>
+
+the underlying Java objects must be equal, i.e.
+<blockquote>
+<pre>key1.equals(key2)</pre>
+</blockquote>
+should always return <code>true</code>.
+<p>
+</li>
+
+<li>
+The Java <code>Object.hashCode()</code> method should be implemented
+so that the returned value is derived from the values of the enclosed subkeys
+(at best, it may be produced from the values returned by
+<code>subkey1.hashCode()</code> and <code>subkey2.hashCode()</code> calls).
+</li>
+</ol>
+
+<p>
+<u>Parameters</u>:
+<p>
+Two or more separately specified subkeys or an array of subkeys.
+<p>
+<u>Example</u>:
+<blockquote>
+<pre>HashKey (classElement.id, "overridden-methods")</pre>
+</blockquote>
+
+<b>Tip:</b>
+<p>
+Currently, the main purpose of this function is to use it with the
+<code><a href="#findElementsByKey()">findElementsByKey()</a></code>
+function (see its description).
+</p>
+<hr>
+
+<!--~~~ hyperTargetExists ~~~-->
+
+<p class="func">
+  <a name="hyperTargetExists()"></a>
+  hyperTargetExists
+</p>
+
+<pre class="func_heading">
+<font class="type">Boolean</font> <b>hyperTargetExists</b>(<font class="type">Object</font> targetKey)
+
+<font class="type">Boolean</font> <b>hyperTargetExists</b>(<font class="type">Object[]</font> targetKeys)
+
+<font class="type">Boolean</font> <b>hyperTargetExists</b>(<font class="type">Object[]</font> targetKeys,
+                          <font class="type">Boolean</font> strict)
+</pre>
+<p>
+Allows to determine, if a hypertarget with the specified set of keys
+exists somewhere in the whole generated documentation.
+<p>
+This function returns the correct result only during the
+<i><a href="gom.html#generation_phase">generation phase</a></i>.
+During the <i><a href="gom.html#estimation_phase">estimation phase</a></i>,
+it always returns <code>false</code>.
+<p>
+To know exactly which phase currently is,
+use the generator variable:
+<code><a href="gom.html#GOMContext.output">output</a>.<a href="gom.html#GOMOutputInfo.estimationPhase">estimationPhase</a></code>
+<p>
+<b>Note:</b> Be careful when using this function (especially, within
+<a href="template_components.html#enabling_condition">enablings conditions</a>
+of template components and filtering expressions)!
+Incorrect use may cause the following side effects:
+<ul>
+<li><p>The hypertargets defined within the affected components may be generated incorrectly
+(therefore, hyperlinks targeted to them may never be generated).</p>
+<li><p>If such components include
+<a href="template_components.html#element_iterator">Element Iterators</a>
+or call Element Iterators from themselves, the generation progress bar may be distorted
+(which may result in a premature filling it up or, vice versa, filling only part of it when
+the generation is actually about to finish).</p>
+</ul>
+
+<u>Parameters</u>:
+<dl>
+<dt><code>targetKey<br>targetKeys</code>
+<dd>
+Specifies one or several (in the form of Array) hypertarget keys
+by which the hypertarget is searched.
+<p>
+Each hypertarget is identified with a number of keys which may be objects of any type.
+The keys are generated automatically for each hypertarget during the
+<i><a href="gom.html#estimation_phase">estimation phase</a></i>
+by the FlexQuery expressions specified in hypertarget definitions within the properties
+of template components. The hypertarget keys are tested for equality using
+the Java <code>Object.equals()</code> method.
+<p>
+A hypertarget is considered matching to the specified keys when each key has a separate
+equal pair among the hypertarget's keys. In the case, a two specified keys are equal,
+they should match to different hypertarget's keys (that is, if the specified keys include
+"one", "one", the matching hypertarget should also contain two keys "one", "one").
+</dd>
+
+<dt><code>strict</code>
+<dd>
+If this parameter is <code>true</code>, in addition to the matching condition mentioned
+above, the hypertarget should have no other keys besides those matching to the
+specified ones.
+<p>
+If not specified, the parameter is assumed to be <code>false</code>.
+</dd>
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#documentByHyperTarget()">documentByHyperTarget()</a>,
+<a href="#Array()">Array()</a>,
+<a href="gom.html#GOMContext.output">output</a>.<a href="gom.html#GOMOutputInfo.estimationPhase">estimationPhase</a>
+</code>
+generator variable.
+</blockquote>
+<hr>
+
+<!--~~~ indexOf(String,...) ~~~-->
+
+<p class="func">
+  <a name="indexOf(String,...)"></a>
+  indexOf
+</p>
+
+<pre class="func_heading">
+<font class="type">Number</font> <b>indexOf</b>(<font class="type">String</font> str,
+               <font class="type">String</font> search)
+
+<font class="type">Number</font> <b>indexOf</b>(<font class="type">String</font> str,
+               <font class="type">String</font> search,
+               <font class="type">Number</font> fromIndex)
+</pre>
+<p>
+Returns the index within the specified string of the first occurence of the specified substring,
+starting at the specified index.
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>str</code>
+<dd>The string to be searched in.
+
+<dt><code>search</code>
+<dd>The substring to search for.
+
+<dt><code>fromIndex</code>
+<dd>
+The index to start the search from.
+If not specified, 0 is assumed.
+</dd>
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#lastIndexOf(String,...)">lastIndexOf()</a>
+</code>
+</blockquote>
+
+<p>
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style, e.g.:
+<blockquote>
+<pre>str.indexOf("blah", 5)</pre>
+</blockquote>
+<hr>
+
+<!--~~~ indexOf(Object[],...) ~~~-->
+
+<p class="func">
+  <a name="indexOf(Object[],...)"></a>
+  indexOf
+</p>
+
+<pre class="func_heading">
+<font class="type">Number</font> <b>indexOf</b>(<font class="type">Object[]</font> a,
+               <font class="type">Object</font> obj)
+
+<font class="type">Number</font> <b>indexOf</b>(<font class="type">Object[]</font> a,
+               <font class="type">Object</font> obj,
+               <font class="type">Number</font> fromIndex)
+</pre>
+<p>
+Returns the index within the specified Array of the first occurence of the
+given object, starting at the specified index, and testing for equality using the
+Java <code>java.lang.Object.equals()</code> method.
+<p>
+Returns -1 if the object is not found.
+
+<p>
+<u>Parameters</u>:
+<dl>
+
+<dt><code>a</code>
+<dd>The Array to be searched in.
+
+<dt><code>obj</code>
+<dd>The object to search for.
+
+<dt><code>fromIndex</code>
+<dd>
+The index to start the search from.
+If not specified, 0 is assumed.
+</dd>
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#lastIndexOf(Object[],...)">lastIndexOf()</a>
+</code>
+</blockquote>
+
+<p>
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style:
+<blockquote>
+<pre>a.indexOf(obj, fromIndex)</pre>
+</blockquote>
+<hr>
+
+<!--~~~ indexOf(Vector,...) ~~~-->
+
+<p class="func">
+  <a name="indexOf(Vector,...)"></a>
+  indexOf
+</p>
+
+<pre class="func_heading">
+<font class="type">Number</font> <b>indexOf</b>(<font class="type">Vector</font> a,
+               <font class="type">Object</font> obj)
+
+<font class="type">Number</font> <b>indexOf</b>(<font class="type">Vector</font> a,
+               <font class="type">Object</font> obj,
+               <font class="type">Number</font> fromIndex)
+</pre>
+<p>
+Returns the index within the specified Vector of the first occurence of the
+given object, starting at the specified index, and testing for equality using the
+Java <code>java.lang.Object.equals()</code> method.
+<p>
+Returns -1 if the object is not found.
+
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>v</code>
+<dd>The Vector to be searched in.
+
+<dt><code>obj</code>
+<dd>The object to search for.
+
+<dt><code>fromIndex</code>
+<dd>
+The index to start the search from.
+If not specified, 0 is assumed.
+</dd>
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#lastIndexOf(Vector,...)">lastIndexOf()</a>
+</code>
+</blockquote>
+
+<p>
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style:
+<blockquote>
+<pre>v.indexOf(obj, fromIndex)</pre>
+</blockquote>
+<hr>
+
+<!--~~~ instanceOf ~~~-->
+
+<p class="func">
+  <a name="instanceOf()"></a>
+  instanceOf
+</p>
+
+<pre class="func_heading">
+<font class="type">Boolean</font> <b>instanceOf</b>(<a href="gom.html#GOMElement">GOMElement</a> element,
+                   <font class="type">String</font> elementTypeName)
+
+<font class="type">Boolean</font> <b>instanceOf</b>(<font class="type">String</font> elementTypeName)
+</pre>
+<p>
+Tests if the specified element is an instance of the specified
+<a href="about.html#element_type">Element Type</a>.
+<p>
+<b>Note: </b>Since in some <a href="about.html#dsm_type">DSM Types</a>
+(Data Source Models), there is no direct inherent association between elements and
+<a href="about.html#element_type">Element Types</a>.
+Testing if an element conforms to a certain Element Type can be made much quicker
+than finding the exact Element Type associated with this element.
+Use this function instead of the
+<code><a href="gom.html#GOMElement.elementType">GOMElement.elementType</a></code>
+property, when the only you need is to test whether the element
+is of a particular Element Type.
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>element</code>
+<dd>
+The element to be tested. If not specified, the
+<a href="template_components.html#context_element">generator's context element</a>
+will be assumed, i.e. the same as the call: <code>contextElement.instanceOf(elementTypeName)</code>
+</dd>
+
+<dt><code>elementTypeName</code>
+<dd>
+The name of the <a href="about.html#element_type">Element Type</a>.
+<p>
+If no such an Element Type exists, the function will return <code>false</code>.</p>
+</dd>
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#resolveElementType()">resolveElementType()</a>,
+<a href="#findElementType()">findElementType()</a>,
+<a href="gom.html#GOMElement.elementType">GOMElement.elementType</a>
+</code>
+</blockquote>
+
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style, e.g.:
+<blockquote>
+<pre>element.instanceOf("UseCase")</pre>
+</blockquote>
+<hr>
+
+<!--~~~ instanceOfClass ~~~-->
+
+<p class="func">
+  <a name="instanceOfClass()"></a>
+  instanceOfClass
+</p>
+
+<pre class="func_heading">
+<font class="type">Boolean</font> <b>instanceOfClass</b>(<font class="type">Object</font> obj,
+                        <font class="type">String</font> className)
+</pre>
+<p>
+Tests whether the specified object is an instance of the specified Java class.
+
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>obj</code>
+<dd>The object to be tested
+
+<dt><code>className</code>
+<dd>The fully qualified Java class name
+</dl>
+
+<p>
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style:
+<blockquote>
+<pre>obj.instanceOfClass(className)</pre>
+</blockquote>
+
+<u>Example</u>:
+<p>
+The following expression
+<blockquote>
+<pre>getParam("v").instanceOfClass("java.util.Vector")</pre>
+</blockquote>
+tests whether the value of the template parameter <code>"v"</code> is
+an instance of <code>java.util.Vector</code> class.
+</p>
+<hr>
+
+<!--~~~ lastIndexOf(String,...) ~~~-->
+
+<p class="func">
+  <a name="lastIndexOf(String,...)"></a>
+  lastIndexOf
+</p>
+
+<pre class="func_heading">
+<font class="type">Number</font> <b>lastIndexOf</b>(<font class="type">String</font> str,
+                   <font class="type">String</font> search)
+
+<font class="type">Number</font> <b>lastIndexOf</b>(<font class="type">String</font> str,
+                   <font class="type">String</font> search,
+                   <font class="type">Number</font> fromIndex)
+</pre>
+<p>
+Searches the string backwards for the specified substring, starting from the specified index,
+and returns an index to it.
+<p>
+Returns -1 if the substring is not found.
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>str</code>
+<dd>The string to be searched in.
+
+<dt><code>search</code>
+<dd>The substring to search for.
+
+<dt><code>fromIndex</code>
+<dd>
+The index to start the search from.
+If not specified, <code>str.len()-1</code> is assumed.
+</dd>
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#indexOf(String,...)">indexOf()</a>
+</code>
+</blockquote>
+
+<p>
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style, e.g.:
+<blockquote>
+<pre>str.lastIndexOf(".")</pre>
+</blockquote>
+<hr>
+
+<!--~~~ lastIndexOf(Object[],...) ~~~-->
+
+<p class="func">
+  <a name="lastIndexOf(Object[],...)"></a>
+  lastIndexOf
+</p>
+
+<pre class="func_heading">
+<font class="type">Number</font> <b>lastIndexOf</b>(<font class="type">Object[]</font> a,
+                   <font class="type">Object</font> obj)
+
+<font class="type">Number</font> <b>lastIndexOf</b>(<font class="type">Object[]</font> a,
+                   <font class="type">Object</font> obj,
+                   <font class="type">Number</font> fromIndex)
+</pre>
+<p>
+Searches the Array backwards for the specified object, starting from the specified index,
+and returns an index to it.
+The object equality is tested using the Java <code>java.lang.Object.equals()</code> method.
+<p>
+Returns -1 if the object is not found.
+
+<p>
+<u>Parameters</u>:
+<dl>
+
+<dt><code>a</code>
+<dd>The Array to be searched in.
+
+<dt><code>obj</code>
+<dd>The object to search for.
+
+<dt><code>fromIndex</code>
+<dd>
+The index to start the search from.
+If not specified, the last element is assumed.
+</dd>
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#indexOf(Object[],...)">indexOf()</a>
+</code>
+</blockquote>
+
+<p>
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style:
+<blockquote>
+<pre>a.lastIndexOf(obj, fromIndex)</pre>
+</blockquote>
+<hr>
+
+<!--~~~ lastIndexOf(Vector,...) ~~~-->
+
+<p class="func">
+  <a name="lastIndexOf(Vector,...)"></a>
+  lastIndexOf
+</p>
+
+<pre class="func_heading">
+<font class="type">Number</font> <b>lastIndexOf</b>(<font class="type">Vector</font> a,
+                   <font class="type">Object</font> obj)
+
+<font class="type">Number</font> <b>lastIndexOf</b>(<font class="type">Vector</font> a,
+                   <font class="type">Object</font> obj,
+                   <font class="type">Number</font> fromIndex)
+</pre>
+<p>
+Searches the Vector backwards for the specified object, starting from the specified index,
+and returns an index to it.
+The object equality is tested using the Java <code>java.lang.Object.equals()</code> method.
+<p>
+Returns -1 if the object is not found.
+
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>v</code>
+<dd>The Vector to be searched in.
+
+<dt><code>obj</code>
+<dd>The object to search for.
+
+<dt><code>fromIndex</code>
+<dd>
+The index to start the search from.
+If not specified, the last element is assumed.
+</dd>
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#indexOf(Vector,...)">indexOf()</a>
+</code>
+</blockquote>
+
+<p>
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style:
+<blockquote>
+<pre>v.lastIdexOf(obj, fromIndex)</pre>
+</blockquote>
+<hr>
+
+<!--~~~ len ~~~-->
+
+<p class="func">
+  <a name="len()"></a>
+  len
+</p>
+
+<pre class="func_heading">
+<font class="type">Number</font> <b>len</b>(<font class="type">String</font> s)
+</pre>
+<p>
+Returns the length of the specified string.
+<p>
+<b>Tip:</b>
+<p>
+This function may be called in a method-like style:
+<blockquote>
+<pre>s.len()</pre>
+</blockquote>
+<hr>
+
+<!--~~~ length ~~~-->
+
+<p class="func">
+  <a name="length()"></a>
+  length
+</p>
+
+<pre class="func_heading">
+<font class="type">Number</font> <b>length</b>(<font class="type">Object[]</font> a)
+</pre>
+<p>
+Returns the number of elements in the array.
+<p>
+<b>Tip:</b>
+<p>
+This function may be called in a method-like style:
+<blockquote>
+<pre>a.length()</pre>
+</blockquote>
+<hr>
+
+<!--~~~ LocationRule ~~~-->
+
+<p class="func">
+  <a name="LocationRule()"></a>
+  LocationRule
+</p>
+
+<pre class="func_heading">
+<font class="type">Object</font> <b>LocationRule</b>(<font class="type">String</font> ruleSpec,
+                    <font class="type">Boolean</font> recursive)
+
+<font class="type">Object</font> <b>LocationRule</b>(<font class="type">String</font> ruleSpec,
+                    <font class="type">Boolean</font> recursive,
+                    <font class="type">String</font> enablingCondExpr)
+</pre>
+<p>
+This function is used to specify parameters for the
+<code><a href="#findElementsByLRules()">findElementsByLRules()</a></code> function.
+It creates a <b><i>Location Rule Definition</i></b> object which
+is a specification of a Location Rule.
+<p>
+Each <a href="element_iterator_details.html#location_rule">Location Rule</a>
+specification includes the following settings:
+<ol>
+  <li><i>Enabling Condition</i></li>
+  <li>List of <i>Matching Element Types</i></li>
+  <li><i>Element Location Path</i></li>
+  <li><i>Recursive flag</i></li>
+</ol>
+
+See description for <code><a href="#findElementsByLRules()">findElementsByLRules()</a></code>
+function for more details about these settings.
+<p>
+Use <a href="flexquery_reference.html#lrule_builder">Location Rule Builder</a>
+to quickly construct a <a href="element_iterator_details.html#location_rule">Location Rule</a>
+instantly encoded as a <code>LocationRule()</code> function call.
+
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>ruleSpec</code>
+<dd>
+The string which provides a basic specification of the
+<a href="element_iterator_details.html#location_rule">Location Rule</a>
+in one of the following forms:
+<blockquote>
+<pre class="mrg8"><code>* -> <i>lpath</i></code></pre>
+<pre class="mrg8"><code><i>ET</i> -> <i>lpath</i></code></pre>
+<pre class="mrg8"><code>(<i>ET1</i> | <i>ET2</i> | ... | <i>ETn</i>) -> <i>lpath</i></code></pre>
+</blockquote>
+The left part (before arrow) specifies the list of <b>Matching Element Types</b>.
+The asterisk (<code>*</code>) means the rule matches to any Element Type.
+<p>
+The right part (after arrow) specifies the <b>Element Location Path</b>.
+See <code><a href="#findElementsByLPath()">findElementsByLPath()</a></code>
+function for more information about Location Paths.
+</dd>
+
+<dt><code>recursive</code>
+<dd>
+Specifies whether this is a
+<a href="element_iterator_details.html#recursive_location_rules">Recursive Location Rule</a>.
+See <code><a href="#findElementsByLRules()">findElementsByLRules()</a></code>
+for more details.
+</dd>
+
+<dt><code>enablingCondExpr</code>
+<dd>
+This optional parameter specifies the Location Rule's <b>Enabling Condition</b> which
+is a boolean subquery expression that, when specified, is tested for any element
+against which the rule is going to be interpreted. (The rule is executed
+only when the subquery returns <code>true</code>.)
+<p>
+The tested element is accessible within the subquery as the
+<a href="template_components.html#context_element">generator's context element</a>
+(via the <code><a href="gom.html#GOMContext.contextElement">contextElement</a></code> variable).
+The previous context element is overshadowed (it is restored after the subquery processing finished).
+You may use within the subquery any other variables assigned within the calling expressions before
+the call of this function.
+<p>
+<b>Note: </b>The Enabling Condition subquery is compiled dynamically within the implementation
+of this function. Thus, there is no way to check it before execution.
+Syntax errors within the subquery will cause an exception during the execution of this function.
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#findElementsByLRules()">findElementsByLRules()</a>,
+<a href="#findElementsByLPath()">findElementsByLPath()</a>
+</code>
+</blockquote>
+
+<p>
+<u>Example</u>:
+<blockquote>
+<pre>LocationRule("* -> extends^::(Class|Interface)", true)</pre>
+</blockquote>
+See discussion about this particular Location Rule
+at the "Example" section of the description for
+<code><a href="#findElementsByLRules()">findElementsByLRules()</a></code> function.
+</p>
+<hr>
+
+<!--~~~ max ~~~-->
+
+<p class="func">
+  <a name="max()"></a>
+  max
+</p>
+
+<pre class="func_heading">
+<font class="type">Object</font> <b>max</b>(<font class="type">Object</font> o1,
+           <font class="type">Object</font> o2)
+</pre>
+<p>
+This function is a shortcut of the following expression:
+<blockquote>
+<pre>compare(o1, o2) &gt;= 0 ? o1 : o2;</pre>
+</blockquote>
+
+<b>See Also:</b>
+<blockquote>
+<code><a href="#compare()">compare()</a></code>
+</blockquote>
+<hr>
+
+<!--~~~ maxElement ~~~-->
+
+<p class="func">
+  <a name="maxElement()"></a>
+  maxElement
+</p>
+
+<pre class="func_heading">
+<font class="type">Object</font> <b>maxElement</b>(<font class="type">Object[]</font> a)
+
+<font class="type">Object</font> <b>maxElement</b>(<font class="type">Vector</font> v)
+</pre>
+<p>
+Returns the maximum element of the given Array or Vector,
+according to the comparison rules described in
+<code><a href="#compare()">compare()</a></code> function.
+<p>
+<b>See Also:</b>
+<blockquote>
+<code><a href="#compare()">compare()</a></code>
+</blockquote>
+
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style:
+<blockquote>
+<pre>a.maxElement()
+v.maxElement()</pre>
+</blockquote>
+<hr>
+
+<!--~~~ mergeStrings ~~~-->
+
+<p class="func">
+  <a name="mergeStrings()"></a>
+  mergeStrings
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>mergeStrings</b>(<font class="type">Object[]</font> strings,
+                    <font class="type">String</font> delimiter)
+
+<font class="type">String</font> <b>mergeStrings</b>(<font class="type">Vector</font> strings,
+                    <font class="type">String</font> delimiter)
+</pre>
+<p>
+Creates a new string made of fragments contained in the specified Vector or Array
+and delimited with the substring specified in the <code>delimiter</code> parameter.
+
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>strings</code>
+<dd>
+An Array or Vector containing the fragments to be merged.
+<p>
+The Array's or Vector's elements are not required to be String objects.
+Actually, what is taken from each element is the string returned by the call
+<code> element.toString()</code>.
+<p>
+If an element is <code>null</code>, it is simply ignored.
+</dd>
+
+<dt><code>delimiter</code>
+<dd>The delimiter substring
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code><a href="#breakString()">breakString()</a></code>
+</blockquote>
+
+<p>
+<u>Examples</u>:
+<p>
+The following expression
+<blockquote>
+<pre>a = Array ("Vini", "vidi", "vici");
+mergeStrings (a, " -> ");</pre>
+</blockquote>
+will return string:
+<blockquote>
+<pre>"Vini -> vidi -> vici"</pre>
+</blockquote>
+
+The call
+<blockquote>
+<pre>mergeStrings (Vector (1,2,3), ",");</pre>
+</blockquote>
+will return:
+<blockquote>
+<pre>"1,2,3"</pre>
+</blockquote>
+<hr>
+
+<!--~~~ min ~~~-->
+
+<p class="func">
+  <a name="min()"></a>
+  min
+</p>
+
+<pre class="func_heading">
+<font class="type">Object</font> <b>min</b>(<font class="type">Object</font> o1,
+           <font class="type">Object</font> o2)
+</pre>
+<p>
+This function is a shortcut of the following expression:
+<blockquote>
+<pre>compare(o1, o2) &lt;= 0 ? o1 : o2;</pre>
+</blockquote>
+
+<b>See Also:</b>
+<blockquote>
+<code><a href="#compare()">compare()</a></code>
+</blockquote>
+<hr>
+
+<!--~~~ minElement ~~~-->
+
+<p class="func">
+  <a name="minElement()"></a>
+  minElement
+</p>
+
+<pre class="func_heading">
+<font class="type">Object</font> <b>minElement</b>(<font class="type">Object[]</font> a)
+
+<font class="type">Object</font> <b>minElement</b>(<font class="type">Vector</font> v)
+</pre>
+<p>
+Returns the minimum element of the given Array or Vector,
+according to the comparison rules described in
+<code><a href="#compare()">compare()</a></code> function.
+<p>
+<b>See Also:</b>
+<blockquote>
+<code><a href="#compare()">compare()</a></code>
+</blockquote>
+
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style:
+<blockquote>
+<pre>a.minElement()
+v.minElement()
+</pre>
+</blockquote>
+<hr>
+
+<!--~~~ nextElement ~~~-->
+
+<p class="func">
+  <a name="nextElement()"></a>
+  nextElement
+</p>
+
+<pre class="func_heading">
+<font class="type">Object</font> <b>nextElement</b>(<font class="type">Enumeration</font> e)
+</pre>
+<p>
+Returns the next element of the enumeration.
+If the enumeration contains no more elements, returns <code>null</code>.
+
+<p>
+<b>Tip:</b>
+<p>
+You may also call this function in a method-like style:
+<blockquote>
+<pre>e.nextElement()</pre>
+</blockquote>
+<hr>
+
+<!--~~~ removeElement ~~~-->
+
+<p class="func">
+  <a name="removeElement()"></a>
+  removeElement
+</p>
+
+<pre class="func_heading">
+<font class="type">Vector</font> <b>removeElement</b>(<font class="type">Vector</font> v,
+                     <font class="type">Number</font> index)
+</pre>
+<p>
+Removes the element at the specified position in the Vector.
+Returns the same Vector object.
+<p>
+This function does nothing if the specified
+index is &lt; 0 or &gt;= the Vector size.
+
+<p>
+<b>Tip:</b>
+<p>
+This function may be called in a more method-like style:
+<blockquote>
+<pre>v.removeElement(0)</pre>
+</blockquote>
+<hr>
+
+<!--~~~ replace ~~~-->
+
+<p class="func">
+  <a name="replace()"></a>
+  replace
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>replace</b>(<font class="type">String</font> s,
+               <font class="type">String</font> oldSubstr,
+               <font class="type">String</font> newSubstr)
+</pre>
+<p>
+Returns a new string that is the specified string in which
+all occurences of <code>oldSubstr</code> are replaced with the <code>newSubstr</code>.
+
+<p>
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style:
+<blockquote>
+<pre>s.replace(oldSubstr, newSubstr)</pre>
+</blockquote>
+
+<u>Examples</u>:
+<blockquote>
+<code>"java.lang.Object".replace(".", "/") </code>returns<code> "java/lang/Object"</code>
+<br>
+<code>"Vini, vidi, vici".replace(",", " ->") </code>returns<code> "Vini -> vidi -> vici"</code>
+</blockquote>
+<hr>
+
+<!--~~~ resolveElementType ~~~-->
+
+<p class="func">
+  <a name="resolveElementType()"></a>
+  resolveElementType
+</p>
+
+<pre class="func_heading">
+<a href="gom.html#DSMElementType">DSMElementType</a> <b>resolveElementType</b>()
+
+<a href="gom.html#DSMElementType">DSMElementType</a> <b>resolveElementType</b>(<a href="gom.html#GOMElement">GOMElement</a> element)
+
+<a href="gom.html#DSMElementType">DSMElementType</a> <b>resolveElementType</b>(<a href="gom.html#GOMElement">GOMElement</a> element,
+                                  <font class="type">String</font> elementTypeNames)
+
+<a href="gom.html#DSMElementType">DSMElementType</a> <b>resolveElementType</b>(<font class="type">String</font> elementTypeNames)
+</pre>
+
+<p>
+Finds an <a href="about.html#element_type">Element Type</a>
+associated with the given element.
+<p>
+When the element suits to several Element Types having inheritance relationship
+(if supported by the underlying <a href="about.html#dsm_type">DSM Type</a>),
+this function finds the best suited Element Type (i.e. the lowest heir).
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>element</code>
+<dd>
+Specifies the element whose type should be resolved.
+If absent, the <a href="template_components.html#context_element">generator's context element</a>
+will be assumed (same as the call <code>contextElement.resolveElementType(..)</code>)
+</dd>
+
+<dt><code>elementTypeNames</code>
+<dd>
+If presents, specifies the list of the Element Type names (separated with ';')
+which should be tested first.
+<p>
+This may speed up the search of the appropriate Element Type.
+For instance, if the provided name is of a top-level Element Type known to suit this element,
+the search will start from this type and descend to the best suited its heir.
+</dd>
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#instanceOf()">instanceOf()</a>,
+<a href="#toElement()">toElement()</a>,
+<a href="#findElementType()">findElementType()</a>,
+<a href="gom.html#GOMElement.elementType">GOMElement.elementType</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ resolveURL ~~~-->
+
+<p class="func">
+  <a name="resolveURL()"></a>
+  resolveURL
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>resolveURL</b>(<font class="type">String</font> spec,
+                  <font class="type">String</font> contextURL)
+</pre>
+
+<hr>
+
+<!--~~~ reverseVector ~~~-->
+
+<p class="func">
+  <a name="reverseVector()"></a>
+  reverseVector
+</p>
+
+<pre class="func_heading">
+<font class="type">Vector</font> <b>reverseVector</b>(<font class="type">Vector</font> v)
+</pre>
+<p>
+Reverses the order of the elements in the specified Vector.
+<p>
+Returns the same Vector object (whose elements are reversed).
+No new Vector object is created!
+</p>
+<hr>
+
+<!--~~~ setVar ~~~-->
+
+<p class="func">
+  <a name="setVar()"></a>
+  setVar
+</p>
+
+<pre class="func_heading">
+<font class="type">Object</font> <b>setVar</b>(<font class="type">String</font> name,
+              <font class="type">Object</font> value)
+</pre>
+
+<hr>
+
+<!--~~~ size ~~~-->
+
+<p class="func">
+  <a name="size()"></a>
+  size
+</p>
+
+<pre class="func_heading">
+<font class="type">Number</font> <b>size</b>(<font class="type">Vector</font> v)
+</pre>
+<p>
+Returns the number of elements in the Vector.
+<p>
+<b>Tip:</b>
+<p>
+This function may be called in a method-like style:
+<blockquote>
+<pre>v.size()</pre>
+</blockquote>
+<hr>
+
+<!--~~~ startsWith ~~~-->
+
+<p class="func">
+  <a name="startsWith()"></a>
+  startsWith
+</p>
+
+<pre class="func_heading">
+<font class="type">Boolean</font> <b>startsWith</b>(<font class="type">String</font> str,
+                   <font class="type">String</font> prefix)
+
+<font class="type">Boolean</font> <b>startsWith</b>(<font class="type">String</font> str,
+                   <font class="type">String</font> prefix,
+                   <font class="type">Number</font> toffset)
+
+<font class="type">Boolean</font> <b>startsWith</b>(<font class="type">String</font> str,
+                   <font class="type">Object[]</font> prefixes)
+
+<font class="type">Boolean</font> <b>startsWith</b>(<font class="type">String</font> str,
+                   <font class="type">Object[]</font> prefixes,
+                   <font class="type">Number</font> toffset)
+</pre>
+<p>
+Tests if the specified string starts with the specified prefix
+(or one among several specified prefixes) beginning a specified index.
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>str</code>
+<dd>The string to be tested.
+
+<dt><code>prefix</code><br><code>prefixes</code>
+<dd>
+The prefix or an array of prefixes.
+<br>
+When an array of prefixes specified, the function returns
+<code>true</code> if the string starts with at least one of them.
+</dd>
+
+<dt><code>tooffset</code>
+<dd>
+The index where to begin looking in the string.
+If not specified, 0 is assumed.
+</dd>
+</dl>
+
+<p>
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style, e.g.:
+<blockquote>
+<pre>str.startsWith("blah", 5)</pre>
+</blockquote>
+<hr>
+
+<!--~~~ substring ~~~-->
+
+<p class="func">
+  <a name="substring()"></a>
+  substring
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>substring</b>(<font class="type">String</font> s,
+                 <font class="type">Number</font> beginIndex)
+
+<font class="type">String</font> <b>substring</b>(<font class="type">String</font> s,
+                 <font class="type">Number</font> beginIndex,
+                 <font class="type">Number</font> endIndex)
+</pre>
+<p>
+Returns a new string that is a substring of the specified string.
+The substring begins at the specified <code>beginIndex</code> and extends to the character
+at index <code>endIndex-1</code>. Thus the length of the substring is <code>endIndex-beginIndex</code>.
+
+<p>
+<u>Parameters</u>:
+<dl>
+<dt><code>s</code>
+<dd>The source string.
+
+<dt><code>beginIndex</code>
+<dd>The beginning index, inclusive.
+
+<dt><code>endIndex</code>
+<dd>
+The ending index, exclusive.
+If not specified, <code>s.length()</code> is assumed.
+</dd>
+</dl>
+
+<b>Tip:</b>
+<p>
+You may call this function in a method-like style:
+<blockquote>
+<pre>s.substring(beginIndex, endIndex)</pre>
+</blockquote>
+
+<u>Examples</u>:
+<blockquote>
+<code>"hamburger".substring(4, 8) </code>returns<code> "urge"</code><br>
+<code>"smiles".substring(1, 5) </code>returns<code> "mile"</code>
+</blockquote>
+<hr>
+
+<!--~~~ toArray ~~~-->
+
+<p class="func">
+  <a name="toArray()"></a>
+  toArray
+</p>
+
+<pre class="func_heading">
+<font class="type">Object[]</font> <b>toArray</b>(<font class="type">Object</font> obj)
+</pre>
+<p>
+Converts a specified object to Array according to the following rules:
+<ul>
+<li>
+<p>If <code>obj</code> is already an <b>Array</b> object
+(i.e. an instance of <code>java.lang.Object[]</code>),
+the function works simply as a type cast operator,
+same as it would be in Java:<code> (Object[]) obj</code></p>
+</li>
+<li>
+<p>If <code>obj</code> is an <b>Enumeration</b>, the function returns an Array
+produced from the Enumeration's elements.</p>
+</li>
+<li>
+<p>If <code>obj</code> is instance of <b><code>java.util.Collection</code></b> Java class
+(which also includes a Vector),
+the returned Array is created as:<code> ((Collection) obj).toArray()</code></p>
+</li>
+<li>
+<p>If <code>obj</code> is instance of <b><code>java.util.Map</code></b> Java class,
+the returned Array is created as:<code> ((Map) obj).values().toArray()</code></p>
+</li>
+<li>
+<p>If <code>obj</code> is <b><code>null</code></b>, an empty Array is returned</p>
+</li>
+<li>
+<p>At last, if <code>obj</code> is <b>neither</b> of the above, the function returns
+a single-element Array with this object as the only element.</p>
+</li>
+</ul>
+
+<b>Tip:</b>
+<p>
+You may call this function in a more method-like style:
+<blockquote>
+<pre>obj.toArray()</pre>
+</blockquote>
+<hr>
+
+<!--~~~ toBoolean ~~~-->
+
+<p class="func">
+  <a name="toBoolean()"></a>
+  toBoolean
+</p>
+
+<pre class="func_heading">
+<font class="type">Boolean</font> <b>toBoolean</b>(<font class="type">Object</font> obj)
+</pre>
+<p>
+Converts a specified object to Boolean type according to the following:
+<ul>
+<li>
+<p>If <code>obj</code> is already a <b>Boolean</b> object
+(i.e. an instance of <code>java.lang.Boolean</code>),
+the function works simply as a type cast operator,
+same as it would be in Java:<code> (Boolean) obj</code></p>
+</li>
+<li>
+<p>If <code>obj</code> is not <code>null</code> and <code>obj.toString().toLowerCase()</code>
+returns <b><code>"true"</code></b>, <b><code>"yes"</code></b> or <b><code>"on"</code></b>,
+then the function returns <code>true</code>.</p>
+</li>
+<li>
+<p>In all other cases, the function returns <code>false</code></p>
+</li>
+</ul>
+
+<b>Tip:</b>
+<p>
+You may call this function in a more method-like style:
+<blockquote>
+<pre>obj.toBoolean()</pre>
+</blockquote>
+<hr>
+
+<!--~~~ toElement ~~~-->
+
+<p class="func">
+  <a name="toElement()"></a>
+  toElement
+</p>
+
+<pre class="func_heading">
+<a href="gom.html#GOMElement">GOMElement</a> <b>toElement</b>(<font class="type">Object</font> obj)
+
+<a href="gom.html#GOMElement">GOMElement</a> <b>toElement</b>(<font class="type">Object</font> obj,
+                     <font class="type">String</font> elementTypeNames)
+</pre>
+<p>
+Converts an object to the <code><a href="gom.html#GOMElement">GOMElement</a></code> type.
+<p>
+Initially, the object should be either
+<code><a href="gom.html#GOMElement">GOMElement</a></code> or
+<code><a href="gom.html#DSMElement">DSMElement</a></code>.
+Otherwise, the function returns <code>null</code>.
+<p>
+<u>Parameters</u>:
+<dl>
+
+<dt><code>obj</code>
+<dd>object to convert
+
+<dt><code>elementTypeNames</code>
+<dd>
+If presents, causes to resolve the exact
+<a href="about.html#element_type">Element Type</a> associated
+with this element. The meaning of this parameter is the same as in
+<code><a href="#resolveElementType()">resolveElementType()</a></code>
+function.
+</dd>
+</dl>
+
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#resolveElementType()">resolveElementType()</a>,
+<a href="#instanceOf()">instanceOf()</a>
+</code>
+</blockquote>
+
+<b>Tip:</b>
+<p>
+You may call this function in a more method-like style, e.g.:
+<blockquote>
+<pre>obj.toElement()
+obj.toElement("UseCase")
+</pre>
+</blockquote>
+<hr>
+
+<!--~~~ toEnum ~~~-->
+
+<p class="func">
+  <a name="toEnum()"></a>
+  toEnum
+</p>
+
+<pre class="func_heading">
+<font class="type">Enumeration</font> <b>toEnum</b>(<font class="type">Object</font> obj)
+</pre>
+<p>
+Converts a specified object to Enumeration according to the following rules:
+<ul>
+<li>
+<p>If <code>obj</code> is instance of <b><code>java.util.Enumeration</code></b> Java class,
+the function works simply as a type cast operator,
+same as it would be in Java:<code> (Enumeration) obj</code></p>
+</li>
+<li>
+<p>If <code>obj</code> is a <b>Vector</b> or an <b>Array</b>, the function returns
+the Enumeration of its elements.</p>
+</li>
+<li>
+<p>If <code>obj</code> is instance of <b><code>java.util.Hashtable</code></b> Java class,
+the returned Enumeration is produced as:<code> ((Hashtable) obj).elements()</code></p>
+</li>
+<li>
+<p>If <code>obj</code> is <b><code>null</code></b>, the <code>null</code> is returned</p>
+</li>
+<li>
+<p>At last, if <code>obj</code> is <b>neither</b> of the above, the function returns
+a single-element Enumeration containing just this object.</p>
+</li>
+</ul>
+
+<b>Tip:</b>
+<p>
+You may call this function in a more method-like style:
+<blockquote>
+<pre>obj.toEnum()</pre>
+</blockquote>
+<hr>
+
+<!--~~~ toLowerCase ~~~-->
+
+<p class="func">
+  <a name="toLowerCase()"></a>
+  toLowerCase
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>toLowerCase</b>(<font class="type">String</font> s)
+</pre>
+<p>
+Returns the specified string, converted to lowercase.
+<p>
+<b>Tip:</b>
+<p>
+This function may be called in a method-like style:
+<blockquote>
+<pre>s.toLowerCase()</pre>
+</blockquote>
+<hr>
+
+<!--~~~ toNumber ~~~-->
+
+<p class="func">
+  <a name="toNumber()"></a>
+  toNumber
+</p>
+
+<pre class="func_heading">
+<font class="type">Number</font> <b>toNumber</b>(<font class="type">Object</font> obj)
+</pre>
+<p>
+Converts a specified object to Number according to the rules:
+<ul>
+<li>
+<p>If <code>obj</code> is already a <b>Number</b> object
+(i.e. an instance of <code>java.lang.Number</code>),
+the function works simply as a type cast operator,
+same as it would be in Java:<code> (Number) obj</code></p>
+</li>
+<li>
+<p>If <code>obj</code> is not <code>null</code>, the function tries to parse the
+string returned by <code>obj.toString()</code> call as integer, fixed-point or floating-point
+decimal number value.
+<p>
+If the string is successfully parsed, the result Number object is returned.
+<p>
+If the string does not contain a parsable number or
+<code>obj</code> parameter is <code>null</code>, the function returns <code>0</code>.
+</p>
+</li>
+</ul>
+
+<b>Tip:</b>
+<p>
+You may call this function in a more method-like style:
+<blockquote>
+<pre>obj.toNumber()</pre>
+</blockquote>
+<hr>
+
+<!--~~~ toString ~~~-->
+
+<p class="func">
+  <a name="toString()"></a>
+  toString
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>toString</b>(<font class="type">Object</font> obj)
+</pre>
+<p>
+Converts a specified object to String according to the following:
+<ul>
+<li>
+<p>If <code>obj</code> is already a <b>String</b> object
+(i.e. an instance of <code>java.lang.String</code>),
+the function works simply as a type cast operator,
+same as it would be in Java:<code> (String) obj</code></p>
+</li>
+<li>
+<p>If <code>obj</code> is <b><code>null</code></b>, an empty string is returned</p>
+</li>
+<li>
+<p>In all other cases, the function returns result of a Java call<code> obj.toString()</code></p>
+</li>
+</ul>
+
+<b>Tip:</b>
+<p>
+You may call this function in a more method-like style:
+<blockquote>
+<pre>obj.toString()</pre>
+</blockquote>
+<hr>
+
+<!--~~~ toString ~~~-->
+
+<p class="func">
+  <a name="toString(Object[],...)"></a>
+  toString
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>toString</b>(<font class="type">Object[]</font> a,
+                <font class="type">String</font> delimiter)
+</pre>
+<p>
+This function is a synonym for
+<code><a href="#mergeStrings()">mergeStrings()</a></code> function.
+<p>
+<b>See Also:</b>
+<blockquote>
+<code>
+<a href="#mergeStrings()">mergeStrings()</a>,
+<a href="#breakString()">breakString()</a>
+</code>
+</blockquote>
+<hr>
+
+<!--~~~ toUpperCase ~~~-->
+
+<p class="func">
+  <a name="toUpperCase()"></a>
+  toUpperCase
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>toUpperCase</b>(<font class="type">String</font> s)
+</pre>
+<p>
+Returns the specified string, converted to uppercase.
+<p>
+<b>Tip:</b>
+<p>
+This function may be called in a method-like style:
+<blockquote>
+<pre>s.toUpperCase()</pre>
+</blockquote>
+<hr>
+
+<!--~~~ toVector ~~~-->
+
+<p class="func">
+  <a name="toVector()"></a>
+  toVector
+</p>
+
+<pre class="func_heading">
+<font class="type">Vector</font> <b>toVector</b>(<font class="type">Object</font> obj)
+</pre>
+<p>
+
+Converts a specified object to Vector according to the following rules:
+<ul>
+<li>
+<p>If <code>obj</code> is already a <b>Vector</b> object, the function returns just it
+so its type becomes specified for further operations.
+This is similar to Java type cast operator:<code> (Vector) obj</code></p>
+</li>
+<li>
+<p>If <code>obj</code> is an <b>Array</b>, the function returns a Vector
+containing elements of that array.</p>
+</li>
+<li>
+<p>If <code>obj</code> is an <b>Enumeration</b>, the function returns a Vector
+produced from the Enumeration's elements.</p>
+</li>
+<li>
+<p>If <code>obj</code> is instance of <b><code>java.util.Collection</code></b> Java class,
+the returned Vector is created as:<code> new Vector((Collection) obj)</code></p>
+</li>
+<li>
+<p>If <code>obj</code> is instance of <b><code>java.util.Map</code></b> Java class,
+the returned Vector is created as:<code> new Vector(((Map) obj).values())</code></p>
+</li>
+<li>
+<p>At last, if <code>obj</code> is <b>neither</b> of the above, the function returns
+a Vector with this object as the only Vector element.</p>
+</li>
+</ul>
+
+<b>Tip:</b>
+<p>
+You may call this function in a more method-like style:
+<blockquote>
+<pre>obj.toVector()</pre>
+</blockquote>
+<hr>
+
+<!--~~~ trim ~~~-->
+
+<p class="func">
+  <a name="trim()"></a>
+  trim
+</p>
+
+<pre class="func_heading">
+<font class="type">String</font> <b>trim</b>(<font class="type">String</font> s)
+</pre>
+<p>
+Returns the specified string with white space removed from the front and end.
+<p>
+<b>Tip:</b>
+<p>
+This function may be called in a method-like style:
+<blockquote>
+<pre>s.trim()</pre>
+</blockquote>
+<hr>
+
+<!--~~~ Vector ~~~-->
+
+<p class="func">
+  <a name="Vector()"></a>
+  Vector
+</p>
+
+<pre class="func_heading">
+<font class="type">Vector</font> <b>Vector</b>(...)
+</pre>
+<p>
+This function creates a Vector from the elements passed in the function
+parameters. The number of parameters may be from zero to unlimited.
+The underlying Java object representing the Vector is an instance of
+<code>java.util.Vector</code> class.
+<p>
+<u>Examples</u>:
+<p>
+The following call creates an empty Vector (same as in Java:<code> new&nbsp;Vector()</code>):
+<blockquote>
+<pre>Vector()</pre>
+</blockquote>
+
+The following creates a Vector of three Number objects:
+<blockquote>
+<pre>Vector(1,2,3)</pre>
+</blockquote>
+
+This creates a Vector of three String objects:
+<blockquote>
+<pre>Vector("1","2","3")</pre>
+</blockquote>
+
+<!--~~~~~~~~~~~~~~-->
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2003-2009 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

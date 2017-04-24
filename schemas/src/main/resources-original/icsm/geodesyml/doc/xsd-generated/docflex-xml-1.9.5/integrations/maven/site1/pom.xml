@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- POM Basics -->
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1.0</version>
+  <name>my-app</name>
+
+  <!-- Specifying properties (i.e. variables for further usage) -->
+  <properties>
+    <!-- DocFlex/XML home directory -->
+    <DFH>${basedir}/../../..</DFH>
+  </properties>
+
+  <!-- 
+    Reporting section. 
+    All reports for "Project Reports" page of the Maven-generated site
+    should be specified here.
+  -->
+  <reporting>
+    <plugins>
+      <!-- Configure DocFlex/XML Maven plugin -->
+      <plugin>
+        <groupId>docflex</groupId>
+        <artifactId>docflex-xml-maven-plugin</artifactId>
+        <version>1.0</version>
+        <configuration>
+
+          <!-- Specifying command-line parameters for DocFlex/XML Generator -->
+          <generatorParams>
+
+            <!-- The main template -->
+            <param>-template</param>
+            <param>${DFH}/templates/XSDDoc/FramedDoc.tpl</param>
+
+            <!-- Pass template parameter -->
+            <param>-p:docTitle</param>
+            <param>XML Schema for XML Schemas</param>
+
+            <!-- Specify the output format -->
+            <param>-format</param>
+            <param>HTML</param>
+
+            <!-- Suppress showing up the generator GUI -->
+            <param>-nodialog</param>
+
+            <!-- Suppress most of messages -->
+            <param>-quiet</param>
+
+            <!-- 
+              The data source XML file to be processed.
+              (Both local pathnames and URLs are allowed.)
+              In this example, it is an XML schema to be documented.
+            -->
+            <param>http://www.w3.org/2001/XMLSchema.xsd</param>
+
+            <!-- 
+              Use default XML catalog to load the above specified file
+              from DocFlex/XML resources (instead of W3C website)
+            -->
+            <param>-xmlcatalog</param>
+            <param>urn:docflex-com:xml:defaultcatalog</param>
+
+          </generatorParams>
+
+          <!-- 
+            Specify the output directory name.
+
+            The plugin will produce by it the full output directory pathname 
+            and pass it both to Maven and to DocFlex/XML Generator (via -d option)
+          -->
+          <outputFolder>xsddoc</outputFolder>
+
+          <!-- For the Maven project-reports page -->
+          <name>XSDDoc</name>
+          <description>XML Schema for XML Schemas</description>
+
+        </configuration>
+
+      </plugin>
+    </plugins>
+ </reporting>
+
+</project>

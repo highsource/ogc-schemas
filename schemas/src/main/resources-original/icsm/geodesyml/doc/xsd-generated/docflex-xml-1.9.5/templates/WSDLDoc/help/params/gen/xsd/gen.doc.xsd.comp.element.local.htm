@@ -1,0 +1,49 @@
+Specifies whether to generate the detailed (global) <b><i>Element Documentation</i></b> for <i>local elements</i>
+(i.e. locally defined element components; see also <a href="#local_elements">below</a>).
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"all"</i>
+<dl><dd>
+Document all local elements the same way as global ones (see below:
+<i><a href="#local_elements.global_documenting">About Local Elements | Global Documenting</a></i>).
+</dd></dl>
+
+<i>"with complex type only"</i>
+<dl><dd>
+Generate the detailed <i>Element Documentation</i> only for local elements with complex types.
+<p></p>
+<b>Note:</b> Certain XML schema design patterns avoid using global element components almost entirely.
+Instead, they define a single global element component that describes the root element of a possible XML document.
+Any other elements, which may be contained in that XML document, are defined using only global types and local element components.
+What is more, frequently, those XML schemas also avoid defining element attributes.
+Instead, to store in an XML document the elementary data normally supposed for attributes,
+they define lots of local elements with primitive simple types.
+As a result, such an XML schema contains great a lot of insignificant local element components.
+When all of them are documented separately (and appear in main element component lists) they may overwhelm anything else.
+This parameter value allows you to avoid exactly such a mess and properly document your XML schemas written according to that pattern!
+</dd></dl>
+
+<i>"none"</i>
+<dl><dd>
+Do not generate separate <i>Element Documentation</i> for local elements.
+</dd></dl>
+
+<p>
+<b>Related Parameters:</b>
+<blockquote style="margin-top:10pt;margin-bottom:0;margin-right:0">
+This parameter provides the default value for the following parameters:
+</blockquote>
+<ul>
+  <li><i>Details | Fragments | XSD Component Summary | Generate For | Elements | Local Elements</i></li>
+  <li><i>Navigation | Index Frame | All Components | XSD Components | Elements | Local Elements</i></li>
+  <li><i>Navigation | Index Frame | Namespace | XSD Components | Elements | Local Elements</i></li>
+  <li><i>Navigation | Index Frame | Schema | XSD Components | Elements | Local Elements</i></li>
+</ul>
+
+<b>See Also:</b>
+<blockquote style="margin-top:10pt;margin-bottom:10;margin-right:0">
+<i>"Details | XSD Component"</i> parameter group, which controls the exact content of the <i>Element Documentation</i>.
+</blockquote>
+
+${include ../../../refs/local_elements.htm}

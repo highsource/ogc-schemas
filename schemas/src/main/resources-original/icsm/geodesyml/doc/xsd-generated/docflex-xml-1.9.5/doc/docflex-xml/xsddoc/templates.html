@@ -1,0 +1,919 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../../styles.css">
+<title>DocFlex/XML - XSDDoc - Templates</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/XML - XSDDoc - Templates
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#xmltype">XML Type</a></li>
+  <li><a href="#main_templates">Main Templates</a>
+    <ul>
+      <li><a href="#FramedDoc.tpl">FramedDoc.tpl</a></li>
+      <li><a href="#PlainDoc.tpl">PlainDoc.tpl</a></li>
+    </ul>
+  </li>
+  <li><a href="#subtemplates">Subtemplates</a></li>
+  <li><a href="#parameters">Template Parameters</a></li>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<h2>
+  <a name="overview"></a>
+  1.&nbsp; Overview
+</h2>
+
+The &ldquo;XSDDoc&rdquo; template set includes two <b><a href="#main_templates">main templates</a></b>,
+which effectively provide two different documentation generators:
+
+<ol>
+  <li>
+    <a href="#FramedDoc.tpl">FramedDoc.tpl</a> to generate
+    <a href="organization.html#framed_doc">framed HTML</a> documentation
+  </li>
+  <li>
+    <a href="#PlainDoc.tpl">PlainDoc.tpl</a> to generate
+    <a href="organization.html#single_file_doc">single file</a> documentation
+  </li>
+</ol>
+
+<i>Main templates</i> are those that can be specified for interpretation directly to the
+<a href="../about.html#docflex-xml-generator">generator</a>
+(i.e. either with
+-<a href="../generator.html#template_option">template</a> option
+on the <a href="../generator.html#cmdline">command line</a>
+or in the <a href="overview.html#generator_dialog">Generator Dialog</a>).
+<p class="mrg8">
+Besides them, there are many other templates 
+(called <b><a href="#subtemplates">subtemplates</a></b>) that are used internally.
+Those templates work as procedures invoked from the main templates as well as from each other.
+<p class="mrg8">
+The entire &ldquo;XSDDoc&rdquo; template set (version 2.8.1) consists of
+<b>71 templates</b>.
+
+<h2>
+  <a name="xmltype"></a>
+  2.&nbsp; XML Type
+</h2>
+
+To be able to process any <a href="http://www.w3.org/XML/Schema" target="_blank">XSD</a> files,
+first, one needs to know their structure. 
+This is provided by the <b>&ldquo;xsddoc&rdquo;</b>
+<a href="../design_templates.html#xmltype">XML Type</a>,
+which is defined using a special plain text file (found in the XSDDoc template set):
+<blockquote class="mrg8">
+<code><i>{docflex-xml}</i>/templates/XSDDoc/xsddoc.xmltype</code>
+</blockquote>
+Here is its full content:
+<blockquote>
+<table cellpadding="0" cellspacing="0">
+<tr valign="top">
+  <td bgcolor="#E0E0F0" align="right" style="padding-left:8px; padding-right:8px">
+  <code>
+    <a href="#xmltype_line1">1</a><br>
+    <a href="#xmltype_line2">2</a><br>
+    <a href="#xmltype_line3">3</a><br>
+    <a href="#xmltype_line4">4</a><br>
+    <a href="#xmltype_line5">5</a><br>
+    <a href="#xmltype_line6">6</a><br>
+    <a href="#xmltype_line7">7</a><br>
+    <a href="#xmltype_line8">8</a><br>
+    <a href="#xmltype_line9">9</a><br>
+    <a href="#xmltype_line10">10</a><br>
+    <a href="#xmltype_line11">11</a><br>
+    <a href="#xmltype_line12">12</a><br>
+    <a href="#xmltype_line13">13</a><br>
+    <a href="#xmltype_line14">14</a><br>
+    <a href="#xmltype_line15">15</a><br>
+    <a href="#xmltype_line16">16</a><br>
+    <a href="#xmltype_line17">17</a>
+  </code>
+  </td>
+  <td style="padding-left:18px">
+  <code>
+    xsddoc.name = W3C XML Schema Files<br>
+    xsddoc.doc = Represents any number of W3C XML Schema Definition (XSD) files<br>
+    xsddoc.xsd.files = http://www.w3.org/2001/XMLSchema.xsd<br>
+    xsddoc.xsd.catalogs = urn:docflex-com:xml:defaultcatalog<br>
+    xsddoc.xsd.includeAbstractTypes = true<br>
+    xsddoc.ns.1.prefix = xs<br>
+    xsddoc.ns.1.uri = http://www.w3.org/2001/XMLSchema<br>
+    xsddoc.ns.2.prefix = xhtml<br>
+    xsddoc.ns.2.uri = http://www.w3.org/1999/xhtml<br>
+    xsddoc.pseudo-elements.all = on<br>
+    xsddoc.defaultRootElement = Documents<br>
+    xsddoc.imageProvider.class = %IMAGE_PROVIDER_CLASS%<br>
+    xsddoc.imageProvider.XMLSpy.version = %XMLSPY_VERSION%<br>
+    xsddoc.imageProvider.XMLSpy.classPath = %XMLSPY_CLASSPATH%<br>
+    xsddoc.imageProvider.XMLSpy.libPath = %XMLSPY_LIBPATH%<br>
+    xsddoc.imageProvider.OxygenXML.command = %OXYGENXML_COMMAND%<br>
+    xsddoc.imageProvider.OxygenXML.config = %OXYGENXML_CONFIG%
+  </code>
+  </td>
+</tr>
+</table>
+</blockquote>
+
+And here is the meaning of each line:
+
+<p class="mrg8">
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+
+<tr align="center">
+  <th width="1%"><b>Line</b></th>
+  <th width="99%"><b>Explanation</b></th>
+</tr>
+
+<tr valign="top">
+  <td align="center">
+    <a name="xmltype_line1"></a>
+    1
+  </td>
+  <td>
+    The <a href="../design_templates.html#xmltype">XML Type</a>'s full name
+  </td>
+</tr>
+<tr valign="top">
+  <td align="center">
+    <a name="xmltype_line2"></a>
+    2
+  </td>
+  <td>
+    A short description of the XML Type
+  </td>
+</tr>
+<tr valign="top">
+  <td align="center">
+    <a name="xmltype_line3"></a>
+    3
+  </td>
+  <td>
+    This setting is crucial for the whole XML Type definition! 
+    It specifies one or several XML schema files that will provide the datatype information about 
+    all data-source XML files possible to process by any template set based on 
+    this <a href="../design_templates.html#xmltype">XML Type</a>.
+    <p class="mrg80">
+    In this case, it is 
+    <a href="http://www.w3.org/2001/XMLSchema.xsd" target="_blank">http://www.w3.org/2001/XMLSchema.xsd</a>
+    (i.e. &ldquo;XML schema for XML Schemas&rdquo;) and the possible data-source XML files are 
+    any XML schema (XSD) files themselves.
+    <p class="mrg80">
+    For further details, please see:
+    <a href="../design_templates.html#xmltype.xsd.files">Defining XML Type | Assigning XML Schemas | xsd.files</a>
+  </td>
+</tr>
+<tr valign="top">
+  <td align="center">
+    <a name="xmltype_line4"></a>
+    4
+  </td>
+  <td>
+    The URI of an XML catalog that redirects the locations of the XSD files
+    (specified in <a href="#xmltype_line3">line 3</a> as well as any other
+    XML schemas referenced from them) to some other locations, which may be easier to access.
+    <p class="mrg80">
+    The specified URI (<code>'urn:docflex-com:xml:defaultcatalog'</code>) denotes
+    the <a href="../setup.html#xml_catalogs">Default XML Catalog</a>,
+    which redirects the Internet locations of all necessary files to their local copies held in DocFlex/XML
+    resources.
+  </td>
+</tr>
+<tr valign="top">
+  <td align="center">
+    <a name="xmltype_line5"></a>
+    5
+  </td>
+  <td>
+    Indicates that all global types (i.e. <code>xs:simpleType</code> and <code>xs:complexType</code>)
+    defined in the XML schemas (<a href="#xmltype_line3">line 3</a>) should be exposed as <i>abstract element types</i>.
+    <p class="mrg80">
+    In particular, this allows programing in templates the searching and iterating of elements not only 
+    by their names, which can be directly found in the XML files, but also by the element types, which are
+    associated with the elements according to the XML schemas.
+    <p class="mrg80">
+    For more details about this setting, please see:
+    <a href="../design_templates.html#xmltype.xsd.includeAbstractTypes">Defining XML Type | Assigning XML Schemas | xsd.includeAbstractTypes</a>
+  </td>
+</tr>
+<tr valign="top">
+  <td align="center">
+    <a name="xmltype_line6"></a>
+    <a name="xmltype_line7"></a>
+    <a name="xmltype_line8"></a>
+    <a name="xmltype_line9"></a>
+    <span class="nowrap">6-9</span>
+  </td>
+  <td>
+    These lines specify all namespace prefixes used in XSDDoc templates.
+    <p class="mrg80">
+    Templates, like XML documents they process, need to deal with namespace URIs,
+    which are typically long character strings. Therefore, some shortcuts are needed to reference to particular
+    namespaces.
+    <p class="mrg80">
+    For more details, please see:
+    <a href="../design_templates.html#xmltype.ns">Defining XML Type | Assigning XML Schemas | Declaring Namespaces</a>
+  </td>
+</tr>
+<tr valign="top">
+  <td align="center">
+    <a name="xmltype_line10"></a>
+    10
+  </td>
+  <td>
+    This setting says that, in addition to normal elements and attributes, all other nodes of
+    an XML document (i.e. <a href="http://www.w3.org/DOM/" target="_blank">DOM</a>)
+    should be exposed as special elements (called 
+    <i><a href="../design_templates.html#xmltype.pseudo_elements">pseudo-elements</a></i>).
+    <p class="mrg80">
+    This is needed to be able to process with templates the entire content of the XML file, for instance,
+    to fully reproduce it in the generated documentation along with the special formatting and hyperlinks (see 
+    <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.schema.php#schema-overview.tpl">schema-overview.tpl</a>
+    and
+    <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.xml.php#nodeSource.tpl">nodeSource.tpl</a>
+    templates).
+    <p class="mrg80">
+    For more details, please see:
+    <a href="../design_templates.html#xmltype.pseudo_elements">Defining XML Type | Pseudo-elements</a>
+  </td>
+</tr>
+<tr valign="top">
+  <td align="center">
+    <a name="xmltype_line11"></a>
+    11
+  </td>
+  <td>
+    Indicates that all the processing should start from the 
+    <a href="../design_templates.html#xmltype.DOCUMENTS">#DOCUMENTS</a> pseudo-element, which
+    is created by the template interpreter to represent the list of all data-source XML files specified 
+    on the generator <a href="../generator.html#cmdline">command-line</a> for processing.
+    <p class="mrg80">
+    That virtual element will be passed to any <a href="#main_templates">main template</a> (specified on the command-line with
+     -<a href="../generator.html#template_option">template</a> option), as the template's
+    <i>root element</i>, from which the processing of the template starts.
+    This allows XSDDoc to document any number of XML schemas at once.
+    <p class="mrg80">
+    For more information, please see:
+    <a href="../design_templates.html#xmltype.DOCUMENTS">Defining XML Type | Pseudo-elements | #DOCUMENTS</a>
+  </td>
+</tr>
+<tr valign="top">
+  <td align="center">
+    <a name="xmltype_line12"></a>
+    12
+  </td>
+  <td>
+    Specify an <a href="../design_templates.html#xmltype.imageProvider">Element Image Provider</a>
+    class.
+    <p class="mrg8">
+    Here, &ldquo;elements&rdquo; mean not XML schema element components,
+    but elements of the XML document that describes the schema -- that it the XSD file.
+    The &ldquo;images&rdquo; are diagrams that depict 
+    <a href="features.html#complex_content.model">content models</a>
+    of XML schema components defined by some of those elements 
+    (such as <code>&lt;xs:element&gt;</code>, <code>&lt;xs:complexType&gt;</code> and <code>&lt;xs:group&gt;</code>).
+    <p class="mrg8">
+    The <a href="../design_templates.html#xmltype.imageProvider">Element Image Provider</a>'s
+    job is to generate those diagrams and allows inserting them in the output.
+    In practice, it is a bridge to some other software that generates those diagrams, which means it is
+    an entry point of some of the <a href="../integrations/index.html">integrations</a>.
+    <p class="mrg8">
+    Currently, only one integration supports this: the 
+    <a href="../integrations/XMLSpy.html">integration with XMLSpy</a>.
+    But in the near future more similar integrations are planned.
+    That's why the image provider class is specified not directly, but via <code>'IMAGE_PROVIDER_CLASS'</code>
+    <a href="../design_templates.html#using_macros">macro</a>.
+    That allows selecting the particular integration on the command line
+    (of both <a href="../generator.html#cmdline">Generator</a> and
+     <a href="../design_templates.html#designer">Template Designer</a>).
+    <p class="mrg80">
+    For further information, please see:
+    <ul class="mrg0">
+    <li><a href="../design_templates.html#xmltype.imageProvider">Defining XML Type | Element Image Provider</a></li>
+    <li><a href="../integrations/XMLSpy.html#integration_main_class">DocFlex/XML | Integrations | XMLSpy | Setting Details | XMLSpy Integration Main Class</a></li>
+    <li><a href="../integrations/OxygenXML.html#integration_main_class">DocFlex/XML | Integrations | Oxygen XML | Setting Details | OxygenXML Integration Main Class</a></li>
+    </ul>
+  </td>
+</tr>
+<tr valign="top">
+  <td align="center">
+    <a name="xmltype_line13"></a>
+    13
+  </td>
+  <td>
+    <a href="../integrations/XMLSpy.html">XMLSpy Integration</a> parameter:
+    The version number of the XMLSpy being used. It cannot be obtained via XMLSpy API,
+    yet it is needed in the XSDDoc templates for the integration support.
+
+    The XMLSpy version number is passed via <code>'XMLSPY_VERSION'</code>
+    <a href="../design_templates.html#using_macros">macro</a>,
+    which can be specified on the command line.
+    <p class="mrg80">
+    See also:
+    <ul class="mrg0">
+    <li><a href="../integrations/XMLSpy.html#xmlspy_version">DocFlex/XML | Integrations | XMLSpy | Setting Details | XMLSpy Version</a></li>
+    <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.integration.XMLSpy.php#integration.XMLSpy.version">XSDDoc | Parameters | Integrations | XMLSpy | XMLSpy Version</a></li>
+    </ul>
+  </td>
+</tr>
+<tr valign="top">
+  <td align="center">
+    <a name="xmltype_line14"></a>
+    14
+  </td>
+  <td>
+    <a href="../integrations/XMLSpy.html">XMLSpy Integration</a> parameter:
+    The Java classpath to XMLSpy Java API.
+
+    It is passed via <code>'XMLSPY_CLASSPATH'</code>
+    <a href="../design_templates.html#using_macros">macro</a>,
+    which can be specified on the command line.
+    <p class="mrg80">
+    For more details, please see:
+    <a href="../integrations/XMLSpy.html#xmlspy_classpath">DocFlex/XML | Integrations | XMLSpy | Setting Details | XMLSpy API Java Class Path</a>
+  </td>
+</tr>
+<tr valign="top">
+  <td align="center">
+    <a name="xmltype_line15"></a>
+    15
+  </td>
+  <td>
+    <a href="../integrations/XMLSpy.html">XMLSpy Integration</a> parameter:
+    The pathname of the directory containing a non-Java implementation of XMLSpy API
+    (this is a Windows DLL that provides a bridge between Java and XMLSpy's Windows native code).
+
+    It is passed via <code>'XMLSPY_LIBPATH'</code>
+    <a href="../design_templates.html#using_macros">macro</a>,
+    which can be specified on the command line.
+    <p class="mrg80">
+    For more details, please see:
+    <a href="../integrations/XMLSpy.html#xmlspy_libpath">DocFlex/XML | Integrations | XMLSpy | Setting Details | XMLSpy API Library Path</a>
+  </td>
+</tr>
+<tr valign="top">
+  <td align="center">
+    <a name="xmltype_line16"></a>
+    16
+  </td>
+  <td>
+    <a href="../integrations/OxygenXML.html">OxygenXML Integration</a> parameter:
+    Specify the OS command to call OxygenXML's own XML schema doc-generator.
+
+    It is passed via <code>'OXYGENXML_COMMAND'</code>
+    <a href="../design_templates.html#using_macros">macro</a>
+    specified on the command line.
+    <p class="mrg80">
+    For more details, please see:
+    <a href="../integrations/OxygenXML.html#oxygen_command">DocFlex/XML | Integrations | Oxygen XML | Setting Details | OS command to run OxygenXML's own DocGen</a>
+  </td>
+</tr>
+<tr valign="top">
+  <td align="center">
+    <a name="xmltype_line17"></a>
+    17
+  </td>
+  <td>
+    <a href="../integrations/OxygenXML.html">OxygenXML Integration</a> parameter:
+    Specify an alternative pattern file for the settings file passed to OxygenXML's XML schema doc-generator.
+    This may be needed in case when that settings file substantially changes in the future OxygenXML version,
+    so that one used now by the integration (and stored in resources) will not be adequate for this.
+  </td>
+</tr>
+</table>
+
+<p>
+The following screenshot shows a part of the tree representation of the <i>element types</i> and
+their attributes constructed by <a href="#xmltype">this</a> XML Type definition
+(click on the picture to see a more expanded tree view):
+<blockquote>
+<a href="http://www.filigris.com/docflex-xml/xsddoc/templates/images/xsddoc_dsmtype.html" target="_blank"><img src="images/xsddoc_dsmtype_s.png" title="&ldquo;W3C XML Schema Files&rdquo; XML Type" border="0"></a>
+</blockquote>
+
+<table border="1" cellspacing="1" cellpadding="5">
+<tr><td bgcolor="#F6F6F6" class="inset">
+The term &ldquo;<a href="../../general/about.html#dsm_type">DSM Type</a>&rdquo;
+(Data Source Model Type) visible on the screenshot is a generalization of the notion of 
+<a href="../design_templates.html#xmltype">XML Type</a>
+extended to the whole <a href="../../general/about.html">DocFlex Technology</a>,
+which is able to process in a similar way not only XML-files,
+but any other data-sources provided via some Java APIs.
+For example, see <a target="_blank" href="http://www.filigris.com/docflex-javadoc/">DocFlex/Javadoc</a>.
+</td></tr>
+</table>
+
+<h2>
+  <a name="main_templates"></a>
+  3.&nbsp; Main Templates
+</h2>
+
+<h3 class="spec">
+  <a name="FramedDoc.tpl"></a>
+  FramedDoc.tpl
+</h3>
+
+FramedDoc.tpl is a main template designed to generate multi-file (Javadoc-like)
+<a href="organization.html#framed_doc"><b>framed HTML documentation</b></a>
+by any number of XML schema files.
+<p class="mrg8">
+Here is how this template looks when open in the
+<a href="overview.html#template_designer">Template Designer</a> (click to enlarge):
+<blockquote>
+  <a href="http://www.filigris.com/docflex-xml/xsddoc/templates/images/FramedDoc_tpl.html" target="_blank"><img src="images/FramedDoc_tpl_s.png" title="FramedDoc.tpl" border="0"></a>
+</blockquote>
+
+On the following screenshot you can see an example of the documentation
+generated with FramedDoc.tpl (directly from the file: <a href="http://www.w3.org/2001/XMLSchema.xsd" target="_blank">http://www.w3.org/2001/XMLSchema.xsd</a>).
+Click to view the real HTML:
+
+<blockquote>
+  <a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/index.html" target="_blank"><img src="images/XMLSchema_xsddoc_html_framed.png" title="Framed HTML documentation" border="0"></a>
+</blockquote>
+
+The <a href="#FramedDoc.tpl">FramedDoc.tpl</a> template is interpreted as follows:
+<ol>
+
+<li>
+  First, the <i>&ldquo;Template Init Expression&rdquo;</i> specified in the template properties is processed:
+  <p>
+  <img src="images/FramedDoc_tpl_init_expr.png" title="FramedDoc.tpl - Template Init Expressions" border="0">
+  </p>
+</li>
+<li>
+  This, in turn, invokes the execution of <i>&ldquo;Init&rdquo;</i>
+  <a href="../../general/template_components.html#stock_sections">stock-section</a>
+  (click on the screenshot to enlarge):
+  <p>
+  <a href="http://www.filigris.com/docflex-xml/xsddoc/templates/images/FramedDoc_tpl_Init.html" target="_blank"><img src="images/FramedDoc_tpl_Init_s.png" title="FramedDoc.tpl - &ldquo;Init&rdquo; stock-section" border="0"></a>
+  </p>
+  This stock-section does not generate any output. Rather, it calls from itself two subtemplates for special purposes:
+  <ol class="mrg8">
+    <li class="mrg8">
+      <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.php#init.tpl">init.tpl</a>
+      creates <b>element maps</b>, which are essentially hash-maps. Element maps allow resolving very complicated queries.
+      They are used in almost all templates of XSDDoc template set
+      (including even <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.php#init.tpl">init.tpl</a> itself)
+      and are critical for their working.
+    </li>
+    <li class="mrg8">
+      <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.integrations.php#XMLSpy.tpl">XMLSpy.tpl</a>,
+      which is a part of the <a href="../integrations/XMLSpy.html">XMLSpy Integration</a>.
+      This template is called only when the XMLSpy Integration is installed and enabled.
+      See also:
+      <ul class="mrg8">
+        <li>&ldquo;<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.integration.XMLSpy.php#integration.XMLSpy">Integrations | XMLSpy</a>&rdquo; parameter</li>
+        <li><a href="../integrations/XMLSpy.html#how_it_works">DocFlex/XML | Integations | XMLSpy | How Integration Works</a></li>
+      </ul>
+    </li>
+    <li class="mrg8">
+      <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.integrations.php#OxygenXML.tpl">OxygenXML.tpl</a>,
+      which is a part of the <a href="../integrations/OxygenXML.html">OxygenXML Integration</a>.
+      This template is called only when the OxygenXML Integration is installed and enabled.
+      See also:
+      <ul class="mrg8">
+        <li>&ldquo;<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.integration.OxygenXML.php#integration.OxygenXML">Integrations | OxygenXML</a>&rdquo; parameter</li>
+      </ul>
+    </li>
+  </ol>
+  </p>
+</li>
+<li>
+  Further, the template's
+  <a href="../../general/template_components.html#section_blocks">root section block</a> 
+   is processed (which is the content of the 'FramedDoc.tpl' tab):
+  <p>
+  <a href="http://www.filigris.com/docflex-xml/xsddoc/templates/images/FramedDoc_tpl.html" target="_blank"><img src="images/FramedDoc_tpl_s.png" title="FramedDoc.tpl" border="0"></a>
+  </p>
+  It does the following:
+  <ol class="mrg8">
+    <li>
+      <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.php#overview-summary.tpl">overview-summary.tpl</a> template is called to
+      generate <a href="organization.html#blocks.overview">Overview Summary</a>
+      page for the whole documentation.
+    </li>
+    <li>
+      <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#all-components-summary.tpl">all-components-summary.tpl</a> template is called to
+      generate <a href="organization.html#blocks.allcomps">All Component Summary</a>
+      page.
+    </li>
+    <li>
+      All namespaces targeted by the XML schemas to be documented are itereated.
+      <br>
+      For each namespace:
+      <ol type="a">
+        <li>
+          <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.namespace.php#namespace-overview.tpl">namespace-overview.tpl</a> template generates
+          <a href="organization.html#blocks.namespace">Namespace Overview</a> page.
+        </li>
+        <li>
+          <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.namespace.php#namespace-frame.tpl">namespace-frame.tpl</a> template generates 
+          <a href="organization.html#framed_doc.nav.namespace">Namespace Components</a>
+          page.
+        </li>
+        <li>
+          For all global components and local element components (to be documented separately) that belong to
+          the namespace the following templates are called (depending on the component type):
+          <ul>
+            <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.element.php#element.tpl">element.tpl</a></li>
+            <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#complexType.tpl">complexType.tpl</a></li>
+            <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#simpleType.tpl">simpleType.tpl</a></li>
+            <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.groups.php#group.tpl">group.tpl</a></li>
+            <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.attribute.php#attribute.tpl">attribute.tpl</a></li>
+            <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.groups.php#attributeGroup.tpl">attributeGroup.tpl</a></li>
+          </ul>
+          to generate the corresponding 
+          <a href="organization.html#blocks.comp">Component Documentation</a> files.
+        </li>
+      </ol>
+    </li>
+    <li>
+      All XML schemas (to be documented) are itereated.<br>
+      For each schema:
+      <ol type="a">
+        <li>
+          <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.schema.php#schema-overview.tpl">schema-overview.tpl</a>
+          template generates the 
+          <a href="organization.html#blocks.schema">Schema Overview</a> page.
+        </li>
+        <li>
+          <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.schema.php#schema-frame.tpl">schema-frame.tpl</a> template generates
+          <a href="organization.html#framed_doc.nav.schema">Schema Components</a> page.
+        </li>
+      </ol>
+    </li>
+    <li>
+      <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#all-components-frame.tpl">all-components-frame.tpl</a>
+      template is called to generate
+      <a href="organization.html#framed_doc.nav.allcomps">All Components</a> page.
+    </li>
+    <li>
+      <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.php#overview-frame.tpl">overview-frame.tpl</a>
+      template is called to generate the page shown in the
+      <a href="organization.html#framed_doc.overviewFrame">Overview Frame</a>.
+    </li>
+    <li>
+      <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.xml.php#xmlns-bindings.tpl">xmlns-bindings.tpl</a>
+      template is called to generate the
+      <a href="organization.html#blocks.xmlnsBindings">XML Namespace Bindings</a> page.
+    </li>
+  </ol>
+  <p>
+</li>
+<li>
+  At this point, all document files have been generated.
+  What is left is the HTML frameset file (normally named <code>'index.html'</code>).
+  That file starts the whole documentation to display particular HTML documents in three frame windows:
+  <p>
+  <img src="images/frameset_diagram.png" title="Frameset Diagram" border="0" usemap="#frameset_diagram_map">
+  <map name="frameset_diagram_map">
+    <area shape="rect" coords="3,38,128,86" href="organization.html#framed_doc.overviewFrame" title="Click to see frame details">
+    <area shape="rect" coords="33,201,128,250" href="organization.html#framed_doc.listFrame" title="Click to see frame details">
+    <area shape="rect" coords="343,133,449,181" href="organization.html#framed_doc.detailFrame" title="Click to see frame details">
+    <area shape="rect" coords="137,4,337,265" href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/index.html?schemas/XMLSchema_xsd/complexTypes/namedAttributeGroup.html" target="_blank" title="Click to view the framed HTML documentation open on a selected page">
+  </map>
+  </p>
+  For further details about the usage of each frame, see:
+  <a href="organization.html#framed_doc.frameset">Documentation Organization | Framed HTML Documentation | Frameset Structure</a>.
+  <p class1="mrg8">
+  The frameset file is generated according to the definition specified in
+  the <i>&ldquo;Output File | Frameset Structure&rdquo;</i> tab of the <a href="#FramedDoc.tpl">FramedDoc.tpl</a>
+  properties dialog:
+  <p>
+  <img src="images/FramedDoc_tpl_frameset.png" title="FramedDoc.tpl - Frameset Definition" border="0">
+  </p>
+  The expression specified in the <i>&ldquo;Source Expression&rdquo;</i> field (on the right panel)
+  should return the pathname (or URL) of a document to be initially loaded in the given frame.
+  <p>
+  However, the initial content of the <b><i>detailFrame</i></b> may be overridden dynamically by the Javascript, which is inserted
+  in <code>index.html</code> according the <i>&ldquo;HTML Head Expression&rdquo;</i>:
+  <p>
+  <img src="images/FramedDoc_tpl_javascript.png" title="FramedDoc.tpl - HTML Head Expression" border="0">
+  </p>
+  This particular Javascript obtains a URL parameter (specified after '?' in the initial URL) passed to <code>index.html</code>.
+  If the parameter exists, the <i>detailFrame</i> will be reloaded according to the new URL found in the parameter.
+  That allows you to construct URLs like this one:
+  <blockquote>
+  <a href="http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/index.html?schemas/XMLSchema_xsd/elements/element.html" target="_blank">http://www.filigris.com/docflex-xml/xsddoc/examples/html/XMLSchema/index.html?schemas/XMLSchema_xsd/elements/element.html</a>
+  </blockquote>
+  which will open the frameset documentation directly on a specified page.
+  <p>
+</li>
+<li>
+  As soon as everything has been generated, the <i>&ldquo;Template Finish Expression&rdquo;</i> is processed:
+  <p>
+  <img src="images/FramedDoc_tpl_finish_expr.png" title="FramedDoc.tpl - Template Finish Expressions" border="0">
+  </p>
+  which invokes the execution of <i>&ldquo;Finish&rdquo;</i>
+  <a href="../../general/template_components.html#stock_sections">stock-section</a>
+  (click on the screenshot to enlarge):
+  <p>
+  <a href="http://www.filigris.com/docflex-xml/xsddoc/templates/images/FramedDoc_tpl_Finish.html" target="_blank"><img src="images/FramedDoc_tpl_Finish_s.png" title="FramedDoc.tpl - &ldquo;Finish&rdquo; stock-section" border="0"></a>
+  </p>
+  Currently, all it does is removing the temporary files produced by XMLSpy (when 
+  <a href="../integrations/XMLSpy.html">XMLSpy Integration</a> is enabled).
+</li>
+
+</ol>
+
+<h3 class="spec">
+  <a name="PlainDoc.tpl"></a>
+  PlainDoc.tpl
+</h3>
+
+PlainDoc.tpl is a main template designed specifically to generate
+<a href="organization.html#single_file_doc"><b>single file documentation</b></a>
+in all supported output formats (which currently include HTML, RTF and TXT).
+<p class="mrg8">
+Here is how this template looks when open in the
+<a href="overview.html#template_designer">Template Designer</a>
+(click to see the full screenshot):
+<blockquote>
+  <a href="http://www.filigris.com/docflex-xml/xsddoc/templates/images/PlainDoc_tpl.html" target="_blank"><img src="images/PlainDoc_tpl_s.png" title="PlainDoc.tpl" border="0"></a>
+</blockquote>
+
+The RTF output it generates is the most important. It delivers an unmatched quality printable
+<a href="overview.html#output.rtf">RTF documentation</a>.
+Here are a few pages of such a documentation generated with <a href="#PlainDoc.tpl">PlainDoc.tpl</a> (click to enlarge):
+
+<blockquote>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+  <td><a href="http://www.filigris.com/docflex-xml/xsddoc/images/p001.html" target="_blank"><img src="images/p001_s.png" title="RTF documentation: Overview Summary" border="0"></a></td>
+  <td><table border="0" cellpadding="0" cellspacing="0" width="16"><tr><td></td></tr></table></td>
+  <td><a href="http://www.filigris.com/docflex-xml/xsddoc/images/p066.html" target="_blank"><img src="images/p066_s.png" title="RTF documentation: Element Detail" border="0"></a></td>
+  <td><table border="0" cellpadding="0" cellspacing="0" width="16"><tr><td></td></tr></table></td>
+  <td><a href="http://www.filigris.com/docflex-xml/xsddoc/images/p367.html" target="_blank"><img src="images/p367_s.png" title="RTF documentation: Schema Overview" border="0"></a></td>
+</tr>
+</table>
+</blockquote>
+
+<p class="mrg8">
+  <b>Calls:</b>
+</p>
+<blockquote class="mrg0">
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.php#about.tpl">about.tpl</a>,</span>
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#all-components-summary.tpl">all-components-summary.tpl</a>,</span>
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.attribute.php#attribute.tpl">attribute.tpl</a>,</span>
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.groups.php#attributeGroup.tpl">attributeGroup.tpl</a>,</span>
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#complexType.tpl">complexType.tpl</a>,</span>
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.element.php#element.tpl">element.tpl</a>,</span>
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.groups.php#group.tpl">group.tpl</a>,</span>
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.php#init.tpl">init.tpl</a>,</span>
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.element.php#localElementExt.tpl">localElementExt.tpl</a>,</span>
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.namespace.php#namespace-overview.tpl">namespace-overview.tpl</a>,</span>
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.php#overview-summary.tpl">overview-summary.tpl</a>,</span>
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.schema.php#schema-overview.tpl">schema-overview.tpl</a>,</span>
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#simpleType.tpl">simpleType.tpl</a>,</span>
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.xml.php#xmlns-bindings.tpl">xmlns-bindings.tpl</a>,</span>
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.integrations.php#XMLSpy.tpl">XMLSpy.tpl</a>,</span>
+  <span class="nowrap"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.integrations.php#OxygenXML.tpl">OxygenXML.tpl</a></span>
+</blockquote>
+
+<h2>
+  <a name="subtemplates"></a>
+  4.&nbsp; Subtemplates
+</h2>
+
+Subtemplates by directory:
+
+<blockquote>
+<table cellpadding="0" cellspacing="0" border="0">
+<tr><td style="border: solid 1px #999999; background-color:#F5F5F5">
+<ul class="mrg8">
+  <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.php"><b>[lib]</b></a>
+    <blockquote class="mrg0">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+          <td width="200">
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.php#init.tpl">init.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.php#about.tpl">about.tpl</a>,
+          </td>
+          <td>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.php#overview-frame.tpl">overview-frame.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.php#overview-summary.tpl">overview-summary.tpl</a>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+  </li>
+  <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.ann.php"><b>[lib/ann]</b></a>
+    <blockquote class="mrg0">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+          <td width="200">
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.ann.php#annotation.tpl">annotation.tpl</a>,
+          </td>
+          <td>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.ann.php#firstSentence.tpl">firstSentence.tpl</a>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+  </li>
+  <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.attribute.php"><b>[lib/attribute]</b></a>
+    <blockquote class="mrg0">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+          <td width="200">
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.attribute.php#attribute.tpl">attribute.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.attribute.php#attributeProfile.tpl">attributeProfile.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.attribute.php#attributeProfile2.tpl">attributeProfile2.tpl</a>,
+          </td>
+          <td>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.attribute.php#attributes.tpl">attributes.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.attribute.php#attributeSummary.tpl">attributeSummary.tpl</a>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+  </li>
+  <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php"><b>[lib/component]</b></a>
+    <blockquote class="mrg0">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+          <td width="200">
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#componentName.tpl">componentName.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#componentLinkTitle.tpl">componentLinkTitle.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#all-components-frame.tpl">all-components-frame.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#all-components-summary.tpl">all-components-summary.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#contentType.tpl">contentType.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#diagram.tpl">diagram.tpl</a>,
+          </td>
+          <td>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#xmlRep.tpl">xmlRep.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#complexContentModel.tpl">complexContentModel.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#simpleContentRep.tpl">simpleContentRep.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#simpleContentDerivation.tpl">simpleContentDerivation.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#wildcard.tpl">wildcard.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.component.php#facet.tpl">facet.tpl</a>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+  </li>
+  <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.element.php"><b>[lib/element]</b></a>
+    <blockquote class="mrg0">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+          <td width="200">
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.element.php#element.tpl">element.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.element.php#elementProfile.tpl">elementProfile.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.element.php#elementProfile2.tpl">elementProfile2.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.element.php#elementBlockAttrInfo.tpl">elementBlockAttrInfo.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.element.php#elementFinalAttrInfo.tpl">elementFinalAttrInfo.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.element.php#substitutionGroupInfo.tpl">substitutionGroupInfo.tpl</a>,
+          </td>
+          <td>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.element.php#contentElementList.tpl">contentElementList.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.element.php#contentElements.tpl">contentElements.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.element.php#elementSummary.tpl">elementSummary.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.element.php#elementListNote.tpl">elementListNote.tpl,</a><br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.element.php#localElementExt.tpl">localElementExt.tpl</a>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+  </li>
+  <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.groups.php"><b>[lib/groups]</b></a>
+    <blockquote class="mrg0">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+          <td width="200">
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.groups.php#group.tpl">group.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.groups.php#groupProfile.tpl">groupProfile.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.groups.php#groupProfile2.tpl">groupProfile2.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.groups.php#groupSummary.tpl">groupSummary.tpl</a>,
+          </td>
+          <td>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.groups.php#attributeGroup.tpl">attributeGroup.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.groups.php#attributeGroupProfile.tpl">attributeGroupProfile.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.groups.php#attributeGroupProfile2.tpl">attributeGroupProfile2.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.groups.php#attributeGroupSummary.tpl">attributeGroupSummary.tpl</a>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+  </li>
+  <li class="mrg0"><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.images.php"><b>[lib/images]</b></a></li>
+  <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.integrations.php"><b>[lib/integrations]</b></a>
+    <blockquote class="mrg0">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+          <td width="200">
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.integrations.php#XMLSpy.tpl">XMLSpy.tpl</a>
+          </td>
+          <td>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.integrations.php#OxygenXML.tpl">OxygenXML.tpl</a>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+  </li>
+  <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.namespace.php"><b>[lib/namespace]</b></a>
+    <blockquote class="mrg0">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+          <td width="200">
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.namespace.php#namespace-frame.tpl">namespace-frame.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.namespace.php#namespace-overview.tpl">namespace-overview.tpl</a>,
+          </td>
+          <td>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.namespace.php#namespaceProfile.tpl">namespaceProfile.tpl</a>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+  </li>
+  <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.schema.php"><b>[lib/schema]</b></a>
+    <blockquote class="mrg0">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+          <td width="200">
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.schema.php#schema-frame.tpl">schema-frame.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.schema.php#schema-overview.tpl">schema-overview.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.schema.php#schema-source.tpl">schema-source.tpl</a>,
+          </td>
+          <td>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.schema.php#schemaName.tpl">schemaName.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.schema.php#schemaLinkTitle.tpl">schemaLinkTitle.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.schema.php#schemaProfile.tpl">schemaProfile.tpl</a>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+  </li>
+  <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php"><b>[lib/type]</b></a>
+    <blockquote class="mrg0">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+          <td width="200">
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#complexType.tpl">complexType.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#simpleType.tpl">simpleType.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#typeProfile.tpl">typeProfile.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#typeProfile2.tpl">typeProfile2.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#typeBlockAttrInfo.tpl">typeBlockAttrInfo.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#typeFinalAttrInfo.tpl">typeFinalAttrInfo.tpl</a>,
+          </td>
+          <td>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#typeRelatedCompLists.tpl">typeRelatedCompLists.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#typeUsage.tpl">typeUsage.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#typeDerivationTree.tpl">typeDerivationTree.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#typeDerivationSummary.tpl">typeDerivationSummary.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#complexTypeSummary.tpl">complexTypeSummary.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.type.php#simpleTypeSummary.tpl">simpleTypeSummary.tpl</a>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+  </li>
+  <li><a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.xml.php"><b>[lib/xml]</b></a>
+    <blockquote class="mrg0">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+          <td width="200">
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.xml.php#nodeSource.tpl">nodeSource.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.xml.php#sourceNote.tpl">sourceNote.tpl</a>,
+          </td>
+          <td>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.xml.php#documentSource.tpl">documentSource.tpl</a>,<br>
+            <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/subtemplates.lib.xml.php#xmlns-bindings.tpl">xmlns-bindings.tpl</a>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+  </li>
+</ul>
+</td></tr>
+</table>
+</blockquote>
+
+<h2>
+  <a name="parameters"></a>
+  5.&nbsp; Template Parameters
+</h2>
+
+See:
+<a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/templates/parameters.php">DocFlex/XML | XSDDoc | Templates | Parameters</a>
+
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2013 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

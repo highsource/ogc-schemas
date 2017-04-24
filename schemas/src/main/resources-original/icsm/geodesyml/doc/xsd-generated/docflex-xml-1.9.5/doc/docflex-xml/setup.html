@@ -1,0 +1,538 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex/XML - Documentation - Installation / Configuration Files</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/XML - Documentation - Installation / Configuration Files
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+  <li class="mrg4"><a href="#installation"><b>Installation</b></a></li>
+  <li class="mrg4"><a href="#config_files"><b>Configuration Files</b></a>
+    <ul class="mrg4">
+      <li><a href="#docflex.config">docflex.config</a></li>
+      <li><a href="#docflex.license">docflex.license</a></li>
+      <li><a href="#designer.config">designer.config</a></li>
+      <li><a href="#generator.config">generator.config</a></li>
+      <li><a href="#catalog.xml">catalog.xml</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#xml_catalogs"><b>XML Catalogs</b></a>
+    <ul class="mrg4">
+      <li><a href="#xml_catalogs.about">What is XML Catalog?</a></li>
+      <li><a href="#xml_catalogs.usage">How DocFlex/XML uses XML Catalogs</a></li>
+      <li><a href="#xml_catalogs.default">Default XML Catalog</a></li>
+    </ul>
+  </li>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<h2>
+  <a name="installation"></a>
+  1.&nbsp; Installation
+</h2>
+
+Installation of <a href="about.html">DocFlex/XML</a> is very simple:
+
+<ol class="mrg8">
+  <li class="mrg8">
+    Unpack the downloaded archive.
+  </li>
+  <li class="mrg8">
+    Copy the DocFlex license file <code>'<a href="#docflex.license">docflex-xml.license</a>'</code>,
+    which you received by e-mail, into the <b><code>'lib'</code></b> directory.
+    This file must be always near the DocFlex/XML Java library
+    (<code>docflex-xml.jar</code>) file!
+  </li>
+  <li class="mrg8">
+    Edit <b><code>generator.bat</code></b> and <b><code>designer.bat</code></b>
+    to specify the <b><code>'JRE'</code></b> variable according to the location of 
+    Java 7, Java 6, Java 5 or Java 1.4.x installed on your system.
+  </li>
+</ol>
+
+After that, you can start:
+<ul class="mrg8">
+<li>
+  <code>generator.bat</code> (e.g. to generate <a href="xsddoc/index.html">XML Schema documentation</a>)
+</li>
+<li>
+  <code>designer.bat</code> to launch the
+  <a href="design_templates.html#designer">Template Designer</a>
+  (and investigate <a href="xsddoc/templates.html#>XSDDoc templates</a> or
+  <a href="samples/index.html">samples</a>)
+</li>
+</ul>
+
+<h2>
+  <a name="config_files"></a>
+  2.&nbsp; Configuration Files
+</h2>
+
+Totally, <a href="about.html">DocFlex/XML</a> employs five stationary configuration files:
+<ol>
+  <li><a href="#docflex.config">docflex.config</a></li>
+  <li><a href="#docflex.license">docflex.license</a></li>
+  <li><a href="#designer.config">designer.config</a></li>
+  <li><a href="#generator.config">generator.config</a></li>
+  <li><a href="#catalog.xml">catalog.xml</a></li>
+</ol>
+<p>
+<i>(In addition, there may be any number of 
+<a href="design_templates.html#xmltype.config">XML Type Configuration Files</a>
+prepared for specific template applications.)</i>
+<p>
+Here are details about each configuration file:
+<p>
+<table width="100%" cellspacing="1" cellpadding="4" border="1">
+<tr bgcolor="#E0E0E0">
+  <th width="10%"><b class="nowrap">File</b></th>
+  <th width="90%"><b>Description</b></th>
+</tr>
+
+<tr valign="top">
+  <td>
+    <a name="docflex.config"></a>
+    <span class="nowrap"><img src="images/cfg.gif" width="16" height="16" align="top">&nbsp;<b>docflex.config</b></span>
+  </td>
+  <td>
+    This is the <a href="about.html">DocFlex/XML</a>
+    <b><i>main configuration file</i></b>.
+    It specifies:
+    <ol class="mrg8">
+      <li class="mrg8">
+        The <i>default template directory</i>.
+        It is used by the template designer as an initial file chooser directory.
+      </li>
+      <li class="mrg8">
+        The <i>default output directory</i> (used when no output directory is specified
+        to the generator directly with the
+        <span class="nowrap">-<a href="generator.html#d_option">d option</a></span>
+        or can be found in the <a href="#generator.config">generator.config</a> file).
+      </li>
+      <li class="mrg8">
+        The location of the <a href="#xml_catalogs.default">default XML catalog</a> file
+        (see <a href="#catalog.xml">catalog.xml</a>).
+      </li>
+      <li class="mrg8">
+        The locations of some frequently used
+        <a href="design_templates.html#xmltype.config">XML Type Configuration Files</a>,
+        which need to be loaded reliably (because the default search procedure for an XML Type file in some cases
+        may fail and specifying it all the time with
+        <span class="nowrap">-<a href="generator.html#xmltype_option">xmltype</a></span> 
+        option on the command line may be cumbersome).
+      </li>
+      <li class="mrg8">
+        An alternative location of the <a href="#docflex.license">docflex.license</a> file.
+      </li>
+      <li class="mrg8">
+        The definitions of <a href="design_templates.html#using_macros">macros</a>,
+        which can be used in the <code>docflex.config</code> itself as well as in all
+        <a href="design_templates.html#xmltype.config">XML Type Configuration Files</a>.
+      </li>
+      <li class="mrg8">
+        An external system command to open URL (or several such commands for different URL types).
+        This is used to launch an external viewer
+        for the generated output files (see also
+        -<a href="generator.html#launchviewer_option">launchviewer</a>
+        command line option) as well as to handle any other URL open requests
+        (e.g. from external links within various descriptions shown in the
+         <a href="generator.html#gui">generator GUI</a> or
+         <a href="design_templates.html#designer">Template Designer</a>).
+      </li>
+    </ol>
+    <p class="mrg8">
+    The main configuration file is used in the read-only mode and never changed.
+
+    <dl class="mrg80">
+      <dt class="mrg80"><b>Default Location:</b></dt>
+      <dd class="mrg80">
+        By default, the main configuration file is <b><code>'docflex.config'</code></b>. It is searched for
+        in the same directory where the DocFlex/XML Java library <b><code class="nowrap">'docflex-xml.jar'</code></b>
+        is located. If not found, the <code>'docflex.config'</code> file is created automatically with the default settings.
+      </dd>
+      <dt class="mrg80"><b>Alternative Location:</b></dt>
+      <dd class="mrg80">
+        Can be specified using
+        -<a href="generator.html#docflexconfig_option">docflexconfig</a>
+        option both on the <a href="design_templates.html#designer">Template Designer</a>
+        and <a href="generator.html#cmdline">Generator</a> command line.
+      </dd>
+    </dl>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td>
+    <a name="docflex.license"></a>
+    <span class="nowrap"><img src="images/cfg.gif" width="16" height="16" align="top">&nbsp;<b>docflex.license</b></span>
+  </td>
+  <td>
+    The <a href="about.html">DocFlex/XML</a> license file,
+    which you should receive by e-mail.
+
+    <dl class="mrg80">
+      <dt class="mrg80"><b>Default Location:</b></dt>
+      <dd class="mrg80">
+        Searched near the DocFlex/XML Java library file <b><code class="nowrap">'docflex-xml.jar'</code></b>
+        <p class="mrg8">
+        The default license file name is <code>'docflex-xml.license'</code>.
+        When a file with that name is not found, the generic <code>'docflex.license'</code> file
+        will be searched in the same location.
+        <p class="mrg8">
+        <table cellspacing="0" cellpadding="0">
+          <tr valign="top">
+            <td><b>Note:</b>&nbsp;&nbsp;</td>
+            <td>
+              You may copy all your licenses into the same single license file (e.g. in the case of 
+              <a target="_blank" href="http://www.filigris.com/licensing/#multiple_licenses">multiple licenses</a>).
+            </td>
+          </tr>
+        </table>
+      </dd>
+    </dl>
+    <p class="mrg8"><b>Alternative Locations:</b></p>
+    <ul class="mrg80">
+      <li>
+        Can be specified using
+        -<a href="generator.html#license_option">license</a>
+        option on the <a href="generator.html#cmdline">generator</a> or
+        <a href="design_templates.html#designer">Template Designer</a>
+        command line
+      </li>
+      <li>
+        Can be assigned in the main configuration file (<a href="#docflex.config">docflex.config</a>)
+      </li>
+    </ul>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td>
+    <a name="designer.config"></a>
+    <span class="nowrap"><img src="images/cfg.gif" width="16" height="16" align="top">&nbsp;<b>designer.config</b>&nbsp;</span>
+  </td>
+  <td>
+    The <a href="design_templates.html#designer">Template Designer</a> configuration file.
+    It stores the designer configuration for the recently edited templates.
+    This file is created and maintained automatically.
+
+    <dl class="mrg80">
+      <dt class="mrg80"><b>Default Location:</b></dt>
+      <dd class="mrg80">
+        <code>config/designer.config</code> --
+        assigned in the <a href="#docflex.config">main configuration file</a>
+      </dd>
+      <dt class="mrg80"><b>Alternative Location:</b></dt>
+      <dd class="mrg80">
+        Can be specified using -<a href="design_templates.html#designer.config_option">config</a> option
+        on the <a href="design_templates.html#designer">Template Designer</a> command line.
+      </dd>
+    </dl>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td>
+    <a name="generator.config"></a>
+    <span class="nowrap"><img src="images/cfg.gif" width="16" height="16" align="top">&nbsp;<b>generator.config</b>&nbsp;</span>
+  </td>
+  <td>
+    The generator configuration file; used by the <a href="generator.html">Generator</a>
+    to obtain all settings not specified directly on the command line.
+
+    <p class="mrg8">
+    This file is created and maintained automatically by the
+    <a href="generator.html#gui">generator dialog</a>.
+    It contains:
+    <ul class="mrg8">
+      <li>The last used templates</li>
+      <li>The values of template parameters</li>
+      <li>The last used XML files</li>
+      <li>The list of XML catalog files</li>
+      <li>The output directory and file name</li>
+      <li>The output format and its options</li>
+    </ul>
+    <p class="mrg8">
+    When the <a href="generator.html#gui">generator dialog</a>
+    is invoked next time, those settings are restored from the generator config file,
+    so you don't need to re-enter them again.
+    The values of template parameters previously specified for one template will also
+    be loaded into the equally named parameters of other templates.
+
+    <p class="mrg8">
+    You can use the <a href="generator.html#gui">generator dialog</a>
+    to quickly prepare a config file with the specific settings you need and, then, provide only this file
+    on the <a href="generator.html#cmdline">generator command line</a>
+    (using -<a href="generator.html#config_option">config</a> option)
+    instead of specifying all those settings directly.
+
+    <dl class="mrg80">
+      <dt class="mrg80"><b>Default Location:</b></dt>
+      <dd class="mrg80">
+        <code>config/generator.config</code> --
+        assigned in the <a href="#docflex.config">main configuration file</a>
+      </dd>
+      <dt class="mrg80"><b>Alternative Location:</b></dt>
+      <dd class="mrg80">
+        Can be specified using
+        -<a href="generator.html#config_option">config</a>
+        option on the <a href="generator.html#cmdline">generator command line</a>.
+      </dd>
+    </dl>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td>
+    <a name="catalog.xml"></a>
+    <span class="nowrap"><img src="images/cfg.gif" width="16" height="16" align="top">&nbsp;<b>catalog.xml</b>&nbsp;</span>
+  </td>
+  <td>
+    The <a href="#xml_catalogs.default">default XML catalog</a> file;
+    redirects the external locations of some standard XML schemas found in Internet
+    to their local copies stored in DocFlex/XML resources.
+    <p class="mrg8">
+    This file is crucial for big template applications, like <a href="xsddoc/index.html">XSDDoc</a>!
+    For more details, please see:
+    <a href="#xml_catalogs.default">XML Catalogs | Default XML Catalog</a>
+
+    <dl class="mrg80">
+      <dt class="mrg80"><b>Default Location:</b></dt>
+      <dd class="mrg80">
+        <code>lib/resources/catalog.xml</code> --
+        assigned in the <a href="#docflex.config">main configuration file</a>
+      </dd>
+      <dt class="mrg80"><b>Alternative Location:</b></dt>
+      <dd class="mrg80">
+        Can be specified using
+        -<a href="generator.html#defaultcatalog_option">defaultcatalog</a>
+        option both on the <a href="generator.html#cmdline">Generator</a> and
+        <a href="design_templates.html#designer">Template Designer</a>
+        command line.
+      </dd>
+    </dl>
+  </td>
+</tr>
+
+</table>
+
+<h2>
+  <a name="xml_catalogs"></a>
+  3.&nbsp; XML Catalogs
+</h2>
+
+<h3>
+  <a name="xml_catalogs.about"></a>
+  What is XML Catalog?
+</h3>
+
+Suppose you have an XML file that contains a reference to another XML file.
+That reference may be specified as a certain external URL.
+For instance, you have an XML schema containing a line like this:
+
+<blockquote class="mrg8">
+ <code>&lt;xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/&gt</code>
+</blockquote>
+
+Here, the <code>&lt;xs:import&gt</code> element tells the XML schema processor to import another XML schema 
+<code>'xml.xsd'</code> located by the URL 
+<code><a href="http://www.w3.org/2001/xml.xsd" target="_blank">http://www.w3.org/2001/xml.xsd</a></code>,
+which is found somewhere in Internet (specifically, on the web-site of W3C).
+<p class="mrg8">
+Suppose that you have both XML schemas on your local drive.
+You want to process them without changing anything in the schema sources
+and, yet, without loading anything from the Internet. How can you do that?
+<p class="mrg8">
+Another situation may happen when an XML file (or any other file) is referred by a certain opaque URI
+(or system identifier), like the following string:
+
+<blockquote class="mrg8">
+ <code>urn:oasis:names:tc:dita:xsd:xml.xsd:1.1</code>
+</blockquote>
+
+Such an URI does somehow identify the file. But, it provides no clue where that file can be found.
+How can it be processed then?
+<p class="mrg8">
+XML catalogs provide a solution for such problems. Basically, an XML catalog is a special XML file
+that maps some external identifiers or URIs to other URIs, which may provide more information on how
+the physical files can be found. Here is an example of XML catalog (click on the link):
+
+<blockquote class="mrg8">
+ <code><a href="http://docs.oasis-open.org/dita/v1.1/OS/schema/catalog.xml" target="_blank">http://docs.oasis-open.org/dita/v1.1/OS/schema/catalog.xml</a></code>
+</blockquote>
+
+Using XML catalog, you can specify that a file originally found
+by a remote URL should be actually taken from a certain location on your system
+or a certain opaque URI must be translated into another local file.
+<p class="mrg8">
+Of course, that idea is simple and probably was implemented many times!
+Indeed, several XML catalog formats exist now.
+One of them &#8211;
+<a href="http://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html" target="_blank">OASIS XML Catalogs v1.1</a>
+&#8211; is apparently the most prominent standard, which is used by <a href="about.html">DocFlex/XML</a>.
+
+<h3>
+  <a name="xml_catalogs.usage"></a>
+  How DocFlex/XML uses XML Catalogs
+</h3>
+
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  DocFlex/XML supports
+  <a href="http://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html" target="_blank">OASIS XML Catalogs v1.1</a>
+  using <code>'org.apache.xerces.util.XMLCatalogResolver'</code> class included in Apache Xerces2 (see
+  <a href="http://xerces.apache.org/xerces2-j/faq-xcatalogs.html" target="_blank">Apache Xerces2 | Using XML Catalogs</a>).
+  <p class="mrg8"></p>
+  When the locations of OASIS XML Catalog files are <a href="generator.html#gui.xml_catalogs">specified</a>,
+  they are passed to the instance of <code>XMLCatalogResolver</code>,
+  which is registered on the Apache XML parser used to read XML files.
+  After that, the DTD references specified in the XML files will be automatically resolved
+  according to the catalog mappings.
+  <p class="mrg8"></p>
+  What is more, the prepared instance of <code>XMLCatalogResolver</code> 
+  will be used also by the <code>'resolveURI()'</code> function available in
+  <a href="../general/data_processing_features.html#fq_expr">FlexQuery-expressions</a>.
+  This function plays a key role within the templates when loading and processing of the XML files referenced from other XML files.
+  (For instance, it is used in <a href="xsddoc/index.html">XSDDoc</a> templates to process 
+  XML schema <code>&lt;xs:import&gt</code> elements).
+</td></tr>
+</table>
+<p>
+DocFlex/XML uses <a href="#xml_catalogs">XML Catalogs</a> for two purposes:
+<ol class="mrg8">
+<li class="mrg8">
+  To resolve the locations of the XSD and DTD files that provide the datatype information for
+  <a href="design_templates.html#xmltype">XML Types</a>
+  -- the descriptions of specific xml-file data sources, on which particular template applications are based.
+  <p class="mrg8">
+  For further information about this, please see:
+  <ul class="mrg8">
+    <li>
+      <a href="design_templates.html#xmltype.xsd.catalogs">Designing Templates |
+      Defining XML Type | Assigning XML Schemas | <code>'xsd.catalogs'</code> property</a>
+    </li>
+    <li>
+      <a href="xsddoc/templates.html#xmltype">DocFlex/XML | XSDDoc | Templates | XML Type</a>
+    </li>
+    <li>
+      <a href="#xml_catalogs.default">Default XML Catalog</a>
+    </li>
+  </ul>
+</li>
+<li class="mrg8">
+  To resolve the locations of the XML and DTD files referenced from other data-source XML files processed
+  by the <a href="generator.html">generator</a>.
+  <p class="mrg8">
+  In this case, the necessary XML catalog(s) must be specified with 
+  -<a href="generator.html#xmlcatalog_option">xmlcatalog</a> option
+  on the generator <a href="generator.html#cmdline">command-line</a> or in the
+  <a href="generator.html#gui">generator GUI</a>
+  (see <a href="generator.html#gui.xml_catalogs">Assigning XML Catalog(s)</a>).
+</li>
+</ol>
+
+<h3>
+  <a name="xml_catalogs.default"></a>
+  Default XML Catalog
+</h3>
+
+The <i>default XML catalog</i> has been introduced (since DocFlex/XML v1.8.5),
+to substitute dynamically the canonical locations of some standard XML schemas
+(like <a href="http://www.w3.org/2001/XMLSchema.xsd" target="_blank" class="nowrap">http://www.w3.org/2001/XMLSchema.xsd</a>)
+found in Internet with their local copies stored in the DocFlex/XML resource directory:
+<blockquote class="mrg8">
+<code><i>{docflex-xml}</i>/lib/resources</code>
+</blockquote>
+This is needed because those schemas are used in the definitions of 
+<a href="design_templates.html#xmltype">XML Types</a>
+of some <a href="about.html#templates">template applications</a> supplied with DocFlex/XML
+(e.g. see <a href="xsddoc/templates.html#xmltype">XSDDoc | Templates | XML Type</a>).
+Therefore, they need to be loaded quickly and reliably.
+
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+Previously, those XML schemas were also held locally along with the <a href="xsddoc/index.html">XSDDoc</a>
+templates in the directory: <code><i>{docflex-xml}</i>/templates/XSDDoc/xmltype/</code>.
+But now, they have been moved in a more central location so as to reuse them in other template applications
+(e.g. <a href="wsdldoc/overview.html">WSDLDoc</a>)
+as well as during the generation of some <a target="_blank" href="http://www.filigris.com/docflex-xml/xsddoc/examples.php">examples</a>.
+</td></tr>
+</table>
+<p>
+
+The location of the default XML catalog is specified in <a href="#docflex.config">docflex.config</a>.
+By default, it is the file:
+<blockquote class="mrg8">
+<code><i>{docflex-xml}</i>/lib/resources/catalog.xml</code>
+</blockquote>
+
+However, that location can be overridden with
+-<a href="generator.html#defaultcatalog_option">defaultcatalog</a>
+option both on the 
+<a href="generator.html#cmdline">Generator</a> and
+<a href="design_templates.html#designer">Template Designer</a>
+command line.
+<p class="mrg8">
+The default XML catalog is not activated automatically whenever some XML catalogs might be used
+(see <a href="#xml_catalogs.usage">above</a>).
+Instead, like all other XML catalogs, it must be selected explicitly (e.g. with 
+-<a href="generator.html#xmlcatalog_option">xmlcatalog</a> option or
+<a href="design_templates.html#xmltype.xsd.catalogs">xsd.catalogs</a> property).
+The difference is that it can be specified not only with a physical URL or pathname (leading to the catalog file itself),
+but using the following abstract URI:
+<blockquote class="mrg8">
+<code><b>urn:docflex-com:xml:defaultcatalog</b></code>
+</blockquote>
+
+That URI is recognized by DocFlex/XML simply as the &ldquo;default XML catalog&rdquo;
+(whose actual file is specified as such in <a href="#docflex.config">docflex.config</a>).
+This makes possible to select the default XML catalog independently on where it is actually located.
+For example:
+<blockquote class="mrg8">
+<code>-xmlcatalog urn:docflex-com:xml:defaultcatalog</code>
+</blockquote>
+<p>
+<table cellspacing="0" cellpadding="5" CLASS="brdr1">
+<tr><td bgcolor="#F6F6F6" class="inset">
+  In fact, the alternative possibility to specify the default XML catalog file
+  using <code>-<a href="generator.html#defaultcatalog_option">defaultcatalog</a></code>
+  command line option is provided because the default XML catalog is extremely important for big
+  template applications like <a href="xsddoc/index.html">XSDDoc</a>.
+  <p class="mrg8"></p>
+  For instance, the "<a href="xsddoc/templates.html#xmltype">xsddoc</a>" XML Type,
+  on which XSDDoc <a href="xsddoc/templates.html#>templates</a> are based,
+  itself is based on the XML Schema for XML schemas:
+  <a href="http://www.w3.org/2001/XMLSchema.xsd" target="_blank" class="nowrap">http://www.w3.org/2001/XMLSchema.xsd</a>.
+  If that schema cannot be loaded, the XML Type won't be initialized
+  and <a href="xsddoc/index.html">XSDDoc</a> won't work; nor even can it be edited
+  in the Template Designer!
+  <p class="mrg8"></p>
+  So, if something is wrong with your DocFlex/XML main configuration file (<a href="#docflex.config">docflex.config</a>),
+  you may always use the 
+  -<a href="generator.html#defaultcatalog_option">defaultcatalog</a>
+  option as the last resort.
+</td></tr>
+</table>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

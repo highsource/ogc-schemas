@@ -1,0 +1,33 @@
+Specify whether to generate the <b><i>Fault</i></b> sections,
+which describe the <b>operation faults</b>.
+<p>
+There may be several such sections, each generated according to a certain <code>fault</code> element 
+found in the WSDL operation definition:
+<dl><dd>
+<code>wsdl:operation/wsdl:fault</code>
+</dd></dl>
+Note that each fault is identified by its <b>name</b> specified in the <code>name</code> attribute
+of the <code>fault</code> element. That name will be shown also in the <i>Fault</i> section heading.
+<p>
+In case of operation in WSDL <code>binding</code>, the full information about the fault is obtained both by the path:
+<dl><dd>
+<code>wsdl:binding/wsdl:operation/wsdl:output</code>
+</dd></dl>
+and from the corresponding <code>fault</code> element
+(in the corresponding operation definition) found in the <code>portType</code> assigned to that <code>binding</code>:
+<dl><dd>
+<code>wsdl:portType/wsdl:operation/wsdl:input</code>
+</dd></dl>
+Both <code>fault</code> elements in <code>binding</code> and <code>portType</code> are matched by
+the same name.
+
+<p>
+<b>Applies To:</b>
+<dl><dd>
+All operations (portType/binding)
+</dd></dl>
+
+<b>Nested Parameters:</b>
+<dl><dd>
+Control what is included in the <i>Fault</i> section.
+</dd></dl>

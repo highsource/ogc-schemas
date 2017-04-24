@@ -1,0 +1,78 @@
+This parameter allows you to customize the initial content of 
+the <b><i>Detail Frame</i></b>,
+which occupies the largest (right) part of the frameset:
+<p> 
+<img src="${this_dir}/../images/frameset_diagram.png">
+<p>
+(All the documentation informative content appears in this frame.
+Other frames are used mainly for navigation purpose.)
+
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"Overview Summary"</i>
+<blockquote style="margin-top:10pt">
+Load the first the <b><i>Overview Summary</i></b> page.
+<p style="margin-top:8pt">
+The generation of this page is controlled by:
+<ul>
+  <li><i>"Generate Details | Overview Summary"</i> parameter</li>
+  <li><i>"Details | Schema Overview"</i> parameter group</li>
+</ul>
+</blockquote>
+
+<i>"All Component Summary"</i>
+<blockquote style="margin-top:10pt">
+Load the first the <b><i>All Component Summary</i></b> page.
+<p style="margin-top:8pt">
+The generation of this page is controlled by:
+<ul>
+  <li><i>"Generate Details | All Component Summary"</i> parameter</li>
+  <li><i>"Details | All Component Summary"</i> parameter group</li>
+</ul>
+</blockquote>
+
+<i>"Namespace Overview"</i>
+<blockquote style="margin-top:10pt">
+This selection will cause loading the first some of the <b><i>Namespace Overview</i></b> pages.
+<p style="margin-top:8pt">
+The documentation may contain several such pages -- a separate page for each namespace.
+Among them, the one will be loaded that was generated the first.
+This is controlled by the <i>"Generate Details | Sorting | Namespaces"</i> parameter.
+<p style="margin-top:8pt">
+The generation of <i>Namespace Overview</i> pages is controlled by:
+<ul>
+  <li><i>"Generate Details | Namespace Overview"</i> parameter</li>
+  <li><i>"Details | Namespace Overview"</i> parameter group</li>
+</ul>
+</blockquote>
+
+<i>"Schema Overview"</i>
+<blockquote style="margin-top:10pt">
+This selection will cause loading the first some of the <b><i>Schema Overview</i></b> pages.
+<p style="margin-top:8pt">
+The documentation may contain several such pages -- a separate page for each XML schema.
+Among such pages, the one will be loaded that was generated the first.
+This is controlled by the <i>"Generate Details | Sorting | Schemas"</i> parameter.
+<p style="margin-top:8pt">
+The generation of <i>Schema Overview</i> pages is controlled by:
+<ul>
+  <li><i>"Generate Details | Schema Overview"</i> parameter</li>
+  <li><i>"Details | Schema Overview"</i> parameter group</li>
+</ul>
+</blockquote>
+
+<b>Note:</b>
+<blockquote>
+When the specified page is not available (has not been generated), 
+by default, the initially loaded document is chosen according to the 
+following priority list:
+<ol>
+<li><i>Overview Summary</i></li>
+<li><i>All Component Summary</i></li>
+<li><i>Namespace Overview</i></li>
+<li><i>Schema Overview</i></li>
+<li><i>Component Documentation</i></li>
+<li><i>Namespace Bindings Report</i></li>
+</ol>
+</blockquote>

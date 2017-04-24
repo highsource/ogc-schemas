@@ -1,0 +1,35 @@
+Specify whether to document <b><code>'block'</code></b> attribute of the component.
+<p>
+<b>Note:</b> For global elements and complex types, when <code>block</code> attribute is not specified,
+its default value is defined by the <b><code>'blockDefault'</code></b> attribute of the parent
+<b><code>&lt;xs:schema&gt;</code></b>.
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"any"</i>
+<dl><dd>
+Document <code>block</code> attribute in any case both for the original and default value.
+</dd></dl>
+
+<i>"non-default only"</i>
+<dl><dd>
+Document <code>block</code> attribute only in the case when it is specified on this component.
+(No default value will be documented.)
+</dd></dl>
+
+<i>"none"</i>
+<dl><dd>
+Do not document <code>block</code> attribute.
+</dd></dl>
+
+<p>
+<b>Applies To:</b>
+<ul>
+<li>Global & Local Elements</li>
+<li>Complex Types</li>
+</ul>
+
+<b>Nested Parameters:</b>
+<dl><dd>
+Specify how to document the <code>'block'</code> attribute value.
+</dd></dl>

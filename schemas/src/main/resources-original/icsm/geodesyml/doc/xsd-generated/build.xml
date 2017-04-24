@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<project basedir="." name="GeodesyML HTML Documentation">
+    <target name="html">
+        <property name="DFH" value="./docflex-xml-1.9.5"/>
+
+        <property name="CP"
+                value="${DFH}/lib/xml-apis.jar;${DFH}/lib/xercesImpl.jar;${DFH}/lib/resolver.jar;${DFH}/lib/docflex-xml.jar"/>
+
+        <java classname="com.docflex.xml.Generator" classpath="${CP}" fork="true" failonerror="true" maxmemory="512m"
+                jvmargs="-Dhttp.proxyHost=sun-web-intdev.ga.gov.au -Dhttp.proxyPort=2710">
+
+            <arg value="-template"/>
+            <arg value="${DFH}/templates/XSDDoc/FramedDoc.tpl"/>
+            <arg value="-p:docTitle"/>
+            <arg value="GeodesyML XML Schema"/>
+            <arg value="-format"/>
+            <arg value="HTML"/>
+            <arg value="-d"/>
+            <arg value="html"/>
+            <arg value="-nodialog"/>
+            <arg value="-launchviewer=false"/>
+            <arg value="../../schemas/geodesyML.xsd"/>
+        </java>
+    </target>
+</project>

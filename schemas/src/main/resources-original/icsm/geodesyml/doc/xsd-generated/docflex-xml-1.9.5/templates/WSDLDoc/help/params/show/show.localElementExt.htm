@@ -1,0 +1,48 @@
+Specify whether to generate extended names of local elements.
+<p style="margin:0">
+<table border="1">
+<tr><td><font face="Dialog" size="-1">
+Local elements are the locally defined element components.
+For more information, please see <i>"About Local Elements"</i> below.
+</font>
+</td></tr>
+</table>
+<p>
+The extended name of a local element is made of its normal name extended
+with some short info about the possible element location or its type.
+For example:
+<dl><dd>
+<code>
+configuration (in plugin in plugins in reporting)<br>
+xs:complexType (type xs:localComplexType)
+</code>
+</dd></dl>
+here in the brackets are the local element name extensions.
+<p>
+The name extension is needed to distinguish that element in the documentation from other local elements,
+which share the same XML name, however have different content.
+<p>
+The name extensions may be not necessary for local element with unique names.
+For instance, some XML schemas are designed (or generated) so that almost all element components
+are declared locally, except only the root element. At that, all element names may be unique.
+So, the name extensions are not really needed and will only overload the documentation.
+<p>
+<u>Possible Choices</u>:
+<p>
+<i>"always"</i>
+<dl><dd>
+Generate name extensions for all local elements.
+</dd></dl>
+
+<i>"for repeating names only"</i>
+<dl><dd>
+Generate name extension only for local elements with non-unique names
+(i.e. whose XML names are shared by any other element components).
+</dd></dl>
+
+<i>"never"</i>
+<dl><dd>
+Do not generate the name extensions.
+</dd></dl>
+
+${include ../../refs/local_elements.htm}

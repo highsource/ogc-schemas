@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:xml-gov-au:icsm:egeodesy:0.3" xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.3" elementFormDefault="qualified" version="0.3" xml:lang="en">
+    <annotation>
+        <documentation>eGeodesy schema implementation based on GML - draft. Copyright (c) 2015-2016 Commonwealth of Australia, on behalf of the Intergovernmental Committee on Surveying and Mapping. All rights reserved.</documentation>
+    </annotation>
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <include schemaLocation="document.xsd"/>
+    <!--  -->
+    <group name="RemarksGroup">
+        <annotation>
+            <documentation>A convenience group. This allows an application schema developer to include remarks and associated documents in a standard fashion.</documentation>
+        </annotation>
+        <sequence>
+            <element name="remarks" type="string" minOccurs="0"/>
+            <element name="associatedDocument" type="geo:DocumentPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="extension" type="anyType" minOccurs="0"/>
+        </sequence>
+    </group>
+    <!-- Change tracking group -->
+    <group name="ChangeTracking">
+        <annotation>
+            <documentation>A convenience group to log changes made to each meta-data block.</documentation>
+        </annotation>
+        <sequence>
+            <sequence>
+                <element name="dateInserted" type="gml:TimePositionType"/>
+                <element name="dateDeleted" type="gml:TimePositionType" minOccurs="0"/>
+                <element name="deletedReason" type="string" minOccurs="0"/>
+            </sequence>
+        </sequence>
+    </group>
+    <!--  -->
+    <attributeGroup name="RequiredSRSReferenceGroup">
+        <annotation>
+            <documentation>The attribute group SRSReferenceGroup is a required reference to the CRS used by this geometry, with optional additional information to simplify the processing of the coordinates when a more complete definition of the CRS is not needed.
+                In general the attribute srsName points to a CRS instance of gml:AbstractCoordinateReferenceSystem. For well-known references it is not required that the CRS description exists at the location the URI points to. 
+                If no srsName attribute is given, the CRS shall be specified as part of the larger context this geometry element is part of.</documentation>
+        </annotation>
+        <attribute name="srsName" type="anyURI" use="required"/>
+        <attribute name="srsDimension" type="positiveInteger"/>
+        <attributeGroup ref="gml:SRSInformationGroup"/>
+    </attributeGroup>
+    <!--  -->
+    <group name="TimeSliceProperties">
+        <annotation>
+            <documentation/>
+        </annotation>
+        <sequence>
+            <element ref="gml:validTime"/>
+            <element ref="gml:dataSource" minOccurs="0"/>
+        </sequence>
+    </group>
+    <!--  -->
+    <complexType name="DynamicFeatureType">
+        <complexContent>
+            <restriction base="gml:DynamicFeatureType">
+                <sequence>
+                    <sequence>
+                        <group ref="gml:StandardObjectProperties"/>
+                    </sequence>
+                    <sequence>
+                        <element ref="gml:boundedBy" minOccurs="0"/>
+                        <element ref="gml:location" minOccurs="0"/>
+                    </sequence>
+                    <sequence>
+                        <element ref="gml:validTime" minOccurs="0"/>
+                        <element ref="gml:dataSource" minOccurs="0"/>
+                        <element ref="gml:dataSourceReference" minOccurs="0"/>
+                    </sequence>
+                </sequence>
+            </restriction>
+        </complexContent>
+    </complexType>
+    <!--  -->
+    <element name="DynamicFeature" type="geo:DynamicFeatureType" abstract="true" substitutionGroup="gml:AbstractFeature">
+        <annotation>
+            <documentation>Restriction of the gml:DynamicFeatureType. Removes gml:history and relies upon the extending type to implement a history element that restricts child types to those allowed by the class model.</documentation>
+        </annotation>
+    </element>
+    <!--  -->
+    <complexType name="InstrumentPropertyType">
+        <sequence minOccurs="0">
+            <element ref="geo:Instrument"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    </complexType>
+    <!--  -->
+    <element name="AbstractTimeSlice" type="geo:AbstractTimeSliceType" abstract="true" substitutionGroup="gml:AbstractFeature">
+        <annotation>
+            <documentation>Mimics the gml:AbstractTimeSlice element but extends gml:AbstractFeatureType instead of gml:AbstractGMLType. The purpose of making this distinction is to ensure better access to a wider variety of WFS solutions that use the gml:AbstractFeature/gml:Location element for visualisation. 
+            </documentation>
+        </annotation>
+    </element>
+    <!--  -->
+    <complexType name="AbstractTimeSliceType" abstract="true">
+        <complexContent>
+            <extension base="gml:AbstractFeatureType">
+                <sequence>
+                    <group ref="geo:TimeSliceProperties"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <!--  -->
+    <element name="Instrument" type="geo:InstrumentType" substitutionGroup="gml:AbstractGML"/>
+    <!--  -->
+    <complexType name="InstrumentType">
+        <complexContent>
+            <extension base="gml:AbstractGMLType">
+                <sequence>
+                    <element name="type" type="gml:CodeType" minOccurs="0"/>
+                    <group ref="geo:RemarksGroup"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <!--  -->
+</schema>
