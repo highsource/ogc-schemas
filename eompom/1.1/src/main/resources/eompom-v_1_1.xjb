@@ -3,7 +3,6 @@
 	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
 	jaxb:extensionBindingPrefixes="xjc">
 
-http://www.opengis.net/atm/2.1
 	<jaxb:bindings schemaLocation="http://schemas.opengis.net/eompom/1.1/xsd/eop.xsd" node="/xs:schema">
 		<jaxb:schemaBindings>
 			<jaxb:package name="net.opengis.eompom.eop.v_1_1"/>
