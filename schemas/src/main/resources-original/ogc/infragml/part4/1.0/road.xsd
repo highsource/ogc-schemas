@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 rel. 2 (http://www.altova.com) by Linda Peduto (Bentley Systems Inc) -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:li="http://www.opengis.net/infragml/core/1.0" xmlns:lilf="http://www.opengis.net/infragml/landfeature/1.0" xmlns:lif="http://www.opengis.net/infragml/facility/1.0" xmlns:lia="http://www.opengis.net/infragml/alignment/1.0" xmlns:lifr="http://www.opengis.net/infragml/road/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmllr="http://www.opengis.net/gml/3.3/lr" xmlns:gmllro="http://www.opengis.net/gml/3.3/lro" xmlns:tin="http://www.opengis.net/gml/3.3/tin" targetNamespace="http://www.opengis.net/infragml/road/1.0" elementFormDefault="qualified" version="1.0.0">
+	<annotation>
+		<documentation>
+			InfraGML is an OGC Standard. 
+			Copyright (c) 2017  Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/infragml/core/1.0" schemaLocation="http://schemas.opengis.net/infragml/part0/1.0/core.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/landfeature/1.0" schemaLocation="http://schemas.opengis.net/infragml/part1/1.0/land-feature.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/facility/1.0" schemaLocation="http://schemas.opengis.net/infragml/part2/1.0/facility.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/alignment/1.0" schemaLocation="http://schemas.opengis.net/infragml/part3/1.0/alignment.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lr" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRef.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/tin" schemaLocation="http://schemas.opengis.net/gml/3.3/tin.xsd"/>
+	<!--XML Schema document created by ShapeChange - http://shapechange.net/
+		 Modified by Paul Scarponcini (Bentley Systems Inc.) 
+	-->
+	<!-- 410: fixed striping  .-->
+	<!--                                                                                                                         	-->
+	<!--     Road                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="Road" type="lifr:RoadType" substitutionGroup="lif:FacilityPart">
+		<annotation>
+			<documentation>that part of a Project that relates to a single alternative for a single Road part of a project for a single Road part of a Facility.  Each alternative is a separate Road ProjectPart.  An alternative may be a design alternative or a separate phase of construction.</documentation>
+		</annotation>
+	</element>
+	<complexType name="RoadType">
+		<complexContent>
+			<extension base="lif:FacilityPartType">
+				<sequence>
+					<element name="roadID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="approximateWidth" type="gml:LengthType" minOccurs="0"/>
+					<choice minOccurs="0" maxOccurs="unbounded">
+						<element name="element" type="lifr:RoadElementPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+						<element name="roadElementSet" type="lifr:RoadElementSetPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+						<element name="stringLine" type="lifr:StringLinePropertyType" minOccurs="0" maxOccurs="unbounded"/>
+						<element name="stringLineSet" type="lifr:StringLineSetPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+						<element name="surface" type="lifr:SurfacePropertyType" minOccurs="0" maxOccurs="unbounded"/>
+						<element name="surfaceSet" type="lifr:SurfaceSetPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					</choice>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="RoadPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifr:Road"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     RoadElement                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="RoadElement" type="lifr:RoadElementType" substitutionGroup="lif:PhysicalElement"/>
+	<complexType name="RoadElementType">
+		<complexContent>
+			<extension base="lif:PhysicalElementType">
+				<sequence>
+					<element name="roadElementID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="roadElementType" type="gml:ReferenceType"/>
+					<element name="material" type="string" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="RoadElementPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifr:RoadElement"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     RoadElementSet                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="RoadElementSet" type="lifr:RoadElementSetType" substitutionGroup="li:Set"/>
+	<complexType name="RoadElementSetType">
+		<complexContent>
+			<extension base="li:SetType">
+				<sequence>
+					<element name="roadElementSetID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="element" type="lifr:RoadElementPropertyType" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="RoadElementSetPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifr:RoadElementSet"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     StringLine                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="StringLine" type="lifr:StringLineType" substitutionGroup="li:AbstractData">
+		<annotation>
+			<documentation>3D linestring representing some cross section point (e.g., edge of pavement) in the 
+				longitudinal direction
+			</documentation>
+		</annotation>
+	</element>
+	<complexType name="StringLineType">
+		<complexContent>
+			<extension base="li:AbstractDataType">
+				<sequence>
+					<element name="stringLineID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="geometry">
+						<annotation>
+							<documentation>3D curve, as a LineString</documentation>
+						</annotation>
+						<complexType>
+							<sequence>
+								<element name="LineString" type="gml:LineStringType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="alternativeGeometry" type="lia:AlignmentCurvePropertyType" minOccurs="0">
+						<annotation>
+							<documentation>alternative 3D curve geometry as an AlignmentCurve</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="StringLinePropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifr:StringLine"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     StringLineSet                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="StringLineSet" type="lifr:StringLineSetType" substitutionGroup="li:Set"/>
+	<complexType name="StringLineSetType">
+		<complexContent>
+			<extension base="li:SetType">
+				<sequence>
+					<element name="stringLineSetID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="stringLine" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lifr:StringLine"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="StringLineSetPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifr:StringLineSet"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Surface                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="Surface" type="lifr:SurfaceType" substitutionGroup="li:AbstractData"/>
+	<complexType name="SurfaceType">
+		<complexContent>
+			<extension base="li:AbstractDataType">
+				<sequence>
+					<element name="surfaceID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="geometry">
+						<complexType>
+							<sequence>
+								<element name="TIN" type="tin:TINType"/>
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SurfacePropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifr:Surface"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     SurfaceSet                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="SurfaceSet" type="lifr:SurfaceSetType" substitutionGroup="li:Set"/>
+	<complexType name="SurfaceSetType">
+		<complexContent>
+			<extension base="li:SetType">
+				<sequence>
+					<element name="surfaceSetID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="surface" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lifr:Surface"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SurfaceSetPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifr:SurfaceSet"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+</schema>

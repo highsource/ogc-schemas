@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:gwml2at="http://www.opengis.net/gwml-aquifertest/2.2" targetNamespace="http://www.opengis.net/gwml-aquifertest/2.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0">
+	<annotation>
+		<documentation>Describes aquifer tests, such as pump test, tracing or any other procedures aimed at estimating groundwater or aquifer properties.
+
+        OGC WaterML 2.0 Part 4 - GroundWaterML 2 is an OGC Standard.
+        Copyright (c) 2016 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/samplingSpatial/2.0" schemaLocation="http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd"/>
+	<element name="GW_AquiferTest" type="gwml2at:GW_AquiferTestType" substitutionGroup="sams:SF_SpatialSamplingFeature">
+		<annotation>
+			<documentation>Signature class representing a aquifer test (or pump test). It describes the inputs, outputs, and methods associated with such a test.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_AquiferTestType">
+		<complexContent>
+			<extension base="sams:SF_SpatialSamplingFeatureType"/>
+		</complexContent>
+	</complexType>
+	<complexType name="GW_AquiferTestPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2at:GW_AquiferTest"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<complexType name="GW_AquiferTestPropertyByValueType">
+		<sequence>
+			<element ref="gwml2at:GW_AquiferTest"/>
+		</sequence>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+</schema>

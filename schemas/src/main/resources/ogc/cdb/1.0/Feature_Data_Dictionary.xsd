@@ -1,0 +1,177 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="xs3p.xsl"?>
+<xs:schema
+  version="1.1"
+  attributeFormDefault="unqualified" 
+  elementFormDefault="qualified" 
+  targetNamespace="http://www.opengis.net/cdb/1.0/Feature_Data_Dictionary"
+  xmlns:cdb="http://www.opengis.net/cdb/1.0/Feature_Data_Dictionary"
+  xmlns="http://www.opengis.net/cdb/1.0/Feature_Data_Dictionary"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      This XML schema defines the format of the CDB Feature Data Dictionary.
+      CDB is an OGC Standard.
+      Copyright (c) 2016 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:element  name="Feature_Data_Dictionary">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This element represents the CDB Feature Data Dictionary root element.
+        It has a version number and the list of all the categories.
+      </xs:documentation>
+    </xs:annotation>
+
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Category" type="Category" maxOccurs="unbounded">
+          <xs:unique name="Unique_Subcategory_Codes">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">
+                Validate that all subcategory codes are unique.
+              </xs:documentation>
+            </xs:annotation>
+            <xs:selector xpath="cdb:Subcategory" />
+            <xs:field xpath ="@code" />
+          </xs:unique>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="version" type="Version" use="required" />
+    </xs:complexType>
+
+    <xs:unique name="Unique_Category_Codes">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          Validate that all category codes are unique.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:selector xpath="cdb:Category" />
+      <xs:field xpath ="@code" />
+    </xs:unique>
+  </xs:element>
+
+  <xs:complexType name="Category">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This element represents a Category. It has a code attribute, a label and a list of subcategories.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Label" type="Label" />
+      <xs:element name="Subcategory" type="Subcategory" maxOccurs="unbounded">
+        <xs:unique name="Unique_Feature_Types">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Validate that all feature types are unique.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:selector xpath="cdb:Feature_Type" />
+          <xs:field xpath ="@code" />
+        </xs:unique>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="code" type="AlphaCode" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="Subcategory">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This element represents a Subcategory. It has a code attribute, a label and a list of feature types.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Label" type="Label" />
+      <xs:element name="Feature_Type" type="Feature_Type" minOccurs="0" maxOccurs="unbounded">
+        <xs:unique name="Unique_Subcodes">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Validate that all subcodes are unique.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:selector xpath="cdb:Subcode" />
+          <xs:field xpath ="@code" />
+        </xs:unique>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="code" type="AlphaCode" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="Feature_Type">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This element represents a Feature_Type. It has a code attribute, a label and a list of subcodes.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Label" type="Label" />
+      <xs:element name="Subcode" type="Subcode" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="code" type="DigitCode" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="Subcode">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This element represents a Subcode. It has a code attribute, a label, a concept definition, a recommended dataset component and an origin.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Label" type="Label" />
+      <xs:element name="Concept_Definition" type="xs:token" />
+      <xs:element name="Recommended_Dataset_Component" type="xs:token" maxOccurs="unbounded" />
+      <xs:element name="Origin" type="xs:token" />
+      <xs:element name="Priority" type="xs:decimal" minOccurs="0" default="50"/>
+    </xs:sequence>
+    <xs:attribute name="code" type="DigitCode" use="required" />
+  </xs:complexType>
+
+  <xs:simpleType name="AlphaCode">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This attribute represents the code of the category or subcategory.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="DigitCode">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This attribute represents the feature code and subcode.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9][0-9][0-9]"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Label">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This attribute represents the Label. It is a meaningful name to the code attribute.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([A-Za-z0-9_-])+"/>
+      <xs:maxLength value="32"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Version">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This attribute represents the version number of this file. It has two components: major.minor.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([1-9]([0-9])*[.]([0-9])+)"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

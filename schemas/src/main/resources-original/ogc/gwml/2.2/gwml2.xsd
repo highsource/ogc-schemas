@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gwml2comp="http://www.opengis.net/gwml/2.2" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gwml2c="http://www.opengis.net/gwml-constituent/2.2" xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" xmlns:gwml2at="http://www.opengis.net/gwml-aquifertest/2.2" xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" targetNamespace="http://www.opengis.net/gwml/2.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0">
+	<annotation>
+		<documentation>This is a summary schema to import all related application schemas for GWML v 2.2.0
+
+        OGC WaterML 2.0 Part 4 - GroundWaterML 2 is an OGC Standard.
+        Copyright (c) 2016 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/gwml-constituent/2.2" schemaLocation="http://schemas.opengis.net/gwml/2.2/gwml2-constituent.xsd"/>
+	<import namespace="http://www.opengis.net/gwml-aquifertest/2.2" schemaLocation="http://schemas.opengis.net/gwml/2.2/gwml2-aquifertest.xsd"/>
+	<import namespace="http://www.opengis.net/gwml-flow/2.2" schemaLocation="http://schemas.opengis.net/gwml/2.2/gwml2-flow.xsd"/>
+	<import namespace="http://www.opengis.net/gwml-well/2.2" schemaLocation="http://schemas.opengis.net/gwml/2.2/gwml2-well.xsd"/>
+	<import namespace="http://www.opengis.net/gwml-wellconstruction/2.2" schemaLocation="http://schemas.opengis.net/gwml/2.2/gwml2-wellconstruction.xsd"/>
+	<import namespace="http://www.opengis.net/gwml-main/2.2" schemaLocation="http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd"/>
+</schema>

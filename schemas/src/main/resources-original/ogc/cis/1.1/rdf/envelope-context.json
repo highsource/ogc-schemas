@@ -1,0 +1,14 @@
+{
+	"@context":
+	{
+		"EnvelopeByAxisType": "cis:EnvelopeByAxisType",
+		"srsName": {"@id":"cis:srsName", "@type": "@id"},
+		"axisLabels": {"@id":"cis:axisLabels", "@container": "@list"},
+		"axis": "cis:axis",
+		"AxisExtendType": "cis:AxisExtendType",
+		"axisLabel": "cis:axisLabel",
+		"lowerBound": "cis:lowerBound",
+		"upperBound": "cis:upperBound",
+		"uomLabel": "cis:uomLabel"
+	}	
+}

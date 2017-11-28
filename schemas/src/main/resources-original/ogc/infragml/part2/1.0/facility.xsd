@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:li="http://www.opengis.net/infragml/core/1.0" xmlns:lif="http://www.opengis.net/infragml/facility/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmllr="http://www.opengis.net/gml/3.3/lr" xmlns:gmllro="http://www.opengis.net/gml/3.3/lro" targetNamespace="http://www.opengis.net/infragml/facility/1.0" elementFormDefault="qualified" version="1.0.0">
+	<annotation>
+		<documentation>
+			InfraGML is an OGC Standard. 
+			Copyright (c) 2017  Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/infragml/core/1.0" schemaLocation="http://schemas.opengis.net/infragml/part0/1.0/core.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lr" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRef.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lro" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRefOffset.xsd"/>
+	<!--XML Schema document created by ShapeChange - http://shapechange.net/
+		 Modified by Paul Scarponcini (Bentley Systems Inc.)  -->
+	<!-- 410: fixed striping  .-->
+	<!--                                                                                                                         	-->
+	<!--     Building                                                                                                         -->
+	<!--                                                                                                                         	-->
+	<element name="Building" type="lif:BuildingType" substitutionGroup="lif:FacilityPart"/>
+	<complexType name="BuildingType">
+		<complexContent>
+			<extension base="lif:FacilityPartType">
+				<sequence/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BuildingPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lif:Building"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Facility                                                                                                          -->
+	<!--                                                                                                                         	-->
+	<element name="Facility" type="lif:FacilityType" substitutionGroup="li:Feature">
+		<annotation>
+			<documentation>Facilities include buildings and civil engineering works and their associated siteworks.  Civil engineering works, or infrastructure facilities, are construction works comprising a structure, such as a dam, bridge, road, railway, runway, utilities, pipeline, or sewerage system, or are the result of operations such as dredging, earthwork, and geotechnical processes.
+A facility has a life cycle, including planning, design, construction, maintenance, operation, and removal phases  The design and construction phases are typically performed as part of a project.  There may be multiple such projects during the life cycle of the facility to enable phased construction and incremental improvement.</documentation>
+		</annotation>
+	</element>
+	<complexType name="FacilityType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="facilityID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="type" type="string"/>
+					<element name="status" type="gml:ReferenceType"/>
+					<element name="footprint" type="gml:SurfacePropertyType" minOccurs="0"/>
+					<element name="part" type="lif:FacilityPartPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="FacilityPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lif:Facility"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     FacilityPart                                                                                                   -->
+	<!--                                                                                                                         	-->
+	<element name="FacilityPart" type="lif:FacilityPartType" substitutionGroup="li:Feature">
+		<annotation>
+			<documentation>Part of a Land and Infrastructure facility, such as a road or bridge.  A facility has a life cycle, including planning, design, construction, maintenance, operation, and removal phases  The design and construction phases are typically performed as part of a project.  There may be multiple such projects during the life cycle of the facility to enable phased construction and incremental improvement.</documentation>
+		</annotation>
+	</element>
+	<complexType name="FacilityPartType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="facilityPartID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="type" type="gml:ReferenceType"/>
+					<element name="status" type="gml:ReferenceType"/>
+					<element name="footprint" type="gml:SurfacePropertyType" minOccurs="0"/>
+					<element name="alternative" type="string" minOccurs="0"/>
+					<element name="relationship" type="lif:FacilityPartRelationshipPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="FacilityPartPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lif:FacilityPart"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     FacilityPartRelationship                                                                               -->
+	<!--                                                                                                                         	-->
+	<element name="FacilityPartRelationship" type="lif:FacilityPartRelationshipType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="FacilityPartRelationshipType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="relationship" type="string"/>
+					<element name="description" type="string"/>
+					<element name="facilityPart" type="lif:FacilityPartPropertyType" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="FacilityPartRelationshipPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lif:FacilityPartRelationship"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     PhysicalElement                                                                                          -->
+	<!--                                                                                                                         	-->
+	<element name="PhysicalElement" type="lif:PhysicalElementType" substitutionGroup="li:Feature"/>
+	<complexType name="PhysicalElementType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="partOf" type="lif:PhysicalElementPropertyType" minOccurs="0">
+						<annotation>
+							<appinfo>
+								<reversePropertyName xmlns="http://www.opengis.net/gml/3.2">lif:part
+								</reversePropertyName>
+							</appinfo>
+						</annotation>
+					</element>
+					<element name="part" type="lif:PhysicalElementPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<appinfo>
+								<reversePropertyName xmlns="http://www.opengis.net/gml/3.2">lif:partOf
+								</reversePropertyName>
+							</appinfo>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PhysicalElementPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lif:PhysicalElement"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+</schema>

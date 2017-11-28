@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:li="http://www.opengis.net/infragml/core/1.0" xmlns:lis="http://www.opengis.net/infragml/survey/1.0" xmlns:lisr="http://www.opengis.net/infragml/surveyresults/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.opengis.net/infragml/surveyresults/1.0" elementFormDefault="qualified" version="1.0.0">
+	<annotation>
+		<documentation>
+			InfraGML is an OGC Standard. 
+			Copyright (c) 2017  Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/infragml/core/1.0" schemaLocation="http://schemas.opengis.net/infragml/part0/1.0/core.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/survey/1.0" schemaLocation="http://schemas.opengis.net/infragml/part6/1.0/survey.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<!--XML Schema document created by ShapeChange - http://shapechange.net/
+		Modified by Hans-Christoph Gruler(Leica Geosystems AG) October 19, 2016
+		Modified by Hans-Christoph Gruler(Leica Geosystems AG) November 02, 2016-
+		Changes in 1102 version: 1) remove dependency from OM and use gml:observation
+		  1.	Uses gml:observation instead of OM-Observations
+		  2. therefore model sampling here instead of import  standard
+		Modified by Hans-Christoph Gruler(Leica Geosystems AG) November 16, 2016-
+		make type optional in the base class
+        Modified by Hans-Christoph Gruler(Leica Geosystems AG) February 28, 2017
+        1. Remove the dependency to observations
+        2. Make sampling in a separate requirement class
+-->
+	<!-- 410: fixed striping  .-->
+	<!--                                                                                                                         	-->
+	<!--    Average                                                                                                           -->
+	<!--                                                                                                                         	-->
+	<element name="Average" type="lisr:AverageType" substitutionGroup="lisr:SurveyResult">
+		<annotation>
+			<documentation>Average is represents multiple measurements on the same target location. Averaging may be required for determine the geometry of the feature of when observation are made at different times for monitoring the object of interest</documentation>
+		</annotation>
+	</element>
+	<complexType name="AverageType">
+		<complexContent>
+			<extension base="lisr:SurveyResultType">
+				<sequence>
+					<element name="averagePoint" type="lisr:AveragePointPropertyType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AveragePropertyType">
+		<sequence minOccurs="0">
+			<element ref="lisr:Average"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    AveragePoint                                                                                                    -->
+	<!--                                                                                                                         	-->
+	<element name="AveragePoint" type="lisr:AveragePointType" substitutionGroup="gml:AbstractGML">
+		<annotation>
+			<documentation>AveragePoint represents the geometry of the feature of interest determined with multiple measurements on the same target location.</documentation>
+		</annotation>
+	</element>
+	<complexType name="AveragePointType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="geometry" type="gml:PointPropertyType"/>
+					<element name="quality" type="lisr:PointQualityPropertyType" minOccurs="0"/>
+					<element name="targetPoint" minOccurs="2" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lisr:TargetPoint"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AveragePointPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lisr:AveragePoint"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    DesignPoint                                                                                                      -->
+	<!--                                                                                                                         	-->
+	<element name="DesignPoint" type="lisr:DesignPointType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="DesignPointType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="geometry" type="gml:PointPropertyType"/>
+					<element name="quality" type="lisr:PointQualityPropertyType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="DesignPointPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lisr:DesignPoint"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    Image                                                                                                              -->
+	<!--                                                                                                                         	-->
+	<element name="Image" type="lisr:ImageType" substitutionGroup="lisr:SurveyResult"/>
+	<complexType name="ImageType">
+		<complexContent>
+			<extension base="lisr:SurveyResultType">
+				<sequence>
+					<element name="file" minOccurs="0">
+						<complexType>
+							<sequence>
+								<element name="File" type="gml:FileType"/>
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ImagePropertyType">
+		<sequence minOccurs="0">
+			<element ref="lisr:Image"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    PointCloud                                                                                                        -->
+	<!--                                                                                                                         	-->
+	<element name="PointCloud" type="lisr:PointCloudType" substitutionGroup="lisr:SurveyResult"/>
+	<complexType name="PointCloudType">
+		<complexContent>
+			<extension base="lisr:SurveyResultType">
+				<sequence>
+					<element name="file" minOccurs="0">
+						<complexType>
+							<sequence>
+								<element name="File" type="gml:FileType"/>
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PointCloudPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lisr:PointCloud"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    PointQuality                                                                                                     -->
+	<!--                                                                                                                         	-->
+	<element name="PointQuality" type="lisr:PointQualityType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="PointQualityType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="meanError" type="gml:LengthType"/>
+					<element name="qxx" type="double"/>
+					<element name="qxy" type="double"/>
+					<element name="qxz" type="double"/>
+					<element name="qyy" type="double"/>
+					<element name="qyz" type="double"/>
+					<element name="qzz" type="double"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PointQualityPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lisr:PointQuality"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    Stakeout                                                                                                          -->
+	<!--                                                                                                                         	-->
+	<element name="Stakeout" type="lisr:StakeoutType" substitutionGroup="lisr:SurveyResult">
+		<annotation>
+			<documentation>Stakeout results contains the differences between the design and the collected observations</documentation>
+		</annotation>
+	</element>
+	<complexType name="StakeoutType">
+		<complexContent>
+			<extension base="lisr:SurveyResultType">
+				<sequence>
+					<element name="diffNorthing" type="gml:LengthType"/>
+					<element name="diffEasting" type="gml:LengthType"/>
+					<element name="diffElevation" type="gml:LengthType"/>
+					<element name="targetPoint">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lisr:TargetPoint"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="designPoint" type="lisr:DesignPointPropertyType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="StakeoutPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lisr:Stakeout"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    String                                                                                                               -->
+	<!--                                                                                                                         	-->
+	<element name="String" type="lisr:StringType" substitutionGroup="lisr:SurveyResult">
+		<annotation>
+			<documentation>Boundery String related to ISO 19152</documentation>
+		</annotation>
+	</element>
+	<complexType name="StringType">
+		<complexContent>
+			<extension base="lisr:SurveyResultType">
+				<sequence>
+					<element name="targetPoint" minOccurs="2" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lisr:TargetPoint"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="StringPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lisr:String"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    SurveyResult                                                                                                    -->
+	<!--                                                                                                                         	-->
+	<element name="SurveyResult" type="lisr:SurveyResultType" substitutionGroup="li:Feature">
+		<annotation>
+			<documentation>SurveyResult is an estimate of the value  of a geometry or property of the feature of interest.</documentation>
+		</annotation>
+	</element>
+	<complexType name="SurveyResultType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="surveyResultID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="type" type="gml:ReferenceType" minOccurs="0"/>
+					<element name="featureOfInterest" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="li:Feature"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SurveyResultPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lisr:SurveyResult"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    TargetPoint                                                                                                      -->
+	<!--                                                                                                                         	-->
+	<element name="TargetPoint" type="lisr:TargetPointType" substitutionGroup="lisr:SurveyResult">
+		<annotation>
+			<documentation>TargetPoint is the value  of a geometry of the feature of interest that can estimated from the raw observations.</documentation>
+		</annotation>
+	</element>
+	<complexType name="TargetPointType">
+		<complexContent>
+			<extension base="lisr:SurveyResultType">
+				<sequence>
+					<element name="geometry" type="gml:PointPropertyType"/>
+					<element name="isComplete" type="boolean"/>
+					<element name="quality" type="lisr:PointQualityPropertyType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="TargetPointPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lisr:TargetPoint"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    UserDefined                                                                                                      -->
+	<!--                                                                                                                         	-->
+	<element name="UserDefined" type="lisr:UserDefinedType" substitutionGroup="lisr:SurveyResult"/>
+	<complexType name="UserDefinedType">
+		<complexContent>
+			<extension base="lisr:SurveyResultType">
+				<sequence>
+					<element name="name" type="string" minOccurs="0"/>
+					<element name="description" type="string" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="UserDefinedPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lisr:UserDefined"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    Value                                                                                                               -->
+	<!--                                                                                                                         	-->
+	<element name="Value" type="lisr:ValueType" substitutionGroup="gml:AbstractGML">
+		<annotation>
+			<documentation>Estimate of a geometry or property resulted from observation of the feature of interest.</documentation>
+		</annotation>
+	</element>
+	<complexType name="ValueType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="valueType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ValuePropertyType">
+		<sequence minOccurs="0">
+			<element ref="lisr:Value"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+</schema>

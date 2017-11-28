@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:li="http://www.opengis.net/infragml/core/1.0" xmlns:lilf="http://www.opengis.net/infragml/landfeature/1.0" xmlns:lif="http://www.opengis.net/infragml/facility/1.0" xmlns:lia="http://www.opengis.net/infragml/alignment/1.0" xmlns:lifr="http://www.opengis.net/infragml/road/1.0" xmlns:lifrcs="http://www.opengis.net/infragml/roadcrosssection/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmllr="http://www.opengis.net/gml/3.3/lr" xmlns:gmllro="http://www.opengis.net/gml/3.3/lro" xmlns:tin="http://www.opengis.net/gml/3.3/tin" targetNamespace="http://www.opengis.net/infragml/roadcrosssection/1.0" elementFormDefault="qualified" version="1.0.0">
+	<annotation>
+		<documentation>
+			InfraGML is an OGC Standard. 
+			Copyright (c) 2017  Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/infragml/core/1.0" schemaLocation="http://schemas.opengis.net/infragml/part0/1.0/core.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/landfeature/1.0" schemaLocation="http://schemas.opengis.net/infragml/part1/1.0/land-feature.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/facility/1.0" schemaLocation="http://schemas.opengis.net/infragml/part2/1.0/facility.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/alignment/1.0" schemaLocation="http://schemas.opengis.net/infragml/part3/1.0/alignment.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/road/1.0" schemaLocation="http://schemas.opengis.net/infragml/part4/1.0/road.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lr" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRef.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/tin" schemaLocation="http://schemas.opengis.net/gml/3.3/tin.xsd"/>
+	<!--XML Schema document created by ShapeChange - http://shapechange.net/
+		 Modified by Paul Scarponcini (Bentley Systems Inc.) 
+	-->
+	<!-- 410: fixed striping  .-->
+	<!--                                                                                                                         	-->
+	<!--     CrossSection                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="CrossSection" type="lifrcs:CrossSectionType" substitutionGroup="li:AbstractData">
+		<annotation>
+			<documentation>view resulting from a perpendicular slice of the road at a location along an alignment, 
+				including the existing ground
+			</documentation>
+		</annotation>
+	</element>
+	<complexType name="CrossSectionType">
+		<complexContent>
+			<extension base="li:AbstractDataType">
+				<sequence>
+					<element name="crossSectionID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="locatedAlong" type="gmllr:LinearElementPropertyType"/>
+					<element name="distanceAlong">
+						<complexType>
+							<sequence>
+								<element ref="gmllr:DistanceExpression"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="horizontalDisplacement" type="gml:LengthType" minOccurs="0"/>
+					<element name="verticallDisplacement" type="gml:LengthType" minOccurs="0"/>
+					<element name="component" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lifrcs:CrossSectionComponent"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="area" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lifrcs:CrossSectionArea"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CrossSectionPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifrcs:CrossSection"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     CrossSectionArea                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="CrossSectionArea" type="lifrcs:CrossSectionAreaType" substitutionGroup="li:AbstractData"/>
+	<complexType name="CrossSectionAreaType">
+		<complexContent>
+			<extension base="li:AbstractDataType">
+				<sequence>
+					<element name="crossSectionAreaID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="material" type="string" minOccurs="0"/>
+					<element name="area" type="gml:AreaType"/>
+					<element name="point" minOccurs="3" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lifrcs:CrossSectionPoint"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CrossSectionAreaPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifrcs:CrossSectionArea"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     CrossSectionComponent                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="CrossSectionComponent" type="lifrcs:CrossSectionComponentType" substitutionGroup="li:AbstractData"/>
+	<complexType name="CrossSectionComponentType">
+		<complexContent>
+			<extension base="li:AbstractDataType">
+				<sequence>
+					<element name="crossSectionComponentID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="material" type="string" minOccurs="0"/>
+					<element name="isClosed" type="boolean"/>
+					<element name="state" type="li:StateType"/>
+					<element name="point" minOccurs="2" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lifrcs:CrossSectionPoint"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CrossSectionComponentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifrcs:CrossSectionComponent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     CrossSectionPoint                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="CrossSectionPoint" type="lifrcs:CrossSectionPointType" substitutionGroup="li:AbstractData"/>
+	<complexType name="CrossSectionPointType">
+		<complexContent>
+			<extension base="li:AbstractDataType">
+				<sequence>
+					<element name="crossSectionPointID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="horizontalOffset" type="gml:LengthType"/>
+					<element name="verticalOffset" type="gml:LengthType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CrossSectionPointPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifrcs:CrossSectionPoint"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     CrossSectionSet                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="CrossSectionSet" type="lifrcs:CrossSectionSetType" substitutionGroup="li:Set"/>
+	<complexType name="CrossSectionSetType">
+		<complexContent>
+			<extension base="li:SetType">
+				<sequence>
+					<element name="crossSectionSetID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="crossSection" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lifrcs:CrossSection"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CrossSectionSetPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifrcs:CrossSectionSet"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Road with Cross Section                                                                                                           -->
+	<!--                                                                                                                         	-->
+	<element name="RoadWithCrossSection" type="lifrcs:RoadWithCrossSectionType" substitutionGroup="lifr:Road">
+		<annotation>
+			<documentation>a Road that can also be represented by CrossSections and/or CrossSectionSets</documentation>
+		</annotation>
+	</element>
+	<complexType name="RoadWithCrossSectionType">
+		<complexContent>
+			<extension base="lifr:RoadType">
+				<choice minOccurs="0" maxOccurs="unbounded">
+					<element name="crossSection" type="lifrcs:CrossSectionPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="crossSectionSet" type="lifrcs:CrossSectionSetPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</choice>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="RoadWithCrossSectionPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifrcs:RoadWithCrossSection"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+</schema>

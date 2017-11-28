@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsmlb:MappedFeature xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:gml="http://www.opengis.net/gml/3.2"
+ xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic"
+ xmlns:swe="http://www.opengis.net/swe/2.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd"
+ gml:id="mf.16">
+ <gsmlb:mappingFrame
+  xlink:href="http://inspire.ec.europa.eu/codelist/MappingFrameValue/topOfBedrock"
+  xlink:title="top of bedrock"/>
+ <gsmlb:specification>
+  <gsmlb:Fold gml:id="FOLD_ID_1">
+   <gml:identifier codeSpace="http://data.bgs.ac.uk/">http://data.bgs.ac.uk/ref/625KGeologyMap/Fold/bgsn_digmap20111213000010000_625k</gml:identifier>
+   <gml:name>UNNAMED FOLD</gml:name>
+   <!--  -->
+   <!-- The GeologicAge is provided by a relationship to a GeologicEvent -->
+   <!--  -->
+   <gsmlb:geologicHistory>
+    <gsmlb:GeologicEvent gml:id="EVENT_3">
+     <gml:name>HERCYNIAN OROGENY</gml:name>
+     <gsmlb:eventProcess
+      xlink:href="http://inspire.ec.europa.eu/codelist/EventProcessValue/folding"
+      xlink:title="folding"/>
+     <gsmlb:olderNamedAge
+      xlink:href="http://inspire.ec.europa.eu/codelist/GeochronologicEraValue/tournaisian"
+      xlink:title="Tournaisian"/>
+     <gsmlb:youngerNamedAge
+      xlink:href="http://inspire.ec.europa.eu/codelist/GeochronologicEraValue/tournaisian"
+      xlink:title="Tournaisian"/>
+     <gsmlb:eventEnvironment>
+      <swe:Category
+       definition="http://inspire.ec.europa.eu/codelist/EventEnvironmentValue">
+       <swe:extension>
+        <swe:Category
+         definition="http://resource.geosciml.org/classifierscheme/cgi/201211/valuequalifier">
+         <swe:identifier>http://resource.geosciml.org/classifier/cgi/valuequalifier/always</swe:identifier>
+         <swe:label>always</swe:label>
+         <swe:codeSpace
+          xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/valuequalifier"
+         />
+        </swe:Category>
+       </swe:extension>
+       <swe:identifier>http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/crustalSetting</swe:identifier>
+       <swe:label>crustal setting</swe:label>
+       <swe:codeSpace
+        xlink:href="http://inspire.ec.europa.eu/codelist/EventEnvironmentValue"
+       />
+      </swe:Category>
+     </gsmlb:eventEnvironment>
+    </gsmlb:GeologicEvent>
+   </gsmlb:geologicHistory>
+   <gsmlb:profileType
+    xlink:href="http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/anticline"
+    xlink:title="anticline"/>
+  </gsmlb:Fold>
+ </gsmlb:specification>
+ <gsmlb:shape>
+  <gml:Polygon srsName="urn:ogc:def:crs:EPSG::4326" gml:id="LOCAL_ID_0">
+   <gml:exterior>
+    <gml:LinearRing>
+     <gml:posList srsDimension="2" count="8">55.0760921318516 -3.31719604609088
+      55.0833753209835 -3.31853455922777 55.0825574334633 -3.31921378657955
+      55.0801997429522 -3.31978309699423 55.0768616358466 -3.3194575613054
+      55.0741365291192 -3.31966903508197 55.0756843873373 -3.31747948721346
+      55.0760921318516 -3.31719604609088</gml:posList>
+    </gml:LinearRing>
+   </gml:exterior>
+  </gml:Polygon>
+ </gsmlb:shape>
+</gsmlb:MappedFeature>

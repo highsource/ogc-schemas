@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:li="http://www.opengis.net/infragml/core/1.0" xmlns:lis="http://www.opengis.net/infragml/survey/1.0" xmlns:lise="http://www.opengis.net/infragml/equipment/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.opengis.net/infragml/equipment/1.0" elementFormDefault="qualified" version="1.0.0">
+	<annotation>
+		<documentation>
+			InfraGML is an OGC Standard. 
+			Copyright (c) 2017  Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/infragml/core/1.0" schemaLocation="http://schemas.opengis.net/infragml/part0/1.0/core.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/survey/1.0" schemaLocation="http://schemas.opengis.net/infragml/part6/1.0/survey.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/observation.xsd"/>
+	<!--XML Schema document created by ShapeChange - http://shapechange.net/
+		 Modified by Hans-Christoph Gruler(Leica Geosystems AG) October 19, 2016
+		Modified by Hans-Christoph Gruler(Leica Geosystems AG) November 02, 2016-
+		Changes in 1102 version: 1) remove dependency from OM and use gml:observation
+1.	Uses gml:observation instead of OM-Observations
+2.	Antenna -> Feature
+3.	Model ISO1930 for Camera
+4.	Correction::type -> optional…not needed for dervived classes
+5. Added distortion class
+6.	Equipment -> feature
+7. Remove SurveySensor Sets
+8. added pixel definition gml:GridLengthType
+9. ObservationCorrection nove has the correct base
+10. Added Sensor System ISO19130
+11.SurveyProcess…add element instead of inheritance - 
+12.Derive now from gml:ProcedurePropertyType
+13.	SurveySensor -> Feature
+14.	SurveySensor:type -> optional…not needed for dervived classes
+15.	SurveySensorTpye -> add other and remove tilt
+-->
+	<!-- 410: fixed striping  .-->
+	<!--                                                                                                                         	-->
+	<!--    AngularCorrection                                                                                             -->
+	<!--                                                                                                                         	-->
+	<element name="AngularCorrection" type="lise:AngularCorrectionType" substitutionGroup="lise:Correction">
+		<annotation>
+			<documentation>Angular correction could be for example the inclination between magnetic and geometric North.</documentation>
+		</annotation>
+	</element>
+	<complexType name="AngularCorrectionType">
+		<complexContent>
+			<extension base="lise:CorrectionType">
+				<sequence>
+					<element name="rotation" type="gml:AngleType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AngularCorrectionPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:AngularCorrection"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    Antenna                                                                                                           -->
+	<!--                                                                                                                         	-->
+	<element name="Antenna" type="lise:AntennaType" substitutionGroup="li:Feature"/>
+	<complexType name="AntennaType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="antennaID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="iGSName" type="string" minOccurs="0"/>
+					<element name="horizzontalOffset" type="gml:LengthType" minOccurs="0"/>
+					<element name="verticallOffset" type="gml:LengthType" minOccurs="0"/>
+					<element name="l1phaseOffset" type="gml:LengthType" minOccurs="0"/>
+					<element name="l2phaseOffset" type="gml:LengthType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AntennaPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:Antenna"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    Camera                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="Camera" type="lise:CameraType" substitutionGroup="lise:SurveySensor">
+		<annotation>
+			<documentation>Camera - Information about the pixel size, chip window. If the focal length for the camera is always constant the interior orientation is always the same. Therefore this information is attached to the equipment and not the image observation</documentation>
+		</annotation>
+	</element>
+	<complexType name="CameraType">
+		<complexContent>
+			<extension base="lise:SurveySensorType">
+				<sequence>
+					<element name="autoFocus" type="boolean" minOccurs="0"/>
+					<element name="offsetAndOrientation" minOccurs="0">
+						<complexType>
+							<sequence>
+								<element name="OffsetAndOrientation" type="gml:MovingObjectStatusType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="crs" type="gml:CRSPropertyType" minOccurs="0"/>
+					<element name="detector" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:DetectorArray"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="interiorOrientation" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:InteriorOrientation"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="gNSS" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:GNSS"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="system" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:SensorSystem"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CameraPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:Camera"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    Correction                                                                                                         -->
+	<!--                                                                                                                         	-->
+	<element name="Correction" type="lise:CorrectionType" substitutionGroup="gml:AbstractGML">
+		<annotation>
+			<documentation>Correction could be applied to the raw measurements from a sensor. Observations always contain the raw reading from a measurements and individual corrections have to be applied for the Target point under several conditions.</documentation>
+		</annotation>
+	</element>
+	<complexType name="CorrectionType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="correctionID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="type" type="gml:ReferenceType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CorrectionPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:Correction"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    DetectorArray                                                                                                   -->
+	<!--                                                                                                                         	-->
+	<element name="DetectorArray" type="lise:DetectorArrayType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="DetectorArrayType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="numberOfDimensions" type="integer"/>
+					<element name="arrayDimensionsValue" type="integer" maxOccurs="2"/>
+					<element name="arrayDimensionsName" type="string" maxOccurs="2"/>
+					<element name="detectorSize" type="integer" maxOccurs="2"/>
+					<element name="offsetVector" type="gml:VectorType" maxOccurs="2"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="DetectorArrayPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:DetectorArray"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    DistanceCorrection                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="DistanceCorrection" type="lise:DistanceCorrectionType" substitutionGroup="lise:Correction">
+		<annotation>
+			<documentation>Distance correction is used to correct the distance between Instrument and Target points ( example scale, refraction )</documentation>
+		</annotation>
+	</element>
+	<complexType name="DistanceCorrectionType">
+		<complexContent>
+			<extension base="lise:CorrectionType">
+				<sequence>
+					<element name="projectionDistortion" type="gml:ScaleType" minOccurs="0">
+						<annotation>
+							<documentation>correction of the projection distortion</documentation>
+						</annotation>
+					</element>
+					<element name="heightReduction" type="gml:ScaleType" minOccurs="0">
+						<annotation>
+							<documentation>reduction to reference ellipsoid</documentation>
+						</annotation>
+					</element>
+					<element name="atmosphericalCorrection" type="gml:ScaleType" minOccurs="0">
+						<annotation>
+							<documentation>value for the correction of atmosheric effects</documentation>
+						</annotation>
+					</element>
+					<element name="individualScale" type="gml:ScaleType" minOccurs="0">
+						<annotation>
+							<documentation>reduction to reference ellipsoid</documentation>
+						</annotation>
+					</element>
+					<element name="absolutePrismConstant" type="gml:LengthType" minOccurs="0">
+						<annotation>
+							<documentation>prism const</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="DistanceCorrectionPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:DistanceCorrection"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    Distortion                                                                                                         -->
+	<!--                                                                                                                         	-->
+	<element name="Distortion" type="lise:DistortionType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="DistortionType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="princPoint" type="gml:GeometryPropertyType"/>
+					<element name="crs" type="gml:CRSPropertyType" minOccurs="0"/>
+					<element name="distortionK1" type="double">
+						<annotation>
+							<documentation>first coefficient of Taylor approximation to correct radial distortion</documentation>
+						</annotation>
+					</element>
+					<element name="distortionK2" type="double">
+						<annotation>
+							<documentation>second coefficient of Taylor approximation to correct radial distortion</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="DistortionPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:Distortion"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    EDM                                                                                                                -->
+	<!--                                                                                                                         	-->
+	<element name="EDM" type="lise:EDMType" substitutionGroup="lise:GenericDistance"/>
+	<complexType name="EDMType">
+		<complexContent>
+			<extension base="lise:GenericDistanceType">
+				<sequence>
+					<element name="carrierWavelength" type="gml:LengthType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="EDMPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:EDM"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    Equipment                                                                                                        -->
+	<!--                                                                                                                         	-->
+	<element name="Equipment" type="lise:EquipmentType" substitutionGroup="li:Feature">
+		<annotation>
+			<documentation>Equipment includes all information about the sensoric that was used each observation</documentation>
+		</annotation>
+	</element>
+	<complexType name="EquipmentType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="serialID" type="string" minOccurs="0"/>
+					<element name="dataCollector" type="string" minOccurs="0">
+						<annotation>
+							<documentation>Name of the Hardware used with controlling software</documentation>
+						</annotation>
+					</element>
+					<element name="controlSoftware" type="string" minOccurs="0">
+						<annotation>
+							<documentation>Name of the Software that was use to control the sensor(s)</documentation>
+						</annotation>
+					</element>
+					<element name="softwareVersion" type="string" minOccurs="0"/>
+					<element name="surveySensor" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:SurveySensor"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="EquipmentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:Equipment"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    GNSS                                                                                                              -->
+	<!--                                                                                                                         	-->
+	<element name="GNSS" type="lise:GNSSType" substitutionGroup="lise:SurveySensor">
+		<annotation>
+			<documentation>GNSS - Sensors of different satellite systems to determine a 3d location of a CRS. External antennas could be also used.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GNSSType">
+		<complexContent>
+			<extension base="lise:SurveySensorType">
+				<sequence>
+					<element name="posAccuracy" type="gml:LengthType" minOccurs="0"/>
+					<element name="hgtAccuracy" type="gml:LengthType" minOccurs="0"/>
+					<element name="camera" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:Camera"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="antenna" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:Antenna"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="reference" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:GNSS"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GNSSPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:GNSS"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    GenericAngle                                                                                                    -->
+	<!--                                                                                                                         	-->
+	<element name="GenericAngle" type="lise:GenericAngleType" substitutionGroup="lise:SurveySensor">
+		<annotation>
+			<documentation>Generic Angle delivers angular measurements</documentation>
+		</annotation>
+	</element>
+	<complexType name="GenericAngleType">
+		<complexContent>
+			<extension base="lise:SurveySensorType">
+				<sequence>
+					<element name="accuracy" type="gml:AngleType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GenericAnglePropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:GenericAngle"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    GenericDistance                                                                                               -->
+	<!--                                                                                                                         	-->
+	<element name="GenericDistance" type="lise:GenericDistanceType" substitutionGroup="lise:SurveySensor">
+		<annotation>
+			<documentation>GenericDistance sensor could be a manual (tape) device or any other kinds of sensor that measures distances between to locations.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GenericDistanceType">
+		<complexContent>
+			<extension base="lise:SurveySensorType">
+				<sequence>
+					<element name="accuracy" type="gml:LengthType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GenericDistancePropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:GenericDistance"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    InteriorOrientation                                                                                              -->
+	<!--                                                                                                                         	-->
+	<element name="InteriorOrientation" type="lise:InteriorOrientationType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="InteriorOrientationType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="principalPointX" type="gml:GridLengthType">
+						<annotation>
+							<documentation>uom = Pixel spacing</documentation>
+						</annotation>
+					</element>
+					<!--to do get type Pixel in gml   type="gml:pixelInCell"-->
+					<element name="principalPointY" type="gml:GridLengthType">
+						<annotation>
+							<documentation>uom = Pixel spacing</documentation>
+						</annotation>
+					</element>
+					<element name="focalLength" type="gml:LengthType"/>
+					<element name="crossHairPosX" type="gml:GridLengthType">
+						<annotation>
+							<documentation>uom = Pixel spacing</documentation>
+						</annotation>
+					</element>
+					<element name="crossHairPosY" type="gml:GridLengthType">
+						<annotation>
+							<documentation>uom = Pixel spacing</documentation>
+						</annotation>
+					</element>
+					<element name="virtualCameraConstant" type="double"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="InteriorOrientationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:InteriorOrientation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    LaserScanner                                                                                                   -->
+	<!--                                                                                                                         	-->
+	<element name="LaserScanner" type="lise:LaserScannerType" substitutionGroup="lise:SurveySensor">
+		<annotation>
+			<documentation>Laser Scanners the controlled steering of laser beams followed by a distance measurement at every pointing direction.</documentation>
+		</annotation>
+	</element>
+	<complexType name="LaserScannerType">
+		<complexContent>
+			<extension base="lise:SurveySensorType">
+				<sequence>
+					<element name="horizontalAngle" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:GenericAngle"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="verticalAngle" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:GenericAngle"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="eDM" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:EDM"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="camera" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:Camera"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LaserScannerPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:LaserScanner"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    Level                                                                                                                -->
+	<!--                                                                                                                         	-->
+	<element name="Level" type="lise:LevelType" substitutionGroup="lise:SurveySensor">
+		<annotation>
+			<documentation>Level sensors are used to determine the height difference between two locations</documentation>
+		</annotation>
+	</element>
+	<complexType name="LevelType">
+		<complexContent>
+			<extension base="lise:SurveySensorType">
+				<sequence>
+					<element name="accuracy" type="gml:LengthType" minOccurs="0"/>
+					<element name="staff1" type="string" minOccurs="0"/>
+					<element name="staff2" type="string" minOccurs="0"/>
+					<element name="camera" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:Camera"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LevelPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:Level"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    ObservationCorrections                                                                                      -->
+	<!--                                                                                                                         	-->
+	<element name="ObservationCorrections" type="lise:ObservationCorrectionsType" substitutionGroup="lise:SurveyProcess">
+		<annotation>
+			<documentation>Tranforamtion is used to get the Targetpoint in the Targer CRS if the Instrument Point is not in the Target CRS.</documentation>
+		</annotation>
+	</element>
+	<complexType name="ObservationCorrectionsType">
+		<complexContent>
+			<extension base="lise:SurveyProcessType">
+				<sequence>
+					<element name="correction" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:Correction"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ObservationCorrectionsPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:ObservationCorrections"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    Offset                                                                                                               -->
+	<!--                                                                                                                         	-->
+	<element name="Offset" type="lise:OffsetType" substitutionGroup="lise:Correction">
+		<annotation>
+			<documentation>Offset is a user entered value that is applied to the measurements</documentation>
+		</annotation>
+	</element>
+	<complexType name="OffsetType">
+		<complexContent>
+			<extension base="lise:CorrectionType">
+				<sequence>
+					<element name="crossOffset" type="gml:LengthType"/>
+					<element name="lengthOffset" type="gml:LengthType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="OffsetPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:Offset"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    SensorSystem                                                                                                  -->
+	<!--                                                                                                                         	-->
+	<element name="SensorSystem" type="lise:SensorSystemType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="SensorSystemType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="calibratedFocalLength" type="gml:LengthType"/>
+					<element name="princPoint" type="gml:GeometryPropertyType"/>
+					<element name="crs" type="gml:CRSPropertyType" minOccurs="0"/>
+					<element name="instFieldOfView" type="gml:AngleType"/>
+					<element name="swathFieldOfView" type="gml:AngleType"/>
+					<element name="opticalDistortion" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:Distortion"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SensorSystemPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:SensorSystem"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    SurveyProcess                                                                                                  -->
+	<!--                                                                                                                         	-->
+	<element name="SurveyProcess" type="lise:SurveyProcessType" substitutionGroup="gml:using"/>
+	<annotation>
+		<documentation> The purpose of an observation process is to generate an observation
+				result. An instance is often an instrument or sensor, but may be a human observer, a
+				simulator, or a process or algorithm applied to more primitive results used as
+				inputs. </documentation>
+	</annotation>
+	<complexType name="SurveyProcessType">
+		<complexContent>
+			<extension base="gml:ProcedurePropertyType">
+				<sequence>
+					<element name="surveyProcessID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="surveySensor" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:SurveySensor"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SurveyProcessPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:SurveyProcess"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    SurveySensor                                                                                                   -->
+	<!--                                                                                                                         	-->
+	<element name="SurveySensor" type="lise:SurveySensorType" substitutionGroup="li:Feature">
+		<annotation>
+			<documentation>Sensor contains information about the hardware that is used to collect measurements</documentation>
+		</annotation>
+	</element>
+	<complexType name="SurveySensorType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="surveySensorID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="type" type="gml:ReferenceType" minOccurs="0"/>
+					<element name="manufacture" type="string" minOccurs="0">
+						<annotation>
+							<documentation>name of the manufactor</documentation>
+						</annotation>
+					</element>
+					<element name="model" type="string" minOccurs="0"/>
+					<element name="serialID" type="string" minOccurs="0">
+						<annotation>
+							<documentation>Serial Number of the equipment</documentation>
+						</annotation>
+					</element>
+					<element name="softwareVersion" type="string" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SurveySensorPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:SurveySensor"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    Tps                                                                                                                  -->
+	<!--                                                                                                                         	-->
+	<element name="Tps" type="lise:TpsType" substitutionGroup="lise:SurveySensor">
+		<annotation>
+			<documentation>TPS - total station that measures distances and angles.</documentation>
+		</annotation>
+	</element>
+	<complexType name="TpsType">
+		<complexContent>
+			<extension base="lise:SurveySensorType">
+				<sequence>
+					<element name="horizontalAngle" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:GenericAngle"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="vericalAngle" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:GenericAngle"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="eDM" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:EDM"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="compLongitudinal" type="gml:LengthType" minOccurs="0"/>
+					<element name="compTransversal" type="gml:LengthType" minOccurs="0"/>
+					<element name="verticalIndexErrorl" type="gml:LengthType" minOccurs="0"/>
+					<element name="collimHzErrorl" type="gml:LengthType" minOccurs="0"/>
+					<element name="tiltAxisError" type="gml:LengthType" minOccurs="0"/>
+					<element name="aTRHzError" type="gml:LengthType" minOccurs="0"/>
+					<element name="aTRVError" type="gml:LengthType" minOccurs="0"/>
+					<element name="camera" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lise:Camera"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="TpsPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:Tps"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    Transformation                                                                                                  -->
+	<!--                                                                                                                         	-->
+	<element name="Transformation" type="lise:TransformationType" substitutionGroup="lise:Correction">
+		<annotation>
+			<documentation>Transformation is used to get the TargetPoint in the Target CRS if the Instrument Point is not in the Target CRS.</documentation>
+		</annotation>
+	</element>
+	<complexType name="TransformationType">
+		<complexContent>
+			<extension base="lise:CorrectionType">
+				<sequence>
+					<element name="deltaX" type="gml:LengthType"/>
+					<element name="deltaY" type="gml:LengthType"/>
+					<element name="deltaZ" type="gml:LengthType"/>
+					<element name="scaleX" type="gml:ScaleType"/>
+					<element name="scaleY" type="gml:ScaleType"/>
+					<element name="scaleZ" type="gml:ScaleType"/>
+					<element name="rotX" type="gml:AngleType"/>
+					<element name="rotY" type="gml:AngleType"/>
+					<element name="rotZ" type="gml:AngleType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="TransformationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lise:Transformation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+</schema>

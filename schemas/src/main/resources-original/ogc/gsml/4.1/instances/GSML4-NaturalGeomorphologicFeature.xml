@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsmlb:NaturalGeomorphologicFeature 
+     xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic"
+     xmlns:xlink="http://www.w3.org/1999/xlink" 
+     xmlns:gml="http://www.opengis.net/gml/3.2" 
+     xmlns:om="http://www.opengis.net/om/2.0"
+     xmlns:swe="http://www.opengis.net/swe/2.0" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd"  gml:id="GEOMORPH_1">
+    <gml:identifier codeSpace="http://data.bgs.ac.uk/">http://data.bgs.ac.uk/ref/625KGeologyMap/GeomorphologicFeature/bgsn_digmap20111213000010001_625k</gml:identifier>
+    <gml:name>UNNAMED GLACIAL OUTWASH CHANNEL</gml:name>
+    <gsmlb:geologicHistory>
+        <gsmlb:GeologicEvent gml:id="EVENT_4">
+            <gml:name>DEVENSIAN GLACIATION</gml:name>
+            <gsmlb:eventProcess xlink:href="http://inspire.ec.europa.eu/codelist/EventProcessValue/waterErosion" xlink:title="water erosion"/>
+            <gsmlb:olderNamedAge xlink:href="http://inspire.ec.europa.eu/codelist/GeochronologicEraValue/latePleistocene" xlink:title="Late/Upper Pleistocene"/>
+            <gsmlb:youngerNamedAge xlink:href="http://inspire.ec.europa.eu/codelist/GeochronologicEraValue/latePleistocene" xlink:title="Late/Upper Pleistocene"/>
+            <gsmlb:eventEnvironment>
+                <swe:Category definition="http://inspire.ec.europa.eu/codelist/EventEnvironmentValue">
+                    <swe:identifier>http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/glacialOutwashPlainSetting</swe:identifier>
+                    <swe:label>glacial outwash plain setting</swe:label>
+                    <swe:codeSpace xlink:href="http://inspire.ec.europa.eu/codelist/EventEnvironmentValue"/>
+                </swe:Category>
+            </gsmlb:eventEnvironment>
+        </gsmlb:GeologicEvent>
+    </gsmlb:geologicHistory>
+    <gsmlb:unitDescription>
+        <gsmlb:GeologicUnit gml:id="testGeolUnit"/>
+    </gsmlb:unitDescription>
+    <gsmlb:naturalGeomorphologicFeatureType xlink:href="http://inspire.ec.europa.eu/codelist/NaturalGeomorphologicFeatureTypeValue/glacial" xlink:title="glacial, glaciofluvial, glaciolacustrine and glaciomarine features"/>
+    <gsmlb:activity xlink:href="http://inspire.ec.europa.eu/codelist/GeomorphologicActivityValue/inactive" xlink:title="inactive"/>
+</gsmlb:NaturalGeomorphologicFeature>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+    targetNamespace="http://www.opengis.net/cis/1.1/gml"
+    xmlns:cis="http://www.opengis.net/cis/1.1/gml"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:sml="http://www.opengis.net/sensorml/2.0"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified" xml:lang="en"
+    version="1.1.0">
+    <annotation>
+        <appinfo>grid.xsd</appinfo>
+        <documentation>
+        This XML Schema Document encodes grid definitions for the OGC Coverage Implementation Schema (CIS) 1.1.
+        It consists of the GMLCOV 1.0 definitions plus additions introduced by CIS 1.1.
+        Last updated: 2017-jan-16
+        Copyright (c) 2016, 2017 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+        </documentation>
+    </annotation>
+
+    <!-- ============================================================== -->
+    <!-- Includes and imports                                           -->
+    <!-- ============================================================== -->
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <import namespace="http://www.opengis.net/sensorml/2.0" schemaLocation="http://schemas.opengis.net/sensorML/2.0/sensorML.xsd"/>
+    <include schemaLocation="coverage.xsd"/>
+
+    <!-- ============================================================== -->
+    <!-- Body of this schema                                            -->
+    <!-- ============================================================== -->
+    <element name="GeneralGrid" type="cis:GeneralGridType">
+        <annotation>
+            <documentation>A general n-D grid is defined through a sequence of axes, each of which can be of a particular axis type.</documentation>
+        </annotation>
+    </element>
+    <complexType name="GeneralGridType">
+        <sequence>
+            <element name="Origin" type="cis:DirectPositionType" minOccurs="0"/>
+            <choice maxOccurs="unbounded">
+                <element ref="cis:Axis"/>
+                <element ref="cis:DisplacementAxisNest"/>
+                <element ref="cis:Model"/>
+            </choice>
+            <element ref="cis:GridLimits" minOccurs="0"/>
+        </sequence>
+        <attribute name="srsName" type="anyURI" use="required"/>
+        <attribute name="axisLabels" type="cis:NameListType" use="required"/>
+    </complexType>
+    <!-- ============================================================== -->
+    <simpleType name="NameListType">
+        <annotation>
+            <documentation>A name list is an ordered sequence of names. Due to technical reasons of GML, names are restricted to NCName.</documentation>
+        </annotation>
+        <list itemType="NCName"/>
+    </simpleType>
+    <!-- ============================================================== -->
+    <complexType name="DirectPositionType">
+        <annotation>
+            <documentation>Direct positions resemble n-D coordinates indicating where a coverage provides values. For efficiency reason, frequently repeated tag names are kept terse: "dp" for "directPosition", "c" for "directCoordinate". To accommodate all possible coordinate types (such as "1.2" for degrees, "2016-02-29" for dates, etc.) the type is anySimpleType.</documentation>
+        </annotation>
+        <sequence>
+            <element name="C" type="anySimpleType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <!-- ============================================================== -->
+    <element name="Axis" type="cis:AxisType"/>
+    <complexType name="AxisType">
+        <attribute name="axisLabel" type="NCName" use="required"/>
+    </complexType>
+    <!-- ============================================================= -->
+    <element name="GridLimits" type="cis:GridLimitsType">
+        <annotation>
+            <documentation>This is the boundary of the array underlying the grid, given by its diagonal corner points in integer coordinates. The grid limits can be omitted in case all axes are of type index axis, because then it repeats the grid information in a redundant way. The purpose of the axisLabels attribute, which lists the axis labels of all axisExtent elements in proper sequence, is to enforce axis sequence also in XML systems which do not preserve document order.</documentation>
+        </annotation>
+    </element>
+    <complexType name="GridLimitsType">
+        <sequence>
+            <element ref="cis:IndexAxis" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="srsName" type="anyURI" use="required"/>
+        <attribute name="axisLabels" type="cis:NameListType" use="required"/>
+    </complexType>
+    <!-- ============================================================= -->
+    <element name="IndexAxis" type="cis:IndexAxisType" substitutionGroup="cis:Axis">
+        <annotation>
+            <documentation>An Index Axis is an axis with only integer positions allowed.</documentation>
+        </annotation>
+    </element>
+    <complexType name="IndexAxisType">
+        <complexContent>
+            <extension base="cis:AxisType">
+                <attribute name="lowerBound" type="anySimpleType" use="required"/>
+                <attribute name="upperBound" type="anySimpleType" use="required"/>
+            </extension>
+        </complexContent>
+    </complexType>
+    <!-- ============================================================= -->
+    <element name="RegularAxis" type="cis:RegularAxisType" substitutionGroup="cis:Axis">
+        <annotation>
+            <documentation>A Regular Axis is an axis where all direct coordinates are at a common distance from its immediate neighbors.</documentation>
+        </annotation>
+    </element>
+    <complexType name="RegularAxisType">
+        <complexContent>
+            <extension base="cis:AxisType">
+                <sequence>
+                    <element name="Offset" type="cis:DirectPositionType" minOccurs="0"/>
+                </sequence>
+                <attribute name="lowerBound" type="anySimpleType" use="required"/>
+                <attribute name="upperBound" type="anySimpleType" use="required"/>
+                <attribute name="resolution" type="anySimpleType" use="required"/>
+                <attribute name="uomLabel"   type="NCName" use="required"/>
+            </extension>
+        </complexContent>
+    </complexType>
+    <!-- ============================================================= -->
+    <element name="IrregularAxis" type="cis:IrregularAxisType" substitutionGroup="cis:Axis">
+        <annotation>
+            <documentation>An irregular axis enumerates all possible direct position coordinates. In order to keep frequently repeated tag names short they have been abbreviated: "dp" for "DirectPosition".</documentation>
+        </annotation>
+    </element>
+    <complexType name="IrregularAxisType">
+        <complexContent>
+            <extension base="cis:AxisType">
+                <sequence>
+                    <element name="C" type="anySimpleType" maxOccurs="unbounded"/>
+                </sequence>
+                <attribute name="uomLabel" type="NCName" use="required"/>
+            </extension>
+        </complexContent>
+    </complexType>
+    <!-- ============================================================= -->
+    <element name="DisplacementAxisNest" type="cis:DisplacementAxisNestType">
+        <annotation>
+            <documentation>A DisplacementAxisNest is a group of warped axes where points on the grid all have their individual direct position coordinates. The sequenceRule element describes linearization order.</documentation>
+        </annotation>
+    </element>
+    <complexType name="DisplacementAxisNestType">
+        <sequence>
+            <choice maxOccurs="unbounded">
+                <element name="P" type="cis:DirectPositionType"/>
+                <element name="C" type="anySimpleType"/>
+            </choice>
+            <element name="SequenceRule" type="gml:SequenceRuleType" minOccurs="0"/>
+        </sequence>
+        <attribute name="axisLabels" type="cis:NameListType" use="required"/>
+        <attribute name="uomLabels" type="cis:NameListType" use="required"/>
+    </complexType>
+    <!-- ============================================================= -->
+    <element name="Model" type="cis:TransformationModelType" abstract="true">
+        <annotation>
+            <documentation>A Transformation Model is a grid transformation definition, given by some algorithm which is not specified further.</documentation>
+        </annotation>
+    </element>
+    <complexType name="TransformationModelType">
+        <attribute name="axisLabels" type="cis:NameListType" use="required"/>
+        <attribute name="uomLabels" type="cis:NameListType" use="required"/>
+    </complexType>
+    <!-- ============================================================= -->
+    <element name="TransformationBySensorModel" type="cis:TransformationBySensorModelType" substitutionGroup="cis:Model">
+        <annotation>
+            <documentation>A TransformationBySensorModel is a transformation definition which is given by a SensorML 2.0 transformation specification.</documentation>
+        </annotation>
+    </element>
+    <complexType name="TransformationBySensorModelType">
+        <complexContent>
+            <extension base="cis:TransformationModelType">
+                <sequence>
+                    <element name="SensorModel" type="sml:AbstractProcessPropertyType" maxOccurs="unbounded"/>
+                    <element name="SensorInstance" type="sml:AbstractProcessPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+</schema>

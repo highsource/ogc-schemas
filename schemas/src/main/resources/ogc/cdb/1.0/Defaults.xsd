@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="xs3p.xsl"?>
+<xs:schema
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified" 
+  targetNamespace="http://www.opengis.net/cdb/1.0/Defaults"
+  xmlns:cdb="http://www.opengis.net/cdb/1.0/Defaults"
+  xmlns="http://www.opengis.net/cdb/1.0/Defaults/1.0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  version="1.0">
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      XML Schema to define and validate the content of Defaults.xml
+      CDB is an OGC Standard.
+      Copyright (c) 2016 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:element name="Default_Value_Table">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Default_Value" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Dataset" type="xs:string" minOccurs="0"/>
+              <xs:element name="Name" type="xs:string" />
+              <xs:element name="Description" type="xs:string" />
+              <xs:element name="Type" type="xs:string" />
+              <xs:element name="Value" type="xs:string" />
+              <xs:element name="R_W_Type" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="version" use="required">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              This attribute is used to indicate the version of the XML file containing the list of CDB Default Values.
+              It is independent from the version of the Specification.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="([1-9]([0-9])*[.]([0-9])+)"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

@@ -1,0 +1,1948 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection 
+xmlns:wfs="http://www.opengis.net/wfs/2.0"
+xmlns:gml="http://www.opengis.net/gml/3.2" 
+xmlns:sam="http://www.opengis.net/sampling/2.0" 
+xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"  
+xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" 
+xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" 
+xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" 
+xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" 
+xmlns:gwml2c="http://www.opengis.net/gwml-constituent/2.2" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:swe="http://www.opengis.net/swe/2.0" 
+xmlns:gmd="http://www.isotc211.org/2005/gmd" 
+xmlns:gco="http://www.isotc211.org/2005/gco" 
+xmlns:cv="http://www.opengis.net/cv/0.2/gml32" 
+xmlns:om="http://www.opengis.net/om/2.0" 
+xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+
+ numberMatched="unknown" timeStamp="2015-03-17T02:02:01.898Z" numberReturned="1"
+xsi:schemaLocation="http://www.opengis.net/gwml-well/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-well.xsd 
+http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd
+http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+
+	<!-- ######################### 
+Location of individual GWML2 schema:
+All -"http://www.opengis.net/gwml/2.2 http://schemas.opengis.net/gwml/2.2/gwml2.xsd"
+Constituent - "http://www.opengis.net/gwml-constituent/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-constituent.xsd"
+Flow - "http://www.opengis.net/gwml-flow/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-flow.xsd"
+Well - "http://www.opengis.net/gwml-well/2.2 http://schemas.opengis.net/gwml/gwml2-well.xsd"
+Well Construction - "http://www.opengis.net/gwml-wellconstruction/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-wellconstruction.xsd"
+Nucleus - "http://www.opengis.net/gwml-main/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd"
+-->
+	<!-- ######################### -->
+	<!-- Mapping of National Groundwater Information System (NGIS) database tables and records to the proposed GroundWaterML2 OGC standard release candidate  -->
+	<!-- File created by Bruce Simons, CSIRO, September 2014 -->
+	<!-- ######################### -->
+	<!-- This file is an example instance of a GWML2 GW_Well -->
+	<!-- Although this instance is a gml:FeatureCollection with one or more gml:featureMembers, a valid alternative is as a single gwml2w:GW_Well -->
+	<!-- Other related GWML2 features are referred to "byReference" using xlink:href. In most cases these could be included "inLine" (i.e. within this instance). A separate instance for each feature is provided for ease of mapping. The final aggregation of inLine vs. byReference features will be determined by the use case requirements -->
+	<!-- Where features are aggregated into single feature services the xlink:href references to URIs need to be replaced with internal # references to gml:id -->
+	<!-- ######################### -->
+	<!-- NGIS - Mapping patterns -->
+	<!-- Comments beginning 'NGIS -' are instructions for mappings between NGIS data and GWML2 -->
+	<!-- ???? Comments beginning ???? require further checking -->
+	<!-- NGIS table record pairs are referred to by the pattern [table.record] -->
+	<!-- The mapping pattern is [schema/property] = [table.record] -->
+	<!-- ######################### -->
+	<!-- NGIS - Feature IDs and identifiers -->
+	<!-- Feature IDs (gml:id) are document specific unique identifiers based on NGIS table keys and the feature type -->
+	<!-- To create the id, replace [table.record_id] with values from the appropriate table -->
+	<!-- Feature identities (gml:identifier) use the URI for the feature. This is in the format "[base URI]/[category]/[type]/[gml:id]" -->
+	<!-- Domain Name - The temporary domain name "http://environment.data.gov.au/groundwater/" has been used for the feature identifiers and vocabulary term references. An appropriate persistent and organisation independent domain will need to be established.
+A redirect service, such as the SISS PID service, is required to resolve these URIs -->
+	<!-- Category - where the object is a GML Feature use "feature". Where the object is a vocabulary concept use "def". -->
+	<!-- Type - where the Category is a feature, the type of feature, where Category is "def' the type of term  -->
+	<!-- ######################### -->
+	<!-- NGIS Mapping -->
+	<!-- gml:featureMember is a GW_Well -->
+	<wfs:member>
+		<!-- NGIS - example based on NGIS Bore HydoID = 40267275 -->
+		<!-- NGIS - gml:id= "borehole.[StateTerritoryCVD].[NGIS_Bore.HydroCode]" -->
+		<gwml2w:GW_Well gml:id="borehole.qld.81402B">
+			<!-- NGIS - gml:metaDataProperty to capture source organisation name and State -->
+			<gml:metaDataProperty>
+				<gml:GenericMetaData>
+					<gmd:MD_Metadata>
+						<gmd:contact>
+					<gmd:CI_ResponsibleParty>
+						<gmd:organisationName>
+							<!-- NGIS - gmd:organisationName/gco:CharacterString = [Agency.CodedValueDomain.Description] based on [NGIS_Bore.Agency] -->
+							<gco:CharacterString>Department of Natural Resources and Mines</gco:CharacterString>
+						</gmd:organisationName>
+						<gmd:contactInfo>
+							<gmd:CI_Contact>
+								<gmd:address>
+									<gmd:CI_Address>
+										<!-- NGIS - gmd:administrativeArea/gco:CharacterString = [StateTerritory.CodedValueDomain.Description] based on [NGIS_Bore.StateTerritory] -->
+										<gmd:administrativeArea>
+											<gco:CharacterString>QLD</gco:CharacterString>
+										</gmd:administrativeArea>
+									</gmd:CI_Address>
+								</gmd:address>
+							</gmd:CI_Contact>
+						</gmd:contactInfo>
+						<gmd:role>
+							<!-- NGIS - <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeSpace="ISOTC211/19115" codeListValue="CI_RoleCode_originator">originator</gmd:CI_RoleCode> -->
+							<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeSpace="ISOTC211/19115" codeListValue="CI_RoleCode_originator">originator</gmd:CI_RoleCode>
+						</gmd:role>
+					</gmd:CI_ResponsibleParty>
+					</gmd:contact>
+					<gmd:dateStamp>
+					<gco:Date>1975-10-20</gco:Date>
+					</gmd:dateStamp>					
+						<!--<gmd:CI_Date>
+<gmd:dateType>
+<gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="CI_DateTypeCode_creation"></gmd:CI_DateTypeCode>
+						</gmd:dateType>
+					</gmd:CI_Date>-->
+					<!-- NGIS - 	gmd:identificationInfo is unknown. Use gmd:identificationInfo xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/ -->
+						<gmd:identificationInfo xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+						</gmd:MD_Metadata>
+				</gml:GenericMetaData>
+			</gml:metaDataProperty>
+			<!-- NGIS - No NGIS property for gml:description -->
+			<gml:description/>
+			<!-- The suggested identifiers are independent of organisation (e.g. 'bom') and project (e.g. 'ngis') -->
+			<!-- NGIS - gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616", value='http://environment.data.gov.au/groundwater/feature/borehole/[StateTerritoryCVD].[NGIS_Bore.HydroCode]" -->
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/borehole/qld.81402B</gml:identifier>
+			<!-- NGIS - gml:name from NGIS:HydroCode, NGIS:StateBoreID, and/or NGIS:StatePipeID -->
+			<!-- NGIS - codeSpace="http://www.bom.gov.au/water/groundwater/{property} -->
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/HydroCode" value=[NGIS_Bore.HydroCode] -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/HydroCode">81402B</gml:name>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/StateBoreID" value=[NGIS_Bore.StateBoreID] -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/StateBoreID">81402</gml:name>
+			<!-- NGIS - Leave StatePipeID out -->
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/StatePipeID" value=[NGIS_Bore.StatePipeID] -->
+			<!-- <gml:name codeSpace="http://www.bom.gov.au/water/groundwater/StatePipeID">B</gml:name> -->
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/HydroID" value=[NGIS_Bore.HydroID] -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/HydroID">40267275</gml:name>
+			<!-- gml:boundedBy envelope to be generated by middleware on the fly -->
+			<gml:boundedBy>
+				<gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4283">
+					<gml:pos srsDimension="2">-21.206403 149.118236</gml:pos>
+					<gml:pos srsDimension="2">-21.453933 149.233661</gml:pos>
+				</gml:Envelope>
+			</gml:boundedBy>
+			<!-- sam:sampledFeature is 1..*. It allows specifying the GW_HydrogeoUnits (GeologicUnits) intersected in the Well. -->
+			<!-- NGIS - sam:sampledFeature are hydrogeologic units (GW_HydrogeoUnits of type = "hydrogeologic unit") from [NGIS_HydrogeologicUnit] -->
+			<!-- NGIS - For  sampled features:
+sam:sampledFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.[NGIS_Bore.HGUNumber]" xlink:title="[NGIS_HydrogeologicUnit.HGUName] -->
+			<sam:sampledFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.1330" xlink:title="Lizzie Creek Volcanic Group"/>
+			<!-- NGIS - If [NGIS_Bore.HGUID] = "-49999999" then  
+sam:sampledFeature xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" -->
+			<sam:sampledFeature xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- NGIS - sam:lineage:  Co-ordinate reference methods ([NGIS_Bore.CoordMethod]) mapped to sam:lineage. Vocabulary of "Coordinate Method" required at  "http://environment.data.gov.au/groundwater/def/location-method/".
+Where [NGIS_Bore.CoordMethod] =
+
+AIR 	Air photo 	Estimated from an air photo / aerial photography.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/airphoto" xlink:title="Estimated from an air photo / aerial photography"/>
+ARB 	Arbitrary 	An arbitrary position assigned to a feature with unknown site.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/arbitary" xlink:title="An arbitrary position assigned to a feature with unknown site"/>
+AST 	Astronomical 	Measured from astronomical observations.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/astronomical" xlink:title="Measured from astronomical observations"/>
+CAD 	Cadastre 	Estimated by address matching or assigning to cadastre (property information).
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/cadastre" xlink:title="Estimated by address matching or assigning to cadastre"/>
+CBF 	Block Face 	Placed on calculated midpoint of street segment of block.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/block-face" xlink:title="Placed on calculated midpoint of street segment of block"/>
+CNI 	Nearest intersection 	Placed on calculated midpoint of street segment of block.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/block-interesection" xlink:title="Placed on calculated midpoint of street segment of block"/>
+CPC 	Property centre 	Placed in centre of property.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/property-centre" xlink:title="Placed in centre of property"/>
+CTN 	Town 	Placed on centre of associated built up area.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/town" xlink:title="Placed on centre of associated built up area"/>
+EST 	Estimate 	Estimated using an unknown method i.e. not surveyed.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/estimate" xlink:title="Estimated using an unknown method"/>
+FLD 	Field 	Estimated from field observation.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/estimate" xlink:title="Estimated from field observation"/>
+GAT 	Autonomous GPS 	Autonomous global positioning system.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/gps-a" xlink:title="Autonomous global positioning system"/>
+GDF 	Differential GPS 	Measured using differential global positioning system.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/gps-d" xlink:title="Measured using differential global positioning system"/>
+GKN 	Kinematic GPS 	Measured using GPS device with phase kinematic relative positioning.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/gps-k" xlink:title="Measured using GPS device with phase kinematic relative positioning"/>
+GPS 	Global positioning system 	Measured using global positioning system.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/gps" xlink:title="Measured using global positioning system"/>
+LID 	Lidar 	Estimated from LiDAR (Light Detection and Ranging) technology.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/lidar" xlink:title="Estimated from LiDAR (Light Detection and Ranging) technology."/>
+GST 	Static GPS 	Measured using GPS device with phase static relative positioning.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/gps-s" xlink:title="Measured using GPS device with phase static relative positioning"/>
+MAP 	Map 	Estimated from map e.g. using contours.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/map" xlink:title="Estimated from map e.g. using contours"/>
+OWN 	Owner 	Estimated from owner returns.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/owner" xlink:title="Estimated from owner returns"/>
+RAD 	Radio triangulation 	Measured by triangulation using synchronised pulsed transmissions from radio stations
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/radio" xlink:title="Measured by triangulation using synchronised pulsed transmissions from radio stations"/>
+RPT 	Report 	Estimate derived from a report eg drillers location map.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/report" xlink:title="Estimate derived from a report"/>
+SAT 	Satellite 	Estimated from satellite imagery.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/satellite" xlink:title="Estimated from satellite imagery"/>
+SBM 	Benchmark survey 	Precise survey from a benchmark.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/benchmark" xlink:title="Precise survey from a benchmark"/>
+SCP 	Control point survey 	Survey between non benchmark control points.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/control-point" xlink:title="Survey between non benchmark control points"/>
+STP 	Stereophotogrammetry 	Measured from stereopairs of photogrammes.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/stereophoto" xlink:title="Measured from stereopairs of photogrammes"/>
+STR 	Trignometric 	Trigonometrical levelling.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/trig" xlink:title="Trigonometrical levelling"/>
+SVY 	Survey 	Traditional survey with ground control.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/survey" xlink:title="Traditional survey with ground control"/>
+UNK 	Unknown 	Method of location or elevation is unknown.
+<sam:lineage xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+VBL 	Verbal 	Estimated from verbal reports.
+<sam:lineage xlink:href="http://environment.data.gov.au/groundwater/def/location-method/verbal" xlink:title="Estimated from verbal reports"/>
+-->
+			<sam:lineage xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- sam:relatedObservation allows linking or describing extra observations down the well -->
+			<!-- ???? NGIS -  sam:relatedObservation for time series observations or GW_Well observations. Time Series results from TANGIP. Need to work out after PostGres load -->
+			<sam:relatedObservation xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- sam:relatedSamplingFeature is for describing related specimens (e.g. water samples) from the well, or other related sampling features such as related water wells. -->
+			<!--	NGIS - use sam:relatedSamplingFeature for identifying multi pipes. -->
+			<!-- NGIS - If {[NGIS_Bore.IsMultiPipe = "1"} then deliver sam:relatedSamplingFeature  -->
+			<sam:relatedSamplingFeature>
+				<sam:SamplingFeatureComplex>
+					<!-- NGIS - sam:role xlink:href="http://environment.data.gov.au/groundwater/def/sampling-feature-role/multi-pipe" xlink:title="Multi-Pipe" -->
+					<sam:role xlink:href="http://environment.data.gov.au/groundwater/def/sampling-feature-role/multi-pipe" xlink:title="Multi-Pipe"/>
+					<!-- NGIS - sam:relatedSamplingFeature xlink:href="http://environment.data.gov.au/groundwater/feature/borehole/[StateTerritoryCVD].[NGIS_Bore.HydroCode]" xlink:title="[NGIS_Bore.HydroCode]" for {[NGIS_Bore.StateBoreID] = GW_Well:[NGIS_Bore.StateBoreID]} -->
+					<sam:relatedSamplingFeature xlink:href="http://environment.data.gov.au/groundwater/feature/borehole/qld.81402A" xlink:title="81402A">
+					</sam:relatedSamplingFeature>
+				</sam:SamplingFeatureComplex>
+			</sam:relatedSamplingFeature>
+			<!-- sams:shape is the shape of the GW_Well -->
+			<!-- NGIS - If {[NGIS_Bore.RefElevMethod] = "NA"} or {[NGIS_Bore.DrilledDepth] and [NGIS_Bore.BoreDepth] = 0.0}, then <sams:shape nilReason="unknown" xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" > -->
+			<sams:shape>
+				<!-- NGIS - Assume well is vertical -->
+				<!-- NGIS - If {[NGIS_Well.DrilledDepth] > 0} then:
+<sams:shape/gml:posList> =  {[NGIS_Bore.Longitude], [NGIS_Bore.Latitude], [NGIS_Bore.RefElev], [NGIS_Bore.Longitude], [NGIS_Bore.Latitude], [NGIS_Bore.RefElev]-[NGIS_Well.DrilledDepth]} -->
+				<!-- NGIS - If {[NGIS_Well.DrilledDepth] = 0} then:
+<sams:shape/gml:posList> =  {[NGIS_Bore.Longitude], [NGIS_Bore.Latitude], [NGIS_Bore.RefElev], [NGIS_Bore.Longitude], [NGIS_Bore.Latitude], [NGIS_Bore.RefElev]-[NGIS_Well.BoreDepth]} -->
+				<!-- NGIS - gml:LineString gml:id="borehole.[StateTerritoryCVD].[NGIS_Bore.HydroCode].shape" -->
+				<gml:LineString gml:id="borehole.qld.81402B.shape" srsDimension="3" srsName="http://www.opengis.net/def/crs/EPSG/0/4283">
+					<gml:pos>149.233661 21.453933 13.86</gml:pos>
+					<gml:pos>149.233661 -21.453933 -6.84</gml:pos>
+				</gml:LineString>
+			</sams:shape>
+			<!-- gwWellBody describes the fluid body (GW_FluidBody) within the Well -->
+			<!-- NGIS - The GW_FluidBody is considered to be the fluid body associated with the NGIS_HydrogeologicUnit -->
+			<!-- NGIS - The NGIS_HydrogeologicUnit table provides the fluid bodies' properties (transmissivity, hydraulic conductivity) and the classification for the hydrogeologic unit. -->
+			<!-- NGIS - gwWellBody xlink:href="http://environment.data.gov.au/groundwater/feature/fluidbody/[StateTerritoryCVD].[NGIS_Bore.HGUNumber]"
+<gwml2w:gwWellBody xlink:href="http://environment.data.gov.au/groundwater/feature/fluidbody/qld.1330"/>
+ -->
+			<!-- NGIS - alternative is to use:
+gwml2w:gwWellBody xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/ -->
+			<gwml2w:gwWellBody xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- GW_Well only allows [0..1] gwml2w:gwWellConstructedDepth. -->
+			<!-- NGIS - gwml2w:gwWellConstructedDepth = [NGIS_Bore.BoreDepth] -->
+			<!-- NGIS - If {[NGIS_Bore.BoreDepth] = 0} then gwml2w:gwWellConstructedDepth = [NGIS_Bore.DrilledDepth]  -->
+			<!--  NGIS - If {[NGIS_Bore.BoreDepth] = 0} and {[NGIS_Bore.DrilledDepth] = 0} then :
+gwml2w:gwWellConstructedDepth xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" -->
+			<gwml2w:gwWellConstructedDepth>
+				<!-- NGIS - om:OM_Observation gml:id= "borehole.[StateTerritoryCVD].[NGIS_Bore.HydroCode].constructed-depth" -->
+				<!-- NGIS - gml:Point gml:id=	"borehole.[StateTerritoryCVD].[NGIS_Bore.HydroCode].location" -->
+				<om:OM_Observation gml:id="borehole.qld.81402B.constructed-depth">
+					<!-- om:phenomenomTime is the time the observation of the depth of the well was made -->
+					<!-- gml:TimeInstant is defined here but could be an xlink:href (#) to a date specified elsewhere in the mapping -->
+					<!-- NGIS - drilled date [NGIS_Bore.DrilledDate] is the om:phenomenonTime -->
+					<om:phenomenonTime>
+						<!-- NGIS - gml:TimeInstant gml:id="borehole.[StateTerritoryCVD].[NGIS_Bore.HydroCode.date" -->
+						<gml:TimeInstant gml:id="borehole.qld.81402B.date">
+							<gml:timePosition>1993-11-10+00:00</gml:timePosition>
+						</gml:TimeInstant>
+					</om:phenomenonTime>
+					<!-- NGIS - reference {gwml2w:gwWellConstructedDepth/om:phenomenonTime/gml:TimeInstant gml:id} for all initial GW_Well time properties -->
+					<om:resultTime xlink:href="#borehole.qld.81402B.date"/>
+					<!-- NGIS - does not have the procedure used to measure the depth of the well. Use:
+ <om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/missing" xlink:title="missing"/> -->
+					<om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/missing" xlink:title="missing"/>
+					<!-- om:observedProperty is self-referential -->
+					<!-- Used {namespace}/{property} -->
+					<om:observedProperty xlink:href="http://www.opengis.net/gwml-well/2.0/gwWellConstructedDepth" xlink:title="gwWellConstructedDepth"/>
+					<!-- NGIS - om:featureOfInterest is the GW_Well. Use xlink:href internal reference -->
+					<om:featureOfInterest xlink:href="#borehole.qld.81402B"/>
+					<om:result>
+						<swe:Quantity>
+							<!-- NGIS - <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/> -->
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+							<!-- NGIS gwml2w:gwWellConstructedDepth swe:value = [NGIS_Bore.DrilledDepth]. If {[NGIS_Bore.DrilledDepth] =0} then swe:value = [NGIS_Bore.BoreDepth]} -->
+							<swe:value>20.7</swe:value>
+						</swe:Quantity>
+					</om:result>
+				</om:OM_Observation>
+			</gwml2w:gwWellConstructedDepth>
+			<!-- gwml2w:gwWellConstruction is a reference to the gwml2wc:Borehole feature -->
+			<!-- NGIS - gwml2w:gwWellConstruction xlink:href="http://environment.data.gov.au/groundwater/feature/borehole.[StateTerritoryCVD].[NGIS_Bore.HydroCode].construction" -->
+			<!-- NGIS - gwml2w:gwWellConstruction will need to be in-line (see GWML2-Borehole-NGIS.xml for example) -->
+			<!-- &&&& -->
+			<!--<gwml2w:gwWellConstruction xlink:href="http://environment.data.gov.au/groundwater/feature/borehole.qld.81402B.construction"/>-->
+			<gwml2w:gwWellConstruction>
+				<gwml2wc:Borehole gml:id="borehole.construction.qld.40181A">
+					<!-- NGIS - gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">xlink:href="http://environment.data.gov.au/groundwater/feature/borehole.construction.[NGIS_Bore.StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode]"-->
+					<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/borehole.construction.qld.40181A</gml:identifier>
+					<!-- sam:sampledFeature for the gwml2wc:Borehole is the associated GW_Well -->
+					<!-- NGIS - sam:sampledFeature xlink:href="http://environment.data.gov.au/groundwater/feature/borehole/[NGIS_Bore.StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode]" -->
+					<sam:sampledFeature xlink:href="http://environment.data.gov.au/groundwater/feature/borehole/qld.40181A"/>
+					<!-- sams:shape allows describing the geometry of the construction log -->
+					<!-- NGIS - [NGIS_ConstructionLog] does not contain shape information separate from that of the associated [NGIS_Bore]. Therefore, the gwml2wc:Borehole should be inLine with the GW_Well and Borehole/sams:shape will xlink:href to the GW_Well/gml:Curve/gml:id.  -->
+					<!--		<sams:shape xlink:href="#borehole.qld.40181A.shape"/> -->
+					<!-- NGIS - Otherwise use <sams:shape nilReason="unknown" xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"> -->
+					<sams:shape xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<!-- NGIS - no gwml2wc:bholeMaterialCustodian data  -->
+					<gwml2wc:bholeMaterialCustodian xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<!-- NGIS - does not have gwml2wc:bholeCoreInterval. Leave out  -->
+					<!-- gwml2wc:bholeCoreInterval/ -->
+					<!-- gwml2wc:bHoleDateOfDrilling uses a different data type  to the om:phenomenonTime used in gwml2w:gwWellConstructedDepth -->
+					<!-- NGIS - [NGIS_ConstrauctionLog] does not contain gwml2wc:bHoleDateOfDrilling information. This is available from  [NGIS_Bore.DrilledDate] -->
+					<!-- NGIS -  gwml2wc:bHoleDateOfDrilling = [NGIS_Bore.DrilledDate] Date will need to be converted to GWML2 format (1993-11-10)  -->
+					<gwml2wc:bholeDateOfDrilling>1993-11-10+00:00</gwml2wc:bholeDateOfDrilling>
+					<!-- NGIS - Does not have gwml2wc:bholeDriller information -->
+					<gwml2wc:bholeDriller xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<!-- NGIS - gwml2wc:bholeDrillingMethod xlink:title="[NGIS_ConstructionLog.DrillMethod]" -->
+					<!-- NGIS - Database codes will need to be mapped to drilling method vocabulary terms described at http://www.bom.gov.au/water/groundwater/explorer/terminology.shtml  -->
+					<!-- NGIS - Suggest "Drilling Method" vocabulary at 'http://environment.data.gov.au/groundwater/def/borehole-drill-method/"  -->
+					<!-- NGIS - All Qld examples use "UNK". CBT example here. -->
+					<gwml2wc:bholeDrillingMethod xlink:href="http://environment.data.gov.au/groundwater/def/borehole-drill-method/cbt" xlink:title="Cable Tool"/>
+					<gwml2wc:bholeDrillingMethod xlink:href="http://environment.data.gov.au/groundwater/def/borehole-drill-method/cbt" xlink:title="Cable Tool"/>
+					<!-- NGIS - Assume all Boreholes are vertical -->
+					<gwml2wc:bholeInclinationType xlink:title="vertical"/>
+					<!-- NGIS -  bholeNominalDiameter should be able to be obtained from [NGIS_ConstructionLog.OuterDiameter] where [NGIS_ConstructionLog.Property] is a code for the bore size. However, no appropriate code appears at http://www.bom.gov.au/water/groundwater/explorer/terminology.shtml and the only code in the Qld data is 'AP' -->
+					<gwml2wc:bholeNominalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<!-- NGIS - gwml2wc:bholeOperator xlink:title="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/ -->
+					<gwml2wc:bholeOperator xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<!-- NGIS - gwml2wc:bholeStartPoint = [NGIS_ConstructionLog.RefElevDesc] -->
+					<!-- NGIS -  gwml2wc:bholeStartPoint: Suggest establishing a [NGIS_ConstructionLog.RefElevDesc] vocabulary at 'http://environment.data.gov.au/groundwater/def/borehole-reference-elevation/" -->
+					<gwml2wc:bholeStartPoint xlink:href="http://environment.data.gov.au/groundwater/def/borehole-reference-elevation/ngs" xlink:title="natural ground surface"/>
+					<!-- gwml2wc:bholeConstruction allows specifying the various components in the Borehole construction -->
+					<!-- NGIS - gwml2wc:bholeConstruction components determined by [NGIS_ConstructionLog.ConstructionType] -->
+					<!-- NGIS mappings:
+gwml2wc:Casing = LIN, CAS, PIPE,  
+gwml2wc:Filtration	= GVP, 
+gwml2wc:Screen = INLT, BSC, LVC, SLC, PFC, PRL, PNP, WWS, WWSR, WWST, OPEN, MESH, 
+gwml2wc:Sealing = SEAL, PLUG, PKR, 
+
+???? Possible NGIS mappings required for: AFIL, CENT, VFIL, VOID, FIX, EXT, VLV, DIS, HDV, SMV, NRV, 
+SPH, ID, MRK, MON, AIR, ARC, AWL, GTC, ORPL, FTO, PGAG, PTO, SGAG, FLO, PROT, SHLD, BNC, BASE, LHC, SOCK,CLMP,CMTI, UNK
+Pump types =PUMP, CDP, PST, ROT, ROTG, ROTV, HLC, SQZ, VDP, CFG, VLT, TBN, SBM, MIX, AXL, RGN, JET, RAM, ARL, BLD, 
+
+-->
+					<!-- NGIS - First gwml2wc:bholeConstruction captures the gwml2wc:Casing elements -->
+					<!-- &&&& -->
+					<gwml2wc:bholeConstruction>
+						<!-- NGIS - First example is a Wooden lining ([NGIS_ConstructionLog.ConstructionType]='LIN') which has been mapped to gwml2wc:Casing -->
+						<!-- NGIS - 	gwml2wc:Casing gml:id="borehole.construction.[StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode].casing" -->
+						<gwml2wc:Casing gml:id="borehole.construction.qld.40181A.casing">
+							<gwml2wc:casingElement>
+								<!-- NGIS - 	gwml2wc:CasingComponent gml:id="borehole.construction.[NGIS_ConstructionLog.Bore_ID].casing.[NGIS_ConstructionLog.OBJECT_ID]" -->
+								<gwml2wc:CasingComponent gml:id="borehole.construction.qld.40181A.casing.273">
+									<!-- NGIS  - gwml2wc:from = [NGIS_ConstructionLog.FromDepth] -->
+									<gwml2wc:from>
+										<swe:Quantity>
+											<!--  NGIS - Assume units of measure are in metres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.FromDepth] -->
+											<swe:value>0.00</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<!-- NGIS  - gwml2wc:to = [NGIS_ConstructionLog.ToDepth] -->
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.ToDepth] -->
+											<swe:value>0.9</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<!-- NGIS - gwml2wc:casingMaterial = [NGIS_ConstructionLog.Material] -->
+									<!-- NGIS -  gwml2wc:casingMaterial: Suggest establishing a [NGIS_ConstructionLog.Material] vocabulary at 'http://environment.data.gov.au/groundwater/def/borehole-construction-material/" -->
+									<!-- NGIS - Mapping between  [NGIS_ConstructionLog.Material] and vocabulary required -->
+									<gwml2wc:casingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/wood" xlink:title="wood"/>
+									<!-- NGIS - gwml2wc:casingCoating depends on [NGIS_ConstructionLog.Material]   -->
+									<!-- NGIS - If [NGIS_ConstructionLog.Material] =
+GALV, GAC, STLG   gwml2wc:casingCoating xlink:title="galvanised" 
+SSTL, SSTL304, SSTL316,  gwml2wc:casingCoating xlink:title="stainless" 
+STLCT gwml2wc:casingCoating xlink:title="coated"
+STLCTE gwml2wc:casingCoating xlink:title="coal tar epoxy"
+PTFE gwml2wc:casingCoating xlink:title="teflon"
+PCN gwml2wc:casingCoating xlink:title="polycarbonate emulsion"
+Else use <gwml2wc:casingCoating xlink:title="none"/>  -->
+									<gwml2wc:casingCoating xlink:title="none"/>
+									<!-- NGIS - gwml2wc:casingForm depends on  [NGIS_ConstructionLog.Material] or  [NGIS_ConstructionLog.ConstructionType] -->
+									<!-- NGIS - If  [NGIS_ConstructionLog.Material]  is
+COR GAC then gwml2wc:casingForm xlink:title="corrugated"
+If [NGIS_ConstructionLog.ConstructionType] is
+CASE then gwml2wc:casingForm xlink:title="casing"
+PIPE then gwml2wc:casingForm xlink:title="pipe"
+Else use <gwml2wc:casingForm xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:casingForm xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- #### gwml2wc:casingInternalDiameter should be voidable -->
+									<!-- NGIS - gwml2wc:casingInternalDiameter [NGIS_ConstructionLog.InnerDiameter]  -->
+									<!-- NGIS - if [NGIS_ConstructionLog.InnerDiameter]=0 then 
+<gwml2wc:casingInternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:casingInternalDiameter>
+										<swe:Quantity>
+											<!--  NGIS - Assume units of measure are in millimetres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<swe:value>0.00</swe:value>
+										</swe:Quantity>
+									</gwml2wc:casingInternalDiameter>
+									<!--<gwml2wc:casingInternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<!-- #### gwml2wc:casingExternalDiameter should be voidable -->
+									<!-- NGIS - gwml2wc:casingExternalDiameter [NGIS_ConstructionLog.OuterDiameter]  -->
+									<!-- NGIS - if [NGIS_ConstructionLog.OuterDiameter]=0 then 
+<gwml2wc:casingExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:casingExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- NGIS -  If  {[NGIS_ConstructionLog.InnerDiameter] != 0} and {[NGIS_ConstructionLog.OuterDiameter] != 0} then 
+gwml2wc:casingWallThickness = {[NGIS_ConstructionLog.OuterDiameter]-[NGIS_ConstructionLog.InnerDiameter]} 
+Else <gwml2wc:casingWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:casingWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+								</gwml2wc:CasingComponent>
+							</gwml2wc:casingElement>
+							<!-- NGIS - Second example is a steel lining ([NGIS_ConstructionLog.ConstructionType]='LIN') which has been mapped to gwml2wc:Casing -->
+							<!-- NGIS - 	gwml2wc:Casing gml:id="borehole.construction.[NGIS_ConstructionLog.Bore_ID].casing" -->
+							<gwml2wc:casingElement>
+								<!-- NGIS - 	gwml2wc:CasingComponent gml:id="borehole.construction.[StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode].casing.[NGIS_ConstructionLog.OBJECT_ID]" -->
+								<gwml2wc:CasingComponent gml:id="borehole.construction.qld.40181A.casing.272">
+									<!-- NGIS  - gwml2wc:from = [NGIS_ConstructionLog.FromDepth] -->
+									<gwml2wc:from>
+										<swe:Quantity>
+											<!--  NGIS - Assume units of measure are in metres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.FromDepth] -->
+											<swe:value>12.2</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<!-- NGIS  - gwml2wc:to = [NGIS_ConstructionLog.ToDepth] -->
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.ToDepth] -->
+											<swe:value>18.3</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<!-- NGIS - gwml2wc:casingMaterial = [NGIS_ConstructionLog.Material] -->
+									<!-- NGIS -  gwml2wc:casingMaterial: Suggest establishing a [NGIS_ConstructionLog.Material] vocabulary at 'http://environment.data.gov.au/groundwater/def/borehole-construction-material/" -->
+									<!-- NGIS - Mapping between  [NGIS_ConstructionLog.Material] and vocabulary required -->
+									<gwml2wc:casingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/steel" xlink:title="steel"/>
+									<!-- NGIS - gwml2wc:casingCoating depends on [NGIS_ConstructionLog.Material]   -->
+									<!-- NGIS - If [NGIS_ConstructionLog.Material] =
+GALV, GAC, STLG   gwml2wc:casingCoating xlink:title="galvanised" 
+SSTL, SSTL304, SSTL316,  gwml2wc:casingCoating xlink:title="stainless" 
+STLCT gwml2wc:casingCoating xlink:title="coated"
+STLCTE gwml2wc:casingCoating xlink:title="coal tar epoxy"
+PTFE gwml2wc:casingCoating xlink:title="teflon"
+PCN gwml2wc:casingCoating xlink:title="polycarbonate emulsion"
+Else use <gwml2wc:casingForm xlink:title="none"/>  -->
+									<gwml2wc:casingCoating xlink:title="none"/>
+									<!-- NGIS - gwml2wc:casingForm depends on  [NGIS_ConstructionLog.Material] or  [NGIS_ConstructionLog.ConstructionType] -->
+									<!-- NGIS - If  [NGIS_ConstructionLog.Material]  is
+COR GAC then gwml2wc:casingForm xlink:title="corrugated"
+If [NGIS_ConstructionLog.ConstructionType] is
+CASE then gwml2wc:casingForm xlink:title="casing"
+PIPE then gwml2wc:casingForm xlink:title="pipe"
+Else use <gwml2wc:casingForm xlink:title="unknown"/> -->
+									<gwml2wc:casingForm xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- #### gwml2wc:casingInternalDiameter should be voidable -->
+									<!-- NGIS - gwml2wc:casingInternalDiameter [NGIS_ConstructionLog.InnerDiameter]  -->
+									<!-- NGIS - if [NGIS_ConstructionLog.InnerDiameter]=0 then 
+<gwml2wc:casingInternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:casingInternalDiameter>
+										<swe:Quantity>
+											<!-- NGIS Assume units of measure are millimetres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<!-- NGIS swe:value = [NGIS_ConstructionLog.InnerDiameter] -->
+											<swe:value>76</swe:value>
+										</swe:Quantity>
+									</gwml2wc:casingInternalDiameter>
+									<!-- #### gwml2wc:casingExternalDiameter should be voidable -->
+									<!-- NGIS - gwml2wc:casingExternalDiameter [NGIS_ConstructionLog.OuterDiameter]  -->
+									<!-- NGIS - if [NGIS_ConstructionLog.OuterDiameter]=0 then 
+<gwml2wc:casingInternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:casingExternalDiameter>
+										<swe:Quantity>
+											<!-- NGIS Assume units of measure are millimetres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<!-- NGIS swe:value = [NGIS_ConstructionLog.OuterDiameter] -->
+											<swe:value>76</swe:value>
+										</swe:Quantity>
+									</gwml2wc:casingExternalDiameter>
+									<!-- NGIS -  If  {[NGIS_ConstructionLog.InnerDiameter] != 0} and {[NGIS_ConstructionLog.OuterDiameter] != 0} then gwml2wc:casingWallThickness = {[NGIS_ConstructionLog.OuterDiameter]-[NGIS_ConstructionLog.InnerDiameter]} 
+Else <gwml2wc:casingWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:casingWallThickness>
+										<swe:Quantity>
+											<!-- NGIS Assume units of measure are millimetres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<!-- NGIS -  If  {[NGIS_ConstructionLog.InnerDiameter] != 0} and {[NGIS_ConstructionLog.OuterDiameter] != 0} then gwml2wc:casingWallThickness = {[NGIS_ConstructionLog.OuterDiameter]-[NGIS_ConstructionLog.InnerDiameter]} -->
+											<swe:value>0.0</swe:value>
+										</swe:Quantity>
+									</gwml2wc:casingWallThickness>
+								</gwml2wc:CasingComponent>
+							</gwml2wc:casingElement>
+						</gwml2wc:Casing>
+					</gwml2wc:bholeConstruction>
+					<!-- NGIS - Filtration example based on dummy values for [NGIS_ConstructionLog.ConstructionType] = 'GVP' BoreID = 40137528 -->
+					<gwml2wc:bholeConstruction>
+						<!-- NGIS - gwml2wc:Filtration/gml:id = "borehole.construction.[StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode].filtration" -->
+						<gwml2wc:Filtration gml:id="borehole.construction.qld.40181A.filtration">
+							<!-- NGIS - First filter element -->
+							<gwml2wc:filterElement>
+								<!-- NGIS - 	gwml2wc:FiltrationComponent gml:id="borehole.construction.[StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode].filtration.[NGIS_ConstructionLog.OBJECT_ID]" -->
+								<gwml2wc:FiltrationComponent gml:id="borehole.construction.qld.40181A.filtration.549">
+									<!-- NGIS  - gwml2wc:from = [NGIS_ConstructionLog.FromDepth] -->
+									<gwml2wc:from>
+										<swe:Quantity>
+											<!-- NGIS - Assume units of measure are in metres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.FromDepth] -->
+											<swe:value>0.00</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<!-- NGIS  - gwml2wc:to = [NGIS_ConstructionLog.ToDepth] -->
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.ToDepth] -->
+											<swe:value>18.3</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<!-- NGIS - If [NGIS_ConstructionLog.Property] = "GR", "GSMAX", "GSMIN", "GSMOD" then 
+gwml2wc:filterGrainSize swe:uom = xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm" and swe:value = [NGIS_ConstructionLog.PropertySize] -->
+									<gwml2wc:filterGrainSize>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<swe:value>8</swe:value>
+										</swe:Quantity>
+									</gwml2wc:filterGrainSize>
+									<!-- NGIS -  -->
+									<!-- NGIS - gwml2wc:filterMaterial = [NGIS_ConstructionLog.Material] -->
+									<!-- NGIS -  gwml2wc:filterMaterial: Suggest establishing a [NGIS_ConstructionLog.Material] vocabulary at 'http://environment.data.gov.au/groundwater/def/borehole-construction-material/" -->
+									<!-- NGIS - Mapping between  [NGIS_ConstructionLog.Material] and vocabulary required -->
+									<gwml2wc:filterMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/gravel" xlink:title="gravel"/>
+								</gwml2wc:FiltrationComponent>
+							</gwml2wc:filterElement>
+							<!-- NGIS - Second Filter element -->
+							<gwml2wc:filterElement>
+								<!-- NGIS - 	gwml2wc:FiltrationComponent gml:id="borehole.construction.[StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode].filtration.[NGIS_ConstructionLog.OBJECT_ID]" -->
+								<gwml2wc:FiltrationComponent gml:id="borehole.construction.qld.40181A.filtration.550">
+									<!-- NGIS  - gwml2wc:from = [NGIS_ConstructionLog.FromDepth] -->
+									<gwml2wc:from>
+										<swe:Quantity>
+											<!--  NGIS - Assume units of measure are in metres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.FromDepth] -->
+											<swe:value>0.00</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<!-- NGIS  - gwml2wc:to = [NGIS_ConstructionLog.ToDepth] -->
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.ToDepth] -->
+											<swe:value>28.3</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<!-- NGIS - If [NGIS_ConstructionLog.Property] = "GR", "GSMAX", "GSMIN", "GSMOD" then gwml2wc:filterGrainSize swe:uom = xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm" and swe:value = [NGIS_ConstructionLog.PropertySize] -->
+									<gwml2wc:filterGrainSize>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<swe:value>2</swe:value>
+										</swe:Quantity>
+									</gwml2wc:filterGrainSize>
+									<!-- NGIS -  -->
+									<!-- NGIS - gwml2wc:filterMaterial = [NGIS_ConstructionLog.Material] -->
+									<!-- NGIS -  gwml2wc:filterMaterial: Suggest establishing a [NGIS_ConstructionLog.Material] vocabulary at 'http://environment.data.gov.au/groundwater/def/borehole-construction-material/" -->
+									<!-- NGIS - Mapping between  [NGIS_ConstructionLog.Material] and vocabulary required -->
+									<gwml2wc:filterMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/gravel" xlink:title="gravel"/>
+								</gwml2wc:FiltrationComponent>
+							</gwml2wc:filterElement>
+						</gwml2wc:Filtration>
+					</gwml2wc:bholeConstruction>
+					<!-- NGIS - gwml2wc:bholeConstruction/gwml2wc:Screen if [NGIS_ConstructionLog.ConstructionType] = INLT, BSC, LVC, SLC, PFC, PRL, PNP, WWS, WWSR, WWST, OPEN, MESH -->
+					<!-- NGIS - Screen examples based on dummy values for [NGIS_ConstructionLog.ConstructionType] = "PFC", "WWS" "OPEN"  -->
+					<gwml2wc:bholeConstruction>
+						<!-- NGIS - gwml2wc:Screen/gml:id = "borehole.construction.[StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode].screen  -->
+						<gwml2wc:Screen gml:id="borehole.construction.qld.40181A.screen">
+							<!-- NGIS - First screen element based on dummy values for [NGIS_ConstructionLog.ConstructionType] = 'PFC', BoreID = 40134649 -->
+							<gwml2wc:screenElement>
+								<!-- NGIS - gwml2wc:ScreenComponent gml:id="borehole.construction.[StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode].screen.[NGIS_ConstructionLog.OBJECT_ID]"  -->
+								<gwml2wc:ScreenComponent gml:id="borehole.construction.qld.40181A.screen.1033">
+									<!-- NGIS  - gwml2wc:from = [NGIS_ConstructionLog.FromDepth] -->
+									<gwml2wc:from>
+										<swe:Quantity>
+											<!-- ???? NGIS - Assume units of measure are in metres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.FromDepth] -->
+											<swe:value>16.2</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<!-- NGIS  - gwml2wc:to = [NGIS_ConstructionLog.ToDepth] -->
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.ToDepth] -->
+											<swe:value>17.1</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<!-- NGIS - gwml2wc:screenAttachmentMethod: Full NGIS standard includes method of attachment (construct.joining_method.html) -->
+									<!-- ???? NGIS - Not sure how this is implemented in the NGIS database as requires a property to capture the joining method -->
+									<gwml2wc:screenAttachmentMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- NGIS - Does not record gwml2wc:screenCoating -->
+									<gwml2wc:screenCoating xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!--  gwml2wc:screenForm is the "form of the screen. Can be slotted casing, perforated casing, bridge slot casing, wire wrap or continuous slot, wire mesh, shutter or louvered, well point, tube, unknown, other." -->
+									<!-- NGIS - gwml2wc:screenForm mappings are [NGIS_ConstructionLog.ConstructionType] =
+INLT <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/unknown" xlink:title="unknown"/>
+BSC <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/bridge" xlink:title="bridge slot casing"/>
+LVC <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/louvred" xlink:title="louvred casing"/>
+SLC <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/slotted" xlink:title="slotted casing"/>
+PFC <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/perforated" xlink:title="perforated casing"/> 
+PRL <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/porous" xlink:title="porous lining"/> 
+PNP <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/punched-plate" xlink:title="punched plate"/> 
+WWS <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/wws" xlink:title="wire wound screen"/> 
+WWSR <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/wwsr" xlink:title="round wire wound screen"/> 
+WWST <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/wwst" xlink:title="triangular wire wound screen"/>  
+OPEN  <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/open" xlink:title="open hole"/>  
+MESH <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/mesh" xlink:title="open weave mesh"/>  
+ -->
+									<gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/perforated" xlink:title="perforated casing"/>
+<!-- NGIS - If [NGIS_ConstructionLog.Property] = "AP", "SAP", "PS" "SLAP", "SLL" then gwml2wc:screenHoleWidth = [NGIS_ConstructionLog.PropertySize]  -->
+									<gwml2wc:screenHoleWidth>
+									<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<swe:value>0.5</swe:value>
+										</swe:Quantity>
+										</gwml2wc:screenHoleWidth>
+<!-- NGIS - If [NGIS_ConstructionLog.Property] = "AP", "SAP", "PS" "SLAP", "SLL" then gwml2wc:screenHoleLength = [NGIS_ConstructionLog.PropertySize]  -->
+									<gwml2wc:screenHoleLength>
+									<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<swe:value>0.5</swe:value>
+										</swe:Quantity>
+										</gwml2wc:screenHoleLength>
+									<!-- gwml2wc:screenMaterial is "the material with which the screen is made. Can be metal, steel, iron, copper, brass, bronze, everdur, Armco metal, veriperm, stone, plastic, PVC, ABS, Fibreglass." -->
+									<!-- NGIS - gwml2wc:screenMaterial mappings are unknown:
+gwml2wc:screenMaterial xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" -->
+									<gwml2wc:screenMaterial xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!--  NGIS - gwml2wc:screenInternalDiameter  -->
+									<!-- NGIS - gwml2wc:screenInternalDiameter = [NGIS_ConstructionLog.InnerDiameter]  -->
+									<!-- NGIS - if [NGIS_ConstructionLog.InnerDiameter]=0 then 
+<gwml2wc:screenInternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:screenInternalDiameter>
+										<swe:Quantity>
+											<!-- NGIS Assume units of measure are millimetres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<!-- NGIS swe:value = [NGIS_ConstructionLog.InnerDiameter] -->
+											<swe:value>127</swe:value>
+										</swe:Quantity>
+									</gwml2wc:screenInternalDiameter>
+									<!-- NGIS - gwml2wc:screenExternalDiameter [NGIS_ConstructionLog.OuterDiameter]  -->
+									<!-- NGIS - if [NGIS_ConstructionLog.OuterDiameter]=0 then 
+<gwml2wc:screenInternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:screenExternalDiameter>
+										<swe:Quantity>
+											<!-- NGIS Assume units of measure are millimetres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<!-- NGIS swe:value = [NGIS_ConstructionLog.OuterDiameter] -->
+											<swe:value>76</swe:value>
+										</swe:Quantity>
+									</gwml2wc:screenExternalDiameter>
+									<!-- gwml2wc:screenPerforationMethod provides "Information on how the slots were performated. Can be drill, grinder, axe / chisel, machine, saw, torch, other, unknown." -->
+									<!-- NGIS - Does not record gwml2wc:screenPerforationMethod -->
+									<gwml2wc:screenPerforationMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- gwml2wc:screenFitting provides "Identification of the screen fitting (from the bottom). Can be bail, open, plug, tail pipe, washdown, unknown." -->
+									<!-- NGIS - Does not record gwml2wc:screenFitting -->
+									<gwml2wc:screenFitting xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- NGIS - Does not record gwml2wc:screenMake -->
+									<gwml2wc:screenMake xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- NGIS - Does not record gwml2wc:screenModel -->
+									<gwml2wc:screenModel xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- gwml2wc:screenNumber "corresponds to hole size and is given in 0.001 inch. The value is expressed as an alphanumeric code." -->
+									<!-- NGIS - Does not record gwml2wc:screenNumber -->
+									<gwml2wc:screenNumber xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- gwml2wc:screenPlacement is the "Value of thescreen placement method. Can be bail down, pull back, jetted, washed down, unknown." -->
+									<!-- NGIS - Does not record gwml2wc:screenPlacement -->
+									<gwml2wc:screenPlacement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- NGIS -  If  {[NGIS_ConstructionLog.InnerDiameter] != 0} and {[NGIS_ConstructionLog.OuterDiameter] != 0} then gwml2wc:screenWallThickness = {[NGIS_ConstructionLog.OuterDiameter]-[NGIS_ConstructionLog.InnerDiameter]} 
+Else <gwml2wc:screenWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:screenWallThickness>
+										<swe:Quantity>
+											<!-- NGIS Assume units of measure are millimetres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<!-- NGIS -  If  {[NGIS_ConstructionLog.InnerDiameter] != 0} and {[NGIS_ConstructionLog.OuterDiameter] != 0} then gwml2wc:casingWallThickness = {[NGIS_ConstructionLog.OuterDiameter]-[NGIS_ConstructionLog.InnerDiameter]} -->
+											<swe:value>0.0</swe:value>
+										</swe:Quantity>
+									</gwml2wc:screenWallThickness>
+								</gwml2wc:ScreenComponent>
+							</gwml2wc:screenElement>
+							<!-- NGIS - Second screen element based on dummy values for [NGIS_ConstructionLog.ConstructionType] = 'WWS', BoreID = 40134180 -->
+							<gwml2wc:screenElement>
+								<!-- NGIS - gwml2wc:ScreenComponent gml:id="borehole.construction.[StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode].screen.[NGIS_ConstructionLog.OBJECT_ID]"  -->
+								<gwml2wc:ScreenComponent gml:id="borehole.construction.qld.40181A.screen.336">
+									<!-- NGIS  - gwml2wc:from = [NGIS_ConstructionLog.FromDepth] -->
+									<gwml2wc:from>
+										<swe:Quantity>
+											<!-- ???? NGIS - Assume units of measure are in metres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.FromDepth] -->
+											<swe:value>22.0</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<!-- NGIS  - gwml2wc:to = [NGIS_ConstructionLog.ToDepth] -->
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.ToDepth] -->
+											<swe:value>25.1</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<!-- NGIS - Does not record gwml2wc:screenAttachmentMethod -->
+									<gwml2wc:screenAttachmentMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- NGIS - Does not record gwml2wc:screenCoating -->
+									<gwml2wc:screenCoating xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!--  gwml2wc:screenForm is the "form of the screen. Can be slotted casing, perforated casing, bridge slot casing, wire wrap or continuous slot, wire mesh, shutter or louvered, well point, tube, unknown, other." -->
+									<!-- NGIS - gwml2wc:screenForm mappings are [NGIS_ConstructionLog.ConstructionType] =
+INLT <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/unknown" xlink:title="unknown"/>
+BSC <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/bridge" xlink:title="bridge slot casing"/>
+LVC <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/louvred" xlink:title="louvred casing"/>
+SLC <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/slotted" xlink:title="slotted casing"/>
+PFC <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/perforated" xlink:title="perforated casing"/> 
+PRL <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/porous" xlink:title="porous lining"/> 
+PNP <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/punched-plate" xlink:title="punched plate"/> 
+WWS <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/wws" xlink:title="wire wound screen"/> 
+WWSR <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/wwsr" xlink:title="round wire wound screen"/> 
+WWST <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/wwst" xlink:title="triangular wire wound screen"/>  
+OPEN  <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/open" xlink:title="open hole"/>  
+MESH <gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/mesh" xlink:title="open weave mesh"/>  
+ -->
+									<gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/wws" xlink:title="wire wound screen"/>
+									
+									<!-- NGIS - If [NGIS_ConstructionLog.Property] = "AP", "SAP", "PS" "SLAP", "SLL" then gwml2wc:screenHoleWidth = [NGIS_ConstructionLog.PropertySize]  -->
+									<!-- NGIS If gwml2wc:screenHoleWidth is unknown then gwml2wc:screenHoleWidth xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:screenHoleWidth>
+									<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<swe:value>0.5</swe:value>
+										</swe:Quantity>
+										</gwml2wc:screenHoleWidth>
+<!-- NGIS - If [NGIS_ConstructionLog.Property] = "AP", "SAP", "PS" "SLAP", "SLL" then gwml2wc:screenHoleLength = [NGIS_ConstructionLog.PropertySize]  -->
+<!-- NGIS If gwml2wc:screenHoleLength is unknown then gwml2wc:screenHoleLength xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:screenHoleLength>
+									<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<swe:value>0.5</swe:value>
+										</swe:Quantity>
+										</gwml2wc:screenHoleLength>
+									<!-- gwml2wc:screenMaterial is "the material with which the screen is made. Can be metal, steel, iron, copper, brass, bronze, everdur, Armco metal, veriperm, stone, plastic, PVC, ABS, Fibreglass." -->
+									<!-- NGIS - gwml2wc:screenMaterial mappings are unknown:
+gwml2wc:screenMaterial xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" -->
+									<gwml2wc:screenMaterial xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!--  NGIS - gwml2wc:screenInternalDiameter  -->
+									<!-- NGIS - gwml2wc:screenInternalDiameter = [NGIS_ConstructionLog.InnerDiameter]  -->
+									<!-- NGIS - if [NGIS_ConstructionLog.InnerDiameter]=0 then 
+<gwml2wc:screenInternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:screenInternalDiameter>
+										<swe:Quantity>
+											<!-- NGIS Assume units of measure are millimetres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<!-- NGIS swe:value = [NGIS_ConstructionLog.InnerDiameter] -->
+											<swe:value>217.35</swe:value>
+										</swe:Quantity>
+									</gwml2wc:screenInternalDiameter>
+									<!-- NGIS - gwml2wc:screenExternalDiameter [NGIS_ConstructionLog.OuterDiameter]  -->
+									<!-- NGIS - if [NGIS_ConstructionLog.OuterDiameter]=0 then 
+<gwml2wc:screenInternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:screenExternalDiameter>
+										<swe:Quantity>
+											<!-- NGIS Assume units of measure are millimetres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<!-- NGIS swe:value = [NGIS_ConstructionLog.OuterDiameter] -->
+											<swe:value>219.00</swe:value>
+										</swe:Quantity>
+									</gwml2wc:screenExternalDiameter>
+									<!-- gwml2wc:screenPerforationMethod provides "Information on how the slots were performated. Can be drill, grinder, axe / chisel, machine, saw, torch, other, unknown." -->
+									<!-- NGIS - Does not record gwml2wc:screenPerforationMethod -->
+									<gwml2wc:screenPerforationMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- gwml2wc:screenFitting provides "Identification of the screen fitting (from the bottom). Can be bail, open, plug, tail pipe, washdown, unknown." -->
+									<!-- NGIS - Does not record gwml2wc:screenFitting -->
+									<gwml2wc:screenFitting xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- NGIS - Does not record gwml2wc:screenMake -->
+									<gwml2wc:screenMake xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- NGIS - Does not record gwml2wc:screenModel -->
+									<gwml2wc:screenModel xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- gwml2wc:screenNumber "corresponds to hole size and is given in 0.001 inch. The value is expressed as an alphanumeric code." -->
+									<!-- NGIS - Does not record gwml2wc:screenNumber -->
+									<gwml2wc:screenNumber xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- gwml2wc:screenPlacement is the "Value of thescreen placement method. Can be bail down, pull back, jetted, washed down, unknown." -->
+									<!-- NGIS - Does not record gwml2wc:screenPlacement -->
+									<gwml2wc:screenPlacement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- NGIS -  If  {[NGIS_ConstructionLog.InnerDiameter] != 0} and {[NGIS_ConstructionLog.OuterDiameter] != 0} then gwml2wc:screenWallThickness = {[NGIS_ConstructionLog.OuterDiameter]-[NGIS_ConstructionLog.InnerDiameter]} 
+Else <gwml2wc:screenWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:screenWallThickness>
+										<swe:Quantity>
+											<!-- NGIS Assume units of measure are millimetres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<!-- NGIS -  If  {[NGIS_ConstructionLog.InnerDiameter] != 0} and {[NGIS_ConstructionLog.OuterDiameter] != 0} then gwml2wc:casingWallThickness = {[NGIS_ConstructionLog.OuterDiameter]-[NGIS_ConstructionLog.InnerDiameter]} -->
+											<swe:value>1.65</swe:value>
+										</swe:Quantity>
+									</gwml2wc:screenWallThickness>
+								</gwml2wc:ScreenComponent>
+							</gwml2wc:screenElement>
+						</gwml2wc:Screen>
+					</gwml2wc:bholeConstruction>
+					<gwml2wc:bholeConstruction>
+						<!-- NGIS - gwml2wc:Sealing when [NGIS_ConstructionLog.ConstructionType] = 'SEAL', 'PLUG', or 'PKR',  -->
+						<!-- NGIS - gwml2wc:Sealing gml:id = "borehole.construction.[StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode].sealing  -->
+						<gwml2wc:Sealing gml:id="borehole.construction.qld.40181A.sealing">
+							<!--  #### gwml2wc:sealingGroutingPlacementMethod is a 'Process". I've no idea what goes in here, or how, but NGIS doesn't have this data anyway - BS -->
+							<gwml2wc:sealingGroutingPlacementMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<!-- gwml2wc:casingLeft and gwml2wc:casingSlit allow specifying the gwml2wc:CasingComponent associated with the gwml2wc:Sealing. If known these will be  internal (#) xlink:href to the gml:id of the gwml2wc:CasingComponent  -->
+							<gwml2wc:casingLeft/>
+							<gwml2wc:casingSlit/>
+							<!-- NGIS - The first sealing element based on dummy values for [NGIS_ConstructionLog.ConstructionType] = 'SEAL', BoreID = 40160043 -->
+							<gwml2wc:sealingElement>
+								<!-- NGIS - gwml2wc:SealingComponent gml:id="borehole.construction.[StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode].sealing.[NGIS_ConstructionLog.OBJECT_ID]"  -->
+								<gwml2wc:SealingComponent gml:id="borehole.construction.qld.40181A.sealing.41279">
+									<!-- NGIS  - gwml2wc:from = [NGIS_ConstructionLog.FromDepth] -->
+									<gwml2wc:from>
+										<swe:Quantity>
+											<!-- ???? NGIS - Assume units of measure are in metres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.FromDepth] -->
+											<swe:value>65</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<!-- NGIS  - gwml2wc:to = [NGIS_ConstructionLog.ToDepth] -->
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.ToDepth] -->
+											<swe:value>66</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<!-- gwml2wc:sealingMaterial is "Material used in the sealing component of a water well. Can be formation packer, welded ring, shale trap, drive shoe, driven casing, other." -->
+									<!--  NGIS - If 	[NGIS_ConstructionLog.Material] = 
+"ABS" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/abs" xlink:title="Acroylonite Butadiene Styrene"/>
+"AC" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/asbestos-cement" xlink:title="Asbestos cement"/>
+"AGGR" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/aggregate" xlink:title="Aggregate"/>
+"AL" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/aluminium" xlink:title="Aluminium"/>
+"BENT" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/bentonite" xlink:title="bentonite clay"/> 
+"BRK" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/brick" xlink:title="Brick"/>
+"BRNZ" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/bronze" xlink:title="Bronze"/>
+"BRNZS" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/silicone-bronze" xlink:title="Silicon bronze"/>
+"CLY" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/clay" xlink:title="Clay"/>
+"CMT" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/cement" xlink:title="Cement"/> 
+"CN" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/concrete" xlink:title="Concrete"/>
+"FBRG" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/fibreglass" xlink:title="Fibreglass"/> 
+"FRP" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/fibreglass-plastic" xlink:title="Fibreglass reinforced plastic"/>
+"GALV" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/galvanised-iron" xlink:title="Galvanised iron"/> 
+"GVL" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/gravel" xlink:title="Gravel"/> 
+"MTL" then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/metal" xlink:title="Metal"/> 
+NONE then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/none" xlink:title="No material present"/>	
+PE then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/polyethylene" xlink:title="Polyethylene"/>	 
+PLST then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/plastic" xlink:title="Plastic"/>
+ROCK then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/rock" xlink:title="Rock"/>
+SND then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/sand" xlink:title="Sand"/>	
+SPL then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/spoil" xlink:title="Spoil or cuttings"/>	 
+SSTL then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/stainless-steel" xlink:title="Stainless steel"/>
+STKM then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/mild-steel" xlink:title="Mild steel"/>
+STL then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/steel" xlink:title="Steel"/> 
+STLC then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/carbon-steel" xlink:title="Carbon steel"/>
+STLG then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/galvanised-steel" xlink:title="Galvanised steel"/>
+UNK then <gwml2wc:sealingMaterial  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>	
+UPVC then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/unplasticised-polyvinylchloride" xlink:title="Unplasticised polyvinylchloride"/>	
+UPVC12 then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/unplasticised-polyvinylchloride12" xlink:title="Unplasticised polyvinylchloride Class 12"/>
+UPVC15then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/unplasticised-polyvinylchloride15" xlink:title="Unplasticised polyvinylchloride Class 15"/>
+UPVC18 then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/unplasticised-polyvinylchloride18" xlink:title="Unplasticised polyvinylchloride Class 18"/>
+UPVC6 then then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/unplasticised-polyvinylchloride6" xlink:title="Unplasticised polyvinylchloride Class 6"/>
+UPVC9 then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/unplasticised-polyvinylchloride9" xlink:title="Unplasticised polyvinylchloride Class 9"/>
+WOOD then <gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/wood" xlink:title="Timber"/>	
+-->
+									<gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/cement" xlink:title="cement"/>
+									<!-- gwml2wc:sealingType "Describes the type of sealing. Can be annular sealing, pluging" -->
+									<!--  NGIS -  gwml2wc:sealingType mapping for [NGIS_ConstructionLog.ConstructionType] =
+SEAL  <gwml2wc:sealingType xlink:href="http://environment.data.gov.au/groundwater/def/borehole-sealing-type/annular-seal" xlink:title="annular sealing"/>
+PLUG  <gwml2wc:sealingType xlink:href="http://environment.data.gov.au/groundwater/def/borehole-sealing-type/plugging" xlink:title="plugging"/>
+PKR  <gwml2wc:sealingType xlink:href="http://environment.data.gov.au/groundwater/def/borehole-sealing-type/packer" xlink:title="packer"/>
+-->
+									<gwml2wc:sealingType xlink:href="http://environment.data.gov.au/groundwater/def/borehole-sealing-type/annular-seal" xlink:title="annular sealing"/>
+								</gwml2wc:SealingComponent>
+							</gwml2wc:sealingElement>
+							<!-- NGIS - The second sealing element based on dummy values for [NGIS_ConstructionLog.ConstructionType] = 'PLUG', BoreID = 40215843 -->
+							<gwml2wc:sealingElement>
+								<!-- NGIS - gwml2wc:SealingComponent gml:id="borehole.construction.[StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode].sealing.[NGIS_ConstructionLog.OBJECT_ID]"  -->
+								<gwml2wc:SealingComponent gml:id="borehole.construction.qld.40181A.sealing.129133">
+									<!-- NGIS  - gwml2wc:from = [NGIS_ConstructionLog.FromDepth] -->
+									<gwml2wc:from>
+										<swe:Quantity>
+											<!-- ???? NGIS - Assume units of measure are in metres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.FromDepth] -->
+											<swe:value>1273.1</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<!-- NGIS  - gwml2wc:to = [NGIS_ConstructionLog.ToDepth] -->
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.ToDepth] -->
+											<swe:value>1318.8</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<!-- gwml2wc:sealingMaterial is "Material used in the sealing component of a water well. Can be formation packer, welded ring, shale trap, drive shoe, driven casing, other." -->
+									<gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/concrete" xlink:title="concrete"/>
+									<!-- gwml2wc:sealingType "Describes the type of sealing. Can be annular sealing, pluging" -->
+									<!-- NGIS -  gwml2wc:sealingType mapping for [NGIS_ConstructionLog.ConstructionType] =
+SEAL  <gwml2wc:sealingType xlink:href="http://environment.data.gov.au/groundwater/def/borehole-sealing-type/annular-seal" xlink:title="annular sealing"/>
+PLUG  <gwml2wc:sealingType xlink:href="http://environment.data.gov.au/groundwater/def/borehole-sealing-type/plugging" xlink:title="plugging"/>
+PKR  <gwml2wc:sealingType xlink:href="http://environment.data.gov.au/groundwater/def/borehole-sealing-type/packer" xlink:title="packer"/>
+-->
+									<gwml2wc:sealingType xlink:href="http://environment.data.gov.au/groundwater/def/borehole-sealing-type/plugging" xlink:title="plugging"/>
+								</gwml2wc:SealingComponent>
+							</gwml2wc:sealingElement>
+							<!-- NGIS - The third sealing element based on dummy values for [NGIS_ConstructionLog.ConstructionType] = 'PKR', BoreID = 40201235 -->
+							<gwml2wc:sealingElement>
+								<!-- NGIS - gwml2wc:SealingComponent gml:id="borehole.construction.[StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode].sealing.[NGIS_ConstructionLog.OBJECT_ID]"  -->
+								<gwml2wc:SealingComponent gml:id="borehole.construction.qld.40181A.sealing.108790">
+									<!-- NGIS  - gwml2wc:from = [NGIS_ConstructionLog.FromDepth] -->
+									<gwml2wc:from>
+										<swe:Quantity>
+											<!-- ???? NGIS - Assume units of measure are in metres -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.FromDepth] -->
+											<swe:value>89.0</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<!-- NGIS  - gwml2wc:to = [NGIS_ConstructionLog.ToDepth] -->
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS  - swe:value =  [NGIS_ConstructionLog.ToDepth] -->
+											<swe:value>90.0</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<!-- gwml2wc:sealingMaterial is "Material used in the sealing component of a water well. Can be formation packer, welded ring, shale trap, drive shoe, driven casing, other." -->
+									<gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/bentonite" xlink:title="bentonite clay"/>
+									<!-- gwml2wc:sealingType "Describes the type of sealing. Can be annular sealing, pluging" -->
+									<!-- NGIS -  gwml2wc:sealingType mapping for [NGIS_ConstructionLog.ConstructionType] =
+SEAL  <gwml2wc:sealingType xlink:href="http://environment.data.gov.au/groundwater/def/borehole-sealing-type/annular-seal" xlink:title="annular sealing"/>
+PLUG  <gwml2wc:sealingType xlink:href="http://environment.data.gov.au/groundwater/def/borehole-sealing-type/plugging" xlink:title="plugging"/>
+PKR  <gwml2wc:sealingType xlink:href="http://environment.data.gov.au/groundwater/def/borehole-sealing-type/packer" xlink:title="packer"/>
+-->
+									<gwml2wc:sealingType xlink:href="http://environment.data.gov.au/groundwater/def/borehole-sealing-type/packer" xlink:title="packer"/>
+								</gwml2wc:SealingComponent>
+							</gwml2wc:sealingElement>
+						</gwml2wc:Sealing>
+					</gwml2wc:bholeConstruction>
+					<!-- gwml2wc:bholeHeadworks captures BoreCollar information. This will, largely be a duplicate of GW_Well:gwWellLocation for collarLocation and GW_Well:gwWellReferenceElevation for collarElevation. gwml2wc:collarHeadworkType is the third  BoreCollar property -->
+					<gwml2wc:bholeHeadworks>
+						<!-- NGIS - gwml2wc:BoreCollar gml:id="borehole.construction.[NGIS_ConstructionLog.HydroCode].collar -->
+						<gwml2wc:BoreCollar gml:id="borehole.construction.40181A.collar">
+							<!-- NGIS gwml2wc:collarElevation = [NGIS_ConstructionLog.RefElev] -->
+							<gwml2wc:collarElevation uomLabels="metre" axisLabels="m AHD" srsName="http://www.opengis.net/def/crs/EPSG/0/5711" srsDimension="1">16.81</gwml2wc:collarElevation>
+							<!-- An assembly bolted to the production casing to control the well, to provide access and protection (e.g. from flooding, vandalism) http://www.water.wa.gov.au/PublicationStore/first/102386.pdf
+example : raised tube, covers, manhole, 'Gattick Cover' flush, concrete ring, etc..
+Various source, including https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/290727/scho0106bkct-e-e.pdf and http://www.water.wa.gov.au/PublicationStore/first/102386.pdf
+ -->
+							<!-- ???? NGIS - May have information in [NGIS_ConstructionLog.ConstructionType] that could be used to populate gwml2wc:collarHeadworkType. 
+Qld data does not contain appropriate values -->
+							<gwml2wc:collarHeadworkType/>
+							<gwml2wc:collarLocation xlink:href=""/>
+							<!-- gml:Point gml:id is the identifier for the gwml2wc:Borehole:gwml2wc:collarLocation. If it is defined elsewhere (e.g. gwml2w:gwWellLocation/gml:Point) use <gwml2wc:collarLocation xlink:href="#{gml:id}"/> -->
+							<!-- gml:Point gml:id is the identifier for the GW_Well:gwWellLocation. If it is defined elsewhere use <gwml2w:gwWellLocation xlink:href="#{gml:id}"/> -->
+							<!-- NGIS - if defined here use gwml2w:gwWellLocation/gml:Point gml:id="borehole.construction.[StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode].location"  -->
+							<!--				<gml:Point gml:id="borehole.construction.qld.40181A.location" srsName="EPSG:4939"> -->
+							<!-- NGIS - gml:pos = [NGIS_Bore.Longitude] [NGIS_Bore.Latitude] -->
+							<!--					<gml:pos>141.79256 -37.85769</gml:pos>
+						</gml:Point>
+					</gwml2wc:collarLocation> -->
+							<!-- gwml2wc:Borehole/gwml2wc:bholeDetails refers to the GW_Well that the Borehole is associated with. If in-line use xlink:href="#{gwml2w:GW_Well gml:id}" -->
+							<!-- NGIS - gwml2wc:bholeDetails xlink:href="http://environment.data.gov.au/groundwater/feature/borehole/[StateTerritoryCVD].[NGIS_ConstructionLog.HydroCode]" -->
+							<!--<gwml2wc:bholeDetails xlink:href="http://environment.data.gov.au/groundwater/feature/borehole/qld.40181A"/>-->
+							<gwml2wc:bholeDetails xlink:href="#borehole.qld.81402B"/>
+						</gwml2wc:BoreCollar>
+					</gwml2wc:bholeHeadworks>
+				</gwml2wc:Borehole>
+			</gwml2w:gwWellConstruction>
+			<!-- gwml2w:gwWellContributionZone is the area surrounding a pumping well or other discharge site that encompasses all areas and features that supply groundwater to the well or discharge site. -->
+			<!-- NGIS - gwml2w:gwWellContributionZone is not known -->
+			<gwml2w:gwWellContributionZone xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- NGIS - gwml2w:gwWellLocation = [NGIS_Bore.Longitude] [NGIS_Bore.Latitude]  -->
+			<gwml2w:gwWellLocation>
+				<!-- gml:Point gml:id is the identifier for the GW_Well:gwWellLocation. If it is defined elsewhere use <gwml2w:gwWellLocation xlink:href="#{gml:id}"/> -->
+				<!--  NGIS - if defined here use gml:id="borehole.[StateTerritoryCVD].[NGIS_Bore.HydroCode].location"  -->
+				<gml:Point gml:id="borehole.qld.81402B.location" srsName="EPSG:4939">
+					<!-- NGIS - gml:pos = [NGIS_Bore.Longitude] [NGIS_Bore.Latitude] -->
+					<gml:pos>149.233661 -21.453933</gml:pos>
+				</gml:Point>
+			</gwml2w:gwWellLocation>
+			<!-- NGIS - Multiple values may occur in [NGIS_Bore.FType]. These will need to be disambiguated and mapped accordingly   -->
+			<!-- NGIS - gwWellPurpose and gwWellUse: [NGIS_Bore.FType] codes need to be mapped to gwWellPurpose and gwWellUse with xlink:href and xlink:title values required -->
+			<!-- NGIS - Suggest "Purpose" vocabulary at 'http://environment.data.gov.au/groundwater/def/borehole-purpose/" 
+Suggest "Use" vocabulary at 'http://environment.data.gov.au/groundwater/def/borehole-use/ -->
+			<!--
+AQCT 	Aquaculture 	Water supply for aqua cultural enterprise
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/aquaculture" xlink:title=" Water supply for aqua cultural enterprise"/>
+
+ASR 	Aquifer storage and recovery 	Aquifer storage and recovery (ASR) facility.
+ <gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/storage-recovery" xlink:title="Aquifer storage and recovery (ASR) facility"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+BVGE 	Beverages 	Water supply for commercial beverages eg mineral water.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/beverages" xlink:title="Water supply for commercial beverages"/>
+
+CATL 	Cattle 	Water supply for cattle.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/cattle" xlink:title="Water supply for cattle"/>
+
+COMS 	Commercial 	Water supply for commercial activities ie a service business that does not fabricate a product.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/commercial" xlink:title="Water supply for commercial activities"/>
+
+CULT 	Natural heritage/cultural 	Feature of natural or cultural significance.
+ <gwml2w:gwWellPurpose  xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/cultural" xlink:title="Feature of natural or cultural significance"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+DMGN 	Domestic garden 	Water supply for domestic garden.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/domestic-garden" xlink:title="Water supply for domestic garden"/>
+
+DOM 	Domestic household 	Domestic scale water supply for household needs eg. washing, toilet
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/domestic-household" xlink:title="Water supply for domestic household"/>
+
+DOMD 	Domestic drinking 	Domestic scale potable water supply.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/domestic-drinking" xlink:title="Domestic scale potable water supply"/>
+
+DRNG 	Drainage of groundwater 	Drainage of groundwater principally to lower watertable or remove deleterious groundwater.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/groundwater-drainage" xlink:title="Drainage of groundwater principally to lower watertable or remove deleterious groundwater"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+DRNK 	Potable water supply 	Potable water supply i.e. drinking water
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/potable" xlink:title="Potable water supply"/>
+
+DROT 	Drought relief 	Emergency supply for drought relief
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/drought-relief" xlink:title="Emergency supply for drought relief"/>
+
+DWAT 	Dewatering 	Dewatering of an area or structure
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/dewatering" xlink:title="Dewatering of an area or structure"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+DYCL 	Dairy Cattle 	Water supply for dairy cattle.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/cattle-dairy" xlink:title="Water supply for dairy cattle"/>
+
+EXPR 	Exploration or research	Bore installed for the purpose of exploration or research
+ <gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/exploration-research" xlink:title="Bore installed for the purpose of exploration or research"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+GTHM 	Geothermal 	Electricity generated from geothermal source
+<gwml2w: gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/electricity-generation" xlink:title="Electricity generated from geothermal source"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+
+GWMD 	Groundwater modelling 	Collection of hydrogeological information at nodal point of groundwater model
+ <gwml2w: gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/groundwater-modelling" xlink:title="Collection of hydrogeological information at nodal point of groundwater model"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+HELP 	Emergency supply 	Used as a water source when principle supply is unavailable.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/emergency-supply" xlink:title="Water source when principle supply is unavailable"/>
+
+HUSE 	Household 	Water supply for household needs eg. washing, toilet.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/household" xlink:title="Water supply for household needs"/>
+
+INDS 	Manufacturing and industry 	Water supply for manufacturing and industry.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/industry" xlink:title="Water supply for manufacturing and industry"/>
+
+INST 	Institutional supply 	Water supply for institution. 
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/institution" xlink:title="Water supply for institution"/>
+
+IPST 	Irrigated pasture 	Water supply for irrigated pasture. 
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/irrigated-pasture" xlink:title=" Water supply for irrigated pasture "/>
+
+IRAG 	Irrigated agriculture 	Water supply for irrigated agriculture.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/irrigated-agriculture" xlink:title="Irrigated agriculture"/>
+
+IRRD 	Irrigation drainage 	Disposal of irrigation drainage.
+<gwml2w: gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/irrigation-disposal" xlink:title="Disposal of irrigation drainage"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+LQDW 	Liquid waste	Disposal of liquid waste.
+<gwml2w: gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/waste-disposal" xlink:title="Disposal of liquid waste/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+MIND 	Mine drainage	Disposal of mine drainage.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/mine-disposal" xlink:title="Disposal of mine drainage"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+
+MINE 	Mining	Mining i.e. extraction of minerals or energy resources.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/mining" xlink:title="Extraction of minerals or energy resources"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+MNAS 	Mining activities		Water supply for mining activities.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/mining" xlink:title="Water supply for mining activities"/>
+
+MON 	Monitoring 	Monitoring of groundwater conditions.
+ <gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/monitoring" xlink:title="Monitoring of groundwater conditions"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+PUBS 	Public facilities	Water supply for public facilities.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/public-facilities" xlink:title="Water supply for public facilities"/>
+
+RECN 	Recreation 	Water supply for recreational purposes.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/recreation" xlink:title="Water supply for recreational purposes"/>
+
+RECS 	Recreation and cultural activities 	Water supply for recreation and cultural activities.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/recreation-cultural" xlink:title="Water supply for recreation and cultural activities"/>
+
+REMD 	Remediation 	Remediation of groundwater contamination.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/groundwater-remediation" xlink:title="Remediation of groundwater contamination"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+RESV 	Reservoir 	Water reservoir eg dam.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/reservoir" xlink:title="Water reservoir"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+RODS 	Road Supply 	Water supply for road
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/road" xlink:title="Water supply for road"/>
+
+RPRS 	Repressurise 	Input of water in order to increase or maintain aquifer pressures
+<gwml2w: gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/repressurise" xlink:title="Input of water in order to increase or maintain aquifer pressures"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+SLTI 	Salinity Interception 	Interception of saline groundwater.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/salinity-interception" xlink:title="Interception of saline groundwater"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+STOK 	Water supply for livestock 	Water supply for livestock.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/livestock" xlink:title="Water supply for livestock"/>
+
+STRM 	Storm water 	Disposal of storm water.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/stormwater-disposal" xlink:title="Disposal of storm water"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+TOWN 	Town household 	Town scale water supply for household needs eg. washing, toilet
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/town-household" xlink:title="Town scale water supply for household needs"/>
+
+TRAN 	Transport 	Transportation feature
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/transportation" xlink:title=" Transportation feature"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+TRCS 	Transport/communications supply 	Water supply for transport or communications facility.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/transport-communications" xlink:title="Water supply for transport or communications facility"/>
+
+TWND 	Town drinking	Town scale potable water supply.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/town" xlink:title="Town scale potable water supply"/>
+
+UBND 	Urban drinking	Urban scale potable water supply.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/urban" xlink:title="Urban scale potable water supply"/>
+
+UNK 	Unknown 	The purpose of the groundwater feature is unknown.
+<gwml2w:gwWellPurpose xsi:nil="true" nilReason="unknown" xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+ <gwml2w:gwWellWaterUse xsi:nil="true" nilReason="unknown" xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+
+URBN 	Urban household 	Urban scale water supply for household needs eg. washing, toilet.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/urban-household" xlink:title="Urban scale water supply for household needs"/>
+
+UTIL 	Utilities 	Water supply for utilities - fluid storage or power generation
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/utilities" xlink:title="Water supply for utilities"/>
+
+VLGD 	Village drinking 	Village scale potable water supply.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/village" xlink:title="Village scale potable water supply"/>
+
+VLGE 	Village household 	Village scale water supply for household needs eg. washing, toilet.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/village-household" xlink:title="Village scale water supply for household needs"/>
+
+WAST 	Waste disposal 	Disposal of waste materials.
+ <gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/waste-disposal" xlink:title="Disposal of waste materials"/>
+<gwml2w:gwWellWaterUse xlink:href=" http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title=" inapplicable"/>
+
+WSUP 	Water supply	Water supply.
+<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/water-supply" xlink:title="Water supply"/>
+ <gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/water-supply" xlink:title="Water supply"/>
+
+-->
+			<!-- 	NGIS - gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/[NGIS_Bore.FType]" xlink:title="[NGIS_Bore.FType]" -->
+			<gwml2w:gwWellPurpose xlink:href="http://environment.data.gov.au/groundwater/def/borehole-purpose/extraction" xlink:title="extraction"/>
+			<!-- GWML2 allows multiple gwml2w:gwWellReferenceElevation. If multiples are provided which is the reference elevation for the "from - to" properties? -->
+			<!-- NGIS - Multiple gwml2w:gwWellReferenceElevation used to capture [NGIS_Bore.RefElev], [NGIS_Bore.TsRefElev], [NGIS_Bore.LandElev]. -->
+			<!-- NGIS - gwml2w:elevationMeasurementMethod:  Reference elevation methods ([NGIS_Bore.RefElevMethod],  [NGIS_Bore.TsRefElevMethod], [NGIS_Bore.LandElevMethod]) mapped to gwml2w:elevationMeasurementMethod. Vocabulary of "Elevation Method" and "Location Method" are required at 'http://environment.data.gov.au/groundwater/def/elevation-method/"  and "http://environment.data.gov.au/groundwater/def/location-method/"
+
+AIR 	Air photo 	Estimated from an air photo / aerial photography.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/airphoto" xlink:title="Estimated from an air photo / aerial photography"/>
+ARB 	Arbitrary 	An arbitrary position assigned to a feature with unknown site.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/arbitary" xlink:title="An arbitrary position assigned to a feature with unknown site"/>
+AST 	Astronomical 	Measured from astronomical observations.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/astronomical" xlink:title="Measured from astronomical observations"/>
+BAR 	Barometer. 	Measured using aneroid barometer.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/barometer" xlink:title="Measured using aneroid barometer"/>
+CAD 	Cadastre 	Estimated by address matching or assigning to cadastre (property information).
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/cadastre" xlink:title="Estimated by address matching or assigning to cadastre"/>
+CBF 	Block Face 	Placed on calculated midpoint of street segment of block.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/block-face" xlink:title="Placed on calculated midpoint of street segment of block"/>
+CNI 	Nearest intersection 	Placed on calculated midpoint of street segment of block.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/block-interesection" xlink:title="Placed on calculated midpoint of street segment of block"/>
+CPC 	Property centre 	Placed in centre of property.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/property-centre" xlink:title="Placed in centre of property"/>
+CTN 	Town 	Placed on centre of associated built up area.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/town" xlink:title="Placed on centre of associated built up area"/>
+DEM 	Digital Elevation Model 	Estimated from digital elevation model (DEM).
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/dem" xlink:title="Estimated from digital elevation model (DEM)"/>
+EST 	Estimate 	Estimated using an unknown method i.e. not surveyed.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/estimate" xlink:title="Estimated using an unknown method"/>
+FLD 	Field 	Estimated from field observation.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/estimate" xlink:title="Estimated from field observation"/>
+GAT 	Autonomous GPS 	Autonomous global positioning system.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/gps-a" xlink:title="Autonomous global positioning system"/>
+GDF 	Differential GPS 	Measured using differential global positioning system.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/gps-d" xlink:title="Measured using differential global positioning system"/>
+GKN 	Kinematic GPS 	Measured using GPS device with phase kinematic relative positioning.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/gps-k" xlink:title="Measured using GPS device with phase kinematic relative positioning"/>
+GPS 	Global positioning system 	Measured using global positioning system.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/gps" xlink:title="Measured using global positioning system"/>
+LID 	Lidar 	Estimated from LiDAR (Light Detection and Ranging) technology.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/lidar" xlink:title="Estimated from LiDAR (Light Detection and Ranging) technology."/>
+GST 	Static GPS 	Measured using GPS device with phase static relative positioning.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/gps-s" xlink:title="Measured using GPS device with phase static relative positioning"/>
+MAP 	Map 	Estimated from map e.g. using contours.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/map" xlink:title="Estimated from map e.g. using contours"/>
+OWN 	Owner 	Estimated from owner returns.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/owner" xlink:title="Estimated from owner returns"/>
+RAD 	Radio triangulation 	Measured by triangulation using synchronised pulsed transmissions from radio stations
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/radio" xlink:title="Measured by triangulation using synchronised pulsed transmissions from radio stations"/>
+RPT 	Report 	Estimate derived from a report eg drillers location map.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/report" xlink:title="Estimate derived from a report"/>
+SAT 	Satellite 	Estimated from satellite imagery.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/satellite" xlink:title="Estimated from satellite imagery"/>
+SBM 	Benchmark survey 	Precise survey from a benchmark.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/benchmark" xlink:title="Precise survey from a benchmark"/>
+SCP 	Control point survey 	Survey between non benchmark control points.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/control-point" xlink:title="Survey between non benchmark control points"/>
+STP 	Stereophotogrammetry 	Measured from stereopairs of photogrammes.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/stereophoto" xlink:title="Measured from stereopairs of photogrammes"/>
+STR 	Trignometric 	Trigonometrical levelling.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/trig" xlink:title="Trigonometrical levelling"/>
+SVY 	Survey 	Traditional survey with ground control.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/survey" xlink:title="Traditional survey with ground control"/>
+UNK 	Unknown 	Method of location or elevation is unknown.
+<gwml2w:elevationMeasurementMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+VBL 	Verbal 	Estimated from verbal reports.
+<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/location-method/verbal" xlink:title="Estimated from verbal reports"/>
+-->
+			<!-- NGIS - mappings between gwml2w:elevationType and NGIS reference elevation descriptions  for [NGIS_Bore.RefElevDesc] and [NGIS_Bore.TsRefElevDesc]:
+
+AIR 	Airline 	Datum is base of airline.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/airline-base" xlink:title="Datum is base of airline"/>
+BDG 	Bridge 	Datum is top of bridge over groundwater feature eg lake, river.
+ <gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/bridge-top" xlink:title="Datum is top of bridge over groundwater feature"/>
+CAB 	Cable 	Datum is top of cable access on the cable tool rig.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/cable-access" xlink:title="Datum is top of cable access on the cable tool rig"/>
+CEL 	Element 	Datum is construction element of groundwater feature.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/construction-element" xlink:title="Datum is construction element of groundwater feature"/>
+COL 	Collar 	Datum is top of hole collar during construction.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/collar" xlink:title="Datum is top of hole collar during construction"/>
+CON 	Construction 	Datum is part of construction phase of groundwater feature.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/construction" xlink:title="Datum is part of construction phase of groundwater feature"/>
+COV 	Cover 	Datum is top of protective cover over groundwater feature.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/cover" xlink:title="Datum is top of protective cover over groundwater feature"/>
+FLR 	Floor 	Datum is top of floor of groundwater feature eg floor of dug well.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/floor" xlink:title="Datum is top of floor of groundwater feature eg floor of dug well"/>
+GBD 	Gauge board 	Datum is top of gauge board.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/gauge-board" xlink:title="Datum is top of gauge board"/>
+KLB 	Kelly bushing 	Datum is top of bushing or insert on rotary table found on rotary drill rigs through which the kelly passes.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/kelly-bushing" xlink:title="Datum is top of bushing or insert on rotary table found on rotary drill rigs through which the kelly passes"/>
+NAT 	Natural feature 	Datum is a natural feature of landscape around site.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/natural-feature" xlink:title="Datum is a natural feature of landscape around site"/>
+NGS 	Natural ground surface 	Datum is ground surface at site of groundwater feature.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/natural-ground-surface" xlink:title="natural ground surface"/>
+PBP 	Base plate 	Datum is top of base plate for pump.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/base-plate" xlink:title="Datum is top of base plate for pump"/>
+SBM 	Benchmark 	Datum is top of a permanently established survey point.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/benchmark" xlink:title="Datum is top of a permanently established survey point"/>
+SMK 	Survey marker 	Datum is top of an arbitrary and temporary marker.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/survey-marker" xlink:title="Datum is top of an arbitrary and temporary marker"/>
+SVY 	Survey 	Datum is part of survey.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/survey" xlink:title="Datum is part of survey"/>
+TOC 	Top of Casing 	Datum is top of casing/ standpipe.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/casing-top" xlink:title="Datum is top of casing/ standpipe"/>
+UNK 	Unknown. 	Feature that datum relates to is unknown.
+<gwml2w:elevationType  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+WEL 	Well 	Datum is the top of well frame or lining.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/well" xlink:title="Datum is the top of well frame or lining"/>
+WIN 	Windmill clamp 	Datum is top of windmill clamp.
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/windmill-clamp" xlink:title="Datum is top of windmill clamp."/>
+ -->
+			<!--  -->
+			<!-- NGIS - elevation: [NGIS_Bore.HeightDatum] codes need to be mapped to gwml2w:elevation srsName
+AHD 	Australian height datum 	The Australian Height Datum is a geodetic datum for altitude measurement in Australia.
+ <gwml2w:elevation srsName="http://www.opengis.net/def/crs/EPSG/0/5711" uomLabels="m AHD" srsDimension="1">
+ASL 	Above sea level 	Above sea level is the elevation (on the ground) or altitude (in the air) of any object, relative to the average sea level datum.
+????
+ASS 	Assumed datum 	The datum point is assumed rather than actual.
+????
+MSL 	Mean sea level 	The sea level halfway between the mean levels of high and low water.
+????
+STD 	State datum 	The datum adopted by the individual State or Territory.
+????
+UNK 	Unknown 	Unknown height datum.
+<gwml2w:elevation srsName="http://www.opengis.net/def/nil/OGC/0/unknown" uomLabels="unknown" srsDimension="1">
+
+-->
+			<!-- NGIS - First gwml2w:gwWellReferenceElevation based on [NGIS_Bore.LandElev] -->
+			<gwml2w:gwWellReferenceElevation>
+				<gwml2w:Elevation>
+					<!-- NGIS - gwml2w:elevation/srsName based on [NGIS_Bore.HeightDatum] -->
+					<!-- NGIS - gwml2w:elevation value = [NGIS_Bore.LandElev]  -->
+					<gwml2w:elevation srsName="http://www.opengis.net/def/crs/EPSG/0/5711" uomLabels="m AHD" srsDimension="1">13.865666</gwml2w:elevation>
+					<!-- NGIS - does not have gwml2w:elevationAccuracy -->
+					<gwml2w:elevationAccuracy/>
+					<!-- NGIS - For [NGIS_Bore.LandElev] then:
+<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/natural-ground-surface" xlink:title="natural ground surface"/>
+ -->
+					<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/natural-ground-surface" xlink:title="natural ground surface"/>
+					<!-- NGIS - For [NGIS_Bore.LandElev] gwml2w:elevationMeasurementMethod = [NGIS_Bore.LandElevMethod] -->
+					<!-- NGIS - gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/[NGIS_Bore.LandElevMethod]" xlink:title="[NGIS_Bore.LandElevMethod]" -->
+					<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/dem" xlink:title="Estimated from digital elevation model (DEM)"/>
+				</gwml2w:Elevation>
+			</gwml2w:gwWellReferenceElevation>
+			<!-- NGIS - Second gwml2w:gwWellReferenceElevation based on [NGIS_Bore.RefElev] -->
+			<gwml2w:gwWellReferenceElevation>
+				<gwml2w:Elevation>
+					<!-- NGIS - gwml2w:elevation/srsName based on [NGIS_Bore.HeightDatum] -->
+					<!-- NGIS - gwml2w:elevation value = [NGIS_Bore.RefElev]  -->
+					<gwml2w:elevation srsName="http://www.opengis.net/def/crs/EPSG/0/5711" uomLabels="m AHD" srsDimension="1">13.865666</gwml2w:elevation>
+					<!-- NGIS - does not have gwml2w:elevationAccuracy -->
+					<gwml2w:elevationAccuracy/>
+					<!-- NGIS - For [NGIS_Bore.RefElev] then gwml2w:elevationType based on [NGIS_Bore.RefElevDesc] -->
+					<gwml2w:elevationType xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/reference elevation" xlink:title="reference elevation"/>
+					<!-- NGIS - For [NGIS_Bore.RefElev] gwml2w:elevationMeasurementMethod = [NGIS_Bore.RefElevMethod] -->
+					<!-- NGIS - Vocabulary of "Elevation Method" is required at 'http://environment.data.gov.au/groundwater/def/elevation-method/" -->
+					<!-- NGIS - gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/[NGIS_Bore.RefElevMethod]" xlink:title="[NGIS_Bore.RefElevMethod]" -->
+					<gwml2w:elevationMeasurementMethod xlink:href="http://environment.data.gov.au/groundwater/def/elevation-method/dem" xlink:title="Estimated from digital elevation model (DEM)"/>
+				</gwml2w:Elevation>
+			</gwml2w:gwWellReferenceElevation>
+			<!-- NGIS - Third gwml2w:gwWellReferenceElevation based on [NGIS_Bore.TsRefElev] Not configured -->
+			<!-- NGIS - If {[NGIS_Bore.TsRefElevDesc] = "NA"} then no  gwml2w:gwWellStaticWaterDepth is required for [NGIS_Bore.TsRefElev] values -->
+			<!-- ???? NGIS - gwml2w:gwWellStaticWaterDepth:- NGIS does not have gwml2w:gwWellStaticWaterDepth values unless use first value from time series measurements -->
+			<gwml2w:gwWellStaticWaterDepth xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- NGIS - gwml2w:gwWellStatus = [NGIS_Bore.Status] -->
+			<!-- NGIS - gwWellStatus:- [NGIS_Bore.Status] codes need to be mapped to gwWellStatus:
+
+ABN 	Abandoned 	Groundwater feature has been abandoned but the functionality is unknown.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/abandoned" xlink:title="Groundwater feature has been abandoned but the functionality is unknown"/>
+BRK 	Backfilled 	Groundwater feature has been backfilled.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/backfilled" xlink:title="Groundwater feature has been backfilled"/>
+CAP 	Capped 	Groundwater feature has been capped
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/capped" xlink:title="Groundwater feature has been capped"/>
+CNF 	Controlled flow 	Groundwater flow is controlled eg by valves on headworks.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/controlled-flow" xlink:title="Groundwater feature is controlled"/>
+COM 	Combination 	Some components of the groundwater feature are flowing while others are non-flowing.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/combination" xlink:title="Some components of the groundwater feature are flowing while others are non-flowing."/>
+CSF 	Ceased flow 	Groundwater feature was originally flowing but has since ceased.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/ceased-flow" xlink:title="Groundwater feature was originally flowing but has since ceased"/>
+DCM 	Decommissioned 	Groundwater feature has been permanently discontinued eg plugged.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/decommissioned" xlink:title="Groundwater feature has been permanently discontinued"/>
+DRY 	Dry 	No groundwater evident.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/dry" xlink:title="No groundwater evident"/>
+FLO 	Flowing 	Head is above ground surface so is flowing artesian.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/flowing" xlink:title="Head is above ground surface so is flowing artesian"/>
+FUN 	Functional 	Groundwater feature is in working order.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/functional" xlink:title="Groundwater feature is in working order"/>
+IRF 	Irregular flow 	Groundwater flow occurs in sporadic intervals.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/irregular" xlink:title="Groundwater flow occurs in sporadic intervals"/>
+NOF 	Non-flowing 	Head is below the ground surface so is not flowing.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/non-flowing" xlink:title="Head is below the ground surface so is not flowing"/>
+NON 	Non-functional 	Groundwater feature is not in working order eg collapsed, blocked, damaged, destroyed.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/non-functional" xlink:title="Groundwater feature is not in working order"/>
+PDF 	Periodic flow 	Groundwater flow occurs at more or less regular intervals eg geyser.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/periodic" xlink:title="Groundwater flow occurs at more or less regular intervals"/>
+PRF 	Perennial flow 	Groundwater feature has continuous groundwater flow.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/perennial" xlink:title="Groundwater feature has continuous groundwater flow"/>
+PRP 	Proposed 	Construction has not occurred of the groundwater feature.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/proposed" xlink:title="Construction has not occurred of the groundwater feature"/>
+RCF 	Recharge response 	Groundwater feature flows only after periods of recharge eg rainfall.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/recharge-response" xlink:title="Groundwater feature flows only after periods of recharge"/>
+REC 	Reconditioned 	Groundwater feature has been reconditioned so that functionality has improved.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/reconditioned" xlink:title="Groundwater feature has been reconditioned so that functionality has improved"/>
+RMV 	Removed 	Groundwater feature has been physically removed.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/removed" xlink:title="Groundwater feature has been physically removed"/>
+RPL 	Replaced 	Groundwater feature is not functional and has been replaced by a newer version.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/replaced" xlink:title="Groundwater feature has been replaced by a newer version"/>
+SEP 	Seep 	Small intake of groundwater into groundwater feature.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/seep" xlink:title="Small intake of groundwater into groundwater feature"/>
+SNF 	Seasonal flow 	Groundwater flow varies seasonally.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/seasonal" xlink:title="Groundwater flow varies seasonally"/>
+UCF 	Uncontrolled flow 	Groundwater flow is uncontrolled.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/uncontrolled" xlink:title="Groundwater flow is uncontrolled"/>
+UNK 	Unknown 	Status of groundwater feature is unknown.
+<gwml2w:gwWellStatus  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+USE 	Functioning 	Groundwater feature is functional and in use.
+<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/functioning" xlink:title="Groundwater feature is functional and in use"/>
+-->
+			<gwml2w:gwWellStatus xlink:href="http://environment.data.gov.au/groundwater/def/borehole-status/functioning" xlink:title="Groundwater feature is functional and in use"/>
+			<!-- NGIS - gwml2w:gwWellTotalLength = [NGIS_Bore.DrilledDepth] -->
+			<!--  If [NGIS_Bore.DrilledDepth] = 0 then gwml2w:gwWellTotalLength = [NGIS_Bore.BoreDepth] -->
+			<!--  NGIS - If {[NGIS_Bore.BoreDepth] = 0} and {[NGIS_Bore.DrilledDepth] = 0} then :
+<gwml2w:gwWellTotalLength xsi:nil="true"  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+			<gwml2w:gwWellTotalLength>
+				<swe:Quantity>
+					<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+					<!-- NGIS - swe:value = [NGIS_Bore.BoreDepth] or [NGIS_Bore.DrilledDepth] -->
+					<swe:value>13.865666</swe:value>
+				</swe:Quantity>
+			</gwml2w:gwWellTotalLength>
+			<!-- #### gwWellUnit specifies the GW_HydrogeoUnit. This duplicates the sampledFeature property. It also duplicates the GW_GeologyLog. Examples of all 3 are provided as xlink:hrefs but all may not be required  -->
+			<!--  NGIS - The hydrogeologic unit is described by combining the [NGIS_HydrogeologicUnit] unit properties with the [NGIS_BoreholeLog] table. These are delivered as GW_Aquifer, GW_ContainingBed, GW_Basin or GW_AquiferSystem features -->
+			<!-- NGIS - For gwml2w:gwWellUnit:
+gwml2w:gwWellUnit xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/hgu.[NGIS_Bore.StateTerritory].[NGIS_Bore.HGUNumber]" xlink:title="[NGIS_Bore.HGUName]" xlink:role="hydrogeologic unit" -->
+			<!-- #### Should this rather be the NafHGUName? #### -->
+			<!-- NGIS - For gwml2w:gwWellUnit:
+gwml2w:gwWellUnit xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/nafhgu.[NGIS_Bore.StateTerritory].[NGIS_Bore.NafHGUNumber]" xlink:title="[NGIS_Bore.NafHGUName]" xlink:role="hydrogeologic unit" -->
+			<!--  NGIS - gwml2w:gwWellUnit could also be used to deliver 'lithologic units' from [NGIS_BoreholeLog]. In this mapping they are treated as GW_GeologyLogs as per [NGIS_LithologyLog] -->
+			<gwml2w:gwWellUnit xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.4.1330" xlink:title="Lizzie Creek Volcanic Group" xlink:role="hydrogeologic unit"/>
+			<!-- NGIS - If [NGIS_Bore.HGUNumber] = "-9999" and [NGIS_Bore.NAFHGUNumber] = "-9999" then  there are no gwWellUnits:
+gwml2w:gwWellUnit xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" -->
+			<gwml2w:gwWellUnit xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- 	NGIS - gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/[NGIS_Bore.FType]" xlink:title="[NGIS_Bore.FType]" -->
+			<!--  NGIS - See gwWellPurpose documentation for the mapping -->
+			<gwml2w:gwWellWaterUse xlink:href="http://environment.data.gov.au/groundwater/def/borehole-use/irrigated-agriculture" xlink:title="Irrigated agriculture"/>
+			<!--  NGIS - Does not have gwml2w:gwWellYield info? -->
+			<gwml2w:gwWellYield xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gwWellLicence Licence is for relating to the drilling of the well or to the extraction of groundwater. -->
+			<!-- NGIS - Has [NGIS_Bore.LicenceExtractID], [NGIS_Bore.LicenceExtractVolume], [NGIS_Bore.LicenceUseID] -->
+			<!-- NGIS - If {[NGIS_Bore.LicenceExtractID] = 0} and {[NGIS_Bore.WorksID] = 0} and {[NGIS_Bore.LicenseUseID] = 0} then leave gwml2w:gwWellLicence out -->
+			<!-- NGIS - First gwml2w:gwWellLicence is a Licence for groundwater extraction -->
+			<!-- No licence data is included in NGIS database -->
+			<gwml2w:gwWellLicence>
+				<gwml2w:GW_Licence>
+					<!-- NGIS - gwml2w:gwWellLicence/gwml2:gwLicenceID = [NGIS_Bore.LicenceExtractID] -->
+					<gwml2w:gwLicenceID>121345</gwml2w:gwLicenceID>
+					<!-- NGIS - gwml2w:gwWellLicence/gwml2:gwPurpose = "Licence for groundwater extraction" -->
+					<gwml2w:gwPurpose>Licence for groundwater extraction</gwml2w:gwPurpose>
+					<!--  NGIS- does not have anything for gwml2w:gwWellLicence/gwml2:gwTimePeriod  -->
+					<gwml2w:gwTimePeriod xsi:nil="true"/>
+				</gwml2w:GW_Licence>
+			</gwml2w:gwWellLicence>
+			<!-- NGIS - Second gwml2w:gwWellLicence is a Licence to drill and construct bore -->
+			<gwml2w:gwWellLicence>
+				<gwml2w:GW_Licence>
+					<!-- NGIS - gwml2w:gwWellLicence/gwml2:gwLicenceID = [NGIS_Bore.WorksID] -->
+					<gwml2w:gwLicenceID>121345</gwml2w:gwLicenceID>
+					<!-- NGIS - gwml2w:gwWellLicence/gwml2:gwPurpose = "Licence to drill and construct bore" -->
+					<gwml2w:gwPurpose>Licence to drill and construct bore</gwml2w:gwPurpose>
+					<!--  NGIS- does not have anything for gwml2w:gwWellLicence/gwml2:gwTimePeriod  -->
+					<gwml2w:gwTimePeriod xsi:nil="true"/>
+				</gwml2w:GW_Licence>
+			</gwml2w:gwWellLicence>
+			<!-- NGIS - Third gwml2w:gwWellLicence is a License for using groundwater -->
+			<gwml2w:gwWellLicence>
+				<gwml2w:GW_Licence>
+					<!-- NGIS - gwml2w:gwWellLicence/gwml2:gwLicenceID = [NGIS_Bore.LicenceUseID] -->
+					<gwml2w:gwLicenceID>121345</gwml2w:gwLicenceID>
+					<!-- NGIS - gwml2w:gwWellLicence/gwml2:gwPurpose = "License for using groundwater" -->
+					<gwml2w:gwPurpose>License for using groundwater</gwml2w:gwPurpose>
+					<!--  NGIS- does not have anything for gwml2w:gwWellLicence/gwml2:gwTimePeriod  -->
+					<gwml2w:gwTimePeriod xsi:nil="true"/>
+				</gwml2w:GW_Licence>
+			</gwml2w:gwWellLicence>
+			<!-- NGIS - The [NGIS_LithologyLog] table and [NGIS_BoreholeLog] table are used to describe the GWML2 GW_GeologyLogs -->
+			<!-- NGIS - If {[NGIS_LithologyLog.HydroCode] = GW_Well [NGIS_Bore.HydroCode]}  then there is a lithology log' associated with the GW_Well. -->
+			<!-- NGIS - First gwWellGeology geology log from  [NGIS_LithologyLog.] -->
+			<!-- NGIS - gwml2w:gwWellGeology xlink:href="http://environment.data.gov.au/groundwater/feature/lithology-log/[StateTerritoryCVD].[NGIS_LithologyLog.HydroCode] -->
+			<!-- If byReference: -->
+			<gwml2w:gwWellGeology xlink:href="http://environment.data.gov.au/groundwater/feature/lithology-log/qld.81402B"/>
+			<!-- &&&& -->
+			<gwml2w:gwWellGeology>
+			<!-- GW_GeologyLog modified to suit delivering of both lithology and stratigraphy logs from the same table. need to replace this with example from the actual WFS -->
+				<!-- NGIS - gml:id= "borehole.[StateTerritoryCVD].[NGIS_LithologyLog.HydroCode].[NGIS_LithologyLog.LogType].lithology" -->
+				<gwml2w:GW_GeologyLog gml:id="borehole.qld.40432A.1.lithology">
+					<!-- NGIS - use gml:metaDataProperty to capture source data -->
+					<!-- NGIS - use gml:metaDataProperty to capture source data -->
+					<!-- #### Source is for each log interval rather than for the complete log. This will need to be encoded in the swe:field -->
+					<!--
+					<gml:metaDataProperty>
+						<gml:GenericMetaData>
+							<gmd:CI_Citation> -->
+					<!-- NGIS - gmd:title/gco:CharacterString = [NGIS_LithologyLog.Source] -->
+					<!--	<gmd:title>
+									<gco:CharacterString>QLD DNRM GWDB</gco:CharacterString>
+								</gmd:title>
+								<gmd:date gco:nilReason="unknown"/>
+							</gmd:CI_Citation>
+						</gml:GenericMetaData>
+					</gml:metaDataProperty> -->
+					<!-- NGIS - The suggested identifiers are independent of organisation (e.g. 'bom') and project (e.g. 'ngis') -->
+					<!-- NGIS - gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616", value='http://environment.data.gov.au/groundwater/feature/lithology-log/[StateTerritoryCVD].[NGIS_LithologyLog.HydroCode].[NGIS_LithologyLog.LogType]" -->
+					<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/lithology-log/qld.40432A.1</gml:identifier>
+					<!-- NGIS - om:phenomenonTime and om:resultTime nilReason are unknown -->
+					<om:phenomenonTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<om:resultTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<!-- NGIS - om:procedure based on [NGIS_LithologyLog.LithLogType]  -->
+					<!-- [NGIS_LithologyLog.LithLogType] =1 then <om:procedure xlink:href="http://environment.data.gov.au/groundwater/def/procedure/drillers-log" xlink:title="driller's log"/>
+ [NGIS_LithologyLog.LithLogType] = 2 then <om:procedure xlink:href="http://environment.data.gov.au/groundwater/def/procedure/geologists-log" xlink:title="geologist's log"/> -->
+					<om:procedure xlink:href="http://environment.data.gov.au/groundwater/def/procedure/drillers-log" xlink:title="driller's log"/>
+					<!-- NGIS - For lithology logs <om:observedProperty xlink:href="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial" xlink:title="lithology"/> -->
+					<om:observedProperty xlink:href="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial" xlink:title="lithology"/>
+					<!-- The  om:featureOfInterest should be the GW_Well the lithology describes.  -->
+					<!-- NGIS - om:featureOfInterest xlink:href='http://environment.data.gov.au/groundwater/feature/borehole/[StateTerritoryCVD].[NGIS_LithologyLog.HydroCode]" -->
+					<om:featureOfInterest xlink:href="http://environment.data.gov.au/groundwater/feature/borehole/qld.40432A"/>
+					<om:result>
+						<!-- NGIS - gwml2w:GW_GeologyLogCoverage gml:id="borehole.[StateTerritoryCVD].[NGIS_LithologyLog.HydroCode].NGIS_LithologyLog.LogType].lithology.coverage" for lithology logs -->
+						<gwml2w:GW_GeologyLogCoverage gml:id="borehole.qld.40432A.1.lithology.coverage">
+							<!-- #### Order of elements in the coverage is assumed to be unimportant. Therefore ordered as per database order, not top to bottom of borehole -->
+							<!-- NGIS - Descriptions contain "&". These will need to be replaced with  "&amp;"  -->
+							<!-- NGIS - First element in lithology coverage -->
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<!-- NGIS - uom are metres ,swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/> -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS - swe:value from [NGIS_LithologyLog.FromDepth] -->
+											<swe:value>9.14</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<!-- NGIS - swe:value from [NGIS_LithologyLog.ToDepth] -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>18.29</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+	<!-- #### After GWML2IE discussion the lithology Geology Log element has been re-designed. 
+For each element the resulting gwml2w:value should look like the following example (which is an annotated version of the WFS response) -->
+									<gwml2w:value>
+											<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<!-- NGIS - First swe:field is for major lithology code -->
+											<!-- NGIS swe:value = [NGIS_LithologLog.MajorLithCode]. These could be mapped to CGI vocabularies such as:
+<swe:codeSpace  xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/simplelithology"/>
+ <swe:value> http://resource.geosciml.org/classifier/cgi/lithology/sand</swe:value>-->
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://environment.data.gov.au/groundwater/def/lithology/CLAY</swe:identifier>	
+	<!-- #### If the lithology terms are mapped to a vocabulary (either CGI or BoM) then swe:codeSpace specifies this vocabulary -->												
+						<!--			<swe:codeSpace xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/simplelithology"/> -->
+									<swe:value>CLAY</swe:value>
+												</swe:Category>
+											</swe:field>
+											<!-- NGIS - Second swe:field is for minor lithology code -->
+											<!-- NGIS swe:value = [NGIS_LithologLog.MinorLithCode] -->
+											<!-- 'NA' values in the database have been replaced with 'NULL', which results in the 'minor_lithology field being left out if not present -->
+											<swe:field name="minor_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://environment.data.gov.au/groundwater/def/lithology/NA</swe:identifier>
+													<swe:value>NA</swe:value>
+												</swe:Category>
+											</swe:field>
+											<!-- NGIS - Third swe:field is for the lithology description -->
+											<swe:field name="lithology-description">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+												<!-- NGIS - swe:value from [NGIS_LithologyLog.Description] -->
+													<swe:value>Clay white sandy</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>									
+										</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+<!-- #### The remainder of these elements are examples from an earlier encoding of swe:DataRecord. See the previous element for the correct encoding -->
+							<!-- NGIS - second element in lithology coverage -->
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>0</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>9.14</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">
+											<!-- NGIS - First swe:field is for major lithology code -->
+											<swe:field name="major_lithology">
+												<!-- NGIS - Example code made-up for illustrative purposes only -->
+												<swe:Category>
+														<swe:extension>
+														<!-- NGIS - gmd:title/gco:CharacterString = [NGIS_LithologyLog.Source] -->
+														<gmd:CI_Citation>
+															<gmd:title>
+																<gco:CharacterString>QLD DNRM GWDB</gco:CharacterString>
+															</gmd:title>
+															<gmd:date gco:nilReason="unknown"/>
+															<gmd:citedResponsibleParty>
+																<gmd:CI_ResponsibleParty>
+																<gmd:individualName></gmd:individualName>
+																	<gmd:role>
+																		<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/CodeList/gmxCodelists.xml#CI_RoleCode" codeListValue="CI_RoleCode_author"/>
+																	</gmd:role>
+																</gmd:CI_ResponsibleParty>
+															</gmd:citedResponsibleParty>
+														</gmd:CI_Citation>
+													</swe:extension>
+<!-- NGIS swe:value = [NGIS_LithologLog.MajorLithCode] -->
+													<swe:value>Soil</swe:value>
+												</swe:Category>
+											</swe:field>
+											<!-- NGIS - Second swe:field is for minor lithology code -->
+											<swe:field name="minor-lithology">
+												<!-- NGIS - Example code made-up for illustrative purposes only -->
+												<swe:Category>
+													<!-- NGIS swe:value = [NGIS_LithologLog.MinorLithCode] -->
+													<swe:value>Clay</swe:value>
+												</swe:Category>
+											</swe:field>
+											<!-- NGIS - Third swe:field is for the lithology description -->
+											<swe:field name="lithology-description">
+												<swe:Text>
+													<!-- NGIS - swe:value from [NGIS_LithologyLog.Description] -->
+													<swe:value>Topsoil, gravelly subsoil &amp; clay</swe:value>
+												</swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<!-- NGIS - third element in lithology coverage -->
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>18.29</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>22.25</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">
+											<!-- NGIS - First swe:field is for major lithology code -->
+											<swe:field name="lithology">
+												<!-- NGIS - Example code made-up for illustrative purposes only -->
+												<swe:Category>
+													<!-- NGIS swe:value = [NGIS_LithologLog.MajorLithCode] -->
+													<swe:value>SandyClay</swe:value>
+												</swe:Category>
+											</swe:field>
+											<!-- NGIS - Second swe:field is for minor lithology code -->
+											<swe:field name="minor-lithology">
+												<!-- NGIS - Example code made-up for illustrative purposes only -->
+												<swe:Category>
+													<!-- NGIS swe:value = [NGIS_LithologLog.MinorLithCode] -->
+													<swe:value>Gravel</swe:value>
+												</swe:Category>
+											</swe:field>
+											<!-- NGIS - Third swe:field is for the lithology description -->
+											<swe:field name="lithology-description">
+												<swe:Text>
+													<!-- NGIS - swe:value from [NGIS_LithologyLog.Description] -->
+													<swe:value>Sandy clay and gravel</swe:value>
+												</swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<!-- NGIS - fourth element in lithology coverage -->
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>22.25</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>26.21</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">
+											<!-- NGIS - First swe:field is for major lithology code -->
+											<swe:field name="lithology">
+												<!-- NGIS - Example code made-up for illustrative purposes only -->
+												<swe:Category>
+													<!-- NGIS swe:value = [NGIS_LithologLog.MajorLithCode] -->
+													<swe:value>SandyClay</swe:value>
+												</swe:Category>
+											</swe:field>
+											<!-- NGIS - Second swe:field is for minor lithology code -->
+											<swe:field name="minor-lithology">
+												<!-- NGIS - Example code made-up for illustrative purposes only -->
+												<swe:Category>
+													<!-- NGIS swe:value = [NGIS_LithologLog.MinorLithCode] -->
+													<swe:value>Gravel</swe:value>
+												</swe:Category>
+											</swe:field>
+											<!-- NGIS - Third swe:field is for the lithology description -->
+											<swe:field name="lithology-description">
+												<swe:Text>
+													<!-- NGIS - swe:value from [NGIS_LithologyLog.Description] -->
+													<swe:value>Sandy clay and gravel</swe:value>
+												</swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<!-- NGIS - fifth element in lithology coverage -->
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>26.21</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>31.09</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">
+											<!-- NGIS - First swe:field is for major lithology code -->
+											<swe:field name="lithology">
+												<!-- NGIS - Example code made-up for illustrative purposes only -->
+												<swe:Category>
+													<!-- NGIS swe:value = [NGIS_LithologLog.MajorLithCode] -->
+													<swe:value>Sand</swe:value>
+												</swe:Category>
+											</swe:field>
+											<!-- NGIS - Second swe:field is for minor lithology code -->
+											<swe:field name="minor-lithology">
+												<!-- NGIS - Example code made-up for illustrative purposes only -->
+												<swe:Category>
+													<!-- NGIS swe:value = [NGIS_LithologLog.MinorLithCode] -->
+													<swe:value>Gravel</swe:value>
+												</swe:Category>
+											</swe:field>
+											<!-- NGIS - Third swe:field is for the lithology description -->
+											<swe:field name="lithology-description">
+												<swe:Text>
+													<!-- NGIS - swe:value from [NGIS_LithologyLog.Description] -->
+													<swe:value>Sand and gravel</swe:value>
+												</swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+						</gwml2w:GW_GeologyLogCoverage>
+					</om:result>
+					<!-- NGIS - gwml2w:startDepth and gwml2w:endDepth capture the top and bottom values of the log. These will need to be calculated:
+gwml2w:startDepth = smallest value of [NGIS_LithologyLog.FromDepth] for [NGIS_LithologyLog.HydroCode] -->
+					<!-- NGIS - or use xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/ -->
+					<gwml2w:startDepth>
+						<swe:Quantity>
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+							<swe:value>0</swe:value>
+						</swe:Quantity>
+					</gwml2w:startDepth>
+					<!-- NGIS - gwml2w:endDepth = largest value of [NGIS_LithologyLog.ToDepth] for [NGIS_LithologyLog.HydroCode] -->
+					<gwml2w:endDepth>
+						<swe:Quantity>
+							<!-- NGIS - <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/> -->
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+							<swe:value>31.09</swe:value>
+						</swe:Quantity>
+					</gwml2w:endDepth>
+				</gwml2w:GW_GeologyLog>
+			</gwml2w:gwWellGeology>
+			<!-- &&&& -->
+			<!-- NGIS - Second gwWellGeology geology log from  [NGIS_BoreholeLog.] -->
+			<!-- NGIS - If {[NGIS_BoreholeLog.HydroCode] = GW_Well [NGIS_Bore.HydroCode]}  then there is a hydrogeologic unit associated with the GW_Well. -->
+			<!-- NGIS - gwml2w:gwWellGeology xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologic-log/[StateTerritoryCVD].[NGIS_BoreholeLog.HydroCode]  -->
+			<gwml2w:gwWellGeology xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologic-log/qld.81402B"/>
+			<gwml2w:gwWellGeology>
+				<!-- gwml2w:GW_GeologyLog gml:id="borehole.[StateTerritoryCVD].[NGIS_BoreholeLog.HydroCode].[NGIS_BoreholeLog.LogType].[NGIS_BoreholeLog.Scenario].stratigraphy"  for Stratigraphy logs -->
+				<gwml2w:GW_GeologyLog gml:id="borehole.qld.14483A.1.1.stratigraphy">
+					<!-- NGIS - use gml:metaDataProperty to capture source data -->
+					<!-- #### Source is for each log interval rather than for the complete log. This will need to be encoded in the swe:field unless a single source can be applied to the whole log -->
+					<!--<gml:metaDataProperty>
+						<gml:GenericMetaData>
+							<gmd:CI_Citation> -->
+					<!-- NGIS - gmd:title/gco:CharacterString = [NGIS_BoreholeLog.Source] -->
+					<!--			<gmd:title>
+									<gco:CharacterString>QLD DNRM GWDB</gco:CharacterString>
+								</gmd:title>
+								<gmd:date gco:nilReason="unknown"/>
+							</gmd:CI_Citation>
+						</gml:GenericMetaData>
+					</gml:metaDataProperty> -->
+					<!-- NGIS - <gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/stratigraphy-log/[StateTerritoryCVD].[NGIS_BoreholeLog.HydroCode].[NGIS_BoreholeLog.LogType].[NGIS_BoreholeLog.Scenario]</gml:identifier> -->
+					<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/stratigraphy-log.qld.14483A.1.1</gml:identifier>
+					<!-- NGIS - does not have the time the stratigraphy log was made -->
+					<om:phenomenonTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<om:resultTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<!-- NGIS - does not record method stratigraphy log was created. Could use [NGIS_BoreholeLog.LogType] -->
+					<om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<om:observedProperty xlink:href="http://www.opengis.net/def/gwml/2.0/observedProperty/hydrostratigraphy" xlink:title="hydrostratigraphy"/>
+					<!-- The  om:featureOfInterest should be the GW_Well the stratigraphy describes.  -->
+					<!-- NGIS - om:featureOfInterest xlink:href='http://environment.data.gov.au/groundwater/feature/borehole/[StateTerritoryCVD].[NGIS_Bore.HydroCode]" -->
+					<om:featureOfInterest xlink:href="http://environment.data.gov.au/groundwater/feature/borehole/qld.14483A"/>
+					<!-- NGIS - om:result values for appropriate [NGIS_BoreholeLog.HGUNumber] and [NGIS_BoreholeLog.HGUNumber] != -9999 -->
+					<!-- NGIS - om:results will need to refer to [NGIS_HydrogeologicUnit.HGUNumber] -->
+					<om:result>
+						<!-- NGIS - gwml2w:GW_GeologyLogCoverage gml:id="borehole.[NGIS_BoreholeLog.HydroCode].[NGIS_BoreholeLog.LogType].[NGISBoreholeLog.Scenario].stratigraphy.coverage" for hydrostratigraphy logs -->
+						<gwml2w:GW_GeologyLogCoverage gml:id="borehole.qld.14483A.1.1.stratigraphy.coverage">
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS - swe:value from [NGIS_BoreholeLog.FromDepth] -->
+											<swe:value>0.00</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<!-- NGIS - swe:value from [NGIS_BoreholeLog.ToDepth] -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>14.02</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<!-- swe:DataRecord needs defining for stratigraphy record -->
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/data-record/stratigraphy">
+											<swe:field name="stratigraphy">
+												<!-- Following is for categorical example to be used for hydrostratigraphic log -->
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/hydrostratigraphy">
+													<!-- swe:identifier = "http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.[NGIS_BoreholeLog.HGUNumber] -->
+													<swe:identifier>http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.1079</swe:identifier>
+													<!-- NGIS - swe:description from [NGIS_BoreholeLog.Description] -->
+													<swe:description>Lockyer creek alluvium</swe:description>
+													<!-- NGIS - swe:codeSpace xlink:href="http://environment.data.gov.au/groundwater/hydrogeologicunit" -->
+													<swe:codeSpace xlink:href="http://www.bom.gov.au/water/groundwater/hydrogeologicunit"/>
+													<!-- NGIS - swe:value from [NGIS_BoreholeLog.hguname] -->
+													<swe:value>Lockyer creek alluvium</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS - swe:value from [NGIS_BoreholeLog.FromDepth] -->
+											<swe:value>14.02</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<!-- NGIS - swe:value from [NGIS_BoreholeLog.ToDepth] -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>41.76</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<!-- swe:DataRecord needs defining for stratigraphy record -->
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/data-record/stratigraphy">
+											<swe:field name="stratigraphy">
+												<!-- Following is for categorical example to be used for hydrostratigraphic log -->
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/hydrostratigraphy">
+													<!-- swe:identifier = "http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.[NGIS_BoreholeLog.HGUNumber] -->
+													<swe:identifier>http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.1260</swe:identifier>
+													<!-- NGIS - swe:description from [NGIS_BoreholeLog.Description] -->
+													<swe:description>Marburg subgroup</swe:description>
+													<!-- NGIS - swe:codeSpace xlink:href="http://environment.data.gov.au/groundwater/hydrogeologicunit" -->
+													<swe:codeSpace xlink:href="http://www.bom.gov.au/water/groundwater/hydrogeologicunit"/>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- NGIS - swe:value from [NGIS_BoreholeLog.FromDepth] -->
+											<swe:value>41.76</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<!-- NGIS - swe:value from [NGIS_BoreholeLog.ToDepth] -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>57.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<!-- swe:DataRecord needs defining for stratigraphy record -->
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/data-record/stratigraphy">
+											<swe:field name="stratigraphy">
+												<!-- Following is for categorical example to be used for hydrostratigraphic log -->
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/hydrostratigraphy">
+													<!-- swe:identifier = "http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.[NGIS_BoreholeLog.HGUNumber] -->
+													<swe:identifier>http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.1261</swe:identifier>
+													<!-- NGIS - swe:description from [NGIS_BoreholeLog.Description] -->
+													<swe:description>Woogaroo subgroup</swe:description>
+													<!-- NGIS - swe:codeSpace xlink:href="http://environment.data.gov.au/groundwater/hydrogeologicunit" -->
+													<swe:codeSpace xlink:href="http://www.bom.gov.au/water/groundwater/hydrogeologicunit"/>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+						</gwml2w:GW_GeologyLogCoverage>
+					</om:result>
+					<!-- NGIS - gwml2w:startDepth and gwml2w:endDepth capture the top and bottom values of the log. Or use xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/ -->
+					<!-- NGIS - gwml2w:startDepth = smallest value of [NGIS_BoreholeLog.FromDepth] for [NGIS_BoreholeLog.BoreID] -->
+					<gwml2w:startDepth>
+						<swe:Quantity>
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+							<swe:value>0</swe:value>
+						</swe:Quantity>
+					</gwml2w:startDepth>
+					<!-- NGIS - gwml2w:endDepth = largest value of [NGIS_BoreholeLog.ToDepth] for [NGIS_BoreholeLog.BoreID] -->
+					<gwml2w:endDepth>
+						<swe:Quantity>
+							<!-- NGIS - <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/> -->
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+							<swe:value>57</swe:value>
+						</swe:Quantity>
+					</gwml2w:endDepth>
+				</gwml2w:GW_GeologyLog>
+			</gwml2w:gwWellGeology>
+		</gwml2w:GW_Well>
+	</wfs:member>
+</wfs:FeatureCollection>

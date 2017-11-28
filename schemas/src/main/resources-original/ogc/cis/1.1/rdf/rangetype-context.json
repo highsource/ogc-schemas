@@ -1,0 +1,24 @@
+{
+     "@context": {
+		"swe": "http://www.opengis.net/swe/2.0/", 
+		"sml": "http://www.sensorml.com/sensorML-2.0/",
+		"ogcType": "http://www.opengis.net/def/dataType/OGC/0/",	
+		"ogcInterpolation": "http://www.opengis.net/def/interpolation/OGC/0/",
+		
+		"DataRecordType": "swe:DataRecordType",
+		"field": "swe:field",
+		"names": {"@id":"swe:names", "@container": "@list"},
+		"name": "swe:name",
+		"QuantityType": "swe:QuantityType",
+		"uom": "swe:uom",
+		"code": "swe:code",
+		"UnitReference": "swe:UnitReference",
+		"definition": {"@id":"swe:definition", "@type": "@id"},
+		"interpolationRestriction": "cis:interpolationRestriction",
+		"allowedInterpolation": {"@id":"cis:allowedInterpolation", "@type": "@id"},
+		
+		"constraint": "swe:constraint",
+		"AllowedValues": "swe:AllowedValues",
+		"interval": "swe:interval"
+	}
+}

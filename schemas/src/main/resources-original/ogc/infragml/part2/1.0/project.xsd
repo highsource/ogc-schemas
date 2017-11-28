@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 rel. 2 (http://www.altova.com)  -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:li="http://www.opengis.net/infragml/core/1.0" xmlns:lif="http://www.opengis.net/infragml/facility/1.0" xmlns:lip="http://www.opengis.net/infragml/project/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmllr="http://www.opengis.net/gml/3.3/lr" xmlns:gmllro="http://www.opengis.net/gml/3.3/lro" targetNamespace="http://www.opengis.net/infragml/project/1.0" elementFormDefault="qualified" version="1.0.0">
+	<annotation>
+		<documentation>
+			InfraGML is an OGC Standard. 
+			Copyright (c) 2017  Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/infragml/core/1.0" schemaLocation="http://schemas.opengis.net/infragml/part0/1.0/core.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/facility/1.0" schemaLocation="http://schemas.opengis.net/infragml/part2/1.0/facility.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lr" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRef.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lro" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRefOffset.xsd"/>
+	<!--XML Schema document created by ShapeChange - http://shapechange.net/
+		 Modified by Paul Scarponcini (Bentley Systems Inc.) -->
+	<!-- 410: fixed striping  .-->
+	<!--                                                                                                                         	-->
+	<!--     Project                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="Project" type="lip:ProjectType" substitutionGroup="li:Feature">
+		<annotation>
+			<documentation>activity related to the improvement of a facility, including design and/or construction.  May be for 
+				the creation, modification, or elimination of the facility.</documentation>
+		</annotation>
+	</element>
+	<complexType name="ProjectType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="projectID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="projectStatus" type="gml:ReferenceType"/>
+					<element name="statusDate" type="date"/>
+					<element name="projectPart" type="lip:ProjectPartPropertyType" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ProjectPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lip:Project"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Project Part                                                                                                  -->
+	<!--                                                                                                                         	-->
+	<element name="ProjectPart" type="lip:ProjectPartType" substitutionGroup="li:Feature">
+		<annotation>
+			<documentation>part of a project</documentation>
+		</annotation>
+	</element>
+	<complexType name="ProjectPartType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="projectPartID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="alternative" type="string" minOccurs="0"/>
+					<element name="status" type="gml:ReferenceType"/>
+					<element name="statusDate" type="date"/>
+					<element name="facilityPart" type="lif:FacilityPartPropertyType" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ProjectPartPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lip:ProjectPart"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+</schema>

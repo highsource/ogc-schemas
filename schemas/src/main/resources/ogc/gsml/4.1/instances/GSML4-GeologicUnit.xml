@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsmlb:GeologicUnit 
+ xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic"
+ xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:gml="http://www.opengis.net/gml/3.2" 
+ xmlns:om="http://www.opengis.net/om/2.0"
+ xmlns:swe="http://www.opengis.net/swe/2.0" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd"  gml:id="HerveyGroup.1">
+ <gml:metaDataProperty>
+  <gml:GenericMetaData>
+   <anyMetadataPropery>A place holder for any metadata property from an external schema (eg: INSPIRE)</anyMetadataPropery>
+  </gml:GenericMetaData>
+ </gml:metaDataProperty>
+ <gml:description>Terrigenous to shallow marine, red to white and green, quartzose to lithic sandstone, siltstone, shale and conglomerate; sandstones commonly thick-bedded and massive to cross-stratified.</gml:description>
+ <gml:identifier codeSpace="http://data.geoscience.gov.xx/">http://data.geoscience.gov.xx/feature/asc/geologicunit/stratno/25947</gml:identifier>
+ <gml:name>Hervey Group</gml:name>
+ <gsmlb:occurrence xlink:href="http://data.geoscience.gov.xx/mappedfeature/polygon/6735427298"/>
+ <gsmlb:purpose>typicalNorm</gsmlb:purpose>
+ <gsmlb:relatedFeature xlink:href="http://data.geoscience.gov.xx/feature/geologicprovince/Lachlan_Orogen" xlink:title="Lachlan Orogen"/> 
+ <gsmlb:classifier xlink:href="http://data.bgs.ac.uk/ref/EngineeringGeologyTheme/strongSandstone" xlink:title="Engineering Geology theme: Strong Sandstone"/> <!-- Example of a thematic classification of a GeologicUnit -->
+ <gsmlb:geologicHistory>
+  <gsmlb:GeologicEvent gml:id="HerveyGroup.depositionalAge">
+   <gsmlb:eventProcess xlink:href="http://resource.geosciml.org/classifier/cgi/eventprocess/deposition" xlink:title="deposition"/>
+   <gsmlb:olderNamedAge xlink:href="http://resource.geosciml.org/classifier/ics/ischart/Frasnian" xlink:title="Frasnian"/>
+   <gsmlb:youngerNamedAge xlink:href="http://resource.geosciml.org/classifier/ics/ischart/Famennian" xlink:title="Famennian"/>
+  </gsmlb:GeologicEvent>
+ </gsmlb:geologicHistory>
+ <gsmlb:geologicHistory>
+  <gsmlb:GeologicEvent gml:id="HerveyGroup.deformationAge">
+   <gsmlb:eventProcess xlink:href="http://resource.geosciml.org/classifier/cgi/eventprocess/deformation" xlink:title="deformation"/>
+   <gsmlb:olderNamedAge xlink:href="http://resource.geosciml.org/classifier/ics/ischart/Tournaisian" xlink:title="Tournaisian"/>
+   <gsmlb:youngerNamedAge xlink:href="http://resource.geosciml.org/classifier/ics/ischart/Serpukhovian" xlink:title="Serpukhovian"/>
+  </gsmlb:GeologicEvent>
+ </gsmlb:geologicHistory>
+ <gsmlb:geologicUnitType xlink:href="http://resource.geosciml.org/classifier/cgi/geologicunittype/lithostratigraphic_unit" xlink:title="lithostratigraphic unit"/>
+ <gsmlb:rank xlink:href="http://resource.geosciml.org/classifier/cgi/stratigraphicrank/group" xlink:title="group"/>
+ <!-- There are two component lithologies in this example -->
+ <gsmlb:composition>
+  <gsmlb:CompositionPart>
+   <gsmlb:role xlink:title="unspecified part role" xlink:href="http://inspire.ec.europa.eu/codelist/CompositionPartRoleValue/unspecifiedPartRole"/>
+   <gsmlb:material>
+    <gsmlb:RockMaterial gml:id="rock.1">
+     <gsmlb:lithology xlink:href="http://resource.geosciml.org/classifier/cgi/simplelithology/mudstone" xlink:title="mudstone"/>
+    </gsmlb:RockMaterial>
+   </gsmlb:material>
+   <gsmlb:proportion>
+    <gsmlb:GSML_QuantityRange>
+     <swe:uom code="%" xlink:href="http://unitsofmeasure/ucum.html#para-29" xlink:title="percent"/>
+     <swe:value>5.0 50.0</swe:value>
+     <gsmlb:lowerValue>5.0</gsmlb:lowerValue>
+     <gsmlb:upperValue>50.0</gsmlb:upperValue>
+    </gsmlb:GSML_QuantityRange>
+   </gsmlb:proportion>
+  </gsmlb:CompositionPart>
+ </gsmlb:composition>
+ <gsmlb:composition>
+  <gsmlb:CompositionPart>
+   <gsmlb:role xlink:title="unspecified part role" xlink:href="http://inspire.ec.europa.eu/codelist/CompositionPartRoleValue/unspecifiedPartRole"/>
+   <gsmlb:material>
+    <gsmlb:RockMaterial gml:id="rock.2">
+     <gsmlb:lithology xlink:href="http://resource.geosciml.org/classifier/cgi/simplelithology/sandstone" xlink:title="sandstone"/>
+    </gsmlb:RockMaterial>
+   </gsmlb:material>
+   <gsmlb:proportion>
+    <gsmlb:GSML_QuantityRange>
+     <swe:uom code="%" xlink:href="http://unitsofmeasure/ucum.html#para-29" xlink:title="percent"/>
+     <swe:value>50.0 95.0</swe:value>
+     <gsmlb:lowerValue>50.0</gsmlb:lowerValue>
+     <gsmlb:upperValue>95.0</gsmlb:upperValue>
+    </gsmlb:GSML_QuantityRange>
+   </gsmlb:proportion>
+  </gsmlb:CompositionPart>
+ </gsmlb:composition>
+ <gsmlb:hierarchyLink>
+  <gsmlb:GeologicUnitHierarchy>
+   <gsmlb:role xlink:href="http://resource.geoscience.gov.xx/vocabulary/geologicunit_hierarchy_role/constituent_unit" xlink:title="constituent unit"/>
+   <gsmlb:targetUnit>
+    <gsmlb:GeologicUnit gml:id="HerveyGroup.2">
+     <gml:identifier codeSpace="http:data.geoscience.gov.xx/">http:data.geoscience.gov.xx/feature/asc/geologicunit/stratno/33410</gml:identifier>
+     <gml:name>Boulton Formation</gml:name>
+    </gsmlb:GeologicUnit>
+   </gsmlb:targetUnit>
+  </gsmlb:GeologicUnitHierarchy>
+ </gsmlb:hierarchyLink>
+</gsmlb:GeologicUnit>

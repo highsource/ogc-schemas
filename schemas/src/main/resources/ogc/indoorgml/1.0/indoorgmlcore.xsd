@@ -158,6 +158,7 @@ Furthermore the graph also contains the state transition edges (intra-space conn
 					<xs:element name="typeOfTopoExpression" type="typeOfTopoExpressionCodeType" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="comment" type="xs:string" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="interConnects" type="StatePropertyType" minOccurs="2" maxOccurs="2"/>
+                    <xs:element name="ConnectedLayers" type="SpaceLayerPropertyType" minOccurs="2" maxOccurs="2" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -195,6 +196,13 @@ Furthermore the graph also contains the state transition edges (intra-space conn
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ====================================================================== -->
+        <xs:complexType name="SpaceLayerPropertyType">
+        <xs:sequence minOccurs="0">
+            <xs:element ref="SpaceLayer"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+    </xs:complexType>
+    <!-- ====================================================================== -->
 	<xs:complexType name="NodesType">
 		<xs:complexContent>
 			<xs:extension base="gml:AbstractFeatureType">
@@ -361,7 +369,7 @@ Within the dual graph structure of one layer a node in dual space represents a s
 	</xs:complexType>
 	<!-- ====================================================================== -->
 	<xs:complexType name="CellSpaceBoundaryPropertyType">
-		<xs:sequence>
+        <xs:sequence minOccurs="0">
 			<xs:element ref="CellSpaceBoundary"/>
 		</xs:sequence>
 		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
@@ -392,8 +400,7 @@ Within the dual graph structure of one layer a node in dual space represents a s
 	</xs:simpleType>
 	<!-- ====================================================================== -->
 	<xs:simpleType name="typeOfTopoExpressionCodeType">
-		<xs:union memberTypes="typeOfTopoExpressionCodeEnumerationType 
-                         typeOfTopoExpressionCodeOtherType"/>
+        <xs:union memberTypes="typeOfTopoExpressionCodeEnumerationType typeOfTopoExpressionCodeOtherType"/>
 	</xs:simpleType>
 	<!-- ====================================================================== -->
 	<xs:simpleType name="typeOfTopoExpressionCodeEnumerationType">

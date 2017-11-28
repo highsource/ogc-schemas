@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" xmlns:om="http://www.opengis.net/om/2.0" targetNamespace="http://www.opengis.net/gwml-flow/2.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0">
+	<annotation>
+		<documentation>Describes the elements required to capture groundwater flow information.
+
+        OGC WaterML 2.0 Part 4 - GroundWaterML 2 is an OGC Standard.
+        Copyright (c) 2016 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/om/2.0" schemaLocation="http://schemas.opengis.net/om/2.0/observation.xsd"/>
+	<element name="GW_Recharge" type="gwml2f:GW_RechargeType" substitutionGroup="gwml2f:GW_InterFlow">
+		<annotation>
+			<documentation>Fluid added to an aquifer by various means such as precipitation, injection, etc.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_RechargeType">
+		<complexContent>
+			<extension base="gwml2f:GW_InterFlowType"/>
+		</complexContent>
+	</complexType>
+	<complexType name="GW_RechargePropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2f:GW_Recharge"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="GW_Flow" type="gwml2f:GW_FlowType" abstract="true" substitutionGroup="gml:AbstractFeature">
+		<annotation>
+			<documentation>Process by which the water enters or exits a hydrogeologic unit or a void, or flows within a unit or a void. Can flow from/to other natural or man-made features such as rivers, filtration stations, etc.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_FlowType" abstract="true">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="gwFlowPersistence" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The regularity of flow occurrence, e.g. ephemeral, intermittent, perennial, seasonal. After http://inspire.ec.europa.eu/codeList/WaterPersistenceValue/ (INSPIRE 2013).</documentation>
+						</annotation>
+					</element>
+					<element name="gwFlowProcess" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The process causing the flow, e.g. evapotranspiration, evaporation, transpiration, runoff, baseflow, pumping, infiltration, injection, etc.</documentation>
+						</annotation>
+					</element>
+					<element name="gwFlowTime" type="gml:TimePeriodPropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Refers to the duration, instant or interval of the flow (actual time, not observation time). E.g. "yearly", "summer", "2009" or "2009-2011".</documentation>
+						</annotation>
+					</element>
+					<element name="gwFlowVelocity" type="om:OM_ObservationPropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Measure of water volume per unit of time.</documentation>
+						</annotation>
+					</element>
+					<element name="gwFlowVolumeRate" type="om:OM_ObservationPropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Measure of water quantity per time period with uom.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GW_FlowPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2f:GW_Flow"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="GW_InterFlow" type="gwml2f:GW_InterFlowType" substitutionGroup="gwml2f:GW_Flow">
+		<annotation>
+			<documentation>Fluid flow between features through an interface, exiting one feature and entering another. Features into which fluid is flowing are usually units, voids, or fluid bodies, but can be natural surface water features such as rivers or lakes, or even man-made features such as dams or canals. Likewise for features where water is exiting.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_InterFlowType">
+		<complexContent>
+			<extension base="gwml2f:GW_FlowType">
+				<sequence>
+					<element name="gwFlowDestinationBody" type="gml:FeaturePropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The fluid body into which water is flowing.</documentation>
+						</annotation>
+					</element>
+					<element name="gwFlowDestinationContainer" type="gml:FeaturePropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The feature into which water is flowing.</documentation>
+						</annotation>
+					</element>
+					<element name="gwFlowInterfaceFeature" type="gml:FeaturePropertyType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>The feature that denotes the interface between, for example, the groundwater and surface, such as a well, spring, seep, etc., or between two aquifers.</documentation>
+						</annotation>
+					</element>
+					<element name="gwFlowLocation" type="gml:GeometryPropertyType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>The location at which water is being transferred from one one feature into another.</documentation>
+						</annotation>
+					</element>
+					<element name="gwFlowSourceBody" type="gml:FeaturePropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The fluid body from which water is flowing.</documentation>
+						</annotation>
+					</element>
+					<element name="gwFlowSourceContainer" type="gml:FeaturePropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The feature from which water is flowing.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GW_InterFlowPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2f:GW_InterFlow"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="GW_IntraFlow" type="gwml2f:GW_IntraFlowType" substitutionGroup="gwml2f:GW_Flow">
+		<annotation>
+			<documentation>Fluid flow within a feature such as a unit, void, groundwater body, or even a man-made feature such as a conduit of some kind.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_IntraFlowType">
+		<complexContent>
+			<extension base="gwml2f:GW_FlowType">
+				<sequence>
+					<element name="gwFlowBody" type="gml:FeaturePropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The fluid body that is flowing.</documentation>
+						</annotation>
+					</element>
+					<element name="gwFlowContainer" type="gml:FeaturePropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The entity in which the groundwater is flowing. Typically a unit, void, or groundwater body, but also be a man-made feature such as some conduit.</documentation>
+						</annotation>
+					</element>
+					<element name="gwFlowLocation" type="gml:FeaturePropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The location where groundwater is flowing within a feature.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GW_IntraFlowPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2f:GW_IntraFlow"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="GW_Discharge" type="gwml2f:GW_DischargeType" substitutionGroup="gwml2f:GW_InterFlow">
+		<annotation>
+			<documentation>An outflow of fluid from a container such as an aquifer, watershed, pipe, etc.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_DischargeType">
+		<complexContent>
+			<extension base="gwml2f:GW_InterFlowType"/>
+		</complexContent>
+	</complexType>
+	<complexType name="GW_DischargePropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2f:GW_Discharge"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="GW_WaterBudget" type="gwml2f:GW_WaterBudgetType" substitutionGroup="gml:AbstractObject">
+		<annotation>
+			<documentation>An accounting of the water input and output of a hydrogeologic unit, at a particular point in time, with a description of inflows and outflows.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_WaterBudgetType">
+		<sequence>
+			<element name="gwBudgetAmount" type="gml:FeaturePropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>Final quantity (sum) of the budget.  If recharge = discharge, the sum is 0.</documentation>
+				</annotation>
+			</element>
+			<element name="gwBudgetDischarge" type="gwml2f:GW_DischargePropertyType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Discharge (outflows) considered in the budget.</documentation>
+				</annotation>
+			</element>
+			<element name="gwBudgetRecharge" type="gwml2f:GW_RechargePropertyType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation>Recharge (inflows) considered by the budget.</documentation>
+				</annotation>
+			</element>
+			<element name="gwBudgetValidTime" type="gml:TimePeriodPropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>Validity time of this budget (eg, 2010).</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="GW_WaterBudgetPropertyType">
+		<sequence>
+			<element ref="gwml2f:GW_WaterBudget"/>
+		</sequence>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+</schema>

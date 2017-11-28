@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" 
+
+xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" 
+xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:sam="http://www.opengis.net/sampling/2.0" 
+ xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" 
+xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+numberMatched="unknown" timeStamp="2015-08-24T05:31:16.101Z" 
+xsi:schemaLocation="http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gwml-main/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd" numberReturned="1">
+	
+<wfs:member>
+		<gwml2f:GW_Recharge gml:id="lake-murdeduke-recharge-zone_19930101">
+			<gml:description>Example Interflow instance of fluid flow from Lake Murdeduke to Upper Tertiary-Quaternary Basalt Aquifer based on data from Jane Coram MSc 1996</gml:description>
+			<gml:identifier codeSpace="http://www.vvg.org.au/">http://www.vvg.org.au/feature/recharge/lake-murdeduke-recharge-zone_19930101</gml:identifier>
+			<gml:name codeSpace="http://www.vvg.org.au/">Lake Murdeduke outflow</gml:name>
+			<gwml2f:gwFlowTime>
+				<gml:TimePeriod gml:id="lake-murdeduke-recharge-zone_19930101.timeperiod">
+					<gml:beginPosition>1992-12-31Z</gml:beginPosition>
+					<gml:endPosition>1993-01-30Z</gml:endPosition>
+				</gml:TimePeriod>
+			</gwml2f:gwFlowTime>
+			<gwml2f:gwFlowVelocity>
+				<om:OM_Observation gml:id="lake-murdeduke-recharge-zone_19930101.flowvelocity">
+					<om:phenomenonTime xlink:href="#lake-murdeduke-recharge-zone_19930101.timeperiod"/>
+					<om:resultTime xlink:href="#lake-murdeduke-recharge-zone_19930101.timeperiod"/>
+					<om:procedure xlink:href="http://www.vvg.org.au/def/procedure/flowvelocity/V=Ki/n" xlink:title="V=Ki/n"/>
+					<om:observedProperty xlink:href="http://www.opengis.net/gwml-flow/2.2#gwFlowVelocity" xlink:title="gwFlowVelocity"/>
+					<om:featureOfInterest xlink:href="#lake-murdeduke-recharge-zone_19930101"/>
+					<om:result>
+						<swe:Quantity>
+							<swe:uom code="m/mth" xlink:href="http://www.vvg.org.au/def/flowvelocity/metrespermonth" xlink:title="metres per month"/>
+							<swe:value>2.9</swe:value>
+						</swe:Quantity>
+					</om:result>
+				</om:OM_Observation>
+			</gwml2f:gwFlowVelocity>
+			<gwml2f:gwFlowVolumeRate>
+				<om:OM_Observation gml:id="lake-murdeduke-recharge-zone_19930101.flowvolumerate">
+					<om:phenomenonTime xlink:href="#lake-murdeduke-recharge-zone_19930101.timeperiod"/>
+					<om:resultTime xlink:href="#lake-murdeduke-recharge-zone_19930101.timeperiod"/>
+					<om:procedure xlink:href="http://www.vvg.org.au/def/procedure/flowvolumerate/V=Ki/n" xlink:title="V=Ki/n"/>
+					<om:observedProperty xlink:href="http://www.opengis.net/gwml-flow/2.2#gwFlowVolumeRate" xlink:title="gwFlowVolumeRate"/>
+					<om:featureOfInterest xlink:href="#lake-murdeduke-recharge-zone_19930101"/>
+					<om:result>
+						<swe:Quantity>
+							<swe:uom code="m3/mth" xlink:href="http://www.vvg.org.au/def/flowvolumerate/cubicmetrespermonth" xlink:title="cubic metres per month"/>
+							<swe:value>88706.0</swe:value>
+						</swe:Quantity>
+					</om:result>
+				</om:OM_Observation>
+			</gwml2f:gwFlowVolumeRate>
+			<gwml2f:gwFlowDestinationBody xlink:href="http://www.vvg.org.au/feature/gwml2/fluid-body/feduni.fluidbody.13" xlink:title="Upper Tertiary-Quaternary Basalt Fluid Body"/>
+			<gwml2f:gwFlowDestinationContainer xlink:href="http://www.vvg.org.au/feature/gwml2/aquifer/feduni.aquifer.13" xlink:title="Upper Tertiary-Quaternary Basalt Aquifer"/>
+			<gwml2f:gwFlowInterfaceFeature xlink:href="http://www.opengis.net/def/nil/ogc/0/unknown" xlink:title="unknown"/>
+			<gwml2f:gwFlowSourceContainer xlink:href="http://www.vvg.org.au/feature/gde/gde_cutdown_region.2080" xlink:title="Lake Murdeduke"/>
+		</gwml2f:GW_Recharge>
+	</wfs:member>
+</wfs:FeatureCollection>

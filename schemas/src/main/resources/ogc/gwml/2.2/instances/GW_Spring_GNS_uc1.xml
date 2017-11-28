@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gwml2w:GW_Spring xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2"
+    xmlns:sam="http://www.opengis.net/sampling/2.0"
+    xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"
+    xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/gwml-well/2.2 
+    http://schemas.opengis.net/gwml/2.2/gwml2-well.xsd"
+    xmlns:gml="http://www.opengis.net/gml/3.2" gml:id="ngmp.pub.7">
+    <gwml2w:gwSpringName>Te Waikoropupu Springs ('Pupu Springs')</gwml2w:gwSpringName>
+    <gwml2w:gwSpringLocation>
+        <gml:Point srsName="http://www.opengis.net/gml/srs/epsg.xml#4326" gml:id="loc_ngmp_7">
+            <gml:coordinates cs="," ts=" " decimal=".">172.768,-40.849</gml:coordinates>
+        </gml:Point>
+    </gwml2w:gwSpringLocation>
+    <gwml2w:gwSpringReferenceElevation>
+        <gwml2w:Elevation>
+            <gwml2w:elevation srsName="http://www.opengis.net/gml/srs/epsg.xml#4440"
+                srsDimension="1" uomLabels="m above sea level">3.7</gwml2w:elevation>
+            <gwml2w:elevationType xlink:href="http://some.vocab.org/MeasuredInSitu"
+                xlink:title="in situ"/>
+            <gwml2w:elevationMeasurementMethod xlink:href="http://some.vocab/some-gps-gear"
+                xlink:title="D-GPS method"/>
+        </gwml2w:Elevation>
+    </gwml2w:gwSpringReferenceElevation>
+    <gwml2w:gwSpringType xlink:href="http://somevocab.org/gwml/2.0/notes" xlink:title="mineral"/>
+    <gwml2w:gwSpringCauseType xlink:href="http://somevocab.org/gwml/2.0/notes"
+        xlink:title="artesian"/>
+    <gwml2w:gwSpringGeology xlink:href="http://maps.gns.cri.nz/geology/wfs?"
+        xlink:title="QMAP NZ Geology"/>
+    <gwml2w:gwSpringUnit xsi:nil="true" nilReason="unknown"/>
+    <gwml2w:gwSpringConstruction xsi:nil="true"/>
+    <gwml2w:gwSpringPersistence xlink:href="http://somevocab.org/gwml/2.0/notes"
+        xlink:title="permanent"/>
+    <gwml2w:gwSpringLicence xsi:nil="true"/>
+</gwml2w:GW_Spring>

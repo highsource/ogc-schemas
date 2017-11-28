@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsmlb:AnthropogenicGeomorphologicFeature
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:gsr="http://www.isotc211.org/2005/gsr"
+ xmlns:gco="http://www.isotc211.org/2005/gco"
+ xmlns:gts="http://www.isotc211.org/2005/gts"
+ xmlns:gss="http://www.isotc211.org/2005/gss"
+ xmlns:gmd="http://www.isotc211.org/2005/gmd"
+ xmlns:gml="http://www.opengis.net/gml/3.2"
+ xmlns:om="http://www.opengis.net/om/2.0"
+ xmlns:swe="http://www.opengis.net/swe/2.0"
+ xmlns:gmlexr="http://www.opengis.net/gml/3.3/exr"
+ xmlns:sam="http://www.opengis.net/sampling/2.0"
+ xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd"
+ gml:id="GEOMORPH_1">
+ <gml:identifier codeSpace="http://data.bgs.ac.uk/">http://data.bgs.ac.uk/ref/625KGeologyMap/GeomorphologicFeature/bgsn_digmap20111213000010002_625k</gml:identifier>
+ <gml:name>Castle Country Park</gml:name>
+ <gsmlb:geologicHistory>
+  <gsmlb:GeologicEvent gml:id="EVENT_0">
+   <gml:name>Unnamed event</gml:name>
+   <gsmlb:eventProcess
+    xlink:href="http://inspire.ec.europa.eu/codelist/EventProcessValue/humanActivity/"
+    xlink:title="human activity"/>
+   <gsmlb:olderNamedAge
+    xlink:href="http://inspire.ec.europa.eu/codelist/GeochronologicEraValue/holocene/"
+    xlink:title="Holocene"/>
+   <gsmlb:youngerNamedAge
+    xlink:href="http://inspire.ec.europa.eu/codelist/GeochronologicEraValue/holocene/"
+    xlink:title="Holocene"/>
+   <gsmlb:eventEnvironment>
+    <swe:Category
+     definition="http://inspire.ec.europa.eu/codelist/EventEnvironmentValue">
+     <swe:extension>
+      <swe:Category
+       definition="http://resource.geosciml.org/classifierscheme/cgi/201211/valuequalifier">
+       <swe:identifier>http://resource.geosciml.org/classifier/cgi/valuequalifier/always</swe:identifier>
+       <swe:label>always</swe:label>
+       <swe:codeSpace
+        xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/valuequalifier"
+       />
+      </swe:Category>
+     </swe:extension>
+     <swe:identifier>http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/humanEnvironmentSetting/</swe:identifier>
+     <swe:label>human environment setting</swe:label>
+     <swe:codeSpace
+      xlink:href="http://inspire.ec.europa.eu/codelist/EventEnvironmentValue"/>
+    </swe:Category>
+   </gsmlb:eventEnvironment>
+  </gsmlb:GeologicEvent>
+ </gsmlb:geologicHistory>
+ <gsmlb:anthropogenicGeomorphologicFeatureType
+  xlink:href="http://inspire.ec.europa.eu/codelist/AnthropogenicGeomorphologicFeatureTypeValue/fill"
+  xlink:title="fill"/>
+</gsmlb:AnthropogenicGeomorphologicFeature>

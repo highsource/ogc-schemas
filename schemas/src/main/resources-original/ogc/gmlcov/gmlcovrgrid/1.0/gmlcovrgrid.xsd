@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:gmlcovrgrid="http://www.opengis.net/gmlcov/gmlcovrgrid/1.0"
+        xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+        xmlns:sml="http://www.opengis.net/sensorml/2.0"
+        xmlns:gml="http://www.opengis.net/gml/3.2"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.opengis.net/gmlcov/gmlcovrgrid/1.0"
+        elementFormDefault="qualified" version="1.0.0" xml:lang="en">
+    <annotation>
+        <appinfo>gmlcovrgrid.xsd</appinfo>
+        <documentation>This XML Schema Document encodes instantiable referenceable grid elements for CIS 1.0, as described in OGC Coverage Implementation Schema - ReferenceableGridCoverage Extension (16-083r2).
+        Last updated: 2017-May-31
+        Copyright (c) 2017 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+        </documentation>
+    </annotation>
+    <!-- ============================================================== -->
+    <!-- Includes and imports                                           -->
+    <!-- ============================================================== -->
+    <import namespace="http://www.opengis.net/gmlcov/1.0"   schemaLocation="http://schemas.opengis.net/gmlcov/1.0/gmlcovAll.xsd"/>
+    <import namespace="http://www.opengis.net/sensorml/2.0" schemaLocation="http://schemas.opengis.net/sensorML/2.0/sensorML.xsd"/>
+    <import namespace="http://www.opengis.net/gml/3.2"      schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd" />
+
+    <!-- ============================================================== -->
+    <!-- Elements and types                                             -->
+    <!-- ============================================================== -->
+    <element name="gridCRS" type="gmlcovrgrid:GridCRSPropertyType" />
+    <complexType name="GridCRSPropertyType">
+      <sequence maxOccurs="unbounded">
+        <element ref="gml:AbstractCRS" minOccurs="0"/>
+      </sequence>
+      <attributeGroup ref="gml:AssociationAttributeGroup" />
+    </complexType>
+    <!-- =========================================================== -->
+    <element name="ReferenceableGridBySensorModel" type="gmlcovrgrid:ReferenceableGridBySensorModelType" substitutionGroup="gmlcov:AbstractReferenceableGrid"/>
+    <complexType name="ReferenceableGridBySensorModelType">
+      <complexContent>
+        <extension base="gmlcov:AbstractReferenceableGridType">
+          <sequence>
+            <element ref="gmlcovrgrid:gridCRS" minOccurs="0" />
+            <element name="sensorModel" type="sml:AbstractProcessPropertyType" maxOccurs="unbounded"/>
+            <element name="sensorInstance" type="sml:AbstractProcessPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+    <!-- =========================================================== -->
+    <element name="ReferenceableGridByArray" type="gmlcovrgrid:ReferenceableGridByArrayType" substitutionGroup="gmlcov:AbstractReferenceableGrid" />
+    <complexType name="ReferenceableGridByArrayType">
+      <complexContent>
+        <extension base="gmlcov:AbstractReferenceableGridType">
+          <sequence>
+            <group ref="gml:geometricPositionListGroup" />
+            <element name="sequenceRule" type="gml:SequenceRuleType" />
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+    <!-- =========================================================== -->
+    <element name="ReferenceableGridByVectors" type="gmlcovrgrid:ReferenceableGridByVectorsType" substitutionGroup="gmlcov:AbstractReferenceableGrid" />
+    <complexType name="ReferenceableGridByVectorsType">
+      <complexContent>
+        <extension base="gmlcov:AbstractReferenceableGridType">
+          <sequence>
+            <element name="origin" type="gml:PointPropertyType" />
+            <element name="generalGridAxis" type="gmlcovrgrid:GeneralGridAxisPropertyType" maxOccurs="unbounded"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+     <element name="GeneralGridAxis" type="gmlcovrgrid:GeneralGridAxisType" />
+    <complexType name="GeneralGridAxisType">
+      <sequence>
+        <element name="offsetVector"    type="gml:VectorType" />
+        <element name="coefficients"    type="gml:doubleList" />
+        <element name="gridAxesSpanned" type="gml:NCNameList" />
+        <element name="sequenceRule"    type="gml:SequenceRuleType" />
+      </sequence>
+    </complexType>
+    <complexType name="GeneralGridAxisPropertyType">
+      <sequence minOccurs="0">
+        <element ref="gmlcovrgrid:GeneralGridAxis" />
+      </sequence>
+      <attributeGroup ref="gml:AssociationAttributeGroup" />
+      <attributeGroup ref="gml:OwnershipAttributeGroup" />
+    </complexType>
+    <!-- =========================================================== -->
+    <element name="ReferenceableGridByTransformation" type="gmlcovrgrid:ReferenceableGridByTransformationType" substitutionGroup="gmlcov:AbstractReferenceableGrid" />
+    <complexType name="ReferenceableGridByTransformationType">
+      <complexContent>
+        <extension base="gmlcov:AbstractReferenceableGridType">
+          <sequence>
+            <element ref="gmlcovrgrid:gridCRS" minOccurs="0" />
+            <choice>
+              <element name="transformation"        type="gml:TransformationPropertyType" />
+              <element name="concatenatedOperation" type="gml:ConcatenatedOperationPropertyType" />
+            </choice>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+    <!-- =========================================================== -->
+</schema>

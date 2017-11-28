@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection 
+xmlns:wfs="http://www.opengis.net/wfs/2.0" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:gmd="http://www.isotc211.org/2005/gmd" 
+xmlns:gco="http://www.isotc211.org/2005/gco" 
+xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" 
+xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:gml="http://www.opengis.net/gml/3.2" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+numberMatched="unknown" timeStamp="2015-06-18T04:02:25.737Z" xsi:schemaLocation="http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gwml-main/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd" numberReturned="1">
+ <!--
+Unused namespaces:
+xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+xmlns:swe="http://www.opengis.net/swe/2.0" 
+xmlns:sam="http://www.opengis.net/sampling/2.0"  
+xmlns:om="http://www.opengis.net/om/2.0" 
+xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" 
+xmlns:gsmlga="http://xmlns.geosciml.org/GeologicAge/3.2" 
+xmlns:gsmlu="http://xmlns.geosciml.org/Utilities/3.2" 
+xmlns:gsml="http://xmlns.geosciml.org/GeoSciML-Core/3.2" 
+xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2"
+xmlns:gsmlgu="http://xmlns.geosciml.org/GeologicUnit/3.2"
+xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" 
+xmlns:gwml2c="http://www.opengis.net/gwml-constituent/2.2" 
+xmlns:gsmlem="http://xmlns.geosciml.org/EarthMaterial/3.2"  -->
+	
+	<!-- ######################### -->
+	<!-- Mapping of National Groundwater Information System (NGIS) database tables and records to the proposed GroundWaterML2 OGC standard release candidate version 2.2  -->
+	<!-- File created by Bruce Simons, CSIRO, February 2016 -->
+	<!-- ######################### -->
+	<!-- This file is an example instance of a GWML2 GW_ManagementArea -->
+	<!-- Although this instance is a wfs:FeatureCollection with one or more wfs:members, a valid alternative is as a single gwml2:GW_ManagementArea -->
+	<!-- Other related GWML2 features are referred to "byReference" using xlink:href. In most cases these could be included "inLine" (i.e. within this instance). A separate instance for each feature is provided for ease of mapping. The final aggregation of inLine vs. byReference features will be determined by the use case requirements -->
+	<!-- Where features are aggregated into single feature services the xlink:href references to URIs need to be replaced with internal # references to gml:id -->
+	<!-- ######################### -->
+	<!-- NGIS - Mapping patterns -->
+	<!-- Comments beginning 'NGIS -' are instructions for mappings between NGIS data and GWML2 -->
+	<!-- ???? Comments beginning ???? require further checking -->
+	<!-- NGIS table record pairs are referred to by the pattern [table.record] -->
+	<!-- The mapping pattern is [schema/property] = [table.record] -->
+	<!-- ######################### -->
+	<!-- NGIS - Feature IDs and identifiers -->
+	<!-- Feature IDs (gml:id) are document specific unique identifiers based on NGIS table keys and the feature type -->
+	<!-- To create the id, replace [table.record_id] with values from the appropriate table -->
+	<!-- Feature identities (gml:identifier) use the URI for the feature. This is in the format "[domain name]/[category]/[type]/[gml:id]" -->
+	<!-- Domain Name - The temporary domain name "http://environment.data.gov.au/groundwater/" has been used for the feature identifiers and vocabulary term references. An appropriate persistent and organisation independent domain will need to be established.
+A redirect service, such as the SISS PID service, is required to resolve these URIs -->
+	<!-- Category - where the object is a GML Feature use "feature". Where the object is a vocabulary concept use "def". -->
+	<!-- Type - where the Category is a feature, the type of feature, where Category is "def' the type of term (e.g. from "http://environment.data.gov.au/def/"  values are "object", "unit", "property") -->
+	<!-- ######################### -->
+	<!-- NGIS Mapping -->
+	<!-- gml:featureMember is a GWML2 GW_ManagementArea -->
+	<!-- NGIS - example based on  -->
+	<wfs:member>
+		<!-- NGIS- For GW_ManagementArea gml:id = "ngis.gw_management.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_ManagementZone.HydroCode]" -->
+		<gwml2:GW_ManagementArea gml:id="ngis.gw_management.qld.1">
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/gw-management-area/ngis.gw_management.qld.1></gml:identifier>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HydroID", value = [NGIS_ManagementZone.HydroID]  -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HydroID">1</gml:name>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HydroCode", value = [NGIS_ManagementZone.HydroCode]  -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HydroCode">1</gml:name>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HydroName", value = [NGIS_ManagementZone.HydroName]  -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HydroName">some name</gml:name>
+			<gwml2:gwAreaCompetentAuthority/>
+			<gwml2:gwAreaDesignationPeriod/>
+			<gwml2:gwAreaSpecialisedAreaType/>
+			<gwml2:gwAreaEnvironmentalDomain/>
+			<!-- NGIS - gwml2:gwAreaShape = [NGIS_ManagementZone.SHAPE] -->
+			<gwml2:gwAreaShape/>
+			<gwml2:gwAreaType/>
+			<gwml2:gwAreaFeature/>
+			<gwml2:gwAreaBody xlink:href="http://environment.data.gov.au/groundwater/feature/fluidbody/4.1330"/>
+			<gwml2:gwAreaWaterBudget xsi:nil="true" nilReason="unknown"/>
+			<!-- ???? NGIS - is gwml2:gwAreaYield = [NGIS_ManagementZone.ManagedVolume]? -->
+			<gwml2:gwAreaYield xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2:relatedManagementArea/>
+			<gwml2:gwManagedUnit xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.4.1330"/>
+			<gwml2:documentation>
+				<gmd:MD_Metadata>
+					<gmd:contact>
+						<gmd:CI_ResponsibleParty>
+							<gmd:organisationName>
+								<!-- NGIS - gmd:organisationName/gco:CharacterString = [Agency.CodedValueDomain.Description] based on [NGIS_ManagementZone.Agency] -->
+								<gco:CharacterString>Department of Natural Resources and Mines</gco:CharacterString>
+							</gmd:organisationName>
+							<gmd:contactInfo>
+								<gmd:CI_Contact>
+									<gmd:address>
+										<gmd:CI_Address>
+											<!-- NGIS - gmd:administrativeArea/gco:CharacterString = [StateTerritory.CodedValueDomain.Description] based on [NGIS_MangementZone.StateTerritory] -->
+											<gmd:administrativeArea>
+												<gco:CharacterString>QLD</gco:CharacterString>
+											</gmd:administrativeArea>
+										</gmd:CI_Address>
+									</gmd:address>
+								</gmd:CI_Contact>
+							</gmd:contactInfo>
+							<gmd:role>
+								<!-- NGIS - <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeSpace="ISOTC211/19115" codeListValue="CI_RoleCode_originator">originator</gmd:CI_RoleCode> -->
+								<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeSpace="ISOTC211/19115" codeListValue="CI_RoleCode_originator">originator</gmd:CI_RoleCode>
+							</gmd:role>
+						</gmd:CI_ResponsibleParty>
+					</gmd:contact>
+					<gmd:dateStamp gco:nilReason="unknown"/>
+					<!-- NGIS - 	gmd:identificationInfo is unknown. Use gmd:identificationInfo xlink:href="http://www.opengis.net/def/nil/OGC/0/missing" xlink:title="missing"/ -->
+					<gmd:identificationInfo xlink:href="http://www.opengis.net/def/nil/OGC/0/missing" xlink:title="missing"/>
+				</gmd:MD_Metadata>
+			</gwml2:documentation>
+			<gwml2:documentation>
+				<gwml2w:GW_Licence>
+					<gwml2w:gwLicenceID>121345</gwml2w:gwLicenceID>
+					<gwml2w:gwPurpose>Licence for groundwater extraction</gwml2w:gwPurpose>
+					<gwml2w:gwAssociatedGWVolume xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" nilReason="unknown"/>
+					<gwml2w:gwTimePeriod xsi:nil="true"/>
+				</gwml2w:GW_Licence>
+			</gwml2:documentation>
+		</gwml2:GW_ManagementArea>
+	</wfs:member>
+</wfs:FeatureCollection>

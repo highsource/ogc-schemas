@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 rel. 2 (http://www.altova.com)  -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:li="http://www.opengis.net/infragml/core/1.0" xmlns:lia="http://www.opengis.net/infragml/alignment/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmllr="http://www.opengis.net/gml/3.3/lr" xmlns:gmllro="http://www.opengis.net/gml/3.3/lro" targetNamespace="http://www.opengis.net/infragml/alignment/1.0" elementFormDefault="qualified" version="1.0.0">
+	<annotation>
+		<documentation>
+			InfraGML is an OGC Standard. 
+			Copyright (c) 2017  Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/infragml/core/1.0" schemaLocation="http://schemas.opengis.net/infragml/part0/1.0/core.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lr" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRef.xsd"/>
+	<!--XML Schema document created by ShapeChange - http://shapechange.net/
+		 Modified by Paul Scarponcini (Bentley Systems Inc.) 
+	-->
+	<!-- 410: fixed striping  .-->
+	<!--                                                                                                                         	-->
+	<!--     Alignment                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="Alignment" type="lia:AlignmentType" substitutionGroup="li:Feature">
+		<annotation>
+			<documentation>
+				An Alignment shall be continuous, non-branching, and non-overlapping. If it is a Project Alignment, it is for a single 	
+				alternative, as specified by its owning ProjectPart.
+			</documentation>
+		</annotation>
+	</element>
+	<complexType name="AlignmentType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="alignmentID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="purpose" type="string" minOccurs="0"/>
+					<element name="designAlternative" type="string" minOccurs="0"/>
+					<element name="linestring2DRepresentation" minOccurs="0">
+						<complexType>
+							<sequence>
+								<element name="Linestring2DRepresentation" type="gml:LineStringType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="linestring3DRepresentation" minOccurs="0">
+						<complexType>
+							<sequence>
+								<element name="Linestring3DRepresentation" type="gml:LineStringType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="geometry" type="lia:AlignmentCurvePropertyType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AlignmentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lia:Alignment"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Alignment2DHorSegment                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<complexType name="Alignment2DHorSegmentType">
+		<annotation>
+			<documentation>part of a horizontal alignment having a single geometric representation (either line, circular curve,
+				clothoid, or other transition curve)
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="tangentialContinuity" type="boolean"/>
+			<element name="geometry" minOccurs="0">
+				<complexType>
+					<choice>
+						<element name="LineSegment" type="gml:LineStringSegmentType"/>
+						<element name="CircularArcSegment">
+							<complexType>
+								<sequence>
+									<element name="circularArcSegment">
+										<complexType>
+											<choice>
+												<element name="CircularArc" type="gml:ArcType"/>
+												<element name="CircularArcByBulge" type="gml:ArcByBulgeType"/>
+												<element name="CircularArcByCenterPoint" type="gml:ArcByCenterPointType"/>
+											</choice>
+										</complexType>
+									</element>
+								</sequence>
+							</complexType>
+						</element>
+						<element name="ClothoidArcSegment" type="gml:ClothoidType"/>
+						<element name="TransitionSegment" type="lia:TransitionCurveType"/>
+					</choice>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Alignment2DHorizontal                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="Alignment2DHorizontal" type="lia:Alignment2DHorizontalType" substitutionGroup="gml:AbstractCurve">
+		<annotation>
+			<documentation>2D representation of the alignment geometry in the x-y plane</documentation>
+		</annotation>
+	</element>
+	<complexType name="Alignment2DHorizontalType">
+		<complexContent>
+			<extension base="gml:AbstractCurveType">
+				<sequence>
+					<element name="location" type="string">
+						<annotation>
+							<documentation>e.g., "road centerline"</documentation>
+						</annotation>
+					</element>
+					<element name="description" type="string">
+						<annotation>
+							<documentation>describes where the alignment is located with respect to the owning road or rail 
+								segment, such as "roadway centerline"</documentation>
+						</annotation>
+					</element>
+					<element name="state" type="li:StateType"/>
+					<element name="segment" maxOccurs="unbounded">
+						<complexType>
+							<sequence>
+								<element name="Alignment2DHorSegment" type="lia:Alignment2DHorSegmentType"/>
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="Alignment2DHorizontalPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lia:Alignment2DHorizontal"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Alignment2DVertSegment                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<complexType name="Alignment2DVertSegmentType">
+		<sequence>
+			<element name="tangentialContinuity" type="boolean"/>
+			<element name="startDistAlong">
+				<complexType>
+					<sequence>
+						<element ref="gmllr:DistanceExpression"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="startHeight" type="gml:LengthType"/>
+			<element name="startGradient" type="double">
+				<annotation>
+					<documentation>real number in the range of -100 to +100, where 2.00 = 2%</documentation>
+				</annotation>
+			</element>
+			<element name="horizontalLength" type="gml:LengthType"/>
+			<element name="isConvex" type="boolean" minOccurs="0">
+				<annotation>
+					<documentation>A value of ”true” (convex) means that the gradient at the beginning of the segment is 
+								less than the gradient at the end of the previous segment.  A value of “false” (concave) (Boolean=”false”) 
+								means that the gradient at the beginning of the segment is greater than the gradient at the end of the 
+								previous segment.
+							</documentation>
+				</annotation>
+			</element>
+			<choice minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>if vertical segment is a line, then no choice applies; 
+									if a circular arc, then the circular arc radius must be supplied; 
+									if a parabola, then the parabola constant must be supplied
+								</documentation>
+				</annotation>
+				<element name="radius" type="gml:LengthType"/>
+				<element name="constant" type="double">
+					<annotation>
+						<documentation>the parabola constant determins the “steepness” of the parabola = K * 100
+									</documentation>
+					</annotation>
+				</element>
+			</choice>
+		</sequence>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Alignment2DVertical                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="Alignment2DVertical" type="lia:Alignment2DVerticalType" substitutionGroup="gml:AbstractGML">
+		<annotation>
+			<documentation>long section profile along a line at or offset from a horizontal alignment.
+2D coordinate axes are alignment distanceAlong and ground elevation.
+State distinguishes between existing ground surface vs. proposed design profile.</documentation>
+		</annotation>
+	</element>
+	<complexType name="Alignment2DVerticalType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="location" type="string">
+						<annotation>
+							<documentation>e.g., "edge of pavement"</documentation>
+						</annotation>
+					</element>
+					<element name="description" type="string"/>
+					<element name="state" type="li:StateType"/>
+					<element name="alignmentOffset" type="gml:LengthType" minOccurs="0"/>
+					<element name="segments" maxOccurs="unbounded">
+						<complexType>
+							<sequence>
+								<element name="Alignment2DVertSegment" type="lia:Alignment2DVertSegmentType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="measuredAlong" type="lia:Alignment2DHorizontalPropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="Alignment2DVerticalPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lia:Alignment2DVertical"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     AlignmentCurve                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="AlignmentCurve" type="lia:AlignmentCurveType" substitutionGroup="gml:AbstractCurve">
+		<annotation>
+			<documentation>An AlignmentCurve is a type of Curve whose geometry is defined by a linestring2DRepresentation, 
+				a horizontal 2D alignment, a 2D horizontal and a 2Dvertical alignment, and/or a 3D alignment.
+			</documentation>
+		</annotation>
+	</element>
+	<complexType name="AlignmentCurveType">
+		<complexContent>
+			<extension base="gml:AbstractCurveType">
+				<sequence>
+					<element name="crs" type="gml:EngineeringCRSPropertyType" minOccurs="0"/>
+					<element name="horizontal">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lia:Alignment2DHorizontal"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="vertical" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lia:Alignment2DVertical"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AlignmentCurvePropertyType">
+		<sequence minOccurs="0">
+			<element ref="lia:AlignmentCurve"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     AlignmentSet                                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="AlignmentSet" type="lia:AlignmentSetType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="AlignmentSetType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="alignment" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lia:Alignment"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AlignmentSetPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lia:AlignmentSet"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--  TransitionCurve                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="TransitionCurve" type="lia:TransitionCurveType" substitutionGroup="gml:AbstractCurve">
+		<annotation>
+			<documentation>A TransitionCurve is used between a linestring and a circular curve or between two circular curves 
+				to allow for a more gradual transitio between these other types. They are typically used only for Railways (Roads 
+				use Clothoids or three centered circular curves), especially of the high speed variety.
+			</documentation>
+		</annotation>
+	</element>
+	<complexType name="TransitionCurveType">
+		<complexContent>
+			<extension base="gml:AbstractCurveType">
+				<sequence>
+					<element name="referenceLocation">
+						<complexType>
+							<sequence>
+								<element ref="gml:AffinePlacement"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="length" type="gml:LengthType"/>
+					<element name="startCurvature" type="double"/>
+					<element name="endCurvature" type="double"/>
+					<element name="transitionType" type="lia:TransitionType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--  TransitionType                                                            -->
+	<!--                                                                                                                         	-->
+	<simpleType name="TransitionType">
+		<union memberTypes="lia:TransitionEnumerationType lia:TransitionOtherType"/>
+	</simpleType>
+	<simpleType name="TransitionEnumerationType">
+		<restriction base="string">
+			<enumeration value="biquadratic"/>
+			<enumeration value="bloss"/>
+			<enumeration value="clothoid"/>
+			<enumeration value="cosine"/>
+			<enumeration value="cubicParabola"/>
+			<enumeration value="sine"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="TransitionOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+</schema>

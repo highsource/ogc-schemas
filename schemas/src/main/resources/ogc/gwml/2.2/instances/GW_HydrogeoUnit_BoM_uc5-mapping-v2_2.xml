@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection gml:id="ngis.example.hydrogeo" 
+xmlns:gml="http://www.opengis.net/gml/3.2" 
+xmlns:sam="http://www.opengis.net/sampling/2.0" 
+xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" 
+xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" 
+xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" 
+xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" 
+xmlns:gwml2c="http://www.opengis.net/gwml-constituent/2.2" 
+xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" 
+xmlns:gsmlx="http://www.opengis.net/gsml/4.1/GeoSciML-Extension" 
+xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:cv="http://www.opengis.net/cv/0.2/gml32" xmlns:om="http://www.opengis.net/om/2.0" xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/gwml/2.2 http://schemas.opengis.net/gwml/2.2/gwml2.xsd 
+http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd
+http://www.opengis.net/gsml/4.1/GeoSciML-Extension http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd">
+	<!--
+xmlns:gu="http://xmlns.geosciml.org/GeologicUnit/4.0" 
+xmlns:gsmlga="http://xmlns.geosciml.org/GeologicAge/4.0"
+xmlns:gsmlem="http://xmlns.geosciml.org/EarthMaterial/4.0"
+xmlns:gsmlpp="http://xmlns.geosciml.org/PhysicalProperties/4.0" 
+<import namespace="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Extension http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd"/>  -->
+	<!-- Although all the gwml2 schema may not be required, this instance imports all gwml2 packages via gwml2.xsd for consistence between instance examples  -->
+	<!-- ######################### -->
+	<!-- Mapping of National Groundwater Information System (NGIS) database tables and records to the proposed GroundWaterML2 OGC standard release candidate  -->
+	<!-- File created by Bruce Simons, CSIRO, February 2016 -->
+	<!-- ######################### -->
+	<!-- Although this instance is a gml:FeatureCollection with one or more gwml2:GW_Aquifer, gwml2:GW_ConfiningBed, gwml2:GW_AquiferSystem or gwml2:GW_Basin gml:featureMembers, a valid alternative is as a single instance of these -->
+	<!-- Other related gwml2 features are referred to "byReference" using xlink:href. In most cases these could be included "inLine" (i.e. within this instance). A separate instance for each feature is provided for ease of mapping. The final aggregation of inLine vs. byReference features will be determined by the use case requirements -->
+	<!-- Where features are aggregated into single feature services the xlink:href references to URIs need to be replaced with internal # references to gml:id -->
+	<!-- ######################### -->
+	<!-- NGIS - Mapping patterns -->
+	<!-- Comments beginning 'NGIS -' are instructions for mappings between NGIS data and gwml2 -->
+	<!-- ???? Comments beginning ???? require further checking -->
+	<!-- NGIS table record pairs are referred to by the pattern [table.record] -->
+	<!-- The mapping pattern is [schema/property] = [table.record] -->
+	<!-- ######################### -->
+	<!-- NGIS - Feature IDs and identifiers -->
+	<!-- Feature IDs (gml:id) are document specific unique identifiers based on NGIS table keys and the feature type -->
+	<!-- To create the id, replace [table.record_id] with values from the appropriate table -->
+	<!-- Feature identities (gml:identifier) use the URI for the feature. This is in the format "[domain name]/[category]/[type]/[gml:id]" -->
+	<!-- Domain Name - The temporary domain name "http://environment.data.gov.au/groundwater/" has been used for the feature identifiers and vocabulary term references. An appropriate persistent and organisation independent domain will need to be established.
+A redirect service, such as the SISS PID service, is required to resolve these URIs -->
+	<!-- Category - where the object is a GML Feature use "feature". Where the object is a vocabulary concept use "def". -->
+	<!-- Type - where the Category is a feature, the type of feature, where Category is "def' the type of term  -->
+	<!-- ######################### -->
+	<!-- NGIS Mapping -->
+	<!-- NGIS - gwml2:GW_HydrogeoUnit is abstract and must be delivered as one of gwml2:GW_Aquifer, gwml2:GW_ConfiningBed, gwml2:GW_AquiferSystem or gwml2:GW_Basin -->
+	<!-- NGIS - gwml2:GW_HydrogeoUnit are described from [NGIS_HydrogeologicUnit] -->
+	<!--  NGIS - Where [NGIS_HydrogeologicUnit.HGUAquiferType] = "3" then gml:featureMember = gwml2:GW_ConfiningBed -->
+	<!--  NGIS - Where [NGIS_HydrogeologicUnit.HGUAquiferType] = "1" or "2" or "4" then gml:featureMember = gwml2:GW_Aquifer -->
+	<!-- NGIS - [NGIS_HydrogeologicUnit.HGUConfinedType] is not used to classify the type of gwml2:GW_HydrogeoUnit -->
+	<!-- -->
+	<!-- NGIS - Splitting [NGIS_HydrogeologicUnit] into separate gwml2:GW_HydrogeoUnit based on following: -->
+	<!--  NGIS - each Unique [NGIS_HydrogeologicUnit.HGUNumber] = gwml2:GW_Aquifer or gwml2:GW_ConfiningBed. 
+gml:id = ngis.hydrogeologicunit.hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber] -->
+	<!-- NGIS - each Unique [NGIS_HydrogeologicUnit.NafHGUNumber] = gwml2:GW_Aquifer or gwml2:GW_ConfiningBed 
+gml:id = ngis.hydrogeologicunit.nafhgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.NafHGUNumber] -->
+	<!-- NGIS - each Unique [NGIS_HydrogeologicUnit.HGCNumber] = gwml2:GW_AquiferSystem 
+gml:id = ngis.hydrogeologicunit.hgc.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGCNumber] -->
+	<!-- NGIS - each Unique [NGIS_HydrogeologicUnit.NafHGCNumber] = gwml2:GW_AquiferSystem 
+gml:id = ngis.hydrogeologicunit.nafhgc.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.NafHGCNumber]  -->
+	<!-- NGIS - each Unique [NGIS_HydrogeologicUnit.ProvName] = gwml2:GW_Basin 
+gml:id = ngis.hydrogeologicunit.prov.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.ProvName] {spaces removed} -->
+	<!-- NGIS - each Unique [NGIS_HydrogeologicUnit.NafProvName] = gwml2:GW_Basin 
+gml:id = ngis.hydrogeologicunit.nafprov.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.NafProvName] {spaces removed} -->
+	<!-- -->
+	<!-- The  gml:featureMembers are:
+ gwml2:GW_Aquifer
+gwml2:GW_ConfiningBed
+gwml2:GW_AquiferSystem
+gwml2:GW_Basin -->
+	<!-- This gml:featureMember is a gwml2:GW_Aquifer from [NGIS_HydrogeologicUnit.HGUNumber] = 1330  -->
+	<gml:featureMember>
+		<!-- NGIS - gwml2:GW_Aquifer if [NGIS_HydrogeologicUnit.HGUAquiferType] != "3" -->
+		<!-- NGIS- For GW_Aquifer gml:id = ngis.hydrogeologicunit.hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber] -->
+		<gwml2:GW_Aquifer gml:id="ngis.hydrogeologicunit.hgu.qld.1330">
+			<!-- NGIS - Changes to GeoSciML v4.0 from GeoSciML v3.2 mean using gwml2:GW_Aquifer/gml:metaDataProperty instead of gwml2:GW_Aquifer/gsmlb:metadata to specify the State/Territory that the HGU comes from -->
+			<gml:metaDataProperty>
+				<gml:GenericMetaData>
+					<gmd:MD_Metadata>
+						<gmd:contact>
+							<gmd:CI_ResponsibleParty>
+								<!-- NGIS - Does not record the agency responsible for the NGIS_HydrogeologicalUnit.
+Use gmd:organisationName gco:nilReason="unknown" -->
+								<gmd:organisationName gco:nilReason="unknown"/>
+								<gmd:contactInfo>
+									<gmd:CI_Contact>
+										<gmd:address>
+											<gmd:CI_Address>
+												<!-- NGIS - gmd:administrativeArea/gco:CharacterString = [StateTerritory.CodedValueDomain.Description] based on [NGIS_HydrogeologicUnit.StateTerritory] -->
+												<gmd:administrativeArea>
+													<gco:CharacterString>QLD</gco:CharacterString>
+												</gmd:administrativeArea>
+											</gmd:CI_Address>
+										</gmd:address>
+									</gmd:CI_Contact>
+								</gmd:contactInfo>
+								<gmd:role>
+									<!-- NGIS - <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeSpace="ISOTC211/19115" codeListValue="CI_RoleCode_originator">originator</gmd:CI_RoleCode> -->
+									<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeSpace="ISOTC211/19115" codeListValue="CI_RoleCode_originator">originator</gmd:CI_RoleCode>
+								</gmd:role>
+							</gmd:CI_ResponsibleParty>
+						</gmd:contact>
+						<!-- NGIS - 	gmd:dateStamp is unknown. Use 	gmd:dateStamp gco:nilReason="unknown"/ -->
+						<gmd:dateStamp gco:nilReason="unknown"/>
+						<!-- NGIS - 	gmd:identificationInfo is unknown. Use gmd:identificationInfo xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/ -->
+						<gmd:identificationInfo xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					</gmd:MD_Metadata>
+				</gml:GenericMetaData>
+			</gml:metaDataProperty>
+			<!-- NGIS - gml:description = [NGIS_HydrogeologicUnit.HGUDescription]  -->
+			<gml:description>Permian volcanics, pyroclastics and sediments. Fractured rock aquifers.</gml:description>
+			<!-- NGIS - gml:identifier = "http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]"-->
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.qld.1330</gml:identifier>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HydroID", value = [NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]  -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HydroID">40000331</gml:name>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGUNumber", value = [NGIS_HydrogeologicUnit.HGUNumber]  -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGUNumber">1330</gml:name>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGUName", value = [NGIS_HydrogeologicUnit.HGUName]  -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGUName">Lizzie Creek Volcanic Group</gml:name>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGUCode", value = [NGIS_HydrogeologicUnit.HGUCode]  -->
+			<!-- ???? NGIS - No HGUCode examples in the Qld data. Dummy code used -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGUCode">XX</gml:name>
+			<!-- NGIS - does not record method of observing the stratigraphy - use xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" -->
+			<gsmlb:observationMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gsmlb:occurrence allows providing the spatial representation of the GW_HydrogeoUnit.  -->
+			<!-- NGIS - [NGIS_HydrogeologicUnit] does not include spatial information separate to the related Borehole locations [NGIS_Bore] and intervals down each Borehole [NGIS_BoreholeLog] -->
+			<!-- ???? NGIS - Options:
+1. provide list of locations (points) based on [NGIS_Bore] locations; and/or
+2. provide x1,y1,z1, x2, y2, z2 for each bore based on [NGIS_BoreholeLog] -->
+			<!-- NGIS - In this example there is no attempt to identify the location of the HGU -->
+			<gsmlb:occurrence xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gsmlb:purpose to indicate whether defining, typical or instance of the unit. -->
+			<!-- NGIS - gsmlb:purpose = "instance" -->
+			<gsmlb:purpose>instance</gsmlb:purpose>
+			<!--  NGIS - use gsmlb:relatedFeature for linking to the related hydrogeologicunits specified by [NGIS_HydrogeologicUnit.ProvName],  [NGIS_HydrogeologicUnit.HGCNumber], [NGIS_HydrogeologicUnit.NAFProvName], [NGIS_HydrogeologicUnit.NafHGUNumber], [NGIS_HydrogeologicUnit.NafHGCNumber]   -->
+			<!-- NGIS - [NGIS_HydrogeologicUnit.NafHGUNumber] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafhgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.NafHGUNumber]" xlink:title="[NGIS_HydrogeologicUnit.NafHGUName]" -->
+			<gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafhgu.qld.133145" xlink:title="Lizzie Creek Volcanic Group"/>
+			<!-- NGIS - [NGIS_HydrogeologicUnit.HGCNumber] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgc.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGCNumber]" xlink:title="[NGIS_HydrogeologicUnit.HGCName]" -->
+			<gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgc.qld.120" xlink:title="Permian Sediments and Volcanics"/>
+			<!-- NGIS - [NGIS_HydrogeologicUnit.NafHGCNumber] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafhgc.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.NafHGCNumber]" xlink:title="[NGIS_HydrogeologicUnit.NafHGCName]" -->
+			<gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafhgc.qld.133" xlink:title="Palaeozoic meta-sediments and volcanics"/>
+			<!-- NGIS - [NGIS_HydrogeologicUnit.NafProvName] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafprov.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.NafProvName]{with spaces removed}" xlink:title="[NGIS_HydrogeologicUnit.NafProvName]" -->
+			<gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafprov.qld.Connors-AuburnProvince" xlink:title="Connors - Auburn Province"/>
+			<!-- NGIS - [NGIS_HydrogeologicUnit.ProvName] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/prov.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.ProvName]{with spaces removed}" xlink:title="[NGIS_HydrogeologicUnit.ProvName]" -->
+			<gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/prov.qld.Connors-AuburnProvince" xlink:title="Connors - Auburn Province"/>
+			<!-- NGIS - For [NGIS_HydrogeologicUnit.HGUNumber] gsmlb:classifier = [NGIS_HydrogeologicUnit.HGUCode] -->
+			<!-- ####  gsmlb:classifier should refer to a vocabulary of  terms  -->
+			<!-- ???? NGIS - The gsmlb:classifier xlink:href should refer to the Australian Stratigraphic Units Database. This will require a mapping between [NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber] and Australian Stratigraphic Units Database terms using [NGIS_HydrogeologicUnit.HGUCode] or [NGIS_HydrogeologicUnit.HGUName] or [NGIS_HydrogeologicUnit.HGUNumber]
+In the interim use xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" -->
+			<gsmlb:classifier xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- NGIS - gsmlb:geologicUnitType xlink:href="http://resource.geosciml.org/classifier/cgi/geologicunittype/hydrogeologic_unit" xlink:title="Hydrogeologic Unit" -->
+			<gsmlb:geologicUnitType xlink:href="http://resource.geosciml.org/classifier/cgi/geologicunittype/hydrogeologic_unit" xlink:title="Hydrogeologic Unit"/>
+			<!-- NGIS - Does not have any gsmlb:rank -->
+			<gsmlb:rank xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gsmlb:gbUnitDescription>
+				<gsmlx:GeologicUnitDescription>
+					<!-- NGIS -  gsmlx:unitThickness = [NGIS_HydrogeologicUnit.HGUThickness] -->
+					<!-- NGIS - If [NGIS_HydrogeologicUnit.HGUThickness] is NULL then <gsmlx:unitThickness  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"> -->
+					<gsmlx:unitThickness>
+						<swe:QuantityRange>
+							<!--  NGIS - What are uom for [NGIS_HydrogeologicUnit.HGUThickness]? Assumed metres here -->
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+							<!-- NGIS - swe:value is a range but [NGIS_HydrogeologicUnit.HGUThickness] is a single value. Repeat [NGIS_HydrogeologicUnit.HGUThickness]  -->
+							<swe:value>100.0 100.0</swe:value>
+						</swe:QuantityRange>
+					</gsmlx:unitThickness>
+					<!--############### Deleted properties not in GeoSciML v4.0 #######################-->
+					<!-- NGIS - Does not have any gsmlb:bodyMorphology -->
+					<!--<gsmlb:bodyMorphology xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>-->
+					<!-- NGIS - Does not have any gsmlb:unitComposition (broad compositional term like "I-type") -->
+					<!--<gsmlb:unitComposition xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>-->
+					<!-- NGIS - Does not have any gsmlb:exposureColor -->
+					<!--<gsmlb:exposureColor xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>-->
+					<!-- NGIS - Does not have any gsmlb:outcropCharacter -->
+					<!--<gsmlb:outcropCharacter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>-->
+				</gsmlx:GeologicUnitDescription>
+			</gsmlb:gbUnitDescription>
+			<!-- gwml2:gwUnitProperty is for other GW_HydrogeoUnit properties.    -->
+			<!-- NGIS - following aquifer properties are unknown for stratigraphic units -->
+			<gwml2:gwUnitMedia xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitWaterBudget xsi:nil="true" nilReason="missing"/>
+			<gwml2:gwUnitRecharge xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitDischarge xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitVulnerability xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gwml2:gwUnitFluidBody allows describing aquifer-fluid properties -->
+			<!-- NGIS - gwml2:gwUnitFluidBody could be byReference or in-line. An example byReference is:
+<gwml2:gwUnitFluidBody xlink:href="http://environment.data.gov.au/groundwater/feature/fluidbody/qld.1330">
+-->
+			<gwml2:gwUnitFluidBody>
+				<!-- There may be many gwml2:GW_UnitFluidProperty properties associated with a GW_HydroGeologicUnit (e.g. the same fluid body in separate boreholes may have different properties). Therefore gwml2:GW_UnitFluidProperty requires a gml:id to identify these separate descriptions -->
+				<!-- ???? NGIS - Each fluid body is only associated with a single NGIS_HydrogeologicUnit, therefore the HGUNumber can be used for unique identity -->
+				<!-- NGIS - gwml2:GW_UnitFluidProperty gml:id="ngis.groundwaterfluidbody.gwf.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber].property" -->
+				<gwml2:GW_UnitFluidProperty gml:id="ngis.groundwaterfluidbody.gwf.qld.1330.property">
+					<!-- NGIS - gml:identifier = "http://environment.data.gov.au/groundwater/feature/groundwaterfluidbody/gwf.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber].property"-->
+					<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/groundwaterfluidbody/gwf.qld.1330.property</gml:identifier>
+					<!-- #### The om:featureOfInterest for GW_UnitFluidProperty property observations is considered to be the GW_HydrogeologicUnit. -->
+					<!-- ???? NGIS - These properties are observations and could be byReference to OM_Observation feature WFS (See FedUni examples) The examples here are in-line. -->
+					<!-- ???? NGIS has ngis.ngis_hydrogeologicunit/hguhydraulick as datatype character varying. It should be a number -->
+					<gwml2:gwHydraulicConductivity>
+						<!-- NGIS - om:OM_Observation gml:id="ngis.hydrogeologicunit.hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber].property.hydraulicconductivity -->
+						<om:OM_Observation gml:id="ngis.hydrogeologicunit.hgu.qld.1330.property.hydraulicconductivity">
+							<om:phenomenonTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:resultTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<!-- ???? om:observedProperty xlink:href {namespace} should be ${main.property} but currently hard-coded -->
+							<om:observedProperty xlink:href="http://www.opengis.net/gwml-nucleus/2.0/gwHydraulicConductivity" xlink:title="Hydraulic Conductivity"/>
+							<!-- om:featureOfInterest is the GW_HydrogeologicUnit -->
+							<!-- NGIS - om:featureOfInterest xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]" -->
+							<om:featureOfInterest xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.qld.1330"/>
+							<!-- NGIS - om:result = [NGIS_HydrogeologicUnit.HGUHydraulicK] -->
+							<!-- ???? NGIS - [NGIS_HydrogeologicUnit.HGUHydraulicK] data type is 'string'. Are these 'categoricals' rather than numeric values? -->
+							<om:result>
+								<swe:Quantity>
+									<!-- ???? NGIS -  What are the [NGIS_HydrogeologicUnit.HGUHydraulicK] units of measure? L.T-1 e.g. m/d, m/s  -->
+									<swe:uom xlink:href="http://environment.data.gov.au/def/unit/MeterPerDay" xlink:title="Meter per Day"/>
+									<!-- NGIS - swe:value = [NGIS_HydrogeologicUnit.HGUHydraulicK] -->
+									<swe:value>0</swe:value>
+								</swe:Quantity>
+							</om:result>
+						</om:OM_Observation>
+					</gwml2:gwHydraulicConductivity>
+					<!-- ???? NGIS has ngis.ngis_hydrogeologicunit/storativity is datatype character varying. It should be a number -->
+					<gwml2:gwStorativity>
+						<!-- NGIS - om:OM_Observation gml:id="ngis.hydrogeologicunit.hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber].property.storativity -->
+						<om:OM_Observation gml:id="ngis.hydrogeologicunit.hgu.qld.1330.property.storativity">
+							<om:phenomenonTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:resultTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:observedProperty xlink:href="http://www.opengis.net/gwml-nucleus/2.0/gwStorativity" xlink:title="Storativity"/>
+							<!-- om:featureOfInterest is the GW_HydrogeologicUnit -->
+							<!-- NGIS - om:featureOfInterest xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]" -->
+							<om:featureOfInterest xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.qld.1330"/>
+							<!-- NGIS - om:result = [NGIS_HydrogeologicUnit.HGUStorage] -->
+							<!-- ???? NGIS - [NGIS_HydrogeologicUnit.HGUStorage] data type is 'string'. Are these 'categoricals' rather than numeric values? -->
+							<om:result>
+								<swe:Quantity>
+									<!-- ???? NGIS -  Are the [NGIS_HydrogeologicUnit.HGUStorage]  units of measure are dimensionless? -->
+									<swe:uom xlink:href="http://qudt.org/vocab/unit#Unitless" xlink:title="Unitless"/>
+									<!-- NGIS - swe:value = [NGIS_HydrogeologicUnit.HGUStorage]  -->
+									<swe:value>0</swe:value>
+								</swe:Quantity>
+							</om:result>
+						</om:OM_Observation>
+					</gwml2:gwStorativity>
+					<gwml2:gwTransmissivity>
+						<!-- NGIS - om:OM_Observation gml:id="ngis.hydrogeologicunit.hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber].property.transmissivity -->
+						<om:OM_Observation gml:id="ngis.hydrogeologicunit.hgu.qld.1330.property.transmissivity">
+							<om:phenomenonTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:resultTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:observedProperty xlink:href="http://www.opengis.net/gwml-nucleus/2.0/gwTransmissivity" xlink:title="Transmissivity"/>
+							<!-- om:featureOfInterest is the GW_HydrogeologicUnit -->
+							<!-- NGIS - om:featureOfInterest xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]" -->
+							<om:featureOfInterest xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.qld.1330"/>
+							<!-- NGIS - om:result = [NGIS_HydrogeologicUnit.HGUTransmissivity] -->
+							<!-- ???? NGIS - [NGIS_HydrogeologicUnit.HGUTransmissivity] data type is 'string'. Are these 'categoricals' rather than numeric values? -->
+							<om:result>
+								<swe:Quantity>
+									<!-- ???? NGIS -  Are the [NGIS_HydrogeologicUnit.HGUTransmissivity]  units of measure  L2.T-1 e.g. m2/d, m2/s? -->
+									<swe:uom xlink:href="http://environment.data.gov.au/def/unit/MeterSquaredPerDay" xlink:title="Meter squared per day"/>
+									<!-- NGIS - swe:value = [NGIS_HydrogeologicUnit.HGUTransmissivity]  -->
+									<swe:value>0</swe:value>
+								</swe:Quantity>
+							</om:result>
+						</om:OM_Observation>
+					</gwml2:gwTransmissivity>
+					<!-- NGIS - Does not have gwml2:gwYield  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"  -->
+					<gwml2:gwYield xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<!-- gwml2:gwUnitFluidBody is the fluid body in the GW_HydrogeologicUnit. This could be a real feature or unknown -->
+					<!-- NGIS - gwml2:gwUnitFluidBody xlink:href="http://environment.data.gov.au/groundwater/feature/fluidbody/[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]" -->
+					<!-- NGIS - alternative is to use:
+gwWellBody xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/ -->
+					<gwml2:gwUnitFluidBody xlink:href="http://environment.data.gov.au/groundwater/feature/fluidbody/4.1330"/>
+					<!-- gwml2:gwFluidBodyUnit is a reference back to the GW_Aquifer containing the GW_UnitFluidProperty properties (i.e. the body containing the GW_FluidBody -->
+					<!-- NGIS - For gwml2:gwFluidBodyUnit can use either xlink:href to gwml2:GW_Aquifer gml:id (xlink:href="#ngis.hydrogeologicunit.hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]") or to gwml2:GW_Aquifer gml:identifier (xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]") -->
+					<gwml2:gwFluidBodyUnit xlink:href="#ngis.hydrogeologicunit.hgu.qld.1330"/>
+				</gwml2:GW_UnitFluidProperty>
+			</gwml2:gwUnitFluidBody>
+			<!-- gwml2:gwUnitVoid allows describing the aquifer-void properties, such as permeability, porosity, as well as void properties, such as shape, type -->
+			<!-- NGIS - Does not have any gwml2:gwUnitVoid data -->
+			<gwml2:gwUnitVoid xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- NGIS - gwml2:gwAquiferSystem is the HGC and NafHGC that the HGU forms part of -->
+			<!-- NGIS - [NGIS_HydrogeologicUnit.NafHGCNumber] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafhgc.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.NafHGCNumber]" xlink:title="[NGIS_HydrogeologicUnit.NafHGCName]" -->
+			<!-- &&&& gwAquiferSystem -->
+			<gwml2:gwAquiferSystem xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafhgc.qld.133" xlink:title="Palaeozoic meta-sediments and volcanics"/>
+			<!-- NGIS - [NGIS_HydrogeologicUnit.HGCNumber] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgc.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGCNumber]" xlink:title="[NGIS_HydrogeologicUnit.HGCName]" -->
+			<gwml2:gwAquiferSystem xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgc.qld.120" xlink:title="Permian Sediments and Volcanics"/>
+			<!-- gwml2:gwAquiferType defined as "Water in an Aquifer is, or is not, under pressure. Based on that unconfined, confined, artesian, subartesian, or aquitard types are distinguished. (INSPIRE v3.0)" -->
+			<!-- NGIS - gwml2:gwAquiferType xlink:href="http://environment.data.gov.au/groundwater/def/ngis/hydrogeologicalunitconfiningtype/[HGUConfinedType]{spaces removed}" xlink:title = [HGUConfinedType] -->
+			<gwml2:gwAquiferType xlink:href="http://environment.data.gov.au/groundwater/def/ngis/hydrogeologicalunitconfiningtype/unconfinedtoconfined" xlink:title="unconfined to confined"/>
+			<!--<gwml2:gwAquiferIsExploited></gwml2:gwAquiferIsExploited>-->
+			<!--	<gwml2:gwAquiferIsMain></gwml2:gwAquiferIsMain> -->
+			<!-- ???? NGIS - Does NGIS relate the confining beds to the aquifers? -->
+			<gwml2:gwConfiningBed xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+		</gwml2:GW_Aquifer>
+	</gml:featureMember>
+	<!-- This gml:featureMember is a gwml2:GW_ConfiningBed from [NGIS_HydrogeologicUnit.HGUNumber] = 1240  -->
+	<gml:featureMember>
+		<!-- NGIS - gwml2:GW_ConfiningBed if [NGIS_HydrogeologicUnit.HGUAquiferType] = "3" -->
+		<!-- NGIS - All Qld example data has [NGIS_HydrogeologicUnit.HGUAquiferType] = "4" {Unclassified}. Instance example is made-up -->
+		<!-- NGIS- For GW_ConfiningBed gml:id = ngis.hydrogeologicunit.hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber] -->
+		<gwml2:GW_ConfiningBed gml:id="ngis.hydrogeologicunit.hgu.qld.1240">
+			<gml:metaDataProperty>
+				<gml:GenericMetaData>
+					<gmd:MD_Metadata>
+						<gmd:contact>
+							<gmd:CI_ResponsibleParty>
+								<!-- NGIS - Does not record the agency responsible for the NGIS_HydrogeologicalUnit.
+Use gmd:organisationName gco:nilReason="unknown" -->
+								<gmd:organisationName gco:nilReason="unknown"/>
+								<gmd:contactInfo>
+									<gmd:CI_Contact>
+										<gmd:address>
+											<gmd:CI_Address>
+												<!-- NGIS - gmd:administrativeArea/gco:CharacterString = [StateTerritory.CodedValueDomain.Description] based on [NGIS_HydrogeologicUnit.StateTerritory] -->
+												<gmd:administrativeArea>
+													<gco:CharacterString>QLD</gco:CharacterString>
+												</gmd:administrativeArea>
+											</gmd:CI_Address>
+										</gmd:address>
+									</gmd:CI_Contact>
+								</gmd:contactInfo>
+								<gmd:role>
+									<!-- NGIS - <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeSpace="ISOTC211/19115" codeListValue="CI_RoleCode_originator">originator</gmd:CI_RoleCode> -->
+									<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeSpace="ISOTC211/19115" codeListValue="CI_RoleCode_originator">originator</gmd:CI_RoleCode>
+								</gmd:role>
+							</gmd:CI_ResponsibleParty>
+						</gmd:contact>
+						<!-- NGIS - 	gmd:dateStamp is unknown. Use 	gmd:dateStamp gco:nilReason="unknown"/ -->
+						<gmd:dateStamp gco:nilReason="unknown"/>
+						<!-- NGIS - 	gmd:identificationInfo is unknown. Use gmd:identificationInfo xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/ -->
+						<gmd:identificationInfo xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					</gmd:MD_Metadata>
+				</gml:GenericMetaData>
+			</gml:metaDataProperty>
+			<!-- NGIS - gml:description = [NGIS_HydrogeologicUnit.HGUDescription]  -->
+			<gml:description>Cretaceous consolidated shallow marine sediments.  Confining aquitards.</gml:description>
+			<!-- NGIS - gml:identifier = "http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]"-->
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.qld.1240</gml:identifier>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HydroID", value = [NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]  -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HydroID">40000241</gml:name>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGUNumber", value = [NGIS_HydrogeologicUnit.HGUNumber]  -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGUNumber">1240</gml:name>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGUName", value = [NGIS_HydrogeologicUnit.HGUName]  -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGUName">Griman Creek Formation</gml:name>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGUCode", value = [NGIS_HydrogeologicUnit.HGUCode]  -->
+			<!-- ???? NGIS - No HGUCode examples in the Qld data. Dummy code used -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGUCode">XX</gml:name>
+			<!-- NGIS - does not record method of observing the stratigraphy - use  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" -->
+			<gsmlb:observationMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gsmlb:purpose to indicate whether defining, typical or instance of the unit. -->
+			<!-- NGIS - gsmlb:purpose = "instance" -->
+			<gsmlb:purpose>instance</gsmlb:purpose>
+			<!--  NGIS - use gsmlb:relatedFeature for linking to the related hydrogeologicunits specified by [NGIS_HydrogeologicUnit.ProvName],  [NGIS_HydrogeologicUnit.HGCNumber], [NGIS_HydrogeologicUnit.NAFProvName], [NGIS_HydrogeologicUnit.NafHGUNumber], [NGIS_HydrogeologicUnit.NafHGCNumber]   -->
+			<!-- NGIS - [NGIS_HydrogeologicUnit.ProvName] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/prov.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.ProvName]{with spaces removed}" xlink:title="[NGIS_HydrogeologicUnit.ProvName]" -->
+			<gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/prov.qld.GAB" xlink:title="GAB"/>
+			<!-- NGIS - [NGIS_HydrogeologicUnit.NafHGUNumber] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafhgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.NafHGUNumber]" xlink:title="[NGIS_HydrogeologicUnit.NafHGUName]" -->
+			<gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafhgu.qld.121016" xlink:title="GAB Cretaceous sedimentary aquitard"/>
+			<!-- NGIS - [NGIS_HydrogeologicUnit.HGCNumber] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgc.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGCNumber]" xlink:title="[NGIS_HydrogeologicUnit.HGCName]" -->
+			<gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgc.qld.109" xlink:title="Cretaceous GAB"/>
+			<!-- NGIS - [NGIS_HydrogeologicUnit.NafHGCNumber] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafhgc.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.NafHGCNumber]" xlink:title="[NGIS_HydrogeologicUnit.NafHGCName]" -->
+			<gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafhgc.qld.121" xlink:title="Cretaceous sediments"/>
+			<!-- NGIS - [NGIS_HydrogeologicUnit.NafProvName] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafprov.[NGIS_HydrogeologicUnit.NafProvName]{with spaces removed}" xlink:title="[NGIS_HydrogeologicUnit.NafProvName]" -->
+			<!-- ???? NGIS - No [NGIS_HydrogeologicUnit.NafProvName] examples in Qld data. Using [NGIS_HydrogeologicUnit.ProvName] as example -->
+			<gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafprov.qld.GAB" xlink:title="GAB"/>
+			<!-- NGIS - For [NGIS_HydrogeologicUnit.HGUNumber] gsmlb:classifier = [NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUCode] -->
+			<!-- ####  gsmlb:classifier should refer to a vocabulary of  terms  -->
+			<!-- ???? NGIS - The gsmlb:classifier xlink:href should refer to the Australian Stratigraphic Units Database. This will require a mapping between [NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber] and Australian Stratigraphic Units Database terms using [NGIS_HydrogeologicUnit.HGUCode] or [NGIS_HydrogeologicUnit.HGUName] or [NGIS_HydrogeologicUnit.HGUNumber] 
+xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"-->
+			<gsmlb:classifier xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- NGIS - gsmlb:geologicUnitType xlink:href="http://resource.geosciml.org/classifier/cgi/geologicunittype/hydrogeologic_unit" xlink:title="Hydrogeologic Unit" -->
+			<gsmlb:geologicUnitType xlink:href="http://resource.geosciml.org/classifier/cgi/geologicunittype/hydrogeologic_unit" xlink:title="Hydrogeologic Unit"/>
+			<gsmlb:gbUnitDescription>
+				<gsmlx:GeologicUnitDescription>
+					<!-- NGIS -  gsmlb:unitThickness = [NGIS_HydrogeologicUnit.HGUThickness] -->
+					<!-- NGIS - If [NGIS_HydrogeologicUnit.HGUThickness] is NULL then <gsmlb:unitThickness  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"> -->
+					<gsmlx:unitThickness>
+						<swe:QuantityRange>
+							<!--  NGIS - What are uom for [NGIS_HydrogeologicUnit.HGUThickness]? Assumed metres here -->
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+							<!-- NGIS - swe:value is a range but [NGIS_HydrogeologicUnit.HGUThickness] is a single value. Repeat [NGIS_HydrogeologicUnit.HGUThickness]  -->
+							<swe:value>100.0 100.0</swe:value>
+						</swe:QuantityRange>
+					</gsmlx:unitThickness>
+				</gsmlx:GeologicUnitDescription>
+			</gsmlb:gbUnitDescription>
+			<!-- gwml2:gwUnitProperty is for other GW_HydrogeoUnit properties.    -->
+			<!-- NGIS - following aquifer properties are inapplicable for confining beds -->
+			<gwml2:gwUnitMedia xlink:href="http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title="inapplicable"/>
+			<gwml2:gwUnitWaterBudget xsi:nil="true"/>
+			<gwml2:gwUnitRecharge xlink:href="http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title="inapplicable"/>
+			<gwml2:gwUnitDischarge xlink:href="http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title="inapplicable"/>
+			<gwml2:gwUnitVulnerability xlink:href="http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title="inapplicable"/>
+			<!-- gwml2:gwUnitFluidBody allows describing aquifer-fluid properties -->
+			<!-- NGIS - These properties are inapplicable for NGIS confining beds. -->
+			<gwml2:gwUnitFluidBody xlink:href="http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title="inapplicable"/>
+			<!-- gwml2:gwUnitVoid allows describing the aquifer-void properties, such as permeability, porosity, as well as void properties, such as shape, type -->
+			<!-- NGIS - These properties are inapplicable for NGIS confining beds. -->
+			<gwml2:gwUnitVoid xlink:href="http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title="inapplicable"/>
+			<!-- NGIS - gwml2:gwAquiferSystem is the HGC and NafHGC that the HGU forms part of -->
+			<!-- NGIS - [NGIS_HydrogeologicUnit.NafHGCNumber] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafhgc.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.NafHGCNumber]" xlink:title="[NGIS_HydrogeologicUnit.NafHGCName]" -->
+			<gwml2:gwAquiferSystem xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafhgc.qld.121" xlink:title="Cretaceous sediments"/>
+			<!-- NGIS - [NGIS_HydrogeologicUnit.HGCNumber] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgc.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGCNumber]" xlink:title="[NGIS_HydrogeologicUnit.HGCName]" -->
+			<gwml2:gwAquiferSystem xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgc.qld.109" xlink:title="Cretaceous GAB"/>
+			<!-- gwml2:gwSpatialConfinement defined as "Degree of confinement (typically: "Unconfined-Confined", "Partially Confined")." -->
+			<!-- NGIS - gwml2:gwSpatialConfinement  xlink:href="http://environment.data.gov.au/groundwater/def/ngis/hydrogeologicalunitconfiningtype/[HGUConfinedType]{spaces removed}" xlink:title = [HGUConfinedType] -->
+			<gwml2:gwSpatialConfinement xlink:href="http://environment.data.gov.au/groundwater/def/ngis/hydrogeologicalunitconfiningtype/confined" xlink:title="confined"/>
+			<!-- gwml2:gwConductivityConfinement defined as "Degree of confinement (e.g. aquiclude)." -->
+			<!-- ???? NGIS - gwml2:gwConductivityConfinement  if [NGIS_HydrogeologicUnit.HGUAquiferType] = "3" then gwml2:gwConductivityConfinement xlink:href="http://environment.data.gov.au/groundwater/def/ngis/hydrogeologicalunitconfiningtype/aquitard" xlink:title="aquitard" -->
+			<gwml2:gwConductivityConfinement xlink:href="http://environment.data.gov.au/groundwater/def/ngis/hydrogeologicalunitconfiningtype/aquitard" xlink:title="aquitard"/>
+			<!-- ???? NGIS - Does NGIS relate the confining beds to the aquifers? -->
+			<gwml2:gwConfinedAquifer xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+		</gwml2:GW_ConfiningBed>
+	</gml:featureMember>
+	<!-- This gml:featureMember is a gwml2:GW_AquiferSystem for [NGIS_HydrogeologicUnit.HGCNumber] = 111  -->
+	<gml:featureMember>
+		<!-- NGIS - each Unique [NGIS_HydrogeologicUnit.HGCNumber] = gwml2:GW_AquiferSystem 
+gml:id = ngis.hydrogeologicunit.hgc.[NGIS_HydrogeologicUnit.HGCNumber] -->
+		<!-- NGIS - each Unique [NGIS_HydrogeologicUnit.NafHGCNumber] = gwml2:GW_AquiferSystem 
+gml:id = ngis.hydrogeologicunit.nafhgc.[NGIS_HydrogeologicUnit.NafHGCNumber]  -->
+		<!-- NGIS - For [NGIS_HydrogeologicUnit.NafHGCNumber] replace "HGC" with "NafHGC", and "naf" with nafhgc" in the examples -->
+		<!-- NGIS- For GW_AquiferSystem gml:id = ngis.hydrogeologicunit.hgc.[NGIS_HydrogeologicUnit.HGCNumber] or gml:id = 
+ngis.hydrogeologicunit.nafhgc.[NGIS_HydrogeologicUnit.NafHGCNumber]-->
+		<gwml2:GW_AquiferSystem gml:id="ngis.hydrogeologicunit.hgc.111">
+			<gml:metaDataProperty>
+				<gml:GenericMetaData>
+					<gmd:MD_Metadata>
+						<gmd:contact>
+							<gmd:CI_ResponsibleParty>
+								<!-- NGIS - Does not record the agency responsible for the NGIS_HydrogeologicalUnit.
+Use gmd:organisationName gco:nilReason="unknown" -->
+								<gmd:organisationName gco:nilReason="unknown"/>
+								<gmd:contactInfo>
+									<gmd:CI_Contact>
+										<gmd:address>
+											<gmd:CI_Address>
+												<!-- NGIS - gmd:administrativeArea/gco:CharacterString = [StateTerritory.CodedValueDomain.Description] based on [NGIS_HydrogeologicUnit.StateTerritory] -->
+												<gmd:administrativeArea>
+													<gco:CharacterString>QLD</gco:CharacterString>
+												</gmd:administrativeArea>
+											</gmd:CI_Address>
+										</gmd:address>
+									</gmd:CI_Contact>
+								</gmd:contactInfo>
+								<gmd:role>
+									<!-- NGIS - <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeSpace="ISOTC211/19115" codeListValue="CI_RoleCode_originator">originator</gmd:CI_RoleCode> -->
+									<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeSpace="ISOTC211/19115" codeListValue="CI_RoleCode_originator">originator</gmd:CI_RoleCode>
+								</gmd:role>
+							</gmd:CI_ResponsibleParty>
+						</gmd:contact>
+						<!-- NGIS - 	gmd:dateStamp is unknown. Use 	gmd:dateStamp gco:nilReason="unknown"/ -->
+						<gmd:dateStamp gco:nilReason="unknown"/>
+						<!-- NGIS - 	gmd:identificationInfo is unknown. Use gmd:identificationInfo xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/ -->
+						<gmd:identificationInfo xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					</gmd:MD_Metadata>
+				</gml:GenericMetaData>
+			</gml:metaDataProperty>
+			<!-- NGIS - HGC and NafHGC units do not have gml:description  -->
+			<!-- NGIS - gml:identifier = "http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgc.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGCNumber]"
+or "http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafhgc.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.NafHGCNumber]" -->
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgc.qld.111</gml:identifier>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGCID", value = [NGIS_HydrogeologicUnit.HGCID]  -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGCID">0</gml:name>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGCNumber", value = [NGIS_HydrogeologicUnit.HGCNumber]  -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGCNumber">111</gml:name>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGCName", value = [NGIS_HydrogeologicUnit.HGCName]  -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGCName">Jurassic Intrusives</gml:name>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGCCode", value = [NGIS_HydrogeologicUnit.HGCCode]  -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGCCode">JI</gml:name>
+			<!-- NGIS - does not record method of observing the stratigraphy - use  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" -->
+			<gsmlb:observationMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gsmlb:occurrence allows providing the spatial representation of the GW_HydrogeoUnit.  -->
+			<!-- NGIS - [NGIS_HydrogeologicUnit] does not include spatial information separate to the related Borehole locations [NGIS_Bore] and intervals down each Borehole [NGIS_BoreholeLog] -->
+			<!-- ???? NGIS - Options:
+1. provide list of locations (points) based on [NGIS_Bore] locations; and/or
+2. provide x1,y1,z1, x2, y2, z2 for each bore based on [NGIS_BoreholeLog] -->
+			<!-- NGIS - In this example there is no attempt to identify the location of the HGC/NafHGC -->
+			<gsmlb:occurrence xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gsmlb:purpose to indicate whether defining, typical or instance of the unit. -->
+			<!-- NGIS - gsmlb:purpose = "instance" -->
+			<gsmlb:purpose>instance</gsmlb:purpose>
+			<!--  NGIS - Could use gsmlb:relatedFeature for linking to the related hydrogeologicunits specified by [NGIS_HydrogeologicUnit.ProvName],  [NGIS_HydrogeologicUnit.HGCNumber], [NGIS_HydrogeologicUnit.NAFProvName], [NGIS_HydrogeologicUnit.NafHGUNumber], [NGIS_HydrogeologicUnit.NafHGCNumber]   -->
+			<!-- Suggest for HGC and NafHGC only relate to Prov and NAFProv -->
+			<!-- NGIS - [NGIS_HydrogeologicUnit.ProvName] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/prov.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.ProvName]{with spaces removed}" xlink:title="[NGIS_HydrogeologicUnit.ProvName]" -->
+			<gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/prov.qld.JurassicIntrusives" xlink:title="Jurassic Intrusives"/>
+			<!-- NGIS - [NGIS_HydrogeologicUnit.ProvName] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafprov.[NGIS_HydrogeologicUnit.NafProvName]{with spaces removed}" xlink:title="[NGIS_HydrogeologicUnit.NafProvName]" -->
+			<gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafprov.qld.JurassicIntrusives" xlink:title="Jurassic Intrusives"/>
+			<!-- NGIS - For [NGIS_HydrogeologicUnit.HGUNumber] gsmlb:classifier = [NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUCode] -->
+			<!-- ####  gsmlb:classifier should refer to a vocabulary of  terms  -->
+			<!-- ???? NGIS - The gsmlb:classifier xlink:href should refer to the Australian Stratigraphic Units Database. For HGC and NafHGC  these units are probably not defined -->
+			<gsmlb:classifier xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- NGIS - gsmlb:geologicUnitType xlink:href="http://resource.geosciml.org/classifier/cgi/geologicunittype/hydrogeologic_unit" xlink:title="Hydrogeologic Unit" -->
+			<gsmlb:geologicUnitType xlink:href="http://resource.geosciml.org/classifier/cgi/geologicunittype/hydrogeologic_unit" xlink:title="Hydrogeologic Unit"/>
+			<!-- NGIS - Does not have any gsmlb:rank -->
+			<gsmlb:rank xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gwml2:gwUnitProperty is for other GW_HydrogeoUnit properties.    -->
+			<!-- NGIS - following aquifer properties are unknown for stratigraphic units -->
+			<gwml2:gwUnitMedia xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitWaterBudget xsi:nil="true"/>
+			<gwml2:gwUnitRecharge xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitDischarge xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitVulnerability xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gwml2:gwUnitFluidBody allows describing aquifer-fluid properties -->
+			<gwml2:gwUnitFluidBody xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gwml2:gwUnitVoid allows describing the aquifer-void properties, such as permeability, porosity, as well as void properties, such as shape, type -->
+			<!-- NGIS - For HGC and NafHGC units NGIS does not have any gwml2:gwUnitVoid data -->
+			<gwml2:gwUnitVoid xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gwml2:gwAquiferSystem allows nested GW_AquiferSystems. For NGIS it is a reference to itself -->
+			<!-- NGIS - gwml2:gwAquiferSystem xlink:href="#ngis.hydrogeologicunit.hgc.[NGIS_HydrogeologicUnit.NafHGCNumber]" or "#ngis.hydrogeologicunit.hgc.[NGIS_HydrogeologicUnit.HGCNumber]" -->
+			<gwml2:gwAquiferSystem xlink:href="#ngis.hydrogeologicunit.hgc.111"/>
+			<!-- NGIS - Does not indicate whether the HGC/NafHGC is layered or not -->
+			<!--<gwml2:gwAquiferSystemIsLayered></gwml2:gwAquiferSystemIsLayered> -->
+			<!-- gwml2:gwAquiferSystemPart specifies the components that make up the GW_AquiferSystem -->
+			<!-- NGIS - gwml2:gwAquiferSystemPart is the HGUs within the HGC or NafHGC  -->
+			<!-- NGIS - gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber] xlink:title="[NGIS_HydrogeologicUnit.HGUName] -->
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.qld.1251" xlink:title="Jurassic felsic intrusives"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.qld.1252" xlink:title="Jurassic mafic intrusives"/>
+		</gwml2:GW_AquiferSystem>
+	</gml:featureMember>
+	<!-- ???? NGIS - each Unique [NGIS_HydrogeologicUnit.ProvName] = gwml2:GW_Basin 
+gml:id = ngis.hydrogeologicunit.prov.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.ProvName] {spaces removed} -->
+	<!-- ???? NGIS - each Unique [NGIS_HydrogeologicUnit.NafProvName] = gwml2:GW_Basin 
+gml:id = ngis.hydrogeologicunit.nafprov.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.NafProvName] {spaces removed} -->
+	<!-- This gml:featureMember is a gwml2:GW_Basin for [NGIS_HydrogeologicUnit.ProvName] = GAB  -->
+	<gml:featureMember>
+		<!-- NGIS - gml:id="ngis.hydrogeologicunit.prov.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.ProvName]" 
+or "ngis.hydrogeologicunit.prov.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.NafProvName]" {spaces removed}-->
+		<gwml2:GW_Basin gml:id="ngis.hydrogeologicunit.prov.qld.GAB">
+			<!-- NGIS - Changes to GeoSciML v4.0 from GeoSciML v3.2 mean using gwml2:GW_Basin/gml:metaDataProperty instead of gwml2:GW_Basin/gsmlb:metadata to specify the State/Territory that the Basin comes from -->
+			<gml:metaDataProperty>
+				<gml:GenericMetaData>
+					<gmd:MD_Metadata>
+						<gmd:contact>
+							<gmd:CI_ResponsibleParty>
+								<!-- NGIS - Does not record the agency responsible for the NGIS_HydrogeologicalUnit.
+Use gmd:organisationName gco:nilReason="unknown" -->
+								<gmd:organisationName gco:nilReason="unknown"/>
+								<gmd:contactInfo>
+									<gmd:CI_Contact>
+										<gmd:address>
+											<gmd:CI_Address>
+												<!-- NGIS - gmd:administrativeArea/gco:CharacterString = [StateTerritory.CodedValueDomain.Description] based on [NGIS_HydrogeologicUnit.StateTerritory] -->
+												<gmd:administrativeArea>
+													<gco:CharacterString>QLD</gco:CharacterString>
+												</gmd:administrativeArea>
+											</gmd:CI_Address>
+										</gmd:address>
+									</gmd:CI_Contact>
+								</gmd:contactInfo>
+								<gmd:role>
+									<!-- NGIS - <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeSpace="ISOTC211/19115" codeListValue="CI_RoleCode_originator">originator</gmd:CI_RoleCode> -->
+									<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeSpace="ISOTC211/19115" codeListValue="CI_RoleCode_originator">originator</gmd:CI_RoleCode>
+								</gmd:role>
+							</gmd:CI_ResponsibleParty>
+						</gmd:contact>
+						<!-- NGIS - 	gmd:dateStamp is unknown. Use 	gmd:dateStamp gco:nilReason="unknown"/ -->
+						<gmd:dateStamp gco:nilReason="unknown"/>
+						<!-- NGIS - 	gmd:identificationInfo is unknown. Use gmd:identificationInfo xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/ -->
+						<gmd:identificationInfo xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					</gmd:MD_Metadata>
+				</gml:GenericMetaData>
+			</gml:metaDataProperty>
+			<!-- NGIS - Prov and NafProv units do not have gml:description  -->
+			<!-- NGIS - gml:identifier = "http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/prov.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.ProvName]"
+or "http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafhgc.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.NafProvName]" -->
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/prov.qld.GAB</gml:identifier>
+			<!-- NGIS - gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/provname", value = [NGIS_HydrogeologicUnit.ProvName]  -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/provname">GAB</gml:name>
+			<!-- NGIS - does not record method of observing the stratigraphy - use  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" -->
+			<gsmlb:observationMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gsmlb:occurrence allows providing the spatial representation of the GW_HydrogeoUnit.  -->
+			<!-- NGIS - [NGIS_HydrogeologicUnit] does not include spatial information separate to the related Borehole locations [NGIS_Bore] and intervals down each Borehole [NGIS_BoreholeLog] -->
+			<!-- ???? NGIS - Options:
+1. provide list of locations (points) based on [NGIS_Bore] locations; and/or
+2. provide x1,y1,z1, x2, y2, z2 for each bore based on [NGIS_BoreholeLog] -->
+			<!-- NGIS - In this example there is no attempt to identify the location of the HGC/NafHGC -->
+			<gsmlb:occurrence xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gsmlb:purpose to indicate whether defining, typical or instance of the unit. -->
+			<!-- NGIS - gsmlb:purpose = "instance" -->
+			<gsmlb:purpose>instance</gsmlb:purpose>
+			<!--  NGIS - Could use gsmlb:relatedFeature for linking to the related hydrogeologicunits specified by [NGIS_HydrogeologicUnit.ProvName],  [NGIS_HydrogeologicUnit.HGCNumber], [NGIS_HydrogeologicUnit.NAFProvName], [NGIS_HydrogeologicUnit.NafHGUNumber], [NGIS_HydrogeologicUnit.NafHGCNumber]   -->
+			<!-- Suggest for Prov and NafProv  only relate to each other  -->
+			<!-- NGIS - [NGIS_HydrogeologicUnit.NafProvName] gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/prov.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.NafProvName]{with spaces removed}" xlink:title="[NGIS_HydrogeologicUnit.NafProvName]" -->
+			<!--		<gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/nafprov.qld.JurassicIntrusives" xlink:title="Jurassic Intrusives"/> -->
+			<!-- NGIS - For Qld data no NafProv data supplied -->
+			<gsmlb:relatedFeature xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- ####  gsmlb:classifier should refer to a vocabulary of  terms  -->
+			<!-- ???? NGIS - The gsmlb:classifier xlink:href should refer to the Australian Stratigraphic Units Database. For ProvName and NafProvName this may be difficult  -->
+			<gsmlb:classifier xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- NGIS - gsmlb:geologicUnitType xlink:href="http://resource.geosciml.org/classifier/cgi/geologicunittype/hydrogeologic_unit" xlink:title="Hydrogeologic Unit" -->
+			<gsmlb:geologicUnitType xlink:href="http://resource.geosciml.org/classifier/cgi/geologicunittype/hydrogeologic_unit" xlink:title="Hydrogeologic Unit"/>
+			<!-- NGIS - Does not have any gsmlb:rank -->
+			<gsmlb:rank xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gwml2:gwUnitProperty is for other GW_HydrogeoUnit properties.    -->
+			<!-- NGIS - following aquifer properties are unknown for stratigraphic units -->
+			<gwml2:gwUnitMedia xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitWaterBudget xsi:nil="true"/>
+			<gwml2:gwUnitRecharge xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitDischarge xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitVulnerability xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gwml2:gwUnitFluidBody allows describing aquifer-fluid properties -->
+			<!-- ???? NGIS - There are no observations associated with the Basin. -->
+			<gwml2:gwUnitFluidBody xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gwml2:gwUnitVoid allows describing the aquifer-void properties, such as permeability, porosity, as well as void properties, such as shape, type -->
+			<!-- NGIS - For Prov and NafProv units NGIS does not have any gwml2:gwUnitVoid data -->
+			<gwml2:gwUnitVoid xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- NGIS - the gwml2:gwDivide is unknown -->
+			<gwml2:gwDivide xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- gwml2:gwBasinUnit allows specifying all the units that make up the GW_Basin -->
+			<!-- NGIS -  Rather than listing them all NGIS withhold the units:
+gwml2:gwBasinUnit xlink:href="http://www.opengis.net/def/nil/OGC/0/withheld" xlink:title="withheld" -->
+			<gwml2:gwBasinUnit xlink:href="http://www.opengis.net/def/nil/OGC/0/withheld" xlink:title="withheld"/>
+		</gwml2:GW_Basin>
+	</gml:featureMember>
+</gml:FeatureCollection>

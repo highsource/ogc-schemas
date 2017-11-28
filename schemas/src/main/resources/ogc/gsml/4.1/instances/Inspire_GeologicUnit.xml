@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsmlb:GeologicUnit xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:gsr="http://www.isotc211.org/2005/gsr"
+ xmlns:gco="http://www.isotc211.org/2005/gco"
+ xmlns:gts="http://www.isotc211.org/2005/gts"
+ xmlns:gss="http://www.isotc211.org/2005/gss"
+ xmlns:gmd="http://www.isotc211.org/2005/gmd"
+ xmlns:gml="http://www.opengis.net/gml/3.2"
+ xmlns:om="http://www.opengis.net/om/2.0"
+ xmlns:swe="http://www.opengis.net/swe/2.0"
+ xmlns:gmlexr="http://www.opengis.net/gml/3.3/exr"
+ xmlns:sam="http://www.opengis.net/sampling/2.0"
+ xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd"
+ gml:id="INV-SDSM">
+ <gml:identifier codeSpace="http://data.bgs.ac.uk/">http://data.bgs.ac.uk/id/Lexicon/NamedRockUnit/INV</gml:identifier>
+ <gml:name>INVERCLYDE GROUP</gml:name>
+ <!--  -->
+ <!-- Example of a thematic classification of a GeologicUnit -->
+ <!--  -->
+ <gsmlb:classifier
+  xlink:href="http://data.bgs.ac.uk/ref/EngineeringGeologyTheme/strongSandstone"
+  xlink:title="Engineering Geology theme: Strong Sandstone"/>
+ <gsmlb:geologicHistory>
+  <gsmlb:GeologicEvent gml:id="EVENT_1">
+   <!-- In INSPIRE GeologicEvent is not a type of GeologicFeature and doesn't
+    have an inspireId so no need for a gml:identifier here. -->
+   <gml:name>UNNAMED EVENT</gml:name>
+   <!-- Schema needs fixing to encode eventProcess properly -->
+   <gsmlb:eventProcess
+    xlink:href="http://inspire.ec.europa.eu/codelist/EventProcessValue/mechanicalDeposition"
+    xlink:title="mechanical deposition"/>
+   <!-- numericAgeDate is not in INSPIRE model so omit if don't have
+    it or don't want to report it -->
+   <gsmlb:olderNamedAge
+    xlink:href="http://inspire.ec.europa.eu/codelist/GeochronologicEraValue/tournaisian"
+    xlink:title="Tournaisian"/>
+   <gsmlb:youngerNamedAge
+    xlink:href="http://inspire.ec.europa.eu/codelist/GeochronologicEraValue/visean"
+    xlink:title="Visean"/>
+   <gsmlb:eventEnvironment>
+    <swe:Category
+     definition="http://inspire.ec.europa.eu/codelist/EventEnvironmentValue">
+     <swe:extension>
+      <swe:Category
+       definition="http://resource.geosciml.org/classifierscheme/cgi/201211/valuequalifier">
+       <swe:identifier>http://resource.geosciml.org/classifier/cgi/valuequalifier/always</swe:identifier>
+       <swe:label>always</swe:label>
+       <swe:codeSpace
+        xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/valuequalifier"
+       />
+      </swe:Category>
+     </swe:extension>
+     <swe:identifier>http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/riverPlainSystemSetting</swe:identifier>
+     <swe:label>river plain system setting</swe:label>
+     <swe:codeSpace
+      xlink:href="http://inspire.ec.europa.eu/codelist/EventEnvironmentValue"/>
+    </swe:Category>
+   </gsmlb:eventEnvironment>
+  </gsmlb:GeologicEvent>
+ </gsmlb:geologicHistory>
+ <!--  -->
+ <!--  -->
+ <gsmlb:geologicUnitType
+  xlink:href="http://inspire.ec.europa.eu/codelist/GeologicUnitTypeValue/lithostratigraphicUnit"
+  xlink:title="lithostratigraphic unit"/>
+ <!--  -->
+ <!-- The composition (lithology) of the GeologicUnit -->
+ <!-- There are three component lithologies in this example -->
+ <!--  -->
+ <gsmlb:composition>
+  <gsmlb:CompositionPart>
+   <gsmlb:role xlink:title="unspecified part role"
+    xlink:href="http://inspire.ec.europa.eu/codelist/CompositionPartRoleValue/unspecifiedPartRole"/>
+   <gsmlb:material>
+    <gsmlb:RockMaterial gml:id="LOCAL_ID_3">
+     <gsmlb:lithology
+      xlink:href="http://inspire.ec.europa.eu/codelist/LithologyValue/mudstone"
+      xlink:title="mudstone"/>
+    </gsmlb:RockMaterial>
+   </gsmlb:material>
+   <gsmlb:proportion>
+    <gsmlb:GSML_QuantityRange>
+     <swe:uom code="%" xlink:href="http://unitsofmeasure/ucum.html#para-29"
+      xlink:title="percent"/>
+     <swe:value>5.0 50.0</swe:value>
+     <gsmlb:lowerValue>5.0</gsmlb:lowerValue>
+     <gsmlb:upperValue>50.0</gsmlb:upperValue>
+    </gsmlb:GSML_QuantityRange>
+   </gsmlb:proportion>
+  </gsmlb:CompositionPart>
+ </gsmlb:composition>
+ <gsmlb:composition>
+  <gsmlb:CompositionPart>
+   <gsmlb:role xlink:title="unspecified part role"
+    xlink:href="http://inspire.ec.europa.eu/codelist/CompositionPartRoleValue/unspecifiedPartRole"/>
+   <gsmlb:material>
+    <gsmlb:RockMaterial gml:id="LOCAL_ID_4">
+     <gsmlb:lithology
+      xlink:href="http://inspire.ec.europa.eu/codelist/LithologyValue/sandstone"
+      xlink:title="sandstone"/>
+    </gsmlb:RockMaterial>
+   </gsmlb:material>
+   <gsmlb:proportion>
+    <gsmlb:GSML_QuantityRange>
+     <swe:uom code="%" xlink:href="http://unitsofmeasure/ucum.html#para-29"
+      xlink:title="percent"/>
+     <swe:value>50.0 95.0</swe:value>
+     <gsmlb:lowerValue>50.0</gsmlb:lowerValue>
+     <gsmlb:upperValue>95.0</gsmlb:upperValue>
+    </gsmlb:GSML_QuantityRange>
+   </gsmlb:proportion>
+  </gsmlb:CompositionPart>
+ </gsmlb:composition>
+ <gsmlb:composition>
+  <gsmlb:CompositionPart>
+   <gsmlb:role xlink:title="unspecified part role"
+    xlink:href="http://inspire.ec.europa.eu/codelist/CompositionPartRoleValue/unspecifiedPartRole"/>
+   <gsmlb:material>
+    <gsmlb:RockMaterial gml:id="LOCAL_ID_5">
+     <gsmlb:lithology
+      xlink:href="http://inspire.ec.europa.eu/codelist/LithologyValue/siltstone"
+      xlink:title="siltstone"/>
+    </gsmlb:RockMaterial>
+   </gsmlb:material>
+   <gsmlb:proportion>
+    <gsmlb:GSML_QuantityRange>
+     <swe:uom code="%" xlink:href="http://unitsofmeasure/ucum.html#para-29"
+      xlink:title="percent"/>
+     <swe:value>5.0 50.0</swe:value>
+     <gsmlb:lowerValue>5.0</gsmlb:lowerValue>
+     <gsmlb:upperValue>50.0</gsmlb:upperValue>
+    </gsmlb:GSML_QuantityRange>
+   </gsmlb:proportion>
+  </gsmlb:CompositionPart>
+ </gsmlb:composition>
+</gsmlb:GeologicUnit>

@@ -1,0 +1,16 @@
+{
+	"@context": {	
+		"cis": "http://www.opengis.net/cis/1.1/",
+
+		"id": "@id",
+		"type": "@type",
+		"CoverageByDomainAndRangeType": "cis:CoverageByDomainAndRangeType",
+		"CoverageByPartitioningType": "cis:CoverageByPartitioningType",
+		"envelope": "cis:envelope",
+		"domainSet": "cis:domainSet",
+		"rangeSet": "cis:rangeSet",
+		"partitionSet": "cis:partitionSet",
+		"rangeType": "cis:rangeType",
+		"metadata": "cis:metadata"		
+     }
+}

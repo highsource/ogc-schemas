@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gwml2c="http://www.opengis.net/gwml-constituent/2.2" xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:om="http://www.opengis.net/om/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gsmlx="http://www.opengis.net/gsml/4.1/GeoSciML-Extension" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" numberMatched="unknown" numberReturned="5" timeStamp="2016-05-12T22:47:55.796Z" xsi:schemaLocation="http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gwml-wellconstruction/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-wellconstruction.xsd">
+	<wfs:member>
+		<gwml2wc:Borehole gml:id="ngis.borehole.construction.act.80000001">
+			<gml:identifier codeSpace="http://www.bom.gov.au/water/groundwater/ngis/">http://environment.data.gov.au/groundwater/feature/ngis.borehole.construction.act.80000001</gml:identifier>
+			<sam:sampledFeature xlink:href="http://environment.data.gov.au/groundwater/feature/ngis.borehole.act.80000001"/>
+			<sams:shape>
+				<gml:Point gml:id="ngis.borehole.construction.act.80000001.shape" srsDimension="2" srsName="http://www.opengis.net/gml/srs/epsg.xml#4283">
+					<gml:pos>149.15916124413474 -35.335897849493136</gml:pos>
+				</gml:Point>
+			</sams:shape>
+			<gwml2wc:bholeMaterialCustodian xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeDateOfDrilling>2003-09-05Z</gwml2wc:bholeDateOfDrilling>
+			<gwml2wc:bholeDriller xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeDrillingMethod xlink:href="http://environment.data.gov.au/groundwater/def/borehole-drill-method/reverse-circulation" xlink:title="Reverse circulation"/>
+			<gwml2wc:bholeNominalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeOperator xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeStartPoint xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/natural-ground-surface" xlink:title="natural ground surface"/>
+			<gwml2wc:bholeConstruction>
+				<gwml2wc:Casing gml:id="ngis.borehole.construction.act.80000001.casing">
+					<gwml2wc:casingElement>
+						<gwml2wc:CasingComponent gml:id="ngis.borehole.construction.act.80000001.casing.1172955">
+							<gwml2wc:from>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>0.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:from>
+							<gwml2wc:to>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>30.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:to>
+							<gwml2wc:casingMaterial xlink:href="borehole-construction-material/unplasticised-polyvinylchloride9" xlink:title="Unplasticised polyvinylchloride Class 9"/>
+							<gwml2wc:casingInternalDiameter>
+								<swe:Quantity>
+									<swe:uom code="mm" xlink:href="http://qudt.org/vocab/unit#Millimeter" xlink:title="millimetre"/>
+									<swe:value>100.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:casingInternalDiameter>
+							<gwml2wc:casingExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:casingWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+						</gwml2wc:CasingComponent>
+					</gwml2wc:casingElement>
+				</gwml2wc:Casing>
+			</gwml2wc:bholeConstruction>
+			<gwml2wc:bholeConstruction>
+				<gwml2wc:Screen gml:id="ngis.borehole.construction.act.80000001.screen">
+					<gwml2wc:screenElement>
+						<gwml2wc:ScreenComponent gml:id="ngis.borehole.construction.act.80000001.screen.1172956">
+							<gwml2wc:from>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>30.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:from>
+							<gwml2wc:to>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>60.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:to>
+							<gwml2wc:screenAttachmentMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenCoating xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenHoleWidth xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:screenHoleLength xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:screenMaterial xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenInternalDiameter>
+								<swe:Quantity>
+									<swe:uom code="mm" xlink:href="http://qudt.org/vocab/unit#Millimeter" xlink:title="millimetre"/>
+									<swe:value>100.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:screenInternalDiameter>
+							<gwml2wc:screenExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:screenPerforationMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenFitting xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenMake xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenModel xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenNumber xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenPlacement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+						</gwml2wc:ScreenComponent>
+					</gwml2wc:screenElement>
+				</gwml2wc:Screen>
+			</gwml2wc:bholeConstruction>
+			<gwml2wc:bholeHeadworks>
+				<gwml2wc:BoreCollar gml:id="ngis.borehole.construction.act.80000001.collar">
+					<gwml2wc:collarElevation axisLabels="m AHD" srsDimension="1" srsName="http://www.opengis.net/def/crs/EPSG/0/5711" uomLabels="metre">560.0</gwml2wc:collarElevation>
+					<gwml2wc:collarHeadworkType xlink:href="http://www.opengis.net/def/nil/OGC/0/missing" nilReason="unknown" xlink:title="missing"/>
+					<gwml2wc:collarLocation>
+						<gml:Point gml:id="ngis.borehole.construction.act.80000001.location" srsDimension="2" srsName="urn:ogc:def:crs:EPSG::4283">
+							<gml:pos>149.15916124413474 -35.335897849493136</gml:pos>
+						</gml:Point>
+					</gwml2wc:collarLocation>
+					<gwml2wc:bholeDetails xlink:href="http://environment.data.gov.au/groundwater/feature/ngis.borehole.act.80000001"/>
+				</gwml2wc:BoreCollar>
+			</gwml2wc:bholeHeadworks>
+		</gwml2wc:Borehole>
+	</wfs:member>
+	<wfs:member>
+		<gwml2wc:Borehole gml:id="ngis.borehole.construction.act.80000002">
+			<gml:identifier codeSpace="http://www.bom.gov.au/water/groundwater/ngis/">http://environment.data.gov.au/groundwater/feature/ngis.borehole.construction.act.80000002</gml:identifier>
+			<sam:sampledFeature xlink:href="http://environment.data.gov.au/groundwater/feature/ngis.borehole.act.80000002"/>
+			<sams:shape>
+				<gml:Point gml:id="ngis.borehole.construction.act.80000002.shape" srsDimension="2" srsName="http://www.opengis.net/gml/srs/epsg.xml#4283">
+					<gml:pos>149.1608726285684 -35.33654336785629</gml:pos>
+				</gml:Point>
+			</sams:shape>
+			<gwml2wc:bholeMaterialCustodian xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeDateOfDrilling>2003-09-06Z</gwml2wc:bholeDateOfDrilling>
+			<gwml2wc:bholeDriller xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeDrillingMethod xlink:href="http://environment.data.gov.au/groundwater/def/borehole-drill-method/reverse-circulation" xlink:title="Reverse circulation"/>
+			<gwml2wc:bholeNominalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeOperator xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeStartPoint xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/natural-ground-surface" xlink:title="natural ground surface"/>
+			<gwml2wc:bholeConstruction>
+				<gwml2wc:Casing gml:id="ngis.borehole.construction.act.80000002.casing">
+					<gwml2wc:casingElement>
+						<gwml2wc:CasingComponent gml:id="ngis.borehole.construction.act.80000002.casing.1172957">
+							<gwml2wc:from>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>0.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:from>
+							<gwml2wc:to>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>18.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:to>
+							<gwml2wc:casingMaterial xlink:href="borehole-construction-material/unplasticised-polyvinylchloride9" xlink:title="Unplasticised polyvinylchloride Class 9"/>
+							<gwml2wc:casingInternalDiameter>
+								<swe:Quantity>
+									<swe:uom code="mm" xlink:href="http://qudt.org/vocab/unit#Millimeter" xlink:title="millimetre"/>
+									<swe:value>100.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:casingInternalDiameter>
+							<gwml2wc:casingExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:casingWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+						</gwml2wc:CasingComponent>
+					</gwml2wc:casingElement>
+				</gwml2wc:Casing>
+			</gwml2wc:bholeConstruction>
+			<gwml2wc:bholeConstruction>
+				<gwml2wc:Screen gml:id="ngis.borehole.construction.act.80000002.screen">
+					<gwml2wc:screenElement>
+						<gwml2wc:ScreenComponent gml:id="ngis.borehole.construction.act.80000002.screen.1172958">
+							<gwml2wc:from>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>18.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:from>
+							<gwml2wc:to>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>48.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:to>
+							<gwml2wc:screenAttachmentMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenCoating xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenHoleWidth xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:screenHoleLength xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:screenMaterial xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenInternalDiameter>
+								<swe:Quantity>
+									<swe:uom code="mm" xlink:href="http://qudt.org/vocab/unit#Millimeter" xlink:title="millimetre"/>
+									<swe:value>100.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:screenInternalDiameter>
+							<gwml2wc:screenExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:screenPerforationMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenFitting xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenMake xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenModel xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenNumber xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenPlacement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+						</gwml2wc:ScreenComponent>
+					</gwml2wc:screenElement>
+				</gwml2wc:Screen>
+			</gwml2wc:bholeConstruction>
+			<gwml2wc:bholeHeadworks>
+				<gwml2wc:BoreCollar gml:id="ngis.borehole.construction.act.80000002.collar">
+					<gwml2wc:collarElevation axisLabels="m AHD" srsDimension="1" srsName="http://www.opengis.net/def/crs/EPSG/0/5711" uomLabels="metre">559.63</gwml2wc:collarElevation>
+					<gwml2wc:collarHeadworkType xlink:href="http://www.opengis.net/def/nil/OGC/0/missing" nilReason="unknown" xlink:title="missing"/>
+					<gwml2wc:collarLocation>
+						<gml:Point gml:id="ngis.borehole.construction.act.80000002.location" srsDimension="2" srsName="urn:ogc:def:crs:EPSG::4283">
+							<gml:pos>149.1608726285684 -35.33654336785629</gml:pos>
+						</gml:Point>
+					</gwml2wc:collarLocation>
+					<gwml2wc:bholeDetails xlink:href="http://environment.data.gov.au/groundwater/feature/ngis.borehole.act.80000002"/>
+				</gwml2wc:BoreCollar>
+			</gwml2wc:bholeHeadworks>
+		</gwml2wc:Borehole>
+	</wfs:member>
+	<wfs:member>
+		<gwml2wc:Borehole gml:id="ngis.borehole.construction.act.80000003">
+			<gml:identifier codeSpace="http://www.bom.gov.au/water/groundwater/ngis/">http://environment.data.gov.au/groundwater/feature/ngis.borehole.construction.act.80000003</gml:identifier>
+			<sam:sampledFeature xlink:href="http://environment.data.gov.au/groundwater/feature/ngis.borehole.act.80000003"/>
+			<sams:shape>
+				<gml:Point gml:id="ngis.borehole.construction.act.80000003.shape" srsDimension="2" srsName="http://www.opengis.net/gml/srs/epsg.xml#4283">
+					<gml:pos>149.1534120373647 -35.34062504169785</gml:pos>
+				</gml:Point>
+			</sams:shape>
+			<gwml2wc:bholeMaterialCustodian xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeDateOfDrilling>2003-09-10Z</gwml2wc:bholeDateOfDrilling>
+			<gwml2wc:bholeDriller xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeDrillingMethod xlink:href="http://environment.data.gov.au/groundwater/def/borehole-drill-method/reverse-circulation" xlink:title="Reverse circulation"/>
+			<gwml2wc:bholeNominalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeOperator xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeStartPoint xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/natural-ground-surface" xlink:title="natural ground surface"/>
+			<gwml2wc:bholeConstruction>
+				<gwml2wc:Casing gml:id="ngis.borehole.construction.act.80000003.casing">
+					<gwml2wc:casingElement>
+						<gwml2wc:CasingComponent gml:id="ngis.borehole.construction.act.80000003.casing.1172962">
+							<gwml2wc:from>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>0.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:from>
+							<gwml2wc:to>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>30.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:to>
+							<gwml2wc:casingMaterial xlink:href="borehole-construction-material/unplasticised-polyvinylchloride9" xlink:title="Unplasticised polyvinylchloride Class 9"/>
+							<gwml2wc:casingInternalDiameter>
+								<swe:Quantity>
+									<swe:uom code="mm" xlink:href="http://qudt.org/vocab/unit#Millimeter" xlink:title="millimetre"/>
+									<swe:value>100.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:casingInternalDiameter>
+							<gwml2wc:casingExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:casingWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+						</gwml2wc:CasingComponent>
+					</gwml2wc:casingElement>
+				</gwml2wc:Casing>
+			</gwml2wc:bholeConstruction>
+			<gwml2wc:bholeConstruction>
+				<gwml2wc:Screen gml:id="ngis.borehole.construction.act.80000003.screen">
+					<gwml2wc:screenElement>
+						<gwml2wc:ScreenComponent gml:id="ngis.borehole.construction.act.80000003.screen.1172963">
+							<gwml2wc:from>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>30.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:from>
+							<gwml2wc:to>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>60.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:to>
+							<gwml2wc:screenAttachmentMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenCoating xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenHoleWidth xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:screenHoleLength xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:screenMaterial xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenInternalDiameter>
+								<swe:Quantity>
+									<swe:uom code="mm" xlink:href="http://qudt.org/vocab/unit#Millimeter" xlink:title="millimetre"/>
+									<swe:value>100.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:screenInternalDiameter>
+							<gwml2wc:screenExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:screenPerforationMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenFitting xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenMake xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenModel xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenNumber xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenPlacement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+						</gwml2wc:ScreenComponent>
+					</gwml2wc:screenElement>
+				</gwml2wc:Screen>
+			</gwml2wc:bholeConstruction>
+			<gwml2wc:bholeHeadworks>
+				<gwml2wc:BoreCollar gml:id="ngis.borehole.construction.act.80000003.collar">
+					<gwml2wc:collarElevation axisLabels="m AHD" srsDimension="1" srsName="http://www.opengis.net/def/crs/EPSG/0/5711" uomLabels="metre">573.29</gwml2wc:collarElevation>
+					<gwml2wc:collarHeadworkType xlink:href="http://www.opengis.net/def/nil/OGC/0/missing" nilReason="unknown" xlink:title="missing"/>
+					<gwml2wc:collarLocation>
+						<gml:Point gml:id="ngis.borehole.construction.act.80000003.location" srsDimension="2" srsName="urn:ogc:def:crs:EPSG::4283">
+							<gml:pos>149.1534120373647 -35.34062504169785</gml:pos>
+						</gml:Point>
+					</gwml2wc:collarLocation>
+					<gwml2wc:bholeDetails xlink:href="http://environment.data.gov.au/groundwater/feature/ngis.borehole.act.80000003"/>
+				</gwml2wc:BoreCollar>
+			</gwml2wc:bholeHeadworks>
+		</gwml2wc:Borehole>
+	</wfs:member>
+	<wfs:member>
+		<gwml2wc:Borehole gml:id="ngis.borehole.construction.act.80000004">
+			<gml:identifier codeSpace="http://www.bom.gov.au/water/groundwater/ngis/">http://environment.data.gov.au/groundwater/feature/ngis.borehole.construction.act.80000004</gml:identifier>
+			<sam:sampledFeature xlink:href="http://environment.data.gov.au/groundwater/feature/ngis.borehole.act.80000004"/>
+			<sams:shape>
+				<gml:Point gml:id="ngis.borehole.construction.act.80000004.shape" srsDimension="2" srsName="http://www.opengis.net/gml/srs/epsg.xml#4283">
+					<gml:pos>149.15670131397874 -35.34185549259629</gml:pos>
+				</gml:Point>
+			</sams:shape>
+			<gwml2wc:bholeMaterialCustodian xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeDateOfDrilling>2003-09-08Z</gwml2wc:bholeDateOfDrilling>
+			<gwml2wc:bholeDriller xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeDrillingMethod xlink:href="http://environment.data.gov.au/groundwater/def/borehole-drill-method/reverse-circulation" xlink:title="Reverse circulation"/>
+			<gwml2wc:bholeNominalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeOperator xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeStartPoint xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/natural-ground-surface" xlink:title="natural ground surface"/>
+			<gwml2wc:bholeConstruction>
+				<gwml2wc:Casing gml:id="ngis.borehole.construction.act.80000004.casing">
+					<gwml2wc:casingElement>
+						<gwml2wc:CasingComponent gml:id="ngis.borehole.construction.act.80000004.casing.1172960">
+							<gwml2wc:from>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>0.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:from>
+							<gwml2wc:to>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>60.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:to>
+							<gwml2wc:casingMaterial xlink:href="borehole-construction-material/unplasticised-polyvinylchloride9" xlink:title="Unplasticised polyvinylchloride Class 9"/>
+							<gwml2wc:casingInternalDiameter>
+								<swe:Quantity>
+									<swe:uom code="mm" xlink:href="http://qudt.org/vocab/unit#Millimeter" xlink:title="millimetre"/>
+									<swe:value>50.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:casingInternalDiameter>
+							<gwml2wc:casingExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:casingWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+						</gwml2wc:CasingComponent>
+					</gwml2wc:casingElement>
+				</gwml2wc:Casing>
+			</gwml2wc:bholeConstruction>
+			<gwml2wc:bholeConstruction>
+				<gwml2wc:Screen gml:id="ngis.borehole.construction.act.80000004.screen">
+					<gwml2wc:screenElement>
+						<gwml2wc:ScreenComponent gml:id="ngis.borehole.construction.act.80000004.screen.1172961">
+							<gwml2wc:from>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>60.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:from>
+							<gwml2wc:to>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>84.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:to>
+							<gwml2wc:screenAttachmentMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenCoating xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenHoleWidth xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:screenHoleLength xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:screenMaterial xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenInternalDiameter>
+								<swe:Quantity>
+									<swe:uom code="mm" xlink:href="http://qudt.org/vocab/unit#Millimeter" xlink:title="millimetre"/>
+									<swe:value>50.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:screenInternalDiameter>
+							<gwml2wc:screenExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:screenPerforationMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenFitting xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenMake xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenModel xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenNumber xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenPlacement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+						</gwml2wc:ScreenComponent>
+					</gwml2wc:screenElement>
+				</gwml2wc:Screen>
+			</gwml2wc:bholeConstruction>
+			<gwml2wc:bholeHeadworks>
+				<gwml2wc:BoreCollar gml:id="ngis.borehole.construction.act.80000004.collar">
+					<gwml2wc:collarElevation axisLabels="m AHD" srsDimension="1" srsName="http://www.opengis.net/def/crs/EPSG/0/5711" uomLabels="metre">571.41</gwml2wc:collarElevation>
+					<gwml2wc:collarHeadworkType xlink:href="http://www.opengis.net/def/nil/OGC/0/missing" nilReason="unknown" xlink:title="missing"/>
+					<gwml2wc:collarLocation>
+						<gml:Point gml:id="ngis.borehole.construction.act.80000004.location" srsDimension="2" srsName="urn:ogc:def:crs:EPSG::4283">
+							<gml:pos>149.15670131397874 -35.34185549259629</gml:pos>
+						</gml:Point>
+					</gwml2wc:collarLocation>
+					<gwml2wc:bholeDetails xlink:href="http://environment.data.gov.au/groundwater/feature/ngis.borehole.act.80000004"/>
+				</gwml2wc:BoreCollar>
+			</gwml2wc:bholeHeadworks>
+		</gwml2wc:Borehole>
+	</wfs:member>
+	<wfs:member>
+		<gwml2wc:Borehole gml:id="ngis.borehole.construction.act.80000005">
+			<gml:identifier codeSpace="http://www.bom.gov.au/water/groundwater/ngis/">http://environment.data.gov.au/groundwater/feature/ngis.borehole.construction.act.80000005</gml:identifier>
+			<sam:sampledFeature xlink:href="http://environment.data.gov.au/groundwater/feature/ngis.borehole.act.80000005"/>
+			<sams:shape>
+				<gml:Point gml:id="ngis.borehole.construction.act.80000005.shape" srsDimension="2" srsName="http://www.opengis.net/gml/srs/epsg.xml#4283">
+					<gml:pos>149.17702630591603 -35.31863853412173</gml:pos>
+				</gml:Point>
+			</sams:shape>
+			<gwml2wc:bholeMaterialCustodian xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeDateOfDrilling>2006-02-19Z</gwml2wc:bholeDateOfDrilling>
+			<gwml2wc:bholeDriller xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeDrillingMethod xlink:href="http://environment.data.gov.au/groundwater/def/borehole-drill-method/rotary" xlink:title="Rotary"/>
+			<gwml2wc:bholeNominalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeOperator xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2wc:bholeStartPoint xlink:href="http://environment.data.gov.au/groundwater/def/elevation-type/natural-ground-surface" xlink:title="natural ground surface"/>
+			<gwml2wc:bholeConstruction>
+				<gwml2wc:Casing gml:id="ngis.borehole.construction.act.80000005.casing">
+					<gwml2wc:casingElement>
+						<gwml2wc:CasingComponent gml:id="ngis.borehole.construction.act.80000005.casing.1172964">
+							<gwml2wc:from>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>0.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:from>
+							<gwml2wc:to>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>4.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:to>
+							<gwml2wc:casingMaterial xlink:href="borehole-construction-material/unplasticised-polyvinylchloride9" xlink:title="Unplasticised polyvinylchloride Class 9"/>
+							<gwml2wc:casingInternalDiameter>
+								<swe:Quantity>
+									<swe:uom code="mm" xlink:href="http://qudt.org/vocab/unit#Millimeter" xlink:title="millimetre"/>
+									<swe:value>100.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:casingInternalDiameter>
+							<gwml2wc:casingExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:casingWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+						</gwml2wc:CasingComponent>
+					</gwml2wc:casingElement>
+				</gwml2wc:Casing>
+			</gwml2wc:bholeConstruction>
+			<gwml2wc:bholeConstruction>
+				<gwml2wc:Screen gml:id="ngis.borehole.construction.act.80000005.screen">
+					<gwml2wc:screenElement>
+						<gwml2wc:ScreenComponent gml:id="ngis.borehole.construction.act.80000005.screen.1172965">
+							<gwml2wc:from>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>4.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:from>
+							<gwml2wc:to>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>10.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:to>
+							<gwml2wc:screenAttachmentMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenCoating xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenForm xlink:href="http://environment.data.gov.au/groundwater/def/borehole-screen-form/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenHoleWidth xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:screenHoleLength xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:screenMaterial xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenInternalDiameter>
+								<swe:Quantity>
+									<swe:uom code="mm" xlink:href="http://qudt.org/vocab/unit#Millimeter" xlink:title="millimetre"/>
+									<swe:value>100.0</swe:value>
+								</swe:Quantity>
+							</gwml2wc:screenInternalDiameter>
+							<gwml2wc:screenExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+							<gwml2wc:screenPerforationMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenFitting xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenMake xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenModel xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenNumber xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenPlacement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:screenWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+						</gwml2wc:ScreenComponent>
+					</gwml2wc:screenElement>
+				</gwml2wc:Screen>
+			</gwml2wc:bholeConstruction>
+			<gwml2wc:bholeHeadworks>
+				<gwml2wc:BoreCollar gml:id="ngis.borehole.construction.act.80000005.collar">
+					<gwml2wc:collarElevation axisLabels="m AHD" srsDimension="1" srsName="http://www.opengis.net/def/crs/EPSG/0/5711" uomLabels="metre">560.0</gwml2wc:collarElevation>
+					<gwml2wc:collarHeadworkType xlink:href="http://www.opengis.net/def/nil/OGC/0/missing" nilReason="unknown" xlink:title="missing"/>
+					<gwml2wc:collarLocation>
+						<gml:Point gml:id="ngis.borehole.construction.act.80000005.location" srsDimension="2" srsName="urn:ogc:def:crs:EPSG::4283">
+							<gml:pos>149.17702630591603 -35.31863853412173</gml:pos>
+						</gml:Point>
+					</gwml2wc:collarLocation>
+					<gwml2wc:bholeDetails xlink:href="http://environment.data.gov.au/groundwater/feature/ngis.borehole.act.80000005"/>
+				</gwml2wc:BoreCollar>
+			</gwml2wc:bholeHeadworks>
+		</gwml2wc:Borehole>
+	</wfs:member>
+</wfs:FeatureCollection>

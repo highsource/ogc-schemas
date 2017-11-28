@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:lic="http://www.opengis.net/infragml/condominium/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmllr="http://www.opengis.net/gml/3.3/lr" xmlns:gmllro="http://www.opengis.net/gml/3.3/lro" xmlns:li="http://www.opengis.net/infragml/core/1.0" xmlns:lild="http://www.opengis.net/infragml/landdivision/1.0" targetNamespace="http://www.opengis.net/infragml/condominium/1.0" elementFormDefault="qualified" version="1.0.0">
+	<annotation>
+		<documentation>
+			InfraGML is an OGC Standard.
+			Copyright (c) 2017  Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lr" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRef.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lro" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRefOffset.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/core/1.0" schemaLocation="http://schemas.opengis.net/infragml/part0/1.0/core.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/landdivision/1.0" schemaLocation="land-division.xsd"/>
+	<!--XML Schema document created by ShapeChange - http://shapechange.net/
+		Modified by Erik Stubkjær (Aalborg University, Denmark) during February 2017 with Altova XMLSpy v 2017 sp2
+	 ESt 20170203
+			-->
+	<!-- 2017-09-25  410: fixed striping  .-->
+	<!--                                                                                                            -->
+	<!-- BuildingPart                                                                                               -->
+	<!--                                                                                                            -->
+	<element name="BuildingPart" type="lic:BuildingPartType" substitutionGroup="li:Feature"/>
+	<complexType name="BuildingPartType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="floorNumber" type="string" maxOccurs="unbounded"/>
+					<element name="subSurfaceFloor" type="boolean"/>
+					<element name="floorArea" type="gml:AreaType" minOccurs="0"/>
+					<element name="buildingPartType">
+						<simpleType>
+							<restriction base="string">
+								<enumeration value="condominiumMainPart"/>
+								<enumeration value="condominiumAccessoryPart"/>
+								<enumeration value="jointAccessFacility"/>
+								<enumeration value="jointOtherFacility"/>
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="shapeAndLocation" type="lild:SpatialUnitPropertyType"/>
+					<element name="partOf" type="lic:CondominiumBuildingPropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BuildingPartPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lic:BuildingPart"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                            -->
+	<!-- CondominiumBuilding                                                                                        -->
+	<!--                                                                                                            -->
+	<element name="CondominiumBuilding" type="lic:CondominiumBuildingType" substitutionGroup="li:Feature"/>
+	<complexType name="CondominiumBuildingType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="buildingNumber" type="string"/>
+					<element name="parcelLocation" type="lild:LandParcelPropertyType" minOccurs="1" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CondominiumBuildingPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lic:CondominiumBuilding"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                            -->
+	<!-- CondominiumScheme                                                                                          -->
+	<!--                                                                                                            -->
+	<element name="CondominiumScheme" type="lic:CondominiumSchemeType" substitutionGroup="lild:Statement"/>
+	<complexType name="CondominiumSchemeType">
+		<complexContent>
+			<extension base="lild:StatementType">
+				<sequence>
+					<element name="buildingDescription" type="string"/>
+					<element name="unit" type="lic:CondominiumUnitPropertyType" minOccurs="2" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CondominiumSchemePropertyType">
+		<sequence minOccurs="0">
+			<element ref="lic:CondominiumScheme"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                            -->
+	<!-- CondominiumUnit                                                                                            -->
+	<!--                                                                                                            -->
+	<element name="CondominiumUnit" type="lic:CondominiumUnitType" substitutionGroup="lild:PropertyUnit"/>
+	<complexType name="CondominiumUnitType">
+		<complexContent>
+			<extension base="lild:PropertyUnitType">
+				<sequence>
+					<element name="shareInJointFacilities" type="string"/>
+					<element name="condominiumUseType" type="gml:ReferenceType" minOccurs="0"/>
+					<element name="designUnitID" type="string" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="mainPart" type="lic:BuildingPartPropertyType"/>
+					<element name="accessoryPart" type="lic:BuildingPartPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CondominiumUnitPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lic:CondominiumUnit"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+</schema>

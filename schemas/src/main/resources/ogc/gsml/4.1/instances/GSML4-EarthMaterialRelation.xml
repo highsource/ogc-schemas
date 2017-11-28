@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsmlb:CompositionPart xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" 
+ xmlns:gsmle="http://www.opengis.net/gsml/4.1/GeoSciML-Extension" 
+ xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:gml="http://www.opengis.net/gml/3.2" 
+ xmlns:swe="http://www.opengis.net/swe/2.0" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd
+ http://www.opengis.net/gsml/4.1/GeoSciML-Extension http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd">
+ <gsmlb:material>
+  <gsmlb:RockMaterial gml:id="my_metagabbro">
+   <gsmlb:gbEarthMaterialDescription>
+    <gsmle:CompoundMaterialDescription>
+     <gsmle:constituent>
+      <gsmle:ConstituentPart gml:id="cp_orthopyroxene">
+       <gsmle:proportion/>
+       <gsmle:role xlink:href="http://myVocabs/GeologicRelationshipTerm" xlink:title="constituent mineral"/>
+       <gsmle:relatedMaterial>
+        <gsmle:MaterialRelation gml:id="mr1">
+         <gsmle:relationship xlink:href="http://myVocabs/GeologicRelationshipTerm" xlink:title="metamorphic mineral relationship"/>
+         <gsmle:sourceRole xlink:href="http://myVocabs/RelationshipRoleTerm" xlink:title="mineral overgrowth - rim"/>
+         <gsmle:targetRole xlink:href="http://myVocabs/RelationshipRoleTerm" xlink:title="mineral overgrowth - core"/>
+         <gsmle:relatedMaterial>
+          <gsmle:ConstituentPart gml:id="cp_olivine">
+           <gsmle:constituentMaterial>
+            <gsmle:Mineral gml:id="olivine">
+             <gsmle:mineralName xlink:href="http://mymineralvocab/olivine" xlink:title="olivine"/>			
+            </gsmle:Mineral>
+           </gsmle:constituentMaterial>
+          </gsmle:ConstituentPart>
+         </gsmle:relatedMaterial>
+        </gsmle:MaterialRelation>
+       </gsmle:relatedMaterial>
+       <gsmle:constituentMaterial>
+        <gsmle:Mineral gml:id="orthopyroxene">
+         <gsmle:mineralName xlink:href="http://mymineralvocab/orthopyroxene" xlink:title="orthopyroxene"/>			
+        </gsmle:Mineral>
+       </gsmle:constituentMaterial>
+      </gsmle:ConstituentPart>
+     </gsmle:constituent>
+    </gsmle:CompoundMaterialDescription>
+   </gsmlb:gbEarthMaterialDescription>
+   <gsmlb:lithology xlink:href="http://resource.geosciml.org/classifier/cgi/simplelithology/sandstone" xlink:title="sandstone"/>
+  </gsmlb:RockMaterial>
+ </gsmlb:material>
+</gsmlb:CompositionPart>
+

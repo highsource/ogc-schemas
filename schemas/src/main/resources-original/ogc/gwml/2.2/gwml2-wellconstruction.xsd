@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:om="http://www.opengis.net/om/2.0" xmlns:gmd="http://www.isotc211.org/2005/gmd" targetNamespace="http://www.opengis.net/gwml-wellconstruction/2.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0">
+	<annotation>
+		<documentation>Describes the well drilling and construction details.
+
+        OGC WaterML 2.0 Part 4 - GroundWaterML 2 is an OGC Standard.
+        Copyright (c) 2016 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
+	<import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd"/>
+	<import namespace="http://www.opengis.net/samplingSpatial/2.0" schemaLocation="http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd"/>
+	<import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+	<import namespace="http://www.opengis.net/om/2.0" schemaLocation="http://schemas.opengis.net/om/2.0/observation.xsd"/>
+	<element name="SealingComponent" type="gwml2wc:SealingComponentType" substitutionGroup="gwml2wc:ConstructionComponent">
+		<annotation>
+			<documentation>A material used for sealing the construction of a borehole or well.</documentation>
+		</annotation>
+	</element>
+	<complexType name="SealingComponentType">
+		<complexContent>
+			<extension base="gwml2wc:ConstructionComponentType">
+				<sequence>
+					<element name="sealingMaterial" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Material used in the sealing component of a water well. E.g. formation packer, welded ring, shale trap, drive shoe, driven casing, etc.</documentation>
+						</annotation>
+					</element>
+					<element name="sealingType" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Type of sealing. E.g. annular sealing, plugging, etc.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SealingComponentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2wc:SealingComponent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="BoreCollar" type="gwml2wc:BoreCollarType" substitutionGroup="gml:AbstractFeature">
+		<annotation>
+			<documentation>Topmost component of a borehole construction.</documentation>
+		</annotation>
+	</element>
+	<complexType name="BoreCollarType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="collarElevation" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>The elevation of the bore collar with CRS and UOM.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="gml:DirectPositionType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="collarElevationType" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Type of reference elevation, defined as a feature, e.g. Top of Casing, Ground, etc.</documentation>
+						</annotation>
+					</element>
+					<element name="collarHeadworkType" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Type of assembly bolted to the production casing to control the well, and to provide access and protection (e.g. from flooding, vandalism). Example: raised tube, covers, manhole, 'Gattick Cover' flush, concrete ring, etc. (after Fretwell, et al., 2006).</documentation>
+						</annotation>
+					</element>
+					<element name="collarLocation" type="gml:PointPropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The geographical location of the collar.</documentation>
+						</annotation>
+					</element>
+					<element name="collarSeal" type="gwml2wc:SealingComponentPropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Relation between a bore collar and its sealing parts.</documentation>
+						</annotation>
+					</element>
+					<element name="bholeDetails" type="gwml2wc:BoreholePropertyType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Characteristics of the borehole associated to a specific collar.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BoreCollarPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2wc:BoreCollar"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="WellConstruction" type="gwml2wc:WellConstructionType" abstract="true" substitutionGroup="gml:AbstractFeature">
+		<annotation>
+			<documentation>Construction components of the well. These are particularly important when assessing results of pump tests.</documentation>
+		</annotation>
+	</element>
+	<complexType name="WellConstructionType" abstract="true">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType"/>
+		</complexContent>
+	</complexType>
+	<complexType name="WellConstructionPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2wc:WellConstruction"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="Borehole" type="gwml2wc:BoreholeType" substitutionGroup="sams:SF_SpatialSamplingFeature">
+		<annotation>
+			<documentation>General term for a hole drilled in the ground for various purposes such extraction of a core, release of fluid, etc.</documentation>
+		</annotation>
+	</element>
+	<complexType name="BoreholeType">
+		<complexContent>
+			<extension base="sams:SF_SpatialSamplingFeatureType">
+				<sequence>
+					<element name="bholeMaterialCustodian" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>The custodian of the drill core or samples recovered from the borehole.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="gmd:CI_ResponsibleParty_PropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="bholeCoreInterval" type="gml:BoundingShapeType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>The geometries for the intervals from which core is extracted along the borehole.</documentation>
+						</annotation>
+					</element>
+					<element name="bholeDateOfDrilling" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Date of drilling.</documentation>
+						</annotation>
+						<complexType>
+							<simpleContent>
+								<extension base="gml:CalDate">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</simpleContent>
+						</complexType>
+					</element>
+					<element name="bholeDriller" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The organisation responsible for drilling the borehole (as opposed to commissioning the borehole).</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="gmd:CI_ResponsibleParty_PropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="bholeDrillingMethod" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Method of drilling.</documentation>
+						</annotation>
+					</element>
+					<element name="bholeInclinationType" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Type of borehole inclination, e.g. vertical or horizontal.</documentation>
+						</annotation>
+					</element>
+					<element name="bholeNominalDiameter" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Diameter of the borehole.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="swe:QuantityPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="bholeOperator" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Organisation responsible for commissioning the borehole (as opposed to drilling the borehole).</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="gmd:CI_ResponsibleParty_PropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="bholeStartPoint" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Describes the location of the start of the borehole, e.g. ground surface.</documentation>
+						</annotation>
+					</element>
+					<element name="bholeConstruction" type="gwml2wc:WellConstructionPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Relation between a borehole and its construction components.</documentation>
+						</annotation>
+					</element>
+					<element name="bholeHeadworks" type="gwml2wc:BoreCollarPropertyType" nillable="true" minOccurs="1" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Relation between a borehole and its collar, which represents the top construction component of the borehole.</documentation>
+						</annotation>
+					</element>
+					<element name="installedEquipment" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Relation designating the equipment installed in a borehole.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="gwml2wc:EquipmentPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BoreholePropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2wc:Borehole"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="ConstructionComponent" type="gwml2wc:ConstructionComponentType" substitutionGroup="gml:AbstractFeature">
+		<annotation>
+			<documentation>Elements used in borehole construction.</documentation>
+		</annotation>
+	</element>
+	<complexType name="ConstructionComponentType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="from" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Position of the top (nearest to the surface) of the component</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="swe:QuantityPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="to" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Position of the bottom (farthest to the surface) of the component</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="swe:QuantityPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ConstructionComponentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2wc:ConstructionComponent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="Filtration" type="gwml2wc:FiltrationType" substitutionGroup="gwml2wc:WellConstruction">
+		<annotation>
+			<documentation>Collection of filtration components used to filter a fluid body in a well.</documentation>
+		</annotation>
+	</element>
+	<complexType name="FiltrationType">
+		<complexContent>
+			<extension base="gwml2wc:WellConstructionType">
+				<sequence>
+					<element name="filterElement" type="gwml2wc:FiltrationComponentPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Relation between a filtration device and its parts.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="FiltrationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2wc:Filtration"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="Screen" type="gwml2wc:ScreenType" substitutionGroup="gwml2wc:WellConstruction">
+		<annotation>
+			<documentation>Collection of components of the water pump screen.</documentation>
+		</annotation>
+	</element>
+	<complexType name="ScreenType">
+		<complexContent>
+			<extension base="gwml2wc:WellConstructionType">
+				<sequence>
+					<element name="screenElement" type="gwml2wc:ScreenComponentPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Relation between a screen and its parts.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ScreenPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2wc:Screen"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="Casing" type="gwml2wc:CasingType" substitutionGroup="gwml2wc:WellConstruction">
+		<annotation>
+			<documentation>Collection of linings of the borehole.</documentation>
+		</annotation>
+	</element>
+	<complexType name="CasingType">
+		<complexContent>
+			<extension base="gwml2wc:WellConstructionType">
+				<sequence>
+					<element name="casingElement" type="gwml2wc:CasingComponentPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Relation between a casing and its parts.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CasingPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2wc:Casing"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="FiltrationComponent" type="gwml2wc:FiltrationComponentType" substitutionGroup="gwml2wc:ConstructionComponent">
+		<annotation>
+			<documentation>Material used to filter the fluid in a borehole or well.</documentation>
+		</annotation>
+	</element>
+	<complexType name="FiltrationComponentType">
+		<complexContent>
+			<extension base="gwml2wc:ConstructionComponentType">
+				<sequence>
+					<element name="filterGrainSize" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Size of the particles of the filtration material.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="swe:QuantityPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="filterMaterial" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Material used in the filtration device. E.g. gravel, pit run, silica sand, washed sand, crushed rock, etc.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="FiltrationComponentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2wc:FiltrationComponent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="ScreenComponent" type="gwml2wc:ScreenComponentType" substitutionGroup="gwml2wc:ConstructionComponent">
+		<annotation>
+			<documentation>Component of the well lining where water enters the well.</documentation>
+		</annotation>
+	</element>
+	<complexType name="ScreenComponentType">
+		<complexContent>
+			<extension base="gwml2wc:ConstructionComponentType">
+				<sequence>
+					<element name="screenAttachmentMethod" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Screen attachment method. E.g. telescoped, on casing, on riser pipe, neoprene (K) packer, Lead packer, etc.
+Groundwater Data Management Guidelines, Environment Canada, Dec. 1991 </documentation>
+						</annotation>
+					</element>
+					<element name="screenCoating" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Thin outer layer applied to the screen. E.g. galvanized, stainless, copper bearing, low carbon, black, porous, etc.
+Groundwater Data Management Guidelines, Environment Canada, Dec. 1991.</documentation>
+						</annotation>
+					</element>
+					<element name="screenForm" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Form of the screen. E.g. slotted casing, perforated casing, bridge slot casing, wire wrap or continuous slot, wire mesh, shutter or louvered, well point, tube, etc.</documentation>
+						</annotation>
+					</element>
+					<element name="screenHoleWidth" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Width of the slots or perforations of the screen.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="swe:QuantityPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="screenHoleLength" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Length of the slots or perforations of the screen.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="swe:QuantityPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="screenMaterial" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Material that makes up the screen. E.g. metal, steel, iron, copper, brass, bronze, everdur, Armco metal, veriperm, stone, plastic, PVC, ABS, Fibreglass, etc.</documentation>
+						</annotation>
+					</element>
+					<element name="screenInternalDiameter" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Internal screen diameter.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="swe:QuantityPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="screenExternalDiameter" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>External screen diameter.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="swe:QuantityPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="screenPerforationMethod" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Method used for perforating the screen. E.g. drill, grinder, axe / chisel, machine, saw, torch, other, etc.</documentation>
+						</annotation>
+					</element>
+					<element name="screenFitting" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The screen fitting (from the bottom). E.g. bail, open, plug, tail pipe, washdown, etc.</documentation>
+						</annotation>
+					</element>
+					<element name="screenMake" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Make of the screen.</documentation>
+						</annotation>
+					</element>
+					<element name="screenModel" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Model of the screen.</documentation>
+						</annotation>
+					</element>
+					<element name="screenNumber" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Screen number corresponds to hole size and is given in 0.001 inch. The value is expressed as an alphanumeric code.
+Groundwater Data Management Guidelines, Environment Canada, Dec. 1991.</documentation>
+						</annotation>
+					</element>
+					<element name="screenPlacement" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Screen placement method. E.g. bail down, pull back, jetted, washed down, etc.</documentation>
+						</annotation>
+					</element>
+					<element name="screenWallThickness" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Thickness of the screen walls.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="swe:QuantityPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ScreenComponentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2wc:ScreenComponent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="Sealing" type="gwml2wc:SealingType" substitutionGroup="gwml2wc:WellConstruction">
+		<annotation>
+			<documentation>Collection of materials that prevent undesirable elements from entering the borehole.</documentation>
+		</annotation>
+	</element>
+	<complexType name="SealingType">
+		<complexContent>
+			<extension base="gwml2wc:WellConstructionType">
+				<sequence>
+					<element name="sealingGroutingPlacementMethod" type="om:OM_ProcessPropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Method of placing the sealing grouting.</documentation>
+						</annotation>
+					</element>
+					<element name="casingLeft" type="gwml2wc:CasingComponentPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Casing left after plugging.</documentation>
+						</annotation>
+					</element>
+					<element name="casingSlit" type="gwml2wc:CasingComponentPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Casing slit opposing water bearing zones before plugging.</documentation>
+						</annotation>
+					</element>
+					<element name="sealingElement" type="gwml2wc:SealingComponentPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Relation between a seal and its parts.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SealingPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2wc:Sealing"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="CasingComponent" type="gwml2wc:CasingComponentType" substitutionGroup="gwml2wc:ConstructionComponent">
+		<annotation>
+			<documentation>A single part of a well casing.</documentation>
+		</annotation>
+	</element>
+	<complexType name="CasingComponentType">
+		<complexContent>
+			<extension base="gwml2wc:ConstructionComponentType">
+				<sequence>
+					<element name="casingMaterial" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Material in which the casing is made. Can be metal, steel, iron, concrete, wood, brick, plastic, teflon, PVC, ABS, fibre glass, asbestos cement, unknown, other. Groundwater Data Management Guidelines, Environment Canada, Dec. 1991.</documentation>
+						</annotation>
+					</element>
+					<element name="casingCoating" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Coating applied to the casing. E.g. galvanized, stainless, mild, low carbon, copper bearing, black, etc.
+Groundwater Data Management Guidelines, Environment Canada, Dec. 1991</documentation>
+						</annotation>
+					</element>
+					<element name="casingForm" type="gml:ReferenceType" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Form of material used in the casing. E.g. curbing, cribbing, corrugated culvert, hose, etc. Groundwater Data Management Guidelines, Environment Canada, Dec. 1991.</documentation>
+						</annotation>
+					</element>
+					<element name="casingInternalDiameter" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Internal diameter of the casing.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="swe:QuantityPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="casingExternalDiameter" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>External diameter of the casing.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="swe:QuantityPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="casingWallThickness" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Thickness of the wall of the casing.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="swe:QuantityPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CasingComponentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2wc:CasingComponent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="Equipment" type="gwml2wc:EquipmentType" substitutionGroup="gml:AbstractObject">
+		<annotation>
+			<documentation>Equipment installed in a borehole (like a pump or any other device).</documentation>
+		</annotation>
+	</element>
+	<complexType name="EquipmentType">
+		<sequence>
+			<element name="characteristics" type="om:NamedValuePropertyType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation>General characteristics of the equipment.</documentation>
+				</annotation>
+			</element>
+			<element name="equipmentType" type="gml:ReferenceType" nillable="true">
+				<annotation>
+					<documentation>Type of equipment.</documentation>
+				</annotation>
+			</element>
+			<element name="installationDate" type="gml:TimeInstantPropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>Date of installation of the equipment.</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="EquipmentPropertyType">
+		<sequence>
+			<element ref="gwml2wc:Equipment"/>
+		</sequence>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<simpleType name="ScreenModelTermType">
+		<union memberTypes="gwml2wc:ScreenModelTermEnumerationType gwml2wc:ScreenModelTermOtherType"/>
+	</simpleType>
+	<simpleType name="ScreenModelTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="ScreenModelTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="FiltrationMaterialTermType">
+		<union memberTypes="gwml2wc:FiltrationMaterialTermEnumerationType gwml2wc:FiltrationMaterialTermOtherType"/>
+	</simpleType>
+	<simpleType name="FiltrationMaterialTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="FiltrationMaterialTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="BoreholeInclinationTermType">
+		<union memberTypes="gwml2wc:BoreholeInclinationTermEnumerationType gwml2wc:BoreholeInclinationTermOtherType"/>
+	</simpleType>
+	<simpleType name="BoreholeInclinationTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="BoreholeInclinationTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="ScreenCoatingTermType">
+		<union memberTypes="gwml2wc:ScreenCoatingTermEnumerationType gwml2wc:ScreenCoatingTermOtherType"/>
+	</simpleType>
+	<simpleType name="ScreenCoatingTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="ScreenCoatingTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="SealingMaterialTermType">
+		<union memberTypes="gwml2wc:SealingMaterialTermEnumerationType gwml2wc:SealingMaterialTermOtherType"/>
+	</simpleType>
+	<simpleType name="SealingMaterialTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="SealingMaterialTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="SealingTypeTermType">
+		<union memberTypes="gwml2wc:SealingTypeTermEnumerationType gwml2wc:SealingTypeTermOtherType"/>
+	</simpleType>
+	<simpleType name="SealingTypeTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="SealingTypeTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="ScreenMaterialTermType">
+		<union memberTypes="gwml2wc:ScreenMaterialTermEnumerationType gwml2wc:ScreenMaterialTermOtherType"/>
+	</simpleType>
+	<simpleType name="ScreenMaterialTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="ScreenMaterialTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="AttachmentMethodTermType">
+		<union memberTypes="gwml2wc:AttachmentMethodTermEnumerationType gwml2wc:AttachmentMethodTermOtherType"/>
+	</simpleType>
+	<simpleType name="AttachmentMethodTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="AttachmentMethodTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="PerforationMethodTermType">
+		<union memberTypes="gwml2wc:PerforationMethodTermEnumerationType gwml2wc:PerforationMethodTermOtherType"/>
+	</simpleType>
+	<simpleType name="PerforationMethodTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="PerforationMethodTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="ScreenMakerTermType">
+		<union memberTypes="gwml2wc:ScreenMakerTermEnumerationType gwml2wc:ScreenMakerTermOtherType"/>
+	</simpleType>
+	<simpleType name="ScreenMakerTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="ScreenMakerTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="ScreenNumberTermType">
+		<union memberTypes="gwml2wc:ScreenNumberTermEnumerationType gwml2wc:ScreenNumberTermOtherType"/>
+	</simpleType>
+	<simpleType name="ScreenNumberTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="ScreenNumberTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="CasingCoatingTermType">
+		<union memberTypes="gwml2wc:CasingCoatingTermEnumerationType gwml2wc:CasingCoatingTermOtherType"/>
+	</simpleType>
+	<simpleType name="CasingCoatingTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="CasingCoatingTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="CasingFormTermType">
+		<union memberTypes="gwml2wc:CasingFormTermEnumerationType gwml2wc:CasingFormTermOtherType"/>
+	</simpleType>
+	<simpleType name="CasingFormTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="CasingFormTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="BoreholeDrillingMethodTermType">
+		<union memberTypes="gwml2wc:BoreholeDrillingMethodTermEnumerationType gwml2wc:BoreholeDrillingMethodTermOtherType"/>
+	</simpleType>
+	<simpleType name="BoreholeDrillingMethodTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="BoreholeDrillingMethodTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="EquipmentTypeTermType">
+		<union memberTypes="gwml2wc:EquipmentTypeTermEnumerationType gwml2wc:EquipmentTypeTermOtherType"/>
+	</simpleType>
+	<simpleType name="EquipmentTypeTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="EquipmentTypeTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="CasingMaterialTermType">
+		<union memberTypes="gwml2wc:CasingMaterialTermEnumerationType gwml2wc:CasingMaterialTermOtherType"/>
+	</simpleType>
+	<simpleType name="CasingMaterialTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="CasingMaterialTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="BoreholeStartPointTermType">
+		<union memberTypes="gwml2wc:BoreholeStartPointTermEnumerationType gwml2wc:BoreholeStartPointTermOtherType"/>
+	</simpleType>
+	<simpleType name="BoreholeStartPointTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="BoreholeStartPointTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="ScreenFormTermType">
+		<union memberTypes="gwml2wc:ScreenFormTermEnumerationType gwml2wc:ScreenFormTermOtherType"/>
+	</simpleType>
+	<simpleType name="ScreenFormTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="ScreenFormTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="ScreenPlacementTermType">
+		<union memberTypes="gwml2wc:ScreenPlacementTermEnumerationType gwml2wc:ScreenPlacementTermOtherType"/>
+	</simpleType>
+	<simpleType name="ScreenPlacementTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="ScreenPlacementTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="ScreenFittingTermType">
+		<union memberTypes="gwml2wc:ScreenFittingTermEnumerationType gwml2wc:ScreenFittingTermOtherType"/>
+	</simpleType>
+	<simpleType name="ScreenFittingTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="ScreenFittingTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+</schema>

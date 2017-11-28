@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsmlb:GeologicEvent xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:sf="http://www.opengis.net/samplingSpatial/2.0"
+    xmlns:gsmlgt="http://www.opengis.net/gsml/4.1/GeologicTime"
+    xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic"
+    xmlns:om="http://www.opengis.net/om/2.0" xmlns:sam="http://www.opengis.net/sampling/2.0"
+    xmlns:gsmle="http://www.opengis.net/gsml/4.1/GeoSciML-Extension"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeologicTime http://schemas.opengis.net/gsml/4.1/geologicTime.xsd 
+    http://www.opengis.net/gsml/4.1/GeoSciML-Extension http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd"
+    gml:id="ID000">
+    <gml:identifier codeSpace="http://resource.azgs.az.gov/events/">http://resource.azgs.az.gov/event/234627</gml:identifier>
+    <gml:name>Laramide Orogeny</gml:name>
+    <gsmlb:relatedFeature>
+        <gsmle:GeologicFeatureRelation gml:id="gfr.1">
+            <gsmlb:relatedFeature>
+                <gsmlb:GeologicEvent gml:id="e2637">
+                    <gml:identifier codeSpace="http://resource.azgs.az.gov/events/">http://resource.azgs.az.gov/event/1567</gml:identifier>
+                    <gml:name>Eocene erosion event</gml:name>
+                    <gsmlb:eventProcess
+                        xlink:href="http://resource.geosciml.org/classifier/geologicProcess/erosion"/>
+                </gsmlb:GeologicEvent>
+            </gsmlb:relatedFeature>
+            <gsmle:relationship
+                xlink:href="http://resource.geosciml.org/classifier/cgi/vocabularyrelation/target_follows_source"
+                xlink:title="target follows source"/>
+        </gsmle:GeologicFeatureRelation>
+    </gsmlb:relatedFeature>
+    <gsmlb:classifier>
+        <swe:Category>
+            <swe:label>Orogenic event</swe:label>
+            <swe:codeSpace xlink:href="http://resource.azgs.az.gov/eventType"/>
+            <swe:value>http://resource.azgs.az.gov/eventType/0ng4rh</swe:value>
+        </swe:Category>
+    </gsmlb:classifier>
+    <gsmlb:eventProcess/>
+    <gsmlb:gaEventDescription>
+        <gsmle:GeologicEventDescription>
+            <gsmle:prototype>
+                <gsmlgt:StratigraphicPoint gml:id="d3267">
+                    <sam:sampledFeature/>
+                    <sf:shape/>
+                    <gsmlgt:primaryGuidingCriterion/>
+                </gsmlgt:StratigraphicPoint>
+            </gsmle:prototype>
+        </gsmle:GeologicEventDescription>
+    </gsmlb:gaEventDescription>
+</gsmlb:GeologicEvent>

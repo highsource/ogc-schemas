@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:li="http://www.opengis.net/infragml/core/1.0" xmlns:lis="http://www.opengis.net/infragml/survey/1.0" xmlns:liso="http://www.opengis.net/infragml/observations/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.opengis.net/infragml/observations/1.0" elementFormDefault="qualified" version="1.0.0">
+	<annotation>
+		<documentation>
+			InfraGML is an OGC Standard. 
+			Copyright (c) 2017  Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/infragml/core/1.0" schemaLocation="http://schemas.opengis.net/infragml/part0/1.0/core.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/survey/1.0" schemaLocation="http://schemas.opengis.net/infragml/part6/1.0/survey.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/observation.xsd"/>
+	<!--<import namespace="http://www.opengis.net/om/2.0" schemaLocation="http://schemas.opengis.net/om/2.0/observation.xsd"/>-->
+	<!--<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/content.xsd"/>-->
+	<!--XML Schema document created by ShapeChange - http://shapechange.net/
+		 Modified by Hans-Christoph Gruler(Leica Geosystems AG) October 17, 2016
+		Modified by Hans-Christoph Gruler(Leica Geosystems AG) November 02, 2016-
+		Changes in 1102 version: 1) remove dependency from OM and use gml:observation
+		1.	Uses gml:observation instead of OM-Observations
+		2. Model MD_ImageObservation into liso:ImageObservation
+		3.InstrumentPoint -> Feature
+		4.PanoramaImage -> Feature
+		5.Setup -> Feature
+		6. Nested sequences in setup
+		Modified by Hans-Christoph Gruler(Leica Geosystems AG) November 16, 2016
+		added Types and Qualities - moved image observation and panorama image to SurveySensor
+		added instrumentPoint into Setup
+-->
+	<!-- 410: fixed striping  .-->
+	<!--                                                                                                                         	-->
+	<!--    AngularObservation                                                                                           -->
+	<!--                                                                                                                         	-->
+	<element name="AngularObservation" type="liso:AngularObservationType" substitutionGroup="liso:SurveyObservation">
+		<annotation>
+			<documentation>AngularObservation is a horizontal or vertical direction from the InstrumentPoint to the Target  Point</documentation>
+		</annotation>
+	</element>
+	<complexType name="AngularObservationType">
+		<complexContent>
+			<extension base="liso:SurveyObservationType">
+				<sequence>
+					<element name="angle" type="gml:AngleType"/>
+					<element name="angularType" type="gml:ReferenceType" minOccurs="0"/>
+					<element name="angularQuality" type="gml:AngleType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AngularObservationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:AngularObservation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    DistanceObservation                                                                                         -->
+	<!--                                                                                                                         	-->
+	<element name="DistanceObservation" type="liso:DistanceObservationType" substitutionGroup="liso:SurveyObservation">
+		<annotation>
+			<documentation>DistanceObservation is a horizontal / vertical or slope distance from the InstrumentPoint to the Target  Point</documentation>
+		</annotation>
+	</element>
+	<complexType name="DistanceObservationType">
+		<complexContent>
+			<extension base="liso:SurveyObservationType">
+				<sequence>
+					<element name="distance" type="gml:LengthType"/>
+					<element name="distanceType" type="gml:ReferenceType" minOccurs="0"/>
+					<element name="distanceQuality" type="gml:LengthType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="DistanceObservationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:DistanceObservation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    ExteriorOrientation                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="ExteriorOrientation" type="liso:ExteriorOrientationType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="ExteriorOrientationType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="projectionCenterX" type="gml:LengthType"/>
+					<element name="projectionCenterY" type="gml:LengthType"/>
+					<element name="projectionCenterZ" type="gml:LengthType"/>
+					<element name="phi" type="gml:AngleType"/>
+					<element name="theta" type="gml:AngleType"/>
+					<element name="kappa" type="gml:AngleType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ExteriorOrientationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:ExteriorOrientation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    GF_PropertyType                                                                                              -->
+	<!--                                                                                                                         	-->
+	<element name="GF_PropertyType" type="liso:GF_PropertyTypeType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="GF_PropertyTypeType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GF_PropertyTypePropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:GF_PropertyType"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    GnssObservation                                                                                              -->
+	<!--                                                                                                                         	-->
+	<element name="GnssObservation" type="liso:GnssObservationType" substitutionGroup="liso:SurveyObservation">
+		<annotation>
+			<documentation>GNSS observation contains all oberservation to a satellite system. When using differental GNSS also the observation from the reference stations are included.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GnssObservationType">
+		<complexContent>
+			<extension base="liso:SurveyObservationType">
+				<sequence>
+					<element name="antennaHeight" type="gml:LengthType"/>
+					<element name="quality" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="liso:GnssQuality"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="rtkInfo" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="liso:RtkInfo"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="satInfo" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="liso:SatelliteInfo"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GnssObservationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:GnssObservation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    GnssQuality                                                                                                     -->
+	<!--                                                                                                                         	-->
+	<element name="GnssQuality" type="liso:GnssQualityType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="GnssQualityType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="hDOP" type="double" minOccurs="0"/>
+					<element name="gDOP" type="double" minOccurs="0"/>
+					<element name="pDOP" type="double" minOccurs="0"/>
+					<element name="vDOP" type="double" minOccurs="0"/>
+					<element name="tDOP" type="double" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GnssQualityPropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:GnssQuality"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    ImageObservation                                                                                             -->
+	<!--                                                                                                                         	-->
+	<element name="ImageObservation" type="liso:ImageObservationType" substitutionGroup="liso:SurveyObservation">
+		<annotation>
+			<documentation>Image Observations contains the Interior and Exterior orientation as well as the current camera settings ( example focal length, scale )</documentation>
+		</annotation>
+	</element>
+	<complexType name="ImageObservationType">
+		<complexContent>
+			<extension base="liso:SurveyObservationType">
+				<sequence>
+					<element name="illuminationElevationAngle" type="gml:AngleType" minOccurs="0"/>
+					<element name="illuminationAzimuthAngle" type="gml:AngleType" minOccurs="0"/>
+					<element name="cloudCoverPercentage" type="double" minOccurs="0"/>
+					<element name="triangulationIndicator" type="boolean" minOccurs="0"/>
+					<element name="radiometricCalibrationDataAvailability" type="boolean" minOccurs="0"/>
+					<element name="cameraCalibrationInformationAvailability" type="boolean" minOccurs="0"/>
+					<element name="filmDistortionInformationAvailability" type="boolean" minOccurs="0"/>
+					<element name="lensDistortionInformationAvailability" type="boolean" minOccurs="0"/>
+					<element name="exteriorOrientation" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="liso:ExteriorOrientation"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ImageObservationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:ImageObservation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    InstrumentPoint                                                                                                -->
+	<!--                                                                                                                         	-->
+	<element name="InstrumentPoint" type="liso:InstrumentPointType" substitutionGroup="li:Feature">
+		<annotation>
+			<documentation>InstrumentPoint is the geometric location of the Setup. For GNSS Setup this is the position of the Base , For other setup this is the location of the equipment.</documentation>
+		</annotation>
+	</element>
+	<complexType name="InstrumentPointType">
+		<complexContent>
+			<extension base="li:FeatureType"/>
+		</complexContent>
+	</complexType>
+	<complexType name="InstrumentPointPropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:InstrumentPoint"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    LevelObservation                                                                                               -->
+	<!--                                                                                                                         	-->
+	<element name="LevelObservation" type="liso:LevelObservationType" substitutionGroup="liso:SurveyObservation">
+		<annotation>
+			<documentation>LevelObservation is a elevation difference from the InstrumentPoint to the Target  Point</documentation>
+		</annotation>
+	</element>
+	<complexType name="LevelObservationType">
+		<complexContent>
+			<extension base="liso:SurveyObservationType">
+				<sequence>
+					<element name="deltaHeight" type="gml:LengthType"/>
+					<element name="deltaHeightQuality" type="gml:LengthType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LevelObservationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:LevelObservation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    PanoramaImage                                                                                                -->
+	<!--                                                                                                                         	-->
+	<element name="PanoramaImage" type="liso:PanoramaImageType" substitutionGroup="li:Feature">
+		<annotation>
+			<documentation>Panorama images is a stitched images from single images</documentation>
+		</annotation>
+	</element>
+	<complexType name="PanoramaImageType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="panoramaImageID"/>
+					<element name="image" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="liso:ImageObservation"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PanoramaImagePropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:PanoramaImage"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    PointCloudObservation                                                                                      -->
+	<!--                                                                                                                         	-->
+	<element name="PointCloudObservation" type="liso:PointCloudObservationType" substitutionGroup="liso:SurveyObservation"/>
+	<complexType name="PointCloudObservationType">
+		<complexContent>
+			<extension base="liso:SurveyObservationType">
+				<sequence>
+					<element name="numberPoints" type="integer" minOccurs="0"/>
+					<element name="maxSNR" type="integer" minOccurs="0"/>
+					<element name="minSNR" type="integer" minOccurs="0"/>
+					<element name="maxIntensity" type="integer" minOccurs="0"/>
+					<element name="minIntensity" type="integer" minOccurs="0"/>
+					<element name="maxDistance" type="gml:LengthType" minOccurs="0"/>
+					<element name="minDistance" type="gml:LengthType" minOccurs="0"/>
+					<element name="maxNorthing" type="gml:LengthType" minOccurs="0"/>
+					<element name="minNorthing" type="gml:LengthType" minOccurs="0"/>
+					<element name="maxEasting" type="gml:LengthType" minOccurs="0"/>
+					<element name="minEasting" type="gml:LengthType" minOccurs="0"/>
+					<element name="maxElevation" type="gml:LengthType" minOccurs="0"/>
+					<element name="minElevation" type="gml:LengthType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PointCloudObservationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:PointCloudObservation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    RtkInfo                                                                                                             -->
+	<!--                                                                                                                         	-->
+	<element name="RtkInfo" type="liso:RtkInfoType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="RtkInfoType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="networkSolution" type="boolean" minOccurs="0">
+						<annotation>
+							<documentation>If not known then attribute is not written</documentation>
+						</annotation>
+					</element>
+					<element name="networkType" type="gml:ReferenceType" minOccurs="0"/>
+					<element name="dataFormat" type="string" minOccurs="0"/>
+					<element name="insideRTKNetwork" type="boolean" minOccurs="0">
+						<annotation>
+							<documentation>If not known then attribute is not written</documentation>
+						</annotation>
+					</element>
+					<element name="mountpoint" type="string" minOccurs="0"/>
+					<element name="numNetworkReferences" type="integer" minOccurs="0"/>
+					<element name="numRtkPositionsUsed" type="integer" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="RtkInfoPropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:RtkInfo"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    SatelliteInfo                                                                                                      -->
+	<!--                                                                                                                         	-->
+	<element name="SatelliteInfo" type="liso:SatelliteInfoType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="SatelliteInfoType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="systemType" type="gml:ReferenceType"/>
+					<element name="numSatsTracked" type="integer" minOccurs="0"/>
+					<element name="numSatsUsed" type="integer" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SatelliteInfoPropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:SatelliteInfo"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    Setup                                                                                                              -->
+	<!--                                                                                                                         	-->
+	<element name="Setup" type="liso:SetupType" substitutionGroup="li:Feature">
+		<annotation>
+			<documentation>Setup describes the place from where different observations has been measured</documentation>
+		</annotation>
+	</element>
+	<complexType name="SetupType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="instrumentHeight" type="gml:LengthType" minOccurs="0"/>
+					<element name="instrumentPoint" type="liso:InstrumentPointPropertyType" minOccurs="0"/>
+					<element name="validTime" type="gml:TimePeriodPropertyType" minOccurs="0">
+						<annotation>
+							<documentation> If present, the attribute validTime:TM_Period shall describe the
+								time period during which the result is intended to be used. </documentation>
+						</annotation>
+					</element>
+					<element name="observations" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<sequence>
+								<element name="Observations">
+									<complexType>
+										<complexContent>
+											<extension base="gml:AbstractMemberType">
+												<sequence minOccurs="0" maxOccurs="unbounded">
+													<choice>
+														<element name="surveyObservation">
+															<complexType>
+																<complexContent>
+																	<extension base="gml:AbstractMemberType">
+																		<sequence maxOccurs="unbounded">
+																			<choice>
+																				<element ref="liso:SurveyObservation"/>
+																			</choice>
+																		</sequence>
+																	</extension>
+																</complexContent>
+															</complexType>
+														</element>
+													</choice>
+												</sequence>
+												<attributeGroup ref="gml:AssociationAttributeGroup"/>
+											</extension>
+										</complexContent>
+									</complexType>
+								</element>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="setupObservations" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Obersvations to determine setup parameters</documentation>
+						</annotation>
+						<complexType>
+							<sequence>
+								<element name="SetupObservations">
+									<complexType>
+										<complexContent>
+											<extension base="gml:AbstractMemberType">
+												<sequence minOccurs="0" maxOccurs="unbounded">
+													<choice>
+														<element name="setupObservation">
+															<complexType>
+																<complexContent>
+																	<extension base="gml:AbstractMemberType">
+																		<sequence maxOccurs="unbounded">
+																			<choice>
+																				<element ref="liso:SurveyObservation"/>
+																			</choice>
+																		</sequence>
+																	</extension>
+																</complexContent>
+															</complexType>
+														</element>
+													</choice>
+												</sequence>
+												<attributeGroup ref="gml:AssociationAttributeGroup"/>
+											</extension>
+										</complexContent>
+									</complexType>
+								</element>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="panoImage" type="liso:PanoramaImagePropertyType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SetupPropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:Setup"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    SurveyObservation                                                                                             -->
+	<!--                                                                                                                         	-->
+	<element name="SurveyObservation" type="liso:SurveyObservationType" substitutionGroup="gml:Observation">
+		<annotation>
+			<documentation>Observation is reading of a property at a specific time from a measurement sensor.</documentation>
+		</annotation>
+	</element>
+	<complexType name="SurveyObservationType">
+		<complexContent>
+			<extension base="gml:ObservationType">
+				<sequence>
+					<element name="phenomenonTime" type="liso:TimeObjectPropertyType" minOccurs="0">
+						<annotation>
+							<documentation> The attribute phenomenonTime:TM_Object shall describe the time
+							that the result (6.2.2.9) applies to the property of the feature-of-interest
+							(6.2.2.7). This is often the time of interaction by a sampling procedure
+							(8.1.3) or observation procedure (6.2.2.10) with a real-world feature.
+						</documentation>
+						</annotation>
+					</element>
+					<element name="resultTime" type="gml:TimeInstantPropertyType" block="#all">
+						<annotation>
+							<documentation> The attribute resultTime:TM_Instant shall describe the time when
+							the result became available, typically when the procedure (6.2.2.10)
+							associated with the observation was completed For some observations this is
+							identical to the samplingTime. However, there are important cases where they
+							differ. </documentation>
+						</annotation>
+						<!-- om:resultTime is used in schematron-based validaty tests, so must not be changed -->
+					</element>
+					<element name="type" type="gml:ReferenceType" minOccurs="0"/>
+					<element name="bInstrumentPoint" type="boolean">
+						<annotation>
+							<documentation>Flag describes if observation was made at Instrument or Target position</documentation>
+						</annotation>
+					</element>
+					<element name="image" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="liso:ImageObservation"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="panoImage" minOccurs="0">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="liso:PanoramaImage"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SurveyObservationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:SurveyObservation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    TimeObjectPropertyType                                                                                    -->
+	<!--                                                                                                                         	-->
+	<complexType name="TimeObjectPropertyType">
+		<annotation>
+			<documentation>This property type is not provided directly by GML</documentation>
+		</annotation>
+		<sequence minOccurs="0">
+			<element ref="gml:AbstractTimeObject"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    TpsObservation                                                                                                 -->
+	<!--                                                                                                                         	-->
+	<element name="TpsObservation" type="liso:TpsObservationType" substitutionGroup="liso:SurveyObservation">
+		<annotation>
+			<documentation>TPSObservation is an anguar or distance observation from the InstrumentPoint to the Target Point</documentation>
+		</annotation>
+	</element>
+	<complexType name="TpsObservationType">
+		<complexContent>
+			<extension base="liso:SurveyObservationType">
+				<sequence>
+					<element name="reflectorHeight" type="gml:LengthType"/>
+					<element name="directFace" type="boolean"/>
+					<element name="meanFace" type="boolean"/>
+					<element name="horizontalAngle" type="gml:AngleType"/>
+					<element name="hzAngleQuality" type="gml:AngleType" minOccurs="0"/>
+					<element name="verticalAngle" type="gml:AngleType"/>
+					<element name="vAngleQuality" type="gml:AngleType" minOccurs="0"/>
+					<element name="slopeDistance" type="gml:LengthType" minOccurs="0"/>
+					<element name="sDistanceQuality" type="gml:LengthType" minOccurs="0"/>
+					<element name="azimuth" type="gml:AngleType" minOccurs="0"/>
+					<element name="azQuality" type="gml:AngleType" minOccurs="0"/>
+					<element name="horizontalDistance" type="gml:LengthType" minOccurs="0"/>
+					<element name="hDistanceQuality" type="gml:LengthType" minOccurs="0"/>
+					<element name="inclinationLength" type="gml:AngleType" minOccurs="0"/>
+					<element name="inclLengthQuality" type="gml:AngleType" minOccurs="0"/>
+					<element name="inclinationCross" type="gml:AngleType" minOccurs="0"/>
+					<element name="inclCrossQuality" type="gml:AngleType" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="TpsObservationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="liso:TpsObservation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+</schema>

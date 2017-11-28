@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:li="http://www.opengis.net/infragml/core/1.0" xmlns:lip="http://www.opengis.net/infragml/project/1.0" xmlns:lif="http://www.opengis.net/infragml/facility/1.0" xmlns:lia="http://www.opengis.net/infragml/alignment/1.0" xmlns:lifrw="http://www.opengis.net/infragml/railway/1.0" xmlns:lr="http://www.opengis.net/gml/3.3/lr" xmlns:lro="http://www.opengis.net/gml/3.3/lro" targetNamespace="http://www.opengis.net/infragml/railway/1.0" elementFormDefault="qualified" version="1.0.0">
+	<annotation>
+		<documentation>
+			InfraGML is an OGC Standard. 
+			Copyright (c) 2017  Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lr" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRef.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lro" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRefOffset.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/core/1.0" schemaLocation="http://schemas.opengis.net/infragml/part0/1.0/core.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/facility/1.0" schemaLocation="http://schemas.opengis.net/infragml/part2/1.0/facility.xsd"/>
+	<!--
+        XML Schema document created by ShapeChange - http://shapechange.net/
+		Modified by Lars Wikström, Triona for Trafikverket, Sweden
+     -->
+	<!--																																-->
+	<!--		CantEvent																											-->
+	<!--																																-->
+	<element name="CantEvent" type="lifrw:CantEventType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="CantEventType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="eventAt" type="lr:DistanceExpressionPropertyType"/>
+					<element name="appliedCant" type="gml:MeasureType"/>
+					<element name="cantSide" type="li:SideType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CantEventPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifrw:CantEvent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--																																-->
+	<!--		CantSpecification																								-->
+	<!--																																-->
+	<element name="CantSpecification" type="lifrw:CantSpecificationType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="CantSpecificationType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="gauge" type="gml:MeasureType"/>
+					<element name="name" type="string"/>
+					<element name="cantEvent" type="lifrw:CantEventPropertyType" minOccurs="2" maxOccurs="unbounded"/>
+					<element name="locatedAlong" type="lr:LinearElementPropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CantSpecificationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifrw:CantSpecification"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--																																-->
+	<!--		Railway 																											-->
+	<!--																																-->
+	<element name="Railway" type="lifrw:RailwayType" substitutionGroup="lif:FacilityPart">
+		<annotation>
+			<documentation>that part of a project that relates to a single alternative for a single rail part of a project.  Each alternative is a separate Rail ProjectPart. An alternative may be a design alternative or a separate phase of  construction.</documentation>
+		</annotation>
+	</element>
+	<complexType name="RailwayType">
+		<complexContent>
+			<extension base="lif:FacilityPartType">
+				<sequence>
+					<element name="railwayID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<!-- Lars W : 2016-11-17 - Removed alignment element. Use Feature.geometry instead -->
+					<!--<element name="alignment" type="lia:AlignmentPropertyType" minOccurs="0" maxOccurs="unbounded"/>-->
+					<element name="railwayElementSet" type="lifrw:RailwayElementSetPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="element" type="lifrw:RailwayElementPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="cantSpecification" type="lifrw:CantSpecificationPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="RailwayPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifrw:Railway"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--																																-->
+	<!--		RailwayElement																									-->
+	<!--																																-->
+	<element name="RailwayElement" type="lifrw:RailwayElementType" substitutionGroup="lif:PhysicalElement"/>
+	<complexType name="RailwayElementType">
+		<complexContent>
+			<extension base="lif:PhysicalElementType">
+				<sequence>
+					<element name="railwayElementID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="railwayElementType" type="gml:ReferenceType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="RailwayElementPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifrw:RailwayElement"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--																																-->
+	<!--		RailwayElementSet																							-->
+	<!--																																-->
+	<element name="RailwayElementSet" type="lifrw:RailwayElementSetType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="RailwayElementSetType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="railwayElementSetID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="element" type="lifrw:RailwayElementPropertyType" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="RailwayElementSetPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lifrw:RailwayElementSet"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+</schema>

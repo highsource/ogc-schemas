@@ -1,0 +1,32 @@
+{
+	"@context": ["http://localhost/json-ld/coverage-context.json", {"examples": "http://www.opengis.net/cis/1.1/examples/"}],
+	"type": "CoverageByPartitioningType",
+	"id": "examples:CIS_61_1D",
+	"partitionSet":{
+		"@context": "http://localhost/json-ld/partitionset-context.json",
+		"type": "PartitionSetType",
+		"id": "examples:CIS_PS_61_1D",
+		"positionValuePair":[
+			{ "type": "PVPType", "id": "examples:CIS_PVP1_61_1D", "coordinate": ["2015-09-20"], "value": [0]},
+			{ "type": "PVPType", "id": "examples:CIS_PVP2_61_1D", "coordinate": ["2015-09-21"], "value": [1]},
+			{ "type": "PVPType", "id": "examples:CIS_PVP3_61_1D", "coordinate": ["2015-09-22"], "value": [2]},
+			{ "type": "PVPType", "id": "examples:CIS_PVP4_61_1D", "coordinate": ["2015-09-23"], "value": [3]}
+		]
+	},
+	"rangeType": { 
+		"@context": "http://localhost/json-ld/rangetype-context.json",
+		"type": "DataRecordType",
+		"id": "examples:CIS_RT_61_1D",
+		"field":[{ 
+			"type": "QuantityType",
+			"id": "examples:CIS_RT_F_61_1D",
+			"name": "singleBand",
+			"definition": "ogcType:unsignedInt",
+			"uom": {
+				"type": "UnitReference",
+				"id": "examples:CIS_RT_F_UOM__61_1D",
+				"code": "10^0"
+			}
+		}]
+	}  
+}
