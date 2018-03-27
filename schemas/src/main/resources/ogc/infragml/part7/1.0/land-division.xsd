@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmllr="http://www.opengis.net/gml/3.3/lr" xmlns:gmllro="http://www.opengis.net/gml/3.3/lro" xmlns:li="http://www.opengis.net/infragml/core/1.0" xmlns:lild="http://www.opengis.net/infragml/landdivision/1.0" targetNamespace="http://www.opengis.net/infragml/landdivision/1.0" elementFormDefault="qualified" version="1.0.0">
+	<annotation>
+		<documentation>
+			InfraGML is an OGC Standard.
+			Copyright (c) 2017  Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lr" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRef.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lro" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRefOffset.xsd"/>
+	<import namespace="http://www.opengis.net/infragml/core/1.0" schemaLocation="http://schemas.opengis.net/infragml/part0/1.0/core.xsd"/>
+	<!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+	<!-- Modified by Erik Stubkjær (Aalborg University, Denmark) 2017-02-07 till 2017-03-21 with Altova XMLSpy v 2017 sp2
+	-->
+	<!-- 2017-09-25  410: fixed striping  .-->
+	<!--                                                                                                      -->
+	<!--     AdministrativeDivision                                                                           -->
+	<!--                                                                                                      -->
+	<element name="AdministrativeDivision" type="lild:AdministrativeDivisionType" substitutionGroup="lild:LandDivision"/>
+	<complexType name="AdministrativeDivisionType">
+		<complexContent>
+			<extension base="lild:LandDivisionType">
+				<sequence>
+					<element name="adID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+								<!-- e.g.
+											For the EU EuroStat http://ec.europa.eu/eurostat/web/nuts/overview
+											For the US U.S. Census Bureau https://www.census.gov/geo/reference/
+									-->
+							</sequence>
+						</complexType>
+					</element>
+					<element name="adType" type="string"/>
+					<element name="isoCode" type="string" minOccurs="0"/>
+					<element name="shapeAndLocation" type="lild:SpatialUnitPropertyType" maxOccurs="unbounded"/>
+					<element name="part" type="lild:AdministrativeDivisionPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<appinfo>
+								<reversePropertyName xmlns="http://www.opengis.net/gml/3.2">lild:ownedBy</reversePropertyName>
+							</appinfo>
+						</annotation>
+					</element>
+					<element name="ownedBy" type="lild:AdministrativeDivisionPropertyType" minOccurs="0">
+						<annotation>
+							<appinfo>
+								<reversePropertyName xmlns="http://www.opengis.net/gml/3.2">lild:part</reversePropertyName>
+							</appinfo>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AdministrativeDivisionPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:AdministrativeDivision"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                               -->
+	<!--     BEExplicitFace                                                                            -->
+	<!--                                                                                               -->
+	<element name="BEExplicitFace" type="lild:BEExplicitFaceType" substitutionGroup="lild:BEFace"/>
+	<complexType name="BEExplicitFaceType">
+		<complexContent>
+			<extension base="lild:BEFaceType">
+				<sequence>
+					<element name="geometry" type="gml:SurfacePropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BEExplicitFacePropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:BEExplicitFace"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--  BEExtrudedFace                                                                                        -->
+	<!--                                                                                                      -->
+	<element name="BEExtrudedFace" type="lild:BEExtrudedFaceType" substitutionGroup="lild:BEFace"/>
+	<complexType name="BEExtrudedFaceType">
+		<complexContent>
+			<extension base="lild:BEFaceType">
+				<sequence>
+					<element name="geometry" type="gml:GeometryPropertyType"/>
+					<element name="lowerLimit">
+						<complexType>
+							<sequence>
+								<element name="Limit" type="lild:ExtrusionLimitType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="upperLimit">
+						<complexType>
+							<sequence>
+								<element name="Limit" type="lild:ExtrusionLimitType"/>
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BEExtrudedFacePropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:BEExtrudedFace"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--    BEFace                                                                                            -->
+	<!--                                                                                                      -->
+	<element name="BEFace" type="lild:BEFaceType" abstract="true" substitutionGroup="lild:BoundingElement"/>
+	<complexType name="BEFaceType" abstract="true">
+		<complexContent>
+			<extension base="lild:BoundingElementType">
+				<sequence/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BEFacePropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:BEFace"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     BEImplicitFace                                                                                   -->
+	<!--                                                                                                      -->
+	<element name="BEImplicitFace" type="lild:BEImplicitFaceType" substitutionGroup="lild:BEFace"/>
+	<complexType name="BEImplicitFaceType">
+		<complexContent>
+			<extension base="lild:BEFaceType">
+				<sequence>
+					<element name="geometry">
+						<simpleType>
+							<restriction base="string">
+								<enumeration value="top"/>
+								<enumeration value="bottom"/>
+							</restriction>
+						</simpleType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BEImplicitFacePropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:BEImplicitFace"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     BEPoint                                                                                          -->
+	<!--                                                                                                      -->
+	<element name="BEPoint" type="lild:BEPointType" substitutionGroup="lild:BoundingElement"/>
+	<complexType name="BEPointType">
+		<complexContent>
+			<extension base="lild:BoundingElementType">
+				<sequence>
+					<element name="geometry" type="gml:PointPropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BEPointPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:BEPoint"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     BESolid                                                                                          -->
+	<!--                                                                                                      -->
+	<element name="BESolid" type="lild:BESolidType" substitutionGroup="lild:BoundingElement"/>
+	<complexType name="BESolidType">
+		<complexContent>
+			<extension base="lild:BoundingElementType">
+				<sequence>
+					<element name="geometry" type="gml:SolidPropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BESolidPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:BESolid"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     BEString                                                                                         -->
+	<!--                                                                                                      -->
+	<element name="BEString" type="lild:BEStringType" substitutionGroup="lild:BoundingElement"/>
+	<complexType name="BEStringType">
+		<complexContent>
+			<extension base="lild:BoundingElementType">
+				<sequence>
+					<element name="geometry" type="gml:GeometryPropertyType"/>
+					<element name="stringType">
+						<simpleType>
+							<restriction base="string">
+								<enumeration value="unstructured"/>
+								<enumeration value="structured"/>
+								<enumeration value="topological"/>
+								<enumeration value="partial"/>
+								<enumeration value="ring"/>
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="direction" minOccurs="0">
+						<simpleType>
+							<restriction base="string">
+								<enumeration value="forward"/>
+								<enumeration value="reverse"/>
+							</restriction>
+						</simpleType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BEStringPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:BEString"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     BEText                                                                                           -->
+	<!--                                                                                                      -->
+	<element name="BEText" type="lild:BETextType" substitutionGroup="lild:BoundingElement"/>
+	<complexType name="BETextType">
+		<complexContent>
+			<extension base="lild:BoundingElementType">
+				<sequence>
+					<element name="geometry" type="string"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BETextPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:BEText"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     BoundingElement                                                                                  -->
+	<!--                                                                                                      -->
+	<element name="BoundingElement" type="lild:BoundingElementType" substitutionGroup="li:AbstractData"/>
+	<complexType name="BoundingElementType">
+		<complexContent>
+			<extension base="li:AbstractDataType">
+				<sequence>
+					<element name="boundingElementID" type="string"/>
+					<element name="isComplete" type="boolean"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BoundingElementPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:BoundingElement"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     Easement                                                                                         -->
+	<!--                                                                                                      -->
+	<element name="Easement" type="lild:EasementType" substitutionGroup="lild:InterestInLand"/>
+	<complexType name="EasementType">
+		<complexContent>
+			<extension base="lild:InterestInLandType">
+				<sequence>
+					<element name="easementID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+								<!-- e.g. Court district -->
+							</sequence>
+						</complexType>
+					</element>
+					<element name="type" type="gml:ReferenceType"/>
+					<element name="beneficiaryParty" type="string" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="permittedUse" type="string"/>
+					<element name="shapeAndLocation" type="lild:SpatialUnitPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="across" type="lild:LandParcelPropertyType" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="EasementPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:Easement"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     ExtrusionLimitType                                                                                   -->
+	<!--                                                                                                      -->
+	<!-- 	<element name="ExtrusionLimit" type="lild:ExtrusionLimitType"/>
+ substitutionGroup="gml:AbstractObject" -->
+	<complexType name="ExtrusionLimitType">
+		<choice>
+			<element name="distance" type="double"/>
+			<element name="elevation" type="double"/>
+			<element name="text" type="string"/>
+		</choice>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     InterestInLand                                                                                   -->
+	<!--                                                                                                      -->
+	<element name="InterestInLand" type="lild:InterestInLandType" abstract="true" substitutionGroup="lild:LandDivision"/>
+	<complexType name="InterestInLandType" abstract="true">
+		<complexContent>
+			<extension base="lild:LandDivisionType">
+				<sequence>
+					<element name="documentation" type="lild:StatementPropertyType" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="InterestInLandPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:InterestInLand"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     LandDivision                                                                                     -->
+	<!--                                                                                                      -->
+	<element name="LandDivision" type="lild:LandDivisionType" abstract="true" substitutionGroup="li:Feature"/>
+	<complexType name="LandDivisionType" abstract="true">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LandDivisionPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:LandDivision"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     LandParcel                                                                                       -->
+	<!--                                                                                                      -->
+	<element name="LandParcel" type="lild:LandParcelType" substitutionGroup="li:Feature"/>
+	<complexType name="LandParcelType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="cadastralParcelId">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+								<!-- e.g. Cadastral township, or the municipality  -->
+							</sequence>
+						</complexType>
+					</element>
+					<element name="landRecordingDocumentId" minOccurs="0">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+								<!--		e.g. Court district   		-->
+							</sequence>
+						</complexType>
+					</element>
+					<element name="parcelArea" type="gml:AreaType"/>
+					<element name="currentLandUse" type="string" minOccurs="0"/>
+					<element name="plannedLandUse" type="string" minOccurs="0"/>
+					<element name="parcelState" type="lild:LandParcelStateType" minOccurs="0"/>
+					<element name="shapeAndLocation" type="lild:SpatialUnitPropertyType"/>
+					<element name="within" type="lild:AdministrativeDivisionPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LandParcelPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:LandParcel"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     LandParcelStateType                                                                              -->
+	<!--                                                                                                      -->
+	<simpleType name="LandParcelStateType">
+		<union memberTypes="lild:LandParcelStateEnumerationType lild:LandParcelStateOtherType"/>
+	</simpleType>
+	<simpleType name="LandParcelStateEnumerationType">
+		<restriction base="string">
+			<enumeration value="firstRegistration"/>
+			<enumeration value="transitory"/>
+			<enumeration value="current"/>
+			<enumeration value="carrierParcel"/>
+			<enumeration value="mainParcel"/>
+			<enumeration value="extinguished"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="LandParcelStateOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<!--                                                                                                      -->
+	<!--     LandPropertyUnit                                                                                 -->
+	<!--                                                                                                      -->
+	<element name="LandPropertyUnit" type="lild:LandPropertyUnitType" substitutionGroup="lild:PropertyUnit"/>
+	<complexType name="LandPropertyUnitType">
+		<complexContent>
+			<extension base="lild:PropertyUnitType">
+				<sequence>
+					<element name="landParcel" type="lild:LandParcelPropertyType" minOccurs="1" maxOccurs="unbounded"/>
+					<element name="encumbrance" type="lild:SuperficieObjectPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LandPropertyUnitPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:LandPropertyUnit"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     Ownership                                                                                        -->
+	<!--                                                                                                      -->
+	<element name="Ownership" type="lild:OwnershipType" substitutionGroup="li:AbstractData"/>
+	<complexType name="OwnershipType">
+		<complexContent>
+			<extension base="li:AbstractDataType">
+				<sequence>
+					<element name="name" type="string"/>
+					<element name="relativeShare" type="double" minOccurs="0"/>
+					<element name="ownerAddress" type="string" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="OwnershipPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:Ownership"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     PropertyUnit                                                                                     -->
+	<!--                                                                                                      -->
+	<element name="PropertyUnit" type="lild:PropertyUnitType" substitutionGroup="lild:InterestInLand"/>
+	<complexType name="PropertyUnitType">
+		<complexContent>
+			<extension base="lild:InterestInLandType">
+				<sequence>
+					<element name="propertyUnitID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+								<!-- e.g. 
+											Cadastral township, or Municipality
+									-->
+							</sequence>
+						</complexType>
+					</element>
+					<element name="ownership" type="lild:OwnershipPropertyType" maxOccurs="unbounded"/>
+					<element name="postAddress" type="string" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PropertyUnitPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:PropertyUnit"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     Signatory                                                                                        -->
+	<!--                                                                                                      -->
+	<element name="Signatory" type="lild:SignatoryType" substitutionGroup="li:AbstractData"/>
+	<complexType name="SignatoryType">
+		<complexContent>
+			<extension base="li:AbstractDataType">
+				<sequence>
+					<element name="signingParty" type="string"/>
+					<element name="role" type="gml:ReferenceType" minOccurs="0"/>
+					<element name="signingDate" type="date"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     SpatialUnit                                                                                      -->
+	<!--                                                                                                      -->
+	<element name="SpatialUnit" type="lild:SpatialUnitType" substitutionGroup="li:AbstractData"/>
+	<complexType name="SpatialUnitType">
+		<complexContent>
+			<extension base="li:AbstractDataType">
+				<sequence>
+					<element name="spatialUnitID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="dimension">
+						<simpleType>
+							<restriction base="string">
+								<enumeration value="2D"/>
+								<enumeration value="3D"/>
+								<enumeration value="liminal"/>
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="area" type="gml:AreaType" minOccurs="0"/>
+					<element name="volume" type="gml:VolumeType" minOccurs="0"/>
+					<element name="height" type="gml:LengthType" minOccurs="0"/>
+					<element name="boundingElement" type="lild:BoundingElementPropertyType" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SpatialUnitPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:SpatialUnit"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--      Statement                                                                                       -->
+	<!--                                                                                                      -->
+	<element name="Statement" type="lild:StatementType" substitutionGroup="li:Document"/>
+	<complexType name="StatementType">
+		<complexContent>
+			<extension base="li:DocumentType">
+				<sequence>
+					<element name="type" type="gml:ReferenceType"/>
+					<element name="draftsman" type="li:ProfessionalPropertyType"/>
+					<element name="caseID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+								<!-- e.g. 	Company name and branch	-->
+							</sequence>
+						</complexType>
+					</element>
+					<element name="landRecordingDocumentId" minOccurs="0">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+								<!-- e.g. Court district -->
+							</sequence>
+						</complexType>
+					</element>
+					<element name="signatory" maxOccurs="unbounded">
+						<complexType>
+							<sequence>
+								<element name="Signatory" type="lild:SignatoryType"/>
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="StatementPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:Statement"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     SuperficieObject                                                                                 -->
+	<!--                                                                                                      -->
+	<element name="SuperficieObject" type="lild:SuperficieObjectType" substitutionGroup="li:Feature"/>
+	<complexType name="SuperficieObjectType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="superficieID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+								<!-- e.g. Court district  -->
+							</sequence>
+						</complexType>
+					</element>
+					<element name="type" type="string"/>
+					<element name="ownership" type="lild:OwnershipPropertyType" maxOccurs="unbounded"/>
+					<element name="encumbranceScheme" type="lild:StatementPropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SuperficieObjectPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:SuperficieObject"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                      -->
+	<!--     SurveyMonument                                                                                   -->
+	<!--                                                                                                      -->
+	<element name="SurveyMonument" type="lild:SurveyMonumentType" substitutionGroup="li:SurveyMark"/>
+	<complexType name="SurveyMonumentType">
+		<complexContent>
+			<extension base="li:SurveyMarkType">
+				<sequence>
+					<element name="type" type="gml:ReferenceType"/>
+					<element name="documentation" type="lild:StatementPropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SurveyMonumentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lild:SurveyMonument"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+</schema>

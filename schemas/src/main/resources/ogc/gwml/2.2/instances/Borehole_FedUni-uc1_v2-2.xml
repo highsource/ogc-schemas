@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection 
+gml:id="feduni.example.borehole" 
+xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" 
+xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" xmlns:gco="http://www.isotc211.org/2005/gco" 
+xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gwml2c="http://www.opengis.net/gwml-constituent/2.2" xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" 
+xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" 
+xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:om="http://www.opengis.net/om/2.0" 
+xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gsmlx="http://www.opengis.net/gsml/4.1/GeoSciML-Extension" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+xsi:schemaLocation="http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd 
+http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd 
+http://www.opengis.net/gwml-wellconstruction/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-wellconstruction.xsd">
+
+	<!-- Although all the GWML2 schema may not be required, this instance imports all GWML2 packages via gwml2.xsd for consistence between instance examples  -->
+	<!-- ######################### -->
+	<!-- Mapping of Federation University (FedUni) Groundwater database tables and records to the proposed GroundWaterML2 OGC standard release candidate version 2.2  -->
+	<!-- File created by Bruce Simons, CSIRO, February 2016 -->
+	<!-- ######################### -->
+	<!-- This file is an example instance of a GWML2 Borehole -->
+	<!-- Although this instance is a gml:FeatureCollection with one or more gml:featureMembers, a valid alternative is as a single gww:Borehole -->
+	<!-- Other related GWML2 features are referred to "byReference" using xlink:href. In most cases these could be included "inLine" (i.e. within this instance). A separate instance for each feature is provided for ease of mapping. The final aggregation of inLine vs. byReference features will be determined by the use case requirements -->
+	<!-- Where features are aggregated into single feature services the xlink:href references to URIs need to be replaced with internal # references to gml:id -->
+	<!-- ######################### -->
+	<!-- FedUni - Mapping patterns -->
+	<!-- Comments beginning 'FedUni -' are instructions for mappings between FedUni data and GWML2 -->
+	<!-- ???? Comments beginning ???? require further checking -->
+	<!-- FedUni table record pairs are referred to by the pattern [table.record] -->
+	<!-- The mapping pattern is [schema/property] = [table.record] -->
+	<!-- ######################### -->
+	<!-- FedUni - Feature IDs and identifiers -->
+	<!-- Feature IDs (gml:id) are document specific unique identifiers based on FedUni table keys and the feature type -->
+	<!-- To create the id, replace [table.record_id] with values from the appropriate table -->
+	<!-- Feature identities (gml:identifier) use the URI for the feature. This is in the format "[domain name]/[category]/[type]/[gml:id]" -->
+	<!-- Domain Name - The temporary domain name "http://www.groundwater-victoria.com.au" has been used for the feature identifiers and vocabulary term references. An appropriate persistent and organisation independent domain will need to be established.
+A redirect service, such as the SISS PID service, is required to resolve these URIs -->
+	<!-- Category - where the object is a GML Feature use "feature". Where the object is a vocabulary concept use "def". -->
+	<!-- Type - where the Category is a feature, the type of feature, where Category is "def' the type of term (e.g. from "http://environment.data.gov.au/def/" it is "object", "unit", "property") -->
+	<!-- ######################### -->
+	<!-- FedUni Mapping -->
+	
+	<!-- gml:featureMember is a Borehole -->
+	<gml:featureMember>
+<!-- FedUni - GW_ChemicalConstituent gml:id="feduni.borehole.construction.[bore.bore_ID]"  -->
+				<gwml2wc:Borehole gml:id="feduni.borehole.construction.51409">
+					<!-- FedUni - gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://groundwater.victoria.com.au/feature/constituent/feduni.borehole.construction.[bore.bore_ID]	-->
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://groundwater.victoria.com.au/feature/constituent/feduni.borehole.construction.51409</gml:identifier>
+			
+<!-- sam:sampledFeature for the gwml2wc:Borehole is the associated GW_Well -->
+<!-- FedUni - sam:sampledFeature xlink:href="http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.[bore.bore_id]" -->
+					<sam:sampledFeature xlink:href="http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.51409"/>
+					<!-- FedUni - If the gwml2wc:Borehole is inLine with the GW_Well and where the Well Construction shape is the same as the Well shape use xlink:href to gml:Curve/gml:id.  -->
+					<!--		<sams:shape xlink:href="#feduni.borehole.51409.shape"/> -->
+					<!-- FedUni - Otherwise gml:Curve  gml:id = "feduni.borehole.construction.[bore.bore_ID]" -->
+					<!--  [bore.rlns] is the reference point for all the FedUni elevation -->
+			<sams:shape>
+			<!-- gml:Curve gml:id="feduni.borehole.[bore.bore_ID].shape" -->
+				<gml:Curve gml:id="feduni.borehole.construction.51409.shape" srsDimension="3" srsName="http://www.opengis.net/def/crs/EPSG/0/4283">
+					<gml:segments>
+						<!-- FedUni - Assume well is vertical and [bore.constructed_depth] is depth of well from [bore.rlns] then:
+<gml:posList> = [bore:longitude_gda94], [bore:latitude.gda94], [bore.rlns] [bore.longitude_gda94], [bore.latitude:gda94], {[bore.rlns]-[bore.constructed_depth]} -->
+						<!-- Check order is right for SRS -->
+						<gml:LineStringSegment>
+							<gml:posList>141.79256 -37.85769 523.27 141.79256 -37.85769 493.27</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</sams:shape>					
+<!-- FedUni is missing bholeMaterialCustodian  -->
+					<gwml2wc:bholeMaterialCustodian xsi:nil="true" gco:nilReason="unknown"/>
+<!-- FedUni does not have gwml2wc:bholeCoreInterval  -->
+					<!-- gwml2wc:bholeCoreInterval/ -->
+					<!--<gwml2wc:bholeCoreInterval>
+		<Envelope xmlns="http://www.opengis.net/gml/3.2">
+			<lowerCorner></lowerCorner>
+			<upperCorner></upperCorner>
+		</Envelope>
+	</gwml2wc:bholeCoreInterval> -->
+					<!-- gwml2wc:bholeDateOfDrilling uses a different data type  to the om:phenomenonTime used in gww:gwWellConstructedDepth -->
+<!-- FedUni gwml2wc:bholeDateOfDrilling = [bore:datecomp] Date will need to be converted from FedUni format (10/11/1993  12:00:00 AM) to GWML2 format (1993-11-10)  -->
+					<gwml2wc:bholeDateOfDrilling>1993-11-10+00:00</gwml2wc:bholeDateOfDrilling>
+					<!-- FedUni gwml2wc:bholeDriller xlink:title="[bore.driller]" -->
+					<gwml2wc:bholeDriller xlink:title="Govt. Drilling Services">
+						<gmd:CI_ResponsibleParty>
+							<!-- gwml2wc:bholeDriller/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString = [bore.driller] -->
+							<gmd:organisationName>
+								<gco:CharacterString>Govt. Drilling Services</gco:CharacterString>
+							</gmd:organisationName>
+							<gmd:role>
+								<gmd:CI_RoleCode codeList="http://groundwater.feduni.edu/waterwell/roleCodes" codeListValue="http://groundwater.feduni.edu/waterwell/roleCodes/driller">Driller</gmd:CI_RoleCode>
+							</gmd:role>
+						</gmd:CI_ResponsibleParty>
+					</gwml2wc:bholeDriller>
+					<!-- FedUni gwml2wc:bholeDriller xlink:title="[bore.drillmth]" -->
+					<gwml2wc:bholeDrillingMethod xlink:title="Down-Hole Hammer Percussion"/>
+					<!-- Assume all FedUni Boreholes are vertical -->
+					<gwml2wc:bholeInclinationType xlink:title="vertical"/>
+					<!-- FedUni is missing bholeNominalDiameter  -->
+					<gwml2wc:bholeNominalDiameter xsi:nil="true"/>
+					<!-- FedUni gwml2wc:bholeOperator xlink:title="[bore.boreauth]" -->
+					<gwml2wc:bholeOperator xlink:title="Rural Water Commission / Corporation (1984 - 1995)"/>
+					<!-- FedUni use bholeStartPoint xlink:title="natural ground surface" -->
+					<gwml2wc:bholeStartPoint xlink:title="natural ground surface"/>
+					<!-- gwml2wc:bholeHeadworks captures BoreCollar information. This will, largely be a duplicate of GW_Well:gwWellLocation for collarLocation and GW_Well:gwWellReferenceElevation for collarElevation. collarHeadworkType is the third  BoreCollar property -->
+					<gwml2wc:bholeConstruction>
+						<!--  FedUni - Bore Filter construction information is included with [bore_screen] -->
+						<!--FedUni - gwml2wc:Filtration/gml:id = {gwml2wc:Borehole/gml:id}.filter.[bore_screen.bore_screen_id] -->
+						<gwml2wc:Filtration gml:id="feduni.borehole.construction.51409.filter.1818">
+							<gwml2wc:filterElement>
+								<!--FedUni - gwml2wc:Filtration/gml:id = {gwml2wc:Borehole/gml:id}.filter.[bore_screen.bore_screen_id].1 -->
+								<gwml2wc:FiltrationComponent gml:id="feduni.borehole.51409.bore.filter.1818.1">
+									<!-- FedUni - gwml2wc:from = [bore_screen.filter_from] -->
+									<gwml2wc:from>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>0</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<gwml2wc:to>
+										<!-- FedUni - gwml2wc:to = [bore_screen.filter_to] -->
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>0</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<gwml2wc:filterGrainSize/>
+									<!-- FedUni - gwml2wc:to = [bore_screen.filter_material] -->
+									<gwml2wc:filterMaterial/>
+								</gwml2wc:FiltrationComponent>
+							</gwml2wc:filterElement>
+						</gwml2wc:Filtration>
+					</gwml2wc:bholeConstruction>
+					<gwml2wc:bholeConstruction>
+						<!-- FedUni - 	gwml2wc:Casing gml:id="{gwml2wc:Borehole/gml:id}.casing.[bore_casing.bore_casing_id]" -->
+						<gwml2wc:Casing gml:id="feduni.borehole.construction.51409.casing.16061">
+							<!-- FedUni - [bore_casing.source] to be mapped to gml:metadataProperty -->
+							<gml:metaDataProperty>
+								<gml:GenericMetaData>
+									<gmd:LI_Source>
+										<gmd:sourceCitation>
+											<gmd:CI_Citation>
+												<gmd:title>
+													<!-- FedUni - Structure of [bore_casing.source] only allows mapping to free text field -->
+													<gco:CharacterString>HydroTechnology (1994) report MC/44041.010/1</gco:CharacterString>
+												</gmd:title>
+												<!-- FedUni does not have mandatory gmd:date property. Use gco:nilReason="missing" -->
+												<gmd:date gco:nilReason="missing"/>
+											</gmd:CI_Citation>
+										</gmd:sourceCitation>
+									</gmd:LI_Source>
+								</gml:GenericMetaData>
+							</gml:metaDataProperty>
+							<!-- FedUni - gml:description for gwml2wc:Casing from [bore_casing.comments] -->
+							<gml:description>Casing run 16m to 30m below screen</gml:description>
+							<gwml2wc:casingElement>
+								<!-- FedUni - 	gwml2wc:Casing gml:id="{gwml2wc:Borehole/gml:id}.casing.[bore_casing.bore_casing_id].[bore_casing..casing_run_number]" -->
+								<gwml2wc:CasingComponent gml:id="feduni.borehole.construction.51409.casing.16061.1">
+									<!-- FedUni - gwml2wc:from = [bore_casing.casing_from_depth] -->
+									<gwml2wc:from>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>-0.5</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<!-- FedUni - gwml2wc:to = [bore_casing.casing_to_depth] -->
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>11</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<!-- FedUni - gwml2wc:casingMaterial = [bore_casing.casing_type] -->
+									<gwml2wc:casingMaterial xlink:title="PVC"/>
+									<!-- FedUni - doesn't have gwml2wc:casingCoating -->
+									<gwml2wc:casingCoating/>
+									<!-- FedUni - doesn't have gwml2wc:casingForm -->
+									<gwml2wc:casingForm/>
+									<!-- FedUni - [bore-casing.casing_diameter] = gwml2wc:casingInternalDiameter or gwml2wc:casingExternalDiameter? -->
+									<gwml2wc:casingInternalDiameter>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<swe:value>101</swe:value>
+										</swe:Quantity>
+									</gwml2wc:casingInternalDiameter>
+									<gwml2wc:casingExternalDiameter/>
+									<!-- FedUni - doesn't have gwml2wc:casingWallThickness -->
+									<gwml2wc:casingWallThickness/>
+								</gwml2wc:CasingComponent>
+							</gwml2wc:casingElement>
+						</gwml2wc:Casing>
+					</gwml2wc:bholeConstruction>
+					<gwml2wc:bholeConstruction>
+						<!-- FedUni - 	gwml2wc:Screen gml:id="{gwml2wc:Borehole/gml:id}.screen.[bore_screen.bore_screen_id]" -->
+						<gwml2wc:Screen gml:id="feduni.borehole.construction.51409.screen.1818">
+							<!-- FedUni - [bore_screen.source] to be mapped to gml:metadataProperty -->
+							<gml:metaDataProperty>
+								<gml:GenericMetaData>
+									<gmd:LI_Source>
+										<gmd:sourceCitation>
+											<gmd:CI_Citation>
+												<gmd:title>
+													<!-- FedUni - Structure of [bore_screen.source] only allows mapping to free text field -->
+													<gco:CharacterString>HydroTechnology (1994) report MC/44041.010/1</gco:CharacterString>
+												</gmd:title>
+												<!-- FedUni does not have mandatory gmd:date property. Use gco:nilReason="missing" -->
+												<gmd:date gco:nilReason="missing"/>
+											</gmd:CI_Citation>
+										</gmd:sourceCitation>
+									</gmd:LI_Source>
+								</gml:GenericMetaData>
+							</gml:metaDataProperty>
+							<!-- FedUni - gml:description for gwml2wc:Screen from [bore_screen.comments] -->
+							<gml:description>Rubber seal at 7m and 20m</gml:description>
+							<gwml2wc:screenElement>
+								<!-- FedUni - 	gwml2wc:Screen gml:id="{gwml2wc:Borehole/gml:id}.screen.[bore_screen.bore_screen_id]" -->
+								<gwml2wc:ScreenComponent gml:id="feduni.borehole.construction.51409.screen.1818.1">
+									<!-- FedUni - gwml2wc:from = [bore_screen.screen_from_depth] -->
+									<gwml2wc:from>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>11</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<!-- FedUni - gwml2wc:to = [bore_screen.screen_from_depth] -->
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>16</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<!-- FedUni - Does not record gwml2wc:screenAttachmentMethod -->
+									<gwml2wc:screenAttachmentMethod xsi:nil="true" nilReason="unknown"/>
+									<!-- FedUni - Does not record gwml2wc:screenCoating -->
+									<gwml2wc:screenCoating xsi:nil="true" nilReason="unknown"/>
+									<!-- ???? FedUni - Does not record gwml2wc:screenForm (unless it is = [bore_screen.screen_type]? -->
+									<gwml2wc:screenForm xsi:nil="true" nilReason="unknown"/>
+									<!-- FedUni - gwml2wc:screenHoleWidth = [bore_screen.screen_aperture] -->
+									<!-- FedUni gwml2wc:screenHoleWidth = [bore_screen.screen_aperture] uom = mm -->								
+									<gwml2wc:screenHoleWidth>
+									<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<swe:value>1</swe:value>
+										</swe:Quantity>
+										</gwml2wc:screenHoleWidth>
+<!-- FedUni - gwml2wc:screenHoleLength = [bore_screen.screen_aperture] -->
+									<!-- FedUni gwml2wc:screenHoleLength = [bore_screen.screen_aperture] uom = mm -->
+									<gwml2wc:screenHoleLength>
+									<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<swe:value>1</swe:value>
+										</swe:Quantity>
+										</gwml2wc:screenHoleLength>
+									<!-- FedUni - gwml2wc:screenMaterial = [bore_screen.screen_type] -->
+									<gwml2wc:screenMaterial xlink:title="PSL"/>
+									<!--  FedUni [bore_screen.screen_diameter] = gwml2wc:screenInternalDiameter  -->
+									<gwml2wc:screenInternalDiameter>
+										<swe:Quantity>
+											<!--  FedUni [bore_screen.screen_diameter] swe:uom = mm  -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#MilliMeter" xlink:title="millimetre" code="mm"/>
+											<swe:value>101</swe:value>
+										</swe:Quantity>
+									</gwml2wc:screenInternalDiameter>
+									<gwml2wc:screenExternalDiameter/>
+									<!-- FedUni - Does not record gwml2wc:screenPerforationMethod -->
+									<gwml2wc:screenPerforationMethod xsi:nil="true" nilReason="unknown"/>
+									<!-- FedUni - Does not record gwml2wc:screenFitting -->
+									<gwml2wc:screenFitting xsi:nil="true" nilReason="unknown"/>
+									<!-- FedUni - Does not record gwml2wc:screenMake -->
+									<gwml2wc:screenMake xsi:nil="true" nilReason="unknown"/>
+									<!-- FedUni - Does not record gwml2wc:screenModel -->
+									<gwml2wc:screenModel xsi:nil="true" nilReason="unknown"/>
+									<!-- FedUni - Does not record gwml2wc:screenNumber -->
+									<gwml2wc:screenNumber xsi:nil="true" nilReason="unknown"/>
+									<!-- FedUni - Does not record gwml2wc:screenPlacement -->
+									<gwml2wc:screenPlacement xsi:nil="true" nilReason="unknown"/>
+									<!-- FedUni - Does not record gwml2wc:screenWallThickness -->
+									<gwml2wc:screenWallThickness/>
+								</gwml2wc:ScreenComponent>
+							</gwml2wc:screenElement>
+						</gwml2wc:Screen>
+					</gwml2wc:bholeConstruction>
+					<gwml2wc:bholeConstruction>
+						<!-- FedUni does not have gwml2wc:Sealing data
+				<gwml2wc:Sealing gml:id="feduni.borehole.construction.51409.b.sealing">
+					<gwml2wc:sealingGroutingPlacementMethod/>
+					<gwml2wc:sealingElement/>
+				</gwml2wc:Sealing> -->
+					</gwml2wc:bholeConstruction>
+					<gwml2wc:bholeHeadworks>
+						<gwml2wc:BoreCollar gml:id="feduni.borehole.construction.51409.collar">
+							<!-- FedUni gwml2wc:collarElevation = [bore:rlns] -->
+							<gwml2wc:collarElevation uomLabels="metre" axisLabels="m AHD" srsName="http://www.opengis.net/def/crs/EPSG/0/5711" srsDimension="1">523.27</gwml2wc:collarElevation>
+							<!-- #### Not sure what should go in gwml2wc:collarHeadworkType. No documentation in UML -->
+							<gwml2wc:collarHeadworkType/>
+							<gwml2wc:collarLocation>
+						<!-- gml:Point gml:id is the identifier for the gwml2wc:Borehole:gwml2wc:collarLocation. If it is defined elsewhere (e.g. gww:gwWellLocation/gml:Point) use <gwml2wc:collarLocation xlink:href="#{gml:id}"/> -->
+							<!-- gml:Point gml:id is the identifier for the GW_Well:gwWellLocation. If it is defined elsewhere use <gww:gwWellLocation xlink:href="#{gml:id}"/> -->
+				<!-- FedUni - if defined here use gml:id="[gww:GW_Well gml:id].location" and gml:pos = [bore.longitude_gda94], [bore.latitude_gda94] -->
+				<gml:Point gml:id="feduni.borehole.construction.51409.location" srsName="EPSG:4939">
+					<gml:pos>141.79256 -37.85769</gml:pos>
+				</gml:Point>
+		</gwml2wc:collarLocation>
+							<!-- gwml2wc:Borehole/gwml2wc:bholeDetails refers to the GW_Well that the Borehole is associated with. If in-line use xlink:href="#{gww:GW_Well gml:id}" -->
+							<!-- FedUni - gwml2wc:bholeDetails xlink:href="http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.[bore.bore_id]" -->
+							<gwml2wc:bholeDetails xlink:href="http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.51409"/>
+						</gwml2wc:BoreCollar>
+					</gwml2wc:bholeHeadworks>
+				</gwml2wc:Borehole>
+			</gml:featureMember>
+			</gml:FeatureCollection>

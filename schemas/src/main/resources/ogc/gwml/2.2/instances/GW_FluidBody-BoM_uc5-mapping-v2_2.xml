@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection gml:id="ngis.example.fluid-body" 
+
+xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" 
+xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" 
+xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" 
+xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" 
+xmlns:gwml2c="http://www.opengis.net/gwml-constituent/2.2" 
+ xmlns:gml="http://www.opengis.net/gml/3.2" 
+ xmlns:sam="http://www.opengis.net/sampling/2.0" 
+ xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:swe="http://www.opengis.net/swe/2.0" 
+  xmlns:gmd="http://www.isotc211.org/2005/gmd" 
+  xmlns:gco="http://www.isotc211.org/2005/gco" 
+  xmlns:cv="http://www.opengis.net/cv/0.2/gml32" 
+  xmlns:om="http://www.opengis.net/om/2.0" 
+  xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/gwml/2.2 http://schemas.opengis.net/gwml/2.2/gwml2.xsd http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd">
+	<!-- Although all the GWML2 schema may not be required, this instance imports all GWML2 packages via gwml2.xsd for consistence between instance examples  -->
+<!-- ######################### -->
+	<!-- Mapping of National Groundwater Information System (NGIS) database tables and records to the proposed GroundWaterML2 OGC standard release candidate version 2.2 -->
+	<!-- File created by Bruce Simons, CSIRO, February 2016 -->
+	<!-- ######################### -->
+	<!-- Although this instance is a gml:FeatureCollection with one or more gml:featureMembers, a valid alternative is as a single gwml2:GW_FluidBody -->
+	<!-- Other related GWML2 features are referred to "byReference" using xlink:href. In most cases these could be included "inLine" (i.e. within this instance). A separate instance for each feature is provided for ease of mapping. The final aggregation of inLine vs. byReference features will be determined by the use case requirements -->
+	<!-- Where features are aggregated into single feature services the xlink:href references to URIs need to be replaced with internal # references to gml:id -->
+	<!-- ######################### -->
+	<!-- NGIS - Mapping patterns -->
+	<!-- Comments beginning 'NGIS -' are instructions for mappings between NGIS data and GWML2 -->
+	<!-- ???? Comments beginning ???? require further checking -->
+	<!-- NGIS table record pairs are referred to by the pattern [table.record] -->
+	<!-- The mapping pattern is [schema/property] = [table.record] -->
+	<!-- ######################### -->
+	<!-- NGIS - Feature IDs and identifiers -->
+	<!-- Feature IDs (gml:id) are document specific unique identifiers based on NGIS table keys and the feature type -->
+	<!-- To create the id, replace [table.record_id] with values from the appropriate table -->
+	<!-- Feature identities (gml:identifier) use the URI for the feature. This is in the format "[domain name]/[category]/[type]/[gml:id]" -->
+	<!-- Domain Name - The temporary domain name "http://environment.data.gov.au/groundwater/" has been used for the feature identifiers and vocabulary term references. An appropriate persistent and organisation independent domain will need to be established.
+A redirect service, such as the SISS PID service, is required to resolve these URIs -->
+	<!-- Category - where the object is a GML Feature use "feature". Where the object is a vocabulary concept use "def". -->
+	<!-- Type - where the Category is a feature, the type of feature, where Category is "def' the type of term  -->	
+	<!-- ######################### -->	
+			<!-- The GW_FluidBody is considered to be the fluid body associated with the NGIS_HydrogeologicUnit -->
+			<!-- ???? NGIS - although an example is provided here, there is no data that isn't already included in a GW_HydrogeologicUnit feature -->
+			<!-- ???? NGIS - having a GW_FluidBody would allow the GW_ManagementArea/gwAreaBody to reference the GW_FluidBody (if NGIS data allows this) -->
+	<!-- ######################### -->
+	<!-- NGIS Mapping -->
+	<!-- This gml:featureMember is a gwml2:GW_FluidBody based on [NGIS_HydrogeologicUnit] table -->
+	<gml:featureMember>
+		<!-- NGIS - The NGIS_HydrogeologicUnit table provides the fluid bodies' properties (transmissivity, hydraulic conductivity) and the classification for the hydrogeologic unit. -->
+		<!-- ???? NGIS - Qld examples do not contain any fluid property data. Dummy examples used. -->
+		<!-- NGIS - gwml2:GW_FluidBody gml:id = borehole.fluid-body.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]   -->
+		<gwml2:GW_FluidBody gml:id="borehole.fluid-body.4.1330">
+			<!-- NGIS - gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/fluidbody/[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]</gml:identifier>	-->
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/fluidbody/4.1330</gml:identifier>
+			<!-- NGIS - gml:name = [NGIS_HydrogeologicUnit.HGUNumber] codeSpace="http://www.bom.gov.au/water/groundwater/ngis/fluid-body/HGUNumber" -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/fluid-body/HGUNumber">1330</gml:name>
+			<!-- NGIS - gml:name = [NGIS_HydrogeologicUnit.HGUNumber] codeSpace="http://www.bom.gov.au/water/groundwater/ngis/fluid-body/HGUNumber" -->
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/fluid-body/HydroID">40000331</gml:name>
+			<!-- NGIS - most of the properties of the GW_FluidBody are not available  -->
+			<!-- NGIS - Empty elements are:
+					<gwml2:gwBodyFlow/>
+					<gwml2:gwBodyMetadata/>
+					<gwml2:gwBodyProperty/>
+					<gwml2:gwBodyQuality/>
+					<gwml2:gwBodyShape/>
+					<gwml2:gwBodyVolume/>
+					<gwml2:gwBodyVulnerability/>
+					
+					<gwml2:gwFluidBodyVoid/>
+					<gwml2:gwBodyPartOf/>
+					<gwml2:gwBodySurface/
+		<gwml2:gwBodyConstituent/> 
+			<gwml2:gwBackgroundConstituent/>
+			<gwml2:gwPartOfBody/>
+-->
+			<gwml2:gwBodyFlow/>
+			<gwml2:gwBodyMetadata/>
+			<gwml2:gwBodyProperty/>
+			<gwml2:gwBodyQuality/>
+			<gwml2:gwBodyShape/>
+			<gwml2:gwBodyVolume/>
+			<gwml2:gwBodyVulnerability/>
+			<!-- gwml2:GW_FluidBody/gwml2:gwFluidBodyUnit describes theproperties of the GW_FluidBody within the GW_HydrogeoUnit -->
+			<gwml2:gwFluidBodyUnit>
+			<!-- #### The om:featureOfInterest for GW_UnitFluidProperty property observations is considered to be the GW_HydrogeologicUnit (or is it the GW_FluidBody?). -->		
+			<!-- There may be many gwml2:GW_UnitFluidProperty properties associated with a GW_FluidBody (e.g. the same fluid body in separate boreholes may have different properties). Therefore gwml2:GW_UnitFluidProperty requires a gml:id to identify these separate descriptions -->
+			<!-- NGIS - Each fluid body is only associated with a single NGIS_HydrogeologicUnit, therefore the HGUNumber can be used for unique identity -->
+			<!-- NGIS - gwml2:GW_UnitFluidProperty gml:id ="borehole.fluid-body.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber].aquifer_property" -->
+			<gwml2:GW_UnitFluidProperty gml:id="borehole.fluid-body.4.1330.aquifer_property">
+				<!-- ???? NGIS - These properties are observations and could be byReference to OM_Observation feature WFS (See FedUni examples) The examples here are in-line. -->
+			<gwml2:gwHydraulicConductivity>
+						<!-- NGIS - om:OM_Observation gml:id="ngis.hydrogeologicunit.hgu.aquifer_property.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber].hydraulicconductivity -->
+						<om:OM_Observation gml:id="ngis.hydrogeologicunit.hgu.4.1330.aquifer_property.hydraulicconductivity">
+							<om:phenomenonTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:resultTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:observedProperty xlink:href="http://www.opengis.net/gwml-nucleus/2.0/gwHydraulicConductivity" xlink:title="Hydraulic Conductivity"/>
+							<!-- om:featureOfInterest is the GW_HydrogeologicUnit -->
+							<!-- NGIS - om:featureOfInterest xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]" -->
+							<om:featureOfInterest xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.4.1330"/>
+							<!-- NGIS - om:result = [NGIS_HydrogeologicUnit.HGUHydraulicK] -->
+							<!-- ???? NGIS - [NGIS_HydrogeologicUnit.HGUHydraulicK] data type is 'string'. Are these 'categoricals' rather than numeric values? -->
+							<om:result>
+								<swe:Quantity>
+									<!-- ???? NGIS -  What are the [NGIS_HydrogeologicUnit.HGUHydraulicK] units of measure? L.T-1 e.g. m/d, m/s  -->
+									<swe:uom xlink:href="http://environment.data.gov.au/def/unit/MeterPerDay" xlink:title="Meter per Day"/>
+									<!-- NGIS - swe:value = [NGIS_HydrogeologicUnit.HGUHydraulicK] -->
+									<swe:value>0</swe:value>
+								</swe:Quantity>
+							</om:result>
+						</om:OM_Observation>
+					</gwml2:gwHydraulicConductivity>
+					<gwml2:gwStorativity>
+						<!-- NGIS - om:OM_Observation gml:id="ngis.hydrogeologicunit.hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber].aquifer_property.storativity -->
+						<om:OM_Observation gml:id="ngis.hydrogeologicunit.hgu.4.1330.aquifer_property.storativity">
+							<om:phenomenonTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:resultTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:observedProperty xlink:href="http://www.opengis.net/gwml-nucleus/2.0/gwStorativity" xlink:title="Storativity"/>
+							<!-- om:featureOfInterest is the GW_HydrogeologicUnit -->
+							<!-- NGIS - om:featureOfInterest xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]" -->
+							<om:featureOfInterest xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.4.1330"/>
+							<!-- NGIS - om:result = [NGIS_HydrogeologicUnit.HGUStorage] -->
+							<!-- ???? NGIS - [NGIS_HydrogeologicUnit.HGUStorage] data type is 'string'. Are these 'categoricals' rather than numeric values? -->
+							<om:result>
+								<swe:Quantity>
+									<!-- ???? NGIS -  Are the [NGIS_HydrogeologicUnit.HGUStorage]  units of measure are dimensionless? -->
+									<swe:uom xlink:href="http://qudt.org/vocab/unit#Unitless" xlink:title="Unitless"/>
+									<!-- NGIS - swe:value = [NGIS_HydrogeologicUnit.HGUStorage]  -->
+									<swe:value>0</swe:value>
+								</swe:Quantity>
+							</om:result>
+						</om:OM_Observation>
+					</gwml2:gwStorativity>
+					<gwml2:gwTransmissivity>
+						<!-- NGIS - om:OM_Observation gml:id="ngis.hydrogeologicunit.hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber].aquifer_property.transmissivity -->
+						<om:OM_Observation gml:id="ngis.hydrogeologicunit.hgu.4.1330.aquifer_property.transmissivity">
+							<om:phenomenonTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:resultTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:observedProperty xlink:href="http://www.opengis.net/gwml-nucleus/2.0/gwTransmissivity" xlink:title="Transmissivity"/>
+							<!-- om:featureOfInterest is the GW_HydrogeologicUnit -->
+							<!-- NGIS - om:featureOfInterest xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]" -->
+							<om:featureOfInterest xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/hgu.4.1330"/>
+							<!-- NGIS - om:result = [NGIS_HydrogeologicUnit.HGUTransmissivity] -->
+							<!-- ???? NGIS - [NGIS_HydrogeologicUnit.HGUTransmissivity] data type is 'string'. Are these 'categoricals' rather than numeric values? -->
+							<om:result>
+								<swe:Quantity>
+									<!-- ???? NGIS -  Are the [NGIS_HydrogeologicUnit.HGUTransmissivity]  units of measure  L2.T-1 e.g. m2/d, m2/s? -->
+									<swe:uom xlink:href="http://environment.data.gov.au/def/unit/MeterSquaredPerDay" xlink:title="Meter squared per day"/>
+									<!-- NGIS - swe:value = [NGIS_HydrogeologicUnit.HGUTransmissivity]  -->
+									<swe:value>0</swe:value>
+								</swe:Quantity>
+							</om:result>
+						</om:OM_Observation>
+					</gwml2:gwTransmissivity>
+				<!-- NGIS - Does not have gwml2:gwYield  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"  -->
+				<gwml2:gwYield xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+				
+			<!-- gwml2:gwUnitFluidBody is the GW_FluidBody the gwml2:GW_UnitFluidProperty properties describe. This is a reference back to the GW_FluidBody -->
+			<!-- NGIS - gwml2:gwUnitFluidBody xlink:href="#borehole.fluid-body.[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]" -->
+			<gwml2:gwUnitFluidBody xlink:href="#borehole.fluid-body.4.1330"></gwml2:gwUnitFluidBody>
+			<!-- gwml2:GW_UnitFluidProperty/gwml2:gwFluidBodyUnit is the Aquifer the GW_FluidBody occurs within. -->
+			<!-- NGIS -  
+gwml2:gwFluidBodyUnit xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/[NGIS_HydrogeologicUnit.StateTerritory].[NGIS_HydrogeologicUnit.HGUNumber]"  xlink:title="[NGIS_HydrogeologicUnit.HGUName] xlink:role="hydrogeologic unit" xlink:title="[NGIS_HydrogeologicUnit.HGUName] xlink:role="hydrogeologic unit" -->
+			<!-- NGIS - Use  [NGIS_Bore.HGUNumber] for the hydrogeologic unit identifier -->
+			<gwml2:gwFluidBodyUnit xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/4.1330" xlink:title="Lizzie Creek Volcanic Group" xlink:role="hydrogeologic unit"/>
+			</gwml2:GW_UnitFluidProperty>
+			</gwml2:gwFluidBodyUnit>
+			<gwml2:gwFluidBodyVoid/>
+			<gwml2:gwBodyPartOf/>
+			<gwml2:gwBodySurface/>
+			<gwml2:gwBodyConstituent/>
+			<gwml2:gwBackgroundConstituent/>
+			<gwml2:gwPartOfBody/>
+		</gwml2:GW_FluidBody>
+	</gml:featureMember>
+</gml:FeatureCollection>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsmlb:ShearDisplacementStructure 
+ xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic"
+ xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:gml="http://www.opengis.net/gml/3.2" 
+ xmlns:om="http://www.opengis.net/om/2.0"
+ xmlns:swe="http://www.opengis.net/swe/2.0" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd" gml:id="fault.1">
+    <gml:identifier codeSpace="http://data.gov.au/fault/id">GA.fault.6353548</gml:identifier>
+    <gml:name>Lake George Fault</gml:name>
+    <gsmlb:observationMethod>
+        <swe:Category definition="http://resource.geosciml.org/classifierScheme/cgi/featureobservationmethod">
+            <swe:identifier>http://resource.geosciml.org/classifier/cgi/featureobservationmethod/synthesis_from_multiple_sources</swe:identifier>
+            <swe:label>synthesis from multiple sources</swe:label>
+            <swe:codeSpace xlink:href="http://resource.geosciml.org/classifierScheme/cgi/featureobservationmethod"/>
+        </swe:Category>
+    </gsmlb:observationMethod>
+    <gsmlb:occurrence/>
+    <gsmlb:purpose>instance</gsmlb:purpose>
+    <gsmlb:relatedFeature/>
+    <gsmlb:classifier/>
+    <gsmlb:geologicHistory>
+        <gsmlb:GeologicEvent gml:id="fault.1.age">
+            <gsmlb:eventProcess xlink:href="http://resource.geoscience.gov.xx/vocabulary/eventprocess/faulting" xlink:title="faulting"/>
+            <gsmlb:olderNamedAge xlink:href="http://resource.geoscience.gov.xx/vocabulary/geochronologicera/Devonian" xlink:title="Devonian"/>
+            <gsmlb:youngerNamedAge xlink:href="http://resource.geoscience.gov.xx/vocabulary/geochronologicera/Carboniferous" xlink:title="Carboniferous"/>
+        </gsmlb:GeologicEvent>
+    </gsmlb:geologicHistory>
+    <gsmlb:faultType xlink:href="http://resource.geosciml.org/classifier/cgi/faulttype/normal_fault" xlink:title="normal fault"/>
+</gsmlb:ShearDisplacementStructure>
+

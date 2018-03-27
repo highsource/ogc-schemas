@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:li="http://www.opengis.net/infragml/core/1.0" xmlns:lis="http://www.opengis.net/infragml/survey/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.opengis.net/infragml/survey/1.0" elementFormDefault="qualified" version="1.0.0">
+	<annotation>
+		<documentation>
+			InfraGML is an OGC Standard. 
+			Copyright (c) 2017  Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/infragml/core/1.0" schemaLocation="http://schemas.opengis.net/infragml/part0/1.0/core.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<!--XML Schema document created by ShapeChange - http://shapechange.net/
+		 Modified by Hans-Christoph Gruler(Leica Geosystems AG) October 19, 2016-
+		Modified by Hans-Christoph Gruler(Leica Geosystems AG) November 02, 2016-
+		Changes in 1102 version: 1) Survey: gml:Abstract to li:Abstract; 2) added new 
+		elements for SurveyProcess and Sampling
+		Modified by Hans-Christoph Gruler(Leica Geosystems AG) November 16, 2016-
+		Remove embedded landSurveyor to landSurveyor with type li:Professional 
+		-->
+	<!-- 410: fixed striping  .-->
+	<!--                                                                                                                         	-->
+	<!--    Survey                                                                                                             -->
+	<!--                                                                                                                         	-->
+	<element name="Survey" type="lis:SurveyType" substitutionGroup="li:AbstractData">
+		<annotation>
+			<documentation>Survey is a collection of observations relevant to a project; The observed property may be any property associated with the type of the feature of interest. Observations are collected within different Setups - this is necessary for processing all different measurements taken from several sensors.</documentation>
+		</annotation>
+	</element>
+	<complexType name="SurveyType">
+		<complexContent>
+			<extension base="li:AbstractDataType">
+				<sequence>
+					<element name="surveyID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="landSurveyor" type="li:ProfessionalPropertyType" minOccurs="0"/>
+					<element name="purposeOfSurvey" type="string" minOccurs="0"/>
+					<element name="type" type="gml:ReferenceType" minOccurs="0"/>
+					<element name="document" type="li:DocumentPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="setup" type="li:FeaturePropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="equipment" type="li:FeaturePropertyType" minOccurs="0"/>
+					<element name="surveyProcess" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<sequence>
+								<element name="SurveyProcess" type="gml:ProcedurePropertyType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="surveyResult" type="li:FeaturePropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="sampling" type="li:FeaturePropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="samplingCollection" type="li:AbstractDataPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SurveyPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lis:Survey"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+</schema>

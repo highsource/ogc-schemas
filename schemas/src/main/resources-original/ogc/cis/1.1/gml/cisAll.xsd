@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.opengis.net/cis/1.1/gml"
+    xmlns:cis11="http://www.opengis.net/cis/1.1/gml"
+    xmlns:cis10="http://www.opengis.net/gmlcov/1.0"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    version="1.1.0">
+    <annotation>
+        <appinfo>cisAll.xsd</appinfo>
+        <documentation>This is the XML Schema for the OGC Coverage Implementation Schema (CIS) 1.1.
+            This XML Schema Document includes, directly and indirectly, all the XML Schema Documents defined by the this standard.
+            Last updated: 2017-jan-16
+            Copyright (c) 2015, 2017 Open Geospatial Consortium.
+            To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+       </documentation>
+    </annotation>
+
+    <!-- ========================================================= -->
+    <!-- Includes and imports                                      -->
+    <!-- ========================================================= -->
+    <include schemaLocation="coverage.xsd"/>
+    <include schemaLocation="grid.xsd"/>
+    <import namespace="http://www.opengis.net/gmlcov/1.0" schemaLocation="http://schemas.opengis.net/gmlcov/1.0/gmlcovAll.xsd"/>
+
+</schema>

@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gwml [
+	<!ENTITY meter "http://www.opengis.net/def/uom/UCUM/0/m">
+	<!ENTITY gwvoc "http://resource.gwml.org">
+]>
+<gwml2at:GW_AquiferTest xmlns:gwml2at="http://www.opengis.net/gwml-aquifertest/2.2" xmlns:sf="http://www.opengis.net/samplingSpatial/2.0" xmlns:swe="http://www.opengis.net/swe/2.0"  xmlns:om="http://www.opengis.net/om/2.0" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sam="http://www.opengis.net/sampling/2.0" gml:id="pump.wit.63" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.opengis.net/gwml-aquifertest/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-aquifertest.xsd http://www.opengis.net/samplingSpatial/2.0 http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd">
+	
+	<gml:description>Multiple well pumping test using Thiems's method.  Data from The Netherland (from Kruseman &amp; deRitter, 2000).  Pumping test done in Oude Korendijk documented by Wit (1963).</gml:description>
+	<gml:identifier codeSpace="urn:gwml2:example">http://opengis.org/example/pumpingTest/wit63</gml:identifier>
+	<gml:name codeSpace="urn:gwml2:example:name">wik63</gml:name>
+	<gml:location>
+		<gml:LocationString>Oude Korendijk</gml:LocationString>
+	</gml:location>
+	<!-- NOTE: was not sure at this point.  Should we reference the surface of the test or actually the volume of the test, we are really testing a volume -->
+	<sam:type xlink:href="http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingSurface"/>
+	<sam:sampledFeature xlink:href="http://opengis.org/example/aquifer/OudeKorendijk" xlink:title="Oude Korendijk aquifer"/>
+		
+
+
+<!-- ********************************
+
+Related observations that stores the result of the current pump test 
+each observation can be linked back to the Observation that is the value stored in GWML2 GW_FluidProperty (in this case, gwTransmissivity, the first test in Wit,63 did not have any storativity
+
+There are many results (see p.71 of Kruseman &amp; deRitter
+-->
+	<sam:relatedObservation>
+		<om:OM_Observation gml:id="obs.wik63.1">
+			<om:relatedObservation>
+				<om:ObservationContext>
+					<om:role xlink:href="&gwvoc;/def/role/supportObservation" xlink:title="supporting Observation"/>
+					<!--LINK TO TRANSMISSIVITY IN GWML2 -->
+					<om:relatedObservation xlink:href="http://example.gw.com/observations/00001" xlink:title="Accepted Transmissivity for aquifer"/>
+				</om:ObservationContext>
+			</om:relatedObservation>
+			<om:phenomenonTime>
+				<gml:TimePeriod gml:id="tp.wik63.1">
+					<!-- assume the test was done on july 1 1963 @ 13h00 -->
+					<gml:beginPosition>1963-07-01T13:00:00Z</gml:beginPosition>
+					<gml:endPosition>1963-07-02T02:50:00Z</gml:endPosition>
+				</gml:TimePeriod>
+			</om:phenomenonTime>
+			<om:resultTime>
+				<gml:TimeInstant gml:id="ti.wik63.1">
+					<!-- result valid at the end of the test -->
+					<gml:timePosition>1963-07-02T02:50:00Z</gml:timePosition>
+				</gml:TimeInstant>
+			</om:resultTime>
+			<om:procedure xlink:href="&gwvoc;/def/method/Thiem" xlink:title="Thiem method"/>
+			<!-- this is one option to pump test related properties, the other option is to have the procedure above to point to a full SensorML description of the test -->
+		
+			<!-- links to a combo of typical pumptest results -->
+			<om:observedProperty xlink:href="&gwvoc;/def/property/pumpTestProperties" xlink:title="Pump test results"/>
+			<om:featureOfInterest xlink:href="#pump.wit.63" xlink:title="Wit 63 Pump test"/>
+			<om:result>
+				<swe:DataRecord definition="&gwvoc;/def/property/pumpTestProperties" id="le.1">
+					<!-- Since pump test can result in many parameters, better group them in a record -->
+					<swe:field name="transmissivity">
+						<swe:Quantity definition="&gwvoc;/def/phenomenon/groundwaterTransmissivity">
+							<swe:uom code="m^2/d"/>
+							<swe:value>385</swe:value>
+						</swe:Quantity>
+					</swe:field>
+				</swe:DataRecord>
+			</om:result>
+		</om:OM_Observation>
+	</sam:relatedObservation>
+	<!-- ################################ -->
+		<sam:relatedObservation>
+		<om:OM_Observation gml:id="obs.wik63.2">
+			<om:relatedObservation>
+				<om:ObservationContext>
+					<om:role xlink:href="&gwvoc;/def/role/supportObservation" xlink:title="supporting Observation"/>
+					<!--LINK TO TRANSMISSIVITY IN GWML2 -->
+					<om:relatedObservation xlink:href="http://example.gw.com/observations/00001" xlink:title="Accepted Transmissivity for aquifer"/>
+				</om:ObservationContext>
+			</om:relatedObservation>
+			<!-- same times as the previous Observation, it's not mandatory to do it this way, but it explicitly say it's the SAME time, not times that happen to have the same values -->
+			<om:phenomenonTime xlink:href="#tp.wik63.1"/>
+			<om:resultTime xlink:href="#ti.wik63.1"/>
+			<om:procedure xlink:href="&gwvoc;/def/method/Thiem" xlink:title="Thiem method"/>
+			<!-- this is one option to pump test related properties, the other option is to have the procedure above to point to a full SensorML description of the test -->
+
+			<!-- links to a combo of typical pumptest results -->
+			<om:observedProperty xlink:href="&gwvoc;/def/property/pumpTestProperties" xlink:title="Pump test results"/>
+			<om:featureOfInterest xlink:href="#pump.wit.63" xlink:title="Wit 63 Pump test"/>
+			<om:result>
+				<swe:DataRecord definition="&gwvoc;/def/property/pumpTestProperties" id="le.2">
+					<!-- Since pump test can result in many parameters, better group them in a record -->
+					<swe:field name="transmissivity">
+						<swe:Quantity definition="&gwvoc;/def/phenomenon/groundwaterTransmissivity">
+							<swe:uom code="m^2/d"/>
+							<swe:value>390</swe:value>
+						</swe:Quantity>
+					</swe:field>
+				</swe:DataRecord>
+			</om:result>
+		</om:OM_Observation>
+	</sam:relatedObservation>
+	
+	<!-- ########### Theis this time ##################### -->
+	
+		<sam:relatedObservation>
+		<om:OM_Observation gml:id="obs.wik63.3">
+			<om:relatedObservation>
+				<om:ObservationContext>
+					<om:role xlink:href="&gwvoc;/def/role/supportObservation" xlink:title="supporting Observation"/>
+					<!--LINK TO TRANSMISSIVITY IN GWML2 -->
+					<om:relatedObservation xlink:href="http://example.gw.com/observations/00001" xlink:title="Accepted Transmissivity for aquifer"/>
+				</om:ObservationContext>
+			</om:relatedObservation>
+			<!-- this method has storativity -->
+			<om:relatedObservation>
+				<om:ObservationContext>
+					<om:role xlink:href="&gwvoc;/def/role/supportObservation" xlink:title="supporting Observation"/>
+					<!--LINK TO STORATIVITY IN GWML2 -->
+					<om:relatedObservation xlink:href="http://example.gw.com/observations/00002" xlink:title="Accepted Storativity for aquifer"/>
+				</om:ObservationContext>
+			</om:relatedObservation>
+			<!-- same times as the previous Observation, it's not mandatory to do it this way, but it explicitly say it's the SAME time, not times that happen to have the same values -->
+			<om:phenomenonTime xlink:href="#tp.wik63.1"/>
+			<om:resultTime xlink:href="#ti.wik63.1"/>
+			<om:procedure xlink:href="&gwvoc;/def/method/Theis" xlink:title="Theis method"/>
+			<!-- this is one option to pump test related properties, the other option is to have the procedure above to point to a full SensorML description of the test -->
+			<!-- links to a combo of typical pumptest results -->
+			<om:observedProperty xlink:href="&gwvoc;/def/property/pumpTestProperties" xlink:title="Pump test results"/>
+			<om:featureOfInterest xlink:href="#pump.wit.63" xlink:title="Wit 63 Pump test"/>
+			<om:result>
+				<swe:DataRecord definition="&gwvoc;/def/property/pumpTestProperties" id="le.3">
+					<!-- Since pump test can result in many parameters, better group them in a record -->
+					<swe:field name="transmissivity">
+						<swe:Quantity definition="&gwvoc;/def/phenomenon/groundwaterTransmissivity">
+							<swe:uom code="m^2/d"/>
+							<swe:value>392</swe:value>
+						</swe:Quantity>
+					</swe:field>
+					<swe:field name="storativity">
+						<swe:Quantity definition="&gwvoc;/def/phenomenon/groundwaterStorativity">
+							<swe:uom code="unitless"/>
+							<swe:value>1.6E-04</swe:value>
+						</swe:Quantity>
+					</swe:field>
+				</swe:DataRecord>
+			</om:result>
+		</om:OM_Observation>
+	</sam:relatedObservation>	
+	
+	<!-- ########### Jacob ##################### -->
+	
+		<sam:relatedObservation>
+		<om:OM_Observation gml:id="obs.wik63.4">
+			<om:relatedObservation>
+				<om:ObservationContext>
+					<om:role xlink:href="&gwvoc;/def/role/supportObservation" xlink:title="supporting Observation"/>
+					<!--LINK TO TRANSMISSIVITY IN GWML2 -->
+					<om:relatedObservation xlink:href="http://example.gw.com/observations/00001" xlink:title="Accepted Transmissivity for aquifer"/>
+				</om:ObservationContext>
+			</om:relatedObservation>
+			<!-- this method has storativity -->
+			<om:relatedObservation>
+				<om:ObservationContext>
+					<om:role xlink:href="&gwvoc;/def/role/supportObservation" xlink:title="supporting Observation"/>
+					<!--LINK TO STORATIVITY IN GWML2 -->
+					<om:relatedObservation xlink:href="http://example.gw.com/observations/00002" xlink:title="Accepted Storativity for aquifer"/>
+				</om:ObservationContext>
+			</om:relatedObservation>
+			<!-- same times as the previous Observation, it's not mandatory to do it this way, but it explicitly say it's the SAME time, not times that happen to have the same values -->
+			<om:phenomenonTime xlink:href="#tp.wik63.1"/>
+			<om:resultTime xlink:href="#ti.wik63.1"/>
+			<om:procedure xlink:href="&gwvoc;/def/method/Jacob" xlink:title="Jacob method"/>
+
+
+			<!-- links to a combo of typical pumptest results -->
+			<om:observedProperty xlink:href="&gwvoc;/def/property/pumpTestProperties" xlink:title="Pump test results"/>
+			<om:featureOfInterest xlink:href="#pump.wit.63" xlink:title="Wit 63 Pump test"/>
+			<om:result>
+				<swe:DataRecord definition="&gwvoc;/def/property/pumpTestProperties" id="le.4">
+					<!-- Since pump test can result in many parameters, better group them in a record -->
+					<swe:field name="transmissivity">
+						<swe:Quantity definition="&gwvoc;/def/phenomenon/groundwaterTransmissivity">
+							<swe:uom code="m^2/d"/>
+							<swe:value>385</swe:value>
+						</swe:Quantity>
+					</swe:field>
+					<swe:field name="storativity">
+						<swe:Quantity definition="&gwvoc;/def/phenomenon/groundwaterStorativity">
+							<swe:uom code="unitless"/>
+							<swe:value>1.7E-04</swe:value>
+						</swe:Quantity>
+					</swe:field>
+				</swe:DataRecord>
+			</om:result>
+		</om:OM_Observation>
+	</sam:relatedObservation>	
+	
+		<!-- ########### Jacob ##################### -->
+	
+		<sam:relatedObservation>
+		<om:OM_Observation gml:id="obs.wik63.5">
+			<om:relatedObservation>
+				<om:ObservationContext>
+					<om:role xlink:href="&gwvoc;/def/role/supportObservation" xlink:title="supporting Observation"/>
+					<!--LINK TO TRANSMISSIVITY IN GWML2 -->
+					<om:relatedObservation xlink:href="http://example.gw.com/observations/00001" xlink:title="Accepted Transmissivity for aquifer"/>
+				</om:ObservationContext>
+			</om:relatedObservation>
+			<!-- this method has storativity -->
+			<om:relatedObservation>
+				<om:ObservationContext>
+					<om:role xlink:href="&gwvoc;/def/role/supportObservation" xlink:title="supporting Observation"/>
+					<!--LINK TO STORATIVITY IN GWML2 -->
+					<om:relatedObservation xlink:href="http://example.gw.com/observations/00002" xlink:title="Accepted Storativity for aquifer"/>
+				</om:ObservationContext>
+			</om:relatedObservation>
+			<!-- same times as the previous Observation, it's not mandatory to do it this way, but it explicitly say it's the SAME time, not times that happen to have the same values -->
+			<om:phenomenonTime xlink:href="#tp.wik63.1"/>
+			<om:resultTime xlink:href="#ti.wik63.1"/>
+			<om:procedure xlink:href="&gwvoc;/def/method/Jacob" xlink:title="Jacob method"/>
+
+			<!-- links to a combo of typical pumptest results -->
+			<om:observedProperty xlink:href="&gwvoc;/def/property/pumpTestProperties" xlink:title="Pump test results"/>
+			<om:featureOfInterest xlink:href="#pump.wit.63" xlink:title="Wit 63 Pump test"/>
+			<om:result>
+				<swe:DataRecord definition="&gwvoc;/def/property/pumpTestProperties" id="le.5">
+					<!-- Since pump test can result in many parameters, better group them in a record -->
+					<swe:field name="transmissivity">
+						<swe:Quantity definition="&gwvoc;/def/phenomenon/groundwaterTransmissivity">
+							<swe:uom code="m^2/d"/>
+							<swe:value>370</swe:value>
+						</swe:Quantity>
+					</swe:field>
+					<swe:field name="storativity">
+						<swe:Quantity definition="&gwvoc;/def/phenomenon/groundwaterStorativity">
+							<swe:uom code="unitless"/>
+							<swe:value>14.1E-04</swe:value>
+						</swe:Quantity>
+					</swe:field>
+				</swe:DataRecord>
+			</om:result>
+		</om:OM_Observation>
+	</sam:relatedObservation>	
+	
+		<!-- ########### Jacob ##################### -->
+	
+		<sam:relatedObservation>
+		<om:OM_Observation gml:id="obs.wik63.6">
+			<om:relatedObservation>
+				<om:ObservationContext>
+					<om:role xlink:href="&gwvoc;/def/role/supportObservation" xlink:title="supporting Observation"/>
+					<!--LINK TO TRANSMISSIVITY IN GWML2 -->
+					<om:relatedObservation xlink:href="http://example.gw.com/observations/00001" xlink:title="Accepted Transmissivity for aquifer"/>
+				</om:ObservationContext>
+			</om:relatedObservation>
+			<!-- this method has storativity -->
+			<om:relatedObservation>
+				<om:ObservationContext>
+					<om:role xlink:href="&gwvoc;/def/role/supportObservation" xlink:title="supporting Observation"/>
+					<!--LINK TO STORATIVITY IN GWML2 -->
+					<om:relatedObservation xlink:href="http://example.gw.com/observations/00002" xlink:title="Accepted Storativity for aquifer"/>
+				</om:ObservationContext>
+			</om:relatedObservation>
+			<!-- same times as the previous Observation, it's not mandatory to do it this way, but it explicitly say it's the SAME time, not times that happen to have the same values -->
+			<om:phenomenonTime xlink:href="#tp.wik63.1"/>
+			<om:resultTime xlink:href="#ti.wik63.1"/>
+			<om:procedure xlink:href="&gwvoc;/def/method/Jacob" xlink:title="Jacob method"/>
+
+			<!-- links to a combo of typical pumptest results -->
+			<om:observedProperty xlink:href="&gwvoc;/def/property/pumpTestProperties" xlink:title="Pump test results"/>
+			<om:featureOfInterest xlink:href="#pump.wit.63" xlink:title="Wit 63 Pump test"/>
+			<om:result>
+				<swe:DataRecord definition="&gwvoc;/def/property/pumpTestProperties" id="le.6">
+					<!-- Since pump test can result in many parameters, better group them in a record -->
+					<swe:field name="transmissivity">
+						<swe:Quantity definition="&gwvoc;/def/phenomenon/groundwaterTransmissivity">
+							<swe:uom code="m^2/d"/>
+							<swe:value>437</swe:value>
+						</swe:Quantity>
+					</swe:field>
+					<swe:field name="storativity">
+						<swe:Quantity definition="&gwvoc;/def/phenomenon/groundwaterStorativity">
+							<swe:uom code="unitless"/>
+							<swe:value>1.7E-04</swe:value>
+						</swe:Quantity>
+					</swe:field>
+				</swe:DataRecord>
+			</om:result>
+		</om:OM_Observation>
+	</sam:relatedObservation>	
+	
+	<!-- #################################################
+This is where the "raw" data is, the time serie in WaterML 2.0 -->
+
+
+<sam:relatedObservation>
+<om:OM_Observation gml:id="obs.wit63.data1" xmlns:wml2="http://www.opengis.net/waterml/2.0">
+<gml:description>Data taken from Kruseman &amp; deRitter 2000, p. 59</gml:description>
+	<om:phenomenonTime xlink:href="#tp.wik63.1"/>
+	<om:resultTime xlink:href="#ti.wik63.1"/>
+	<procedure xlink:href="urn:ogc:object:feature:Sensor:gwprobe" xmlns="http://www.opengis.net/om/2.0"/>
+	<om:observedProperty xlink:href="urn:ogc:def:phenomenon:OGC:1.0.30:groundwaterdepth" xlink:title="groundwater depth from surface"/>
+	<om:featureOfInterest xlink:href="http://example.gw.com/samplingFeature/WellWit63h30" xlink:title="Observation well h30"/>
+	<om:result>
+		<wml2:MeasurementTimeSeries gml:id="ts1">
+			<wml2:metadata>
+				<wml2:MeasurementTimeseriesMetadata>
+					<wml2:temporalExtent xlink:href="#tp.wik63.1"/>
+					<wml2:cumulative>false</wml2:cumulative>
+				</wml2:MeasurementTimeseriesMetadata>
+			</wml2:metadata>
+			<wml2:defaultPointMetadata>
+				<wml2:DefaultTVPMeasurementMetadata>
+					<wml2:uom code="m" xlink:href="http://www.opengis.net/def/uom/UCUM/0/m" xlink:title="depth"/>
+				</wml2:DefaultTVPMeasurementMetadata>
+			</wml2:defaultPointMetadata>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:00:00</wml2:time>
+					<wml2:value>0</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:00:06</wml2:time>
+					<wml2:value>0.04</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:00:15</wml2:time>
+					<wml2:value>0.08</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:00:30</wml2:time>
+					<wml2:value>0.13</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:00:42</wml2:time>
+					<wml2:value>0.18</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:01:00</wml2:time>
+					<wml2:value>0.23</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:01:24</wml2:time>
+					<wml2:value>0.28</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:01:54</wml2:time>
+					<wml2:value>0.33</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:02:20</wml2:time>
+					<wml2:value>0.36</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:02:48</wml2:time>
+					<wml2:value>0.39</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:03:22</wml2:time>
+					<wml2:value>0.42</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:04:00</wml2:time>
+					<wml2:value>0.45</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:05:21</wml2:time>
+					<wml2:value>0.5</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:06:48</wml2:time>
+					<wml2:value>0.54</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:08:18</wml2:time>
+					<wml2:value>0.57</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:08:42</wml2:time>
+					<wml2:value>0.58</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:10:00</wml2:time>
+					<wml2:value>0.6</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:13:06</wml2:time>
+					<wml2:value>0.64</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:18:00</wml2:time>
+					<wml2:value>0.68</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:27:00</wml2:time>
+					<wml2:value>0.742</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:33:00</wml2:time>
+					<wml2:value>0.753</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:41:00</wml2:time>
+					<wml2:value>0.779</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:48:00</wml2:time>
+					<wml2:value>0.793</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T13:59:00</wml2:time>
+					<wml2:value>0.819</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T14:20:00</wml2:time>
+					<wml2:value>0.855</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T14:35:00</wml2:time>
+					<wml2:value>0.5873</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T15:19:00</wml2:time>
+					<wml2:value>0.915</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T16:01:00</wml2:time>
+					<wml2:value>0.935</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T17:05:00</wml2:time>
+					<wml2:value>0.966</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T18:00:00</wml2:time>
+					<wml2:value>0.99</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T19:00:00</wml2:time>
+					<wml2:value>1.007</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T21:00:00</wml2:time>
+					<wml2:value>1.05</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-01T23:00:00</wml2:time>
+					<wml2:value>1.053</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-02T01:08:00</wml2:time>
+					<wml2:value>1.072</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+			<wml2:point>
+				<wml2:MeasurementTVP>
+					<wml2:time>1963-07-02T02:50:00</wml2:time>
+					<wml2:value>1.088</wml2:value>
+				</wml2:MeasurementTVP>
+			</wml2:point>
+		</wml2:MeasurementTimeSeries>
+	</om:result>
+</om:OM_Observation>
+</sam:relatedObservation>
+
+
+
+<sam:relatedObservation>
+<om:OM_Observation gml:id="obs.wit63.data2" xmlns:wml2="http://www.opengis.net/waterml/2.0">
+<gml:description>Data taken from Kruseman &amp; deRitter 2000, p. 59</gml:description>
+	<om:phenomenonTime xlink:href="#tp.wik63.1"/>
+	<om:resultTime xlink:href="#ti.wik63.1"/>
+	<procedure xlink:href="urn:ogc:object:feature:Sensor:gwprobe" xmlns="http://www.opengis.net/om/2.0"/>
+	<om:observedProperty xlink:href="urn:ogc:def:phenomenon:OGC:1.0.30:groundwaterdepth" xlink:title="groundwater depth from surface"/>
+	<om:featureOfInterest xlink:href="http://example.gw.com/samplingFeature/WellWit63h90" xlink:title="Observation well h90"/>
+	<om:result>
+		<wml2:MeasurementTimeSeries gml:id="ts2">
+			<wml2:metadata>
+				<wml2:MeasurementTimeseriesMetadata>
+					<wml2:temporalExtent xlink:href="#tp.wik63.1"/>
+					<wml2:cumulative>false</wml2:cumulative>
+				</wml2:MeasurementTimeseriesMetadata>
+			</wml2:metadata>
+			<wml2:defaultPointMetadata>
+				<wml2:DefaultTVPMeasurementMetadata>
+					<wml2:uom code="m" xlink:href="http://www.opengis.net/def/uom/UCUM/0/m" xlink:title="depth"/>
+				</wml2:DefaultTVPMeasurementMetadata>
+			</wml2:defaultPointMetadata>
+			<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:00:00</wml2:time><wml2:value>0</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:01:30</wml2:time><wml2:value>0.015</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:02:00</wml2:time><wml2:value>0.021</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:02:10</wml2:time><wml2:value>0.023</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:02:40</wml2:time><wml2:value>0.044</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:03:00</wml2:time><wml2:value>0.054</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:03:30</wml2:time><wml2:value>0.075</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:04:00</wml2:time><wml2:value>0.09</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:04:20</wml2:time><wml2:value>0.105</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:05:30</wml2:time><wml2:value>0.133</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:06:00</wml2:time><wml2:value>0.153</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:07:30</wml2:time><wml2:value>0.178</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:09:00</wml2:time><wml2:value>0.206</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:13:00</wml2:time><wml2:value>0.25</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:15:00</wml2:time><wml2:value>0.275</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:18:00</wml2:time><wml2:value>0.305</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:25:00</wml2:time><wml2:value>0.348</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:30:00</wml2:time><wml2:value>0.364</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:40:00</wml2:time><wml2:value>0.404</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:53:00</wml2:time><wml2:value>0.429</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T14:00:00</wml2:time><wml2:value>0.444</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T14:15:00</wml2:time><wml2:value>0.467</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T14:30:00</wml2:time><wml2:value>0.494</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T14:45:00</wml2:time><wml2:value>0.507</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T15:00:00</wml2:time><wml2:value>0.528</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T15:30:00</wml2:time><wml2:value>0.55</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T16:00:00</wml2:time><wml2:value>0.569</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T17:08:00</wml2:time><wml2:value>0.593</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T18:01:00</wml2:time><wml2:value>0.614</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T19:03:00</wml2:time><wml2:value>0.636</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T20:02:00</wml2:time><wml2:value>0.657</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T22:02:00</wml2:time><wml2:value>0.679</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T23:02:00</wml2:time><wml2:value>0.688</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-02T00:20:00</wml2:time><wml2:value>0.701</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-02T02:05:00</wml2:time><wml2:value>0.718</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-02T03:05:00</wml2:time><wml2:value>0.716</wml2:value></wml2:MeasurementTVP></wml2:point>
+		</wml2:MeasurementTimeSeries>
+	</om:result>
+</om:OM_Observation>
+</sam:relatedObservation>
+
+
+<sam:relatedObservation>
+<om:OM_Observation gml:id="obs.wit63.data3" xmlns:wml2="http://www.opengis.net/waterml/2.0">
+<gml:description>Data taken from Kruseman &amp; deRitter 2000, p. 59</gml:description>
+	<om:phenomenonTime xlink:href="#tp.wik63.1"/>
+	<om:resultTime xlink:href="#ti.wik63.1"/>
+	<procedure xlink:href="urn:ogc:object:feature:Sensor:gwprobe" xmlns="http://www.opengis.net/om/2.0"/>
+	<om:observedProperty xlink:href="urn:ogc:def:phenomenon:OGC:1.0.30:groundwaterdepth" xlink:title="groundwater depth from surface"/>
+	<om:featureOfInterest xlink:href="http://example.gw.com/samplingFeature/WellWit63h215" xlink:title="Observation well h215"/>
+	<om:result>
+		<wml2:MeasurementTimeSeries gml:id="ts3">
+			<wml2:metadata>
+				<wml2:MeasurementTimeseriesMetadata>
+					<wml2:temporalExtent xlink:href="#tp.wik63.1"/>
+					<wml2:cumulative>false</wml2:cumulative>
+				</wml2:MeasurementTimeseriesMetadata>
+			</wml2:metadata>
+			<wml2:defaultPointMetadata>
+				<wml2:DefaultTVPMeasurementMetadata>
+					<wml2:uom code="m" xlink:href="http://www.opengis.net/def/uom/UCUM/0/m" xlink:title="depth"/>
+				</wml2:DefaultTVPMeasurementMetadata>
+			</wml2:defaultPointMetadata>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T13:00:00</wml2:time><wml2:value>0</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T14:06:00</wml2:time><wml2:value>0.089</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T15:07:00</wml2:time><wml2:value>0.138</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T16:05:00</wml2:time><wml2:value>0.165</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T17:11:00</wml2:time><wml2:value>0.186</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T18:05:00</wml2:time><wml2:value>0.196</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T19:06:00</wml2:time><wml2:value>0.207</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T20:10:00</wml2:time><wml2:value>0.214</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-01T23:06:00</wml2:time><wml2:value>0.227</wml2:value></wml2:MeasurementTVP></wml2:point>
+<wml2:point><wml2:MeasurementTVP><wml2:time>1963-07-02T02:00:00</wml2:time><wml2:value>0.25</wml2:value></wml2:MeasurementTVP></wml2:point>
+		</wml2:MeasurementTimeSeries>
+	</om:result>
+</om:OM_Observation>
+</sam:relatedObservation>
+
+	<!-- ******************************************
+Sampling features relevant to this test and their role.  They can also be found in the Observation section, but their role are defined here -->
+
+
+			
+			
+	<sam:relatedSamplingFeature>
+		<sam:SamplingFeatureComplex>
+		<!-- this one is the pumping well -->
+			<sam:role xlink:href="&gwvoc;/def/role/testFeature" xlink:title="Well that is being pumped"/>
+			<sam:relatedSamplingFeature xlink:href="http://example.gw.com/samplingFeature/WellWit63"/>
+		</sam:SamplingFeatureComplex>
+	</sam:relatedSamplingFeature>
+	
+	<!-- those are the obs wells -->
+	
+	<sam:relatedSamplingFeature>
+		<sam:SamplingFeatureComplex>
+			<sam:role xlink:href="&gwvoc;/def/role/observationFeature" xlink:title="Well at which the observation was done"/>
+			<sam:relatedSamplingFeature xlink:href="http://example.gw.com/samplingFeature/WellWit63h215"/>
+		</sam:SamplingFeatureComplex>
+	</sam:relatedSamplingFeature>	
+	
+	<sam:relatedSamplingFeature>
+		<sam:SamplingFeatureComplex>
+			<sam:role xlink:href="&gwvoc;/def/role/observationFeature" xlink:title="Well at which the observation was done"/>
+			<sam:relatedSamplingFeature xlink:href="http://example.gw.com/samplingFeature/WellWit63h90"/>
+		</sam:SamplingFeatureComplex>
+	</sam:relatedSamplingFeature>	
+	
+		<sam:relatedSamplingFeature>
+		<sam:SamplingFeatureComplex>
+			<sam:role xlink:href="&gwvoc;/def/role/observationFeature" xlink:title="Well at which the observation was done"/>
+			<sam:relatedSamplingFeature xlink:href="http://example.gw.com/samplingFeature/WellWit63h08"/>
+		</sam:SamplingFeatureComplex>
+	</sam:relatedSamplingFeature>	
+	
+	<sam:relatedSamplingFeature>
+		<sam:SamplingFeatureComplex>
+			<sam:role xlink:href="&gwvoc;/def/role/observationFeature" xlink:title="Well at which the observation was done"/>
+			<sam:relatedSamplingFeature xlink:href="http://example.gw.com/samplingFeature/WellWit63h30"/>
+		</sam:SamplingFeatureComplex>
+	</sam:relatedSamplingFeature>	
+	
+	<sam:parameter>
+				<om:NamedValue>
+					<om:name xlink:href="&gwvoc;/def/properties/pumpingRate" xlink:title="pumping rate"/>
+					<!-- made up this value, did not find it in the document -->
+					<om:value xsi:type="gml:MeasureType" uom="l/m">10</om:value>
+				</om:NamedValue>
+			</sam:parameter>
+			
+	<sf:shape>
+		<gml:Polygon gml:id="wit3.location.1">
+			<gml:exterior>
+				<gml:LinearRing>
+					<!-- create a 1 x 1 degree box around the collection of wells -->
+					<gml:posList srsDimension="2" srsName="epsg:4326">3.00 52.00 4.00 52.00 4.00 51.00 3.00 51.00 3.00 52.00</gml:posList>
+				</gml:LinearRing>
+			</gml:exterior>
+		</gml:Polygon>
+	</sf:shape>
+	
+</gwml2at:GW_AquiferTest>

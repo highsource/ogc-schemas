@@ -1,0 +1,1609 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="Stylesheet/Vector_Attributes.xsl"?>
+<Vector_Attributes
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.opengis.net/cdb/1.0/Vector_Attributes"
+  xsi:schemaLocation="http://www.opengis.net/cdb/1.0/Vector_Attributes http://schemas.opengis.net/cdb/1.0/Vector_Attributes.xsd"
+  version="3.2">
+
+  <Attributes>
+  
+    <Attribute code="1" symbol="AEAC" deprecated="true">
+      <Name>ATARS Extended Attribute Code</Name>
+      <Description>
+        A unique numeric identifier that points to the entry number of the ATARS Extended Attribution file for the current dataset.
+        This entry is provided for legacy database generation facility considerations only; CDB-compliant devices are not required to read and interpret this field.
+        The ATARS Extended Attribution file should be located in the same directory as the instance-level attribution file.
+        An empty AEAC field (i.e., null string) is allowed.
+        Refer to Section 3.6.6, Tiled Datasets Folder Hierarchical Organization for the file naming conventions of vector datasets.
+        NOTE: The AEAC is attribute is deprecated as a result of the more comprehensive Extended-level attribution schema introduced in version 3.1 of the CDB Specification.
+      </Description>
+      <Level>
+        <Instance>Supported</Instance>
+        <Class>Supported</Class>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999999999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="2" symbol="AHGT">
+      <Name>Absolute Height Flag</Name>
+      <Description>
+        Indicates how to interpret the Z component of a vertex.
+        If AHGT is true, the feature is positioned to the value specified by the Z component (Absolute Terrain Altitude), irrelevant of the terrain elevation dataset.
+        If AHGT is false or not present, the feature is positioned to the value specified by the underlying terrain offset by the Z component value.
+        Refer to section 5.6.1.1, ShapeFile Type Usage and Conventions for more details.
+        AHGT can be present only in datasets using PointZ, PolylineZ, PolygonZ and MultiPointZ Shape types.
+        AHGT should not be present for all other Shape types or must be ignored otherwise.
+        Refer to Appendix A – "How to Interpret the AHGT, HGT, BSR, BBH, and Z Attributes" for additional usage guidelines.
+        NOTE: It is recommended that the AHGT flag be set to false because it facilitates the creation of CDB datasets that are independent of each others.
+        When the Z coordinate (altitude) of a feature is relative to the ground, the terrain elevation dataset can be updated without the need to recompute the altitude of the feature.
+        CAUTION: When the AHGT flag is set to true, the feature will be at a fixed WGS-84 elevation independently of the terrain LOD selected by the client-device.
+        As a result, there is no guarantee that the feature (and its modeled representation) will remain above the terrain skin across all terrain LODs.
+        RECOMMENDATION: Limit the use of AHGT=TRUE to data whose source is inherently absolute.
+        Such source data include geodetic marks or survey marks that provide a known position in terms of latitude, longitude, and altitude.
+        Good examples of such markers are boundary markers between countries.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Not Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Boolean</Type>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="3" symbol="AO1">
+      <Name>Angle of Orientation with greater than 1 degree resolution</Name>
+      <Description>
+        The angular distance measured from true north (0 deg) clockwise to the major (Y) axis of the feature.
+        If the feature is square, the axis 0 through 89.999 deg shall be recorded.
+        If the feature is circular, 360.000 deg shall be recorded.
+        Recommended Usage. CDB readers should default to a value of 0.000 if AO1 is missing.
+        Applicable to Point, Light Point, Moving Model Location and Figure Point features.
+        When used in conjunction with the PowerLine dataset, AO1 corresponds to the orientation of the Y-axis of the modeled pylon.
+        The modeled pylon should be oriented (in its local Cartesian space) so that the wires nominally attach along the Y-axis.
+        Refer to Appendix A – “Creating a 3D Model for a Powerline Pylon” for additional usage guidelines.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Floating-Point</Format>
+        <Precision>3.3</Precision>
+        <Range interval="Right-Open">
+          <Min>0</Min>
+          <Max>360</Max>
+        </Range>
+        <Unit>2</Unit>
+      </Value>
+    </Attribute>
+  
+    <Attribute code="4" symbol="APFN" deprecated="true">
+      <Name>Airport Feature Name</Name>
+      <Description>...</Description>
+      <Level>
+        <Class>Deprecated</Class>
+        <Extended>Preferred</Extended>
+      </Level>
+      <Value>
+        <Type>Text</Type>
+        <Length>24</Length>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="5" symbol="APID">
+      <Name>AirPort ID</Name>
+      <Description>
+        A unique alphanumeric identifier that points to a record in the NavData Airport or Heliport dataset (i.e., a link to the Airport or the Heliport description in the NavData dataset).
+        This ID is the value of the field Ident of the Airport or Heliport dataset.
+        Note that all of the lights located in list-organized datasets that are associated with the operation of an airport (including runway lights and lighting systems) are required to reference an airport or heliport in the NavData dataset.
+        All man-made features associated with an airport or heliport must be assigned an APID attribute; the APID attribute is not required for features unrelated to airports or heliports.
+        Usage Note: Recommended for all Airport Light Points and airport-related i2DModels (such as runway/taxiway/apron surfaces, and markings).
+        Failure to appropriately tag airport culture with APID attribute will result in reduced control of airport-related culture by simulator.
+        Optional for Location Points, Environmental Light Points, and Moving Model Location features that fall within the confines of an airport and for which control of the feature is desirable.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Text</Type>
+        <Length>6</Length>
+      </Value>
+    </Attribute>
+  
+    <Attribute code="6" symbol="BBH">
+      <Name>Bounding Box Height</Name>
+      <Description>
+        The Height/Width/Length of the Bounding Box of the 3D model associated with a point feature.
+        It is the dimension of the box centered at the model origin and that bounds the portion of the model above its XY plane,
+        including the envelopes of all articulated parts.
+        BBH refers to height of the box above the XY plane of the model,
+        BBW refers to the width of the box along the X-axis,
+        and BBL refers to the length of the box along the Y-axis.
+        Note that for 3D models used as cultural features, the XY plane of the model corresponds to its ground reference plane.
+        The value of BBH, BBW and BBL should be accounted for by client-devices (in combination with other information)
+        to determine the appropriate distance at which the model should be paged-in, rendered or processed.
+        BBH, BBW and BBL are usually generated through database authoring tool automation.
+        Optional on features for which a MODL has been assigned.
+        When missing, CDB readers should default BBH to the value of BSR, and BBW and BBL to twice the value of BSR.
+        The dimension of the bounding box is intrinsic to the model and identical for all LOD representations.
+        Refer to Appendix A – "How to Interpret the AHGT, HGT, BSR, BBH, and Z Attributes" for additional usage guidelines.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Floating-Point</Format>
+        <Precision>5.3</Precision>
+        <Range interval="Open">
+          <Min>0</Min>
+          <Max>100000</Max>
+        </Range>
+        <Unit>1</Unit>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="7" symbol="BBW">
+      <Name>Bounding Box Width</Name>
+      <Description>
+        The width of a feature.
+        See BBH for a complete description.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Floating-Point</Format>
+        <Precision>5.3</Precision>
+        <Range interval="Open">
+          <Min>0</Min>
+          <Max>100000</Max>
+        </Range>
+        <Unit>1</Unit>
+      </Value>
+    </Attribute>
+        
+    <Attribute code="8" symbol="BBL">
+      <Name>Bounding Box Length</Name>
+      <Description>
+        The length of a feature.
+        See BBH for a complete description.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Floating-Point</Format>
+        <Precision>5.3</Precision>
+        <Range interval="Open">
+          <Min>0</Min>
+          <Max>100000</Max>
+        </Range>
+        <Unit>1</Unit>
+      </Value>
+    </Attribute>
+
+    <Attribute code="9" symbol="BOTY">
+      <Name>Boundary Type</Name>
+      <Description>
+        A value that uniquely attributes a boundary according to the enumerators found here.
+        Usage Note: Optional. See table 5-29 for a list of accepted values.
+        Can be used only with Boundary Point, Lineal or Areal Feature Datasets (which are part of the Geopolitical Datasets)
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="10" symbol="BSR">
+      <Name>Bounding Sphere Radius</Name>
+      <Description>
+        The radius of a feature.
+        In the case where a feature references an associated 3D model,
+        it is the radius of the hemisphere centered at the model origin and that bounds the portion of the model above its XY plane,
+        including the envelopes of all articulated parts.
+        Note that for 3D models used as cultural features, the XY plane of the model corresponds to its ground reference plane.
+        The value of BSR should be accounted for by client-devices (in combination with other information)
+        to determine the appropriate distance at which the model should be paged-in, rendered or processed.
+        When the feature does not reference a 3D model, BSR is the radius of the abstract point representing the feature (e.g., a city).
+        Usage Note:
+        Mandatory for features for which a MODL has been assigned, but optional for geopolitical point features.
+        The dimension of the bounding sphere is intrinsic to the model and identical for all LOD representations.
+        Refer to Appendix A – "How to Interpret the AHGT, HGT, BSR, BBH, and Z Attributes" for additional usage guidelines.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Floating-Point</Format>
+        <Precision>5.3</Precision>
+        <Range interval="Open">
+          <Min>0</Min>
+          <Max>100000</Max>
+        </Range>
+        <Unit>1</Unit>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="11" symbol="CEAI">
+      <Name>CDB Extended Attribute Index</Name>
+      <Description>
+        An index that points to a row entry of a CDB Extended Attribution file for the current dataset.
+        This entry permits users to store an index to a link list set of CDB-specific attributes.
+        CDB-compliant devices must be capable of reading and interpreting this field.
+        Usage of this attribution is not portable to other simulators because it falls outside of the documented CDB attribution scheme.
+        The CDB Extended Attribution file should be located in the same directory as the instance-level attribution file.
+        An empty CEAI attribute is allowed. Note that the first entry in the CDB Extended Attribution file has an index of 1.
+        Usage Note: Optional. Use when CDB extended attribution is required. A “blank” or a value of 0 indicates that there are no CDB Extended attributes.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Not Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>1</Min>
+          <Max>999999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="12" symbol="CEAC" deprecated="true">
+      <Name>CDB Extended Attribute Code</Name>
+      <Description>
+        A unique numeric identifier that points to the entry number of a CDB Extended Attribution file for the current dataset.
+        This entry permits users to store a link to a set of CDB-specific attributes beyond those explicitly supported by the current version of this Specification.
+        CDB-compliant devices may optionally read and interpret this field due to program requirements that cannot be supported by the current version of the CDB.
+        Usage of this attribution is not portable to other simulators because it falls outside of the documented CDB attribution scheme.
+        The CDB Extended Attribution file should be located in the same directory as the instance-level attribution file.
+        An empty CEAC field is allowed.
+        Refer to Section 3.6.6, Tiled Datasets Folder Hierarchical Organization for the file naming conventions of vector datasets.
+        NOTE: The CEAC attribute is deprecated as a result of the more comprehensive Extended-level attribution schema introduced in version 3.1 of the CDB Specification.
+      </Description>
+      <Level>
+        <Instance>Deprecated</Instance>
+        <Class>Deprecated</Class>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999999999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="13" symbol="CMIX">
+      <Name>Composite Material Index</Name>
+      <Description>
+        Index into the Composite Material Table is used to determine the Base Materials composition of the associated feature.
+        Refer to Section 2.5, Material Naming Conventions for a description on material naming conventions.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="14" symbol="CNAM">
+      <Name>Class Name</Name>
+      <Description>
+        A name that represents the Attribution Class.
+        The class-level attribution schema is described in Section 5.6.1.2.7.2, Class-level Schema.
+        Attributes are referenced via this classname.
+        The classname is used as the primary key to perform searches within the Dataset Class Attribute file.
+        Each row of a class-level *.dbf ShapeFile must have a valid CNAM entry; the CNAM must be unique within the file.
+        Each row of an instance-level *.dbf can optionally use the CNAM to refer to class attributes; blank indicates “no class attribute”.
+      </Description>
+      <Level>
+        <Instance>Supported</Instance>
+        <Class>Supported</Class>
+        <Extended>Not Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Text</Type>
+        <Length>32</Length>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="67" symbol="DAMA">
+      <Name>Damage Level</Name>
+      <Description>
+        Represents the level of damage of the feature and its model.
+        The level is expressed as a percentage where 0% means no damage at all and 100% means fully damaged and completely destroyed.
+        In the case of network datasets, the level of damage shall be interpreted as a measure of the incapacity of the feature to perform its function.
+        For instance, a road network whose damage level is 75% tells the client that it is only able to perform 25% of its intended function.
+        As a result, a client may decide that it cannot use the road network while another client may continue to do so.
+        
+        In the context of HLA/DIS, the concept of DAMA maps directly to the concepts of Damage State for which the standards define 4 states named No Damage, Slight Damage, Moderate Damage, and Destroyed.
+        The Specification suggests the following mapping between CDB and HLA/DIS.
+        
+        From CDB to HLA/DIS,
+        if DAMA &lt; 25 then State = No Damage;
+        else if DAMA &lt; 50 then State = Slight Damage;
+        else if DAMA &lt; 75 then State = Moderate Damage;
+        else State = Destroyed.
+        
+        From HLA/DIS to CDB,
+        if State = Destroyed then DAMA = 100;
+        else if State = Moderate Damage then DAMA = 66;
+        else if State = Slight Damage then DAMA = 33;
+        else DAMA = 0.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>100</Max>
+        </Range>
+        <Unit>7</Unit>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="15" symbol="DEAC" deprecated="true">
+      <Name>DIGEST Extended Attribute Code</Name>
+      <Description>
+        A unique numeric identifier that points to the entry number of the DIGEST Extended Attribution file for the current dataset.
+        This entry is provided for legacy database generation facility considerations only; it provides a means for the CDB to act as a repository for legacy DIGEST attribution.
+        CDB-compliant devices are not required to read and interpret this field.
+        The DIGEST Extended Attribution file should be located in the same directory as the instance-level attribution file.
+        An empty DEAC field (i.e., null string) is allowed.
+        Refer to Section 3.6.6, Tiled Datasets Folder Hierarchical OrganizationDirectory for the file naming conventions of vector datasets.
+        Usage Note: Optional. Use when DIGEST extended attribution is required.
+        NOTE: The DEAC attribute is deprecated as a result of the more comprehensive Extended-level attribution schema introduced in version 3.1 of the CDB Specification.
+      </Description>
+      <Level>
+        <Instance>Deprecated</Instance>
+        <Class>Deprecated</Class>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999999999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="16" symbol="DEP">
+      <Name>Depth below Surface Level</Name>
+      <Description>
+        Distance measured from the highest point at surface level to the lowest point of the feature below the surface.
+        Recorded values are positive numbers.
+        In the case of hydrographic lineal feature, DEPth refers to the depth of rivers, lakes, etc.
+        This data is typically used by client-device that needs to determine whether a waterway is navigable by ships/boats with a specific draw.
+        Usage Note: Mandatory. Applicable to lineal features with depth, especially for HydrographyNetwork Dataset features.
+        Not applicable to features that are intrinsically above ground.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Floating-Point</Format>
+        <Precision>5.3</Precision>
+        <Range interval="Open">
+          <Min>0</Min>
+          <Max>100000</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="17" symbol="DIR">
+      <Name>Directivity</Name>
+      <Description>
+        The side or sides of a feature that has the greatest reflectivity potential.
+        This data is typically needed for Radar simulation.
+        DIR is used solely for lineal features in accordance to DFAD conventions.
+        Value of 1 means Uni-directional, 2 means Bi-directional, and 3 means Omni-directional.
+        If DIR is not equal to 3, then AO1 is the angular distance measured from true north (0 deg) clockwise to the reflective side of the feature.
+        Usage Note: Recommended for lineal features. If absent, client-devices are required to default to a value of 3 – Omni-directional.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="18" symbol="DML">
+      <Name>Density Measure (% light cover)</Name>
+      <Description>
+        Percentage light coverage at night (expressed as a percentage) within the area of delimited by an areal feature.
+        Usage Note: Recommended. Applies to Geopolitical Dataset areal features that delineate inhabited areas.
+        If this field is absent, client-devices shall assume 0%.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>100</Max>
+        </Range>
+        <Unit>7</Unit>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="19" symbol="DMR">
+      <Name>Density Measure (% roof cover)</Name>
+      <Description>
+        Roof cover measure by percent within area of feature.
+        Usage Note: Recommended for Areal features.
+        If absent, client-devices shall assume 0%.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>100</Max>
+        </Range>
+        <Unit>7</Unit>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="20" symbol="DMS">
+      <Name>Density Measure (structure count)</Name>
+      <Description>
+        Number of man-made, habitable structures per square kilometer.
+        Usage Note: Recommended for Areal features. If absent, client-devices shall assume 0.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>100000</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="21" symbol="DMT">
+      <Name>Density Measure (% tree/canopy cover)</Name>
+      <Description>
+        Roof cover measure by percent within area of feature.
+        Usage Note: Recommended for Areal features. If absent, client-devices shall assume 0%.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>100</Max>
+        </Range>
+        <Unit>7</Unit>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="22" symbol="EJID">
+      <Name>End Junction ID</Name>
+      <Description>
+        Unique Identification Number that is used to virtually connect the end point of a lineal to another point, lineal or areal feature.
+        Lineal features stored in the same shape file having the same SJID or EJID are connected.
+        Lineal features stored in different shape files having the same SJID or EJID as the JID listed in the corresponding tile 2D relationship file (*.dbf) are connected.
+        Usage Note: Mandatory for all features belonging to Topological Network Datasets.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="23" symbol="FACC">
+      <Name>Feature Attribute Classification Code</Name>
+      <Description>
+        This code used to distinguish and categorize features within a dataset.
+        The enumerated codes are in accordance to DIGEST 2.1.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Text</Type>
+        <Length>5</Length>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="24" symbol="FSC">
+      <Name>FACC Sub Code</Name>
+      <Description>
+        This code, in conjunction with the FACC is used to distinguish and categorize features within a dataset.
+        The enumerated codes are in accordance to Appendix N.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="25" symbol="GAID">
+      <Name>Gate AirPort ID</Name>
+      <Description>
+        A unique alphanumeric identifier (for the airport in question) that points to the IDENT attribute name within the NavData Gate dataset (i.e., a link to the Gate description in the NavData dataset).
+        This ID is the value of the Gate Identifier of the Gate dataset and can be used to extract additional information such as the gate position and bearing.
+        Usage Note: Recommended and Optional usages are per Table 5-37: Allocation of CDB Attributes to Datasets.
+        Typically used (but not limited to) for models such as docking systems, marshallers and other models that are logically associated with a Terminal gate and that require some level of control by the simulation application.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Text</Type>
+        <Length>6</Length>
+      </Value>
+    </Attribute>
+
+    <Attribute code="26" symbol="GEAI">
+      <Name>Geomatics Extended Attribute Index</Name>
+      <Description>
+        An index that points to a row entry of a Geomatics Extended Attribution file for the current dataset.
+        This entry permits users to store an index to a link list set of Geomatics-specific attributes.
+        CDB-compliant devices are not mandated to read and interpret this field.
+        Usage of this attribution is not portable to other simulators because it falls outside of the documented CDB attribution scheme.
+        The Geomatics Extended Attribution file should be located in the same directory as the instance-level attribution file.
+        An empty GEAI attribute is allowed.
+        Note that the first entry in the Geomatics Extended Attribution file has an index of 1.
+        Usage Note: Optional. Use when Geomatics extended attribution is required.
+        A “blank” or a value of 0 indicates that there are no Geomatics Extended attributes.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Not Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>1</Min>
+          <Max>999999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="27" symbol="HGT">
+      <Name>Height above surface level</Name>
+      <Description>
+        Distance measured from the lowest point of the base at ground (non-floating objects) or water level (floating objects downhill side/downstream side) to the tallest point of the feature above the surface.
+        Recorded values are positive numbers.
+        In the case of roads and railroads, HGT corresponds to the elevation of the road/railroad wrt terrain in its immediate vicinity.
+        Usage Note: Mandatory on all Point and Figure Point features for which a MODL has been assigned.
+        Recommended on Lineal features except coastline (coastlines are assumed to be zero).
+        Optional for Airport and Environmental Light Points.
+        Recommended on all areals features.
+        Refer to Appendix A – "How to Interpret the AHGT, HGT, BSR, BBH, and Z Attributes" for additional usage guidelines.
+        Default: Value must be provided for Point and Figure Point features. For the lineal and areal features, a default value of 0.00 should be used.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Floating-Point</Format>
+        <Precision>4.2</Precision>
+        <Range interval="Right-Open">
+          <Min>0</Min>
+          <Max>10000</Max>
+        </Range>
+        <Unit>1</Unit>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="28" symbol="JID">
+      <Name>Junction ID</Name>
+      <Description>
+        Unique Identification Number that is used to virtually connect a point or an areal feature to another point, lineal or areal feature.
+        Features stored in the same shape file having the same JID are connected.
+        Features stored in different shape files having the same JID as the JID listed in the corresponding tile 2D relationship file (*.dbf) are connected.
+        When JID is associated to an areal feature, it necessarily connects to the first point of the areal feature.
+        Usage Note: Mandatory for all features belonging to Topological Network Datasets.
+        Attribute is used in 2D relationship file.
+        Attribute is stored as a character string representing an unsigned 64-bit number, and requires conversion back into numerical representation by client reader.
+        This is due to the 32-bit limitation on integer values within dbf files.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="29" symbol="LACC">
+      <Name>Location Accuracy</Name>
+      <Description>
+        A precision value used to quantify the relative precision of the Location point representing the specific GeoPolitical Location.
+        Usage Note: Optional. See Table 5-30: Location Accuracy Enumeration Values for a list of accepted values.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="30" symbol="LENL">
+      <Name>Length of Lineal</Name>
+      <Description>
+        The length of a lineal.
+        If the feature has been clipped to a tile boundary, the length still gives the initial full length of the object prior to the clipping operation,
+        and if it belonged to a topological network, LENL will represent the distance between the two closest junction points encompassing this lineal segment.
+        Note the Length attribute is not used to define a bounding sphere associated to an object, but rather to provide a weight to the relative length of the
+        lineal as compared to others.
+        Usage Note: Mandatory for all networked lineal features. Length computation should be account for the earth’s curvature.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="31" symbol="LMIX" deprecated="true">
+      <Name>Light Material Index</Name>
+      <Description>
+        Index into the Composite Material Table that is used to determine the Light Material composition of the associated city illumination.
+        Represent the predominant material characterizing the major light attributes of a populated area.
+        Refer to Section 2.5, Material Naming Conventions for a description on material naming conventions.
+        Usage Note: Optional. Applicable to Geopolitical Dataset areal features that delineate inhabited areas.
+        NOTE: The LMIX attribute is deprecated in version 3.1
+      </Description>
+      <Level>
+        <Class>Supported</Class>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="32" symbol="LNAM">
+      <Name>Location Name</Name>
+      <Description>A name that corresponds to a GeoPolitical Location. Usage Note: Optional. Blank indicates "no name".</Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Text</Type>
+        <Length>32</Length>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="33" symbol="LOTY">
+      <Name>Location Type</Name>
+      <Description>
+        A value that uniquely attributes a location feature according to the enumerators found here.
+        Enumeration per Table 5-31: Location Type Enumeration Values.
+        Usage Note: Optional. Applicable to Geopolitical Dataset areal features. See table below for a list of accepted values.
+        Can be used only with Location Point, Lineal or Areal Feature Datasets (which are part of the Geopolitical Datasets).
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="34" symbol="LPH">
+      <Name>Light Phase</Name>
+      <Description>
+        Used for all light types that are periodic in nature (rotating, blink, flashing, etc).
+        The value of LPH controls the phase of the light relative to all other lights that share the same LTYP.
+        All other light characteristics, including frequency and duration are implicitly determined by the LTYP.
+        Usage Note: Optional. In absence of a value, LPH defaults to a value of 0.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="35" symbol="LPN">
+      <Name>Layer Priority Number</Name>
+      <Description>
+        A priority number that establishes the relative priority of overlapping features.
+        LPN establishes the order (starting from 0 for lowest priority) by which overlapping features are processed by client-devices.
+        Usage Note: Mandatory for terrain constraint features that overlap one another.
+        For all other features, it is optional.
+        LPN is derived from priority information stored and maintained by the authoring tools.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>32767</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="36" symbol="LTN">
+      <Name>Lane/Track Number</Name>
+      <Description>
+        The number of lanes on a road, tracks on railroad, or conductors on powerlines, including both directions.
+        Usage Note: Recommended for Road, RailRoad, and Powerline Network features. Optional for Hydrography Network features.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>99</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="37" symbol="LTYP">
+      <Name>Light Type</Name>
+      <Description>
+        A unique code corresponding to a Light Type; Appendix E of this Specification provides the supported light types.
+        The light types follow a hierarchical organization provided by the light type naming conventions described in Section 2.3, Light Naming.
+        The Lights.xml file (located in CDB\Metadata directory of the CDB storage structure) establishes the correspondence between the LTYP code and the Light Type name.
+        Usage Note: Mandatory for all Airport Light Point features, Environmental Light Point features.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>9999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="38" symbol="MLOD">
+      <Name>Model Level Of Detail</Name>
+      <Description>
+        The level of detail of the 3D model associated with the point feature.
+        When used in conjunction with MODL, the MLOD attribute indicates the LOD where the corresponding MODL is found.
+        In this case, the value of MLOD can never be larger than the LOD of the Vector Tile-LOD that contains it.
+        When used in the context of Airport and Environmental Light Point features, the value of MLOD, if present,
+        indicates that this light point also exist in a 3D model found at the specified LOD.
+        In such case, the value of MLOD is not constrained and can indicate any LOD.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>-10</Min>
+          <Max>23</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="39" symbol="MMDC">
+      <Name>Moving Model DIS Code</Name>
+      <Description>
+        A character string composed of the 7 fields of the DIS Entity Type
+        separated by an underscore character (“_”) and formatted like this: 1_2_3_4_5_6_7
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Text</Type>
+        <Length>29</Length>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="40" symbol="MODL">
+      <Name>Model Name</Name>
+      <Description>
+        A string reference, the model name, which stands for the modeled geometry of a feature;
+        in the case of buildings, this includes both its external shell and modeled interior.
+        Usage Note: Needed for Point features, Road Figure Point features, Railroad Figure Point features, Pipeline Figure Point features and Hydrography Figure
+        Point features that are modeled as OpenFlight or as RCS (Shape).
+        MODL can also be used with Road Lineal features, Railroad Lineal features, Pipeline Lineal features and Hydrography Lineal and Areal features.
+        Note that it is not permitted to specify a value for MODL simultaneously with a value for MMDC.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Text</Type>
+        <Length>32</Length>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="41" symbol="MODT">
+      <Name>Model Type</Name>
+      <Description>
+        A flag indicating whether the modeled feature is geo-typical, geo-specific or a Moving Model.
+        Together, the MODT flag, the FACC-FSC, and the MODL model name or the MMDC produce a unique path
+        to a directory within the CDB hierarchy and a unique filename within that directory.
+        Usage Note: Needed for features that are modeled as OpenFlight or as RCS (Shape).
+        "T" for geo-typical, "S" for geo-specific, "M" for Moving Model. Default value is "S" when not present.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Text</Type>
+        <Length>1</Length>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="42" symbol="NCS1">
+      <Name>Network Component Selector 1</Name>
+      <Description>
+        Code that is used to identify the component selector 1 file which contain the point, lineal, or areal feature that is virtually connected.
+        Usage Note: Mandatory for Network datasets. Attribute is used in 2D relationship file.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>9999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="43" symbol="NCS2">
+      <Name>Network Component Selector 2</Name>
+      <Description>
+        Code that is used to identify the component selector 2 file which contain the point, lineal, or areal feature that is virtually connected.
+        Usage Note: Mandatory for Network datasets. Attribute is used in 2D relationship file.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>9999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="44" symbol="NDSC">
+      <Name>Network Dataset Code</Name>
+      <Description>
+        Code that is used to identify the dataset code file which contain the point, lineal, or areal feature that is virtually connected.
+        Usage Note: Mandatory for Network datasets. Attribute is used in 2D relationship file.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>9999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="45" symbol="NIS" deprecated="true">
+      <Name>Number of Instances</Name>
+      <Description>
+        Number of instances found in the 3D model associated with the cultural point feature.
+      </Description>
+      <Level>
+        <Class>Deprecated</Class>
+        <Extended>Preferred</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="46" symbol="NIX" deprecated="true">
+      <Name>Number of Indices</Name>
+      <Description>
+        Number of indices found in the 3D model associated with the cultural point feature.
+      </Description>
+      <Level>
+        <Class>Deprecated</Class>
+        <Extended>Preferred</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="47" symbol="NNL" deprecated="true">
+      <Name>Number of Normals</Name>
+      <Description>
+        Number of normal vectors found in the 3D model associated with the cultural point feature.
+      </Description>
+      <Level>
+        <Class>Deprecated</Class>
+        <Extended>Preferred</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="48" symbol="NTC" deprecated="true">
+      <Name>Number of Texture Coordinates</Name>
+      <Description>
+        Number of texture coordinates found in the 3D model associated with the cultural point feature.
+      </Description>
+      <Level>
+        <Class>Deprecated</Class>
+        <Extended>Preferred</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="49" symbol="NTX" deprecated="true">
+      <Name>Number of Texels</Name>
+      <Description>
+        Number of texels found in the 3D model associated with the cultural point feature.
+      </Description>
+      <Level>
+        <Class>Deprecated</Class>
+        <Extended>Preferred</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999999999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="50" symbol="NVT">
+      <Name>Number of Vertices</Name>
+      <Description>
+        Number of vertices of the 3D model associated with a point feature.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="51" symbol="POPD">
+      <Name>Population Density</Name>
+      <Description>
+        The number of inhabitants per square kilometer.
+        Applicable to Geopolitical features representing inhabited areas.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>99999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="52" symbol="POPT">
+      <Name>Populated Place Type</Name>
+      <Description>
+        A value that uniquely represents the Populated Place Attribution Type.
+        This attribute should be used in conjunction with the BOTY attribute when BOTY has an (enumerator) value of 13 which corresponds to "Populated Place".
+        Usage Note: Optional. Applies to Geopolitical Dataset areal features that delineate inhabited areas. See table below for a list of accepted values.
+        Enumeration per Table 5-32: Populated Place Type Enumeration Values.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="53" symbol="RTAI">
+      <Name>Relative Tactical Importance</Name>
+      <Description>
+        Provides the Relative TActical Importance of moving models or cultural features relative to other features for the purpose of client-device
+        scene/load management. A value of 100% corresponds to the highest importance; a value of 0% corresponds to the lowest importance.
+        When confronted with otherwise identical objects that differ only wrt to their RelativeTActical Importance, client-devices should always discard features
+        with lower importance before those of higher importance in the course of performing their scene / load management function. As a
+        result, a value of zero gives complete freedom to client-devices to discard the feature as soon as the load of the client-device is
+        exceeded. The effectiveness of scene / load management functions can be severely hampered if large quantities of features are assigned
+        the same Relative TActical Importance by the modeler. In effect, if all models are assigned the same value, the client-devices have no
+        means to distinguish tactically important objects from each other. Assigning a value of 1% to all objects is equivalent to assigning
+        them all a value of 99%. Ideally, the assignment of tactical importance to features should be in accordance to a histogram
+        similar to the one shown here. The shape of the curve is not critical, however the proportion of models tagged with a high importance
+        compared to those with low importance is critical in achieving effective scene/load management schemes. It is illustrated here to
+        show that few models should have an importance of 100 with progressively more models with lower importance. The assignment
+        of the RTAI to each feature lends itself to database tools automation. For instance, RTAI could be based on a look-up function which
+        factors the feature’s type (FACC or MMDC). The value of Relative TActical Importance should be accounted for by client-devices
+        (in combination with other information) to determine the appropriate distance at which the model should be rendered or processed.
+        Relative TActical Importance is mandatory. It has no default value.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Not Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>100</Max>
+        </Range>
+        <Unit>7</Unit>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="54" symbol="RWID">
+      <Name>Runway ID</Name>
+      <Description>
+        An alphanumeric identifier that, combined with the APID, points to a unique record in the NavData Runway or Helipad dataset
+        (i.e., a link to the Runway or Helipad description in the NavData dataset).
+        This ID is the value of the field Ident of the Runway or Helipad dataset.
+        Note that all of the lights and other features located in list-organized datasets that are associated with the operation of a
+        runway or helipad are required to reference a runway or helipad in the NavData dataset;
+        the RWID attribute is not required for features unrelated to a runway or helipad.
+        Usage Note: Recommended for all Airport Light Points features.
+        Failure to appropriately tag airport culture with RWID attribute will result in reduced control of runway-related (or helipad)
+        culture by simulator. Optional for Point/Lineal/Areal features, Location Points Features, Environmental Light Point features,
+        and Moving Model Location features that are associated with a runway and for which control of the feature is desirable.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Text</Type>
+        <Length>6</Length>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="55" symbol="SCALx">
+      <Name>Scaling X-Axis</Name>
+      <Description>
+        A set of scaling factors, one of the model axis, to be applied to the rendering of model geometry by the client-device.
+        A value of 1.0 instructs the client-devices to use the model as-is.
+        The physical dimension of models processed by client-device should approach zero, as SCALing tends to zero.
+        The value of SCALing should also be accounted for by client-devices (in combination with other information) to determine
+        the appropriate distance at which the model should be paged-in, rendered or processed. All three SCALing factors are optional.
+        Values of zero and negative values are not permitted.
+        Usage Note: Optional; defaults to a value of 1.0 if SCALx, SCALy, or SCALz is missing.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Floating-Point</Format>
+        <Precision>3.5</Precision>
+        <Range interval="Open">
+          <Min>0</Min>
+          <Max>1000</Max>
+        </Range>
+      </Value>
+    </Attribute>
+
+    <Attribute code="56" symbol="SCALy">
+      <Name>Scaling Y-Axis</Name>
+      <Description>
+        Scale factor to apply to the Y-axis of the model. See SCALx for a detailed description.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Floating-Point</Format>
+        <Precision>3.5</Precision>
+        <Range interval="Open">
+          <Min>0</Min>
+          <Max>1000</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="57" symbol="SCALz">
+      <Name>Scaling Z-Axis</Name>
+      <Description>
+        Scale factor to apply to the Z-axis of the model. See SCALx for a detailed description.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Floating-Point</Format>
+        <Precision>3.5</Precision>
+        <Range interval="Open">
+          <Min>0</Min>
+          <Max>1000</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="58" symbol="SJID">
+      <Name>Start Junction ID</Name>
+      <Description>
+        Unique Identification Number that is used to virtually connect the start point of a lineal to another point, lineal or areal feature.
+        Lineal features stored in the same shape file having the same SJID or EJID are connected.
+        Lineal features stored in different shape files having the same SJID or EJID as the JID listed in the corresponding tile 2D relationship file (*.dbf) are connected.
+        Usage Note: Mandatory for all features belonging to Topological Network Datasets.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Not Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="59" symbol="SRD">
+      <Name>Surface Roughness Description</Name>
+      <Description>
+        Describes the condition of the surface materials that may be used for mobility prediction, construction material, and landing sites.
+        Enumeration per Table 5-33: Surface Roughness Enumeration Values.
+        Usage Note: Recommended for Areal features.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="60" symbol="SSC">
+      <Name>Structure Shape Category</Name>
+      <Description>
+        Describes the Geometric form, appearance, or configuration of the feature.
+        Enumeration per Table 5-34: Structure Shape Category Enumeration Values
+        Usage Note: Recommended for Point features, and all Network Lineal/Areal Figure Points features.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+
+    <Attribute code="61" symbol="SSR">
+      <Name>Structure Shape of Roof</Name>
+      <Description>
+        Describes the roof shape.
+        Enumeration per Table 5-35: Structure Shape of Roof Enumeration Values
+        Usage Note: Recommended for Point features, and all Network Lineal/Areal Point Figures.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="62" symbol="TRF">
+      <Name>Traffic Flow</Name>
+      <Description>
+        Encodes the general destination of traffic.
+        Usage Note: Recommended on all Network Lineal (except PowerLines) features. When absent, client-devices default to a value of 4 (two-way).
+        Default: 004 (for RoadNetwork lineal features), 003 (for RailRoadNetwork lineal features)
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="63" symbol="TXID">
+      <Name>Taxiway ID</Name>
+      <Description>
+        A unique alphanumeric identifier (for the airport in question).
+        Usage Note: Recommended usage and Optional usages are per table Table 5-37: Allocation of CDB Attributes to Datasets.
+        Failure to appropriately tag airport culture with TXID attribute will result in reduced control of taxiway-related culture by a simulation device.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Text</Type>
+        <Length>6</Length>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="64" symbol="USP">
+      <Name>Urban Street Pattern</Name>
+      <Description>
+        Describes the predominant geometric configuration of streets found within the delineated area of the feature.
+        Enumeration per Table 5-36: Urban Street Pattern Enumeration Values.
+        Usage Note: Recommended for Areal features.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>0</Min>
+          <Max>999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="65" symbol="VEAI">
+      <Name>Vendor Extended Attribute Index</Name>
+      <Description>
+        An index that points to a row entry of a VendorExtended Attribution file for the current dataset.
+        This entry permits users to store an index to a link list set of Vendor-specific attributes.
+        CDB-compliant devices are not mandated to read and interpret this field.
+        Usage of this attribution is not portable to other simulators because it falls outside of the documented CDB attribution scheme.
+        The Vendor Extended Attribution file should be located in the same directory as the instance-level attribution file.
+        An empty VEAI attribute is allowed. Note that the first entry in the Vendor Extended Attribution file has an index of 1.
+        Usage Note: Optional. Use when Vendor extended attribution is required. A “blank” or a value of 0 indicates that there are no Vendor Extended attributes.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Not Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Integer</Format>
+        <Range>
+          <Min>1</Min>
+          <Max>999999</Max>
+        </Range>
+      </Value>
+    </Attribute>
+    
+    <Attribute code="66" symbol="WGP">
+      <Name>Width with Greater Than 1 meter Precision</Name>
+      <Description>
+        For lineal features (such as roads, railways, runways, taxiways), WGP is a measurement of the shorter of two linear axes.
+        For a bridge, the width is the measurement perpendicular to the axis between the abutments.
+        For powerlines, the width is the distance between the outermost wires.
+        Usage Note: Recommended on all Network Lineal features.
+      </Description>
+      <Level>
+        <Instance>Preferred</Instance>
+        <Class>Supported</Class>
+        <Extended>Supported</Extended>
+      </Level>
+      <Value>
+        <Type>Numeric</Type>
+        <Format>Floating-Point</Format>
+        <Precision>5.3</Precision>
+        <Range interval="Open">
+          <Min>0</Min>
+          <Max>100000</Max>
+        </Range>
+        <Unit>1</Unit>
+      </Value>
+    </Attribute>
+    
+  </Attributes>
+  
+  <Units>
+  
+    <Unit code="1" symbol="m">
+      <Name>meter</Name>
+      <Description>To measure a length.</Description>
+    </Unit>
+    
+    <Unit code="2" symbol="deg">
+      <Name>degree</Name>
+      <Description>To mesure an angle.</Description>
+    </Unit>
+    
+    <Unit code="3" symbol="rad">
+      <Name>radian</Name>
+      <Description>To mesure an angle.</Description>
+    </Unit>
+    
+    <Unit code="4" symbol="kph">
+      <Name>Kilometer per hour</Name>
+      <Description>To measure a speed.</Description>
+    </Unit>
+    
+    <Unit code="5" symbol="g">
+      <Name>gram</Name>
+      <Description>To measure a mass.</Description>
+    </Unit>
+    
+    <Unit code="6" symbol="s">
+      <Name>second</Name>
+      <Description>To measure time.</Description>
+    </Unit>
+    
+    <Unit code="7" symbol="%">
+      <Name>Percentage</Name>
+      <Description>A value between 0 and 100.</Description>
+    </Unit>
+    
+  </Units>
+  
+  <Scalers>
+  
+    <Scaler code="1" symbol="k">
+      <Name>kilo</Name>
+      <Description>A multiplier: thousand</Description>
+      <Multiplier>1000</Multiplier>
+    </Scaler>
+    
+    <Scaler code="2" symbol="m">
+      <Name>milli</Name>
+      <Description>A divisor: thousandth</Description>
+      <Multiplier>0.001</Multiplier>
+    </Scaler>
+    
+  </Scalers>
+  
+</Vector_Attributes>

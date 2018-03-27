@@ -1,0 +1,592 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="Stylesheet/Base_Material_Table.xsl"?>
+<Base_Material_Table
+  xmlns="http://www.opengis.net/cdb/1.0/Base_Material_Table"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/cdb/1.0/Base_Material_Table http://schemas.opengis.net/cdb/1.0/Base_Material_Table.xsd"
+  version="1.4">
+  <Base_Material>
+    <Name>BM_AIR</Name>
+    <Description>The common name of the atmosphere surrounding the Earth</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ASH</Name>
+    <Description>The solid remains of a fire</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ASH-VOLCANIC</Name>
+    <Description>Volcanic Ash</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ASPHALT</Name>
+    <Description>Asphalt</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_BRICK</Name>
+    <Description>Brick</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_CEMENT</Name>
+    <Description>Cement</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_CINDERS</Name>
+    <Description>Cinders</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_CIRRIPEDIA</Name>
+    <Description>Cirripedia</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_CLAY</Name>
+    <Description>Clay (dry)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_COAL</Name>
+    <Description>Coal</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_COKE</Name>
+    <Description>Coke (Fossil coal charred)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_CONCRETE</Name>
+    <Description>Concrete</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_CONCRETE-PRESTRESSED</Name>
+    <Description>Prestressed Concrete</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_CONCRETE-REINFORCED</Name>
+    <Description>Reinforced Concrete</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_CORAL</Name>
+    <Description>Coral</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_DIATOMS</Name>
+    <Description>Diatoms</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_DRYWALL</Name>
+    <Description>Drywall panel (aka plasterboard)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_EARTHEN</Name>
+    <Description>Baked clay</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_FABRIC</Name>
+    <Description>Cloth, material</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_FIBERBOARD</Name>
+    <Description>Fiberboard panel</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_FIBERGLASS</Name>
+    <Description>Fiber glass</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_FLYSH</Name>
+    <Description>Flysh (sedimentary)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_FOAMBOARD</Name>
+    <Description>A rigid panel of polyurethane foam used for insulation in residential, commercial, and industrial constructions</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_FOLIAGE</Name>
+    <Description>Generic Tree Foliage</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_FOLIAGE-DECIDUOUS</Name>
+    <Description>Leaves of live deciduous trees</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_FOLIAGE-NEEDLES</Name>
+    <Description>Needles of live conifer trees</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_FORAMINIFERA</Name>
+    <Description>Foraminifera</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_FUCUS</Name>
+    <Description>Fucus (seaweed)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_FUR</Name>
+    <Description>Fur</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_GASOLINE</Name>
+    <Description>Gasoline</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_GLASS</Name>
+    <Description>Glass</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_GLASSWOOL</Name>
+    <Description>An insulating material made from fibres of glass arranged using a binder into a texture similar to wool</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_GLOBIGERINA</Name>
+    <Description>Globigerina</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_GROUND-SHELLS</Name>
+    <Description>Ground shells</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ICE</Name>
+    <Description>Ice</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ICE-PERMANENT</Name>
+    <Description>Permanent ice</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_LAND</Name>
+    <Description>Land with unspecified type of vegetation</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_LAND-CEREALS</Name>
+    <Description>Grain field</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_LAND-CULTIVATED</Name>
+    <Description>Cultivated land (vegetables)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_LAND-DRY_GRASS</Name>
+    <Description>Dried grassy land</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_LAND-ERODED</Name>
+    <Description>Eroded land</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_LAND-GRASS</Name>
+    <Description>Grassy land</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_LAND-HIGH_MEADOW</Name>
+    <Description>High vegetation</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_LAND-LOW_MEADOW</Name>
+    <Description>Low vegetation</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_LAND-MAIZE</Name>
+    <Description>Corn field</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_LAND-MARSH</Name>
+    <Description>Marsh land</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_LAND-MOOR</Name>
+    <Description>Temperate climate vegetation</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_LAND-PLOUGHED</Name>
+    <Description>Ploughed land, free of vegetation</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_LAND-UNCULTIVATED</Name>
+    <Description>Uncultivated land (wild vegetation)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_LUMBER</Name>
+    <Description>Plank of wood</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_MACADAM</Name>
+    <Description>Macadam (roadway constructed by compacting into a solid mass of broken stone using cement or asphalt as binder)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_MADREPORES</Name>
+    <Description>Madrepores</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_METAL</Name>
+    <Description>Generic metal</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_METAL-ALUMINIUM</Name>
+    <Description>Aluminium</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_METAL-COPPER</Name>
+    <Description>Copper</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_METAL-GOLD</Name>
+    <Description>Gold</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_METAL-IRON</Name>
+    <Description>Raw iron</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_METAL-LEAD</Name>
+    <Description>Lead</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_METAL-MANGANESE</Name>
+    <Description>Manganese</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_METAL-MATTES</Name>
+    <Description>Mattes (metallic product of the smelting of ores)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_METAL-SCORIA</Name>
+    <Description>Scoria</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_METAL-SILVER</Name>
+    <Description>Silver</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_METAL-SLAG</Name>
+    <Description>Slag (recrement of metal)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_METAL-STEEL</Name>
+    <Description>Steel</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_METAL-URANIUM</Name>
+    <Description>Uranium</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_METAL-ZINC</Name>
+    <Description>Zinc</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_MOISTURE</Name>
+    <Description>Embedded water in porous materials</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_MUSSELS</Name>
+    <Description>Mussels</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_OIL</Name>
+    <Description>Oil</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_OYSTERS</Name>
+    <Description>Oysters</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_PAINT</Name>
+    <Description>Generic paint</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_PAINT-ASPHALT</Name>
+    <Description>Paint applied to asphalt  (highways, runway markings)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_PAINT-CONCRETE</Name>
+    <Description>Paint applied to concrete (typically runway markings)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_PAINT-LATEX</Name>
+    <Description>Latex paint</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_PAINT-OIL</Name>
+    <Description>Oil paint</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_PAPER</Name>
+    <Description>Paper</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_PLASTIC</Name>
+    <Description>Rigid plastic</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_PLYWOOD</Name>
+    <Description>Plywood panel</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_POLYZOA</Name>
+    <Description>Polyzoa</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_PTEROPODS</Name>
+    <Description>Pteropods</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_RADIOACTIVE</Name>
+    <Description>Radioactive material</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_RADIOLARIA</Name>
+    <Description>Radiolaria</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK</Name>
+    <Description>Generic rock</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-BASALT</Name>
+    <Description>Basalt rock (cliffs)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-BEDROCK</Name>
+    <Description>Bedrock</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-BOULDERS</Name>
+    <Description>Boulders</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-CALCAREOUS</Name>
+    <Description>Limestone rock</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-CHALK</Name>
+    <Description>Chalk rock (cliffs)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-DOLOMITE</Name>
+    <Description>Dolomite (magnesium carbonate of lime)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-EVAPORITES</Name>
+    <Description>Evaporites (sedimentary gypsum or rock salt)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-GRANITE</Name>
+    <Description>Granite</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-GRAVEL</Name>
+    <Description>Gravel rock</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-LAVA</Name>
+    <Description>Lava rock</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-MARBLE</Name>
+    <Description>Marble rock</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-PEBBLES</Name>
+    <Description>Pebbles</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-PORPHYRY</Name>
+    <Description>Porphyry rock</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-PUMICE</Name>
+    <Description>Pumice rock</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-QUARTZ</Name>
+    <Description>Quartz rock</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-RUBBLE</Name>
+    <Description>Rubble</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-SANDSTONE</Name>
+    <Description>Sandstone rock</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-SCHIST</Name>
+    <Description>Schist rock</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-SLATE</Name>
+    <Description>Slate rock</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-TAILINGS</Name>
+    <Description>Mine tailings</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-TUFA</Name>
+    <Description>Calcium carbonate limestone</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_ROCK-VOLCANIC</Name>
+    <Description>Volcanic rock</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_RUBBER</Name>
+    <Description>Rubber (tires, coatings)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SALT</Name>
+    <Description>Salt</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SAND</Name>
+    <Description>Sand</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SEA_TANGLE</Name>
+    <Description>Sea Tangle</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SEAWEED</Name>
+    <Description>Seaweed</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SEWAGE</Name>
+    <Description>Sewage</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SHELLS</Name>
+    <Description>Shells</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SHINGLE</Name>
+    <Description>Shingle (tar)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SKIN</Name>
+    <Description>Skin (of living animals or humans)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SNOW</Name>
+    <Description>snow</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SNOW-PERMANENT</Name>
+    <Description>Permanent snow</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SOIL</Name>
+    <Description>Generic soil</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SOIL-CLAY</Name>
+    <Description>Clayey ground</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SOIL-LOESS</Name>
+    <Description>Loess</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SOIL-MARL</Name>
+    <Description>Marl (calcarious earth)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SOIL-OOZE</Name>
+    <Description>Ooze (mud, silt, sludge or slime that flows)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SOIL-PEAT</Name>
+    <Description>Peat moss</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SOIL-SILT</Name>
+    <Description>Silt</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SPICULES</Name>
+    <Description>Spicules</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SPONGE</Name>
+    <Description>Sponge</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SPRAYFOAM</Name>
+    <Description>A mixture of isocyanate and polyol resin forming an expanding foam sprayed onto roof tiles, concrete slabs, into wall cavities, or through holes drilled in into a cavity of a finished wall</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_STONE</Name>
+    <Description>Stone</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_STONE-BRICK</Name>
+    <Description>Brick stone (masonry)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_STONE-COBBLE</Name>
+    <Description>Cobble stone</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_STRAW</Name>
+    <Description>Straw</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_SUGAR</Name>
+    <Description>Sugar</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_TAR</Name>
+    <Description>Tar</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_THATCH</Name>
+    <Description>Grass Thatch</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_TRAVERTINE</Name>
+    <Description>Travertine</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_VACUUM</Name>
+    <Description>The absence, or near absence of air within an enclosed space</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_VEGETATION</Name>
+    <Description>Generic forest vegetation</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_VEGETATION-BRUSH</Name>
+    <Description>Forest brush or undergrowth</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_VEGETATION-DEBRIS</Name>
+    <Description>Natural detritus, dead leaves, small branches</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_WATER</Name>
+    <Description>Water</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_WATER-FRESH</Name>
+    <Description>Fresh water</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_WATER-FRESH-FLOWING</Name>
+    <Description>Fresh water (e.g. rivers)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_WATER-FRESH-STANDING</Name>
+    <Description>Fresh water (e.g. lakes)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_WATER-OCEAN</Name>
+    <Description>Salt water (e.g. oceans, seas)</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_WOOD</Name>
+    <Description>Generic tree trunks and branches</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_WOOD-CONIFER</Name>
+    <Description>Tree trunks, branches of live conifer trees</Description>
+  </Base_Material>
+  <Base_Material>
+    <Name>BM_WOOD-DECIDUOUS</Name>
+    <Description>Trunks, branches of live deciduous trees</Description>
+  </Base_Material>
+</Base_Material_Table>

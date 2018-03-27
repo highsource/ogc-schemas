@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gwml2w:GW_MonitoringSite xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2"
+    gml:id="soe.mon.352271" xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns:sam="http://www.opengis.net/sampling/2.0"
+    xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+    xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/gwml-well/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-well.xsd">
+    <gml:description>state of the environment monitoring well with a depth of 93m</gml:description>
+    <gml:identifier codeSpace="http://www.gns.cri.nz">soe.352271</gml:identifier>
+    <gml:name codeSpace="http://www.gns.cri.nz">352271</gml:name>
+    <gml:location>
+        <gml:Point gml:id="loc.mon.352271" srsDimension="2">
+            <gml:pos>175.25156953952836 -40.575382977771476</gml:pos>
+        </gml:Point>
+    </gml:location>
+    <sam:sampledFeature xsi:nil="true" nilReason="unknown"/>
+    <!-- the vertical line of the monitoring well -->
+    <sams:shape>
+        <gml:Curve gml:id="shape.mon.352271" srsDimension="3"
+            srsName="http://www.opengis.net/def/crs/EPSG/0/4327">
+            <gml:segments>
+                <gml:LineStringSegment>
+                    <gml:posList>175.25156953952836 -40.575382977771476 19.0 175.25156953952836
+                        -40.575382977771476 112.2</gml:posList>
+                </gml:LineStringSegment>
+            </gml:segments>
+        </gml:Curve>
+    </sams:shape>
+    <gwml2w:gwSiteReferenceElevation>
+        <gwml2w:Elevation>
+            <gwml2w:elevation srsDimension="1" srsName="http://www.opengis.net/def/crs/EPSG/0/4440"
+                uomLabels="m NZVD2009">14.295</gwml2w:elevation>
+            <gwml2w:elevationType xlink:href="http://somevocab.org/gwml/2.0/notes"
+                xlink:title="Relative Level Natural Surface"/>
+            <gwml2w:elevationMeasurementMethod xlink:href="http://somevocab.org/gwml/2.0/notes"
+                xlink:title="MeasuredInSitu"/>
+        </gwml2w:Elevation>
+    </gwml2w:gwSiteReferenceElevation>
+    <gwml2w:gwSiteType xlink:href="http://somevocab.org/gwml/2.0/notes" xlink:title="Water well"/>
+</gwml2w:GW_MonitoringSite>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" xmlns:gwml2c="http://www.opengis.net/gwml-constituent/2.2"  xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:gsml="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gsmle="http://www.opengis.net/gsml/4.1/GeoSciML-Extension" xmlns:gsmlga="http://xmlns.geosciml.org/GeologicAge/4.1" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gwml-main/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd" timeStamp="2015-07-17T11:17:00Z" numberMatched="1" numberReturned="1">
+	<!-- Jessica Lucido, U.S. Geological Survey, 2016/05/12 -->
+	<wfs:member>
+		<gwml2:GW_AquiferSystem gml:id="principalaquifer.N100GLCIAL">
+				<gml:metaDataProperty>
+				<gml:GenericMetaData>
+					<gmd:contact>
+						<gmd:CI_ResponsibleParty>
+							<gmd:organisationName>
+								<gco:CharacterString>U.S. Geological Survey</gco:CharacterString>
+							</gmd:organisationName>
+							<gmd:contactInfo>
+								<gmd:CI_Contact>
+									<gmd:address>
+										<gmd:CI_Address>
+											<gmd:administrativeArea>
+												<gco:CharacterString>United States</gco:CharacterString>
+											</gmd:administrativeArea>
+										</gmd:CI_Address>
+									</gmd:address>
+								</gmd:CI_Contact>
+							</gmd:contactInfo>
+							<gmd:role>
+								<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="CI_RoleCode_originator" codeSpace="ISOTC211/19115">originator</gmd:CI_RoleCode>
+							</gmd:role>
+						</gmd:CI_ResponsibleParty>
+					</gmd:contact>
+					<gmd:dateStamp gco:nilReason="unknown"/>
+					<gmd:identificationInfo xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+
+				</gml:GenericMetaData>
+			</gml:metaDataProperty>
+			<gml:description>Principal aquifer from USGS National Water Information System (NWIS) database</gml:description>
+			<!-- NWIS - <gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://water.usgs.gov/groundwater/feature/principalaquifer/[Nat_Aqfr.Nat_Aqfr_Cd]</gml:identifier> -->
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://water.usgs.gov/groundwater/feature/principalaquifer/N100GLCIAL</gml:identifier>
+			<!-- NWIS - <gml:name codeSpace="https://water.usgs.gov/groundwater/nwis/principalaquifername">[Nat_Aqfr.Nat_Aqfr_Nm]</gml:name> -->
+			<gml:name codeSpace="https://water.usgs.gov/groundwater/nwis/principalaquifername">Sand and gravel aquifers (glaciated regions)</gml:name>
+			<gsml:purpose>instance</gsml:purpose>
+
+			<gsml:geologicUnitType xlink:href="http://resource.geosciml.org/classifier/cgi/geologicunittype/hydrogeologic-unit" xlink:title="hydrogeologic unit"/>
+			<gwml2:gwAquiferSystem xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/hgc.nsw.-9999" xlink:title="Unknown"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/hgu.nsw.-9999" xlink:title="Unknown"/>
+		</gwml2:GW_AquiferSystem>
+	</wfs:member>
+</wfs:FeatureCollection>

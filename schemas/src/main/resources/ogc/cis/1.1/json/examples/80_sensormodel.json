@@ -1,0 +1,65 @@
+{
+	"@context": ["http://localhost/json-ld/coverage-context.json", {"examples": "http://www.opengis.net/cis/1.1/examples/"}],
+	"type": "CoverageByDomainAndRangeType",
+	"id": "examples:CIS_80",
+	"domainSet":{
+		"@context": "http://localhost/json-ld/domainset-context.json",
+		"type": "DomainSetType",
+		"id": "examples:CIS_DS_80",
+		"generalGrid":{
+			"type": "GeneralGridCoverageType",
+			"id": "examples:CIS_DS_GG_80",
+			"srsName": "http://www.opengis.net/def/crs/EPSG/0/4326",
+			"axisLabels": ["Lat", "Long"],
+			"model": {
+				"type": "TransformationBySensorModelType",
+				"id": "examples:CIS_DS_GG_TSM_80",
+				"axisLabels": ["Lat", "Long"],
+				"uomLabels": ["deg", "deg"],
+				"sensorModelRef": "http://www.sensorml.com/sensorML-2.0/examples/csmFrame.html",
+				"sensorInstanceRef": "http://www.sensorml.com/sensorML-2.0/examples/myHDCamera.html"
+			},
+			"gridLimits": {
+				"type": "GridLimitsType",
+				"id": "examples:CIS_DS_GG_GL_80",
+				"srsName": "http://www.opengis.net/def/crs/OGC/0/Index2D",
+				"axisLabels": ["i", "j"],
+				"axis": [{ 
+					"type": "IndexAxisType",
+					"id": "examples:CIS_DS_GG_GL_I_80",
+					"axisLabel": "i",
+					"lowerBound": 0,
+					"upperBound": 1919
+				},{
+					"type": "IndexAxisType",
+					"id": "examples:CIS_DS_GG_GL_J_80",
+					"axisLabel": "j",
+					"lowerBound": 0,
+					"upperBound": 1079
+				}]
+			}
+		}
+	},
+	"rangeSet": {
+		"@context": "http://localhost/json-ld/rangeset-context.json",
+		"type": "RangeSetRefType",
+		"id": "examples:CIS_RS_80",
+		"fileReference": "http://www.acme.com/cis_001.jpeg"
+	},
+	"rangeType": { 
+		"@context": "http://localhost/json-ld/rangetype-context.json",
+		"type": "DataRecordType",
+		"id": "examples:CIS_RT_80",
+		"field":[{ 
+			"type": "QuantityType",
+			"id": "examples:CIS_RT_F_80",
+			"definition": "ogcType:unsignedInt",
+			"name": "panchromatic",
+			"uom": {
+				"type": "UnitReference",
+				"id": "examples:CIS_RT_F_UOM_80",
+				"code": "10^0"
+			}
+		}]
+	}  
+}

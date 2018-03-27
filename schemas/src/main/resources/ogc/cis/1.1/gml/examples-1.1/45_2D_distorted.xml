@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Example of a general-grid coverage with distorted axes
+     as defined in the OGC Coverage Implementation Schema 1.1.
+     Last updated 2016-aug-11.
+-->
+
+<GeneralGridCoverage
+    xmlns='http://www.opengis.net/cis/1.1/gml'
+    xmlns:gml='http://www.opengis.net/gml/3.2'
+    xmlns:swe='http://www.opengis.net/swe/2.0'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
+    xsi:schemaLocation='http://www.opengis.net/cis/1.1/gml ../cisAll.xsd'
+    gml:id="CIS_002">
+
+    <DomainSet>
+        <GeneralGrid srsName="http://www.opengis.net/def/crs/EPSG/0/4979" axisLabels="Lat Long h">
+            <DisplacementAxisNest axisLabels="Lat Long h" uomLabels="deg deg m">
+                <P><C>-90</C><C> 0</C><C>0</C></P>
+                <P><C>-85</C><C> 0</C><C>0</C></P>
+                <P><C>-80</C><C> 0</C><C>0</C></P>
+
+                <P><C>-90</C><C> 5</C><C>0</C></P>
+                <P><C>-85</C><C> 5</C><C>1</C></P>
+                <P><C>-80</C><C> 5</C><C>0</C></P>
+
+                <P><C>-90</C><C>10</C><C>0</C></P>
+                <P><C>-85</C><C>10</C><C>0</C></P>
+                <P><C>-80</C><C>10</C><C>0</C></P>
+            </DisplacementAxisNest>            
+            <GridLimits srsName="http://www.opengis.net/def/crs/OGC/0/Index2D" axisLabels="i j">
+                <IndexAxis axisLabel="i" lowerBound="0" upperBound="2"/>
+                <IndexAxis axisLabel="j" lowerBound="0" upperBound="2"/>                                
+            </GridLimits>
+        </GeneralGrid>
+    </DomainSet>
+
+    <RangeSet>
+        <DataBlock>
+            <V>1</V>
+            <V>2</V>
+            <V>3</V>
+            <V>4</V>
+            <V>5</V>
+            <V>6</V>
+            <V>7</V>
+            <V>8</V>
+            <V>9</V>
+        </DataBlock>
+    </RangeSet>
+
+    <RangeType>
+        <swe:DataRecord>
+            <swe:field name="singleBand">
+                <swe:Quantity definition="http://www.opengis.net/def/dataType/OGC/0/unsignedInt">
+                    <swe:uom code="W/cm2"/>
+                </swe:Quantity>
+            </swe:field>
+        </swe:DataRecord>
+    </RangeType>
+
+</GeneralGridCoverage>
+

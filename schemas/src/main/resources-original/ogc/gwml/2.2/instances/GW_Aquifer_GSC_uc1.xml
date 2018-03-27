@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gwml
+[
+<!ENTITY meter "http://www.opengis.net/def/uom/UCUM/0/m">
+<!ENTITY gwvoc "resource.gwml.org">
+<!ENTITY nil "http://www.opengis.net/def/nil/OGC/0/unknown">
+]>
+<gwml2:GW_AquiferSystem 
+xmlns:gu="http://xmlns.geosciml.org/GeologicUnit/3.2" 
+xmlns:gml="http://www.opengis.net/gml/3.2" 
+xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" 
+xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" 
+xmlns:gsml="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" 
+xmlns:gsmle="http://www.opengis.net/gsml/4.1/GeoSciML-Extension" 
+gml:id="gin.1" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:swe="http://www.opengis.net/swe/2.0" 
+xmlns:gmd="http://www.isotc211.org/2005/gmd" 
+xmlns:gco="http://www.isotc211.org/2005/gco" 
+xmlns:om="http://www.opengis.net/om/2.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/gwml-main/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd http://www.opengis.net/gsml/4.1/GeoSciML-Extension http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd">
+	<!-- Eric Boisvert, Geological Survey of Canada, 2014/06/05 *WORK IN PROGRESS* -->
+	<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">/features/GW_AquiferSystem/gin.1</gml:identifier>
+	<gml:name codeSpace="http://gw-info.net/identifiers">urn:db:ngwd:gw_data:hydrogeological_units:3</gml:name>
+	<gml:name codeSpace="http://gw-info.net">Appalachian External Zone</gml:name>
+	<gsml:observationMethod>
+		<swe:Category>
+			<swe:value>http://resource.geosciml.org/classifier/cgi/featureobservationmethod/synthesis_from_multiple_sources</swe:value>
+		</swe:Category>
+	</gsml:observationMethod>
+	
+	
+	<gsml:occurrence>
+		<gsml:MappedFeature gml:id="gin.mf.1">
+			<gsml:observationMethod>
+				<swe:Category>
+					<swe:value>http://resource.geosciml.org/classifier/cgi/featureobservationmethod/synthesis_from_multiple_sources</swe:value>
+				</swe:Category>
+			</gsml:observationMethod>
+			<gsml:positionalAccuracy>
+				<swe:Quantity>
+					<swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/m"/>
+					<swe:value>100</swe:value>
+				</swe:Quantity>
+			</gsml:positionalAccuracy>
+			<gsml:resolutionRepresentativeFraction>100000</gsml:resolutionRepresentativeFraction>
+			<gsml:mappingFrame xlink:href="http://resource.geosciml.org/feature/bgs/EarthBedrockSurface"/>
+			<gsml:specification xlink:href="#gin.1"/>
+			<gsml:shape>
+				<gml:Polygon gml:id="gin.mf.s.1" srsName="EPSG:4326">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:coordinates>45.63550019976917,-72.32726900019529 45.635152899743765,-72.32763519945202 45.6347350002453,-72.32811880032716 45.63343469947494,-72.32944149960522 45.631561500078725,-72.33190430047013 45.63116850000537,-72.33219429975637 45.630702900168444,-72.33243520038691 45.63046970003095,-72.3325170001959 45.630155600472726,-72.33258770018513 45.62968859975055,-72.33266130012383 
+        45.6293192009044,-72.33264340038157 45.62866990026214,-72.33247750013963 45.628425399987144,-72.33234130003223 45.62810800010745,-72.33210420041493 45.627844699628106,-72.33186599985838 45.62759899992851,-72.33160190010194 45.62744360010452,-72.3313612996718 45.62718709964041,-72.33090490072728 45.62679339998805,-72.33025920061075 45.62662780044371,-72.32989060026831 
+        45.62628809982044,-72.32923080031927 45.626150899946374,-72.32902860056878 45.625522699740465,-72.32918259997291 45.62518060028757,-72.3291898998003 45.625000400214155,-72.3291551007714 45.62417000044383,-72.328890199496 45.62248019978484,-72.3290792002516 45.622228299975234,-72.32907180014242 45.62207470022276,-72.32902359996612 45.62165900018356,-72.32885279986372 
+        45.62136910010209,-72.32866639965897 45.621060299709406,-72.32837810045035 45.62078720030166,-72.32807620005165 45.6204771999226,-72.32768489925552 45.61991040011571,-72.32681179954112 45.61954629967929,-72.3264090999695 45.61942910039425,-72.32638580043205 45.61920480056299,-72.32644179961616 45.61909749999242,-72.32650830031707 45.61871349997597,-72.32678539989156 
+        45.618535299632484,-72.32696889998175 45.61831349989653,-72.32725549943308 45.61809210059062,-72.32761910037986 45.617968999716894,-72.32790380073375 45.61782049989392,-72.32834300052816 45.617646599998366,-72.3289235001413 45.61735319979066,-72.33016020079002 45.61719499978627,-72.33052300038587 45.61700030015666,-72.33083480080315 45.616760399977565,-72.33113460036975 
+        45.61644850004326,-72.33143589948637 45.61613630037499,-72.33169890029427 45.61583219945775,-72.33188480086302 45.615482600385405,-72.33200740021886 45.615033499573464,-72.33209369982411 45.6146289001163,-72.33211490061626 45.61409729970433,-72.3320616999084 45.613456599807634,-72.33188270059158 45.613067700078666,-72.3316985002675 45.612434600528815,-72.33136540022748 
+        45.61197259947107,-72.33106739972052 45.61161879954646,-72.33077999914374 45.61134559957425,-72.33046509945422 45.61102630036732,-72.33003559965375 45.60957969986863,-72.32762989981161 45.60933179951949,-72.3271351000815 45.608588519094816,-72.3254470843829 45.63550019976917,-72.32726900019529 
+ 	</gml:coordinates></gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</gsml:shape>
+		</gsml:MappedFeature>
+	</gsml:occurrence>
+
+	<gsml:purpose>instance</gsml:purpose>	
+	<gsml:relatedFeature>
+	<gsmle:GeologicFeatureRelation gml:id="host1">
+		<gsml:relatedFeature xlink:href="http://weblex.nrcan.gc.ca/ws/lexrest.svc/lithobyid/GSCC00053013643.xml" xlink:title="Shefford sandstone"/>
+		<gsmle:relationship xlink:href="&gwvoc;/def/relationshipRoles/aquiferGeologicalHosting" xlink:title="Host"/>
+		<gsmle:sourceRole xlink:href="&gwvoc;/def/relationshipRoles/aquifer" xlink:title="aquifer"/>
+		<gsmle:targetRole xlink:href="&gwvoc;/def/relationshipRoles/hostGeologicUnit" xlink:title="aquiferHost"/>
+
+	</gsmle:GeologicFeatureRelation>
+	</gsml:relatedFeature>
+	
+	<gsml:relatedFeature>
+	<gsmle:GeologicFeatureRelation gml:id="host2">
+		<gsml:relatedFeature xlink:href="http://weblex.nrcan.gc.ca/ws/lexrest.svc/lithobyid/GSCC00053011797.xml" xlink:title="Philipsburg Group"/>
+		<gsmle:relationship xlink:href="&gwvoc;/def/relationshipRoles/aquiferGeologicalHosting" xlink:title="Host"/>
+		<gsmle:sourceRole xlink:href="&gwvoc;/def/relationshipRoles/aquifer" xlink:title="aquifer"/>
+		<gsmle:targetRole xlink:href="&gwvoc;/def/relationshipRoles/hostGeologicUnit" xlink:title="aquiferHost"/>
+
+	</gsmle:GeologicFeatureRelation>
+	</gsml:relatedFeature>
+	
+	<gsml:relatedFeature>
+	<gsmle:GeologicFeatureRelation gml:id="host3">
+		<gsml:relatedFeature xlink:href="http://weblex.nrcan.gc.ca/ws/lexrest.svc/lithobyid/GSCC00053016984.xml" xlink:title="Stanbridge Group"/>
+		<gsmle:relationship xlink:href="&gwvoc;/def/relationshipRoles/aquiferGeologicalHosting" xlink:title="Host"/>
+		<gsmle:sourceRole xlink:href="&gwvoc;/def/relationshipRoles/aquifer" xlink:title="aquifer"/>
+		<gsmle:targetRole xlink:href="&gwvoc;/def/relationshipRoles/hostGeologicUnit" xlink:title="aquiferHost"/>
+		
+	</gsmle:GeologicFeatureRelation>
+	</gsml:relatedFeature>
+	
+	<gsml:relatedFeature>
+	<gsmle:GeologicFeatureRelation gml:id="host4">
+		<gsml:relatedFeature xlink:href="http://weblex.nrcan.gc.ca/ws/lexrest.svc/lithobyid/GSCC00053008289.xml" xlink:title="Laurier Group"/>
+		<gsmle:relationship xlink:href="&gwvoc;/def/relationshipRoles/aquiferGeologicalHosting" xlink:title="Host"/>
+		<gsmle:sourceRole xlink:href="&gwvoc;/def/relationshipRoles/aquifer" xlink:title="aquifer"/>
+		<gsmle:targetRole xlink:href="&gwvoc;/def/relationshipRoles/hostGeologicUnit" xlink:title="aquiferHost"/>
+		
+	</gsmle:GeologicFeatureRelation>
+	</gsml:relatedFeature>
+	
+	<gsml:relatedFeature>
+	<gsmle:GeologicFeatureRelation  gml:id="host5">
+		<gsml:relatedFeature>
+		<gsml:GeologicUnit gml:id="gin.gu.drummundvilleOlitostrome">
+					<gml:description>Dummondville Olitostrome or Drummundville Wildflysh lying at the base of nappes</gml:description>
+					<gml:name codeSpace="http://weblex.nrcan.gc.ca">unregistered</gml:name>
+					<gsml:observationMethod>
+						<swe:Category>
+							<swe:value>http://resource.geosciml.org/classifier/cgi/featureobservationmethod/synthesis_from_multiple_sources</swe:value>
+						</swe:Category>
+					</gsml:observationMethod>
+					<gsml:purpose>typicalNorm</gsml:purpose>
+					<gsml:geologicUnitType xlink:href="http://resource.geosciml.org/classifier/cgi/geologicunittype/lithostratigraphic_unit" xlink:title="Lithostratigraphic unit"/>
+					<gsml:rank xlink:href="http://resource.geosciml.org/classifier/cgi/stratigraphicrank/rank_not_specified" xlink:title="Rank not specified"/>					
+					<gsml:gbUnitDescription>
+						<gsmle:GeologicUnitDescription>
+						<gsmle:bodyMorphology>
+							<swe:Category>
+								<swe:value>http://resource.geosciml.org/classifier/cgi/geologicunitmorphology/layer_shape</swe:value>
+							</swe:Category>
+						</gsmle:bodyMorphology>
+					</gsmle:GeologicUnitDescription>
+					</gsml:gbUnitDescription>					
+					
+					
+				</gsml:GeologicUnit></gsml:relatedFeature>
+		<gsmle:relationship xlink:href="&gwvoc;/def/relationshipRoles/aquiferGeologicalHosting" xlink:title="Host"/>
+		<gsmle:sourceRole xlink:href="&gwvoc;/def/relationshipRoles/aquifer" xlink:title="aquifer"/>
+		<gsmle:targetRole xlink:href="&gwvoc;/def/relationshipRoles/hostGeologicUnit" xlink:title="aquiferHost"/>
+
+	</gsmle:GeologicFeatureRelation>
+</gsml:relatedFeature>
+
+	<!-- we need to define our own hydrogeologic unit types -->
+	<gsml:geologicUnitType xlink:href="http://resource.geosciml.org/classifier/cgi/geologicunittype/geologic_unit" xlink:title="Hydrogeologic context"/>
+	
+	<!-- one detailed composition element -->
+	<gsml:composition>
+		<gsml:CompositionPart>
+			<gsml:role nilReason="unknown"/>
+			<gsml:material>
+				<gsml:RockMaterial gml:id="gin.1.rm.1">
+					<gml:description>thin till unit followed by thin discontinuous sandy-gravelly coastal sediments.</gml:description>
+					<gml:name codeSpace="TB">Till</gml:name>
+					<gsml:purpose>instance</gsml:purpose>
+				</gsml:RockMaterial>
+			</gsml:material>
+		</gsml:CompositionPart>
+	</gsml:composition>
+	<!-- generic, not sure it's legal to do this because the term that are refered don't provided explictly the mandatory properties, there should be a GeoSciML version of there guys -->
+	<gsml:composition>
+		<gsml:CompositionPart>
+			<gsml:role nilReason="unknown"/>
+			<gsml:material xlink:href="http://resource.geosciml.org/classifier/cgi/lithology/slate" xlink:title="Slate"/>
+		</gsml:CompositionPart>
+	</gsml:composition>
+	<gsml:composition>
+		<gsml:CompositionPart>
+			<gsml:role nilReason="unknown"/>
+			<gsml:material xlink:href="http://resource.geosciml.org/classifier/cgi/lithology/shale" xlink:title="Shale"/>
+		</gsml:CompositionPart>
+	</gsml:composition>
+	<gsml:composition>
+		<gsml:CompositionPart>
+			<gsml:role nilReason="unknown"/>
+			<gsml:material xlink:href="http://resource.geosciml.org/classifier/cgi/lithology/sandstone" xlink:title="Sandstone"/>
+		</gsml:CompositionPart>
+	</gsml:composition>
+	<gsml:composition>
+		<gsml:CompositionPart>
+			<gsml:role nilReason="unknown"/>
+			<gsml:material xlink:href="http://resource.geosciml.org/classifier/cgi/lithology/limestone" xlink:title="Limestone"/>
+		</gsml:CompositionPart>
+	</gsml:composition>
+
+	<gsml:gbMaterialDescription>
+		<gsmle:PhysicalDescription>
+		<gsmle:propertyName xlink:href="http://ngwd-bdnes.cits.nrcan.gc.ca/Reference/uri-cgi/classifier/ca.gin/NRCanGroundWaterTopics/1404" xlink:title="Hydraulic Conductivity"/>
+			<gsmle:propertyMeasure>
+				<swe:Quantity>
+					<swe:description>Surficial units hydraulic conductivity</swe:description>
+					<swe:quality>
+						<swe:QuantityRange>
+							<swe:uom xlink:href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterPerSecond" xlink:title="m/s"/>
+							<swe:value>1.58 5.01</swe:value>
+						</swe:QuantityRange>
+					</swe:quality>
+					<swe:uom xlink:href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterPerSecond" xlink:title="m/s"/>
+					<swe:value>6.31</swe:value>
+				</swe:Quantity>
+			</gsmle:propertyMeasure>
+			</gsmle:PhysicalDescription>
+	</gsml:gbMaterialDescription>
+	
+	<gsml:gbMaterialDescription>
+		<gsmle:PhysicalDescription>
+		<!-- definitively not the right SKOS entry, this is a THEME, not a observed property, must update our SKOS dictionnary -->
+			<gsmle:propertyName xlink:href="http://ngwd-bdnes.cits.nrcan.gc.ca/Reference/uri-cgi/classifier/ca.gin/NRCanGroundWaterTopics/1404" xlink:title="Hydraulic Conductivity"/>
+			<gsmle:propertyMeasure>
+				<swe:Quantity>
+					<swe:description>Hydraulic conductivity for the hydrogeological unit. The median value for hydraulic conductivity is 10^-6.2 m/s, but it ranges from 10^-7.8 to 10^-4.8 m/s.  Hydraulic regional conductivity  The decreasing trend of transmissivity with depth in the rock is observed in all contexts. The average hydraulic conductivity is 10^-3.9 m/s near the top of bedrock (z = 1 m) which gradually loses an order of magnitude at a depth of 10 m (10^-4.9 m/s), 25 m (10^-5.9 m/s), 60 m (10^-6.9 m/s) and 200 m (10^-7.9 m/s).</swe:description>
+					<swe:uom xlink:href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterPerSecond" xlink:title="m/s"/>
+					<swe:value>0.09</swe:value>
+				</swe:Quantity>
+			</gsmle:propertyMeasure>
+			</gsmle:PhysicalDescription>
+	</gsml:gbMaterialDescription>
+
+	<gsml:gbUnitDescription>
+		<gsmle:GeologicUnitDescription>
+			<gsmle:bodyMorphology xlink:href="http://resource.geosciml.org/classifier/cgi/geologicunitmorphology/layer_shape" xlink:title="Layers"/>
+		</gsmle:GeologicUnitDescription>
+	</gsml:gbUnitDescription>
+	
+	<!-- add more compositions -->
+
+
+	
+	<gwml2:gwUnitMedia xlink:href="http://gw-info.net/media/granular" xlink:title="granular"/>
+	<gwml2:gwUnitWaterBudget xsi:nil="true"/>
+	<gwml2:gwUnitRecharge>
+		<gwml2f:GW_Recharge gml:id="gin.richelieu.recharge.1">
+			<gml:location>
+				<gml:LocationString>Regional precipitation</gml:LocationString>
+			</gml:location>
+			<gwml2f:gwFlowPersistence nilReason="missing"/>
+			<gwml2f:gwFlowProcess xlink:href="urn:Precipitation" xlink:title="Precipitation"/>
+			<gwml2f:gwFlowTime><gml:TimePeriod gml:id="gin.richelieu.recharge.1.ft"><gml:beginPosition>2012-04-01</gml:beginPosition><gml:endPosition>2013-03-31</gml:endPosition></gml:TimePeriod></gwml2f:gwFlowTime>
+			<gwml2f:gwFlowVelocity xsi:nil="true" nilReason="unknown"/>
+			<gwml2f:gwFlowVolumeRate>
+				<om:OM_Observation gml:id="gin.r.1">
+					<gml:description>regional precipitation (not scope to this area)</gml:description>
+					<om:phenomenonTime>
+						<gml:TimePeriod gml:id="gin.r.1.tp">
+							<gml:beginPosition>2012-04-01</gml:beginPosition>
+							<gml:endPosition>2013-03-31</gml:endPosition>
+						</gml:TimePeriod>
+					</om:phenomenonTime>
+					<om:resultTime>
+						<gml:TimeInstant gml:id="gin.r.1.ti">
+							<gml:timePosition>2013-03-31</gml:timePosition>
+						</gml:TimeInstant>
+					</om:resultTime>
+					<om:validTime>
+						<gml:TimePeriod gml:id="gin.r.1.tp2">
+							<gml:beginPosition>2013-03-31</gml:beginPosition>
+							<gml:endPosition indeterminatePosition="after"/>
+						</gml:TimePeriod>
+					</om:validTime>
+					<om:procedure xsi:nil="true" nilReason="missing"/>
+					<om:observedProperty xlink:href="http://dict.for/recharge" xlink:title="Precipitation"/>
+					<om:featureOfInterest xlink:href="urn:geoscience.data.gc.ca:id:aquiferSystem:RichelieuYamaska" xlink:title="Richelieu Yamaska Aquifer System"/>
+					<om:result>
+						<swe:Quantity>
+							<swe:quality>
+								<swe:QuantityRange>
+									<swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/mm-yr-1"/>
+									<swe:value>1023.9 1306.5</swe:value>
+								</swe:QuantityRange>
+							</swe:quality>
+							<swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/mm-yr-1"/>
+							<swe:value>1064.5</swe:value>
+						</swe:Quantity>
+					</om:result>
+				</om:OM_Observation>
+			</gwml2f:gwFlowVolumeRate>
+			<gwml2f:gwFlowDestinationBody xsi:nil="true" nilReason="missing"/>
+			<gwml2f:gwFlowDestinationContainer xsi:nil="true" nilReason="missing"/>
+			<!-- should point to an area ?  the study area ? -->
+			<gwml2f:gwFlowLocation xsi:nil="true" nilReason="missing"/>
+			<gwml2f:gwFlowSourceBody xsi:nil="true" nilReason="inapplicable"/>
+			<gwml2f:gwFlowSourceContainer xsi:nil="true" nilReason="inapplicable"/>
+		</gwml2f:GW_Recharge>
+	</gwml2:gwUnitRecharge>
+	<gwml2:gwUnitRecharge>
+		<gwml2f:GW_Recharge gml:id="gin.richelieu.recharge.2">
+			<gml:location>
+				<gml:LocationString>Noire River Valley</gml:LocationString>
+			</gml:location>
+			<gwml2f:gwFlowPersistence xsi:nil="true" nilReason="missing"/>
+			<gwml2f:gwFlowProcess xlink:href="urn:Precipitation" xlink:title="Precipitation"/>
+			<gwml2f:gwFlowTime><gml:TimePeriod gml:id="gin.richelieu.recharge.2.ft"><gml:beginPosition>2012-04-01</gml:beginPosition><gml:endPosition>2013-03-31</gml:endPosition></gml:TimePeriod></gwml2f:gwFlowTime>
+			<gwml2f:gwFlowVelocity xsi:nil="true" nilReason="unknown"/>
+			<gwml2f:gwFlowVolumeRate>
+				<om:OM_Observation gml:id="gin.r.2">
+					<gml:description>Region Recharge</gml:description>
+					<om:phenomenonTime>
+						<gml:TimePeriod gml:id="gin.r.2.tp">
+							<gml:beginPosition>2012-04-01</gml:beginPosition>
+							<gml:endPosition>2013-03-31</gml:endPosition>
+						</gml:TimePeriod>
+					</om:phenomenonTime>
+					<om:resultTime>
+						<gml:TimeInstant gml:id="gin.r.2.ti">
+							<gml:timePosition>2013-03-31</gml:timePosition>
+						</gml:TimeInstant>
+					</om:resultTime>
+					<om:validTime>
+						<gml:TimePeriod gml:id="gin.r.2.tp2">
+							<gml:beginPosition>2013-03-31</gml:beginPosition>
+							<gml:endPosition indeterminatePosition="after"/>
+						</gml:TimePeriod>
+					</om:validTime>
+					<om:procedure xsi:nil="true" nilReason="missing"/>
+					<om:observedProperty xlink:href="http://dict.for/recharge" xlink:title="Precipitation"/>
+					<om:featureOfInterest xlink:href="urn:geoscience.data.gc.ca:id:aquiferSystem:RichelieuYamaska" xlink:title="Richelieu Yamaska Aquifer System"/>
+					<om:result>
+						<swe:Quantity>
+							<swe:quality>
+								<swe:QuantityRange>
+									<swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/mm-yr-1"/>
+									<swe:value>0 417</swe:value>
+								</swe:QuantityRange>
+							</swe:quality>
+							<swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/mm-yr-1"/>
+							<swe:value>114.7</swe:value>
+						</swe:Quantity>
+					</om:result>
+				</om:OM_Observation>
+			</gwml2f:gwFlowVolumeRate>
+			<gwml2f:gwFlowDestinationBody xsi:nil="true" nilReason="missing"/>
+			<gwml2f:gwFlowDestinationContainer xsi:nil="true" nilReason="missing"/>
+			<!-- should point to an area ?  the study area ? -->
+			<gwml2f:gwFlowLocation xsi:nil="true" nilReason="missing"/>
+			<gwml2f:gwFlowSourceBody xsi:nil="true" nilReason="inapplicable"/>
+			<gwml2f:gwFlowSourceContainer xsi:nil="true" nilReason="inapplicable"/>
+		</gwml2f:GW_Recharge>
+	</gwml2:gwUnitRecharge>
+	<!-- UnitDischarge is of type interflow, that allows both Recharge and Discharge, because they are subtypes -->
+	<gwml2:gwUnitDischarge>
+		<gwml2f:GW_Discharge gml:id="gin.richelieu.discharge.1">
+			<gml:name>Regional evapotranspiration</gml:name>
+			<gml:location>
+				<gml:LocationString>Yamaska study area</gml:LocationString>
+			</gml:location>
+			<gwml2f:gwFlowPersistence xsi:nil="true" nilReason="missing"/>
+			<gwml2f:gwFlowProcess xlink:href="urn:Evapotranspiration" xlink:title="Evapotranspiration"/>			<gwml2f:gwFlowTime><gml:TimePeriod gml:id="gin.richelieu.discharge.1.ft"><gml:beginPosition>2012-04-01</gml:beginPosition><gml:endPosition>2013-03-31</gml:endPosition></gml:TimePeriod></gwml2f:gwFlowTime>
+			<gwml2f:gwFlowVelocity xsi:nil="true" nilReason="unknown"/>
+			<gwml2f:gwFlowVolumeRate>
+				<om:OM_Observation gml:id="gin.d.1">
+					<gml:description>Region Recharge</gml:description>
+					<om:phenomenonTime>
+						<gml:TimePeriod gml:id="gin.d.1.tp">
+							<gml:beginPosition>2012-04-01</gml:beginPosition>
+							<gml:endPosition>2013-03-31</gml:endPosition>
+						</gml:TimePeriod>
+					</om:phenomenonTime>
+					<om:resultTime>
+						<gml:TimeInstant gml:id="gin.d.1.ti">
+							<gml:timePosition>2013-03-31</gml:timePosition>
+						</gml:TimeInstant>
+					</om:resultTime>
+					<om:validTime>
+						<gml:TimePeriod gml:id="gin.d.1.tp2">
+							<gml:beginPosition>2013-03-31</gml:beginPosition>
+							<gml:endPosition indeterminatePosition="after"/>
+						</gml:TimePeriod>
+					</om:validTime>
+					<om:procedure xsi:nil="true" nilReason="missing"/>
+					<om:observedProperty xlink:href="http://dict.for/evapotranspiration" xlink:title="Evapotranspiration"/>
+					<om:featureOfInterest xlink:href="urn:geoscience.data.gc.ca:id:aquiferSystem:RichelieuYamaska" xlink:title="Richelieu Yamaska Aquifer System"/>
+					<om:result>
+						<swe:Quantity>
+							<swe:quality>
+								<swe:QuantityRange>
+									<swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/mm-yr-1"/>
+									<swe:value>370 644.4</swe:value>
+								</swe:QuantityRange>
+							</swe:quality>
+							<swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/mm-yr-1"/>
+							<swe:value>575</swe:value>
+						</swe:Quantity>
+					</om:result>
+				</om:OM_Observation>
+			</gwml2f:gwFlowVolumeRate>
+			<gwml2f:gwFlowDestinationBody xsi:nil="true" nilReason="missing"/>
+			<gwml2f:gwFlowDestinationContainer xsi:nil="true" nilReason="missing"/>
+			<!-- should point to an area ?  the study area ? -->
+			<gwml2f:gwFlowLocation xsi:nil="true" nilReason="missing"/>
+			<gwml2f:gwFlowSourceBody xsi:nil="true" nilReason="inapplicable"/>
+			<gwml2f:gwFlowSourceContainer xsi:nil="true" nilReason="inapplicable"/>
+		</gwml2f:GW_Discharge>
+	</gwml2:gwUnitDischarge>
+	<gwml2:gwUnitDischarge>
+		<gwml2f:GW_Discharge gml:id="gin.richelieu.discharge.2">
+			<gml:name>Regional runoff</gml:name>
+			<gml:location>
+				<gml:LocationString>Yamaska study area</gml:LocationString>
+			</gml:location>
+			<gwml2f:gwFlowPersistence xsi:nil="true" nilReason="missing"/>
+			<gwml2f:gwFlowProcess xlink:href="urn:Runoff" xlink:title="Runoff"/>
+			<gwml2f:gwFlowTime><gml:TimePeriod gml:id="gin.richelieu.discharge.2.ft"><gml:beginPosition>2012-04-01</gml:beginPosition><gml:endPosition>2013-03-31</gml:endPosition></gml:TimePeriod></gwml2f:gwFlowTime>
+			<gwml2f:gwFlowVelocity xsi:nil="true" nilReason="unknown"/>
+			<gwml2f:gwFlowVolumeRate>
+				<om:OM_Observation gml:id="gin.d.2">
+					<gml:description>Region Recharge</gml:description>
+					<om:phenomenonTime>
+						<gml:TimePeriod gml:id="gin.d.2.tp">
+							<gml:beginPosition>2012-04-01</gml:beginPosition>
+							<gml:endPosition>2013-03-31</gml:endPosition>
+						</gml:TimePeriod>
+					</om:phenomenonTime>
+					<om:resultTime>
+						<gml:TimeInstant gml:id="gin.d.2.ti">
+							<gml:timePosition>2013-03-31</gml:timePosition>
+						</gml:TimeInstant>
+					</om:resultTime>
+					<om:validTime>
+						<gml:TimePeriod gml:id="gin.d.2.tp2">
+							<gml:beginPosition>2013-03-31</gml:beginPosition>
+							<gml:endPosition indeterminatePosition="after"/>
+						</gml:TimePeriod>
+					</om:validTime>
+					<om:procedure xsi:nil="true" nilReason="missing"/>
+					<om:observedProperty xlink:href="http://dict.for/runoff" xlink:title="Runoff"/>
+					<om:featureOfInterest xlink:href="urn:geoscience.data.gc.ca:id:aquiferSystem:RichelieuYamaska" xlink:title="Richelieu Yamaska Aquifer System"/>
+					<om:result>
+						<swe:Quantity>
+							<swe:quality>
+								<swe:QuantityRange>
+									<swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/mm-yr-1"/>
+									<swe:value>79.2 1146.2</swe:value>
+								</swe:QuantityRange>
+							</swe:quality>
+							<swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/mm-yr-1"/>
+							<swe:value>460.2</swe:value>
+						</swe:Quantity>
+					</om:result>
+				</om:OM_Observation>
+			</gwml2f:gwFlowVolumeRate>
+			<gwml2f:gwFlowDestinationBody xsi:nil="true" nilReason="missing"/>
+			<gwml2f:gwFlowDestinationContainer xsi:nil="true" nilReason="missing"/>
+			<!-- should point to an area ?  the study area ? -->
+			<gwml2f:gwFlowLocation xsi:nil="true" nilReason="missing"/>
+			<gwml2f:gwFlowSourceBody xsi:nil="true" nilReason="inapplicable"/>
+			<gwml2f:gwFlowSourceContainer xsi:nil="true" nilReason="inapplicable"/>
+		</gwml2f:GW_Discharge>
+	</gwml2:gwUnitDischarge>
+
+	
+	<gwml2:gwManagementArea>
+		<gwml2:GW_ManagementArea gml:id="gin.mg.1">
+			<gml:name>Yamaska Richelieu watershed</gml:name>
+			<gwml2:gwAreaShape nilReason="missing"/>
+			<gwml2:gwAreaType>Watershed</gwml2:gwAreaType>
+			<gwml2:gwAreaFeature xsi:nil="true" nilReason="missing"/>	
+			
+			<!-- I had to instanciata this guy to load the vulnerability info -->
+			<gwml2:gwAreaBody>
+				<gwml2:GW_FluidBody gml:id="gin.fb.1">
+					<gml:description>General regional fluid body filling Richelieu Yamaska aquifer </gml:description>
+					<gwml2:gwBodyFlow xlink:href="#gin.richelieu.discharge.1" xlink:title="Evapotranspiration"/>
+					<gwml2:gwBodyFlow xlink:href="#gin.richelieu.discharge.2" xlink:title="Runoff"/>
+					<gwml2:gwBodyFlow xlink:href="#gin.richelieu.recharge.1" xlink:title="Precipitation"/>
+					<gwml2:gwBodyFlow xlink:href="#gin.richelieu.recharge.2" xlink:title="Regional recharge"/>
+					<gwml2:gwBodyMetadata xsi:nil="true" gco:nilReason="missing"/>
+					<gwml2:gwBodyProperty xsi:nil="true" nilReason="unknown"/>
+					<gwml2:gwBodyQuality xlink:href="&gwvoc;/def/gwBodyQuality/fresh-sulfurous" xlink:title="fresh-sulfurous"/>
+					<gwml2:gwBodyShape xsi:nil="true" nilReason="unknown"/>
+					<gwml2:gwBodyVolume xsi:nil="true" nilReason="missing"/>
+					<gwml2:gwBodyVulnerability>
+						<om:OM_Observation gml:id="gin.fb.1.1">
+							<gml:description>Vulnerability</gml:description>
+							<om:phenomenonTime>
+								<gml:TimePeriod gml:id="gin.fb.1.1.tp">
+									<gml:beginPosition>2012-04-01</gml:beginPosition>
+									<gml:endPosition>2013-03-31</gml:endPosition>
+								</gml:TimePeriod>
+							</om:phenomenonTime>
+							<om:resultTime>
+								<gml:TimeInstant gml:id="gin.fb.1.1.ti">
+									<gml:timePosition>2013-03-31</gml:timePosition>
+								</gml:TimeInstant>
+							</om:resultTime>
+							<om:validTime>
+								<gml:TimePeriod gml:id="gin.fb.1.1.tp2">
+									<gml:beginPosition>2013-03-31</gml:beginPosition>
+									<gml:endPosition indeterminatePosition="after"/>
+								</gml:TimePeriod>
+							</om:validTime>
+							<!-- because drastic weighting can be tweaked, the procedure should point to a complete SensorML description instead of a generic method identifier--> 
+							<om:procedure xlink:href="http://dict.for/drastic"/>
+							<om:observedProperty xlink:href="http://dict.for/drasticvulnerability" xlink:title="Drastic Vulnerability"/>
+							<om:featureOfInterest xlink:href="#gin.fb.1" xlink:title="Yamaska Richelieu watershed"/>
+							<om:result>
+								<swe:Quantity>
+									<swe:quality>
+										<swe:QuantityRange>
+										<!-- drastic is unit less -->
+											<swe:uom xlink:href="http://www.opengis.net/def/uom/nil"/>
+											<swe:value>77 187</swe:value>
+										</swe:QuantityRange>
+									</swe:quality>
+									<swe:uom xlink:href="http://www.opengis.net/def/uom/nil"/>
+									<swe:value>142</swe:value>
+								</swe:Quantity>
+							</om:result>
+						</om:OM_Observation>
+					</gwml2:gwBodyVulnerability>
+					<gwml2:gwFluidBodyUnit xlink:href="#gin.1"/>
+					<gwml2:gwFluidBodyVoid xsi:nil="true" nilReason="missing"/>
+					<gwml2:gwBodySurface xsi:nil="true" nilReason="missing"/>
+				</gwml2:GW_FluidBody>
+			</gwml2:gwAreaBody>
+			<gwml2:gwAreaWaterBudget xsi:nil="true"/>
+			<gwml2:gwAreaYield xsi:nil="true" nilReason="missing"/>
+			<gwml2:gwManagedUnit xlink:href="#gin.1" xlink:title="Appalachian External Zone"/>
+			<gwml2:gwManagedUnit xlink:href="urn:db:ngwd:gw_data:hydrogeological_units:1" xlink:title="Southern St Lawrence Platform"/>
+			<gwml2:gwManagedUnit xlink:href="urn:db:ngwd:gw_data:hydrogeological_units:2" xlink:title="Northern St Lawrence Platform"/>
+			<gwml2:gwManagedUnit xlink:href="urn:db:ngwd:gw_data:hydrogeological_units:4" xlink:title="Appalachian Internal zone"/>
+			<gwml2:gwManagedUnit xlink:href="urn:db:ngwd:gw_data:hydrogeological_units:5" xlink:title="Monteregian intrusions"/>
+			<gwml2:documentation xlink:href="&nil;" xlink:title="unknown" nilReason="unknown"/>
+
+
+		</gwml2:GW_ManagementArea>
+	</gwml2:gwManagementArea>
+	<gwml2:gwAquiferSystemIsLayered>true</gwml2:gwAquiferSystemIsLayered>
+	<gwml2:gwAquiferSystemPart xsi:nil="true" nilReason="template"/>
+</gwml2:GW_AquiferSystem>

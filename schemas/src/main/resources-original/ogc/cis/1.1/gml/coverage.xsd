@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+    xmlns:cis="http://www.opengis.net/cis/1.1/gml"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.opengis.net/cis/1.1/gml"
+    elementFormDefault="qualified"
+    version="1.1.0">
+    <annotation>
+        <appinfo>coverage.xsd</appinfo>
+        <documentation>Component of OGC Coverage Implementation Schema 1.1.
+        Last updated: 2017-jan-16
+        Copyright (c) 2016, 2017 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+        </documentation>
+    </annotation>
+
+    <!-- ============================================================= -->
+    <!-- Includes and imports                                          -->
+    <!-- ============================================================= -->
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+    <include schemaLocation="grid.xsd"/>
+
+    <!-- ============================================================= -->
+    <!-- Abstract Coverages                                            -->
+    <!-- ============================================================= -->
+    <element name="AbstractCoverage" type="cis:AbstractCoverageType" abstract="true" substitutionGroup="gml:AbstractFeature">
+        <annotation>
+            <documentation>cis:AbstractCoverage is the abstract superclass for the CIS 1.1 coverage structures.</documentation>
+        </annotation>
+    </element>
+    <complexType name="AbstractCoverageType">
+        <complexContent>
+            <extension base="gml:AbstractFeatureType">
+                <sequence>
+                    <element name="CoverageFunction" type="gml:CoverageFunctionType" minOccurs="0"/>
+                    <element ref="cis:Envelope" minOccurs="0"/>
+                    <choice>
+                        <sequence>
+                            <element ref="cis:DomainSet"/>
+                            <element ref="cis:RangeSet"/>
+                        </sequence>
+                        <element ref="cis:PartitionSet"/>
+                    </choice>
+                    <element ref="cis:RangeType"/>
+                    <element ref="cis:Metadata" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <!-- ============================================================= -->
+    <element name="Envelope" type="cis:EnvelopeByAxisType">
+        <annotation>
+            <documentation>The envelope around a coverage is defined by the lower and upper bound of each axis, respectively. The purpose of the axisLabels attribute, which lists the axis labels of all AxisExtent elements in proper sequence, is to enforce axis sequence also in XML systems which do not preserve document order.</documentation>
+        </annotation>
+    </element>
+    <complexType name="EnvelopeByAxisType">
+        <sequence>
+            <element name="AxisExtent" maxOccurs="unbounded">
+                <complexType>
+                    <attribute name="axisLabel" type="NCName" use="required"/>
+                    <attribute name="uomLabel" type="NCName" use="required"/>
+                    <attribute name="lowerBound" type="anySimpleType" use="required"/>
+                    <attribute name="upperBound" type="anySimpleType" use="required"/>
+                </complexType>
+            </element>
+        </sequence>
+        <attribute name="srsName" type="anyURI" use="required"/>
+        <attribute name="axisLabels" type="cis:NameListType" use="required"/>
+        <attribute name="srsDimension" type="positiveInteger" use="required"/>
+    </complexType>
+    <!-- ============================================================= -->
+    <element name="DomainSet" type="cis:DomainSetType">
+        <annotation>
+            <documentation>The DomainSet describes the "direct positions" of the coverage, i.e., the locations for which values are available. Excessively large domain sets these can be externalized into a file through a "FileReference" element (this mechanism is a simplified version of gml:File).</documentation>
+        </annotation>
+    </element>
+    <complexType name="DomainSetType">
+        <sequence>
+            <choice>
+                <element ref="cis:GeneralGrid"/>
+                <element ref="cis:DirectMultiPoint"/>
+                <element name="FileReference" type="anyURI"/>
+            </choice>
+        </sequence>
+    </complexType>
+    <!-- ============================================================= -->
+    <element name="RangeType" type="cis:RangeTypeType">
+        <annotation>
+            <documentation>The RangeType element describes the structure and semantics of a coverage's range values, including (optionally) restrictions on the interpolation allowed on such values.</documentation>
+        </annotation>
+    </element>
+    <complexType name="RangeTypeType">
+        <sequence>
+            <choice>
+                <element ref="swe:DataRecord"/>
+                <element name="FileReference" type="anyURI"/>
+            </choice>
+            <element name="InterpolationRestriction" type="cis:InterpolationRestrictionType" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType name="InterpolationRestrictionType">
+        <sequence>
+            <element name="AllowedInterpolation" type="anyURI" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <!-- ============================================================= -->
+    <element name="RangeSet" type="cis:RangeSetType">
+        <annotation>
+            <documentation>The RangeSet lists a value for each of the coverage's direct positions. Values resemble the "payload" information of some particular direct positions. Values can be composite (with a single nesting level, i.e.: composites always consist of atomics), or atomic (emulated through single-component composites) whereby the sequence, structure, and meaning of every value is defined through the RangeType. Values can be represented in GML or by reference to an external file which may have any suitable encoding. For efficiency reason, tag names are kept terse: "cv" for "composite value", "av" for "atomic value".</documentation>
+        </annotation>
+    </element>
+    <complexType name="RangeSetType">
+        <choice>
+            <element name="DataBlock">
+                <complexType>
+                    <sequence>
+                        <choice>
+                            <element ref="cis:CV" maxOccurs="unbounded"/>
+                            <element ref="cis:V" maxOccurs="unbounded"/>
+                        </choice>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="FileReference" type="anyURI"/>
+        </choice>
+    </complexType>
+    <element name="CV" type="cis:CompositeRangeValueType">
+        <annotation>
+            <documentation>Composite values consist of lists of values, implementing the SWE::DataRecord records and arrays in a flattened way (i.e., there is only one level of nesting, even for multiple-nested records). Values can be of any kind, such as numeric or categorial (e.g., "true" and "false"). </documentation>
+        </annotation>
+    </element>
+    <complexType name="CompositeRangeValueType">
+        <sequence>
+            <element ref="cis:V" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <element name="V" type="anySimpleType">
+        <annotation>
+            <documentation>Atomic Range Values consist of single, atomic values; these can be of any kind, such as numeric, date, or categorial (e.g., "true" and "false"). </documentation>
+        </annotation>
+    </element>
+    <!-- ============================================================= -->
+    <element name="PartitionSet" type="cis:PartitionSetType">
+        <annotation>
+            <documentation>A partition describes how a coverage ("sub-coverage") referenced is located within referencing coverage ("super-coverage"). The sub-coverage can be represented by referencing a coverage id or a URL pointing to a coverage.  Such sub-coverages referenced may be grouped into the super-coverage document, or reside remote, or mixed.
+As an additional alternative, single range values can be indicated verbatimg, together with their direct position. All values must share an identical structure and conform to the rangeType definition. For compactness reason, frequently repeated tag names are kept terse: "pv" for "positionValuePair", "p" for "directPosition" "v" for "value".</documentation>
+        </annotation>
+    </element>
+    <complexType name="PartitionSetType">
+        <choice>
+            <element name="Partition" type="cis:PartitionType" maxOccurs="unbounded"/>
+            <element name="PV" type="cis:PositionValuePairType" maxOccurs="unbounded"/>
+        </choice>
+    </complexType>
+    <complexType name="PartitionType">
+        <sequence>
+            <element ref="cis:Envelope"/>
+            <choice>
+                <element ref="cis:AbstractCoverage"/>
+                <element name="CoverageId" type="string"/>
+                <element name="CoverageRef" type="anyURI"/>
+            </choice>
+        </sequence>
+    </complexType>
+    <complexType name="PositionValuePairType">
+        <annotation>
+            <documentation>Direct positions resemble n-D coordinates indicating where a coverage provides values; single (1D coordinates are provided as Direct Coordinates, n-tuples as Direct Positions. Following the same pattern, a value can be atomic (i.e., a string) or a composite value. This pattern is introduced to make representation of single values more convenient and efficient. Likewise for efficiency reason, frequently repeated tag names are kept terse: "p" for "direct position", "cv" for "composite value".</documentation>
+        </annotation>
+        <sequence>
+            <choice>
+                <element name="P" type="cis:DirectPositionType"/>
+                <element name="C" type="anySimpleType"/>
+            </choice>
+            <choice>
+                <element name="CV" type="cis:CompositeRangeValueType"/>
+                <element name="V" type="anySimpleType"/>
+            </choice>
+        </sequence>
+    </complexType>
+    <!-- ============================================================= -->
+    <element name="Metadata" type="cis:MetadataType">
+        <annotation>
+            <documentation>The metadata element is a container of any (not further specified) information which should be transported along with the coverage on hand, such as domain-specific metadata.</documentation>
+        </annotation>
+    </element>
+    <complexType name="MetadataType">
+        <sequence>
+            <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <!-- ============================================================= -->
+    <!-- General Grid Coverages                                        -->
+    <!-- ============================================================= -->
+    <element name="GeneralGridCoverage" type="cis:GeneralGridCoverageType" substitutionGroup="cis:AbstractCoverage">
+        <annotation>
+            <documentation>A GeneralGridCoverage is a specialization of AbstractCoverage where the DomainSet is given by a GeneralGrid; its grid axes can be of different types (non-referenced, regular, irregular, algorithmic, etc.).</documentation>
+        </annotation>
+    </element>
+    <complexType name="GeneralGridCoverageType">
+        <complexContent>
+            <extension base="cis:AbstractCoverageType"/>
+        </complexContent>        
+    </complexType>
+
+    <!-- ============================================================= -->
+    <!-- Sensor Model Coverages                                        -->
+    <!-- ============================================================= -->
+    <element name="SensorModelCoverage" type="cis:GeneralGridCoverageType" substitutionGroup="cis:GeneralGridCoverage">
+        <annotation>
+            <documentation>A coverage whose domain set is given by a grid defined through a SensorML 2.0 transformation model, represented by a TransformationBySensorModelCoverage element.</documentation>
+        </annotation>
+    </element>
+
+    <!-- ============================================================= -->
+    <!-- MultiPoint Coverages                                          -->
+    <!-- ============================================================= -->
+    <element name="MultiPointCoverage" type="cis:MultiPointCoverageType" substitutionGroup="cis:AbstractCoverage">
+        <annotation>
+            <documentation>In a MultiPointCoverage (i.e., point cloud) the DomainSet consists of a DirectMultiPoint, i.e.: a collection of points.</documentation>
+        </annotation>
+    </element>
+    <complexType name="MultiPointCoverageType">
+        <complexContent>
+            <extension base="cis:AbstractCoverageType"/>
+        </complexContent>
+    </complexType>
+    <!-- ============================================================= -->
+    <element name="DirectMultiPoint" type="cis:DirectMultiPointType">
+        <annotation>
+            <documentation>A DirectMultiPoint consist of a list of arbitrary direct positions (normally not aligned on a grid).</documentation>
+        </annotation>
+    </element>
+    <complexType name="DirectMultiPointType">
+        <sequence>
+            <element name="P" type="cis:DirectPositionType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <!-- ============================================================= -->
+    <!-- Container Objects                                             -->
+    <!-- ============================================================= -->
+    <element name="AbstractObject" type="cis:AbstractObjectType" abstract="true">
+        <annotation>
+            <documentation>This is a general object which can be used, e.g., to derive concrete containers for coverages and other objects.</documentation>
+        </annotation>
+    </element>
+    <complexType name="AbstractObjectType"/>
+</schema>
+

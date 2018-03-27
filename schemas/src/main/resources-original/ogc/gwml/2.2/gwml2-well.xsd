@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" xmlns:gsml="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:om="http://www.opengis.net/om/2.0" xmlns:gmd="http://www.isotc211.org/2005/gmd" targetNamespace="http://www.opengis.net/gwml-well/2.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0">
+	<annotation>
+		<documentation>Describes the features and properties associated with water well. Imports WellConstruction.
+
+        OGC WaterML 2.0 Part 4 - GroundWaterML 2 is an OGC Standard.
+        Copyright (c) 2016 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
+	<import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd"/>
+	<import namespace="http://www.opengis.net/om/2.0" schemaLocation="http://schemas.opengis.net/om/2.0/observation.xsd"/>
+	<import namespace="http://www.opengis.net/gwml-main/2.2" schemaLocation="http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd"/>
+	<import namespace="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" schemaLocation="http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd"/>
+	<import namespace="http://www.opengis.net/gwml-wellconstruction/2.2" schemaLocation="http://schemas.opengis.net/gwml/2.2/gwml2-wellconstruction.xsd"/>
+	<import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+	<import namespace="http://www.opengis.net/samplingSpatial/2.0" schemaLocation="http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd"/>
+	<element name="GW_GeologyLogCoverage" type="gwml2w:GW_GeologyLogCoverageType" substitutionGroup="gml:AbstractFeature">
+		<annotation>
+			<documentation>Overrides discrete coverage to allow LogValues as elements.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_GeologyLogCoverageType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="element" type="gwml2w:LogValuePropertyType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Link to a LogValue of the GW_GeologyLogCoverage.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GW_GeologyLogCoveragePropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2w:GW_GeologyLogCoverage"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="GW_MonitoringSite" type="gwml2w:GW_MonitoringSiteType" substitutionGroup="sams:SF_SpatialSamplingFeature">
+		<annotation>
+			<documentation>Observation site (e.g. well) used to watch for the advent of an anticipated condition, generally undesirable, such as the advance of the salt-water front in a coastal area where salt-water encroachment is occurring, or the movement of a pollutant injected into a disposal well. IGH0806</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_MonitoringSiteType">
+		<complexContent>
+			<extension base="sams:SF_SpatialSamplingFeatureType">
+				<sequence>
+					<element name="gwMonitoringHost" type="gml:FeaturePropertyType" nillable="false" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The feature hosting the site, e.g. a well, spring, lake or stream.</documentation>
+						</annotation>
+					</element>
+					<element name="gwSiteReferenceElevation" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Reference elevation for all observations at the site, e.g. ground elevation, casing elevation. This can differ from the host feature elevation, or be more specific. </documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="gwml2w:ElevationPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="gwSiteType" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Type of monitoring site, e.g. well, gauging station, etc.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GW_MonitoringSitePropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2w:GW_MonitoringSite"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="GW_Spring" type="gwml2w:GW_SpringType" substitutionGroup="gml:AbstractFeature">
+		<annotation>
+			<documentation>Any natural situation where groundwater flows to the surface of the earth.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_SpringType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="gwSpringName" nillable="false" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Name or ID of the spring.</documentation>
+						</annotation>
+						<complexType>
+							<simpleContent>
+								<extension base="string">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</simpleContent>
+						</complexType>
+					</element>
+					<element name="gwSpringLocation" type="gml:GeometryPropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Position of the feature.</documentation>
+						</annotation>
+					</element>
+					<element name="gwSpringReferenceElevation" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Reference elevation for all observations at the site, e.g. ground elevation, casing elevation.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="gwml2w:ElevationPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="gwSpringType" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Type of spring e.g. mineral, thermal, saline, etc.</documentation>
+						</annotation>
+					</element>
+					<element name="gwSpringCauseType" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The cause of the spring e.g. artesian, geyser, perched, etc.</documentation>
+						</annotation>
+					</element>
+					<element name="gwSpringGeology" type="gsml:GeologicFeaturePropertyType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Related geology features, e.g. borehole, unit, etc.</documentation>
+						</annotation>
+					</element>
+					<element name="gwSpringBody" type="gwml2:GW_FluidBodyPropertyType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>The fluid body being depleted by the spring.</documentation>
+						</annotation>
+					</element>
+					<element name="gwSpringUnit" type="gwml2:GW_HydrogeoUnitPropertyType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>The hydrogeologic unit(s) hosting the spring.</documentation>
+						</annotation>
+					</element>
+					<element name="gwSpringConstruction" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Spring construction details, if any.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="anyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="gwSpringPersistence" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The periodicity of the spring e.g. ephemeral, perennial, intermittent, seasonal, etc.</documentation>
+						</annotation>
+					</element>
+					<element name="gwSpringLicence" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Any licence relating to the spring.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="gwml2w:GW_LicencePropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GW_SpringPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2w:GW_Spring"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="GW_GeologyLog" type="gwml2w:GW_GeologyLogType" substitutionGroup="om:OM_Observation">
+		<annotation>
+			<documentation>Specialization of the OM_Observation class to allow defining the log start end depth for coverages.
+For Stratigraphic logs, the observedProperty will be a GeoSciML:GeologicUnit/name.
+For Lithologic logs, the observedProperty will be a GeoSciML:GeologicUnit/composition/CompositionPart/material.
+</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_GeologyLogType">
+		<complexContent>
+			<extension base="om:OM_ObservationType">
+				<sequence>
+					<element name="startDepth" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The start of the log measured as a depth from the reference elevation.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="swe:QuantityPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="endDepth" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The end of the log measured as a depth from the reference elevation.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="swe:QuantityPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="result" type="gwml2w:GW_GeologyLogCoveragePropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Relates a geology log with a particular collection of values (the result) that represent the group of measurements taken in intervals along the length of the log.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GW_GeologyLogPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2w:GW_GeologyLog"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="GW_Well" type="gwml2w:GW_WellType" substitutionGroup="sams:SF_SpatialSamplingFeature">
+		<annotation>
+			<documentation>A shaft or hole sunk, dug or drilled into the Earth to observe, extract or inject water (after IGH1397).</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_WellType">
+		<complexContent>
+			<extension base="sams:SF_SpatialSamplingFeatureType">
+				<sequence>
+					<element name="gwWellBody" type="gwml2:GW_FluidBodyPropertyType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>The fluid body occupying the well.</documentation>
+						</annotation>
+					</element>
+					<element name="gwWellConstructedDepth" type="om:OM_ObservationPropertyType" nillable="false" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Constructed depth of the well.</documentation>
+						</annotation>
+					</element>
+					<element name="gwWellConstruction" type="gwml2wc:BoreholePropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Construction details for a well.</documentation>
+						</annotation>
+					</element>
+					<element name="gwWellContributionZone" type="gml:GeometryPropertyType" nillable="false" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The area or volume surrounding a pumping well or other discharge site that encompasses all areas and features that supply groundwater to the well or discharge site.</documentation>
+						</annotation>
+					</element>
+					<element name="gwWellLocation" type="gml:PointPropertyType" nillable="false" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Surface location of the well.</documentation>
+						</annotation>
+					</element>
+					<element name="gwWellPurpose" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Purpose of well, e.g. extraction, injection, observation, dewatering, cathodic protection, decontamination, disposal, FlowingShot, Geotechnical, Mineral, MonitoringlevelHead, MonitoringQuality, Oil, OilExploratory, Seismic, WaterExploratory, etc.</documentation>
+						</annotation>
+					</element>
+					<element name="gwWellReferenceElevation" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Reference elevation for all observations at the site, e.g. ground elevation, casing elevation.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="gwml2w:ElevationPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="gwWellStaticWaterDepth" type="om:OM_ObservationPropertyType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Depth of the fluid body (e.g. piezometric level).</documentation>
+						</annotation>
+					</element>
+					<element name="gwWellStatus" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Status of the well, Can be new, unfinished, reconditioned, deepened, not in use, standby, unknown, abandoned dry, abandoned insufficient, abandoned quality. (gwml1)</documentation>
+						</annotation>
+					</element>
+					<element name="gwWellTotalLength" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Total length of the well from reference elevation.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="swe:QuantityPropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="gwWellUnit" type="gwml2:GW_HydrogeoUnitPropertyType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>The aquifers or confining beds intersecting the well.</documentation>
+						</annotation>
+					</element>
+					<element name="gwWellWaterUse" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>E.g. Agricultural, Domestic, Industrial, Recreation.</documentation>
+						</annotation>
+					</element>
+					<element name="gwWellYield" type="om:OM_ObservationPropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Estimated or calculated yield from a well.	</documentation>
+						</annotation>
+					</element>
+					<element name="gwWellLicence" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Licence relating to the drilling of the well or to the extraction of groundwater.</documentation>
+						</annotation>
+						<complexType>
+							<complexContent>
+								<extension base="gwml2w:GW_LicencePropertyType">
+									<attribute name="nilReason" type="gml:NilReasonType"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="gwWellGeology" type="gwml2w:GW_GeologyLogPropertyType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Relates a GeologyLog with a well.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GW_WellPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2w:GW_Well"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="Elevation" type="gwml2w:ElevationType" substitutionGroup="gml:AbstractObject">
+		<annotation>
+			<documentation>A class to capture the elevation information about a well to enable applications that cannot handle 3D data.</documentation>
+		</annotation>
+	</element>
+	<complexType name="ElevationType">
+		<sequence>
+			<element name="elevation" type="gml:DirectPositionType" nillable="false" minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>Numeric value, coordinate reference system (CRS), and unit of measure (UoM) for the elevation.</documentation>
+				</annotation>
+			</element>
+			<element name="elevationAccuracy" type="gmd:DQ_PositionalAccuracy_PropertyType" nillable="false" minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>Description of the accuracy of the elevation measurement.</documentation>
+				</annotation>
+			</element>
+			<element name="elevationType" type="gml:ReferenceType" nillable="false" minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>Type of reference elevation, defined as a feature, e.g. Top of Casing, Ground, etc.</documentation>
+				</annotation>
+			</element>
+			<element name="elevationMeasurementMethod" nillable="false" minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>Method used to measure the elevation, e.g. GPS, Survey, DEM, etc.</documentation>
+				</annotation>
+				<complexType>
+					<complexContent>
+						<extension base="gml:ReferenceType"/>
+					</complexContent>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="ElevationPropertyType">
+		<sequence>
+			<element ref="gwml2w:Elevation"/>
+		</sequence>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="GW_Licence" type="gwml2w:GW_LicenceType" substitutionGroup="gml:AbstractObject">
+		<annotation>
+			<documentation>Licence relating to the drilling of the well or to the extraction of groundwater.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_LicenceType">
+		<sequence>
+			<element name="gwLicenceID" type="string" nillable="false" minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>Identifier of the licence.</documentation>
+				</annotation>
+			</element>
+			<element name="gwPurpose" nillable="true" minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>Role of the licence.</documentation>
+				</annotation>
+				<complexType>
+					<simpleContent>
+						<extension base="string">
+							<attribute name="nilReason" type="gml:NilReasonType"/>
+						</extension>
+					</simpleContent>
+				</complexType>
+			</element>
+			<element name="gwAssociatedGWVolume" nillable="true" minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>Fluid volume associated with the licence.</documentation>
+				</annotation>
+				<complexType>
+					<complexContent>
+						<extension base="swe:QuantityRangePropertyType">
+							<attribute name="nilReason" type="gml:NilReasonType"/>
+						</extension>
+					</complexContent>
+				</complexType>
+			</element>
+			<element name="gwTimePeriod" nillable="true" minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>The period of time for which the licence is valid.</documentation>
+				</annotation>
+				<complexType>
+					<complexContent>
+						<extension base="swe:TimeRangePropertyType">
+							<attribute name="nilReason" type="gml:NilReasonType"/>
+						</extension>
+					</complexContent>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="GW_LicencePropertyType">
+		<sequence>
+			<element ref="gwml2w:GW_Licence"/>
+		</sequence>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="LogValue" type="gwml2w:LogValueType" substitutionGroup="gml:AbstractObject">
+		<annotation>
+			<documentation>The value of the log property at a depth interval along the log.</documentation>
+		</annotation>
+	</element>
+	<complexType name="LogValueType">
+		<sequence>
+			<element name="fromDepth" nillable="true" minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>Start depth of the interval along a log.</documentation>
+				</annotation>
+				<complexType>
+					<complexContent>
+						<extension base="swe:QuantityPropertyType">
+							<attribute name="nilReason" type="gml:NilReasonType"/>
+						</extension>
+					</complexContent>
+				</complexType>
+			</element>
+			<element name="toDepth" nillable="true" minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>End depth of the interval along a log.</documentation>
+				</annotation>
+				<complexType>
+					<complexContent>
+						<extension base="swe:QuantityPropertyType">
+							<attribute name="nilReason" type="gml:NilReasonType"/>
+						</extension>
+					</complexContent>
+				</complexType>
+			</element>
+			<element name="value" nillable="false" minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>Value of the log property.</documentation>
+				</annotation>
+				<complexType>
+					<complexContent>
+						<extension base="swe:DataRecordPropertyType">
+							<attribute name="nilReason" type="gml:NilReasonType"/>
+						</extension>
+					</complexContent>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="LogValuePropertyType">
+		<sequence>
+			<element ref="gwml2w:LogValue"/>
+		</sequence>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<simpleType name="ElevationMeasurementMethodTermType">
+		<union memberTypes="gwml2w:ElevationMeasurementMethodTermEnumerationType gwml2w:ElevationMeasurementMethodTermOtherType"/>
+	</simpleType>
+	<simpleType name="ElevationMeasurementMethodTermEnumerationType">
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="ElevationMeasurementMethodTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+</schema>

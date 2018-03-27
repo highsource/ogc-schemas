@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Example of a 1D timeseries represented as a partitioned coverage
+     as defined in the OGC Coverage Implementation Schema 1.1.
+     Last updated 2016-aug-11.
+-->
+
+<GeneralGridCoverage
+    xmlns='http://www.opengis.net/cis/1.1/gml'
+    xmlns:gml='http://www.opengis.net/gml/3.2'
+    xmlns:swe='http://www.opengis.net/swe/2.0'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:schemaLocation='http://www.opengis.net/cis/1.1/gml ../cisAll.xsd'
+    gml:id="CIS_001">
+
+    <Envelope srsName="http://www.opengis.net/def/crs/OGC/0/AnsiDate" axisLabels="date" srsDimension="1">
+        <AxisExtent axisLabel="date" uomLabel="d" lowerBound="2015-09-20" upperBound="2015-09-23"/>
+    </Envelope>
+
+    <PartitionSet>
+        <Partition> 
+            <Envelope srsName="http://www.opengis.net/def/crs/OGC/0/AnsiDate" axisLabels="date" srsDimension="1">
+                <AxisExtent axisLabel="date" uomLabel="d" lowerBound="2015-09-20" upperBound="2015-09-20"/>
+            </Envelope>
+            <GeneralGridCoverage gml:id="CIS_002">
+                <DomainSet>
+                    <GeneralGrid srsName="http://www.opengis.net/def/crs/OGC/0/Index1D" axisLabels="i">
+                        <IndexAxis axisLabel="i" lowerBound="0" upperBound="0"/>
+                    </GeneralGrid>
+                </DomainSet>
+                <RangeSet>
+                    <DataBlock>
+                        <V>0</V>
+                    </DataBlock>
+                </RangeSet>
+                <RangeType>
+                    <swe:DataRecord>
+                        <swe:field name="singleBand">
+                            <swe:Quantity definition="http://www.opengis.net/def/dataType/OGC/0/unsignedInt">
+                                <swe:uom code="10^0"/>
+                            </swe:Quantity>
+                        </swe:field>
+                    </swe:DataRecord>
+                </RangeType>
+            </GeneralGridCoverage>
+        </Partition> 
+        <Partition> 
+            <Envelope srsName="http://www.opengis.net/def/crs/OGC/0/AnsiDate" axisLabels="date" srsDimension="1">
+                <AxisExtent axisLabel="date" uomLabel="d" lowerBound="2015-09-21" upperBound="2015-09-21"/>
+            </Envelope>
+            <GeneralGridCoverage gml:id="CIS_003">
+                <DomainSet>
+                    <GeneralGrid srsName="http://www.opengis.net/def/crs/OGC/0/Index1D" axisLabels="i">
+                        <IndexAxis axisLabel="i" lowerBound="0" upperBound="0"/>
+                    </GeneralGrid>
+                </DomainSet>
+                <RangeSet>
+                    <DataBlock>
+                        <V>1</V>
+                    </DataBlock>
+                </RangeSet>
+                <RangeType>
+                    <swe:DataRecord>
+                        <swe:field name="singleBand">
+                            <swe:Quantity definition="http://www.opengis.net/def/dataType/OGC/0/unsignedInt">
+                                <swe:uom code="10^0"/>
+                            </swe:Quantity>
+                        </swe:field>
+                    </swe:DataRecord>
+                </RangeType>
+            </GeneralGridCoverage>
+        </Partition> 
+        <Partition> 
+            <Envelope srsName="http://www.opengis.net/def/crs/OGC/0/AnsiDate" axisLabels="date" srsDimension="1">
+                <AxisExtent axisLabel="date" uomLabel="d" lowerBound="2015-09-22" upperBound="2015-09-22"/>
+            </Envelope>
+            <GeneralGridCoverage gml:id="CIS_004">
+                <DomainSet>
+                    <GeneralGrid srsName="http://www.opengis.net/def/crs/OGC/0/Index1D" axisLabels="i">
+                        <IndexAxis axisLabel="i" lowerBound="0" upperBound="0"/>
+                    </GeneralGrid>
+                </DomainSet>
+                <RangeSet>
+                    <DataBlock>
+                        <V>2</V>
+                    </DataBlock>
+                </RangeSet>
+                <RangeType>
+                    <swe:DataRecord>
+                        <swe:field name="singleBand">
+                            <swe:Quantity definition="http://www.opengis.net/def/dataType/OGC/0/unsignedInt">
+                                <swe:uom code="10^0"/>
+                            </swe:Quantity>
+                        </swe:field>
+                    </swe:DataRecord>
+                </RangeType>
+            </GeneralGridCoverage>
+        </Partition> 
+        <Partition> 
+            <Envelope srsName="http://www.opengis.net/def/crs/OGC/0/AnsiDate" axisLabels="date" srsDimension="1">
+                <AxisExtent axisLabel="date" uomLabel="d" lowerBound="2015-09-23" upperBound="2015-09-23"/>
+            </Envelope>
+            <GeneralGridCoverage gml:id="CIS_005">
+                <DomainSet>
+                    <GeneralGrid srsName="http://www.opengis.net/def/crs/OGC/0/Index1D" axisLabels="i">
+                        <IndexAxis axisLabel="i" lowerBound="0" upperBound="0"/>
+                    </GeneralGrid>
+                </DomainSet>
+                <RangeSet>
+                    <DataBlock>
+                        <V>3</V>
+                    </DataBlock>
+                </RangeSet>
+                <RangeType>
+                    <swe:DataRecord>
+                        <swe:field name="singleBand">
+                            <swe:Quantity definition="http://www.opengis.net/def/dataType/OGC/0/unsignedInt">
+                                <swe:uom code="10^0"/>
+                            </swe:Quantity>
+                        </swe:field>
+                    </swe:DataRecord>
+                </RangeType>
+            </GeneralGridCoverage>
+        </Partition> 
+    </PartitionSet> 
+
+    <RangeType>
+        <swe:DataRecord>
+            <swe:field name="singleBand">
+                <swe:Quantity definition="http://www.opengis.net/def/dataType/OGC/0/unsignedInt">
+                    <swe:uom code="10^0"/>
+                </swe:Quantity>
+            </swe:field>
+        </swe:DataRecord>
+    </RangeType>
+
+</GeneralGridCoverage>
+

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="xs3p.xsl"?>
+<xs:schema
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  targetNamespace="http://www.opengis.net/cdb/1.0/Moving_Model_Codes"
+  xmlns:cdb="http://www.opengis.net/cdb/1.0/Moving_Model_Codes"
+  xmlns="http://www.opengis.net/cdb/1.0/Moving_Model_Codes"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  version="1.0">
+  
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      CDB is an OGC Standard.
+      Copyright (c) 2016 Open Geospatial Consortium.
+      To obtain additional rights of use, visit
+      http://www.opengeospatial.org/legal/.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:element name="Moving_Model_Codes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Kind" type="Kind" maxOccurs="256" />
+      </xs:sequence>
+      <xs:attribute name="version" use="required">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              This attribute is used to indicate the version of the XML file containing the list of codes.
+              It is independent from the version of the Specification.
+              It is also independent from the version of the Schema.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="([1-9]([0-9])*[.]([0-9])+)"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="Kind">
+    <xs:sequence>
+      <xs:element name="Domain" type="Domain" minOccurs="0" maxOccurs="256" />
+    </xs:sequence>
+    <xs:attributeGroup ref="Code_Name" />
+  </xs:complexType>
+
+  <xs:complexType name="Domain">
+    <xs:sequence>
+      <xs:element name="Category" type="Category" minOccurs="0" maxOccurs="256" />
+    </xs:sequence>
+    <xs:attributeGroup ref="Code_Name" />
+  </xs:complexType>
+
+  <xs:complexType name="Category">
+    <xs:attributeGroup ref="Code_Name" />
+  </xs:complexType>
+
+  <xs:attributeGroup name="Code_Name">
+    <xs:attribute name="code" type="xs:unsignedByte" />
+    <xs:attribute name="name" type="xs:token" />
+  </xs:attributeGroup>
+  
+</xs:schema>

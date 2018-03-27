@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection gml:id="feduni.GW_InterFlow" 
+xmlns:wfs="http://www.opengis.net/wfs/2.0"
+xmlns:gml="http://www.opengis.net/gml/3.2" 
+xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" 
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:swe="http://www.opengis.net/swe/2.0" 
+ xmlns:om="http://www.opengis.net/om/2.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://www.opengis.net/gwml-flow/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-flow.xsd http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd">
+ 
+<!-- ######################### -->
+	<!-- Mapping of Federation University (FedUni) Groundwater database tables and records to the proposed GroundWaterML2 OGC standard release candidate version 2.2  -->
+	<!-- File created by Bruce Simons, CSIRO, February 2016 -->
+	<!-- ######################### -->
+	<gml:featureMember>
+		<!-- First featureMember is an example of GW_Discharge -->
+		<gwml2f:GW_Discharge gml:id="lake-murdeduke-discharge-zone_19930101">
+			<gml:description>Example Interflow instance of fluid flow from Tertiary-Quaternary Basalt Aquifer to Lake Murdeduke based on data from Jane Coram MSc 1996</gml:description>
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://groundwater.feduni.edu/flowsystem/feduni/lake-murdeduke-discharge-zone_19930101"</gml:identifier>
+			<gml:name>Lake Murdeduke western discharge zone January 1993</gml:name>
+			<gwml2f:gwFlowPersistence xlink:title="perennial"/>
+			<gwml2f:gwFlowProcess xlink:title="baseflow"/>
+			<gwml2f:gwFlowTime>
+				<gml:TimePeriod gml:id="January1993">
+					<gml:beginPosition xmlns="http://www.opengis.net/gml/3.2">1993-01-01</gml:beginPosition>
+					<gml:endPosition xmlns="http://www.opengis.net/gml/3.2">1993-01-31</gml:endPosition>
+				</gml:TimePeriod>
+			</gwml2f:gwFlowTime>
+			<gwml2f:gwFlowVelocity>
+				<om:OM_Observation gml:id="lake-murdeduke-discharge-zone_19930101-FlowVelocity">
+					<om:phenomenonTime xlink:href="#January1993"/>
+					<om:resultTime xlink:href="#January1993"/>
+					<om:procedure xlink:title="V=Ki/n"/>
+					<om:observedProperty xlink:title="flow velocity"/>
+					<om:featureOfInterest/>
+					<om:result>
+						<swe:Quantity>
+							<swe:uom xlink:title="metres per month" code="m/mth"/>
+							<swe:value>2.2</swe:value>
+						</swe:Quantity>
+					</om:result>
+				</om:OM_Observation>
+			</gwml2f:gwFlowVelocity>
+			<gwml2f:gwFlowVolumeRate>
+				<om:OM_Observation gml:id="lake-murdeduke-discharge-zone_19930101_FlowVolumeRate">
+					<om:phenomenonTime xlink:href="January1993"/>
+					<om:resultTime xlink:title="#January1993"/>
+					<om:procedure xlink:title="flow net calculation"/>
+					<om:observedProperty xlink:href="" xlink:title="GWML2-Flow:gwFlowVolumeRate"/>
+					<om:featureOfInterest xlink:href="#"/>
+					<om:result>
+						<swe:Quantity>
+							<swe:uom xlink:title="cubic metres per month" code="m3/mth"/>
+							<swe:value>80427</swe:value>
+						</swe:Quantity>
+					</om:result>
+				</om:OM_Observation>
+			</gwml2f:gwFlowVolumeRate>
+			<gwml2f:gwFlowDestinationBody xlink:title="Lake Murdeduke water body"/>
+			<gwml2f:gwFlowDestinationContainer xlink:title="Lake Murdeduke"/>
+			<gwml2f:gwFlowInterfaceFeature xlink:title="Lake Murdeduke western discharge zone"/>
+			<gwml2f:gwFlowLocation>
+				<!-- Fill in some geometry -->
+			</gwml2f:gwFlowLocation>
+			<gwml2f:gwFlowSourceBody xlink:title="Upper Tertiary-Quaternary Basalt Fluid Body"/>
+			<gwml2f:gwFlowSourceContainer xlink:title="Upper Tertiary-Quaternary Basalt Aquifer"/>
+		</gwml2f:GW_Discharge>
+	</gml:featureMember>
+	<gml:featureMember>
+		<!-- Second featureMember is an example of GW_Recharge -->
+		<gwml2f:GW_Recharge gml:id="lake-murdeduke-recharge-zone_19930101">
+			<gml:description>Example Interflow instance of fluid flow from Lake Murdeduke to Upper Tertiary-Quaternary Basalt Aquifer based on data from Jane Coram MSc 1996</gml:description>
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://groundwater.feduni.edu/flowsystem/feduni/lake-murdeduke</gml:identifier>
+			<gml:name>Lake Murdeduke outflow</gml:name>
+			<gwml2f:gwFlowPersistence xlink:title="perennial"/>
+			<gwml2f:gwFlowProcess xlink:title="constant head"/>
+			<gwml2f:gwFlowTime xlink:href="#January1993">
+
+</gwml2f:gwFlowTime>
+			<gwml2f:gwFlowVelocity>
+				<om:OM_Observation gml:id="lake-murdeduke-recharge-zone_19930101_FlowVelocity">
+					<om:phenomenonTime xlink:href="#January1993"/>
+					<om:resultTime xlink:href="#January1993"/>
+					<om:procedure xlink:title="V=Ki/n"/>
+					<om:observedProperty xlink:title="flow velocity"/>
+					<om:featureOfInterest/>
+					<om:result>
+						<swe:Quantity>
+							<swe:uom xlink:title="metres per month" code="m/mth"/>
+							<swe:value>2.9</swe:value>
+						</swe:Quantity>
+					</om:result>
+				</om:OM_Observation>
+			</gwml2f:gwFlowVelocity>
+			<gwml2f:gwFlowVolumeRate>
+				<om:OM_Observation gml:id="lake-murdeduke-recharge-zone_19930101_FlowVolumeRate">
+					<om:phenomenonTime xlink:href="#January1993"/>
+					<om:resultTime xlink:href="#January1993"/>
+					<om:procedure xlink:title="flow net calculation"/>
+					<om:observedProperty xlink:href="" xlink:title="GWML2-Flow:gwFlowVolumeRate"/>
+					<om:featureOfInterest xlink:href="#"/>
+					<om:result>
+						<swe:Quantity>
+							<swe:uom xlink:title="cubic metres per month" code="m3/mth"/>
+							<swe:value>88706</swe:value>
+						</swe:Quantity>
+					</om:result>
+				</om:OM_Observation>
+			</gwml2f:gwFlowVolumeRate>
+			<gwml2f:gwFlowDestinationBody xlink:title="Upper Tertiary-Quaternary Basalt Fluid Body"/>
+			<gwml2f:gwFlowDestinationContainer xlink:title="Upper Tertiary-Quaternary Basalt Aquifer"/>
+			<gwml2f:gwFlowInterfaceFeature xlink:title="Lake Murdeduke eastern recharge zone"/>
+			<gwml2f:gwFlowLocation>
+				<!-- Fill in some geometry -->
+			</gwml2f:gwFlowLocation>
+			<gwml2f:gwFlowSourceBody xlink:title="Lake Murdeduke water body"/>
+			<gwml2f:gwFlowSourceContainer xlink:title="Lake Murdeduke"/>
+		</gwml2f:GW_Recharge>
+	</gml:featureMember>
+</gml:FeatureCollection>

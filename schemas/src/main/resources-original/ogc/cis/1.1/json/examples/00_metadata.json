@@ -1,0 +1,64 @@
+{
+	"@context": ["http://localhost/json-ld/coverage-context.json", {"examples": "http://www.opengis.net/cis/1.1/examples/"}],
+	"type": "CoverageByDomainAndRangeType",
+	"id": "examples:CIS_00_MD",
+	"domainSet":{
+		"@context": "http://localhost/json-ld/domainset-context.json",
+		"type": "DomainSetType",
+		"id": "examples:CIS_DS_00_MD",
+		"generalGrid":{
+			"type": "GeneralGridCoverageType",
+			"id": "examples:CIS_DS_GG_00_MD",
+			"srsName": "http://www.opengis.net/def/crs/OGC/0/Index2D",
+			"axisLabels": ["i", "j"],
+			"axis": [{ 
+				"type": "IndexAxisType",
+				"id": "examples:CIS_DS_GG_I_00_MD",
+				"axisLabel": "i",
+				"lowerBound": 0,
+				"upperBound": 2
+			},{
+				"type": "IndexAxisType",
+				"id": "examples:CIS_DS_GG_J_00_MD",
+				"axisLabel": "j",
+				"lowerBound": 0,
+				"upperBound": 2
+			}]
+		}
+	},
+	"rangeSet": {
+		"@context": "http://localhost/json-ld/rangeset-context.json",
+		"type": "RangeSetType",
+		"id": "examples:CIS_RS_00_MD",
+		"dataBlock": {
+			"id": "examples:CIS_RS_DB_00_MD",
+			"type": "VDataBlockType", 
+			"values": [1,2,3,4,5,6,7,8,9]
+		}
+	},
+	"rangeType": { 
+		"@context": "http://localhost/json-ld/rangetype-context.json",
+		"type": "DataRecordType",
+		"id": "examples:CIS_RT_00_MD",
+		"field":[{ 
+			"type": "QuantityType",
+			"id": "examples:CIS_RT_F_00_MD",
+			"definition": "ogcType:unsignedInt",
+			"uom": {
+				"type": "UnitReference",
+				"id": "examples:CIS_RT_F_UOM_00_MD",
+				"code": "10^0"
+			}
+		}]
+	},
+	"metadata":{
+		"@context":
+		{
+			"eop": "http://www.opengis.net/eop/2.0/",
+			"om": "http://www.opengis.net/om/2.0/",
+			"EarthObservationType": "eop:EarthObservationType",
+			"featureOfInterest": "om:featureOfInterest"
+		},
+		"type": "EarthObservationType"
+	 }
+}

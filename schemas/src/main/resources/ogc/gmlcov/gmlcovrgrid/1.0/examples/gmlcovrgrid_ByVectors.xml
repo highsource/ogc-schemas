@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    GMLCOV 1.0 example with a referenceable grid coverage (gmlcov:ReferenceableGridCoverage)
+    having an instantiable referenceable grid element (gmlcovrgrid:ReferenceableGridByVectors) in
+    its domain set.
+-->
+
+<gmlcov:ReferenceableGridCoverage 
+    xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+    xmlns:gmlcovrgrid="http://www.opengis.net/gmlcov/gmlcovrgrid/1.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/gmlcov/gmlcovrgrid/1.0 http://schemas.opengis.net/gmlcov/gmlcovrgrid/1.0/gmlcovrgrid.xsd"
+    gml:id="C0002">
+    <gml:boundedBy>
+        <gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326" axisLabels="Lat Long" uomLabels="deg deg" srsDimension="2"> 
+            <gml:lowerCorner>9.9 9.9</gml:lowerCorner>
+            <gml:upperCorner>14.9 12.9</gml:upperCorner>
+        </gml:Envelope>
+    </gml:boundedBy>
+    <gml:domainSet>
+        <gmlcovrgrid:ReferenceableGridByVectors gml:id="ex2" dimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">    
+            <gml:limits>
+                <gml:GridEnvelope>
+                    <gml:low>0 0</gml:low>
+                    <gml:high>4 3</gml:high>
+                </gml:GridEnvelope>
+            </gml:limits>
+            <gml:axisLabels>x y</gml:axisLabels>
+            <gmlcovrgrid:origin>
+                <gml:Point gml:id="o1.2">
+                    <gml:pos>2 8</gml:pos>
+                </gml:Point>
+            </gmlcovrgrid:origin>
+            <gmlcovrgrid:generalGridAxis>
+                <gmlcovrgrid:GeneralGridAxis>
+                    <gmlcovrgrid:offsetVector>0.333 0.667</gmlcovrgrid:offsetVector>
+                    <gmlcovrgrid:coefficients>
+                        0 3 8 12 18
+                        0 4 10 14 18
+                        -2 1 5 8 15
+                        0 1 5 9 13
+                    </gmlcovrgrid:coefficients>
+                    <gmlcovrgrid:gridAxesSpanned>x y</gmlcovrgrid:gridAxesSpanned>
+                    <gmlcovrgrid:sequenceRule axisOrder="+1 +2">Linear</gmlcovrgrid:sequenceRule>
+                </gmlcovrgrid:GeneralGridAxis>
+            </gmlcovrgrid:generalGridAxis>
+            <gmlcovrgrid:generalGridAxis>
+                <gmlcovrgrid:GeneralGridAxis>
+                    <gmlcovrgrid:offsetVector>0.667 -0.667</gmlcovrgrid:offsetVector>
+                    <gmlcovrgrid:coefficients>
+                        0 0 2 3 3
+                        3 4 4 5 6
+                        7 7 8 8 9
+                        9 8.5 9.5 9 10
+                    </gmlcovrgrid:coefficients>
+                    <gmlcovrgrid:gridAxesSpanned>x y</gmlcovrgrid:gridAxesSpanned>
+                    <gmlcovrgrid:sequenceRule axisOrder="+1 +2">Linear</gmlcovrgrid:sequenceRule>
+                </gmlcovrgrid:GeneralGridAxis>
+            </gmlcovrgrid:generalGridAxis>
+        </gmlcovrgrid:ReferenceableGridByVectors>
+    </gml:domainSet>
+    <gml:rangeSet>
+        <gml:DataBlock>
+            <gml:rangeParameters/>
+            <gml:tupleList>
+                 248 248 248 248 248 248 248 248 29 78 248 248 248 248 248 248 248 29 78 78 248 248 248 248 248 248 29 78 29 8 
+            </gml:tupleList>
+        </gml:DataBlock>
+    </gml:rangeSet>
+    <gml:coverageFunction>
+        <gml:GridFunction>
+            <gml:sequenceRule axisOrder="+1 +2">Linear</gml:sequenceRule>
+            <gml:startPoint>0 0</gml:startPoint>
+        </gml:GridFunction>
+    </gml:coverageFunction>
+    <gmlcov:rangeType>
+        <swe:DataRecord>
+            <swe:field name="red">
+                <swe:Quantity definition="http://opengis.net/def/property/OGC/0/Radiance">
+                    <swe:description>Red Channel</swe:description>
+                    <swe:nilValues>
+                        <swe:NilValues>
+                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">0</swe:nilValue>
+                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/AboveDetectionRange">255</swe:nilValue>
+                        </swe:NilValues>
+                    </swe:nilValues>
+                    <swe:uom code="W.m-2.sr-1.nm-1"/>
+                    <swe:constraint>
+                        <swe:AllowedValues>
+                            <swe:interval>0 255</swe:interval>
+                            <swe:significantFigures>3</swe:significantFigures>
+                        </swe:AllowedValues>
+                    </swe:constraint>
+                </swe:Quantity>
+            </swe:field>
+            <swe:field name="green">
+                 <swe:Quantity definition="http://opengis.net/def/property/OGC/0/Radiance">
+                     <swe:description>Green Channel</swe:description>
+                    <swe:nilValues>
+                        <swe:NilValues>
+                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">0</swe:nilValue>
+                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/AboveDetectionRange">255</swe:nilValue>
+                        </swe:NilValues>
+                    </swe:nilValues>
+                     <swe:uom code="W.m-2.sr-1.nm-1"/>
+                    <swe:constraint>
+                        <swe:AllowedValues>
+                            <swe:interval>0 255</swe:interval>
+                            <swe:significantFigures>3</swe:significantFigures>
+                        </swe:AllowedValues>
+                    </swe:constraint>
+                 </swe:Quantity>
+             </swe:field>
+            <swe:field name="blue">
+                <swe:Quantity definition="http://opengis.net/def/property/OGC/0/Radiance">
+                    <swe:description>Blue Channel</swe:description>
+                    <swe:nilValues>
+                        <swe:NilValues>
+                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">0</swe:nilValue>
+                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/AboveDetectionRange">255</swe:nilValue>
+                        </swe:NilValues>
+                    </swe:nilValues>
+                    <swe:uom code="W.m-2.sr-1.nm-1"/>
+                    <swe:constraint>
+                        <swe:AllowedValues>
+                            <swe:interval>0 255</swe:interval>
+                            <swe:significantFigures>3</swe:significantFigures>
+                        </swe:AllowedValues>
+                    </swe:constraint>
+                </swe:Quantity>
+            </swe:field>    
+        </swe:DataRecord>
+    </gmlcov:rangeType>
+</gmlcov:ReferenceableGridCoverage>

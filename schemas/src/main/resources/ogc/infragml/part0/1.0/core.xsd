@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 rel. 2 (http://www.altova.com) by Linda Peduto (Bentley Systems Inc) -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:li="http://www.opengis.net/infragml/core/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmllr="http://www.opengis.net/gml/3.3/lr" xmlns:gmllro="http://www.opengis.net/gml/3.3/lro" targetNamespace="http://www.opengis.net/infragml/core/1.0" elementFormDefault="qualified" version="1.0.0">
+	<annotation>
+		<documentation>
+			InfraGML is an OGC Standard. 
+			Copyright (c) 2017  Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lr" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRef.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lro" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRefOffset.xsd"/>
+	<!--XML Schema document created by ShapeChange - http://shapechange.net/
+		 Modified by Paul Scarponcini (Bentley Systems Inc.)  -->
+	<!-- 410: fixed striping  .-->
+	<!--                                                                                                                         	-->
+	<!--    Abstract Data                                                                                                   -->
+	<!--                                                                                                                         	-->
+	<element name="AbstractData" type="li:AbstractDataType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="AbstractDataType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="propertySet" type="li:PropertySetPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="property" type="li:PropertyPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AbstractDataPropertyType">
+		<sequence minOccurs="0">
+			<element ref="li:AbstractData"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Document                                                                                                       -->
+	<!--                                                                                                                         	-->
+	<element name="Document" type="li:DocumentType" substitutionGroup="li:Feature"/>
+	<complexType name="DocumentType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="documentID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="documentType" type="string"/>
+					<element name="documentContent" type="anyURI" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="DocumentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="li:Document"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Feature                                                                                                           -->
+	<!--                                                                                                                         	-->
+	<element name="Feature" type="li:FeatureType" substitutionGroup="gml:AbstractFeature"/>
+	<complexType name="FeatureType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="spatialRepresentation" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<sequence>
+								<element name="SpatialRepresentation" type="li:SpatialRepresentationType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="linearlyReferencedLocation" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<sequence>
+								<element name="LinearlyReferencedLocation" type="li:LinearlyReferencedLocationType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="propertySet" type="li:PropertySetPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+					<element name="property" type="li:PropertyPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="FeaturePropertyType">
+		<sequence minOccurs="0">
+			<element ref="li:Feature"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     FeatureAssociation                                                                                          -->
+	<!--                                                                                                                         	-->
+	<element name="FeatureAssociation" type="li:FeatureAssociationType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="FeatureAssociationType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="fromFeature">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="li:Feature"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="fromRole" type="string"/>
+					<element name="toFeature">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="li:Feature"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="toRole" type="string"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="FeatureAssociationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="li:FeatureAssociation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    ID T ype                                                                                                       -->
+	<!--                                                                                                                         	-->
+	<complexType name="IDType">
+		<sequence>
+			<element name="identifier" type="string"/>
+			<element name="scope" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Indexed Point	                                                                                                -->
+	<!--                                                                                                                         	-->
+	<element name="IndexedPoint" type="li:IndexedPointType">
+		<annotation>
+			<documentation>Point having an Integer index reference number</documentation>
+		</annotation>
+	</element>
+	<complexType name="IndexedPointType">
+		<sequence>
+			<element name="index" type="integer"/>
+			<element name="coordinates" type="gml:doubleList"/>
+		</sequence>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     LandInfra Dataset                                                                                             -->
+	<!--                                                                                                                         	-->
+	<element name="LandInfraDataset" type="li:LandInfraDatasetType" substitutionGroup="gml:AbstractGML">
+		<annotation>
+			<documentation>metadata about the LandInfra dataset</documentation>
+		</annotation>
+	</element>
+	<complexType name="LandInfraDatasetType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="datasetID">
+						<annotation>
+							<documentation>user defined unique ID used to identify a LandInfra dataset or file
+							</documentation>
+						</annotation>
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="name" type="string" minOccurs="0"/>
+					<element name="description" type="string" minOccurs="0"/>
+					<element name="dateTime" type="dateTime"/>
+					<element name="datasetVersion" type="string"/>
+					<element name="application" type="string"/>
+					<element name="author" type="string"/>
+					<element name="infraVersion" type="string"/>
+					<element name="language" type="string"/>
+					<element name="defaultCRS" type="gml:CRSPropertyType"/>
+					<choice minOccurs="0" maxOccurs="unbounded">
+						<element name="feature" type="li:FeaturePropertyType"/>
+						<element name="featureAssociation" type="li:FeatureAssociationPropertyType"/>
+						<element name="abstractData" type="li:AbstractDataPropertyType"/>
+						<element name="linearElement" type="gmllr:LinearElementPropertyType"/>
+					</choice>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LandInfraDatasetPropertyType">
+		<sequence minOccurs="0">
+			<element ref="li:LandInfraDataset"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--   LinearAtLocationType                                                                                                       -->
+	<!--                                                                                                                         	-->
+	<complexType name="LinearAtLocationType">
+		<sequence>
+			<element name="atPosition" type="gmllr:PositionExpressionPropertyType"/>
+		</sequence>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     LinearElement                                                                                                      -->
+	<!--                                                                                                                         	-->
+	<element name="LinearElement" type="li:LinearElementType" substitutionGroup="gmllr:LinearElement">
+		<annotation>
+			<documentation>extension of 19148/Topic 19 LinearElement Type, adding optional Referent(s)</documentation>
+		</annotation>
+	</element>
+	<complexType name="LinearElementType">
+		<complexContent>
+			<extension base="gmllr:LinearElementType">
+				<sequence>
+					<element name="referent" type="gmllr:ReferentPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LinearElementPropertyType">
+		<sequence minOccurs="0">
+			<element ref="li:LinearElement"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--   LinearFromToLocationType                                                                                                       -->
+	<!--                                                                                                                         	-->
+	<complexType name="LinearFromToLocationType">
+		<sequence>
+			<element name="fromPosition" type="gmllr:PositionExpressionPropertyType"/>
+			<element name="toPosition" type="gmllr:PositionExpressionPropertyType"/>
+		</sequence>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    LinearlyReferencedLocationType                                                                                                       -->
+	<!--                                                                                                                         	-->
+	<complexType name="LinearlyReferencedLocationType">
+		<sequence>
+			<element name="name" type="string" minOccurs="0"/>
+			<element name="description" type="string" minOccurs="0"/>
+			<choice>
+				<element name="linearAtLocation">
+					<complexType>
+						<sequence>
+							<element name="LinearAtLocation" type="li:LinearAtLocationType"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="linearFromToLocation">
+					<complexType>
+						<sequence>
+							<element name="LinearFromToLocation" type="li:LinearFromToLocationType"/>
+						</sequence>
+					</complexType>
+				</element>
+			</choice>
+		</sequence>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     OffsetsDistanceExpression                                                                                                      -->
+	<!--                                                                                                                         	-->
+	<element name="OffsetsDistanceExpression" type="li:OffsetsDistanceExpressionType" substitutionGroup="gmllr:DistanceExpression"/>
+	<complexType name="OffsetsDistanceExpressionType">
+		<complexContent>
+			<extension base="gmllro:LateralOffsetDistanceExpressionType">
+				<sequence>
+					<element name="longitudinalOffsetExpression" type="double" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Percentage                                                                                                      -->
+	<!--                                                                                                                         	-->
+	<element name="Percentage" type="li:PercentageType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="PercentageType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="percentage" type="double">
+						<annotation>
+							<documentation>real number in the range of -100 to +100, where 2.00 = 2%</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PercentagePropertyType">
+		<sequence minOccurs="0">
+			<element ref="li:Percentage"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Polyface Mesh                                                                                                 -->
+	<!--                                                                                                                         	-->
+	<element name="PolyfaceMesh" type="li:PolyfaceMeshType" substitutionGroup="gml:AbstractGeometry">
+		<annotation>
+			<documentation>A PolyfaceMesh consists of one or more SimpleIndexedPolygons.   A SimpleIndexedPolygon has at least 3 sides.  These SimpleIndexedPolygons are defined by a list of at least three Index values.  Each Index value represents an IndexedPoint which contains the index and a list of coordinates.  The list of eligible IndexedPoints used by a PolyfaceMesh is contained in the PolyfaceMesh definition.</documentation>
+		</annotation>
+	</element>
+	<complexType name="PolyfaceMeshType">
+		<complexContent>
+			<extension base="gml:AbstractGeometryType">
+				<sequence>
+					<element name="indexedPointList">
+						<complexType>
+							<sequence>
+								<element ref="li:IndexedPoint" minOccurs="3" maxOccurs="unbounded"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="simpleIndexedPolygonList">
+						<complexType>
+							<sequence>
+								<element ref="li:SimpleIndexedPolygon" minOccurs="1" maxOccurs="unbounded"/>
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PolyfaceMeshPropertyType">
+		<sequence minOccurs="0">
+			<element ref="li:PolyfaceMesh"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Professional                                                                                                    -->
+	<!--                                                                                                                         	-->
+	<element name="Professional" type="li:ProfessionalType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="ProfessionalType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="fullName" type="string"/>
+					<element name="type" type="gml:ReferenceType"/>
+					<element name="company" type="string" minOccurs="0"/>
+					<element name="registration" type="string" minOccurs="0"/>
+					<element name="licensingCountry" type="string" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="ProfessionalPropertyType">
+		<sequence minOccurs="0">
+			<element ref="li:Professional"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    Property                                                                                                           -->
+	<!--                                                                                                                         	-->
+	<element name="Property" type="li:PropertyType" substitutionGroup="gml:AbstractGML"/>
+	<complexType name="PropertyType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="valueType" type="string"/>
+					<element name="value" type="anyType" maxOccurs="unbounded"/>
+					<element name="units" type="string" minOccurs="0"/>
+					<element name="cardinality" type="string" minOccurs="0">
+						<annotation>
+							<documentation>if not specified, defaut is 1 (one).  Can use either * or n for unbounded</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PropertyPropertyType">
+		<sequence minOccurs="0">
+			<element ref="li:Property"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    Property Set                                                                                                     -->
+	<!--                                                                                                                         	-->
+	<element name="PropertySet" type="li:PropertySetType" substitutionGroup="li:Set"/>
+	<complexType name="PropertySetType">
+		<complexContent>
+			<extension base="li:SetType">
+				<sequence>
+					<element name="propertyMember" type="li:PropertyPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="PropertySetPropertyType">
+		<sequence minOccurs="0">
+			<element ref="li:PropertySet"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Restart Referent                                                                                              -->
+	<!--                                                                                                                         	-->
+	<element name="RestartReferent" type="li:RestartReferentType" substitutionGroup="gmllr:Referent">
+		<annotation>
+			<documentation>An extension to ISO 19148, this subtype of Referent allows for the specification of a restart 
+measure value at the Referent location for use by all linearly referenced locations which include this referent and use the specified LRM, similar to the startValue of a LinearElement.  Together with the Referent Location, this restart value can be used to specify a station equation</documentation>
+		</annotation>
+	</element>
+	<complexType name="RestartReferentType">
+		<complexContent>
+			<extension base="gmllr:ReferentType">
+				<sequence>
+					<element name="restartValue" type="gmllr:StartValueType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="RestartReferentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="li:RestartReferent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     Set                                                                                                                 -->
+	<!--                                                                                                                         	-->
+	<element name="Set" type="li:SetType" substitutionGroup="li:AbstractData"/>
+	<complexType name="SetType">
+		<complexContent>
+			<extension base="li:AbstractDataType">
+				<sequence>
+					<element name="authority" type="string" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SetPropertyType">
+		<sequence minOccurs="0">
+			<element ref="li:Set"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    SideT ype                                                                                                       -->
+	<!--                                                                                                                         	-->
+	<simpleType name="SideType">
+		<restriction base="string">
+			<enumeration value="left"/>
+			<enumeration value="right"/>
+			<enumeration value="neither"/>
+			<enumeration value="both"/>
+		</restriction>
+	</simpleType>
+	<!--                                                                                                                         	-->
+	<!--     Simple Indexed Polygon                                                                                   -->
+	<!--                                                                                                                         	-->
+	<element name="SimpleIndexedPolygon" type="li:SimpleIndexedPolygonType" substitutionGroup="gml:AbstractSurface">
+		<annotation>
+			<documentation>Simple Polygon Surface defined by IndexedPoint indices</documentation>
+		</annotation>
+	</element>
+	<complexType name="SimpleIndexedPolygonType">
+		<complexContent>
+			<extension base="gml:AbstractSurfaceType">
+				<sequence>
+					<element name="pointIndex" type="gml:integerList"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    SpatialRepresentationT ype                                                                                                       -->
+	<!--                                                                                                                         	-->
+	<complexType name="SpatialRepresentationType">
+		<sequence>
+			<element name="name" type="string" minOccurs="0"/>
+			<element name="description" type="string" minOccurs="0"/>
+			<element name="geometry" type="gml:GeometryPropertyType"/>
+			<element name="crs" type="gml:CRSPropertyType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    StateT ype                                                                                                       -->
+	<!--                                                                                                                         	-->
+	<simpleType name="StateType">
+		<union memberTypes="li:StateEnumerationType li:StateOtherType"/>
+	</simpleType>
+	<simpleType name="StateEnumerationType">
+		<restriction base="string">
+			<enumeration value="existing"/>
+			<enumeration value="proposed"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="StateOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+	<!--                                                                                                                         	-->
+	<!--    Survey Mark                                                                                                     -->
+	<!--                                                                                                                         	-->
+	<element name="SurveyMark" type="li:SurveyMarkType" substitutionGroup="li:Feature"/>
+	<complexType name="SurveyMarkType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="identification" type="string" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SurveyMarkPropertyType">
+		<sequence minOccurs="0">
+			<element ref="li:SurveyMark"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+</schema>

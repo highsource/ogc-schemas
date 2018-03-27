@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" 
+xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" 
+xmlns:gwml2c="http://www.opengis.net/gwml-constituent/2.2" xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" xmlns:swe="http://www.opengis.net/swe/2.0" 
+xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" 
+xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:om="http://www.opengis.net/om/2.0" 
+xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gsmlx="http://www.opengis.net/gsml/4.1/GeoSciML-Extension" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" numberMatched="unknown" timeStamp="2016-03-10T23:46:30.069Z" 
+xsi:schemaLocation="http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gwml-main/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd" numberReturned="1">
+	<wfs:member>
+		<gwml2:GW_AquiferSystem gml:id="ngis.hgc.qld.101">
+			<gml:metaDataProperty>
+				<gml:GenericMetaData>
+					<gmd:MD_Metadata>
+						<gmd:contact>
+							<gmd:CI_ResponsibleParty>
+								<gmd:organisationName gco:nilReason="unknown"/>
+								<gmd:contactInfo>
+									<gmd:CI_Contact>
+										<gmd:address>
+											<gmd:CI_Address>
+												<gmd:administrativeArea>
+													<gco:CharacterString>QLD</gco:CharacterString>
+												</gmd:administrativeArea>
+											</gmd:CI_Address>
+										</gmd:address>
+									</gmd:CI_Contact>
+								</gmd:contactInfo>
+								<gmd:role>
+									<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="CI_RoleCode_originator" codeSpace="ISOTC211/19115">originator</gmd:CI_RoleCode>
+								</gmd:role>
+							</gmd:CI_ResponsibleParty>
+						</gmd:contact>
+						<gmd:dateStamp gco:nilReason="unknown"/>
+						<gmd:identificationInfo xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					</gmd:MD_Metadata>
+				</gml:GenericMetaData>
+			</gml:metaDataProperty>
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgc.qld.101</gml:identifier>
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGCName">Quaternary Aquifers</gml:name>
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGCNumber">101</gml:name>
+			<gsmlb:observationMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gsmlb:occurrence xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gsmlb:purpose>instance</gsmlb:purpose>
+			<gsmlb:classifier xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gsmlb:geologicUnitType xlink:href="http://resource.geosciml.org/classifier/cgi/geologicunittype/hydrogeologic-unit" xlink:title="hydrogeologic unit"/>
+			<gsmlb:rank xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitMedia xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitRecharge xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitDischarge xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitVulnerability xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitFluidBody xlink:href="http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title="inapplicable"/>
+			<gwml2:gwUnitVoid xlink:href="http://www.opengis.net/def/nil/OGC/0/inapplicable" xlink:title="inapplicable"/>
+			<gwml2:gwAquiferSystem xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgc.qld.101" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1139.40000140" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1057.40000058" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1099.40000100" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1077.40000078" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1048.40000049" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1019.40000020" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1136.40000137" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1135.40000136" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1145.40000146" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1081.40000082" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1045.40000046" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1148.40000149" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1018.40000019" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1021.40000022" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1098.40000099" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1061.40000062" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1050.40000051" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1124.40000125" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1051.40000052" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1044.40000045" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1042.40000043" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1129.40000130" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1069.40000070" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1109.40000110" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1146.40000147" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1011.40000012" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1038.40000039" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1003.40000004" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1132.40000133" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1134.40000135" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1026.40000027" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1031.40000032" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1094.40000095" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1017.40000018" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1147.40000148" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1002.40000003" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1020.40000021" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1143.40000144" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1114.40000115" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1140.40000141" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1089.40000090" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1063.40000064" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1101.40000102" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1084.40000085" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1067.40000068" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1141.40000142" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1035.40000036" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1023.40000024" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1138.40000139" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1127.40000128" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1142.40000143" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1071.40000072" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1059.40000060" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1137.40000138" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1066.40000067" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1053.40000054" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1086.40000087" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1115.40000116" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1056.40000057" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1039.40000040" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1078.40000079" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1029.40000030" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1006.40000007" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1009.40000010" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1079.40000080" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1036.40000037" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1052.40000053" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1095.40000096" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1032.40000033" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1015.40000016" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1013.40000014" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1001.40000002" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1088.40000089" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1107.40000108" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1082.40000083" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1074.40000075" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1106.40000107" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1131.40000132" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1047.40000048" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1012.40000013" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1120.40000121" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1126.40000127" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1133.40000134" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1004.40000005" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1111.40000112" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1005.40000006" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1130.40000131" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1080.40000081" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1016.40000017" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1149.40000150" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1073.40000074" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1028.40000029" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1100.40000101" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1083.40000084" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1150.40000151" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1046.40000047" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1055.40000056" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1068.40000069" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1117.40000118" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1025.40000026" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1058.40000059" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1104.40000105" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1034.40000035" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1062.40000063" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1085.40000086" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1087.40000088" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1049.40000050" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1043.40000044" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1072.40000073" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1065.40000066" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1041.40000042" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1014.40000015" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1076.40000077" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1121.40000122" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1090.40000091" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1118.40000119" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1022.40000023" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1030.40000031" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1116.40000117" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1091.40000092" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1102.40000103" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1125.40000126" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1123.40000124" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1060.40000061" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1108.40000109" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1008.40000009" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1144.40000145" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1097.40000098" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1007.40000008" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1122.40000123" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1128.40000129" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1093.40000094" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1070.40000071" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1064.40000065" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1040.40000041" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1103.40000104" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1119.40000120" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1033.40000034" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1075.40000076" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1105.40000106" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1112.40000113" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1010.40000011" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1027.40000028" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1037.40000038" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1024.40000025" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1110.40000111" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1113.40000114" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1096.40000097" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1054.40000055" xlink:title="Quaternary Aquifers"/>
+			<gwml2:gwAquiferSystemPart xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.hgu.qld.1092.40000093" xlink:title="Quaternary Aquifers"/>
+		</gwml2:GW_AquiferSystem>
+	</wfs:member>
+</wfs:FeatureCollection>

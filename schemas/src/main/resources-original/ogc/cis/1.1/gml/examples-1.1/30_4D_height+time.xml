@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Example general-grid coverage with 2 regular and 2 irregular axes
+     as defined in the OGC Coverage Implementation Schema 1.1.
+     Last updated 2016-mar-28.
+-->
+
+<GeneralGridCoverage
+    xmlns='http://www.opengis.net/cis/1.1/gml'
+    xmlns:gml='http://www.opengis.net/gml/3.2'
+    xmlns:swe='http://www.opengis.net/swe/2.0'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
+    xsi:schemaLocation= 'http://www.opengis.net/cis/1.1/gml ../cisAll.xsd'
+    gml:id="CIS_001">
+
+    <DomainSet>
+        <GeneralGrid srsName="http://www.opengis.net/def/crs-compound?1=http://www.opengis.net/def/crs/EPSG/0/4979&amp;2=http://www.opengis.net/def/crs/OGC/0/AnsiDate"
+            axisLabels="Lat Long h date">
+            <RegularAxis   axisLabel="Lat"  uomLabel="deg" lowerBound="40"  upperBound="60" resolution="10"/>
+            <RegularAxis   axisLabel="Long" uomLabel="deg" lowerBound="-10" upperBound="10"  resolution="10"/>
+            <IrregularAxis axisLabel="h"    uomLabel="m">
+                <C>  0</C>
+                <C>100</C>
+            </IrregularAxis>
+            <IrregularAxis axisLabel="date" uomLabel="d">
+                <C>2015-12-01</C>
+                <C>2015-12-02</C>
+            </IrregularAxis>
+            <GridLimits srsName="http://www.opengis.net/def/crs/OGC/0/Index4D" axisLabels="i j k l">
+                <IndexAxis axisLabel="i" lowerBound="0" upperBound="2"/>
+                <IndexAxis axisLabel="j" lowerBound="0" upperBound="2"/>
+                <IndexAxis axisLabel="k" lowerBound="0" upperBound="1"/>
+                <IndexAxis axisLabel="l" lowerBound="0" upperBound="1"/>
+            </GridLimits>
+        </GeneralGrid>
+    </DomainSet>
+
+    <RangeSet>
+        <DataBlock>
+               <V>01</V> <V>02</V> <V>03</V> <V>04</V> <V>05</V> <V>06</V> <V>07</V> <V>08</V> <V>09</V>
+               <V>01</V> <V>02</V> <V>03</V> <V>04</V> <V>05</V> <V>06</V> <V>07</V> <V>08</V> <V>09</V>
+               <V>01</V> <V>02</V> <V>03</V> <V>04</V> <V>05</V> <V>06</V> <V>07</V> <V>08</V> <V>09</V>
+               <V>01</V> <V>02</V> <V>03</V> <V>04</V> <V>05</V> <V>06</V> <V>07</V> <V>08</V> <V>09</V>
+        </DataBlock>
+    </RangeSet>
+
+    <RangeType>
+        <swe:DataRecord>
+            <swe:field name="panchromatic">
+                <swe:Quantity definition="http://www.opengis.net/def/dataType/OGC/0/unsignedInt">
+                    <swe:uom code="10^0"/>
+                </swe:Quantity>
+            </swe:field>
+        </swe:DataRecord>
+    </RangeType>
+
+</GeneralGridCoverage>
+

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<xs:schema id="Model_Components" targetNamespace="CDB" xmlns="CDB" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0">
+
+  <xs:annotation>
+    <xs:appinfo>CDB Model Components Schema</xs:appinfo>
+    <xs:documentation>
+      XML schema to define and validate CDB Model Components.
+      In accordance with appendix F of the CDB specification.
+      Version 3.1
+      CDB is an OGC Standard.
+      Copyright (c) 2016 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+    </xs:documentation>
+  </xs:annotation>
+
+  <!-- The list of model components is made of a number of components along with their descriptions. -->
+  <xs:element name="Model_Components">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Component" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" type="xs:string" />
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:token" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

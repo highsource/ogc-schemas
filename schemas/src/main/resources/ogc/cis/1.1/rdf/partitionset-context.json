@@ -1,0 +1,13 @@
+{
+	"@context":
+	{
+		"PartitionSetType": "cis:PartitionSetType",			
+		"partition": "cis:partition",
+		"coverage": "cis:coverage",
+		"coverageRef": {"@id":"cis:coverageRef", "@type": "@id"},
+		"positionValuePair": "cis:positionValuePair",
+		"PVPType": "cis:PVPType",
+		"coordinate": "cis:coordinate",
+		"value": "cis:value"
+	}
+}

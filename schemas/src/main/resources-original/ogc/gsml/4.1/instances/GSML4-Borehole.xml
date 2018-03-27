@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsmlbh:Borehole 
+ xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0"
+ xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+ xmlns:gml="http://www.opengis.net/gml/3.2" 
+ xmlns:sam="http://www.opengis.net/sampling/2.0" 
+ xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+ xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" 
+ xmlns:gsmlbh="http://www.opengis.net/gsml/4.1/Borehole"
+ xmlns:swe="http://www.opengis.net/swe/2.0" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://www.opengis.net/gsml/4.1/Borehole http://schemas.opengis.net/gsml/4.1/borehole.xsd 
+ http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd" gml:id="bh.1">
+ <gml:identifier codeSpace="http://data.gov.au/boreholes/id">GA.borehole.276547</gml:identifier>
+ <gml:name>BMR Eromanga 1</gml:name>
+ <sam:sampledFeature>
+  <gsmlb:GeologicUnit gml:id="bh.1.sampledFeature">
+   <gml:name>Eromanga Basin</gml:name>
+   <gsmlb:geologicUnitType xlink:href="http://resource.geoscience.gov.xxx/vocabulary/geologicunittype" xlink:title="sedimentary basin"/>
+  </gsmlb:GeologicUnit>
+ </sam:sampledFeature>
+ <sam:sampledFeature>
+  <gsmlb:GeologicUnit gml:id="Hooray.Sandstone">
+   <gml:name>Hooray Sandstone</gml:name>
+   <gsmlb:geologicUnitType xlink:href="http://resource.geoscience.gov.xxx/vocabulary/geologicunittype" xlink:title="lithostratigraphic unit"/>
+  </gsmlb:GeologicUnit>
+ </sam:sampledFeature>
+ <sams:shape>
+  <gml:LineString gml:id="bh.1.shape" srsName="http://spatialreference.org/ref/epsg/4979/">
+   <gml:posList srsDimension="3" count="3">-25.9020 132.334 27.9 -25.9025 132.334 -30.65 -25.9030 132.334 -215.6</gml:posList>
+  </gml:LineString>
+ </sams:shape>
+ <gsmlbh:referenceLocation>
+  <gsmlbh:OriginPosition gml:id="bh.1.op">
+   <gsmlbh:location>
+    <gml:Point gml:id="bh.1.op.pt1" srsName="http://spatialreference.org/ref/epsg/4326/" srsDimension="2">
+     <gml:pos>-25.902 132.334</gml:pos>
+    </gml:Point>
+   </gsmlbh:location>
+   <gsmlbh:elevation srsName="http://spatialreference.org/ref/epsg/5711" srsDimension="1">27.9</gsmlbh:elevation>
+   <gsmlbh:relatedBorehole></gsmlbh:relatedBorehole>
+  </gsmlbh:OriginPosition>
+ </gsmlbh:referenceLocation>
+ <gsmlbh:indexData>
+  <gsmlbh:BoreholeDetails>
+   <gsmlbh:operator>
+    <cit:CI_Responsibility>
+     <cit:role>
+      <cit:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="owner"/>
+     </cit:role>
+     <cit:party>
+      <cit:CI_Organisation>
+       <cit:name>
+        <gco:CharacterString>Bureau of Mineral Resources</gco:CharacterString>
+       </cit:name>
+      </cit:CI_Organisation>
+     </cit:party>
+    </cit:CI_Responsibility>
+   </gsmlbh:operator>
+   <gsmlbh:driller>
+    <cit:CI_Responsibility>
+     <cit:role>
+      <cit:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="pointOfContact"/>
+     </cit:role>
+     <cit:party>
+      <cit:CI_Organisation>
+       <cit:name>
+        <gco:CharacterString>Leander Drilling</gco:CharacterString>
+       </cit:name>
+      </cit:CI_Organisation>
+     </cit:party>
+    </cit:CI_Responsibility>
+   </gsmlbh:driller>
+   <gsmlbh:dateOfDrilling>
+    <gml:TimePeriod gml:id="drilldates-01">
+     <gml:begin>
+      <gml:TimeInstant gml:id="drilldates_begin-01">
+       <gml:timePosition>1969-05-04</gml:timePosition>
+      </gml:TimeInstant>
+     </gml:begin>
+     <gml:end>
+      <gml:TimeInstant gml:id="drilldates_end-01">
+       <gml:timePosition>1969-05-06</gml:timePosition>
+      </gml:TimeInstant>
+     </gml:end>
+    </gml:TimePeriod>
+   </gsmlbh:dateOfDrilling>
+   <gsmlbh:startPoint xlink:href="http://resource.geoscience.gov.au/classifier/ga/locationType/onshore" xlink:title="onshore"/>
+   <gsmlbh:inclinationType xlink:href="http://resource.geoscience.gov.au/classifier/ga/inclinationtype/vertical" xlink:title="vertical"/>
+   <gsmlbh:boreholeMaterialCustodian>
+    <cit:CI_Responsibility>
+     <cit:role>
+      <cit:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="pointOfContact"/>
+     </cit:role>
+     <cit:party>
+      <cit:CI_Organisation>
+       <cit:name>
+        <gco:CharacterString>Geoscience Australia</gco:CharacterString>
+       </cit:name>
+      </cit:CI_Organisation>
+     </cit:party>
+    </cit:CI_Responsibility>
+   </gsmlbh:boreholeMaterialCustodian>
+   <gsmlbh:purpose xlink:href="http://inspire.ec.europa.eu/codelist/BoreholePurposeValue/geologicalSurvey" xlink:title="geological survey"/>
+   <gsmlbh:dataCustodian>
+    <cit:CI_Responsibility>
+     <cit:role>
+      <cit:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="pointOfContact"/>
+     </cit:role>
+     <cit:party>
+      <cit:CI_Organisation>
+       <cit:name>
+        <gco:CharacterString>Geoscience Australia</gco:CharacterString>
+       </cit:name>
+      </cit:CI_Organisation>
+     </cit:party>
+    </cit:CI_Responsibility>
+   </gsmlbh:dataCustodian>
+   <gsmlbh:boreholeLength>
+    <swe:Quantity>
+     <swe:uom code="m" xlink:href="http://www.opengis.net/def/uom/OGC/1.0/metre" xlink:title="metre"/>
+     <swe:value>245.0</swe:value>
+    </swe:Quantity>
+   </gsmlbh:boreholeLength>
+  </gsmlbh:BoreholeDetails>
+ </gsmlbh:indexData>
+</gsmlbh:Borehole>

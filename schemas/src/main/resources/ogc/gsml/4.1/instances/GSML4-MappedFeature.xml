@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsmlb:MappedFeature  
+ xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic"
+ xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:gml="http://www.opengis.net/gml/3.2" 
+ xmlns:om="http://www.opengis.net/om/2.0"
+ xmlns:swe="http://www.opengis.net/swe/2.0" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd" gml:id="mappedfeature.1">
+ <gsmlb:observationMethod>
+  <swe:Category>
+   <swe:identifier>http://resource.geosciml.org/classifier/cgi/mappedfeatureobservationmethod/inferred_aeromagnetic_survey</swe:identifier>   
+   <swe:label>inferred aeromagnetic survey</swe:label>
+   <swe:codeSpace xlink:href="http://resource.geosciml.org/classifier/cgi/mappedfeatureobservationmethod/"/>
+  </swe:Category>
+ </gsmlb:observationMethod>
+ <gsmlb:positionalAccuracy>
+  <swe:Quantity>
+   <swe:uom code="m" xlink:href="http://www.opengis.net/def/uom/OGC/1.0/metre" xlink:title="metre"/>
+   <swe:value>100</swe:value>
+  </swe:Quantity>
+ </gsmlb:positionalAccuracy>
+ <gsmlb:resolutionRepresentativeFraction>250000</gsmlb:resolutionRepresentativeFraction>
+ <gsmlb:mappingFrame xlink:href="http://resource.geoscience.gov.xx/vocabulary/mappingframe/top-of-bedrock" xlink:title="top of bedrock"/>
+ <gsmlb:exposure xlink:href="http://resource.geosciml.org/classifier/cgi/exposure/concealed" xlink:title="concealed"/>
+ <gsmlb:specification>
+  <gsmlb:Fold gml:id="fold.1"/>
+ </gsmlb:specification>
+ <gsmlb:shape>
+  <gml:Curve gml:id="fold.1.shape" srsDimension="2" srsName="http://spatialreference.org/ref/epsg/4326/">
+   <gml:segments>
+    <gml:Arc>
+     <gml:coordinates>-25.9020 132.334 -25.9025 132.43 -25.9030 132.67</gml:coordinates>
+    </gml:Arc>
+   </gml:segments>
+  </gml:Curve>
+ </gsmlb:shape>
+</gsmlb:MappedFeature>

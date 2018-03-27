@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+    GMLCOV 1.0 example with a referenceable grid coverage (gmlcov:ReferenceableGridCoverage)
+    having an instantiable referenceable grid element (gmlcovrgrid:ReferenceableGridBySensorModel) 
+    in its domain set.  The sensorModel and sensorInstance of the referenceable grid element are 
+    both set by xlink reference. 
+-->
+
+<gmlcov:ReferenceableGridCoverage gml:id="GMLCOV_0" 
+        xmlns="http://www.opengis.net/gml/3.2" 
+        xmlns:gmlcovrgrid="http://www.opengis.net/gmlcov/gmlcovrgrid/1.0"
+        xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+        xmlns:gml="http://www.opengis.net/gml/3.2"
+        xmlns:swe="http://www.opengis.net/swe/2.0"
+        xmlns:sml="http://www.opengis.net/sensorml/2.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.opengis.net/gmlcov/gmlcovrgrid/1.0 http://schemas.opengis.net/gmlcov/gmlcovrgrid/1.0/gmlcovrgrid.xsd">
+    <domainSet>
+        <gmlcovrgrid:ReferenceableGridBySensorModel gml:id="RefGrid_0" dimension="2" srsDimension="3">
+            <limits>
+                <GridEnvelope>
+                    <low>0 0</low>
+                    <high>6732 8984</high>
+                </GridEnvelope>
+            </limits>
+            <axisLabels>Row Column</axisLabels>
+            <gmlcovrgrid:sensorModel xlink:href="http://www.sensorml.com/sensorML-2.0/examples/csmFrame.html"/>
+            <gmlcovrgrid:sensorInstance xlink:href="http://www.sensorml.com/sensorML-2.0/examples/myHDCamera.html"/>
+        </gmlcovrgrid:ReferenceableGridBySensorModel>
+    </domainSet>
+    <rangeSet>
+		<File>
+			<rangeParameters />
+            <fileName>gmljp2://codestream</fileName>
+            <fileStructure>inapplicable</fileStructure>
+            <mimeType>image/jp2</mimeType>
+		</File>
+    </rangeSet>
+    <gmlcov:rangeType>
+        <swe:DataRecord>
+            <swe:field name="red">
+                <swe:Quantity definition="http://opengis.net/def/property/OGC/0/Radiance">
+                    <swe:description>Red Channel</swe:description>
+                    <swe:nilValues>
+                        <swe:NilValues>
+                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">0</swe:nilValue>
+                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/AboveDetectionRange">255</swe:nilValue>
+                        </swe:NilValues>
+                    </swe:nilValues>
+                    <swe:uom code="W.m-2.sr-1.nm-1"/>
+                    <swe:constraint>
+                        <swe:AllowedValues>
+                            <swe:interval>0 255</swe:interval>
+                            <swe:significantFigures>3</swe:significantFigures>
+                        </swe:AllowedValues>
+                    </swe:constraint>
+                </swe:Quantity>
+            </swe:field>
+            <swe:field name="green">
+                 <swe:Quantity definition="http://opengis.net/def/property/OGC/0/Radiance">
+                     <swe:description>Green Channel</swe:description>
+                    <swe:nilValues>
+                        <swe:NilValues>
+                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">0</swe:nilValue>
+                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/AboveDetectionRange">255</swe:nilValue>
+                        </swe:NilValues>
+                    </swe:nilValues>
+                     <swe:uom code="W.m-2.sr-1.nm-1"/>
+                    <swe:constraint>
+                        <swe:AllowedValues>
+                            <swe:interval>0 255</swe:interval>
+                            <swe:significantFigures>3</swe:significantFigures>
+                        </swe:AllowedValues>
+                    </swe:constraint>
+                 </swe:Quantity>
+             </swe:field>
+            <swe:field name="blue">
+                <swe:Quantity definition="http://opengis.net/def/property/OGC/0/Radiance">
+                    <swe:description>Blue Channel</swe:description>
+                    <swe:nilValues>
+                        <swe:NilValues>
+                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/BelowDetectionRange">0</swe:nilValue>
+                            <swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/AboveDetectionRange">255</swe:nilValue>
+                        </swe:NilValues>
+                    </swe:nilValues>
+                    <swe:uom code="W.m-2.sr-1.nm-1"/>
+                    <swe:constraint>
+                        <swe:AllowedValues>
+                            <swe:interval>0 255</swe:interval>
+                            <swe:significantFigures>3</swe:significantFigures>
+                        </swe:AllowedValues>
+                    </swe:constraint>
+                </swe:Quantity>
+            </swe:field>    
+        </swe:DataRecord>
+    </gmlcov:rangeType>
+</gmlcov:ReferenceableGridCoverage>

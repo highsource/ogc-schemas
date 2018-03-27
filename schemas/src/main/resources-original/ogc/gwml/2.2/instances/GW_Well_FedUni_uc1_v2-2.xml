@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection gml:id="feduni.example.well1" 
+xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" 
+xmlns:gml="http://www.opengis.net/gml/3.2" 
+xmlns:sam="http://www.opengis.net/sampling/2.0" 
+xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+ xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:swe="http://www.opengis.net/swe/2.0" 
+ xmlns:gmd="http://www.isotc211.org/2005/gmd" 
+ xmlns:om="http://www.opengis.net/om/2.0" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://www.opengis.net/gwml-well/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-well.xsd http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd">
+	
+	<!-- ######################### -->
+	<!-- Mapping of Federation University (FedUni) Groundwater database tables and records to the proposed GroundWaterML2 OGC standard release candidate version 2.2 -->
+	<!-- File created by Bruce Simons, CSIRO, February 2016 -->
+	<!-- ######################### -->
+	<!-- This file is an example instance of a GWML2 GW_well -->
+	<!-- Although this instance is a gml:FeatureCollection with one or more gml:featureMembers, a valid alternative is as a single gwml2w:GW_Well -->
+	<!-- Other related GWML2 features are referred to "byReference" using xlink:href. In most cases these could be included "inLine" (i.e. within this instance). A separate instance for each feature is provided for ease of mapping. The final aggregation of inLine vs. byReference features will be determined by the use case requirements -->
+	<!-- Where features are aggregated into single feature services the xlink:href references to URIs need to be replaced with internal # references to gml:id -->
+	<!-- ######################### -->
+	<!-- FedUni - Mapping patterns -->
+	<!-- Comments beginning 'FedUni -' are instructions for mappings between FedUni data and GWML2 -->
+	<!-- ???? Comments beginning ???? require further checking -->
+	<!-- FedUni table record pairs are referred to by the pattern [table.record] -->
+	<!-- The mapping pattern is [schema/property] = [table.record] -->
+	<!-- ######################### -->
+	<!-- FedUni - Feature IDs and identifiers -->
+	<!-- Feature IDs (gml:id) are document specific unique identifiers based on FedUni table keys and the feature type -->
+	<!-- To create the id, replace [table.record_id] with values from the appropriate table -->
+	<!-- Feature identities (gml:identifier) use the URI for the feature. This is in the format "[domain name]/[category]/[type]/[gml:id]" -->
+	<!-- Domain Name - The temporary domain name "http://www.groundwater-victoria.com.au" has been used for the feature identifiers and vocabulary term references. An appropriate persistent and organisation independent domain will need to be established.
+A redirect service, such as the SISS PID service, is required to resolve these URIs -->
+	<!-- Category - where the object is a GML Feature use "feature". Where the object is a vocabulary concept use "def". -->
+	<!-- Type - where the Category is a feature, the type of feature, where Category is "def' the type of term (e.g. from "http://environment.data.gov.au/def/" it is "object", "unit", "property") -->
+	<!-- ######################### -->
+	<!-- FedUni Mapping -->
+	<!-- First test is to see if the FedUni Bore is Spring -->
+	<!-- If [bore.boretype] = "Spring" (SPR) then the feature is a GW_Spring -->
+	<!-- Second test is to see if the FedUni Bore is a Monitoring Point -->
+	<!-- If [bore:monitoring_Status] ="Y" then establish GWML2:GW_MonitoringSite feature with gwMonitoringHost xlink:href="http://groundwater.feduni.edu/borehole/feduni/[bore.bore_id] -->
+	<!-- gml:featureMember is a GW_Well -->
+	<gml:featureMember>
+		<!-- FedUni - gwml2w:GW_Well gml:id= "feduni.borehole.[bore.bore_ID]" -->
+		<gwml2w:GW_Well gml:id="feduni.borehole.51409">
+			<!-- FedUni - gwml2w:GW_Well/gml:description = [bore.site_desc]  -->
+			<gml:description>SOBN bore</gml:description>
+			<!-- FedUni - <gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.[bore.bore_id]"</gml:identifier> -->
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.51409</gml:identifier>
+			<!-- FedUni - Other gml:names are to come from [bore.oldid], [bore.local_bore_name], [bore.bore_code] -->
+			<!-- gml:name codeSpace should identify a dictionary, thesaurus or authority for the term, such as the organisation who assigned the value, or the dictionary from which it is taken. -->
+			<gml:name codeSpace="http://www.groundwater-victoria.com.au/def/feduni/waterwell/oldboreid">093</gml:name>
+			<gml:name codeSpace="http://www.groundwater-victoria.com.au/def/feduni/waterwell/borecode">119330</gml:name>
+			<gml:name codeSpace="http://www.groundwater-victoria.com.au/def/feduni/waterwell/localborename">Ballarat 9037</gml:name>
+			<!-- gml:boundedBy envelope to be generated by middleware on the fly -->
+			<gml:boundedBy>
+				<gml:Envelope srsName="EPSG:4939">
+					<gml:pos srsDimension="2">139 -32</gml:pos>
+					<gml:pos srsDimension="2">143 -37</gml:pos>
+				</gml:Envelope>
+			</gml:boundedBy>
+			<!-- sam:sampledFeature is 1..*. It allows specifying the GW_HydrogeoUnits (GeologicUnits) intersected in the Well. -->
+			<!-- FedUni - these could be GeologicUnits (type = "stratigraphic unit") from [stratigraphy], or GW_Aquifer (type = "hydrogeological unit" from [aquifer-property] -->
+			<!-- FedUni - For stratigraphic sampled features:
+sam:sampledFeature xlink:href="http://www.groundwater-victoria.com.au/feature/stratigraphicunit/[stratigraphy.bore_id_fk].[stratigraphy.strat_code]" xlink:title="[aquifer-property.aq_name] -->
+			<sam:sampledFeature xlink:href="http://www.groundwater-victoria.com.au/feature/stratigraphicunit/feduni/51409.3770" xlink:title="Newer Volcanics"/>
+			<!-- FedUni - For aquifer sampled features:
+sam:sampledFeature xlink:href="http://www.groundwater-victoria.com.au/feature/aquifer/[aquifer-property.bore_id_fk].[aquifer-property.aquifer-property_id]" xlink:title="[aquifer-property.aq_name] -->
+			<sam:sampledFeature xlink:href="http://www.groundwater-victoria.com.au/feature/aquifer/feduni/51409.1947" xlink:title="Newer Volcanics"/>
+			<!-- FedUni - If no stratigraphy or aquifer GW_HydrogeoUnits then use the unknown default: 
+sam:sampledFeature xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" -->
+			<sam:sampledFeature xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- sam:relatedObservation allows linking or describing extra observations down the well -->
+			<!-- FedUni - if [chemistry_code.chemistry_category_id] = "6", "7" or "8" they will be delivered as relatedObservations instead of relatedSamplingFeatures. -->
+			<!-- sam:relatedObservation xlink:href="http://groundwater.victoria.com.au/feature/observation/feduni.borehole.[bore.bore_ID].[hydrochemistry.hydrochemistry_id].[sample_chemistry.sample_chemistry_id]" -->
+			<!-- FedUni - sam:relatedObservation example for pH -->
+			<sam:relatedObservation xlink:href="http://groundwater.victoria.com.au/feature/observation/feduni.borehole.51409.44574.32328"/>
+			<!-- FedUni - OM_Observation example for 18Oxygen  -->
+			<sam:relatedObservation xlink:href="http://groundwater.victoria.com.au/feature/observation/feduni.borehole.51409.44574.32317"/>
+			<!-- FedUni - [swl] table measurements to be delivered as WaterML2 TimeSeries observations, sam:relatedObservation will point to these using xlink:href  -->
+			<!-- ???? FedUni - example xlink:href to timeseries feature required   -->
+			<sam:relatedObservation xlink:href="http://groundwater.victoria.com.au/sos/feduni/borehole/swl/26101994120000-14121994120000"/>
+			<!-- sam:relatedSamplingFeature is for describing related specimens (e.g. water samples) from the well -->
+			<!--	FedUni - if [chemistry_code.chemistry_category_id] = "1", "2", "3", "4", "5" or "9", or "6" and Name = "Dissolved Oxygen" (i.e. all chemical or biological constituent observations) then a sam:relatedSamplingFeature (i.e. a specimen) has been taken, and its constituents determined. The specimen has sampled the GW_FluidBody. -->
+			<!-- FedUni - spec:SF_Specimen gml:id = feduni.borehole.specimen.[bore.bore_ID].[hydrochemistry.hydrochemistry_id] -->
+			<sam:relatedSamplingFeature>
+				<sam:SamplingFeatureComplex>
+					<!-- FedUni - sam:role xlink:href="http://www.opengis.net/def/gwml/role/waterSample" xlink:title="Water sample" -->
+					<sam:role xlink:href="http://www.opengis.net/def/gwml/role/waterSample" xlink:title="Water sample"/>
+					<!-- sam:relatedSamplingFeature identifies the specimens taken from the GW_Well -->
+					<!-- FedUni - sam:relatedSamplingFeature xlink:href="http://groundwater.victoria.com.au/feature/specimen/feduni.borehole.specimen.[bore.bore_ID].[hydrochemistry.hydrochemistry_id] " -->
+					<sam:relatedSamplingFeature xlink:href="http://groundwater.victoria.com.au/feature/specimen/feduni.borehole.specimen.51409.44574"/>
+				</sam:SamplingFeatureComplex>
+			</sam:relatedSamplingFeature>
+			<!--  [bore.rlns] is the reference point for all the FedUni elevation -->
+			<sams:shape>
+				<!-- gml:Curve gml:id="feduni.borehole.[bore.bore_ID].shape" -->
+				<gml:Curve gml:id="feduni.borehole.51409.shape" srsDimension="3" srsName="http://www.opengis.net/def/crs/EPSG/0/4283">
+					<gml:segments>
+						<!-- FedUni - Assume well is vertical and [bore.constructed_depth] is depth of well from [bore.rlns] then:
+<gml:posList> = [bore:longitude_gda94], [bore:latitude.gda94], [bore.rlns] [bore.longitude_gda94], [bore.latitude:gda94], {[bore.rlns]-[bore.constructed_depth]} -->
+						<!-- Check order is right for SRS -->
+						<gml:LineStringSegment>
+							<gml:posList>141.79256 -37.85769 523.27 141.79256 -37.85769 493.27</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</sams:shape>
+			<!-- gwWellBody describes the fluid body (GW_FluidBody) within the Well -->
+			<!-- FedUni - gwml2w:gwWellBody xlink:href="http://groundwater.victoria.com.au/feature/fluid-body/feduni.borehole.fluid-body.[bore.bore_ID].[hydrochemistry.hydrochemistry_id]" -->
+			<gwml2w:gwWellBody xlink:href="http://groundwater.victoria.com.au/feature/fluid-body/feduni.borehole.fluid-body.51409.44574"/>
+			<!-- GW_Well only allows [0..1] gwml2w:gwWellConstructedDepth. FedUni records changing depth of well over time through [bore_condition]. Use initial constructed depth value from [bore.constructed_depth] -->
+			<gwml2w:gwWellConstructedDepth>
+				<!-- om:OM_Observation gml:id= "feduni.borehole.[bore.bore_ID].constructed-depth" -->
+				<om:OM_Observation gml:id="feduni.borehole.51409.constructed-depth">
+					<!-- om:phenomenomTime is the time the observation of the depth of the well was made -->
+					<!-- gml:TimeInstant is defined here but could be an xlink:href to a date specified elsewhere in the mapping -->
+					<!-- FedUni - assume completed date [bore.datecomp] is the om:phenomenonTime -->
+					<om:phenomenonTime>
+						<gml:TimeInstant gml:id="feduni.borehole.51409.date">
+							<gml:timePosition>1993-11-10+00:00</gml:timePosition>
+						</gml:TimeInstant>
+					</om:phenomenonTime>
+					<!-- FedUni - reference {gwml2w:gwWellConstructedDepth/om:phenomenonTime/gml:TimeInstant gml:id} for all initial GW_Well time properties -->
+					<om:resultTime xlink:href="#feduni.borehole.51409.date"/>
+					<!-- FedUni does not have the procedure used to measure the depth of the well -->
+					<om:procedure xsi:nil="true" nilReason="missing"/>
+					<!-- om:observedProperty is self-referential -->
+					<!-- Used {namespace}/{property} -->
+					<om:observedProperty xlink:href="http://www.opengis.net/gwml-well/2.0/gwWellConstructedDepth" xlink:title="gwWellConstructedDepth"/>
+					<!-- FedUni - om:featureOfInterest is the GW_Well. Use xlink:href internal reference -->
+					<om:featureOfInterest xlink:href="#feduni.borehole.51409"/>
+					<om:result>
+						<swe:Quantity>
+							<!-- FedUni - <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/> -->
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+							<!-- FedUni gwml2w:gwWellConstructedDepth swe:value= [bore.constructed_depth] -->
+							<swe:value>30.00</swe:value>
+						</swe:Quantity>
+					</om:result>
+				</om:OM_Observation>
+			</gwml2w:gwWellConstructedDepth>
+			<!-- FedUni - gwml2w:gwWellConstruction is a reference to gwml2wc:Borehole feature -->
+			<!-- FedUni - gwml2w:gwWellConstruction xlink:href="http://groundwater.victoria.com.au/feature/constituent/feduni.borehole.construction.[bore.bore_ID]" -->
+			<gwml2w:gwWellConstruction xlink:href="http://groundwater.victoria.com.au/feature/constituent/feduni.borehole.construction.51409"/>
+			<!-- gwml2w:gwWellContributionZone is the area surrounding a pumping well or other discharge site that encompasses all areas and features that supply groundwater to the well or discharge site. -->
+			<!-- FedUni - gwml2w:gwWellContributionZone is not known -->
+			<gwml2w:gwWellContributionZone/>
+			<gwml2w:gwWellLocation>
+				<!-- gml:Point gml:id is the identifier for the GW_Well:gwWellLocation. If it is defined elsewhere use <gwml2w:gwWellLocation xlink:href="#{gml:id}"/> -->
+				<!-- For FedUni, if defined here use gml:id="[gwml2w:GW_Well gml:id].location" and gml:pos = [bore.longitude_gda94], [bore.latitude_gda94] -->
+				<gml:Point gml:id="feduni.borehole.51409.location" srsName="EPSG:4939">
+					<gml:pos>141.79256 -37.85769</gml:pos>
+				</gml:Point>
+			</gwml2w:gwWellLocation>
+			<!-- FedUni - gwml2w:gwWellPurpose xlink:title=[bore.boretype] -->
+			<gwml2w:gwWellPurpose xlink:title="Groundwater"/>
+			<!-- FedUni - gwml2w:gwWellPurpose (1) xlink:title=[bore.uses1] -->
+			<gwml2w:gwWellPurpose xlink:title="Observation"/>
+			<!-- FedUni - gwml2w:gwWellPurpose (2) xlink:title=[bore.uses2] if present -->
+			<gwml2w:gwWellPurpose xlink:title="Groundwater Investigation"/>
+			<!-- FedUni - gwml2w:gwWellPurpose (3) xlink:title=[bore.uses3] if present. If no uses1, uses2 or uses3 present use gwml2w:gwWellPurpose xsi:nil="true" nilReason="unknown" -->
+			<gwml2w:gwWellPurpose xsi:nil="true" nilReason="unknown"/>
+			<!-- GWML2 allows multiple gwml2w:gwWellReferenceElevation. If multiples are provided which is the reference elevation for the "from - to" properties? -->
+			<!-- FedUni - Multiple gwml2w:gwWellReferenceElevation used to capture [bore.collar], [bore.casing_standpipe], [bore.headworks_height]. -->
+			<gwml2w:gwWellReferenceElevation>
+				<gwml2w:Elevation>
+					<!-- FedUni: gwml2w:elevation value from [bore:rlns] or [bore.digitisedelevation]  -->
+					<gwml2w:elevation srsName="http://www.opengis.net/def/crs/EPSG/0/5711" uomLabels="m AHD" srsDimension="1">523.27</gwml2w:elevation>
+					<!-- FedUni - does not have gwml2w:elevationAccuracy -->
+					<gwml2w:elevationAccuracy/>
+					<gwml2w:elevationType xlink:title="Relative Level Natural Surface"/>
+					<!-- FedUni - gwml2w:elevationMeasurementMethod = [bore.elevation_method] -->
+					<gwml2w:elevationMeasurementMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown"/>
+				</gwml2w:Elevation>
+			</gwml2w:gwWellReferenceElevation>
+			<gwml2w:gwWellReferenceElevation>
+				<gwml2w:Elevation>
+					<!-- FedUni: gwml2w:elevation value from [bore:casing_standpipe]  -->
+					<!-- [bore:casing_standpipe] is height of casing above rlns. Therefore gwml2w:elevation = {[bore:rlns]+[bore:casing_standpipe]} -->
+					<gwml2w:elevation srsName="http://www.opengis.net/def/crs/EPSG/0/5711" uomLabels="m AHD" srsDimension="1">523.77</gwml2w:elevation>
+					<!-- FedUni - does not have gwml2w:elevationAccuracy for [bore.casing_standpipe] -->
+					<gwml2w:elevationAccuracy/>
+					<gwml2w:elevationType xlink:title="Casing Standpipe"/>
+					<!-- FedUni - does not have gwml2w:elevationMeasurementMethod for [bore.casing_standpipe] -->
+					<gwml2w:elevationMeasurementMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown"/>
+				</gwml2w:Elevation>
+			</gwml2w:gwWellReferenceElevation>
+			<gwml2w:gwWellReferenceElevation>
+				<gwml2w:Elevation>
+					<!-- FedUni: gwml2w:elevation value from [bore:headworks_height]  -->
+					<!-- [bore:casing_standpipe] is height of casing above rlns. Therefore gwml2w:elevation = {[bore:rlns]+[bore:headworks_height]} -->
+					<gwml2w:elevation srsName="http://www.opengis.net/def/crs/EPSG/0/5711" uomLabels="m AHD" srsDimension="1">524.29</gwml2w:elevation>
+					<!-- FedUni - does not have gwml2w:elevationAccuracy for [bore.headworks_height] -->
+					<gwml2w:elevationAccuracy/>
+					<gwml2w:elevationType xlink:title="Headworks Height"/>
+					<!-- FedUni - does not have gwml2w:elevationMeasurementMethod for [bore.headworks_height] -->
+					<gwml2w:elevationMeasurementMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown"/>
+				</gwml2w:Elevation>
+			</gwml2w:gwWellReferenceElevation>
+			<!-- FedUni - has an initial swl [bore.initial.swl] and then time series values for swl [swl.meas_swl]. Use [bore.initial.swl] for gwml2w:gwWellStaticWaterDepth -->
+			<!-- FedUni - gwml2w:gwWellStaticWaterDepth OM_Observation could be inLine or ByReference. This Example is byReference -->
+			<!--		<gwml2w:gwWellStaticWaterDepth xlink:href="http://groundwater.victoria.com.au/feature/observation/feduni.borehole.observation.51409.initial-swl"/> -->
+			<!-- ================ -->
+			<!-- This  is an om:OM_Observation of the initial gww:gwWellStaticWaterDepth -->
+			<gwml2w:gwWellStaticWaterDepth>
+				<!--  FedUni - OM_Observation gml:id = feduni.borehole.observation.[bore.bore_ID].initial-swl -->
+				<om:OM_Observation gml:id="feduni.borehole.observation.51409.initial-swl">
+					<!-- FedUni - gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616" value="http://groundwater.victoria.com.au/feature/observation/feduni.borehole.observation.[bore.bore_id].initial-swl -->
+					<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://groundwater.victoria.com.au/feature/observation/feduni.borehole.observation.51409.initial-swl</gml:identifier>
+					<!-- om:phenomenomTime is the time the observation of the depth of the well was made -->
+					<!-- gml:TimeInstant is defined here but could be an xlink:href to a date specified elsewhere in the mapping -->
+					<!-- FedUni - assume completed date [bore.datecomp] is the om:phenomenonTime -->
+					<om:phenomenonTime>
+						<gml:TimeInstant gml:id="feduni.borehole.51409.swl-date">
+							<gml:timePosition>1993-11-10+00:00</gml:timePosition>
+						</gml:TimeInstant>
+					</om:phenomenonTime>
+					<!-- FedUni - reference {gww:gwWellConstructedDepth/om:phenomenonTime/gml:TimeInstant gml:id} for all initial GW_Well time properties -->
+					<om:resultTime xlink:href="#feduni.borehole.51409.swl-date"/>
+					<!-- FedUni does not have the procedure used to measure the depth of the well -->
+					<om:procedure xsi:nil="true" nilReason="missing"/>
+					<!-- FedUni - om:observedProperty xlink:href="{namespace}/{property}" xlink:title="gwWellStaticWaterDepth" -->
+					<om:observedProperty xlink:href="http://www.opengis.net/gwml-well/2.0/gwWellStaticWaterDepth" xlink:title="gwWellStaticWaterDepth"/>
+					<!-- FedUni - om:featureOfInterest is the GW_Well.  -->
+					<!-- FedUni - xlink:href="http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.[bore.bore_id]" -->
+					<om:featureOfInterest xlink:href="http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.51409"/>
+					<om:result>
+						<swe:Quantity>
+							<!-- FedUni - swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m" -->
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+							<!-- FedUni - swe:value = [bore.initial_swl] -->
+							<swe:value>10.12</swe:value>
+						</swe:Quantity>
+					</om:result>
+				</om:OM_Observation>
+			</gwml2w:gwWellStaticWaterDepth>
+			<!-- ================= -->
+			<!-- #### gwWellStatusType should allow nilReason -->
+			<!-- FedUni - does not have gwml2w:gwWellStatus -->
+			<gwml2w:gwWellStatus/>
+			<!-- FedUni - does not specifically have gwml2w:gwWellTotalLength. Suggest using [bore.constructed_depth], (note though [lithology.to_m] or [stratigraphy.to_m] may be deeper than [bore.constructed_depth]) -->
+			<gwml2w:gwWellTotalLength>
+				<swe:Quantity>
+					<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+					<swe:value>30</swe:value>
+				</swe:Quantity>
+			</gwml2w:gwWellTotalLength>
+			<!-- #### gwWellUnit specifies the GW_HydrogeoUnit. This duplicates the sampledFeature property. It also duplicates the GW_GeologyLog. Examples of all 3 are provided as xlink:hrefs but may not be required  -->
+			<!-- FedUni - This can be an Aquifer, ContainingBed, Basin or AquiferSystem.  -->
+			<!-- FedUni - If Hydrogeologic Unit identities are available then use "byReference" (xlink:href). If not describe hydrogeologic unit in-line -->
+			<!-- FedUni - This example is from [stratigraphy] table -->
+			<!-- FedUni - gwml2w:gwWellUnit  xlink:href="http://groundwater.victoria.com.au/feature/stratigraphic-unit/[stratigraphy.stratigraphy_id]" xlink:title="[stratigraphy.formation_description]" xlink:role="stratigraphic unit"/> -->
+			<gwml2w:gwWellUnit xlink:href="http://groundwater.victoria.com.au/feature/stratigraphic-unit/3770" xlink:title="Newer Volcanics" xlink:role="stratigraphic unit"/>
+			<!-- FedUni - this example is from [lithology] and assumes the gwml2w:gwWellUnit is a lithologic unit of type GW_Aquifer. -->
+			<!-- FedUni -  xlink:href="http://groundwater.victoria.com.au/feature/lithologic-unit/[lithology.lithology_id] xlink:title="[lithology.lithology_description] xlink:role="lithology unit"  -->
+			<gwml2w:gwWellUnit xlink:href="http://groundwater.victoria.com.au/feature/lithologic-unit/242285" xlink:title="SANDSTONE, well cemented sands of granitic origin intermixed with granite clasts" xlink:role="lithology unit"/>
+			<!-- FedUni - this example is of a  GW_Aquifer from [aquifer_properties] -->
+			<!-- FedUni - xlink:href="http://groundwater.victoria.com.au/feature.aquifer/[aquifer_property.bore_id_fk].[aquifer_property.aquifer_property_id]" xlink:title="[aquifer_property.aq_name]" -->
+			<gwml2w:gwWellUnit xlink:href="http://groundwater.victoria.com.au/feature/aquifer/51409.1947" xlink:title="Newer Volcanics Formation"/>
+			<!-- ???? FedUni - Does FedUni have gwml2w:gwWellWaterUse info? -->
+			<gwml2w:gwWellWaterUse xsi:nil="true" nilReason="unknown"/>
+			<gwml2w:gwWellYield xsi:nil="true" nilReason="unknown"/>
+			<!-- gwWellLicence Licence is for relating to the drilling of the well or to the extraction of groundwater. -->
+			<gwml2w:gwWellLicence>
+				<gwml2w:GW_Licence>
+					<!-- ???? FedUni - is gwml2w:gwWellLicence/gwml2:gwLicenceID for borehole = [bore.bore_licence]? -->
+					<gwml2w:gwLicenceID>123456</gwml2w:gwLicenceID>
+					<!-- FedUni - gwml2w:gwWellLicence/gwml2:gwPurpose =[bore.boretype] -->
+					<gwml2w:gwPurpose>General Geological Investigation</gwml2w:gwPurpose>
+					<!--  FedUni - does not have anything for gwml2w:gwWellLicence/gwml2:gwTimePeriod for borehole -->
+					<gwml2w:gwTimePeriod xsi:nil="true"/>
+				</gwml2w:GW_Licence>
+			</gwml2w:gwWellLicence>
+			<!-- FedUni - gwWellGeology geology logs from  [lithology.lithology_description] -->
+			<!-- FedUni - gwml2w:gwWellGeology xlink:href="http://groundwater.victoria.com.au/feature/geology-log/feduni.borehole.lithology.[lithology.bore_id_fk].[lithology:lithology_id] -->
+			<!--	<gwml2w:gwWellGeology xlink:href="http://groundwater.victoria.com.au/feature/geology-log/feduni.borehole.lithology.51409.242285"/> -->
+			<!-- FedUni - gwWellGeology geology logs from  [stratigraphy] -->
+			<!-- FedUni - gwml2w:gwWellGeology xlink:href="http://groundwater.victoria.com.au/feature/geology-log/feduni.borehole.stratigraphy.[stratigraphy.bore_id_fk]  -->
+			<!--	<gwml2w:gwWellGeology xlink:href="http://groundwater.victoria.com.au/feature/geology-log/feduni.borehole.stratigraphy.51409"/> -->
+			<!-- FedUni - gwWellGeology age logs from  [stratigraphy] -->
+			<!-- FedUni - gwml2w:gwWellGeology xlink:href="http://groundwater.victoria.com.au/feature/geology-log/feduni.borehole.age.[stratigraphy.bore_id_fk]  -->
+			<!--		<gwml2w:gwWellGeology xlink:href="http://groundwater.victoria.com.au/feature/geology-log/feduni.borehole.age.51409"/> -->
+			<gwml2w:gwWellGeology>
+				<!-- Example gwWellGeology geology logs from [lithology.lithology_description], [stratigraphy.strat_code], [stratigraphy.formation_age]  -->
+				<!-- This gml:featureMember is a gwml2w:GW_GeologyLog based on [lithology] table -->
+				<!--  FedUni - Each Borehole [lithology} contains a total log (e.g. 0-26) and component parts (e.g. 0-2, 2-6, 6-26 {see bore 119330}). 
+It will only be necessary to map the component parts to each element -->
+				<!-- gwml2w:GW_GeologyLog gml:id="feduni.borehole.lithology.[lithology.bore_id_fk].[lithology:lithology_id]"  where [lithology:lithology_id] is the total log -->
+				<gwml2w:GW_GeologyLog gml:id="feduni.borehole.lithology.51409.242285">
+					<!-- FedUni - gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616" value ="http://groundwater.victoria.com.au/feature/geology-log/feduni.borehole.lithology.[lithology.bore_id_fk].[lithology:lithology_id] -->
+					<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://groundwater.victoria.com.au/feature/geology-log/feduni.borehole.lithology.51409.242285</gml:identifier>
+					<om:phenomenonTime nilReason="unknown"/>
+					<om:resultTime nilReason="unknown"/>
+					<!--If [lithology:log_type] = "D" then om:procedure xlink:title="driller's log" -->
+					<!--If [lithology:log_type] = "E" then om:procedure xlink:title="engineer's log" -->
+					<!--If [lithology:log_type] = "G" then om:procedure xlink:title="geologist's log" -->
+					<!-- #### Need appropriate xlink:href URIs for "driller's log", "engineer's log" and "geologist's log" vocabulary terms -->
+					<om:procedure xlink:href="http://??" xlink:title="driller's log"/>
+					<om:observedProperty xlink:href="http://www.opengis.net/def/gwml/2.1/observedProperty/earthMaterial" xlink:title="lithology"/>
+					<!-- The  om:featureOfInterest is the GW_Well the lithology describes.  -->
+					<!-- FedUni - om:featureOfInterest xlink:href="http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.[bore.bore_id]" -->
+					<om:featureOfInterest xlink:href="http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.51409"/>
+					<om:result>
+						<!-- gwml2w:GW_GeologyLogCoverage gml:id="feduni.borehole.[bore:bore_id].lithology.[lithology:log_type].lithology:lithology_id].coverage" for lithology logs -->
+						<gwml2w:GW_GeologyLogCoverage gml:id="feduni.borehole.lithology.51409.242285.coverage">
+							<!-- FedUni - First element in lithology coverage -->
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- swe:value from [lithology.from_m] -->
+											<swe:value>0.00</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<!-- swe:value from [lithology.to_m] -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>2</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<!-- FedUni bore has no lithology code or identifier so there is no swe:identifier, just a lithology description free text -->
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<!-- swe:value from [lithology:lthology_description] -->
+													<swe:value>brown clay</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<!-- FedUni - second element in lithology coverage -->
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>2</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>6</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<!-- FedUni bore has no lithology code or identifier so there is no swe:identifier, just a lithology description free text -->
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<!-- swe:value from [lithology:lthology_description] -->
+													<swe:value>weathered grey brown basalt</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<!-- FedUni - third element in lithology coverage -->
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>6</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>19</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<!-- swe:value from [lithology:lthology_description] -->
+													<swe:value>BLUE BASALT (W)</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+						</gwml2w:GW_GeologyLogCoverage>
+					</om:result>
+					<!-- FedUni - gwml2w:startDepth and gwml2w:endDepth capture the top and bottom values of the log. These are {lithology.from_m] and [lithology.to_m] for the total log -->
+					<gwml2w:startDepth>
+						<swe:Quantity>
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+							<swe:value>0</swe:value>
+						</swe:Quantity>
+					</gwml2w:startDepth>
+					<gwml2w:endDepth>
+						<swe:Quantity>
+							<!-- FedUni - <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/> -->
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+							<swe:value>19</swe:value>
+						</swe:Quantity>
+					</gwml2w:endDepth>
+				</gwml2w:GW_GeologyLog>
+			</gwml2w:gwWellGeology>
+			<!-- This  gwml2w:GW_GeologyLog is a stratigraphy log based on [stratigraphy] table -->
+			<gwml2w:gwWellGeology>
+				<!-- gwml2w:GW_GeologyLog gml:id="feduni.borehole.stratigraphy.[stratigraphy.bore_id_fk]"  for Stratigraphy logs -->
+				<gwml2w:GW_GeologyLog gml:id="feduni.borehole.stratigraphy.51409">
+					<!-- FedUni - gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616" value
+ ="http://groundwater.victoria.com.au/feature/geology-log/feduni.borehole.stratigraphy.[stratigraphy.bore_id_fk]. -->
+					<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://groundwater.victoria.com.au/feature/geology-log/feduni.borehole.stratigraphy.51409</gml:identifier>
+					<!-- FedUni - does not have the time stratigraphy log was made -->
+					<om:phenomenonTime nilReason="unknown"/>
+					<om:resultTime nilReason="unknown"/>
+					<!-- FedUni - does not record method stratigraphy log was created -->
+					<om:procedure xsi:nil="true" nilReason="unknown"/>
+					<om:observedProperty xlink:href="http://www.opengis.net/def/gwml/2.0/observedProperty/stratigraphy" xlink:title="stratigraphy"/>
+					<!-- The  om:featureOfInterest is the GW_Well the stratigraphy describes.  -->
+					<!-- FedUni - om:featureOfInterest xlink:href="http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.[bore.bore_id]" -->
+					<om:featureOfInterest xlink:href="http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.51409"/>
+					<om:result>
+						<!-- gwml2w:GW_GeologyLogCoverage gml:id="feduni.borehole.stratigraphy.[stratigraphy.bore_id_fk].coverage" for stratigraphy logs -->
+						<gwml2w:GW_GeologyLogCoverage gml:id="feduni.borehole.stratigraphy.51409.coverage">
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- swe:value from [stratigraphy.from_m] -->
+											<swe:value>0.00</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<!-- swe:value from [stratigraphy.to_m] -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>19</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+										<gwml2w:value>
+										<!-- swe:DataRecord needs defining for stratigraphy record -->
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/data-record/stratigraphy">
+											<swe:field name="stratigraphy">
+												<!-- Following is  example to be used for hydrostratigraphic log -->
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/observedProperty/hydrostratigraphy">
+													<!-- swe:description from [stratigraphy:formation_description] -->
+													<swe:description>Some geological description</swe:description>
+													<swe:codeSpace xlink:href="http://geology.data.gov.vic.au/stratigraphicunit"/>
+													<!-- swe:value from [stratigraphy:strat_code] -->
+													<swe:value>To</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>0.30</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>4.27</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial" id="le.2">
+											<swe:field name="stratigraphy">
+												<!-- Following is for categorical example to be used for stratigraphic log -->
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/stratigraphy">
+													<!-- swe:description from [stratigraphy:formation_description] -->
+													<swe:description>Newer Volcanics Formation</swe:description>
+													<swe:codeSpace xlink:href="http://geology.data.gov.vic.au/stratigraphicunit"/>
+													<!-- swe:value from [stratigraphy:strat_code] -->
+													<swe:value>Qvn</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+						</gwml2w:GW_GeologyLogCoverage>
+					</om:result>
+					<!-- #### gwml2w:startDepth and gwml2w:endDepth capture the top and bottom values of the log. Is the only way to determine this to check all [stratigraphy:from_m] and [lstratigraphy:to_m] for a specific [lstratigraphy:stratigraphy_id] and select smallest and largest respectively? -->
+					<gwml2w:startDepth>
+						<swe:Quantity>
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+							<swe:value>0</swe:value>
+						</swe:Quantity>
+					</gwml2w:startDepth>
+					<gwml2w:endDepth>
+						<swe:Quantity>
+							<!-- FedUni - <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/> -->
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+							<swe:value>11.58</swe:value>
+						</swe:Quantity>
+					</gwml2w:endDepth>
+				</gwml2w:GW_GeologyLog>
+			</gwml2w:gwWellGeology>
+			<!-- This gml:featureMember is an age gwml2w:GW_GeologyLog based on [stratigraphy] table -->
+			<gwml2w:gwWellGeology>
+				<!-- gwml2w:GW_GeologyLog gml:id="feduni.borehole.age.[stratigraphy.bore_id_fk]" for geologic age logs -->
+				<gwml2w:GW_GeologyLog gml:id="feduni.borehole.age.51409">
+					<!-- FedUni - gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616" value
+ ="http://groundwater.victoria.com.au/feature/geology-log/feduni.borehole.age.[stratigraphy.bore_id_fk]. -->
+					<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://groundwater.victoria.com.au/feature/geology-log/feduni.borehole.age.51409</gml:identifier>
+					<!-- FedUni does not have the time the age log was made -->
+					<om:phenomenonTime nilReason="unknown"/>
+					<om:resultTime nilReason="unknown"/>
+					<!-- FedUni does not record method age log was created -->
+					<om:procedure xsi:nil="true" nilReason="unknown"/>
+					<om:observedProperty xlink:href="http://www.opengis.net/def/gwml/2.0/observedProperty/geologicAge" xlink:title="geologic age"/>
+					<!-- The  om:featureOfInterest is the GW_Well the age describes.  -->
+					<!-- FedUni - om:featureOfInterest xlink:href="http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.[bore.bore_id]" -->
+					<om:featureOfInterest xlink:href="http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.51409"/>
+					<om:result>
+						<!-- gwml2w:GW_GeologyLogCoverage gml:id="feduni.borehole.age.[stratigraphy.bore_id_fk].coverage" for stratigraphy logs -->
+						<gwml2w:GW_GeologyLogCoverage gml:id="feduni.borehole.age.51409.coverage">
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<!-- swe:value from [stratigraphy.from_m] -->
+											<swe:value>0.00</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<!-- swe:value from [stratigraphy.to_m] -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+											<swe:value>0.30</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<!-- swe:DataRecord needs defining for age record -->
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/observedProperty/geologicAge">
+											<swe:field name="geologicAge">
+												<!-- Following is for categorical example to be used for chronostratigraphic log -->
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/chronostratigraphy">
+													<!-- swe:description from [stratigraphy:formation_description] -->
+													<!-- Need to map [stratigraphy:formation_age] values to http://resource.geosciml.org/classifier/ics/ischart/ values -->
+													<swe:identifier>xlink:href="http://resource.geosciml.org/classifier/ics/ischart/Quaternary"</swe:identifier>
+													<swe:description>Some geological description</swe:description>
+													<!-- swe:codeSpace is http://resource.geosciml.org/classifier/ics/ischart/  -->
+													<swe:codeSpace xlink:href="http://resource.geosciml.org/classifier/ics/ischart/"/>
+													<!-- swe:value from [stratigraphy:formation_age] -->
+													<swe:value>Quaternary</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+						</gwml2w:GW_GeologyLogCoverage>
+					</om:result>
+					<!-- ???? FedUni - gwml2w:startDepth and gwml2w:endDepth capture the top and bottom values of the log. Is the only way to determine this to check all [stratigraphy:from_m] and [stratigraphy:to_m] for a specific [stratigraphy:stratigraphy_id] and select smallest and largest respectively? -->
+					<gwml2w:startDepth>
+						<swe:Quantity>
+							<!-- FedUni - <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/> -->
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+							<swe:value>0</swe:value>
+						</swe:Quantity>
+					</gwml2w:startDepth>
+					<gwml2w:endDepth>
+						<swe:Quantity>
+							<!-- FedUni - <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/> -->
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre" code="m"/>
+							<swe:value>11.58</swe:value>
+						</swe:Quantity>
+					</gwml2w:endDepth>
+				</gwml2w:GW_GeologyLog>
+			</gwml2w:gwWellGeology>
+			<!-- +++++++++======================+++++++++++-->
+		</gwml2w:GW_Well>
+	</gml:featureMember>
+</gml:FeatureCollection>
+<!-- #### Still to sort out -->
+<!-- #### 9.	gwml2w:startDepth and gwml2w:endDepth capture the top and bottom values of the log. Is the only way to determine this to check all [lithology.from_m] and [lithology.to_m] for a specific [lithology:lithology_id] and select smallest and largest respectively? Andrew may have to answer this when he gets back from leave.What you say makes sense. Ditto stratigraphic log. -->
+<!-- #### gwml2w:startDepth and gwml2w:endDepth capture the top and bottom values of the log. Is the only way to determine this to check all [stratigraphy:from_m] and [lstratigraphy:to_m] for a specific [lstratigraphy:stratigraphy_id] and select smallest and largest respectively? -->
+<!-- #### 16.	Is [bore.initial_ec] a property of the aquifer (GW_HydrogeoUnit/gwml2:gwUnitProperty) or a fluid property (GW_FluidBody/gwBodyProperty)? I'm guessing Fluid property. I wonder what the others are guessing?  -->
+<!-- #### 17.	What is [bore.initial.tds]? If a property of the aquifer (total dissolved solids?) then use gwml2:gwUnitProperty, if a fluid property use GW_FluidBody/gwBodyProperty. It's TDS, usually calculated as EC*0.6. Some older bores measured TDS in the lab. It's the total dissolved salts in the fluid (i.e. the solutes).  -->
+<!-- #### 19.	What are [aquifer_property] water properties 'water_from', 'water_to', 'pdepth', 'prate', 'ptime', 'ddown', 'rtime', 'ptype'? Water from and to are where water was struck during drilling. others are pump depth, pump rate, pumping time, drawdown, recovery time and pump type. Login to see the units.  -->

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection timeStamp="2015-06-08T16:48:31" xsi:schemaLocation="http://www.opengis.net/gwml-well/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-well.xsd http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd " numberReturned="1" numberMatched="1" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gwml-wellconstruction="http://www.opengis.net/gwml-wellconstruction/2.2" xmlns:gwml-main="http://www.opengis.net/gwml-main/2.2" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gwml-well="http://www.opengis.net/gwml-well/2.2" xmlns:om="http://www.opengis.net/om/2.0" xmlns:samplingspatial="http://www.opengis.net/samplingSpatial/2.0" xmlns:ns0="http://xmlns.geosciml.org/GeologicTime/3.2" xmlns:sampling="http://www.opengis.net/sampling/2.0" xmlns:ns1="http://xmlns.geosciml.org/GeologicAge/3.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:ns2="http://xmlns.geosciml.org/PhysicalProperties/3.2" xmlns:ns3="http://xmlns.geosciml.org/GeologicUnit/3.2" xmlns:ns4="http://xmlns.geosciml.org/EarthMaterial/3.2" xmlns:gwml-flow="http://www.opengis.net/gwml-flow/2.2" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gwml-constituent="http://www.opengis.net/gwml-constituent/2.2" xmlns:ns5="http://xmlns.geosciml.org/GeoSciML-Core/3.2">
+   <wfs:boundedBy>
+      <gml:Envelope srsName="urn:ogc:def:crs:epsg:7.9:4326">
+         <gml:lowerCorner>48.7936350250679 2.66530554336762</gml:lowerCorner>
+         <gml:upperCorner>48.7936350250679 2.66530554336762</gml:upperCorner>
+      </gml:Envelope>
+   </wfs:boundedBy>
+   <wfs:member>
+      <gwml-well:GW_Well gml:id="PointEau.01846X0361.P1">
+      <!-- Sylvain Grellet, BRGM  2014/07/07th - WFS server connected to BSS Eau and an extract from BSS (without confidential points)-->
+      <!-- Instance example validated against the xsd (not the schematron) using XML Spy version 2015.sp1-->
+         <gml:description>Water well from national BSS (Banque du Sous-Sol) Data database</gml:description>
+         <gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://ressource.brgm.fr/data/PointEau/01846X0361/P1</gml:identifier>
+         <gml:name codeSpace="http://www.sandre.eaufrance.fr/urn.php?urn=urn:sandre:dictionnaire:PTE::entite:PointEau:ressource:2.1:::html">PIEZOMETRE DU COLLEGE DELACROIX (ROISSY - 77)</gml:name>
+         <sampling:sampledFeature nilReason="unknown" xsi:nil="true"/>
+         <samplingspatial:shape/>
+         <gwml-well:gwWellBody/>
+         <gwml-well:gwWellConstructedDepth>
+            <om:OM_Observation gml:id="OM_Observation.1">
+			   <om:phenomenonTime/>
+				<om:resultTime/>
+				<om:procedure xsi:nil="true"/>
+				<om:observedProperty xlink:href="http://www.opengis.net/gwml-well/2.0/gwWellConstructedDepth" xlink:title="gwWellConstructedDepth"/>
+				<om:featureOfInterest/>
+               <om:result>62.0</om:result>
+            </om:OM_Observation>
+         </gwml-well:gwWellConstructedDepth>
+             <gwml-well:gwWellConstruction>
+            <gwml-wellconstruction:Borehole gml:id="Borehole.1">
+               <gml:description>Borehole from national BSS (Banque du Sous-Sol) Data database</gml:description>
+               <gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://ressource.brgm.fr/data/PointEau/FR\01846X0361/P1</gml:identifier>               
+               <sampling:sampledFeature nilReason="unknown" xsi:nil="true"/>
+               <samplingspatial:shape xlink:href="#PointEau.01846X0361/P1" xlink:title="PointEau\01846X0361/P1"/>
+               <gwml-wellconstruction:bholeMaterialCustodian gco:nilReason="unknown" xsi:nil="true"/>
+               <gwml-wellconstruction:bholeCoreInterval nilReason="unknown" xsi:nil="true"/>
+               <gwml-wellconstruction:bholeDateOfDrilling>2000-02-18</gwml-wellconstruction:bholeDateOfDrilling>
+               <gwml-wellconstruction:bholeDriller>
+                  <gmd:CI_ResponsibleParty>
+                     <gmd:organisationName>
+                        <gco:CharacterString>SONDALP TOURS</gco:CharacterString>
+                     </gmd:organisationName>
+                     <gmd:role>
+                        <gmd:CI_RoleCode codeList="prefixCodeListGWML2/roleCodes" codeListValue="prefixCodeListGWML2/roleCodes/driller">Driller</gmd:CI_RoleCode>
+                     </gmd:role>
+                  </gmd:CI_ResponsibleParty>
+               </gwml-wellconstruction:bholeDriller>
+               <gwml-wellconstruction:bholeDrillingMethod xlink:href="http://www.opengis.net/req/gwml2-wellconstruction/BoreholeDrillingMethodTerm/ROTARY" xlink:title="ROTARY"/>
+               <gwml-wellconstruction:bholeInclinationType xlink:href="http://www.opengis.net/req/gwml2-wellconstruction/BoreholeInclinationTerm/vertical" xlink:title="vertical"/>
+               <gwml-wellconstruction:bholeOperator gco:nilReason="withheld" xsi:nil="true"/>
+               <gwml-wellconstruction:bholeStartPoint nilReason="unknown" xsi:nil="true"/>
+               <gwml-wellconstruction:bholeConstruction>
+                  <gwml-wellconstruction:Casing gml:id="Casing.1">
+                     <gwml-wellconstruction:casingElement>
+                        <gwml-wellconstruction:CasingComponent gml:id="CasingComponent.1">
+                           <gwml-wellconstruction:from>
+                              <swe:Quantity>
+                                 <swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/m"/>
+                                 <swe:value>0.0</swe:value>
+                              </swe:Quantity>
+                           </gwml-wellconstruction:from>
+                           <gwml-wellconstruction:to>
+                              <swe:Quantity>
+                                 <swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/m"/>
+                                 <swe:value>41.0</swe:value>
+                              </swe:Quantity>
+                           </gwml-wellconstruction:to>
+                           <gwml-wellconstruction:casingMaterial xlink:href="http://www.sandre.eaufrance.fr/?urn=urn:sandre:donnees:154::CdElement:5:::referentiel:3.1:xml" xlink:title="PVC"/>
+                           <gwml-wellconstruction:casingCoating nilReason="unknown" xsi:nil="true"/>
+                           <gwml-wellconstruction:casingForm nilReason="unknown"/>
+                           <gwml-wellconstruction:casingInternalDiameter>
+                              <swe:Quantity>
+                                 <swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/cm"/>
+                                 <swe:value>115.0</swe:value>
+                              </swe:Quantity>
+                           </gwml-wellconstruction:casingInternalDiameter>
+                           <gwml-wellconstruction:casingWallThickness>
+                              <swe:Quantity>
+                                 <swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/cm"/>
+                                 <swe:value>0.0</swe:value>
+                              </swe:Quantity>
+                           </gwml-wellconstruction:casingWallThickness>
+                        </gwml-wellconstruction:CasingComponent>
+                     </gwml-wellconstruction:casingElement>
+                  </gwml-wellconstruction:Casing>
+               </gwml-wellconstruction:bholeConstruction>
+               <gwml-wellconstruction:bholeConstruction>
+                  <gwml-wellconstruction:Screen gml:id="Screen.1">
+                     <gwml-wellconstruction:screenElement>
+                        <gwml-wellconstruction:ScreenComponent gml:id="ScreenComponent.1">
+                           <gwml-wellconstruction:from>
+                              <swe:Quantity>
+                                 <swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/m"/>
+                                 <swe:value>41.0</swe:value>
+                              </swe:Quantity>
+                           </gwml-wellconstruction:from>
+                           <gwml-wellconstruction:to>
+                              <swe:Quantity>
+                                 <swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/m"/>
+                                 <swe:value>62.0</swe:value>
+                              </swe:Quantity>
+                           </gwml-wellconstruction:to>
+                           <gwml-wellconstruction:screenAttachmentMethod nilReason="unknown" xsi:nil="true"/>
+                           <gwml-wellconstruction:screenCoating nilReason="unknown" xsi:nil="true"/>
+                           <gwml-wellconstruction:screenForm xlink:href="" xlink:title=""/>
+                           <gwml-wellconstruction:screenMaterial xlink:href="http://www.sandre.eaufrance.fr/?urn=urn:sandre:donnees:154::CdElement:5:::referentiel:3.1:xml" xlink:title="PVC"/>
+                           <gwml-wellconstruction:screenInternalDiameter>
+                              <swe:Quantity>
+                                 <swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/cm"/>
+                                 <swe:value>115.0</swe:value>
+                              </swe:Quantity>
+                           </gwml-wellconstruction:screenInternalDiameter>
+                           <gwml-wellconstruction:screenWallThickness>
+                              <swe:Quantity>
+                                 <swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/cm"/>
+                                 <swe:value>0.0</swe:value>
+                              </swe:Quantity>
+                           </gwml-wellconstruction:screenWallThickness>
+                        </gwml-wellconstruction:ScreenComponent>
+                     </gwml-wellconstruction:screenElement>
+                  </gwml-wellconstruction:Screen>
+               </gwml-wellconstruction:bholeConstruction>
+               <gwml-wellconstruction:bholeHeadworks>
+                  <gwml-wellconstruction:BoreCollar gml:id="BoreCollar.1">
+                     <gwml-wellconstruction:collarElevation srsName="urn:ogc:def:crs:EPSG:5720" srsDimension="1" uomLabels="m">110.0</gwml-wellconstruction:collarElevation>
+                     <gwml-wellconstruction:collarElevationType nilReason="unknown"/>
+                     <gwml-wellconstruction:collarHeadworkType nilReason="unknown" xsi:nil="true"/>
+                     <gwml-wellconstruction:collarLocation>
+                        <gml:Point gml:id="Point.2" srsName="EPSG:4326" xmlns:ns8="http://www.opengis.net/gml" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:gmx="http://www.isotc211.org/2005/gmx">
+                           <gml:pos srsName="urn:ogc:def:crs:epsg:7.9:4326" srsDimension="2">2.66530554336762 48.7936350250679</gml:pos>
+                        </gml:Point>
+                     </gwml-wellconstruction:collarLocation>
+                  </gwml-wellconstruction:BoreCollar>
+               </gwml-wellconstruction:bholeHeadworks>
+            </gwml-wellconstruction:Borehole>
+         </gwml-well:gwWellConstruction>
+         <gwml-well:gwWellLocation>
+            <gml:Point gml:id="point.1" srsName="urn:ogc:def:crs:epsg:7.9:4326" xmlns:ns8="http://www.opengis.net/gml" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:gmx="http://www.isotc211.org/2005/gmx">
+               <gml:pos srsName="urn:ogc:def:crs:epsg:7.9:4326" srsDimension="2">48.7936350250679 2.66530554336762</gml:pos>
+            </gml:Point>
+         </gwml-well:gwWellLocation>
+         <gwml-well:gwWellPurpose xlink:href="http://www.sandre.eaufrance.fr/?urn=urn:sandre:donnees:148::CdElement:2:::referentiel:3.1:xml" xlink:title="Mesure quantitÃ© (piÃ©zomÃ©trie)"/>
+         <gwml-well:gwWellReferenceElevation>
+            <gwml-well:Elevation>
+               <gwml-well:elevation srsName="EPSG:5720" srsDimension="1" uomLabels="m">0.0</gwml-well:elevation>
+               <gwml-well:elevationType xlink:href="http://www.sandre.eaufrance.fr/?urn=urn:sandre:donnees:171::CdElement:null:::referentiel:3.1:xml"/>
+            </gwml-well:Elevation>
+         </gwml-well:gwWellReferenceElevation>
+         <gwml-well:gwWellStatus xlink:href="http://www.sandre.eaufrance.fr/?urn=urn:sandre:donnees:79::CdElement:3:::referentiel:3.1:xml" xlink:title="OpÃ©rationnel"/>
+         <gwml-well:gwWellTotalLength>
+            <swe:Quantity>
+               <swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/m"/>
+               <swe:value>62.0</swe:value>
+            </swe:Quantity>
+         </gwml-well:gwWellTotalLength>
+         <gwml-well:gwWellUnit xlink:href="http://reseau.eaufrance.fr/geotraitements/bdlisa/files/entite/107AK01.pdf" xlink:title="Calcaires de Brie du RupÃ©lien (OligocÃ¨ne inf.) du Bassin Parisien (bassin Seine-Normandie et Loire-Bretagne)"/>
+         <gwml-well:gwWellYield nilReason="unknown" xsi:nil="true"/>
+      </gwml-well:GW_Well>
+   </wfs:member>
+</wfs:FeatureCollection>

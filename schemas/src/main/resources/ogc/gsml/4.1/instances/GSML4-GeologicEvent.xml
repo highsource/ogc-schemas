@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsmlb:GeologicEvent 
+    xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xmlns:gml="http://www.opengis.net/gml/3.2" 
+    xmlns:swe="http://www.opengis.net/swe/2.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd" gml:id="event.1">
+    <gml:identifier codeSpace=""/>
+    <gml:name>Kanimblan Orogeny</gml:name>
+    <gsmlb:eventProcess xlink:href="http://resource.geoscience.gov.xx/vocabulary/eventprocess/deformation" xlink:title="deformation"/>
+    <gsmlb:numericAge>
+        <gsmlb:NumericAgeRange>
+            <gsmlb:reportingDate>
+                <swe:Quantity>
+                    <swe:uom code="Ma"/>
+                    <swe:value>335</swe:value>
+                </swe:Quantity>
+            </gsmlb:reportingDate>
+            <gsmlb:olderBoundDate>
+                <swe:Quantity>
+                    <swe:uom code="Ma"/>
+                    <swe:value>350</swe:value>
+                </swe:Quantity>
+            </gsmlb:olderBoundDate>
+            <gsmlb:youngerBoundDate>
+                <swe:Quantity>
+                    <swe:uom code="Ma"/>
+                    <swe:value>325</swe:value>
+                </swe:Quantity>
+            </gsmlb:youngerBoundDate>
+        </gsmlb:NumericAgeRange>
+    </gsmlb:numericAge>
+    <gsmlb:olderNamedAge xlink:href="http://resource.geosciml.org/classifier/ics/ischart/Tournaisian" xlink:title="Tournaisian"/>
+    <gsmlb:youngerNamedAge xlink:href="http://resource.geosciml.org/classifier/ics/ischart/Serpukhovian" xlink:title="Serpukhovian"/>
+    <gsmlb:eventEnvironment>
+        <swe:Category definition="http://resource.geoscience.gov.xx/vocabulary/eventenviroment">
+            <swe:identifier>http://resource.geoscience.gov.xx/vocabulary/eventenviroment/deep-crustal</swe:identifier>
+            <swe:label>deep crustal</swe:label>
+            <swe:codeSpace xlink:href="http://resource.geoscience.gov.xx/vocabulary/eventenviroment"/>
+        </swe:Category>
+    </gsmlb:eventEnvironment>
+</gsmlb:GeologicEvent>

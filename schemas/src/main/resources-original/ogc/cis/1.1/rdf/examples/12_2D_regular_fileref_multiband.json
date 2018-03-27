@@ -1,0 +1,163 @@
+{
+	"@context": ["http://localhost/json-ld/coverage-context.json", {"examples": "http://www.opengis.net/cis/1.1/examples/"}],
+	"type": "CoverageByPartitioningType",
+	"id": "examples:CIS_12_2D",
+	"partitionSet":{
+		"@context": "http://localhost/json-ld/partitionset-context.json",
+		"type": "PartitionSetType",
+		"id": "examples:CIS_PS_12_2D",
+		"partition":[{
+			"type": "PartitionType",
+			"id": "examples:CIS_P1_12_2D",
+			"coverage": {
+				"type": "CoverageByDomainAndRangeType",
+				"id": "examples:CIS_12_2D",
+				"domainSet":{
+					"@context": "http://localhost/json-ld/domainset-context.json",
+					"type": "DomainSetType",
+					"id": "examples:CIS_DS_12_2D",
+					"generalGrid":{
+						"type": "GeneralGridCoverageType",
+						"id": "examples:CIS_DS_GG_12_2D",
+						"srsName": "http://www.opengis.net/def/crs/EPSG/0/4326",
+						"axisLabels": ["Lat", "Long"],
+						"axis": [{ 
+							"type": "RegularAxisType",
+							"id": "examples:CIS_DS_GG_LAT_12_2D",
+							"axisLabel": "Lat",
+							"lowerBound": -80,
+							"upperBound": -70,
+							"uomLabel": "deg",
+							"resolution": 5
+						},{
+							"type": "RegularAxisType",
+							"id": "examples:CIS_DS_GG_LONG_12_2D",
+							"axisLabel": "Long",
+							"lowerBound": 0,
+							"upperBound": 10,
+							"uomLabel": "deg",
+							"resolution": 5
+						}],
+						"gridLimits": {
+							"type": "GridLimitsType",
+							"id": "examples:CIS_DS_GG_GL_12_2D",
+							"srsName": "http://www.opengis.net/def/crs/OGC/0/Index2D",
+							"axisLabels": ["i", "j"],
+							"axis": [{ 
+								"type": "IndexAxisType",
+								"id": "examples:CIS_DS_GG_GL_I_12_2D",
+								"axisLabel": "i",
+								"lowerBound": 0,
+								"upperBound": 2
+							},{
+								"type": "IndexAxisType",
+								"id": "examples:CIS_DS_GG_GL_J_12_2D",
+								"axisLabel": "j",
+								"lowerBound": 0,
+								"upperBound": 2
+							}]
+						}
+					}
+				},
+				"rangeSet": {
+					"@context": "http://localhost/json-ld/rangeset-context.json",
+					"type": "RangeSetRefType",
+					"id": "examples:CIS_P1_RS_12_2D",
+					"fileReference": ["regural_fileref1.tiff"]
+				},
+				"rangeType": { 
+					"@context": "http://localhost/json-ld/rangetype-context.json",
+					"type": "RangeTypeRefType",
+					"id": "examples:CIS_P1_RT_12_2D",
+					"fileReference": "examples:CIS_RT_F1_12_2D"
+				}  
+			}
+		},{
+			"type": "PartitionType",
+			"id": "examples:CIS_P2_12_2D",
+			"coverage": {
+				"type": "CoverageByDomainAndRangeType",
+				"id": "examples:CIS_P2_C_12_2D",
+				"domainSet":{
+					"@context": "http://localhost/json-ld/domainset-context.json",
+					"type": "DomainSetRefType",
+					"id": "examples:CIS_P2_DS_12_2D",
+					"fileReference": "examples:CIS_12_2D"
+				},
+				"rangeSet": {
+					"@context": "http://localhost/json-ld/rangeset-context.json",
+					"type": "RangeSetRefType",
+					"id": "examples:CIS_P2_RS_12_2D",
+					"fileReference": ["regural_fileref2.tiff"]
+				},
+				"rangeType": { 
+					"@context": "http://localhost/json-ld/rangetype-context.json",
+					"type": "RangeTypeRefType",
+					"id": "examples:CIS_P2_RT_12_2D",
+					"fileReference": "examples:CIS_RT_F2_12_2D"
+				}  
+			}
+		},{
+			"type": "PartitionType",
+			"id": "examples:CIS_P3_12_2D",
+			"coverage": {
+				"type": "CoverageByDomainAndRangeType",
+				"id": "examples:CIS_P3_C_12_2D",
+				"domainSet":{
+					"@context": "http://localhost/json-ld/domainset-context.json",
+					"type": "DomainSetRefType",
+					"id": "examples:CIS_P3_DS_12_2D",
+					"fileReference": "examples:CIS_12_2D"
+				},
+				"rangeSet": {
+					"@context": "http://localhost/json-ld/rangeset-context.json",
+					"type": "RangeSetRefType",
+					"id": "examples:CIS_P3_RS_12_2D",
+					"fileReference": ["regural_fileref3.tiff"]
+				},
+				"rangeType": { 
+					"@context": "http://localhost/json-ld/rangetype-context.json",
+					"type": "RangeTypeRefType",
+					"id": "examples:CIS_P3_RT_12_2D",
+					"fileReference": "examples:CIS_RT_F3_12_2D"
+				}  
+			}
+		}]
+	},
+	"rangeType": { 
+		"@context": "http://localhost/json-ld/rangetype-context.json",
+		"type": "DataRecordType",
+		"id": "examples:CIS_RT_12_2D",
+		"field":[{ 
+			"type": "QuantityType",
+			"id": "examples:CIS_RT_F1_12_2D",
+			"definition": "ogcType:unsignedInt",
+			"name": "band1",
+			"uom": {
+				"type": "UnitReference",
+				"id": "examples:CIS_RT_F1_UOM_12_2D",
+				"code": "10^0"
+			}
+		},{ 
+			"type": "QuantityType",
+			"id": "examples:CIS_RT_F2_12_2D",
+			"definition": "ogcType:unsignedInt",
+			"name": "band2",
+			"uom": {
+				"type": "UnitReference",
+				"id": "examples:CIS_RT_F2_UOM_12_2D",
+				"code": "10^0"
+			}
+		},{ 
+			"type": "QuantityType",
+			"id": "examples:CIS_RT_F2_12_2D",
+			"definition": "ogcType:unsignedInt",
+			"name": "band3",
+			"uom": {
+				"type": "UnitReference",
+				"id": "examples:CIS_RT_F2_UOM_12_2D",
+				"code": "10^0"
+			}
+		}]
+	}  
+}

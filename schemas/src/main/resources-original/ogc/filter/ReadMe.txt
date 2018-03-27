@@ -28,6 +28,11 @@ FES 2.0 is filterAll.xsd .
 
 -----------------------------------------------------------------------
 
+2017-06-15  Panagiotis (Peter) A. Vretanos
+  * v2.0: add missing matchCase (default true) attribute in PropertyIsLikeType.
+  * v2.0: updated xsd:schema/@version to 2.0.3 (06-135r11 s#13.4)
+  * v2.0: Updated FES 2.0.3 as filter/2.0 from 09-026r2 change request #434
+
 2014-09-23  Panagiotis (Peter) A. Vretanos
   * v2.0: Added FES 2.0.2 as filter/2.0 from 09-026r2.
 

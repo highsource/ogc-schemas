@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection gml:id="feduni.example.monitoring-site" 
+xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2"
+xmlns:sam="http://www.opengis.net/sampling/2.0"   
+xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"
+xmlns:gml="http://www.opengis.net/gml/3.2"  
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.opengis.net/gwml-well/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-well.xsd 
+http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd
+http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+	
+	<!-- ######################### -->
+	<!-- Mapping of Federation University (FedUni) Groundwater database tables and records to the proposed GroundWaterML2 OGC standard release candidate version 2.2 -->
+	<!-- File created by Bruce Simons, CSIRO, February 2016 -->
+	<!-- ######################### -->
+	<!-- This file is an example instance of a GWML2 GW_MonitoringSite -->
+	<!-- Although this instance is a gml:FeatureCollection with one or more gml:featureMembers, a valid alternative is as a single gwml2w:GW_MonitoringSite -->
+	<!-- Other related GWML2 features are referred to "byReference" using xlink:href. In most cases these could be included "inLine" (i.e. within this instance). A separate instance for each feature is provided for ease of mapping. The final aggregation of inLine vs. byReference features will be determined by the use case requirements -->
+	<!-- Where features are aggregated into single feature services the xlink:href references to URIs need to be replaced with internal # references to gml:id -->
+	<!-- ######################### -->
+	<!-- FedUni - Mapping patterns -->
+	<!-- Comments beginning 'FedUni -' are instructions for mappings between FedUni data and GWML2 -->
+	<!-- ???? Comments beginning ???? require further checking -->
+	<!-- FedUni table record pairs are referred to by the pattern [table.record] -->
+	<!-- The mapping pattern is [schema/property] = [table.record] -->
+	<!-- ######################### -->
+	<!-- FedUni - Feature IDs and identifiers -->
+	<!-- Feature IDs (gml:id) are document specific unique identifiers based on FedUni table keys and the feature type -->
+	<!-- To create the id, replace [table.record_id] with values from the appropriate table -->
+	<!-- Feature identities (gml:identifier) use the URI for the feature. This is in the format "[domain name]/[category]/[gml:id]" -->
+	<!-- Domain Name - The temporary domain name "http://www.groundwater-victoria.com.au" has been used for the feature identifiers and vocabulary term references. An appropriate persistent and organisation independent domain will need to be established.
+A redirect service, such as the SISS PID service, is required to resolve these URIs -->
+	<!-- Category - where the object is a GML Feature use "feature". Where the object is a vocabulary concept use "def". -->
+<!-- Type - where the Category is a feature, the type of feature, where Category is "def' the type of term (e.g. from "http://environment.data.gov.au/def/" it is "object", "unit", "property") -->
+	<!-- ######################### -->
+	<!-- FedUni - Need to test if the water bore is a monitoring bore -->
+	<!-- FedUni - If [bore.monitoring_status] = "Y" then the feature is both a GW_MonitoringSite and a GW_Well. Need to create a new feature GW_MonitoringSite with a link to the GW_Well from the same data -->
+	<!-- This gml:featureMember is an example of a gwml2w:GW_MonitoringSite -->
+	<gml:featureMember>
+		<!-- GW_MonitoringSite -->
+		<!-- FedUni - gwml2w:GW_MonitoringSite gml:id="feduni.monitoring-bore.[bore.bore_id]" -->
+		<gwml2w:GW_MonitoringSite gml:id="feduni.monitoring-bore.51409">
+			<!-- FedUni - gml:description = [bore.site_desc] -->
+			<gml:description/>
+			<!-- FedUni - gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616" 
+value = http://groundwater.victoria.com.au/feature/monitoring-site/feduni.monitoring-bore.[bore.bore_id] -->
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://groundwater.victoria.com.au/feature/monitoring-site/feduni.monitoring-bore.51409</gml:identifier>
+			<!-- FedUni - sam:sampledFeature xlink:href="http://groundwater.feduni.edu/feature/aquifer/[aquifer_property.bore_id_fk].[aquifer-property.aquifer-property_id]" xlink:title="[aquifer-property.aq_name] -->
+			<sam:sampledFeature xlink:href="http://groundwater.victoria.com.au/feature/aquifer/51409.1947" xlink:title="Newer Volcanics" xlink:role="aquifer name"/>
+			<!-- gml:Curve gml:id="feduni.monitoring-site.[bore.bore_ID].shape" -->
+			<sams:shape>
+				<gml:Curve gml:id="feduni.monitoring-site.51409.shape" srsDimension="3" srsName="http://www.opengis.net/def/crs/EPSG/0/4283">
+					<gml:segments>
+						<!-- FedUni - Assume well is vertical and [bore.constructed_depth] is depth of well from [bore.rlns] then:
+<gml:posList> = [bore:longitude_gda94], [bore:latitude.gda94], [bore.rlns] [bore.longitude_gda94], [bore.latitude:gda94], {[bore.rlns]-[bore.constructed_depth]} -->
+						<!-- ???? Check order is right for SRS -->
+						<gml:LineStringSegment>
+							<gml:posList>141.79256 -37.85769 523.27 141.79256 -37.85769 493.27</gml:posList>
+						</gml:LineStringSegment>
+					</gml:segments>
+				</gml:Curve>
+			</sams:shape>
+			<!-- FedUni - gwml2w:gwMonitoringHost is the associated bore -->
+			<!-- FedUni - gwml2w:gwMonitoringHost xlink:href="http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.[bore.bore_id]" -->
+			<gwml2w:gwMonitoringHost xlink:href="http://groundwater.victoria.com.au/feature/water-well/feduni.borehole.51409"/>
+			<gwml2w:gwSiteReferenceElevation>
+				<gwml2w:Elevation>
+					<!-- ???? FedUni: gwml2w:elevation value from [bore:rlns] or [bore.digitisedelevation]  -->
+					<gwml2w:elevation srsName="http://www.opengis.net/def/crs/EPSG/0/5711" uomLabels="m AHD" srsDimension="1">523.27</gwml2w:elevation>
+					<!-- FedUni - does not have gwml2w:elevationAccuracy -->
+					<gwml2w:elevationAccuracy xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<!-- FedUni - gwml2w:elevationType xlink:title="Relative Level Natural Surface" -->
+					<gwml2w:elevationType xlink:title="Relative Level Natural Surface"/>
+					<!-- FedUni - gwml2w:elevationMeasurementMethod = [bore.elevation_method]. If NULL then gwml2w:elevationMeasurementMethod xsi:nil="true" nilReason="unknown" -->
+					<gwml2w:elevationMeasurementMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" nilReason="unknown"/>
+				</gwml2w:Elevation>
+			</gwml2w:gwSiteReferenceElevation>
+			<!-- FedUni - gwml2w:gwSiteType xlink:href="http://www.opengis.net/gwml-well/2.0/GW_Well" xlink:title="Water well" -->
+			<gwml2w:gwSiteType xlink:href="http://www.opengis.net/gwml-well/2.0/GW_Well" xlink:title="Water well"/>
+		</gwml2w:GW_MonitoringSite>
+	</gml:featureMember>
+</gml:FeatureCollection>

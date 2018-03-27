@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 rel. 2 (http://www.altova.com) by Linda Peduto (Bentley Systems Inc) -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:li="http://www.opengis.net/infragml/core/1.0" xmlns:lilf="http://www.opengis.net/infragml/landfeature/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmllr="http://www.opengis.net/gml/3.3/lr" xmlns:gmllro="http://www.opengis.net/gml/3.3/lro" xmlns:tin="http://www.opengis.net/gml/3.3/tin" targetNamespace="http://www.opengis.net/infragml/landfeature/1.0" elementFormDefault="qualified" version="1.0.0">
+	<annotation>
+		<documentation>
+			InfraGML is an OGC Standard. 
+			Copyright (c) 2017  Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/infragml/core/1.0" schemaLocation="http://schemas.opengis.net/infragml/part0/1.0/core.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lr" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRef.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/lro" schemaLocation="http://schemas.opengis.net/gml/3.3/linearRefOffset.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.3/tin" schemaLocation="http://schemas.opengis.net/gml/3.3/tin.xsd"/>
+	<!--XML Schema document created by ShapeChange - http://shapechange.net/
+		 Modified by Paul Scarponcini (Bentley Systems Inc.) -->
+	<!-- 410: fixed striping  .-->
+	<!--                                                                                                                         	-->
+	<!--     CrossSectionArea                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="CrossSectionArea" type="lilf:CrossSectionAreaType" substitutionGroup="li:AbstractData"/>
+	<complexType name="CrossSectionAreaType">
+		<complexContent>
+			<extension base="li:AbstractDataType">
+				<sequence>
+					<element name="material" type="string" minOccurs="0"/>
+					<element name="area" type="gml:AreaType"/>
+					<element name="crossSectionPoint" minOccurs="3" maxOccurs="unbounded">
+						<complexType>
+							<sequence>
+								<element name="CrossSectionPoint">
+									<complexType>
+										<sequence>
+											<element name="name" type="string"/>
+											<element name="description" type="string" minOccurs="0"/>
+											<element name="horizontalOffset" type="gml:LengthType"/>
+											<element name="verticalOffset" type="gml:LengthType"/>
+										</sequence>
+									</complexType>
+								</element>
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="CrossSectionAreaPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lilf:CrossSectionArea"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     LandCrossSection                                                                                            -->
+	<!--                                                                                                                         	-->
+	<element name="LandCrossSection" type="lilf:LandCrossSectionType" substitutionGroup="li:AbstractData"/>
+	<complexType name="LandCrossSectionType">
+		<complexContent>
+			<extension base="li:AbstractDataType">
+				<sequence>
+					<element name="locatedAlong" type="gmllr:LinearElementPropertyType"/>
+					<element name="distanceAlong">
+						<complexType>
+							<sequence>
+								<element ref="gmllr:DistanceExpression"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="horizontalDisplacement" type="gml:LengthType" minOccurs="0"/>
+					<element name="verticalDisplacement" type="gml:LengthType" minOccurs="0"/>
+					<element name="crossSectionArea" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractMemberType">
+									<sequence minOccurs="0">
+										<element ref="lilf:CrossSectionArea"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LandCrossSectionPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lilf:LandCrossSection"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     LandElement                                                                                                   -->
+	<!--                                                                                                                         	-->
+	<element name="LandElement" type="lilf:LandElementType" substitutionGroup="lilf:LandFeature"/>
+	<complexType name="LandElementType">
+		<complexContent>
+			<extension base="lilf:LandFeatureType">
+				<sequence>
+					<element name="elementID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="elementType" type="gml:ReferenceType"/>
+					<element name="material" type="string" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LandElementPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lilf:LandElement"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     LandFeature                                                                                                    -->
+	<!--                                                                                                                         	-->
+	<element name="LandFeature" type="lilf:LandFeatureType" substitutionGroup="li:Feature"/>
+	<complexType name="LandFeatureType">
+		<complexContent>
+			<extension base="li:FeatureType">
+				<sequence>
+					<element name="landFeatureID" minOccurs="0">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="state" type="li:StateType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LandFeaturePropertyType">
+		<sequence minOccurs="0">
+			<element ref="lilf:LandFeature"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     LandLayer                                                                                                       -->
+	<!--                                                                                                                         	-->
+	<element name="LandLayer" type="lilf:LandLayerType" substitutionGroup="lilf:LandFeature"/>
+	<complexType name="LandLayerType">
+		<complexContent>
+			<extension base="lilf:LandFeatureType">
+				<sequence>
+					<element name="landLayerID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LandLayerPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lilf:LandLayer"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     LandSurface                                                                                                    -->
+	<!--                                                                                                                         	-->
+	<element name="LandSurface" type="lilf:LandSurfaceType" substitutionGroup="lilf:LandFeature"/>
+	<complexType name="LandSurfaceType">
+		<complexContent>
+			<extension base="lilf:LandFeatureType">
+				<sequence>
+					<element name="landSurfaceID">
+						<complexType>
+							<sequence>
+								<element name="ID" type="li:IDType"/>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="spatialRepresentation" type="lilf:TINPropertyType"/>
+					<element name="material" type="string" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LandSurfacePropertyType">
+		<sequence minOccurs="0">
+			<element ref="lilf:LandSurface"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     LinearLayer                                                                                                     -->
+	<!--                                                                                                                         	-->
+	<element name="LinearLayer" type="lilf:LinearLayerType" substitutionGroup="lilf:LandLayer"/>
+	<complexType name="LinearLayerType">
+		<complexContent>
+			<extension base="lilf:LandLayerType">
+				<sequence>
+					<element name="landCrossSection" type="lilf:LandCrossSectionPropertyType" minOccurs="2" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="LinearLayerPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lilf:LinearLayer"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     SolidLayer                                                                                                       -->
+	<!--                                                                                                                         	-->
+	<element name="SolidLayer" type="lilf:SolidLayerType" substitutionGroup="lilf:LandLayer"/>
+	<complexType name="SolidLayerType">
+		<complexContent>
+			<extension base="lilf:LandLayerType">
+				<sequence>
+					<element name="spatialRepresentation" type="li:PolyfaceMeshPropertyType"/>
+					<element name="material" type="string" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SolidLayerPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lilf:SolidLayer"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--     SurfacesLayer                                                                                                  -->
+	<!--                                                                                                                         	-->
+	<element name="SurfacesLayer" type="lilf:SurfacesLayerType" substitutionGroup="lilf:LandLayer"/>
+	<complexType name="SurfacesLayerType">
+		<complexContent>
+			<extension base="lilf:LandLayerType">
+				<sequence>
+					<element name="topSurface" type="lilf:LandSurfacePropertyType"/>
+					<element name="bottomSurface" type="lilf:LandSurfacePropertyType" minOccurs="0">
+						<annotation>
+							<documentation>missing bottom layer inplies infinite thickness
+							</documentation>
+						</annotation>
+					</element>
+					<element name="extent" type="gml:PolygonType"/>
+					<element name="material" type="string" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="SurfacesLayerPropertyType">
+		<sequence minOccurs="0">
+			<element ref="lilf:SurfacesLayer"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<!--                                                                                                                         	-->
+	<!--    TIN Property Type                                                                                                     -->
+	<!--                                                                                                                         	-->
+	<complexType name="TINPropertyType">
+		<sequence minOccurs="0">
+			<element ref="tin:TIN"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+</schema>

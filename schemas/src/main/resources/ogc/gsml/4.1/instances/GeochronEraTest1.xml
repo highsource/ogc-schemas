@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsmlgt:GeochronologicEra xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2" 
+    xmlns:sf="http://www.opengis.net/samplingSpatial/2.0"
+    xmlns:gsmlgt="http://www.opengis.net/gsml/4.1/GeologicTime"
+    xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic"
+    xmlns:om="http://www.opengis.net/om/2.0" xmlns:sam="http://www.opengis.net/sampling/2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeologicTime http://schemas.opengis.net/gsml/4.1/geologicTime.xsd 
+    http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd"
+    gml:id="ID000">
+    <gml:metaDataProperty>
+        <gml:GenericMetaData gml:id="ID001"> </gml:GenericMetaData>
+    </gml:metaDataProperty>
+
+    <gml:description>Test geochronologic era instance document</gml:description>
+    <gml:descriptionReference xlink:title="Meeker, 2007, PhD dissertation" xlink:href="http://library.arizona.edu/dissertation/24637"/>
+    <gml:identifier codeSpace="http://resource.arizona.edu/stratigraphicLexicon">http://resource.arizona.edu/chronostratigraphicUnit/2366</gml:identifier>
+    <gml:name codeSpace="http://resource.arizona.edu/stratigraphicLexicon">Zappodachus Zone</gml:name>
+    <!-- multiple gml:name are allowed -->
+    <gsmlgt:start xlink:title="Era starts at base of Mesoproterozoic">
+        <gsmlgt:StandardGlobalNumericalAge gml:id="ID003">
+            <gml:metaDataProperty>
+                <gml:GenericMetaData gml:id="ID004"> </gml:GenericMetaData>
+            </gml:metaDataProperty>
+            <gml:description>Standard age assigned to base of Mesoproterozoic</gml:description>
+            <gml:descriptionReference xlink:title="ICS Time Scale" xlink:href="http://stratigraphy.org/ICSchart/ChronostratChart2012.jpg"/>
+            <gml:identifier codeSpace="http://resource.geosciml.org/classifier/ics/ischart/2014">http://resource.geosciml.org/classifier/ics/ischart/BaseMesoproterozoic</gml:identifier>
+            <gml:name>GSSA for base of Mesoproterozoic</gml:name>
+            <gsmlgt:position xlink:title="time coordinate, base Mesoproterozoic">
+                <gml:TimeInstant frame="http://resource.geosciml.org/trs/standard-geologic-time-ma" gml:id="ID006">
+                    <gml:timePosition>1600</gml:timePosition>
+                </gml:TimeInstant>
+            </gsmlgt:position>
+<!-- can have multiple observationBasis elements -->
+            <gsmlgt:observationalBasis  nilReason="inapplicable"/>
+            <gsmlgt:positionalUncertainty xlink:title="asserted value">
+                <swe:Quantity referenceFrame="http://geosciml.org/geologicTime/Ma" id="ID033">
+                    <swe:description>no uncertainty, value is asserted</swe:description>
+                    <swe:uom code="Ma"/>
+                    <swe:value>0.00</swe:value>
+                </swe:Quantity>
+            </gsmlgt:positionalUncertainty>
+            <gsmlgt:nextEra xlink:title="Mesoproterozoic" xlink:href="http://resource.geosciml.org/classifier/ics/ischart/Mesoproterozoic"/>
+            <gsmlgt:nextEra xlink:title="Calymmian" xlink:href="http://resource.geosciml.org/classifier/ics/ischart/Calymmian"/>
+            <gsmlgt:previousEra xlink:title="Paleoproterozoic" xlink:href="http://resource.geosciml.org/classifier/ics/ischart/Paleoproterozoic"/>
+            <gsmlgt:previousEra xlink:title="Statherian" xlink:href="http://resource.geosciml.org/classifier/ics/ischart/Statherian"/>
+        </gsmlgt:StandardGlobalNumericalAge>
+    </gsmlgt:start>
+    <gsmlgt:end xlink:title="Era ends with eruption of Beckers Butte Tuff">
+        <gsmlgt:GeochronologicBoundary gml:id="f8756">
+            <gml:description>younger boundary of the time interval is defined by eruption of Beckers Butte Tuff, a thin, widespread marker assumed to be synchronously deposited across the region</gml:description>
+            <gml:name>Beckers Butte Tuff marker</gml:name>
+            <gsmlgt:stratotype>
+                <gsmlgt:StratigraphicPoint gml:id="s87690d">
+                    <sam:sampledFeature>
+                        <gsmlb:Contact gml:id="w46347">
+                            <gml:name>Beckers Butte tuff, Martin Formation</gml:name>
+                        </gsmlb:Contact>
+                    </sam:sampledFeature>
+                    <sf:shape xlink:href="http://azgs.az.gov/resource/location/3574884" 
+                        xlink:title="reference outcrop, Beckers Butte Tuff, Martin Formation"/>
+                </gsmlgt:StratigraphicPoint>
+            </gsmlgt:stratotype>
+        </gsmlgt:GeochronologicBoundary>
+    </gsmlgt:end>
+    <gsmlgt:member xlink:title="Neoproterozoic" xlink:href="http://resource.geosciml.org/classifier/ics/ischart/Neoproterozoic"/>
+    <gsmlgt:member xlink:title="Mesoproterozoic" xlink:href="http://resource.geosciml.org/classifier/ics/ischart/Mesoproterozoic"/>
+    <gsmlgt:member xlink:title="Cambrian" xlink:href="http://resource.geosciml.org/classifier/ics/ischart/Cambrian"/>
+    <gsmlgt:rank xlink:title="informal"/>
+    <gsmlgt:stratotype xlink:title="Theodore Roosevelt Dam Section, Arizona">
+        <gsmlgt:StratigraphicSection  gml:id="ID041">
+            <sam:sampledFeature xlink:href="http://resource.usgs.gov/stratigraphicLexicon/15379" xlink:title="Apache Group"/>
+            <sam:sampledFeature xlink:href="http://resource.usgs.gov/stratigraphicLexicon/985743" xlink:title="Troy Quartzite"/>
+            <sam:sampledFeature xlink:href="http://resource.usgs.gov/stratigraphicLexicon/6732" xlink:title="Bolsa Quartzite"/>
+            <sam:sampledFeature xlink:href="http://resource.usgs.gov/stratigraphicLexicon/78532" xlink:title="Beckers Butte Member, Martin Formation"/>
+            <sf:shape xlink:href="http://resource.usgs.gov/stratigraphicSection/geometry/347378"/>
+        </gsmlgt:StratigraphicSection>
+    </gsmlgt:stratotype>
+</gsmlgt:GeochronologicEra>

@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<wfs:FeatureCollection   xmlns:gsmlpp="http://xmlns.geosciml.org/PhysicalProperties/4.0" xmlns:gww="http://www.opengis.net/gwml-well/2.2" xmlns:gwml="http://www.nrcan.gc.ca/xml/gwml/1" xmlns:gsml="http://xmlns.geosciml.org/GeoSciML-Core/4.0" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:om="http://www.opengis.net/om/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gu="http://xmlns.geosciml.org/GeologicUnit/4.0" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:gsmlga="http://xmlns.geosciml.org/GeologicAge/4.0" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" xmlns:cv="http://www.opengis.net/cv/0.2/gml32" xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" xmlns:sa="http://www.opengis.net/sampling/1.0" xmlns:gwml2c="http://www.opengis.net/gwml-constituent/2.2"  timeStamp="2017-03-07T00:00:00" numberMatched="1" numberReturned="1"
+xsi:schemaLocation="http://www.opengis.net/gwml-well/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-well.xsd http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+	<wfs:member>
+		<gww:GW_Well gml:id="WELL.USGS.403836085374401">
+			<gml:metaDataProperty>
+				<gml:GenericMetaData>
+					<gmd:CI_ResponsibleParty>
+						<gmd:organisationName>
+							<gco:CharacterString>U.S. Geological Survey</gco:CharacterString>
+						</gmd:organisationName>
+						<gmd:contactInfo>
+							<gmd:CI_Contact>
+								<gmd:address>
+									<gmd:CI_Address>
+										<gmd:administrativeArea>
+											<gco:CharacterString>INDIANA</gco:CharacterString>
+										</gmd:administrativeArea>
+									</gmd:CI_Address>
+								</gmd:address>
+							</gmd:CI_Contact>
+						</gmd:contactInfo>
+						<gmd:role>
+							<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeSpace="ISOTC211/19115" codeListValue="CI_RoleCode_originator">originator</gmd:CI_RoleCode>
+						</gmd:role>
+					</gmd:CI_ResponsibleParty>
+				</gml:GenericMetaData>
+			</gml:metaDataProperty>
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">
+				http://cida.usgs.gov/ngwmn/feature/USGS.403836085374401</gml:identifier>
+			<gml:name  codeSpace="http://cida.usgs.gov/water/groundwater/SiteNo">403836085374401</gml:name>
+			<sam:sampledFeature  xlink:href="http://cida.usgs.gov/ngwmn/feature/USGS.403836085374401"/>
+			<sams:shape>
+				<gml:Point gml:id="WELL.USGS.403836085374401.shape" srsDimension="2" srsName="http://www.opengis.net/gml/srs/epsg.xml#4283">
+					<gml:pos>-85.6288664456762 40.6433756511575</gml:pos>
+				</gml:Point>
+			</sams:shape>
+			<gww:gwWellBody xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gww:gwWellConstructedDepth>
+				<om:OM_Observation gml:id="WELL.USGS.403836085374401.constructed-depth">
+					<om:phenomenonTime>
+						<gml:TimeInstant gml:id="WELL.USGS.403836085374401.date">
+							<gml:timePosition>1987-08-14+00:00</gml:timePosition>
+						</gml:TimeInstant>
+					</om:phenomenonTime>
+					<om:resultTime xlink:href="#WELL.USGS.403836085374401.date"/>
+					<om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/missing" xlink:title="missing"/>
+					<om:observedProperty xlink:href="http://www.opengis.net/gwml-well/2.0/gwWellConstructedDepth" xlink:title="gwWellConstructedDepth"/>
+					<om:featureOfInterest xlink:href="#WELL.USGS.403836085374401"/>
+					<om:result>
+						<swe:Quantity>
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+							<swe:value>198.02</swe:value>
+						</swe:Quantity>
+					</om:result>
+				</om:OM_Observation>
+			</gww:gwWellConstructedDepth>
+			<gww:gwWellConstruction>
+				<gwml2wc:Borehole gml:id="WELL.construction.USGS.403836085374401">
+					<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://cida.usgs.gov/ngwmn/feature/WELL.construction.USGS.403836085374401</gml:identifier>
+					<sam:sampledFeature xlink:href="http://cida.usgs.gov/ngwmn/feature/USGS.403836085374401"/>
+					<sams:shape xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<gwml2wc:bholeMaterialCustodian xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<gwml2wc:bholeDriller xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<gwml2wc:bholeDrillingMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<gwml2wc:bholeInclinationType xlink:title="vertical"/>
+					<gwml2wc:bholeNominalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<gwml2wc:bholeOperator xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<gwml2wc:bholeStartPoint xlink:href="http://cida.usgs.gov/ngwmn/def/borehole-reference-elevation/ngs" xlink:title="natural ground surface"/>
+					<gwml2wc:bholeConstruction>
+						<gwml2wc:Casing gml:id="WELL.construction.USGS.403836085374401.casing.1">
+							<gwml2wc:casingElement>
+								<gwml2wc:CasingComponent gml:id="WELL.construction.USGS.403836085374401.casing.1.1">
+									<gwml2wc:from>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>0</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>193</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<gwml2wc:casingMaterial xlink:href="http://cida.usgs.gov/ngwmn/def/borehole-construction-material/PVC" xlink:title="PVC"/>
+									<gwml2wc:casingCoating xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:casingForm xlink:title="casing"/>
+									<gwml2wc:casingInternalDiameter>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Inch" xlink:title="inch" code="in"/>
+											<swe:value>6</swe:value>
+										</swe:Quantity>
+									</gwml2wc:casingInternalDiameter>
+									<gwml2wc:casingExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:casingWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+								</gwml2wc:CasingComponent>
+							</gwml2wc:casingElement>
+						</gwml2wc:Casing>
+					</gwml2wc:bholeConstruction>
+					<gwml2wc:bholeConstruction>
+						<gwml2wc:Casing gml:id="WELL.construction.USGS.403836085374401.casing.2">
+							<gwml2wc:casingElement>
+								<gwml2wc:CasingComponent gml:id="WELL.construction.USGS.403836085374401.casing.2.1">
+									<gwml2wc:from>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>0</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>193</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<gwml2wc:casingMaterial xlink:href="http://cida.usgs.gov/ngwmn/def/borehole-construction-material/PVC" xlink:title="PVC"/>
+									<gwml2wc:casingCoating xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:casingForm xlink:title="casing"/>
+									<gwml2wc:casingInternalDiameter>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Inch" xlink:title="inch" code="in"/>
+											<swe:value>6</swe:value>
+										</swe:Quantity>
+									</gwml2wc:casingInternalDiameter>
+									<gwml2wc:casingExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:casingWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+								</gwml2wc:CasingComponent>
+							</gwml2wc:casingElement>
+						</gwml2wc:Casing>
+					</gwml2wc:bholeConstruction>
+						
+					<gwml2wc:bholeConstruction>
+						<gwml2wc:Screen gml:id="WELL.construction.USGS.403836085374401.screen">
+							<gwml2wc:screenElement>
+								<gwml2wc:ScreenComponent gml:id="WELL.construction.USGS.403836085374401.screen.1">
+									<gwml2wc:from>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>193</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>198</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<gwml2wc:screenAttachmentMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:screenCoating xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:screenForm xlink:href="http://cida.usgs.gov/ngwmn/def/borehole-screen-form/screen" xlink:title="screen"/>
+									<gwml2wc:screenHoleWidth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Inch" xlink:title="inch" code="in"/>
+											<swe:value>0.040</swe:value>
+										</swe:Quantity>
+									</gwml2wc:screenHoleWidth>
+									<gwml2wc:screenHoleLength>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Inch" xlink:title="inch" code="in"/>
+											<swe:value>5</swe:value>
+										</swe:Quantity>
+									</gwml2wc:screenHoleLength>
+									
+									<gwml2wc:screenMaterial xlink:href="http://cida.usgs.gov/ngwmn/def/borehole-screen-material/steel" xlink:title="steel"/>
+									<gwml2wc:screenInternalDiameter>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Inch" xlink:title="inch" code="in"/>
+											<swe:value>6</swe:value>
+										</swe:Quantity>
+									</gwml2wc:screenInternalDiameter>
+									<gwml2wc:screenExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:screenPerforationMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:screenFitting xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:screenMake xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:screenModel xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:screenNumber xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:screenPlacement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:screenWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+								</gwml2wc:ScreenComponent>
+							</gwml2wc:screenElement>
+						</gwml2wc:Screen>
+					</gwml2wc:bholeConstruction>
+					<gwml2wc:bholeConstruction>
+						<gwml2wc:Sealing gml:id="WELL.construction.USGS.403836085374401.sealing">
+							<gwml2wc:sealingGroutingPlacementMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<gwml2wc:casingLeft/>
+							<gwml2wc:casingSlit/>
+							<gwml2wc:sealingElement>
+								<gwml2wc:SealingComponent gml:id="WELL.construction.USGS.403836085374401.sealing.1">
+									<gwml2wc:sealingMaterial xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:sealingType xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+								</gwml2wc:SealingComponent>
+							</gwml2wc:sealingElement>
+						</gwml2wc:Sealing>
+					</gwml2wc:bholeConstruction>
+					<gwml2wc:bholeHeadworks/>
+				</gwml2wc:Borehole>
+			</gww:gwWellConstruction>
+			<gww:gwWellContributionZone  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gww:gwWellLocation >
+				<gml:Point gml:id="WELL.USGS.403836085374401.location" srsName="EPSG:4267">
+					<gml:pos>-85.6288664456762 40.6433756511575</gml:pos>
+				</gml:Point>
+			</gww:gwWellLocation>
+			<gww:gwWellPurpose  xlink:href="http://cida.usgs.gov/ngwmn/def/qw-borehole-purpose/1" xlink:title="Dedicated Monitoring/Observation"/>
+			<gww:gwWellPurpose  xlink:href="http://cida.usgs.gov/ngwmn/def/wl-borehole-purpose/1" xlink:title="Dedicated Monitoring/Observation"/>
+			<gww:gwWellReferenceElevation >
+				<gww:Elevation>
+					<gww:elevation srsName="http://www.opengis.net/def/crs/EPSG/0/5702" uomLabels="ftUS" srsDimension="1">912.16</gww:elevation>
+					<gww:elevationAccuracy/>
+					<gww:elevationType xlink:href="http://cida.usgs.gov/ngwmn/def/elevation-type/natural-ground-surface" xlink:title="natural ground surface"/>
+					<gww:elevationMeasurementMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+				</gww:Elevation>
+			</gww:gwWellReferenceElevation>
+			<gww:gwWellStaticWaterDepth  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gww:gwWellStatus  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gww:gwWellTotalLength >
+				<swe:Quantity>
+					<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+					<swe:value>198.02</swe:value>
+				</swe:Quantity>
+			</gww:gwWellTotalLength>
+			<gww:gwWellUnit  xlink:href="http://cida.usgs.gov/ngwmn/feature/hydrogeologicunit/principal.USGS.403836085374401.N100GLCIAL" xlink:title="Sand and gravel aquifers (glaciated regions)" xlink:role="hydrogeologic unit"/>
+			<gww:gwWellUnit  xlink:href="http://cida.usgs.gov/ngwmn/feature/hydrogeologicunit/local.USGS.403836085374401.112PLSC" xlink:title="Pleistocene Series" xlink:role="hydrogeologic unit"/>
+			<gww:gwWellWaterUse  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gww:gwWellYield  xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gww:gwWellGeology  xlink:href="http://cida.usgs.gov/ngwmn/feature/lithology-log/USGS.403836085374401">
+				<gww:GW_GeologyLog gml:id="WELL.USGS.403836085374401.lithology">
+					<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://cida.usgs.gov/ngwmn/feature/lithology-log/USGS.403836085374401</gml:identifier>
+					<om:phenomenonTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<om:resultTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<om:observedProperty xlink:href="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial" xlink:title="lithology"/>
+					<om:featureOfInterest xlink:href="http://cida.usgs.gov/ngwmn/feature/USGS.403836085374401"/>
+					<om:result>
+						<gww:GW_GeologyLogCoverage gml:id="WELL.USGS.403836085374401.lithology.coverage">
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>0</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>9</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Clay</swe:identifier>
+													<swe:value>Clay</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>
+													<swe:value>BROWN</swe:value>
+												</swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>9</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>50</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Clay</swe:identifier>
+													<swe:value>Clay</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>
+													<swe:value>BLUE</swe:value>
+												</swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>50</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>84</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Clay</swe:identifier>
+													<swe:value>Clay</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>
+													<swe:value>SOFT, BLUE</swe:value>
+												</swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>84</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>85</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Sand</swe:identifier>
+													<swe:value>Sand</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>
+													<swe:value>SOFT, BLUE</swe:value>
+												</swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>85</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>97</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Clay</swe:identifier>
+													<swe:value>Clay</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value>BLUE</swe:value>                                                                       
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>97</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>105</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Clay</swe:identifier>
+													<swe:value>Clay</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value>BLUE CLAY AND LIMESTONE PEBBLES</swe:value>                                            
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>105</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>124</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Clay</swe:identifier>
+													<swe:value>Clay</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value>BLUE</swe:value>                                                                       
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>124</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>132</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Sand &amp; Gravel</swe:identifier>
+													<swe:value>Sand &amp; Gravel</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value>COARSE GRAVEL</swe:value>                                                              
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>132</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>141</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Sand &amp; Gravel</swe:identifier>
+													<swe:value>Sand &amp; Gravel</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value>MEDIUM GRAVEL</swe:value>                                                              
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>152</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>164</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Clay</swe:identifier>
+													<swe:value>Clay</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value>BLUE</swe:value>                                                                       
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>164</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>167</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Sand</swe:identifier>
+													<swe:value>Sand</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value></swe:value>                                                                           
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>167</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>184</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Clay</swe:identifier>
+													<swe:value>Clay</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value>BLUE</swe:value>                                                                       
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>184</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>193</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Sand</swe:identifier>
+													<swe:value>Sand</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value></swe:value>                                                                           
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>193</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>196</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Gravel</swe:identifier>
+													<swe:value>Gravel</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value>COARSE</swe:value>                                                                     
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>196</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>198</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Sand</swe:identifier>
+													<swe:value>Sand</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value></swe:value>                                                                           
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>198</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>202</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Gravel</swe:identifier>
+													<swe:value>Gravel</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value>COARSE</swe:value>                                                                     
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>202</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>206</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Sand &amp; Gravel</swe:identifier>
+													<swe:value>Sand &amp; Gravel</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value>FINE GRAVEL</swe:value>                                                                
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>206</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>208</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Clay</swe:identifier>
+													<swe:value>Clay</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value></swe:value>                                                                           
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>208</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>212</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Sand &amp; Gravel</swe:identifier>
+													<swe:value>Sand &amp; Gravel</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value>MEDIUM SAND</swe:value>                                                                
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+							<gww:element>
+								<gww:LogValue>
+									<gww:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>212</swe:value>
+										</swe:Quantity>
+									</gww:fromDepth>
+									<gww:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>218</swe:value>
+										</swe:Quantity>
+									</gww:toDepth>
+									<gww:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/ngwmn/def/lithology/Clay</swe:identifier>
+													<swe:value>Clay</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>                                                                                            
+                                                    <swe:value>BLUE</swe:value>                                                                       
+                                                </swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gww:value>
+								</gww:LogValue>
+							</gww:element>
+						</gww:GW_GeologyLogCoverage>
+					</om:result>
+					<gww:startDepth>
+						<swe:Quantity>
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+							<swe:value>0</swe:value>
+						</swe:Quantity>
+					</gww:startDepth>
+					<gww:endDepth>
+						<swe:Quantity>
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+							<swe:value>218</swe:value>
+						</swe:Quantity>
+					</gww:endDepth>
+				</gww:GW_GeologyLog>
+			</gww:gwWellGeology>
+		</gww:GW_Well>
+	</wfs:member>
+</wfs:FeatureCollection>

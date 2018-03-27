@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Datasets xmlns="CDB" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="CDB http://schemas.opengis.net/cdb/1.0/Datasets.xsd">
+
+  <Dataset code="1" name="Elevation" />
+  <Dataset code="2" name="MinMaxElevation" />
+  <Dataset code="3" name="MaxCulture" />
+  <Dataset code="4" name="Imagery" />
+  <Dataset code="5" name="RMTexture" />
+  <Dataset code="6" name="RMDescriptor" />
+
+  <Dataset code="100" name="GSFeature" />
+  <Dataset code="101" name="GTFeature" />
+  <Dataset code="102" name="GeoPolitical" />
+
+  <Dataset code="200" name="VectorMaterial" />
+  <Dataset code="201" name="RoadNetwork" />
+  <Dataset code="202" name="RailRoadNetwork" />
+  <Dataset code="203" name="PowerLineNetwork" />
+  <Dataset code="204" name="HydrographyNetwork" />
+
+  <Dataset code="300" name="GSModelGeometry" />
+  <Dataset code="301" name="GSModelTexture" />
+  <Dataset code="302" name="GSModelSignature" />
+  <Dataset code="303" name="GSModelDescriptor" />
+
+  <Dataset code="400" name="NavData" />
+  <Dataset code="401" name="Navigation" />
+
+  <Dataset code="500" name="GTModelGeometry" />
+  <Dataset code="501" name="GTModelTexture" />
+  <Dataset code="502" name="GTModelSignature" />
+  <Dataset code="503" name="GTModelDescriptor" />
+
+  <Dataset code="600" name="MModelGeometry" />
+  <Dataset code="601" name="MModelTexture" />
+  <Dataset code="602" name="MModelSignature" />
+  <Dataset code="603" name="MModelDescriptor" />
+
+</Datasets>

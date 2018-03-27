@@ -1,0 +1,31 @@
+{
+      "@context": {
+     		"sml": "http://www.sensorml.com/sensorML-2.0/",
+
+		"DomainSetType": "cis:DomainSetType",
+		"GeneralGridCoverageType": "cis:GeneralGridCoverageType",
+		"generalGrid": "cis:generalGrid",
+		"srsName": {"@id":"cis:srsName", "@type": "@id"},
+		"axisLabel": "cis:axisLabel",
+		"axisLabels": {"@id":"cis:axisLabels", "@container": "@list"},
+		"uomLabel": "cis:uomLabel",
+		"uomLabels": {"@id":"cis:uomLabels", "@container": "@list"},
+		"axis": "cis:axis",
+		"IndexAxisType": "cis:IndexAxisType",
+		"RegularAxisType": "cis:RegularAxisType",			
+		"IrregularAxisType": "cis:IrregularAxisType",
+		"DisplacementAxisNestType": "cis:DisplacementAxisNestType",
+		"lowerBound": "cis:lowerBound",
+		"upperBound": "cis:upperBound",
+		"resolution": "cis:resolution",
+		"GridLimitsType": "cis:GridLimitsType",
+		"gridLimits": "cis:gridLimits",
+		"coordinate": {"@id":"cis:coordinate", "@container": "@list"},
+		"displacement": "cis:displacement",
+		"model": "cis:model",
+		
+		"TransformationBySensorModelType": "cis:TransformationBySensorModelType",
+		"sensorModelRef": "sml:sensorModelRef",
+		"sensorInstanceRef": "sml:sensorInstanceRef"
+	}
+}

@@ -18,17 +18,27 @@
    geospatial and location based services.</description>
 <dc:language>en-us</dc:language>
 <dc:rights>Copyright 1994-2010, Open Geospatial Consortium.</dc:rights>
-<dc:date>2017-01-16T21:01:53:+00:00
+<dc:date>2017-09-25T19:56:23:+00:00
 </dc:date>
 <dc:publisher>Open Geospatial Consortium</dc:publisher>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:subject>OGC Standards</dc:subject>
-<syn:updateBase>2017-01-16T21:01:53:+00:00
+<syn:updateBase>2017-09-25T19:56:23:+00:00
 </syn:updateBase>
 <syn:updateFrequency>2</syn:updateFrequency>
 <syn:updatePeriod>hourly</syn:updatePeriod>
 <items>
  <rdf:Seq>
+  <rdf:li rdf:resource="http://schemas.opengis.net/infragml/ReadMe.txt#20170925t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/infragml/ReadMe.txt#20170922t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/cis/ReadMe.txt#20170922t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/infragml/ReadMe.txt#20170830t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/gmlgov/ReadMe.txt#20170814t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/gmlgov/ReadMe.txt#20170616t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/filter/ReadMe.txt#20170615t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/cdb/ReadMe.txt#20170402115" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/gwml/ReadMe.txt#20170306t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/geosciml/ReadMe.txt#20170207t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/cis/ReadMe.txt#20170116t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/guf/ReadMe.txt#20161122t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/wcs/ReadMe.txt#20161117t15" />
@@ -116,6 +126,99 @@
 <url>http://www.opengeospatial.org/themes/ogc/logo.png</url>
 <link>http://www.opengeospatial.org/</link>
 </image>
+<item rdf:about="http://schemas.opengis.net/infragml/ReadMe.txt#20170925t15">
+<title>OGC InfraGML 1.0 Part 7 - Schema Updated</title>
+<link>http://schemas.opengis.net/infragml/ReadMe.txt#20170925t15</link>
+<description>Updates to the OGC InfraGML Part 7 1.0 schema, described in OGC document 16-107r2, have been published.  The previous version was only a working copy and had not been vote approved. See http://www.opengeospatial.org/standards/infragml for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2017-09-22T15:46:30:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC InfraGML Part 7 1.0 Schema Updated</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/infragml/ReadMe.txt#20170922t15">
+<title>OGC InfraGML 1.0 Part 7 - Schema Posted</title>
+<link>http://schemas.opengis.net/infragml/ReadMe.txt#20170922t15</link>
+<description>The OGC InfraGML Part 7 1.0 schema, described in OGC document 16-107r2, has been published.  See http://www.opengeospatial.org/standards/infragml for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2017-09-22T15:46:29:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC InfraGML Part 7 1.0 Schema Added</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/cis/ReadMe.txt#20170922t15">
+<title>OGC CIS 1.1 - Schema Posted</title>
+<link>http://schemas.opengis.net/cis/ReadMe.txt#20170922t15</link>
+<description>The OGC CIS 1.1 schema, described in OGC document 09-146r6, has been published.  See http://www.opengeospatial.org/standards/wcs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2017-09-22T15:46:28:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC CIS 1.1 Schema Added</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/infragml/ReadMe.txt#20170830t15">
+<title>OGC InfraGML 1.0 - Schema Posted</title>
+<link>http://schemas.opengis.net/infragml/ReadMe.txt#20170830t15</link>
+<description>The OGC InfraGML 1.0 schema described in OGC documents, 16-100r2, 16-101r2, 16-102r2, 16-103r2, 16-104r2, 16-105r2 and 16-106r2, has been published.  See http://www.opengeospatial.org/standards/infragml for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2017-08-30T15:46:27:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC InfraGML 1.0 Schema Added</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/gmlgov/ReadMe.txt#20170814t15">
+<title>OGC GMLCOV GMLCOVRGRID 1.0 Examples - Schema Posted</title>
+<link>http://schemas.opengis.net/gmlgov/ReadMe.txt#20170814t15</link>
+<description>The OGC GMLCOVRGRID 1.0 Examples described in OGC document 16-083r2 have been published.  See http://www.opengeospatial.org/standards/wcs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2017-08-14T15:46:26:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC GMLCOV GMLCOVRGRID 1.0 Examples Added</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/gmlgov/ReadMe.txt#20170616t15">
+<title>OGC GMLCOV GMLCOVRGRID 1.0 - Schema Posted</title>
+<link>http://schemas.opengis.net/gmlgov/ReadMe.txt#20170616t15</link>
+<description>The OGC GMLCOVRGRID 1.0 schema described in OGC document 16-083r2 has been published.  See http://www.opengeospatial.org/standards/wcs for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2017-06-16T15:46:25:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC GMLCOV GMLCOVRGRID 1.0 Extension Schema Added</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/filter/ReadMe.txt#20170615t15">
+<title>OGC Filter (FES) 2.0 - Schema Posted</title>
+<link>http://schemas.opengis.net/filter/ReadMe.txt#20170615t15</link>
+<description>The OGC Filter (FES) 2.0 schema described in OGC document 09-026r2 has been updated.  See http://www.opengeospatial.org/standards/filter for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2017-06-15T15:46:24:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC Filter (FES) 2.0 Standard Schema Updated</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/cdb/ReadMe.txt#20170402115">
+<title>OGC CDB Volume 9 1.0 schema added</title>
+<link>http://schemas.opengis.net/cdb/ReadMe.txt#20170402115</link>
+<description>The OGC CDB Volume 9 1.0 standard schema, described in OGC document 16-119, has been published.
+  See http://www.opengeospatial.org/standards/cdb for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2017-04-21T15:46:23:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC CDB 1.0 standard schema added</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/gwml/ReadMe.txt#20170306t15">
+<title>OGC WaterML 2: Part 4 - GroundWaterML 2.2 (GWML2) - schema added</title>
+<link>http://schemas.opengis.net/gwml/ReadMe.txt#20170306t15</link>
+<description>The OGC WaterML 2: Part 4 - GroundWaterML 2.2 (GWML2) standard schema, described in OGC document 16-032r2, has been published.
+  See http://www.opengeospatial.org/standards/waterml for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2017-03-06T15:46:22:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC GWML 2.2 standard schema added</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/geosciml/ReadMe.txt#20170207t15">
+<title>OGC GeoSciML 4.1 - schema added</title>
+<link>http://schemas.opengis.net/geosciml/ReadMe.txt#20170207t15</link>
+<description>The OGC Geoscience Markup Language 4.1 (GeoSciML) standard schema, jointly developed by OGC and IUGS-CGI and described in OGC document 16-008, has been published.
+  See http://www.opengeospatial.org/standards/geosciml for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2017-02-07T15:46:21:+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC GeoSciML 4.1 standard schema added</dc:subject>
+</item>
 <item rdf:about="http://schemas.opengis.net/cis/ReadMe.txt#20170116t15">
 <title>OGC CIS 1.0 - Schema Updated</title>
 <link>http://schemas.opengis.net/cis/ReadMe.txt#20170116t15</link>

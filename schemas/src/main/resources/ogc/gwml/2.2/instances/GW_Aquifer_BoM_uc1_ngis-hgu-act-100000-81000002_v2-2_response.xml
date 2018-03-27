@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" 
+xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" 
+xmlns:gwml2c="http://www.opengis.net/gwml-constituent/2.2" xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" xmlns:swe="http://www.opengis.net/swe/2.0" 
+xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" 
+xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:om="http://www.opengis.net/om/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" 
+xmlns:gsmlx="http://www.opengis.net/gsml/4.1/GeoSciML-Extension" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" numberMatched="unknown" timeStamp="2016-03-10T23:34:44.893Z" 
+xsi:schemaLocation="http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gwml-main/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd" numberReturned="1">
+	<wfs:member>
+		<gwml2:GW_Aquifer gml:id="ngis.hgu.act.100000.81000002">
+			<gml:metaDataProperty>
+				<gml:GenericMetaData>
+					<gmd:MD_Metadata>
+						<gmd:contact>
+							<gmd:CI_ResponsibleParty>
+								<gmd:organisationName gco:nilReason="unknown"/>
+								<gmd:contactInfo>
+									<gmd:CI_Contact>
+										<gmd:address>
+											<gmd:CI_Address>
+												<gmd:administrativeArea>
+													<gco:CharacterString>ACT</gco:CharacterString>
+												</gmd:administrativeArea>
+											</gmd:CI_Address>
+										</gmd:address>
+									</gmd:CI_Contact>
+								</gmd:contactInfo>
+								<gmd:role>
+									<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="CI_RoleCode_originator" codeSpace="ISOTC211/19115">originator</gmd:CI_RoleCode>
+								</gmd:role>
+							</gmd:CI_ResponsibleParty>
+						</gmd:contact>
+						<gmd:dateStamp gco:nilReason="unknown"/>
+						<gmd:identificationInfo xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					</gmd:MD_Metadata>
+				</gml:GenericMetaData>
+			</gml:metaDataProperty>
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/ngis.hgu.act.100000.81000002</gml:identifier>
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGUName">Quaternary alluvial, lacustrine and colluvial sediments</gml:name>
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HGUNumber">100000</gml:name>
+			<gml:name codeSpace="http://www.bom.gov.au/water/groundwater/ngis/HydroID">81000002</gml:name>
+			<gsmlb:observationMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gsmlb:occurrence xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gsmlb:purpose>instance</gsmlb:purpose>
+			<gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.nafhgu.act.100003" xlink:title="Quaternary alluvial, lacustrine and colluvial sediments"/>
+			<gsmlb:relatedFeature xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicalunit/ngis.nafhgc.act.100" xlink:title="Quaternary sediments"/>
+			<gsmlb:classifier xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gsmlb:geologicUnitType xlink:href="http://resource.geosciml.org/classifier/cgi/geologicunittype/hydrogeologic-unit" xlink:title="hydrogeologic unit"/>
+			<gsmlb:rank xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitMedia xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitRecharge xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitDischarge xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitVulnerability xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2:gwUnitFluidBody>
+				<gwml2:GW_UnitFluidProperty gml:id="ngis.fluidbody.act.100000.81000002.property">
+					<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://environment.data.gov.au/groundwater/feature/unitfluidproperty/ngis.gwf.act.100000.81000002.property</gml:identifier>
+					<gwml2:gwHydraulicConductivity xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+					<gwml2:gwStorativity xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+					<gwml2:gwTransmissivity xlink:href="http://www.opengis.net/def/nil/OGC/0/missing"/>
+					<gwml2:gwYield xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+					<gwml2:gwUnitFluidBody xlink:href="http://environment.data.gov.au/groundwater/feature/fluidbody/ngis.gwf.act.100000.81000002"/>
+					<gwml2:gwFluidBodyUnit xlink:href="http://environment.data.gov.au/groundwater/feature/hydrogeologicunit/ngis.hgu.act.100000.81000002"/>
+				</gwml2:GW_UnitFluidProperty>
+			</gwml2:gwUnitFluidBody>
+			<gwml2:gwUnitVoid xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+			<gwml2:gwAquiferSystem xlink:href="http://environment.data.gov.au/groundwater/feature/"/>
+			<gwml2:gwAquiferSystem xlink:href="http://environment.data.gov.au/groundwater/feature/ngis.nafhgc.act.100" xlink:title="Quaternary sediments"/>
+			<gwml2:gwAquiferType xlink:href="http://environment.data.gov.au/groundwater/feature/ngis/hgu-confiningtype.5" xlink:title="Unclassified"/>
+			<gwml2:gwConfiningBed xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" nilReason="unknown" xlink:title="unknown"/>
+		</gwml2:GW_Aquifer>
+	</wfs:member>
+</wfs:FeatureCollection>

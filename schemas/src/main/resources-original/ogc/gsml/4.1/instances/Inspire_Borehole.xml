@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsmlbh:Borehole xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:cit="http://standards.iso.org/19115/-3/cit/1.0" 
+ xmlns:gml="http://www.opengis.net/gml/3.2" 
+ xmlns:sam="http://www.opengis.net/sampling/2.0"
+ xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"
+ xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" 
+ xmlns:gsmlbh="http://www.opengis.net/gsml/4.1/Borehole" 
+ xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opengis.net/gsml/4.1/Borehole http://schemas.opengis.net/gsml/4.1/borehole.xsd
+ http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd" 
+ gml:id="bh.ns94se5">
+ <gml:identifier codeSpace="http://data.bgs.ac.uk/id/Borehole">NS94SE5</gml:identifier>
+ <sam:sampledFeature xlink:href="#PEAT"/>
+ <sam:sampledFeature xlink:href="#INV-MDST"/>
+ <sams:shape>
+  <gml:LineString gml:id="bh.ns94se5.shape"
+   srsName="urn:ogc:def:crs:EPSG:6.15:7405">
+   <gml:posList srsDimension="3" count="7">-30.7111 134.2059 321. -30.7112
+    134.2058 315. -30.7113 134.2057 303. -30.7114 134.2056 296. -30.7115
+    134.2055 272. -30.7116 134.2054 271. -30.7117 134.2053 270.</gml:posList>
+  </gml:LineString>
+ </sams:shape>
+ <gsmlbh:referenceLocation>
+  <gsmlbh:OriginPosition gml:id="op1">
+   <gsmlbh:location>
+    <gml:Point gml:id="pt1" srsName="urn:ogc:def:crs:EPSG:6.15:27700"
+     srsDimension="2">
+     <gml:pos>-30.7 134.2</gml:pos>
+    </gml:Point>
+   </gsmlbh:location>
+   <gsmlbh:elevation srsName="urn:ogc:def:crs:EPSG:6.15:5701" srsDimension="1"
+    >321.0</gsmlbh:elevation>
+  </gsmlbh:OriginPosition>
+ </gsmlbh:referenceLocation>
+ <gsmlbh:indexData>
+  <gsmlbh:BoreholeDetails>
+   <gsmlbh:purpose
+    xlink:href="http://inspire.ec.europa.eu/codelist/BoreholePurposeValue/geologicalSurvey"
+    xlink:title="geological Survey"/>
+   <gsmlbh:boreholeLength>
+    <swe:Quantity>
+     <swe:uom code="m" xlink:href="http://www.opengis.net/def/uom/OGC/1.0/metre"
+      xlink:title="metre"/>
+     <swe:value>51.0</swe:value>
+    </swe:Quantity>
+   </gsmlbh:boreholeLength>
+  </gsmlbh:BoreholeDetails>
+ </gsmlbh:indexData>
+ <!--  -->
+ <!-- The borehole log is given as a series of logElemants (MappedIntervals) -->
+ <!--  -->
+ <gsmlbh:logElement>
+  <gsmlbh:BoreholeInterval gml:id="mi1">
+   <!--  -->
+   <!-- The MappedInterval is specified by a GeologicUnit -->
+   <!--  -->
+   <gsmlbh:specification>
+    <gsmlb:GeologicUnit gml:id="PEAT">
+     <gml:identifier codeSpace="http://data.bgs.ac.uk/id/Lexicon/NamedRockUnit">PEAT</gml:identifier>
+     <gml:name>PEAT</gml:name>
+     <gsmlb:geologicHistory>
+      <gsmlb:GeologicEvent gml:id="EVENT_10">
+       <gml:name>UNNAMED EVENT</gml:name>
+       <gsmlb:eventProcess
+        xlink:href="http://inspire.ec.europa.eu/codelist/EventProcessValue/inSituOrganismicGrowth"
+        xlink:title="in-situ organismic growth"/>
+       <gsmlb:olderNamedAge
+        xlink:href="http://inspire.ec.europa.eu/codelist/GeochronologicEraValue/holocene"
+        xlink:title="Holocene"/>
+       <gsmlb:youngerNamedAge
+        xlink:href="http://inspire.ec.europa.eu/codelist/GeochronologicEraValue/holocene"
+        xlink:title="Holocene"/>
+       <gsmlb:eventEnvironment>
+        <swe:Category
+         definition="http://inspire.ec.europa.eu/codelist/EventEnvironmentValue">
+         <swe:extension>
+          <swe:Category
+           definition="http://resource.geosciml.org/classifierscheme/cgi/201211/valuequalifier">
+           <swe:identifier>http://resource.geosciml.org/classifier/cgi/valuequalifier/always</swe:identifier>
+           <swe:label>always</swe:label>
+           <swe:codeSpace
+            xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/valuequalifier"
+           />
+          </swe:Category>
+         </swe:extension>
+         <swe:identifier>http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/bogSetting</swe:identifier>
+         <swe:label>bog setting</swe:label>
+         <swe:codeSpace
+          xlink:href="http://inspire.ec.europa.eu/codelist/EventEnvironmentValue"
+         />
+        </swe:Category>
+       </gsmlb:eventEnvironment>
+      </gsmlb:GeologicEvent>
+     </gsmlb:geologicHistory>
+     <gsmlb:geologicUnitType
+      xlink:href="http://inspire.ec.europa.eu/codelist/GeologicUnitTypeValue/lithodemicUnit"
+      xlink:title="lithodemic unit"/>
+     <gsmlb:composition>
+      <gsmlb:CompositionPart>
+       <gsmlb:role xlink:title="unspecified part role"
+        xlink:href="http://inspire.ec.europa.eu/codelist/CompositionPartRoleValue/unspecifiedPartRole"/>
+       <gsmlb:material>
+        <gsmlb:RockMaterial gml:id="LOCAL_ID_30">
+         <gsmlb:lithology
+          xlink:href="http://inspire.ec.europa.eu/codelist/LithologyValue/peat"
+          xlink:title="peat"/>
+        </gsmlb:RockMaterial>
+       </gsmlb:material>
+       <gsmlb:proportion>
+        <gsmlb:GSML_QuantityRange xmlns="http://xmlns.geosciml.org/Utilities/3.2">
+         <swe:uom code="%" xlink:href="http://unitsofmeasure/ucum.html#para-29"
+          xlink:title="percent"/>
+         <swe:value>100.0 100.0</swe:value>
+         <gsmlb:lowerValue>100.0</gsmlb:lowerValue>
+         <gsmlb:upperValue>100.0</gsmlb:upperValue>
+        </gsmlb:GSML_QuantityRange>
+       </gsmlb:proportion>
+      </gsmlb:CompositionPart>
+     </gsmlb:composition>
+    </gsmlb:GeologicUnit>
+   </gsmlbh:specification>
+   <gsmlbh:mappedIntervalBegin>
+    <swe:Quantity>
+     <swe:uom code="m" xlink:href="http://www.opengis.net/def/uom/OGC/1.0/metre"
+      xlink:title="metre"/>
+     <swe:value>0.0</swe:value>
+    </swe:Quantity>
+   </gsmlbh:mappedIntervalBegin>
+   <gsmlbh:mappedIntervalEnd>
+    <swe:Quantity>
+     <swe:uom code="m" xlink:href="http://www.opengis.net/def/uom/OGC/1.0/metre"
+      xlink:title="metre"/>
+     <swe:value>2.0</swe:value>
+    </swe:Quantity>
+   </gsmlbh:mappedIntervalEnd>
+   <gsmlbh:shape>
+    <gml:LineString gml:id="ls1" srsName="#bh.ns94se5.shape">
+     <gml:posList srsDimension="1" count="2">0.0 2.0</gml:posList>
+    </gml:LineString>
+   </gsmlbh:shape>
+  </gsmlbh:BoreholeInterval>
+ </gsmlbh:logElement>
+ <gsmlbh:logElement>
+  <gsmlbh:BoreholeInterval gml:id="mi2">
+   <gsmlbh:specification>
+    <gsmlb:GeologicUnit gml:id="INV-MDST">
+     <gml:identifier codeSpace="http://data.bgs.ac.uk/id/Lexicon/NamedRockUnit"
+      >INV</gml:identifier>
+     <gml:name>INVERCLYDE GROUP</gml:name>
+     <gsmlb:geologicHistory>
+      <gsmlb:GeologicEvent gml:id="EVENT_11">
+       <gml:name>UNNAMED EVENT</gml:name>
+       <gsmlb:eventProcess
+        xlink:href="http://inspire.ec.europa.eu/codelist/EventProcessValue/mechanicalDeposition"
+        xlink:title="mechanical deposition"/>
+       <gsmlb:olderNamedAge
+        xlink:href="http://inspire.ec.europa.eu/codelist/GeochronologicEraValue/tournaisian"
+        xlink:title="Tournaisian"/>
+       <gsmlb:youngerNamedAge
+        xlink:href="http://inspire.ec.europa.eu/codelist/GeochronologicEraValue/visean"
+        xlink:title="Visean"/>
+       <gsmlb:eventEnvironment>
+        <swe:Category
+         definition="http://inspire.ec.europa.eu/codelist/EventEnvironmentValue">
+         <swe:extension>
+          <swe:Category
+           definition="http://resource.geosciml.org/classifierscheme/cgi/201211/valuequalifier">
+           <swe:identifier>http://resource.geosciml.org/classifier/cgi/valuequalifier/always</swe:identifier>
+           <swe:label>always</swe:label>
+           <swe:codeSpace
+            xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/valuequalifier"
+           />
+          </swe:Category>
+         </swe:extension>
+         <swe:identifier>http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/riverPlainSystemSetting</swe:identifier>
+         <swe:label>river plain system setting</swe:label>
+         <swe:codeSpace
+          xlink:href="http://inspire.ec.europa.eu/codelist/EventEnvironmentValue"
+         />
+        </swe:Category>
+       </gsmlb:eventEnvironment>
+      </gsmlb:GeologicEvent>
+     </gsmlb:geologicHistory>
+     <gsmlb:geologicUnitType
+      xlink:href="http://inspire.ec.europa.eu/codelist/GeologicUnitTypeValue/lithostratigraphicUnit"
+      xlink:title="lithostratigraphic Unit"/>
+     <gsmlb:composition>
+      <gsmlb:CompositionPart>
+       <gsmlb:role xlink:title="unspecified part role"
+        xlink:href="http://inspire.ec.europa.eu/codelist/CompositionPartRoleValue/unspecifiedPartRole"/>
+       <gsmlb:material>
+        <gsmlb:RockMaterial gml:id="LOCAL_ID_31">
+         <gsmlb:lithology
+          xlink:href="http://inspire.ec.europa.eu/codelist/LithologyValue/mudstone"
+          xlink:title="mudstone"/>
+        </gsmlb:RockMaterial>
+       </gsmlb:material>
+       <gsmlb:proportion>
+        <gsmlb:GSML_QuantityRange xmlns="http://xmlns.geosciml.org/Utilities/3.2">
+         <swe:uom code="%" xlink:href="http://unitsofmeasure/ucum.html#para-29"
+          xlink:title="percent"/>
+         <swe:value>100.0 100.0</swe:value>
+         <gsmlb:lowerValue>100.0</gsmlb:lowerValue>
+         <gsmlb:upperValue>100.0</gsmlb:upperValue>
+        </gsmlb:GSML_QuantityRange>
+       </gsmlb:proportion>
+      </gsmlb:CompositionPart>
+     </gsmlb:composition>
+    </gsmlb:GeologicUnit>
+   </gsmlbh:specification>
+   <gsmlbh:mappedIntervalBegin>
+    <swe:Quantity>
+     <swe:uom code="m" xlink:href="http://www.opengis.net/def/uom/OGC/1.0/metre"
+      xlink:title="metre"/>
+     <swe:value>2.0</swe:value>
+    </swe:Quantity>
+   </gsmlbh:mappedIntervalBegin>
+   <gsmlbh:mappedIntervalEnd>
+    <swe:Quantity>
+     <swe:uom code="m" xlink:href="http://www.opengis.net/def/uom/OGC/1.0/metre"
+      xlink:title="metre"/>
+     <swe:value>51.0</swe:value>
+    </swe:Quantity>
+   </gsmlbh:mappedIntervalEnd>
+   <gsmlbh:shape>
+    <gml:LineString gml:id="ls2" srsName="#bh.ns94se5.shape" srsDimension="1">
+     <gml:pos>2.0</gml:pos>
+     <gml:pos>51.0</gml:pos>
+    </gml:LineString>
+   </gsmlbh:shape>
+  </gsmlbh:BoreholeInterval>
+ </gsmlbh:logElement>
+</gsmlbh:Borehole>

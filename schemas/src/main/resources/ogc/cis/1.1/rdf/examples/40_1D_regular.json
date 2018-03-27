@@ -1,0 +1,63 @@
+{
+	"@context": ["http://localhost/json-ld/coverage-context.json", {"examples": "http://www.opengis.net/cis/1.1/examples/"}],
+	"type": "CoverageByDomainAndRangeType",
+	"id": "examples:CIS_40_1D",
+	"domainSet":{
+		"@context": "http://localhost/json-ld/domainset-context.json",
+		"type": "DomainSetType",
+		"id": "examples:CIS_DS_40_1D",
+		"generalGrid":{
+			"type": "GeneralGridCoverageType",
+			"id": "examples:CIS_DS_GG_40_1D",
+			"srsName": "http://www.opengis.net/def/crs/OGC/0/AnsiDate",
+			"axisLabels": ["Lat", "Long"],
+			"axis": [{ 
+				"type": "RegularAxisType",
+				"id": "examples:CIS_DS_GG_LAT_40_1D",
+				"axisLabel": "date",
+				"lowerBound": "2015-12-01",
+				"upperBound": "2015-12-31",
+				"uomLabel": "d",
+				"resolution": 1
+			}],
+			"gridLimits": {
+				"type": "GridLimitsType",
+				"id": "examples:CIS_DS_GG_GL_40_1D",
+				"srsName": "http://www.opengis.net/def/crs/OGC/0/Index1D",
+				"axisLabels": ["i"],
+				"axis": [{ 
+					"type": "IndexAxisType",
+					"id": "examples:CIS_DS_GG_GL_I_40_1D",
+					"axisLabel": "i",
+					"lowerBound": 1,
+					"upperBound": 31
+				}]
+			}
+		}
+	},
+	"rangeSet": {
+		"@context": "http://localhost/json-ld/rangeset-context.json",
+		"type": "RangeSetType",
+		"id": "examples:CIS_RS_40_1D",
+		"dataBlock": {
+			"id": "examples:CIS_RS_DB_40_1D",
+			"type": "VDataBlockType", 
+			"values": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+		}
+	},
+	"rangeType": { 
+		"@context": "http://localhost/json-ld/rangetype-context.json",
+		"type": "DataRecordType",
+		"id": "examples:CIS_RT_40_1D",
+		"field":[{ 
+			"type": "QuantityType",
+			"id": "examples:CIS_RT_F_40_1D",
+			"definition": "ogcType:unsignedInt",
+			"uom": {
+				"type": "UnitReference",
+				"id": "examples:CIS_RT_F_UOM_40_1D",
+				"code": "d"
+			}
+		}]
+	}  
+}

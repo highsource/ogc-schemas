@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gwml [
+	<!ENTITY meter "http://www.opengis.net/def/uom/UCUM/0/m">
+	<!ENTITY gwvoc "resource.gwml.org">
+	<!ENTITY nil "http://www.opengis.net/def/nil/OGC/0/unknown">
+]>
+<gww:GW_Well xmlns:gww="http://www.opengis.net/gwml-well/2.2" 
+xmlns:gml="http://www.opengis.net/gml/3.2" 
+xmlns:sam="http://www.opengis.net/sampling/2.0" 
+xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+xmlns:gwml2="http://www.opengis.net/gwml-core/2.0" 
+xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2"   
+xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:bh="http://www.opengis.net/gwml-wellconstruction/2.2" xmlns:cv="http://www.opengis.net/cv/0.2/gml32" xmlns:om="http://www.opengis.net/om/2.0" xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" gml:id="ab.ww.402557" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/gwml-well/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-well.xsd http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd">
+	<!-- based on http://ngwd-bdnes.cits.nrcan.gc.ca/service/gin/wfs/gin?REQUEST=GetFeature&INFO_FORMAT=text/xml&FID=ab.ww.402557 -->
+	<gml:description>Water well from Alberta water well database</gml:description>
+	<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://ngwd-bdnes.cits.nrcan.gc.ca/Reference/uri-cgi/feature/gsc/waterwell/ca.ab.gov.wells.402557</gml:identifier>
+	<gml:name codeSpace="urn:cgi:featureType:CA.AB:WaterWell">402557</gml:name>
+	<gml:name codeSpace="urn:x-gin">ca.ab.waterWell.402557</gml:name>
+	<gml:boundedBy>
+		<gml:Envelope srsName="urn:ogc:def:crs:EPSG:4326">
+			<gml:pos srsDimension="2">-114.625045 49.671622</gml:pos>
+			<gml:pos srsDimension="2">-114.625045 49.671622</gml:pos>
+		</gml:Envelope>
+	</gml:boundedBy>
+	<!-- wells in Alberta are located by townships, their geographic locations is estimated as the center of the township -->
+	<gml:location>
+		<!-- deprecated -->
+		<gml:LocationString>03-28-008-05-5</gml:LocationString>
+	</gml:location>
+	<sam:type xlink:href="http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingCurve"/>
+	<sam:sampledFeature xsi:nil="true" nilReason="unknown"/>
+	<sam:relatedObservation>
+		<om:OM_Observation gml:id="ab.ww.402557.flow.1">
+			<gml:description>Fictive Flow measurement</gml:description>
+			<om:phenomenonTime>
+				<gml:TimeInstant gml:id="ab.ww.402557.flow.1.pt">
+					<gml:timePosition>2012-05-01</gml:timePosition>
+				</gml:TimeInstant>
+			</om:phenomenonTime>
+			<om:resultTime>
+				<gml:TimeInstant gml:id="ab.ww.402557.flow.1.ti">
+					<gml:timePosition>2012-05-01</gml:timePosition>
+				</gml:TimeInstant>
+			</om:resultTime>
+			<om:procedure xlink:href="http://www.opengis.net/def/gwml/procedure/flowmeter" xlink:title="flow meter"/>
+			<!-- /req/gwml2-well/waterwell_observation_fromParam -->
+			<om:parameter>
+				<om:NamedValue>
+					<om:name xlink:href="http://www.opengis.net/def/param-name/GWML/2.2/fromDistance" xlink:title="from"/>
+					<om:value xsi:type="swe:QuantityPropertyType">
+						<swe:Quantity>
+							<swe:uom xlink:href="&meter;" xlink:title="m from top"/>
+							<swe:value>7.6</swe:value>
+						</swe:Quantity>
+					</om:value>
+				</om:NamedValue>
+			</om:parameter>
+			<!-- /req/gwml2-well/waterwell_observation_toParam -->
+			<om:parameter>
+				<om:NamedValue>
+					<om:name xlink:href="http://www.opengis.net/def/param-name/GWML/2.2/toDistance" xlink:title="to"/>
+					<om:value xsi:type="swe:QuantityPropertyType">
+						<swe:Quantity>
+							<swe:uom xlink:href="&meter;" xlink:title="m from top"/>
+							<swe:value>7.7</swe:value>
+						</swe:Quantity>
+					</om:value>
+				</om:NamedValue>
+			</om:parameter>
+			<om:parameter>
+				<om:NamedValue>
+					<om:name xlink:href="http://www.opengis.net/req/gw_well/waterwell_observation_spatial-reference" xlink:title="geometry"/>
+					<om:value xsi:type="gml:GeometryPropertyType" xlink:href="#ab.ww.402557.shape.1"/>
+				</om:NamedValue>
+			</om:parameter>
+			<om:observedProperty xlink:href="http://www.opengis.net/def/gwml/phenomenon/flowspeed" xlink:title="groundwater flow speed"/>
+			<!--/req/gwml2-well/waterwell_observation_foi -->
+			<om:featureOfInterest xlink:href="#ab.ww.402557" xlink:title="ab.ww.402557"/>
+			<om:result xsi:type="gml:MeasureType" uom="m/s">0.0021</om:result>
+		</om:OM_Observation>
+	</sam:relatedObservation>
+	<!-- positionned sampling feature -->
+	<sam:relatedSamplingFeature>
+		<sam:SamplingFeatureComplex>
+			<sam:role xlink:href="http://www.opengis.net/def/gwml/role/waterSample" xlink:title="Water sample"/>
+			<sam:relatedSamplingFeature>
+				<spec:SF_Specimen gml:id="spc.1">
+					<gml:description>Fictitious water sample taken in the well</gml:description>
+					<gml:name>S.1</gml:name>
+					<sam:sampledFeature xsi:nil="true" nilReason="unknown"/>
+					<!-- /req/xsd-gwml-well/waterwell_sf_foi -->
+					<sam:relatedSamplingFeature>
+						<sam:SamplingFeatureComplex>
+							<sam:role xlink:href="http://www.opengis.net/def/gwml/role/samplingFeature" xlink:title="Sampling Feature"/>
+							<sam:relatedSamplingFeature xlink:href="#ab.ww.402557" xlink:title="ab.ww.402557"/>
+						</sam:SamplingFeatureComplex>
+					</sam:relatedSamplingFeature>
+					<!-- /req/gwml2-well/waterwell_sf_fromParam -->
+					<sam:parameter>
+						<om:NamedValue>
+							<om:name xlink:href="http://www.opengis.net/req/gw_well/waterwell_sf_fromParam" xlink:title="from"/>
+							<om:value xsi:type="swe:QuantityPropertyType">
+								<swe:Quantity>
+									<swe:uom xlink:href="&meter;" xlink:title="m from top"/>
+									<swe:value>8.12</swe:value>
+								</swe:Quantity>
+							</om:value>
+						</om:NamedValue>
+					</sam:parameter>
+					<!-- /req/gwml2-well/waterwell_sf_toParam -->
+					<sam:parameter>
+						<om:NamedValue>
+							<om:name xlink:href="http://www.opengis.net/req/gw_well/waterwell_sf_toParam" xlink:title="to"/>
+							<om:value xsi:type="swe:QuantityPropertyType">
+								<swe:Quantity>
+									<swe:uom xlink:href="&meter;" xlink:title="m from top"/>
+									<swe:value>8.4</swe:value>
+								</swe:Quantity>
+							</om:value>
+						</om:NamedValue>
+					</sam:parameter>
+					<sam:parameter>
+						<om:NamedValue>
+							<om:name xlink:href="http://www.opengis.net/req/gw_well/waterwell-sf-spatial-reference" xlink:title="geometry"/>
+							<om:value xsi:type="gml:GeometryPropertyType" xlink:href="#ab.ww.402557.shape.1"/>
+						</om:NamedValue>
+					</sam:parameter>
+					<spec:materialClass xlink:href="http://www.opengis.net/def/waterml/2.0/medium/Groundwater" xlink:title="Groundwater"/>
+					<spec:samplingTime>
+						<gml:TimeInstant gml:id="spc.1.ts">
+							<gml:timePosition>2012-06-24</gml:timePosition>
+						</gml:TimeInstant>
+					</spec:samplingTime>
+					<spec:size uom="ml">150</spec:size>
+				</spec:SF_Specimen>
+			</sam:relatedSamplingFeature>
+		</sam:SamplingFeatureComplex>
+	</sam:relatedSamplingFeature>
+	<sams:shape>
+		<gml:Curve gml:id="ab.ww.402557.shape.1" srsDimension="3" srsName="urn:ogc:def:crs:EPSG:4955">
+			<gml:segments>
+				<gml:LineStringSegment>
+					<gml:posList>49.671622 -114.625045 0.00 49.671622 -114.625045 11.58</gml:posList>
+				</gml:LineStringSegment>
+			</gml:segments>
+		</gml:Curve>
+	</sams:shape>
+	<gww:gwWellConstruction>
+		<bh:Borehole gml:id="ab.ww.402557.bore.1">
+			<sam:sampledFeature nilReason="unknown"/>
+			<!-- reuse the same bore shape -->
+			<sams:shape xlink:href="#ab.ww.402557" xlink:title="ab.ww.402557"/>
+			<bh:bholeDateOfDrilling>1981-09-12</bh:bholeDateOfDrilling>
+			<bh:bholeDrillingMethod xsi:nil="true"/>
+			<bh:bholeInclinationType xsi:nil="true"/>
+			<bh:bholeNominalDiameter xsi:nil="true"/>
+			<bh:bholeOperator gco:nilReason="missing" xsi:nil="true"/>
+			<bh:bholeStartPoint xsi:nil="true"/>
+			<bh:bholeConstruction>
+				<bh:Casing gml:id="ab.ww.402557.bore.1.casing">
+					<bh:casingElement>
+						<bh:CasingComponent gml:id="ab.ww.402557.bore.1.casing.1">
+							<gml:description>Well Casing</gml:description>
+							<gml:name codeSpace="urn:x-gin">ca.ab.wellCasing.402557</gml:name>
+							<bh:from>
+								<swe:Quantity>
+									<swe:uom xlink:href="&meter;" xlink:title="m"/>
+									<swe:value>0.0</swe:value>
+								</swe:Quantity>
+							</bh:from>
+							<bh:to>
+								<swe:Quantity>
+									<swe:uom xlink:href="&meter;" xlink:title="m"/>
+									<swe:value>7.62</swe:value>
+								</swe:Quantity>
+							</bh:to>
+							<!-- these guys should be nillable -->
+							<bh:casingMaterial xlink:href="http://www.opengis.net/def/gwml/casingMaterial/Steel" xlink:title="Steel"/>
+							<bh:casingCoating xsi:nil="true" nilReason="unknown"/>
+							<bh:casingForm xlink:href="&nil;" xlink:title="unknown" nilReason="unknown"/>
+							<bh:casingInternalDiameter xlink:href="nil"/>
+							<bh:casingExternalDiameter xlink:href="nil"/>
+							<bh:casingWallThickness xlink:href="nil"/>
+						</bh:CasingComponent>
+					</bh:casingElement>
+				</bh:Casing>
+			</bh:bholeConstruction>
+			<bh:bholeConstruction>
+				<bh:Sealing gml:id="ab.ww.402557.bore.1.sealing">
+					<gml:description>Well Sealing</gml:description>
+					<gml:name codeSpace="urn:x-gin">ca.ab.Sealing.402557</gml:name>
+					<bh:sealingGroutingPlacementMethod xsi:nil="true" nilReason="unknown"/>
+					<bh:sealingElement>
+						<bh:SealingComponent gml:id="ab.ww.402557.bore.1.sealing.1">
+							<bh:from>
+								<swe:Quantity>
+									<swe:uom xlink:href="&meter;" xlink:title="m"/>
+									<swe:value>0.0</swe:value>
+								</swe:Quantity>
+							</bh:from>
+							<bh:to>
+								<swe:Quantity>
+									<swe:uom xlink:href="&meter;" xlink:title="m"/>
+									<swe:value>7.62</swe:value>
+								</swe:Quantity>
+							</bh:to>
+							<bh:sealingMaterial xlink:href="http://www.opengis.net/def/gwml/sealingMaterial/Mixed" xlink:title="Cement Grout"/>
+							<bh:sealingType xsi:nil="true" nilReason="unknown"/>
+						</bh:SealingComponent>
+					</bh:sealingElement>
+				</bh:Sealing>
+			</bh:bholeConstruction>
+			<bh:bholeHeadworks nilReason="missing" xsi:nil="true"/>
+		</bh:Borehole>
+	</gww:gwWellConstruction>
+	<gww:gwWellLocation>
+		<gml:Point gml:id="w_well.pos.ab.ww.402557.w" srsName="urn:ogc:def:crs:EPSG:4326">
+			<gml:pos srsDimension="2">49.671622 -114.625045</gml:pos>
+		</gml:Point>
+	</gww:gwWellLocation>
+	<gww:gwWellPurpose xsi:nil="true"/>
+	<gww:gwWellReferenceElevation>
+		<!-- this entry is the one that should be used for relative positions -->
+		<gww:Elevation>
+			<gww:elevation srsName="urn:ogc:def:crs:EPSG:5100" uomLabels="m above sea level" srsDimension="1">1737.36</gww:elevation>
+			<gww:elevationType xlink:href="http://www.opengis.net/req/gwml2-well/origin_elevation" xlink:title="origin"/>
+			<gww:elevationMeasurementMethod xlink:href="&nil;" nilReason="unknown"/>
+		</gww:Elevation>
+	</gww:gwWellReferenceElevation>
+	<gww:gwWellReferenceElevation>
+		<gww:Elevation>
+			<gww:elevation srsName="urn:ogc:def:crs:EPSG:5100" uomLabels="m above sea level" srsDimension="1">1648</gww:elevation>
+			<gww:elevationType xlink:href="http://gin.gw-info.net/def/gwml/2.0/elevationType/dem" xlink:title="dem site"/>
+			<gww:elevationMeasurementMethod xlink:href="http://gin.gw-info.net/def/gwml/2.0/elevMeasType/dem" xlink:title="DEM"/>
+		</gww:Elevation>
+	</gww:gwWellReferenceElevation>
+	<gww:gwWellReferenceElevation>
+		<gww:Elevation>
+			<gww:elevation srsName="urn:ogc:def:crs:EPSG:5100" uomLabels="m above sea level" srsDimension="1">1658.633</gww:elevation>
+			<gww:elevationType xlink:href="http://gin.gw-info.net/def/gwml/2.0/elevationType/dem" xlink:title="dem site"/>
+			<gww:elevationMeasurementMethod xlink:href="http://gin.gw-info.net/def/gwml/2.0/elevMeasType/dem" xlink:title="DEM"/>
+		</gww:Elevation>
+	</gww:gwWellReferenceElevation>
+	<gww:gwWellStaticWaterDepth>
+		<om:OM_Observation gml:id="ab.ww.402557.wl.1">
+			<gml:description>Static Water Level</gml:description>
+			<gml:name codeSpace="urn:cgi:featuretype:CA.AB:WaterLevel">10341338</gml:name>
+			<gml:name codeSpace="urn:x-gin">ca.ab.waterLevel.10341338</gml:name>
+			<om:phenomenonTime>
+				<gml:TimeInstant gml:id="ab.ww.402557.wl.1.ti.1">
+					<gml:timePosition>1981-09-12T00:00:00</gml:timePosition>
+				</gml:TimeInstant>
+			</om:phenomenonTime>
+			<om:resultTime>
+				<gml:TimeInstant gml:id="ab.ww.402557.wl.1.ti.2">
+					<gml:timePosition>2014-06-09T00:00:00</gml:timePosition>
+				</gml:TimeInstant>
+			</om:resultTime>
+			<om:procedure xlink:href="urn:ogc:def:procedure:GIN:unknown" xlink:title="unknown"/>
+			<om:observedProperty xlink:href="urn:ogc:def:phenomenon:GIN:StaticWaterLevel" xlink:title="Static Water Level"/>
+			<om:featureOfInterest xlink:href="#ab.ww.402557" xlink:title="ab.ww.402557"/>
+			<om:result>
+				<swe:Quantity>
+					<swe:uom xlink:href="&meter;" xlink:title="m"/>
+					<swe:value>9.75</swe:value>
+				</swe:Quantity>
+			</om:result>
+		</om:OM_Observation>
+	</gww:gwWellStaticWaterDepth>
+	<gww:gwWellStatus nilReason="missing" xsi:nil="true"/>
+	<gww:gwWellTotalLength>
+		<swe:Quantity>
+			<swe:uom xlink:href="&meter;" xlink:title="m"/>
+			<swe:value>11.58</swe:value>
+		</swe:Quantity>
+	</gww:gwWellTotalLength>
+	<gww:gwWellUnit xsi:nil="true" nilReason="unknown"/>
+	<gww:gwWellWaterUse xlink:href="urn:cgi:classifier:CA.AB:waterUseCode:Domestic" xlink:title="Domestic"/>
+	<gww:gwWellYield nilReason="unknown" xsi:nil="true"/>
+	<gww:gwWellLicence xsi:nil="true"/>
+	<gww:gwWellGeology>
+		<gww:GW_GeologyLog gml:id="ab.ww.402557.log.1">
+			<om:phenomenonTime>
+				<gml:TimeInstant gml:id="ab.ww.402557.log.1.ph">
+					<gml:timePosition>1981-09-12T00:00:00</gml:timePosition>
+				</gml:TimeInstant>
+			</om:phenomenonTime>
+			<om:resultTime>
+				<gml:TimeInstant gml:id="ab.ww.402557.log.1.rs">
+					<gml:timePosition>1981-09-12T00:00:00</gml:timePosition>
+				</gml:TimeInstant>
+			</om:resultTime>
+			<om:procedure xsi:nil="true" nilReason="unknown"/>
+			<om:observedProperty xlink:href="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial" xlink:title="Lithology"/>
+			<om:featureOfInterest xsi:nil="true" nilReason="missing"/>
+			<om:result>
+				<gww:GW_GeologyLogCoverage gml:id="ab.ww.402557.log.1.coverage">
+					<gww:element>
+						<gww:LogValue>
+							<gww:fromDepth>
+								<swe:Quantity>
+									<swe:uom xlink:href="&meter;" xlink:title="m"/>
+									<swe:value>0.00</swe:value>
+								</swe:Quantity>
+							</gww:fromDepth>
+							<gww:toDepth>
+								<swe:Quantity>
+									<swe:uom xlink:href="&meter;" xlink:title="m"/>
+									<swe:value>0.30</swe:value>
+								</swe:Quantity>
+							</gww:toDepth>
+							<gww:value>
+								<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial" id="le.1">
+									<swe:field name="lithology">
+										<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+											<swe:codeSpace xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/simplelithology" xlink:title="Simple lithology"/>
+											<swe:value>Soil</swe:value>
+										</swe:Category>
+									</swe:field>
+								</swe:DataRecord>
+							</gww:value>
+						</gww:LogValue>
+					</gww:element>
+					<gww:element>
+						<gww:LogValue>
+							<gww:fromDepth>
+								<swe:Quantity>
+									<swe:uom xlink:href="&meter;" xlink:title="m"/>
+									<swe:value>0.30</swe:value>
+								</swe:Quantity>
+							</gww:fromDepth>
+							<gww:toDepth>
+								<swe:Quantity>
+									<swe:uom xlink:href="&meter;" xlink:title="m"/>
+									<swe:value>4.27</swe:value>
+								</swe:Quantity>
+							</gww:toDepth>
+							<gww:value>
+								<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial" id="le.2">
+									<swe:field name="lithology">
+										<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+											<swe:codeSpace xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/simplelithology" xlink:title="Simple lithology"/>
+											<swe:value>Clay</swe:value>
+										</swe:Category>
+									</swe:field>
+								</swe:DataRecord>
+							</gww:value>
+						</gww:LogValue>
+					</gww:element>
+					<gww:element>
+						<gww:LogValue>
+							<gww:fromDepth>
+								<swe:Quantity>
+									<swe:uom xlink:href="&meter;" xlink:title="m"/>
+									<swe:value>4.27</swe:value>
+								</swe:Quantity>
+							</gww:fromDepth>
+							<gww:toDepth>
+								<swe:Quantity>
+									<swe:uom xlink:href="&meter;" xlink:title="m"/>
+									<swe:value>9.14</swe:value>
+								</swe:Quantity>
+							</gww:toDepth>
+							<gww:value>
+								<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial" id="le.3">
+									<swe:field name="lithology">
+										<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+											<swe:codeSpace xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/simplelithology" xlink:title="Simple lithology"/>
+											<swe:value>Till</swe:value>
+										</swe:Category>
+									</swe:field>
+								</swe:DataRecord>
+							</gww:value>
+						</gww:LogValue>
+					</gww:element>
+					<gww:element>
+						<gww:LogValue>
+							<gww:fromDepth>
+								<swe:Quantity>
+									<swe:uom xlink:href="&meter;" xlink:title="m"/>
+									<swe:value>9.14</swe:value>
+								</swe:Quantity>
+							</gww:fromDepth>
+							<gww:toDepth>
+								<swe:Quantity>
+									<swe:uom xlink:href="&meter;" xlink:title="m"/>
+									<swe:value>11.58</swe:value>
+								</swe:Quantity>
+							</gww:toDepth>
+							<gww:value>
+								<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial" id="le.4">
+									<swe:field name="lithology">
+										<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+											<swe:codeSpace xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/simplelithology" xlink:title="Simple lithology"/>
+											<swe:value>Gravel</swe:value>
+										</swe:Category>
+									</swe:field>
+								</swe:DataRecord>
+							</gww:value>
+						</gww:LogValue>
+					</gww:element>
+				</gww:GW_GeologyLogCoverage>
+			</om:result>
+			<gww:startDepth>
+				<swe:Quantity>
+					<swe:uom xlink:href="&meter;" xlink:title="m"/>
+					<swe:value>0</swe:value>
+				</swe:Quantity>
+			</gww:startDepth>
+			<gww:endDepth>
+				<swe:Quantity>
+					<swe:uom xlink:href="&meter;" xlink:title="m"/>
+					<swe:value>11.58</swe:value>
+				</swe:Quantity>
+			</gww:endDepth>
+		</gww:GW_GeologyLog>
+	</gww:gwWellGeology>
+</gww:GW_Well>

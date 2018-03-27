@@ -1,0 +1,1108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection gml:id="usgs.example.well1"
+xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" 
+xmlns:gml="http://www.opengis.net/gml/3.2" 
+xmlns:sam="http://www.opengis.net/sampling/2.0" 
+xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" 
+xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" 
+xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" 
+xmlns:gwml2c="http://www.opengis.net/gwml-constituent/2.2" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:swe="http://www.opengis.net/swe/2.0" 
+xmlns:gmd="http://www.isotc211.org/2005/gmd" 
+xmlns:gco="http://www.isotc211.org/2005/gco"
+xmlns:om="http://www.opengis.net/om/2.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.opengis.net/gwml-well/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-well.xsd http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd">
+	<!-- ######################### 
+Location of individual GWML2 schema:
+All -"http://www.opengis.net/gwml/2.2 http://schemas.opengis.net/gwml/2.2/gwml2.xsd"
+Constituent - "http://www.opengis.net/gwml-constituent/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-constituent.xsd"
+Flow - "http://www.opengis.net/gwml-flow/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-flow.xsd"
+Well - "http://www.opengis.net/gwml-well/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-well.xsd"
+Well Construction - "http://www.opengis.net/gwml-wellconstruction/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-wellconstruction.xsd"
+Nucleus - "http://www.opengis.net/gwml-nucleus/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd"
+-->
+	<!-- ######################### -->
+	<!-- Mapping of National Water Information System (NWIS) database tables and records to the proposed GroundWaterML2 OGC standard release candidate  -->
+	<!-- File created by Kathy Schoephoester, CIDA, May 2016 -->
+	<!-- File updated by Jessica Lucido, OWI, May 2016 -->
+	<!-- ######################### -->
+	<!-- This file is an example instance of a GWML2 GW_Well -->
+	<!-- Although this instance is a gml:FeatureCollection with one or more gml:featureMembers, a valid alternative is as a single gwml2w:GW_Well -->
+	<!-- Other related GWML2 features are referred to "byReference" using xlink:href. In most cases these could be included "inLine" (i.e. within this instance). A separate instance for each feature is provided for ease of mapping. The final aggregation of inLine vs. byReference features will be determined by the use case requirements -->
+	<!-- Where features are aggregated into single feature services the xlink:href references to URIs need to be replaced with internal # references to gml:id -->
+	<!-- ######################### -->
+	<!-- NWIS - Mapping patterns -->
+	<!-- Comments beginning 'NWIS -' are instructions for mappings between NWIS data and GWML2 -->
+	<!-- ???? Comments beginning ???? require further checking -->
+	<!-- NWIS table record pairs are referred to by the pattern [table.record] -->
+	<!-- The mapping pattern is [schema/property] = [table.record] -->
+	<!-- ######################### -->
+	<!-- NWIS - Feature IDs and identifiers -->
+	<!-- Feature IDs (gml:id) are document specific unique identifiers based on NGIS table keys and the feature type -->
+	<!-- To create the id, replace [table.record_id] with values from the appropriate table -->
+	<!-- Feature identities (gml:identifier) use the URI for the feature. This is in the format "[base URI]/[category]/[type]/[gml:id]" -->
+	<!-- Domain Name - The temporary domain name "http://cida.usgs.gov/groundwater/" has been used for the feature identifiers and vocabulary term references. An appropriate persistent and organisation independent domain will need to be established.
+A redirect service, such as the SISS PID service, is required to resolve these URIs -->
+	<!-- Category - where the object is a GML Feature use "feature". Where the object is a vocabulary concept use "def". -->
+	<!-- Type - where the Category is a feature, the type of feature, where Category is "def' the type of term  -->
+	<!-- ######################### -->
+	<!-- NWIS Mapping -->
+	<!-- gml:featureMember is a GW_Well -->
+	<gml:featureMember>
+		<!-- NWIS - example based on NWIS Bore SiteNo = 403836085374401 -->
+		<!-- NWIS - gml:id= "WELL.[Well_Registry.FID]" -->
+		<gwml2w:GW_Well gml:id="USGS.403836085374401">
+			<!-- NWIS - gml:metaDataProperty to capture source organisation name and State -->
+			<gml:metaDataProperty>
+				<gml:GenericMetaData>
+					<gmd:CI_ResponsibleParty>
+						<gmd:organisationName>
+							<!-- NWIS - gmd:organisationName/gco:CharacterString = [Well_Registry.Agency_Nm] -->
+							<gco:CharacterString>U.S. Geological Survey</gco:CharacterString>
+						</gmd:organisationName>
+						<gmd:contactInfo>
+							<gmd:CI_Contact>
+								<gmd:address>
+									<gmd:CI_Address>
+										<!-- NWIS - gmd:administrativeArea/gco:CharacterString = [Well_Registry.State_Nm] -->
+										<gmd:administrativeArea>
+											<gco:CharacterString>INDIANA</gco:CharacterString>
+										</gmd:administrativeArea>
+									</gmd:CI_Address>
+								</gmd:address>
+							</gmd:CI_Contact>
+						</gmd:contactInfo>
+						<gmd:role>
+							<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeSpace="ISOTC211/19115" codeListValue="CI_RoleCode_originator">originator</gmd:CI_RoleCode>
+						</gmd:role>
+					</gmd:CI_ResponsibleParty>
+				</gml:GenericMetaData>
+			</gml:metaDataProperty>
+			<!-- NWIS - gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616", value='http://cida.usgs.gov/ngwmn/feature/[Well_Registry.FID]" -->
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://cida.usgs.gov/ngwmn/feature/USGS.403836085374401</gml:identifier>
+			<!-- NWIS - gml:name codeSpace="http://cida.usgs.gov/water/groundwater/SiteNo" value=[Well_Registry.SiteNo] -->
+			<gml:name codeSpace="http://cida.usgs.gov/water/groundwater/SiteNo">403836085374401</gml:name>
+			<sam:sampledFeature xlink:href="http://cida.usgs.gov/ngwmn/feature/USGS.403836085374401"/>
+			<sams:shape>
+			<!-- NWIS - gml:pos value=[Well_Registry.dec_long_va Well_Registry.dec_lat_va] -->
+				<gml:Point gml:id="WELL.USGS.403836085374401.shape" srsDimension="2" srsName="http://www.opengis.net/gml/srs/epsg.xml#4283">
+					<gml:pos>-85.6288664456762 40.6433756511575</gml:pos>
+				</gml:Point>
+			</sams:shape>
+			<gwml2w:gwWellBody xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- GW_Well only allows [0..1] gwml2w:gwWellConstructedDepth. -->
+			<!-- NWIS - gwml2w:gwWellConstructedDepth = [Well_Registry.Well_Depth] -->
+			<!--  NWIS - If {[Well_Registry.Well_Depth] = 0} then :
+gwml2w:gwWellConstructedDepth xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" -->
+			<gwml2w:gwWellConstructedDepth>
+				<!-- NWIS - om:OM_Observation gml:id= "WELL.[Well_Registry.FID].constructed-depth" -->
+				<!-- NWIS - gml:Point gml:id=	"WELL.[Well_Registry.FID].location" -->
+				<om:OM_Observation gml:id="WELL.USGS.403836085374401.constructed-depth">
+					<!-- om:phenomenomTime is the time the observation of the depth of the well was made -->
+					<!-- gml:TimeInstant is defined here but could be an xlink:href (#) to a date specified elsewhere in the mapping -->
+					<!-- NWIS - drilled date [gw_cons.cons_dt] is the om:phenomenonTime -->
+					<om:phenomenonTime>
+						<!-- NWIS - gml:TimeInstant gml:id="WELL.[Well_Registry.FID].date" -->
+						<gml:TimeInstant gml:id="WELL.USGS.403836085374401.date">
+							<!--  NWIS gml:timePosition = [gwsi_cons_csng_open_hole.cons_dt]</gml:timePosition -->
+							<gml:timePosition>1987-08-14+00:00</gml:timePosition>
+						</gml:TimeInstant>
+					</om:phenomenonTime>
+					<!-- NWIS - reference {gwml2w:gwWellConstructedDepth/om:phenomenonTime/gml:TimeInstant gml:id} for all initial GW_Well time properties -->
+					<om:resultTime xlink:href="#WELL.USGS.403836085374401.date"/>
+					<!-- NWIS - does not have the procedure used to measure the depth of the well. Use:
+ <om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/missing" xlink:title="missing"/> -->
+					<om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/missing" xlink:title="missing"/>
+					<!-- om:observedProperty is self-referential -->
+					<!-- Used {namespace}/{property} -->
+					<om:observedProperty xlink:href="http://www.opengis.net/gwml-well/2.0/gwWellConstructedDepth" xlink:title="gwWellConstructedDepth"/>
+					<!-- NWIS - om:featureOfInterest is the GW_Well. Use xlink:href internal reference -->
+					<om:featureOfInterest xlink:href="#WELL.USGS.403836085374401"/>
+					<om:result>
+						<swe:Quantity>
+							<!-- NWIS - <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/> -->
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+							<!-- NWIS gwml2w:gwWellConstructedDepth swe:value = [Well_Registry.Well_Depth] -->
+							<swe:value>198.02</swe:value>
+						</swe:Quantity>
+					</om:result>
+				</om:OM_Observation>
+			</gwml2w:gwWellConstructedDepth>
+			<!-- gwml2w:gwWellConstruction is a reference to the gwml2wc:Borehole feature -->
+			<!-- NWIS - gwml2w:gwWellConstruction xlink:href="http://cida.usgs.gov/ngwmn/feature/WELL.[Well_Registry.FID].construction" -->
+			<!-- NWIS - gwml2w:gwWellConstruction will need to be in-line (see GWML2-Borehole-NWIS.xml for example) -->
+			<!-- &&&& -->
+			<!--<gwml2w:gwWellConstruction xlink:href="http://cida.usgs.gov/ngwmn/feature/WELL.USGS.403836085374401.construction"/>-->
+			<gwml2w:gwWellConstruction>
+				<gwml2wc:Borehole gml:id="WELL.construction.USGS.403836085374401">
+					<!-- NWIS - gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">xlink:href="http://cida.usgs.gov/ngwmn/feature/WELL.construction.[Well_Registry.FID]"-->
+					<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://cida.usgs.gov/ngwmn/feature/WELL.construction.USGS.403836085374401</gml:identifier>
+					<!-- sam:sampledFeature for the gwml2wc:Borehole is the associated GW_Well -->
+					<!-- NWIS - sam:sampledFeature xlink:href="http://cida.usgs.gov/NGWMN/feature/WELL.[Well_Registry.FID]" -->
+					<sam:sampledFeature xlink:href="http://cida.usgs.gov/ngwmn/feature/WELL.USGS.403836085374401"/>
+					<!-- sams:shape allows describing the geometry of the construction log -->
+					<sams:shape xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<!-- NWIS - no gwml2wc:bholeMaterialCustodian data  -->
+					<gwml2wc:bholeMaterialCustodian xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<!-- NWIS - does not have gwml2wc:bholeCoreInterval. Leave out  -->
+					<!-- gwml2wc:bholeCoreInterval/ -->
+					<!-- NWIS - [gw_hole] does not contain gwml2wc:bHoleDateOfDrilling information. -->
+					<!--<gwml2wc:bHoleDateOfDrilling/> -->
+					<gwml2wc:bholeDriller xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<!-- NWIS - gwml2wc:bholeDrillingMethod xlink:title="[gwsi_cons_csng_open_hole.cons_meth_cd]" xlink:title="[gwsi_cons_csng_open_hole.cons_meth_ds]" -->
+					<gwml2wc:bholeDrillingMethod xlink:href="http://cida.usgs.gov/groundwater/def/borehole-drill-method/A" xlink:title="Air rotary"/>
+					<!-- NWIS - Assume all Boreholes are vertical -->
+					<gwml2wc:bholeInclinationType xlink:title="vertical"/>
+					<!-- NWIS -  bholeNominalDiameter gml:id= "WELL.[Well_Registry.FID].constructed-depth" -->
+					<gwml2wc:bholeNominalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<!-- NWIS - gwml2wc:bholeOperator xlink:title="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/ -->
+					<gwml2wc:bholeOperator xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<gwml2wc:bholeStartPoint xlink:href="http://cida.usgs.gov/groundwater/def/borehole-reference-elevation/ngs" xlink:title="natural ground surface"/>
+					<!-- gwml2wc:bholeConstruction allows specifying the various components in the Borehole construction -->
+					<!-- NWIS - First gwml2wc:bholeConstruction captures the gwml2wc:Casing elements -->
+					<!-- &&&& -->
+					<gwml2wc:bholeConstruction>
+						<!-- NWIS - 	gwml2wc:Casing gml:id="WELL.construction.[Well_Registry.FID].casing" -->
+						<gwml2wc:Casing gml:id="WELL.construction.USGS.403836085374401.casing">
+							<gwml2wc:casingElement>
+								<!-- NWIS - 	gwml2wc:CasingComponent gml:id="WELL.construction.[Well_Registry.FID].casing.[gwsi_cons_csng_open_hole.csng_seq_nu]" -->
+								<gwml2wc:CasingComponent gml:id="WELL.construction.USGS.403836085374401.casing.1">
+									<!-- NWIS  - gwml2wc:from = [gwsi_cons_csng_open_hole.csng_top_va] -->
+									<gwml2wc:from>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<!-- NWIS  - swe:value =  [gwsi_cons_csng_open_hole.csng_top_va] -->
+											<swe:value>0</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<!-- NWIS  - gwml2wc:to = [gwsi_cons_csng_open_hole.csng_bottom_va] -->
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<!-- NWIS  - swe:value =  [gwsi_cons_csng_open_hole.csng_bottom_va] -->
+											<swe:value>193</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<!-- NWIS - gwml2wc:casingMaterial = [gwsi_cons_csng_open_hole.csng_material_cd]  -->
+									<!-- NWIS - Mapping between  [gwsi_cons_csng_open_hole.csng_material_cd] and vocabulary required -->
+									<!-- if [gwsi_cons_csng_open_hole.csng_material_cd] =
+				D, M gwml2wc:casingMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-construction-material/metal" xlink:title="metal"
+				4, 6, s, U, V, X, Y gwml2wc:casingMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-construction-material/steel" xlink:title="steel"
+				I, G gwml2wc:casingMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-construction-material/iron" xlink:title="iron"
+				C gwml2wc:casingMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-construction-material/concrete" xlink:title="concrete"
+				W gwml2wc:casingMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-construction-material/wood" xlink:title="wood"
+				B gwml2wc:casingMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-construction-material/brick" xlink:title="brick"
+				H gwml2wc:casingMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-construction-material/plastic" xlink:title="plastic"
+				E, Q gwml2wc:casingMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-construction-material/teflon" xlink:title="teflon"
+				K, N, P gwml2wc:casingMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-construction-material/PVC" xlink:title="PVC"
+				A gwml2wc:casingMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-construction-material/ABS" xlink:title="ABS"
+				F gwml2wc:casingMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-construction-material/fibreglass" xlink:title="fibreglass"
+				J, L, R, T, Z gwml2wc:casingMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-construction-material/other" xlink:title="other" 
+				Else (including NULL) gwml2wc:casingMaterial xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" -->
+									<gwml2wc:casingMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-construction-material/PVC" xlink:title="PVC"/>
+									<!-- NWIS - gwml2wc:casingCoating depends on [gwsi_cons_csng_open_hole.csng_material_cd]   -->
+									<!-- NWIS - If [gwsi_cons_csng_open_hole.csng_material_cd] =
+G, Y  gwml2wc:casingCoating xlink:title="galvanised" 
+4, 6, V  gwml2wc:casingCoating xlink:title="stainless"
+U gwml2wc:casingCoating xlink:title="coated"
+E, Q gwml2wc:casingCoating xlink:title="teflon"
+Else use <gwml2wc:casingCoating xlink:title="unknown"/>  -->
+									<gwml2wc:casingCoating xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- NWIS - gwml2wc:casingForm depends on  [gwsi_cons_csng_open_hole.csng_material_cd] -->
+									<!-- NWIS - If  [gwsi_cons_csng_open_hole.csng_material_cd]  is
+T, W then gwml2wc:casingForm xlink:title="casing"
+D, G, I, S, U  then gwml2wc:casingForm xlink:title="pipe"
+Else use <gwml2wc:casingForm xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:casingForm xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- NWIS - gwml2wc:casingInternalDiameter [gwsi_cons_csng_open_hole.csng_dia_va]  -->
+									<!-- NWIS - if [gwsi_cons_csng_open_hole.csng_dia_va]=0 then 
+<gwml2wc:casingInternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:casingInternalDiameter>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Inch" xlink:title="inch" code="in"/>
+											<swe:value>6</swe:value>
+										</swe:Quantity>
+									</gwml2wc:casingInternalDiameter>
+									<!-- NWIS -  If  {[gwsi_cons_csng_open_hole.csng_dia_va] != 0} and {[gwsi_cons_csng_open_hole.csng_thick_va] != 0} then gwml2wc:casingExternalDiameter =  [gwsi_cons_csng_open_hole.csng_dia_va] + [gwsi_cons_csng_open_hole.csng_thick_va] -->
+									<gwml2wc:casingExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:casingWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+								</gwml2wc:CasingComponent>
+							</gwml2wc:casingElement>
+						</gwml2wc:Casing>
+					</gwml2wc:bholeConstruction>
+					<gwml2wc:bholeConstruction>
+						<!-- NWIS - gwml2wc:Screen/gml:id = "WELL.construction.[Well_Registry.FID].screen  -->
+						<gwml2wc:Screen gml:id="WELL.construction.USGS.403836085374401.screen">
+							<gwml2wc:screenElement>
+								<!-- NWIS - gwml2wc:ScreenComponent gml:id="WELL.construction.[Well_Registry.FID].screen.[gwsi_cons_csng_open_hole.open_seq_nu]"  -->
+								<gwml2wc:ScreenComponent gml:id="WELL.construction.USGS.403836085374401.screen.1">
+									<!-- NWIS  - gwml2wc:from = [gwsi_cons_csng_open_hole.open_top_va] -->
+									<gwml2wc:from>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<!-- NWIS - swe:value =  [gwsi_cons_csng_open_hole.open_top_va] -->
+											<swe:value>193</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from>
+									<!-- NWIS  - gwml2wc:to = [gwsi_cons_csng_open_hole.open_bottom_va] -->
+									<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<!-- NWIS  - swe:value =  [gwsi_cons_csng_open_hole.open_bottom_va] -->
+											<swe:value>198</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>
+									<gwml2wc:screenAttachmentMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<gwml2wc:screenCoating xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!--  gwml2wc:screenForm is the "form of the screen. Can be slotted casing, perforated casing, bridge slot casing, wire wrap or continuous slot, wire mesh, shutter or louvered, well point, tube, unknown, other." -->
+									<!-- NWIS - gwml2wc:screenForm mappings are [gwsi_cons_csng_open_hole.open_cd] =
+F, S, T, W, P <gwml2wc:screenForm xlink:href="http://cida.usgs.gov/groundwater/def/borehole-screen-form/other" xlink:title="other"/>
+L <gwml2wc:screenForm xlink:href="http://cida.usgs.gov/groundwater/def/borehole-screen-form/louvred" xlink:title="louvred casing"/>
+R <gwml2wc:screenForm xlink:href="http://cida.usgs.gov/groundwater/def/borehole-screen-form/wws" xlink:title="wire wound screen"/> 
+X  <gwml2wc:screenForm xlink:href="http://cida.usgs.gov/groundwater/def/borehole-screen-form/open" xlink:title="open hole"/>  
+M <gwml2wc:screenForm xlink:href="http://cida.usgs.gov/groundwater/def/borehole-screen-form/mesh" xlink:title="open weave mesh"/>  
+ -->
+									<gwml2wc:screenForm xlink:href="http://cida.usgs.gov/groundwater/def/borehole-screen-form/other" xlink:title="other"/>
+									<!-- NWIS - gwml2wc:screenHoleLength = [gwsi_cons_csng_open_hole.open_len_va]  -->
+									<gwml2wc:screenHoleWidth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Inch" xlink:title="inch" code="in"/>
+											<swe:value>0.040</swe:value>
+										</swe:Quantity>
+									</gwml2wc:screenHoleWidth>
+									<gwml2wc:screenHoleLength>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Inch" xlink:title="inch" code="in"/>
+											<swe:value>5</swe:value>
+										</swe:Quantity>
+									</gwml2wc:screenHoleLength>
+
+									
+									<!-- gwml2wc:screenMaterial is "the material with which the screen is made. Can be metal, steel, iron, copper, brass, bronze, everdur, Armco metal, veriperm, stone, plastic, PVC, ABS, Fibreglass." -->
+									<!-- NWIS - gwml2wc:screenForm mappings are [gwsi_cons_csng_open_hole.open_cd] =
+				M gwml2wc:screenMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-screen-material/metal" xlink:title="metal"
+				4, 6, R, S, X, Y gwml2wc:screenMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-screen-material/steel" xlink:title="steel"
+				I, G gwml2wc:screenMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-screen-material/iron" xlink:title="iron"
+				H gwml2wc:screenMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-screen-material/plastic" xlink:title="plastic"
+				K, N gwml2wc:screenMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-screen-material/PVC" xlink:title="PVC"
+				A gwml2wc:screenMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-screen-material/ABS" xlink:title="ABS"
+				F gwml2wc:screenMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-screen-material/fibreglass" xlink:title="fibreglass"
+				B, C, D, J, L, P, Q, E, T, V, W, Z gwml2wc:screenMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-screen-material/other" xlink:title="other" 
+				Else (including NULL) gwml2wc:screenMaterial xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown" -->
+									<gwml2wc:screenMaterial xlink:href="http://cida.usgs.gov/groundwater/def/borehole-screen-material/steel" xlink:title="steel"/>
+									<!-- NWIS - gwml2wc:screenInternalDiameter  -->
+									<!-- NWIS - gwml2wc:screenInternalDiameter = [gwsi_cons_csng_open_hole.open_dia_va]  -->
+									<!-- NWIS - if [gwsi_cons_csng_open_hole.open_dia_va]=0 then 
+<gwml2wc:screenInternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> -->
+									<gwml2wc:screenInternalDiameter>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Inch" xlink:title="inch" code="in"/>
+											<!-- NWIS swe:value = [gwsi_cons_csng_open_hole.open_dia_va] -->
+											<swe:value>6</swe:value>
+										</swe:Quantity>
+									</gwml2wc:screenInternalDiameter>
+									<!-- NWIS - Does not record gwml2wc:screenExternalDiameter -->
+									<gwml2wc:screenExternalDiameter xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- gwml2wc:screenPerforationMethod provides "Information on how the slots were performated. Can be drill, grinder, axe / chisel, machine, saw, torch, other, unknown." -->
+									<!-- NWIS - Does not record gwml2wc:screenPerforationMethod -->
+									<gwml2wc:screenPerforationMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- gwml2wc:screenFitting provides "Identification of the screen fitting (from the bottom). Can be bail, open, plug, tail pipe, washdown, unknown." -->
+									<!-- NWIS - Does not record gwml2wc:screenFitting -->
+									<gwml2wc:screenFitting xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- NWIS - Does not record gwml2wc:screenMake -->
+									<gwml2wc:screenMake xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- NWIS - Does not record gwml2wc:screenModel -->
+									<gwml2wc:screenModel xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- gwml2wc:screenNumber "corresponds to hole size and is given in 0.001 inch. The value is expressed as an alphanumeric code." -->
+									<!-- NWIS - Does not record gwml2wc:screenNumber -->
+									<gwml2wc:screenNumber xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- gwml2wc:screenPlacement is the "Value of the screen placement method. Can be bail down, pull back, jetted, washed down, unknown." -->
+									<!-- NWIS - Does not record gwml2wc:screenPlacement -->
+									<gwml2wc:screenPlacement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+									<!-- NWIS - Does not record screenWallThickness -->
+									<gwml2wc:screenWallThickness xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+								</gwml2wc:ScreenComponent>
+							</gwml2wc:screenElement>
+						</gwml2wc:Screen>
+					</gwml2wc:bholeConstruction>
+					<gwml2wc:bholeConstruction>
+						<!-- NWIS - gwml2wc:Sealing gml:id = "WELL.construction.[Well_Registry.FID].sealing  -->
+						<gwml2wc:Sealing gml:id="WELL.construction.USGS.403836085374401.sealing">
+							<!--  #### gwml2wc:sealingGroutingPlacementMethod is a "Process". I've no idea what goes in here, or how, but NWIS doesn't have this data anyway - KMS -->
+							<gwml2wc:sealingGroutingPlacementMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<!-- gwml2wc:casingLeft and gwml2wc:casingSlit allow specifying the gwml2wc:CasingComponent associated with the gwml2wc:Sealing. If known these will be  internal (#) xlink:href to the gml:id of the gwml2wc:CasingComponent  -->
+							<gwml2wc:casingLeft/>
+							<gwml2wc:casingSlit/>
+							<gwml2wc:sealingElement>
+								<!-- NWIS - gwml2wc:SealingComponent gml:id="WELL.construction.[Well_Registry.FID].sealing.[gwsi_cons_csng_open_hole.cons_seq_nu]"  -->
+								<gwml2wc:SealingComponent gml:id="WELL.construction.USGS.403836085374401.sealing.1">
+									<!-- NWIS  - gwml2wc:from = assume ground surface, or 0 -->
+									<!--<gwml2wc:from>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>0</swe:value>
+										</swe:Quantity>
+									</gwml2wc:from> -->
+									<!-- NWIS  - gwml2wc:to = [gwsi_cons_csng_open_hole.seal_depth_va] -->
+									<!--<gwml2wc:to>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>66</swe:value>
+										</swe:Quantity>
+									</gwml2wc:to>-->
+									<!-- gwml2wc:sealingMaterial is "Material used in the sealing component of a water well. Can be formation packer, welded ring, shale trap, drive shoe, driven casing, other." -->
+									<!-- NWIS gwml2wc:sealingMaterial xlink:href="http://environment.data.gov.au/groundwater/def/borehole-construction-material/[gwsi_cons_csng_open_hole.seal_cd] xlink:title="[gwsi_cons_csng_open_hole.seal_ds]"/>-->
+									<gwml2wc:sealingMaterial xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/> 
+									<!-- gwml2wc:sealingType "Describes the type of sealing. Can be annular sealing, pluging" -->
+									<gwml2wc:sealingType xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+								</gwml2wc:SealingComponent>
+							</gwml2wc:sealingElement>
+						</gwml2wc:Sealing>
+					</gwml2wc:bholeConstruction>
+					<!-- gwml2wc:bholeHeadworks captures BoreCollar information. This will, largely be a duplicate of GW_Well:gwWellLocation for collarLocation and GW_Well:gwWellReferenceElevation for collarElevation. gwml2wc:collarHeadworkType is the third  BoreCollar property -->
+					<gwml2wc:bholeHeadworks/>
+				</gwml2wc:Borehole>
+			</gwml2w:gwWellConstruction>
+			<!-- gwml2w:gwWellContributionZone is the area surrounding a pumping well or other discharge site that encompasses all areas and features that supply groundwater to the well or discharge site. -->
+			<!-- NWIS - gwml2w:gwWellContributionZone is not known -->
+			<gwml2w:gwWellContributionZone xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- NWIS - gwml2w:gwWellLocation = [Well_Registry.dec_long_va] [Well_Registry.dec_lat_va]  -->
+			<gwml2w:gwWellLocation>
+				<!-- gml:Point gml:id is the identifier for the GW_Well:gwWellLocation. If it is defined elsewhere use <gwml2w:gwWellLocation xlink:href="#{gml:id}"/> -->
+				<!--  NWIS - if defined here use gml:id="WELL.[Well_Registry.FID].location"  -->
+				<gml:Point gml:id="WELL.USGS.403836085374401.location" srsName="EPSG:4267">
+					<!-- NWIS - gml:pos = [Well_Registry.dec_long_va] [Well_Registry.dec_lat_va] -->
+					<gml:pos>-85.6288664456762 40.6433756511575</gml:pos>
+				</gml:Point>
+			</gwml2w:gwWellLocation>
+			<!-- NWIS - gwml2w:gwWellPurpose xlink:href="http://cida.usgs.gov/groundwater/def/borehole-purpose/[Well_Registry.qw_well_purpose]" xlink:title="[Well_Registry.qw_well_purpose_desc]" -->
+			<gwml2w:gwWellPurpose xlink:href="http://cida.usgs.gov/groundwater/def/qw-borehole-purpose/1" xlink:title="Dedicated Monitoring/Observation"/>
+			<!-- NWIS - gwml2w:gwWellPurpose xlink:href="http://cida.usgs.gov/groundwater/def/borehole-purpose/[Well_Registry.wl_well_purpose]" xlink:title="[Well_Registry.wl_well_purpose_desc]" -->
+			<gwml2w:gwWellPurpose xlink:href="http://cida.usgs.gov/groundwater/def/wl-borehole-purpose/1" xlink:title="Dedicated Monitoring/Observation"/>
+			<!-- NWIS - gwml2w:gwWellReferenceElevation based on [Well_Registry.alt_va] -->
+			<gwml2w:gwWellReferenceElevation>
+				<gwml2w:Elevation>
+					<!-- NWIS - gwml2w:elevation/srsName based on [Well_Registry.alt_datum_cd] -->
+					<!-- NWIS - gwml2w:elevation value = [Well_Registry.alt_va]  -->
+					<gwml2w:elevation srsName="http://www.opengis.net/def/crs/EPSG/0/5702" uomLabels="ftUS" srsDimension="1">912.16</gwml2w:elevation>
+					<!-- NWIS - does not have gwml2w:elevationAccuracy -->
+					<gwml2w:elevationAccuracy/>
+					<gwml2w:elevationType xlink:href="http://cida.usgs.gov/groundwater/def/elevation-type/natural-ground-surface" xlink:title="natural ground surface"/>
+					<gwml2w:elevationMeasurementMethod xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+				</gwml2w:Elevation>
+			</gwml2w:gwWellReferenceElevation>
+			<!-- ???? NWIS - gwml2w:gwWellStaticWaterDepth:- NWIS does not have gwml2w:gwWellStaticWaterDepth values unless use first value from time series measurements -->
+			<gwml2w:gwWellStaticWaterDepth xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<gwml2w:gwWellStatus xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- NWIS - gwml2w:gwWellTotalLength = [Well_Registry.well_depth] -->
+			<gwml2w:gwWellTotalLength>
+				<swe:Quantity>
+					<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+					<swe:value>198.02</swe:value>
+				</swe:Quantity>
+			</gwml2w:gwWellTotalLength>
+			<!-- #### gwWellUnit specifies the GW_HydrogeoUnit. This duplicates the sampledFeature property. It also duplicates the GW_GeologyLog. -->
+			<!-- NWIS - For gwml2w:gwWellUnit:
+gwml2w:gwWellUnit xlink:href="http://cida.usgs.gov/ngwmn/feature/hydrogeologicalunit/principal.[Well_Registry.FID].[Well_Registry.nat_aquifer_cd]" xlink:title="[Well_Registry.nat_aqfr_desc]" xlink:role="hydrogeologic unit" -->
+			<!-- NWIS - For gwml2w:gwWellUnit:
+gwml2w:gwWellUnit xlink:href="http://cida.usgs.gov/ngwmn/feature/hydrogeologicalunit/local.[Well_Registry.FID].[Well_Registry.local_aquifer_cd]" xlink:title="[Well_Registry.local_aquifer_name]" xlink:role="hydrogeologic unit" -->
+			<gwml2w:gwWellUnit xlink:href="http://cida.usgs.gov/ngwmn/feature/hydrogeologicunit/principal.USGS.403836085374401.N100GLCIAL" xlink:title="Sand and gravel aquifers (glaciated regions)" xlink:role="hydrogeologic unit"/>
+			<gwml2w:gwWellUnit xlink:href="http://cida.usgs.gov/ngwmn/feature/hydrogeologicunit/local.USGS.403836085374401.112PLSC" xlink:title="Pleistocene Series" xlink:role="hydrogeologic unit"/>
+			<!--  NWIS - See gwWellPurpose documentation for the mapping -->
+			<gwml2w:gwWellWaterUse xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!--  NWIS - Does not have gwml2w:gwWellYield info? -->
+			<gwml2w:gwWellYield xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+			<!-- No licence data is included in NWIS database -->
+			<!-- <gwml2w:gwWellLicence/> -->
+			<!-- NWIS - The [gwsi_geoh_aqfr] table is used to describe the GWML2 GW_GeologyLogs -->
+			<!-- NWIS - gwml2w:gwWellGeology xlink:href="http://cida.usgs.gov/ngwmn/feature/lithology-log/[Well_Registry.FID] -->
+			<!-- If byReference: -->
+			<gwml2w:gwWellGeology xlink:href="http://cida.usgs.gov/ngwmn/feature/lithology-log/USGS.403836085374401">
+			<!-- GW_GeologyLog modified to suit delivering of both lithology and stratigraphy logs from the same table. need to replace this with example from the actual WFS -->
+				<!-- NWIS - gml:id= "WELL.[Well_Registry.FID].lithology" -->
+				<gwml2w:GW_GeologyLog gml:id="WELL.USGS.403836085374401.lithology">
+					<!-- NWIS - use gml:metaDataProperty to capture source data -->
+					<!-- NWIS - gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616", value='http://cida.usgs.gov/ngwmn/feature/lithology-log/[Well_Registry.FID] " -->
+					<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://cida.usgs.gov/ngwmn/feature/lithology-log/USGS.403836085374401</gml:identifier>
+					<!-- NWIS - om:phenomenonTime and om:resultTime nilReason are unknown -->
+					<om:phenomenonTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<om:resultTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+					<!-- NWIS - For lithology logs <om:observedProperty xlink:href="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial" xlink:title="lithology"/> -->
+					<om:observedProperty xlink:href="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial" xlink:title="lithology"/>
+					<!-- The  om:featureOfInterest should be the GW_Well the lithology describes.  -->
+					<!-- NWIS - om:featureOfInterest xlink:href='http://cida.usgs.gov/ngwmn/feature/[Well_Registry.FID]" -->
+					<om:featureOfInterest xlink:href="http://cida.usgs.gov/ngwmn/feature/USGS.403836085374401"/>
+					<om:result>
+						<!-- NWIS - gwml2w:GW_GeologyLogCoverage gml:id="WELL.[Well_Registry.FID].lithology.coverage" for lithology logs -->
+						<gwml2w:GW_GeologyLogCoverage gml:id="WELL.USGS.403836085374401.lithology.coverage">
+							<!-- #### Order of elements in the coverage is assumed to be unimportant. Therefore ordered as per database order, not top to bottom of borehole -->
+							<!-- NWIS - First element in lithology coverage -->
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<!-- NWIS - uom are feet ,swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/> -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<!-- NWIS - swe:value from [gwsi_geoh_aqfr.lith_top_va] -->
+											<swe:value>0</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<!-- NWIS - swe:value from [gwsi_geoh_aqfr.lith_bottom_va] -->
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>9</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+	<!-- #### After GWML2IE discussion the lithology Geology Log element has been re-designed. 
+For each element the resulting gwml2w:value should look like the following example (which is an annotated version of the WFS response) -->
+									<gwml2w:value>
+											<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<!-- NWIS - First swe:field is for major lithology code -->
+											<!-- NWIS - swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/[gwsi_geoh_aqfr.lith_cd] -->
+											<!-- NWIS swe:value = [gwsi_geoh_aqfr.lith_cd]. These could be mapped to CGI vocabularies such as:
+<swe:codeSpace  xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/simplelithology"/>
+ <swe:value> http://resource.geosciml.org/classifier/cgi/lithology/sand</swe:value>-->
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/CLAY</swe:identifier>	
+	<!-- #### If the lithology terms are mapped to a vocabulary (either CGI or USGS) then swe:codeSpace specifies this vocabulary -->												
+						<!--			<swe:codeSpace xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/simplelithology"/> -->
+													<swe:value>CLAY</swe:value>
+												</swe:Category>
+											</swe:field>
+											<!-- NWIS - Second swe:field is for minor lithology code -->
+											<!-- 'NA' values in the database have been replaced with 'NULL', which results in the 'minor_lithology field being left out if not present -->
+											<!--<swe:field name="minor_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/NA</swe:identifier>
+													<swe:value>NA</swe:value>
+												</swe:Category>
+											</swe:field>-->
+											<!-- NWIS - Third swe:field is for the lithology description -->
+											<swe:field name="lithology-description">
+												<!-- NWIS - swe:value from [gwsi_geoh_aqfr.lith_ds] -->
+												<swe:Text>
+													<swe:value>BROWN</swe:value>
+												</swe:Text>
+											</swe:field>
+										</swe:DataRecord>									
+										</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>9</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>50</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/CLAY</swe:identifier>	
+													<swe:value>CLAY</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>
+													<swe:value>BLUE</swe:value>
+												</swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>50</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>84</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/CLAY</swe:identifier>	
+													<swe:value>CLAY</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>
+													<swe:value>SOFT, BLUE</swe:value>
+												</swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>84</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+											<swe:value>85</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">
+											<swe:field name="major_lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">
+													<swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/SAND</swe:identifier>	
+													<swe:value>SAND</swe:value>
+												</swe:Category>
+											</swe:field>
+											<swe:field name="lithology-description">
+												<swe:Text>
+													<swe:value>SOFT, BLUE</swe:value>
+												</swe:Text>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>85</swe:value>                                                                                 
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>97</swe:value>                                                                                 
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/CLAY</swe:identifier>              
+                                                    <swe:value>CLAY</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value>BLUE</swe:value>                                                                       
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element>
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>97</swe:value>                                                                                 
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>105</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/CLAY</swe:identifier>              
+                                                    <swe:value>CLAY</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value>BLUE CLAY AND LIMESTONE PEBBLES</swe:value>                                            
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element>
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>105</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>124</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/CLAY</swe:identifier>              
+                                                    <swe:value>CLAY</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value>BLUE</swe:value>                                                                       
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element>
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>124</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>132</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/SDGL</swe:identifier>              
+                                                    <swe:value>SDGL</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value>COARSE GRAVEL</swe:value>                                                              
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element>
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>132</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>141</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/SDGL</swe:identifier>              
+                                                    <swe:value>SDGL</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value>MEDIUM GRAVEL</swe:value>                                                              
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element>
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>152</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>164</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/CLAY</swe:identifier>              
+                                                    <swe:value>CLAY</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value>BLUE</swe:value>                                                                       
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element>
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>164</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>167</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/SAND</swe:identifier>              
+                                                    <swe:value>SAND</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value></swe:value>                                                                           
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element>
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>167</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>184</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/CLAY</swe:identifier>              
+                                                    <swe:value>CLAY</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value>BLUE</swe:value>                                                                       
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element>
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>184</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>193</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/SAND</swe:identifier>              
+                                                    <swe:value>SAND</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value></swe:value>                                                                           
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element>
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>193</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>196</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/GRVL</swe:identifier>              
+                                                    <swe:value>GRVL</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value>COARSE</swe:value>                                                                     
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element>
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>196</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>198</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/SAND</swe:identifier>              
+                                                    <swe:value>SAND</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value></swe:value>                                                                           
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element>
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>198</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>202</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/GRVL</swe:identifier>              
+                                                    <swe:value>GRVL</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value>COARSE</swe:value>                                                                     
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element>
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>202</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>206</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/SDGL</swe:identifier>              
+                                                    <swe:value>SDGL</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value>FINE GRAVEL</swe:value>                                                                
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element> 
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>206</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>208</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/CLAY</swe:identifier>              
+                                                    <swe:value>CLAY</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value></swe:value>                                                                           
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element>
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>208</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>212</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/SDGL</swe:identifier>              
+                                                    <swe:value>SDGL</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value>MEDIUM SAND</swe:value>                                                                
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element>
+							<gwml2w:element>                                                                                                             
+                                <gwml2w:LogValue>                                                                                                        
+                                    <gwml2w:fromDepth>                                                                                                   
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>212</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:fromDepth>                                                                                                  
+                                    <gwml2w:toDepth>                                                                                                     
+                                        <swe:Quantity>                                                                                                
+                                            <swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>                      
+                                            <swe:value>218</swe:value>                                                                                
+                                        </swe:Quantity>                                                                                               
+                                    </gwml2w:toDepth>                                                                                                    
+                                    <gwml2w:value>                                                                                                       
+                                        <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">                    
+                                            <swe:field name="major_lithology">                                                                        
+                                                <swe:Category definition="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial">        
+                                                    <swe:identifier>http://cida.usgs.gov/groundwater/def/lithology/CLAY</swe:identifier>              
+                                                    <swe:value>CLAY</swe:value>                                                                       
+                                                </swe:Category>                                                                                       
+                                            </swe:field>                                                                                              
+                                            <swe:field name="lithology-description">                                                                  
+                                                <swe:Text>                                                                                            
+                                                    <swe:value>BLUE</swe:value>                                                                       
+                                                </swe:Text>                                                                                           
+                                            </swe:field>                                                                                              
+                                        </swe:DataRecord>                                                                                             
+                                    </gwml2w:value>                                                                                                      
+                                </gwml2w:LogValue>                                                                                                       
+                            </gwml2w:element>
+						</gwml2w:GW_GeologyLogCoverage>
+					</om:result>
+					<!-- NWIS - gwml2w:startDepth and gwml2w:endDepth capture the top and bottom values of the log. These will need to be calculated:
+gwml2w:startDepth = smallest to_number(value) of [gwsi_geoh_aqfr.lith_top_va] for [Well_Registry.FID] -->
+					<!-- NWIS - or use xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/ -->
+					<gwml2w:startDepth>
+						<swe:Quantity>
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+							<swe:value>0</swe:value>
+						</swe:Quantity>
+					</gwml2w:startDepth>
+					<!-- NWIS - gwml2w:endDepth = largest to_number(value) of [gwsi_geoh_aqfr.lith_bottom_va] for [Well_Registry.FID] -->
+					<gwml2w:endDepth>
+						<swe:Quantity>
+							<swe:uom xlink:href="http://qudt.org/vocab/unit#Foot" xlink:title="foot" code="ft"/>
+							<swe:value>218</swe:value>
+						</swe:Quantity>
+					</gwml2w:endDepth>
+				</gwml2w:GW_GeologyLog>
+			</gwml2w:gwWellGeology>
+		</gwml2w:GW_Well>
+	</gml:featureMember>
+</gml:FeatureCollection>

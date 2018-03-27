@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsmle:Lineation 
+ xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:gml="http://www.opengis.net/gml/3.2" 
+ xmlns:swe="http://www.opengis.net/swe/2.0" 
+ xmlns:gmlexr="http://www.opengis.net/gml/3.3/exr" 
+ xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" 
+ xmlns:gsmle="http://www.opengis.net/gsml/4.1/GeoSciML-Extension" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Extension http://schemas.opengis.net/gsml/4.1/geoSciMLExtension.xsd" gml:id="lineation.1">
+ <gml:identifier codeSpace="http:data.geoscience.gov.au/">http:data.geoscience.gov.au/feature/ga/lineation/525947</gml:identifier>
+ <gsmlb:geologicHistory>
+  <gsmlb:GeologicEvent gml:id="lineation.1.age">
+   <gsmlb:eventProcess xlink:href="http://resource.geoscience.gov.xx/vocabulary/eventprocess/deformation" xlink:title="deformation"/>
+   <gsmlb:olderNamedAge xlink:href="http://resource.geoscience.gov.xx/vocabulary/geochronologicera/Devonian" xlink:title="Devonian"/>
+   <gsmlb:youngerNamedAge xlink:href="http://resource.geoscience.gov.xx/vocabulary/geochronologicera/Carboniferous" xlink:title="Devonian"/>
+  </gsmlb:GeologicEvent>
+ </gsmlb:geologicHistory>
+ <gsmle:lineationType xlink:href="http://resource.geoscience.gov.xx/lineationtype/mineral_alignement" xlink:title="mineral alignment"/>
+ <gsmle:definingElement>
+  <swe:Category definition="http://resource.geoscience.gov.xx/defining_elements">
+   <swe:identifier>http://resource.geoscience.gov.xx/defining_elements/aligned_minerals</swe:identifier>  
+   <swe:label>aligned minerals</swe:label>
+   <swe:codeSpace xlink:href="http://resource.geoscience.gov.xx/defining_elements"/>
+  </swe:Category>
+ </gsmle:definingElement>
+ <gsmle:intensity>
+  <swe:Category>
+   <swe:extension>
+     <swe:Category definition="http://resource.geosciml.org/classifierscheme/cgi/201211/valuequalifier">
+      <swe:identifier>http://resource.geosciml.org/classifier/cgi/valuequalifier/always</swe:identifier>
+      <swe:label>usually</swe:label>
+      <swe:codeSpace xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/valuequalifier"/>
+    </swe:Category>
+   </swe:extension>
+   <swe:identifier>http://resource.geoscience.gov.xx/intensity/strong</swe:identifier>
+   <swe:label>strong</swe:label>
+   <swe:codeSpace xlink:href="http://resource.geoscience.gov.xxx/intensity"/>
+  </swe:Category>
+ </gsmle:intensity>
+ <gsmle:mineralElement>
+  <gsmle:Mineral gml:id="hbl">
+   <gsmle:mineralName xlink:href="http://resource.geoscience.gov.xx/mineralnames/hornblende" xlink:title="hornblende"/>
+  </gsmle:Mineral>
+ </gsmle:mineralElement>
+ <gsmle:orientation>
+  <gsmlb:GSML_LinearOrientation>
+   <gsmlb:plunge>
+    <gsmlb:GSML_QuantityRange>
+     <swe:uom code="degree"/>
+     <gsmlb:lowerValue>65</gsmlb:lowerValue>
+     <gsmlb:upperValue>75</gsmlb:upperValue>
+    </gsmlb:GSML_QuantityRange>
+   </gsmlb:plunge>
+   <gsmlb:trend>
+    <gsmlb:GSML_QuantityRange>
+     <swe:uom code="degree"/>
+     <gsmlb:lowerValue>010</gsmlb:lowerValue>
+     <gsmlb:upperValue>010</gsmlb:upperValue>
+    </gsmlb:GSML_QuantityRange>
+   </gsmlb:trend>
+  </gsmlb:GSML_LinearOrientation>
+ </gsmle:orientation>
+</gsmle:Lineation>

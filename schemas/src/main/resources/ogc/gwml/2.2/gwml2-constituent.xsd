@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gwml2c="http://www.opengis.net/gwml-constituent/2.2" targetNamespace="http://www.opengis.net/gwml-constituent/2.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0">
+	<annotation>
+		<documentation>Describes the groundwater fluid body constituents and their relationships.
+
+        OGC WaterML 2.0 Part 4 - GroundWaterML 2 is an OGC Standard.
+        Copyright (c) 2016 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+        </documentation>
+	</annotation>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<element name="GW_ChemicalConstituent" type="gwml2c:GW_ChemicalConstituentType" substitutionGroup="gwml2c:GW_Constituent">
+		<annotation>
+			<documentation>Characterisation of the chemical composition of the fluid body, both natural and man-made.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_ChemicalConstituentType">
+		<complexContent>
+			<extension base="gwml2c:GW_ConstituentType">
+				<sequence>
+					<element name="gwChemical" type="gml:ReferenceType" nillable="false" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Chemical component type, e.g. arsenic.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GW_ChemicalConstituentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2c:GW_ChemicalConstituent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="GW_BiologicConstituent" type="gwml2c:GW_BiologicConstituentType" substitutionGroup="gwml2c:GW_Constituent">
+		<annotation>
+			<documentation>Characterisation of the biological composition of the fluid body, both natural and man-made.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_BiologicConstituentType">
+		<complexContent>
+			<extension base="gwml2c:GW_ConstituentType">
+				<sequence>
+					<element name="gwOrganism" type="gml:ReferenceType" nillable="false" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<appinfo>
+								<gml:defaultCodeSpace>#NOTES</gml:defaultCodeSpace>
+							</appinfo>
+							<documentation>Biological species.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GW_BiologicConstituentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2c:GW_BiologicConstituent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="GW_Constituent" type="gwml2c:GW_ConstituentType" abstract="true" substitutionGroup="gml:AbstractFeature">
+		<annotation>
+			<documentation>General (abstract) entity denoting a material, chemical or biological constituent of a fluid body.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_ConstituentType" abstract="true">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="gwState" type="gwml2c:StateTypeType" nillable="false" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>The physical state of the constituent, i.e. solid, liquid, or gas.</documentation>
+						</annotation>
+					</element>
+					<element name="gwConstituent" type="gwml2c:GW_ConstituentRelationPropertyType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Relates to constituents composing another constituent</documentation>
+						</annotation>
+					</element>
+					<element name="gwConstituedOf" type="gwml2c:GW_ConstituentRelationPropertyType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Relates to the constituent which a constituent is part of</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- added manually to handle local vocabulary -->
+	<simpleType name="StateTypeType">
+		<annotation>
+			<documentation>The physical state of the constituent, i.e. solid, liquid, or gas.</documentation>
+		</annotation>
+		<union memberTypes="gwml2c:StateTypeEnumerationType"/>
+	</simpleType>
+	<simpleType name="StateTypeEnumerationType">
+		<annotation>
+			<documentation>The physical state of the constituent, i.e. solid, liquid, or gas.</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="gas">
+				<annotation>
+					<documentation>A gas is a compressible fluid. Not only will a gas conform to the shape of its container but it will also expand to fill the container. (wikipedia)</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="liquid">
+				<annotation>
+					<documentation>A liquid is a nearly incompressible fluid that conforms to the shape of its container but retains a (nearly) constant volume independent of pressure. (Wikipedia)</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="solid">
+				<annotation>
+					<documentation>In a solid the particles (ions, atoms or molecules) are closely packed together. The forces between particles are strong so that the particles cannot move freely but can only vibrate (wikipedia)</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+	<!-- encode manually above -->
+	<complexType name="GW_ConstituentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2c:GW_Constituent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="GW_MaterialConstituent" type="gwml2c:GW_MaterialConstituentType" substitutionGroup="gwml2c:GW_Constituent">
+		<annotation>
+			<documentation>Suspended or colloidal material in a fluid body, e.g sediment.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_MaterialConstituentType">
+		<complexContent>
+			<extension base="gwml2c:GW_ConstituentType">
+				<sequence>
+					<element name="gwMaterial" type="gwml2c:MaterialConstituentTermPropertyType" nillable="false" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Name of the suspended or colloid material in the fluid body, e.g. a lithology or mineral name.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GW_MaterialConstituentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2c:GW_MaterialConstituent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="GW_ConstituentRelation" type="gwml2c:GW_ConstituentRelationType" substitutionGroup="gml:AbstractGML">
+		<annotation>
+			<documentation>Relation between fluid body components, typically caused by a specific mechanism, e.g. coating (from adsorption), constitution (from chemical bonding forming a new material), aggregation (from physical bonding, e.g. pressure), containment (from absorption, digestion).</documentation>
+		</annotation>
+	</element>
+	<complexType name="GW_ConstituentRelationType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="gwConstituentRelationType" type="gml:ReferenceType" nillable="false" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Type of relation between fluid body components, typically caused by a specific mechanism, e.g. coating (from adsorption), constitution (from chemical bonding forming a new material), aggregation (from physical bonding, e.g. pressure), containment (from absorption, digestion).</documentation>
+						</annotation>
+					</element>
+					<element name="gwConstituentRelationMechanism" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="1">
+						<annotation>
+							<documentation>Mechanisms by which materials (of various states) come into a relationship, e.g. sorption, precipitation, digestion, excretion, etc.</documentation>
+						</annotation>
+					</element>
+					<element name="gwConstitutedOf" type="gwml2c:GW_ConstituentRelationPropertyType" nillable="true" maxOccurs="1">
+						<annotation>
+							<documentation>Relates to the constituent which a constituent is part of</documentation>
+						</annotation>
+					</element>
+					<element name="gwConstituent" type="gwml2c:GW_ConstituentRelationPropertyType" nillable="true" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Relates to constituents composing another constituent</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="GW_ConstituentRelationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="gwml2c:GW_ConstituentRelation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<group name="MaterialConstituentTerm">
+		<choice>
+			<element name="mineralName" type="gml:ReferenceType" nillable="false" minOccurs="0">
+				<annotation>
+					<documentation>Name of the mineral (eg: orthoclase) or mineral family (eg: feldspar), approved by the International Mineralogical Association. (eg: http://www.mindat.org/mineralindex.php)</documentation>
+				</annotation>
+			</element>
+			<element name="lithology" type="gml:ReferenceType" nillable="false" minOccurs="0">
+				<annotation>
+					<documentation>A controlled concept indicating the name of the RockMaterial type (eg, quartz sandstone, basalt, muscovite schist, sand, mud, soil, saprolite). Igneous rock definitions are governed by IUGS agreed vocabulary</documentation>
+				</annotation>
+			</element>
+		</choice>
+	</group>
+	<complexType name="MaterialConstituentTermPropertyType">
+		<sequence minOccurs="0">
+			<group ref="gwml2c:MaterialConstituentTerm"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attribute name="unionSemantics" type="gwml2c:MaterialConstituentTermUnionSemantics"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<simpleType name="MaterialConstituentTermUnionSemantics">
+		<restriction base="string">
+			<enumeration value="lithologyName"/>
+			<enumeration value="mineralName"/>
+		</restriction>
+	</simpleType>
+</schema>

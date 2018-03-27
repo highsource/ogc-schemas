@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gwml2w:GW_Well xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2"
+    xmlns:gmd="http://www.isotc211.org/2005/gmd"
+    xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:sam="http://www.opengis.net/sampling/2.0"
+    xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2"
+    xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/gwml-well/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-well.xsd"
+    gml:id="soe.well.352271">
+
+    <gml:identifier codeSpace="http://www.gns.cri.nz">
+        http://vocab.smart-project.info/ngmp/soe/well/352271
+    </gml:identifier>
+    <gml:name codeSpace="http://www.gns.cri.nz">352271</gml:name>
+    <gml:boundedBy>
+        <gml:Envelope srsDimension="2" srsName="urn:ogc:def:crs:EPSG::4326">
+            <gml:lowerCorner>-40.575382977771476 175.25156953952836</gml:lowerCorner>
+            <gml:upperCorner>-40.575382977771476 175.25156953952836</gml:upperCorner>
+        </gml:Envelope>
+    </gml:boundedBy>
+    <sam:sampledFeature xsi:nil="true" nilReason="missing"/>
+    <!-- the vertical line of the monitoring well -->
+    <sams:shape>
+        <gml:Curve gml:id="shape.mon.352271" srsDimension="3"
+            srsName="http://www.opengis.net/def/crs/EPSG/0/4327">
+            <gml:segments>
+                <gml:LineStringSegment>
+                    <gml:posList>175.25156953952836 -40.575382977771476 19.0 175.25156953952836
+                        -40.575382977771476 112.2</gml:posList>
+                </gml:LineStringSegment>
+            </gml:segments>
+        </gml:Curve>
+    </sams:shape>
+    <gwml2w:gwWellLocation>
+        <gml:Point gml:id="loc.mon.352271" srsDimension="2" srsName="urn:ogc:def:crs:EPSG::4326">
+            <gml:pos>-40.575382977771476 175.25156953952836</gml:pos>
+        </gml:Point>
+    </gwml2w:gwWellLocation>
+    <gwml2w:gwWellPurpose xlink:href="http://somevocab.org/gwml/2.0/notes" xlink:title="Monitoring"/>
+    <gwml2w:gwWellReferenceElevation>
+        <gwml2w:Elevation>
+            <gwml2w:elevation srsDimension="1" srsName="http://www.opengis.net/def/crs/EPSG/0/4440"
+                uomLabels="m NZVD2009">14.295</gwml2w:elevation>
+            <gwml2w:elevationType xlink:href="http://somevocab.org/gwml/2.0/notes"
+                xlink:title="Relative Level Natural Surface"/>
+            <gwml2w:elevationMeasurementMethod xlink:href="http://somevocab.org/gwml/2.0/notes"
+                xlink:title="MeasuredInSitu"/>
+        </gwml2w:Elevation>
+    </gwml2w:gwWellReferenceElevation>
+    <gwml2w:gwWellStatus xlink:href="http://somevocab.org/gwml/2.0/notes" xlink:title="standby"/>
+    <gwml2w:gwWellTotalLength>
+        <swe:Quantity>
+            <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+            <swe:value>93.0</swe:value>
+        </swe:Quantity>
+    </gwml2w:gwWellTotalLength>
+    <gwml2w:gwWellWaterUse xlink:href="http://somevocab.org/gwml/2.0/notes" xlink:title="monitoring"/>
+    <gwml2w:gwWellGeology>
+        <gwml2w:GW_GeologyLog gml:id="soe.well.lithology.352271">
+            <gml:identifier codeSpace="http://www.gns.cri.nz">
+                http://vocab.smart-project.info/ngmp/soe/log/352271
+            </gml:identifier>
+            <om:phenomenonTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown"/>
+            <om:resultTime xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown"/>
+            <om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown"/>
+            <om:observedProperty
+                xlink:href="http://www.opengis.net/def/gwml/2.2/observedProperty/earthMaterial"
+                xlink:title="lithology"/>
+            <om:featureOfInterest xlink:href="http://vocab.smart-project.info/ngmp/soe/well/352271"/>
+            <om:result>
+                <gwml2w:GW_GeologyLogCoverage gml:id="soe.well.lithology.coverage352271">
+                    <gml:identifier codeSpace="http://www.gns.cri.nz">
+                        http://vocab.smart-project.info/ngmp/soe/log-cov/352271
+                    </gml:identifier>
+                    <gwml2w:element>
+                        <gwml2w:LogValue>
+                            <gwml2w:fromDepth>
+                                <swe:Quantity>
+                                    <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter"
+                                        xlink:title="metre"/>
+                                    <swe:value>0.0</swe:value>
+                                </swe:Quantity>
+                            </gwml2w:fromDepth>
+                            <gwml2w:toDepth>
+                                <swe:Quantity>
+                                    <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter"
+                                        xlink:title="metre"/>
+                                    <swe:value>0.3</swe:value>
+                                </swe:Quantity>
+                            </gwml2w:toDepth>
+                            <gwml2w:value>
+                                <swe:DataRecord
+                                    definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial"
+                                    id="log.id.1672">
+                                    <swe:field name="lithology">
+                                        <swe:Category
+                                            definition="http://www.opengis.net/def/gwml/2.2/observedProperty/earthMaterial">
+                                            <swe:codeSpace
+                                                xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/simplelithology"
+                                                xlink:title="Simple lithology"/>
+                                            <swe:value>Top Soil</swe:value>
+                                        </swe:Category>
+                                    </swe:field>
+                                    <swe:field name="description">
+                                        <swe:Text
+                                            definition="http://www.gwml.org/def/gwml/2.2/datarecord/FreeText">
+                                            <swe:value>topsoil and sand</swe:value>
+                                        </swe:Text>
+                                    </swe:field>
+                                </swe:DataRecord>
+                            </gwml2w:value>
+                        </gwml2w:LogValue>
+                    </gwml2w:element>
+                    <gwml2w:element>
+                        <gwml2w:LogValue>
+                            <gwml2w:fromDepth>
+                                <swe:Quantity>
+                                    <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter"
+                                        xlink:title="metre"/>
+                                    <swe:value>0.3</swe:value>
+                                </swe:Quantity>
+                            </gwml2w:fromDepth>
+                            <gwml2w:toDepth>
+                                <swe:Quantity>
+                                    <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter"
+                                        xlink:title="metre"/>
+                                    <swe:value>2.4</swe:value>
+                                </swe:Quantity>
+                            </gwml2w:toDepth>
+                            <gwml2w:value>
+                                <swe:DataRecord
+                                    definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial"
+                                    id="log.id.1673">
+                                    <swe:field name="lithology">
+                                        <swe:Category
+                                            definition="http://www.opengis.net/def/gwml/2.2/observedProperty/earthMaterial">
+                                            <swe:codeSpace
+                                                xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/simplelithology"
+                                                xlink:title="Simple lithology"/>
+                                            <swe:value>Peat</swe:value>
+                                        </swe:Category>
+                                    </swe:field>
+                                    <swe:field name="description">
+                                        <swe:Text
+                                            definition="http://www.gwml.org/def/gwml/2.2/datarecord/FreeText">
+                                            <swe:value>organic</swe:value>
+                                        </swe:Text>
+                                    </swe:field>
+                                </swe:DataRecord>
+                            </gwml2w:value>
+                        </gwml2w:LogValue>
+                    </gwml2w:element>
+                    <gwml2w:element>
+                        <gwml2w:LogValue>
+                            <gwml2w:fromDepth>
+                                <swe:Quantity>
+                                    <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter"
+                                        xlink:title="metre"/>
+                                    <swe:value>2.4</swe:value>
+                                </swe:Quantity>
+                            </gwml2w:fromDepth>
+                            <gwml2w:toDepth>
+                                <swe:Quantity>
+                                    <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter"
+                                        xlink:title="metre"/>
+                                    <swe:value>14.6</swe:value>
+                                </swe:Quantity>
+                            </gwml2w:toDepth>
+                            <gwml2w:value>
+                                <swe:DataRecord
+                                    definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial"
+                                    id="log.id.1674">
+                                    <swe:field name="lithology">
+                                        <swe:Category
+                                            definition="http://www.opengis.net/def/gwml/2.2/observedProperty/earthMaterial">
+                                            <swe:codeSpace
+                                                xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/simplelithology"
+                                                xlink:title="Simple lithology"/>
+                                            <swe:value>Sand</swe:value>
+                                        </swe:Category>
+                                    </swe:field>
+                                    <swe:field name="description">
+                                        <swe:Text
+                                            definition="http://www.gwml.org/def/gwml/2.2/datarecord/FreeText">
+                                            <swe:value>sand</swe:value>
+                                        </swe:Text>
+                                    </swe:field>
+                                </swe:DataRecord>
+                            </gwml2w:value>
+                        </gwml2w:LogValue>
+                    </gwml2w:element>
+                    <gwml2w:element>
+                        <gwml2w:LogValue>
+                            <gwml2w:fromDepth>
+                                <swe:Quantity>
+                                    <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter"
+                                        xlink:title="metre"/>
+                                    <swe:value>14.6</swe:value>
+                                </swe:Quantity>
+                            </gwml2w:fromDepth>
+                            <gwml2w:toDepth>
+                                <swe:Quantity>
+                                    <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter"
+                                        xlink:title="metre"/>
+                                    <swe:value>17.0</swe:value>
+                                </swe:Quantity>
+                            </gwml2w:toDepth>
+                            <gwml2w:value>
+                                <swe:DataRecord
+                                    definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial"
+                                    id="log.id.1675">
+                                    <swe:field name="lithology">
+                                        <swe:Category
+                                            definition="http://www.opengis.net/def/gwml/2.2/observedProperty/earthMaterial">
+                                            <swe:codeSpace
+                                                xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/simplelithology"
+                                                xlink:title="Simple lithology"/>
+                                            <swe:value>Gravel</swe:value>
+                                        </swe:Category>
+                                    </swe:field>
+                                    <swe:field name="description">
+                                        <swe:Text
+                                            definition="http://www.gwml.org/def/gwml/2.2/datarecord/FreeText">
+                                            <swe:value>fine stones and blue clay</swe:value>
+                                        </swe:Text>
+                                    </swe:field>
+                                </swe:DataRecord>
+                            </gwml2w:value>
+                        </gwml2w:LogValue>
+                    </gwml2w:element>
+                    <gwml2w:element>
+                        <gwml2w:LogValue>
+                            <gwml2w:fromDepth>
+                                <swe:Quantity>
+                                    <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter"
+                                        xlink:title="metre"/>
+                                    <swe:value>17.0</swe:value>
+                                </swe:Quantity>
+                            </gwml2w:fromDepth>
+                            <gwml2w:toDepth>
+                                <swe:Quantity>
+                                    <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter"
+                                        xlink:title="metre"/>
+                                    <swe:value>93.2</swe:value>
+                                </swe:Quantity>
+                            </gwml2w:toDepth>
+                            <gwml2w:value>
+                                <swe:DataRecord
+                                    definition="http://www.opengis.net/def/gwml/2.2/datarecord/earthMaterial"
+                                    id="log.id.1676">
+                                    <swe:field name="lithology">
+                                        <swe:Category
+                                            definition="http://www.opengis.net/def/gwml/2.2/observedProperty/earthMaterial">
+                                            <swe:codeSpace
+                                                xlink:href="http://resource.geosciml.org/classifierscheme/cgi/201211/simplelithology"
+                                                xlink:title="Simple lithology"/>
+                                            <swe:value>Rock</swe:value>
+                                        </swe:Category>
+                                    </swe:field>
+                                    <swe:field name="description">
+                                        <swe:Text
+                                            definition="http://www.gwml.org/def/gwml/2.2/datarecord/FreeText">
+                                            <swe:value>greywacke greywacke</swe:value>
+                                        </swe:Text>
+                                    </swe:field>
+                                </swe:DataRecord>
+                            </gwml2w:value>
+                        </gwml2w:LogValue>
+                    </gwml2w:element>
+                </gwml2w:GW_GeologyLogCoverage>
+            </om:result>
+            <gwml2w:startDepth>
+                <swe:Quantity>
+                    <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+                    <swe:value>0.0</swe:value>
+                </swe:Quantity>
+            </gwml2w:startDepth>
+            <gwml2w:endDepth>
+                <swe:Quantity>
+                    <swe:uom xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+                    <swe:value>93.2</swe:value>
+                </swe:Quantity>
+            </gwml2w:endDepth>
+        </gwml2w:GW_GeologyLog>
+    </gwml2w:gwWellGeology>
+</gwml2w:GW_Well>

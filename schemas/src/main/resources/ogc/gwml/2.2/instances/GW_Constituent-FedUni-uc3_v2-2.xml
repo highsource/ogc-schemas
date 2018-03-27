@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gml:FeatureCollection gml:id="feduni.example.constituent" 
+xmlns:gml="http://www.opengis.net/gml/3.2" 
+xmlns:sam="http://www.opengis.net/sampling/2.0" 
+xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" 
+xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" 
+xmlns:gwml2f="http://www.opengis.net/gwml-flow/2.2" 
+xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" 
+xmlns:gwml2c="http://www.opengis.net/gwml-constituent/2.2" 
+ xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:swe="http://www.opengis.net/swe/2.0" 
+ xmlns:gmd="http://www.isotc211.org/2005/gmd" 
+ xmlns:gco="http://www.isotc211.org/2005/gco" 
+ xmlns:cv="http://www.opengis.net/cv/0.2/gml32" 
+ xmlns:om="http://www.opengis.net/om/2.0" 
+ xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://www.opengis.net/gwml/2.2 http://schemas.opengis.net/gwml/2.2/gwml2.xsd 
+http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd">
+ 
+	<!-- Although all the GWML2 schema may not be required, this instance imports all GWML2 packages via gwml2.xsd for consistence between instance examples  -->
+	<!-- ######################### -->
+	<!-- Mapping of Federation University (FedUni) Groundwater database tables and records to the proposed GroundWaterML2 OGC standard release candidate version 2.2 -->
+	<!-- File created by Bruce Simons, CSIRO, February 2016 -->
+	<!-- ######################### -->
+	<!-- Although this instance is a gml:FeatureCollection with one or more gml:featureMembers, a valid alternative is as a single gwml2:GW_Constituent -->
+	<!-- Other related GWML2 features are referred to "byReference" using xlink:href. In most cases these could be included "inLine" (i.e. within this instance). A separate instance for each feature is provided for ease of mapping. The final aggregation of inLine vs. byReference features will be determined by the use case requirements -->
+	<!-- Where features are aggregated into single feature services the xlink:href references to URIs need to be replaced with internal # references to gml:id -->
+	<!-- ######################### -->
+	<!-- FedUni - Mapping patterns -->
+	<!-- Comments beginning 'FedUni -' are instructions for mappings between FedUni data and GWML2 -->
+	<!-- ???? Comments beginning ???? require further checking -->
+	<!-- FedUni table record pairs are referred to by the pattern [table.record] -->
+	<!-- The mapping pattern is [schema/property] = [table.record] -->
+	<!-- ######################### -->
+	<!-- FedUni - Feature IDs and identifiers -->
+	<!-- Feature IDs (gml:id) are document specific unique identifiers based on FedUni table keys and the feature type -->
+	<!-- To create the id, replace [table.record_id] with values from the appropriate table -->
+	<!-- Feature identities (gml:identifier) use the URI for the feature. This is in the format "[domain name]/[category]/[type]/[gml:id]" -->
+	<!-- Domain Name - The temporary domain name "http://www.groundwater-victoria.com.au" has been used for the feature identifiers and vocabulary term references. An appropriate persistent and organisation independent domain will need to be established.
+A redirect service, such as the SISS PID service, is required to resolve these URIs -->
+	<!-- Category - where the object is a GML Feature use "feature". Where the object is a vocabulary concept use "def". -->
+	<!-- Type - where the Category is a feature, the type of feature, where Category is "def' the type of term (e.g. from "http://environment.data.gov.au/def/" it is "object", "unit", "property") -->
+	<!-- ######################### -->
+	<!-- FedUni Mapping -->
+	<!-- GW_Constituent describes the constituents that make up the GW_Fluid. GW_Constituent is abstract, therefore gml:featureMember is either a GW_BiologicalConstituent, GW_MaterialConstituent or GW_ChemicalConstituent -->
+	<!-- This gml:featureMember is a gwml2:GW_ChemicalConstituent -->
+	<gml:featureMember>
+		<!-- FedUni - GW_ChemicalConstituent gml:id="feduni.borehole.constituent.[bore.bore_ID].[hydrochemistry.hydrochemistry_id].[chemistry_code.chemistry_code_id] -->
+		<gwml2c:GW_ChemicalConstituent gml:id="feduni.borehole.constituent.51409.44574.121">
+			<!-- FedUni - gml:description = [chemistry_code.description] -->
+			<gml:description>Oxygen 18</gml:description>
+			<!-- FedUni - gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://groundwater.victoria.com.au/feature/constituent/feduni.borehole.constituent.[bore.bore_ID].[hydrochemistry.hydrochemistry_id].[chemistry_code.chemistry_code_id] 	-->
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://groundwater.victoria.com.au/feature/constituent/feduni.borehole.constituent.51409.44574.121</gml:identifier>
+			<!-- FedUni - gml:name = [chemistry_code.chemistry_code_id] codeSpace="http://www.groundwater-victoria.com.au/def/feduni/waterwell/constituent" -->
+			<gml:name codeSpace="http://www.groundwater-victoria.com.au/def/feduni/waterwell/constituent">121</gml:name>
+			<!-- FedUni - gml:name = [chemistry_code.name] -->
+			<gml:name codeSpace="http://groundwater.feduni.edu/waterwell/chemical-name">18Oxygen</gml:name>
+			<!-- FedUni - gml:name = [chemistry_code.abbreviation] -->
+			<gml:name codeSpace="http://groundwater.feduni.edu/waterwell/chemical-abbreviation">d&lt;sup&gt;18&lt;/sup&gt;O&lt;sub&gt;V-SMOW&lt;/sub&gt;</gml:name>
+			<!-- wml2c:gwState is "gas", "liquid" or "solid" -->
+			<gwml2c:gwState>liquid</gwml2c:gwState>
+			<!-- gwml2c:gwConstituent and gwml2c:gwConstituedOf allow describing the relationship between constituents making up the mixture -->
+			<!-- FedUni - does not have constituent relationship information -->
+			<gwml2c:gwConstituent/>
+			<gwml2c:gwConstituedOf/>
+			<!-- FedUni - gwChemical xlink:href and xlink:title will need to be mapped to the op:objectOfInterest related to the constituent being measured -->
+			<!-- FedUni mapping:
+18Oxygen = xlink:href="http://environment.data.gov.au/def/object/oxygen_18" xlink:title="oxygen 18"
+2Hydrogen = xlink:href="http://environment.data.gov.au/def/object/deuterium" xlink:title="deuterium"
+14Carbon = xlink:href="http://environment.data.gov.au/def/object/carbon_14" xlink:title="carbon 14"
+13Carbon = xlink:href="http://environment.data.gov.au/def/object/carbon_13" xlink:title="carbon 13"
+CFC 11 = xlink:href="http://environment.data.gov.au/def/object/trichlorofluoromethane" xlink:title="trichlorofluoromethane"
+CFC 12 = xlink:href="http://environment.data.gov.au/def/object/dichlorodifluoromethane" xlink:title="dichlorodifluoromethane"
+222Radon = xlink:href="http://environment.data.gov.au/def/object/radon_222" xlink:title="radon-222"
+Phosphate as P = xlink:href="http://environment.data.gov.au/def/object/phosphorus" xlink:title="phosphorus"
+Total phosphorus = xlink:href="http://environment.data.gov.au/def/object/phosphorus" xlink:title="phosphorus"
+Reactive phosphorus = xlink:href="http://environment.data.gov.au/def/object/phosphorus" xlink:title="phosphorus"
+Nitrate as N = xlink:href="http://environment.data.gov.au/def/object/nitrogen" xlink:title="nitrogen"
+Total Nitrogen = xlink:href="http://environment.data.gov.au/def/object/nitrogen" xlink:title="nitrogen"
+Kjeldahl Nitrogen = xlink:href="http://environment.data.gov.au/def/object/nitrogen" xlink:title="nitrogen"
+Oxidised Nitrogen = xlink:href="http://environment.data.gov.au/def/object/nitrogen" xlink:title="nitrogen"
+Ammonia Nitrogen = xlink:href="http://environment.data.gov.au/def/object/nitrogen" xlink:title="nitrogen"
+Ammonia = xlink:href="http://environment.data.gov.au/def/object/ammonia" xlink:title="ammonia"
+Dissolved Oxygen = xlink:href="http://environment.data.gov.au/def/object/oxygen" xlink:title="oxygen"
+-->
+			<gwml2c:gwChemical xlink:href="http://environment.data.gov.au/def/object/oxygen_18" xlink:title="oxygen 18"/>
+		</gwml2c:GW_ChemicalConstituent>
+	</gml:featureMember>
+	<gml:featureMember>
+		<!-- FedUni - Second featureMember is a gwml2c:GW_BiologicConstituent -->
+		<!-- FedUni - GW_BiologicConstituent gml:id="feduni.borehole.constituent.[bore.bore_ID].[hydrochemistry.hydrochemistry_id].[chemistry_code.chemistry_code_id] -->
+		<gwml2c:GW_BiologicConstituent gml:id="feduni.borehole.constituent.51409.44574.130">
+			<!-- FedUni - gml:description = [chemistry_code.description] -->
+			<gml:description>E.coli</gml:description>
+			<!-- FedUni - gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://groundwater.victoria.com.au/feature/constituent/feduni.borehole.constituent.[bore.bore_ID].[hydrochemistry.hydrochemistry_id].[chemistry_code.chemistry_code_id] 	-->
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">http://groundwater.victoria.com.au/feature/constituent/feduni.borehole.constituent.51409.44574.130</gml:identifier>
+			<!-- FedUni - gml:name = [chemistry_code.chemistry_code_id] codeSpace="http://www.groundwater-victoria.com.au/def/feduni/waterwell/constituent" -->
+			<gml:name codeSpace="http://www.groundwater-victoria.com.au/def/feduni/waterwell/constituent">130</gml:name>
+			<!-- FedUni - gml:name = [chemistry_code.name] -->
+			<gml:name codeSpace="http://groundwater.feduni.edu/waterwell/chemical-name">Escherichia coli</gml:name>
+			<!-- wml2c:gwState is "gas", "liquid" or "solid" -->
+			<gwml2c:gwState>solid</gwml2c:gwState>
+			<!-- gwml2c:gwConstituent and gwml2c:gwConstituedOf allow describing the relationship between constituents making up the mixture -->
+			<!-- FedUni - does not have constituent relationship information -->
+			<gwml2c:gwConstituent/>
+			<gwml2c:gwConstituedOf/>
+			<!-- FedUni - gwml2c:gwOrganism xlink:href and xlink:title will need to be mapped to the op:objectOfInterest related to the constituent being measured -->
+			<!-- FedUni mapping:
+Total Coliforms = xlink:href="http://environment.data.gov.au/def/object/coliform" xlink:title="coliform"
+Faecal Coliforms = xlink:href="http://environment.data.gov.au/def/object/faecal_coliform" xlink:title="faecal coliform"
+Escherichia coli = xlink:href="http://environment.data.gov.au/def/object/escherichia_coli" xlink:title="escherichia coli"
+Faecal streptococci = xlink:href="http://environment.data.gov.au/def/object/faecal_streptococci" xlink:title="faecal streptococci"
+Pseudomonas aeruginosa = xlink:href="http://environment.data.gov.au/def/object/pseudomonas_aeruginosa" (needs to be added to http://environment.data.gov.au/def/object/)
+Heterotrophic Plate Count = xlink:href="http://environment.data.gov.au/def/object/heterotroph" (needs to be added to http://environment.data.gov.au/def/object/) 
+-->
+			<gwml2c:gwOrganism xlink:href="http://environment.data.gov.au/def/object/escherichia_coli" xlink:title="escherichia coli"/>
+		</gwml2c:GW_BiologicConstituent>
+	</gml:featureMember>
+</gml:FeatureCollection>
