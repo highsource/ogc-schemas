@@ -1054,47 +1054,4 @@ diff -urN ../resources-original/ogc/wms/1.3.0/capabilities_1_3_0.xsd ogc/wms/1.3
 +	<element name="OtherExtendedCapabilities" substitutionGroup="wms:_ExtendedCapabilities"/>
 +	<element name="OtherExtendedOperation" type="wms:OperationType" substitutionGroup="wms:_ExtendedOperation"/>
  </schema>
- diff -urN ../resources-original/ogc/indoorgml/1.0/indoorgmlcore.xsd ogc/indoorgml/1.0/indoorgmlcore.xsd
---- ../resources-original/ogc/indoorgml/1.0/indoorgmlcore.xsd    Sun Jul 22 03:59:38 2012
-+++ ogc/indoorgml/1.0/indoorgmlcore.xsd    Sun Jul 10 18:00:59 2016
-@@ -156,6 +152,7 @@
-                     <xs:element name="typeOfTopoExpression" type="typeOfTopoExpressionCodeType" minOccurs="0" maxOccurs="1"/>
-                     <xs:element name="comment" type="xs:string" minOccurs="0" maxOccurs="1"/>
-                     <xs:element name="interConnects" type="StatePropertyType" minOccurs="2" maxOccurs="2"/>
-+                    <xs:element name="ConnectedLayers" type="SpaceLayerPropertyType" minOccurs="2" maxOccurs="2" />
-                 </xs:sequence>
-             </xs:extension>
-         </xs:complexContent>
-@@ -196,6 +189,13 @@
-         </xs:complexContent>
-     </xs:complexType>
-     <!-- ====================================================================== -->
-+        <xs:complexType name="SpaceLayerPropertyType">
-+        <xs:sequence minOccurs="0">
-+            <xs:element ref="SpaceLayer"/>
-+        </xs:sequence>
-+        <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
-+    </xs:complexType>
-+    <!-- ====================================================================== -->
-     <xs:complexType name="NodesType">
-         <xs:complexContent>
-             <xs:extension base="gml:AbstractFeatureType">
-@@ -362,7 +362,7 @@
-     </xs:complexType>
-     <!-- ====================================================================== -->
-     <xs:complexType name="CellSpaceBoundaryPropertyType">
--        <xs:sequence>
-+        <xs:sequence minOccurs="0">
-             <xs:element ref="CellSpaceBoundary"/>
-         </xs:sequence>
-         <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
-@@ -393,8 +393,7 @@
-     </xs:simpleType>
-     <!-- ====================================================================== -->
-     <xs:simpleType name="typeOfTopoExpressionCodeType">
--        <xs:union memberTypes="typeOfTopoExpressionCodeEnumerationType
--                         typeOfTopoExpressionCodeOtherType"/>
-+        <xs:union memberTypes="typeOfTopoExpressionCodeEnumerationType typeOfTopoExpressionCodeOtherType"/>
-     </xs:simpleType>
-     <!-- ====================================================================== -->
-     <xs:simpleType name="typeOfTopoExpressionCodeEnumerationType">
+ 
