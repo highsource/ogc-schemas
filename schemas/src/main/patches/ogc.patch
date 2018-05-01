@@ -1,6 +1,6 @@
 diff -urN ../resources-original/ogc/context/1.0.0/collection.xsd ogc/context/1.0.0/collection.xsd
 --- ../resources-original/ogc/context/1.0.0/collection.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/context/1.0.0/collection.xsd	2018-05-01 18:13:47.900227800 +0200
++++ ogc/context/1.0.0/collection.xsd	2018-05-01 18:19:15.285176000 +0200
 @@ -8,6 +8,7 @@
  -->
  <xs:schema targetNamespace="http://www.opengis.net/context" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:context="http://www.opengis.net/context" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0.0.2">
@@ -21,7 +21,7 @@ diff -urN ../resources-original/ogc/context/1.0.0/collection.xsd ogc/context/1.0
  </xs:schema>
 diff -urN ../resources-original/ogc/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd ogc/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd
 --- ../resources-original/ogc/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd	2018-03-22 04:09:25.000000000 +0100
-+++ ogc/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd	2018-05-01 18:13:47.921229400 +0200
++++ ogc/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd	2018-05-01 18:19:15.306176300 +0200
 @@ -15,7 +15,7 @@
  		<xs:documentation>ISO Wrapper to include service related type to GMD</xs:documentation>
  	</xs:annotation>
@@ -34,7 +34,7 @@ diff -urN ../resources-original/ogc/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd ogc
  </xs:schema>
 diff -urN ../resources-original/ogc/eop/1.0/eop.xsd ogc/eop/1.0/eop.xsd
 --- ../resources-original/ogc/eop/1.0/eop.xsd	2011-11-01 19:17:42.000000000 +0100
-+++ ogc/eop/1.0/eop.xsd	2018-05-01 18:13:47.943230200 +0200
++++ ogc/eop/1.0/eop.xsd	2018-05-01 18:19:15.329176800 +0200
 @@ -9,7 +9,7 @@
  		</xs:documentation>
  	</xs:annotation>
@@ -46,7 +46,7 @@ diff -urN ../resources-original/ogc/eop/1.0/eop.xsd ogc/eop/1.0/eop.xsd
  			<xs:documentation>eop root element for generic Earth Observation Product description</xs:documentation>
 diff -urN ../resources-original/ogc/filter/1.0.0/expr.xsd ogc/filter/1.0.0/expr.xsd
 --- ../resources-original/ogc/filter/1.0.0/expr.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/filter/1.0.0/expr.xsd	2018-05-01 18:13:47.966231900 +0200
++++ ogc/filter/1.0.0/expr.xsd	2018-05-01 18:19:15.351179200 +0200
 @@ -68,7 +68,11 @@
    </xsd:complexType>
    <xsd:complexType name="PropertyNameType">
@@ -62,7 +62,7 @@ diff -urN ../resources-original/ogc/filter/1.0.0/expr.xsd ogc/filter/1.0.0/expr.
  </xsd:schema>
 diff -urN ../resources-original/ogc/filter/1.0.0/filterCapabilities.xsd ogc/filter/1.0.0/filterCapabilities.xsd
 --- ../resources-original/ogc/filter/1.0.0/filterCapabilities.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/filter/1.0.0/filterCapabilities.xsd	2018-05-01 18:13:47.985232400 +0200
++++ ogc/filter/1.0.0/filterCapabilities.xsd	2018-05-01 18:19:15.371180200 +0200
 @@ -16,15 +16,19 @@
           <xsd:element name="Functions" type="ogc:FunctionsType"/>
        </xsd:choice>
@@ -184,7 +184,7 @@ diff -urN ../resources-original/ogc/filter/1.0.0/filterCapabilities.xsd ogc/filt
  </xsd:schema>
 diff -urN ../resources-original/ogc/filter/1.1.0/expr.xsd ogc/filter/1.1.0/expr.xsd
 --- ../resources-original/ogc/filter/1.1.0/expr.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/filter/1.1.0/expr.xsd	2018-05-01 18:13:48.005233800 +0200
++++ ogc/filter/1.1.0/expr.xsd	2018-05-01 18:19:15.390180300 +0200
 @@ -61,7 +61,11 @@
     </xsd:complexType>
     <xsd:complexType name="PropertyNameType">
@@ -200,7 +200,7 @@ diff -urN ../resources-original/ogc/filter/1.1.0/expr.xsd ogc/filter/1.1.0/expr.
  </xsd:schema>
 diff -urN ../resources-original/ogc/filter/1.1.0/filter.xsd ogc/filter/1.1.0/filter.xsd
 --- ../resources-original/ogc/filter/1.1.0/filter.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/filter/1.1.0/filter.xsd	2018-05-01 18:13:48.030234900 +0200
++++ ogc/filter/1.1.0/filter.xsd	2018-05-01 18:19:15.410181400 +0200
 @@ -198,9 +198,8 @@
        <xsd:complexContent>
           <xsd:extension base="ogc:SpatialOpsType">
@@ -215,7 +215,7 @@ diff -urN ../resources-original/ogc/filter/1.1.0/filter.xsd ogc/filter/1.1.0/fil
                 </xsd:choice>
 diff -urN ../resources-original/ogc/gml/2.1.2/feature.xsd ogc/gml/2.1.2/feature.xsd
 --- ../resources-original/ogc/gml/2.1.2/feature.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/gml/2.1.2/feature.xsd	2018-05-01 18:13:48.050236700 +0200
++++ ogc/gml/2.1.2/feature.xsd	2018-05-01 18:19:15.429181900 +0200
 @@ -24,6 +24,7 @@
    <element name="_Feature" type="gml:AbstractFeatureType" abstract="true"/>
    <element name="_FeatureCollection" type="gml:AbstractFeatureCollectionType" abstract="true" substitutionGroup="gml:_Feature"/>
@@ -226,7 +226,7 @@ diff -urN ../resources-original/ogc/gml/2.1.2/feature.xsd ogc/gml/2.1.2/feature.
    <element name="geometryProperty" type="gml:GeometryAssociationType"/>
 diff -urN ../resources-original/ogc/gml/3.1.1/base/feature.xsd ogc/gml/3.1.1/base/feature.xsd
 --- ../resources-original/ogc/gml/3.1.1/base/feature.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/gml/3.1.1/base/feature.xsd	2018-05-01 18:13:48.078236400 +0200
++++ ogc/gml/3.1.1/base/feature.xsd	2018-05-01 18:19:15.451184300 +0200
 @@ -71,6 +71,7 @@
  	<!-- ====================================================================== -->
  	<!-- ===== property for feature association ==== -->
@@ -245,7 +245,7 @@ diff -urN ../resources-original/ogc/gml/3.1.1/base/feature.xsd ogc/gml/3.1.1/bas
  		<annotation>
 diff -urN ../resources-original/ogc/gml/3.2.1/deprecatedTypes.xsd ogc/gml/3.2.1/deprecatedTypes.xsd
 --- ../resources-original/ogc/gml/3.2.1/deprecatedTypes.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/gml/3.2.1/deprecatedTypes.xsd	2018-05-01 18:13:48.112240400 +0200
++++ ogc/gml/3.2.1/deprecatedTypes.xsd	2018-05-01 18:19:15.474185600 +0200
 @@ -807,6 +807,7 @@
  			<appinfo>deprecated</appinfo>
  		</annotation>
@@ -264,7 +264,7 @@ diff -urN ../resources-original/ogc/gml/3.2.1/deprecatedTypes.xsd ogc/gml/3.2.1/
  			<appinfo>deprecated</appinfo>
 diff -urN ../resources-original/ogc/iso/19139/20070417/srv/1.0/serviceMetadata.xsd ogc/iso/19139/20070417/srv/1.0/serviceMetadata.xsd
 --- ../resources-original/ogc/iso/19139/20070417/srv/1.0/serviceMetadata.xsd	2018-03-22 04:09:25.000000000 +0100
-+++ ogc/iso/19139/20070417/srv/1.0/serviceMetadata.xsd	2018-05-01 18:13:48.135240900 +0200
++++ ogc/iso/19139/20070417/srv/1.0/serviceMetadata.xsd	2018-05-01 18:19:15.497186900 +0200
 @@ -20,8 +20,8 @@
  		<xs:documentation>2006-10-13 This file was generated from ISO TC/211 UML class diagrams. It is based on document 211n1977 (Text of ISO 19119:2005 Amd. 1, Geographic information - Services, Amendment 1), as sent to ISO for further processing. This includes the creation of 2 types (SV_CouplingType and SV_CoupledResource), the addition of 3 properties for SV_ServiceIdentification (extent, couplingType and coupledResource) and the removal of the type SV_ServiceProvider.</xs:documentation>
  	</xs:annotation>
@@ -278,7 +278,7 @@ diff -urN ../resources-original/ogc/iso/19139/20070417/srv/1.0/serviceMetadata.x
  	<!-- ########################################################################### -->
 diff -urN ../resources-original/ogc/iso/19139/20070417/srv/1.0/serviceModel.xsd ogc/iso/19139/20070417/srv/1.0/serviceModel.xsd
 --- ../resources-original/ogc/iso/19139/20070417/srv/1.0/serviceModel.xsd	2018-03-22 04:09:25.000000000 +0100
-+++ ogc/iso/19139/20070417/srv/1.0/serviceModel.xsd	2018-05-01 18:13:48.174243600 +0200
++++ ogc/iso/19139/20070417/srv/1.0/serviceModel.xsd	2018-05-01 18:19:15.518187600 +0200
 @@ -10,8 +10,8 @@
  		<xs:documentation>2006-10-13 This file was generated from ISO TC/211 UML class diagrams. It is based on document 211n1977 (Text of ISO 19119:2005 Amd. 1, Geographic information - Services, Amendment 1), as sent to ISO for further processing. See seriveMetadata.xsd</xs:documentation>
  	</xs:annotation>
@@ -292,7 +292,7 @@ diff -urN ../resources-original/ogc/iso/19139/20070417/srv/1.0/serviceModel.xsd 
  	<!-- ########################################################################### -->
 diff -urN ../resources-original/ogc/kml/2.3/ogckml23.xsd ogc/kml/2.3/ogckml23.xsd
 --- ../resources-original/ogc/kml/2.3/ogckml23.xsd	2015-10-22 16:14:09.000000000 +0200
-+++ ogc/kml/2.3/ogckml23.xsd	2018-05-01 18:13:48.211245000 +0200
++++ ogc/kml/2.3/ogckml23.xsd	2018-05-01 18:19:15.556189900 +0200
 @@ -23,9 +23,9 @@
    <import namespace="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"
      schemaLocation="http://docs.oasis-open.org/election/external/xAL.xsd"/>
@@ -577,7 +577,7 @@ diff -urN ../resources-original/ogc/kml/2.3/ogckml23.xsd ogc/kml/2.3/ogckml23.xs
    </complexType>
 diff -urN ../resources-original/ogc/ols/1.1.0/ADT.xsd ogc/ols/1.1.0/ADT.xsd
 --- ../resources-original/ogc/ols/1.1.0/ADT.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ols/1.1.0/ADT.xsd	2018-05-01 18:13:48.244247600 +0200
++++ ogc/ols/1.1.0/ADT.xsd	2018-05-01 18:19:15.583191500 +0200
 @@ -6,7 +6,8 @@
   To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
  -->
@@ -590,7 +590,7 @@ diff -urN ../resources-original/ogc/ols/1.1.0/ADT.xsd ogc/ols/1.1.0/ADT.xsd
  	<!--=============================================================================
 diff -urN ../resources-original/ogc/ols/1.1.0/DirectoryService.xsd ogc/ols/1.1.0/DirectoryService.xsd
 --- ../resources-original/ogc/ols/1.1.0/DirectoryService.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ols/1.1.0/DirectoryService.xsd	2018-05-01 18:13:48.267249300 +0200
++++ ogc/ols/1.1.0/DirectoryService.xsd	2018-05-01 18:19:15.605193500 +0200
 @@ -5,7 +5,8 @@
   Copyright (c) 2006,2010 Open Geospatial Consortium.
   To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
@@ -603,7 +603,7 @@ diff -urN ../resources-original/ogc/ols/1.1.0/DirectoryService.xsd ogc/ols/1.1.0
  	<element name="DirectoryRequest" type="xls:DirectoryRequestType" substitutionGroup="xls:_RequestParameters"/>
 diff -urN ../resources-original/ogc/ols/1.1.0/GatewayService.xsd ogc/ols/1.1.0/GatewayService.xsd
 --- ../resources-original/ogc/ols/1.1.0/GatewayService.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ols/1.1.0/GatewayService.xsd	2018-05-01 18:13:48.286248600 +0200
++++ ogc/ols/1.1.0/GatewayService.xsd	2018-05-01 18:19:15.624193700 +0200
 @@ -5,7 +5,8 @@
   Copyright (c) 2006,2010 Open Geospatial Consortium.
   To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
@@ -616,7 +616,7 @@ diff -urN ../resources-original/ogc/ols/1.1.0/GatewayService.xsd ogc/ols/1.1.0/G
  	<element name="_GatewayParameters" type="xls:AbstractGatewayParametersType" abstract="false">
 diff -urN ../resources-original/ogc/ols/1.1.0/LocationUtilityService.xsd ogc/ols/1.1.0/LocationUtilityService.xsd
 --- ../resources-original/ogc/ols/1.1.0/LocationUtilityService.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ols/1.1.0/LocationUtilityService.xsd	2018-05-01 18:13:48.308250600 +0200
++++ ogc/ols/1.1.0/LocationUtilityService.xsd	2018-05-01 18:19:15.643193800 +0200
 @@ -6,7 +6,8 @@
   To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
  -->
@@ -629,7 +629,7 @@ diff -urN ../resources-original/ogc/ols/1.1.0/LocationUtilityService.xsd ogc/ols
  	<element name="GeocodeRequest" type="xls:GeocodeRequestType" substitutionGroup="xls:_RequestParameters">
 diff -urN ../resources-original/ogc/ols/1.1.0/PresentationService.xsd ogc/ols/1.1.0/PresentationService.xsd
 --- ../resources-original/ogc/ols/1.1.0/PresentationService.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ols/1.1.0/PresentationService.xsd	2018-05-01 18:13:48.328252000 +0200
++++ ogc/ols/1.1.0/PresentationService.xsd	2018-05-01 18:19:15.661195000 +0200
 @@ -6,7 +6,8 @@
   To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
  -->
@@ -642,7 +642,7 @@ diff -urN ../resources-original/ogc/ols/1.1.0/PresentationService.xsd ogc/ols/1.
  	<element name="GetPortrayMapCapabilitiesRequest" type="xls:GetPortrayMapCapabilitiesRequestType" substitutionGroup="xls:_RequestParameters">
 diff -urN ../resources-original/ogc/ols/1.1.0/RouteService.xsd ogc/ols/1.1.0/RouteService.xsd
 --- ../resources-original/ogc/ols/1.1.0/RouteService.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ols/1.1.0/RouteService.xsd	2018-05-01 18:13:48.348253900 +0200
++++ ogc/ols/1.1.0/RouteService.xsd	2018-05-01 18:19:15.681196800 +0200
 @@ -7,7 +7,8 @@
   To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
  -->
@@ -655,7 +655,7 @@ diff -urN ../resources-original/ogc/ols/1.1.0/RouteService.xsd ogc/ols/1.1.0/Rou
  				Route Service Basic
 diff -urN ../resources-original/ogc/ols/1.1.0/geometry.xsd ogc/ols/1.1.0/geometry.xsd
 --- ../resources-original/ogc/ols/1.1.0/geometry.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ols/1.1.0/geometry.xsd	2018-05-01 18:13:48.368254500 +0200
++++ ogc/ols/1.1.0/geometry.xsd	2018-05-01 18:19:15.703198500 +0200
 @@ -6,7 +6,8 @@
   To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
  -->
@@ -668,7 +668,7 @@ diff -urN ../resources-original/ogc/ols/1.1.0/geometry.xsd ogc/ols/1.1.0/geometr
  	<!-- =============================== type ===================================== -->
 diff -urN ../resources-original/ogc/ols/1.2/ADT.xsd ogc/ols/1.2/ADT.xsd
 --- ../resources-original/ogc/ols/1.2/ADT.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ols/1.2/ADT.xsd	2018-05-01 18:13:48.389255600 +0200
++++ ogc/ols/1.2/ADT.xsd	2018-05-01 18:19:15.724199600 +0200
 @@ -10,7 +10,8 @@
  		To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
  	-->
@@ -681,7 +681,7 @@ diff -urN ../resources-original/ogc/ols/1.2/ADT.xsd ogc/ols/1.2/ADT.xsd
  	<!--=============================================================================
 diff -urN ../resources-original/ogc/ols/1.2/DirectoryService.xsd ogc/ols/1.2/DirectoryService.xsd
 --- ../resources-original/ogc/ols/1.2/DirectoryService.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ols/1.2/DirectoryService.xsd	2018-05-01 18:13:48.413257400 +0200
++++ ogc/ols/1.2/DirectoryService.xsd	2018-05-01 18:19:15.746200800 +0200
 @@ -9,7 +9,8 @@
  		To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
  	-->
@@ -694,7 +694,7 @@ diff -urN ../resources-original/ogc/ols/1.2/DirectoryService.xsd ogc/ols/1.2/Dir
  	<element name="DirectoryRequest" type="xls:DirectoryRequestType" substitutionGroup="xls:_RequestParameters"/>
 diff -urN ../resources-original/ogc/ols/1.2/GatewayService.xsd ogc/ols/1.2/GatewayService.xsd
 --- ../resources-original/ogc/ols/1.2/GatewayService.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ols/1.2/GatewayService.xsd	2018-05-01 18:13:48.433258800 +0200
++++ ogc/ols/1.2/GatewayService.xsd	2018-05-01 18:19:15.765201700 +0200
 @@ -9,7 +9,8 @@
  		To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
  	-->
@@ -707,7 +707,7 @@ diff -urN ../resources-original/ogc/ols/1.2/GatewayService.xsd ogc/ols/1.2/Gatew
  	<element name="_GatewayParameters" type="xls:AbstractGatewayParametersType" abstract="false">
 diff -urN ../resources-original/ogc/ols/1.2/LocationUtilityService.xsd ogc/ols/1.2/LocationUtilityService.xsd
 --- ../resources-original/ogc/ols/1.2/LocationUtilityService.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ols/1.2/LocationUtilityService.xsd	2018-05-01 18:13:48.453259800 +0200
++++ ogc/ols/1.2/LocationUtilityService.xsd	2018-05-01 18:19:15.821204400 +0200
 @@ -10,7 +10,8 @@
  		To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
  	-->
@@ -720,7 +720,7 @@ diff -urN ../resources-original/ogc/ols/1.2/LocationUtilityService.xsd ogc/ols/1
  	<element name="GeocodeRequest" type="xls:GeocodeRequestType" substitutionGroup="xls:_RequestParameters">
 diff -urN ../resources-original/ogc/ols/1.2/PresentationService.xsd ogc/ols/1.2/PresentationService.xsd
 --- ../resources-original/ogc/ols/1.2/PresentationService.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ols/1.2/PresentationService.xsd	2018-05-01 18:13:48.474261400 +0200
++++ ogc/ols/1.2/PresentationService.xsd	2018-05-01 18:19:15.842205500 +0200
 @@ -10,7 +10,8 @@
  		To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
  	-->
@@ -733,7 +733,7 @@ diff -urN ../resources-original/ogc/ols/1.2/PresentationService.xsd ogc/ols/1.2/
  	<element name="GetPortrayMapCapabilitiesRequest" type="xls:GetPortrayMapCapabilitiesRequestType" substitutionGroup="xls:_RequestParameters">
 diff -urN ../resources-original/ogc/ols/1.2/RouteService.xsd ogc/ols/1.2/RouteService.xsd
 --- ../resources-original/ogc/ols/1.2/RouteService.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ols/1.2/RouteService.xsd	2018-05-01 18:13:48.495261700 +0200
++++ ogc/ols/1.2/RouteService.xsd	2018-05-01 18:19:15.863206600 +0200
 @@ -10,7 +10,8 @@
  		To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
  	-->
@@ -746,7 +746,7 @@ diff -urN ../resources-original/ogc/ols/1.2/RouteService.xsd ogc/ols/1.2/RouteSe
  				Route Service Basic
 diff -urN ../resources-original/ogc/ols/1.2/geometry.xsd ogc/ols/1.2/geometry.xsd
 --- ../resources-original/ogc/ols/1.2/geometry.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ols/1.2/geometry.xsd	2018-05-01 18:13:48.515263500 +0200
++++ ogc/ols/1.2/geometry.xsd	2018-05-01 18:19:15.884209800 +0200
 @@ -11,7 +11,8 @@
  		To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
  	-->
@@ -759,7 +759,7 @@ diff -urN ../resources-original/ogc/ols/1.2/geometry.xsd ogc/ols/1.2/geometry.xs
  	<!-- =============================== type ===================================== --> 
 diff -urN ../resources-original/ogc/ols/1.3/nav-Positioning.xsd ogc/ols/1.3/nav-Positioning.xsd
 --- ../resources-original/ogc/ols/1.3/nav-Positioning.xsd	2014-07-31 20:46:15.000000000 +0200
-+++ ogc/ols/1.3/nav-Positioning.xsd	2018-05-01 18:13:48.536265000 +0200
++++ ogc/ols/1.3/nav-Positioning.xsd	2018-05-01 18:19:15.905208900 +0200
 @@ -8,7 +8,8 @@
  		</xsd:documentation>
  	</xsd:annotation>
@@ -772,7 +772,7 @@ diff -urN ../resources-original/ogc/ols/1.3/nav-Positioning.xsd ogc/ols/1.3/nav-
  	<xsd:include schemaLocation="nav-UOM.xsd"/>
 diff -urN ../resources-original/ogc/ols/1.3/nav-RouteService.xsd ogc/ols/1.3/nav-RouteService.xsd
 --- ../resources-original/ogc/ols/1.3/nav-RouteService.xsd	2014-07-31 20:46:15.000000000 +0200
-+++ ogc/ols/1.3/nav-RouteService.xsd	2018-05-01 18:13:48.555266400 +0200
++++ ogc/ols/1.3/nav-RouteService.xsd	2018-05-01 18:19:15.924211000 +0200
 @@ -8,7 +8,8 @@
  		</documentation>
  	</annotation>
@@ -785,7 +785,7 @@ diff -urN ../resources-original/ogc/ols/1.3/nav-RouteService.xsd ogc/ols/1.3/nav
  	<include schemaLocation="nav-Positioning.xsd"/>
 diff -urN ../resources-original/ogc/om/2.0/observation.xsd ogc/om/2.0/observation.xsd
 --- ../resources-original/ogc/om/2.0/observation.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/om/2.0/observation.xsd	2018-05-01 18:13:48.577266300 +0200
++++ ogc/om/2.0/observation.xsd	2018-05-01 18:19:15.946213000 +0200
 @@ -429,4 +429,14 @@
  	<!-- ====================================================================== -->
  	<!-- ====================================================================== -->
@@ -803,7 +803,7 @@ diff -urN ../resources-original/ogc/om/2.0/observation.xsd ogc/om/2.0/observatio
  </schema>
 diff -urN ../resources-original/ogc/ows/1.1.0/owsContents.xsd ogc/ows/1.1.0/owsContents.xsd
 --- ../resources-original/ogc/ows/1.1.0/owsContents.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ows/1.1.0/owsContents.xsd	2018-05-01 18:13:48.598267900 +0200
++++ ogc/ows/1.1.0/owsContents.xsd	2018-05-01 18:19:15.967213300 +0200
 @@ -84,4 +84,8 @@
  		</complexContent>
  	</complexType>
@@ -815,7 +815,7 @@ diff -urN ../resources-original/ogc/ows/1.1.0/owsContents.xsd ogc/ows/1.1.0/owsC
  </schema>
 diff -urN ../resources-original/ogc/ows/2.0/owsAdditionalParameters.xsd ogc/ows/2.0/owsAdditionalParameters.xsd
 --- ../resources-original/ogc/ows/2.0/owsAdditionalParameters.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/ows/2.0/owsAdditionalParameters.xsd	2018-05-01 18:13:48.617268800 +0200
++++ ogc/ows/2.0/owsAdditionalParameters.xsd	2018-05-01 18:19:15.986214200 +0200
 @@ -53,13 +53,13 @@
    <!-- ========================================================== -->
    <complexType name="AdditionalParametersType">
@@ -834,7 +834,7 @@ diff -urN ../resources-original/ogc/ows/2.0/owsAdditionalParameters.xsd ogc/ows/
    <!-- ========================================================== -->
 diff -urN ../resources-original/ogc/sweCommon/1.0.0/aggregateTypes.xsd ogc/sweCommon/1.0.0/aggregateTypes.xsd
 --- ../resources-original/ogc/sweCommon/1.0.0/aggregateTypes.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/sweCommon/1.0.0/aggregateTypes.xsd	2018-05-01 18:13:48.640270900 +0200
++++ ogc/sweCommon/1.0.0/aggregateTypes.xsd	2018-05-01 18:19:16.005216000 +0200
 @@ -139,7 +139,7 @@
  		<xs:annotation>
  			<xs:documentation>Use to point or include data values inline</xs:documentation>
@@ -846,7 +846,7 @@ diff -urN ../resources-original/ogc/sweCommon/1.0.0/aggregateTypes.xsd ogc/sweCo
  			</xs:extension>
 diff -urN ../resources-original/ogc/sweCommon/1.0.1/aggregateTypes.xsd ogc/sweCommon/1.0.1/aggregateTypes.xsd
 --- ../resources-original/ogc/sweCommon/1.0.1/aggregateTypes.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/sweCommon/1.0.1/aggregateTypes.xsd	2018-05-01 18:13:48.661271600 +0200
++++ ogc/sweCommon/1.0.1/aggregateTypes.xsd	2018-05-01 18:19:16.025216600 +0200
 @@ -138,7 +138,7 @@
  		<xs:annotation>
  			<xs:documentation>Use to point or include data values inline</xs:documentation>
@@ -858,7 +858,7 @@ diff -urN ../resources-original/ogc/sweCommon/1.0.1/aggregateTypes.xsd ogc/sweCo
  				<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
 diff -urN ../resources-original/ogc/sweCommon/2.0/basic_types.xsd ogc/sweCommon/2.0/basic_types.xsd
 --- ../resources-original/ogc/sweCommon/2.0/basic_types.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/sweCommon/2.0/basic_types.xsd	2018-05-01 18:13:48.676271800 +0200
++++ ogc/sweCommon/2.0/basic_types.xsd	2018-05-01 18:19:16.041218100 +0200
 @@ -78,7 +78,7 @@
  	</complexType>
  	<!-- ================================================= -->
@@ -870,7 +870,7 @@ diff -urN ../resources-original/ogc/sweCommon/2.0/basic_types.xsd ogc/sweCommon/
  			</extension>
 diff -urN ../resources-original/ogc/swes/2.0/swesContents.xsd ogc/swes/2.0/swesContents.xsd
 --- ../resources-original/ogc/swes/2.0/swesContents.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/swes/2.0/swesContents.xsd	2018-05-01 18:13:48.705274000 +0200
++++ ogc/swes/2.0/swesContents.xsd	2018-05-01 18:19:16.056219000 +0200
 @@ -16,6 +16,8 @@
        <documentation>contains metadata about a procedure / sensor hosted by the service</documentation>
      </annotation>
@@ -880,9 +880,25 @@ diff -urN ../resources-original/ogc/swes/2.0/swesContents.xsd ogc/swes/2.0/swesC
    <complexType name="AbstractOfferingType" abstract="true">
      <complexContent>
        <extension base="swes:AbstractSWESType">
+diff -urN ../resources-original/ogc/swes/2.0/swesInsertSensor.xsd ogc/swes/2.0/swesInsertSensor.xsd
+--- ../resources-original/ogc/swes/2.0/swesInsertSensor.xsd	2012-07-22 03:59:38.000000000 +0200
++++ ogc/swes/2.0/swesInsertSensor.xsd	2018-05-01 18:19:16.074219100 +0200
+@@ -79,6 +79,12 @@
+     </annotation>
+   </element>
+   <complexType name="InsertionMetadataType" abstract="true"/>
++  <element name="OtherInsertionMetadata" type="swes:OtherInsertionMetadataType" substitutionGroup="swes:InsertionMetadata"/>
++  <complexType name="OtherInsertionMetadataType">
++    <complexContent>
++      <extension base="swes:InsertionMetadataType"/>
++    </complexContent>
++  </complexType>
+   <complexType name="InsertionMetadataPropertyType">
+     <sequence minOccurs="0">
+       <element ref="swes:InsertionMetadata"/>
 diff -urN ../resources-original/ogc/tml/1.0.0/tml.xsd ogc/tml/1.0.0/tml.xsd
 --- ../resources-original/ogc/tml/1.0.0/tml.xsd	2009-08-14 22:02:25.000000000 +0200
-+++ ogc/tml/1.0.0/tml.xsd	2018-05-01 18:13:48.755276600 +0200
++++ ogc/tml/1.0.0/tml.xsd	2018-05-01 18:19:16.098221300 +0200
 @@ -1,7 +1,7 @@
  <?xml version="1.0" encoding="UTF-8"?>
  <!-- edited with XMLSpy v2006 U (http://www.altova.com) by Steve Havens (IRIS Corporation) -->
@@ -894,7 +910,7 @@ diff -urN ../resources-original/ogc/tml/1.0.0/tml.xsd ogc/tml/1.0.0/tml.xsd
  			<xs:documentation>Root Element.  Also contains attributes to indicate the overall security classification of this TML stream or file.  If needed individual data clusters can be labeled with a security class.</xs:documentation>
 diff -urN ../resources-original/ogc/wcs/1.0.0/wcsCapabilities.xsd ogc/wcs/1.0.0/wcsCapabilities.xsd
 --- ../resources-original/ogc/wcs/1.0.0/wcsCapabilities.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/wcs/1.0.0/wcsCapabilities.xsd	2018-05-01 18:13:48.786277400 +0200
++++ ogc/wcs/1.0.0/wcsCapabilities.xsd	2018-05-01 18:19:16.124220800 +0200
 @@ -444,9 +444,9 @@
          </xs:annotation>
          <xs:complexContent>
@@ -909,7 +925,7 @@ diff -urN ../resources-original/ogc/wcs/1.0.0/wcsCapabilities.xsd ogc/wcs/1.0.0/
      </xs:complexType>
 diff -urN ../resources-original/ogc/wcs/interpolation/1.0/wcsInt.xsd ogc/wcs/interpolation/1.0/wcsInt.xsd
 --- ../resources-original/ogc/wcs/interpolation/1.0/wcsInt.xsd	2014-11-18 21:32:21.000000000 +0100
-+++ ogc/wcs/interpolation/1.0/wcsInt.xsd	2018-05-01 18:13:48.813280300 +0200
++++ ogc/wcs/interpolation/1.0/wcsInt.xsd	2018-05-01 18:19:16.145223900 +0200
 @@ -1,6 +1,6 @@
  <?xml version="1.0" encoding="UTF-8"?>
 -<schema targetNamespace="http://www.opengis.net/WCS_service-extension_interpolation/1.0" 
@@ -921,7 +937,7 @@ diff -urN ../resources-original/ogc/wcs/interpolation/1.0/wcsInt.xsd ogc/wcs/int
      <annotation>
 diff -urN ../resources-original/ogc/wcs/processing/2.0/wcsProcessCoverages.xsd ogc/wcs/processing/2.0/wcsProcessCoverages.xsd
 --- ../resources-original/ogc/wcs/processing/2.0/wcsProcessCoverages.xsd	2014-11-26 16:41:48.000000000 +0100
-+++ ogc/wcs/processing/2.0/wcsProcessCoverages.xsd	2018-05-01 18:13:48.856283000 +0200
++++ ogc/wcs/processing/2.0/wcsProcessCoverages.xsd	2018-05-01 18:19:16.163224400 +0200
 @@ -1,6 +1,6 @@
  <?xml version="1.0" encoding="UTF-8"?>
 -<xs:schema targetNamespace="http://www.opengis.net/wcs_service-extension_processing/2.0"
@@ -933,7 +949,7 @@ diff -urN ../resources-original/ogc/wcs/processing/2.0/wcsProcessCoverages.xsd o
      xmlns:gml="http://www.opengis.net/gml/3.2.1"
 diff -urN ../resources-original/ogc/wcs/scaling/1.0/examples/scaleAxesByFactor.xml ogc/wcs/scaling/1.0/examples/scaleAxesByFactor.xml
 --- ../resources-original/ogc/wcs/scaling/1.0/examples/scaleAxesByFactor.xml	2014-11-19 21:22:57.000000000 +0100
-+++ ogc/wcs/scaling/1.0/examples/scaleAxesByFactor.xml	2018-05-01 18:13:48.885284000 +0200
++++ ogc/wcs/scaling/1.0/examples/scaleAxesByFactor.xml	2018-05-01 18:19:16.186226100 +0200
 @@ -1,5 +1,5 @@
  <?xml version="1.0" encoding="UTF-8"?>
 -<wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scal="http://www.opengis.net/WCS_service-extension_scaling/1.0" service="WCS" version="2.0.1" xsi:schemaLocation="http://www.opengis.net/WCS_service-extension_scaling/1.0 http://schemas.opengis.net/wcs/scaling/1.0/wcsScal.xsd">
@@ -943,7 +959,7 @@ diff -urN ../resources-original/ogc/wcs/scaling/1.0/examples/scaleAxesByFactor.x
  			<scal:ScaleAxesByFactor>
 diff -urN ../resources-original/ogc/wcs/scaling/1.0/examples/scaleByFactor.xml ogc/wcs/scaling/1.0/examples/scaleByFactor.xml
 --- ../resources-original/ogc/wcs/scaling/1.0/examples/scaleByFactor.xml	2014-11-19 21:22:57.000000000 +0100
-+++ ogc/wcs/scaling/1.0/examples/scaleByFactor.xml	2018-05-01 18:13:48.912286100 +0200
++++ ogc/wcs/scaling/1.0/examples/scaleByFactor.xml	2018-05-01 18:19:16.202227100 +0200
 @@ -1,5 +1,5 @@
  <?xml version="1.0" encoding="UTF-8"?>
 -<wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scal="http://www.opengis.net/WCS_service-extension_scaling/1.0" service="WCS" version="2.0.1" xsi:schemaLocation="http://www.opengis.net/WCS_service-extension_scaling/1.0 http://schemas.opengis.net/wcs/scaling/1.0/wcsScal.xsd">
@@ -953,7 +969,7 @@ diff -urN ../resources-original/ogc/wcs/scaling/1.0/examples/scaleByFactor.xml o
  			<scal:ScaleByFactor>
 diff -urN ../resources-original/ogc/wcs/scaling/1.0/examples/scaleToExtent.xml ogc/wcs/scaling/1.0/examples/scaleToExtent.xml
 --- ../resources-original/ogc/wcs/scaling/1.0/examples/scaleToExtent.xml	2014-11-19 21:22:57.000000000 +0100
-+++ ogc/wcs/scaling/1.0/examples/scaleToExtent.xml	2018-05-01 18:13:48.946288400 +0200
++++ ogc/wcs/scaling/1.0/examples/scaleToExtent.xml	2018-05-01 18:19:16.218228200 +0200
 @@ -1,5 +1,5 @@
  <?xml version="1.0" encoding="UTF-8"?>
 -<wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scal="http://www.opengis.net/WCS_service-extension_scaling/1.0" service="WCS" version="2.0.1" xsi:schemaLocation="http://www.opengis.net/WCS_service-extension_scaling/1.0 http://schemas.opengis.net/wcs/scaling/1.0/wcsScal.xsd">
@@ -963,7 +979,7 @@ diff -urN ../resources-original/ogc/wcs/scaling/1.0/examples/scaleToExtent.xml o
  			<scal:ScaleToExtent>
 diff -urN ../resources-original/ogc/wcs/scaling/1.0/examples/scaleToSize.xml ogc/wcs/scaling/1.0/examples/scaleToSize.xml
 --- ../resources-original/ogc/wcs/scaling/1.0/examples/scaleToSize.xml	2014-11-19 21:22:57.000000000 +0100
-+++ ogc/wcs/scaling/1.0/examples/scaleToSize.xml	2018-05-01 18:13:48.977290000 +0200
++++ ogc/wcs/scaling/1.0/examples/scaleToSize.xml	2018-05-01 18:19:16.234228900 +0200
 @@ -1,5 +1,5 @@
  <?xml version="1.0" encoding="UTF-8"?>
 -<wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scal="http://www.opengis.net/WCS_service-extension_scaling/1.0" service="WCS" version="2.0.1" xsi:schemaLocation="http://www.opengis.net/WCS_service-extension_scaling/1.0 http://schemas.opengis.net/wcs/scaling/1.0/wcsScal.xsd">
@@ -973,7 +989,7 @@ diff -urN ../resources-original/ogc/wcs/scaling/1.0/examples/scaleToSize.xml ogc
  			<scal:ScaleToSize>
 diff -urN ../resources-original/ogc/wcs/scaling/1.0/wcsScal.xsd ogc/wcs/scaling/1.0/wcsScal.xsd
 --- ../resources-original/ogc/wcs/scaling/1.0/wcsScal.xsd	2014-11-18 17:14:18.000000000 +0100
-+++ ogc/wcs/scaling/1.0/wcsScal.xsd	2018-05-01 18:13:48.999290800 +0200
++++ ogc/wcs/scaling/1.0/wcsScal.xsd	2018-05-01 18:19:16.250228300 +0200
 @@ -1,5 +1,5 @@
  <?xml version="1.0" encoding="UTF-8"?>
 -<schema xmlns:scal="http://www.opengis.net/WCS_service-extension_scaling/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.opengis.net/wcs/2.0" targetNamespace="http://www.opengis.net/WCS_service-extension_scaling/1.0" elementFormDefault="qualified" version="1.0.0" xml:lang="en">
@@ -983,7 +999,7 @@ diff -urN ../resources-original/ogc/wcs/scaling/1.0/wcsScal.xsd ogc/wcs/scaling/
  		<documentation>This XML Schema Document is part of the WCS Scaling Extension [OGC 12-039]. It encodes the elements and types that allow expressing Scaling in WCS client/server communication.
 diff -urN ../resources-original/ogc/wfs/1.0.0/WFS-capabilities.xsd ogc/wfs/1.0.0/WFS-capabilities.xsd
 --- ../resources-original/ogc/wfs/1.0.0/WFS-capabilities.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/wfs/1.0.0/WFS-capabilities.xsd	2018-05-01 18:13:49.032293000 +0200
++++ ogc/wfs/1.0.0/WFS-capabilities.xsd	2018-05-01 18:19:16.270231700 +0200
 @@ -54,12 +54,13 @@
     <!-- A human-readable title to briefly identify
          this server in menus. -->
@@ -1086,7 +1102,7 @@ diff -urN ../resources-original/ogc/wfs/1.0.0/WFS-capabilities.xsd ogc/wfs/1.0.0
  </xsd:schema>
 diff -urN ../resources-original/ogc/wms/1.3.0/capabilities_1_3_0.xsd ogc/wms/1.3.0/capabilities_1_3_0.xsd
 --- ../resources-original/ogc/wms/1.3.0/capabilities_1_3_0.xsd	2012-07-22 03:59:38.000000000 +0200
-+++ ogc/wms/1.3.0/capabilities_1_3_0.xsd	2018-05-01 18:13:49.069296400 +0200
++++ ogc/wms/1.3.0/capabilities_1_3_0.xsd	2018-05-01 18:19:16.291231200 +0200
 @@ -615,4 +615,7 @@
  			<maxInclusive value="90"/>
  		</restriction>
