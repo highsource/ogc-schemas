@@ -79,7 +79,6 @@
     </annotation>
   </element>
   <complexType name="InsertionMetadataType" abstract="true"/>
-  <complexType name="InsertionMetadataType" abstract="true"/>
   <element name="OtherInsertionMetadata" type="swes:OtherInsertionMetadataType" substitutionGroup="swes:InsertionMetadata"/>
   <complexType name="OtherInsertionMetadataType">
     <complexContent>
