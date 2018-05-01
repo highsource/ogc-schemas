@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2016 (x64) (http://www.altova.com) by Eric Boisvert (Natural Resources Canada) -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlexr="http://www.opengis.net/gml/3.3/exr" xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:gsmlla="http://www.opengis.net/gsml/4.1/LaboratoryAnalysis-Specimen" xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/1.0" xmlns:om="http://www.opengis.net/om/2.0" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" targetNamespace="http://www.opengis.net/gsml/4.1/LaboratoryAnalysis-Specimen" elementFormDefault="qualified" version="4.1.0">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlexr="http://www.opengis.net/gml/3.3/exr" xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:gsmlla="http://www.opengis.net/gsml/4.1/LaboratoryAnalysis-Specimen" xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/1.0" xmlns:om="http://www.opengis.net/om/2.0" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" targetNamespace="http://www.opengis.net/gsml/4.1/LaboratoryAnalysis-Specimen" elementFormDefault="qualified" version="4.1.1">
 	<annotation>
 		<documentation>The LaboratoryAnalysis-Specimen application model extends the ISO19156 model for Observations, Measurements and Sampling.  It specifically describes processes and results related to the analysis of (geological) samples using instruments, commonly in a laboratory environment. The design of this package is also informed by the MOLES v3 data model.
 
@@ -20,7 +20,7 @@
 	<import namespace="http://www.opengis.net/samplingSpecimen/2.0" schemaLocation="http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd"/>
 	<import namespace="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" schemaLocation="geoSciMLBasic.xsd"/>
 	<!--XML Schema document created by ShapeChange - http://shapechange.net/-->
-	<element name="AnalyticalInstrument" type="gsmlla:AnalyticalInstrumentType" substitutionGroup="gml:AbstractFeature">
+  <element name="AnalyticalInstrument" substitutionGroup="gml:AbstractFeature" type="gsmlla:AnalyticalInstrumentType">
 		<annotation>
 			<documentation>The analytical instrument is the category of instrument used to perform an analytical measurement or observation.</documentation>
 		</annotation>
@@ -29,7 +29,7 @@
 		<complexContent>
 			<extension base="gml:AbstractFeatureType">
 				<sequence>
-					<element name="type" type="gml:ReferenceType" minOccurs="0">
+          <element minOccurs="0" name="type" nillable="true" type="gml:ReferenceType">
 						<annotation>
 							<documentation>The property type:InstrumentTypeTerm reports a term from a controlled vocabulary that describes the category of instrument used in an analytical session (e.g., XRF, ICPMS, SHRIMP, etc.).</documentation>
 							<appinfo>
@@ -38,27 +38,41 @@
 							</appinfo>
 						</annotation>
 					</element>
-					<element name="model" type="string" minOccurs="0">
+          <element minOccurs="0" name="model" nillable="true">
 						<annotation>
 							<documentation>The property mode:Primitive::CharacterString contains a string identifying the model of instrument used. (e.g., instrument type = XRD, model = Siemens Diffraktometer D500).</documentation>
 						</annotation>
+            <complexType>
+              <simpleContent>
+                <extension base="string">
+                  <attribute name="nilReason" type="gml:NilReasonType"/>
+                </extension>
+              </simpleContent>
+            </complexType>
 					</element>
-					<element name="serialNumber" type="string" minOccurs="0">
+          <element minOccurs="0" name="serialNumber" nillable="true">
 						<annotation>
 							<documentation>The property serialNumber:Primitive::CharacterString contains a string that contains the serial number of the machine used in an analytical session.</documentation>
 						</annotation>
+            <complexType>
+              <simpleContent>
+                <extension base="string">
+                  <attribute name="nilReason" type="gml:NilReasonType"/>
+                </extension>
+              </simpleContent>
+            </complexType>
 					</element>
-					<element name="commissionDate" type="gml:TimeInstantPropertyType" minOccurs="0">
+          <element minOccurs="0" name="commissionDate" nillable="true" type="gml:TimeInstantPropertyType">
 						<annotation>
 							<documentation>The property commissionDate is an association between an AnalyticalInstrument and a TM_Instant corresponding to the date of the commissioning of an instrument.</documentation>
 						</annotation>
 					</element>
-					<element name="location" type="cit:CI_Responsibility_PropertyType" minOccurs="0">
+          <element minOccurs="0" name="location" nillable="true" type="cit:CI_Responsibility_PropertyType">
 						<annotation>
 							<documentation>The property location is an association between an AnalyticalInstrument and a CIT:Responsibility describing the owner and the location of an instrument.</documentation>
 						</annotation>
 					</element>
-					<element name="usedIn" type="gsmlla:AnalyticalSessionPropertyType" minOccurs="0" maxOccurs="unbounded">
+          <element maxOccurs="unbounded" minOccurs="0" name="usedIn" nillable="true" type="gsmlla:AnalyticalSessionPropertyType">
 						<annotation>
 							<documentation>The property usedIn is an association between an AnalyticalInstrument and an AnalyticalSession identifying an analytical sessions which used this instrument.</documentation>
 							<appinfo>
@@ -77,7 +91,7 @@
 		<attributeGroup ref="gml:AssociationAttributeGroup"/>
 		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</complexType>
-	<element name="AnalyticalMethod" type="gsmlla:AnalyticalMethodType" substitutionGroup="gml:AbstractGML">
+  <element name="AnalyticalMethod" substitutionGroup="gml:AbstractGML" type="gsmlla:AnalyticalMethodType">
 		<annotation>
 			<documentation>The AnalyticalMethod provides the name, and published citation, of the analytical method used in an analytical session.</documentation>
 		</annotation>
@@ -86,7 +100,7 @@
 		<complexContent>
 			<extension base="gml:AbstractGMLType">
 				<sequence>
-					<element name="methodName" type="gml:ReferenceType" minOccurs="0">
+          <element minOccurs="0" name="methodName" nillable="true" type="gml:ReferenceType">
 						<annotation>
 							<documentation>The property methodName:AnalyticalMethodTerm contains a term from a controlled vocabulary that describes an analytical method used in a session (e.g., XRF mass spectrometry, ICPMS, SHRIMP geochronology).</documentation>
 							<appinfo>
@@ -95,7 +109,7 @@
 							</appinfo>
 						</annotation>
 					</element>
-					<element name="citation" type="cit:CI_Citation_PropertyType" minOccurs="0">
+          <element minOccurs="0" name="citation" nillable="true" type="cit:CI_Citation_PropertyType">
 						<annotation>
 							<documentation>The citation property is an association between an AnalyticalMethod and a CIT:CI_Citation describing a published description of a particular analytical method (e.g., a standard operating procedure document).</documentation>
 						</annotation>
@@ -111,7 +125,7 @@
 		<attributeGroup ref="gml:AssociationAttributeGroup"/>
 		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</complexType>
-	<element name="AnalyticalProcess" type="gsmlla:AnalyticalProcessType" substitutionGroup="gml:AbstractFeature">
+  <element name="AnalyticalProcess" substitutionGroup="gml:AbstractFeature" type="gsmlla:AnalyticalProcessType">
 		<annotation>
 			<documentation>An analytical process is a concrete implementation of OM::OM_Process and describes the steps and methods used in an analytical session.  It links to an analytical session (data acquisition) or a computational process which produce analytical results.</documentation>
 		</annotation>
@@ -120,12 +134,12 @@
 		<complexContent>
 			<extension base="gml:AbstractFeatureType">
 				<sequence>
-					<element name="method" type="gsmlla:AnalyticalMethodPropertyType" minOccurs="0">
+          <element minOccurs="0" name="method" nillable="true" type="gsmlla:AnalyticalMethodPropertyType">
 						<annotation>
 							<documentation>The property method is an association that links an AnalyticalProcess to an AnalyticalMethod that describes the type of analytical method used to make an observation.</documentation>
 						</annotation>
 					</element>
-					<element name="acquisition" minOccurs="0">
+          <element minOccurs="0" name="acquisition" nillable="true">
 						<annotation>
 							<documentation>The property acquisition is an association that links an AnalyticalProcess to an AnalyticalSession that describes the analytical session (e.g., laboratory session) in which an observation was made and data acquired.</documentation>
 						</annotation>
@@ -140,7 +154,7 @@
 							</complexContent>
 						</complexType>
 					</element>
-					<element name="computation" type="gml:ReferenceType" minOccurs="0">
+					<element name="computation" type="gml:ReferenceType" minOccurs="0" nillable="true">
 						<annotation>
 							<documentation>The computation property is an association between an AnalyticalProcess and a CIT:ProcessStep that describes the computational process associated with the process.</documentation>
 							<appinfo>
@@ -159,7 +173,7 @@
 		<attributeGroup ref="gml:AssociationAttributeGroup"/>
 		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</complexType>
-	<element name="AnalyticalSession" type="gsmlla:AnalyticalSessionType" substitutionGroup="gml:AbstractFeature">
+  <element name="AnalyticalSession" substitutionGroup="gml:AbstractFeature" type="gsmlla:AnalyticalSessionType">
 		<annotation>
 			<documentation>This feature type describes the time and operator of a particular laboratory analytical session. AnalyticalSession also has associated links to the type of instrument and analytical method used, processing steps applied to data collected during a session, and instrument parameters unique to that session.</documentation>
 		</annotation>
@@ -168,17 +182,17 @@
 		<complexContent>
 			<extension base="gml:AbstractFeatureType">
 				<sequence>
-					<element name="time" type="gml:TimePeriodPropertyType" minOccurs="0">
+          <element minOccurs="0" name="time" nillable="true" type="gml:TimePeriodPropertyType">
 						<annotation>
 							<documentation>The property time is an association between an AnalyticalSession and a TM_Period describing the time period during which the analysis was performed.</documentation>
 						</annotation>
 					</element>
-					<element name="operator" type="cit:CI_Responsibility_PropertyType" minOccurs="0">
+          <element minOccurs="0" name="operator" nillable="true" type="cit:CI_Responsibility_PropertyType">
 						<annotation>
 							<documentation>The property operator is an association between an AnalyticalSession and a CIT:CI_Responsability describing the operator or organisation responsible for the analytical session.</documentation>
 						</annotation>
 					</element>
-					<element name="parameter" minOccurs="0" maxOccurs="unbounded">
+          <element maxOccurs="unbounded" minOccurs="0" name="parameter" nillable="true">
 						<annotation>
 							<documentation>The property parameter (OM::NamedValue) contains a name/value pair to describe arbitrary environmental or instrument setting parameters that apply to an entire analytical session (e.g., voltage, current, temperature, vacuum). The "name" attribute of NamedValue is a term from a controlled vocabulary.</documentation>
 						</annotation>
@@ -186,9 +200,10 @@
 							<sequence>
 								<element ref="om:NamedValue"/>
 							</sequence>
+              <attribute name="nilReason" type="gml:NilReasonType"/>
 						</complexType>
 					</element>
-					<element name="instrument" type="gsmlla:AnalyticalInstrumentPropertyType" minOccurs="0">
+          <element minOccurs="0" name="instrument" nillable="true" type="gsmlla:AnalyticalInstrumentPropertyType">
 						<annotation>
 							<documentation>The property instrument is an association between an AnalyticalSession and an AnalyticalInstrument that describes the instrument used in the analytical session.</documentation>
 							<appinfo>
@@ -196,7 +211,7 @@
 							</appinfo>
 						</annotation>
 					</element>
-					<element name="referenceAnalyses" type="gsmlla:ReferenceSpecimenPropertyType" minOccurs="0" maxOccurs="unbounded">
+          <element maxOccurs="unbounded" minOccurs="0" name="referenceAnalyses" nillable="true" type="gsmlla:ReferenceSpecimenPropertyType">
 						<annotation>
 							<documentation>The property referenceAnalysis is an association between an AnalyticalSession and a ReferenceSpecimen that describes a reference specimen (i.e., standards, blanks) used in the analytical session.</documentation>
 							<appinfo>
@@ -215,7 +230,7 @@
 		<attributeGroup ref="gml:AssociationAttributeGroup"/>
 		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</complexType>
-	<element name="GeochronologicInterpretation" type="gsmlla:GeochronologicInterpretationType" substitutionGroup="gml:AbstractFeature">
+  <element name="GeochronologicInterpretation" substitutionGroup="gml:AbstractFeature" type="gsmlla:GeochronologicInterpretationType">
 		<annotation>
 			<documentation>A GeochronologicInterpretation is an interpretation made by a geologist of the age of a specimen made by statistical analysis of a collection of observations.  A geologic specimen may have multiple geochronological interpretations made on it, each related to a different observation/result collection.</documentation>
 		</annotation>
@@ -224,7 +239,7 @@
 		<complexContent>
 			<extension base="gml:AbstractFeatureType">
 				<sequence>
-					<element name="interpretedAge" minOccurs="0">
+          <element minOccurs="0" name="interpretedAge">
 						<annotation>
 							<documentation>The interpretedAge property is an association between a GeochronologicInterpretation and a GeologicEvent that describes the dated event, process and environment.</documentation>
 						</annotation>
@@ -239,7 +254,7 @@
 							</complexContent>
 						</complexType>
 					</element>
-					<element name="isotopicEvent" type="gml:ReferenceType" minOccurs="0" maxOccurs="unbounded">
+          <element maxOccurs="unbounded" minOccurs="0" name="isotopicEvent" nillable="true" type="gml:ReferenceType">
 						<annotation>
 							<documentation>The isotopicEvent:IsotopicEventType contains a term from a controlled vocabulary that describes any isotopic events that are relevant to the interpretation. e.g., closure, isotopic mixing, Pb loss, etc.</documentation>
 							<appinfo>
@@ -248,7 +263,7 @@
 							</appinfo>
 						</annotation>
 					</element>
-					<element name="isotopicSystem" type="gml:ReferenceType" minOccurs="0">
+          <element minOccurs="0" name="isotopicSystem" nillable="true" type="gml:ReferenceType">
 						<annotation>
 							<documentation>The property isotopicSystem:IsotopicSystemName contains a term from a controlled vocabulary that describes the isotopic system used to calculate geochronological age. A vocabulary would contain values such as: Ar-Ar, K-Ar, Nd-Sm, Pb-Pb, Rb-Sr, Re-Os, U-Pb, etc.</documentation>
 							<appinfo>
@@ -257,7 +272,7 @@
 							</appinfo>
 						</annotation>
 					</element>
-					<element name="statisticalMethod" type="gml:ReferenceType" minOccurs="0">
+          <element minOccurs="0" name="statisticalMethod" nillable="true" type="gml:ReferenceType">
 						<annotation>
 							<documentation>The property statisticalMethod:StatisticalMethodTerm contains a term from a controlled vocabulary that describes the statistical method used to interpret the results.  (e.g., weighted mean, median, concordia, discordia, etc)</documentation>
 							<appinfo>
@@ -266,22 +281,29 @@
 							</appinfo>
 						</annotation>
 					</element>
-					<element name="interpretedBy" type="cit:CI_Responsibility_PropertyType" minOccurs="0">
+          <element minOccurs="0" name="interpretedBy" nillable="true" type="cit:CI_Responsibility_PropertyType">
 						<annotation>
 							<documentation>The property interpretedBy is an association between a GeochronologicInterpretation and a CIT:CI_Responsability describing the party responsible for this interpretation.</documentation>
 						</annotation>
 					</element>
-					<element name="citation" type="cit:CI_Citation_PropertyType" minOccurs="0">
+          <element minOccurs="0" name="citation" nillable="true" type="cit:CI_Citation_PropertyType">
 						<annotation>
 							<documentation>The citation property is an association between a GeochronologicInterpretation and a CIT:CI_Citation that describes authors and other reference information for an interpreted age.</documentation>
 						</annotation>
 					</element>
-					<element name="preferredInterpretation" type="boolean" minOccurs="0">
+          <element minOccurs="0" name="preferredInterpretation" nillable="true">
 						<annotation>
 							<documentation>The property preferredInterpretation:Primitive::Boolean indicates whether this interpretation is the preferred interpretation (i.e., the analytical data may be reinterpreted).</documentation>
 						</annotation>
+            <complexType>
+              <simpleContent>
+                <extension base="boolean">
+                  <attribute name="nilReason" type="gml:NilReasonType"/>
+                </extension>
+              </simpleContent>
+            </complexType>
 					</element>
-					<element name="sourceCollection" type="sam:SF_SamplingFeatureCollectionPropertyType" minOccurs="0">
+          <element minOccurs="0" name="sourceCollection" nillable="true" type="sam:SF_SamplingFeatureCollectionPropertyType">
 						<annotation>
 							<documentation>The property sourceCollection is an association between a GeochronologicInterpretation and an OM::SF_SamplingFeatureCollection that lists a collection of OM::SF_SamplingFeature (e.g., a collection of burn spots or craters from a SHRIMP analytical session).  When legacy published data for which the SamplingFeatureCollection is unknown, it may be delivered with SamplingFeatureCollection = 'unknown'.</documentation>
 						</annotation>
@@ -297,7 +319,7 @@
 		<attributeGroup ref="gml:AssociationAttributeGroup"/>
 		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</complexType>
-	<element name="GeologicSamplingMethod" type="gsmlla:GeologicSamplingMethodType" substitutionGroup="gml:AbstractFeature">
+  <element name="GeologicSamplingMethod" substitutionGroup="gml:AbstractFeature" type="gsmlla:GeologicSamplingMethodType">
 		<annotation>
 			<documentation>GeologicSamplingMethod is an implementation of OM::SF_Process to describe the method used to obtain a geologic specimen.
 Examples include: 
@@ -316,7 +338,7 @@ Examples include:
 		<complexContent>
 			<extension base="gml:AbstractFeatureType">
 				<sequence>
-					<element name="method" type="gml:ReferenceType" minOccurs="0">
+          <element minOccurs="0" name="method" type="gml:ReferenceType">
 						<annotation>
 							<documentation>The property method:GeologicSamplingMethodTerm is a term from a controlled vocabulary that describes the process used to obtain or create a geologic specimen. e.g., diamond drilling, percussion drilling, piston core drilling, vibro core drilling, channel sampling, sea floor dredging, crushing, mineral separation, melting, outcrop sampling.</documentation>
 							<appinfo>
@@ -325,7 +347,7 @@ Examples include:
 							</appinfo>
 						</annotation>
 					</element>
-					<element name="parameter" minOccurs="0" maxOccurs="unbounded">
+          <element maxOccurs="unbounded" minOccurs="0" name="parameter" nillable="true">
 						<annotation>
 							<documentation>The property parameter (OM::NamedValue) contains a name/value pair to describe arbitrary parameters used in the sampling process.  The "name" attribute of NamedValue shall be a term from a controlled vocabulary.</documentation>
 						</annotation>
@@ -333,6 +355,7 @@ Examples include:
 							<sequence>
 								<element ref="om:NamedValue"/>
 							</sequence>
+              <attribute name="nilReason" type="gml:NilReasonType"/>
 						</complexType>
 					</element>
 				</sequence>
@@ -346,7 +369,7 @@ Examples include:
 		<attributeGroup ref="gml:AssociationAttributeGroup"/>
 		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</complexType>
-	<element name="GeologicSpecimenPreparation" type="gsmlla:GeologicSpecimenPreparationType" substitutionGroup="spec:PreparationStep">
+  <element name="GeologicSpecimenPreparation" substitutionGroup="spec:PreparationStep" type="gsmlla:GeologicSpecimenPreparationType">
 		<annotation>
 			<documentation>GeologicSpecimenPreparation is an extension of ISO Specimen::preparationStep to allow details of preparation steps to be delivered (e.g., filtration and mesh size, chemical additives, crushing methods, drying parameters, etc.).</documentation>
 		</annotation>
@@ -355,7 +378,7 @@ Examples include:
 		<complexContent>
 			<extension base="spec:PreparationStepType">
 				<sequence>
-					<element name="preparationMethod" type="gml:ReferenceType" minOccurs="0">
+          <element minOccurs="0" name="preparationMethod" type="gml:ReferenceType">
 						<annotation>
 							<documentation>The preparationMethod:GeologicSpecimenPreparationTerm contains a term from a controlled vocabulary that describes the method employed for the preparation of a geologic specimen for further analysis.</documentation>
 							<appinfo>
@@ -364,7 +387,7 @@ Examples include:
 							</appinfo>
 						</annotation>
 					</element>
-					<element name="parameter" minOccurs="0" maxOccurs="unbounded">
+          <element maxOccurs="unbounded" minOccurs="0" name="parameter" nillable="true">
 						<annotation>
 							<documentation>The property parameter (OM::NamedValue) contains name/value pair to describe arbitrary parameters used in this preparation step (e.g., mesh size in a sieving process, type of chemical additives, parameters in a mineral separation process). The "name" attribute of NamedValue shall be a term from a controlled vocabulary.</documentation>
 						</annotation>
@@ -372,6 +395,7 @@ Examples include:
 							<sequence>
 								<element ref="om:NamedValue"/>
 							</sequence>
+              <attribute name="nilReason" type="gml:NilReasonType"/>
 						</complexType>
 					</element>
 				</sequence>
@@ -385,7 +409,7 @@ Examples include:
 		<attributeGroup ref="gml:AssociationAttributeGroup"/>
 		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</complexType>
-	<element name="Image" type="gsmlla:ImageType" substitutionGroup="sam:SF_SamplingFeature">
+  <element name="Image" substitutionGroup="sam:SF_SamplingFeature" type="gsmlla:ImageType">
 		<annotation>
 			<documentation>The Image feature type is used to describe images of sampling features, for example, photographs of ion microprobe grain mounts.</documentation>
 		</annotation>
@@ -404,7 +428,7 @@ Examples include:
 		<attributeGroup ref="gml:AssociationAttributeGroup"/>
 		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
 	</complexType>
-	<element name="ReferenceSpecimen" type="gsmlla:ReferenceSpecimenType" substitutionGroup="spec:SF_Specimen">
+  <element name="ReferenceSpecimen" substitutionGroup="spec:SF_Specimen" type="gsmlla:ReferenceSpecimenType">
 		<annotation>
 			<documentation>A reference specimen is a specimen with known or accepted values of some property.  The citation property describes the location of a published description of these values. Reference specimens include analytical blanks. ReferenceSpecimens are used in quality control procedures to assess method reproducibility. 
 
@@ -415,12 +439,12 @@ Analytical results from a reference specimen analysed during an AnalyticalSessio
 		<complexContent>
 			<extension base="spec:SF_SpecimenType">
 				<sequence>
-					<element name="referenceDescription" type="cit:CI_Citation_PropertyType" minOccurs="0">
+          <element minOccurs="0" name="referenceDescription" nillable="true" type="cit:CI_Citation_PropertyType">
 						<annotation>
 							<documentation>The property referenceDescription is an association between a ReferenceSpecimen and a CIT:CI_Citation that references a citation of published analytical results for this standard reference specimen.</documentation>
 						</annotation>
 					</element>
-					<element name="usedIn" type="gsmlla:AnalyticalSessionPropertyType" minOccurs="0" maxOccurs="unbounded">
+          <element maxOccurs="unbounded" minOccurs="0" name="usedIn" nillable="true" type="gsmlla:AnalyticalSessionPropertyType">
 						<annotation>
 							<documentation>The property usedIn is an association between a ReferenceSpecimen and an AnalyticalSession in which the reference specimen was used.</documentation>
 							<appinfo>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gsml="http://www.opengis.net/gsml/4.1/GeoSciML" xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:gsmle="http://www.opengis.net/gsml/4.1/GeoSciML-Extension" xmlns:gsmlbh="http://www.opengis.net/gsml/4.1/Borehole" xmlns:gsmlgt="http://www.opengis.net/gsml/4.1/GeologicTime" xmlns:gsmlla="http://www.opengis.net/gsml/4.1/LaboratoryAnalysis-Specimen" targetNamespace="http://www.opengis.net/gsml/4.1/GeoSciML" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.1.0">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gsml="http://www.opengis.net/gsml/4.1/GeoSciML" xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:gsmle="http://www.opengis.net/gsml/4.1/GeoSciML-Extension" xmlns:gsmlbh="http://www.opengis.net/gsml/4.1/Borehole" xmlns:gsmlgt="http://www.opengis.net/gsml/4.1/GeologicTime" xmlns:gsmlla="http://www.opengis.net/gsml/4.1/LaboratoryAnalysis-Specimen" targetNamespace="http://www.opengis.net/gsml/4.1/GeoSciML" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.1.1">
 	<annotation>
-		<documentation>This is a summary schema to import all related application schemas for GeoSciML v 4.1.0
+		<documentation>This is a summary schema to import all related application schemas for GeoSciML v 4.1.1
 
 GeoSciML is a data transfer standard that specifies a set of feature-types and supporting structures for information used in the solid-earth geosciences. 
 GeoSciML is scoped approximately to the information required to construct geologic maps, but also geological sampling, observation and analyses. "Map" is interpreted broadly, 
@@ -17,14 +17,15 @@ GeoSciML 4.1 standard is available as OGC 16-008.
 
 Copyright (c)
  - Open GeoSpatial Consortium (OGC), 2016-2017
+   - To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
  - IUGS Commission for the Management and Application of Geoscience Information, 2016-2017.
-All rights reserved.
-
-To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+   - For more information, visit
+	    - GeoSciML : http://www.geosciml.org/ 
+	    - Commission for the Management and Application of GeoScience Information : http://www.cgi-iugs.org/ 
+All rights reserved. 
 
         </documentation>
 	</annotation>
-	<!-- <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/> -->
 	<import namespace="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" schemaLocation="geoSciMLBasic.xsd"/>
 	<import namespace="http://www.opengis.net/gsml/4.1/GeoSciML-Extension" schemaLocation="geoSciMLExtension.xsd"/>
 	<import namespace="http://www.opengis.net/gsml/4.1/Borehole" schemaLocation="borehole.xsd"/>
