@@ -15,6 +15,8 @@ This XML Schema implementation is composed of the following namespaces:
   (http://www.isotc211.org/2005/gsr)
 - Geographic Temporal Schema (GTS) extensible markup language
   (http://www.isotc211.org/2005/gts)
+- Geographic Geographic information -- Services (SRV)
+  (http://www.opengis.net/iso/19139/20070417/srv/1.0)
 
 The most current schemas are available at:
 http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/

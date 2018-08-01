@@ -348,8 +348,8 @@ csw/2.0.2/profiles/apiso/1.0.0/examples-ISO19139/serviceInstanceSimple.xml
 csw/2.0.2/profiles/apiso/1.0.0/examples-ISO19139/urnHMAEUMM02AVHxxx1B.xml
 csw/2.0.2/profiles/apiso/1.0.0/examples-ISO19139/urnHMAEUMMSG1MSG15.xml
 csw/2.0.2/profiles/apiso/1.0.0/examples-ISO19139/urnHMAEUMMSG1MSGAMVE.xml
-csw/2.0.2/profiles/apiso/1.0.0/ReadMe.txt
 csw/2.0.2/profiles/apiso/apiso-1_0_0.zip
+csw/2.0.2/profiles/apiso/apiso-1_0_1.zip
 csw/2.0.2/profiles/apiso/ReadMe.txt
 csw/2.0.2/profiles/ebrim/1.0/csw-ebrim-iri.xsd
 csw/2.0.2/profiles/ebrim/1.0/csw-ebrim.xsd
@@ -986,6 +986,7 @@ gsml/4.1/instances/Inspire_ShearDisplacementStructure.xml
 gsml/4.1/laboratoryAnalysis-Specimen.sch
 gsml/4.1/laboratoryAnalysis-Specimen.xsd
 gsml/gsml-4_1_0.zip
+gsml/gsml-4_1_1.zip
 gsml/ReadMe.txt
 guf/1.0/examples/GLC2000.xml
 guf/1.0/examples/GUF_FeedbackItem.xml
@@ -1067,6 +1068,7 @@ indoorgml/1.0/indoorgmlnavi.xsd
 indoorgml/indoorgml-1_0_0.zip
 indoorgml/indoorgml-1_0_1.zip
 indoorgml/indoorgml-1_0_2.zip
+indoorgml/indoorgml-1_0_3.zip
 indoorgml/ReadMe.txt
 infragml/infragml-1_0_0.zip
 infragml/part0/1.0/core.xsd
@@ -1207,6 +1209,10 @@ iso/19139/20070417/resources/example/fr-fr.xml
 iso/19139/20070417/resources/ReadMe.txt
 iso/19139/20070417/resources/uom/gmxUom.xml
 iso/19139/20070417/resources/uom/ML_gmxUom.xml
+iso/19139/20070417/srv/1.0/serviceMetadata.xsd
+iso/19139/20070417/srv/1.0/serviceModel.xsd
+iso/19139/20070417/srv/1.0/srv.xsd
+iso/19139/20070417/srv/ReadMe.txt
 iso/19139/iso19139-20060504.zip
 iso/19139/iso19139-20070417.zip
 iso/19139/ReadMe.txt
