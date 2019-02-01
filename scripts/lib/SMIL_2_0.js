@@ -7,19 +7,6 @@ var SMIL_2_0_Module_Factory = function () {
         ln: 'AnimatePrototype',
         tn: 'animatePrototype',
         ps: [{
-            n: 'attributeName',
-            rq: true,
-            an: {
-              lp: 'attributeName'
-            },
-            t: 'a'
-          }, {
-            n: 'attributeType',
-            an: {
-              lp: 'attributeType'
-            },
-            t: 'a'
-          }, {
             n: 'additive',
             an: {
               lp: 'additive'
@@ -53,6 +40,19 @@ var SMIL_2_0_Module_Factory = function () {
             n: 'to',
             an: {
               lp: 'to'
+            },
+            t: 'a'
+          }, {
+            n: 'attributeName',
+            rq: true,
+            an: {
+              lp: 'attributeName'
+            },
+            t: 'a'
+          }, {
+            n: 'attributeType',
+            an: {
+              lp: 'attributeType'
             },
             t: 'a'
           }]
@@ -129,6 +129,19 @@ var SMIL_2_0_Module_Factory = function () {
         ln: 'AnimateColorPrototype',
         tn: 'animateColorPrototype',
         ps: [{
+            n: 'attributeName',
+            rq: true,
+            an: {
+              lp: 'attributeName'
+            },
+            t: 'a'
+          }, {
+            n: 'attributeType',
+            an: {
+              lp: 'attributeType'
+            },
+            t: 'a'
+          }, {
             n: 'additive',
             an: {
               lp: 'additive'
@@ -164,19 +177,6 @@ var SMIL_2_0_Module_Factory = function () {
               lp: 'to'
             },
             t: 'a'
-          }, {
-            n: 'attributeName',
-            rq: true,
-            an: {
-              lp: 'attributeName'
-            },
-            t: 'a'
-          }, {
-            n: 'attributeType',
-            an: {
-              lp: 'attributeType'
-            },
-            t: 'a'
           }]
       }, {
         t: 'enum',
@@ -184,16 +184,8 @@ var SMIL_2_0_Module_Factory = function () {
         vs: ['remove', 'freeze', 'hold', 'auto', 'inherit', 'transition']
       }, {
         t: 'enum',
-        ln: 'FillTimingAttrsType',
-        vs: ['remove', 'freeze', 'hold', 'auto', 'default', 'transition']
-      }, {
-        t: 'enum',
         ln: 'SyncBehaviorDefaultType',
         vs: ['canSlip', 'locked', 'independent', 'inherit']
-      }, {
-        t: 'enum',
-        ln: 'SyncBehaviorType',
-        vs: ['canSlip', 'locked', 'independent', 'default']
       }, {
         t: 'enum',
         ln: 'RestartTimingType',
@@ -202,8 +194,23 @@ var SMIL_2_0_Module_Factory = function () {
         t: 'enum',
         ln: 'RestartDefaultType',
         vs: ['never', 'always', 'whenNotActive', 'inherit']
+      }, {
+        t: 'enum',
+        ln: 'FillTimingAttrsType',
+        vs: ['remove', 'freeze', 'hold', 'auto', 'default', 'transition']
+      }, {
+        t: 'enum',
+        ln: 'SyncBehaviorType',
+        vs: ['canSlip', 'locked', 'independent', 'default']
       }],
     eis: [{
+        en: 'animateMotion',
+        ti: 'SMIL_2_0_Language.AnimateMotionType',
+        sh: {
+          lp: 'animateMotion',
+          ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
+        }
+      }, {
         en: 'set',
         ti: 'SMIL_2_0_Language.SetType',
         sh: {
@@ -215,13 +222,6 @@ var SMIL_2_0_Module_Factory = function () {
         ti: 'SMIL_2_0_Language.AnimateType',
         sh: {
           lp: 'animate',
-          ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
-        }
-      }, {
-        en: 'animateMotion',
-        ti: 'SMIL_2_0_Language.AnimateMotionType',
-        sh: {
-          lp: 'animateMotion',
           ns: 'http:\/\/www.w3.org\/2001\/SMIL20\/Language'
         }
       }, {

@@ -3,27 +3,8 @@ var ISO19139_GTS_20070417_Module_Factory = function () {
     n: 'ISO19139_GTS_20070417',
     dens: 'http:\/\/www.isotc211.org\/2005\/gts',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1'],
+    deps: ['GML_3_2', 'XLink_1_0'],
     tis: [{
-        ln: 'TMPeriodDurationPropertyType',
-        tn: 'TM_PeriodDuration_PropertyType',
-        ps: [{
-            n: 'tmPeriodDuration',
-            rq: true,
-            en: 'TM_PeriodDuration',
-            ti: 'Duration'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason',
-              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'TMPrimitivePropertyType',
         tn: 'TM_Primitive_PropertyType',
         ps: [{
@@ -35,7 +16,7 @@ var ISO19139_GTS_20070417_Module_Factory = function () {
               lp: 'AbstractTimePrimitive',
               ns: 'http:\/\/www.opengis.net\/gml\/3.2'
             },
-            ti: 'GML_3_2_1.AbstractTimePrimitiveType',
+            ti: 'GML_3_2.AbstractTimePrimitiveType',
             t: 'er'
           }, {
             n: 'nilReason',
@@ -76,6 +57,25 @@ var ISO19139_GTS_20070417_Module_Factory = function () {
           }, {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'TMPeriodDurationPropertyType',
+        tn: 'TM_PeriodDuration_PropertyType',
+        ps: [{
+            n: 'tmPeriodDuration',
+            rq: true,
+            en: 'TM_PeriodDuration',
+            ti: 'Duration'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason',
+              ns: 'http:\/\/www.isotc211.org\/2005\/gco'
+            },
             t: 'a'
           }]
       }],

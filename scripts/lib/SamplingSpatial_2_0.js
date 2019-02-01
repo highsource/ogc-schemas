@@ -3,7 +3,7 @@ var SamplingSpatial_2_0_Module_Factory = function () {
     n: 'SamplingSpatial_2_0',
     dens: 'http:\/\/www.opengis.net\/samplingSpatial\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1', 'ISO19139_GMD_20070417', 'OM_2_0', 'Sampling_2_0'],
+    deps: ['ISO19139_GMD_20070417', 'XLink_1_0', 'GML_3_2', 'OM_2_0', 'Sampling_2_0'],
     tis: [{
         ln: 'SFSpatialSamplingFeatureType',
         tn: 'SF_SpatialSamplingFeatureType',
@@ -36,7 +36,7 @@ var SamplingSpatial_2_0_Module_Factory = function () {
               lp: 'AbstractGeometry',
               ns: 'http:\/\/www.opengis.net\/gml\/3.2'
             },
-            ti: 'GML_3_2_1.AbstractGeometryType',
+            ti: 'GML_3_2.AbstractGeometryType',
             t: 'er'
           }, {
             n: 'nilReason',
@@ -130,15 +130,15 @@ var SamplingSpatial_2_0_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'shape',
-        ti: '.ShapeType'
-      }, {
         en: 'SF_SpatialSamplingFeature',
         ti: '.SFSpatialSamplingFeatureType',
         sh: {
           lp: 'SF_SamplingFeature',
           ns: 'http:\/\/www.opengis.net\/sampling\/2.0'
         }
+      }, {
+        en: 'shape',
+        ti: '.ShapeType'
       }]
   };
   return {

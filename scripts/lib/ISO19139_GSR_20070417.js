@@ -3,7 +3,7 @@ var ISO19139_GSR_20070417_Module_Factory = function () {
     n: 'ISO19139_GSR_20070417',
     dens: 'http:\/\/www.opengis.net\/gml\/3.2',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1'],
+    deps: ['XLink_1_0', 'GML_3_2'],
     tis: [{
         ln: 'SCCRSPropertyType',
         tn: {
@@ -16,7 +16,7 @@ var ISO19139_GSR_20070417_Module_Factory = function () {
             mx: false,
             dom: false,
             en: 'AbstractCRS',
-            ti: 'GML_3_2_1.AbstractCRSType',
+            ti: 'GML_3_2.AbstractCRSType',
             t: 'er'
           }, {
             n: 'nilReason',

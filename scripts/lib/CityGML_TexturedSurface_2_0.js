@@ -3,46 +3,28 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
     n: 'CityGML_TexturedSurface_2_0',
     dens: 'http:\/\/www.opengis.net\/citygml\/texturedsurface\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_1_1'],
+    deps: ['GML_3_1_1', 'XLink_1_0'],
     tis: [{
-        ln: 'MaterialType',
+        ln: 'AbstractAppearanceType',
+        bti: 'GML_3_1_1.AbstractGMLType'
+      }, {
+        ln: 'SimpleTextureType',
         bti: '.AbstractAppearanceType',
         ps: [{
-            n: 'shininess',
-            ti: 'Double'
+            n: 'textureMap',
+            rq: true
           }, {
-            n: 'transparency',
-            ti: 'Double'
-          }, {
-            n: 'ambientIntensity',
-            ti: 'Double'
-          }, {
-            n: 'specularColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'diffuseColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'emissiveColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }]
-      }, {
-        ln: 'TexturedSurfaceType',
-        bti: 'GML_3_1_1.OrientableSurfaceType',
-        ps: [{
-            n: 'appearance',
+            n: 'textureCoordinates',
             rq: true,
-            col: true,
-            ti: '.AppearancePropertyType'
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'textureType'
+          }, {
+            n: 'repeat',
+            ti: 'Boolean'
           }]
       }, {
         ln: 'AppearancePropertyType',
@@ -94,33 +76,55 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SimpleTextureType',
+        ln: 'TexturedSurfaceType',
+        bti: 'GML_3_1_1.OrientableSurfaceType',
+        ps: [{
+            n: 'appearance',
+            rq: true,
+            col: true,
+            ti: '.AppearancePropertyType'
+          }]
+      }, {
+        ln: 'MaterialType',
         bti: '.AbstractAppearanceType',
         ps: [{
-            n: 'textureMap',
-            rq: true
+            n: 'shininess',
+            ti: 'Double'
           }, {
-            n: 'textureCoordinates',
-            rq: true,
+            n: 'transparency',
+            ti: 'Double'
+          }, {
+            n: 'ambientIntensity',
+            ti: 'Double'
+          }, {
+            n: 'specularColor',
             ti: {
               t: 'l',
               bti: 'Double'
             }
           }, {
-            n: 'textureType'
+            n: 'diffuseColor',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
           }, {
-            n: 'repeat',
-            ti: 'Boolean'
+            n: 'emissiveColor',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
           }]
-      }, {
-        ln: 'AbstractAppearanceType',
-        bti: 'GML_3_1_1.AbstractGMLType'
       }, {
         t: 'enum',
         ln: 'TextureTypeType',
         vs: ['specific', 'typical', 'unknown']
       }],
     eis: [{
+        en: 'Material',
+        ti: '.MaterialType',
+        sh: '_Appearance'
+      }, {
         en: 'TexturedSurface',
         ti: '.TexturedSurfaceType',
         sh: {
@@ -128,23 +132,19 @@ var CityGML_TexturedSurface_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        en: 'appearance',
-        ti: '.AppearancePropertyType'
-      }, {
-        en: 'SimpleTexture',
-        ti: '.SimpleTextureType',
-        sh: '_Appearance'
-      }, {
-        en: 'Material',
-        ti: '.MaterialType',
-        sh: '_Appearance'
-      }, {
         en: '_Appearance',
         ti: '.AbstractAppearanceType',
         sh: {
           lp: '_GML',
           ns: 'http:\/\/www.opengis.net\/gml'
         }
+      }, {
+        en: 'SimpleTexture',
+        ti: '.SimpleTextureType',
+        sh: '_Appearance'
+      }, {
+        en: 'appearance',
+        ti: '.AppearancePropertyType'
       }]
   };
   return {

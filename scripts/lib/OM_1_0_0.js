@@ -3,7 +3,7 @@ var OM_1_0_0_Module_Factory = function () {
     n: 'OM_1_0_0',
     dens: 'http:\/\/www.opengis.net\/om\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'SWE_1_0_1', 'SensorML_1_0_1', 'GML_3_1_1'],
+    deps: ['XLink_1_0', 'GML_3_1_1', 'SWE_1_0_1', 'SensorML_1_0_1'],
     tis: [{
         ln: 'ObservationType',
         bti: 'GML_3_1_1.AbstractFeatureType',
@@ -83,15 +83,6 @@ var OM_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ObservationCollectionType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'member',
-            rq: true,
-            col: true,
-            ti: '.ObservationPropertyType'
-          }]
-      }, {
         ln: 'ProcessPropertyType',
         ps: [{
             n: 'sensorMLProcess',
@@ -142,6 +133,15 @@ var OM_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'ObservationCollectionType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'member',
+            rq: true,
+            col: true,
+            ti: '.ObservationPropertyType'
+          }]
+      }, {
         ln: 'ObservationPropertyType',
         ps: [{
             n: 'observation',
@@ -182,15 +182,15 @@ var OM_1_0_0_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'Observation',
-        ti: '.ObservationType',
+        en: 'ObservationCollection',
+        ti: '.ObservationCollectionType',
         sh: {
           lp: '_Feature',
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        en: 'ObservationCollection',
-        ti: '.ObservationCollectionType',
+        en: 'Observation',
+        ti: '.ObservationType',
         sh: {
           lp: '_Feature',
           ns: 'http:\/\/www.opengis.net\/gml'

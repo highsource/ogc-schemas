@@ -33,6 +33,51 @@
                 "interpolationSupported"
             ]
         },
+        "InterpolationPerAxisType":{
+            "type":"object",
+            "title":"InterpolationPerAxisType",
+            "required":[
+                "axis",
+                "interpolationMethod"
+            ],
+            "properties":{
+                "axis":{
+                    "title":"axis",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"axis",
+                        "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
+                    }
+                },
+                "interpolationMethod":{
+                    "title":"interpolationMethod",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"interpolationMethod",
+                        "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"InterpolationPerAxisType",
+                "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
+            },
+            "propertiesOrder":[
+                "axis",
+                "interpolationMethod"
+            ]
+        },
         "InterpolationType":{
             "type":"object",
             "title":"InterpolationType",
@@ -79,51 +124,6 @@
             "propertiesOrder":[
                 "globalInterpolation",
                 "interpolationPerAxis"
-            ]
-        },
-        "InterpolationPerAxisType":{
-            "type":"object",
-            "title":"InterpolationPerAxisType",
-            "required":[
-                "axis",
-                "interpolationMethod"
-            ],
-            "properties":{
-                "axis":{
-                    "title":"axis",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"axis",
-                        "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
-                    }
-                },
-                "interpolationMethod":{
-                    "title":"interpolationMethod",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"interpolationMethod",
-                        "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"InterpolationPerAxisType",
-                "namespaceURI":"http://www.opengis.net/wcs/interpolation/1.0"
-            },
-            "propertiesOrder":[
-                "axis",
-                "interpolationMethod"
             ]
         }
     },

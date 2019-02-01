@@ -3,21 +3,18 @@ var ISO19139_GSS_20070417_Module_Factory = function () {
     n: 'ISO19139_GSS_20070417',
     dens: 'http:\/\/www.opengis.net\/gml\/3.2',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1'],
+    deps: ['XLink_1_0', 'GML_3_2'],
     tis: [{
-        ln: 'GMObjectPropertyType',
+        ln: 'GMPointPropertyType',
         tn: {
           ns: 'http:\/\/www.isotc211.org\/2005\/gss',
-          lp: 'GM_Object_PropertyType'
+          lp: 'GM_Point_PropertyType'
         },
         ps: [{
-            n: 'abstractGeometry',
+            n: 'point',
             rq: true,
-            mx: false,
-            dom: false,
-            en: 'AbstractGeometry',
-            ti: 'GML_3_2_1.AbstractGeometryType',
-            t: 'er'
+            en: 'Point',
+            ti: 'GML_3_2.PointType'
           }, {
             n: 'nilReason',
             ti: {
@@ -60,16 +57,19 @@ var ISO19139_GSS_20070417_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GMPointPropertyType',
+        ln: 'GMObjectPropertyType',
         tn: {
           ns: 'http:\/\/www.isotc211.org\/2005\/gss',
-          lp: 'GM_Point_PropertyType'
+          lp: 'GM_Object_PropertyType'
         },
         ps: [{
-            n: 'point',
+            n: 'abstractGeometry',
             rq: true,
-            en: 'Point',
-            ti: 'GML_3_2_1.PointType'
+            mx: false,
+            dom: false,
+            en: 'AbstractGeometry',
+            ti: 'GML_3_2.AbstractGeometryType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {

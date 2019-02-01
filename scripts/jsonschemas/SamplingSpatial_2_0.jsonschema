@@ -421,40 +421,6 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "shape"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/samplingSpatial/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/ShapeType"
-                }
-            },
-            "elementName":{
-                "localPart":"shape",
-                "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
                                         "SF_SpatialSamplingFeature"
                                     ]
                                 },
@@ -473,6 +439,40 @@
             },
             "elementName":{
                 "localPart":"SF_SpatialSamplingFeature",
+                "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "shape"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/samplingSpatial/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/ShapeType"
+                }
+            },
+            "elementName":{
+                "localPart":"shape",
                 "namespaceURI":"http://www.opengis.net/samplingSpatial/2.0"
             }
         }

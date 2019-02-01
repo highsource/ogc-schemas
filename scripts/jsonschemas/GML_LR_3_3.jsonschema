@@ -2,11 +2,13 @@
 {
     "id":"http://www.opengis.net/gml/3.3/lr#",
     "definitions":{
-        "PositionExpressionType":{
+        "LinearElementType":{
             "required":[
-                "linearElement",
-                "lrm",
-                "distanceExpression"
+                "feature",
+                "curve",
+                "edge",
+                "defaultLRM",
+                "measure"
             ],
             "allOf":[
                 {
@@ -14,23 +16,49 @@
                 },
                 {
                     "type":"object",
-                    "title":"PositionExpressionType",
+                    "title":"LinearElementType",
                     "properties":{
-                        "linearElement":{
-                            "title":"linearElement",
+                        "feature":{
+                            "title":"feature",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/LinearElementPropertyType"
+                                    "$ref":"#/definitions/FeaturePropertyType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"linearElement",
+                                "localPart":"feature",
                                 "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
                             }
                         },
-                        "lrm":{
-                            "title":"lrm",
+                        "curve":{
+                            "title":"curve",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CurvePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"curve",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+                            }
+                        },
+                        "edge":{
+                            "title":"edge",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/DirectedEdgePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"edge",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+                            }
+                        },
+                        "defaultLRM":{
+                            "title":"defaultLRM",
                             "allOf":[
                                 {
                                     "$ref":"#/definitions/LinearReferencingMethodPropertyType"
@@ -38,20 +66,37 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"lrm",
+                                "localPart":"defaultLRM",
                                 "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
                             }
                         },
-                        "distanceExpression":{
-                            "title":"distanceExpression",
+                        "measure":{
+                            "title":"measure",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/DistanceExpressionPropertyType"
+                                    "$ref":"#/definitions/MeasureType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"distanceExpression",
+                                "localPart":"measure",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+                            }
+                        },
+                        "startValue":{
+                            "title":"startValue",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/StartValueType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"startValue",
                                 "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
                             }
                         }
@@ -60,13 +105,16 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"PositionExpressionType",
+                "localPart":"LinearElementType",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
             },
             "propertiesOrder":[
-                "linearElement",
-                "lrm",
-                "distanceExpression"
+                "feature",
+                "curve",
+                "edge",
+                "defaultLRM",
+                "measure",
+                "startValue"
             ]
         },
         "LinearSRSType":{
@@ -280,6 +328,424 @@
                 "actuate"
             ]
         },
+        "PositionExpressionPropertyType":{
+            "type":"object",
+            "title":"PositionExpressionPropertyType",
+            "required":[
+                "positionExpression"
+            ],
+            "properties":{
+                "positionExpression":{
+                    "title":"positionExpression",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/PositionExpressionType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"PositionExpression",
+                        "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":""
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml/3.2"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"PositionExpressionPropertyType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+            },
+            "propertiesOrder":[
+                "positionExpression",
+                "nilReason",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "AlongReferentType":{
+            "required":[
+                "fromReferent"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractGMLType"
+                },
+                {
+                    "type":"object",
+                    "title":"AlongReferentType",
+                    "properties":{
+                        "fromReferent":{
+                            "title":"fromReferent",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/ReferentPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"fromReferent",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AlongReferentType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+            },
+            "propertiesOrder":[
+                "fromReferent"
+            ]
+        },
+        "DistanceExpressionType":{
+            "required":[
+                "distanceAlong"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractGMLType"
+                },
+                {
+                    "type":"object",
+                    "title":"DistanceExpressionType",
+                    "properties":{
+                        "distanceAlong":{
+                            "title":"distanceAlong",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/MeasureType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"distanceAlong",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+                            }
+                        },
+                        "referent":{
+                            "title":"referent",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/AlongReferentPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"referent",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DistanceExpressionType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+            },
+            "propertiesOrder":[
+                "distanceAlong",
+                "referent"
+            ]
+        },
+        "LinearSRSPropertyType":{
+            "type":"object",
+            "title":"LinearSRSPropertyType",
+            "required":[
+                "linearSRS"
+            ],
+            "properties":{
+                "linearSRS":{
+                    "title":"linearSRS",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"#/definitions/LinearSRSType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"LinearSRS",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"LinearSRS",
+                        "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":""
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml/3.2"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LinearSRSPropertyType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+            },
+            "propertiesOrder":[
+                "linearSRS",
+                "nilReason",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
         "LinearReferencingMethodPropertyType":{
             "type":"object",
             "title":"LinearReferencingMethodPropertyType",
@@ -451,6 +917,87 @@
                 "actuate"
             ]
         },
+        "LinearReferencingMethodType":{
+            "required":[
+                "linearReferencingMethodName",
+                "type",
+                "units"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractGMLType"
+                },
+                {
+                    "type":"object",
+                    "title":"LinearReferencingMethodType",
+                    "properties":{
+                        "linearReferencingMethodName":{
+                            "title":"linearReferencingMethodName",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/LRMNameType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"name",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+                            }
+                        },
+                        "type":{
+                            "title":"type",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/LRMTypeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"type",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+                            }
+                        },
+                        "units":{
+                            "title":"units",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"units",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+                            }
+                        },
+                        "constraint":{
+                            "title":"constraint",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"constraint",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LinearReferencingMethodType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+            },
+            "propertiesOrder":[
+                "linearReferencingMethodName",
+                "type",
+                "units",
+                "constraint"
+            ]
+        },
         "MeasureType":{
             "type":"object",
             "title":"MeasureType",
@@ -581,6 +1128,177 @@
                 "position",
                 "location",
                 "ownedBy"
+            ]
+        },
+        "DistanceExpressionPropertyType":{
+            "type":"object",
+            "title":"DistanceExpressionPropertyType",
+            "required":[
+                "distanceExpression"
+            ],
+            "properties":{
+                "distanceExpression":{
+                    "title":"distanceExpression",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"#/definitions/DistanceExpressionType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"DistanceExpression",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"DistanceExpression",
+                        "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":""
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml/3.2"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DistanceExpressionPropertyType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+            },
+            "propertiesOrder":[
+                "distanceExpression",
+                "nilReason",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
             ]
         },
         "LinearElementPropertyType":{
@@ -796,11 +1514,11 @@
                 "lrm"
             ]
         },
-        "LinearReferencingMethodType":{
+        "PositionExpressionType":{
             "required":[
-                "linearReferencingMethodName",
-                "type",
-                "units"
+                "linearElement",
+                "lrm",
+                "distanceExpression"
             ],
             "allOf":[
                 {
@@ -808,132 +1526,23 @@
                 },
                 {
                     "type":"object",
-                    "title":"LinearReferencingMethodType",
+                    "title":"PositionExpressionType",
                     "properties":{
-                        "linearReferencingMethodName":{
-                            "title":"linearReferencingMethodName",
+                        "linearElement":{
+                            "title":"linearElement",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/LRMNameType"
+                                    "$ref":"#/definitions/LinearElementPropertyType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"name",
+                                "localPart":"linearElement",
                                 "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
                             }
                         },
-                        "type":{
-                            "title":"type",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/LRMTypeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"type",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-                            }
-                        },
-                        "units":{
-                            "title":"units",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"units",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-                            }
-                        },
-                        "constraint":{
-                            "title":"constraint",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"constraint",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LinearReferencingMethodType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-            },
-            "propertiesOrder":[
-                "linearReferencingMethodName",
-                "type",
-                "units",
-                "constraint"
-            ]
-        },
-        "LinearElementType":{
-            "required":[
-                "feature",
-                "curve",
-                "edge",
-                "defaultLRM",
-                "measure"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractGMLType"
-                },
-                {
-                    "type":"object",
-                    "title":"LinearElementType",
-                    "properties":{
-                        "feature":{
-                            "title":"feature",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/FeaturePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"feature",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-                            }
-                        },
-                        "curve":{
-                            "title":"curve",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CurvePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"curve",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-                            }
-                        },
-                        "edge":{
-                            "title":"edge",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DirectedEdgePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"edge",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-                            }
-                        },
-                        "defaultLRM":{
-                            "title":"defaultLRM",
+                        "lrm":{
+                            "title":"lrm",
                             "allOf":[
                                 {
                                     "$ref":"#/definitions/LinearReferencingMethodPropertyType"
@@ -941,37 +1550,20 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"defaultLRM",
+                                "localPart":"lrm",
                                 "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
                             }
                         },
-                        "measure":{
-                            "title":"measure",
+                        "distanceExpression":{
+                            "title":"distanceExpression",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/MeasureType"
+                                    "$ref":"#/definitions/DistanceExpressionPropertyType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"measure",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-                            }
-                        },
-                        "startValue":{
-                            "title":"startValue",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/StartValueType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"startValue",
+                                "localPart":"distanceExpression",
                                 "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
                             }
                         }
@@ -980,17 +1572,32 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"LinearElementType",
+                "localPart":"PositionExpressionType",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
             },
             "propertiesOrder":[
-                "feature",
-                "curve",
-                "edge",
-                "defaultLRM",
-                "measure",
-                "startValue"
+                "linearElement",
+                "lrm",
+                "distanceExpression"
             ]
+        },
+        "LRMNameType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/CodeType"
+                },
+                {
+                    "type":"object",
+                    "title":"LRMNameType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LRMNameType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+            }
         },
         "AlongReferentPropertyType":{
             "type":"object",
@@ -1163,214 +1770,6 @@
                 "actuate"
             ]
         },
-        "AlongReferentType":{
-            "required":[
-                "fromReferent"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractGMLType"
-                },
-                {
-                    "type":"object",
-                    "title":"AlongReferentType",
-                    "properties":{
-                        "fromReferent":{
-                            "title":"fromReferent",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ReferentPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"fromReferent",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AlongReferentType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-            },
-            "propertiesOrder":[
-                "fromReferent"
-            ]
-        },
-        "DistanceExpressionPropertyType":{
-            "type":"object",
-            "title":"DistanceExpressionPropertyType",
-            "required":[
-                "distanceExpression"
-            ],
-            "properties":{
-                "distanceExpression":{
-                    "title":"distanceExpression",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"#/definitions/DistanceExpressionType"
-                                }
-                            },
-                            "elementName":{
-                                "localPart":"DistanceExpression",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-                            }
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"DistanceExpression",
-                        "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":""
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml/3.2"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DistanceExpressionPropertyType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-            },
-            "propertiesOrder":[
-                "distanceExpression",
-                "nilReason",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
         "LRMTypeType":{
             "allOf":[
                 {
@@ -1386,405 +1785,6 @@
             "typeType":"classInfo",
             "typeName":{
                 "localPart":"LRMTypeType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-            }
-        },
-        "PositionExpressionPropertyType":{
-            "type":"object",
-            "title":"PositionExpressionPropertyType",
-            "required":[
-                "positionExpression"
-            ],
-            "properties":{
-                "positionExpression":{
-                    "title":"positionExpression",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/PositionExpressionType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"PositionExpression",
-                        "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":""
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml/3.2"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"PositionExpressionPropertyType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-            },
-            "propertiesOrder":[
-                "positionExpression",
-                "nilReason",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "LinearSRSPropertyType":{
-            "type":"object",
-            "title":"LinearSRSPropertyType",
-            "required":[
-                "linearSRS"
-            ],
-            "properties":{
-                "linearSRS":{
-                    "title":"linearSRS",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"#/definitions/LinearSRSType"
-                                }
-                            },
-                            "elementName":{
-                                "localPart":"LinearSRS",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-                            }
-                        }
-                    ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"LinearSRS",
-                        "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":""
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml/3.2"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LinearSRSPropertyType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-            },
-            "propertiesOrder":[
-                "linearSRS",
-                "nilReason",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "DistanceExpressionType":{
-            "required":[
-                "distanceAlong"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractGMLType"
-                },
-                {
-                    "type":"object",
-                    "title":"DistanceExpressionType",
-                    "properties":{
-                        "distanceAlong":{
-                            "title":"distanceAlong",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/MeasureType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"distanceAlong",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-                            }
-                        },
-                        "referent":{
-                            "title":"referent",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/AlongReferentPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"referent",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DistanceExpressionType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-            },
-            "propertiesOrder":[
-                "distanceAlong",
-                "referent"
-            ]
-        },
-        "LRMNameType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/CodeType"
-                },
-                {
-                    "type":"object",
-                    "title":"LRMNameType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LRMNameType",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
             }
         },
@@ -1815,7 +1815,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "PositionExpression"
+                                        "LinearSRS"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1828,11 +1828,45 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/PositionExpressionType"
+                    "$ref":"#/definitions/LinearSRSType"
                 }
             },
             "elementName":{
-                "localPart":"PositionExpression",
+                "localPart":"LinearSRS",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "DistanceExpression"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml/3.3/lr"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/DistanceExpressionType"
+                }
+            },
+            "elementName":{
+                "localPart":"DistanceExpression",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
             }
         },
@@ -1867,40 +1901,6 @@
             },
             "elementName":{
                 "localPart":"LinearReferencingMethod",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "AlongReferent"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml/3.3/lr"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/AlongReferentType"
-                }
-            },
-            "elementName":{
-                "localPart":"AlongReferent",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
             }
         },
@@ -1985,7 +1985,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "LinearSRS"
+                                        "AlongReferent"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1998,11 +1998,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/LinearSRSType"
+                    "$ref":"#/definitions/AlongReferentType"
                 }
             },
             "elementName":{
-                "localPart":"LinearSRS",
+                "localPart":"AlongReferent",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
             }
         },
@@ -2019,7 +2019,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "DistanceExpression"
+                                        "PositionExpression"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2032,11 +2032,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/DistanceExpressionType"
+                    "$ref":"#/definitions/PositionExpressionType"
                 }
             },
             "elementName":{
-                "localPart":"DistanceExpression",
+                "localPart":"PositionExpression",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/lr"
             }
         }

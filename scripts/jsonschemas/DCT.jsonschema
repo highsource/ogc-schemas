@@ -15,6 +15,210 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
+                                        "hasFormat"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://purl.org/dc/terms/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"hasFormat",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "replaces"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://purl.org/dc/terms/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"replaces",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "alternative"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://purl.org/dc/terms/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"alternative",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "issued"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://purl.org/dc/terms/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"issued",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "audience"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://purl.org/dc/terms/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"audience",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "spatial"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://purl.org/dc/terms/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"spatial",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
                                         "requires"
                                     ]
                                 },
@@ -33,40 +237,6 @@
             },
             "elementName":{
                 "localPart":"requires",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "modified"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://purl.org/dc/terms/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"modified",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -117,7 +287,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "isFormatOf"
+                                        "available"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -134,7 +304,7 @@
                 }
             },
             "elementName":{
-                "localPart":"isFormatOf",
+                "localPart":"available",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -151,7 +321,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "dateSubmitted"
+                                        "abstract"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -168,7 +338,279 @@
                 }
             },
             "elementName":{
-                "localPart":"dateSubmitted",
+                "localPart":"abstract",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "license"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://purl.org/dc/terms/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"license",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "isPartOf"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://purl.org/dc/terms/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"isPartOf",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "references"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://purl.org/dc/terms/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"references",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "dateAccepted"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://purl.org/dc/terms/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"dateAccepted",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "medium"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://purl.org/dc/terms/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"medium",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "provenance"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://purl.org/dc/terms/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"provenance",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "created"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://purl.org/dc/terms/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"created",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "isVersionOf"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://purl.org/dc/terms/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"isVersionOf",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -219,7 +661,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "valid"
+                                        "dateCopyrighted"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -236,7 +678,7 @@
                 }
             },
             "elementName":{
-                "localPart":"valid",
+                "localPart":"dateCopyrighted",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -253,7 +695,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "spatial"
+                                        "educationLevel"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -270,7 +712,41 @@
                 }
             },
             "elementName":{
-                "localPart":"spatial",
+                "localPart":"educationLevel",
+                "namespaceURI":"http://purl.org/dc/terms/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "dateSubmitted"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://purl.org/dc/terms/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
+                }
+            },
+            "elementName":{
+                "localPart":"dateSubmitted",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -355,142 +831,6 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "hasFormat"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://purl.org/dc/terms/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"hasFormat",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "provenance"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://purl.org/dc/terms/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"provenance",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "available"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://purl.org/dc/terms/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"available",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "references"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://purl.org/dc/terms/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"references",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
                                         "tableOfContents"
                                     ]
                                 },
@@ -525,7 +865,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "alternative"
+                                        "isFormatOf"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -542,245 +882,7 @@
                 }
             },
             "elementName":{
-                "localPart":"alternative",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "accessRights"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://purl.org/dc/terms/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"accessRights",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "replaces"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://purl.org/dc/terms/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"replaces",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "conformsTo"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://purl.org/dc/terms/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"conformsTo",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "dateCopyrighted"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://purl.org/dc/terms/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"dateCopyrighted",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "rightsHolder"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://purl.org/dc/terms/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"rightsHolder",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "isPartOf"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://purl.org/dc/terms/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"isPartOf",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "created"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://purl.org/dc/terms/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"created",
+                "localPart":"isFormatOf",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -831,7 +933,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "license"
+                                        "hasPart"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -848,41 +950,7 @@
                 }
             },
             "elementName":{
-                "localPart":"license",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "issued"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://purl.org/dc/terms/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"issued",
+                "localPart":"hasPart",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -933,7 +1001,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "hasVersion"
+                                        "accessRights"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -950,7 +1018,7 @@
                 }
             },
             "elementName":{
-                "localPart":"hasVersion",
+                "localPart":"accessRights",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -967,7 +1035,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "abstract"
+                                        "valid"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -984,7 +1052,7 @@
                 }
             },
             "elementName":{
-                "localPart":"abstract",
+                "localPart":"valid",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -1001,7 +1069,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "medium"
+                                        "rightsHolder"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1018,41 +1086,7 @@
                 }
             },
             "elementName":{
-                "localPart":"medium",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "dateAccepted"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://purl.org/dc/terms/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"dateAccepted",
+                "localPart":"rightsHolder",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -1103,7 +1137,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "hasPart"
+                                        "conformsTo"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1120,7 +1154,7 @@
                 }
             },
             "elementName":{
-                "localPart":"hasPart",
+                "localPart":"conformsTo",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -1137,7 +1171,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "isVersionOf"
+                                        "hasVersion"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1154,7 +1188,7 @@
                 }
             },
             "elementName":{
-                "localPart":"isVersionOf",
+                "localPart":"hasVersion",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         },
@@ -1171,7 +1205,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "audience"
+                                        "modified"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1188,41 +1222,7 @@
                 }
             },
             "elementName":{
-                "localPart":"audience",
-                "namespaceURI":"http://purl.org/dc/terms/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "educationLevel"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://purl.org/dc/terms/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://purl.org/dc/elements/1.1/#/definitions/SimpleLiteral"
-                }
-            },
-            "elementName":{
-                "localPart":"educationLevel",
+                "localPart":"modified",
                 "namespaceURI":"http://purl.org/dc/terms/"
             }
         }

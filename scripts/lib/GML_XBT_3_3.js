@@ -3,7 +3,7 @@ var GML_XBT_3_3_Module_Factory = function () {
     n: 'GML_XBT_3_3',
     dens: 'http:\/\/www.opengis.net\/gml\/3.3\/xbt',
     dans: 'http:\/\/www.w3.org\/XML\/1998\/namespace',
-    deps: ['GML_3_2_1'],
+    deps: ['GML_3_2'],
     tis: [{
         ln: 'CodeType',
         bti: '.LanguageStringType',
@@ -28,7 +28,7 @@ var GML_XBT_3_3_Module_Factory = function () {
         bti: '.CodeType'
       }, {
         ln: 'LanguageStringAuxType',
-        bti: 'GML_3_2_1.StringOrRefType',
+        bti: 'GML_3_2.StringOrRefType',
         ps: [{
             n: 'lang',
             t: 'a'

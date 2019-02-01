@@ -2,155 +2,7 @@ var GML_1_0_0_Module_Factory = function () {
   var GML_1_0_0 = {
     n: 'GML_1_0_0',
     tis: [{
-        ln: 'Location',
-        tn: null,
-        ps: [{
-            n: 'point',
-            en: {
-              lp: 'Point'
-            },
-            ti: '.Point'
-          }]
-      }, {
-        ln: 'CenterOf',
-        tn: null,
-        ps: [{
-            n: 'point',
-            en: {
-              lp: 'Point'
-            },
-            ti: '.Point'
-          }]
-      }, {
-        ln: 'PointProperty',
-        tn: null,
-        ps: [{
-            n: 'point',
-            en: {
-              lp: 'Point'
-            },
-            ti: '.Point'
-          }]
-      }, {
-        ln: 'ExtentOf',
-        tn: null,
-        ps: [{
-            n: 'polygon',
-            en: {
-              lp: 'Polygon'
-            },
-            ti: '.Polygon'
-          }]
-      }, {
-        ln: 'PointMember',
-        tn: null,
-        ps: [{
-            n: 'point',
-            en: {
-              lp: 'Point'
-            },
-            ti: '.Point'
-          }]
-      }, {
-        ln: 'PolygonMember',
-        tn: null,
-        ps: [{
-            n: 'polygon',
-            en: {
-              lp: 'Polygon'
-            },
-            ti: '.Polygon'
-          }]
-      }, {
-        ln: 'Point',
-        tn: null,
-        ps: [{
-            n: 'id',
-            an: {
-              lp: 'ID'
-            },
-            t: 'a'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'coordinates',
-            en: {
-              lp: 'coordinates'
-            },
-            ti: '.Coordinates'
-          }]
-      }, {
-        ln: 'MultiCenterLineOf',
-        tn: null,
-        ps: [{
-            n: 'multiLineString',
-            en: {
-              lp: 'MultiLineString'
-            },
-            ti: '.MultiLineString'
-          }]
-      }, {
-        ln: 'LineStringProperty',
-        tn: null,
-        ps: [{
-            n: 'lineString',
-            en: {
-              lp: 'LineString'
-            },
-            ti: '.LineString'
-          }]
-      }, {
-        ln: 'Feature',
-        tn: null,
-        ps: [{
-            n: 'typeName',
-            an: {
-              lp: 'typeName'
-            },
-            t: 'a'
-          }, {
-            n: 'identifier',
-            an: {
-              lp: 'identifier'
-            },
-            t: 'a'
-          }, {
-            n: 'description',
-            en: {
-              lp: 'description'
-            }
-          }, {
-            n: 'name',
-            en: {
-              lp: 'name'
-            }
-          }, {
-            n: 'boundedBy',
-            en: {
-              lp: 'boundedBy'
-            },
-            ti: '.BoundedBy'
-          }, {
-            n: 'property',
-            col: true,
-            en: {
-              lp: 'property'
-            },
-            ti: '.Property'
-          }, {
-            n: 'geometricProperty',
-            col: true,
-            en: {
-              lp: 'geometricProperty'
-            },
-            ti: '.GeometricProperty'
-          }]
-      }, {
-        ln: 'MultiLocation',
+        ln: 'MultiPosition',
         tn: null,
         ps: [{
             n: 'multiPoint',
@@ -158,59 +10,6 @@ var GML_1_0_0_Module_Factory = function () {
               lp: 'MultiPoint'
             },
             ti: '.MultiPoint'
-          }]
-      }, {
-        ln: 'BoundedBy',
-        tn: null,
-        ps: [{
-            n: 'box',
-            en: {
-              lp: 'Box'
-            },
-            ti: '.Box'
-          }]
-      }, {
-        ln: 'Coverage',
-        tn: null,
-        ps: [{
-            n: 'polygon',
-            en: {
-              lp: 'Polygon'
-            },
-            ti: '.Polygon'
-          }]
-      }, {
-        ln: 'MultiPoint',
-        tn: null,
-        ps: [{
-            n: 'id',
-            an: {
-              lp: 'ID'
-            },
-            t: 'a'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'pointMember',
-            col: true,
-            en: {
-              lp: 'pointMember'
-            },
-            ti: '.PointMember'
-          }]
-      }, {
-        ln: 'GeometryCollectionProperty',
-        tn: null,
-        ps: [{
-            n: 'geometryCollection',
-            en: {
-              lp: 'GeometryCollection'
-            },
-            ti: '.GeometryCollection'
           }]
       }, {
         ln: 'FeatureCollection',
@@ -266,81 +65,27 @@ var GML_1_0_0_Module_Factory = function () {
             ti: '.FeatureMember'
           }]
       }, {
-        ln: 'GeometryMember',
+        ln: 'MultiPointProperty',
         tn: null,
         ps: [{
-            n: 'pointOrLineStringOrPolygonOrMultiPointOrMultiLineStringOrMultiPolygonOrGeometryCollection',
-            col: true,
-            etis: [{
-                en: {
-                  lp: 'Point'
-                },
-                ti: '.Point'
-              }, {
-                en: {
-                  lp: 'LineString'
-                },
-                ti: '.LineString'
-              }, {
-                en: {
-                  lp: 'Polygon'
-                },
-                ti: '.Polygon'
-              }, {
-                en: {
-                  lp: 'MultiPoint'
-                },
-                ti: '.MultiPoint'
-              }, {
-                en: {
-                  lp: 'MultiLineString'
-                },
-                ti: '.MultiLineString'
-              }, {
-                en: {
-                  lp: 'MultiPolygon'
-                },
-                ti: '.MultiPolygon'
-              }, {
-                en: {
-                  lp: 'GeometryCollection'
-                },
-                ti: '.GeometryCollection'
-              }],
-            t: 'es'
-          }]
-      }, {
-        ln: 'MultiLineStringProperty',
-        tn: null,
-        ps: [{
-            n: 'multiLineString',
+            n: 'multiPoint',
             en: {
-              lp: 'MultiLineString'
+              lp: 'MultiPoint'
             },
-            ti: '.MultiLineString'
+            ti: '.MultiPoint'
           }]
       }, {
-        ln: 'PolygonProperty',
+        ln: 'Position',
         tn: null,
         ps: [{
-            n: 'polygon',
+            n: 'point',
             en: {
-              lp: 'Polygon'
+              lp: 'Point'
             },
-            ti: '.Polygon'
+            ti: '.Point'
           }]
       }, {
-        ln: 'EdgeOf',
-        tn: null,
-        ps: [{
-            n: 'lineString',
-            en: {
-              lp: 'LineString'
-            },
-            ti: '.LineString'
-          }]
-      }, {
-        ln: 'CenterLineOf',
+        ln: 'LineStringProperty',
         tn: null,
         ps: [{
             n: 'lineString',
@@ -375,107 +120,17 @@ var GML_1_0_0_Module_Factory = function () {
             t: 'v'
           }]
       }, {
-        ln: 'FeatureMember',
+        ln: 'PointProperty',
         tn: null,
         ps: [{
-            n: 'typeName',
-            an: {
-              lp: 'typeName'
+            n: 'point',
+            en: {
+              lp: 'Point'
             },
-            t: 'a'
-          }, {
-            n: 'featureOrFeatureCollection',
-            col: true,
-            etis: [{
-                en: {
-                  lp: 'Feature'
-                },
-                ti: '.Feature'
-              }, {
-                en: {
-                  lp: 'FeatureCollection'
-                },
-                ti: '.FeatureCollection'
-              }],
-            t: 'es'
+            ti: '.Point'
           }]
       }, {
-        ln: 'MultiCenterOf',
-        tn: null,
-        ps: [{
-            n: 'multiPoint',
-            en: {
-              lp: 'MultiPoint'
-            },
-            ti: '.MultiPoint'
-          }]
-      }, {
-        ln: 'LineStringMember',
-        tn: null,
-        ps: [{
-            n: 'lineString',
-            en: {
-              lp: 'LineString'
-            },
-            ti: '.LineString'
-          }]
-      }, {
-        ln: 'LinearRing',
-        tn: null,
-        ps: [{
-            n: 'id',
-            an: {
-              lp: 'ID'
-            },
-            t: 'a'
-          }, {
-            n: 'coordinates',
-            en: {
-              lp: 'coordinates'
-            },
-            ti: '.Coordinates'
-          }]
-      }, {
-        ln: 'InnerBoundaryIs',
-        tn: null,
-        ps: [{
-            n: 'linearRing',
-            en: {
-              lp: 'LinearRing'
-            },
-            ti: '.LinearRing'
-          }]
-      }, {
-        ln: 'Polygon',
-        tn: null,
-        ps: [{
-            n: 'id',
-            an: {
-              lp: 'ID'
-            },
-            t: 'a'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'outerBoundaryIs',
-            en: {
-              lp: 'outerBoundaryIs'
-            },
-            ti: '.OuterBoundaryIs'
-          }, {
-            n: 'innerBoundaryIs',
-            col: true,
-            en: {
-              lp: 'innerBoundaryIs'
-            },
-            ti: '.InnerBoundaryIs'
-          }]
-      }, {
-        ln: 'LineString',
+        ln: 'Point',
         tn: null,
         ps: [{
             n: 'id',
@@ -520,6 +175,184 @@ var GML_1_0_0_Module_Factory = function () {
             ti: '.LineStringMember'
           }]
       }, {
+        ln: 'BoundedBy',
+        tn: null,
+        ps: [{
+            n: 'box',
+            en: {
+              lp: 'Box'
+            },
+            ti: '.Box'
+          }]
+      }, {
+        ln: 'PolygonProperty',
+        tn: null,
+        ps: [{
+            n: 'polygon',
+            en: {
+              lp: 'Polygon'
+            },
+            ti: '.Polygon'
+          }]
+      }, {
+        ln: 'Polygon',
+        tn: null,
+        ps: [{
+            n: 'id',
+            an: {
+              lp: 'ID'
+            },
+            t: 'a'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'outerBoundaryIs',
+            en: {
+              lp: 'outerBoundaryIs'
+            },
+            ti: '.OuterBoundaryIs'
+          }, {
+            n: 'innerBoundaryIs',
+            col: true,
+            en: {
+              lp: 'innerBoundaryIs'
+            },
+            ti: '.InnerBoundaryIs'
+          }]
+      }, {
+        ln: 'GeometryProperty',
+        tn: null,
+        ps: [{
+            n: 'pointOrLineStringOrPolygonOrMultiPointOrMultiLineStringOrMultiPolygonOrGeometryCollection',
+            col: true,
+            etis: [{
+                en: {
+                  lp: 'Point'
+                },
+                ti: '.Point'
+              }, {
+                en: {
+                  lp: 'LineString'
+                },
+                ti: '.LineString'
+              }, {
+                en: {
+                  lp: 'Polygon'
+                },
+                ti: '.Polygon'
+              }, {
+                en: {
+                  lp: 'MultiPoint'
+                },
+                ti: '.MultiPoint'
+              }, {
+                en: {
+                  lp: 'MultiLineString'
+                },
+                ti: '.MultiLineString'
+              }, {
+                en: {
+                  lp: 'MultiPolygon'
+                },
+                ti: '.MultiPolygon'
+              }, {
+                en: {
+                  lp: 'GeometryCollection'
+                },
+                ti: '.GeometryCollection'
+              }],
+            t: 'es'
+          }]
+      }, {
+        ln: 'Box',
+        tn: null,
+        ps: [{
+            n: 'id',
+            an: {
+              lp: 'ID'
+            },
+            t: 'a'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'coordinates',
+            en: {
+              lp: 'coordinates'
+            },
+            ti: '.Coordinates'
+          }]
+      }, {
+        ln: 'MultiPolygon',
+        tn: null,
+        ps: [{
+            n: 'id',
+            an: {
+              lp: 'ID'
+            },
+            t: 'a'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'polygonMember',
+            col: true,
+            en: {
+              lp: 'polygonMember'
+            },
+            ti: '.PolygonMember'
+          }]
+      }, {
+        ln: 'PointMember',
+        tn: null,
+        ps: [{
+            n: 'point',
+            en: {
+              lp: 'Point'
+            },
+            ti: '.Point'
+          }]
+      }, {
+        ln: 'ExtentOf',
+        tn: null,
+        ps: [{
+            n: 'polygon',
+            en: {
+              lp: 'Polygon'
+            },
+            ti: '.Polygon'
+          }]
+      }, {
+        ln: 'Coverage',
+        tn: null,
+        ps: [{
+            n: 'polygon',
+            en: {
+              lp: 'Polygon'
+            },
+            ti: '.Polygon'
+          }]
+      }, {
+        ln: 'CenterLineOf',
+        tn: null,
+        ps: [{
+            n: 'lineString',
+            en: {
+              lp: 'LineString'
+            },
+            ti: '.LineString'
+          }]
+      }, {
         ln: 'Property',
         tn: null,
         ps: [{
@@ -537,6 +370,81 @@ var GML_1_0_0_Module_Factory = function () {
           }, {
             n: 'value',
             t: 'v'
+          }]
+      }, {
+        ln: 'GeometryCollectionProperty',
+        tn: null,
+        ps: [{
+            n: 'geometryCollection',
+            en: {
+              lp: 'GeometryCollection'
+            },
+            ti: '.GeometryCollection'
+          }]
+      }, {
+        ln: 'MultiPoint',
+        tn: null,
+        ps: [{
+            n: 'id',
+            an: {
+              lp: 'ID'
+            },
+            t: 'a'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'pointMember',
+            col: true,
+            en: {
+              lp: 'pointMember'
+            },
+            ti: '.PointMember'
+          }]
+      }, {
+        ln: 'LineString',
+        tn: null,
+        ps: [{
+            n: 'id',
+            an: {
+              lp: 'ID'
+            },
+            t: 'a'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'coordinates',
+            en: {
+              lp: 'coordinates'
+            },
+            ti: '.Coordinates'
+          }]
+      }, {
+        ln: 'InnerBoundaryIs',
+        tn: null,
+        ps: [{
+            n: 'linearRing',
+            en: {
+              lp: 'LinearRing'
+            },
+            ti: '.LinearRing'
+          }]
+      }, {
+        ln: 'OuterBoundaryIs',
+        tn: null,
+        ps: [{
+            n: 'linearRing',
+            en: {
+              lp: 'LinearRing'
+            },
+            ti: '.LinearRing'
           }]
       }, {
         ln: 'GeometricProperty',
@@ -589,69 +497,17 @@ var GML_1_0_0_Module_Factory = function () {
             t: 'es'
           }]
       }, {
-        ln: 'Position',
+        ln: 'LineStringMember',
         tn: null,
         ps: [{
-            n: 'point',
+            n: 'lineString',
             en: {
-              lp: 'Point'
+              lp: 'LineString'
             },
-            ti: '.Point'
+            ti: '.LineString'
           }]
       }, {
-        ln: 'MultiPolygonProperty',
-        tn: null,
-        ps: [{
-            n: 'multiPolygon',
-            en: {
-              lp: 'MultiPolygon'
-            },
-            ti: '.MultiPolygon'
-          }]
-      }, {
-        ln: 'OuterBoundaryIs',
-        tn: null,
-        ps: [{
-            n: 'linearRing',
-            en: {
-              lp: 'LinearRing'
-            },
-            ti: '.LinearRing'
-          }]
-      }, {
-        ln: 'Box',
-        tn: null,
-        ps: [{
-            n: 'id',
-            an: {
-              lp: 'ID'
-            },
-            t: 'a'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'coordinates',
-            en: {
-              lp: 'coordinates'
-            },
-            ti: '.Coordinates'
-          }]
-      }, {
-        ln: 'MultiExtentOf',
-        tn: null,
-        ps: [{
-            n: 'multiPolygon',
-            en: {
-              lp: 'MultiPolygon'
-            },
-            ti: '.MultiPolygon'
-          }]
-      }, {
-        ln: 'MultiPosition',
+        ln: 'MultiLocation',
         tn: null,
         ps: [{
             n: 'multiPoint',
@@ -659,16 +515,6 @@ var GML_1_0_0_Module_Factory = function () {
               lp: 'MultiPoint'
             },
             ti: '.MultiPoint'
-          }]
-      }, {
-        ln: 'MultiEdgeOf',
-        tn: null,
-        ps: [{
-            n: 'multiLineString',
-            en: {
-              lp: 'MultiLineString'
-            },
-            ti: '.MultiLineString'
           }]
       }, {
         ln: 'MultiCoverage',
@@ -681,7 +527,128 @@ var GML_1_0_0_Module_Factory = function () {
             ti: '.MultiPolygon'
           }]
       }, {
-        ln: 'MultiPolygon',
+        ln: 'MultiPolygonProperty',
+        tn: null,
+        ps: [{
+            n: 'multiPolygon',
+            en: {
+              lp: 'MultiPolygon'
+            },
+            ti: '.MultiPolygon'
+          }]
+      }, {
+        ln: 'FeatureMember',
+        tn: null,
+        ps: [{
+            n: 'typeName',
+            an: {
+              lp: 'typeName'
+            },
+            t: 'a'
+          }, {
+            n: 'featureOrFeatureCollection',
+            col: true,
+            etis: [{
+                en: {
+                  lp: 'Feature'
+                },
+                ti: '.Feature'
+              }, {
+                en: {
+                  lp: 'FeatureCollection'
+                },
+                ti: '.FeatureCollection'
+              }],
+            t: 'es'
+          }]
+      }, {
+        ln: 'CenterOf',
+        tn: null,
+        ps: [{
+            n: 'point',
+            en: {
+              lp: 'Point'
+            },
+            ti: '.Point'
+          }]
+      }, {
+        ln: 'MultiEdgeOf',
+        tn: null,
+        ps: [{
+            n: 'multiLineString',
+            en: {
+              lp: 'MultiLineString'
+            },
+            ti: '.MultiLineString'
+          }]
+      }, {
+        ln: 'LinearRing',
+        tn: null,
+        ps: [{
+            n: 'id',
+            an: {
+              lp: 'ID'
+            },
+            t: 'a'
+          }, {
+            n: 'coordinates',
+            en: {
+              lp: 'coordinates'
+            },
+            ti: '.Coordinates'
+          }]
+      }, {
+        ln: 'MultiCenterOf',
+        tn: null,
+        ps: [{
+            n: 'multiPoint',
+            en: {
+              lp: 'MultiPoint'
+            },
+            ti: '.MultiPoint'
+          }]
+      }, {
+        ln: 'Location',
+        tn: null,
+        ps: [{
+            n: 'point',
+            en: {
+              lp: 'Point'
+            },
+            ti: '.Point'
+          }]
+      }, {
+        ln: 'MultiExtentOf',
+        tn: null,
+        ps: [{
+            n: 'multiPolygon',
+            en: {
+              lp: 'MultiPolygon'
+            },
+            ti: '.MultiPolygon'
+          }]
+      }, {
+        ln: 'PolygonMember',
+        tn: null,
+        ps: [{
+            n: 'polygon',
+            en: {
+              lp: 'Polygon'
+            },
+            ti: '.Polygon'
+          }]
+      }, {
+        ln: 'MultiCenterLineOf',
+        tn: null,
+        ps: [{
+            n: 'multiLineString',
+            en: {
+              lp: 'MultiLineString'
+            },
+            ti: '.MultiLineString'
+          }]
+      }, {
+        ln: 'GeometryCollection',
         tn: null,
         ps: [{
             n: 'id',
@@ -696,25 +663,81 @@ var GML_1_0_0_Module_Factory = function () {
             },
             t: 'a'
           }, {
-            n: 'polygonMember',
+            n: 'geometryMember',
             col: true,
             en: {
-              lp: 'polygonMember'
+              lp: 'geometryMember'
             },
-            ti: '.PolygonMember'
+            ti: '.GeometryMember'
           }]
       }, {
-        ln: 'MultiPointProperty',
+        ln: 'Feature',
         tn: null,
         ps: [{
-            n: 'multiPoint',
-            en: {
-              lp: 'MultiPoint'
+            n: 'typeName',
+            an: {
+              lp: 'typeName'
             },
-            ti: '.MultiPoint'
+            t: 'a'
+          }, {
+            n: 'identifier',
+            an: {
+              lp: 'identifier'
+            },
+            t: 'a'
+          }, {
+            n: 'description',
+            en: {
+              lp: 'description'
+            }
+          }, {
+            n: 'name',
+            en: {
+              lp: 'name'
+            }
+          }, {
+            n: 'boundedBy',
+            en: {
+              lp: 'boundedBy'
+            },
+            ti: '.BoundedBy'
+          }, {
+            n: 'property',
+            col: true,
+            en: {
+              lp: 'property'
+            },
+            ti: '.Property'
+          }, {
+            n: 'geometricProperty',
+            col: true,
+            en: {
+              lp: 'geometricProperty'
+            },
+            ti: '.GeometricProperty'
           }]
       }, {
-        ln: 'GeometryProperty',
+        ln: 'MultiLineStringProperty',
+        tn: null,
+        ps: [{
+            n: 'multiLineString',
+            en: {
+              lp: 'MultiLineString'
+            },
+            ti: '.MultiLineString'
+          }]
+      }, {
+        ln: 'EdgeOf',
+        tn: null,
+        ps: [{
+            n: 'lineString',
+            en: {
+              lp: 'LineString'
+            },
+            ti: '.LineString'
+          }]
+      }, {
+        ln: 'GeometryMember',
         tn: null,
         ps: [{
             n: 'pointOrLineStringOrPolygonOrMultiPointOrMultiLineStringOrMultiPolygonOrGeometryCollection',
@@ -757,140 +780,12 @@ var GML_1_0_0_Module_Factory = function () {
               }],
             t: 'es'
           }]
-      }, {
-        ln: 'GeometryCollection',
-        tn: null,
-        ps: [{
-            n: 'id',
-            an: {
-              lp: 'ID'
-            },
-            t: 'a'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'geometryMember',
-            col: true,
-            en: {
-              lp: 'geometryMember'
-            },
-            ti: '.GeometryMember'
-          }]
       }],
     eis: [{
-        en: {
-          lp: 'Point'
-        },
-        ti: '.Point'
-      }, {
-        en: {
-          lp: 'property'
-        },
-        ti: '.Property'
-      }, {
-        en: {
-          lp: 'multiPolygonProperty'
-        },
-        ti: '.MultiPolygonProperty'
-      }, {
-        en: {
-          lp: 'coverage'
-        },
-        ti: '.Coverage'
-      }, {
-        en: {
-          lp: 'MultiPoint'
-        },
-        ti: '.MultiPoint'
-      }, {
-        en: {
-          lp: 'Box'
-        },
-        ti: '.Box'
-      }, {
         en: {
           lp: 'featureMember'
         },
         ti: '.FeatureMember'
-      }, {
-        en: {
-          lp: 'geometryMember'
-        },
-        ti: '.GeometryMember'
-      }, {
-        en: {
-          lp: 'polygonMember'
-        },
-        ti: '.PolygonMember'
-      }, {
-        en: {
-          lp: 'Feature'
-        },
-        ti: '.Feature'
-      }, {
-        en: {
-          lp: 'outerBoundaryIs'
-        },
-        ti: '.OuterBoundaryIs'
-      }, {
-        en: {
-          lp: 'GeometryCollection'
-        },
-        ti: '.GeometryCollection'
-      }, {
-        en: {
-          lp: 'lineStringProperty'
-        },
-        ti: '.LineStringProperty'
-      }, {
-        en: {
-          lp: 'multiLocation'
-        },
-        ti: '.MultiLocation'
-      }, {
-        en: {
-          lp: 'multiCenterLineOf'
-        },
-        ti: '.MultiCenterLineOf'
-      }, {
-        en: {
-          lp: 'multiEdgeOf'
-        },
-        ti: '.MultiEdgeOf'
-      }, {
-        en: {
-          lp: 'multiCoverage'
-        },
-        ti: '.MultiCoverage'
-      }, {
-        en: {
-          lp: 'extentOf'
-        },
-        ti: '.ExtentOf'
-      }, {
-        en: {
-          lp: 'LineString'
-        },
-        ti: '.LineString'
-      }, {
-        en: {
-          lp: 'position'
-        },
-        ti: '.Position'
-      }, {
-        en: {
-          lp: 'MultiLineString'
-        },
-        ti: '.MultiLineString'
-      }, {
-        en: {
-          lp: 'geometryProperty'
-        },
-        ti: '.GeometryProperty'
       }, {
         en: {
           lp: 'MultiPolygon'
@@ -898,74 +793,9 @@ var GML_1_0_0_Module_Factory = function () {
         ti: '.MultiPolygon'
       }, {
         en: {
-          lp: 'multiLineStringProperty'
+          lp: 'MultiLineString'
         },
-        ti: '.MultiLineStringProperty'
-      }, {
-        en: {
-          lp: 'multiExtentOf'
-        },
-        ti: '.MultiExtentOf'
-      }, {
-        en: {
-          lp: 'multiPosition'
-        },
-        ti: '.MultiPosition'
-      }, {
-        en: {
-          lp: 'LinearRing'
-        },
-        ti: '.LinearRing'
-      }, {
-        en: {
-          lp: 'coordinates'
-        },
-        ti: '.Coordinates'
-      }, {
-        en: {
-          lp: 'centerOf'
-        },
-        ti: '.CenterOf'
-      }, {
-        en: {
-          lp: 'geometricProperty'
-        },
-        ti: '.GeometricProperty'
-      }, {
-        en: {
-          lp: 'pointMember'
-        },
-        ti: '.PointMember'
-      }, {
-        en: {
-          lp: 'centerLineOf'
-        },
-        ti: '.CenterLineOf'
-      }, {
-        en: {
-          lp: 'edgeOf'
-        },
-        ti: '.EdgeOf'
-      }, {
-        en: {
-          lp: 'innerBoundaryIs'
-        },
-        ti: '.InnerBoundaryIs'
-      }, {
-        en: {
-          lp: 'location'
-        },
-        ti: '.Location'
-      }, {
-        en: {
-          lp: 'pointProperty'
-        },
-        ti: '.PointProperty'
-      }, {
-        en: {
-          lp: 'FeatureCollection'
-        },
-        ti: '.FeatureCollection'
+        ti: '.MultiLineString'
       }, {
         en: {
           lp: 'lineStringMember'
@@ -973,14 +803,19 @@ var GML_1_0_0_Module_Factory = function () {
         ti: '.LineStringMember'
       }, {
         en: {
-          lp: 'geometryCollectionProperty'
+          lp: 'coordinates'
         },
-        ti: '.GeometryCollectionProperty'
+        ti: '.Coordinates'
       }, {
         en: {
-          lp: 'multiPointProperty'
+          lp: 'location'
         },
-        ti: '.MultiPointProperty'
+        ti: '.Location'
+      }, {
+        en: {
+          lp: 'multiPosition'
+        },
+        ti: '.MultiPosition'
       }, {
         en: {
           lp: 'multiCenterOf'
@@ -988,9 +823,54 @@ var GML_1_0_0_Module_Factory = function () {
         ti: '.MultiCenterOf'
       }, {
         en: {
-          lp: 'boundedBy'
+          lp: 'LinearRing'
         },
-        ti: '.BoundedBy'
+        ti: '.LinearRing'
+      }, {
+        en: {
+          lp: 'centerLineOf'
+        },
+        ti: '.CenterLineOf'
+      }, {
+        en: {
+          lp: 'pointMember'
+        },
+        ti: '.PointMember'
+      }, {
+        en: {
+          lp: 'coverage'
+        },
+        ti: '.Coverage'
+      }, {
+        en: {
+          lp: 'multiLocation'
+        },
+        ti: '.MultiLocation'
+      }, {
+        en: {
+          lp: 'centerOf'
+        },
+        ti: '.CenterOf'
+      }, {
+        en: {
+          lp: 'edgeOf'
+        },
+        ti: '.EdgeOf'
+      }, {
+        en: {
+          lp: 'pointProperty'
+        },
+        ti: '.PointProperty'
+      }, {
+        en: {
+          lp: 'Feature'
+        },
+        ti: '.Feature'
+      }, {
+        en: {
+          lp: 'MultiPoint'
+        },
+        ti: '.MultiPoint'
       }, {
         en: {
           lp: 'Polygon'
@@ -998,9 +878,129 @@ var GML_1_0_0_Module_Factory = function () {
         ti: '.Polygon'
       }, {
         en: {
+          lp: 'multiCenterLineOf'
+        },
+        ti: '.MultiCenterLineOf'
+      }, {
+        en: {
+          lp: 'FeatureCollection'
+        },
+        ti: '.FeatureCollection'
+      }, {
+        en: {
+          lp: 'geometryMember'
+        },
+        ti: '.GeometryMember'
+      }, {
+        en: {
+          lp: 'geometricProperty'
+        },
+        ti: '.GeometricProperty'
+      }, {
+        en: {
+          lp: 'position'
+        },
+        ti: '.Position'
+      }, {
+        en: {
+          lp: 'multiLineStringProperty'
+        },
+        ti: '.MultiLineStringProperty'
+      }, {
+        en: {
+          lp: 'Box'
+        },
+        ti: '.Box'
+      }, {
+        en: {
+          lp: 'multiEdgeOf'
+        },
+        ti: '.MultiEdgeOf'
+      }, {
+        en: {
+          lp: 'geometryCollectionProperty'
+        },
+        ti: '.GeometryCollectionProperty'
+      }, {
+        en: {
+          lp: 'geometryProperty'
+        },
+        ti: '.GeometryProperty'
+      }, {
+        en: {
+          lp: 'LineString'
+        },
+        ti: '.LineString'
+      }, {
+        en: {
+          lp: 'polygonMember'
+        },
+        ti: '.PolygonMember'
+      }, {
+        en: {
+          lp: 'boundedBy'
+        },
+        ti: '.BoundedBy'
+      }, {
+        en: {
+          lp: 'property'
+        },
+        ti: '.Property'
+      }, {
+        en: {
+          lp: 'Point'
+        },
+        ti: '.Point'
+      }, {
+        en: {
+          lp: 'multiPolygonProperty'
+        },
+        ti: '.MultiPolygonProperty'
+      }, {
+        en: {
+          lp: 'lineStringProperty'
+        },
+        ti: '.LineStringProperty'
+      }, {
+        en: {
+          lp: 'multiCoverage'
+        },
+        ti: '.MultiCoverage'
+      }, {
+        en: {
+          lp: 'GeometryCollection'
+        },
+        ti: '.GeometryCollection'
+      }, {
+        en: {
+          lp: 'outerBoundaryIs'
+        },
+        ti: '.OuterBoundaryIs'
+      }, {
+        en: {
+          lp: 'innerBoundaryIs'
+        },
+        ti: '.InnerBoundaryIs'
+      }, {
+        en: {
           lp: 'polygonProperty'
         },
         ti: '.PolygonProperty'
+      }, {
+        en: {
+          lp: 'extentOf'
+        },
+        ti: '.ExtentOf'
+      }, {
+        en: {
+          lp: 'multiExtentOf'
+        },
+        ti: '.MultiExtentOf'
+      }, {
+        en: {
+          lp: 'multiPointProperty'
+        },
+        ti: '.MultiPointProperty'
       }]
   };
   return {

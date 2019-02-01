@@ -2,11 +2,8 @@ var EOP_SAR_1_0_Module_Factory = function () {
   var EOP_SAR_1_0 = {
     n: 'EOP_SAR_1_0',
     dens: 'http:\/\/earth.esa.int\/sar',
-    deps: ['GML_3_1_1', 'EOP_1_0'],
+    deps: ['EOP_1_0', 'GML_3_1_1'],
     tis: [{
-        ln: 'EarthObservationType',
-        bti: 'EOP_1_0.EarthObservationType'
-      }, {
         ln: 'AcquisitionType',
         bti: 'EOP_1_0.AcquisitionType',
         ps: [{
@@ -29,21 +26,36 @@ var EOP_SAR_1_0_Module_Factory = function () {
             ti: 'GML_3_1_1.MeasureType'
           }]
       }, {
-        t: 'enum',
-        ln: 'PolarisationChannelsPropertyType',
-        vs: ['HH', 'HV', 'VH', 'VV', 'HH, VV', 'HH, VH', 'HH, HV', 'VH, VV', 'VH, HV', 'VV, HV', 'HH, VV, HV, VH', 'UNDEFINED']
+        ln: 'EarthObservationType',
+        bti: 'EOP_1_0.EarthObservationType'
       }, {
         t: 'enum',
         ln: 'PolarisationModePropertyType',
         vs: ['D', 'Q', 'S', 'T', 'UNDEFINED']
+      }, {
+        t: 'enum',
+        ln: 'PolarisationChannelsPropertyType',
+        vs: ['HH', 'HV', 'VH', 'VV', 'HH, VV', 'HH, VH', 'HH, HV', 'VH, VV', 'VH, HV', 'VV, HV', 'HH, VV, HV, VH', 'UNDEFINED']
       }],
     eis: [{
         en: 'antennaLookDirection'
       }, {
-        en: 'dopplerFrequency',
-        ti: 'GML_3_1_1.MeasureType'
-      }, {
         en: 'polarisationMode'
+      }, {
+        en: 'minimumIncidenceAngle',
+        ti: 'GML_3_1_1.AngleType'
+      }, {
+        en: 'incidenceAngleVariation',
+        ti: 'GML_3_1_1.AngleType'
+      }, {
+        en: 'polarisationChannels'
+      }, {
+        en: 'Acquisition',
+        ti: '.AcquisitionType',
+        sh: {
+          lp: 'Acquisition',
+          ns: 'http:\/\/earth.esa.int\/eop'
+        }
       }, {
         en: 'EarthObservation',
         ti: '.EarthObservationType',
@@ -52,23 +64,11 @@ var EOP_SAR_1_0_Module_Factory = function () {
           ns: 'http:\/\/earth.esa.int\/eop'
         }
       }, {
-        en: 'polarisationChannels'
-      }, {
-        en: 'minimumIncidenceAngle',
-        ti: 'GML_3_1_1.AngleType'
-      }, {
         en: 'maximumIncidenceAngle',
         ti: 'GML_3_1_1.AngleType'
       }, {
-        en: 'incidenceAngleVariation',
-        ti: 'GML_3_1_1.AngleType'
-      }, {
-        en: 'Acquisition',
-        ti: '.AcquisitionType',
-        sh: {
-          lp: 'Acquisition',
-          ns: 'http:\/\/earth.esa.int\/eop'
-        }
+        en: 'dopplerFrequency',
+        ti: 'GML_3_1_1.MeasureType'
       }]
   };
   return {
