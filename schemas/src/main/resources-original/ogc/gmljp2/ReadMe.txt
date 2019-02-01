@@ -27,6 +27,15 @@ this Schema gmljp2.xsd.
 
 -----------------------------------------------------------------------
 
+2018-09-24  Eric Hirschorn
+  + v2.1.0: Add/update GMLJP2 2.1.0 examples
+
+2018-09-12  Eric Hirschorn
+  + v2.1.0: Added GMLJP2 2.1.0 examples
+
+2018-08-24  Lucio Colaiacomo, Joan Maso, Emmanuel Devys, Eric Hirschorn
+  + v2.1.0: Added GMLJP2 2.1.0 to gmljp2/2.1 from OGC 08-085r8
+
 2016-06-10  Lucio Colaiacomo & Joan Maso & Emmanuel Devys
   + v2.0.1: Add GMLJP2 2.0.1 examples to gmljp2/2.0/examples (OGC 08-085r5)
 
@@ -48,7 +57,7 @@ Policies, Procedures, Terms, and Conditions of OGC(r) are available
 
 OGC and OpenGIS are registered trademarks of Open Geospatial Consortium.
 
-Copyright (c) 2014, 2016 Open Geospatial Consortium.
+Copyright (c) 2014-2018 Open Geospatial Consortium.
 
 -----------------------------------------------------------------------
 

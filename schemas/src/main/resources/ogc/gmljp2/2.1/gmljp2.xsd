@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:gmljp2="http://www.opengis.net/gmljp2/2.1"
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+	xmlns:gmlcovrgrid="http://www.opengis.net/gmlcov/gmlcovrgrid/1.0"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:gmd="http://www.isotc211.org/2005/gmd"
+	xmlns:eop="http://www.opengis.net/eop/2.1"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	targetNamespace="http://www.opengis.net/gmljp2/2.1"
+	elementFormDefault="qualified"
+	version="2.1.0">
+	<annotation>
+		<appinfo>GMPJP2</appinfo>
+		<documentation>This XML Schema Document defines the GMLJP2 XML encoding described in OGC 08-085r8.
+			
+			GMLJP2 is an OGC Standard.
+			Copyright (c) 2018 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</documentation>
+	</annotation>
+	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+	<import namespace="http://www.opengis.net/gmlcov/1.0" schemaLocation="http://schemas.opengis.net/gmlcov/1.0/gmlcovAll.xsd"/>
+	<import namespace="http://www.opengis.net/gmlcov/gmlcovrgrid/1.0" schemaLocation="http://schemas.opengis.net/gmlcov/gmlcovrgrid/1.0/gmlcovrgrid.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
+	<import namespace="http://www.opengis.net/eop/2.1" schemaLocation="http://schemas.opengis.net/eompom/1.1/xsd/eop.xsd"/>
+	<import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="http://schemas.opengis.net/csw/2.0.2/rec-dcmes.xsd"/>
+	<!-- ==============================================================
+	                                                  GMLJP2 Root elements and type
+	 ==============================================================-->
+	<element name="GMLJP2CoverageCollection" type="gmljp2:GMLJP2CoverageCollectionType" substitutionGroup="gmlcov:AbstractCoverage">
+		<annotation>
+			<documentation>This is the root element of a GMLJP2 XML description of an image, and serves as a container for all other elements (as stated in Requirement 12). The sub-elements gml:domainSet, the gml:rangeSet and the gmlcov:rangeType have no meaning for the collection; it is recommended that they be defined according to Requirement 12 and the text thereafter.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GMLJP2CoverageCollectionType">
+		<complexContent>
+			<extension base="gmlcov:AbstractCoverageType">
+				<sequence>
+					<element name="featureMember" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractFeatureMemberType">
+									<sequence>
+										<choice maxOccurs="unbounded">
+											<element ref="gmljp2:GMLJP2GridCoverage"/>
+											<element ref="gmljp2:GMLJP2RectifiedGridCoverage"/>
+											<element ref="gmljp2:GMLJP2ReferenceableGridCoverage"/>
+											<element ref="gmljp2:GMLJP2Features"/>
+										</choice>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="style" type="gmljp2:GenericWithAssocPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>When styling information of the features or annotations that are common to all codestreams in the JPEG 2000 file are to be included, independently of the features, they shall be included under this element (as stated in Requirement 17)</documentation>
+						</annotation>
+					</element>
+					<element name="extension" type="gmljp2:GenericWithAssocPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="GMLJP2GridCoverage" type="gmljp2:GMLJP2CoverageType" substitutionGroup="gmlcov:GridCoverage">
+		<annotation>
+			<documentation>For each codestream present in the image that can be considered a grid coverage, a gmljp2:GMLJP2GridCoverage shall be provided and populated (by a description of the gml:domainSet, the gml:rangeSet, and the gmlcov:rangeType) (as stated in Requirement 13).</documentation>
+		</annotation>
+	</element>
+	<element name="GMLJP2RectifiedGridCoverage" type="gmljp2:GMLJP2CoverageType" substitutionGroup="gmlcov:RectifiedGridCoverage">
+		<annotation>
+			<documentation>For each codestream present in the image that can be considered a rectified coverage grid, a gmljp2:GMLJP2RectifiedGridCoverage shall be provided and populated (by a description of the gml:domainSet, the gml:rangeSet, and the gmlcov:rangeType) (as stated in Requirement 13).</documentation>
+		</annotation>
+	</element>
+	<element name="GMLJP2ReferenceableGridCoverage" type="gmljp2:GMLJP2CoverageType" substitutionGroup="gmlcov:ReferenceableGridCoverage">
+		<annotation>
+			<documentation>For each codestream present in the image that can be considered a referenceable grid coverage, a  gmljp2:GMLJP2ReferenceableGridCoverage shall be provided and populated (by a description of the gml:domainSet, the gml:rangeSet, and the gmlcov:rangeType) (as stated in Requirement 13).</documentation>
+		</annotation>
+	</element>
+	<element name="GMLJP2Features" type="gmljp2:GMLJP2FeaturesType" substitutionGroup="gml:AbstractFeature">
+		<annotation>
+			<documentation>When there are features common to all codestreams in the JPEG 2000 file, their descriptions are to be placed (except the CIS part and annotations if any) under this element. These descriptions shall be encoded in GML 3.2. For features that are instead related to a single codestream, use the gmljp2:feature element of the GMLJP2 sub-elements of gmljp2:GMLJP2CoverageType derived types (i.e. gmljp2:GMLJP2GridCoverage, gmljp2:GMLJP2RectifiedGridCoverage, or gmljp2:GMLJP2ReferenceableGridCoverage) (as stated in Requirement 15).</documentation>
+		</annotation>
+	</element>
+	<complexType name="GMLJP2FeaturesType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="feature">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractFeatureMemberType">
+									<sequence>
+										<element ref="gml:AbstractFeature" minOccurs="0" maxOccurs="unbounded"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+					<element name="style" type="gmljp2:GenericWithAssocPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>When styling information of parent features are to be included independently of the features, these styles shall be included under this element (as stated in Requirement 17). For example, one may include an SLD as a style layer description that describes styles of the parent element features.</documentation>
+						</annotation>
+					</element>
+					<element name="extension" type="gmljp2:GenericWithAssocPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ==============================================================
+	                                       GMLJP2 coverage for a codestream
+	 ==============================================================-->
+	<complexType name="GMLJP2CoverageType">
+		<annotation>
+			<documentation>For each codestream present in the image, a gmljp2:featureMember sub-element derived from gmlcov:AbstractCoverageType (i.e. gmljp2:GMLJP2GridCoverage, gmljp2:GMLJP2RectifiedGridCoverage or gmljp2:GMLJP2ReferenceableGridCoverage) shall be provided and populated (composed by a description of the gml:domainSet, the gml:rangeSet, and the gmlcov:rangeType with the addition of features, annotations, and styles) (as stated in Requirement 13).</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="gmlcov:AbstractDiscreteCoverageType">
+				<sequence>
+					<element name="feature" type="gml:FeaturePropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>When there are features associated with a single codestream in the JPEG 2000 file, they shall be included here (except the CIS part and annotations if any). Such features shall be encoded in GML 3.2. For features that are common to all codestreams, use GMLJP2Features instead.</documentation>
+						</annotation>
+					</element>
+					<element name="annotation" type="gmljp2:GenericWithAssocPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>When there are annotations associated with a single codestream in the JPEG 2000 file, they shall be included here (as stated in Requirement 16).</documentation>
+						</annotation>
+					</element>
+					<element name="style" type="gmljp2:GenericWithAssocPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>When styling information of the parent features or annotations associated with a single codestream in the JPEG 2000 file are to be included independently of the features, such styles shall be included under this element (as stated in Requirement 17). For example, one may include an SLD as a style layer description that describes styles of the parent gmljp2:feature element.</documentation>
+						</annotation>
+					</element>
+					<element name="extension" type="gmljp2:GenericWithAssocPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<documentation>Generic extension point applicable only for a single codestream.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ==============================================================
+	                                                        Metadata Types
+	 ==============================================================-->
+	<element name="Metadata" type="gmljp2:GenericMetadataType" substitutionGroup="gmlcov:Extension">
+		<annotation>
+			<documentation>If needed, coverage metadata descriptions are to be included under this element by attaching it to the gmlcov:metadata of the gmljp2:featureMember derived from gmlcov:AbstractCoverageType (as stated in Requirement 14). This element provides placeholders for ISO 19139 Metadata (isoMetadata), the Earth Observation Profile metadata (eopMetadata) Dublin Core metadata (dcMetadata), textual metadata (metadata), or any other form of metadata.</documentation>
+		</annotation>
+	</element>
+	<complexType name="GenericMetadataType">
+		<complexContent>
+			<restriction base="gmlcov:ExtensionType">
+				<sequence>
+					<choice minOccurs="0">
+						<element name="isoMetadata" type="gmd:MD_Metadata_PropertyType"/>
+						<element name="eopMetadata" maxOccurs="unbounded">
+							<complexType>
+								<sequence>
+									<element ref="eop:EarthObservation"/>
+								</sequence>
+							</complexType>
+						</element>
+						<element name="dcMetadata" maxOccurs="unbounded">
+							<complexType>
+								<sequence minOccurs="0" maxOccurs="unbounded">
+									<element ref="dc:DC-element"/>
+								</sequence>
+							</complexType>
+						</element>
+						<element name="metadata">
+							<complexType mixed="true">
+								<sequence>
+									<any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+								</sequence>
+								<attributeGroup ref="gml:AssociationAttributeGroup"/>
+							</complexType>
+						</element>
+					</choice>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<!-- ==============================================================
+	                                                        Generic Types
+	 ==============================================================-->
+	<complexType name="GenericWithAssocPropertyType">
+		<sequence>
+			<any namespace="##other" processContents="lax"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup">
+			<annotation>
+				<documentation>
+                All of the child elements of the gmljp2:GMLJP2CoverageType are derived from gml:AssociationAttributeGroup and as such may be described either inline or by reference (via xlink:href).</documentation>
+			</annotation>
+		</attributeGroup>
+	</complexType>
+</schema>
