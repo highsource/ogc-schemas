@@ -2,6 +2,72 @@
 {
     "id":"http://earth.esa.int/opt#",
     "definitions":{
+        "AcquisitionType":{
+            "allOf":[
+                {
+                    "$ref":"http://earth.esa.int/eop#/definitions/AcquisitionType"
+                },
+                {
+                    "type":"object",
+                    "title":"AcquisitionType",
+                    "properties":{
+                        "illuminationAzimuthAngle":{
+                            "title":"illuminationAzimuthAngle",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/AngleType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"illuminationAzimuthAngle",
+                                "namespaceURI":"http://earth.esa.int/opt"
+                            }
+                        },
+                        "illuminationElevationAngle":{
+                            "title":"illuminationElevationAngle",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/AngleType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"illuminationElevationAngle",
+                                "namespaceURI":"http://earth.esa.int/opt"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AcquisitionType",
+                "namespaceURI":"http://earth.esa.int/opt"
+            },
+            "propertiesOrder":[
+                "illuminationAzimuthAngle",
+                "illuminationElevationAngle"
+            ]
+        },
+        "EarthObservationType":{
+            "allOf":[
+                {
+                    "$ref":"http://earth.esa.int/eop#/definitions/EarthObservationType"
+                },
+                {
+                    "type":"object",
+                    "title":"EarthObservationType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationType",
+                "namespaceURI":"http://earth.esa.int/opt"
+            }
+        },
         "EarthObservationResultType":{
             "allOf":[
                 {
@@ -104,72 +170,6 @@
                 "snowCoverPercentage",
                 "snowCoverPercentageAssessmentConfidence",
                 "snowCoverPercentageQuotationMode"
-            ]
-        },
-        "EarthObservationType":{
-            "allOf":[
-                {
-                    "$ref":"http://earth.esa.int/eop#/definitions/EarthObservationType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationType",
-                "namespaceURI":"http://earth.esa.int/opt"
-            }
-        },
-        "AcquisitionType":{
-            "allOf":[
-                {
-                    "$ref":"http://earth.esa.int/eop#/definitions/AcquisitionType"
-                },
-                {
-                    "type":"object",
-                    "title":"AcquisitionType",
-                    "properties":{
-                        "illuminationAzimuthAngle":{
-                            "title":"illuminationAzimuthAngle",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/AngleType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"illuminationAzimuthAngle",
-                                "namespaceURI":"http://earth.esa.int/opt"
-                            }
-                        },
-                        "illuminationElevationAngle":{
-                            "title":"illuminationElevationAngle",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/AngleType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"illuminationElevationAngle",
-                                "namespaceURI":"http://earth.esa.int/opt"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AcquisitionType",
-                "namespaceURI":"http://earth.esa.int/opt"
-            },
-            "propertiesOrder":[
-                "illuminationAzimuthAngle",
-                "illuminationElevationAngle"
             ]
         }
     },

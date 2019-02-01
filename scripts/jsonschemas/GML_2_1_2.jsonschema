@@ -2,236 +2,133 @@
 {
     "id":"http://www.opengis.net/gml#",
     "definitions":{
-        "LineStringType":{
+        "CoordType":{
+            "type":"object",
+            "title":"CoordType",
             "required":[
-                "coord",
-                "coordinates"
+                "x"
             ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractGeometryType"
-                },
-                {
-                    "type":"object",
-                    "title":"LineStringType",
-                    "properties":{
-                        "coord":{
-                            "title":"coord",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/CoordType"
-                                    },
-                                    "minItems":2
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"coord",
-                                "namespaceURI":"http://www.opengis.net/gml"
-                            }
-                        },
-                        "coordinates":{
-                            "title":"coordinates",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CoordinatesType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"coordinates",
-                                "namespaceURI":"http://www.opengis.net/gml"
-                            }
+            "properties":{
+                "x":{
+                    "title":"x",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
                         }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"X",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "y":{
+                    "title":"y",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Y",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "z":{
+                    "title":"z",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Z",
+                        "namespaceURI":"http://www.opengis.net/gml"
                     }
                 }
-            ],
+            },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"LineStringType",
+                "localPart":"CoordType",
                 "namespaceURI":"http://www.opengis.net/gml"
             },
             "propertiesOrder":[
-                "coord",
-                "coordinates"
+                "x",
+                "y",
+                "z"
             ]
         },
-        "MultiLineStringType":{
+        "MultiPolygonType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/GeometryCollectionType"
                 },
                 {
                     "type":"object",
-                    "title":"MultiLineStringType",
+                    "title":"MultiPolygonType",
                     "properties":{
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"MultiLineStringType",
+                "localPart":"MultiPolygonType",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
-        "AbstractGeometryCollectionBaseType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractGeometryType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractGeometryCollectionBaseType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractGeometryCollectionBaseType",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        "PolygonType":{
-            "required":[
-                "outerBoundaryIs"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractGeometryType"
-                },
-                {
-                    "type":"object",
-                    "title":"PolygonType",
-                    "properties":{
-                        "outerBoundaryIs":{
-                            "title":"outerBoundaryIs",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/LinearRingMemberType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"outerBoundaryIs",
-                                "namespaceURI":"http://www.opengis.net/gml"
-                            }
-                        },
-                        "innerBoundaryIs":{
-                            "title":"innerBoundaryIs",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/LinearRingMemberType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"innerBoundaryIs",
-                                "namespaceURI":"http://www.opengis.net/gml"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"PolygonType",
-                "namespaceURI":"http://www.opengis.net/gml"
-            },
-            "propertiesOrder":[
-                "outerBoundaryIs",
-                "innerBoundaryIs"
-            ]
-        },
-        "MultiLineStringPropertyType":{
+        "MultiPointPropertyType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/GeometryAssociationType"
                 },
                 {
                     "type":"object",
-                    "title":"MultiLineStringPropertyType",
+                    "title":"MultiPointPropertyType",
                     "properties":{
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"MultiLineStringPropertyType",
+                "localPart":"MultiPointPropertyType",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
-        "AbstractFeatureCollectionType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractFeatureCollectionBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractFeatureCollectionType",
-                    "properties":{
-                        "featureMember":{
-                            "title":"featureMember",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                                "$ref":"#/definitions/FeatureAssociationType"
-                                            }
-                                        },
-                                        "elementName":{
-                                            "localPart":"featureMember",
-                                            "namespaceURI":"http://www.opengis.net/gml"
-                                        }
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"featureMember",
-                                "namespaceURI":"http://www.opengis.net/gml"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractFeatureCollectionType",
-                "namespaceURI":"http://www.opengis.net/gml"
-            },
-            "propertiesOrder":[
-                "featureMember"
-            ]
-        },
-        "PolygonMemberType":{
+        "LineStringPropertyType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/GeometryAssociationType"
                 },
                 {
                     "type":"object",
-                    "title":"PolygonMemberType",
+                    "title":"LineStringPropertyType",
                     "properties":{
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"PolygonMemberType",
+                "localPart":"LineStringPropertyType",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        "PolygonPropertyType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/GeometryAssociationType"
+                },
+                {
+                    "type":"object",
+                    "title":"PolygonPropertyType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"PolygonPropertyType",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -292,43 +189,148 @@
                 "coordinates"
             ]
         },
-        "MultiPolygonType":{
+        "AbstractFeatureCollectionBaseType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"AbstractFeatureCollectionBaseType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractFeatureCollectionBaseType",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        "MultiLineStringType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/GeometryCollectionType"
                 },
                 {
                     "type":"object",
-                    "title":"MultiPolygonType",
+                    "title":"MultiLineStringType",
                     "properties":{
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"MultiPolygonType",
+                "localPart":"MultiLineStringType",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
-        "MultiGeometryPropertyType":{
+        "MultiLineStringPropertyType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/GeometryAssociationType"
                 },
                 {
                     "type":"object",
-                    "title":"MultiGeometryPropertyType",
+                    "title":"MultiLineStringPropertyType",
                     "properties":{
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"MultiGeometryPropertyType",
+                "localPart":"MultiLineStringPropertyType",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
-        "LinearRingType":{
+        "LineStringMemberType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/GeometryAssociationType"
+                },
+                {
+                    "type":"object",
+                    "title":"LineStringMemberType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LineStringMemberType",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        "AbstractFeatureType":{
+            "type":"object",
+            "title":"AbstractFeatureType",
+            "properties":{
+                "description":{
+                    "title":"description",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"description",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"name",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "boundedBy":{
+                    "title":"boundedBy",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/BoundingShapeType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"boundedBy",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "fid":{
+                    "title":"fid",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"fid",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractFeatureType",
+                "namespaceURI":"http://www.opengis.net/gml"
+            },
+            "propertiesOrder":[
+                "description",
+                "name",
+                "boundedBy",
+                "fid"
+            ]
+        },
+        "LineStringType":{
             "required":[
                 "coord",
                 "coordinates"
@@ -339,7 +341,7 @@
                 },
                 {
                     "type":"object",
-                    "title":"LinearRingType",
+                    "title":"LineStringType",
                     "properties":{
                         "coord":{
                             "title":"coord",
@@ -349,7 +351,7 @@
                                     "items":{
                                         "$ref":"#/definitions/CoordType"
                                     },
-                                    "minItems":4
+                                    "minItems":2
                                 }
                             ],
                             "propertyType":"element",
@@ -376,13 +378,108 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"LinearRingType",
+                "localPart":"LineStringType",
                 "namespaceURI":"http://www.opengis.net/gml"
             },
             "propertiesOrder":[
                 "coord",
                 "coordinates"
             ]
+        },
+        "PolygonMemberType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/GeometryAssociationType"
+                },
+                {
+                    "type":"object",
+                    "title":"PolygonMemberType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"PolygonMemberType",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        "MultiPointType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/GeometryCollectionType"
+                },
+                {
+                    "type":"object",
+                    "title":"MultiPointType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"MultiPointType",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        "AbstractGeometryType":{
+            "type":"object",
+            "title":"AbstractGeometryType",
+            "properties":{
+                "gid":{
+                    "title":"gid",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"gid",
+                        "namespaceURI":""
+                    }
+                },
+                "srsName":{
+                    "title":"srsName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"srsName",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractGeometryType",
+                "namespaceURI":"http://www.opengis.net/gml"
+            },
+            "propertiesOrder":[
+                "gid",
+                "srsName"
+            ]
+        },
+        "AbstractGeometryCollectionBaseType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractGeometryType"
+                },
+                {
+                    "type":"object",
+                    "title":"AbstractGeometryCollectionBaseType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractGeometryCollectionBaseType",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
         },
         "PointMemberType":{
             "allOf":[
@@ -455,237 +552,91 @@
                 "geometryMember"
             ]
         },
-        "LinearRingMemberType":{
+        "AbstractFeatureCollectionType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractFeatureCollectionBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"AbstractFeatureCollectionType",
+                    "properties":{
+                        "featureMember":{
+                            "title":"featureMember",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                                "$ref":"#/definitions/FeatureAssociationType"
+                                            }
+                                        },
+                                        "elementName":{
+                                            "localPart":"featureMember",
+                                            "namespaceURI":"http://www.opengis.net/gml"
+                                        }
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"featureMember",
+                                "namespaceURI":"http://www.opengis.net/gml"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AbstractFeatureCollectionType",
+                "namespaceURI":"http://www.opengis.net/gml"
+            },
+            "propertiesOrder":[
+                "featureMember"
+            ]
+        },
+        "PointPropertyType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/GeometryAssociationType"
                 },
                 {
                     "type":"object",
-                    "title":"LinearRingMemberType",
+                    "title":"PointPropertyType",
                     "properties":{
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"LinearRingMemberType",
+                "localPart":"PointPropertyType",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
-        "MultiPointType":{
+        "MultiPolygonPropertyType":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/GeometryCollectionType"
+                    "$ref":"#/definitions/GeometryAssociationType"
                 },
                 {
                     "type":"object",
-                    "title":"MultiPointType",
+                    "title":"MultiPolygonPropertyType",
                     "properties":{
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"MultiPointType",
+                "localPart":"MultiPolygonPropertyType",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
-        },
-        "AbstractGeometryType":{
-            "type":"object",
-            "title":"AbstractGeometryType",
-            "properties":{
-                "gid":{
-                    "title":"gid",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"gid",
-                        "namespaceURI":""
-                    }
-                },
-                "srsName":{
-                    "title":"srsName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"srsName",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractGeometryType",
-                "namespaceURI":"http://www.opengis.net/gml"
-            },
-            "propertiesOrder":[
-                "gid",
-                "srsName"
-            ]
-        },
-        "CoordType":{
-            "type":"object",
-            "title":"CoordType",
-            "required":[
-                "x"
-            ],
-            "properties":{
-                "x":{
-                    "title":"x",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"X",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "y":{
-                    "title":"y",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Y",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "z":{
-                    "title":"z",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Z",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CoordType",
-                "namespaceURI":"http://www.opengis.net/gml"
-            },
-            "propertiesOrder":[
-                "x",
-                "y",
-                "z"
-            ]
-        },
-        "BoundingShapeType":{
-            "type":"object",
-            "title":"BoundingShapeType",
-            "required":[
-                "box",
-                "_null"
-            ],
-            "properties":{
-                "box":{
-                    "title":"box",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/BoxType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Box",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "_null":{
-                    "title":"_null",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/NullType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"null",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"BoundingShapeType",
-                "namespaceURI":"http://www.opengis.net/gml"
-            },
-            "propertiesOrder":[
-                "box",
-                "_null"
-            ]
-        },
-        "PointType":{
-            "required":[
-                "coord",
-                "coordinates"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractGeometryType"
-                },
-                {
-                    "type":"object",
-                    "title":"PointType",
-                    "properties":{
-                        "coord":{
-                            "title":"coord",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CoordType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"coord",
-                                "namespaceURI":"http://www.opengis.net/gml"
-                            }
-                        },
-                        "coordinates":{
-                            "title":"coordinates",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CoordinatesType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"coordinates",
-                                "namespaceURI":"http://www.opengis.net/gml"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"PointType",
-                "namespaceURI":"http://www.opengis.net/gml"
-            },
-            "propertiesOrder":[
-                "coord",
-                "coordinates"
-            ]
         },
         "GeometryPropertyType":{
             "type":"object",
@@ -841,65 +792,105 @@
                 "actuate"
             ]
         },
-        "PolygonPropertyType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/GeometryAssociationType"
-                },
-                {
-                    "type":"object",
-                    "title":"PolygonPropertyType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"PolygonPropertyType",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        "CoordinatesType":{
+        "FeatureAssociationType":{
             "type":"object",
-            "title":"CoordinatesType",
+            "title":"FeatureAssociationType",
+            "required":[
+                "feature"
+            ],
             "properties":{
-                "value":{
-                    "title":"value",
+                "feature":{
+                    "title":"feature",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"#/definitions/AbstractFeatureType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"_Feature",
+                                "namespaceURI":"http://www.opengis.net/gml"
+                            }
                         }
                     ],
-                    "propertyType":"value"
-                },
-                "decimal":{
-                    "title":"decimal",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"decimal",
-                        "namespaceURI":""
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"_Feature",
+                        "namespaceURI":"http://www.opengis.net/gml"
                     }
                 },
-                "cs":{
-                    "title":"cs",
+                "remoteSchema":{
+                    "title":"remoteSchema",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"cs",
-                        "namespaceURI":""
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml"
                     }
                 },
-                "ts":{
-                    "title":"ts",
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -907,38 +898,180 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"ts",
-                        "namespaceURI":""
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"CoordinatesType",
+                "localPart":"FeatureAssociationType",
                 "namespaceURI":"http://www.opengis.net/gml"
             },
             "propertiesOrder":[
-                "value",
-                "decimal",
-                "cs",
-                "ts"
+                "feature",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
             ]
         },
-        "PointPropertyType":{
+        "LinearRingType":{
+            "required":[
+                "coord",
+                "coordinates"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractGeometryType"
+                },
+                {
+                    "type":"object",
+                    "title":"LinearRingType",
+                    "properties":{
+                        "coord":{
+                            "title":"coord",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/CoordType"
+                                    },
+                                    "minItems":4
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"coord",
+                                "namespaceURI":"http://www.opengis.net/gml"
+                            }
+                        },
+                        "coordinates":{
+                            "title":"coordinates",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CoordinatesType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"coordinates",
+                                "namespaceURI":"http://www.opengis.net/gml"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LinearRingType",
+                "namespaceURI":"http://www.opengis.net/gml"
+            },
+            "propertiesOrder":[
+                "coord",
+                "coordinates"
+            ]
+        },
+        "PolygonType":{
+            "required":[
+                "outerBoundaryIs"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractGeometryType"
+                },
+                {
+                    "type":"object",
+                    "title":"PolygonType",
+                    "properties":{
+                        "outerBoundaryIs":{
+                            "title":"outerBoundaryIs",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/LinearRingMemberType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"outerBoundaryIs",
+                                "namespaceURI":"http://www.opengis.net/gml"
+                            }
+                        },
+                        "innerBoundaryIs":{
+                            "title":"innerBoundaryIs",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/LinearRingMemberType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"innerBoundaryIs",
+                                "namespaceURI":"http://www.opengis.net/gml"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"PolygonType",
+                "namespaceURI":"http://www.opengis.net/gml"
+            },
+            "propertiesOrder":[
+                "outerBoundaryIs",
+                "innerBoundaryIs"
+            ]
+        },
+        "MultiGeometryPropertyType":{
             "allOf":[
                 {
                     "$ref":"#/definitions/GeometryAssociationType"
                 },
                 {
                     "type":"object",
-                    "title":"PointPropertyType",
+                    "title":"MultiGeometryPropertyType",
                     "properties":{
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"PointPropertyType",
+                "localPart":"MultiGeometryPropertyType",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -1096,123 +1229,21 @@
                 "actuate"
             ]
         },
-        "AbstractFeatureCollectionBaseType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractFeatureCollectionBaseType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractFeatureCollectionBaseType",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        "FeatureAssociationType":{
+        "CoordinatesType":{
             "type":"object",
-            "title":"FeatureAssociationType",
-            "required":[
-                "feature"
-            ],
+            "title":"CoordinatesType",
             "properties":{
-                "feature":{
-                    "title":"feature",
+                "value":{
+                    "title":"value",
                     "allOf":[
                         {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"#/definitions/AbstractFeatureType"
-                                }
-                            },
-                            "elementName":{
-                                "localPart":"_Feature",
-                                "namespaceURI":"http://www.opengis.net/gml"
-                            }
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"elementRef",
-                    "elementName":{
-                        "localPart":"_Feature",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
+                    "propertyType":"value"
                 },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
+                "decimal":{
+                    "title":"decimal",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -1220,193 +1251,162 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                        "localPart":"decimal",
+                        "namespaceURI":""
                     }
                 },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"FeatureAssociationType",
-                "namespaceURI":"http://www.opengis.net/gml"
-            },
-            "propertiesOrder":[
-                "feature",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "MultiPolygonPropertyType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/GeometryAssociationType"
-                },
-                {
-                    "type":"object",
-                    "title":"MultiPolygonPropertyType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"MultiPolygonPropertyType",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        "LineStringMemberType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/GeometryAssociationType"
-                },
-                {
-                    "type":"object",
-                    "title":"LineStringMemberType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LineStringMemberType",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        "LineStringPropertyType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/GeometryAssociationType"
-                },
-                {
-                    "type":"object",
-                    "title":"LineStringPropertyType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LineStringPropertyType",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        "MultiPointPropertyType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/GeometryAssociationType"
-                },
-                {
-                    "type":"object",
-                    "title":"MultiPointPropertyType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"MultiPointPropertyType",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        "AbstractFeatureType":{
-            "type":"object",
-            "title":"AbstractFeatureType",
-            "properties":{
-                "description":{
-                    "title":"description",
+                "cs":{
+                    "title":"cs",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"description",
-                        "namespaceURI":"http://www.opengis.net/gml"
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"cs",
+                        "namespaceURI":""
                     }
                 },
-                "name":{
-                    "title":"name",
+                "ts":{
+                    "title":"ts",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"name",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "boundedBy":{
-                    "title":"boundedBy",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/BoundingShapeType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"boundedBy",
-                        "namespaceURI":"http://www.opengis.net/gml"
-                    }
-                },
-                "fid":{
-                    "title":"fid",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
-                        }
-                    ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"fid",
+                        "localPart":"ts",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AbstractFeatureType",
+                "localPart":"CoordinatesType",
                 "namespaceURI":"http://www.opengis.net/gml"
             },
             "propertiesOrder":[
-                "description",
-                "name",
-                "boundedBy",
-                "fid"
+                "value",
+                "decimal",
+                "cs",
+                "ts"
+            ]
+        },
+        "BoundingShapeType":{
+            "type":"object",
+            "title":"BoundingShapeType",
+            "required":[
+                "box",
+                "_null"
+            ],
+            "properties":{
+                "box":{
+                    "title":"box",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/BoxType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Box",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                },
+                "_null":{
+                    "title":"_null",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/NullType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"null",
+                        "namespaceURI":"http://www.opengis.net/gml"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"BoundingShapeType",
+                "namespaceURI":"http://www.opengis.net/gml"
+            },
+            "propertiesOrder":[
+                "box",
+                "_null"
+            ]
+        },
+        "LinearRingMemberType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/GeometryAssociationType"
+                },
+                {
+                    "type":"object",
+                    "title":"LinearRingMemberType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LinearRingMemberType",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        "PointType":{
+            "required":[
+                "coord",
+                "coordinates"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractGeometryType"
+                },
+                {
+                    "type":"object",
+                    "title":"PointType",
+                    "properties":{
+                        "coord":{
+                            "title":"coord",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CoordType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"coord",
+                                "namespaceURI":"http://www.opengis.net/gml"
+                            }
+                        },
+                        "coordinates":{
+                            "title":"coordinates",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/CoordinatesType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"coordinates",
+                                "namespaceURI":"http://www.opengis.net/gml"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"PointType",
+                "namespaceURI":"http://www.opengis.net/gml"
+            },
+            "propertiesOrder":[
+                "coord",
+                "coordinates"
             ]
         },
         "NullType":{
@@ -1423,6 +1423,618 @@
         }
     },
     "anyOf":[
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "MultiGeometry"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GeometryCollectionType"
+                }
+            },
+            "elementName":{
+                "localPart":"MultiGeometry",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "outerBoundaryIs"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/LinearRingMemberType"
+                }
+            },
+            "elementName":{
+                "localPart":"outerBoundaryIs",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "centerOf"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/PointPropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"centerOf",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "otherFeatureMember"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/FeatureAssociationType"
+                }
+            },
+            "elementName":{
+                "localPart":"otherFeatureMember",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "coord"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/CoordType"
+                }
+            },
+            "elementName":{
+                "localPart":"coord",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "polygonProperty"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/PolygonPropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"polygonProperty",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "name"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"name",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "description"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"description",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "multiCenterLineOf"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MultiLineStringPropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"multiCenterLineOf",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_Geometry"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/AbstractGeometryType"
+                }
+            },
+            "elementName":{
+                "localPart":"_Geometry",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_GeometryCollection"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GeometryCollectionType"
+                }
+            },
+            "elementName":{
+                "localPart":"_GeometryCollection",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "MultiLineString"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MultiLineStringType"
+                }
+            },
+            "elementName":{
+                "localPart":"MultiLineString",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "multiPolygonProperty"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MultiPolygonPropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"multiPolygonProperty",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "multiPointProperty"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MultiPointPropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"multiPointProperty",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "LineString"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/LineStringType"
+                }
+            },
+            "elementName":{
+                "localPart":"LineString",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "LinearRing"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/LinearRingType"
+                }
+            },
+            "elementName":{
+                "localPart":"LinearRing",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "geometryProperty"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GeometryAssociationType"
+                }
+            },
+            "elementName":{
+                "localPart":"geometryProperty",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Point"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/PointType"
+                }
+            },
+            "elementName":{
+                "localPart":"Point",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
         {
             "type":"object",
             "properties":{
@@ -1454,6 +2066,176 @@
             },
             "elementName":{
                 "localPart":"lineStringProperty",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "multiLocation"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MultiPointPropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"multiLocation",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "coverage"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/PolygonPropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"coverage",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "location"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/PointPropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"location",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "_geometryProperty"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GeometryAssociationType"
+                }
+            },
+            "elementName":{
+                "localPart":"_geometryProperty",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "boundedBy"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/BoundingShapeType"
+                }
+            },
+            "elementName":{
+                "localPart":"boundedBy",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -1538,7 +2320,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "multiPosition"
+                                        "lineStringMember"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1551,11 +2333,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/MultiPointPropertyType"
+                    "$ref":"#/definitions/LineStringMemberType"
                 }
             },
             "elementName":{
-                "localPart":"multiPosition",
+                "localPart":"lineStringMember",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -1606,516 +2388,6 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "coverage"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/PolygonPropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"coverage",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Polygon"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/PolygonType"
-                }
-            },
-            "elementName":{
-                "localPart":"Polygon",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "lineStringMember"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/LineStringMemberType"
-                }
-            },
-            "elementName":{
-                "localPart":"lineStringMember",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "multiCoverage"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MultiPolygonPropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"multiCoverage",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "boundedBy"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/BoundingShapeType"
-                }
-            },
-            "elementName":{
-                "localPart":"boundedBy",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "otherFeatureMember"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/FeatureAssociationType"
-                }
-            },
-            "elementName":{
-                "localPart":"otherFeatureMember",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "_geometryProperty"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GeometryAssociationType"
-                }
-            },
-            "elementName":{
-                "localPart":"_geometryProperty",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Point"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/PointType"
-                }
-            },
-            "elementName":{
-                "localPart":"Point",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Box"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/BoxType"
-                }
-            },
-            "elementName":{
-                "localPart":"Box",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "name"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            },
-            "elementName":{
-                "localPart":"name",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "featureMember"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/FeatureAssociationType"
-                }
-            },
-            "elementName":{
-                "localPart":"featureMember",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "centerOf"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/PointPropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"centerOf",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "multiPolygonProperty"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MultiPolygonPropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"multiPolygonProperty",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "polygonProperty"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/PolygonPropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"polygonProperty",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "innerBoundaryIs"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/LinearRingMemberType"
-                }
-            },
-            "elementName":{
-                "localPart":"innerBoundaryIs",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
                                         "multiEdgeOf"
                                     ]
                                 },
@@ -2150,7 +2422,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "coord"
+                                        "multiGeometryProperty"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2163,11 +2435,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/CoordType"
+                    "$ref":"#/definitions/MultiGeometryPropertyType"
                 }
             },
             "elementName":{
-                "localPart":"coord",
+                "localPart":"multiGeometryProperty",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -2184,7 +2456,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "multiLocation"
+                                        "multiPosition"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2201,7 +2473,7 @@
                 }
             },
             "elementName":{
-                "localPart":"multiLocation",
+                "localPart":"multiPosition",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -2252,7 +2524,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "description"
+                                        "_FeatureCollection"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2265,11 +2537,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/AbstractFeatureCollectionType"
                 }
             },
             "elementName":{
-                "localPart":"description",
+                "localPart":"_FeatureCollection",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -2320,7 +2592,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "MultiPolygon"
+                                        "MultiPoint"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2333,11 +2605,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/MultiPolygonType"
+                    "$ref":"#/definitions/MultiPointType"
                 }
             },
             "elementName":{
-                "localPart":"MultiPolygon",
+                "localPart":"MultiPoint",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -2354,7 +2626,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "edgeOf"
+                                        "pointMember"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2367,11 +2639,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/LineStringPropertyType"
+                    "$ref":"#/definitions/PointMemberType"
                 }
             },
             "elementName":{
-                "localPart":"edgeOf",
+                "localPart":"pointMember",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -2388,7 +2660,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "pointProperty"
+                                        "multiLineStringProperty"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2401,249 +2673,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/PointPropertyType"
+                    "$ref":"#/definitions/MultiLineStringPropertyType"
                 }
             },
             "elementName":{
-                "localPart":"pointProperty",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "extentOf"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/PolygonPropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"extentOf",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "_FeatureCollection"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractFeatureCollectionType"
-                }
-            },
-            "elementName":{
-                "localPart":"_FeatureCollection",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "multiPointProperty"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MultiPointPropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"multiPointProperty",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "_GeometryCollection"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GeometryCollectionType"
-                }
-            },
-            "elementName":{
-                "localPart":"_GeometryCollection",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "geometryProperty"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GeometryAssociationType"
-                }
-            },
-            "elementName":{
-                "localPart":"geometryProperty",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "location"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/PointPropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"location",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "outerBoundaryIs"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/LinearRingMemberType"
-                }
-            },
-            "elementName":{
-                "localPart":"outerBoundaryIs",
+                "localPart":"multiLineStringProperty",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -2728,7 +2762,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "MultiPoint"
+                                        "featureMember"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2741,11 +2775,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/MultiPointType"
+                    "$ref":"#/definitions/FeatureAssociationType"
                 }
             },
             "elementName":{
-                "localPart":"MultiPoint",
+                "localPart":"featureMember",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -2762,7 +2796,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "multiLineStringProperty"
+                                        "multiCoverage"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2775,11 +2809,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/MultiLineStringPropertyType"
+                    "$ref":"#/definitions/MultiPolygonPropertyType"
                 }
             },
             "elementName":{
-                "localPart":"multiLineStringProperty",
+                "localPart":"multiCoverage",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -2796,7 +2830,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "pointMember"
+                                        "innerBoundaryIs"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2809,11 +2843,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/PointMemberType"
+                    "$ref":"#/definitions/LinearRingMemberType"
                 }
             },
             "elementName":{
-                "localPart":"pointMember",
+                "localPart":"innerBoundaryIs",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -2830,7 +2864,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "LineString"
+                                        "Box"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2843,11 +2877,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/LineStringType"
+                    "$ref":"#/definitions/BoxType"
                 }
             },
             "elementName":{
-                "localPart":"LineString",
+                "localPart":"Box",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -2864,7 +2898,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "multiCenterLineOf"
+                                        "extentOf"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2877,11 +2911,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/MultiLineStringPropertyType"
+                    "$ref":"#/definitions/PolygonPropertyType"
                 }
             },
             "elementName":{
-                "localPart":"multiCenterLineOf",
+                "localPart":"extentOf",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -2898,7 +2932,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "LinearRing"
+                                        "MultiPolygon"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2911,11 +2945,79 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/LinearRingType"
+                    "$ref":"#/definitions/MultiPolygonType"
                 }
             },
             "elementName":{
-                "localPart":"LinearRing",
+                "localPart":"MultiPolygon",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "pointProperty"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/PointPropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"pointProperty",
+                "namespaceURI":"http://www.opengis.net/gml"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Polygon"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/PolygonType"
+                }
+            },
+            "elementName":{
+                "localPart":"Polygon",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         },
@@ -2966,7 +3068,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "MultiLineString"
+                                        "edgeOf"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2979,113 +3081,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/MultiLineStringType"
+                    "$ref":"#/definitions/LineStringPropertyType"
                 }
             },
             "elementName":{
-                "localPart":"MultiLineString",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "MultiGeometry"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GeometryCollectionType"
-                }
-            },
-            "elementName":{
-                "localPart":"MultiGeometry",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "_Geometry"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/AbstractGeometryType"
-                }
-            },
-            "elementName":{
-                "localPart":"_Geometry",
-                "namespaceURI":"http://www.opengis.net/gml"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "multiGeometryProperty"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MultiGeometryPropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"multiGeometryProperty",
+                "localPart":"edgeOf",
                 "namespaceURI":"http://www.opengis.net/gml"
             }
         }

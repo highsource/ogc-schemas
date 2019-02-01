@@ -5,6 +5,8 @@ var GML_EXR_3_3_Module_Factory = function () {
     tis: [],
     eis: [{
         en: 'extendedEncodingRule'
+      }, {
+        en: 'targetCodeList'
       }]
   };
   return {

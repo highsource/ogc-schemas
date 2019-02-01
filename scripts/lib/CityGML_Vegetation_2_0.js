@@ -4,6 +4,16 @@ var CityGML_Vegetation_2_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/citygml\/vegetation\/2.0',
     deps: ['GML_3_1_1', 'CityGML_2_0'],
     tis: [{
+        ln: 'AbstractVegetationObjectType',
+        bti: 'CityGML_2_0.AbstractCityObjectType',
+        ps: [{
+            n: 'genericApplicationPropertyOfVegetationObject',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfVegetationObject',
+            ti: 'AnyType'
+          }]
+      }, {
         ln: 'SolitaryVegetationObjectType',
         bti: '.AbstractVegetationObjectType',
         ps: [{
@@ -64,16 +74,6 @@ var CityGML_Vegetation_2_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'AbstractVegetationObjectType',
-        bti: 'CityGML_2_0.AbstractCityObjectType',
-        ps: [{
-            n: 'genericApplicationPropertyOfVegetationObject',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfVegetationObject',
-            ti: 'AnyType'
-          }]
-      }, {
         ln: 'PlantCoverType',
         bti: '.AbstractVegetationObjectType',
         ps: [{
@@ -126,19 +126,6 @@ var CityGML_Vegetation_2_0_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: '_GenericApplicationPropertyOfSolitaryVegetationObject',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfVegetationObject',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfPlantCover',
-        ti: 'AnyType'
-      }, {
-        en: 'SolitaryVegetationObject',
-        ti: '.SolitaryVegetationObjectType',
-        sh: '_VegetationObject'
-      }, {
         en: '_VegetationObject',
         ti: '.AbstractVegetationObjectType',
         sh: {
@@ -146,9 +133,22 @@ var CityGML_Vegetation_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
       }, {
+        en: '_GenericApplicationPropertyOfVegetationObject',
+        ti: 'AnyType'
+      }, {
         en: 'PlantCover',
         ti: '.PlantCoverType',
         sh: '_VegetationObject'
+      }, {
+        en: 'SolitaryVegetationObject',
+        ti: '.SolitaryVegetationObjectType',
+        sh: '_VegetationObject'
+      }, {
+        en: '_GenericApplicationPropertyOfPlantCover',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfSolitaryVegetationObject',
+        ti: 'AnyType'
       }]
   };
   return {

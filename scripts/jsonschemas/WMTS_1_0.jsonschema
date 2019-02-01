@@ -2,139 +2,6 @@
 {
     "id":"http://www.opengis.net/wmts/1.0#",
     "definitions":{
-        "LayerType":{
-            "required":[
-                "style",
-                "format",
-                "tileMatrixSetLink"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/DatasetDescriptionSummaryBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"LayerType",
-                    "properties":{
-                        "style":{
-                            "title":"style",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/Style"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Style",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "format":{
-                            "title":"format",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Format",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "infoFormat":{
-                            "title":"infoFormat",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"InfoFormat",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "dimension":{
-                            "title":"dimension",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/Dimension"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Dimension",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "tileMatrixSetLink":{
-                            "title":"tileMatrixSetLink",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/TileMatrixSetLink"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"TileMatrixSetLink",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "resourceURL":{
-                            "title":"resourceURL",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/URLTemplateType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ResourceURL",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LayerType",
-                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-            },
-            "propertiesOrder":[
-                "style",
-                "format",
-                "infoFormat",
-                "dimension",
-                "tileMatrixSetLink",
-                "resourceURL"
-            ]
-        },
         "GetCapabilities":{
             "required":[
                 "service"
@@ -206,222 +73,80 @@
                 "tileMatrixSet"
             ]
         },
-        "TileMatrix":{
-            "required":[
-                "identifier",
-                "scaleDenominator",
-                "topLeftCorner",
-                "tileWidth",
-                "tileHeight",
-                "matrixWidth",
-                "matrixHeight"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/DescriptionType"
-                },
-                {
-                    "type":"object",
-                    "title":"TileMatrix",
-                    "properties":{
-                        "identifier":{
-                            "title":"identifier",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Identifier",
-                                "namespaceURI":"http://www.opengis.net/ows/1.1"
-                            }
-                        },
-                        "scaleDenominator":{
-                            "title":"scaleDenominator",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ScaleDenominator",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "topLeftCorner":{
-                            "title":"topLeftCorner",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                    }
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"TopLeftCorner",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "tileWidth":{
-                            "title":"tileWidth",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"TileWidth",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "tileHeight":{
-                            "title":"tileHeight",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"TileHeight",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "matrixWidth":{
-                            "title":"matrixWidth",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"MatrixWidth",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "matrixHeight":{
-                            "title":"matrixHeight",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"MatrixHeight",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "identifier",
-                "scaleDenominator",
-                "topLeftCorner",
-                "tileWidth",
-                "tileHeight",
-                "matrixWidth",
-                "matrixHeight"
-            ]
-        },
-        "Capabilities":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CapabilitiesBaseType"
-                },
-                {
-                    "type":"object",
-                    "title":"Capabilities",
-                    "properties":{
-                        "contents":{
-                            "title":"contents",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/ContentsType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Contents",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "themes":{
-                            "title":"themes",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/Themes"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Themes",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "wsdl":{
-                            "title":"wsdl",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.opengis.net/ows/1.1#/definitions/OnlineResourceType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"WSDL",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "serviceMetadataURL":{
-                            "title":"serviceMetadataURL",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.opengis.net/ows/1.1#/definitions/OnlineResourceType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ServiceMetadataURL",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "contents",
-                "themes",
-                "wsdl",
-                "serviceMetadataURL"
-            ]
-        },
-        "BinaryPayload":{
+        "Themes":{
             "type":"object",
-            "title":"BinaryPayload",
+            "title":"Themes",
+            "properties":{
+                "theme":{
+                    "title":"theme",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/Theme"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Theme",
+                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "theme"
+            ]
+        },
+        "TileMatrixSetLink":{
+            "type":"object",
+            "title":"TileMatrixSetLink",
+            "required":[
+                "tileMatrixSet"
+            ],
+            "properties":{
+                "tileMatrixSet":{
+                    "title":"tileMatrixSet",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TileMatrixSet",
+                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                    }
+                },
+                "tileMatrixSetLimits":{
+                    "title":"tileMatrixSetLimits",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TileMatrixSetLimits"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TileMatrixSetLimits",
+                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "tileMatrixSet",
+                "tileMatrixSetLimits"
+            ]
+        },
+        "URLTemplateType":{
+            "type":"object",
+            "title":"URLTemplateType",
             "required":[
                 "format",
-                "binaryContent"
+                "resourceType",
+                "template"
             ],
             "properties":{
                 "format":{
@@ -431,37 +156,140 @@
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Format",
-                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"format",
+                        "namespaceURI":""
                     }
                 },
-                "binaryContent":{
-                    "title":"binaryContent",
+                "resourceType":{
+                    "title":"resourceType",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/base64Binary"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"BinaryContent",
-                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"resourceType",
+                        "namespaceURI":""
+                    }
+                },
+                "template":{
+                    "title":"template",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"template",
+                        "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
+            "typeName":{
+                "localPart":"URLTemplateType",
+                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+            },
             "propertiesOrder":[
                 "format",
-                "binaryContent"
+                "resourceType",
+                "template"
             ]
         },
-        "TileMatrixSet":{
+        "LegendURL":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/OnlineResourceType"
+                },
+                {
+                    "type":"object",
+                    "title":"LegendURL",
+                    "properties":{
+                        "format":{
+                            "title":"format",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"format",
+                                "namespaceURI":""
+                            }
+                        },
+                        "minScaleDenominator":{
+                            "title":"minScaleDenominator",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"minScaleDenominator",
+                                "namespaceURI":""
+                            }
+                        },
+                        "maxScaleDenominator":{
+                            "title":"maxScaleDenominator",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"maxScaleDenominator",
+                                "namespaceURI":""
+                            }
+                        },
+                        "width":{
+                            "title":"width",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"width",
+                                "namespaceURI":""
+                            }
+                        },
+                        "height":{
+                            "title":"height",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"height",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "format",
+                "minScaleDenominator",
+                "maxScaleDenominator",
+                "width",
+                "height"
+            ]
+        },
+        "Dimension":{
             "required":[
                 "identifier",
-                "supportedCRS",
-                "tileMatrix"
+                "value"
             ],
             "allOf":[
                 {
@@ -469,7 +297,7 @@
                 },
                 {
                     "type":"object",
-                    "title":"TileMatrixSet",
+                    "title":"Dimension",
                     "properties":{
                         "identifier":{
                             "title":"identifier",
@@ -484,71 +312,72 @@
                                 "namespaceURI":"http://www.opengis.net/ows/1.1"
                             }
                         },
-                        "boundingBox":{
-                            "title":"boundingBox",
+                        "uom":{
+                            "title":"uom",
                             "allOf":[
                                 {
-                                    "type":"object",
-                                    "properties":{
-                                        "name":{
-                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                        },
-                                        "value":{
-                                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/BoundingBoxType"
-                                        }
-                                    },
-                                    "elementName":{
-                                        "localPart":"BoundingBox",
-                                        "namespaceURI":"http://www.opengis.net/ows/1.1"
-                                    }
-                                }
-                            ],
-                            "propertyType":"elementRef",
-                            "elementName":{
-                                "localPart":"BoundingBox",
-                                "namespaceURI":"http://www.opengis.net/ows/1.1"
-                            }
-                        },
-                        "supportedCRS":{
-                            "title":"supportedCRS",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/DomainMetadataType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"SupportedCRS",
+                                "localPart":"UOM",
                                 "namespaceURI":"http://www.opengis.net/ows/1.1"
                             }
                         },
-                        "wellKnownScaleSet":{
-                            "title":"wellKnownScaleSet",
+                        "unitSymbol":{
+                            "title":"unitSymbol",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"WellKnownScaleSet",
+                                "localPart":"UnitSymbol",
                                 "namespaceURI":"http://www.opengis.net/wmts/1.0"
                             }
                         },
-                        "tileMatrix":{
-                            "title":"tileMatrix",
+                        "_default":{
+                            "title":"_default",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Default",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "current":{
+                            "title":"current",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Current",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "value":{
+                            "title":"value",
                             "allOf":[
                                 {
                                     "type":"array",
                                     "items":{
-                                        "$ref":"#/definitions/TileMatrix"
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                                     },
                                     "minItems":1
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"TileMatrix",
+                                "localPart":"Value",
                                 "namespaceURI":"http://www.opengis.net/wmts/1.0"
                             }
                         }
@@ -558,51 +387,11 @@
             "typeType":"classInfo",
             "propertiesOrder":[
                 "identifier",
-                "boundingBox",
-                "supportedCRS",
-                "wellKnownScaleSet",
-                "tileMatrix"
-            ]
-        },
-        "TextPayload":{
-            "type":"object",
-            "title":"TextPayload",
-            "required":[
-                "format",
-                "textContent"
-            ],
-            "properties":{
-                "format":{
-                    "title":"format",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Format",
-                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                    }
-                },
-                "textContent":{
-                    "title":"textContent",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TextContent",
-                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "format",
-                "textContent"
+                "uom",
+                "unitSymbol",
+                "_default",
+                "current",
+                "value"
             ]
         },
         "DimensionNameValue":{
@@ -742,62 +531,76 @@
                 "version"
             ]
         },
-        "Theme":{
-            "required":[
-                "identifier"
-            ],
+        "Capabilities":{
             "allOf":[
                 {
-                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/DescriptionType"
+                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CapabilitiesBaseType"
                 },
                 {
                     "type":"object",
-                    "title":"Theme",
+                    "title":"Capabilities",
                     "properties":{
-                        "identifier":{
-                            "title":"identifier",
+                        "contents":{
+                            "title":"contents",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
+                                    "$ref":"#/definitions/ContentsType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"Identifier",
-                                "namespaceURI":"http://www.opengis.net/ows/1.1"
+                                "localPart":"Contents",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
                             }
                         },
-                        "theme":{
-                            "title":"theme",
+                        "themes":{
+                            "title":"themes",
                             "allOf":[
                                 {
                                     "type":"array",
                                     "items":{
-                                        "$ref":"#/definitions/Theme"
+                                        "$ref":"#/definitions/Themes"
                                     },
                                     "minItems":0
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"Theme",
+                                "localPart":"Themes",
                                 "namespaceURI":"http://www.opengis.net/wmts/1.0"
                             }
                         },
-                        "layerRef":{
-                            "title":"layerRef",
+                        "wsdl":{
+                            "title":"wsdl",
                             "allOf":[
                                 {
                                     "type":"array",
                                     "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                        "$ref":"http://www.opengis.net/ows/1.1#/definitions/OnlineResourceType"
                                     },
                                     "minItems":0
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"LayerRef",
+                                "localPart":"WSDL",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "serviceMetadataURL":{
+                            "title":"serviceMetadataURL",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.opengis.net/ows/1.1#/definitions/OnlineResourceType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ServiceMetadataURL",
                                 "namespaceURI":"http://www.opengis.net/wmts/1.0"
                             }
                         }
@@ -806,238 +609,10 @@
             ],
             "typeType":"classInfo",
             "propertiesOrder":[
-                "identifier",
-                "theme",
-                "layerRef"
-            ]
-        },
-        "Themes":{
-            "type":"object",
-            "title":"Themes",
-            "properties":{
-                "theme":{
-                    "title":"theme",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/Theme"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Theme",
-                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "theme"
-            ]
-        },
-        "TileMatrixLimits":{
-            "type":"object",
-            "title":"TileMatrixLimits",
-            "required":[
-                "tileMatrix",
-                "minTileRow",
-                "maxTileRow",
-                "minTileCol",
-                "maxTileCol"
-            ],
-            "properties":{
-                "tileMatrix":{
-                    "title":"tileMatrix",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TileMatrix",
-                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                    }
-                },
-                "minTileRow":{
-                    "title":"minTileRow",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MinTileRow",
-                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                    }
-                },
-                "maxTileRow":{
-                    "title":"maxTileRow",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MaxTileRow",
-                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                    }
-                },
-                "minTileCol":{
-                    "title":"minTileCol",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MinTileCol",
-                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                    }
-                },
-                "maxTileCol":{
-                    "title":"maxTileCol",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MaxTileCol",
-                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "tileMatrix",
-                "minTileRow",
-                "maxTileRow",
-                "minTileCol",
-                "maxTileCol"
-            ]
-        },
-        "LegendURL":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/OnlineResourceType"
-                },
-                {
-                    "type":"object",
-                    "title":"LegendURL",
-                    "properties":{
-                        "format":{
-                            "title":"format",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"format",
-                                "namespaceURI":""
-                            }
-                        },
-                        "minScaleDenominator":{
-                            "title":"minScaleDenominator",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"minScaleDenominator",
-                                "namespaceURI":""
-                            }
-                        },
-                        "maxScaleDenominator":{
-                            "title":"maxScaleDenominator",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"maxScaleDenominator",
-                                "namespaceURI":""
-                            }
-                        },
-                        "width":{
-                            "title":"width",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"width",
-                                "namespaceURI":""
-                            }
-                        },
-                        "height":{
-                            "title":"height",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"height",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "format",
-                "minScaleDenominator",
-                "maxScaleDenominator",
-                "width",
-                "height"
-            ]
-        },
-        "TileMatrixSetLimits":{
-            "type":"object",
-            "title":"TileMatrixSetLimits",
-            "required":[
-                "tileMatrixLimits"
-            ],
-            "properties":{
-                "tileMatrixLimits":{
-                    "title":"tileMatrixLimits",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/TileMatrixLimits"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TileMatrixLimits",
-                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "tileMatrixLimits"
+                "contents",
+                "themes",
+                "wsdl",
+                "serviceMetadataURL"
             ]
         },
         "GetTile":{
@@ -1204,6 +779,674 @@
                 "version"
             ]
         },
+        "TileMatrix":{
+            "required":[
+                "identifier",
+                "scaleDenominator",
+                "topLeftCorner",
+                "tileWidth",
+                "tileHeight",
+                "matrixWidth",
+                "matrixHeight"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/DescriptionType"
+                },
+                {
+                    "type":"object",
+                    "title":"TileMatrix",
+                    "properties":{
+                        "identifier":{
+                            "title":"identifier",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Identifier",
+                                "namespaceURI":"http://www.opengis.net/ows/1.1"
+                            }
+                        },
+                        "scaleDenominator":{
+                            "title":"scaleDenominator",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ScaleDenominator",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "topLeftCorner":{
+                            "title":"topLeftCorner",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                                    }
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"TopLeftCorner",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "tileWidth":{
+                            "title":"tileWidth",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"TileWidth",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "tileHeight":{
+                            "title":"tileHeight",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"TileHeight",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "matrixWidth":{
+                            "title":"matrixWidth",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"MatrixWidth",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "matrixHeight":{
+                            "title":"matrixHeight",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"MatrixHeight",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "identifier",
+                "scaleDenominator",
+                "topLeftCorner",
+                "tileWidth",
+                "tileHeight",
+                "matrixWidth",
+                "matrixHeight"
+            ]
+        },
+        "Theme":{
+            "required":[
+                "identifier"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/DescriptionType"
+                },
+                {
+                    "type":"object",
+                    "title":"Theme",
+                    "properties":{
+                        "identifier":{
+                            "title":"identifier",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Identifier",
+                                "namespaceURI":"http://www.opengis.net/ows/1.1"
+                            }
+                        },
+                        "theme":{
+                            "title":"theme",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/Theme"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Theme",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "layerRef":{
+                            "title":"layerRef",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"LayerRef",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "identifier",
+                "theme",
+                "layerRef"
+            ]
+        },
+        "TileMatrixSet":{
+            "required":[
+                "identifier",
+                "supportedCRS",
+                "tileMatrix"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/DescriptionType"
+                },
+                {
+                    "type":"object",
+                    "title":"TileMatrixSet",
+                    "properties":{
+                        "identifier":{
+                            "title":"identifier",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Identifier",
+                                "namespaceURI":"http://www.opengis.net/ows/1.1"
+                            }
+                        },
+                        "boundingBox":{
+                            "title":"boundingBox",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                        },
+                                        "value":{
+                                            "$ref":"http://www.opengis.net/ows/1.1#/definitions/BoundingBoxType"
+                                        }
+                                    },
+                                    "elementName":{
+                                        "localPart":"BoundingBox",
+                                        "namespaceURI":"http://www.opengis.net/ows/1.1"
+                                    }
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"BoundingBox",
+                                "namespaceURI":"http://www.opengis.net/ows/1.1"
+                            }
+                        },
+                        "supportedCRS":{
+                            "title":"supportedCRS",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"SupportedCRS",
+                                "namespaceURI":"http://www.opengis.net/ows/1.1"
+                            }
+                        },
+                        "wellKnownScaleSet":{
+                            "title":"wellKnownScaleSet",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"WellKnownScaleSet",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "tileMatrix":{
+                            "title":"tileMatrix",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/TileMatrix"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"TileMatrix",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "identifier",
+                "boundingBox",
+                "supportedCRS",
+                "wellKnownScaleSet",
+                "tileMatrix"
+            ]
+        },
+        "TileMatrixLimits":{
+            "type":"object",
+            "title":"TileMatrixLimits",
+            "required":[
+                "tileMatrix",
+                "minTileRow",
+                "maxTileRow",
+                "minTileCol",
+                "maxTileCol"
+            ],
+            "properties":{
+                "tileMatrix":{
+                    "title":"tileMatrix",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TileMatrix",
+                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                    }
+                },
+                "minTileRow":{
+                    "title":"minTileRow",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MinTileRow",
+                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                    }
+                },
+                "maxTileRow":{
+                    "title":"maxTileRow",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MaxTileRow",
+                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                    }
+                },
+                "minTileCol":{
+                    "title":"minTileCol",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/nonNegativeInteger"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MinTileCol",
+                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                    }
+                },
+                "maxTileCol":{
+                    "title":"maxTileCol",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/positiveInteger"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MaxTileCol",
+                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "tileMatrix",
+                "minTileRow",
+                "maxTileRow",
+                "minTileCol",
+                "maxTileCol"
+            ]
+        },
+        "TextPayload":{
+            "type":"object",
+            "title":"TextPayload",
+            "required":[
+                "format",
+                "textContent"
+            ],
+            "properties":{
+                "format":{
+                    "title":"format",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Format",
+                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                    }
+                },
+                "textContent":{
+                    "title":"textContent",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"TextContent",
+                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "format",
+                "textContent"
+            ]
+        },
+        "BinaryPayload":{
+            "type":"object",
+            "title":"BinaryPayload",
+            "required":[
+                "format",
+                "binaryContent"
+            ],
+            "properties":{
+                "format":{
+                    "title":"format",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Format",
+                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                    }
+                },
+                "binaryContent":{
+                    "title":"binaryContent",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/base64Binary"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"BinaryContent",
+                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "format",
+                "binaryContent"
+            ]
+        },
+        "Style":{
+            "required":[
+                "identifier"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/DescriptionType"
+                },
+                {
+                    "type":"object",
+                    "title":"Style",
+                    "properties":{
+                        "identifier":{
+                            "title":"identifier",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Identifier",
+                                "namespaceURI":"http://www.opengis.net/ows/1.1"
+                            }
+                        },
+                        "legendURL":{
+                            "title":"legendURL",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/LegendURL"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"LegendURL",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "isDefault":{
+                            "title":"isDefault",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"isDefault",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "identifier",
+                "legendURL",
+                "isDefault"
+            ]
+        },
+        "LayerType":{
+            "required":[
+                "style",
+                "format",
+                "tileMatrixSetLink"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/DatasetDescriptionSummaryBaseType"
+                },
+                {
+                    "type":"object",
+                    "title":"LayerType",
+                    "properties":{
+                        "style":{
+                            "title":"style",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/Style"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Style",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "format":{
+                            "title":"format",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Format",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "infoFormat":{
+                            "title":"infoFormat",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"InfoFormat",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "dimension":{
+                            "title":"dimension",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/Dimension"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Dimension",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "tileMatrixSetLink":{
+                            "title":"tileMatrixSetLink",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/TileMatrixSetLink"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"TileMatrixSetLink",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        },
+                        "resourceURL":{
+                            "title":"resourceURL",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/URLTemplateType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"ResourceURL",
+                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LayerType",
+                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+            },
+            "propertiesOrder":[
+                "style",
+                "format",
+                "infoFormat",
+                "dimension",
+                "tileMatrixSetLink",
+                "resourceURL"
+            ]
+        },
         "FeatureInfoResponse":{
             "type":"object",
             "title":"FeatureInfoResponse",
@@ -1275,280 +1518,37 @@
                 "anyContent"
             ]
         },
-        "Style":{
-            "required":[
-                "identifier"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/DescriptionType"
-                },
-                {
-                    "type":"object",
-                    "title":"Style",
-                    "properties":{
-                        "identifier":{
-                            "title":"identifier",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Identifier",
-                                "namespaceURI":"http://www.opengis.net/ows/1.1"
-                            }
-                        },
-                        "legendURL":{
-                            "title":"legendURL",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/LegendURL"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"LegendURL",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "isDefault":{
-                            "title":"isDefault",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"isDefault",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "identifier",
-                "legendURL",
-                "isDefault"
-            ]
-        },
-        "TileMatrixSetLink":{
+        "TileMatrixSetLimits":{
             "type":"object",
-            "title":"TileMatrixSetLink",
+            "title":"TileMatrixSetLimits",
             "required":[
-                "tileMatrixSet"
+                "tileMatrixLimits"
             ],
             "properties":{
-                "tileMatrixSet":{
-                    "title":"tileMatrixSet",
+                "tileMatrixLimits":{
+                    "title":"tileMatrixLimits",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/TileMatrixLimits"
+                            },
+                            "minItems":1
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"TileMatrixSet",
-                        "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                    }
-                },
-                "tileMatrixSetLimits":{
-                    "title":"tileMatrixSetLimits",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TileMatrixSetLimits"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"TileMatrixSetLimits",
+                        "localPart":"TileMatrixLimits",
                         "namespaceURI":"http://www.opengis.net/wmts/1.0"
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "tileMatrixSet",
-                "tileMatrixSetLimits"
+                "tileMatrixLimits"
             ]
         },
-        "Dimension":{
-            "required":[
-                "identifier",
-                "value"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/DescriptionType"
-                },
-                {
-                    "type":"object",
-                    "title":"Dimension",
-                    "properties":{
-                        "identifier":{
-                            "title":"identifier",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Identifier",
-                                "namespaceURI":"http://www.opengis.net/ows/1.1"
-                            }
-                        },
-                        "uom":{
-                            "title":"uom",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/DomainMetadataType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"UOM",
-                                "namespaceURI":"http://www.opengis.net/ows/1.1"
-                            }
-                        },
-                        "unitSymbol":{
-                            "title":"unitSymbol",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"UnitSymbol",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "_default":{
-                            "title":"_default",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Default",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "current":{
-                            "title":"current",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Current",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        },
-                        "value":{
-                            "title":"value",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Value",
-                                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "identifier",
-                "uom",
-                "unitSymbol",
-                "_default",
-                "current",
-                "value"
-            ]
-        },
-        "URLTemplateType":{
-            "type":"object",
-            "title":"URLTemplateType",
-            "required":[
-                "format",
-                "resourceType",
-                "template"
-            ],
-            "properties":{
-                "format":{
-                    "title":"format",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"format",
-                        "namespaceURI":""
-                    }
-                },
-                "resourceType":{
-                    "title":"resourceType",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"resourceType",
-                        "namespaceURI":""
-                    }
-                },
-                "template":{
-                    "title":"template",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"template",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"URLTemplateType",
-                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-            },
-            "propertiesOrder":[
-                "format",
-                "resourceType",
-                "template"
-            ]
-        },
-        "GetFeatureInfoValueType":{
+        "GetCapabilitiesValueType":{
             "allOf":[
                 {
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -1556,19 +1556,7 @@
             ],
             "typeType":"enumInfo",
             "typeName":{
-                "localPart":"GetFeatureInfoValueType",
-                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-            }
-        },
-        "GetTileValueType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"GetTileValueType",
+                "localPart":"GetCapabilitiesValueType",
                 "namespaceURI":"http://www.opengis.net/wmts/1.0"
             }
         },
@@ -1596,6 +1584,18 @@
                 "namespaceURI":"http://www.opengis.net/wmts/1.0"
             }
         },
+        "GetFeatureInfoValueType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"GetFeatureInfoValueType",
+                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+            }
+        },
         "RequestServiceType":{
             "allOf":[
                 {
@@ -1608,7 +1608,7 @@
                 "namespaceURI":"http://www.opengis.net/wmts/1.0"
             }
         },
-        "GetCapabilitiesValueType":{
+        "GetTileValueType":{
             "allOf":[
                 {
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -1616,7 +1616,7 @@
             ],
             "typeType":"enumInfo",
             "typeName":{
-                "localPart":"GetCapabilitiesValueType",
+                "localPart":"GetTileValueType",
                 "namespaceURI":"http://www.opengis.net/wmts/1.0"
             }
         }
@@ -1635,7 +1635,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "TileMatrix"
+                                        "Dimension"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1648,11 +1648,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/TileMatrix"
+                    "$ref":"#/definitions/Dimension"
                 }
             },
             "elementName":{
-                "localPart":"TileMatrix",
+                "localPart":"Dimension",
                 "namespaceURI":"http://www.opengis.net/wmts/1.0"
             }
         },
@@ -1669,7 +1669,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "GetTile"
+                                        "FeatureInfoResponse"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1682,215 +1682,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/GetTile"
+                    "$ref":"#/definitions/FeatureInfoResponse"
                 }
             },
             "elementName":{
-                "localPart":"GetTile",
-                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "LegendURL"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/wmts/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/LegendURL"
-                }
-            },
-            "elementName":{
-                "localPart":"LegendURL",
-                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "TileMatrixSet"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/wmts/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/TileMatrixSet"
-                }
-            },
-            "elementName":{
-                "localPart":"TileMatrixSet",
-                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Theme"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/wmts/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/Theme"
-                }
-            },
-            "elementName":{
-                "localPart":"Theme",
-                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "TextPayload"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/wmts/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/TextPayload"
-                }
-            },
-            "elementName":{
-                "localPart":"TextPayload",
-                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "DimensionNameValue"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/wmts/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/DimensionNameValue"
-                }
-            },
-            "elementName":{
-                "localPart":"DimensionNameValue",
-                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "BinaryPayload"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/wmts/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/BinaryPayload"
-                }
-            },
-            "elementName":{
-                "localPart":"BinaryPayload",
+                "localPart":"FeatureInfoResponse",
                 "namespaceURI":"http://www.opengis.net/wmts/1.0"
             }
         },
@@ -1941,7 +1737,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "TileMatrixSetLink"
+                                        "GetFeatureInfo"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1954,11 +1750,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/TileMatrixSetLink"
+                    "$ref":"#/definitions/GetFeatureInfo"
                 }
             },
             "elementName":{
-                "localPart":"TileMatrixSetLink",
+                "localPart":"GetFeatureInfo",
                 "namespaceURI":"http://www.opengis.net/wmts/1.0"
             }
         },
@@ -1975,7 +1771,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "TileMatrixSetLimits"
+                                        "Theme"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1988,11 +1784,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/TileMatrixSetLimits"
+                    "$ref":"#/definitions/Theme"
                 }
             },
             "elementName":{
-                "localPart":"TileMatrixSetLimits",
+                "localPart":"Theme",
                 "namespaceURI":"http://www.opengis.net/wmts/1.0"
             }
         },
@@ -2009,7 +1805,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "GetCapabilities"
+                                        "DimensionNameValue"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2022,79 +1818,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/GetCapabilities"
+                    "$ref":"#/definitions/DimensionNameValue"
                 }
             },
             "elementName":{
-                "localPart":"GetCapabilities",
-                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "TileMatrixLimits"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/wmts/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/TileMatrixLimits"
-                }
-            },
-            "elementName":{
-                "localPart":"TileMatrixLimits",
-                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Layer"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/wmts/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/LayerType"
-                }
-            },
-            "elementName":{
-                "localPart":"Layer",
+                "localPart":"DimensionNameValue",
                 "namespaceURI":"http://www.opengis.net/wmts/1.0"
             }
         },
@@ -2145,7 +1873,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Dimension"
+                                        "Layer"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2158,11 +1886,351 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/Dimension"
+                    "$ref":"#/definitions/LayerType"
                 }
             },
             "elementName":{
-                "localPart":"Dimension",
+                "localPart":"Layer",
+                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "TextPayload"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/wmts/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/TextPayload"
+                }
+            },
+            "elementName":{
+                "localPart":"TextPayload",
+                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "TileMatrixSetLink"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/wmts/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/TileMatrixSetLink"
+                }
+            },
+            "elementName":{
+                "localPart":"TileMatrixSetLink",
+                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "LegendURL"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/wmts/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/LegendURL"
+                }
+            },
+            "elementName":{
+                "localPart":"LegendURL",
+                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "TileMatrixLimits"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/wmts/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/TileMatrixLimits"
+                }
+            },
+            "elementName":{
+                "localPart":"TileMatrixLimits",
+                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "TileMatrixSetLimits"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/wmts/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/TileMatrixSetLimits"
+                }
+            },
+            "elementName":{
+                "localPart":"TileMatrixSetLimits",
+                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "GetTile"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/wmts/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GetTile"
+                }
+            },
+            "elementName":{
+                "localPart":"GetTile",
+                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "TileMatrixSet"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/wmts/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/TileMatrixSet"
+                }
+            },
+            "elementName":{
+                "localPart":"TileMatrixSet",
+                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "BinaryPayload"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/wmts/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/BinaryPayload"
+                }
+            },
+            "elementName":{
+                "localPart":"BinaryPayload",
+                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "TileMatrix"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/wmts/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/TileMatrix"
+                }
+            },
+            "elementName":{
+                "localPart":"TileMatrix",
+                "namespaceURI":"http://www.opengis.net/wmts/1.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "GetCapabilities"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/wmts/1.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GetCapabilities"
+                }
+            },
+            "elementName":{
+                "localPart":"GetCapabilities",
                 "namespaceURI":"http://www.opengis.net/wmts/1.0"
             }
         },
@@ -2197,74 +2265,6 @@
             },
             "elementName":{
                 "localPart":"Capabilities",
-                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "GetFeatureInfo"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/wmts/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GetFeatureInfo"
-                }
-            },
-            "elementName":{
-                "localPart":"GetFeatureInfo",
-                "namespaceURI":"http://www.opengis.net/wmts/1.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "FeatureInfoResponse"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/wmts/1.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/FeatureInfoResponse"
-                }
-            },
-            "elementName":{
-                "localPart":"FeatureInfoResponse",
                 "namespaceURI":"http://www.opengis.net/wmts/1.0"
             }
         }

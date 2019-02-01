@@ -3,7 +3,7 @@ var OMEO_OPT_2_0_Module_Factory = function () {
     n: 'OMEO_OPT_2_0',
     dens: 'http:\/\/www.opengis.net\/opt\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'OMEO_EOP_2_0', 'GML_3_2_1'],
+    deps: ['XLink_1_0', 'GML_3_2_1', 'OMEO_EOP_2_0'],
     tis: [{
         ln: 'EarthObservationResultType',
         bti: 'OMEO_EOP_2_0.EarthObservationResultType',
@@ -89,13 +89,6 @@ var OMEO_OPT_2_0_Module_Factory = function () {
             en: 'EarthObservationResult',
             ti: '.EarthObservationResultType'
           }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
             n: 'nilReason',
             ti: {
               t: 'l'
@@ -135,6 +128,13 @@ var OMEO_OPT_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'EarthObservationType',
@@ -145,17 +145,17 @@ var OMEO_OPT_2_0_Module_Factory = function () {
         vs: ['AUTOMATIC', 'MANUAL']
       }],
     eis: [{
-        en: 'EarthObservationResult',
-        ti: '.EarthObservationResultType',
-        sh: {
-          lp: 'EarthObservationResult',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
-      }, {
         en: 'EarthObservation',
         ti: '.EarthObservationType',
         sh: {
           lp: 'EarthObservation',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+        }
+      }, {
+        en: 'EarthObservationResult',
+        ti: '.EarthObservationResultType',
+        sh: {
+          lp: 'EarthObservationResult',
           ns: 'http:\/\/www.opengis.net\/eop\/2.0'
         }
       }]

@@ -2,6 +2,24 @@
 {
     "id":"http://www.opengis.net/gml/3.3/xbt#",
     "definitions":{
+        "CodeWithAuthorityType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/CodeType"
+                },
+                {
+                    "type":"object",
+                    "title":"CodeWithAuthorityType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"CodeWithAuthorityType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/xbt"
+            }
+        },
         "CodeType":{
             "allOf":[
                 {
@@ -35,24 +53,6 @@
             "propertiesOrder":[
                 "codeSpace"
             ]
-        },
-        "CodeWithAuthorityType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/CodeType"
-                },
-                {
-                    "type":"object",
-                    "title":"CodeWithAuthorityType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CodeWithAuthorityType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/xbt"
-            }
         },
         "LanguageStringAuxType":{
             "allOf":[
