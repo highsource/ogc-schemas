@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    Example using gmlcovrgrid:ReferenceableGridByArray.
+-->
+
+<gmlcovrgrid:ReferenceableGridByArray 
+    xmlns:gmlcovrgrid="http://www.opengis.net/gmlcov/gmlcovrgrid/1.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/gmlcov/gmlcovrgrid/1.0 http://schemas.opengis.net/gmlcov/gmlcovrgrid/1.0/gmlcovrgrid.xsd"
+    gml:id="ex" dimension="2" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+        <gml:limits>
+            <gml:GridEnvelope>
+                <gml:low>0 0</gml:low>
+                <gml:high>4 3</gml:high>
+            </gml:GridEnvelope>
+        </gml:limits>
+        <gml:axisLabels>x y</gml:axisLabels>
+        <gml:posList>
+            2 8 3 10 6 12 8 14 10 18
+            4 6 6 8 8 12 10 14 12 16
+            6 2 7 4 9 6 10 8 13 12
+            8 2 8 3 10 5 11 8 13 10
+        </gml:posList>
+        <gmlcovrgrid:sequenceRule axisOrder="+1 +2">Linear</gmlcovrgrid:sequenceRule>
+</gmlcovrgrid:ReferenceableGridByArray>
