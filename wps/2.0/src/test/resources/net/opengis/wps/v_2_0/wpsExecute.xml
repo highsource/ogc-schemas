@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wps:Execute xmlns:wps="http://www.opengis.net/wps/2.0"
+			 xmlns:xlink="http://www.w3.org/1999/xlink"
+			 xmlns:ows="http://www.opengis.net/ows/2.0"
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 service="WPS" version="2.0.0" response="document" mode="sync">
+	<wps:Input id="polygone">
+		<wps:Data mimeType="text/xml">
+			<LinearRing srsName="EPSG:4326" xmlns="http://www.opengis.net/gml/3.2">
+				<coordinates>-0.631235,46.307557 -0.262215,46.577225 0.106805,46.477874 -0.631235,46.307557</coordinates>
+			</LinearRing>
+		</wps:Data>
+	</wps:Input>
+</wps:Execute>
