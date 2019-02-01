@@ -21,86 +21,99 @@
 		"jaxb",
 		"jsonix",
 		"mapping",
-                "OGC",
+		"OGC",
 		"ARML",
 		"WMC",
 		"CityGML",
 		"CSW",
-                "EOP", "Earth Observation",
-                "EOSPS",
-                "Filter", "Filter Encoding",
-                "GML",
-                "GMLCOV",
-                "GMLCOV GeoTIFF",
-                "GML Application Schema for Coverages",
+		"EOP",
+		"Earth Observation",
+		"EOSPS",
+		"Filter",
+		"Filter Encoding",
+		"GML",
+		"GMLCOV",
+		"GMLCOV GeoTIFF",
+		"GML Application Schema for Coverages",
 		"GMLJP2",
-                "GML in JPEG 2000 Encoding Standard",
+		"GML in JPEG 2000 Encoding Standard",
 		"IC",
 		"IndoorGML",
-		"ISO19139", "ISO 19139", "ISO19139-2", "ISO 19139-2",
+		"ISO19139",
+		"ISO 19139",
+		"ISO19139-2",
+		"ISO 19139-2",
 		"KML",
 		"OLS",
 		"OM",
-		"OMEO", "Observations & Measurements Earth Observation",
+		"OMEO",
+		"Observations & Measurements Earth Observation",
 		"OMX",
-		"OSEO", "Ordering Services for Earth Observation",
+		"OSEO",
+		"Ordering Services for Earth Observation",
 		"OWS",
-                "Sampling",
-                "SamplingSpatial", "Sampling Spatial",
-                "SE", "Symbology Encoding",
-                "SensorML",
-                "SLD",
-                "SOS",
-                "SPS",
-                "SWE",
-                "SWE Common",
-                "SWES",
-                "SWE Service Model",
+		"Sampling",
+		"SamplingSpatial",
+		"Sampling Spatial",
+		"SE",
+		"Symbology Encoding",
+		"SensorML",
+		"SLD",
+		"SOS",
+		"SPS",
+		"SWE",
+		"SWE Common",
+		"SWES",
+		"SWE Service Model",
 		"TJS",
 		"TML",
 		"WAMI",
 		"WaterML",
-                "WCPS",
-                "WCS",
+		"WCPS",
+		"WCS",
 		"WCS CRS",
 		"WCS Interpolation",
 		"WCS Processing",
 		"WCS Range Subsetting",
 		"WCS Scaling",
-		"WCS WCSEO", "WCSEO", "WCS Earth Observation",
-                "WCST",
-                "WFS",
-                "WMS",
-                "WMSC",
-                "WMTS",
-                "WPS"
+		"WCS WCSEO",
+		"WCSEO",
+		"WCS Earth Observation",
+		"WCST",
+		"WFS",
+		"WMS",
+		"WMSC",
+		"WMTS",
+		"WPS"
 	],
 	"homepage": "https://github.com/highsource/ogc-schemas",
-	"bugs" : {
-		"url" : "http://github.com/highsource/ogc-schemas/issues"
+	"bugs": {
+		"url": "http://github.com/highsource/ogc-schemas/issues"
 	},
-	"licenses" : [ {
-		"type" : "BSD-2-Clause",
-		"url" : "http://github.com/highsource/ogc-schemas/raw/master/LICENSE"
-	} ],
-	"author" : {
-		"name" : "Alexey Valikov",
-		"url" : "https://github.com/highsource"
+	"licenses": [
+		{
+			"type": "BSD-2-Clause",
+			"url": "http://github.com/highsource/ogc-schemas/raw/master/LICENSE"
+		}
+	],
+	"author": {
+		"name": "Alexey Valikov",
+		"url": "https://github.com/highsource"
 	},
 	"main": "ogc-schemas.js",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/highsource/ogc-schemas"
 	},
-	"scripts" : {
-		"test" : "nodeunit tests/tests.js"
+	"scripts": {
+		"test": "nodeunit tests/tests.js"
 	},
 	"dependencies": {
 		"jsonix": ">=2.4.0",
 		"w3c-schemas": ">=1.4.0"
 	},
-	"devDependencies" : {
-		"nodeunit" : "0.x.x",
-		"node-static" : "0.x.x"
+	"devDependencies": {
+		"nodeunit": "0.x.x",
+		"node-static": "0.x.x"
 	}
 }

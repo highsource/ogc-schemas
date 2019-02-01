@@ -76,31 +76,31 @@
                 "WPS"
 	],
 	"homepage": "https://github.com/highsource/ogc-schemas",
-	"bugs" : {
-		"url" : "http://github.com/highsource/ogc-schemas/issues"
+	"bugs": {
+		"url": "http://github.com/highsource/ogc-schemas/issues"
 	},
-	"licenses" : [ {
-		"type" : "BSD-2-Clause",
-		"url" : "http://github.com/highsource/ogc-schemas/raw/master/LICENSE"
+	"licenses": [ {
+		"type": "BSD-2-Clause",
+		"url": "http://github.com/highsource/ogc-schemas/raw/master/LICENSE"
 	} ],
-	"author" : {
-		"name" : "Alexey Valikov",
-		"url" : "https://github.com/highsource"
+	"author": {
+		"name": "Alexey Valikov",
+		"url": "https://github.com/highsource"
 	},
 	"main": "ogc-schemas.js",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/highsource/ogc-schemas"
 	},
-	"scripts" : {
-		"test" : "nodeunit tests/tests.js"
+	"scripts": {
+		"test": "nodeunit tests/tests.js"
 	},
 	"dependencies": {
 		"jsonix": ">=${jsonix.version}",
 		"w3c-schemas": ">=${w3c-schemas.version}"
 	},
-	"devDependencies" : {
-		"nodeunit" : "0.x.x",
-		"node-static" : "0.x.x"
+	"devDependencies": {
+		"nodeunit": "0.x.x",
+		"node-static": "0.x.x"
 	}
 }

@@ -11,6 +11,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.namespace.QName;
 
 import org.junit.Test;
+import org.junit.Ignore;
 
 import net.opengis.filter.v_2_0.BinarySpatialOpType;
 import net.opengis.filter.v_2_0.FilterType;
@@ -22,6 +23,7 @@ public class GetFeatureTest {
 	public GetFeatureTest() {
 	}
 
+	@Ignore
 	@Test
 	public void marshals() throws Exception {
 
