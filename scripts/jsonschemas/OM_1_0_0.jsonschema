@@ -2,47 +2,6 @@
 {
     "id":"http://www.opengis.net/om/1.0#",
     "definitions":{
-        "ObservationCollectionType":{
-            "required":[
-                "member"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractFeatureType"
-                },
-                {
-                    "type":"object",
-                    "title":"ObservationCollectionType",
-                    "properties":{
-                        "member":{
-                            "title":"member",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/ObservationPropertyType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"member",
-                                "namespaceURI":"http://www.opengis.net/om/1.0"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ObservationCollectionType",
-                "namespaceURI":"http://www.opengis.net/om/1.0"
-            },
-            "propertiesOrder":[
-                "member"
-            ]
-        },
         "ObservationType":{
             "required":[
                 "samplingTime",
@@ -200,25 +159,28 @@
                 "result"
             ]
         },
-        "ObservationPropertyType":{
+        "AnyOrReferenceType":{
             "type":"object",
-            "title":"ObservationPropertyType",
+            "title":"AnyOrReferenceType",
             "required":[
-                "observation"
+                "any"
             ],
             "properties":{
-                "observation":{
-                    "title":"observation",
+                "any":{
+                    "title":"any",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/ObservationType"
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                }
+                            }
                         }
                     ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Observation",
-                        "namespaceURI":"http://www.opengis.net/om/1.0"
-                    }
+                    "propertyType":"anyElement"
                 },
                 "remoteSchema":{
                     "title":"remoteSchema",
@@ -327,11 +289,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ObservationPropertyType",
+                "localPart":"AnyOrReferenceType",
                 "namespaceURI":"http://www.opengis.net/om/1.0"
             },
             "propertiesOrder":[
-                "observation",
+                "any",
                 "remoteSchema",
                 "type",
                 "href",
@@ -340,6 +302,47 @@
                 "title",
                 "show",
                 "actuate"
+            ]
+        },
+        "ObservationCollectionType":{
+            "required":[
+                "member"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractFeatureType"
+                },
+                {
+                    "type":"object",
+                    "title":"ObservationCollectionType",
+                    "properties":{
+                        "member":{
+                            "title":"member",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/ObservationPropertyType"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"member",
+                                "namespaceURI":"http://www.opengis.net/om/1.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ObservationCollectionType",
+                "namespaceURI":"http://www.opengis.net/om/1.0"
+            },
+            "propertiesOrder":[
+                "member"
             ]
         },
         "ProcessPropertyType":{
@@ -511,28 +514,25 @@
                 "actuate"
             ]
         },
-        "AnyOrReferenceType":{
+        "ObservationPropertyType":{
             "type":"object",
-            "title":"AnyOrReferenceType",
+            "title":"ObservationPropertyType",
             "required":[
-                "any"
+                "observation"
             ],
             "properties":{
-                "any":{
-                    "title":"any",
+                "observation":{
+                    "title":"observation",
                     "allOf":[
                         {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                }
-                            }
+                            "$ref":"#/definitions/ObservationType"
                         }
                     ],
-                    "propertyType":"anyElement"
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Observation",
+                        "namespaceURI":"http://www.opengis.net/om/1.0"
+                    }
                 },
                 "remoteSchema":{
                     "title":"remoteSchema",
@@ -641,11 +641,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"AnyOrReferenceType",
+                "localPart":"ObservationPropertyType",
                 "namespaceURI":"http://www.opengis.net/om/1.0"
             },
             "propertiesOrder":[
-                "any",
+                "observation",
                 "remoteSchema",
                 "type",
                 "href",

@@ -3,22 +3,6 @@ var WMS_1_3_0_Exceptions_Module_Factory = function () {
     n: 'WMS_1_3_0_Exceptions',
     dens: 'http:\/\/www.opengis.net\/ogc',
     tis: [{
-        ln: 'ServiceExceptionReport',
-        tn: null,
-        ps: [{
-            n: 'serviceException',
-            mno: 0,
-            col: true,
-            en: 'ServiceException',
-            ti: '.ServiceExceptionType'
-          }, {
-            n: 'version',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'ServiceExceptionType',
         ps: [{
             n: 'value',
@@ -33,6 +17,22 @@ var WMS_1_3_0_Exceptions_Module_Factory = function () {
             n: 'locator',
             an: {
               lp: 'locator'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ServiceExceptionReport',
+        tn: null,
+        ps: [{
+            n: 'serviceException',
+            mno: 0,
+            col: true,
+            en: 'ServiceException',
+            ti: '.ServiceExceptionType'
+          }, {
+            n: 'version',
+            an: {
+              lp: 'version'
             },
             t: 'a'
           }]

@@ -2,24 +2,6 @@
 {
     "id":"http://www.opengis.net/citygml/texturedsurface/2.0#",
     "definitions":{
-        "AbstractAppearanceType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractGMLType"
-                },
-                {
-                    "type":"object",
-                    "title":"AbstractAppearanceType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AbstractAppearanceType",
-                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
-            }
-        },
         "MaterialType":{
             "allOf":[
                 {
@@ -131,6 +113,47 @@
                 "specularColor",
                 "diffuseColor",
                 "emissiveColor"
+            ]
+        },
+        "TexturedSurfaceType":{
+            "required":[
+                "appearance"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/OrientableSurfaceType"
+                },
+                {
+                    "type":"object",
+                    "title":"TexturedSurfaceType",
+                    "properties":{
+                        "appearance":{
+                            "title":"appearance",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/AppearancePropertyType"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"appearance",
+                                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TexturedSurfaceType",
+                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
+            },
+            "propertiesOrder":[
+                "appearance"
             ]
         },
         "AppearancePropertyType":{
@@ -384,46 +407,23 @@
                 "repeat"
             ]
         },
-        "TexturedSurfaceType":{
-            "required":[
-                "appearance"
-            ],
+        "AbstractAppearanceType":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/OrientableSurfaceType"
+                    "$ref":"#/definitions/AbstractGMLType"
                 },
                 {
                     "type":"object",
-                    "title":"TexturedSurfaceType",
+                    "title":"AbstractAppearanceType",
                     "properties":{
-                        "appearance":{
-                            "title":"appearance",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/AppearancePropertyType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"appearance",
-                                "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
-                            }
-                        }
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"TexturedSurfaceType",
+                "localPart":"AbstractAppearanceType",
                 "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
-            },
-            "propertiesOrder":[
-                "appearance"
-            ]
+            }
         },
         "TextureTypeType":{
             "allOf":[
@@ -486,7 +486,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Material"
+                                        "appearance"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -499,11 +499,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/MaterialType"
+                    "$ref":"#/definitions/AppearancePropertyType"
                 }
             },
             "elementName":{
-                "localPart":"Material",
+                "localPart":"appearance",
                 "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
             }
         },
@@ -554,7 +554,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "appearance"
+                                        "Material"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -567,11 +567,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/AppearancePropertyType"
+                    "$ref":"#/definitions/MaterialType"
                 }
             },
             "elementName":{
-                "localPart":"appearance",
+                "localPart":"Material",
                 "namespaceURI":"http://www.opengis.net/citygml/texturedsurface/2.0"
             }
         },

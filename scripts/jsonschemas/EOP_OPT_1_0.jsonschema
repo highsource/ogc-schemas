@@ -50,24 +50,6 @@
                 "illuminationElevationAngle"
             ]
         },
-        "EarthObservationType":{
-            "allOf":[
-                {
-                    "$ref":"http://earth.esa.int/eop#/definitions/EarthObservationType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationType",
-                "namespaceURI":"http://earth.esa.int/opt"
-            }
-        },
         "EarthObservationResultType":{
             "allOf":[
                 {
@@ -171,6 +153,24 @@
                 "snowCoverPercentageAssessmentConfidence",
                 "snowCoverPercentageQuotationMode"
             ]
+        },
+        "EarthObservationType":{
+            "allOf":[
+                {
+                    "$ref":"http://earth.esa.int/eop#/definitions/EarthObservationType"
+                },
+                {
+                    "type":"object",
+                    "title":"EarthObservationType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationType",
+                "namespaceURI":"http://earth.esa.int/opt"
+            }
         }
     },
     "anyOf":[
@@ -187,7 +187,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "EarthObservation"
+                                        "EarthObservationResult"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -200,11 +200,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/EarthObservationType"
+                    "$ref":"#/definitions/EarthObservationResultType"
                 }
             },
             "elementName":{
-                "localPart":"EarthObservation",
+                "localPart":"EarthObservationResult",
                 "namespaceURI":"http://earth.esa.int/opt"
             }
         },
@@ -255,7 +255,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "EarthObservationResult"
+                                        "EarthObservation"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -268,11 +268,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/EarthObservationResultType"
+                    "$ref":"#/definitions/EarthObservationType"
                 }
             },
             "elementName":{
-                "localPart":"EarthObservationResult",
+                "localPart":"EarthObservation",
                 "namespaceURI":"http://earth.esa.int/opt"
             }
         }

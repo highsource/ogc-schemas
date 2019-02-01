@@ -2,24 +2,6 @@
 {
     "id":"http://www.opengis.net/gml/3.3/xbt#",
     "definitions":{
-        "CodeWithAuthorityType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/CodeType"
-                },
-                {
-                    "type":"object",
-                    "title":"CodeWithAuthorityType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"CodeWithAuthorityType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/xbt"
-            }
-        },
         "CodeType":{
             "allOf":[
                 {
@@ -52,40 +34,6 @@
             },
             "propertiesOrder":[
                 "codeSpace"
-            ]
-        },
-        "LanguageStringAuxType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/StringOrRefType"
-                },
-                {
-                    "type":"object",
-                    "title":"LanguageStringAuxType",
-                    "properties":{
-                        "lang":{
-                            "title":"lang",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"lang",
-                                "namespaceURI":"http://www.w3.org/XML/1998/namespace"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LanguageStringAuxType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/xbt"
-            },
-            "propertiesOrder":[
-                "lang"
             ]
         },
         "LanguageStringType":{
@@ -122,6 +70,58 @@
             },
             "propertiesOrder":[
                 "value",
+                "lang"
+            ]
+        },
+        "CodeWithAuthorityType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/CodeType"
+                },
+                {
+                    "type":"object",
+                    "title":"CodeWithAuthorityType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"CodeWithAuthorityType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/xbt"
+            }
+        },
+        "LanguageStringAuxType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/StringOrRefType"
+                },
+                {
+                    "type":"object",
+                    "title":"LanguageStringAuxType",
+                    "properties":{
+                        "lang":{
+                            "title":"lang",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"lang",
+                                "namespaceURI":"http://www.w3.org/XML/1998/namespace"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LanguageStringAuxType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/xbt"
+            },
+            "propertiesOrder":[
                 "lang"
             ]
         }

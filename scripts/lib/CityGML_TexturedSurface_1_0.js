@@ -5,54 +5,13 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_1_1'],
     tis: [{
-        ln: 'MaterialType',
-        bti: '.AbstractAppearanceType',
+        ln: 'TexturedSurfaceType',
+        bti: 'GML_3_1_1.OrientableSurfaceType',
         ps: [{
-            n: 'shininess',
-            ti: 'Double'
-          }, {
-            n: 'transparency',
-            ti: 'Double'
-          }, {
-            n: 'ambientIntensity',
-            ti: 'Double'
-          }, {
-            n: 'specularColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'diffuseColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'emissiveColor',
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }]
-      }, {
-        ln: 'SimpleTextureType',
-        bti: '.AbstractAppearanceType',
-        ps: [{
-            n: 'textureMap',
-            rq: true
-          }, {
-            n: 'textureCoordinates',
+            n: 'appearance',
             rq: true,
-            ti: {
-              t: 'l',
-              bti: 'Double'
-            }
-          }, {
-            n: 'textureType'
-          }, {
-            n: 'repeat',
-            ti: 'Boolean'
+            col: true,
+            ti: '.AppearancePropertyType'
           }]
       }, {
         ln: 'AppearancePropertyType',
@@ -104,16 +63,57 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'SimpleTextureType',
+        bti: '.AbstractAppearanceType',
+        ps: [{
+            n: 'textureMap',
+            rq: true
+          }, {
+            n: 'textureCoordinates',
+            rq: true,
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'textureType'
+          }, {
+            n: 'repeat',
+            ti: 'Boolean'
+          }]
+      }, {
         ln: 'AbstractAppearanceType',
         bti: 'GML_3_1_1.AbstractGMLType'
       }, {
-        ln: 'TexturedSurfaceType',
-        bti: 'GML_3_1_1.OrientableSurfaceType',
+        ln: 'MaterialType',
+        bti: '.AbstractAppearanceType',
         ps: [{
-            n: 'appearance',
-            rq: true,
-            col: true,
-            ti: '.AppearancePropertyType'
+            n: 'shininess',
+            ti: 'Double'
+          }, {
+            n: 'transparency',
+            ti: 'Double'
+          }, {
+            n: 'ambientIntensity',
+            ti: 'Double'
+          }, {
+            n: 'specularColor',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'diffuseColor',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
+          }, {
+            n: 'emissiveColor',
+            ti: {
+              t: 'l',
+              bti: 'Double'
+            }
           }]
       }, {
         t: 'enum',
@@ -121,9 +121,12 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
         vs: ['specific', 'typical', 'unknown']
       }],
     eis: [{
-        en: 'Material',
-        ti: '.MaterialType',
-        sh: '_Appearance'
+        en: 'TexturedSurface',
+        ti: '.TexturedSurfaceType',
+        sh: {
+          lp: 'OrientableSurface',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
       }, {
         en: '_Appearance',
         ti: '.AbstractAppearanceType',
@@ -136,15 +139,12 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
         ti: '.SimpleTextureType',
         sh: '_Appearance'
       }, {
-        en: 'TexturedSurface',
-        ti: '.TexturedSurfaceType',
-        sh: {
-          lp: 'OrientableSurface',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
-      }, {
         en: 'appearance',
         ti: '.AppearancePropertyType'
+      }, {
+        en: 'Material',
+        ti: '.MaterialType',
+        sh: '_Appearance'
       }]
   };
   return {

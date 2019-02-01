@@ -3,7 +3,7 @@ var GML_LRO_3_3_Module_Factory = function () {
     n: 'GML_LRO_3_3',
     dens: 'http:\/\/www.opengis.net\/gml\/3.3\/lro',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_LR_3_3', 'GML_3_2_1'],
+    deps: ['GML_3_2_1', 'GML_LR_3_3', 'XLink_1_0'],
     tis: [{
         ln: 'LateralOffsetDistanceExpressionType',
         bti: 'GML_LR_3_3.DistanceExpressionType',
@@ -15,12 +15,12 @@ var GML_LRO_3_3_Module_Factory = function () {
             ti: '.VerticalOffsetExpressionType'
           }]
       }, {
-        ln: 'LateralOffsetLinearSRSPropertyType',
+        ln: 'LRMWithOffsetPropertyType',
         ps: [{
-            n: 'lateralOffsetLinearSRS',
+            n: 'lrmWithOffset',
             rq: true,
-            en: 'LateralOffsetLinearSRS',
-            ti: '.LateralOffsetLinearSRSType'
+            en: 'LRMWithOffset',
+            ti: '.LRMWithOffsetType'
           }, {
             n: 'nilReason',
             ti: {
@@ -63,12 +63,49 @@ var GML_LRO_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LRMWithOffsetPropertyType',
+        ln: 'LateralOffsetExpressionType',
         ps: [{
-            n: 'lrmWithOffset',
+            n: 'value',
+            ti: 'Double',
+            t: 'v'
+          }, {
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }, {
+            n: 'lateralOffsetReferent',
+            an: {
+              lp: 'lateralOffsetReferent'
+            },
+            t: 'a'
+          }, {
+            n: 'featureGeometry',
+            an: {
+              lp: 'featureGeometry'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LateralOffsetLinearSRSType',
+        bti: 'GML_3_2_1.IdentifiedObjectType',
+        ps: [{
+            n: 'linearElement',
             rq: true,
-            en: 'LRMWithOffset',
-            ti: '.LRMWithOffsetType'
+            ti: 'GML_LR_3_3.LinearElementPropertyType'
+          }, {
+            n: 'lrm',
+            rq: true,
+            ti: '.LRMWithOffsetPropertyType'
+          }]
+      }, {
+        ln: 'LateralOffsetLinearSRSPropertyType',
+        ps: [{
+            n: 'lateralOffsetLinearSRS',
+            rq: true,
+            en: 'LateralOffsetLinearSRS',
+            ti: '.LateralOffsetLinearSRSType'
           }, {
             n: 'nilReason',
             ti: {
@@ -122,43 +159,6 @@ var GML_LRO_3_3_Module_Factory = function () {
             n: 'positiveVerticalOffsetDirection'
           }]
       }, {
-        ln: 'LateralOffsetExpressionType',
-        ps: [{
-            n: 'value',
-            ti: 'Double',
-            t: 'v'
-          }, {
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }, {
-            n: 'lateralOffsetReferent',
-            an: {
-              lp: 'lateralOffsetReferent'
-            },
-            t: 'a'
-          }, {
-            n: 'featureGeometry',
-            an: {
-              lp: 'featureGeometry'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LateralOffsetLinearSRSType',
-        bti: 'GML_3_2_1.IdentifiedObjectType',
-        ps: [{
-            n: 'linearElement',
-            rq: true,
-            ti: 'GML_LR_3_3.LinearElementPropertyType'
-          }, {
-            n: 'lrm',
-            rq: true,
-            ti: '.LRMWithOffsetPropertyType'
-          }]
-      }, {
         ln: 'VerticalOffsetExpressionType',
         ps: [{
             n: 'value',
@@ -185,14 +185,21 @@ var GML_LRO_3_3_Module_Factory = function () {
           }]
       }, {
         t: 'enum',
-        ln: 'LateralOffsetDirectionType',
-        vs: ['left', 'right']
-      }, {
-        t: 'enum',
         ln: 'VerticalOffsetDirectionType',
         vs: ['up', 'down']
+      }, {
+        t: 'enum',
+        ln: 'LateralOffsetDirectionType',
+        vs: ['left', 'right']
       }],
     eis: [{
+        en: 'LateralOffsetLinearSRS',
+        ti: '.LateralOffsetLinearSRSType',
+        sh: {
+          lp: 'Definition',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
         en: 'LateralOffsetDistanceExpression',
         ti: '.LateralOffsetDistanceExpressionType',
         sh: {
@@ -205,13 +212,6 @@ var GML_LRO_3_3_Module_Factory = function () {
         sh: {
           lp: 'LinearReferencingMethod',
           ns: 'http:\/\/www.opengis.net\/gml\/3.3\/lr'
-        }
-      }, {
-        en: 'LateralOffsetLinearSRS',
-        ti: '.LateralOffsetLinearSRSType',
-        sh: {
-          lp: 'Definition',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }]
   };

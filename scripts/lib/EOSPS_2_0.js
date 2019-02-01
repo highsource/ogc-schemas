@@ -3,64 +3,40 @@ var EOSPS_2_0_Module_Factory = function () {
     n: 'EOSPS_2_0',
     dens: 'http:\/\/www.opengis.net\/eosps\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1', 'SWES_2_0', 'SPS_2_0', 'EOP_1_0'],
+    deps: ['XLink_1_0', 'SWES_2_0', 'GML_3_2_1', 'EOP_1_0', 'SPS_2_0'],
     tis: [{
-        ln: 'GetSensorAvailabilityType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
+        ln: 'GridCellType',
         ps: [{
-            n: 'sensor',
+            n: 'footprint',
+            rq: true,
+            ti: '.GridCellType.Footprint'
+          }, {
+            n: 'status',
             rq: true
-          }, {
-            n: 'requestPeriod',
-            rq: true,
-            ti: '.GetSensorAvailabilityType.RequestPeriod'
-          }]
-      }, {
-        ln: 'SubmitSegmentByIDType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
-        ps: [{
-            n: 'task',
-            rq: true
-          }, {
-            n: 'segmentID',
-            rq: true,
-            col: true,
-            ti: 'NCName'
-          }]
-      }, {
-        ln: 'FeasibilityStudyType',
-        ps: [{
-            n: 'expirationDate',
-            rq: true,
-            ti: 'DateTime'
-          }, {
-            n: 'estimatedCost',
-            ti: 'GML_3_2_1.MeasureType'
           }, {
             n: 'successRate',
             rq: true,
             ti: 'Double'
           }, {
-            n: 'informationUsed',
-            rq: true,
-            col: true
+            n: 'estimatedSuccessDate',
+            ti: 'DateTime'
+          }, {
+            n: 'lastAttemptDate',
+            ti: 'DateTime'
+          }, {
+            n: 'nextAttemptDate',
+            ti: 'DateTime'
+          }, {
+            n: 'remainingAttempts',
+            ti: 'Integer'
           }, {
             n: 'extension',
             mno: 0,
             col: true,
             ti: 'AnyType'
           }, {
-            n: 'segment',
-            mno: 0,
-            col: true,
-            ti: '.SegmentPropertyType'
-          }, {
-            n: 'cell',
-            mno: 0,
-            col: true,
-            ti: '.GridCellPropertyType'
-          }, {
             n: 'id',
+            rq: true,
             ti: 'ID',
             an: {
               lp: 'id',
@@ -110,7 +86,141 @@ var EOSPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'GetSensorAvailabilityResponseType.AvailabilityPeriod',
+        ln: 'GetSensorAvailabilityType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
+        ps: [{
+            n: 'sensor',
+            rq: true
+          }, {
+            n: 'requestPeriod',
+            rq: true,
+            ti: '.GetSensorAvailabilityType.RequestPeriod'
+          }]
+      }, {
+        ln: 'ValidatePropertyType',
+        ps: [{
+            n: 'validate',
+            rq: true,
+            en: 'Validate',
+            ti: '.ValidateType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'GridCellPropertyType',
+        ps: [{
+            n: 'gridCell',
+            rq: true,
+            en: 'GridCell',
+            ti: '.GridCellType'
+          }]
+      }, {
+        ln: 'FeasibilityStudyType',
+        ps: [{
+            n: 'expirationDate',
+            rq: true,
+            ti: 'DateTime'
+          }, {
+            n: 'estimatedCost',
+            ti: 'GML_3_2_1.MeasureType'
+          }, {
+            n: 'successRate',
+            rq: true,
+            ti: 'Double'
+          }, {
+            n: 'informationUsed',
+            rq: true,
+            col: true
+          }, {
+            n: 'extension',
+            mno: 0,
+            col: true,
+            ti: 'AnyType'
+          }, {
+            n: 'segment',
+            mno: 0,
+            col: true,
+            ti: '.SegmentPropertyType'
+          }, {
+            n: 'cell',
+            mno: 0,
+            col: true,
+            ti: '.GridCellPropertyType'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ProgrammingStatusType',
+        ps: [{
+            n: 'extension',
+            mno: 0,
+            col: true,
+            ti: 'AnyType'
+          }, {
+            n: 'segment',
+            rq: true,
+            col: true,
+            ti: '.SegmentPropertyType'
+          }, {
+            n: 'cell',
+            mno: 0,
+            col: true,
+            ti: '.GridCellPropertyType'
+          }, {
+            n: 'id',
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetSensorAvailabilityResponseType.ResponsePeriod',
         tn: null,
         ps: [{
             n: 'timePeriod',
@@ -132,6 +242,14 @@ var EOSPS_2_0_Module_Factory = function () {
               ns: 'http:\/\/www.opengis.net\/gml\/3.2'
             },
             ti: 'GML_3_2_1.PolygonType'
+          }]
+      }, {
+        ln: 'ValidateResponseType',
+        bti: 'SWES_2_0.ExtensibleResponseType',
+        ps: [{
+            n: 'result',
+            rq: true,
+            ti: 'SPS_2_0.StatusReportPropertyType'
           }]
       }, {
         ln: 'GetSensorAvailabilityResponsePropertyType',
@@ -182,79 +300,12 @@ var EOSPS_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ProgrammingStatusType',
+        ln: 'SubmitSegmentByIDPropertyType',
         ps: [{
-            n: 'extension',
-            mno: 0,
-            col: true,
-            ti: 'AnyType'
-          }, {
-            n: 'segment',
+            n: 'submitSegmentByID',
             rq: true,
-            col: true,
-            ti: '.SegmentPropertyType'
-          }, {
-            n: 'cell',
-            mno: 0,
-            col: true,
-            ti: '.GridCellPropertyType'
-          }, {
-            n: 'id',
-            ti: 'ID',
-            an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetSensorAvailabilityResponseType',
-        bti: 'SWES_2_0.ExtensibleResponseType',
-        ps: [{
-            n: 'responsePeriod',
-            rq: true,
-            ti: '.GetSensorAvailabilityResponseType.ResponsePeriod'
-          }, {
-            n: 'availabilityPeriod',
-            mno: 0,
-            col: true,
-            ti: '.GetSensorAvailabilityResponseType.AvailabilityPeriod'
-          }]
-      }, {
-        ln: 'ProgrammingStatusPropertyType',
-        ps: [{
-            n: 'programmingStatus',
-            rq: true,
-            en: 'ProgrammingStatus',
-            ti: '.ProgrammingStatusType'
-          }]
-      }, {
-        ln: 'SegmentPropertyType',
-        ps: [{
-            n: 'segment',
-            rq: true,
-            en: 'Segment',
-            ti: '.SegmentType'
-          }]
-      }, {
-        ln: 'ValidateType',
-        bti: 'SWES_2_0.ExtensibleRequestType',
-        ps: [{
-            n: 'task',
-            rq: true
-          }, {
-            n: 'segmentID',
-            rq: true,
-            col: true,
-            ti: 'NCName'
-          }]
-      }, {
-        ln: 'ValidateResponsePropertyType',
-        ps: [{
-            n: 'validateResponse',
-            rq: true,
-            en: 'ValidateResponse',
-            ti: '.ValidateResponseType'
+            en: 'SubmitSegmentByID',
+            ti: '.SubmitSegmentByIDType'
           }, {
             n: 'nilReason',
             ti: {
@@ -353,24 +404,24 @@ var EOSPS_2_0_Module_Factory = function () {
             ti: '.FeasibilityStudyType'
           }]
       }, {
-        ln: 'SegmentType.Footprint',
-        tn: null,
+        ln: 'SegmentPropertyType',
         ps: [{
-            n: 'polygon',
+            n: 'segment',
             rq: true,
-            en: {
-              lp: 'Polygon',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.PolygonType'
+            en: 'Segment',
+            ti: '.SegmentType'
           }]
       }, {
-        ln: 'GridCellPropertyType',
+        ln: 'GetSensorAvailabilityResponseType.AvailabilityPeriod',
+        tn: null,
         ps: [{
-            n: 'gridCell',
+            n: 'timePeriod',
             rq: true,
-            en: 'GridCell',
-            ti: '.GridCellType'
+            en: {
+              lp: 'TimePeriod',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePeriodType'
           }]
       }, {
         ln: 'GetSensorAvailabilityType.RequestPeriod',
@@ -385,165 +436,110 @@ var EOSPS_2_0_Module_Factory = function () {
             ti: 'GML_3_2_1.TimePeriodType'
           }]
       }, {
-        ln: 'GetSensorAvailabilityResponseType.ResponsePeriod',
-        tn: null,
-        ps: [{
-            n: 'timePeriod',
-            rq: true,
-            en: {
-              lp: 'TimePeriod',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.TimePeriodType'
-          }]
-      }, {
-        ln: 'SubmitSegmentByIDPropertyType',
-        ps: [{
-            n: 'submitSegmentByID',
-            rq: true,
-            en: 'SubmitSegmentByID',
-            ti: '.SubmitSegmentByIDType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'GridCellType',
-        ps: [{
-            n: 'footprint',
-            rq: true,
-            ti: '.GridCellType.Footprint'
-          }, {
-            n: 'status',
-            rq: true
-          }, {
-            n: 'successRate',
-            rq: true,
-            ti: 'Double'
-          }, {
-            n: 'estimatedSuccessDate',
-            ti: 'DateTime'
-          }, {
-            n: 'lastAttemptDate',
-            ti: 'DateTime'
-          }, {
-            n: 'nextAttemptDate',
-            ti: 'DateTime'
-          }, {
-            n: 'remainingAttempts',
-            ti: 'Integer'
-          }, {
-            n: 'extension',
-            mno: 0,
-            col: true,
-            ti: 'AnyType'
-          }, {
-            n: 'id',
-            rq: true,
-            ti: 'ID',
-            an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ValidatePropertyType',
-        ps: [{
-            n: 'validate',
-            rq: true,
-            en: 'Validate',
-            ti: '.ValidateType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'ValidateResponseType',
+        ln: 'GetSensorAvailabilityResponseType',
         bti: 'SWES_2_0.ExtensibleResponseType',
         ps: [{
-            n: 'result',
+            n: 'responsePeriod',
             rq: true,
-            ti: 'SPS_2_0.StatusReportPropertyType'
+            ti: '.GetSensorAvailabilityResponseType.ResponsePeriod'
+          }, {
+            n: 'availabilityPeriod',
+            mno: 0,
+            col: true,
+            ti: '.GetSensorAvailabilityResponseType.AvailabilityPeriod'
           }]
       }, {
-        t: 'enum',
-        ln: 'FeasibilityLevelEnumerationType',
-        vs: ['SIMPLE', 'COMPLETE']
+        ln: 'ProgrammingStatusPropertyType',
+        ps: [{
+            n: 'programmingStatus',
+            rq: true,
+            en: 'ProgrammingStatus',
+            ti: '.ProgrammingStatusType'
+          }]
+      }, {
+        ln: 'ValidateType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
+        ps: [{
+            n: 'task',
+            rq: true
+          }, {
+            n: 'segmentID',
+            rq: true,
+            col: true,
+            ti: 'NCName'
+          }]
+      }, {
+        ln: 'ValidateResponsePropertyType',
+        ps: [{
+            n: 'validateResponse',
+            rq: true,
+            en: 'ValidateResponse',
+            ti: '.ValidateResponseType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SubmitSegmentByIDType',
+        bti: 'SWES_2_0.ExtensibleRequestType',
+        ps: [{
+            n: 'task',
+            rq: true
+          }, {
+            n: 'segmentID',
+            rq: true,
+            col: true,
+            ti: 'NCName'
+          }]
+      }, {
+        ln: 'SegmentType.Footprint',
+        tn: null,
+        ps: [{
+            n: 'polygon',
+            rq: true,
+            en: {
+              lp: 'Polygon',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.PolygonType'
+          }]
       }, {
         t: 'enum',
         ln: 'InformationTypeEnumerationType',
@@ -552,6 +548,10 @@ var EOSPS_2_0_Module_Factory = function () {
         t: 'enum',
         ln: 'StatusCodeEnumerationType',
         vs: ['PLANNED', 'POTENTIAL', 'ACQUIRED', 'VALIDATED', 'CANCELLED', 'FAILED', 'REJECTED']
+      }, {
+        t: 'enum',
+        ln: 'FeasibilityLevelEnumerationType',
+        vs: ['SIMPLE', 'COMPLETE']
       }],
     eis: [{
         en: 'GridCell',
@@ -561,16 +561,12 @@ var EOSPS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'ProgrammingStatus',
-        ti: '.ProgrammingStatusType',
+        en: 'GetSensorAvailability',
+        ti: '.GetSensorAvailabilityType',
         sh: {
-          lp: 'AbstractObject',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+          lp: 'ExtensibleRequest',
+          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
-      }, {
-        en: 'FeasibilityLevel'
-      }, {
-        en: 'ReferenceFeasibilityID'
       }, {
         en: 'ValidateResponse',
         ti: '.ValidateResponseType',
@@ -579,10 +575,10 @@ var EOSPS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
-        en: 'GetSensorAvailability',
-        ti: '.GetSensorAvailabilityType',
+        en: 'GetSensorAvailabilityResponse',
+        ti: '.GetSensorAvailabilityResponseType',
         sh: {
-          lp: 'ExtensibleRequest',
+          lp: 'ExtensibleResponse',
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
@@ -593,6 +589,8 @@ var EOSPS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
+        en: 'ReferenceFeasibilityID'
+      }, {
         en: 'Validate',
         ti: '.ValidateType',
         sh: {
@@ -600,8 +598,7 @@ var EOSPS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/swes\/2.0'
         }
       }, {
-        en: 'ManualValidation',
-        ti: 'Boolean'
+        en: 'FeasibilityLevel'
       }, {
         en: 'Segment',
         ti: '.SegmentType',
@@ -617,11 +614,14 @@ var EOSPS_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'GetSensorAvailabilityResponse',
-        ti: '.GetSensorAvailabilityResponseType',
+        en: 'ManualValidation',
+        ti: 'Boolean'
+      }, {
+        en: 'ProgrammingStatus',
+        ti: '.ProgrammingStatusType',
         sh: {
-          lp: 'ExtensibleResponse',
-          ns: 'http:\/\/www.opengis.net\/swes\/2.0'
+          lp: 'AbstractObject',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }]
   };

@@ -2,9 +2,147 @@
 {
     "id":"#",
     "definitions":{
-        "MultiPolygon":{
+        "Location":{
             "type":"object",
-            "title":"MultiPolygon",
+            "title":"Location",
+            "properties":{
+                "point":{
+                    "title":"point",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Point"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Point",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "point"
+            ]
+        },
+        "CenterOf":{
+            "type":"object",
+            "title":"CenterOf",
+            "properties":{
+                "point":{
+                    "title":"point",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Point"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Point",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "point"
+            ]
+        },
+        "PointProperty":{
+            "type":"object",
+            "title":"PointProperty",
+            "properties":{
+                "point":{
+                    "title":"point",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Point"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Point",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "point"
+            ]
+        },
+        "ExtentOf":{
+            "type":"object",
+            "title":"ExtentOf",
+            "properties":{
+                "polygon":{
+                    "title":"polygon",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Polygon"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Polygon",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "polygon"
+            ]
+        },
+        "PointMember":{
+            "type":"object",
+            "title":"PointMember",
+            "properties":{
+                "point":{
+                    "title":"point",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Point"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Point",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "point"
+            ]
+        },
+        "PolygonMember":{
+            "type":"object",
+            "title":"PolygonMember",
+            "properties":{
+                "polygon":{
+                    "title":"polygon",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Polygon"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Polygon",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "polygon"
+            ]
+        },
+        "Point":{
+            "type":"object",
+            "title":"Point",
             "properties":{
                 "id":{
                     "title":"id",
@@ -32,19 +170,16 @@
                         "namespaceURI":""
                     }
                 },
-                "polygonMember":{
-                    "title":"polygonMember",
+                "coordinates":{
+                    "title":"coordinates",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/PolygonMember"
-                            }
+                            "$ref":"#/definitions/Coordinates"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"polygonMember",
+                        "localPart":"coordinates",
                         "namespaceURI":""
                     }
                 }
@@ -53,30 +188,212 @@
             "propertiesOrder":[
                 "id",
                 "srsName",
-                "polygonMember"
+                "coordinates"
             ]
         },
-        "GeometryCollectionProperty":{
+        "MultiCenterLineOf":{
             "type":"object",
-            "title":"GeometryCollectionProperty",
+            "title":"MultiCenterLineOf",
             "properties":{
-                "geometryCollection":{
-                    "title":"geometryCollection",
+                "multiLineString":{
+                    "title":"multiLineString",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/GeometryCollection"
+                            "$ref":"#/definitions/MultiLineString"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"GeometryCollection",
+                        "localPart":"MultiLineString",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "geometryCollection"
+                "multiLineString"
+            ]
+        },
+        "LineStringProperty":{
+            "type":"object",
+            "title":"LineStringProperty",
+            "properties":{
+                "lineString":{
+                    "title":"lineString",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/LineString"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LineString",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "lineString"
+            ]
+        },
+        "Feature":{
+            "type":"object",
+            "title":"Feature",
+            "properties":{
+                "typeName":{
+                    "title":"typeName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"typeName",
+                        "namespaceURI":""
+                    }
+                },
+                "identifier":{
+                    "title":"identifier",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"identifier",
+                        "namespaceURI":""
+                    }
+                },
+                "description":{
+                    "title":"description",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"description",
+                        "namespaceURI":""
+                    }
+                },
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"name",
+                        "namespaceURI":""
+                    }
+                },
+                "boundedBy":{
+                    "title":"boundedBy",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/BoundedBy"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"boundedBy",
+                        "namespaceURI":""
+                    }
+                },
+                "property":{
+                    "title":"property",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/Property"
+                            }
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"property",
+                        "namespaceURI":""
+                    }
+                },
+                "geometricProperty":{
+                    "title":"geometricProperty",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/GeometricProperty"
+                            }
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"geometricProperty",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "typeName",
+                "identifier",
+                "description",
+                "name",
+                "boundedBy",
+                "property",
+                "geometricProperty"
+            ]
+        },
+        "MultiLocation":{
+            "type":"object",
+            "title":"MultiLocation",
+            "properties":{
+                "multiPoint":{
+                    "title":"multiPoint",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/MultiPoint"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MultiPoint",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "multiPoint"
+            ]
+        },
+        "BoundedBy":{
+            "type":"object",
+            "title":"BoundedBy",
+            "properties":{
+                "box":{
+                    "title":"box",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Box"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Box",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "box"
             ]
         },
         "Coverage":{
@@ -156,6 +473,517 @@
                 "pointMember"
             ]
         },
+        "GeometryCollectionProperty":{
+            "type":"object",
+            "title":"GeometryCollectionProperty",
+            "properties":{
+                "geometryCollection":{
+                    "title":"geometryCollection",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/GeometryCollection"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"GeometryCollection",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "geometryCollection"
+            ]
+        },
+        "FeatureCollection":{
+            "type":"object",
+            "title":"FeatureCollection",
+            "properties":{
+                "typeName":{
+                    "title":"typeName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"typeName",
+                        "namespaceURI":""
+                    }
+                },
+                "identifier":{
+                    "title":"identifier",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"identifier",
+                        "namespaceURI":""
+                    }
+                },
+                "description":{
+                    "title":"description",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"description",
+                        "namespaceURI":""
+                    }
+                },
+                "name":{
+                    "title":"name",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"name",
+                        "namespaceURI":""
+                    }
+                },
+                "boundedBy":{
+                    "title":"boundedBy",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/BoundedBy"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"boundedBy",
+                        "namespaceURI":""
+                    }
+                },
+                "property":{
+                    "title":"property",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/Property"
+                            }
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"property",
+                        "namespaceURI":""
+                    }
+                },
+                "geometricProperty":{
+                    "title":"geometricProperty",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/GeometricProperty"
+                            }
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"geometricProperty",
+                        "namespaceURI":""
+                    }
+                },
+                "featureMember":{
+                    "title":"featureMember",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/FeatureMember"
+                            }
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"featureMember",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "typeName",
+                "identifier",
+                "description",
+                "name",
+                "boundedBy",
+                "property",
+                "geometricProperty",
+                "featureMember"
+            ]
+        },
+        "GeometryMember":{
+            "type":"object",
+            "title":"GeometryMember",
+            "properties":{
+                "pointOrLineStringOrPolygonOrMultiPointOrMultiLineStringOrMultiPolygonOrGeometryCollection":{
+                    "title":"pointOrLineStringOrPolygonOrMultiPointOrMultiLineStringOrMultiPolygonOrGeometryCollection",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/Point"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"Point",
+                                            "namespaceURI":""
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/LineString"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"LineString",
+                                            "namespaceURI":""
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/Polygon"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"Polygon",
+                                            "namespaceURI":""
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/MultiPoint"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"MultiPoint",
+                                            "namespaceURI":""
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/MultiLineString"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"MultiLineString",
+                                            "namespaceURI":""
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/MultiPolygon"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"MultiPolygon",
+                                            "namespaceURI":""
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/GeometryCollection"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"GeometryCollection",
+                                            "namespaceURI":""
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "propertyType":"elements"
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "pointOrLineStringOrPolygonOrMultiPointOrMultiLineStringOrMultiPolygonOrGeometryCollection"
+            ]
+        },
+        "MultiLineStringProperty":{
+            "type":"object",
+            "title":"MultiLineStringProperty",
+            "properties":{
+                "multiLineString":{
+                    "title":"multiLineString",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/MultiLineString"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MultiLineString",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "multiLineString"
+            ]
+        },
+        "PolygonProperty":{
+            "type":"object",
+            "title":"PolygonProperty",
+            "properties":{
+                "polygon":{
+                    "title":"polygon",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Polygon"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"Polygon",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "polygon"
+            ]
+        },
+        "EdgeOf":{
+            "type":"object",
+            "title":"EdgeOf",
+            "properties":{
+                "lineString":{
+                    "title":"lineString",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/LineString"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LineString",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "lineString"
+            ]
+        },
+        "CenterLineOf":{
+            "type":"object",
+            "title":"CenterLineOf",
+            "properties":{
+                "lineString":{
+                    "title":"lineString",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/LineString"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LineString",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "lineString"
+            ]
+        },
+        "Coordinates":{
+            "type":"object",
+            "title":"Coordinates",
+            "properties":{
+                "decimal":{
+                    "title":"decimal",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"decimal",
+                        "namespaceURI":""
+                    }
+                },
+                "cs":{
+                    "title":"cs",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"cs",
+                        "namespaceURI":""
+                    }
+                },
+                "ts":{
+                    "title":"ts",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"ts",
+                        "namespaceURI":""
+                    }
+                },
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"value"
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "decimal",
+                "cs",
+                "ts",
+                "value"
+            ]
+        },
+        "FeatureMember":{
+            "type":"object",
+            "title":"FeatureMember",
+            "properties":{
+                "typeName":{
+                    "title":"typeName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"typeName",
+                        "namespaceURI":""
+                    }
+                },
+                "featureOrFeatureCollection":{
+                    "title":"featureOrFeatureCollection",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "anyOf":[
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/Feature"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"Feature",
+                                            "namespaceURI":""
+                                        }
+                                    },
+                                    {
+                                        "anyOf":[
+                                            {
+                                                "$ref":"#/definitions/FeatureCollection"
+                                            }
+                                        ],
+                                        "elementName":{
+                                            "localPart":"FeatureCollection",
+                                            "namespaceURI":""
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "propertyType":"elements"
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "typeName",
+                "featureOrFeatureCollection"
+            ]
+        },
+        "MultiCenterOf":{
+            "type":"object",
+            "title":"MultiCenterOf",
+            "properties":{
+                "multiPoint":{
+                    "title":"multiPoint",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/MultiPoint"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MultiPoint",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "multiPoint"
+            ]
+        },
+        "LineStringMember":{
+            "type":"object",
+            "title":"LineStringMember",
+            "properties":{
+                "lineString":{
+                    "title":"lineString",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/LineString"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"LineString",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "lineString"
+            ]
+        },
         "LinearRing":{
             "type":"object",
             "title":"LinearRing",
@@ -193,96 +1021,247 @@
                 "coordinates"
             ]
         },
-        "MultiCoverage":{
+        "InnerBoundaryIs":{
             "type":"object",
-            "title":"MultiCoverage",
+            "title":"InnerBoundaryIs",
             "properties":{
-                "multiPolygon":{
-                    "title":"multiPolygon",
+                "linearRing":{
+                    "title":"linearRing",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/MultiPolygon"
+                            "$ref":"#/definitions/LinearRing"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"MultiPolygon",
+                        "localPart":"LinearRing",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "multiPolygon"
+                "linearRing"
             ]
         },
-        "PointMember":{
+        "Polygon":{
             "type":"object",
-            "title":"PointMember",
+            "title":"Polygon",
             "properties":{
-                "point":{
-                    "title":"point",
+                "id":{
+                    "title":"id",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/Point"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"ID",
+                        "namespaceURI":""
+                    }
+                },
+                "srsName":{
+                    "title":"srsName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"srsName",
+                        "namespaceURI":""
+                    }
+                },
+                "outerBoundaryIs":{
+                    "title":"outerBoundaryIs",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/OuterBoundaryIs"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"Point",
+                        "localPart":"outerBoundaryIs",
+                        "namespaceURI":""
+                    }
+                },
+                "innerBoundaryIs":{
+                    "title":"innerBoundaryIs",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/InnerBoundaryIs"
+                            }
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"innerBoundaryIs",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "point"
+                "id",
+                "srsName",
+                "outerBoundaryIs",
+                "innerBoundaryIs"
             ]
         },
-        "MultiLineStringProperty":{
+        "LineString":{
             "type":"object",
-            "title":"MultiLineStringProperty",
+            "title":"LineString",
             "properties":{
-                "multiLineString":{
-                    "title":"multiLineString",
+                "id":{
+                    "title":"id",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/MultiLineString"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"ID",
+                        "namespaceURI":""
+                    }
+                },
+                "srsName":{
+                    "title":"srsName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"srsName",
+                        "namespaceURI":""
+                    }
+                },
+                "coordinates":{
+                    "title":"coordinates",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Coordinates"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"MultiLineString",
+                        "localPart":"coordinates",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "multiLineString"
+                "id",
+                "srsName",
+                "coordinates"
             ]
         },
-        "MultiCenterLineOf":{
+        "MultiLineString":{
             "type":"object",
-            "title":"MultiCenterLineOf",
+            "title":"MultiLineString",
             "properties":{
-                "multiLineString":{
-                    "title":"multiLineString",
+                "id":{
+                    "title":"id",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/MultiLineString"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"ID",
+                        "namespaceURI":""
+                    }
+                },
+                "srsName":{
+                    "title":"srsName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"srsName",
+                        "namespaceURI":""
+                    }
+                },
+                "lineStringMember":{
+                    "title":"lineStringMember",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/LineStringMember"
+                            }
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"MultiLineString",
+                        "localPart":"lineStringMember",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "multiLineString"
+                "id",
+                "srsName",
+                "lineStringMember"
+            ]
+        },
+        "Property":{
+            "type":"object",
+            "title":"Property",
+            "properties":{
+                "typeName":{
+                    "title":"typeName",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"typeName",
+                        "namespaceURI":""
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":""
+                    }
+                },
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"value"
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "typeName",
+                "type",
+                "value"
             ]
         },
         "GeometricProperty":{
@@ -422,326 +1401,6 @@
                 "point"
             ]
         },
-        "CenterOf":{
-            "type":"object",
-            "title":"CenterOf",
-            "properties":{
-                "point":{
-                    "title":"point",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Point"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Point",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "point"
-            ]
-        },
-        "MultiLineString":{
-            "type":"object",
-            "title":"MultiLineString",
-            "properties":{
-                "id":{
-                    "title":"id",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"ID",
-                        "namespaceURI":""
-                    }
-                },
-                "srsName":{
-                    "title":"srsName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"srsName",
-                        "namespaceURI":""
-                    }
-                },
-                "lineStringMember":{
-                    "title":"lineStringMember",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/LineStringMember"
-                            }
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"lineStringMember",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "id",
-                "srsName",
-                "lineStringMember"
-            ]
-        },
-        "Feature":{
-            "type":"object",
-            "title":"Feature",
-            "properties":{
-                "typeName":{
-                    "title":"typeName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"typeName",
-                        "namespaceURI":""
-                    }
-                },
-                "identifier":{
-                    "title":"identifier",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"identifier",
-                        "namespaceURI":""
-                    }
-                },
-                "description":{
-                    "title":"description",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"description",
-                        "namespaceURI":""
-                    }
-                },
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"name",
-                        "namespaceURI":""
-                    }
-                },
-                "boundedBy":{
-                    "title":"boundedBy",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/BoundedBy"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"boundedBy",
-                        "namespaceURI":""
-                    }
-                },
-                "property":{
-                    "title":"property",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/Property"
-                            }
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"property",
-                        "namespaceURI":""
-                    }
-                },
-                "geometricProperty":{
-                    "title":"geometricProperty",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/GeometricProperty"
-                            }
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"geometricProperty",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "typeName",
-                "identifier",
-                "description",
-                "name",
-                "boundedBy",
-                "property",
-                "geometricProperty"
-            ]
-        },
-        "LineStringProperty":{
-            "type":"object",
-            "title":"LineStringProperty",
-            "properties":{
-                "lineString":{
-                    "title":"lineString",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/LineString"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"LineString",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "lineString"
-            ]
-        },
-        "Coordinates":{
-            "type":"object",
-            "title":"Coordinates",
-            "properties":{
-                "decimal":{
-                    "title":"decimal",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"decimal",
-                        "namespaceURI":""
-                    }
-                },
-                "cs":{
-                    "title":"cs",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"cs",
-                        "namespaceURI":""
-                    }
-                },
-                "ts":{
-                    "title":"ts",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"ts",
-                        "namespaceURI":""
-                    }
-                },
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"value"
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "decimal",
-                "cs",
-                "ts",
-                "value"
-            ]
-        },
-        "MultiExtentOf":{
-            "type":"object",
-            "title":"MultiExtentOf",
-            "properties":{
-                "multiPolygon":{
-                    "title":"multiPolygon",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/MultiPolygon"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MultiPolygon",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "multiPolygon"
-            ]
-        },
-        "PolygonProperty":{
-            "type":"object",
-            "title":"PolygonProperty",
-            "properties":{
-                "polygon":{
-                    "title":"polygon",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Polygon"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Polygon",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "polygon"
-            ]
-        },
         "MultiPolygonProperty":{
             "type":"object",
             "title":"MultiPolygonProperty",
@@ -765,150 +1424,27 @@
                 "multiPolygon"
             ]
         },
-        "GeometryMember":{
+        "OuterBoundaryIs":{
             "type":"object",
-            "title":"GeometryMember",
+            "title":"OuterBoundaryIs",
             "properties":{
-                "pointOrLineStringOrPolygonOrMultiPointOrMultiLineStringOrMultiPolygonOrGeometryCollection":{
-                    "title":"pointOrLineStringOrPolygonOrMultiPointOrMultiLineStringOrMultiPolygonOrGeometryCollection",
+                "linearRing":{
+                    "title":"linearRing",
                     "allOf":[
                         {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/Point"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"Point",
-                                            "namespaceURI":""
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/LineString"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"LineString",
-                                            "namespaceURI":""
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/Polygon"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"Polygon",
-                                            "namespaceURI":""
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/MultiPoint"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"MultiPoint",
-                                            "namespaceURI":""
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/MultiLineString"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"MultiLineString",
-                                            "namespaceURI":""
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/MultiPolygon"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"MultiPolygon",
-                                            "namespaceURI":""
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/GeometryCollection"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"GeometryCollection",
-                                            "namespaceURI":""
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "propertyType":"elements"
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "pointOrLineStringOrPolygonOrMultiPointOrMultiLineStringOrMultiPolygonOrGeometryCollection"
-            ]
-        },
-        "MultiPosition":{
-            "type":"object",
-            "title":"MultiPosition",
-            "properties":{
-                "multiPoint":{
-                    "title":"multiPoint",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/MultiPoint"
+                            "$ref":"#/definitions/LinearRing"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"MultiPoint",
+                        "localPart":"LinearRing",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "multiPoint"
-            ]
-        },
-        "MultiCenterOf":{
-            "type":"object",
-            "title":"MultiCenterOf",
-            "properties":{
-                "multiPoint":{
-                    "title":"multiPoint",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/MultiPoint"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MultiPoint",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "multiPoint"
+                "linearRing"
             ]
         },
         "Box":{
@@ -962,32 +1498,101 @@
                 "coordinates"
             ]
         },
-        "InnerBoundaryIs":{
+        "MultiExtentOf":{
             "type":"object",
-            "title":"InnerBoundaryIs",
+            "title":"MultiExtentOf",
             "properties":{
-                "linearRing":{
-                    "title":"linearRing",
+                "multiPolygon":{
+                    "title":"multiPolygon",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/LinearRing"
+                            "$ref":"#/definitions/MultiPolygon"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"LinearRing",
+                        "localPart":"MultiPolygon",
                         "namespaceURI":""
                     }
                 }
             },
             "typeType":"classInfo",
             "propertiesOrder":[
-                "linearRing"
+                "multiPolygon"
             ]
         },
-        "Point":{
+        "MultiPosition":{
             "type":"object",
-            "title":"Point",
+            "title":"MultiPosition",
+            "properties":{
+                "multiPoint":{
+                    "title":"multiPoint",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/MultiPoint"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MultiPoint",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "multiPoint"
+            ]
+        },
+        "MultiEdgeOf":{
+            "type":"object",
+            "title":"MultiEdgeOf",
+            "properties":{
+                "multiLineString":{
+                    "title":"multiLineString",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/MultiLineString"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MultiLineString",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "multiLineString"
+            ]
+        },
+        "MultiCoverage":{
+            "type":"object",
+            "title":"MultiCoverage",
+            "properties":{
+                "multiPolygon":{
+                    "title":"multiPolygon",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/MultiPolygon"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MultiPolygon",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "multiPolygon"
+            ]
+        },
+        "MultiPolygon":{
+            "type":"object",
+            "title":"MultiPolygon",
             "properties":{
                 "id":{
                     "title":"id",
@@ -1015,16 +1620,19 @@
                         "namespaceURI":""
                     }
                 },
-                "coordinates":{
-                    "title":"coordinates",
+                "polygonMember":{
+                    "title":"polygonMember",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/Coordinates"
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/PolygonMember"
+                            }
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"coordinates",
+                        "localPart":"polygonMember",
                         "namespaceURI":""
                     }
                 }
@@ -1033,7 +1641,30 @@
             "propertiesOrder":[
                 "id",
                 "srsName",
-                "coordinates"
+                "polygonMember"
+            ]
+        },
+        "MultiPointProperty":{
+            "type":"object",
+            "title":"MultiPointProperty",
+            "properties":{
+                "multiPoint":{
+                    "title":"multiPoint",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/MultiPoint"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"MultiPoint",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "multiPoint"
             ]
         },
         "GeometryProperty":{
@@ -1136,637 +1767,6 @@
                 "pointOrLineStringOrPolygonOrMultiPointOrMultiLineStringOrMultiPolygonOrGeometryCollection"
             ]
         },
-        "FeatureCollection":{
-            "type":"object",
-            "title":"FeatureCollection",
-            "properties":{
-                "typeName":{
-                    "title":"typeName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"typeName",
-                        "namespaceURI":""
-                    }
-                },
-                "identifier":{
-                    "title":"identifier",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"identifier",
-                        "namespaceURI":""
-                    }
-                },
-                "description":{
-                    "title":"description",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"description",
-                        "namespaceURI":""
-                    }
-                },
-                "name":{
-                    "title":"name",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"name",
-                        "namespaceURI":""
-                    }
-                },
-                "boundedBy":{
-                    "title":"boundedBy",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/BoundedBy"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"boundedBy",
-                        "namespaceURI":""
-                    }
-                },
-                "property":{
-                    "title":"property",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/Property"
-                            }
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"property",
-                        "namespaceURI":""
-                    }
-                },
-                "geometricProperty":{
-                    "title":"geometricProperty",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/GeometricProperty"
-                            }
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"geometricProperty",
-                        "namespaceURI":""
-                    }
-                },
-                "featureMember":{
-                    "title":"featureMember",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/FeatureMember"
-                            }
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"featureMember",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "typeName",
-                "identifier",
-                "description",
-                "name",
-                "boundedBy",
-                "property",
-                "geometricProperty",
-                "featureMember"
-            ]
-        },
-        "FeatureMember":{
-            "type":"object",
-            "title":"FeatureMember",
-            "properties":{
-                "typeName":{
-                    "title":"typeName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"typeName",
-                        "namespaceURI":""
-                    }
-                },
-                "featureOrFeatureCollection":{
-                    "title":"featureOrFeatureCollection",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "anyOf":[
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/Feature"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"Feature",
-                                            "namespaceURI":""
-                                        }
-                                    },
-                                    {
-                                        "anyOf":[
-                                            {
-                                                "$ref":"#/definitions/FeatureCollection"
-                                            }
-                                        ],
-                                        "elementName":{
-                                            "localPart":"FeatureCollection",
-                                            "namespaceURI":""
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "propertyType":"elements"
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "typeName",
-                "featureOrFeatureCollection"
-            ]
-        },
-        "ExtentOf":{
-            "type":"object",
-            "title":"ExtentOf",
-            "properties":{
-                "polygon":{
-                    "title":"polygon",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Polygon"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Polygon",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "polygon"
-            ]
-        },
-        "MultiLocation":{
-            "type":"object",
-            "title":"MultiLocation",
-            "properties":{
-                "multiPoint":{
-                    "title":"multiPoint",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/MultiPoint"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MultiPoint",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "multiPoint"
-            ]
-        },
-        "EdgeOf":{
-            "type":"object",
-            "title":"EdgeOf",
-            "properties":{
-                "lineString":{
-                    "title":"lineString",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/LineString"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"LineString",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "lineString"
-            ]
-        },
-        "LineString":{
-            "type":"object",
-            "title":"LineString",
-            "properties":{
-                "id":{
-                    "title":"id",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"ID",
-                        "namespaceURI":""
-                    }
-                },
-                "srsName":{
-                    "title":"srsName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"srsName",
-                        "namespaceURI":""
-                    }
-                },
-                "coordinates":{
-                    "title":"coordinates",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Coordinates"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"coordinates",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "id",
-                "srsName",
-                "coordinates"
-            ]
-        },
-        "PointProperty":{
-            "type":"object",
-            "title":"PointProperty",
-            "properties":{
-                "point":{
-                    "title":"point",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Point"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Point",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "point"
-            ]
-        },
-        "LineStringMember":{
-            "type":"object",
-            "title":"LineStringMember",
-            "properties":{
-                "lineString":{
-                    "title":"lineString",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/LineString"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"LineString",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "lineString"
-            ]
-        },
-        "Polygon":{
-            "type":"object",
-            "title":"Polygon",
-            "properties":{
-                "id":{
-                    "title":"id",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"ID",
-                        "namespaceURI":""
-                    }
-                },
-                "srsName":{
-                    "title":"srsName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"srsName",
-                        "namespaceURI":""
-                    }
-                },
-                "outerBoundaryIs":{
-                    "title":"outerBoundaryIs",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/OuterBoundaryIs"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"outerBoundaryIs",
-                        "namespaceURI":""
-                    }
-                },
-                "innerBoundaryIs":{
-                    "title":"innerBoundaryIs",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/InnerBoundaryIs"
-                            }
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"innerBoundaryIs",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "id",
-                "srsName",
-                "outerBoundaryIs",
-                "innerBoundaryIs"
-            ]
-        },
-        "Property":{
-            "type":"object",
-            "title":"Property",
-            "properties":{
-                "typeName":{
-                    "title":"typeName",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"typeName",
-                        "namespaceURI":""
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":""
-                    }
-                },
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"value"
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "typeName",
-                "type",
-                "value"
-            ]
-        },
-        "CenterLineOf":{
-            "type":"object",
-            "title":"CenterLineOf",
-            "properties":{
-                "lineString":{
-                    "title":"lineString",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/LineString"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"LineString",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "lineString"
-            ]
-        },
-        "OuterBoundaryIs":{
-            "type":"object",
-            "title":"OuterBoundaryIs",
-            "properties":{
-                "linearRing":{
-                    "title":"linearRing",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/LinearRing"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"LinearRing",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "linearRing"
-            ]
-        },
-        "PolygonMember":{
-            "type":"object",
-            "title":"PolygonMember",
-            "properties":{
-                "polygon":{
-                    "title":"polygon",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Polygon"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Polygon",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "polygon"
-            ]
-        },
-        "Location":{
-            "type":"object",
-            "title":"Location",
-            "properties":{
-                "point":{
-                    "title":"point",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Point"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Point",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "point"
-            ]
-        },
-        "MultiEdgeOf":{
-            "type":"object",
-            "title":"MultiEdgeOf",
-            "properties":{
-                "multiLineString":{
-                    "title":"multiLineString",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/MultiLineString"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MultiLineString",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "multiLineString"
-            ]
-        },
-        "MultiPointProperty":{
-            "type":"object",
-            "title":"MultiPointProperty",
-            "properties":{
-                "multiPoint":{
-                    "title":"multiPoint",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/MultiPoint"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"MultiPoint",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "multiPoint"
-            ]
-        },
-        "BoundedBy":{
-            "type":"object",
-            "title":"BoundedBy",
-            "properties":{
-                "box":{
-                    "title":"box",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Box"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"Box",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "box"
-            ]
-        },
         "GeometryCollection":{
             "type":"object",
             "title":"GeometryCollection",
@@ -1836,6 +1836,40 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
+                                        "Point"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/Point"
+                }
+            },
+            "elementName":{
+                "localPart":"Point",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
                                         "property"
                                     ]
                                 },
@@ -1870,7 +1904,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "geometryCollectionProperty"
+                                        "multiPolygonProperty"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1883,11 +1917,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/GeometryCollectionProperty"
+                    "$ref":"#/definitions/MultiPolygonProperty"
                 }
             },
             "elementName":{
-                "localPart":"geometryCollectionProperty",
+                "localPart":"multiPolygonProperty",
                 "namespaceURI":""
             }
         },
@@ -1904,7 +1938,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "featureMember"
+                                        "coverage"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1917,521 +1951,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/FeatureMember"
+                    "$ref":"#/definitions/Coverage"
                 }
             },
             "elementName":{
-                "localPart":"featureMember",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "lineStringMember"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/LineStringMember"
-                }
-            },
-            "elementName":{
-                "localPart":"lineStringMember",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "geometricProperty"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GeometricProperty"
-                }
-            },
-            "elementName":{
-                "localPart":"geometricProperty",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "multiCenterOf"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MultiCenterOf"
-                }
-            },
-            "elementName":{
-                "localPart":"multiCenterOf",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "polygonProperty"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/PolygonProperty"
-                }
-            },
-            "elementName":{
-                "localPart":"polygonProperty",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "geometryMember"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GeometryMember"
-                }
-            },
-            "elementName":{
-                "localPart":"geometryMember",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "centerOf"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/CenterOf"
-                }
-            },
-            "elementName":{
-                "localPart":"centerOf",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "multiLocation"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MultiLocation"
-                }
-            },
-            "elementName":{
-                "localPart":"multiLocation",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "MultiPolygon"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MultiPolygon"
-                }
-            },
-            "elementName":{
-                "localPart":"MultiPolygon",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "outerBoundaryIs"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/OuterBoundaryIs"
-                }
-            },
-            "elementName":{
-                "localPart":"outerBoundaryIs",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "coordinates"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/Coordinates"
-                }
-            },
-            "elementName":{
-                "localPart":"coordinates",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "GeometryCollection"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/GeometryCollection"
-                }
-            },
-            "elementName":{
-                "localPart":"GeometryCollection",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "multiCoverage"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MultiCoverage"
-                }
-            },
-            "elementName":{
-                "localPart":"multiCoverage",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "centerLineOf"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/CenterLineOf"
-                }
-            },
-            "elementName":{
-                "localPart":"centerLineOf",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "location"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/Location"
-                }
-            },
-            "elementName":{
-                "localPart":"location",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "boundedBy"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/BoundedBy"
-                }
-            },
-            "elementName":{
-                "localPart":"boundedBy",
+                "localPart":"coverage",
                 "namespaceURI":""
             }
         },
@@ -2482,7 +2006,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "LineString"
+                                        "Box"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2495,11 +2019,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/LineString"
+                    "$ref":"#/definitions/Box"
                 }
             },
             "elementName":{
-                "localPart":"LineString",
+                "localPart":"Box",
                 "namespaceURI":""
             }
         },
@@ -2516,7 +2040,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "multiPosition"
+                                        "featureMember"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2529,11 +2053,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/MultiPosition"
+                    "$ref":"#/definitions/FeatureMember"
                 }
             },
             "elementName":{
-                "localPart":"multiPosition",
+                "localPart":"featureMember",
                 "namespaceURI":""
             }
         },
@@ -2550,7 +2074,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "MultiLineString"
+                                        "geometryMember"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2563,45 +2087,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/MultiLineString"
+                    "$ref":"#/definitions/GeometryMember"
                 }
             },
             "elementName":{
-                "localPart":"MultiLineString",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "innerBoundaryIs"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/InnerBoundaryIs"
-                }
-            },
-            "elementName":{
-                "localPart":"innerBoundaryIs",
+                "localPart":"geometryMember",
                 "namespaceURI":""
             }
         },
@@ -2686,7 +2176,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "extentOf"
+                                        "outerBoundaryIs"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2699,11 +2189,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/ExtentOf"
+                    "$ref":"#/definitions/OuterBoundaryIs"
                 }
             },
             "elementName":{
-                "localPart":"extentOf",
+                "localPart":"outerBoundaryIs",
                 "namespaceURI":""
             }
         },
@@ -2720,7 +2210,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Point"
+                                        "GeometryCollection"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2733,11 +2223,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/Point"
+                    "$ref":"#/definitions/GeometryCollection"
                 }
             },
             "elementName":{
-                "localPart":"Point",
+                "localPart":"GeometryCollection",
                 "namespaceURI":""
             }
         },
@@ -2754,7 +2244,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "edgeOf"
+                                        "lineStringProperty"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2767,11 +2257,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/EdgeOf"
+                    "$ref":"#/definitions/LineStringProperty"
                 }
             },
             "elementName":{
-                "localPart":"edgeOf",
+                "localPart":"lineStringProperty",
                 "namespaceURI":""
             }
         },
@@ -2788,7 +2278,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Box"
+                                        "multiLocation"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2801,11 +2291,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/Box"
+                    "$ref":"#/definitions/MultiLocation"
                 }
             },
             "elementName":{
-                "localPart":"Box",
+                "localPart":"multiLocation",
                 "namespaceURI":""
             }
         },
@@ -2822,7 +2312,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "pointMember"
+                                        "multiCenterLineOf"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2835,113 +2325,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/PointMember"
+                    "$ref":"#/definitions/MultiCenterLineOf"
                 }
             },
             "elementName":{
-                "localPart":"pointMember",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "LinearRing"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/LinearRing"
-                }
-            },
-            "elementName":{
-                "localPart":"LinearRing",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "multiLineStringProperty"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MultiLineStringProperty"
-                }
-            },
-            "elementName":{
-                "localPart":"multiLineStringProperty",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "coverage"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/Coverage"
-                }
-            },
-            "elementName":{
-                "localPart":"coverage",
+                "localPart":"multiCenterLineOf",
                 "namespaceURI":""
             }
         },
@@ -2992,6 +2380,176 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
+                                        "multiCoverage"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MultiCoverage"
+                }
+            },
+            "elementName":{
+                "localPart":"multiCoverage",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "extentOf"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/ExtentOf"
+                }
+            },
+            "elementName":{
+                "localPart":"extentOf",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "LineString"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/LineString"
+                }
+            },
+            "elementName":{
+                "localPart":"LineString",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "position"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/Position"
+                }
+            },
+            "elementName":{
+                "localPart":"position",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "MultiLineString"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MultiLineString"
+                }
+            },
+            "elementName":{
+                "localPart":"MultiLineString",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
                                         "geometryProperty"
                                     ]
                                 },
@@ -3010,6 +2568,448 @@
             },
             "elementName":{
                 "localPart":"geometryProperty",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "MultiPolygon"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MultiPolygon"
+                }
+            },
+            "elementName":{
+                "localPart":"MultiPolygon",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "multiLineStringProperty"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MultiLineStringProperty"
+                }
+            },
+            "elementName":{
+                "localPart":"multiLineStringProperty",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "multiExtentOf"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MultiExtentOf"
+                }
+            },
+            "elementName":{
+                "localPart":"multiExtentOf",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "multiPosition"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MultiPosition"
+                }
+            },
+            "elementName":{
+                "localPart":"multiPosition",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "LinearRing"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/LinearRing"
+                }
+            },
+            "elementName":{
+                "localPart":"LinearRing",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "coordinates"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/Coordinates"
+                }
+            },
+            "elementName":{
+                "localPart":"coordinates",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "centerOf"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/CenterOf"
+                }
+            },
+            "elementName":{
+                "localPart":"centerOf",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "geometricProperty"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/GeometricProperty"
+                }
+            },
+            "elementName":{
+                "localPart":"geometricProperty",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "pointMember"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/PointMember"
+                }
+            },
+            "elementName":{
+                "localPart":"pointMember",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "centerLineOf"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/CenterLineOf"
+                }
+            },
+            "elementName":{
+                "localPart":"centerLineOf",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "edgeOf"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/EdgeOf"
+                }
+            },
+            "elementName":{
+                "localPart":"edgeOf",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "innerBoundaryIs"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/InnerBoundaryIs"
+                }
+            },
+            "elementName":{
+                "localPart":"innerBoundaryIs",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "location"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/Location"
+                }
+            },
+            "elementName":{
+                "localPart":"location",
                 "namespaceURI":""
             }
         },
@@ -3094,7 +3094,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "multiCenterLineOf"
+                                        "lineStringMember"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -3107,11 +3107,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/MultiCenterLineOf"
+                    "$ref":"#/definitions/LineStringMember"
                 }
             },
             "elementName":{
-                "localPart":"multiCenterLineOf",
+                "localPart":"lineStringMember",
                 "namespaceURI":""
             }
         },
@@ -3128,7 +3128,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "lineStringProperty"
+                                        "geometryCollectionProperty"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -3141,11 +3141,113 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/LineStringProperty"
+                    "$ref":"#/definitions/GeometryCollectionProperty"
                 }
             },
             "elementName":{
-                "localPart":"lineStringProperty",
+                "localPart":"geometryCollectionProperty",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "multiPointProperty"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MultiPointProperty"
+                }
+            },
+            "elementName":{
+                "localPart":"multiPointProperty",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "multiCenterOf"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/MultiCenterOf"
+                }
+            },
+            "elementName":{
+                "localPart":"multiCenterOf",
+                "namespaceURI":""
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "boundedBy"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/BoundedBy"
+                }
+            },
+            "elementName":{
+                "localPart":"boundedBy",
                 "namespaceURI":""
             }
         },
@@ -3196,7 +3298,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "position"
+                                        "polygonProperty"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -3209,113 +3311,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/Position"
+                    "$ref":"#/definitions/PolygonProperty"
                 }
             },
             "elementName":{
-                "localPart":"position",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "multiExtentOf"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MultiExtentOf"
-                }
-            },
-            "elementName":{
-                "localPart":"multiExtentOf",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "multiPolygonProperty"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MultiPolygonProperty"
-                }
-            },
-            "elementName":{
-                "localPart":"multiPolygonProperty",
-                "namespaceURI":""
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "multiPointProperty"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        ""
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MultiPointProperty"
-                }
-            },
-            "elementName":{
-                "localPart":"multiPointProperty",
+                "localPart":"polygonProperty",
                 "namespaceURI":""
             }
         }

@@ -65,6 +65,22 @@ var GML_TIN_3_3_Module_Factory = function () {
             ti: 'GML_3_2_1.LengthType'
           }]
       }, {
+        ln: 'TINElementType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'elementType',
+            rq: true
+          }, {
+            n: 'elementID',
+            ti: 'Integer'
+          }, {
+            n: 'elementTag'
+          }, {
+            n: 'elementGeometry',
+            rq: true,
+            ti: 'GML_3_2_1.GeometryPropertyType'
+          }]
+      }, {
         ln: 'SimpleTrianglePatchType',
         bti: 'GML_3_2_1.AbstractSurfacePatchType',
         ps: [{
@@ -103,24 +119,12 @@ var GML_TIN_3_3_Module_Factory = function () {
             },
             t: 'a'
           }]
-      }, {
-        ln: 'TINElementType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'elementType',
-            rq: true
-          }, {
-            n: 'elementID',
-            ti: 'Integer'
-          }, {
-            n: 'elementTag'
-          }, {
-            n: 'elementGeometry',
-            rq: true,
-            ti: 'GML_3_2_1.GeometryPropertyType'
-          }]
       }],
     eis: [{
+        en: 'TIN',
+        ti: '.TINType',
+        sh: 'TriangulatedSurface'
+      }, {
         en: 'TINElement',
         ti: '.TINElementType',
         sh: {
@@ -128,21 +132,17 @@ var GML_TIN_3_3_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'TIN',
-        ti: '.TINType',
-        sh: 'TriangulatedSurface'
+        en: 'SimpleTrianglePatch',
+        ti: '.SimpleTrianglePatchType',
+        sh: {
+          lp: 'AbstractSurfacePatch',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
       }, {
         en: 'TriangulatedSurface',
         ti: 'GML_3_2_1.SurfaceType',
         sh: {
           lp: 'Surface',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
-        en: 'SimpleTrianglePatch',
-        ti: '.SimpleTrianglePatchType',
-        sh: {
-          lp: 'AbstractSurfacePatch',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }]

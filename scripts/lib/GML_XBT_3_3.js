@@ -5,9 +5,6 @@ var GML_XBT_3_3_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/XML\/1998\/namespace',
     deps: ['GML_3_2_1'],
     tis: [{
-        ln: 'CodeWithAuthorityType',
-        bti: '.CodeType'
-      }, {
         ln: 'CodeType',
         bti: '.LanguageStringType',
         ps: [{
@@ -18,18 +15,21 @@ var GML_XBT_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LanguageStringAuxType',
-        bti: 'GML_3_2_1.StringOrRefType',
-        ps: [{
-            n: 'lang',
-            t: 'a'
-          }]
-      }, {
         ln: 'LanguageStringType',
         ps: [{
             n: 'value',
             t: 'v'
           }, {
+            n: 'lang',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CodeWithAuthorityType',
+        bti: '.CodeType'
+      }, {
+        ln: 'LanguageStringAuxType',
+        bti: 'GML_3_2_1.StringOrRefType',
+        ps: [{
             n: 'lang',
             t: 'a'
           }]

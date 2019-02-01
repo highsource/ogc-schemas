@@ -2,20 +2,64 @@
 {
     "id":"http://www.isotc211.org/2005/srv#",
     "definitions":{
-        "SVOperationChainPropertyType":{
+        "SVCouplingTypePropertyType":{
             "type":"object",
-            "title":"SVOperationChainPropertyType",
+            "title":"SVCouplingTypePropertyType",
             "properties":{
-                "svOperationChain":{
-                    "title":"svOperationChain",
+                "svCouplingType":{
+                    "title":"svCouplingType",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/SVOperationChainType"
+                            "$ref":"http://www.isotc211.org/2005/gco#/definitions/CodeListValueType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"SV_OperationChain",
+                        "localPart":"SV_CouplingType",
+                        "namespaceURI":"http://www.isotc211.org/2005/srv"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":"http://www.isotc211.org/2005/gco"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_CouplingType_PropertyType",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "svCouplingType",
+                "nilReason"
+            ]
+        },
+        "SVParameterPropertyType":{
+            "type":"object",
+            "title":"SVParameterPropertyType",
+            "properties":{
+                "svParameter":{
+                    "title":"svParameter",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SVParameterType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SV_Parameter",
                         "namespaceURI":"http://www.isotc211.org/2005/srv"
                     }
                 },
@@ -142,11 +186,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SV_OperationChain_PropertyType",
+                "localPart":"SV_Parameter_PropertyType",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             },
             "propertiesOrder":[
-                "svOperationChain",
+                "svParameter",
                 "nilReason",
                 "uuidref",
                 "type",
@@ -158,631 +202,7 @@
                 "actuate"
             ]
         },
-        "SVPortPropertyType":{
-            "type":"object",
-            "title":"SVPortPropertyType",
-            "properties":{
-                "svPort":{
-                    "title":"svPort",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SVPortType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SV_Port",
-                        "namespaceURI":"http://www.isotc211.org/2005/srv"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":"http://www.isotc211.org/2005/gco"
-                    }
-                },
-                "uuidref":{
-                    "title":"uuidref",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"uuidref",
-                        "namespaceURI":""
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_Port_PropertyType",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "svPort",
-                "nilReason",
-                "uuidref",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "SVPortSpecificationPropertyType":{
-            "type":"object",
-            "title":"SVPortSpecificationPropertyType",
-            "properties":{
-                "svPortSpecification":{
-                    "title":"svPortSpecification",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SVPortSpecificationType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SV_PortSpecification",
-                        "namespaceURI":"http://www.isotc211.org/2005/srv"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":"http://www.isotc211.org/2005/gco"
-                    }
-                },
-                "uuidref":{
-                    "title":"uuidref",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"uuidref",
-                        "namespaceURI":""
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_PortSpecification_PropertyType",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "svPortSpecification",
-                "nilReason",
-                "uuidref",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "SVServiceTypePropertyType":{
-            "type":"object",
-            "title":"SVServiceTypePropertyType",
-            "properties":{
-                "svServiceType":{
-                    "title":"svServiceType",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SVServiceTypeType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SV_ServiceType",
-                        "namespaceURI":"http://www.isotc211.org/2005/srv"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":"http://www.isotc211.org/2005/gco"
-                    }
-                },
-                "uuidref":{
-                    "title":"uuidref",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"uuidref",
-                        "namespaceURI":""
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_ServiceType_PropertyType",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "svServiceType",
-                "nilReason",
-                "uuidref",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "SVOperationChainMetadataPropertyType":{
-            "type":"object",
-            "title":"SVOperationChainMetadataPropertyType",
-            "properties":{
-                "svOperationChainMetadata":{
-                    "title":"svOperationChainMetadata",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SVOperationChainMetadataType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SV_OperationChainMetadata",
-                        "namespaceURI":"http://www.isotc211.org/2005/srv"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":"http://www.isotc211.org/2005/gco"
-                    }
-                },
-                "uuidref":{
-                    "title":"uuidref",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"uuidref",
-                        "namespaceURI":""
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_OperationChainMetadata_PropertyType",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "svOperationChainMetadata",
-                "nilReason",
-                "uuidref",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "SVOperationChainType":{
+        "SVOperationChainMetadataType":{
             "required":[
                 "name",
                 "operation"
@@ -793,7 +213,7 @@
                 },
                 {
                     "type":"object",
-                    "title":"SVOperationChainType",
+                    "title":"SVOperationChainMetadataType",
                     "properties":{
                         "name":{
                             "title":"name",
@@ -827,7 +247,7 @@
                                 {
                                     "type":"array",
                                     "items":{
-                                        "$ref":"#/definitions/SVOperationPropertyType"
+                                        "$ref":"#/definitions/SVOperationMetadataPropertyType"
                                     },
                                     "minItems":1
                                 }
@@ -843,283 +263,13 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SV_OperationChain_Type",
+                "localPart":"SV_OperationChainMetadata_Type",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             },
             "propertiesOrder":[
                 "name",
                 "description",
                 "operation"
-            ]
-        },
-        "SVOperationType":{
-            "required":[
-                "operationName",
-                "parameter"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/AbstractObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"SVOperationType",
-                    "properties":{
-                        "operationName":{
-                            "title":"operationName",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/MemberNamePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"operationName",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "dependsOn":{
-                            "title":"dependsOn",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/SVOperationPropertyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"dependsOn",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "parameter":{
-                            "title":"parameter",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/SVParameterPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"parameter",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_Operation_Type",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "operationName",
-                "dependsOn",
-                "parameter"
-            ]
-        },
-        "SVCoupledResourcePropertyType":{
-            "type":"object",
-            "title":"SVCoupledResourcePropertyType",
-            "properties":{
-                "svCoupledResource":{
-                    "title":"svCoupledResource",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SVCoupledResourceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SV_CoupledResource",
-                        "namespaceURI":"http://www.isotc211.org/2005/srv"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":"http://www.isotc211.org/2005/gco"
-                    }
-                },
-                "uuidref":{
-                    "title":"uuidref",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"uuidref",
-                        "namespaceURI":""
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_CoupledResource_PropertyType",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "svCoupledResource",
-                "nilReason",
-                "uuidref",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "SVParameterDirectionPropertyType":{
-            "type":"object",
-            "title":"SVParameterDirectionPropertyType",
-            "properties":{
-                "svParameterDirection":{
-                    "title":"svParameterDirection",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SVParameterDirectionType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SV_ParameterDirection",
-                        "namespaceURI":"http://www.isotc211.org/2005/srv"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":"http://www.isotc211.org/2005/gco"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_ParameterDirection_PropertyType",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "svParameterDirection",
-                "nilReason"
             ]
         },
         "SVOperationPropertyType":{
@@ -1278,78 +428,10 @@
                 "actuate"
             ]
         },
-        "SVCoupledResourceType":{
-            "required":[
-                "operationName",
-                "identifier"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/AbstractObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"SVCoupledResourceType",
-                    "properties":{
-                        "operationName":{
-                            "title":"operationName",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CharacterStringPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"operationName",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "identifier":{
-                            "title":"identifier",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CharacterStringPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"identifier",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "scopedName":{
-                            "title":"scopedName",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/CodeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"ScopedName",
-                                "namespaceURI":"http://www.isotc211.org/2005/gco"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_CoupledResource_Type",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "operationName",
-                "identifier",
-                "scopedName"
-            ]
-        },
-        "SVParameterType":{
+        "SVOperationChainType":{
             "required":[
                 "name",
-                "optionality",
-                "repeatability",
-                "valueType"
+                "operation"
             ],
             "allOf":[
                 {
@@ -1357,31 +439,18 @@
                 },
                 {
                     "type":"object",
-                    "title":"SVParameterType",
+                    "title":"SVOperationChainType",
                     "properties":{
                         "name":{
                             "title":"name",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/MemberNameType"
+                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CharacterStringPropertyType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
                                 "localPart":"name",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "direction":{
-                            "title":"direction",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/SVParameterDirectionPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"direction",
                                 "namespaceURI":"http://www.isotc211.org/2005/srv"
                             }
                         },
@@ -1398,42 +467,20 @@
                                 "namespaceURI":"http://www.isotc211.org/2005/srv"
                             }
                         },
-                        "optionality":{
-                            "title":"optionality",
+                        "operation":{
+                            "title":"operation",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CharacterStringPropertyType"
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/SVOperationPropertyType"
+                                    },
+                                    "minItems":1
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"optionality",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "repeatability":{
-                            "title":"repeatability",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/BooleanPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"repeatability",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "valueType":{
-                            "title":"valueType",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/TypeNamePropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"valueType",
+                                "localPart":"operation",
                                 "namespaceURI":"http://www.isotc211.org/2005/srv"
                             }
                         }
@@ -1442,32 +489,137 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SV_Parameter_Type",
+                "localPart":"SV_OperationChain_Type",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             },
             "propertiesOrder":[
                 "name",
-                "direction",
                 "description",
-                "optionality",
-                "repeatability",
-                "valueType"
+                "operation"
             ]
         },
-        "SVPlatformSpecificServiceSpecificationPropertyType":{
+        "SVPlatformSpecificServiceSpecificationType":{
+            "required":[
+                "dcp",
+                "implementation"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/SVPlatformNeutralServiceSpecificationType"
+                },
+                {
+                    "type":"object",
+                    "title":"SVPlatformSpecificServiceSpecificationType",
+                    "properties":{
+                        "dcp":{
+                            "title":"dcp",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/DCPListPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"DCP",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "implementation":{
+                            "title":"implementation",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/SVServicePropertyType"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"implementation",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_PlatformSpecificServiceSpecification_Type",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "dcp",
+                "implementation"
+            ]
+        },
+        "SVPortSpecificationType":{
+            "required":[
+                "binding",
+                "address"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/AbstractObjectType"
+                },
+                {
+                    "type":"object",
+                    "title":"SVPortSpecificationType",
+                    "properties":{
+                        "binding":{
+                            "title":"binding",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/DCPListPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"binding",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "address":{
+                            "title":"address",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.isotc211.org/2005/gmd#/definitions/URLPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"address",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_PortSpecification_Type",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "binding",
+                "address"
+            ]
+        },
+        "SVCoupledResourcePropertyType":{
             "type":"object",
-            "title":"SVPlatformSpecificServiceSpecificationPropertyType",
+            "title":"SVCoupledResourcePropertyType",
             "properties":{
-                "svPlatformSpecificServiceSpecification":{
-                    "title":"svPlatformSpecificServiceSpecification",
+                "svCoupledResource":{
+                    "title":"svCoupledResource",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/SVPlatformSpecificServiceSpecificationType"
+                            "$ref":"#/definitions/SVCoupledResourceType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"SV_PlatformSpecificServiceSpecification",
+                        "localPart":"SV_CoupledResource",
                         "namespaceURI":"http://www.isotc211.org/2005/srv"
                     }
                 },
@@ -1594,11 +746,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SV_PlatformSpecificServiceSpecification_PropertyType",
+                "localPart":"SV_CoupledResource_PropertyType",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             },
             "propertiesOrder":[
-                "svPlatformSpecificServiceSpecification",
+                "svCoupledResource",
                 "nilReason",
                 "uuidref",
                 "type",
@@ -1610,29 +762,103 @@
                 "actuate"
             ]
         },
-        "SVPortType":{
+        "DCPListPropertyType":{
+            "type":"object",
+            "title":"DCPListPropertyType",
+            "properties":{
+                "dcpList":{
+                    "title":"dcpList",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.isotc211.org/2005/gco#/definitions/CodeListValueType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DCPList",
+                        "namespaceURI":"http://www.isotc211.org/2005/srv"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":"http://www.isotc211.org/2005/gco"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"DCPList_PropertyType",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "dcpList",
+                "nilReason"
+            ]
+        },
+        "SVInterfaceType":{
+            "required":[
+                "typeName",
+                "operation"
+            ],
             "allOf":[
                 {
                     "$ref":"http://www.isotc211.org/2005/gco#/definitions/AbstractObjectType"
                 },
                 {
                     "type":"object",
-                    "title":"SVPortType",
+                    "title":"SVInterfaceType",
                     "properties":{
-                        "theSVInterface":{
-                            "title":"theSVInterface",
+                        "typeName":{
+                            "title":"typeName",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/TypeNamePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"typeName",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "theSVPort":{
+                            "title":"theSVPort",
                             "allOf":[
                                 {
                                     "type":"array",
                                     "items":{
-                                        "$ref":"#/definitions/SVInterfacePropertyType"
+                                        "$ref":"#/definitions/SVPortPropertyType"
                                     },
                                     "minItems":0
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"theSV_Interface",
+                                "localPart":"theSV_Port",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "operation":{
+                            "title":"operation",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/SVOperationPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"operation",
                                 "namespaceURI":"http://www.isotc211.org/2005/srv"
                             }
                         }
@@ -1641,39 +867,264 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SV_Port_Type",
+                "localPart":"SV_Interface_Type",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             },
             "propertiesOrder":[
-                "theSVInterface"
+                "typeName",
+                "theSVPort",
+                "operation"
             ]
         },
-        "SVPlatformNeutralServiceSpecificationPropertyType":{
-            "type":"object",
-            "title":"SVPlatformNeutralServiceSpecificationPropertyType",
-            "properties":{
-                "svPlatformNeutralServiceSpecification":{
-                    "title":"svPlatformNeutralServiceSpecification",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "properties":{
-                                "name":{
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                },
-                                "value":{
-                                    "$ref":"#/definitions/SVPlatformNeutralServiceSpecificationType"
+        "SVPlatformNeutralServiceSpecificationType":{
+            "required":[
+                "serviceType",
+                "implSpec"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/SVServiceSpecificationType"
+                },
+                {
+                    "type":"object",
+                    "title":"SVPlatformNeutralServiceSpecificationType",
+                    "properties":{
+                        "serviceType":{
+                            "title":"serviceType",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/SVServiceTypePropertyType"
                                 }
-                            },
+                            ],
+                            "propertyType":"element",
                             "elementName":{
-                                "localPart":"SV_PlatformNeutralServiceSpecification",
+                                "localPart":"serviceType",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "implSpec":{
+                            "title":"implSpec",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/SVPlatformSpecificServiceSpecificationPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"implSpec",
                                 "namespaceURI":"http://www.isotc211.org/2005/srv"
                             }
                         }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_PlatformNeutralServiceSpecification_Type",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "serviceType",
+                "implSpec"
+            ]
+        },
+        "SVOperationMetadataType":{
+            "required":[
+                "operationName",
+                "dcp",
+                "connectPoint"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/AbstractObjectType"
+                },
+                {
+                    "type":"object",
+                    "title":"SVOperationMetadataType",
+                    "properties":{
+                        "operationName":{
+                            "title":"operationName",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CharacterStringPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"operationName",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "dcp":{
+                            "title":"dcp",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/DCPListPropertyType"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"DCP",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "operationDescription":{
+                            "title":"operationDescription",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CharacterStringPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"operationDescription",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "invocationName":{
+                            "title":"invocationName",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CharacterStringPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"invocationName",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "parameters":{
+                            "title":"parameters",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/SVParameterPropertyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"parameters",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "connectPoint":{
+                            "title":"connectPoint",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.isotc211.org/2005/gmd#/definitions/CIOnlineResourcePropertyType"
+                                    },
+                                    "minItems":1
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"connectPoint",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "dependsOn":{
+                            "title":"dependsOn",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/SVOperationMetadataPropertyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"dependsOn",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_OperationMetadata_Type",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "operationName",
+                "dcp",
+                "operationDescription",
+                "invocationName",
+                "parameters",
+                "connectPoint",
+                "dependsOn"
+            ]
+        },
+        "SVOperationModelPropertyType":{
+            "type":"object",
+            "title":"SVOperationModelPropertyType",
+            "properties":{
+                "svOperationModel":{
+                    "title":"svOperationModel",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SVOperationModelType"
+                        }
                     ],
-                    "propertyType":"elementRef",
+                    "propertyType":"element",
                     "elementName":{
-                        "localPart":"SV_PlatformNeutralServiceSpecification",
+                        "localPart":"SV_OperationModel",
+                        "namespaceURI":"http://www.isotc211.org/2005/srv"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":"http://www.isotc211.org/2005/gco"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_OperationModel_PropertyType",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "svOperationModel",
+                "nilReason"
+            ]
+        },
+        "SVPortPropertyType":{
+            "type":"object",
+            "title":"SVPortPropertyType",
+            "properties":{
+                "svPort":{
+                    "title":"svPort",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SVPortType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SV_Port",
                         "namespaceURI":"http://www.isotc211.org/2005/srv"
                     }
                 },
@@ -1800,11 +1251,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SV_PlatformNeutralServiceSpecification_PropertyType",
+                "localPart":"SV_Port_PropertyType",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             },
             "propertiesOrder":[
-                "svPlatformNeutralServiceSpecification",
+                "svPort",
                 "nilReason",
                 "uuidref",
                 "type",
@@ -2005,20 +1456,20 @@
                 "operatesOn"
             ]
         },
-        "SVServiceIdentificationPropertyType":{
+        "SVParameterDirectionPropertyType":{
             "type":"object",
-            "title":"SVServiceIdentificationPropertyType",
+            "title":"SVParameterDirectionPropertyType",
             "properties":{
-                "svServiceIdentification":{
-                    "title":"svServiceIdentification",
+                "svParameterDirection":{
+                    "title":"svParameterDirection",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/SVServiceIdentificationType"
+                            "$ref":"#/definitions/SVParameterDirectionType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"SV_ServiceIdentification",
+                        "localPart":"SV_ParameterDirection",
                         "namespaceURI":"http://www.isotc211.org/2005/srv"
                     }
                 },
@@ -2037,322 +1488,41 @@
                         "localPart":"nilReason",
                         "namespaceURI":"http://www.isotc211.org/2005/gco"
                     }
-                },
-                "uuidref":{
-                    "title":"uuidref",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"uuidref",
-                        "namespaceURI":""
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SV_ServiceIdentification_PropertyType",
+                "localPart":"SV_ParameterDirection_PropertyType",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             },
             "propertiesOrder":[
-                "svServiceIdentification",
-                "nilReason",
-                "uuidref",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
+                "svParameterDirection",
+                "nilReason"
             ]
         },
-        "SVParameterPropertyType":{
-            "type":"object",
-            "title":"SVParameterPropertyType",
-            "properties":{
-                "svParameter":{
-                    "title":"svParameter",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SVParameterType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SV_Parameter",
-                        "namespaceURI":"http://www.isotc211.org/2005/srv"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":"http://www.isotc211.org/2005/gco"
-                    }
-                },
-                "uuidref":{
-                    "title":"uuidref",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"uuidref",
-                        "namespaceURI":""
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_Parameter_PropertyType",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "svParameter",
-                "nilReason",
-                "uuidref",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "SVPlatformNeutralServiceSpecificationType":{
-            "required":[
-                "serviceType",
-                "implSpec"
-            ],
+        "SVPortType":{
             "allOf":[
                 {
-                    "$ref":"#/definitions/SVServiceSpecificationType"
+                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/AbstractObjectType"
                 },
                 {
                     "type":"object",
-                    "title":"SVPlatformNeutralServiceSpecificationType",
+                    "title":"SVPortType",
                     "properties":{
-                        "serviceType":{
-                            "title":"serviceType",
+                        "theSVInterface":{
+                            "title":"theSVInterface",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/SVServiceTypePropertyType"
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/SVInterfacePropertyType"
+                                    },
+                                    "minItems":0
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"serviceType",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "implSpec":{
-                            "title":"implSpec",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/SVPlatformSpecificServiceSpecificationPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"implSpec",
+                                "localPart":"theSV_Interface",
                                 "namespaceURI":"http://www.isotc211.org/2005/srv"
                             }
                         }
@@ -2361,12 +1531,323 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SV_PlatformNeutralServiceSpecification_Type",
+                "localPart":"SV_Port_Type",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             },
             "propertiesOrder":[
-                "serviceType",
-                "implSpec"
+                "theSVInterface"
+            ]
+        },
+        "SVOperationChainPropertyType":{
+            "type":"object",
+            "title":"SVOperationChainPropertyType",
+            "properties":{
+                "svOperationChain":{
+                    "title":"svOperationChain",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SVOperationChainType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SV_OperationChain",
+                        "namespaceURI":"http://www.isotc211.org/2005/srv"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":"http://www.isotc211.org/2005/gco"
+                    }
+                },
+                "uuidref":{
+                    "title":"uuidref",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"uuidref",
+                        "namespaceURI":""
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_OperationChain_PropertyType",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "svOperationChain",
+                "nilReason",
+                "uuidref",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "SVServicePropertyType":{
+            "type":"object",
+            "title":"SVServicePropertyType",
+            "properties":{
+                "svService":{
+                    "title":"svService",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SVServiceType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SV_Service",
+                        "namespaceURI":"http://www.isotc211.org/2005/srv"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":"http://www.isotc211.org/2005/gco"
+                    }
+                },
+                "uuidref":{
+                    "title":"uuidref",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"uuidref",
+                        "namespaceURI":""
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_Service_PropertyType",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "svService",
+                "nilReason",
+                "uuidref",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
             ]
         },
         "SVOperationMetadataPropertyType":{
@@ -2523,288 +2004,6 @@
                 "title",
                 "show",
                 "actuate"
-            ]
-        },
-        "SVOperationChainMetadataType":{
-            "required":[
-                "name",
-                "operation"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/AbstractObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"SVOperationChainMetadataType",
-                    "properties":{
-                        "name":{
-                            "title":"name",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CharacterStringPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"name",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "description":{
-                            "title":"description",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CharacterStringPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"description",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "operation":{
-                            "title":"operation",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/SVOperationMetadataPropertyType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"operation",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_OperationChainMetadata_Type",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "name",
-                "description",
-                "operation"
-            ]
-        },
-        "SVInterfacePropertyType":{
-            "type":"object",
-            "title":"SVInterfacePropertyType",
-            "properties":{
-                "svInterface":{
-                    "title":"svInterface",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SVInterfaceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SV_Interface",
-                        "namespaceURI":"http://www.isotc211.org/2005/srv"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":"http://www.isotc211.org/2005/gco"
-                    }
-                },
-                "uuidref":{
-                    "title":"uuidref",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"uuidref",
-                        "namespaceURI":""
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_Interface_PropertyType",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "svInterface",
-                "nilReason",
-                "uuidref",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
-        },
-        "SVPlatformSpecificServiceSpecificationType":{
-            "required":[
-                "dcp",
-                "implementation"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/SVPlatformNeutralServiceSpecificationType"
-                },
-                {
-                    "type":"object",
-                    "title":"SVPlatformSpecificServiceSpecificationType",
-                    "properties":{
-                        "dcp":{
-                            "title":"dcp",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DCPListPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"DCP",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "implementation":{
-                            "title":"implementation",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/SVServicePropertyType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"implementation",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_PlatformSpecificServiceSpecification_Type",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "dcp",
-                "implementation"
             ]
         },
         "SVServiceSpecificationPropertyType":{
@@ -2975,10 +2174,9 @@
                 "actuate"
             ]
         },
-        "SVInterfaceType":{
+        "SVServiceType":{
             "required":[
-                "typeName",
-                "operation"
+                "specification"
             ],
             "allOf":[
                 {
@@ -2986,18 +2184,22 @@
                 },
                 {
                     "type":"object",
-                    "title":"SVInterfaceType",
+                    "title":"SVServiceType",
                     "properties":{
-                        "typeName":{
-                            "title":"typeName",
+                        "specification":{
+                            "title":"specification",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/TypeNamePropertyType"
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/SVPlatformSpecificServiceSpecificationPropertyType"
+                                    },
+                                    "minItems":1
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"typeName",
+                                "localPart":"specification",
                                 "namespaceURI":"http://www.isotc211.org/2005/srv"
                             }
                         },
@@ -3017,180 +2219,34 @@
                                 "localPart":"theSV_Port",
                                 "namespaceURI":"http://www.isotc211.org/2005/srv"
                             }
-                        },
-                        "operation":{
-                            "title":"operation",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/SVOperationPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"operation",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
                         }
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SV_Interface_Type",
+                "localPart":"SV_Service_Type",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             },
             "propertiesOrder":[
-                "typeName",
-                "theSVPort",
-                "operation"
+                "specification",
+                "theSVPort"
             ]
         },
-        "SVCouplingTypePropertyType":{
+        "SVServiceTypePropertyType":{
             "type":"object",
-            "title":"SVCouplingTypePropertyType",
+            "title":"SVServiceTypePropertyType",
             "properties":{
-                "svCouplingType":{
-                    "title":"svCouplingType",
+                "svServiceType":{
+                    "title":"svServiceType",
                     "allOf":[
                         {
-                            "$ref":"http://www.isotc211.org/2005/gco#/definitions/CodeListValueType"
+                            "$ref":"#/definitions/SVServiceTypeType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"SV_CouplingType",
-                        "namespaceURI":"http://www.isotc211.org/2005/srv"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":"http://www.isotc211.org/2005/gco"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_CouplingType_PropertyType",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "svCouplingType",
-                "nilReason"
-            ]
-        },
-        "SVOperationModelPropertyType":{
-            "type":"object",
-            "title":"SVOperationModelPropertyType",
-            "properties":{
-                "svOperationModel":{
-                    "title":"svOperationModel",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SVOperationModelType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SV_OperationModel",
-                        "namespaceURI":"http://www.isotc211.org/2005/srv"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":"http://www.isotc211.org/2005/gco"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_OperationModel_PropertyType",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "svOperationModel",
-                "nilReason"
-            ]
-        },
-        "DCPListPropertyType":{
-            "type":"object",
-            "title":"DCPListPropertyType",
-            "properties":{
-                "dcpList":{
-                    "title":"dcpList",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.isotc211.org/2005/gco#/definitions/CodeListValueType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DCPList",
-                        "namespaceURI":"http://www.isotc211.org/2005/srv"
-                    }
-                },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":"http://www.isotc211.org/2005/gco"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DCPList_PropertyType",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "dcpList",
-                "nilReason"
-            ]
-        },
-        "SVServicePropertyType":{
-            "type":"object",
-            "title":"SVServicePropertyType",
-            "properties":{
-                "svService":{
-                    "title":"svService",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/SVServiceType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"SV_Service",
+                        "localPart":"SV_ServiceType",
                         "namespaceURI":"http://www.isotc211.org/2005/srv"
                     }
                 },
@@ -3317,11 +2373,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SV_Service_PropertyType",
+                "localPart":"SV_ServiceType_PropertyType",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             },
             "propertiesOrder":[
-                "svService",
+                "svServiceType",
                 "nilReason",
                 "uuidref",
                 "type",
@@ -3332,6 +2388,250 @@
                 "show",
                 "actuate"
             ]
+        },
+        "SVOperationType":{
+            "required":[
+                "operationName",
+                "parameter"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/AbstractObjectType"
+                },
+                {
+                    "type":"object",
+                    "title":"SVOperationType",
+                    "properties":{
+                        "operationName":{
+                            "title":"operationName",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/MemberNamePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"operationName",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "dependsOn":{
+                            "title":"dependsOn",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/SVOperationPropertyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"dependsOn",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "parameter":{
+                            "title":"parameter",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/SVParameterPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"parameter",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_Operation_Type",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "operationName",
+                "dependsOn",
+                "parameter"
+            ]
+        },
+        "SVServiceIdentificationPropertyType":{
+            "type":"object",
+            "title":"SVServiceIdentificationPropertyType",
+            "properties":{
+                "svServiceIdentification":{
+                    "title":"svServiceIdentification",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SVServiceIdentificationType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SV_ServiceIdentification",
+                        "namespaceURI":"http://www.isotc211.org/2005/srv"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":"http://www.isotc211.org/2005/gco"
+                    }
+                },
+                "uuidref":{
+                    "title":"uuidref",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"uuidref",
+                        "namespaceURI":""
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_ServiceIdentification_PropertyType",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "svServiceIdentification",
+                "nilReason",
+                "uuidref",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "SVServiceTypeType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/AbstractObjectType"
+                },
+                {
+                    "type":"object",
+                    "title":"SVServiceTypeType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_ServiceType_Type",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            }
         },
         "SVServiceSpecificationType":{
             "required":[
@@ -3419,81 +2719,10 @@
                 "theSVInterface"
             ]
         },
-        "SVServiceTypeType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/AbstractObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"SVServiceTypeType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_ServiceType_Type",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            }
-        },
-        "SVPortSpecificationType":{
-            "required":[
-                "binding",
-                "address"
-            ],
-            "allOf":[
-                {
-                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/AbstractObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"SVPortSpecificationType",
-                    "properties":{
-                        "binding":{
-                            "title":"binding",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/DCPListPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"binding",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "address":{
-                            "title":"address",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.isotc211.org/2005/gmd#/definitions/URLPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"address",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"SV_PortSpecification_Type",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            },
-            "propertiesOrder":[
-                "binding",
-                "address"
-            ]
-        },
-        "SVOperationMetadataType":{
+        "SVCoupledResourceType":{
             "required":[
                 "operationName",
-                "dcp",
-                "connectPoint"
+                "identifier"
             ],
             "allOf":[
                 {
@@ -3501,7 +2730,7 @@
                 },
                 {
                     "type":"object",
-                    "title":"SVOperationMetadataType",
+                    "title":"SVCoupledResourceType",
                     "properties":{
                         "operationName":{
                             "title":"operationName",
@@ -3516,25 +2745,8 @@
                                 "namespaceURI":"http://www.isotc211.org/2005/srv"
                             }
                         },
-                        "dcp":{
-                            "title":"dcp",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/DCPListPropertyType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"DCP",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "operationDescription":{
-                            "title":"operationDescription",
+                        "identifier":{
+                            "title":"identifier",
                             "allOf":[
                                 {
                                     "$ref":"http://www.isotc211.org/2005/gco#/definitions/CharacterStringPropertyType"
@@ -3542,72 +2754,21 @@
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"operationDescription",
+                                "localPart":"identifier",
                                 "namespaceURI":"http://www.isotc211.org/2005/srv"
                             }
                         },
-                        "invocationName":{
-                            "title":"invocationName",
+                        "scopedName":{
+                            "title":"scopedName",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CharacterStringPropertyType"
+                                    "$ref":"#/definitions/CodeType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"invocationName",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "parameters":{
-                            "title":"parameters",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/SVParameterPropertyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"parameters",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "connectPoint":{
-                            "title":"connectPoint",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.isotc211.org/2005/gmd#/definitions/CIOnlineResourcePropertyType"
-                                    },
-                                    "minItems":1
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"connectPoint",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
-                            }
-                        },
-                        "dependsOn":{
-                            "title":"dependsOn",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/SVOperationMetadataPropertyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"dependsOn",
-                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                                "localPart":"ScopedName",
+                                "namespaceURI":"http://www.isotc211.org/2005/gco"
                             }
                         }
                     }
@@ -3615,22 +2776,813 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SV_OperationMetadata_Type",
+                "localPart":"SV_CoupledResource_Type",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             },
             "propertiesOrder":[
                 "operationName",
-                "dcp",
-                "operationDescription",
-                "invocationName",
-                "parameters",
-                "connectPoint",
-                "dependsOn"
+                "identifier",
+                "scopedName"
             ]
         },
-        "SVServiceType":{
+        "SVPortSpecificationPropertyType":{
+            "type":"object",
+            "title":"SVPortSpecificationPropertyType",
+            "properties":{
+                "svPortSpecification":{
+                    "title":"svPortSpecification",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SVPortSpecificationType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SV_PortSpecification",
+                        "namespaceURI":"http://www.isotc211.org/2005/srv"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":"http://www.isotc211.org/2005/gco"
+                    }
+                },
+                "uuidref":{
+                    "title":"uuidref",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"uuidref",
+                        "namespaceURI":""
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_PortSpecification_PropertyType",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "svPortSpecification",
+                "nilReason",
+                "uuidref",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "SVPlatformNeutralServiceSpecificationPropertyType":{
+            "type":"object",
+            "title":"SVPlatformNeutralServiceSpecificationPropertyType",
+            "properties":{
+                "svPlatformNeutralServiceSpecification":{
+                    "title":"svPlatformNeutralServiceSpecification",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                },
+                                "value":{
+                                    "$ref":"#/definitions/SVPlatformNeutralServiceSpecificationType"
+                                }
+                            },
+                            "elementName":{
+                                "localPart":"SV_PlatformNeutralServiceSpecification",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        }
+                    ],
+                    "propertyType":"elementRef",
+                    "elementName":{
+                        "localPart":"SV_PlatformNeutralServiceSpecification",
+                        "namespaceURI":"http://www.isotc211.org/2005/srv"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":"http://www.isotc211.org/2005/gco"
+                    }
+                },
+                "uuidref":{
+                    "title":"uuidref",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"uuidref",
+                        "namespaceURI":""
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_PlatformNeutralServiceSpecification_PropertyType",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "svPlatformNeutralServiceSpecification",
+                "nilReason",
+                "uuidref",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "SVPlatformSpecificServiceSpecificationPropertyType":{
+            "type":"object",
+            "title":"SVPlatformSpecificServiceSpecificationPropertyType",
+            "properties":{
+                "svPlatformSpecificServiceSpecification":{
+                    "title":"svPlatformSpecificServiceSpecification",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SVPlatformSpecificServiceSpecificationType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SV_PlatformSpecificServiceSpecification",
+                        "namespaceURI":"http://www.isotc211.org/2005/srv"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":"http://www.isotc211.org/2005/gco"
+                    }
+                },
+                "uuidref":{
+                    "title":"uuidref",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"uuidref",
+                        "namespaceURI":""
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_PlatformSpecificServiceSpecification_PropertyType",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "svPlatformSpecificServiceSpecification",
+                "nilReason",
+                "uuidref",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "SVInterfacePropertyType":{
+            "type":"object",
+            "title":"SVInterfacePropertyType",
+            "properties":{
+                "svInterface":{
+                    "title":"svInterface",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SVInterfaceType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SV_Interface",
+                        "namespaceURI":"http://www.isotc211.org/2005/srv"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":"http://www.isotc211.org/2005/gco"
+                    }
+                },
+                "uuidref":{
+                    "title":"uuidref",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"uuidref",
+                        "namespaceURI":""
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_Interface_PropertyType",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "svInterface",
+                "nilReason",
+                "uuidref",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "SVOperationChainMetadataPropertyType":{
+            "type":"object",
+            "title":"SVOperationChainMetadataPropertyType",
+            "properties":{
+                "svOperationChainMetadata":{
+                    "title":"svOperationChainMetadata",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/SVOperationChainMetadataType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"SV_OperationChainMetadata",
+                        "namespaceURI":"http://www.isotc211.org/2005/srv"
+                    }
+                },
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":"http://www.isotc211.org/2005/gco"
+                    }
+                },
+                "uuidref":{
+                    "title":"uuidref",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"uuidref",
+                        "namespaceURI":""
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"SV_OperationChainMetadata_PropertyType",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            },
+            "propertiesOrder":[
+                "svOperationChainMetadata",
+                "nilReason",
+                "uuidref",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
+        },
+        "SVParameterType":{
             "required":[
-                "specification"
+                "name",
+                "optionality",
+                "repeatability",
+                "valueType"
             ],
             "allOf":[
                 {
@@ -3638,39 +3590,83 @@
                 },
                 {
                     "type":"object",
-                    "title":"SVServiceType",
+                    "title":"SVParameterType",
                     "properties":{
-                        "specification":{
-                            "title":"specification",
+                        "name":{
+                            "title":"name",
                             "allOf":[
                                 {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/SVPlatformSpecificServiceSpecificationPropertyType"
-                                    },
-                                    "minItems":1
+                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/MemberNameType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"specification",
+                                "localPart":"name",
                                 "namespaceURI":"http://www.isotc211.org/2005/srv"
                             }
                         },
-                        "theSVPort":{
-                            "title":"theSVPort",
+                        "direction":{
+                            "title":"direction",
                             "allOf":[
                                 {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/SVPortPropertyType"
-                                    },
-                                    "minItems":0
+                                    "$ref":"#/definitions/SVParameterDirectionPropertyType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"theSV_Port",
+                                "localPart":"direction",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "description":{
+                            "title":"description",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CharacterStringPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"description",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "optionality":{
+                            "title":"optionality",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CharacterStringPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"optionality",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "repeatability":{
+                            "title":"repeatability",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/BooleanPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"repeatability",
+                                "namespaceURI":"http://www.isotc211.org/2005/srv"
+                            }
+                        },
+                        "valueType":{
+                            "title":"valueType",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/TypeNamePropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"valueType",
                                 "namespaceURI":"http://www.isotc211.org/2005/srv"
                             }
                         }
@@ -3679,12 +3675,16 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"SV_Service_Type",
+                "localPart":"SV_Parameter_Type",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             },
             "propertiesOrder":[
-                "specification",
-                "theSVPort"
+                "name",
+                "direction",
+                "description",
+                "optionality",
+                "repeatability",
+                "valueType"
             ]
         },
         "SVParameterDirectionType":{
@@ -3726,7 +3726,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SV_ServiceIdentification"
+                                        "SV_Operation"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -3739,45 +3739,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SVServiceIdentificationType"
+                    "$ref":"#/definitions/SVOperationType"
                 }
             },
             "elementName":{
-                "localPart":"SV_ServiceIdentification",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "SV_OperationChain"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.isotc211.org/2005/srv"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/SVOperationChainType"
-                }
-            },
-            "elementName":{
-                "localPart":"SV_OperationChain",
+                "localPart":"SV_Operation",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             }
         },
@@ -3828,7 +3794,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SV_Port"
+                                        "SV_OperationChainMetadata"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -3841,181 +3807,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SVPortType"
+                    "$ref":"#/definitions/SVOperationChainMetadataType"
                 }
             },
             "elementName":{
-                "localPart":"SV_Port",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "DCPList"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.isotc211.org/2005/srv"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CodeListValueType"
-                }
-            },
-            "elementName":{
-                "localPart":"DCPList",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "SV_PortSpecification"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.isotc211.org/2005/srv"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/SVPortSpecificationType"
-                }
-            },
-            "elementName":{
-                "localPart":"SV_PortSpecification",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "SV_OperationModel"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.isotc211.org/2005/srv"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/SVOperationModelType"
-                }
-            },
-            "elementName":{
-                "localPart":"SV_OperationModel",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "SV_PlatformNeutralServiceSpecification"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.isotc211.org/2005/srv"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/SVPlatformNeutralServiceSpecificationType"
-                }
-            },
-            "elementName":{
-                "localPart":"SV_PlatformNeutralServiceSpecification",
-                "namespaceURI":"http://www.isotc211.org/2005/srv"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "SV_CouplingType"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.isotc211.org/2005/srv"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CodeListValueType"
-                }
-            },
-            "elementName":{
-                "localPart":"SV_CouplingType",
+                "localPart":"SV_OperationChainMetadata",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             }
         },
@@ -4100,7 +3896,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SV_Interface"
+                                        "SV_Parameter"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -4113,11 +3909,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SVInterfaceType"
+                    "$ref":"#/definitions/SVParameterType"
                 }
             },
             "elementName":{
-                "localPart":"SV_Interface",
+                "localPart":"SV_Parameter",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             }
         },
@@ -4134,7 +3930,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SV_ParameterDirection"
+                                        "DCPList"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -4147,11 +3943,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SVParameterDirectionType"
+                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CodeListValueType"
                 }
             },
             "elementName":{
-                "localPart":"SV_ParameterDirection",
+                "localPart":"DCPList",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             }
         },
@@ -4168,7 +3964,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SV_ServiceType"
+                                        "SV_CouplingType"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -4181,11 +3977,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SVServiceTypeType"
+                    "$ref":"http://www.isotc211.org/2005/gco#/definitions/CodeListValueType"
                 }
             },
             "elementName":{
-                "localPart":"SV_ServiceType",
+                "localPart":"SV_CouplingType",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             }
         },
@@ -4202,7 +3998,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SV_Operation"
+                                        "SV_ServiceIdentification"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -4215,11 +4011,45 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SVOperationType"
+                    "$ref":"#/definitions/SVServiceIdentificationType"
                 }
             },
             "elementName":{
-                "localPart":"SV_Operation",
+                "localPart":"SV_ServiceIdentification",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SV_OperationModel"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.isotc211.org/2005/srv"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SVOperationModelType"
+                }
+            },
+            "elementName":{
+                "localPart":"SV_OperationModel",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             }
         },
@@ -4270,7 +4100,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SV_OperationChainMetadata"
+                                        "SV_Port"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -4283,11 +4113,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SVOperationChainMetadataType"
+                    "$ref":"#/definitions/SVPortType"
                 }
             },
             "elementName":{
-                "localPart":"SV_OperationChainMetadata",
+                "localPart":"SV_Port",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             }
         },
@@ -4304,7 +4134,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "SV_Parameter"
+                                        "SV_Interface"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -4317,11 +4147,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/SVParameterType"
+                    "$ref":"#/definitions/SVInterfaceType"
                 }
             },
             "elementName":{
-                "localPart":"SV_Parameter",
+                "localPart":"SV_Interface",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             }
         },
@@ -4356,6 +4186,176 @@
             },
             "elementName":{
                 "localPart":"SV_CoupledResource",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SV_PortSpecification"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.isotc211.org/2005/srv"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SVPortSpecificationType"
+                }
+            },
+            "elementName":{
+                "localPart":"SV_PortSpecification",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SV_OperationChain"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.isotc211.org/2005/srv"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SVOperationChainType"
+                }
+            },
+            "elementName":{
+                "localPart":"SV_OperationChain",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SV_ServiceType"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.isotc211.org/2005/srv"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SVServiceTypeType"
+                }
+            },
+            "elementName":{
+                "localPart":"SV_ServiceType",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SV_ParameterDirection"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.isotc211.org/2005/srv"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SVParameterDirectionType"
+                }
+            },
+            "elementName":{
+                "localPart":"SV_ParameterDirection",
+                "namespaceURI":"http://www.isotc211.org/2005/srv"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "SV_PlatformNeutralServiceSpecification"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.isotc211.org/2005/srv"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/SVPlatformNeutralServiceSpecificationType"
+                }
+            },
+            "elementName":{
+                "localPart":"SV_PlatformNeutralServiceSpecification",
                 "namespaceURI":"http://www.isotc211.org/2005/srv"
             }
         }

@@ -3,17 +3,8 @@ var OM_1_0_0_Module_Factory = function () {
     n: 'OM_1_0_0',
     dens: 'http:\/\/www.opengis.net\/om\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['SensorML_1_0_1', 'XLink_1_0', 'SWE_1_0_1', 'GML_3_1_1'],
+    deps: ['XLink_1_0', 'SWE_1_0_1', 'SensorML_1_0_1', 'GML_3_1_1'],
     tis: [{
-        ln: 'ObservationCollectionType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'member',
-            rq: true,
-            col: true,
-            ti: '.ObservationPropertyType'
-          }]
-      }, {
         ln: 'ObservationType',
         bti: 'GML_3_1_1.AbstractFeatureType',
         ps: [{
@@ -52,12 +43,13 @@ var OM_1_0_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'ObservationPropertyType',
+        ln: 'AnyOrReferenceType',
         ps: [{
-            n: 'observation',
+            n: 'any',
             rq: true,
-            en: 'Observation',
-            ti: '.ObservationType'
+            dom: false,
+            mx: false,
+            t: 'ae'
           }, {
             n: 'remoteSchema',
             an: {
@@ -89,6 +81,15 @@ var OM_1_0_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'ObservationCollectionType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'member',
+            rq: true,
+            col: true,
+            ti: '.ObservationPropertyType'
           }]
       }, {
         ln: 'ProcessPropertyType',
@@ -141,13 +142,12 @@ var OM_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AnyOrReferenceType',
+        ln: 'ObservationPropertyType',
         ps: [{
-            n: 'any',
+            n: 'observation',
             rq: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
+            en: 'Observation',
+            ti: '.ObservationType'
           }, {
             n: 'remoteSchema',
             an: {

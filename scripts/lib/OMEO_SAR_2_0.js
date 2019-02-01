@@ -107,29 +107,29 @@ var OMEO_SAR_2_0_Module_Factory = function () {
         bti: 'OMEO_EOP_2_0.EarthObservationType'
       }, {
         t: 'enum',
-        ln: 'AntennaLookDirectionValueEnumerationType',
-        vs: ['LEFT', 'RIGHT']
-      }, {
-        t: 'enum',
         ln: 'PolarisationChannelsValueEnumerationType',
         vs: ['HH', 'HV', 'UNDEFINED', 'HV, VH', 'VV, VH', 'VV, HV', 'VH, HV', 'VH, VV', 'HH, HV', 'HH, VH', 'HH, VV', 'VH', 'VV']
       }, {
         t: 'enum',
         ln: 'PolarisationModeValueEnumerationType',
         vs: ['UNDEFINED', 'T', 'S', 'D', 'Q']
+      }, {
+        t: 'enum',
+        ln: 'AntennaLookDirectionValueEnumerationType',
+        vs: ['LEFT', 'RIGHT']
       }],
     eis: [{
-        en: 'EarthObservation',
-        ti: '.EarthObservationType',
-        sh: {
-          lp: 'EarthObservation',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
-      }, {
         en: 'Acquisition',
         ti: '.AcquisitionType',
         sh: {
           lp: 'Acquisition',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+        }
+      }, {
+        en: 'EarthObservation',
+        ti: '.EarthObservationType',
+        sh: {
+          lp: 'EarthObservation',
           ns: 'http:\/\/www.opengis.net\/eop\/2.0'
         }
       }]

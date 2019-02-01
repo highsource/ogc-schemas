@@ -14,9 +14,6 @@ var EOP_OPT_1_0_Module_Factory = function () {
             ti: 'GML_3_1_1.AngleType'
           }]
       }, {
-        ln: 'EarthObservationType',
-        bti: 'EOP_1_0.EarthObservationType'
-      }, {
         ln: 'EarthObservationResultType',
         bti: 'EOP_1_0.EarthObservationResultType',
         ps: [{
@@ -36,12 +33,15 @@ var EOP_OPT_1_0_Module_Factory = function () {
           }, {
             n: 'snowCoverPercentageQuotationMode'
           }]
+      }, {
+        ln: 'EarthObservationType',
+        bti: 'EOP_1_0.EarthObservationType'
       }],
     eis: [{
-        en: 'EarthObservation',
-        ti: '.EarthObservationType',
+        en: 'EarthObservationResult',
+        ti: '.EarthObservationResultType',
         sh: {
-          lp: 'EarthObservation',
+          lp: 'EarthObservationResult',
           ns: 'http:\/\/earth.esa.int\/eop'
         }
       }, {
@@ -52,10 +52,10 @@ var EOP_OPT_1_0_Module_Factory = function () {
           ns: 'http:\/\/earth.esa.int\/eop'
         }
       }, {
-        en: 'EarthObservationResult',
-        ti: '.EarthObservationResultType',
+        en: 'EarthObservation',
+        ti: '.EarthObservationType',
         sh: {
-          lp: 'EarthObservationResult',
+          lp: 'EarthObservation',
           ns: 'http:\/\/earth.esa.int\/eop'
         }
       }]

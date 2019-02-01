@@ -4,16 +4,6 @@ var EOP_ATM_1_0_Module_Factory = function () {
     dens: 'http:\/\/earth.esa.int\/atm',
     deps: ['GML_3_1_1', 'EOP_1_0'],
     tis: [{
-        ln: 'EarthObservationResultType',
-        bti: 'EOP_1_0.EarthObservationResultType',
-        ps: [{
-            n: 'dataLayers',
-            ti: '.DataLayerPropertyType'
-          }]
-      }, {
-        ln: 'EarthObservationType',
-        bti: 'EOP_1_0.EarthObservationType'
-      }, {
         ln: 'DataLayerType',
         ps: [{
             n: 'specy'
@@ -31,6 +21,13 @@ var EOP_ATM_1_0_Module_Factory = function () {
             n: 'algorithmVersion'
           }]
       }, {
+        ln: 'EarthObservationResultType',
+        bti: 'EOP_1_0.EarthObservationResultType',
+        ps: [{
+            n: 'dataLayers',
+            ti: '.DataLayerPropertyType'
+          }]
+      }, {
         ln: 'DataLayerPropertyType',
         ps: [{
             n: 'dataLayer',
@@ -39,6 +36,9 @@ var EOP_ATM_1_0_Module_Factory = function () {
             en: 'DataLayer',
             ti: '.DataLayerType'
           }]
+      }, {
+        ln: 'EarthObservationType',
+        bti: 'EOP_1_0.EarthObservationType'
       }],
     eis: [{
         en: 'EarthObservationResult',
