@@ -2,30 +2,59 @@ var OSEO_1_0_Module_Factory = function () {
   var OSEO_1_0 = {
     n: 'OSEO_1_0',
     dens: 'http:\/\/www.opengis.net\/oseo\/1.0',
-    deps: ['OWS_2_0', 'SWE_2_0', 'SWES_2_0'],
+    deps: ['SWES_2_0', 'OWS_2_0', 'SWE_2_0'],
     tis: [{
-        ln: 'StatusNotificationType',
-        bti: '.OrderRequestBaseType',
+        ln: 'ParameterDataType',
         ps: [{
-            n: 'timeStamp',
-            ti: 'DateTime'
+            n: 'encoding',
+            rq: true
           }, {
-            n: 'orderMonitorSpecification',
+            n: 'values',
             rq: true,
-            ti: '.CommonOrderMonitorSpecification'
+            ti: 'AnyType'
           }]
       }, {
-        ln: 'DescribeResultAccessRequestType',
-        bti: '.OrderRequestBaseType',
+        ln: 'DeliveryOptionsType.MediaDelivery',
+        tn: null,
         ps: [{
-            n: 'timeStamp',
-            ti: 'DateTime'
-          }, {
-            n: 'orderId',
+            n: 'packageMedium',
             rq: true
           }, {
-            n: 'subFunction',
+            n: 'shippingInstructions'
+          }]
+      }, {
+        ln: 'ProductIdType',
+        bti: '.OrderItemIdType',
+        ps: [{
+            n: 'identifier',
             rq: true
+          }, {
+            n: 'collectionId'
+          }]
+      }, {
+        ln: 'CommonOrderOptionsType.ProductDeliveryOptions.MediaDelivery',
+        tn: null,
+        ps: [{
+            n: 'packageMedium',
+            rq: true,
+            col: true
+          }]
+      }, {
+        ln: 'CommonOrderStatusItemType',
+        bti: '.CommonOrderItemType',
+        ps: [{
+            n: 'orderItemStatusInfo',
+            rq: true,
+            ti: '.StatusType'
+          }]
+      }, {
+        ln: 'SceneSelectionDescriptorType',
+        bti: 'SWE_2_0.AbstractDataComponentPropertyType',
+        ps: [{
+            n: 'sceneRestriction',
+            mno: 0,
+            col: true,
+            ti: '.SceneSelectionDescriptorType.SceneRestriction'
           }]
       }, {
         ln: 'CollectionCapability',
@@ -50,6 +79,210 @@ var OSEO_1_0_Module_Factory = function () {
             ti: '.CollectionCapability.CancelCapabilities'
           }]
       }, {
+        ln: 'OrderItemGroupPrice',
+        ps: [{
+            n: 'provider',
+            rq: true,
+            ti: '.ProviderType'
+          }, {
+            n: 'quotationId'
+          }, {
+            n: 'validityTime',
+            ti: 'DateTime'
+          }, {
+            n: 'price',
+            rq: true,
+            ti: '.CurrencyType'
+          }, {
+            n: 'balance',
+            ti: '.CurrencyType'
+          }, {
+            n: 'orderItemPrice',
+            rq: true,
+            col: true,
+            ti: '.OrderItemPrice'
+          }, {
+            n: 'contractInformation'
+          }]
+      }, {
+        ln: 'CancelRequestType',
+        bti: '.OrderRequestBaseType',
+        ps: [{
+            n: 'timeStamp',
+            ti: 'DateTime'
+          }, {
+            n: 'orderId',
+            rq: true
+          }, {
+            n: 'statusNotification',
+            rq: true
+          }]
+      }, {
+        ln: 'DeliveryOptionsType.OnlineDataDelivery',
+        tn: null,
+        ps: [{
+            n: 'protocol',
+            rq: true
+          }]
+      }, {
+        ln: 'OrderQuotation',
+        ps: [{
+            n: 'quotationId',
+            rq: true
+          }, {
+            n: 'validityTime',
+            ti: 'DateTime'
+          }, {
+            n: 'price',
+            ti: '.CurrencyType'
+          }, {
+            n: 'orderItemGroupPrice',
+            rq: true,
+            col: true,
+            ti: '.OrderItemGroupPrice'
+          }, {
+            n: 'contractInformation'
+          }]
+      }, {
+        ln: 'CollectionCapability.DescribeResultAccessCapabilities',
+        tn: null,
+        ps: [{
+            n: 'supported',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'supported'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'StatusNotificationAckType',
+        bti: '.OrderResponseBaseType'
+      }, {
+        ln: 'OnLineAccessAddressType',
+        ps: [{
+            n: 'serviceAddress',
+            en: 'ServiceAddress',
+            ti: '.OnLineAccessAddressType.ServiceAddress'
+          }, {
+            n: 'resourceAddress',
+            rq: true,
+            en: 'ResourceAddress',
+            ti: '.OnLineAccessAddressType.ResourceAddress'
+          }]
+      }, {
+        ln: 'CommonOrderMonitorSpecification',
+        bti: '.CommonOrderSpecification',
+        ps: [{
+            n: 'orderId',
+            rq: true
+          }, {
+            n: 'orderStatusInfo',
+            rq: true,
+            ti: '.StatusType'
+          }, {
+            n: 'orderDateTime',
+            ti: 'DateTime'
+          }, {
+            n: 'orderItem',
+            mno: 0,
+            col: true,
+            ti: '.CommonOrderStatusItemType'
+          }]
+      }, {
+        ln: 'DeliveryAddressType',
+        ps: [{
+            n: 'firstName'
+          }, {
+            n: 'lastName'
+          }, {
+            n: 'companyRef'
+          }, {
+            n: 'postalAddress',
+            ti: '.DeliveryAddressType.PostalAddress'
+          }, {
+            n: 'telephoneNumber'
+          }, {
+            n: 'facsimileTelephoneNumber'
+          }]
+      }, {
+        ln: 'SubmitOrderRequestType',
+        bti: '.OrderRequestBaseType',
+        ps: [{
+            n: 'timeStamp',
+            ti: 'DateTime'
+          }, {
+            n: 'orderSpecification',
+            rq: true,
+            ti: '.OrderSpecification'
+          }, {
+            n: 'quotationId',
+            rq: true
+          }, {
+            n: 'statusNotification',
+            rq: true
+          }]
+      }, {
+        ln: 'CommonOrderOptionsType.ProductDeliveryOptions',
+        tn: null,
+        ps: [{
+            n: 'onlineDataAccess',
+            rq: true,
+            ti: '.CommonOrderOptionsType.ProductDeliveryOptions.OnlineDataAccess'
+          }, {
+            n: 'onlineDataDelivery',
+            rq: true,
+            ti: '.CommonOrderOptionsType.ProductDeliveryOptions.OnlineDataDelivery'
+          }, {
+            n: 'mediaDelivery',
+            rq: true,
+            ti: '.CommonOrderOptionsType.ProductDeliveryOptions.MediaDelivery'
+          }]
+      }, {
+        ln: 'GetQuotationRequestType',
+        bti: '.OrderRequestBaseType',
+        ps: [{
+            n: 'timeStamp',
+            ti: 'DateTime'
+          }, {
+            n: 'orderSpecification',
+            rq: true,
+            ti: '.OrderSpecification'
+          }, {
+            n: 'quotationId',
+            rq: true
+          }]
+      }, {
+        ln: 'StatusType',
+        ps: [{
+            n: 'status',
+            rq: true
+          }, {
+            n: 'additionalStatusInfo'
+          }, {
+            n: 'missionSpecificStatusInfo'
+          }]
+      }, {
+        ln: 'CollectionCapability.CancelCapabilities',
+        tn: null,
+        ps: [{
+            n: 'supported',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'supported'
+            },
+            t: 'a'
+          }, {
+            n: 'asynchronous',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'asynchronous'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'Capabilities',
         tn: null,
         bti: 'OWS_2_0.CapabilitiesBaseType',
@@ -63,12 +296,665 @@ var OSEO_1_0_Module_Factory = function () {
             ti: 'SWES_2_0.NotificationProducerMetadataPropertyType'
           }]
       }, {
+        ln: 'CommonOrderItemType',
+        ps: [{
+            n: 'itemId',
+            rq: true
+          }, {
+            n: 'productOrderOptionsId'
+          }, {
+            n: 'orderItemRemark'
+          }, {
+            n: 'option',
+            mno: 0,
+            col: true,
+            ti: '.CommonOrderItemType.Option'
+          }, {
+            n: 'sceneSelection',
+            mno: 0,
+            col: true,
+            ti: '.CommonOrderItemType.SceneSelection'
+          }, {
+            n: 'deliveryOptions',
+            ti: '.DeliveryOptionsType'
+          }, {
+            n: 'payment',
+            ti: '.PaymentOptionSelectedValue'
+          }, {
+            n: 'extension',
+            mno: 0,
+            col: true,
+            ti: 'AnySimpleType'
+          }, {
+            n: 'productId',
+            rq: true,
+            ti: '.ProductIdType'
+          }, {
+            n: 'taskingRequestId',
+            rq: true,
+            ti: '.TaskingRequestIdType'
+          }, {
+            n: 'subscriptionId',
+            rq: true,
+            ti: '.SubscriptionIdType'
+          }]
+      }, {
+        ln: 'GetQuotationAckType',
+        bti: '.OrderResponseBaseType',
+        ps: [{
+            n: 'quotationId',
+            rq: true
+          }, {
+            n: 'quotation',
+            rq: true,
+            ti: '.OrderQuotation'
+          }]
+      }, {
+        ln: 'ItemURLType',
+        ps: [{
+            n: 'itemId',
+            rq: true
+          }, {
+            n: 'productId',
+            ti: '.ProductIdType'
+          }, {
+            n: 'itemAddress',
+            rq: true,
+            ti: '.OnLineAccessAddressType'
+          }, {
+            n: 'expirationDate',
+            ti: 'DateTime'
+          }]
+      }, {
+        ln: 'CommonOrderOptionsType.ProductDeliveryOptions.OnlineDataAccess',
+        tn: null,
+        ps: [{
+            n: 'protocol',
+            rq: true,
+            col: true
+          }]
+      }, {
+        ln: 'CurrencyType',
+        ps: [{
+            n: 'value',
+            rq: true,
+            ti: 'Double'
+          }, {
+            n: 'currency',
+            rq: true
+          }]
+      }, {
+        ln: 'OrderSpecification',
+        bti: '.CommonOrderSpecification',
+        ps: [{
+            n: 'orderItem',
+            rq: true,
+            col: true,
+            ti: '.CommonOrderItemType'
+          }]
+      }, {
+        ln: 'OrderingServiceContentsType.SubmitCapabilities',
+        tn: null,
+        ps: [{
+            n: 'asynchronous',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'asynchronous'
+            },
+            t: 'a'
+          }, {
+            n: 'maxNumberOfProducts',
+            ti: 'Integer',
+            an: {
+              lp: 'maxNumberOfProducts'
+            },
+            t: 'a'
+          }, {
+            n: 'globalDeliveryOptions',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'globalDeliveryOptions'
+            },
+            t: 'a'
+          }, {
+            n: 'localDeliveryOptions',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'localDeliveryOptions'
+            },
+            t: 'a'
+          }, {
+            n: 'globalOrderOptions',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'globalOrderOptions'
+            },
+            t: 'a'
+          }, {
+            n: 'localOrderOptions',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'localOrderOptions'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DescribeResultAccessResponseType',
+        bti: '.OrderResponseBaseType',
+        ps: [{
+            n: 'urLs',
+            mno: 0,
+            col: true,
+            en: 'URLs',
+            ti: '.ItemURLType'
+          }]
+      }, {
+        ln: 'OrderOptionsResponseType',
+        bti: '.OrderResponseBaseType',
+        ps: [{
+            n: 'orderOptions',
+            mno: 0,
+            col: true,
+            ti: '.CommonOrderOptionsType'
+          }]
+      }, {
+        ln: 'OrderingServiceContentsType.SubscriptionOrders',
+        tn: null,
+        ps: [{
+            n: 'supported',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'supported'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DeliveryOptionsType.OnlineDataAccess',
+        tn: null,
+        ps: [{
+            n: 'protocol',
+            rq: true
+          }]
+      }, {
+        ln: 'ParameterDescriptorType',
+        bti: 'SWE_2_0.AbstractDataComponentPropertyType',
+        ps: [{
+            n: 'grouping'
+          }]
+      }, {
+        ln: 'CancelRequestAckType',
+        bti: '.OrderResponseBaseType'
+      }, {
+        ln: 'PaymentOptionDefinitionType',
+        ps: [{
+            n: 'paymentMethod',
+            rq: true
+          }, {
+            n: 'paymentOptionInfoURL'
+          }]
+      }, {
+        ln: 'CollectionCapability.ProductOrders',
+        tn: null,
+        ps: [{
+            n: 'supported',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'supported'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetStatusResponseType',
+        bti: '.OrderResponseBaseType',
+        ps: [{
+            n: 'orderMonitorSpecification',
+            mno: 0,
+            col: true,
+            ti: '.CommonOrderMonitorSpecification'
+          }]
+      }, {
+        ln: 'OrderingServiceContentsType.GetQuotationCapabilities',
+        tn: null,
+        ps: [{
+            n: 'supported',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'supported'
+            },
+            t: 'a'
+          }, {
+            n: 'synchronous',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'synchronous'
+            },
+            t: 'a'
+          }, {
+            n: 'asynchronous',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'asynchronous'
+            },
+            t: 'a'
+          }, {
+            n: 'monitoring',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'monitoring'
+            },
+            t: 'a'
+          }, {
+            n: 'offLine',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'off-line'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CommonOrderOptionsType.SceneSelectionOption',
+        tn: null,
+        ps: [{
+            n: 'name'
+          }, {
+            n: 'description'
+          }, {
+            n: 'sceneSelectionParameter',
+            mno: 0,
+            col: true,
+            ti: '.SceneSelectionDescriptorType'
+          }]
+      }, {
+        ln: 'CollectionCapability.SubscriptionOrders',
+        tn: null,
+        ps: [{
+            n: 'supported',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'supported'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetQuotationResponseAckType',
+        bti: '.OrderResponseBaseType'
+      }, {
+        ln: 'CreditCardInfoType',
+        ps: [{
+            n: 'creditCardInstitute',
+            rq: true,
+            ti: 'AnyType'
+          }, {
+            n: 'nameOnCard',
+            rq: true,
+            ti: 'AnyType'
+          }, {
+            n: 'cardNumber',
+            rq: true,
+            ti: 'AnyType'
+          }, {
+            n: 'expirationDate',
+            rq: true,
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'OnLineAccessAddressType.ResourceAddress.ServiceRequest',
+        tn: null,
+        ps: [{
+            n: 'any',
+            rq: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'DeliveryInformationType',
+        ps: [{
+            n: 'onlineAddress',
+            mno: 0,
+            col: true,
+            ti: '.OnlineAddressType'
+          }, {
+            n: 'mailAddress',
+            ti: '.DeliveryAddressType'
+          }]
+      }, {
+        ln: 'GetCapabilities',
+        tn: null,
+        bti: 'OWS_2_0.GetCapabilitiesType',
+        ps: [{
+            n: 'service',
+            rq: true,
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'OrderingServiceContentsType.DescribeResultAccessCapabilities',
+        tn: null,
+        ps: [{
+            n: 'supported',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'supported'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CommonOrderOptionsType',
+        ps: [{
+            n: 'productOrderOptionsId',
+            rq: true
+          }, {
+            n: 'identifier'
+          }, {
+            n: 'description'
+          }, {
+            n: 'orderType',
+            rq: true
+          }, {
+            n: 'option',
+            mno: 0,
+            col: true,
+            ti: '.ParameterDescriptorType'
+          }, {
+            n: 'productDeliveryOptions',
+            rq: true,
+            col: true,
+            ti: '.CommonOrderOptionsType.ProductDeliveryOptions'
+          }, {
+            n: 'orderOptionInfoURL'
+          }, {
+            n: 'paymentOptions',
+            mno: 0,
+            col: true,
+            ti: '.PaymentOptionDefinitionType'
+          }, {
+            n: 'sceneSelectionOption',
+            mno: 0,
+            col: true,
+            ti: '.CommonOrderOptionsType.SceneSelectionOption'
+          }]
+      }, {
+        ln: 'OrderingServiceContentsType.ProductOrders',
+        tn: null,
+        ps: [{
+            n: 'supported',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'supported'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'OrderRequestBaseType',
+        ps: [{
+            n: 'service',
+            rq: true,
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            rq: true,
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CommonOrderSpecification',
+        ps: [{
+            n: 'orderReference'
+          }, {
+            n: 'orderRemark'
+          }, {
+            n: 'deliveryInformation',
+            ti: '.DeliveryInformationType'
+          }, {
+            n: 'invoiceAddress',
+            ti: '.DeliveryAddressType'
+          }, {
+            n: 'packaging',
+            mx: false,
+            dom: false,
+            t: 'er'
+          }, {
+            n: 'option',
+            mno: 0,
+            col: true,
+            ti: '.CommonOrderSpecification.Option'
+          }, {
+            n: 'deliveryOptions',
+            ti: '.DeliveryOptionsType'
+          }, {
+            n: 'priority'
+          }, {
+            n: 'orderType',
+            rq: true
+          }, {
+            n: 'extension',
+            mno: 0,
+            col: true,
+            ti: 'AnySimpleType'
+          }]
+      }, {
+        ln: 'CommonOrderItemType.SceneSelection',
+        tn: null,
+        ps: [{
+            n: 'parameterData',
+            rq: true,
+            en: 'ParameterData',
+            ti: '.ParameterDataType'
+          }]
+      }, {
+        ln: 'ProviderType',
+        ps: [{
+            n: 'serviceName',
+            rq: true
+          }, {
+            n: 'organization',
+            rq: true
+          }]
+      }, {
+        ln: 'OrderItemPrice',
+        ps: [{
+            n: 'itemId',
+            rq: true
+          }, {
+            n: 'productId',
+            rq: true,
+            ti: '.ProductIdType'
+          }, {
+            n: 'taskingRequestId',
+            rq: true,
+            ti: '.TaskingRequestIdType'
+          }, {
+            n: 'subscriptionId',
+            rq: true,
+            ti: '.SubscriptionIdType'
+          }, {
+            n: 'price',
+            ti: '.CurrencyType'
+          }, {
+            n: 'priceInformation'
+          }, {
+            n: 'contractInformation'
+          }]
+      }, {
+        ln: 'TaskingRequestIdType',
+        bti: '.OrderItemIdType',
+        ps: [{
+            n: 'id',
+            rq: true,
+            en: 'ID'
+          }]
+      }, {
+        ln: 'OnLineAccessAddressType.ServiceAddress.InfoRequest',
+        tn: null,
+        ps: [{
+            n: 'any',
+            rq: true,
+            dom: false,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'OrderOptionsRequestType',
+        bti: '.OrderRequestBaseType',
+        ps: [{
+            n: 'timeStamp',
+            ti: 'DateTime'
+          }, {
+            n: 'collectionId',
+            rq: true
+          }, {
+            n: 'identifier',
+            rq: true,
+            col: true
+          }, {
+            n: 'taskingRequestId',
+            rq: true,
+            ti: '.TaskingRequestIdType'
+          }]
+      }, {
+        ln: 'PaymentOptionSelectedValue',
+        ps: [{
+            n: 'paymentMethod',
+            rq: true
+          }, {
+            n: 'orderAccount'
+          }, {
+            n: 'creditCardInfo'
+          }]
+      }, {
+        ln: 'EncodingType',
+        ps: [{
+            n: 'supportedEncoding',
+            rq: true,
+            col: true
+          }]
+      }, {
+        ln: 'CommonOrderSpecification.Option',
+        tn: null,
+        ps: [{
+            n: 'parameterData',
+            rq: true,
+            en: 'ParameterData',
+            ti: '.ParameterDataType'
+          }]
+      }, {
+        ln: 'OnLineAccessAddressType.ResourceAddress',
+        tn: null,
+        ps: [{
+            n: 'url',
+            rq: true,
+            en: 'URL'
+          }, {
+            n: 'serviceRequest',
+            ti: '.OnLineAccessAddressType.ResourceAddress.ServiceRequest'
+          }]
+      }, {
+        ln: 'SubscriptionIdType',
+        bti: '.OrderItemIdType',
+        ps: [{
+            n: 'collectionId',
+            rq: true
+          }]
+      }, {
+        ln: 'OrderingServiceContentsType.CancelCapabilities',
+        tn: null,
+        ps: [{
+            n: 'supported',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'supported'
+            },
+            t: 'a'
+          }, {
+            n: 'asynchronous',
+            rq: true,
+            ti: 'Boolean',
+            an: {
+              lp: 'asynchronous'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'OnlineAddressType',
+        ps: [{
+            n: 'protocol',
+            rq: true
+          }, {
+            n: 'serverAddress',
+            rq: true
+          }, {
+            n: 'userName'
+          }, {
+            n: 'userPassword'
+          }, {
+            n: 'path'
+          }]
+      }, {
+        ln: 'DescribeResultAccessRequestType',
+        bti: '.OrderRequestBaseType',
+        ps: [{
+            n: 'timeStamp',
+            ti: 'DateTime'
+          }, {
+            n: 'orderId',
+            rq: true
+          }, {
+            n: 'subFunction',
+            rq: true
+          }]
+      }, {
         ln: 'OrderResponseBaseType',
         ps: [{
             n: 'status',
             rq: true
           }, {
             n: 'errorMessage'
+          }]
+      }, {
+        ln: 'DeliveryOptionsType',
+        ps: [{
+            n: 'onlineDataAccess',
+            rq: true,
+            ti: '.DeliveryOptionsType.OnlineDataAccess'
+          }, {
+            n: 'onlineDataDelivery',
+            rq: true,
+            ti: '.DeliveryOptionsType.OnlineDataDelivery'
+          }, {
+            n: 'mediaDelivery',
+            rq: true,
+            ti: '.DeliveryOptionsType.MediaDelivery'
+          }, {
+            n: 'numberOfCopies',
+            ti: 'Int'
+          }, {
+            n: 'productAnnotation'
+          }, {
+            n: 'specialInstructions'
           }]
       }, {
         ln: 'OrderingServiceContentsType',
@@ -126,438 +1012,6 @@ var OSEO_1_0_Module_Factory = function () {
             ti: '.EncodingType'
           }]
       }, {
-        ln: 'OnLineAccessAddressType.ServiceAddress.InfoRequest',
-        tn: null,
-        ps: [{
-            n: 'any',
-            rq: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'SceneSelectionDescriptorType.SceneRestriction',
-        tn: null,
-        bti: 'SWE_2_0.AbstractDataComponentPropertyType'
-      }, {
-        ln: 'CollectionCapability.DescribeResultAccessCapabilities',
-        tn: null,
-        ps: [{
-            n: 'supported',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'supported'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CancelRequestAckType',
-        bti: '.OrderResponseBaseType'
-      }, {
-        ln: 'DeliveryInformationType',
-        ps: [{
-            n: 'onlineAddress',
-            mno: 0,
-            col: true,
-            ti: '.OnlineAddressType'
-          }, {
-            n: 'mailAddress',
-            ti: '.DeliveryAddressType'
-          }]
-      }, {
-        ln: 'GetQuotationResponseAckType',
-        bti: '.OrderResponseBaseType'
-      }, {
-        ln: 'OrderingServiceContentsType.DescribeResultAccessCapabilities',
-        tn: null,
-        ps: [{
-            n: 'supported',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'supported'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'PaymentOptionDefinitionType',
-        ps: [{
-            n: 'paymentMethod',
-            rq: true
-          }, {
-            n: 'paymentOptionInfoURL'
-          }]
-      }, {
-        ln: 'ParameterDataType',
-        ps: [{
-            n: 'encoding',
-            rq: true
-          }, {
-            n: 'values',
-            rq: true,
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'OnLineAccessAddressType',
-        ps: [{
-            n: 'serviceAddress',
-            en: 'ServiceAddress',
-            ti: '.OnLineAccessAddressType.ServiceAddress'
-          }, {
-            n: 'resourceAddress',
-            rq: true,
-            en: 'ResourceAddress',
-            ti: '.OnLineAccessAddressType.ResourceAddress'
-          }]
-      }, {
-        ln: 'GetCapabilities',
-        tn: null,
-        bti: 'OWS_2_0.GetCapabilitiesType',
-        ps: [{
-            n: 'service',
-            rq: true,
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CommonOrderItemType.Option',
-        tn: null,
-        ps: [{
-            n: 'parameterData',
-            rq: true,
-            en: 'ParameterData',
-            ti: '.ParameterDataType'
-          }]
-      }, {
-        ln: 'PaymentOptionSelectedValue',
-        ps: [{
-            n: 'paymentMethod',
-            rq: true
-          }, {
-            n: 'orderAccount'
-          }, {
-            n: 'creditCardInfo'
-          }]
-      }, {
-        ln: 'CommonOrderOptionsType.ProductDeliveryOptions.MediaDelivery',
-        tn: null,
-        ps: [{
-            n: 'packageMedium',
-            rq: true,
-            col: true
-          }]
-      }, {
-        ln: 'OrderSpecification',
-        bti: '.CommonOrderSpecification',
-        ps: [{
-            n: 'orderItem',
-            rq: true,
-            col: true,
-            ti: '.CommonOrderItemType'
-          }]
-      }, {
-        ln: 'GetQuotationAckType',
-        bti: '.OrderResponseBaseType',
-        ps: [{
-            n: 'quotationId',
-            rq: true
-          }, {
-            n: 'quotation',
-            rq: true,
-            ti: '.OrderQuotation'
-          }]
-      }, {
-        ln: 'SubmitOrderRequestType',
-        bti: '.OrderRequestBaseType',
-        ps: [{
-            n: 'timeStamp',
-            ti: 'DateTime'
-          }, {
-            n: 'orderSpecification',
-            rq: true,
-            ti: '.OrderSpecification'
-          }, {
-            n: 'quotationId',
-            rq: true
-          }, {
-            n: 'statusNotification',
-            rq: true
-          }]
-      }, {
-        ln: 'DeliveryOptionsType.OnlineDataDelivery',
-        tn: null,
-        ps: [{
-            n: 'protocol',
-            rq: true
-          }]
-      }, {
-        ln: 'GetStatusResponseType',
-        bti: '.OrderResponseBaseType',
-        ps: [{
-            n: 'orderMonitorSpecification',
-            mno: 0,
-            col: true,
-            ti: '.CommonOrderMonitorSpecification'
-          }]
-      }, {
-        ln: 'DeliveryOptionsType',
-        ps: [{
-            n: 'onlineDataAccess',
-            rq: true,
-            ti: '.DeliveryOptionsType.OnlineDataAccess'
-          }, {
-            n: 'onlineDataDelivery',
-            rq: true,
-            ti: '.DeliveryOptionsType.OnlineDataDelivery'
-          }, {
-            n: 'mediaDelivery',
-            rq: true,
-            ti: '.DeliveryOptionsType.MediaDelivery'
-          }, {
-            n: 'numberOfCopies',
-            ti: 'Int'
-          }, {
-            n: 'productAnnotation'
-          }, {
-            n: 'specialInstructions'
-          }]
-      }, {
-        ln: 'CreditCardInfoType',
-        ps: [{
-            n: 'creditCardInstitute',
-            rq: true,
-            ti: 'AnyType'
-          }, {
-            n: 'nameOnCard',
-            rq: true,
-            ti: 'AnyType'
-          }, {
-            n: 'cardNumber',
-            rq: true,
-            ti: 'AnyType'
-          }, {
-            n: 'expirationDate',
-            rq: true,
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'DeliveryAddressType.PostalAddress',
-        tn: null,
-        ps: [{
-            n: 'streetAddress',
-            rq: true
-          }, {
-            n: 'city',
-            rq: true
-          }, {
-            n: 'state',
-            rq: true
-          }, {
-            n: 'postalCode',
-            rq: true
-          }, {
-            n: 'country',
-            rq: true
-          }, {
-            n: 'postBox'
-          }]
-      }, {
-        ln: 'OrderQuotation',
-        ps: [{
-            n: 'quotationId',
-            rq: true
-          }, {
-            n: 'validityTime',
-            ti: 'DateTime'
-          }, {
-            n: 'price',
-            ti: '.CurrencyType'
-          }, {
-            n: 'orderItemGroupPrice',
-            rq: true,
-            col: true,
-            ti: '.OrderItemGroupPrice'
-          }, {
-            n: 'contractInformation'
-          }]
-      }, {
-        ln: 'CommonOrderSpecification.Option',
-        tn: null,
-        ps: [{
-            n: 'parameterData',
-            rq: true,
-            en: 'ParameterData',
-            ti: '.ParameterDataType'
-          }]
-      }, {
-        ln: 'CommonOrderItemType',
-        ps: [{
-            n: 'itemId',
-            rq: true
-          }, {
-            n: 'productOrderOptionsId'
-          }, {
-            n: 'orderItemRemark'
-          }, {
-            n: 'option',
-            mno: 0,
-            col: true,
-            ti: '.CommonOrderItemType.Option'
-          }, {
-            n: 'sceneSelection',
-            mno: 0,
-            col: true,
-            ti: '.CommonOrderItemType.SceneSelection'
-          }, {
-            n: 'deliveryOptions',
-            ti: '.DeliveryOptionsType'
-          }, {
-            n: 'payment',
-            ti: '.PaymentOptionSelectedValue'
-          }, {
-            n: 'extension',
-            mno: 0,
-            col: true,
-            ti: 'AnySimpleType'
-          }, {
-            n: 'productId',
-            rq: true,
-            ti: '.ProductIdType'
-          }, {
-            n: 'taskingRequestId',
-            rq: true,
-            ti: '.TaskingRequestIdType'
-          }, {
-            n: 'subscriptionId',
-            rq: true,
-            ti: '.SubscriptionIdType'
-          }]
-      }, {
-        ln: 'CurrencyType',
-        ps: [{
-            n: 'value',
-            rq: true,
-            ti: 'Double'
-          }, {
-            n: 'currency',
-            rq: true
-          }]
-      }, {
-        ln: 'CommonOrderItemType.SceneSelection',
-        tn: null,
-        ps: [{
-            n: 'parameterData',
-            rq: true,
-            en: 'ParameterData',
-            ti: '.ParameterDataType'
-          }]
-      }, {
-        ln: 'CancelRequestType',
-        bti: '.OrderRequestBaseType',
-        ps: [{
-            n: 'timeStamp',
-            ti: 'DateTime'
-          }, {
-            n: 'orderId',
-            rq: true
-          }, {
-            n: 'statusNotification',
-            rq: true
-          }]
-      }, {
-        ln: 'DeliveryAddressType',
-        ps: [{
-            n: 'firstName'
-          }, {
-            n: 'lastName'
-          }, {
-            n: 'companyRef'
-          }, {
-            n: 'postalAddress',
-            ti: '.DeliveryAddressType.PostalAddress'
-          }, {
-            n: 'telephoneNumber'
-          }, {
-            n: 'facsimileTelephoneNumber'
-          }]
-      }, {
-        ln: 'SceneSelectionDescriptorType',
-        bti: 'SWE_2_0.AbstractDataComponentPropertyType',
-        ps: [{
-            n: 'sceneRestriction',
-            mno: 0,
-            col: true,
-            ti: '.SceneSelectionDescriptorType.SceneRestriction'
-          }]
-      }, {
-        ln: 'CommonOrderStatusItemType',
-        bti: '.CommonOrderItemType',
-        ps: [{
-            n: 'orderItemStatusInfo',
-            rq: true,
-            ti: '.StatusType'
-          }]
-      }, {
-        ln: 'OnlineAddressType',
-        ps: [{
-            n: 'protocol',
-            rq: true
-          }, {
-            n: 'serverAddress',
-            rq: true
-          }, {
-            n: 'userName'
-          }, {
-            n: 'userPassword'
-          }, {
-            n: 'path'
-          }]
-      }, {
-        ln: 'GetStatusRequestType',
-        bti: '.OrderRequestBaseType',
-        ps: [{
-            n: 'timeStamp',
-            ti: 'DateTime'
-          }, {
-            n: 'orderId',
-            rq: true
-          }, {
-            n: 'filteringCriteria',
-            rq: true,
-            ti: '.OrderSearchCriteriaType'
-          }, {
-            n: 'presentation',
-            rq: true
-          }]
-      }, {
-        ln: 'CommonOrderOptionsType.SceneSelectionOption',
-        tn: null,
-        ps: [{
-            n: 'name'
-          }, {
-            n: 'description'
-          }, {
-            n: 'sceneSelectionParameter',
-            mno: 0,
-            col: true,
-            ti: '.SceneSelectionDescriptorType'
-          }]
-      }, {
-        ln: 'OrderingServiceContentsType.ProductOrders',
-        tn: null,
-        ps: [{
-            n: 'supported',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'supported'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'SubmitOrderResponseType',
         bti: '.OrderResponseBaseType',
         ps: [{
@@ -587,58 +1041,33 @@ var OSEO_1_0_Module_Factory = function () {
             ti: 'AnySimpleType'
           }]
       }, {
-        ln: 'ProductIdType',
-        bti: '.OrderItemIdType',
+        ln: 'DeliveryAddressType.PostalAddress',
+        tn: null,
         ps: [{
-            n: 'identifier',
+            n: 'streetAddress',
             rq: true
           }, {
-            n: 'collectionId'
+            n: 'city',
+            rq: true
+          }, {
+            n: 'state',
+            rq: true
+          }, {
+            n: 'postalCode',
+            rq: true
+          }, {
+            n: 'country',
+            rq: true
+          }, {
+            n: 'postBox'
           }]
       }, {
-        ln: 'ParameterDescriptorType',
-        bti: 'SWE_2_0.AbstractDataComponentPropertyType',
-        ps: [{
-            n: 'grouping'
-          }]
-      }, {
-        ln: 'OnLineAccessAddressType.ResourceAddress',
+        ln: 'CommonOrderOptionsType.ProductDeliveryOptions.OnlineDataDelivery',
         tn: null,
         ps: [{
-            n: 'url',
+            n: 'protocol',
             rq: true,
-            en: 'URL'
-          }, {
-            n: 'serviceRequest',
-            ti: '.OnLineAccessAddressType.ResourceAddress.ServiceRequest'
-          }]
-      }, {
-        ln: 'OrderItemIdType'
-      }, {
-        ln: 'OrderOptionsResponseType',
-        bti: '.OrderResponseBaseType',
-        ps: [{
-            n: 'orderOptions',
-            mno: 0,
-            col: true,
-            ti: '.CommonOrderOptionsType'
-          }]
-      }, {
-        ln: 'OnLineAccessAddressType.ServiceAddress',
-        tn: null,
-        ps: [{
-            n: 'type'
-          }, {
-            n: 'url',
-            rq: true,
-            en: 'URL'
-          }, {
-            n: 'infoURL',
-            rq: true,
-            en: 'info_URL'
-          }, {
-            n: 'infoRequest',
-            ti: '.OnLineAccessAddressType.ServiceAddress.InfoRequest'
+            col: true
           }]
       }, {
         ln: 'OrderingServiceContentsType.ProgrammingOrders',
@@ -659,235 +1088,21 @@ var OSEO_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DeliveryOptionsType.OnlineDataAccess',
+        ln: 'OnLineAccessAddressType.ServiceAddress',
         tn: null,
         ps: [{
-            n: 'protocol',
-            rq: true
-          }]
-      }, {
-        ln: 'ItemURLType',
-        ps: [{
-            n: 'itemId',
-            rq: true
+            n: 'type'
           }, {
-            n: 'productId',
-            ti: '.ProductIdType'
-          }, {
-            n: 'itemAddress',
+            n: 'url',
             rq: true,
-            ti: '.OnLineAccessAddressType'
+            en: 'URL'
           }, {
-            n: 'expirationDate',
-            ti: 'DateTime'
-          }]
-      }, {
-        ln: 'OrderingServiceContentsType.SubmitCapabilities',
-        tn: null,
-        ps: [{
-            n: 'asynchronous',
+            n: 'infoURL',
             rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'asynchronous'
-            },
-            t: 'a'
+            en: 'info_URL'
           }, {
-            n: 'maxNumberOfProducts',
-            ti: 'Integer',
-            an: {
-              lp: 'maxNumberOfProducts'
-            },
-            t: 'a'
-          }, {
-            n: 'globalDeliveryOptions',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'globalDeliveryOptions'
-            },
-            t: 'a'
-          }, {
-            n: 'localDeliveryOptions',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'localDeliveryOptions'
-            },
-            t: 'a'
-          }, {
-            n: 'globalOrderOptions',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'globalOrderOptions'
-            },
-            t: 'a'
-          }, {
-            n: 'localOrderOptions',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'localOrderOptions'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CommonOrderOptionsType',
-        ps: [{
-            n: 'productOrderOptionsId',
-            rq: true
-          }, {
-            n: 'identifier'
-          }, {
-            n: 'description'
-          }, {
-            n: 'orderType',
-            rq: true
-          }, {
-            n: 'option',
-            mno: 0,
-            col: true,
-            ti: '.ParameterDescriptorType'
-          }, {
-            n: 'productDeliveryOptions',
-            rq: true,
-            col: true,
-            ti: '.CommonOrderOptionsType.ProductDeliveryOptions'
-          }, {
-            n: 'orderOptionInfoURL'
-          }, {
-            n: 'paymentOptions',
-            mno: 0,
-            col: true,
-            ti: '.PaymentOptionDefinitionType'
-          }, {
-            n: 'sceneSelectionOption',
-            mno: 0,
-            col: true,
-            ti: '.CommonOrderOptionsType.SceneSelectionOption'
-          }]
-      }, {
-        ln: 'SubscriptionIdType',
-        bti: '.OrderItemIdType',
-        ps: [{
-            n: 'collectionId',
-            rq: true
-          }]
-      }, {
-        ln: 'GetQuotationRequestType',
-        bti: '.OrderRequestBaseType',
-        ps: [{
-            n: 'timeStamp',
-            ti: 'DateTime'
-          }, {
-            n: 'orderSpecification',
-            rq: true,
-            ti: '.OrderSpecification'
-          }, {
-            n: 'quotationId',
-            rq: true
-          }]
-      }, {
-        ln: 'StatusType',
-        ps: [{
-            n: 'status',
-            rq: true
-          }, {
-            n: 'additionalStatusInfo'
-          }, {
-            n: 'missionSpecificStatusInfo'
-          }]
-      }, {
-        ln: 'CommonOrderOptionsType.ProductDeliveryOptions.OnlineDataDelivery',
-        tn: null,
-        ps: [{
-            n: 'protocol',
-            rq: true,
-            col: true
-          }]
-      }, {
-        ln: 'CommonOrderMonitorSpecification',
-        bti: '.CommonOrderSpecification',
-        ps: [{
-            n: 'orderId',
-            rq: true
-          }, {
-            n: 'orderStatusInfo',
-            rq: true,
-            ti: '.StatusType'
-          }, {
-            n: 'orderDateTime',
-            ti: 'DateTime'
-          }, {
-            n: 'orderItem',
-            mno: 0,
-            col: true,
-            ti: '.CommonOrderStatusItemType'
-          }]
-      }, {
-        ln: 'StatusNotificationAckType',
-        bti: '.OrderResponseBaseType'
-      }, {
-        ln: 'EncodingType',
-        ps: [{
-            n: 'supportedEncoding',
-            rq: true,
-            col: true
-          }]
-      }, {
-        ln: 'OrderItemGroupPrice',
-        ps: [{
-            n: 'provider',
-            rq: true,
-            ti: '.ProviderType'
-          }, {
-            n: 'quotationId'
-          }, {
-            n: 'validityTime',
-            ti: 'DateTime'
-          }, {
-            n: 'price',
-            rq: true,
-            ti: '.CurrencyType'
-          }, {
-            n: 'balance',
-            ti: '.CurrencyType'
-          }, {
-            n: 'orderItemPrice',
-            rq: true,
-            col: true,
-            ti: '.OrderItemPrice'
-          }, {
-            n: 'contractInformation'
-          }]
-      }, {
-        ln: 'OrderingServiceContentsType.CancelCapabilities',
-        tn: null,
-        ps: [{
-            n: 'supported',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'supported'
-            },
-            t: 'a'
-          }, {
-            n: 'asynchronous',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'asynchronous'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TaskingRequestIdType',
-        bti: '.OrderItemIdType',
-        ps: [{
-            n: 'id',
-            rq: true,
-            en: 'ID'
+            n: 'infoRequest',
+            ti: '.OnLineAccessAddressType.ServiceAddress.InfoRequest'
           }]
       }, {
         ln: 'OrderingServiceContentsType.GetStatusCapabilities',
@@ -918,193 +1133,21 @@ var OSEO_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'OrderRequestBaseType',
-        ps: [{
-            n: 'service',
-            rq: true,
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ProviderType',
-        ps: [{
-            n: 'serviceName',
-            rq: true
-          }, {
-            n: 'organization',
-            rq: true
-          }]
-      }, {
-        ln: 'OrderingServiceContentsType.GetQuotationCapabilities',
-        tn: null,
-        ps: [{
-            n: 'supported',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'supported'
-            },
-            t: 'a'
-          }, {
-            n: 'synchronous',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'synchronous'
-            },
-            t: 'a'
-          }, {
-            n: 'asynchronous',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'asynchronous'
-            },
-            t: 'a'
-          }, {
-            n: 'monitoring',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'monitoring'
-            },
-            t: 'a'
-          }, {
-            n: 'offLine',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'off-line'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CollectionCapability.CancelCapabilities',
-        tn: null,
-        ps: [{
-            n: 'supported',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'supported'
-            },
-            t: 'a'
-          }, {
-            n: 'asynchronous',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'asynchronous'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CommonOrderOptionsType.ProductDeliveryOptions',
-        tn: null,
-        ps: [{
-            n: 'onlineDataAccess',
-            rq: true,
-            ti: '.CommonOrderOptionsType.ProductDeliveryOptions.OnlineDataAccess'
-          }, {
-            n: 'onlineDataDelivery',
-            rq: true,
-            ti: '.CommonOrderOptionsType.ProductDeliveryOptions.OnlineDataDelivery'
-          }, {
-            n: 'mediaDelivery',
-            rq: true,
-            ti: '.CommonOrderOptionsType.ProductDeliveryOptions.MediaDelivery'
-          }]
-      }, {
-        ln: 'DeliveryOptionsType.MediaDelivery',
-        tn: null,
-        ps: [{
-            n: 'packageMedium',
-            rq: true
-          }, {
-            n: 'shippingInstructions'
-          }]
-      }, {
-        ln: 'CollectionCapability.SubscriptionOrders',
-        tn: null,
-        ps: [{
-            n: 'supported',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'supported'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DescribeResultAccessResponseType',
-        bti: '.OrderResponseBaseType',
-        ps: [{
-            n: 'urLs',
-            mno: 0,
-            col: true,
-            en: 'URLs',
-            ti: '.ItemURLType'
-          }]
-      }, {
-        ln: 'OrderingServiceContentsType.SubscriptionOrders',
-        tn: null,
-        ps: [{
-            n: 'supported',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'supported'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'OnLineAccessAddressType.ResourceAddress.ServiceRequest',
-        tn: null,
-        ps: [{
-            n: 'any',
-            rq: true,
-            dom: false,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'CollectionCapability.ProductOrders',
-        tn: null,
-        ps: [{
-            n: 'supported',
-            rq: true,
-            ti: 'Boolean',
-            an: {
-              lp: 'supported'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'OrderOptionsRequestType',
+        ln: 'GetStatusRequestType',
         bti: '.OrderRequestBaseType',
         ps: [{
             n: 'timeStamp',
             ti: 'DateTime'
           }, {
-            n: 'collectionId',
+            n: 'orderId',
             rq: true
           }, {
-            n: 'identifier',
+            n: 'filteringCriteria',
             rq: true,
-            col: true
+            ti: '.OrderSearchCriteriaType'
           }, {
-            n: 'taskingRequestId',
-            rq: true,
-            ti: '.TaskingRequestIdType'
+            n: 'presentation',
+            rq: true
           }]
       }, {
         ln: 'GetQuotationResponseRequestType',
@@ -1120,120 +1163,132 @@ var OSEO_1_0_Module_Factory = function () {
             ti: '.OrderQuotation'
           }]
       }, {
-        ln: 'OrderItemPrice',
+        ln: 'SceneSelectionDescriptorType.SceneRestriction',
+        tn: null,
+        bti: 'SWE_2_0.AbstractDataComponentPropertyType'
+      }, {
+        ln: 'StatusNotificationType',
+        bti: '.OrderRequestBaseType',
         ps: [{
-            n: 'itemId',
-            rq: true
+            n: 'timeStamp',
+            ti: 'DateTime'
           }, {
-            n: 'productId',
+            n: 'orderMonitorSpecification',
             rq: true,
-            ti: '.ProductIdType'
-          }, {
-            n: 'taskingRequestId',
-            rq: true,
-            ti: '.TaskingRequestIdType'
-          }, {
-            n: 'subscriptionId',
-            rq: true,
-            ti: '.SubscriptionIdType'
-          }, {
-            n: 'price',
-            ti: '.CurrencyType'
-          }, {
-            n: 'priceInformation'
-          }, {
-            n: 'contractInformation'
+            ti: '.CommonOrderMonitorSpecification'
           }]
       }, {
-        ln: 'CommonOrderOptionsType.ProductDeliveryOptions.OnlineDataAccess',
+        ln: 'OrderItemIdType'
+      }, {
+        ln: 'CommonOrderItemType.Option',
         tn: null,
         ps: [{
-            n: 'protocol',
+            n: 'parameterData',
             rq: true,
-            col: true
+            en: 'ParameterData',
+            ti: '.ParameterDataType'
           }]
-      }, {
-        ln: 'CommonOrderSpecification',
-        ps: [{
-            n: 'orderReference'
-          }, {
-            n: 'orderRemark'
-          }, {
-            n: 'deliveryInformation',
-            ti: '.DeliveryInformationType'
-          }, {
-            n: 'invoiceAddress',
-            ti: '.DeliveryAddressType'
-          }, {
-            n: 'packaging',
-            mx: false,
-            dom: false,
-            t: 'er'
-          }, {
-            n: 'option',
-            mno: 0,
-            col: true,
-            ti: '.CommonOrderSpecification.Option'
-          }, {
-            n: 'deliveryOptions',
-            ti: '.DeliveryOptionsType'
-          }, {
-            n: 'priority'
-          }, {
-            n: 'orderType',
-            rq: true
-          }, {
-            n: 'extension',
-            mno: 0,
-            col: true,
-            ti: 'AnySimpleType'
-          }]
-      }, {
-        t: 'enum',
-        ln: 'PackageMedium',
-        vs: ['NTP', 'DAT', 'Exabyte', 'CD-ROM', 'DLT', 'D1', 'DVD', 'BD', 'LTO', 'LTO2', 'LTO4']
-      }, {
-        t: 'enum',
-        ln: 'EnumStatusType',
-        vs: ['Submitted', 'Accepted', 'Cancelled', 'Completed', 'InProduction', 'Suspended', 'Failed', 'Terminated', 'Downloaded']
       }, {
         t: 'enum',
         ln: 'PresentationType',
         vs: ['brief', 'full']
       }, {
         t: 'enum',
-        ln: 'ProtocolType',
-        vs: ['ftp', 'ftps', 'sftp', 'P2P', 'wcs', 'wms', 'e-mail', 'dds', 'http', 'https']
-      }, {
-        t: 'enum',
         ln: 'PriorityType',
         vs: ['STANDARD', 'FAST_TRACK']
-      }, {
-        t: 'enum',
-        ln: 'SWEEncoding',
-        vs: ['XMLEncoding', 'TextEncoding']
-      }, {
-        t: 'enum',
-        ln: 'EnumOrderType',
-        vs: ['PRODUCT_ORDER', 'SUBSCRIPTION_ORDER', 'TASKING_ORDER']
       }, {
         t: 'enum',
         ln: 'OrderResponseStatusType',
         vs: ['success', 'partial']
       }, {
         t: 'enum',
+        ln: 'SWEEncoding',
+        vs: ['XMLEncoding', 'TextEncoding']
+      }, {
+        t: 'enum',
         ln: 'EnumPackagingType',
         vs: ['zip', 'tar', 'tgz', 'compress', 'bzip', 'bzip2', 'gzip', 'rar', '7z']
+      }, {
+        t: 'enum',
+        ln: 'PackageMedium',
+        vs: ['NTP', 'DAT', 'Exabyte', 'CD-ROM', 'DLT', 'D1', 'DVD', 'BD', 'LTO', 'LTO2', 'LTO4']
+      }, {
+        t: 'enum',
+        ln: 'ProtocolType',
+        vs: ['ftp', 'ftps', 'sftp', 'P2P', 'wcs', 'wms', 'e-mail', 'dds', 'http', 'https']
+      }, {
+        t: 'enum',
+        ln: 'EnumStatusType',
+        vs: ['Submitted', 'Accepted', 'Cancelled', 'Completed', 'InProduction', 'Suspended', 'Failed', 'Terminated', 'Downloaded']
+      }, {
+        t: 'enum',
+        ln: 'EnumOrderType',
+        vs: ['PRODUCT_ORDER', 'SUBSCRIPTION_ORDER', 'TASKING_ORDER']
       }],
     eis: [{
-        en: 'CancelResponse',
-        ti: '.StatusNotificationType'
-      }, {
         en: 'packaging',
         sc: '.CommonOrderSpecification'
       }, {
+        en: 'GetQuotationResponseAck',
+        ti: '.GetQuotationResponseAckType'
+      }, {
+        en: 'priority'
+      }, {
+        en: 'GetOptions',
+        ti: '.OrderOptionsRequestType'
+      }, {
+        en: 'itemId'
+      }, {
+        en: 'subscriptionId',
+        ti: '.SubscriptionIdType'
+      }, {
         en: 'SubmitAck',
         ti: '.SubmitOrderResponseType'
+      }, {
+        en: 'taskingRequestId',
+        ti: '.TaskingRequestIdType'
+      }, {
+        en: 'paymentMethod'
+      }, {
+        en: 'Submit',
+        ti: '.SubmitOrderRequestType'
+      }, {
+        en: 'DescribeResultAccessResponse',
+        ti: '.DescribeResultAccessResponseType'
+      }, {
+        en: 'orderMonitorSpecification',
+        ti: '.CommonOrderMonitorSpecification'
+      }, {
+        en: 'productId',
+        ti: '.ProductIdType'
+      }, {
+        en: 'GetQuotationAck',
+        ti: '.GetQuotationAckType'
+      }, {
+        en: 'identifier'
+      }, {
+        en: 'extension',
+        ti: 'AnySimpleType'
+      }, {
+        en: 'GetQuotationResponse',
+        ti: '.GetQuotationResponseRequestType'
+      }, {
+        en: 'CancelResponse',
+        ti: '.StatusNotificationType'
+      }, {
+        en: 'GetQuotation',
+        ti: '.GetQuotationRequestType'
+      }, {
+        en: 'orderOptions',
+        ti: '.CommonOrderOptionsType'
+      }, {
+        en: 'protocol'
+      }, {
+        en: 'GetCapabilities',
+        ti: '.GetCapabilities'
+      }, {
+        en: 'GetOptionsResponse',
+        ti: '.OrderOptionsResponseType'
       }, {
         en: 'DescribeResultAccess',
         ti: '.DescribeResultAccessRequestType'
@@ -1241,102 +1296,47 @@ var OSEO_1_0_Module_Factory = function () {
         en: 'CancelResponseAck',
         ti: '.StatusNotificationAckType'
       }, {
-        en: 'productId',
-        ti: '.ProductIdType'
+        en: 'deliveryOptions',
+        ti: '.DeliveryOptionsType'
       }, {
-        en: 'identifier'
-      }, {
-        en: 'GetOptionsResponse',
-        ti: '.OrderOptionsResponseType'
-      }, {
-        en: 'statusNotification'
-      }, {
-        en: 'paymentMethod'
-      }, {
-        en: 'GetQuotationResponse',
-        ti: '.GetQuotationResponseRequestType'
-      }, {
-        en: 'ParameterData',
-        ti: '.ParameterDataType'
-      }, {
-        en: 'orderId'
-      }, {
-        en: 'priority'
-      }, {
-        en: 'GetQuotationResponseAck',
-        ti: '.GetQuotationResponseAckType'
-      }, {
-        en: 'Capabilities',
-        ti: '.Capabilities'
-      }, {
-        en: 'GetQuotation',
-        ti: '.GetQuotationRequestType'
-      }, {
-        en: 'productOrderOptionsId'
-      }, {
-        en: 'subscriptionId',
-        ti: '.SubscriptionIdType'
-      }, {
-        en: 'orderReference'
+        en: 'GetStatus',
+        ti: '.GetStatusRequestType'
       }, {
         en: 'orderSpecification',
         ti: '.OrderSpecification'
       }, {
+        en: 'collectionId'
+      }, {
+        en: 'Capabilities',
+        ti: '.Capabilities'
+      }, {
         en: 'SubmitResponseAck',
         ti: '.StatusNotificationAckType'
       }, {
-        en: 'Cancel',
-        ti: '.CancelRequestType'
+        en: 'orderReference'
       }, {
-        en: 'GetQuotationAck',
-        ti: '.GetQuotationAckType'
+        en: 'statusNotification'
       }, {
-        en: 'SubmitResponse',
-        ti: '.StatusNotificationType'
+        en: 'ParameterData',
+        ti: '.ParameterDataType'
       }, {
         en: 'GetStatusResponse',
         ti: '.GetStatusResponseType'
       }, {
-        en: 'Submit',
-        ti: '.SubmitOrderRequestType'
+        en: 'orderId'
       }, {
-        en: 'orderMonitorSpecification',
-        ti: '.CommonOrderMonitorSpecification'
+        en: 'Cancel',
+        ti: '.CancelRequestType'
       }, {
-        en: 'orderOptions',
-        ti: '.CommonOrderOptionsType'
+        en: 'productOrderOptionsId'
       }, {
-        en: 'GetOptions',
-        ti: '.OrderOptionsRequestType'
-      }, {
-        en: 'taskingRequestId',
-        ti: '.TaskingRequestIdType'
-      }, {
-        en: 'GetCapabilities',
-        ti: '.GetCapabilities'
+        en: 'SubmitResponse',
+        ti: '.StatusNotificationType'
       }, {
         en: 'CancelAck',
         ti: '.CancelRequestAckType'
       }, {
-        en: 'collectionId'
-      }, {
-        en: 'deliveryOptions',
-        ti: '.DeliveryOptionsType'
-      }, {
-        en: 'DescribeResultAccessResponse',
-        ti: '.DescribeResultAccessResponseType'
-      }, {
         en: 'contractInformation'
-      }, {
-        en: 'protocol'
-      }, {
-        en: 'itemId'
-      }, {
-        en: 'extension',
-        ti: 'AnySimpleType'
-      }, {
-        en: 'GetStatus',
-        ti: '.GetStatusRequestType'
       }]
   };
   return {

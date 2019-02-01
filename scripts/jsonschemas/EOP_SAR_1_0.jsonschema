@@ -2,6 +2,24 @@
 {
     "id":"http://earth.esa.int/sar#",
     "definitions":{
+        "EarthObservationType":{
+            "allOf":[
+                {
+                    "$ref":"http://earth.esa.int/eop#/definitions/EarthObservationType"
+                },
+                {
+                    "type":"object",
+                    "title":"EarthObservationType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationType",
+                "namespaceURI":"http://earth.esa.int/sar"
+            }
+        },
         "AcquisitionType":{
             "allOf":[
                 {
@@ -120,21 +138,15 @@
                 "dopplerFrequency"
             ]
         },
-        "EarthObservationType":{
+        "PolarisationChannelsPropertyType":{
             "allOf":[
                 {
-                    "$ref":"http://earth.esa.int/eop#/definitions/EarthObservationType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationType",
-                    "properties":{
-                    }
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
                 }
             ],
-            "typeType":"classInfo",
+            "typeType":"enumInfo",
             "typeName":{
-                "localPart":"EarthObservationType",
+                "localPart":"PolarisationChannelsPropertyType",
                 "namespaceURI":"http://earth.esa.int/sar"
             }
         },
@@ -147,18 +159,6 @@
             "typeType":"enumInfo",
             "typeName":{
                 "localPart":"PolarisationModePropertyType",
-                "namespaceURI":"http://earth.esa.int/sar"
-            }
-        },
-        "PolarisationChannelsPropertyType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"PolarisationChannelsPropertyType",
                 "namespaceURI":"http://earth.esa.int/sar"
             }
         }
@@ -177,7 +177,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "polarisationMode"
+                                        "polarisationChannels"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -190,11 +190,45 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/PolarisationModePropertyType"
+                    "$ref":"#/definitions/PolarisationChannelsPropertyType"
                 }
             },
             "elementName":{
-                "localPart":"polarisationMode",
+                "localPart":"polarisationChannels",
+                "namespaceURI":"http://earth.esa.int/sar"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "antennaLookDirection"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://earth.esa.int/sar"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            },
+            "elementName":{
+                "localPart":"antennaLookDirection",
                 "namespaceURI":"http://earth.esa.int/sar"
             }
         },
@@ -245,40 +279,6 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Acquisition"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://earth.esa.int/sar"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/AcquisitionType"
-                }
-            },
-            "elementName":{
-                "localPart":"Acquisition",
-                "namespaceURI":"http://earth.esa.int/sar"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
                                         "incidenceAngleVariation"
                                     ]
                                 },
@@ -297,74 +297,6 @@
             },
             "elementName":{
                 "localPart":"incidenceAngleVariation",
-                "namespaceURI":"http://earth.esa.int/sar"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "dopplerFrequency"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://earth.esa.int/sar"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/MeasureType"
-                }
-            },
-            "elementName":{
-                "localPart":"dopplerFrequency",
-                "namespaceURI":"http://earth.esa.int/sar"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "polarisationChannels"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://earth.esa.int/sar"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/PolarisationChannelsPropertyType"
-                }
-            },
-            "elementName":{
-                "localPart":"polarisationChannels",
                 "namespaceURI":"http://earth.esa.int/sar"
             }
         },
@@ -415,6 +347,74 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
+                                        "Acquisition"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://earth.esa.int/sar"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/AcquisitionType"
+                }
+            },
+            "elementName":{
+                "localPart":"Acquisition",
+                "namespaceURI":"http://earth.esa.int/sar"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "polarisationMode"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://earth.esa.int/sar"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/PolarisationModePropertyType"
+                }
+            },
+            "elementName":{
+                "localPart":"polarisationMode",
+                "namespaceURI":"http://earth.esa.int/sar"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
                                         "minimumIncidenceAngle"
                                     ]
                                 },
@@ -449,7 +449,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "antennaLookDirection"
+                                        "dopplerFrequency"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -462,11 +462,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                    "$ref":"#/definitions/MeasureType"
                 }
             },
             "elementName":{
-                "localPart":"antennaLookDirection",
+                "localPart":"dopplerFrequency",
                 "namespaceURI":"http://earth.esa.int/sar"
             }
         }

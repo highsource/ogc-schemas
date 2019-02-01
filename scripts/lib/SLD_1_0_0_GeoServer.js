@@ -2,15 +2,45 @@ var SLD_1_0_0_GeoServer_Module_Factory = function () {
   var SLD_1_0_0 = {
     n: 'SLD_1_0_0',
     dens: 'http:\/\/www.opengis.net\/sld',
-    deps: ['Filter_1_0_0', 'XLink_1_0'],
+    deps: ['XLink_1_0', 'Filter_1_0_0'],
     tis: [{
-        ln: 'PolygonSymbolizer',
-        tn: null,
-        bti: '.SymbolizerType',
+        ln: 'ParameterValueType',
         ps: [{
-            n: 'geometry',
-            en: 'Geometry',
-            ti: '.Geometry'
+            n: 'content',
+            col: true,
+            dom: false,
+            en: {
+              lp: 'expression',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'Filter_1_0_0.ExpressionType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'ContrastEnhancement',
+        tn: null,
+        ps: [{
+            n: 'normalize',
+            rq: true,
+            en: 'Normalize',
+            ti: '.Normalize'
+          }, {
+            n: 'histogram',
+            rq: true,
+            en: 'Histogram',
+            ti: '.Histogram'
+          }, {
+            n: 'gammaValue',
+            en: 'GammaValue',
+            ti: 'Double'
+          }]
+      }, {
+        ln: 'Mark',
+        tn: null,
+        ps: [{
+            n: 'wellKnownName',
+            en: 'WellKnownName',
+            ti: '.WellKnownName'
           }, {
             n: 'fill',
             en: 'Fill',
@@ -21,58 +51,42 @@ var SLD_1_0_0_GeoServer_Module_Factory = function () {
             ti: '.Stroke'
           }]
       }, {
-        ln: 'SelectedChannelType',
-        ps: [{
-            n: 'sourceChannelName',
-            rq: true,
-            en: 'SourceChannelName'
-          }, {
-            n: 'contrastEnhancement',
-            en: 'ContrastEnhancement',
-            ti: '.ContrastEnhancement'
-          }]
-      }, {
-        ln: 'Transformation',
+        ln: 'ImageOutline',
         tn: null,
         ps: [{
-            n: 'function',
+            n: 'lineSymbolizer',
             rq: true,
-            en: {
-              lp: 'Function',
-              ns: 'http:\/\/www.opengis.net\/ogc'
+            en: 'LineSymbolizer',
+            ti: '.LineSymbolizer'
+          }, {
+            n: 'polygonSymbolizer',
+            rq: true,
+            en: 'PolygonSymbolizer',
+            ti: '.PolygonSymbolizer'
+          }]
+      }, {
+        ln: 'ColorMap',
+        tn: null,
+        ps: [{
+            n: 'colorMapEntry',
+            mno: 0,
+            col: true,
+            en: 'ColorMapEntry',
+            ti: '.ColorMapEntry'
+          }, {
+            n: 'type',
+            an: {
+              lp: 'type'
             },
-            ti: 'Filter_1_0_0.FunctionType'
-          }]
-      }, {
-        ln: 'Displacement',
-        tn: null,
-        ps: [{
-            n: 'displacementX',
-            rq: true,
-            en: 'DisplacementX',
-            ti: '.ParameterValueType'
+            t: 'a'
           }, {
-            n: 'displacementY',
-            rq: true,
-            en: 'DisplacementY',
-            ti: '.ParameterValueType'
+            n: 'extended',
+            ti: 'Boolean',
+            an: {
+              lp: 'extended'
+            },
+            t: 'a'
           }]
-      }, {
-        ln: 'RemoteOWS',
-        tn: null,
-        ps: [{
-            n: 'service',
-            rq: true,
-            en: 'Service'
-          }, {
-            n: 'onlineResource',
-            rq: true,
-            en: 'OnlineResource',
-            ti: '.OnlineResource'
-          }]
-      }, {
-        ln: 'Normalize',
-        tn: null
       }, {
         ln: 'AVERAGE',
         tn: null
@@ -101,24 +115,472 @@ var SLD_1_0_0_GeoServer_Module_Factory = function () {
             ti: '.SelectedChannelType'
           }]
       }, {
-        ln: 'FeatureTypeConstraint',
+        ln: 'Stroke',
         tn: null,
         ps: [{
-            n: 'featureTypeName',
-            en: 'FeatureTypeName'
+            n: 'graphicFill',
+            rq: true,
+            en: 'GraphicFill',
+            ti: '.GraphicFill'
+          }, {
+            n: 'graphicStroke',
+            rq: true,
+            en: 'GraphicStroke',
+            ti: '.GraphicStroke'
+          }, {
+            n: 'cssParameter',
+            mno: 0,
+            col: true,
+            en: 'CssParameter',
+            ti: '.CssParameter'
+          }]
+      }, {
+        ln: 'Font',
+        tn: null,
+        ps: [{
+            n: 'cssParameter',
+            mno: 0,
+            col: true,
+            en: 'CssParameter',
+            ti: '.CssParameter'
+          }]
+      }, {
+        ln: 'NamedLayer',
+        tn: null,
+        ps: [{
+            n: 'name',
+            rq: true,
+            en: 'Name'
+          }, {
+            n: 'layerFeatureConstraints',
+            en: 'LayerFeatureConstraints',
+            ti: '.LayerFeatureConstraints'
+          }, {
+            n: 'namedStyleOrUserStyle',
+            mno: 0,
+            col: true,
+            etis: [{
+                en: 'NamedStyle',
+                ti: '.NamedStyle'
+              }, {
+                en: 'UserStyle',
+                ti: '.UserStyle'
+              }],
+            t: 'es'
+          }]
+      }, {
+        ln: 'WellKnownName',
+        tn: null,
+        ps: [{
+            n: 'content',
+            col: true,
+            dom: false,
+            en: {
+              lp: 'expression',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'Filter_1_0_0.ExpressionType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'SelectedChannelType',
+        ps: [{
+            n: 'sourceChannelName',
+            rq: true,
+            en: 'SourceChannelName'
+          }, {
+            n: 'contrastEnhancement',
+            en: 'ContrastEnhancement',
+            ti: '.ContrastEnhancement'
+          }]
+      }, {
+        ln: 'InlineFeature',
+        tn: null,
+        ps: [{
+            n: 'any',
+            mno: 0,
+            col: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'UserStyle',
+        tn: null,
+        ps: [{
+            n: 'name',
+            en: 'Name'
+          }, {
+            n: 'title',
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'isDefault',
+            en: 'IsDefault'
+          }, {
+            n: 'featureTypeStyle',
+            rq: true,
+            col: true,
+            en: 'FeatureTypeStyle',
+            ti: '.FeatureTypeStyle'
+          }]
+      }, {
+        ln: 'PointSymbolizer',
+        tn: null,
+        bti: '.SymbolizerType',
+        ps: [{
+            n: 'geometry',
+            en: 'Geometry',
+            ti: '.Geometry'
+          }, {
+            n: 'graphic',
+            en: 'Graphic',
+            ti: '.Graphic'
+          }]
+      }, {
+        ln: 'Normalize',
+        tn: null
+      }, {
+        ln: 'ElseFilter',
+        tn: null
+      }, {
+        ln: 'Rule',
+        tn: null,
+        ps: [{
+            n: 'name',
+            en: 'Name'
+          }, {
+            n: 'title',
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'legendGraphic',
+            en: 'LegendGraphic',
+            ti: '.LegendGraphic'
           }, {
             n: 'filter',
+            rq: true,
             en: {
               lp: 'Filter',
               ns: 'http:\/\/www.opengis.net\/ogc'
             },
             ti: 'Filter_1_0_0.FilterType'
           }, {
-            n: 'extent',
+            n: 'elseFilter',
+            rq: true,
+            en: 'ElseFilter',
+            ti: '.ElseFilter'
+          }, {
+            n: 'minScaleDenominator',
+            en: 'MinScaleDenominator',
+            ti: 'Double'
+          }, {
+            n: 'maxScaleDenominator',
+            en: 'MaxScaleDenominator',
+            ti: 'Double'
+          }, {
+            n: 'symbolizer',
+            rq: true,
+            col: true,
+            mx: false,
+            dom: false,
+            en: 'Symbolizer',
+            ti: '.SymbolizerType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'AnchorPoint',
+        tn: null,
+        ps: [{
+            n: 'anchorPointX',
+            rq: true,
+            en: 'AnchorPointX',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'anchorPointY',
+            rq: true,
+            en: 'AnchorPointY',
+            ti: '.ParameterValueType'
+          }]
+      }, {
+        ln: 'RANDOM',
+        tn: null
+      }, {
+        ln: 'ColorMapEntry',
+        tn: null,
+        ps: [{
+            n: 'color',
+            rq: true,
+            an: {
+              lp: 'color'
+            },
+            t: 'a'
+          }, {
+            n: 'opacity',
+            ti: 'Double',
+            an: {
+              lp: 'opacity'
+            },
+            t: 'a'
+          }, {
+            n: 'quantity',
+            ti: 'Double',
+            an: {
+              lp: 'quantity'
+            },
+            t: 'a'
+          }, {
+            n: 'label',
+            an: {
+              lp: 'label'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Transformation',
+        tn: null,
+        ps: [{
+            n: 'function',
+            rq: true,
+            en: {
+              lp: 'Function',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'Filter_1_0_0.FunctionType'
+          }]
+      }, {
+        ln: 'Displacement',
+        tn: null,
+        ps: [{
+            n: 'displacementX',
+            rq: true,
+            en: 'DisplacementX',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'displacementY',
+            rq: true,
+            en: 'DisplacementY',
+            ti: '.ParameterValueType'
+          }]
+      }, {
+        ln: 'TextSymbolizer',
+        tn: null,
+        bti: '.SymbolizerType',
+        ps: [{
+            n: 'geometry',
+            en: 'Geometry',
+            ti: '.Geometry'
+          }, {
+            n: 'label',
+            en: 'Label',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'font',
+            en: 'Font',
+            ti: '.Font'
+          }, {
+            n: 'labelPlacement',
+            en: 'LabelPlacement',
+            ti: '.LabelPlacement'
+          }, {
+            n: 'halo',
+            en: 'Halo',
+            ti: '.Halo'
+          }, {
+            n: 'fill',
+            en: 'Fill',
+            ti: '.Fill'
+          }, {
+            n: 'graphic',
+            en: 'Graphic',
+            ti: '.Graphic'
+          }, {
+            n: 'priority',
+            en: 'Priority',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'vendorOption',
             mno: 0,
             col: true,
-            en: 'Extent',
-            ti: '.Extent'
+            en: 'VendorOption',
+            ti: '.VendorOption'
+          }]
+      }, {
+        ln: 'PolygonSymbolizer',
+        tn: null,
+        bti: '.SymbolizerType',
+        ps: [{
+            n: 'geometry',
+            en: 'Geometry',
+            ti: '.Geometry'
+          }, {
+            n: 'fill',
+            en: 'Fill',
+            ti: '.Fill'
+          }, {
+            n: 'stroke',
+            en: 'Stroke',
+            ti: '.Stroke'
+          }]
+      }, {
+        ln: 'GraphicStroke',
+        tn: null,
+        ps: [{
+            n: 'graphic',
+            rq: true,
+            en: 'Graphic',
+            ti: '.Graphic'
+          }]
+      }, {
+        ln: 'LabelPlacement',
+        tn: null,
+        ps: [{
+            n: 'pointPlacement',
+            rq: true,
+            en: 'PointPlacement',
+            ti: '.PointPlacement'
+          }, {
+            n: 'linePlacement',
+            rq: true,
+            en: 'LinePlacement',
+            ti: '.LinePlacement'
+          }]
+      }, {
+        ln: 'LineSymbolizer',
+        tn: null,
+        bti: '.SymbolizerType',
+        ps: [{
+            n: 'geometry',
+            en: 'Geometry',
+            ti: '.Geometry'
+          }, {
+            n: 'stroke',
+            en: 'Stroke',
+            ti: '.Stroke'
+          }]
+      }, {
+        ln: 'LegendGraphic',
+        tn: null,
+        ps: [{
+            n: 'graphic',
+            rq: true,
+            en: 'Graphic',
+            ti: '.Graphic'
+          }]
+      }, {
+        ln: 'SymbolizerType',
+        ps: [{
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'UserLayer',
+        tn: null,
+        ps: [{
+            n: 'name',
+            en: 'Name'
+          }, {
+            n: 'inlineFeature',
+            rq: true,
+            en: 'InlineFeature',
+            ti: '.InlineFeature'
+          }, {
+            n: 'remoteOWS',
+            en: 'RemoteOWS',
+            ti: '.RemoteOWS'
+          }, {
+            n: 'layerFeatureConstraints',
+            rq: true,
+            en: 'LayerFeatureConstraints',
+            ti: '.LayerFeatureConstraints'
+          }, {
+            n: 'userStyle',
+            rq: true,
+            col: true,
+            en: 'UserStyle',
+            ti: '.UserStyle'
+          }]
+      }, {
+        ln: 'RasterSymbolizer',
+        tn: null,
+        bti: '.SymbolizerType',
+        ps: [{
+            n: 'geometry',
+            en: 'Geometry',
+            ti: '.Geometry'
+          }, {
+            n: 'opacity',
+            en: 'Opacity',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'channelSelection',
+            en: 'ChannelSelection',
+            ti: '.ChannelSelection'
+          }, {
+            n: 'overlapBehavior',
+            en: 'OverlapBehavior',
+            ti: '.OverlapBehavior'
+          }, {
+            n: 'colorMap',
+            en: 'ColorMap',
+            ti: '.ColorMap'
+          }, {
+            n: 'contrastEnhancement',
+            en: 'ContrastEnhancement',
+            ti: '.ContrastEnhancement'
+          }, {
+            n: 'shadedRelief',
+            en: 'ShadedRelief',
+            ti: '.ShadedRelief'
+          }, {
+            n: 'imageOutline',
+            en: 'ImageOutline',
+            ti: '.ImageOutline'
+          }]
+      }, {
+        ln: 'ExternalGraphic',
+        tn: null,
+        ps: [{
+            n: 'onlineResource',
+            rq: true,
+            en: 'OnlineResource',
+            ti: '.OnlineResource'
+          }, {
+            n: 'format',
+            rq: true,
+            en: 'Format'
+          }]
+      }, {
+        ln: 'Extent',
+        tn: null,
+        ps: [{
+            n: 'name',
+            rq: true,
+            en: 'Name'
+          }, {
+            n: 'value',
+            rq: true,
+            en: 'Value'
+          }]
+      }, {
+        ln: 'Fill',
+        tn: null,
+        ps: [{
+            n: 'graphicFill',
+            en: 'GraphicFill',
+            ti: '.GraphicFill'
+          }, {
+            n: 'cssParameter',
+            mno: 0,
+            col: true,
+            en: 'CssParameter',
+            ti: '.CssParameter'
           }]
       }, {
         ln: 'FeatureTypeStyle',
@@ -158,14 +620,33 @@ var SLD_1_0_0_GeoServer_Module_Factory = function () {
             ti: '.VendorOption'
           }]
       }, {
-        ln: 'RANDOM',
-        tn: null
-      }, {
-        ln: 'WellKnownName',
+        ln: 'VendorOption',
         tn: null,
         ps: [{
-            n: 'content',
-            col: true,
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'NamedStyle',
+        tn: null,
+        ps: [{
+            n: 'name',
+            rq: true,
+            en: 'Name'
+          }]
+      }, {
+        ln: 'Geometry',
+        tn: null,
+        ps: [{
+            n: 'expression',
+            rq: true,
+            mx: false,
             dom: false,
             en: {
               lp: 'expression',
@@ -173,6 +654,174 @@ var SLD_1_0_0_GeoServer_Module_Factory = function () {
             },
             ti: 'Filter_1_0_0.ExpressionType',
             t: 'er'
+          }]
+      }, {
+        ln: 'LATESTONTOP',
+        tn: null
+      }, {
+        ln: 'Histogram',
+        tn: null
+      }, {
+        ln: 'CssParameter',
+        tn: null,
+        bti: '.ParameterValueType',
+        ps: [{
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'EARLIESTONTOP',
+        tn: null
+      }, {
+        ln: 'StyledLayerDescriptor',
+        tn: null,
+        ps: [{
+            n: 'name',
+            en: 'Name'
+          }, {
+            n: 'title',
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'namedLayerOrUserLayer',
+            mno: 0,
+            col: true,
+            etis: [{
+                en: 'NamedLayer',
+                ti: '.NamedLayer'
+              }, {
+                en: 'UserLayer',
+                ti: '.UserLayer'
+              }],
+            t: 'es'
+          }, {
+            n: 'version',
+            rq: true,
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'Graphic',
+        tn: null,
+        ps: [{
+            n: 'externalGraphicOrMark',
+            mno: 0,
+            col: true,
+            etis: [{
+                en: 'ExternalGraphic',
+                ti: '.ExternalGraphic'
+              }, {
+                en: 'Mark',
+                ti: '.Mark'
+              }],
+            t: 'es'
+          }, {
+            n: 'opacity',
+            en: 'Opacity',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'size',
+            en: 'Size',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'rotation',
+            en: 'Rotation',
+            ti: '.ParameterValueType'
+          }]
+      }, {
+        ln: 'LinePlacement',
+        tn: null,
+        ps: [{
+            n: 'perpendicularOffset',
+            en: 'PerpendicularOffset',
+            ti: '.ParameterValueType'
+          }]
+      }, {
+        ln: 'Halo',
+        tn: null,
+        ps: [{
+            n: 'radius',
+            en: 'Radius',
+            ti: '.ParameterValueType'
+          }, {
+            n: 'fill',
+            en: 'Fill',
+            ti: '.Fill'
+          }]
+      }, {
+        ln: 'FeatureTypeConstraint',
+        tn: null,
+        ps: [{
+            n: 'featureTypeName',
+            en: 'FeatureTypeName'
+          }, {
+            n: 'filter',
+            en: {
+              lp: 'Filter',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'Filter_1_0_0.FilterType'
+          }, {
+            n: 'extent',
+            mno: 0,
+            col: true,
+            en: 'Extent',
+            ti: '.Extent'
+          }]
+      }, {
+        ln: 'LayerFeatureConstraints',
+        tn: null,
+        ps: [{
+            n: 'featureTypeConstraint',
+            rq: true,
+            col: true,
+            en: 'FeatureTypeConstraint',
+            ti: '.FeatureTypeConstraint'
+          }]
+      }, {
+        ln: 'OverlapBehavior',
+        tn: null,
+        ps: [{
+            n: 'latestontop',
+            rq: true,
+            en: 'LATEST_ON_TOP',
+            ti: '.LATESTONTOP'
+          }, {
+            n: 'earliestontop',
+            rq: true,
+            en: 'EARLIEST_ON_TOP',
+            ti: '.EARLIESTONTOP'
+          }, {
+            n: 'average',
+            rq: true,
+            en: 'AVERAGE',
+            ti: '.AVERAGE'
+          }, {
+            n: 'random',
+            rq: true,
+            en: 'RANDOM',
+            ti: '.RANDOM'
+          }]
+      }, {
+        ln: 'RemoteOWS',
+        tn: null,
+        ps: [{
+            n: 'service',
+            rq: true,
+            en: 'Service'
+          }, {
+            n: 'onlineResource',
+            rq: true,
+            en: 'OnlineResource',
+            ti: '.OnlineResource'
           }]
       }, {
         ln: 'OnlineResource',
@@ -231,195 +880,6 @@ var SLD_1_0_0_GeoServer_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'Font',
-        tn: null,
-        ps: [{
-            n: 'cssParameter',
-            mno: 0,
-            col: true,
-            en: 'CssParameter',
-            ti: '.CssParameter'
-          }]
-      }, {
-        ln: 'Fill',
-        tn: null,
-        ps: [{
-            n: 'graphicFill',
-            en: 'GraphicFill',
-            ti: '.GraphicFill'
-          }, {
-            n: 'cssParameter',
-            mno: 0,
-            col: true,
-            en: 'CssParameter',
-            ti: '.CssParameter'
-          }]
-      }, {
-        ln: 'Geometry',
-        tn: null,
-        ps: [{
-            n: 'expression',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'expression',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: 'Filter_1_0_0.ExpressionType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'NamedLayer',
-        tn: null,
-        ps: [{
-            n: 'name',
-            rq: true,
-            en: 'Name'
-          }, {
-            n: 'layerFeatureConstraints',
-            en: 'LayerFeatureConstraints',
-            ti: '.LayerFeatureConstraints'
-          }, {
-            n: 'namedStyleOrUserStyle',
-            mno: 0,
-            col: true,
-            etis: [{
-                en: 'NamedStyle',
-                ti: '.NamedStyle'
-              }, {
-                en: 'UserStyle',
-                ti: '.UserStyle'
-              }],
-            t: 'es'
-          }]
-      }, {
-        ln: 'Stroke',
-        tn: null,
-        ps: [{
-            n: 'graphicFill',
-            rq: true,
-            en: 'GraphicFill',
-            ti: '.GraphicFill'
-          }, {
-            n: 'graphicStroke',
-            rq: true,
-            en: 'GraphicStroke',
-            ti: '.GraphicStroke'
-          }, {
-            n: 'cssParameter',
-            mno: 0,
-            col: true,
-            en: 'CssParameter',
-            ti: '.CssParameter'
-          }]
-      }, {
-        ln: 'ExternalGraphic',
-        tn: null,
-        ps: [{
-            n: 'onlineResource',
-            rq: true,
-            en: 'OnlineResource',
-            ti: '.OnlineResource'
-          }, {
-            n: 'format',
-            rq: true,
-            en: 'Format'
-          }]
-      }, {
-        ln: 'ImageOutline',
-        tn: null,
-        ps: [{
-            n: 'lineSymbolizer',
-            rq: true,
-            en: 'LineSymbolizer',
-            ti: '.LineSymbolizer'
-          }, {
-            n: 'polygonSymbolizer',
-            rq: true,
-            en: 'PolygonSymbolizer',
-            ti: '.PolygonSymbolizer'
-          }]
-      }, {
-        ln: 'GraphicStroke',
-        tn: null,
-        ps: [{
-            n: 'graphic',
-            rq: true,
-            en: 'Graphic',
-            ti: '.Graphic'
-          }]
-      }, {
-        ln: 'StyledLayerDescriptor',
-        tn: null,
-        ps: [{
-            n: 'name',
-            en: 'Name'
-          }, {
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }, {
-            n: 'namedLayerOrUserLayer',
-            mno: 0,
-            col: true,
-            etis: [{
-                en: 'NamedLayer',
-                ti: '.NamedLayer'
-              }, {
-                en: 'UserLayer',
-                ti: '.UserLayer'
-              }],
-            t: 'es'
-          }, {
-            n: 'version',
-            rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'UserStyle',
-        tn: null,
-        ps: [{
-            n: 'name',
-            en: 'Name'
-          }, {
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }, {
-            n: 'isDefault',
-            en: 'IsDefault'
-          }, {
-            n: 'featureTypeStyle',
-            rq: true,
-            col: true,
-            en: 'FeatureTypeStyle',
-            ti: '.FeatureTypeStyle'
-          }]
-      }, {
-        ln: 'Mark',
-        tn: null,
-        ps: [{
-            n: 'wellKnownName',
-            en: 'WellKnownName',
-            ti: '.WellKnownName'
-          }, {
-            n: 'fill',
-            en: 'Fill',
-            ti: '.Fill'
-          }, {
-            n: 'stroke',
-            en: 'Stroke',
-            ti: '.Stroke'
-          }]
-      }, {
         ln: 'ShadedRelief',
         tn: null,
         ps: [{
@@ -432,236 +892,6 @@ var SLD_1_0_0_GeoServer_Module_Factory = function () {
             ti: 'Double'
           }]
       }, {
-        ln: 'OverlapBehavior',
-        tn: null,
-        ps: [{
-            n: 'latestontop',
-            rq: true,
-            en: 'LATEST_ON_TOP',
-            ti: '.LATESTONTOP'
-          }, {
-            n: 'earliestontop',
-            rq: true,
-            en: 'EARLIEST_ON_TOP',
-            ti: '.EARLIESTONTOP'
-          }, {
-            n: 'average',
-            rq: true,
-            en: 'AVERAGE',
-            ti: '.AVERAGE'
-          }, {
-            n: 'random',
-            rq: true,
-            en: 'RANDOM',
-            ti: '.RANDOM'
-          }]
-      }, {
-        ln: 'LabelPlacement',
-        tn: null,
-        ps: [{
-            n: 'pointPlacement',
-            rq: true,
-            en: 'PointPlacement',
-            ti: '.PointPlacement'
-          }, {
-            n: 'linePlacement',
-            rq: true,
-            en: 'LinePlacement',
-            ti: '.LinePlacement'
-          }]
-      }, {
-        ln: 'ColorMap',
-        tn: null,
-        ps: [{
-            n: 'colorMapEntry',
-            mno: 0,
-            col: true,
-            en: 'ColorMapEntry',
-            ti: '.ColorMapEntry'
-          }, {
-            n: 'type',
-            an: {
-              lp: 'type'
-            },
-            t: 'a'
-          }, {
-            n: 'extended',
-            ti: 'Boolean',
-            an: {
-              lp: 'extended'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'InlineFeature',
-        tn: null,
-        ps: [{
-            n: 'any',
-            mno: 0,
-            col: true,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'SymbolizerType',
-        ps: [{
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Graphic',
-        tn: null,
-        ps: [{
-            n: 'externalGraphicOrMark',
-            mno: 0,
-            col: true,
-            etis: [{
-                en: 'ExternalGraphic',
-                ti: '.ExternalGraphic'
-              }, {
-                en: 'Mark',
-                ti: '.Mark'
-              }],
-            t: 'es'
-          }, {
-            n: 'opacity',
-            en: 'Opacity',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'size',
-            en: 'Size',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'rotation',
-            en: 'Rotation',
-            ti: '.ParameterValueType'
-          }]
-      }, {
-        ln: 'EARLIESTONTOP',
-        tn: null
-      }, {
-        ln: 'AnchorPoint',
-        tn: null,
-        ps: [{
-            n: 'anchorPointX',
-            rq: true,
-            en: 'AnchorPointX',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'anchorPointY',
-            rq: true,
-            en: 'AnchorPointY',
-            ti: '.ParameterValueType'
-          }]
-      }, {
-        ln: 'NamedStyle',
-        tn: null,
-        ps: [{
-            n: 'name',
-            rq: true,
-            en: 'Name'
-          }]
-      }, {
-        ln: 'LineSymbolizer',
-        tn: null,
-        bti: '.SymbolizerType',
-        ps: [{
-            n: 'geometry',
-            en: 'Geometry',
-            ti: '.Geometry'
-          }, {
-            n: 'stroke',
-            en: 'Stroke',
-            ti: '.Stroke'
-          }]
-      }, {
-        ln: 'RasterSymbolizer',
-        tn: null,
-        bti: '.SymbolizerType',
-        ps: [{
-            n: 'geometry',
-            en: 'Geometry',
-            ti: '.Geometry'
-          }, {
-            n: 'opacity',
-            en: 'Opacity',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'channelSelection',
-            en: 'ChannelSelection',
-            ti: '.ChannelSelection'
-          }, {
-            n: 'overlapBehavior',
-            en: 'OverlapBehavior',
-            ti: '.OverlapBehavior'
-          }, {
-            n: 'colorMap',
-            en: 'ColorMap',
-            ti: '.ColorMap'
-          }, {
-            n: 'contrastEnhancement',
-            en: 'ContrastEnhancement',
-            ti: '.ContrastEnhancement'
-          }, {
-            n: 'shadedRelief',
-            en: 'ShadedRelief',
-            ti: '.ShadedRelief'
-          }, {
-            n: 'imageOutline',
-            en: 'ImageOutline',
-            ti: '.ImageOutline'
-          }]
-      }, {
-        ln: 'Rule',
-        tn: null,
-        ps: [{
-            n: 'name',
-            en: 'Name'
-          }, {
-            n: 'title',
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }, {
-            n: 'legendGraphic',
-            en: 'LegendGraphic',
-            ti: '.LegendGraphic'
-          }, {
-            n: 'filter',
-            rq: true,
-            en: {
-              lp: 'Filter',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: 'Filter_1_0_0.FilterType'
-          }, {
-            n: 'elseFilter',
-            rq: true,
-            en: 'ElseFilter',
-            ti: '.ElseFilter'
-          }, {
-            n: 'minScaleDenominator',
-            en: 'MinScaleDenominator',
-            ti: 'Double'
-          }, {
-            n: 'maxScaleDenominator',
-            en: 'MaxScaleDenominator',
-            ti: 'Double'
-          }, {
-            n: 'symbolizer',
-            rq: true,
-            col: true,
-            mx: false,
-            dom: false,
-            en: 'Symbolizer',
-            ti: '.SymbolizerType',
-            t: 'er'
-          }]
-      }, {
         ln: 'GraphicFill',
         tn: null,
         ps: [{
@@ -669,236 +899,6 @@ var SLD_1_0_0_GeoServer_Module_Factory = function () {
             rq: true,
             en: 'Graphic',
             ti: '.Graphic'
-          }]
-      }, {
-        ln: 'Halo',
-        tn: null,
-        ps: [{
-            n: 'radius',
-            en: 'Radius',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'fill',
-            en: 'Fill',
-            ti: '.Fill'
-          }]
-      }, {
-        ln: 'PointSymbolizer',
-        tn: null,
-        bti: '.SymbolizerType',
-        ps: [{
-            n: 'geometry',
-            en: 'Geometry',
-            ti: '.Geometry'
-          }, {
-            n: 'graphic',
-            en: 'Graphic',
-            ti: '.Graphic'
-          }]
-      }, {
-        ln: 'TextSymbolizer',
-        tn: null,
-        bti: '.SymbolizerType',
-        ps: [{
-            n: 'geometry',
-            en: 'Geometry',
-            ti: '.Geometry'
-          }, {
-            n: 'label',
-            en: 'Label',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'font',
-            en: 'Font',
-            ti: '.Font'
-          }, {
-            n: 'labelPlacement',
-            en: 'LabelPlacement',
-            ti: '.LabelPlacement'
-          }, {
-            n: 'halo',
-            en: 'Halo',
-            ti: '.Halo'
-          }, {
-            n: 'fill',
-            en: 'Fill',
-            ti: '.Fill'
-          }, {
-            n: 'graphic',
-            en: 'Graphic',
-            ti: '.Graphic'
-          }, {
-            n: 'priority',
-            en: 'Priority',
-            ti: '.ParameterValueType'
-          }, {
-            n: 'vendorOption',
-            mno: 0,
-            col: true,
-            en: 'VendorOption',
-            ti: '.VendorOption'
-          }]
-      }, {
-        ln: 'Extent',
-        tn: null,
-        ps: [{
-            n: 'name',
-            rq: true,
-            en: 'Name'
-          }, {
-            n: 'value',
-            rq: true,
-            en: 'Value'
-          }]
-      }, {
-        ln: 'LinePlacement',
-        tn: null,
-        ps: [{
-            n: 'perpendicularOffset',
-            en: 'PerpendicularOffset',
-            ti: '.ParameterValueType'
-          }]
-      }, {
-        ln: 'VendorOption',
-        tn: null,
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'Histogram',
-        tn: null
-      }, {
-        ln: 'LegendGraphic',
-        tn: null,
-        ps: [{
-            n: 'graphic',
-            rq: true,
-            en: 'Graphic',
-            ti: '.Graphic'
-          }]
-      }, {
-        ln: 'LATESTONTOP',
-        tn: null
-      }, {
-        ln: 'ColorMapEntry',
-        tn: null,
-        ps: [{
-            n: 'color',
-            rq: true,
-            an: {
-              lp: 'color'
-            },
-            t: 'a'
-          }, {
-            n: 'opacity',
-            ti: 'Double',
-            an: {
-              lp: 'opacity'
-            },
-            t: 'a'
-          }, {
-            n: 'quantity',
-            ti: 'Double',
-            an: {
-              lp: 'quantity'
-            },
-            t: 'a'
-          }, {
-            n: 'label',
-            an: {
-              lp: 'label'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ParameterValueType',
-        ps: [{
-            n: 'content',
-            col: true,
-            dom: false,
-            en: {
-              lp: 'expression',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: 'Filter_1_0_0.ExpressionType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'LayerFeatureConstraints',
-        tn: null,
-        ps: [{
-            n: 'featureTypeConstraint',
-            rq: true,
-            col: true,
-            en: 'FeatureTypeConstraint',
-            ti: '.FeatureTypeConstraint'
-          }]
-      }, {
-        ln: 'UserLayer',
-        tn: null,
-        ps: [{
-            n: 'name',
-            en: 'Name'
-          }, {
-            n: 'inlineFeature',
-            rq: true,
-            en: 'InlineFeature',
-            ti: '.InlineFeature'
-          }, {
-            n: 'remoteOWS',
-            en: 'RemoteOWS',
-            ti: '.RemoteOWS'
-          }, {
-            n: 'layerFeatureConstraints',
-            rq: true,
-            en: 'LayerFeatureConstraints',
-            ti: '.LayerFeatureConstraints'
-          }, {
-            n: 'userStyle',
-            rq: true,
-            col: true,
-            en: 'UserStyle',
-            ti: '.UserStyle'
-          }]
-      }, {
-        ln: 'ElseFilter',
-        tn: null
-      }, {
-        ln: 'ContrastEnhancement',
-        tn: null,
-        ps: [{
-            n: 'normalize',
-            rq: true,
-            en: 'Normalize',
-            ti: '.Normalize'
-          }, {
-            n: 'histogram',
-            rq: true,
-            en: 'Histogram',
-            ti: '.Histogram'
-          }, {
-            n: 'gammaValue',
-            en: 'GammaValue',
-            ti: 'Double'
-          }]
-      }, {
-        ln: 'CssParameter',
-        tn: null,
-        bti: '.ParameterValueType',
-        ps: [{
-            n: 'name',
-            rq: true,
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
           }]
       }, {
         ln: 'PointPlacement',
@@ -918,167 +918,132 @@ var SLD_1_0_0_GeoServer_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'AnchorPointX',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'StyledLayerDescriptor',
-        ti: '.StyledLayerDescriptor'
-      }, {
-        en: 'Value'
-      }, {
-        en: 'Transformation',
-        ti: '.Transformation'
-      }, {
-        en: 'OnlineResource',
-        ti: '.OnlineResource'
-      }, {
-        en: 'Mark',
-        ti: '.Mark'
-      }, {
-        en: 'UserStyle',
-        ti: '.UserStyle'
-      }, {
-        en: 'DisplacementY',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'PointPlacement',
-        ti: '.PointPlacement'
-      }, {
-        en: 'GammaValue',
-        ti: 'Double'
-      }, {
-        en: 'WellKnownName',
-        ti: '.WellKnownName'
-      }, {
-        en: 'Font',
-        ti: '.Font'
-      }, {
-        en: 'ColorMap',
-        ti: '.ColorMap'
-      }, {
-        en: 'AVERAGE',
-        ti: '.AVERAGE'
-      }, {
         en: 'IsDefault'
-      }, {
-        en: 'FeatureTypeStyle',
-        ti: '.FeatureTypeStyle'
-      }, {
-        en: 'UserLayer',
-        ti: '.UserLayer'
-      }, {
-        en: 'Normalize',
-        ti: '.Normalize'
-      }, {
-        en: 'Name'
-      }, {
-        en: 'SourceChannelName'
-      }, {
-        en: 'Stroke',
-        ti: '.Stroke'
-      }, {
-        en: 'OverlapBehavior',
-        ti: '.OverlapBehavior'
-      }, {
-        en: 'RemoteOWS',
-        ti: '.RemoteOWS'
-      }, {
-        en: 'LATEST_ON_TOP',
-        ti: '.LATESTONTOP'
-      }, {
-        en: 'ColorMapEntry',
-        ti: '.ColorMapEntry'
-      }, {
-        en: 'MaxScaleDenominator',
-        ti: 'Double'
-      }, {
-        en: 'ChannelSelection',
-        ti: '.ChannelSelection'
-      }, {
-        en: 'VendorOption',
-        ti: '.VendorOption'
-      }, {
-        en: 'LabelPlacement',
-        ti: '.LabelPlacement'
-      }, {
-        en: 'LineSymbolizer',
-        ti: '.LineSymbolizer',
-        sh: 'Symbolizer'
       }, {
         en: 'AnchorPointY',
         ti: '.ParameterValueType'
       }, {
-        en: 'Label',
-        ti: '.ParameterValueType'
+        en: 'OnlineResource',
+        ti: '.OnlineResource'
+      }, {
+        en: 'ColorMap',
+        ti: '.ColorMap'
+      }, {
+        en: 'LinePlacement',
+        ti: '.LinePlacement'
+      }, {
+        en: 'Name'
+      }, {
+        en: 'MinScaleDenominator',
+        ti: 'Double'
+      }, {
+        en: 'GreenChannel',
+        ti: '.SelectedChannelType'
+      }, {
+        en: 'VendorOption',
+        ti: '.VendorOption'
       }, {
         en: 'PointSymbolizer',
         ti: '.PointSymbolizer',
         sh: 'Symbolizer'
       }, {
-        en: 'GrayChannel',
-        ti: '.SelectedChannelType'
-      }, {
-        en: 'Title'
-      }, {
-        en: 'BlueChannel',
-        ti: '.SelectedChannelType'
-      }, {
-        en: 'GraphicFill',
-        ti: '.GraphicFill'
+        en: 'PerpendicularOffset',
+        ti: '.ParameterValueType'
       }, {
         en: 'ContrastEnhancement',
         ti: '.ContrastEnhancement'
+      }, {
+        en: 'Halo',
+        ti: '.Halo'
+      }, {
+        en: 'EARLIEST_ON_TOP',
+        ti: '.EARLIESTONTOP'
+      }, {
+        en: 'DisplacementY',
+        ti: '.ParameterValueType'
       }, {
         en: 'RasterSymbolizer',
         ti: '.RasterSymbolizer',
         sh: 'Symbolizer'
       }, {
-        en: 'FeatureTypeName'
-      }, {
-        en: 'GraphicStroke',
-        ti: '.GraphicStroke'
-      }, {
-        en: 'Geometry',
-        ti: '.Geometry'
-      }, {
-        en: 'Fill',
-        ti: '.Fill'
-      }, {
-        en: 'Halo',
-        ti: '.Halo'
-      }, {
-        en: 'PerpendicularOffset',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'MinScaleDenominator',
-        ti: 'Double'
-      }, {
-        en: 'DisplacementX',
-        ti: '.ParameterValueType'
-      }, {
-        en: 'Rule',
-        ti: '.Rule'
-      }, {
-        en: 'Graphic',
-        ti: '.Graphic'
-      }, {
-        en: 'Format'
-      }, {
-        en: 'EARLIEST_ON_TOP',
-        ti: '.EARLIESTONTOP'
-      }, {
-        en: 'RANDOM',
-        ti: '.RANDOM'
-      }, {
         en: 'TextSymbolizer',
         ti: '.TextSymbolizer',
         sh: 'Symbolizer'
       }, {
-        en: 'BrightnessOnly',
-        ti: 'Boolean'
+        en: 'StyledLayerDescriptor',
+        ti: '.StyledLayerDescriptor'
       }, {
-        en: 'Symbolizer',
-        ti: '.SymbolizerType'
+        en: 'UserLayer',
+        ti: '.UserLayer'
+      }, {
+        en: 'ChannelSelection',
+        ti: '.ChannelSelection'
+      }, {
+        en: 'Value'
+      }, {
+        en: 'Size',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'AnchorPointX',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'FeatureTypeName'
+      }, {
+        en: 'BlueChannel',
+        ti: '.SelectedChannelType'
+      }, {
+        en: 'SourceChannelName'
+      }, {
+        en: 'GraphicFill',
+        ti: '.GraphicFill'
+      }, {
+        en: 'Geometry',
+        ti: '.Geometry'
+      }, {
+        en: 'Opacity',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'Radius',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'ShadedRelief',
+        ti: '.ShadedRelief'
+      }, {
+        en: 'Transformation',
+        ti: '.Transformation'
+      }, {
+        en: 'OverlapBehavior',
+        ti: '.OverlapBehavior'
+      }, {
+        en: 'GammaValue',
+        ti: 'Double'
+      }, {
+        en: 'FeatureTypeStyle',
+        ti: '.FeatureTypeStyle'
+      }, {
+        en: 'Stroke',
+        ti: '.Stroke'
+      }, {
+        en: 'LabelPlacement',
+        ti: '.LabelPlacement'
+      }, {
+        en: 'AVERAGE',
+        ti: '.AVERAGE'
+      }, {
+        en: 'AnchorPoint',
+        ti: '.AnchorPoint'
+      }, {
+        en: 'GrayChannel',
+        ti: '.SelectedChannelType'
+      }, {
+        en: 'RemoteOWS',
+        ti: '.RemoteOWS'
+      }, {
+        en: 'GraphicStroke',
+        ti: '.GraphicStroke'
+      }, {
+        en: 'Fill',
+        ti: '.Fill'
       }, {
         en: 'Service'
       }, {
@@ -1088,79 +1053,114 @@ var SLD_1_0_0_GeoServer_Module_Factory = function () {
         en: 'FeatureTypeConstraint',
         ti: '.FeatureTypeConstraint'
       }, {
-        en: 'ElseFilter',
-        ti: '.ElseFilter'
-      }, {
-        en: 'ShadedRelief',
-        ti: '.ShadedRelief'
-      }, {
-        en: 'Priority',
+        en: 'Rotation',
         ti: '.ParameterValueType'
       }, {
-        en: 'Opacity',
-        ti: '.ParameterValueType'
+        en: 'Normalize',
+        ti: '.Normalize'
       }, {
-        en: 'AnchorPoint',
-        ti: '.AnchorPoint'
+        en: 'Symbolizer',
+        ti: '.SymbolizerType'
       }, {
-        en: 'ReliefFactor',
-        ti: 'Double'
+        en: 'Rule',
+        ti: '.Rule'
       }, {
-        en: 'Radius',
-        ti: '.ParameterValueType'
+        en: 'Title'
       }, {
-        en: 'Size',
-        ti: '.ParameterValueType'
+        en: 'BrightnessOnly',
+        ti: 'Boolean'
       }, {
-        en: 'Displacement',
-        ti: '.Displacement'
+        en: 'LayerFeatureConstraints',
+        ti: '.LayerFeatureConstraints'
       }, {
-        en: 'Histogram',
-        ti: '.Histogram'
+        en: 'RANDOM',
+        ti: '.RANDOM'
       }, {
-        en: 'InlineFeature',
-        ti: '.InlineFeature'
+        en: 'ColorMapEntry',
+        ti: '.ColorMapEntry'
       }, {
-        en: 'SemanticTypeIdentifier'
+        en: 'Format'
+      }, {
+        en: 'LATEST_ON_TOP',
+        ti: '.LATESTONTOP'
       }, {
         en: 'ExternalGraphic',
         ti: '.ExternalGraphic'
       }, {
+        en: 'ImageOutline',
+        ti: '.ImageOutline'
+      }, {
+        en: 'LegendGraphic',
+        ti: '.LegendGraphic'
+      }, {
+        en: 'CssParameter',
+        ti: '.CssParameter'
+      }, {
+        en: 'ElseFilter',
+        ti: '.ElseFilter'
+      }, {
+        en: 'DisplacementX',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'Priority',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'Label',
+        ti: '.ParameterValueType'
+      }, {
+        en: 'Graphic',
+        ti: '.Graphic'
+      }, {
         en: 'Extent',
         ti: '.Extent'
       }, {
-        en: 'LayerFeatureConstraints',
-        ti: '.LayerFeatureConstraints'
+        en: 'SemanticTypeIdentifier'
+      }, {
+        en: 'LineSymbolizer',
+        ti: '.LineSymbolizer',
+        sh: 'Symbolizer'
       }, {
         en: 'PolygonSymbolizer',
         ti: '.PolygonSymbolizer',
         sh: 'Symbolizer'
       }, {
-        en: 'LinePlacement',
-        ti: '.LinePlacement'
+        en: 'Font',
+        ti: '.Font'
       }, {
-        en: 'Rotation',
-        ti: '.ParameterValueType'
+        en: 'ReliefFactor',
+        ti: 'Double'
       }, {
-        en: 'ImageOutline',
-        ti: '.ImageOutline'
+        en: 'Mark',
+        ti: '.Mark'
+      }, {
+        en: 'Histogram',
+        ti: '.Histogram'
+      }, {
+        en: 'MaxScaleDenominator',
+        ti: 'Double'
+      }, {
+        en: 'WellKnownName',
+        ti: '.WellKnownName'
+      }, {
+        en: 'UserStyle',
+        ti: '.UserStyle'
       }, {
         en: 'RedChannel',
         ti: '.SelectedChannelType'
       }, {
+        en: 'InlineFeature',
+        ti: '.InlineFeature'
+      }, {
+        en: 'Displacement',
+        ti: '.Displacement'
+      }, {
+        en: 'PointPlacement',
+        ti: '.PointPlacement'
+      }, {
         en: 'NamedStyle',
         ti: '.NamedStyle'
       }, {
-        en: 'CssParameter',
-        ti: '.CssParameter'
-      }, {
         en: 'Abstract'
-      }, {
-        en: 'GreenChannel',
-        ti: '.SelectedChannelType'
-      }, {
-        en: 'LegendGraphic',
-        ti: '.LegendGraphic'
       }]
   };
   return {

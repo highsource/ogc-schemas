@@ -3,24 +3,70 @@ var CityGML_Tunnel_2_0_Module_Factory = function () {
     n: 'CityGML_Tunnel_2_0',
     dens: 'http:\/\/www.opengis.net\/citygml\/tunnel\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['GML_3_1_1', 'XLink_1_0', 'CityGML_2_0'],
+    deps: ['XLink_1_0', 'GML_3_1_1', 'CityGML_2_0'],
     tis: [{
-        ln: 'ClosureSurfaceType',
+        ln: 'OuterCeilingSurfaceType',
         bti: '.AbstractBoundarySurfaceType',
         ps: [{
-            n: 'genericApplicationPropertyOfClosureSurface',
+            n: 'genericApplicationPropertyOfOuterCeilingSurface',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfClosureSurface',
+            en: '_GenericApplicationPropertyOfOuterCeilingSurface',
             ti: 'AnyType'
           }]
       }, {
-        ln: 'InteriorFurniturePropertyType',
+        ln: 'HollowSpaceType',
+        bti: 'CityGML_2_0.AbstractCityObjectType',
         ps: [{
-            n: 'tunnelFurniture',
+            n: 'clazz',
+            en: 'class',
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'function',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'usage',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'lod4Solid',
+            ti: 'GML_3_1_1.SolidPropertyType'
+          }, {
+            n: 'lod4MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'cityObjectBoundedBy',
+            mno: 0,
+            col: true,
+            en: 'boundedBy',
+            ti: '.BoundarySurfacePropertyType'
+          }, {
+            n: 'interiorFurniture',
+            mno: 0,
+            col: true,
+            ti: '.InteriorFurniturePropertyType'
+          }, {
+            n: 'hollowSpaceInstallation',
+            mno: 0,
+            col: true,
+            ti: '.IntTunnelInstallationPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfHollowSpace',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfHollowSpace',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'TunnelPartPropertyType',
+        ps: [{
+            n: 'tunnelPart',
             rq: true,
-            en: 'TunnelFurniture',
-            ti: '.TunnelFurnitureType'
+            en: 'TunnelPart',
+            ti: '.TunnelPartType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -52,255 +98,6 @@ var CityGML_Tunnel_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
-          }]
-      }, {
-        ln: 'RoofSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
-        ps: [{
-            n: 'genericApplicationPropertyOfRoofSurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfRoofSurface',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'TunnelInstallationPropertyType',
-        ps: [{
-            n: 'tunnelInstallation',
-            rq: true,
-            en: 'TunnelInstallation',
-            ti: '.TunnelInstallationType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractOpeningType',
-        bti: 'CityGML_2_0.AbstractCityObjectType',
-        ps: [{
-            n: 'lod3MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'lod4MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'lod3ImplicitRepresentation',
-            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'lod4ImplicitRepresentation',
-            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfOpening',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfOpening',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'IntTunnelInstallationType',
-        bti: 'CityGML_2_0.AbstractCityObjectType',
-        ps: [{
-            n: 'clazz',
-            en: 'class',
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'function',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'usage',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'lod4Geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'lod4ImplicitRepresentation',
-            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'cityObjectBoundedBy',
-            mno: 0,
-            col: true,
-            en: 'boundedBy',
-            ti: '.BoundarySurfacePropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfIntTunnelInstallation',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfIntTunnelInstallation',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'GroundSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
-        ps: [{
-            n: 'genericApplicationPropertyOfGroundSurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfGroundSurface',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'AbstractBoundarySurfaceType',
-        bti: 'CityGML_2_0.AbstractCityObjectType',
-        ps: [{
-            n: 'lod2MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'lod3MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'lod4MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'opening',
-            mno: 0,
-            col: true,
-            ti: '.OpeningPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfBoundarySurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfBoundarySurface',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'WindowType',
-        bti: '.AbstractOpeningType',
-        ps: [{
-            n: 'genericApplicationPropertyOfWindow',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfWindow',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'OuterFloorSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
-        ps: [{
-            n: 'genericApplicationPropertyOfOuterFloorSurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfOuterFloorSurface',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'TunnelInstallationType',
-        bti: 'CityGML_2_0.AbstractCityObjectType',
-        ps: [{
-            n: 'clazz',
-            en: 'class',
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'function',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'usage',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'lod2Geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'lod3Geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'lod4Geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'lod2ImplicitRepresentation',
-            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'lod3ImplicitRepresentation',
-            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'lod4ImplicitRepresentation',
-            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'cityObjectBoundedBy',
-            mno: 0,
-            col: true,
-            en: 'boundedBy',
-            ti: '.BoundarySurfacePropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfTunnelInstallation',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfTunnelInstallation',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'WallSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
-        ps: [{
-            n: 'genericApplicationPropertyOfWallSurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfWallSurface',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'TunnelFurnitureType',
-        bti: 'CityGML_2_0.AbstractCityObjectType',
-        ps: [{
-            n: 'clazz',
-            en: 'class',
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'function',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'usage',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'lod4Geometry',
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }, {
-            n: 'lod4ImplicitRepresentation',
-            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfTunnelFurniture',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfTunnelFurniture',
-            ti: 'AnyType'
           }]
       }, {
         ln: 'AbstractTunnelType',
@@ -404,157 +201,7 @@ var CityGML_Tunnel_2_0_Module_Factory = function () {
             ti: 'AnyType'
           }]
       }, {
-        ln: 'TunnelType',
-        bti: '.AbstractTunnelType',
-        ps: [{
-            n: 'genericApplicationPropertyOfTunnel',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfTunnel',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'TunnelPartPropertyType',
-        ps: [{
-            n: 'tunnelPart',
-            rq: true,
-            en: 'TunnelPart',
-            ti: '.TunnelPartType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'OuterCeilingSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
-        ps: [{
-            n: 'genericApplicationPropertyOfOuterCeilingSurface',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfOuterCeilingSurface',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'InteriorHollowSpacePropertyType',
-        ps: [{
-            n: 'hollowSpace',
-            rq: true,
-            en: 'HollowSpace',
-            ti: '.HollowSpaceType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TunnelPartType',
-        bti: '.AbstractTunnelType',
-        ps: [{
-            n: 'genericApplicationPropertyOfTunnelPart',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfTunnelPart',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'OpeningPropertyType',
-        ps: [{
-            n: 'opening',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: '_Opening',
-            ti: '.AbstractOpeningType',
-            t: 'er'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'HollowSpaceType',
+        ln: 'TunnelFurnitureType',
         bti: 'CityGML_2_0.AbstractCityObjectType',
         ps: [{
             n: 'clazz',
@@ -571,42 +218,95 @@ var CityGML_Tunnel_2_0_Module_Factory = function () {
             col: true,
             ti: 'GML_3_1_1.CodeType'
           }, {
-            n: 'lod4Solid',
-            ti: 'GML_3_1_1.SolidPropertyType'
+            n: 'lod4Geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
           }, {
-            n: 'lod4MultiSurface',
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+            n: 'lod4ImplicitRepresentation',
+            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
           }, {
-            n: 'cityObjectBoundedBy',
+            n: 'genericApplicationPropertyOfTunnelFurniture',
             mno: 0,
             col: true,
-            en: 'boundedBy',
-            ti: '.BoundarySurfacePropertyType'
-          }, {
-            n: 'interiorFurniture',
-            mno: 0,
-            col: true,
-            ti: '.InteriorFurniturePropertyType'
-          }, {
-            n: 'hollowSpaceInstallation',
-            mno: 0,
-            col: true,
-            ti: '.IntTunnelInstallationPropertyType'
-          }, {
-            n: 'genericApplicationPropertyOfHollowSpace',
-            mno: 0,
-            col: true,
-            en: '_GenericApplicationPropertyOfHollowSpace',
+            en: '_GenericApplicationPropertyOfTunnelFurniture',
             ti: 'AnyType'
           }]
       }, {
-        ln: 'InteriorWallSurfaceType',
+        ln: 'InteriorFurniturePropertyType',
+        ps: [{
+            n: 'tunnelFurniture',
+            rq: true,
+            en: 'TunnelFurniture',
+            ti: '.TunnelFurnitureType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CeilingSurfaceType',
         bti: '.AbstractBoundarySurfaceType',
         ps: [{
-            n: 'genericApplicationPropertyOfInteriorWallSurface',
+            n: 'genericApplicationPropertyOfCeilingSurface',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfInteriorWallSurface',
+            en: '_GenericApplicationPropertyOfCeilingSurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'TunnelType',
+        bti: '.AbstractTunnelType',
+        ps: [{
+            n: 'genericApplicationPropertyOfTunnel',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfTunnel',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'WindowType',
+        bti: '.AbstractOpeningType',
+        ps: [{
+            n: 'genericApplicationPropertyOfWindow',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfWindow',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'TunnelPartType',
+        bti: '.AbstractTunnelType',
+        ps: [{
+            n: 'genericApplicationPropertyOfTunnelPart',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfTunnelPart',
             ti: 'AnyType'
           }]
       }, {
@@ -652,23 +352,51 @@ var CityGML_Tunnel_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'FloorSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
+        ln: 'TunnelInstallationType',
+        bti: 'CityGML_2_0.AbstractCityObjectType',
         ps: [{
-            n: 'genericApplicationPropertyOfFloorSurface',
+            n: 'clazz',
+            en: 'class',
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'function',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfFloorSurface',
-            ti: 'AnyType'
-          }]
-      }, {
-        ln: 'CeilingSurfaceType',
-        bti: '.AbstractBoundarySurfaceType',
-        ps: [{
-            n: 'genericApplicationPropertyOfCeilingSurface',
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'usage',
             mno: 0,
             col: true,
-            en: '_GenericApplicationPropertyOfCeilingSurface',
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'lod2Geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'lod3Geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'lod4Geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'lod2ImplicitRepresentation',
+            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
+          }, {
+            n: 'lod3ImplicitRepresentation',
+            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
+          }, {
+            n: 'lod4ImplicitRepresentation',
+            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
+          }, {
+            n: 'cityObjectBoundedBy',
+            mno: 0,
+            col: true,
+            en: 'boundedBy',
+            ti: '.BoundarySurfacePropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfTunnelInstallation',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfTunnelInstallation',
             ti: 'AnyType'
           }]
       }, {
@@ -679,6 +407,134 @@ var CityGML_Tunnel_2_0_Module_Factory = function () {
             mno: 0,
             col: true,
             en: '_GenericApplicationPropertyOfDoor',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'FloorSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfFloorSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfFloorSurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'AbstractBoundarySurfaceType',
+        bti: 'CityGML_2_0.AbstractCityObjectType',
+        ps: [{
+            n: 'lod2MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'lod3MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'lod4MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'opening',
+            mno: 0,
+            col: true,
+            ti: '.OpeningPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfBoundarySurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfBoundarySurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'AbstractOpeningType',
+        bti: 'CityGML_2_0.AbstractCityObjectType',
+        ps: [{
+            n: 'lod3MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'lod4MultiSurface',
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'lod3ImplicitRepresentation',
+            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
+          }, {
+            n: 'lod4ImplicitRepresentation',
+            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfOpening',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfOpening',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'InteriorWallSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfInteriorWallSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfInteriorWallSurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'OpeningPropertyType',
+        ps: [{
+            n: 'opening',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: '_Opening',
+            ti: '.AbstractOpeningType',
+            t: 'er'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'ClosureSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfClosureSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfClosureSurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'WallSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfWallSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfWallSurface',
             ti: 'AnyType'
           }]
       }, {
@@ -720,117 +576,160 @@ var CityGML_Tunnel_2_0_Module_Factory = function () {
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
+      }, {
+        ln: 'RoofSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfRoofSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfRoofSurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'TunnelInstallationPropertyType',
+        ps: [{
+            n: 'tunnelInstallation',
+            rq: true,
+            en: 'TunnelInstallation',
+            ti: '.TunnelInstallationType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'InteriorHollowSpacePropertyType',
+        ps: [{
+            n: 'hollowSpace',
+            rq: true,
+            en: 'HollowSpace',
+            ti: '.HollowSpaceType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'IntTunnelInstallationType',
+        bti: 'CityGML_2_0.AbstractCityObjectType',
+        ps: [{
+            n: 'clazz',
+            en: 'class',
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'function',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'usage',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'lod4Geometry',
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }, {
+            n: 'lod4ImplicitRepresentation',
+            ti: 'CityGML_2_0.ImplicitRepresentationPropertyType'
+          }, {
+            n: 'cityObjectBoundedBy',
+            mno: 0,
+            col: true,
+            en: 'boundedBy',
+            ti: '.BoundarySurfacePropertyType'
+          }, {
+            n: 'genericApplicationPropertyOfIntTunnelInstallation',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfIntTunnelInstallation',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'OuterFloorSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfOuterFloorSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfOuterFloorSurface',
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'GroundSurfaceType',
+        bti: '.AbstractBoundarySurfaceType',
+        ps: [{
+            n: 'genericApplicationPropertyOfGroundSurface',
+            mno: 0,
+            col: true,
+            en: '_GenericApplicationPropertyOfGroundSurface',
+            ti: 'AnyType'
+          }]
       }],
     eis: [{
-        en: '_AbstractTunnel',
-        ti: '.AbstractTunnelType',
-        sh: {
-          lp: '_Site',
-          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
-        }
-      }, {
-        en: '_GenericApplicationPropertyOfDoor',
+        en: '_GenericApplicationPropertyOfWallSurface',
         ti: 'AnyType'
       }, {
-        en: '_GenericApplicationPropertyOfHollowSpace',
-        ti: 'AnyType'
-      }, {
-        en: 'Door',
-        ti: '.DoorType',
-        sh: '_Opening'
-      }, {
-        en: 'ClosureSurface',
-        ti: '.ClosureSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: '_GenericApplicationPropertyOfOpening',
-        ti: 'AnyType'
-      }, {
-        en: 'CeilingSurface',
-        ti: '.CeilingSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: '_GenericApplicationPropertyOfTunnelPart',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfIntTunnelInstallation',
-        ti: 'AnyType'
-      }, {
-        en: 'Window',
-        ti: '.WindowType',
-        sh: '_Opening'
-      }, {
-        en: 'Tunnel',
-        ti: '.TunnelType',
-        sh: '_AbstractTunnel'
-      }, {
-        en: '_GenericApplicationPropertyOfCeilingSurface',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfRoofSurface',
+        en: '_GenericApplicationPropertyOfFloorSurface',
         ti: 'AnyType'
       }, {
         en: '_GenericApplicationPropertyOfBoundarySurface',
         ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfAbstractTunnel',
-        ti: 'AnyType'
-      }, {
-        en: 'TunnelPart',
-        ti: '.TunnelPartType',
-        sh: '_AbstractTunnel'
-      }, {
-        en: 'RoofSurface',
-        ti: '.RoofSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: '_GenericApplicationPropertyOfTunnelFurniture',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfInteriorWallSurface',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfWallSurface',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfGroundSurface',
-        ti: 'AnyType'
-      }, {
-        en: 'GroundSurface',
-        ti: '.GroundSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: 'IntTunnelInstallation',
-        ti: '.IntTunnelInstallationType',
-        sh: {
-          lp: '_CityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
-        }
-      }, {
-        en: 'OuterFloorSurface',
-        ti: '.OuterFloorSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: 'FloorSurface',
-        ti: '.FloorSurfaceType',
-        sh: '_BoundarySurface'
-      }, {
-        en: 'TunnelFurniture',
-        ti: '.TunnelFurnitureType',
-        sh: {
-          lp: '_CityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
-        }
-      }, {
-        en: '_GenericApplicationPropertyOfOuterFloorSurface',
-        ti: 'AnyType'
-      }, {
-        en: '_Opening',
-        ti: '.AbstractOpeningType',
-        sh: {
-          lp: '_CityObject',
-          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
-        }
       }, {
         en: 'TunnelInstallation',
         ti: '.TunnelInstallationType',
@@ -839,10 +738,13 @@ var CityGML_Tunnel_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
       }, {
-        en: '_GenericApplicationPropertyOfWindow',
+        en: '_GenericApplicationPropertyOfOuterFloorSurface',
         ti: 'AnyType'
       }, {
-        en: '_GenericApplicationPropertyOfOuterCeilingSurface',
+        en: '_GenericApplicationPropertyOfCeilingSurface',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfClosureSurface',
         ti: 'AnyType'
       }, {
         en: '_BoundarySurface',
@@ -852,6 +754,65 @@ var CityGML_Tunnel_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
       }, {
+        en: '_GenericApplicationPropertyOfGroundSurface',
+        ti: 'AnyType'
+      }, {
+        en: '_AbstractTunnel',
+        ti: '.AbstractTunnelType',
+        sh: {
+          lp: '_Site',
+          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
+        }
+      }, {
+        en: '_GenericApplicationPropertyOfAbstractTunnel',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfTunnelPart',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfTunnelFurniture',
+        ti: 'AnyType'
+      }, {
+        en: 'CeilingSurface',
+        ti: '.CeilingSurfaceType',
+        sh: '_BoundarySurface'
+      }, {
+        en: 'InteriorWallSurface',
+        ti: '.InteriorWallSurfaceType',
+        sh: '_BoundarySurface'
+      }, {
+        en: 'Window',
+        ti: '.WindowType',
+        sh: '_Opening'
+      }, {
+        en: 'TunnelFurniture',
+        ti: '.TunnelFurnitureType',
+        sh: {
+          lp: '_CityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
+        }
+      }, {
+        en: 'GroundSurface',
+        ti: '.GroundSurfaceType',
+        sh: '_BoundarySurface'
+      }, {
+        en: '_Opening',
+        ti: '.AbstractOpeningType',
+        sh: {
+          lp: '_CityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
+        }
+      }, {
+        en: '_GenericApplicationPropertyOfRoofSurface',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfIntTunnelInstallation',
+        ti: 'AnyType'
+      }, {
+        en: 'Door',
+        ti: '.DoorType',
+        sh: '_Opening'
+      }, {
         en: 'HollowSpace',
         ti: '.HollowSpaceType',
         sh: {
@@ -859,29 +820,68 @@ var CityGML_Tunnel_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
       }, {
-        en: 'WallSurface',
-        ti: '.WallSurfaceType',
+        en: '_GenericApplicationPropertyOfHollowSpace',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfOpening',
+        ti: 'AnyType'
+      }, {
+        en: 'RoofSurface',
+        ti: '.RoofSurfaceType',
         sh: '_BoundarySurface'
       }, {
-        en: 'OuterCeilingSurface',
-        ti: '.OuterCeilingSurfaceType',
+        en: 'Tunnel',
+        ti: '.TunnelType',
+        sh: '_AbstractTunnel'
+      }, {
+        en: 'ClosureSurface',
+        ti: '.ClosureSurfaceType',
         sh: '_BoundarySurface'
+      }, {
+        en: '_GenericApplicationPropertyOfInteriorWallSurface',
+        ti: 'AnyType'
+      }, {
+        en: '_GenericApplicationPropertyOfDoor',
+        ti: 'AnyType'
+      }, {
+        en: 'FloorSurface',
+        ti: '.FloorSurfaceType',
+        sh: '_BoundarySurface'
+      }, {
+        en: '_GenericApplicationPropertyOfOuterCeilingSurface',
+        ti: 'AnyType'
       }, {
         en: '_GenericApplicationPropertyOfTunnel',
         ti: 'AnyType'
       }, {
-        en: '_GenericApplicationPropertyOfClosureSurface',
-        ti: 'AnyType'
-      }, {
-        en: '_GenericApplicationPropertyOfFloorSurface',
-        ti: 'AnyType'
-      }, {
-        en: 'InteriorWallSurface',
-        ti: '.InteriorWallSurfaceType',
+        en: 'WallSurface',
+        ti: '.WallSurfaceType',
         sh: '_BoundarySurface'
+      }, {
+        en: '_GenericApplicationPropertyOfWindow',
+        ti: 'AnyType'
+      }, {
+        en: 'OuterFloorSurface',
+        ti: '.OuterFloorSurfaceType',
+        sh: '_BoundarySurface'
+      }, {
+        en: 'IntTunnelInstallation',
+        ti: '.IntTunnelInstallationType',
+        sh: {
+          lp: '_CityObject',
+          ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
+        }
+      }, {
+        en: 'TunnelPart',
+        ti: '.TunnelPartType',
+        sh: '_AbstractTunnel'
       }, {
         en: '_GenericApplicationPropertyOfTunnelInstallation',
         ti: 'AnyType'
+      }, {
+        en: 'OuterCeilingSurface',
+        ti: '.OuterCeilingSurfaceType',
+        sh: '_BoundarySurface'
       }]
   };
   return {

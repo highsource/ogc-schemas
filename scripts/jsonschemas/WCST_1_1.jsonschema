@@ -61,20 +61,6 @@
                 "operationRequest"
             ]
         },
-        "Action":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
-                },
-                {
-                    "type":"object",
-                    "title":"Action",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo"
-        },
         "TransactionType":{
             "type":"object",
             "title":"TransactionType",
@@ -200,6 +186,20 @@
                 "action"
             ]
         },
+        "Action":{
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/ows/1.1#/definitions/CodeType"
+                },
+                {
+                    "type":"object",
+                    "title":"Action",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo"
+        },
         "TransactionResponseType":{
             "type":"object",
             "title":"TransactionResponseType",
@@ -298,40 +298,6 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Transaction"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/wcs/1.1/wcst"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/TransactionType"
-                }
-            },
-            "elementName":{
-                "localPart":"Transaction",
-                "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
                                         "RequestId"
                                     ]
                                 },
@@ -350,6 +316,40 @@
             },
             "elementName":{
                 "localPart":"RequestId",
+                "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "TransactionResponse"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/wcs/1.1/wcst"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/TransactionResponseType"
+                }
+            },
+            "elementName":{
+                "localPart":"TransactionResponse",
                 "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
             }
         },
@@ -400,7 +400,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "TransactionResponse"
+                                        "Transaction"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -413,11 +413,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/TransactionResponseType"
+                    "$ref":"#/definitions/TransactionType"
                 }
             },
             "elementName":{
-                "localPart":"TransactionResponse",
+                "localPart":"Transaction",
                 "namespaceURI":"http://www.opengis.net/wcs/1.1/wcst"
             }
         },

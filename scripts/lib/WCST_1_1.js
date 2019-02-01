@@ -20,10 +20,6 @@ var WCST_1_1_Module_Factory = function () {
             ti: '.TransactionType'
           }]
       }, {
-        ln: 'Action',
-        tn: null,
-        bti: 'OWS_1_1_0.CodeType'
-      }, {
         ln: 'TransactionType',
         ps: [{
             n: 'inputCoverages',
@@ -61,6 +57,10 @@ var WCST_1_1_Module_Factory = function () {
             ti: '.Action'
           }]
       }, {
+        ln: 'Action',
+        tn: null,
+        bti: 'OWS_1_1_0.CodeType'
+      }, {
         ln: 'TransactionResponseType',
         ps: [{
             n: 'requestId',
@@ -81,16 +81,16 @@ var WCST_1_1_Module_Factory = function () {
         en: 'Action',
         ti: '.Action'
       }, {
-        en: 'Transaction',
-        ti: '.TransactionType'
-      }, {
         en: 'RequestId'
+      }, {
+        en: 'TransactionResponse',
+        ti: '.TransactionResponseType'
       }, {
         en: 'Acknowledgement',
         ti: '.AcknowledgementType'
       }, {
-        en: 'TransactionResponse',
-        ti: '.TransactionResponseType'
+        en: 'Transaction',
+        ti: '.TransactionType'
       }, {
         en: 'Coverage',
         ti: '.CoverageType',

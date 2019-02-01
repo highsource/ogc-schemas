@@ -3,50 +3,10 @@ var OMEO_SAR_2_0_Module_Factory = function () {
     n: 'OMEO_SAR_2_0',
     dens: 'http:\/\/www.opengis.net\/sar\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1', 'OMEO_EOP_2_0'],
+    deps: ['OMEO_EOP_2_0', 'GML_3_2_1', 'XLink_1_0'],
     tis: [{
-        ln: 'AcquisitionType',
-        bti: 'OMEO_EOP_2_0.AcquisitionType',
-        ps: [{
-            n: 'polarisationMode'
-          }, {
-            n: 'polarisationChannels'
-          }, {
-            n: 'antennaLookDirection'
-          }, {
-            n: 'minimumIncidenceAngle',
-            ti: 'GML_3_2_1.AngleType'
-          }, {
-            n: 'maximumIncidenceAngle',
-            ti: 'GML_3_2_1.AngleType'
-          }, {
-            n: 'incidenceAngleVariation',
-            ti: 'GML_3_2_1.AngleType'
-          }, {
-            n: 'dopplerFrequency',
-            ti: 'GML_3_2_1.MeasureType'
-          }]
-      }, {
         ln: 'EarthObservationType',
         bti: 'OMEO_EOP_2_0.EarthObservationType'
-      }, {
-        ln: 'AcquisitionPropertyType',
-        ps: [{
-            n: 'acquisition',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'Acquisition',
-            ti: '.AcquisitionType',
-            t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
       }, {
         ln: 'EarthObservationPropertyType',
         ps: [{
@@ -57,13 +17,6 @@ var OMEO_SAR_2_0_Module_Factory = function () {
             en: 'EarthObservation',
             ti: '.EarthObservationType',
             t: 'er'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
           }, {
             n: 'nilReason',
             ti: {
@@ -104,7 +57,58 @@ var OMEO_SAR_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }]
+      }, {
+        ln: 'AcquisitionType',
+        bti: 'OMEO_EOP_2_0.AcquisitionType',
+        ps: [{
+            n: 'polarisationMode'
+          }, {
+            n: 'polarisationChannels'
+          }, {
+            n: 'antennaLookDirection'
+          }, {
+            n: 'minimumIncidenceAngle',
+            ti: 'GML_3_2_1.AngleType'
+          }, {
+            n: 'maximumIncidenceAngle',
+            ti: 'GML_3_2_1.AngleType'
+          }, {
+            n: 'incidenceAngleVariation',
+            ti: 'GML_3_2_1.AngleType'
+          }, {
+            n: 'dopplerFrequency',
+            ti: 'GML_3_2_1.MeasureType'
+          }]
+      }, {
+        ln: 'AcquisitionPropertyType',
+        ps: [{
+            n: 'acquisition',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'Acquisition',
+            ti: '.AcquisitionType',
+            t: 'er'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        t: 'enum',
+        ln: 'PolarisationChannelsValueEnumerationType',
+        vs: ['HH', 'HV', 'UNDEFINED', 'HV, VH', 'VV, VH', 'VV, HV', 'VH, HV', 'VH, VV', 'HH, HV', 'HH, VH', 'HH, VV', 'VH', 'VV']
       }, {
         t: 'enum',
         ln: 'PolarisationModeValueEnumerationType',
@@ -113,10 +117,6 @@ var OMEO_SAR_2_0_Module_Factory = function () {
         t: 'enum',
         ln: 'AntennaLookDirectionValueEnumerationType',
         vs: ['LEFT', 'RIGHT']
-      }, {
-        t: 'enum',
-        ln: 'PolarisationChannelsValueEnumerationType',
-        vs: ['HH', 'HV', 'UNDEFINED', 'HV, VH', 'VV, VH', 'VV, HV', 'VH, HV', 'VH, VV', 'HH, HV', 'HH, VH', 'HH, VV', 'VH', 'VV']
       }],
     eis: [{
         en: 'Acquisition',

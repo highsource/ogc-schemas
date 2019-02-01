@@ -5,8 +5,66 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['GML_3_1_1', 'XLink_1_0'],
     tis: [{
+        ln: 'TexturedSurfaceType',
+        bti: 'GML_3_1_1.OrientableSurfaceType',
+        ps: [{
+            n: 'appearance',
+            rq: true,
+            col: true,
+            ti: '.AppearancePropertyType'
+          }]
+      }, {
         ln: 'AbstractAppearanceType',
         bti: 'GML_3_1_1.AbstractGMLType'
+      }, {
+        ln: 'AppearancePropertyType',
+        ps: [{
+            n: 'appearance',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: '_Appearance',
+            ti: '.AbstractAppearanceType',
+            t: 'er'
+          }, {
+            n: 'orientation',
+            ti: 'GML_3_1_1.SignType',
+            an: {
+              lp: 'orientation'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
       }, {
         ln: 'SimpleTextureType',
         bti: '.AbstractAppearanceType',
@@ -58,69 +116,25 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
             }
           }]
       }, {
-        ln: 'AppearancePropertyType',
-        ps: [{
-            n: 'appearance',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: '_Appearance',
-            ti: '.AbstractAppearanceType',
-            t: 'er'
-          }, {
-            n: 'orientation',
-            ti: 'GML_3_1_1.SignType',
-            an: {
-              lp: 'orientation'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'TexturedSurfaceType',
-        bti: 'GML_3_1_1.OrientableSurfaceType',
-        ps: [{
-            n: 'appearance',
-            rq: true,
-            col: true,
-            ti: '.AppearancePropertyType'
-          }]
-      }, {
         t: 'enum',
         ln: 'TextureTypeType',
         vs: ['specific', 'typical', 'unknown']
       }],
     eis: [{
+        en: '_Appearance',
+        ti: '.AbstractAppearanceType',
+        sh: {
+          lp: '_GML',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
+        en: 'appearance',
+        ti: '.AppearancePropertyType'
+      }, {
+        en: 'Material',
+        ti: '.MaterialType',
+        sh: '_Appearance'
+      }, {
         en: 'SimpleTexture',
         ti: '.SimpleTextureType',
         sh: '_Appearance'
@@ -131,20 +145,6 @@ var CityGML_TexturedSurface_1_0_Module_Factory = function () {
           lp: 'OrientableSurface',
           ns: 'http:\/\/www.opengis.net\/gml'
         }
-      }, {
-        en: 'appearance',
-        ti: '.AppearancePropertyType'
-      }, {
-        en: '_Appearance',
-        ti: '.AbstractAppearanceType',
-        sh: {
-          lp: '_GML',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
-      }, {
-        en: 'Material',
-        ti: '.MaterialType',
-        sh: '_Appearance'
       }]
   };
   return {
