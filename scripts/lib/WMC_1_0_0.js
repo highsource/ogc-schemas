@@ -2,8 +2,191 @@ var WMC_1_0_0_Module_Factory = function () {
   var WMC_1_0_0 = {
     n: 'WMC_1_0_0',
     dens: 'http:\/\/www.opengis.net\/context',
-    deps: ['XLink_1_0', 'SLD_1_0_0'],
+    deps: ['SLD_1_0_0', 'XLink_1_0'],
     tis: [{
+        ln: 'BoundingBoxType',
+        ps: [{
+            n: 'srs',
+            rq: true,
+            an: {
+              lp: 'SRS'
+            },
+            t: 'a'
+          }, {
+            n: 'minx',
+            rq: true,
+            ti: 'Decimal',
+            an: {
+              lp: 'minx'
+            },
+            t: 'a'
+          }, {
+            n: 'miny',
+            rq: true,
+            ti: 'Decimal',
+            an: {
+              lp: 'miny'
+            },
+            t: 'a'
+          }, {
+            n: 'maxx',
+            rq: true,
+            ti: 'Decimal',
+            an: {
+              lp: 'maxx'
+            },
+            t: 'a'
+          }, {
+            n: 'maxy',
+            rq: true,
+            ti: 'Decimal',
+            an: {
+              lp: 'maxy'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GeneralType',
+        ps: [{
+            n: 'window',
+            en: 'Window',
+            ti: '.WindowType'
+          }, {
+            n: 'boundingBox',
+            rq: true,
+            en: 'BoundingBox',
+            ti: '.BoundingBoxType'
+          }, {
+            n: 'title',
+            rq: true,
+            en: 'Title'
+          }, {
+            n: 'keywordList',
+            en: 'KeywordList',
+            ti: '.KeywordListType'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'logoURL',
+            en: 'LogoURL',
+            ti: '.URLType'
+          }, {
+            n: 'descriptionURL',
+            en: 'DescriptionURL',
+            ti: '.URLType'
+          }, {
+            n: 'contactInformation',
+            en: 'ContactInformation',
+            ti: '.ContactInformationType'
+          }, {
+            n: 'extension',
+            en: 'Extension',
+            ti: '.ExtensionType'
+          }]
+      }, {
+        ln: 'ViewContextType',
+        ps: [{
+            n: 'general',
+            rq: true,
+            en: 'General',
+            ti: '.GeneralType'
+          }, {
+            n: 'layerList',
+            rq: true,
+            en: 'LayerList',
+            ti: '.LayerListType'
+          }, {
+            n: 'version',
+            rq: true,
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'id',
+            rq: true,
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ServerType',
+        ps: [{
+            n: 'onlineResource',
+            rq: true,
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }, {
+            n: 'service',
+            rq: true,
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            rq: true,
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'title',
+            an: {
+              lp: 'title'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ViewContextReferenceType',
+        ps: [{
+            n: 'title',
+            rq: true,
+            en: 'Title'
+          }, {
+            n: 'contextURL',
+            rq: true,
+            en: 'ContextURL',
+            ti: '.ContextURLType'
+          }, {
+            n: 'version',
+            rq: true,
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'id',
+            rq: true,
+            ti: 'AnySimpleType',
+            an: {
+              lp: 'id'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'WindowType',
+        ps: [{
+            n: 'width',
+            rq: true,
+            ti: 'Integer',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            rq: true,
+            ti: 'Integer',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'OnlineResourceType',
         ps: [{
             n: 'type',
@@ -59,6 +242,44 @@ var WMC_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'LayerListType',
+        ps: [{
+            n: 'layer',
+            rq: true,
+            col: true,
+            en: 'Layer',
+            ti: '.LayerType'
+          }]
+      }, {
+        ln: 'StyleType',
+        ps: [{
+            n: 'name',
+            rq: true,
+            en: 'Name'
+          }, {
+            n: 'title',
+            rq: true,
+            en: 'Title'
+          }, {
+            n: '_abstract',
+            en: 'Abstract'
+          }, {
+            n: 'legendURL',
+            en: 'LegendURL',
+            ti: '.URLType'
+          }, {
+            n: 'sld',
+            en: 'SLD',
+            ti: '.SLDType'
+          }, {
+            n: 'current',
+            ti: 'Boolean',
+            an: {
+              lp: 'current'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'ContactInformationType',
         ps: [{
             n: 'contactPersonPrimary',
@@ -86,227 +307,6 @@ var WMC_1_0_0_Module_Factory = function () {
             n: 'contactElectronicMailAddress',
             rq: true,
             en: 'ContactElectronicMailAddress'
-          }]
-      }, {
-        ln: 'StyleListType',
-        ps: [{
-            n: 'style',
-            rq: true,
-            col: true,
-            en: 'Style',
-            ti: '.StyleType'
-          }]
-      }, {
-        ln: 'URLType',
-        ps: [{
-            n: 'onlineResource',
-            rq: true,
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }, {
-            n: 'width',
-            ti: 'Integer',
-            an: {
-              lp: 'width'
-            },
-            t: 'a'
-          }, {
-            n: 'height',
-            ti: 'Integer',
-            an: {
-              lp: 'height'
-            },
-            t: 'a'
-          }, {
-            n: 'format',
-            an: {
-              lp: 'format'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ViewContextCollectionType',
-        ps: [{
-            n: 'viewContextReference',
-            rq: true,
-            col: true,
-            en: 'ViewContextReference',
-            ti: '.ViewContextReferenceType'
-          }, {
-            n: 'version',
-            rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ViewContextType',
-        ps: [{
-            n: 'general',
-            rq: true,
-            en: 'General',
-            ti: '.GeneralType'
-          }, {
-            n: 'layerList',
-            rq: true,
-            en: 'LayerList',
-            ti: '.LayerListType'
-          }, {
-            n: 'version',
-            rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'id',
-            rq: true,
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GeneralType',
-        ps: [{
-            n: 'window',
-            en: 'Window',
-            ti: '.WindowType'
-          }, {
-            n: 'boundingBox',
-            rq: true,
-            en: 'BoundingBox',
-            ti: '.BoundingBoxType'
-          }, {
-            n: 'title',
-            rq: true,
-            en: 'Title'
-          }, {
-            n: 'keywordList',
-            en: 'KeywordList',
-            ti: '.KeywordListType'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }, {
-            n: 'logoURL',
-            en: 'LogoURL',
-            ti: '.URLType'
-          }, {
-            n: 'descriptionURL',
-            en: 'DescriptionURL',
-            ti: '.URLType'
-          }, {
-            n: 'contactInformation',
-            en: 'ContactInformation',
-            ti: '.ContactInformationType'
-          }, {
-            n: 'extension',
-            en: 'Extension',
-            ti: '.ExtensionType'
-          }]
-      }, {
-        ln: 'FormatListType',
-        ps: [{
-            n: 'format',
-            rq: true,
-            col: true,
-            en: 'Format',
-            ti: '.FormatType'
-          }]
-      }, {
-        ln: 'ContextURLType',
-        ps: [{
-            n: 'onlineResource',
-            rq: true,
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }]
-      }, {
-        ln: 'ContactPersonPrimaryType',
-        ps: [{
-            n: 'contactPerson',
-            rq: true,
-            en: 'ContactPerson'
-          }, {
-            n: 'contactOrganization',
-            rq: true,
-            en: 'ContactOrganization'
-          }]
-      }, {
-        ln: 'ViewContextReferenceType',
-        ps: [{
-            n: 'title',
-            rq: true,
-            en: 'Title'
-          }, {
-            n: 'contextURL',
-            rq: true,
-            en: 'ContextURL',
-            ti: '.ContextURLType'
-          }, {
-            n: 'version',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'id',
-            rq: true,
-            ti: 'AnySimpleType',
-            an: {
-              lp: 'id'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'WindowType',
-        ps: [{
-            n: 'width',
-            rq: true,
-            ti: 'Integer',
-            an: {
-              lp: 'width'
-            },
-            t: 'a'
-          }, {
-            n: 'height',
-            rq: true,
-            ti: 'Integer',
-            an: {
-              lp: 'height'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AddressType',
-        ps: [{
-            n: 'addressType',
-            rq: true,
-            en: 'AddressType'
-          }, {
-            n: 'address',
-            rq: true,
-            en: 'Address'
-          }, {
-            n: 'city',
-            rq: true,
-            en: 'City'
-          }, {
-            n: 'stateOrProvince',
-            rq: true,
-            en: 'StateOrProvince'
-          }, {
-            n: 'postCode',
-            rq: true,
-            en: 'PostCode'
-          }, {
-            n: 'country',
-            rq: true,
-            en: 'Country'
           }]
       }, {
         ln: 'SLDType',
@@ -339,19 +339,22 @@ var WMC_1_0_0_Module_Factory = function () {
             ti: 'SLD_1_0_0.FeatureTypeStyle'
           }]
       }, {
-        ln: 'ServerType',
+        ln: 'StyleListType',
         ps: [{
-            n: 'onlineResource',
+            n: 'style',
             rq: true,
-            en: 'OnlineResource',
-            ti: '.OnlineResourceType'
-          }, {
-            n: 'service',
+            col: true,
+            en: 'Style',
+            ti: '.StyleType'
+          }]
+      }, {
+        ln: 'ViewContextCollectionType',
+        ps: [{
+            n: 'viewContextReference',
             rq: true,
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
+            col: true,
+            en: 'ViewContextReference',
+            ti: '.ViewContextReferenceType'
           }, {
             n: 'version',
             rq: true,
@@ -359,12 +362,17 @@ var WMC_1_0_0_Module_Factory = function () {
               lp: 'version'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'ContactPersonPrimaryType',
+        ps: [{
+            n: 'contactPerson',
+            rq: true,
+            en: 'ContactPerson'
           }, {
-            n: 'title',
-            an: {
-              lp: 'title'
-            },
-            t: 'a'
+            n: 'contactOrganization',
+            rq: true,
+            en: 'ContactOrganization'
           }]
       }, {
         ln: 'FormatType',
@@ -380,52 +388,6 @@ var WMC_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'KeywordListType',
-        ps: [{
-            n: 'keyword',
-            rq: true,
-            col: true,
-            en: 'Keyword'
-          }]
-      }, {
-        ln: 'StyleType',
-        ps: [{
-            n: 'name',
-            rq: true,
-            en: 'Name'
-          }, {
-            n: 'title',
-            rq: true,
-            en: 'Title'
-          }, {
-            n: '_abstract',
-            en: 'Abstract'
-          }, {
-            n: 'legendURL',
-            en: 'LegendURL',
-            ti: '.URLType'
-          }, {
-            n: 'sld',
-            en: 'SLD',
-            ti: '.SLDType'
-          }, {
-            n: 'current',
-            ti: 'Boolean',
-            an: {
-              lp: 'current'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LayerListType',
-        ps: [{
-            n: 'layer',
-            rq: true,
-            col: true,
-            en: 'Layer',
-            ti: '.LayerType'
-          }]
-      }, {
         ln: 'ExtensionType',
         ps: [{
             n: 'any',
@@ -435,44 +397,39 @@ var WMC_1_0_0_Module_Factory = function () {
             t: 'ae'
           }]
       }, {
-        ln: 'BoundingBoxType',
+        ln: 'FormatListType',
         ps: [{
-            n: 'srs',
+            n: 'format',
             rq: true,
+            col: true,
+            en: 'Format',
+            ti: '.FormatType'
+          }]
+      }, {
+        ln: 'URLType',
+        ps: [{
+            n: 'onlineResource',
+            rq: true,
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }, {
+            n: 'width',
+            ti: 'Integer',
             an: {
-              lp: 'SRS'
+              lp: 'width'
             },
             t: 'a'
           }, {
-            n: 'minx',
-            rq: true,
-            ti: 'Decimal',
+            n: 'height',
+            ti: 'Integer',
             an: {
-              lp: 'minx'
+              lp: 'height'
             },
             t: 'a'
           }, {
-            n: 'miny',
-            rq: true,
-            ti: 'Decimal',
+            n: 'format',
             an: {
-              lp: 'miny'
-            },
-            t: 'a'
-          }, {
-            n: 'maxx',
-            rq: true,
-            ti: 'Decimal',
-            an: {
-              lp: 'maxx'
-            },
-            t: 'a'
-          }, {
-            n: 'maxy',
-            rq: true,
-            ti: 'Decimal',
-            an: {
-              lp: 'maxy'
+              lp: 'format'
             },
             t: 'a'
           }]
@@ -533,6 +490,49 @@ var WMC_1_0_0_Module_Factory = function () {
               lp: 'hidden'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'AddressType',
+        ps: [{
+            n: 'addressType',
+            rq: true,
+            en: 'AddressType'
+          }, {
+            n: 'address',
+            rq: true,
+            en: 'Address'
+          }, {
+            n: 'city',
+            rq: true,
+            en: 'City'
+          }, {
+            n: 'stateOrProvince',
+            rq: true,
+            en: 'StateOrProvince'
+          }, {
+            n: 'postCode',
+            rq: true,
+            en: 'PostCode'
+          }, {
+            n: 'country',
+            rq: true,
+            en: 'Country'
+          }]
+      }, {
+        ln: 'ContextURLType',
+        ps: [{
+            n: 'onlineResource',
+            rq: true,
+            en: 'OnlineResource',
+            ti: '.OnlineResourceType'
+          }]
+      }, {
+        ln: 'KeywordListType',
+        ps: [{
+            n: 'keyword',
+            rq: true,
+            col: true,
+            en: 'Keyword'
           }]
       }],
     eis: [{

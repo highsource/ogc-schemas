@@ -2,6 +2,24 @@
 {
     "id":"http://earth.esa.int/atm#",
     "definitions":{
+        "EarthObservationType":{
+            "allOf":[
+                {
+                    "$ref":"http://earth.esa.int/eop#/definitions/EarthObservationType"
+                },
+                {
+                    "type":"object",
+                    "title":"EarthObservationType",
+                    "properties":{
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationType",
+                "namespaceURI":"http://earth.esa.int/atm"
+            }
+        },
         "DataLayerType":{
             "type":"object",
             "title":"DataLayerType",
@@ -99,40 +117,6 @@
                 "algorithmVersion"
             ]
         },
-        "DataLayerPropertyType":{
-            "type":"object",
-            "title":"DataLayerPropertyType",
-            "required":[
-                "dataLayer"
-            ],
-            "properties":{
-                "dataLayer":{
-                    "title":"dataLayer",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"#/definitions/DataLayerType"
-                            },
-                            "minItems":1
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"DataLayer",
-                        "namespaceURI":"http://earth.esa.int/atm"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"DataLayerPropertyType",
-                "namespaceURI":"http://earth.esa.int/atm"
-            },
-            "propertiesOrder":[
-                "dataLayer"
-            ]
-        },
         "EarthObservationResultType":{
             "allOf":[
                 {
@@ -167,23 +151,39 @@
                 "dataLayers"
             ]
         },
-        "EarthObservationType":{
-            "allOf":[
-                {
-                    "$ref":"http://earth.esa.int/eop#/definitions/EarthObservationType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationType",
-                    "properties":{
+        "DataLayerPropertyType":{
+            "type":"object",
+            "title":"DataLayerPropertyType",
+            "required":[
+                "dataLayer"
+            ],
+            "properties":{
+                "dataLayer":{
+                    "title":"dataLayer",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/DataLayerType"
+                            },
+                            "minItems":1
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"DataLayer",
+                        "namespaceURI":"http://earth.esa.int/atm"
                     }
                 }
-            ],
+            },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"EarthObservationType",
+                "localPart":"DataLayerPropertyType",
                 "namespaceURI":"http://earth.esa.int/atm"
-            }
+            },
+            "propertiesOrder":[
+                "dataLayer"
+            ]
         }
     },
     "anyOf":[

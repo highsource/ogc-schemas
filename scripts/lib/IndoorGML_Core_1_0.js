@@ -15,109 +15,14 @@ var IndoorGML_Core_1_0_Module_Factory = function () {
             ti: '.MultiLayeredGraphPropertyType'
           }]
       }, {
-        ln: 'CellSpaceBoundaryMemberType',
-        bti: 'GML_3_2_1.AbstractFeatureMemberType',
+        ln: 'CellSpacePropertyType',
         ps: [{
-            n: 'cellSpaceBoundary',
+            n: 'cellSpace',
             rq: true,
             mx: false,
             dom: false,
-            en: 'CellSpaceBoundary',
-            ti: '.CellSpaceBoundaryType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'CellSpaceType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'cellSpaceGeometry',
-            ti: '.CellSpaceGeometryType'
-          }, {
-            n: 'duality',
-            ti: '.StatePropertyType'
-          }, {
-            n: 'externalReference',
-            mno: 0,
-            col: true,
-            ti: '.ExternalReferenceType'
-          }, {
-            n: 'partialboundedBy',
-            mno: 0,
-            col: true,
-            ti: '.CellSpaceBoundaryPropertyType'
-          }]
-      }, {
-        ln: 'EdgesType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'transitionMember',
-            mno: 0,
-            col: true,
-            ti: '.TransitionMemberType'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }, {
-            n: 'aggregationType',
-            ti: 'GML_3_2_1.AggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CellSpaceBoundaryPropertyType',
-        ps: [{
-            n: 'cellSpaceBoundary',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'CellSpaceBoundary',
-            ti: '.CellSpaceBoundaryType',
+            en: 'CellSpace',
+            ti: '.CellSpaceType',
             t: 'er'
           }, {
             n: 'nilReason',
@@ -182,15 +87,94 @@ var IndoorGML_Core_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'CellSpaceBoundaryGeometryType',
+        ln: 'MultiLayeredGraphType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
-            n: 'geometry3D',
+            n: 'spaceLayers',
             rq: true,
-            ti: 'GML_3_2_1.SurfacePropertyType'
+            col: true,
+            ti: '.SpaceLayersType'
           }, {
-            n: 'geometry2D',
+            n: 'interEdges',
+            mno: 0,
+            col: true,
+            ti: '.InterEdgesType'
+          }]
+      }, {
+        ln: 'TransitionType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'weight',
+            ti: 'Double'
+          }, {
+            n: 'connects',
             rq: true,
+            mno: 2,
+            mxo: 2,
+            col: true,
+            ti: '.StatePropertyType'
+          }, {
+            n: 'duality',
+            ti: '.CellSpaceBoundaryPropertyType'
+          }, {
+            n: 'geometry',
             ti: 'GML_3_2_1.CurvePropertyType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'InterEdgesType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'interLayerConnectionMember',
+            rq: true,
+            col: true,
+            ti: '.InterLayerConnectionMemberType'
+          }, {
+            n: 'aggregationType',
+            ti: 'GML_3_2_1.AggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'MultiLayeredGraphPropertyType',
@@ -241,68 +225,12 @@ var IndoorGML_Core_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'StateMemberType',
-        bti: 'GML_3_2_1.AbstractFeatureMemberType',
+        ln: 'StatePropertyType',
         ps: [{
             n: 'state',
             rq: true,
             en: 'State',
             ti: '.StateType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'StateType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'duality',
-            ti: '.CellSpacePropertyType'
-          }, {
-            n: 'connects',
-            mno: 0,
-            col: true,
-            ti: '.TransitionPropertyType'
-          }, {
-            n: 'geometry',
-            ti: 'GML_3_2_1.PointPropertyType'
           }, {
             n: 'nilReason',
             ti: {
@@ -403,13 +331,12 @@ var IndoorGML_Core_1_0_Module_Factory = function () {
             ti: '.ExternalObjectReferenceType'
           }]
       }, {
-        ln: 'SpaceLayerMemberType',
-        bti: 'GML_3_2_1.AbstractFeatureMemberType',
+        ln: 'PrimalSpaceFeaturesPropertyType',
         ps: [{
-            n: 'spaceLayer',
+            n: 'primalSpaceFeatures',
             rq: true,
-            en: 'SpaceLayer',
-            ti: '.SpaceLayerType'
+            en: 'PrimalSpaceFeatures',
+            ti: '.PrimalSpaceFeaturesType'
           }, {
             n: 'nilReason',
             ti: {
@@ -461,24 +388,202 @@ var IndoorGML_Core_1_0_Module_Factory = function () {
             rq: true
           }]
       }, {
-        ln: 'TransitionType',
+        ln: 'SpaceLayerPropertyType',
+        ps: [{
+            n: 'spaceLayer',
+            rq: true,
+            en: 'SpaceLayer',
+            ti: '.SpaceLayerType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'EdgesType',
         bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
-            n: 'weight',
-            ti: 'Double'
-          }, {
-            n: 'connects',
-            rq: true,
-            mno: 2,
-            mxo: 2,
+            n: 'transitionMember',
+            mno: 0,
             col: true,
-            ti: '.StatePropertyType'
+            ti: '.TransitionMemberType'
           }, {
-            n: 'duality',
-            ti: '.CellSpaceBoundaryPropertyType'
+            n: 'aggregationType',
+            ti: 'GML_3_2_1.AggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
           }, {
-            n: 'geometry',
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CellSpaceBoundaryGeometryType',
+        ps: [{
+            n: 'geometry3D',
+            rq: true,
+            ti: 'GML_3_2_1.SurfacePropertyType'
+          }, {
+            n: 'geometry2D',
+            rq: true,
             ti: 'GML_3_2_1.CurvePropertyType'
+          }]
+      }, {
+        ln: 'SpaceLayerType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'usage',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'terminationDate',
+            ti: 'DateTime'
+          }, {
+            n: 'function',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_2_1.CodeType'
+          }, {
+            n: 'creationDate',
+            ti: 'DateTime'
+          }, {
+            n: 'clazz',
+            en: 'class'
+          }, {
+            n: 'nodes',
+            rq: true,
+            col: true,
+            ti: '.NodesType'
+          }, {
+            n: 'edges',
+            mno: 0,
+            col: true,
+            ti: '.EdgesType'
+          }]
+      }, {
+        ln: 'NodesType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'stateMember',
+            rq: true,
+            col: true,
+            ti: '.StateMemberType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }, {
+            n: 'aggregationType',
+            ti: 'GML_3_2_1.AggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CellSpaceBoundaryPropertyType',
+        ps: [{
+            n: 'cellSpaceBoundary',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'CellSpaceBoundary',
+            ti: '.CellSpaceBoundaryType',
+            t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'StateMemberType',
+        bti: 'GML_3_2_1.AbstractFeatureMemberType',
+        ps: [{
+            n: 'state',
+            rq: true,
+            en: 'State',
+            ti: '.StateType'
           }, {
             n: 'nilReason',
             ti: {
@@ -569,13 +674,19 @@ var IndoorGML_Core_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'TransitionMemberType',
-        bti: 'GML_3_2_1.AbstractFeatureMemberType',
+        ln: 'StateType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
-            n: 'transition',
-            rq: true,
-            en: 'Transition',
-            ti: '.TransitionType'
+            n: 'duality',
+            ti: '.CellSpacePropertyType'
+          }, {
+            n: 'connects',
+            mno: 0,
+            col: true,
+            ti: '.TransitionPropertyType'
+          }, {
+            n: 'geometry',
+            ti: 'GML_3_2_1.PointPropertyType'
           }, {
             n: 'nilReason',
             ti: {
@@ -633,12 +744,16 @@ var IndoorGML_Core_1_0_Module_Factory = function () {
             ti: '.ExternalReferenceType'
           }]
       }, {
-        ln: 'PrimalSpaceFeaturesPropertyType',
+        ln: 'CellSpaceMemberType',
+        bti: 'GML_3_2_1.AbstractFeatureMemberType',
         ps: [{
-            n: 'primalSpaceFeatures',
+            n: 'cellSpace',
             rq: true,
-            en: 'PrimalSpaceFeatures',
-            ti: '.PrimalSpaceFeaturesType'
+            mx: false,
+            dom: false,
+            en: 'CellSpace',
+            ti: '.CellSpaceType',
+            t: 'er'
           }, {
             n: 'nilReason',
             ti: {
@@ -681,48 +796,211 @@ var IndoorGML_Core_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SpaceLayerType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
+        ln: 'CellSpaceGeometryType',
         ps: [{
-            n: 'usage',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'terminationDate',
-            ti: 'DateTime'
-          }, {
-            n: 'function',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_2_1.CodeType'
-          }, {
-            n: 'creationDate',
-            ti: 'DateTime'
-          }, {
-            n: 'clazz',
-            en: 'class'
-          }, {
-            n: 'nodes',
+            n: 'geometry3D',
             rq: true,
-            col: true,
-            ti: '.NodesType'
+            en: 'Geometry3D',
+            ti: 'GML_3_2_1.SolidPropertyType'
           }, {
-            n: 'edges',
-            mno: 0,
-            col: true,
-            ti: '.EdgesType'
+            n: 'geometry2D',
+            rq: true,
+            en: 'Geometry2D',
+            ti: 'GML_3_2_1.SurfacePropertyType'
           }]
       }, {
-        ln: 'CellSpacePropertyType',
+        ln: 'CellSpaceBoundaryMemberType',
+        bti: 'GML_3_2_1.AbstractFeatureMemberType',
         ps: [{
-            n: 'cellSpace',
+            n: 'cellSpaceBoundary',
             rq: true,
             mx: false,
             dom: false,
-            en: 'CellSpace',
-            ti: '.CellSpaceType',
+            en: 'CellSpaceBoundary',
+            ti: '.CellSpaceBoundaryType',
             t: 'er'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SpaceLayersType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'spaceLayerMember',
+            rq: true,
+            col: true,
+            ti: '.SpaceLayerMemberType'
+          }, {
+            n: 'aggregationType',
+            ti: 'GML_3_2_1.AggregationType',
+            an: {
+              lp: 'aggregationType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TransitionPropertyType',
+        ps: [{
+            n: 'transition',
+            rq: true,
+            en: 'Transition',
+            ti: '.TransitionType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SpaceLayerMemberType',
+        bti: 'GML_3_2_1.AbstractFeatureMemberType',
+        ps: [{
+            n: 'spaceLayer',
+            rq: true,
+            en: 'SpaceLayer',
+            ti: '.SpaceLayerType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'CellSpaceType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
+        ps: [{
+            n: 'cellSpaceGeometry',
+            ti: '.CellSpaceGeometryType'
+          }, {
+            n: 'duality',
+            ti: '.StatePropertyType'
+          }, {
+            n: 'externalReference',
+            mno: 0,
+            col: true,
+            ti: '.ExternalReferenceType'
+          }, {
+            n: 'partialboundedBy',
+            mno: 0,
+            col: true,
+            ti: '.CellSpaceBoundaryPropertyType'
+          }]
+      }, {
+        ln: 'TransitionMemberType',
+        bti: 'GML_3_2_1.AbstractFeatureMemberType',
+        ps: [{
+            n: 'transition',
+            rq: true,
+            en: 'Transition',
+            ti: '.TransitionType'
           }, {
             n: 'nilReason',
             ti: {
@@ -788,284 +1066,6 @@ var IndoorGML_Core_1_0_Module_Factory = function () {
             ti: '.SpaceLayerPropertyType'
           }]
       }, {
-        ln: 'SpaceLayersType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'spaceLayerMember',
-            rq: true,
-            col: true,
-            ti: '.SpaceLayerMemberType'
-          }, {
-            n: 'aggregationType',
-            ti: 'GML_3_2_1.AggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'InterEdgesType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'interLayerConnectionMember',
-            rq: true,
-            col: true,
-            ti: '.InterLayerConnectionMemberType'
-          }, {
-            n: 'aggregationType',
-            ti: 'GML_3_2_1.AggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CellSpaceGeometryType',
-        ps: [{
-            n: 'geometry3D',
-            rq: true,
-            en: 'Geometry3D',
-            ti: 'GML_3_2_1.SolidPropertyType'
-          }, {
-            n: 'geometry2D',
-            rq: true,
-            en: 'Geometry2D',
-            ti: 'GML_3_2_1.SurfacePropertyType'
-          }]
-      }, {
-        ln: 'TransitionPropertyType',
-        ps: [{
-            n: 'transition',
-            rq: true,
-            en: 'Transition',
-            ti: '.TransitionType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SpaceLayerPropertyType',
-        ps: [{
-            n: 'spaceLayer',
-            rq: true,
-            en: 'SpaceLayer',
-            ti: '.SpaceLayerType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'StatePropertyType',
-        ps: [{
-            n: 'state',
-            rq: true,
-            en: 'State',
-            ti: '.StateType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'MultiLayeredGraphType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'spaceLayers',
-            rq: true,
-            col: true,
-            ti: '.SpaceLayersType'
-          }, {
-            n: 'interEdges',
-            mno: 0,
-            col: true,
-            ti: '.InterEdgesType'
-          }]
-      }, {
-        ln: 'NodesType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'stateMember',
-            rq: true,
-            col: true,
-            ti: '.StateMemberType'
-          }, {
-            n: 'aggregationType',
-            ti: 'GML_3_2_1.AggregationType',
-            an: {
-              lp: 'aggregationType'
-            },
-            t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'CellSpaceMemberType',
-        bti: 'GML_3_2_1.AbstractFeatureMemberType',
-        ps: [{
-            n: 'cellSpace',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'CellSpace',
-            ti: '.CellSpaceType',
-            t: 'er'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
         t: 'enum',
         ln: 'TypeOfTopoExpressionCodeEnumerationType',
         vs: ['CONTAINS', 'OVERLAPS', 'EQUALS', 'WITHIN', 'CROSSES', 'INTERSECTS']
@@ -1089,8 +1089,8 @@ var IndoorGML_Core_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'SpaceLayer',
-        ti: '.SpaceLayerType',
+        en: 'State',
+        ti: '.StateType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
@@ -1103,8 +1103,8 @@ var IndoorGML_Core_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'Transition',
-        ti: '.TransitionType',
+        en: 'InterLayerConnection',
+        ti: '.InterLayerConnectionType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
@@ -1124,15 +1124,15 @@ var IndoorGML_Core_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'InterLayerConnection',
-        ti: '.InterLayerConnectionType',
+        en: 'SpaceLayer',
+        ti: '.SpaceLayerType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }, {
-        en: 'State',
-        ti: '.StateType',
+        en: 'Transition',
+        ti: '.TransitionType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'

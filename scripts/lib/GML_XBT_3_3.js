@@ -5,6 +5,19 @@ var GML_XBT_3_3_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/XML\/1998\/namespace',
     deps: ['GML_3_2_1'],
     tis: [{
+        ln: 'CodeType',
+        bti: '.LanguageStringType',
+        ps: [{
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CodeWithAuthorityType',
+        bti: '.CodeType'
+      }, {
         ln: 'LanguageStringAuxType',
         bti: 'GML_3_2_1.StringOrRefType',
         ps: [{
@@ -20,32 +33,19 @@ var GML_XBT_3_3_Module_Factory = function () {
             n: 'lang',
             t: 'a'
           }]
-      }, {
-        ln: 'CodeWithAuthorityType',
-        bti: '.CodeType'
-      }, {
-        ln: 'CodeType',
-        bti: '.LanguageStringType',
-        ps: [{
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
-          }]
       }],
     eis: [{
-        en: 'description',
-        ti: '.LanguageStringAuxType',
-        sh: {
-          lp: 'description',
-          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-        }
-      }, {
         en: 'remarks',
         ti: '.LanguageStringType',
         sh: {
           lp: 'remarks',
+          ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+        }
+      }, {
+        en: 'description',
+        ti: '.LanguageStringAuxType',
+        sh: {
+          lp: 'description',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
       }]

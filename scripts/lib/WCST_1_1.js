@@ -4,20 +4,13 @@ var WCST_1_1_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/wcs\/1.1\/wcst',
     deps: ['OWS_1_1_0'],
     tis: [{
-        ln: 'AcknowledgementType',
+        ln: 'CoverageType',
+        bti: 'OWS_1_1_0.ReferenceGroupType',
         ps: [{
-            n: 'timeStamp',
+            n: 'action',
             rq: true,
-            en: 'TimeStamp',
-            ti: 'DateTime'
-          }, {
-            n: 'requestId',
-            rq: true,
-            en: 'RequestId'
-          }, {
-            n: 'operationRequest',
-            en: 'OperationRequest',
-            ti: '.TransactionType'
+            en: 'Action',
+            ti: '.Action'
           }]
       }, {
         ln: 'TransactionType',
@@ -48,15 +41,6 @@ var WCST_1_1_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'CoverageType',
-        bti: 'OWS_1_1_0.ReferenceGroupType',
-        ps: [{
-            n: 'action',
-            rq: true,
-            en: 'Action',
-            ti: '.Action'
-          }]
-      }, {
         ln: 'Action',
         tn: null,
         bti: 'OWS_1_1_0.CodeType'
@@ -76,21 +60,29 @@ var WCST_1_1_Module_Factory = function () {
             },
             ti: 'OWS_1_1_0.CodeType'
           }]
+      }, {
+        ln: 'AcknowledgementType',
+        ps: [{
+            n: 'timeStamp',
+            rq: true,
+            en: 'TimeStamp',
+            ti: 'DateTime'
+          }, {
+            n: 'requestId',
+            rq: true,
+            en: 'RequestId'
+          }, {
+            n: 'operationRequest',
+            en: 'OperationRequest',
+            ti: '.TransactionType'
+          }]
       }],
     eis: [{
         en: 'Action',
         ti: '.Action'
       }, {
-        en: 'RequestId'
-      }, {
-        en: 'TransactionResponse',
-        ti: '.TransactionResponseType'
-      }, {
         en: 'Acknowledgement',
         ti: '.AcknowledgementType'
-      }, {
-        en: 'Transaction',
-        ti: '.TransactionType'
       }, {
         en: 'Coverage',
         ti: '.CoverageType',
@@ -98,6 +90,14 @@ var WCST_1_1_Module_Factory = function () {
           lp: 'ReferenceGroup',
           ns: 'http:\/\/www.opengis.net\/ows\/1.1'
         }
+      }, {
+        en: 'Transaction',
+        ti: '.TransactionType'
+      }, {
+        en: 'RequestId'
+      }, {
+        en: 'TransactionResponse',
+        ti: '.TransactionResponseType'
       }]
   };
   return {

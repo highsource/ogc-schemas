@@ -126,15 +126,18 @@ var CityGML_Vegetation_2_0_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'PlantCover',
-        ti: '.PlantCoverType',
-        sh: '_VegetationObject'
+        en: '_GenericApplicationPropertyOfSolitaryVegetationObject',
+        ti: 'AnyType'
       }, {
         en: '_GenericApplicationPropertyOfVegetationObject',
         ti: 'AnyType'
       }, {
         en: '_GenericApplicationPropertyOfPlantCover',
         ti: 'AnyType'
+      }, {
+        en: 'SolitaryVegetationObject',
+        ti: '.SolitaryVegetationObjectType',
+        sh: '_VegetationObject'
       }, {
         en: '_VegetationObject',
         ti: '.AbstractVegetationObjectType',
@@ -143,11 +146,8 @@ var CityGML_Vegetation_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/citygml\/2.0'
         }
       }, {
-        en: '_GenericApplicationPropertyOfSolitaryVegetationObject',
-        ti: 'AnyType'
-      }, {
-        en: 'SolitaryVegetationObject',
-        ti: '.SolitaryVegetationObjectType',
+        en: 'PlantCover',
+        ti: '.PlantCoverType',
         sh: '_VegetationObject'
       }]
   };

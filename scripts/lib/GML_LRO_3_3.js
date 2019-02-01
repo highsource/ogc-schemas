@@ -3,56 +3,8 @@ var GML_LRO_3_3_Module_Factory = function () {
     n: 'GML_LRO_3_3',
     dens: 'http:\/\/www.opengis.net\/gml\/3.3\/lro',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1', 'GML_LR_3_3'],
+    deps: ['XLink_1_0', 'GML_LR_3_3', 'GML_3_2_1'],
     tis: [{
-        ln: 'LRMWithOffsetPropertyType',
-        ps: [{
-            n: 'lrmWithOffset',
-            rq: true,
-            en: 'LRMWithOffset',
-            ti: '.LRMWithOffsetType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
         ln: 'LateralOffsetLinearSRSPropertyType',
         ps: [{
             n: 'lateralOffsetLinearSRS',
@@ -126,16 +78,6 @@ var GML_LRO_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LateralOffsetDistanceExpressionType',
-        bti: 'GML_LR_3_3.DistanceExpressionType',
-        ps: [{
-            n: 'lateralOffsetExpression',
-            ti: '.LateralOffsetExpressionType'
-          }, {
-            n: 'verticalOffsetExpression',
-            ti: '.VerticalOffsetExpressionType'
-          }]
-      }, {
         ln: 'LRMWithOffsetType',
         bti: 'GML_LR_3_3.LinearReferencingMethodType',
         ps: [{
@@ -145,6 +87,16 @@ var GML_LRO_3_3_Module_Factory = function () {
             n: 'positiveLateralOffsetDirection'
           }, {
             n: 'positiveVerticalOffsetDirection'
+          }]
+      }, {
+        ln: 'LateralOffsetDistanceExpressionType',
+        bti: 'GML_LR_3_3.DistanceExpressionType',
+        ps: [{
+            n: 'lateralOffsetExpression',
+            ti: '.LateralOffsetExpressionType'
+          }, {
+            n: 'verticalOffsetExpression',
+            ti: '.VerticalOffsetExpressionType'
           }]
       }, {
         ln: 'LateralOffsetExpressionType',
@@ -169,6 +121,54 @@ var GML_LRO_3_3_Module_Factory = function () {
             an: {
               lp: 'featureGeometry'
             },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LRMWithOffsetPropertyType',
+        ps: [{
+            n: 'lrmWithOffset',
+            rq: true,
+            en: 'LRMWithOffset',
+            ti: '.LRMWithOffsetType'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {

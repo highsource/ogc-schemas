@@ -2,8 +2,23 @@ var WCS_WCSEO_1_0_Module_Factory = function () {
   var WCS_WCSEO_1_0 = {
     n: 'WCS_WCSEO_1_0',
     dens: 'http:\/\/www.opengis.net\/wcs\/wcseo\/1.0',
-    deps: ['GMLCOV_1_0', 'OMEO_EOP_2_0', 'WCS_2_0', 'OWS_2_0', 'GML_3_2_1'],
+    deps: ['OWS_2_0', 'OMEO_EOP_2_0', 'GML_3_2_1', 'WCS_2_0', 'GMLCOV_1_0'],
     tis: [{
+        ln: 'DatasetType',
+        tn: 'datasetType',
+        ps: [{
+            n: 'coverageId',
+            rq: true,
+            en: {
+              lp: 'CoverageId',
+              ns: 'http:\/\/www.opengis.net\/wcs\/2.0'
+            },
+            ti: 'NCName'
+          }, {
+            n: 'contributingFootprint',
+            ti: '.ContributingFootprint'
+          }]
+      }, {
         ln: 'ServiceParametersType',
         ps: [{
             n: 'rectifiedDataset',
@@ -32,19 +47,13 @@ var WCS_WCSEO_1_0_Module_Factory = function () {
             ti: '.DatasetSeries'
           }]
       }, {
-        ln: 'DatasetSeriesType',
+        ln: 'DatasetSeriesDescriptionType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
             n: 'datasetSeriesId',
             rq: true,
             en: 'DatasetSeriesId',
             ti: 'NCName'
-          }, {
-            n: 'footprint',
-            en: {
-              lp: 'Footprint',
-              ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-            },
-            ti: 'OMEO_EOP_2_0.FootprintType'
           }, {
             n: 'timePeriod',
             rq: true,
@@ -54,33 +63,37 @@ var WCS_WCSEO_1_0_Module_Factory = function () {
             },
             ti: 'GML_3_2_1.TimePeriodType'
           }, {
-            n: 'rectifiedDataset',
-            mno: 0,
-            col: true,
-            ti: '.RectifiedDataset'
+            n: 'footprint',
+            en: {
+              lp: 'Footprint',
+              ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+            },
+            ti: 'OMEO_EOP_2_0.FootprintType'
           }, {
-            n: 'referenceableDataset',
-            mno: 0,
-            col: true,
-            ti: '.ReferenceableDataset'
-          }, {
-            n: 'rectifiedStitchedMosaic',
-            mno: 0,
-            col: true,
-            ti: '.RectifiedStitchedMosaicCommonElement'
-          }, {
-            n: 'referenceableStitchedMosaic',
-            mno: 0,
-            col: true,
-            ti: '.ReferenceableStitchedMosaicCommonElement'
-          }, {
-            n: 'datasetSeries',
-            mno: 0,
-            col: true,
-            ti: '.DatasetSeries'
+            n: 'serviceParameters',
+            en: 'ServiceParameters',
+            ti: '.ServiceParametersType'
           }]
       }, {
-        ln: 'RectifiedStitchedMosaicCommonElement',
+        ln: 'DatasetSeriesDescriptionsType',
+        ps: [{
+            n: 'datasetSeriesDescription',
+            mno: 0,
+            col: true,
+            en: 'DatasetSeriesDescription',
+            ti: '.DatasetSeriesDescriptionType'
+          }]
+      }, {
+        ln: 'RectifiedStitchedMosaic',
+        tn: null,
+        bti: '.AbstractEOCoverageType',
+        ps: [{
+            n: 'datasets',
+            rq: true,
+            ti: '.DatasetsType'
+          }]
+      }, {
+        ln: 'ReferenceableStitchedMosaicCommonElement',
         tn: null,
         ps: [{
             n: 'coverageId',
@@ -130,13 +143,27 @@ var WCS_WCSEO_1_0_Module_Factory = function () {
             ti: '.LineageType'
           }]
       }, {
-        ln: 'Sections',
+        ln: 'RectifiedDataset',
         tn: null,
         ps: [{
-            n: 'section',
+            n: 'coverageId',
             rq: true,
-            col: true,
-            en: 'Section'
+            en: {
+              lp: 'CoverageId',
+              ns: 'http:\/\/www.opengis.net\/wcs\/2.0'
+            },
+            ti: 'NCName'
+          }, {
+            n: 'reference',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'Reference',
+              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
+            },
+            ti: 'OWS_2_0.ReferenceType',
+            t: 'er'
           }]
       }, {
         ln: 'DescribeEOCoverageSetType',
@@ -171,78 +198,7 @@ var WCS_WCSEO_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DatasetSeriesDescriptionsType',
-        ps: [{
-            n: 'datasetSeriesDescription',
-            mno: 0,
-            col: true,
-            en: 'DatasetSeriesDescription',
-            ti: '.DatasetSeriesDescriptionType'
-          }]
-      }, {
-        ln: 'ContributingFootprint',
-        tn: null,
-        ps: [{
-            n: 'footprint',
-            rq: true,
-            en: {
-              lp: 'Footprint',
-              ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-            },
-            ti: 'OMEO_EOP_2_0.FootprintType'
-          }]
-      }, {
-        ln: 'LineageType',
-        tn: 'lineageType',
-        ps: [{
-            n: 'processing',
-            rq: true,
-            mx: false,
-            dom: false,
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'timePosition',
-            en: {
-              lp: 'timePosition',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2_1.TimePositionType'
-          }]
-      }, {
         ln: 'ReferenceableDataset',
-        tn: null,
-        ps: [{
-            n: 'coverageId',
-            rq: true,
-            en: {
-              lp: 'CoverageId',
-              ns: 'http:\/\/www.opengis.net\/wcs\/2.0'
-            },
-            ti: 'NCName'
-          }, {
-            n: 'reference',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'Reference',
-              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
-            },
-            ti: 'OWS_2_0.ReferenceType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'DatasetsType',
-        tn: 'datasetsType',
-        ps: [{
-            n: 'dataset',
-            mno: 0,
-            col: true,
-            ti: '.DatasetType'
-          }]
-      }, {
-        ln: 'ReferenceableStitchedMosaicCommonElement',
         tn: null,
         ps: [{
             n: 'coverageId',
@@ -302,51 +258,28 @@ var WCS_WCSEO_1_0_Module_Factory = function () {
             t: 'er'
           }]
       }, {
-        ln: 'DatasetType',
-        tn: 'datasetType',
+        ln: 'DatasetsType',
+        tn: 'datasetsType',
         ps: [{
-            n: 'coverageId',
-            rq: true,
-            en: {
-              lp: 'CoverageId',
-              ns: 'http:\/\/www.opengis.net\/wcs\/2.0'
-            },
-            ti: 'NCName'
-          }, {
-            n: 'contributingFootprint',
-            ti: '.ContributingFootprint'
+            n: 'dataset',
+            mno: 0,
+            col: true,
+            ti: '.DatasetType'
           }]
       }, {
-        ln: 'RectifiedDataset',
-        tn: null,
-        ps: [{
-            n: 'coverageId',
-            rq: true,
-            en: {
-              lp: 'CoverageId',
-              ns: 'http:\/\/www.opengis.net\/wcs\/2.0'
-            },
-            ti: 'NCName'
-          }, {
-            n: 'reference',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'Reference',
-              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
-            },
-            ti: 'OWS_2_0.ReferenceType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'DatasetSeriesDescriptionType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
+        ln: 'DatasetSeriesType',
         ps: [{
             n: 'datasetSeriesId',
             rq: true,
             en: 'DatasetSeriesId',
             ti: 'NCName'
+          }, {
+            n: 'footprint',
+            en: {
+              lp: 'Footprint',
+              ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+            },
+            ti: 'OMEO_EOP_2_0.FootprintType'
           }, {
             n: 'timePeriod',
             rq: true,
@@ -356,52 +289,30 @@ var WCS_WCSEO_1_0_Module_Factory = function () {
             },
             ti: 'GML_3_2_1.TimePeriodType'
           }, {
-            n: 'footprint',
-            en: {
-              lp: 'Footprint',
-              ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-            },
-            ti: 'OMEO_EOP_2_0.FootprintType'
+            n: 'rectifiedDataset',
+            mno: 0,
+            col: true,
+            ti: '.RectifiedDataset'
           }, {
-            n: 'serviceParameters',
-            en: 'ServiceParameters',
-            ti: '.ServiceParametersType'
-          }]
-      }, {
-        ln: 'ReferenceGetCoverageType',
-        tn: 'referenceGetCoverageType',
-        ps: [{
-            n: 'reference',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'Reference',
-              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
-            },
-            ti: 'OWS_2_0.ReferenceType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'AbstractEOCoverageType',
-        bti: 'GMLCOV_1_0.AbstractDiscreteCoverageType'
-      }, {
-        ln: 'RectifiedStitchedMosaic',
-        tn: null,
-        bti: '.AbstractEOCoverageType',
-        ps: [{
-            n: 'datasets',
-            rq: true,
-            ti: '.DatasetsType'
-          }]
-      }, {
-        ln: 'ReferenceableStitchedMosaic',
-        tn: null,
-        bti: '.AbstractEOCoverageType',
-        ps: [{
-            n: 'datasets',
-            rq: true,
-            ti: '.DatasetsType'
+            n: 'referenceableDataset',
+            mno: 0,
+            col: true,
+            ti: '.ReferenceableDataset'
+          }, {
+            n: 'rectifiedStitchedMosaic',
+            mno: 0,
+            col: true,
+            ti: '.RectifiedStitchedMosaicCommonElement'
+          }, {
+            n: 'referenceableStitchedMosaic',
+            mno: 0,
+            col: true,
+            ti: '.ReferenceableStitchedMosaicCommonElement'
+          }, {
+            n: 'datasetSeries',
+            mno: 0,
+            col: true,
+            ti: '.DatasetSeries'
           }]
       }, {
         ln: 'DatasetSeries',
@@ -422,6 +333,95 @@ var WCS_WCSEO_1_0_Module_Factory = function () {
             },
             ti: 'OWS_2_0.ReferenceType',
             t: 'er'
+          }]
+      }, {
+        ln: 'RectifiedStitchedMosaicCommonElement',
+        tn: null,
+        ps: [{
+            n: 'coverageId',
+            rq: true,
+            en: {
+              lp: 'CoverageId',
+              ns: 'http:\/\/www.opengis.net\/wcs\/2.0'
+            },
+            ti: 'NCName'
+          }, {
+            n: 'reference',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'Reference',
+              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
+            },
+            ti: 'OWS_2_0.ReferenceType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'ContributingFootprint',
+        tn: null,
+        ps: [{
+            n: 'footprint',
+            rq: true,
+            en: {
+              lp: 'Footprint',
+              ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+            },
+            ti: 'OMEO_EOP_2_0.FootprintType'
+          }]
+      }, {
+        ln: 'Sections',
+        tn: null,
+        ps: [{
+            n: 'section',
+            rq: true,
+            col: true,
+            en: 'Section'
+          }]
+      }, {
+        ln: 'ReferenceGetCoverageType',
+        tn: 'referenceGetCoverageType',
+        ps: [{
+            n: 'reference',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'Reference',
+              ns: 'http:\/\/www.opengis.net\/ows\/2.0'
+            },
+            ti: 'OWS_2_0.ReferenceType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'LineageType',
+        tn: 'lineageType',
+        ps: [{
+            n: 'processing',
+            rq: true,
+            mx: false,
+            dom: false,
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'timePosition',
+            en: {
+              lp: 'timePosition',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2_1.TimePositionType'
+          }]
+      }, {
+        ln: 'AbstractEOCoverageType',
+        bti: 'GMLCOV_1_0.AbstractDiscreteCoverageType'
+      }, {
+        ln: 'ReferenceableStitchedMosaic',
+        tn: null,
+        bti: '.AbstractEOCoverageType',
+        ps: [{
+            n: 'datasets',
+            rq: true,
+            ti: '.DatasetsType'
           }]
       }, {
         ln: 'EOCoverageSetDescriptionType',
@@ -455,85 +455,17 @@ var WCS_WCSEO_1_0_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'lineage',
-        ti: '.LineageType'
-      }, {
-        en: 'ServiceParameters',
-        ti: '.ServiceParametersType'
-      }, {
-        en: 'rectifiedDataset',
-        ti: '.RectifiedDataset'
-      }, {
-        en: 'referenceableDataset',
-        ti: '.ReferenceableDataset'
-      }, {
-        en: 'ReferenceableEOCoverage',
-        ti: '.AbstractEOCoverageType',
-        sh: {
-          lp: 'ReferenceableGridCoverage',
-          ns: 'http:\/\/www.opengis.net\/gmlcov\/1.0'
-        }
-      }, {
-        en: 'datasetSeries',
-        ti: '.DatasetSeries'
-      }, {
-        en: 'ReferenceableStitchedMosaic',
-        ti: '.ReferenceableStitchedMosaic',
-        sh: 'ReferenceableEOCoverage'
-      }, {
-        en: 'contributingFootprint',
-        ti: '.ContributingFootprint'
-      }, {
-        en: 'rectifiedStitchedMosaic',
-        ti: '.RectifiedStitchedMosaicCommonElement'
-      }, {
-        en: 'RectifiedDataset',
-        ti: '.AbstractEOCoverageType',
-        sh: 'RectifiedEOCoverage'
-      }, {
-        en: 'DescribeEOCoverageSet',
-        ti: '.DescribeEOCoverageSetType'
-      }, {
-        en: 'Sections',
-        ti: '.Sections'
+        en: 'DatasetSeriesId',
+        ti: 'NCName'
       }, {
         en: 'DatasetSeriesDescriptions',
         ti: '.DatasetSeriesDescriptionsType'
       }, {
-        en: 'EOMetadata',
-        ti: '.EOMetadataType'
-      }, {
-        en: 'DatasetSeries',
-        ti: '.DatasetSeriesType'
-      }, {
-        en: 'containment'
-      }, {
-        en: 'dataset',
-        ti: '.DatasetType'
-      }, {
-        en: 'referenceGetCoverage',
-        ti: '.ReferenceGetCoverageType',
-        sh: 'processing'
-      }, {
-        en: 'processing',
-        ti: 'AnyType'
+        en: 'contributingFootprint',
+        ti: '.ContributingFootprint'
       }, {
         en: 'DatasetSeriesDescription',
         ti: '.DatasetSeriesDescriptionType'
-      }, {
-        en: 'Section'
-      }, {
-        en: 'DatasetSeriesId',
-        ti: 'NCName'
-      }, {
-        en: 'datasets',
-        ti: '.DatasetsType'
-      }, {
-        en: 'EOCoverageSetDescription',
-        ti: '.EOCoverageSetDescriptionType'
-      }, {
-        en: 'referenceableStitchedMosaic',
-        ti: '.ReferenceableStitchedMosaicCommonElement'
       }, {
         en: 'RectifiedEOCoverage',
         ti: '.AbstractEOCoverageType',
@@ -542,18 +474,86 @@ var WCS_WCSEO_1_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gmlcov\/1.0'
         }
       }, {
-        en: 'eoId',
-        ti: 'NCName'
+        en: 'ServiceParameters',
+        ti: '.ServiceParametersType'
+      }, {
+        en: 'rectifiedStitchedMosaic',
+        ti: '.RectifiedStitchedMosaicCommonElement'
       }, {
         en: 'ReferenceableDataset',
         ti: '.AbstractEOCoverageType',
         sh: 'ReferenceableEOCoverage'
       }, {
-        en: 'DatasetSeriesSummary',
-        ti: '.DatasetSeriesSummaryType'
+        en: 'rectifiedDataset',
+        ti: '.RectifiedDataset'
+      }, {
+        en: 'ReferenceableEOCoverage',
+        ti: '.AbstractEOCoverageType',
+        sh: {
+          lp: 'ReferenceableGridCoverage',
+          ns: 'http:\/\/www.opengis.net\/gmlcov\/1.0'
+        }
+      }, {
+        en: 'DatasetSeries',
+        ti: '.DatasetSeriesType'
+      }, {
+        en: 'referenceableStitchedMosaic',
+        ti: '.ReferenceableStitchedMosaicCommonElement'
+      }, {
+        en: 'datasets',
+        ti: '.DatasetsType'
+      }, {
+        en: 'Section'
+      }, {
+        en: 'Sections',
+        ti: '.Sections'
       }, {
         en: 'RectifiedStitchedMosaic',
         ti: '.RectifiedStitchedMosaic',
+        sh: 'RectifiedEOCoverage'
+      }, {
+        en: 'DescribeEOCoverageSet',
+        ti: '.DescribeEOCoverageSetType'
+      }, {
+        en: 'processing',
+        ti: 'AnyType'
+      }, {
+        en: 'EOMetadata',
+        ti: '.EOMetadataType'
+      }, {
+        en: 'EOCoverageSetDescription',
+        ti: '.EOCoverageSetDescriptionType'
+      }, {
+        en: 'eoId',
+        ti: 'NCName'
+      }, {
+        en: 'datasetSeries',
+        ti: '.DatasetSeries'
+      }, {
+        en: 'lineage',
+        ti: '.LineageType'
+      }, {
+        en: 'containment'
+      }, {
+        en: 'referenceGetCoverage',
+        ti: '.ReferenceGetCoverageType',
+        sh: 'processing'
+      }, {
+        en: 'referenceableDataset',
+        ti: '.ReferenceableDataset'
+      }, {
+        en: 'DatasetSeriesSummary',
+        ti: '.DatasetSeriesSummaryType'
+      }, {
+        en: 'ReferenceableStitchedMosaic',
+        ti: '.ReferenceableStitchedMosaic',
+        sh: 'ReferenceableEOCoverage'
+      }, {
+        en: 'dataset',
+        ti: '.DatasetType'
+      }, {
+        en: 'RectifiedDataset',
+        ti: '.AbstractEOCoverageType',
         sh: 'RectifiedEOCoverage'
       }]
   };

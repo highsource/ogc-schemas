@@ -5,57 +5,43 @@ var EOP_1_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['GML_3_1_1', 'XLink_1_0'],
     tis: [{
-        ln: 'AcquisitionType.WrsLongitudeGrid',
-        tn: null,
+        ln: 'PlatformType',
         ps: [{
-            n: 'value',
-            ti: 'AnySimpleType',
-            t: 'v'
+            n: 'shortName',
+            rq: true
           }, {
-            n: 'codeSpace',
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
+            n: 'serialIdentifier'
+          }, {
+            n: 'orbitType'
           }]
       }, {
-        ln: 'EarthObservationEquipmentType',
+        ln: 'FootprintType',
         bti: 'GML_3_1_1.AbstractFeatureType',
         ps: [{
-            n: 'platform',
-            ti: '.PlatformPropertyType'
-          }, {
-            n: 'instrument',
-            ti: '.InstrumentPropertyType'
-          }, {
-            n: 'sensor',
-            ti: '.SensorPropertyType'
-          }, {
-            n: 'acquisitionParameters',
-            ti: '.AcquisitionPropertyType'
-          }]
-      }, {
-        ln: 'MaskInformationType',
-        ps: [{
-            n: 'type',
-            rq: true
-          }, {
-            n: 'format',
-            rq: true
-          }, {
-            n: 'referenceSystemIdentifier',
-            ti: '.CodeWithAuthorityType'
-          }, {
-            n: 'fileName',
-            rq: true
-          }]
-      }, {
-        ln: 'MaskType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'maskMembers',
+            n: 'multiExtentOf',
             rq: true,
-            ti: '.MaskMembersPropertyType'
+            en: {
+              lp: 'multiExtentOf',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.MultiSurfacePropertyType'
+          }, {
+            n: 'centerOf',
+            en: {
+              lp: 'centerOf',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.PointPropertyType'
+          }]
+      }, {
+        ln: 'DownlinkInformationType',
+        ps: [{
+            n: 'acquisitionStation',
+            rq: true,
+            ti: 'GML_3_1_1.CodeListType'
+          }, {
+            n: 'acquisitionDate',
+            ti: 'DateTime'
           }]
       }, {
         ln: 'EarthObservationType',
@@ -69,147 +55,12 @@ var EOP_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DownlinkInformationType',
-        ps: [{
-            n: 'acquisitionStation',
-            rq: true,
-            ti: 'GML_3_1_1.CodeListType'
-          }, {
-            n: 'acquisitionDate',
-            ti: 'DateTime'
-          }]
-      }, {
-        ln: 'ProductInformationType',
-        ps: [{
-            n: 'referenceSystemIdentifier',
-            ti: '.CodeWithAuthorityType'
-          }, {
-            n: 'fileName',
-            rq: true
-          }, {
-            n: 'version'
-          }, {
-            n: 'size',
-            ti: 'GML_3_1_1.MeasureListType'
-          }]
-      }, {
-        ln: 'ArchivingInformationArrayPropertyType',
-        ps: [{
-            n: 'archivingInformation',
-            rq: true,
-            col: true,
-            en: 'ArchivingInformation',
-            ti: '.ArchivingInformationType'
-          }]
-      }, {
-        ln: 'MaskMembersPropertyType',
-        ps: [{
-            n: 'maskFeature',
-            mno: 0,
-            col: true,
-            en: 'MaskFeature',
-            ti: '.MaskFeatureType'
-          }]
-      }, {
-        ln: 'CodeWithAuthorityType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'codeSpace',
-            rq: true,
-            an: {
-              lp: 'codeSpace'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'MaskInformationArrayPropertyType',
-        ps: [{
-            n: 'maskInformation',
-            rq: true,
-            col: true,
-            en: 'MaskInformation',
-            ti: '.MaskInformationType'
-          }]
-      }, {
-        ln: 'ArchivingInformationType',
-        ps: [{
-            n: 'archivingCenter',
-            rq: true,
-            ti: 'GML_3_1_1.CodeListType'
-          }, {
-            n: 'archivingDate',
-            rq: true,
-            ti: 'DateTime'
-          }, {
-            n: 'archivingIdentifier',
-            ti: '.CodeWithAuthorityType'
-          }]
-      }, {
-        ln: 'DownlinkInformationArrayPropertyType',
-        ps: [{
-            n: 'downlinkInformation',
-            rq: true,
-            col: true,
-            en: 'DownlinkInformation',
-            ti: '.DownlinkInformationType'
-          }]
-      }, {
-        ln: 'ProcessingInformationPropertyType',
-        ps: [{
-            n: 'processingInformation',
-            rq: true,
-            en: 'ProcessingInformation',
-            ti: '.ProcessingInformationType'
-          }]
-      }, {
-        ln: 'SpecificInformationType',
-        ps: [{
-            n: 'localAttribute',
-            rq: true
-          }, {
-            n: 'localValue',
-            rq: true
-          }]
-      }, {
         ln: 'InstrumentPropertyType',
         ps: [{
             n: 'instrument',
             rq: true,
             en: 'Instrument',
             ti: '.InstrumentType'
-          }]
-      }, {
-        ln: 'SensorType',
-        ps: [{
-            n: 'sensorType'
-          }, {
-            n: 'operationalMode',
-            ti: 'GML_3_1_1.CodeListType'
-          }, {
-            n: 'resolution',
-            ti: 'GML_3_1_1.MeasureType'
-          }, {
-            n: 'swathIdentifier',
-            ti: 'GML_3_1_1.CodeListType'
-          }]
-      }, {
-        ln: 'EarthObservationEquipmentPropertyType',
-        ps: [{
-            n: 'earthObservationEquipment',
-            rq: true,
-            en: 'EarthObservationEquipment',
-            ti: '.EarthObservationEquipmentType'
-          }]
-      }, {
-        ln: 'BrowseInformationArrayPropertyType',
-        ps: [{
-            n: 'browseInformation',
-            rq: true,
-            col: true,
-            en: 'BrowseInformation',
-            ti: '.BrowseInformationType'
           }]
       }, {
         ln: 'MaskFeatureType',
@@ -228,36 +79,6 @@ var EOP_1_0_Module_Factory = function () {
             ti: 'GML_3_1_1.SurfacePropertyType'
           }]
       }, {
-        ln: 'PlatformType',
-        ps: [{
-            n: 'shortName',
-            rq: true
-          }, {
-            n: 'serialIdentifier'
-          }, {
-            n: 'orbitType'
-          }]
-      }, {
-        ln: 'AcquisitionPropertyType',
-        ps: [{
-            n: 'acquisition',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'Acquisition',
-            ti: '.AcquisitionType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'HistogramArrayPropertyType',
-        ps: [{
-            n: 'histogram',
-            rq: true,
-            col: true,
-            en: 'Histogram',
-            ti: '.HistogramType'
-          }]
-      }, {
         ln: 'BrowseInformationType',
         ps: [{
             n: 'type',
@@ -274,27 +95,31 @@ var EOP_1_0_Module_Factory = function () {
             rq: true
           }]
       }, {
-        ln: 'ProductInformationArrayPropertyType',
-        ps: [{
-            n: 'productInformation',
-            rq: true,
-            col: true,
-            en: 'ProductInformation',
-            ti: '.ProductInformationType'
-          }]
-      }, {
-        ln: 'AcquisitionType.WrsLatitudeGrid',
-        tn: null,
+        ln: 'CodeWithAuthorityType',
         ps: [{
             n: 'value',
-            ti: 'AnySimpleType',
             t: 'v'
           }, {
             n: 'codeSpace',
+            rq: true,
             an: {
               lp: 'codeSpace'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'ArchivingInformationType',
+        ps: [{
+            n: 'archivingCenter',
+            rq: true,
+            ti: 'GML_3_1_1.CodeListType'
+          }, {
+            n: 'archivingDate',
+            rq: true,
+            ti: 'DateTime'
+          }, {
+            n: 'archivingIdentifier',
+            ti: '.CodeWithAuthorityType'
           }]
       }, {
         ln: 'AcquisitionType',
@@ -347,6 +172,172 @@ var EOP_1_0_Module_Factory = function () {
             ti: 'GML_3_1_1.AngleType'
           }]
       }, {
+        ln: 'EarthObservationEquipmentType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'platform',
+            ti: '.PlatformPropertyType'
+          }, {
+            n: 'instrument',
+            ti: '.InstrumentPropertyType'
+          }, {
+            n: 'sensor',
+            ti: '.SensorPropertyType'
+          }, {
+            n: 'acquisitionParameters',
+            ti: '.AcquisitionPropertyType'
+          }]
+      }, {
+        ln: 'SpecificInformationType',
+        ps: [{
+            n: 'localAttribute',
+            rq: true
+          }, {
+            n: 'localValue',
+            rq: true
+          }]
+      }, {
+        ln: 'SpecificInformationArrayPropertyType',
+        ps: [{
+            n: 'specificInformation',
+            rq: true,
+            col: true,
+            en: 'SpecificInformation',
+            ti: '.SpecificInformationType'
+          }]
+      }, {
+        ln: 'AcquisitionType.WrsLatitudeGrid',
+        tn: null,
+        ps: [{
+            n: 'value',
+            ti: 'AnySimpleType',
+            t: 'v'
+          }, {
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'InstrumentType',
+        ps: [{
+            n: 'shortName',
+            rq: true
+          }]
+      }, {
+        ln: 'EarthObservationMetaDataType',
+        bti: 'GML_3_1_1.AbstractMetaDataType',
+        ps: [{
+            n: 'contentOverrideForEarthObservationMetaDataType',
+            dom: false,
+            etis: [{
+                en: 'vendorSpecific',
+                ti: '.SpecificInformationArrayPropertyType'
+              }, {
+                en: 'acquisitionType'
+              }, {
+                en: 'status'
+              }, {
+                en: 'identifier'
+              }, {
+                en: 'productType'
+              }, {
+                en: 'histograms',
+                ti: '.HistogramArrayPropertyType'
+              }, {
+                en: 'composedOf',
+                ti: '.EarthObservationPropertyType'
+              }, {
+                en: 'linkedWith',
+                ti: '.EarthObservationPropertyType'
+              }, {
+                en: 'imageQualityDegradation',
+                ti: 'GML_3_1_1.MeasureType'
+              }, {
+                en: 'subsetOf',
+                ti: '.EarthObservationPropertyType'
+              }, {
+                en: 'archivedIn',
+                ti: '.ArchivingInformationArrayPropertyType'
+              }, {
+                en: 'imageQualityDegradationQuotationMode'
+              }, {
+                en: 'doi'
+              }, {
+                en: 'acquisitionSubType',
+                ti: 'GML_3_1_1.CodeListType'
+              }, {
+                en: 'downlinkedTo',
+                ti: '.DownlinkInformationArrayPropertyType'
+              }, {
+                en: 'processing',
+                ti: '.ProcessingInformationPropertyType'
+              }, {
+                en: 'parentIdentifier'
+              }],
+            t: 'ers'
+          }]
+      }, {
+        ln: 'BrowseInformationArrayPropertyType',
+        ps: [{
+            n: 'browseInformation',
+            rq: true,
+            col: true,
+            en: 'BrowseInformation',
+            ti: '.BrowseInformationType'
+          }]
+      }, {
+        ln: 'ProductInformationType',
+        ps: [{
+            n: 'referenceSystemIdentifier',
+            ti: '.CodeWithAuthorityType'
+          }, {
+            n: 'fileName',
+            rq: true
+          }, {
+            n: 'version'
+          }, {
+            n: 'size',
+            ti: 'GML_3_1_1.MeasureListType'
+          }]
+      }, {
+        ln: 'MaskType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'maskMembers',
+            rq: true,
+            ti: '.MaskMembersPropertyType'
+          }]
+      }, {
+        ln: 'EarthObservationEquipmentPropertyType',
+        ps: [{
+            n: 'earthObservationEquipment',
+            rq: true,
+            en: 'EarthObservationEquipment',
+            ti: '.EarthObservationEquipmentType'
+          }]
+      }, {
+        ln: 'AcquisitionPropertyType',
+        ps: [{
+            n: 'acquisition',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'Acquisition',
+            ti: '.AcquisitionType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'ArchivingInformationArrayPropertyType',
+        ps: [{
+            n: 'archivingInformation',
+            rq: true,
+            col: true,
+            en: 'ArchivingInformation',
+            ti: '.ArchivingInformationType'
+          }]
+      }, {
         ln: 'EarthObservationPropertyType',
         ps: [{
             n: 'earthObservation',
@@ -388,78 +379,21 @@ var EOP_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'ProductInformationArrayPropertyType',
+        ps: [{
+            n: 'productInformation',
+            rq: true,
+            col: true,
+            en: 'ProductInformation',
+            ti: '.ProductInformationType'
+          }]
+      }, {
         ln: 'PlatformPropertyType',
         ps: [{
             n: 'platform',
             rq: true,
             en: 'Platform',
             ti: '.PlatformType'
-          }]
-      }, {
-        ln: 'InstrumentType',
-        ps: [{
-            n: 'shortName',
-            rq: true
-          }]
-      }, {
-        ln: 'FootprintType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'multiExtentOf',
-            rq: true,
-            en: {
-              lp: 'multiExtentOf',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.MultiSurfacePropertyType'
-          }, {
-            n: 'centerOf',
-            en: {
-              lp: 'centerOf',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.PointPropertyType'
-          }]
-      }, {
-        ln: 'EarthObservationResultPropertyType',
-        ps: [{
-            n: 'earthObservationResult',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: 'EarthObservationResult',
-            ti: '.EarthObservationResultType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'EarthObservationResultType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'browse',
-            ti: '.BrowseInformationArrayPropertyType'
-          }, {
-            n: 'product',
-            ti: '.ProductInformationArrayPropertyType'
-          }, {
-            n: 'mask',
-            ti: '.MaskInformationArrayPropertyType'
-          }]
-      }, {
-        ln: 'SpecificInformationArrayPropertyType',
-        ps: [{
-            n: 'specificInformation',
-            rq: true,
-            col: true,
-            en: 'SpecificInformation',
-            ti: '.SpecificInformationType'
-          }]
-      }, {
-        ln: 'SensorPropertyType',
-        ps: [{
-            n: 'sensor',
-            rq: true,
-            en: 'Sensor',
-            ti: '.SensorType'
           }]
       }, {
         ln: 'HistogramType',
@@ -481,57 +415,109 @@ var EOP_1_0_Module_Factory = function () {
             ti: 'Double'
           }]
       }, {
-        ln: 'EarthObservationMetaDataType',
-        bti: 'GML_3_1_1.AbstractMetaDataType',
+        ln: 'MaskInformationArrayPropertyType',
         ps: [{
-            n: 'contentOverrideForEarthObservationMetaDataType',
+            n: 'maskInformation',
+            rq: true,
+            col: true,
+            en: 'MaskInformation',
+            ti: '.MaskInformationType'
+          }]
+      }, {
+        ln: 'DownlinkInformationArrayPropertyType',
+        ps: [{
+            n: 'downlinkInformation',
+            rq: true,
+            col: true,
+            en: 'DownlinkInformation',
+            ti: '.DownlinkInformationType'
+          }]
+      }, {
+        ln: 'MaskInformationType',
+        ps: [{
+            n: 'type',
+            rq: true
+          }, {
+            n: 'format',
+            rq: true
+          }, {
+            n: 'referenceSystemIdentifier',
+            ti: '.CodeWithAuthorityType'
+          }, {
+            n: 'fileName',
+            rq: true
+          }]
+      }, {
+        ln: 'MaskMembersPropertyType',
+        ps: [{
+            n: 'maskFeature',
+            mno: 0,
+            col: true,
+            en: 'MaskFeature',
+            ti: '.MaskFeatureType'
+          }]
+      }, {
+        ln: 'SensorPropertyType',
+        ps: [{
+            n: 'sensor',
+            rq: true,
+            en: 'Sensor',
+            ti: '.SensorType'
+          }]
+      }, {
+        ln: 'EarthObservationResultPropertyType',
+        ps: [{
+            n: 'earthObservationResult',
+            rq: true,
+            mx: false,
             dom: false,
-            etis: [{
-                en: 'status'
-              }, {
-                en: 'linkedWith',
-                ti: '.EarthObservationPropertyType'
-              }, {
-                en: 'acquisitionSubType',
-                ti: 'GML_3_1_1.CodeListType'
-              }, {
-                en: 'composedOf',
-                ti: '.EarthObservationPropertyType'
-              }, {
-                en: 'acquisitionType'
-              }, {
-                en: 'imageQualityDegradation',
-                ti: 'GML_3_1_1.MeasureType'
-              }, {
-                en: 'subsetOf',
-                ti: '.EarthObservationPropertyType'
-              }, {
-                en: 'doi'
-              }, {
-                en: 'downlinkedTo',
-                ti: '.DownlinkInformationArrayPropertyType'
-              }, {
-                en: 'parentIdentifier'
-              }, {
-                en: 'imageQualityDegradationQuotationMode'
-              }, {
-                en: 'productType'
-              }, {
-                en: 'identifier'
-              }, {
-                en: 'histograms',
-                ti: '.HistogramArrayPropertyType'
-              }, {
-                en: 'processing',
-                ti: '.ProcessingInformationPropertyType'
-              }, {
-                en: 'archivedIn',
-                ti: '.ArchivingInformationArrayPropertyType'
-              }, {
-                en: 'vendorSpecific',
-                ti: '.SpecificInformationArrayPropertyType'
-              }],
-            t: 'ers'
+            en: 'EarthObservationResult',
+            ti: '.EarthObservationResultType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'HistogramArrayPropertyType',
+        ps: [{
+            n: 'histogram',
+            rq: true,
+            col: true,
+            en: 'Histogram',
+            ti: '.HistogramType'
+          }]
+      }, {
+        ln: 'AcquisitionType.WrsLongitudeGrid',
+        tn: null,
+        ps: [{
+            n: 'value',
+            ti: 'AnySimpleType',
+            t: 'v'
+          }, {
+            n: 'codeSpace',
+            an: {
+              lp: 'codeSpace'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ProcessingInformationPropertyType',
+        ps: [{
+            n: 'processingInformation',
+            rq: true,
+            en: 'ProcessingInformation',
+            ti: '.ProcessingInformationType'
+          }]
+      }, {
+        ln: 'EarthObservationResultType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'browse',
+            ti: '.BrowseInformationArrayPropertyType'
+          }, {
+            n: 'product',
+            ti: '.ProductInformationArrayPropertyType'
+          }, {
+            n: 'mask',
+            ti: '.MaskInformationArrayPropertyType'
           }]
       }, {
         ln: 'ProcessingInformationType',
@@ -557,15 +543,89 @@ var EOP_1_0_Module_Factory = function () {
             n: 'nativeProductFormat'
           }]
       }, {
+        ln: 'SensorType',
+        ps: [{
+            n: 'sensorType'
+          }, {
+            n: 'operationalMode',
+            ti: 'GML_3_1_1.CodeListType'
+          }, {
+            n: 'resolution',
+            ti: 'GML_3_1_1.MeasureType'
+          }, {
+            n: 'swathIdentifier',
+            ti: 'GML_3_1_1.CodeListType'
+          }]
+      }, {
         t: 'enum',
         ln: 'SensorTypePropertyType',
         vs: ['ALTIMETRIC', 'ATMOSPHERIC', 'OPTICAL', 'RADAR']
       }],
     eis: [{
-        en: 'EarthObservation',
-        ti: '.EarthObservationType',
+        en: 'status'
+      }, {
+        en: 'MaskFeature',
+        ti: '.MaskFeatureType',
         sh: {
-          lp: 'Observation',
+          lp: '_Feature',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
+        en: 'BrowseInformation',
+        ti: '.BrowseInformationType'
+      }, {
+        en: 'statusDetail'
+      }, {
+        en: 'imageQualityDegradationQuotationMode'
+      }, {
+        en: 'doi'
+      }, {
+        en: 'EarthObservationMetaData',
+        ti: '.EarthObservationMetaDataType',
+        sh: {
+          lp: '_MetaData',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
+        en: 'SpecificInformation',
+        ti: '.SpecificInformationType'
+      }, {
+        en: 'parentIdentifier'
+      }, {
+        en: 'acquisitionSubType',
+        ti: 'GML_3_1_1.CodeListType'
+      }, {
+        en: 'subsetOf',
+        ti: '.EarthObservationPropertyType'
+      }, {
+        en: 'Histogram',
+        ti: '.HistogramType',
+        sh: {
+          lp: '_Object',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
+        en: 'Footprint',
+        ti: '.FootprintType',
+        sh: {
+          lp: '_Feature',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
+        en: 'EarthObservationResult',
+        ti: '.EarthObservationResultType',
+        sh: {
+          lp: '_Feature',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
+        en: 'DownlinkInformation',
+        ti: '.DownlinkInformationType'
+      }, {
+        en: 'Mask',
+        ti: '.MaskType',
+        sh: {
+          lp: '_Feature',
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
@@ -579,130 +639,70 @@ var EOP_1_0_Module_Factory = function () {
         en: 'maskMembers',
         ti: '.MaskMembersPropertyType'
       }, {
-        en: 'productType'
+        en: 'linkedWith',
+        ti: '.EarthObservationPropertyType'
       }, {
-        en: 'identifier'
+        en: 'processing',
+        ti: '.ProcessingInformationPropertyType',
+        sc: '.EarthObservationMetaDataType'
       }, {
-        en: 'parentIdentifier'
+        en: 'histograms',
+        ti: '.HistogramArrayPropertyType'
       }, {
-        en: 'EarthObservationResult',
-        ti: '.EarthObservationResultType',
-        sh: {
-          lp: '_Feature',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
+        en: 'ArchivingInformation',
+        ti: '.ArchivingInformationType'
+      }, {
+        en: 'acquisitionType'
+      }, {
+        en: 'archivedIn',
+        ti: '.ArchivingInformationArrayPropertyType',
+        sc: '.EarthObservationMetaDataType'
+      }, {
+        en: 'downlinkedTo',
+        ti: '.DownlinkInformationArrayPropertyType',
+        sc: '.EarthObservationMetaDataType'
+      }, {
+        en: 'Instrument',
+        ti: '.InstrumentType'
+      }, {
+        en: 'composedOf',
+        ti: '.EarthObservationPropertyType'
+      }, {
+        en: 'ProductInformation',
+        ti: '.ProductInformationType'
+      }, {
+        en: 'Sensor',
+        ti: '.SensorType'
       }, {
         en: 'MaskInformation',
         ti: '.MaskInformationType'
       }, {
-        en: 'DownlinkInformation',
-        ti: '.DownlinkInformationType'
-      }, {
-        en: 'statusDetail'
-      }, {
-        en: 'Histogram',
-        ti: '.HistogramType',
+        en: 'EarthObservation',
+        ti: '.EarthObservationType',
         sh: {
-          lp: '_Object',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
-      }, {
-        en: 'acquisitionType'
-      }, {
-        en: 'EarthObservationMetaData',
-        ti: '.EarthObservationMetaDataType',
-        sh: {
-          lp: '_MetaData',
+          lp: 'Observation',
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
         en: 'Platform',
         ti: '.PlatformType'
       }, {
-        en: 'doi'
-      }, {
-        en: 'downlinkedTo',
-        ti: '.DownlinkInformationArrayPropertyType',
-        sc: '.EarthObservationMetaDataType'
-      }, {
-        en: 'Acquisition',
-        ti: '.AcquisitionType'
-      }, {
-        en: 'ProductInformation',
-        ti: '.ProductInformationType'
-      }, {
         en: 'imageQualityDegradation',
         ti: 'GML_3_1_1.MeasureType'
-      }, {
-        en: 'Instrument',
-        ti: '.InstrumentType'
-      }, {
-        en: 'status'
-      }, {
-        en: 'Mask',
-        ti: '.MaskType',
-        sh: {
-          lp: '_Feature',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
-      }, {
-        en: 'BrowseInformation',
-        ti: '.BrowseInformationType'
-      }, {
-        en: 'Footprint',
-        ti: '.FootprintType',
-        sh: {
-          lp: '_Feature',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
       }, {
         en: 'ProcessingInformation',
         ti: '.ProcessingInformationType'
       }, {
-        en: 'archivedIn',
-        ti: '.ArchivingInformationArrayPropertyType',
-        sc: '.EarthObservationMetaDataType'
+        en: 'productType'
       }, {
-        en: 'subsetOf',
-        ti: '.EarthObservationPropertyType'
-      }, {
-        en: 'Sensor',
-        ti: '.SensorType'
-      }, {
-        en: 'linkedWith',
-        ti: '.EarthObservationPropertyType'
-      }, {
-        en: 'histograms',
-        ti: '.HistogramArrayPropertyType'
-      }, {
-        en: 'composedOf',
-        ti: '.EarthObservationPropertyType'
-      }, {
-        en: 'SpecificInformation',
-        ti: '.SpecificInformationType'
+        en: 'Acquisition',
+        ti: '.AcquisitionType'
       }, {
         en: 'vendorSpecific',
         ti: '.SpecificInformationArrayPropertyType',
         sc: '.EarthObservationMetaDataType'
       }, {
-        en: 'imageQualityDegradationQuotationMode'
-      }, {
-        en: 'ArchivingInformation',
-        ti: '.ArchivingInformationType'
-      }, {
-        en: 'MaskFeature',
-        ti: '.MaskFeatureType',
-        sh: {
-          lp: '_Feature',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
-      }, {
-        en: 'acquisitionSubType',
-        ti: 'GML_3_1_1.CodeListType'
-      }, {
-        en: 'processing',
-        ti: '.ProcessingInformationPropertyType',
-        sc: '.EarthObservationMetaDataType'
+        en: 'identifier'
       }]
   };
   return {

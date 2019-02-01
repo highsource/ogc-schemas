@@ -2,72 +2,6 @@
 {
     "id":"http://earth.esa.int/opt#",
     "definitions":{
-        "AcquisitionType":{
-            "allOf":[
-                {
-                    "$ref":"http://earth.esa.int/eop#/definitions/AcquisitionType"
-                },
-                {
-                    "type":"object",
-                    "title":"AcquisitionType",
-                    "properties":{
-                        "illuminationAzimuthAngle":{
-                            "title":"illuminationAzimuthAngle",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/AngleType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"illuminationAzimuthAngle",
-                                "namespaceURI":"http://earth.esa.int/opt"
-                            }
-                        },
-                        "illuminationElevationAngle":{
-                            "title":"illuminationElevationAngle",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/AngleType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"illuminationElevationAngle",
-                                "namespaceURI":"http://earth.esa.int/opt"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AcquisitionType",
-                "namespaceURI":"http://earth.esa.int/opt"
-            },
-            "propertiesOrder":[
-                "illuminationAzimuthAngle",
-                "illuminationElevationAngle"
-            ]
-        },
-        "EarthObservationType":{
-            "allOf":[
-                {
-                    "$ref":"http://earth.esa.int/eop#/definitions/EarthObservationType"
-                },
-                {
-                    "type":"object",
-                    "title":"EarthObservationType",
-                    "properties":{
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"EarthObservationType",
-                "namespaceURI":"http://earth.esa.int/opt"
-            }
-        },
         "EarthObservationResultType":{
             "allOf":[
                 {
@@ -171,43 +105,75 @@
                 "snowCoverPercentageAssessmentConfidence",
                 "snowCoverPercentageQuotationMode"
             ]
-        }
-    },
-    "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "EarthObservationResult"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://earth.esa.int/opt"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
+        },
+        "EarthObservationType":{
+            "allOf":[
+                {
+                    "$ref":"http://earth.esa.int/eop#/definitions/EarthObservationType"
                 },
-                "value":{
-                    "$ref":"#/definitions/EarthObservationResultType"
+                {
+                    "type":"object",
+                    "title":"EarthObservationType",
+                    "properties":{
+                    }
                 }
-            },
-            "elementName":{
-                "localPart":"EarthObservationResult",
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"EarthObservationType",
                 "namespaceURI":"http://earth.esa.int/opt"
             }
         },
+        "AcquisitionType":{
+            "allOf":[
+                {
+                    "$ref":"http://earth.esa.int/eop#/definitions/AcquisitionType"
+                },
+                {
+                    "type":"object",
+                    "title":"AcquisitionType",
+                    "properties":{
+                        "illuminationAzimuthAngle":{
+                            "title":"illuminationAzimuthAngle",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/AngleType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"illuminationAzimuthAngle",
+                                "namespaceURI":"http://earth.esa.int/opt"
+                            }
+                        },
+                        "illuminationElevationAngle":{
+                            "title":"illuminationElevationAngle",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/AngleType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"illuminationElevationAngle",
+                                "namespaceURI":"http://earth.esa.int/opt"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AcquisitionType",
+                "namespaceURI":"http://earth.esa.int/opt"
+            },
+            "propertiesOrder":[
+                "illuminationAzimuthAngle",
+                "illuminationElevationAngle"
+            ]
+        }
+    },
+    "anyOf":[
         {
             "type":"object",
             "properties":{
@@ -273,6 +239,40 @@
             },
             "elementName":{
                 "localPart":"Acquisition",
+                "namespaceURI":"http://earth.esa.int/opt"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "EarthObservationResult"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://earth.esa.int/opt"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/EarthObservationResultType"
+                }
+            },
+            "elementName":{
+                "localPart":"EarthObservationResult",
                 "namespaceURI":"http://earth.esa.int/opt"
             }
         }

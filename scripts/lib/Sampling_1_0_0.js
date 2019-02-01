@@ -3,77 +3,27 @@ var Sampling_1_0_0_Module_Factory = function () {
     n: 'Sampling_1_0_0',
     dens: 'http:\/\/www.opengis.net\/sampling\/1.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_1_1', 'OM_1_0_0'],
+    deps: ['GML_3_1_1', 'XLink_1_0', 'OM_1_0_0'],
     tis: [{
-        ln: 'LocatedSpecimenType',
-        bti: '.SpecimenType',
-        ps: [{
-            n: 'samplingLocation',
-            rq: true,
-            ti: 'GML_3_1_1.GeometryPropertyType'
-          }]
-      }, {
-        ln: 'SamplingCurveType',
+        ln: 'SamplingSurfaceType',
         bti: '.SpatiallyExtensiveSamplingFeatureType',
         ps: [{
             n: 'shape',
             rq: true,
-            ti: 'GML_3_1_1.CurvePropertyType'
+            ti: 'GML_3_1_1.SurfacePropertyType'
           }, {
-            n: 'length',
+            n: 'area',
             ti: 'GML_3_1_1.MeasureType'
           }]
       }, {
-        ln: 'SamplingSolidPropertyType',
+        ln: 'SpatiallyExtensiveSamplingFeaturePropertyType',
         ps: [{
-            n: 'samplingSolid',
-            rq: true,
-            en: 'SamplingSolid',
-            ti: '.SamplingSolidType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SpatiallyExtensiveSamplingFeatureType',
-        bti: '.SamplingFeatureType'
-      }, {
-        ln: 'SpecimenPropertyType',
-        ps: [{
-            n: 'specimen',
+            n: 'spatiallyExtensiveSamplingFeature',
             rq: true,
             mx: false,
             dom: false,
-            en: 'Specimen',
-            ti: '.SpecimenType',
+            en: 'SpatiallyExtensiveSamplingFeature',
+            ti: '.SpatiallyExtensiveSamplingFeatureType',
             t: 'er'
           }, {
             n: 'remoteSchema',
@@ -108,12 +58,12 @@ var Sampling_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SamplingFeatureCollectionPropertyType',
+        ln: 'SurveyProcedurePropertyType',
         ps: [{
-            n: 'samplingFeatureCollection',
+            n: 'surveyProcedure',
             rq: true,
-            en: 'SamplingFeatureCollection',
-            ti: '.SamplingFeatureCollectionType'
+            en: 'SurveyProcedure',
+            ti: '.SurveyProcedureType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -194,25 +144,54 @@ var Sampling_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SamplingSurfaceType',
-        bti: '.SpatiallyExtensiveSamplingFeatureType',
+        ln: 'SurveyProcedureType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
         ps: [{
-            n: 'shape',
-            rq: true,
-            ti: 'GML_3_1_1.SurfacePropertyType'
+            n: 'operator',
+            ti: '.AnyOrReferenceType'
           }, {
-            n: 'area',
+            n: 'elevationDatum',
+            ti: 'GML_3_1_1.ReferenceType'
+          }, {
+            n: 'elevationMethod',
+            ti: 'OM_1_0_0.ProcessPropertyType'
+          }, {
+            n: 'elevationAccuracy',
             ti: 'GML_3_1_1.MeasureType'
+          }, {
+            n: 'geodeticDatum',
+            ti: 'GML_3_1_1.ReferenceType'
+          }, {
+            n: 'positionMethod',
+            rq: true,
+            ti: 'OM_1_0_0.ProcessPropertyType'
+          }, {
+            n: 'positionAccuracy',
+            ti: 'GML_3_1_1.MeasureType'
+          }, {
+            n: 'projection',
+            ti: 'GML_3_1_1.ReferenceType'
+          }, {
+            n: 'surveyTime',
+            ti: 'GML_3_1_1.TimePrimitivePropertyType'
           }]
       }, {
-        ln: 'SamplingFeaturePropertyType',
+        ln: 'SamplingFeatureRelationPropertyType',
         ps: [{
-            n: 'samplingFeature',
+            n: 'samplingFeatureRelation',
+            rq: true,
+            en: 'SamplingFeatureRelation',
+            ti: '.SamplingFeatureRelationType'
+          }]
+      }, {
+        ln: 'SpecimenPropertyType',
+        ps: [{
+            n: 'specimen',
             rq: true,
             mx: false,
             dom: false,
-            en: 'SamplingFeature',
-            ti: '.SamplingFeatureType',
+            en: 'Specimen',
+            ti: '.SpecimenType',
             t: 'er'
           }, {
             n: 'remoteSchema',
@@ -247,12 +226,249 @@ var Sampling_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LocatedSpecimenPropertyType',
+        ln: 'SamplingPointType',
+        bti: '.SamplingFeatureType',
         ps: [{
-            n: 'locatedSpecimen',
+            n: 'position',
             rq: true,
-            en: 'LocatedSpecimen',
-            ti: '.LocatedSpecimenType'
+            ti: 'GML_3_1_1.PointPropertyType'
+          }]
+      }, {
+        ln: 'SamplingCurvePropertyType',
+        ps: [{
+            n: 'samplingCurve',
+            rq: true,
+            en: 'SamplingCurve',
+            ti: '.SamplingCurveType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SamplingFeatureRelationType',
+        ps: [{
+            n: 'role',
+            rq: true,
+            ti: 'GML_3_1_1.CodeType'
+          }, {
+            n: 'target',
+            rq: true,
+            ti: '.SamplingFeaturePropertyType'
+          }]
+      }, {
+        ln: 'LocatedSpecimenType',
+        bti: '.SpecimenType',
+        ps: [{
+            n: 'samplingLocation',
+            rq: true,
+            ti: 'GML_3_1_1.GeometryPropertyType'
+          }]
+      }, {
+        ln: 'SamplingFeatureCollectionType',
+        bti: '.SamplingFeatureType',
+        ps: [{
+            n: 'member',
+            rq: true,
+            col: true,
+            ti: '.SamplingFeaturePropertyType'
+          }]
+      }, {
+        ln: 'SpatiallyExtensiveSamplingFeatureType',
+        bti: '.SamplingFeatureType'
+      }, {
+        ln: 'SamplingFeatureCollectionPropertyType',
+        ps: [{
+            n: 'samplingFeatureCollection',
+            rq: true,
+            en: 'SamplingFeatureCollection',
+            ti: '.SamplingFeatureCollectionType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'LocationPropertyType',
+        ps: [{
+            n: 'geometry',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: '_Geometry',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.AbstractGeometryType',
+            t: 'er'
+          }, {
+            n: 'exGeographicDescription',
+            rq: true,
+            en: 'EX_GeographicDescription',
+            ti: '.AnyOrReferenceType'
+          }, {
+            n: 'unionSemantics',
+            an: {
+              lp: 'unionSemantics'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SamplingFeatureType',
+        bti: 'GML_3_1_1.AbstractFeatureType',
+        ps: [{
+            n: 'sampledFeature',
+            rq: true,
+            col: true,
+            ti: 'GML_3_1_1.FeaturePropertyType'
+          }, {
+            n: 'relatedObservation',
+            mno: 0,
+            col: true,
+            ti: 'OM_1_0_0.ObservationPropertyType'
+          }, {
+            n: 'relatedSamplingFeature',
+            mno: 0,
+            col: true,
+            ti: '.SamplingFeatureRelationPropertyType'
+          }, {
+            n: 'surveyDetails',
+            ti: '.SurveyProcedurePropertyType'
+          }]
+      }, {
+        ln: 'SamplingSurfacePropertyType',
+        ps: [{
+            n: 'samplingSurface',
+            rq: true,
+            en: 'SamplingSurface',
+            ti: '.SamplingSurfaceType'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
+          }]
+      }, {
+        ln: 'SamplingFeaturePropertyType',
+        ps: [{
+            n: 'samplingFeature',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: 'SamplingFeature',
+            ti: '.SamplingFeatureType',
+            t: 'er'
           }, {
             n: 'remoteSchema',
             an: {
@@ -325,20 +541,12 @@ var Sampling_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SamplingFeatureRelationPropertyType',
+        ln: 'SamplingSolidPropertyType',
         ps: [{
-            n: 'samplingFeatureRelation',
+            n: 'samplingSolid',
             rq: true,
-            en: 'SamplingFeatureRelation',
-            ti: '.SamplingFeatureRelationType'
-          }]
-      }, {
-        ln: 'SamplingSurfacePropertyType',
-        ps: [{
-            n: 'samplingSurface',
-            rq: true,
-            en: 'SamplingSurface',
-            ti: '.SamplingSurfaceType'
+            en: 'SamplingSolid',
+            ti: '.SamplingSolidType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -372,15 +580,12 @@ var Sampling_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SpatiallyExtensiveSamplingFeaturePropertyType',
+        ln: 'LocatedSpecimenPropertyType',
         ps: [{
-            n: 'spatiallyExtensiveSamplingFeature',
+            n: 'locatedSpecimen',
             rq: true,
-            mx: false,
-            dom: false,
-            en: 'SpatiallyExtensiveSamplingFeature',
-            ti: '.SpatiallyExtensiveSamplingFeatureType',
-            t: 'er'
+            en: 'LocatedSpecimen',
+            ti: '.LocatedSpecimenType'
           }, {
             n: 'remoteSchema',
             an: {
@@ -414,162 +619,41 @@ var Sampling_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SamplingFeatureCollectionType',
+        ln: 'SamplingCurveType',
+        bti: '.SpatiallyExtensiveSamplingFeatureType',
+        ps: [{
+            n: 'shape',
+            rq: true,
+            ti: 'GML_3_1_1.CurvePropertyType'
+          }, {
+            n: 'length',
+            ti: 'GML_3_1_1.MeasureType'
+          }]
+      }, {
+        ln: 'SpecimenType',
         bti: '.SamplingFeatureType',
         ps: [{
-            n: 'member',
+            n: 'materialClass',
             rq: true,
-            col: true,
-            ti: '.SamplingFeaturePropertyType'
-          }]
-      }, {
-        ln: 'SamplingFeatureType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'sampledFeature',
-            rq: true,
-            col: true,
-            ti: 'GML_3_1_1.FeaturePropertyType'
+            ti: 'GML_3_1_1.CodeType'
           }, {
-            n: 'relatedObservation',
-            mno: 0,
-            col: true,
-            ti: 'OM_1_0_0.ObservationPropertyType'
+            n: 'currentLocation',
+            ti: '.LocationPropertyType'
           }, {
-            n: 'relatedSamplingFeature',
-            mno: 0,
-            col: true,
-            ti: '.SamplingFeatureRelationPropertyType'
+            n: 'size',
+            ti: '.SpecimenType.Size'
           }, {
-            n: 'surveyDetails',
-            ti: '.SurveyProcedurePropertyType'
-          }]
-      }, {
-        ln: 'LocationPropertyType',
-        ps: [{
-            n: 'geometry',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: '_Geometry',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.AbstractGeometryType',
-            t: 'er'
-          }, {
-            n: 'exGeographicDescription',
-            rq: true,
-            en: 'EX_GeographicDescription',
-            ti: '.AnyOrReferenceType'
-          }, {
-            n: 'unionSemantics',
-            an: {
-              lp: 'unionSemantics'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
-        ln: 'SurveyProcedureType',
-        bti: 'GML_3_1_1.AbstractFeatureType',
-        ps: [{
-            n: 'operator',
-            ti: '.AnyOrReferenceType'
-          }, {
-            n: 'elevationDatum',
+            n: 'samplingMethod',
             ti: 'GML_3_1_1.ReferenceType'
           }, {
-            n: 'elevationMethod',
-            ti: 'OM_1_0_0.ProcessPropertyType'
-          }, {
-            n: 'elevationAccuracy',
-            ti: 'GML_3_1_1.MeasureType'
-          }, {
-            n: 'geodeticDatum',
-            ti: 'GML_3_1_1.ReferenceType'
-          }, {
-            n: 'positionMethod',
+            n: 'samplingTime',
             rq: true,
-            ti: 'OM_1_0_0.ProcessPropertyType'
-          }, {
-            n: 'positionAccuracy',
-            ti: 'GML_3_1_1.MeasureType'
-          }, {
-            n: 'projection',
-            ti: 'GML_3_1_1.ReferenceType'
-          }, {
-            n: 'surveyTime',
             ti: 'GML_3_1_1.TimePrimitivePropertyType'
-          }]
-      }, {
-        ln: 'SamplingCurvePropertyType',
-        ps: [{
-            n: 'samplingCurve',
-            rq: true,
-            en: 'SamplingCurve',
-            ti: '.SamplingCurveType'
           }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            n: 'processingDetails',
+            mno: 0,
+            col: true,
+            ti: 'GML_3_1_1.ReferenceType'
           }]
       }, {
         ln: 'AnyOrReferenceType',
@@ -612,97 +696,21 @@ var Sampling_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SpecimenType',
-        bti: '.SamplingFeatureType',
-        ps: [{
-            n: 'materialClass',
-            rq: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'currentLocation',
-            ti: '.LocationPropertyType'
-          }, {
-            n: 'size',
-            ti: '.SpecimenType.Size'
-          }, {
-            n: 'samplingMethod',
-            ti: 'GML_3_1_1.ReferenceType'
-          }, {
-            n: 'samplingTime',
-            rq: true,
-            ti: 'GML_3_1_1.TimePrimitivePropertyType'
-          }, {
-            n: 'processingDetails',
-            mno: 0,
-            col: true,
-            ti: 'GML_3_1_1.ReferenceType'
-          }]
-      }, {
-        ln: 'SamplingPointType',
-        bti: '.SamplingFeatureType',
-        ps: [{
-            n: 'position',
-            rq: true,
-            ti: 'GML_3_1_1.PointPropertyType'
-          }]
-      }, {
-        ln: 'SamplingFeatureRelationType',
-        ps: [{
-            n: 'role',
-            rq: true,
-            ti: 'GML_3_1_1.CodeType'
-          }, {
-            n: 'target',
-            rq: true,
-            ti: '.SamplingFeaturePropertyType'
-          }]
-      }, {
-        ln: 'SurveyProcedurePropertyType',
-        ps: [{
-            n: 'surveyProcedure',
-            rq: true,
-            en: 'SurveyProcedure',
-            ti: '.SurveyProcedureType'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
-          }]
-      }, {
         t: 'enum',
         ln: 'PositionMethodType',
         vs: ['Unknown', 'GPS', 'GPS2', 'GPS3', 'GPS4', 'Astronomical', 'Surveyed from ground control', 'Published report', 'Unpublished report', 'Non-standard topographic map', '25k topo map', '50k topo map', '100k topo map', '250k topo map', '500k topo map', '1M topo map', 'Non-standard geological map', '25k geological map', '50k geological map', '100k geological map', '250k geological map', '500k geological map', '1M geological map', 'Differential GPS - Survey quality', 'Differential GPS', 'Averaged GPS', 'Orthophoto', '25k orthophoto', 'Company supplied location - method unkown', 'State\/NT supplied location - method unkown']
       }],
     eis: [{
-        en: 'SamplingFeatureRelation',
-        ti: '.SamplingFeatureRelationType'
+        en: 'SurveyProcedure',
+        ti: '.SurveyProcedureType',
+        sh: {
+          lp: '_Feature',
+          ns: 'http:\/\/www.opengis.net\/gml'
+        }
+      }, {
+        en: 'SamplingCurve',
+        ti: '.SamplingCurveType',
+        sh: 'SpatiallyExtensiveSamplingFeature'
       }, {
         en: 'SamplingFeature',
         ti: '.SamplingFeatureType',
@@ -719,10 +727,6 @@ var Sampling_1_0_0_Module_Factory = function () {
         ti: '.SamplingFeatureCollectionType',
         sh: 'SamplingFeature'
       }, {
-        en: 'SamplingCurve',
-        ti: '.SamplingCurveType',
-        sh: 'SpatiallyExtensiveSamplingFeature'
-      }, {
         en: 'SamplingSurface',
         ti: '.SamplingSurfaceType',
         sh: 'SpatiallyExtensiveSamplingFeature'
@@ -735,20 +739,16 @@ var Sampling_1_0_0_Module_Factory = function () {
         ti: '.LocatedSpecimenType',
         sh: 'Specimen'
       }, {
-        en: 'SurveyProcedure',
-        ti: '.SurveyProcedureType',
-        sh: {
-          lp: '_Feature',
-          ns: 'http:\/\/www.opengis.net\/gml'
-        }
+        en: 'SamplingPoint',
+        ti: '.SamplingPointType',
+        sh: 'SamplingFeature'
       }, {
         en: 'SamplingSolid',
         ti: '.SamplingSolidType',
         sh: 'SpatiallyExtensiveSamplingFeature'
       }, {
-        en: 'SamplingPoint',
-        ti: '.SamplingPointType',
-        sh: 'SamplingFeature'
+        en: 'SamplingFeatureRelation',
+        ti: '.SamplingFeatureRelationType'
       }]
   };
   return {

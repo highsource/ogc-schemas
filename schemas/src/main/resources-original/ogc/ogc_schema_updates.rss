@@ -17,18 +17,23 @@
    voluntary consensus standards organization that is leading the development of standards for
    geospatial and location based services.</description>
 <dc:language>en-us</dc:language>
-<dc:rights>Copyright 1994-2010, Open Geospatial Consortium.</dc:rights>
-<dc:date>2018-03-22T15:52:04+00:00
+<dc:rights>Copyright 1994-2018, Open Geospatial Consortium.</dc:rights>
+<dc:date>2018-12-20T19:12:57+00:00
 </dc:date>
 <dc:publisher>Open Geospatial Consortium</dc:publisher>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:subject>OGC Standards</dc:subject>
-<syn:updateBase>2018-03-22T15:52:04+00:00
+<syn:updateBase>2018-12-20T19:12:57+00:00
 </syn:updateBase>
 <syn:updateFrequency>2</syn:updateFrequency>
 <syn:updatePeriod>hourly</syn:updatePeriod>
 <items>
  <rdf:Seq>
+  <rdf:li rdf:resource="http://schemas.opengis.net/cdb/ReadMe.txt#20181219t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/gmljp2/ReadMe.txt#20180824t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/gml/3.3/ReadMe.txt#20180703t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/gml/3.3/ReadMe.txt#20180620t15" />
+  <rdf:li rdf:resource="http://schemas.opengis.net/gml/3.2.2/ReadMe.txt#20180530t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/csw/2.0.2/profiles/apiso/ReadMe.txt#20180321t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/gsml/ReadMe.txt#20180309t15" />
   <rdf:li rdf:resource="http://schemas.opengis.net/indoorgml/ReadMe.txt#20180309t15" />
@@ -130,6 +135,51 @@
 <url>http://www.opengeospatial.org/themes/ogc/logo.png</url>
 <link>http://www.opengeospatial.org/</link>
 </image>
+<item rdf:about="http://schemas.opengis.net/cdb/ReadMe.txt#20181219t15">
+<title>OGC CDB 1.1 Schemas Published</title>
+<link>http://schemas.opengis.net/cdb/ReadMe.txt#20181219t15</link>
+<description>The OGC CDB 1.1 standard normative schemas have been published.  See http://www.opengeospatial.org/standards/cdb/ for more information. </description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2018-12-19T15:00:39+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC CDB 1.1 Schemas Published</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/gmljp2/ReadMe.txt#20180824t15">
+<title>OGC GMLJP2 2.1 (OGC 08-085r8) Published</title>
+<link>http://schemas.opengis.net/gmljp2/ReadMe.txt#20180824t15</link>
+<description>Updated to version 3.3.1. Added xslt2 queryBinding attribute to sch:schema element in iso8601.sch. Added closing bracket to the first assert test</description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2018-08-24T15:00:38+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC GMLJP2 2.1 (OGC 08-085r8) Published</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/gml/3.3/ReadMe.txt#20180703t15">
+<title>GML 3.3 schematron bug fixes and version update to 3.3.1</title>
+<link>http://schemas.opengis.net/gml/3.3/ReadMe.txt#20180703t15</link>
+<description>Updated to version 3.3.1. Added xslt2 queryBinding attribute to sch:schema element in iso8601.sch. Added closing bracket to the first assert test</description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2018-07-03T15:00:37+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>GML 3.3 schematron bug fixes and version update to 3.3.1</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/gml/3.3/ReadMe.txt#20180620t15">
+<title>targetCodeList element added to extdEncRule.xsd in GML 3.3.0 schema</title>
+<link>http://schemas.opengis.net/gml/3.3/ReadMe.txt#20180620t15</link>
+<description>targetCodeList element added to extdEncRule.xsd, which is then added to Zipped GML3.3</description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2018-06-20T15:00:30+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>targetCodeList element added to extdEncRule.xsd in GML 3.3.0 schema</dc:subject>
+</item>
+<item rdf:about="http://schemas.opengis.net/gml/3.2.2/ReadMe.txt#20180530t15">
+<title>OGC GML 3.2.2 Schema Posted</title>
+<link>http://schemas.opengis.net/gml/3.2.2/ReadMe.txt#20180530t15</link>
+<description>The OGC Geography Markup Language (GML) 3.2.2 Encoding Standard described in OGC document 07-036r1 has been posted. See http://www.opengeospatial.org/standards/gml for more information.</description>
+<dc:creator>webmaster@opengeospatial.org</dc:creator>
+<dc:date>2018-03-30T15:46:35+00:00</dc:date>
+<dc:publisher>Open Geospatial Consortium</dc:publisher>
+<dc:subject>OGC GML 3.2.2 Schema Posted</dc:subject>
+</item>
 <item rdf:about="http://schemas.opengis.net/csw/2.0.2/profiles/apiso/ReadMe.txt#20180321t15">
 <title>OGC CSW 2.0.2 ISO Application Profile 1.0.1 Schema Updated</title>
 <link>http://schemas.opengis.net/csw/2.0.2/profiles/apiso/ReadMe.txt#20180321t15</link>
@@ -312,8 +362,8 @@
 <item rdf:about="http://schemas.opengis.net/movingfeatures/ReadMe.txt#20160825t15">
 <title>OGC Moving Features Standard 1.0 Schema Posted</title>
 <link>http://schemas.opengis.net/movingfeatures/ReadMe.txt#20160825t15</link>
-<description>The OGC Moving Features Encoding Part I: XML Core 1.0 Standard 
-schema described in OGC document 14-083r2 has been added.  
+<description>The OGC Moving Features Encoding Part I: XML Core 1.0 Standard
+schema described in OGC document 14-083r2 has been added.
 See http://www.opengeospatial.org/standards/movingfeatures for more information. </description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2016-08-25T15:46:15+00:00</dc:date>
@@ -323,8 +373,8 @@ See http://www.opengeospatial.org/standards/movingfeatures for more information.
 <item rdf:about="http://schemas.opengis.net/tsml/ReadMe.txt#20160819t15">
 <title>OGC TimeseriesML Standard 1.0 Schema Posted</title>
 <link>http://schemas.opengis.net/tsml/ReadMe.txt#20160819t15</link>
-<description>The OGC TimeseriesML 1.0 - XML Encoding of the Timeseries Profile of Observations and Measurements Implementation Standard 
-schema described in OGC document 15-042r3 has been added.  
+<description>The OGC TimeseriesML 1.0 - XML Encoding of the Timeseries Profile of Observations and Measurements Implementation Standard
+schema described in OGC document 15-042r3 has been added.
 See http://www.opengeospatial.org/standards/tsml for more information. </description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2016-08-19T15:46:14+00:00</dc:date>
@@ -334,7 +384,7 @@ See http://www.opengeospatial.org/standards/tsml for more information. </descrip
 <item rdf:about="http://schemas.opengis.net/pubsub/ReadMe.txt#20160810t15">
 <title>OGC Publish/Subscribe Interface Standard 1.0 - Core Schema Posted</title>
 <link>http://schemas.opengis.net/pubsub/ReadMe.txt#20160810t15</link>
-<description>The OGC Publish/Subscribe Interface Standard 1.0 - Core schema described in OGC document 13-131 has been added.  
+<description>The OGC Publish/Subscribe Interface Standard 1.0 - Core schema described in OGC document 13-131 has been added.
 See http://www.opengeospatial.org/standards/pubsub for more information. </description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2016-08-10T15:46:13+00:00</dc:date>
@@ -363,7 +413,7 @@ See http://www.opengeospatial.org/standards/pubsub for more information. </descr
 <item rdf:about="http://schemas.opengis.net/cat/ReadMe.txt#20160610t15">
 <title>OGC Catalogue Services 3.0 Specification - HTTP Protocol Binding 3.0.0 Schema Posted</title>
 <link>http://schemas.opengis.net/cat/ReadMe.txt#20160610t15</link>
-<description>The OGC Catalogue CSW 3.0 schema described in OGC document 12-176r7 has been added.  
+<description>The OGC Catalogue CSW 3.0 schema described in OGC document 12-176r7 has been added.
 See http://www.opengeospatial.org/standards/cat for more information. </description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2016-06-10T15:46:10+00:00</dc:date>
@@ -373,7 +423,7 @@ See http://www.opengeospatial.org/standards/cat for more information. </descript
 <item rdf:about="http://schemas.opengis.net/eompom/ReadMe.txt#20160608t15">
 <title>OGC Earth Observation Metadata profile of Observations &#x26; Measurements 1.1 Schema Posted</title>
 <link>http://schemas.opengis.net/eompom/ReadMe.txt#20160608t15</link>
-<description>The OGC EOMPOM 1.1 schema described in OGC document 10-157r4 has been added.  
+<description>The OGC EOMPOM 1.1 schema described in OGC document 10-157r4 has been added.
 See http://www.opengeospatial.org/standards/om for more information. </description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2016-06-07T15:46:09+00:00</dc:date>
@@ -392,7 +442,7 @@ See http://www.opengeospatial.org/standards/om for more information. </descripti
 <item rdf:about="http://schemas.opengis.net/wcs/ReadMe.txt#20160203t15">
 <title>OGC WCS 2.0 CRS Extension 1.0.0 Schema Added</title>
 <link>http://schemas.opengis.net/wcs/ReadMe.txt#20160203t15</link>
-<description>The OGC WCS 2.0 CRS Extension 1.0 schema described in OGC document 11-053r1 has been added.  
+<description>The OGC WCS 2.0 CRS Extension 1.0 schema described in OGC document 11-053r1 has been added.
 See http://www.opengeospatial.org/standards/wcs for more information. </description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2016-02-03T15:46:07+00:00</dc:date>
@@ -402,7 +452,7 @@ See http://www.opengeospatial.org/standards/wcs for more information. </descript
 <item rdf:about="http://schemas.opengis.net/wmts/ReadMe.txt#20160122t15">
 <title>OGC WMTS Simple Profile 1.0 - Schema Added</title>
 <link>http://schemas.opengis.net/wmts/ReadMe.txt#20160122t15</link>
-<description>The OGC WMTS Simple Profile 1.0 schema described in OGC document 13-082r2 has been added.  
+<description>The OGC WMTS Simple Profile 1.0 schema described in OGC document 13-082r2 has been added.
 See http://www.opengeospatial.org/standards/wmts for more information. </description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2015-10-22T15:46:06+00:00</dc:date>
@@ -412,7 +462,7 @@ See http://www.opengeospatial.org/standards/wmts for more information. </descrip
 <item rdf:about="http://schemas.opengis.net/waterml/ReadMe.txt#20151022t15">
 <title>OGC WaterML 2.0 Part 2 1.0 - Schema Added</title>
 <link>http://schemas.opengis.net/waterml/ReadMe.txt#20151022t15</link>
-<description>The OGC WaterML 2.0 Part 2 1.0 schema described in OGC document 15-018r1 has been added.  
+<description>The OGC WaterML 2.0 Part 2 1.0 schema described in OGC document 15-018r1 has been added.
 See http://www.opengeospatial.org/standards/waterml for more information. </description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2015-10-22T15:46:05+00:00</dc:date>
@@ -422,7 +472,7 @@ See http://www.opengeospatial.org/standards/waterml for more information. </desc
 <item rdf:about="http://schemas.opengis.net/kml/2.3/ReadMe.txt#20151022t15">
 <title>OGC KML 2.3 - Schema Added</title>
 <link>http://schemas.opengis.net/kml/2.3/ReadMe.txt#20151022t15</link>
-<description>The OGC KML 2.3 schema described in OGC document 12-007r2 has been added.  
+<description>The OGC KML 2.3 schema described in OGC document 12-007r2 has been added.
 See http://www.opengeospatial.org/standards/kml for more information. </description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2015-10-22T15:46:04+00:00</dc:date>
@@ -478,7 +528,7 @@ See http://www.opengeospatial.org/standards/kml for more information. </descript
 <item rdf:about="http://schemas.opengis.net/wcs/ReadMe.txt#20141126t15">
 <title>OGC WCS Processing 2.0 - Schema Posted</title>
 <link>http://schemas.opengis.net/wcs/ReadMe.txt#20141126t15</link>
-<description>The OGC WCS Processing 2.0 schema described in OGC document 08-059r4 has been posted.  
+<description>The OGC WCS Processing 2.0 schema described in OGC document 08-059r4 has been posted.
 The OGC Web Coverage Service - Processing Extension defines an extension to the WCS Core [OGC 09-110], the ProcessCoverages request type, which allows clients to initi-ate server-side processing and filtering of coverages and to download the resulting coverage or value sets based on the query language defined in the Web Coverage Processing Service (WCPS) interface standard [OGC 08-068].
 See http://www.opengeospatial.org/standards/wcs for more information. </description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
@@ -489,8 +539,8 @@ See http://www.opengeospatial.org/standards/wcs for more information. </descript
 <item rdf:about="http://schemas.opengis.net/wcs/ReadMe.txt#20141119t15">
 <title>OGC WCS Range Subsetting 1.0 - Schema Posted</title>
 <link>http://schemas.opengis.net/wcs/ReadMe.txt#20141119t15</link>
-<description>The OGC WCS Range Subsetting 1.0 schema described in OGC document 12-040 has been posted.  
-This document specifies parameters to the OGC Web Coverage Service (WCS) GetCoverage request which allow extraction of specific fields, according to the range type specification, from the range set of a coverage during server-side processing of a coverage in a GetCoverage request. 
+<description>The OGC WCS Range Subsetting 1.0 schema described in OGC document 12-040 has been posted.
+This document specifies parameters to the OGC Web Coverage Service (WCS) GetCoverage request which allow extraction of specific fields, according to the range type specification, from the range set of a coverage during server-side processing of a coverage in a GetCoverage request.
 See http://www.opengeospatial.org/standards/wcs for more information. </description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2014-11-06T15:45:56+00:00</dc:date>
@@ -500,8 +550,8 @@ See http://www.opengeospatial.org/standards/wcs for more information. </descript
 <item rdf:about="http://schemas.opengis.net/wcs/ReadMe.txt#20141118t15">
 <title>OGC WCS Interpolation 1.0 - Schema Posted</title>
 <link>http://schemas.opengis.net/wcs/ReadMe.txt#20141118t15</link>
-<description>The OGC WCS Interpolation 1.0 schema described in OGC document 12-049 has been posted.  
-This OGC standard specifies parameters to the OGC Web Coverage Service (WCS) GetCoverage request which give control over interpolation of a coverage during its server-side pro-cessing. This allows the client (user) to control and specify the interpolation mechanism to be applied to a coverage during server processing. This WCS Interpolation extension relies on WCS Core [OGC 09-110r4] and the GML Application Schema for Coverages [OGC 09-146r2]. 
+<description>The OGC WCS Interpolation 1.0 schema described in OGC document 12-049 has been posted.
+This OGC standard specifies parameters to the OGC Web Coverage Service (WCS) GetCoverage request which give control over interpolation of a coverage during its server-side pro-cessing. This allows the client (user) to control and specify the interpolation mechanism to be applied to a coverage during server processing. This WCS Interpolation extension relies on WCS Core [OGC 09-110r4] and the GML Application Schema for Coverages [OGC 09-146r2].
 See http://www.opengeospatial.org/standards/wcs for more information. </description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2014-11-06T15:45:55+00:00</dc:date>
@@ -511,8 +561,8 @@ See http://www.opengeospatial.org/standards/wcs for more information. </descript
 <item rdf:about="http://schemas.opengis.net/wcs/ReadMe.txt#20141118t14">
 <title>OGC WCS Scaling 1.0 - Schema Posted</title>
 <link>http://schemas.opengis.net/wcs/ReadMe.txt#20141118t14</link>
-<description>The OGC WCS Scaling 1.0 schema described in OGC document 12-039 has been posted.  
-This document specifies parameters to the OGC Web Coverage Service (WCS) GetCoverage request which allow scaling of a coverage during its server-side processing in a GetCoverage request. 
+<description>The OGC WCS Scaling 1.0 schema described in OGC document 12-039 has been posted.
+This document specifies parameters to the OGC Web Coverage Service (WCS) GetCoverage request which allow scaling of a coverage during its server-side processing in a GetCoverage request.
 See http://www.opengeospatial.org/standards/wcs for more information. </description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2014-11-06T15:45:54+00:00</dc:date>
@@ -522,8 +572,8 @@ See http://www.opengeospatial.org/standards/wcs for more information. </descript
 <item rdf:about="http://schemas.opengis.net/gmlcov/ReadMe.txt#20141118t15">
 <title>OGC GMLCOV GeoTiff 1.0 - Schema Posted</title>
 <link>http://schemas.opengis.net/gmlcov/ReadMe.txt#20141118t15</link>
-<description>The OGC GMLCOV GeoTIFF 1.0 schema described in OGC document 12-100r1 has been posted.  
-This Interface Standard is a profile of the OGC(r) GML Application Schema - Coverages version 1.0 [OGC 09-146r2]. This document specifies the usage of the GeoTIFF data format for the encoding of GML coverages. This encoding is used by several OGC services like the Web Coverage Service (WCS) 2.0 Interface Standard - Core [OGC 09-110r4]. 
+<description>The OGC GMLCOV GeoTIFF 1.0 schema described in OGC document 12-100r1 has been posted.
+This Interface Standard is a profile of the OGC(r) GML Application Schema - Coverages version 1.0 [OGC 09-146r2]. This document specifies the usage of the GeoTIFF data format for the encoding of GML coverages. This encoding is used by several OGC services like the Web Coverage Service (WCS) 2.0 Interface Standard - Core [OGC 09-110r4].
 See http://www.opengeospatial.org/standards/wcs for more information. </description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2014-11-06T15:45:53+00:00</dc:date>
@@ -634,7 +684,7 @@ See http://www.opengeospatial.org/standards/wcs for more information. </descript
 <link>http://schemas.opengis.net/eop/ReadMe.txt#20140414t15</link>
 <description>
     The Geography Markup Language (GML) 3.1.1 Application Schema for Earth Observation
-    Products Implementation Standard is defined in OGC document 06-080r4. 
+    Products Implementation Standard is defined in OGC document 06-080r4.
 
     EOP 1.0 (1.2.2) does not validate. -- 2014-04-14
 
@@ -760,13 +810,13 @@ See http://www.opengeospatial.org/standards/wcs for more information. </descript
 <link>http://schemas.opengis.net/#20120621t15</link>
 <description>In order to manage issues and comments related to the publishing of the schema changes related to OGC XLink and W3C XLink, OGC has set up a Public email reflector.
 
-To subscribe to the OGC Beta-Schemas List, go to:  
+To subscribe to the OGC Beta-Schemas List, go to:
  https://lists.opengeospatial.org/mailman/listinfo/beta-schemas
 
 Additional information on the OGC XLink to W3C XLink transition is available at
  http://www.opengeospatial.org/blog/1597
 
-You may download and test the beta schemas from:  
+You may download and test the beta schemas from:
  http://beta.schemas.opengis.net/BETA_SCHEMAS_OPENGIS_NET.zip</description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2012-06-21T15:45:36+00:00</dc:date>
@@ -943,13 +993,13 @@ The all-components document is http://schemas.opengis.net/filter/2.0/filterAll.x
 <item rdf:about="http://schemas.opengis.net/context/ReadMe.txt#20101118t16">
 <title>WMC 1.1 schemas updated</title>
 <link>http://schemas.opengis.net/context/ReadMe.txt#20101118t16</link>
-<description>The OGC WMC 1.1 schemas have been updated by adding 
-an all-components document (06-135r9 s#14). There should be no 
-ill-effects from this change.  Minor refactoring of the 
-OnlineResourceType definition was required to create the all-components 
-document. The definition was placed in ort.xsd.  This update to 1.1.0 
-creates schema version WMC 1.1.1.  The most recent version will be 
-available from 
+<description>The OGC WMC 1.1 schemas have been updated by adding
+an all-components document (06-135r9 s#14). There should be no
+ill-effects from this change.  Minor refactoring of the
+OnlineResourceType definition was required to create the all-components
+document. The definition was placed in ort.xsd.  This update to 1.1.0
+creates schema version WMC 1.1.1.  The most recent version will be
+available from
 http://schemas.opengis.net/context/1.1/wmcAll.xsd .</description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2010-11-18T16:45:19+00:00</dc:date>
@@ -959,10 +1009,10 @@ http://schemas.opengis.net/context/1.1/wmcAll.xsd .</description>
 <item rdf:about="http://schemas.opengis.net/sld/ReadMe.txt#20101118t16">
 <title>SLD 1.1 schemas updated</title>
 <link>http://schemas.opengis.net/sld/ReadMe.txt#20101118t16</link>
-<description>The OGC SLD 1.1 schemas have been updated by adding an 
-all-components document (06-135r9 s#14). There should be no ill-effects 
-from this change.  This update to 1.1.0 creates schema version SLD 1.1.1. 
-The most recent version will be available from 
+<description>The OGC SLD 1.1 schemas have been updated by adding an
+all-components document (06-135r9 s#14). There should be no ill-effects
+from this change.  This update to 1.1.0 creates schema version SLD 1.1.1.
+The most recent version will be available from
 http://schemas.opengis.net/sld/1.1/sldAll.xsd .</description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2010-11-18T16:45:19+00:00</dc:date>
@@ -972,10 +1022,10 @@ http://schemas.opengis.net/sld/1.1/sldAll.xsd .</description>
 <item rdf:about="http://schemas.opengis.net/ols/ReadMe.txt#20101118t16">
 <title>OLS 1.2 schemas updated</title>
 <link>http://schemas.opengis.net/ols/ReadMe.txt#20101118t16</link>
-<description>The OGC OLS 1.2 schemas have been updated by adding 
-an all-components document (06-135r9 s#14). There should be no 
-ill-effects from this change.  This update to 1.2.0 creates schema 
-version OLS 1.2.1.  The most recent version will be available from 
+<description>The OGC OLS 1.2 schemas have been updated by adding
+an all-components document (06-135r9 s#14). There should be no
+ill-effects from this change.  This update to 1.2.0 creates schema
+version OLS 1.2.1.  The most recent version will be available from
 http://schemas.opengis.net/ols/1.2/olsAll.xsd .</description>
 <dc:creator>webmaster@opengeospatial.org</dc:creator>
 <dc:date>2010-11-18T16:45:19+00:00</dc:date>
@@ -1022,7 +1072,7 @@ http://schemas.opengis.net/ols/1.2/olsAll.xsd .</description>
 <title>OGC Schema Repository xsd:import/@schemaLocation attributes updated to absolute URLs</title>
 <link>http://schemas.opengis.net/#20100213t19</link>
 <description>The OGC schema repositories have undergone a significant cleanup and updating. The work was done in order for OGC schemas to comply with the schema directives as defined in OGC document 06-137r7 - Policy Directives for Writing and Publishing OGC Standards: TC Decisions.
- 
+
 Specifically, the largest change is that all OGC schema have had their
 xsd:import/@schemaLocation attributes updated from relative to
 absolute.   This change should not impact the usage of these

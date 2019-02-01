@@ -3,88 +3,14 @@ var SamplingSpecimen_2_0_Module_Factory = function () {
     n: 'SamplingSpecimen_2_0',
     dens: 'http:\/\/www.opengis.net\/samplingSpecimen\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['ISO19139_GMD_20070417', 'GML_3_2_1', 'XLink_1_0', 'Sampling_2_0', 'OM_2_0'],
+    deps: ['XLink_1_0', 'Sampling_2_0', 'ISO19139_GMD_20070417', 'GML_3_2_1', 'OM_2_0'],
     tis: [{
-        ln: 'SFSpecimenType',
-        tn: 'SF_SpecimenType',
-        bti: 'Sampling_2_0.SFSamplingFeatureType',
+        ln: 'PreparationStepPropertyType',
         ps: [{
-            n: 'materialClass',
+            n: 'preparationStep',
             rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'samplingTime',
-            rq: true,
-            ti: 'OM_2_0.TimeObjectPropertyType'
-          }, {
-            n: 'samplingMethod',
-            ti: 'Sampling_2_0.SFProcessPropertyType'
-          }, {
-            n: 'samplingLocation',
-            ti: 'GML_3_2_1.GeometryPropertyType'
-          }, {
-            n: 'processingDetails',
-            mno: 0,
-            col: true,
-            ti: '.PreparationStepPropertyType'
-          }, {
-            n: 'size',
-            ti: '.SFSpecimenType.Size'
-          }, {
-            n: 'currentLocation',
-            ti: '.LocationPropertyType'
-          }, {
-            n: 'specimenType',
-            ti: 'GML_3_2_1.ReferenceType'
-          }]
-      }, {
-        ln: 'SFSpecimenPropertyType',
-        tn: 'SF_SpecimenPropertyType',
-        ps: [{
-            n: 'sfSpecimen',
-            rq: true,
-            en: 'SF_Specimen',
-            ti: '.SFSpecimenType'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
-            t: 'a'
+            en: 'PreparationStep',
+            ti: '.PreparationStepType'
           }]
       }, {
         ln: 'PreparationStepType.Time',
@@ -142,6 +68,39 @@ var SamplingSpecimen_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'SFSpecimenType',
+        tn: 'SF_SpecimenType',
+        bti: 'Sampling_2_0.SFSamplingFeatureType',
+        ps: [{
+            n: 'materialClass',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'samplingTime',
+            rq: true,
+            ti: 'OM_2_0.TimeObjectPropertyType'
+          }, {
+            n: 'samplingMethod',
+            ti: 'Sampling_2_0.SFProcessPropertyType'
+          }, {
+            n: 'samplingLocation',
+            ti: 'GML_3_2_1.GeometryPropertyType'
+          }, {
+            n: 'processingDetails',
+            mno: 0,
+            col: true,
+            ti: '.PreparationStepPropertyType'
+          }, {
+            n: 'size',
+            ti: '.SFSpecimenType.Size'
+          }, {
+            n: 'currentLocation',
+            ti: '.LocationPropertyType'
+          }, {
+            n: 'specimenType',
+            ti: 'GML_3_2_1.ReferenceType'
+          }]
+      }, {
         ln: 'PreparationStepType',
         ps: [{
             n: 'time',
@@ -157,12 +116,49 @@ var SamplingSpecimen_2_0_Module_Factory = function () {
             ti: 'GML_3_2_1.ReferenceType'
           }]
       }, {
-        ln: 'PreparationStepPropertyType',
+        ln: 'SFSpecimenType.Size',
+        tn: null,
+        bti: 'GML_3_2_1.MeasureType',
         ps: [{
-            n: 'preparationStep',
-            rq: true,
-            en: 'PreparationStep',
-            ti: '.PreparationStepType'
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
         ln: 'LocationPropertyType',
@@ -233,10 +229,14 @@ var SamplingSpecimen_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'SFSpecimenType.Size',
-        tn: null,
-        bti: 'GML_3_2_1.MeasureType',
+        ln: 'SFSpecimenPropertyType',
+        tn: 'SF_SpecimenPropertyType',
         ps: [{
+            n: 'sfSpecimen',
+            rq: true,
+            en: 'SF_Specimen',
+            ti: '.SFSpecimenType'
+          }, {
             n: 'nilReason',
             ti: {
               t: 'l'

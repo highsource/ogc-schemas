@@ -5,6 +5,15 @@ var OMEO_LMB_2_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_2_1', 'OMEO_EOP_2_0'],
     tis: [{
+        ln: 'AcquisitionType',
+        bti: 'OMEO_EOP_2_0.AcquisitionType',
+        ps: [{
+            n: 'observationMode'
+          }, {
+            n: 'verticalResolution',
+            ti: 'GML_3_2_1.MeasureType'
+          }]
+      }, {
         ln: 'FootprintType',
         bti: 'OMEO_EOP_2_0.FootprintType',
         ps: [{
@@ -21,32 +30,67 @@ var OMEO_LMB_2_0_Module_Factory = function () {
             ti: 'GML_3_2_1.MultiPointPropertyType'
           }]
       }, {
-        ln: 'EarthObservationEquipmentType',
-        bti: 'OMEO_EOP_2_0.EarthObservationEquipmentType',
+        ln: 'EarthObservationEquipmentPropertyType',
         ps: [{
-            n: 'rest',
+            n: 'earthObservationEquipment',
             rq: true,
-            mno: 2,
-            mxo: 2,
-            col: true,
-            mx: false,
-            dom: false,
-            etis: [{
-                en: 'acquisitionParameters',
-                ti: 'OMEO_EOP_2_0.AcquisitionPropertyType'
-              }, {
-                en: 'sensor',
-                ti: 'OMEO_EOP_2_0.SensorPropertyType'
-              }],
-            t: 'ers'
+            en: 'EarthObservationEquipment',
+            ti: '.EarthObservationEquipmentType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
+          }, {
+            n: 'nilReason',
+            ti: {
+              t: 'l'
+            },
+            an: {
+              lp: 'nilReason'
+            },
+            t: 'a'
+          }, {
+            n: 'remoteSchema',
+            an: {
+              lp: 'remoteSchema',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            t: 'a'
+          }, {
+            n: 'type',
+            ti: 'XLink_1_0.TypeType',
+            t: 'a'
+          }, {
+            n: 'href',
+            t: 'a'
+          }, {
+            n: 'role',
+            t: 'a'
+          }, {
+            n: 'arcrole',
+            t: 'a'
+          }, {
+            n: 'title',
+            t: 'a'
+          }, {
+            n: 'show',
+            ti: 'XLink_1_0.ShowType',
+            t: 'a'
+          }, {
+            n: 'actuate',
+            ti: 'XLink_1_0.ActuateType',
+            t: 'a'
           }]
       }, {
-        ln: 'SensorPropertyType',
+        ln: 'AcquisitionPropertyType',
         ps: [{
-            n: 'sensor',
+            n: 'acquisition',
             rq: true,
-            en: 'Sensor',
-            ti: '.SensorType'
+            en: 'Acquisition',
+            ti: '.AcquisitionType'
           }, {
             n: 'owns',
             ti: 'Boolean',
@@ -114,12 +158,12 @@ var OMEO_LMB_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'EarthObservationEquipmentPropertyType',
+        ln: 'EarthObservationPropertyType',
         ps: [{
-            n: 'earthObservationEquipment',
+            n: 'earthObservation',
             rq: true,
-            en: 'EarthObservationEquipment',
-            ti: '.EarthObservationEquipmentType'
+            en: 'EarthObservation',
+            ti: '.EarthObservationType'
           }, {
             n: 'nilReason',
             ti: {
@@ -160,30 +204,6 @@ var OMEO_LMB_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
-          }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AcquisitionType',
-        bti: 'OMEO_EOP_2_0.AcquisitionType',
-        ps: [{
-            n: 'observationMode'
-          }, {
-            n: 'verticalResolution',
-            ti: 'GML_3_2_1.MeasureType'
-          }]
-      }, {
-        ln: 'AcquisitionPropertyType',
-        ps: [{
-            n: 'acquisition',
-            rq: true,
-            en: 'Acquisition',
-            ti: '.AcquisitionType'
           }, {
             n: 'owns',
             ti: 'Boolean',
@@ -199,58 +219,38 @@ var OMEO_LMB_2_0_Module_Factory = function () {
             n: 'measurementType'
           }]
       }, {
-        ln: 'EarthObservationPropertyType',
+        ln: 'EarthObservationEquipmentType',
+        bti: 'OMEO_EOP_2_0.EarthObservationEquipmentType',
         ps: [{
-            n: 'earthObservation',
+            n: 'rest',
             rq: true,
-            en: 'EarthObservation',
-            ti: '.EarthObservationType'
+            mno: 2,
+            mxo: 2,
+            col: true,
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'acquisitionParameters',
+                ti: 'OMEO_EOP_2_0.AcquisitionPropertyType'
+              }, {
+                en: 'sensor',
+                ti: 'OMEO_EOP_2_0.SensorPropertyType'
+              }],
+            t: 'ers'
+          }]
+      }, {
+        ln: 'SensorPropertyType',
+        ps: [{
+            n: 'sensor',
+            rq: true,
+            en: 'Sensor',
+            ti: '.SensorType'
           }, {
             n: 'owns',
             ti: 'Boolean',
             an: {
               lp: 'owns'
             },
-            t: 'a'
-          }, {
-            n: 'nilReason',
-            ti: {
-              t: 'l'
-            },
-            an: {
-              lp: 'nilReason'
-            },
-            t: 'a'
-          }, {
-            n: 'remoteSchema',
-            an: {
-              lp: 'remoteSchema',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            t: 'a'
-          }, {
-            n: 'type',
-            ti: 'XLink_1_0.TypeType',
-            t: 'a'
-          }, {
-            n: 'href',
-            t: 'a'
-          }, {
-            n: 'role',
-            t: 'a'
-          }, {
-            n: 'arcrole',
-            t: 'a'
-          }, {
-            n: 'title',
-            t: 'a'
-          }, {
-            n: 'show',
-            ti: 'XLink_1_0.ShowType',
-            t: 'a'
-          }, {
-            n: 'actuate',
-            ti: 'XLink_1_0.ActuateType',
             t: 'a'
           }]
       }, {
@@ -259,17 +259,6 @@ var OMEO_LMB_2_0_Module_Factory = function () {
         vs: ['ABSORPTION', 'EMISSION']
       }],
     eis: [{
-        en: 'Sensor',
-        ti: '.SensorType',
-        sh: {
-          lp: 'Sensor',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
-      }, {
-        en: 'sensor',
-        ti: 'OMEO_EOP_2_0.SensorPropertyType',
-        sc: '.EarthObservationEquipmentType'
-      }, {
         en: 'acquisitionParameters',
         ti: 'OMEO_EOP_2_0.AcquisitionPropertyType',
         sc: '.EarthObservationEquipmentType'
@@ -288,10 +277,10 @@ var OMEO_LMB_2_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/eop\/2.0'
         }
       }, {
-        en: 'EarthObservation',
-        ti: '.EarthObservationType',
+        en: 'Sensor',
+        ti: '.SensorType',
         sh: {
-          lp: 'EarthObservation',
+          lp: 'Sensor',
           ns: 'http:\/\/www.opengis.net\/eop\/2.0'
         }
       }, {
@@ -301,6 +290,17 @@ var OMEO_LMB_2_0_Module_Factory = function () {
           lp: 'Footprint',
           ns: 'http:\/\/www.opengis.net\/eop\/2.0'
         }
+      }, {
+        en: 'EarthObservation',
+        ti: '.EarthObservationType',
+        sh: {
+          lp: 'EarthObservation',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+        }
+      }, {
+        en: 'sensor',
+        ti: 'OMEO_EOP_2_0.SensorPropertyType',
+        sc: '.EarthObservationEquipmentType'
       }]
   };
   return {

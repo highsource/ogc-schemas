@@ -4,245 +4,65 @@ var OLS_1_1_0_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/xls',
     deps: ['GML_3_1_1'],
     tis: [{
-        ln: 'StreetAddressType',
+        ln: 'ContentType',
         ps: [{
-            n: 'streetLocation',
-            mx: false,
-            dom: false,
-            en: '_StreetLocation',
-            ti: '.AbstractStreetLocatorType',
-            t: 'er'
-          }, {
-            n: 'street',
+            n: 'data',
             rq: true,
-            col: true,
-            en: 'Street',
-            ti: '.StreetNameType'
-          }]
-      }, {
-        ln: 'WithinDistanceType',
-        ps: [{
-            n: 'location',
+            en: 'Data'
+          }, {
+            n: 'url',
             rq: true,
-            mx: false,
-            dom: false,
-            en: '_Location',
-            ti: '.AbstractLocationType',
-            t: 'er'
+            en: 'URL'
           }, {
-            n: 'minimumDistance',
-            en: 'MinimumDistance',
-            ti: '.DistanceType'
-          }, {
-            n: 'maximumDistance',
-            en: 'MaximumDistance',
-            ti: '.DistanceType'
-          }]
-      }, {
-        ln: 'ReverseGeocodeResponseType',
-        bti: '.AbstractResponseParametersType',
-        ps: [{
-            n: 'reverseGeocodedLocation',
-            mno: 0,
-            col: true,
-            en: 'ReverseGeocodedLocation',
-            ti: '.ReverseGeocodedLocationType'
-          }]
-      }, {
-        ln: 'SpeedType',
-        bti: '.AbstractMeasureType',
-        ps: [{
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DetermineRouteResponseType',
-        bti: '.AbstractResponseParametersType',
-        ps: [{
-            n: 'routeHandle',
-            en: 'RouteHandle',
-            ti: '.RouteHandleType'
-          }, {
-            n: 'routeSummary',
-            rq: true,
-            en: 'RouteSummary',
-            ti: '.RouteSummaryType'
-          }, {
-            n: 'routeGeometry',
-            en: 'RouteGeometry',
-            ti: '.RouteGeometryType'
-          }, {
-            n: 'routeInstructionsList',
-            en: 'RouteInstructionsList',
-            ti: '.RouteInstructionsListType'
-          }, {
-            n: 'routeMap',
-            mno: 0,
-            col: true,
-            en: 'RouteMap',
-            ti: '.RouteMapType'
-          }]
-      }, {
-        ln: 'OutputMSIDsType',
-        bti: '.AbstractMSIDsType',
-        ps: [{
-            n: 'outputMSInformation',
-            rq: true,
-            en: 'OutputMSInformation',
-            ti: '.OutputMSInformationType'
-          }]
-      }, {
-        ln: 'RequestType',
-        bti: '.AbstractBodyType',
-        ps: [{
-            n: 'requestParameters',
-            mx: false,
-            dom: false,
-            en: '_RequestParameters',
-            ti: '.AbstractRequestParametersType',
-            t: 'er'
-          }, {
-            n: 'methodName',
-            rq: true,
-            ti: 'NMToken',
-            an: {
-              lp: 'methodName'
-            },
-            t: 'a'
-          }, {
-            n: 'version',
-            rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'requestID',
-            rq: true,
-            an: {
-              lp: 'requestID'
-            },
-            t: 'a'
-          }, {
-            n: 'maximumResponses',
-            ti: 'NonNegativeInteger',
-            an: {
-              lp: 'maximumResponses'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractGatewayParametersType',
-        ps: [{
-            n: 'requestedQoP',
-            en: 'RequestedQoP',
-            ti: '.QualityOfPositionType'
-          }, {
-            n: 'locationType',
-            an: {
-              lp: 'locationType'
-            },
-            t: 'a'
-          }, {
-            n: 'requestedsrsName',
-            an: {
-              lp: 'requestedsrsName'
-            },
-            t: 'a'
-          }, {
-            n: 'priority',
-            an: {
-              lp: 'priority'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ResponseHeaderType',
-        bti: '.AbstractHeaderType',
-        ps: [{
-            n: 'errorList',
-            en: 'ErrorList',
-            ti: '.ErrorListType'
-          }, {
-            n: 'sessionID',
-            an: {
-              lp: 'sessionID'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractWayPointType'
-      }, {
-        ln: 'EllipseType',
-        bti: 'GML_3_1_1.AbstractGeometricPrimitiveType',
-        ps: [{
-            n: 'pos',
-            rq: true,
-            en: {
-              lp: 'pos',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.DirectPositionType'
-          }, {
-            n: 'majorAxis',
-            rq: true,
-            ti: 'GML_3_1_1.LengthType'
-          }, {
-            n: 'minorAxis',
-            rq: true,
-            ti: 'GML_3_1_1.LengthType'
-          }, {
-            n: 'rotation',
-            rq: true,
-            ti: 'GML_3_1_1.AngleType'
-          }]
-      }, {
-        ln: 'NAICSType',
-        bti: '.AbstractNamedReferenceSystem',
-        ps: [{
-            n: 'type',
-            an: {
-              lp: 'type'
-            },
-            t: 'a'
-          }, {
-            n: 'subType',
-            an: {
-              lp: 'subType'
-            },
-            t: 'a'
-          }, {
-            n: 'category',
-            an: {
-              lp: 'category'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RouteInstructionsRequestType',
-        ps: [{
             n: 'format',
+            rq: true,
             an: {
               lp: 'format'
             },
             t: 'a'
           }, {
-            n: 'provideGeometry',
-            ti: 'Boolean',
+            n: 'width',
+            rq: true,
+            ti: 'Integer',
             an: {
-              lp: 'provideGeometry'
+              lp: 'width'
             },
             t: 'a'
           }, {
-            n: 'provideBoundingBox',
-            ti: 'Boolean',
+            n: 'height',
+            rq: true,
+            ti: 'Integer',
             an: {
-              lp: 'provideBoundingBox'
+              lp: 'height'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'GeocodeResponseListType',
+        ps: [{
+            n: 'geocodedAddress',
+            rq: true,
+            col: true,
+            en: 'GeocodedAddress',
+            ti: '.GeocodedAddressType'
+          }, {
+            n: 'numberOfGeocodedAddresses',
+            rq: true,
+            ti: 'NonNegativeInteger',
+            an: {
+              lp: 'numberOfGeocodedAddresses'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractDataType'
+      }, {
+        ln: 'AvailableSRSType',
+        ps: [{
+            n: 'srs',
+            rq: true,
+            col: true,
+            en: 'SRS'
           }]
       }, {
         ln: 'RouteGeometryRequestType',
@@ -273,56 +93,65 @@ var OLS_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DirectoryResponseType',
-        bti: '.AbstractResponseParametersType',
+        ln: 'BuildingLocatorType',
+        bti: '.AbstractStreetLocatorType',
         ps: [{
-            n: 'poiContext',
-            mno: 0,
-            col: true,
-            en: 'POIContext',
-            ti: '.POIWithDistanceType'
-          }]
-      }, {
-        ln: 'RouteGeometryType',
-        bti: '.AbstractDataType',
-        ps: [{
-            n: 'lineString',
-            rq: true,
-            en: {
-              lp: 'LineString',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.LineStringType'
-          }]
-      }, {
-        ln: 'RouteSegmentType',
-        bti: '.AbstractRouteSegmentType'
-      }, {
-        ln: 'VerAccType',
-        ps: [{
-            n: 'distance',
-            rq: true,
-            en: 'Distance',
-            ti: '.DistanceType'
-          }]
-      }, {
-        ln: 'RouteInstructionsListType',
-        bti: '.AbstractDataType',
-        ps: [{
-            n: 'routeInstruction',
-            rq: true,
-            col: true,
-            en: 'RouteInstruction',
-            ti: '.RouteInstructionType'
-          }, {
-            n: 'format',
+            n: 'number',
             an: {
-              lp: 'format'
+              lp: 'number'
+            },
+            t: 'a'
+          }, {
+            n: 'subdivision',
+            an: {
+              lp: 'subdivision'
+            },
+            t: 'a'
+          }, {
+            n: 'buildingName',
+            an: {
+              lp: 'buildingName'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'RouteMapRequestType',
+        ps: [{
+            n: 'output',
+            rq: true,
+            col: true,
+            en: 'Output',
+            ti: '.RouteMapOutputType'
+          }]
+      }, {
+        ln: 'XLSType',
+        ps: [{
+            n: 'header',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: '_Header',
+            ti: '.AbstractHeaderType',
+            t: 'er'
+          }, {
+            n: 'body',
+            rq: true,
+            col: true,
+            mx: false,
+            dom: false,
+            en: '_Body',
+            ti: '.AbstractBodyType',
+            t: 'er'
+          }, {
+            n: 'version',
+            rq: true,
+            ti: 'Decimal',
+            an: {
+              lp: 'version'
             },
             t: 'a'
           }, {
             n: 'lang',
-            rq: true,
             ti: 'Language',
             an: {
               lp: 'lang',
@@ -331,42 +160,47 @@ var OLS_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'OverlayType',
+        ln: 'InputMSInformationType',
+        bti: '.AbstractMSInformationType'
+      }, {
+        ln: 'StyleType',
         ps: [{
-            n: 'poi',
+            n: 'name',
             rq: true,
-            en: 'POI',
-            ti: '.PointOfInterestType'
+            en: 'Name'
           }, {
-            n: 'routeGeometry',
+            n: 'styleContent',
             rq: true,
-            en: 'RouteGeometry',
-            ti: '.RouteGeometryType'
-          }, {
-            n: 'position',
-            rq: true,
-            en: 'Position',
-            ti: '.PositionType'
-          }, {
-            n: 'map',
-            rq: true,
-            en: 'Map',
-            ti: '.MapType'
-          }, {
+            en: 'StyleContent'
+          }]
+      }, {
+        ln: 'AvailableStylesType',
+        ps: [{
             n: 'style',
-            en: 'Style',
-            ti: '.StyleType'
+            rq: true,
+            col: true,
+            en: 'Style'
+          }]
+      }, {
+        ln: 'AbstractBodyType'
+      }, {
+        ln: 'AbstractHeaderType'
+      }, {
+        ln: 'NamedPlaceType',
+        ps: [{
+            n: 'value',
+            t: 'v'
           }, {
-            n: 'zorder',
-            ti: 'Integer',
+            n: 'type',
+            rq: true,
             an: {
-              lp: 'zorder'
+              lp: 'type'
             },
             t: 'a'
           }]
       }, {
-        ln: 'GetPortrayMapCapabilitiesRequestType',
-        bti: '.AbstractRequestParametersType'
+        ln: 'AbstractLocationType',
+        bti: '.AbstractDataType'
       }, {
         ln: 'OutputType',
         ps: [{
@@ -420,15 +254,214 @@ var OLS_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'POIProperties',
-        tn: null,
-        bti: '.POIPropertiesType'
-      }, {
-        ln: 'AbstractResponseParametersType'
-      }, {
-        ln: 'RouteMapType',
-        bti: '.MapType',
+        ln: 'RouteInstructionsRequestType',
         ps: [{
+            n: 'format',
+            an: {
+              lp: 'format'
+            },
+            t: 'a'
+          }, {
+            n: 'provideGeometry',
+            ti: 'Boolean',
+            an: {
+              lp: 'provideGeometry'
+            },
+            t: 'a'
+          }, {
+            n: 'provideBoundingBox',
+            ti: 'Boolean',
+            an: {
+              lp: 'provideBoundingBox'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetPortrayMapCapabilitiesRequestType',
+        bti: '.AbstractRequestParametersType'
+      }, {
+        ln: 'VerAccType',
+        ps: [{
+            n: 'distance',
+            rq: true,
+            en: 'Distance',
+            ti: '.DistanceType'
+          }]
+      }, {
+        ln: 'RouteInstructionsListType',
+        bti: '.AbstractDataType',
+        ps: [{
+            n: 'routeInstruction',
+            rq: true,
+            col: true,
+            en: 'RouteInstruction',
+            ti: '.RouteInstructionType'
+          }, {
+            n: 'format',
+            an: {
+              lp: 'format'
+            },
+            t: 'a'
+          }, {
+            n: 'lang',
+            rq: true,
+            ti: 'Language',
+            an: {
+              lp: 'lang',
+              ns: 'http:\/\/www.opengis.net\/xls'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ReferenceSystemType',
+        ps: [{
+            n: 'namedReferenceSystem',
+            rq: true,
+            col: true,
+            mx: false,
+            dom: false,
+            en: '_NamedReferenceSystem',
+            ti: '.AbstractNamedReferenceSystem',
+            t: 'er'
+          }]
+      }, {
+        ln: 'AbstractMSInformationType',
+        ps: [{
+            n: 'msIDType',
+            an: {
+              lp: 'msIDType'
+            },
+            t: 'a'
+          }, {
+            n: 'msIDValue',
+            an: {
+              lp: 'msIDValue'
+            },
+            t: 'a'
+          }, {
+            n: 'encryption',
+            an: {
+              lp: 'encryption'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'POILocationType',
+        ps: [{
+            n: 'address',
+            rq: true,
+            en: 'Address',
+            ti: '.AddressType'
+          }, {
+            n: 'nearest',
+            rq: true,
+            en: 'Nearest',
+            ti: '.NearestType'
+          }, {
+            n: 'withinDistance',
+            rq: true,
+            en: 'WithinDistance',
+            ti: '.WithinDistanceType'
+          }, {
+            n: 'withinBoundary',
+            rq: true,
+            en: 'WithinBoundary',
+            ti: '.WithinBoundaryType'
+          }]
+      }, {
+        ln: 'POIInfoType',
+        ps: [{
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }, {
+            n: 'value',
+            rq: true,
+            an: {
+              lp: 'value'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'MapType',
+        bti: '.AbstractDataType',
+        ps: [{
+            n: 'content',
+            rq: true,
+            en: 'Content',
+            ti: '.ContentType'
+          }, {
+            n: 'bBoxContext',
+            rq: true,
+            en: 'BBoxContext',
+            ti: 'GML_3_1_1.EnvelopeType'
+          }, {
+            n: 'centerContext',
+            rq: true,
+            en: 'CenterContext',
+            ti: '.CenterContextType'
+          }]
+      }, {
+        ln: 'AreaOfInterestType',
+        bti: '.AbstractDataType',
+        ps: [{
+            n: 'circleByCenterPoint',
+            rq: true,
+            en: {
+              lp: 'CircleByCenterPoint',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.CircleByCenterPointType'
+          }, {
+            n: 'polygon',
+            rq: true,
+            en: {
+              lp: 'Polygon',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.PolygonType'
+          }, {
+            n: 'envelope',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'Envelope',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.EnvelopeType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'RouteInstructionType',
+        ps: [{
+            n: 'instruction',
+            rq: true,
+            en: 'Instruction'
+          }, {
+            n: 'distance',
+            rq: true,
+            ti: '.DistanceType'
+          }, {
+            n: 'routeInstructionGeometry',
+            en: 'RouteInstructionGeometry',
+            ti: '.RouteGeometryType'
+          }, {
+            n: 'boundingBox',
+            en: 'BoundingBox',
+            ti: 'GML_3_1_1.EnvelopeType'
+          }, {
+            n: 'duration',
+            rq: true,
+            ti: 'Duration',
+            an: {
+              lp: 'duration'
+            },
+            t: 'a'
+          }, {
             n: 'description',
             an: {
               lp: 'description'
@@ -436,48 +469,300 @@ var OLS_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'NearestType',
+        ln: 'DistanceType',
+        bti: '.AbstractMeasureType',
         ps: [{
-            n: 'location',
+            n: 'uom',
+            an: {
+              lp: 'uom'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PortrayMapResponseType',
+        bti: '.AbstractResponseParametersType',
+        ps: [{
+            n: 'map',
             rq: true,
             col: true,
-            mx: false,
-            dom: false,
-            en: '_Location',
-            ti: '.AbstractLocationType',
-            t: 'er'
-          }, {
-            n: 'nearestCriterion',
+            en: 'Map',
+            ti: '.MapType'
+          }]
+      }, {
+        ln: 'RequestHeaderType',
+        bti: '.AbstractHeaderType',
+        ps: [{
+            n: 'clientName',
             an: {
-              lp: 'nearestCriterion'
+              lp: 'clientName'
+            },
+            t: 'a'
+          }, {
+            n: 'clientPassword',
+            an: {
+              lp: 'clientPassword'
+            },
+            t: 'a'
+          }, {
+            n: 'sessionID',
+            an: {
+              lp: 'sessionID'
+            },
+            t: 'a'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
+            },
+            t: 'a'
+          }, {
+            n: 'msid',
+            an: {
+              lp: 'MSID'
             },
             t: 'a'
           }]
       }, {
-        ln: 'AbstractPOISelectionCriteriaType'
-      }, {
-        ln: 'WayPointType',
-        bti: '.AbstractWayPointType',
+        ln: 'CircularArcType',
+        bti: 'GML_3_1_1.AbstractGeometricPrimitiveType',
         ps: [{
-            n: 'location',
+            n: 'pos',
             rq: true,
-            mx: false,
-            dom: false,
-            en: '_Location',
-            ti: '.AbstractLocationType',
-            t: 'er'
+            en: {
+              lp: 'pos',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.DirectPositionType'
           }, {
-            n: 'geocodeMatchCode',
-            en: 'GeocodeMatchCode',
-            ti: '.GeocodingQOSType'
+            n: 'innerRadius',
+            rq: true,
+            ti: 'GML_3_1_1.LengthType'
           }, {
-            n: 'stop',
+            n: 'outerRadius',
+            rq: true,
+            ti: 'GML_3_1_1.LengthType'
+          }, {
+            n: 'startAngle',
+            rq: true,
+            ti: 'GML_3_1_1.AngleType'
+          }, {
+            n: 'endAngle',
+            rq: true,
+            ti: 'GML_3_1_1.AngleType'
+          }, {
+            n: 'interpolation',
+            ti: 'GML_3_1_1.CurveInterpolationType',
+            an: {
+              lp: 'interpolation'
+            },
+            t: 'a'
+          }, {
+            n: 'numARC',
+            rq: true,
+            ti: 'Integer',
+            an: {
+              lp: 'numArc'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ErrorType',
+        ps: [{
+            n: 'errorCode',
+            rq: true,
+            an: {
+              lp: 'errorCode'
+            },
+            t: 'a'
+          }, {
+            n: 'severity',
+            an: {
+              lp: 'severity'
+            },
+            t: 'a'
+          }, {
+            n: 'locationID',
+            ti: 'IDREF',
+            an: {
+              lp: 'locationID'
+            },
+            t: 'a'
+          }, {
+            n: 'locationPath',
+            an: {
+              lp: 'locationPath'
+            },
+            t: 'a'
+          }, {
+            n: 'message',
+            an: {
+              lp: 'message'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'SLIRType',
+        bti: '.AbstractRequestParametersType',
+        ps: [{
+            n: 'inputGatewayParameters',
+            rq: true,
+            en: 'InputGatewayParameters',
+            ti: '.InputGatewayParametersType'
+          }]
+      }, {
+        ln: 'RouteMapOutputType',
+        ps: [{
+            n: 'bBoxContext',
+            en: 'BBoxContext',
+            ti: 'GML_3_1_1.EnvelopeType'
+          }, {
+            n: 'width',
+            ti: 'NonNegativeInteger',
+            an: {
+              lp: 'width'
+            },
+            t: 'a'
+          }, {
+            n: 'height',
+            ti: 'NonNegativeInteger',
+            an: {
+              lp: 'height'
+            },
+            t: 'a'
+          }, {
+            n: 'format',
+            an: {
+              lp: 'format'
+            },
+            t: 'a'
+          }, {
+            n: 'bGcolor',
+            an: {
+              lp: 'BGcolor'
+            },
+            t: 'a'
+          }, {
+            n: 'transparent',
             ti: 'Boolean',
             an: {
-              lp: 'stop'
+              lp: 'transparent'
+            },
+            t: 'a'
+          }, {
+            n: 'style',
+            an: {
+              lp: 'style'
             },
             t: 'a'
           }]
+      }, {
+        ln: 'ErrorListType',
+        ps: [{
+            n: 'error',
+            rq: true,
+            col: true,
+            en: 'Error',
+            ti: '.ErrorType'
+          }, {
+            n: 'highestSeverity',
+            an: {
+              lp: 'highestSeverity'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractGatewayParametersType',
+        ps: [{
+            n: 'requestedQoP',
+            en: 'RequestedQoP',
+            ti: '.QualityOfPositionType'
+          }, {
+            n: 'locationType',
+            an: {
+              lp: 'locationType'
+            },
+            t: 'a'
+          }, {
+            n: 'requestedsrsName',
+            an: {
+              lp: 'requestedsrsName'
+            },
+            t: 'a'
+          }, {
+            n: 'priority',
+            an: {
+              lp: 'priority'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'PointOfInterestType',
+        bti: '.AbstractPOIType',
+        ps: [{
+            n: 'poiAttributeList',
+            en: 'POIAttributeList',
+            ti: '.POIAttributeListType'
+          }, {
+            n: 'point',
+            en: {
+              lp: 'Point',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.PointType'
+          }, {
+            n: 'address',
+            en: 'Address',
+            ti: '.AddressType'
+          }, {
+            n: 'id',
+            rq: true,
+            an: {
+              lp: 'ID'
+            },
+            t: 'a'
+          }, {
+            n: 'poiName',
+            an: {
+              lp: 'POIName'
+            },
+            t: 'a'
+          }, {
+            n: 'phoneNumber',
+            an: {
+              lp: 'phoneNumber'
+            },
+            t: 'a'
+          }, {
+            n: 'description',
+            an: {
+              lp: 'description'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'NAICSType',
+        bti: '.AbstractNamedReferenceSystem',
+        ps: [{
+            n: 'type',
+            an: {
+              lp: 'type'
+            },
+            t: 'a'
+          }, {
+            n: 'subType',
+            an: {
+              lp: 'subType'
+            },
+            t: 'a'
+          }, {
+            n: 'category',
+            an: {
+              lp: 'category'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractNamedReferenceSystem'
       }, {
         ln: 'AbstractRouteSummaryType',
         bti: '.AbstractDataType',
@@ -498,57 +783,203 @@ var OLS_1_1_0_Module_Factory = function () {
             ti: 'GML_3_1_1.EnvelopeType'
           }]
       }, {
-        ln: 'TimeType',
-        bti: '.TimeStampType',
+        ln: 'WayPointListType',
         ps: [{
-            n: 'utcOffset',
-            ti: 'Integer',
+            n: 'startPoint',
+            rq: true,
+            en: 'StartPoint',
+            ti: '.WayPointType'
+          }, {
+            n: 'viaPoint',
+            mno: 0,
+            col: true,
+            en: 'ViaPoint',
+            ti: '.WayPointType'
+          }, {
+            n: 'endPoint',
+            rq: true,
+            en: 'EndPoint',
+            ti: '.WayPointType'
+          }]
+      }, {
+        ln: 'WithinBoundaryType',
+        ps: [{
+            n: 'aoi',
+            rq: true,
+            en: 'AOI',
+            ti: '.AreaOfInterestType'
+          }]
+      }, {
+        ln: 'DirectoryRequestType',
+        bti: '.AbstractRequestParametersType',
+        ps: [{
+            n: 'poiLocation',
+            en: 'POILocation',
+            ti: '.POILocationType'
+          }, {
+            n: 'poiSelectionCriteria',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: '_POISelectionCriteria',
+            ti: '.AbstractPOISelectionCriteriaType',
+            t: 'er'
+          }, {
+            n: 'sortCriteria',
             an: {
-              lp: 'utcOffset'
+              lp: 'sortCriteria'
+            },
+            t: 'a'
+          }, {
+            n: 'sortDirection',
+            an: {
+              lp: 'sortDirection'
+            },
+            t: 'a'
+          }, {
+            n: 'distanceUnit',
+            an: {
+              lp: 'distanceUnit'
             },
             t: 'a'
           }]
       }, {
-        ln: 'AbstractLocationType',
-        bti: '.AbstractDataType'
-      }, {
-        ln: 'AbstractStreetLocatorType'
-      }, {
-        ln: 'RoutePlanType',
+        ln: 'RadiusType',
         ps: [{
-            n: 'routePreference',
+            n: 'value',
+            ti: 'Decimal',
+            t: 'v'
+          }, {
+            n: 'unit',
             rq: true,
-            en: 'RoutePreference'
-          }, {
-            n: 'wayPointList',
+            an: {
+              lp: 'unit'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'InputGatewayParametersType',
+        bti: '.AbstractGatewayParametersType',
+        ps: [{
+            n: 'inputMSIDs',
             rq: true,
-            en: 'WayPointList',
-            ti: '.WayPointListType'
+            en: 'InputMSIDs',
+            ti: '.InputMSIDsType'
+          }]
+      }, {
+        ln: 'AvoidListType',
+        ps: [{
+            n: 'aoi',
+            mno: 0,
+            col: true,
+            en: 'AOI',
+            ti: '.AreaOfInterestType'
           }, {
-            n: 'avoidList',
-            en: 'AvoidList',
-            ti: '.AvoidListType'
+            n: 'location',
+            mno: 0,
+            col: true,
+            mx: false,
+            dom: false,
+            en: '_Location',
+            ti: '.AbstractLocationType',
+            t: 'er'
           }, {
-            n: 'useRealTimeTraffic',
-            ti: 'Boolean',
+            n: 'avoidFeature',
+            mno: 0,
+            col: true,
+            en: 'AvoidFeature'
+          }]
+      }, {
+        ln: 'GeocodeResponseType',
+        bti: '.AbstractResponseParametersType',
+        ps: [{
+            n: 'geocodeResponseList',
+            rq: true,
+            col: true,
+            en: 'GeocodeResponseList',
+            ti: '.GeocodeResponseListType'
+          }]
+      }, {
+        ln: 'QualityOfPositionType',
+        ps: [{
+            n: 'horizontalAcc',
+            rq: true,
+            en: 'HorizontalAcc',
+            ti: '.HorAccType'
+          }, {
+            n: 'verticalAcc',
+            rq: true,
+            en: 'VerticalAcc',
+            ti: '.VerAccType'
+          }, {
+            n: 'responseReq',
             an: {
-              lp: 'useRealTimeTraffic'
+              lp: 'responseReq'
             },
             t: 'a'
           }, {
-            n: 'expectedStartTime',
-            ti: 'DateTime',
+            n: 'responseTimer',
             an: {
-              lp: 'expectedStartTime'
+              lp: 'responseTimer'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'CenterContextType',
+        ps: [{
+            n: 'centerPoint',
+            rq: true,
+            en: 'CenterPoint',
+            ti: 'GML_3_1_1.PointType'
+          }, {
+            n: 'displayScale',
+            rq: true,
+            en: 'DisplayScale',
+            ti: 'Integer'
+          }, {
+            n: 'dpi',
+            rq: true,
+            en: 'DPI',
+            ti: 'Integer'
+          }, {
+            n: 'radius',
+            rq: true,
+            en: 'Radius',
+            ti: '.RadiusType'
+          }, {
+            n: 'azimuth',
+            ti: 'Integer',
+            an: {
+              lp: 'azimuth'
             },
             t: 'a'
           }, {
-            n: 'expectedEndTime',
-            ti: 'DateTime',
+            n: 'srs',
+            rq: true,
             an: {
-              lp: 'expectedEndTime'
+              lp: 'SRS'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'GeocodedAddressType',
+        ps: [{
+            n: 'point',
+            rq: true,
+            en: {
+              lp: 'Point',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.PointType'
+          }, {
+            n: 'address',
+            rq: true,
+            en: 'Address',
+            ti: '.AddressType'
+          }, {
+            n: 'geocodeMatchCode',
+            en: 'GeocodeMatchCode',
+            ti: '.GeocodingQOSType'
           }]
       }, {
         ln: 'LineCorridorType',
@@ -567,13 +998,51 @@ var OLS_1_1_0_Module_Factory = function () {
             ti: '.DistanceType'
           }]
       }, {
-        ln: 'OutputMSInformationType',
-        bti: '.AbstractMSInformationType',
+        ln: 'AbstractPOIType',
+        bti: '.AbstractLocationType'
+      }, {
+        ln: 'HorAccType',
         ps: [{
-            n: 'position',
+            n: 'distance',
             rq: true,
-            en: 'Position',
-            ti: '.PositionType'
+            en: 'Distance',
+            ti: '.DistanceType'
+          }, {
+            n: 'angle',
+            rq: true,
+            en: 'Angle',
+            ti: '.AngleType'
+          }]
+      }, {
+        ln: 'LayerType',
+        ps: [{
+            n: 'layer',
+            rq: true,
+            col: true,
+            en: 'Layer',
+            ti: '.LayerType.Layer'
+          }, {
+            n: 'filter',
+            rq: true,
+            an: {
+              lp: 'filter'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LayerType.Layer',
+        tn: null,
+        ps: [{
+            n: 'style',
+            en: 'Style',
+            ti: '.StyleType'
+          }, {
+            n: 'name',
+            rq: true,
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'GetPortrayMapCapabilitiesResponseType',
@@ -600,79 +1069,42 @@ var OLS_1_1_0_Module_Factory = function () {
             ti: '.AvailableStylesType'
           }]
       }, {
-        ln: 'POIInfoType',
+        ln: 'AltitudeType',
+        bti: '.DistanceType'
+      }, {
+        ln: 'OutputMSInformationType',
+        bti: '.AbstractMSInformationType',
         ps: [{
-            n: 'name',
+            n: 'position',
             rq: true,
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }, {
-            n: 'value',
-            rq: true,
-            an: {
-              lp: 'value'
-            },
-            t: 'a'
+            en: 'Position',
+            ti: '.PositionType'
           }]
       }, {
-        ln: 'ReverseGeocodedLocationType',
+        ln: 'SpeedType',
+        bti: '.AbstractMeasureType',
         ps: [{
-            n: 'point',
-            rq: true,
-            en: {
-              lp: 'Point',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.PointType'
-          }, {
-            n: 'address',
-            rq: true,
-            en: 'Address',
-            ti: '.AddressType'
-          }, {
-            n: 'searchCentreDistance',
-            en: 'SearchCentreDistance',
-            ti: '.DistanceType'
-          }]
-      }, {
-        ln: 'GeocodeResponseListType',
-        ps: [{
-            n: 'geocodedAddress',
-            rq: true,
-            col: true,
-            en: 'GeocodedAddress',
-            ti: '.GeocodedAddressType'
-          }, {
-            n: 'numberOfGeocodedAddresses',
-            rq: true,
-            ti: 'NonNegativeInteger',
+            n: 'uom',
             an: {
-              lp: 'numberOfGeocodedAddresses'
+              lp: 'uom'
             },
             t: 'a'
           }]
       }, {
-        ln: 'PortrayMapRequestType',
-        bti: '.AbstractRequestParametersType',
+        ln: 'AbstractPOIPropertyType'
+      }, {
+        ln: 'AbstractStreetLocatorType'
+      }, {
+        ln: 'OutputGatewayParametersType',
+        bti: '.AbstractGatewayParametersType',
         ps: [{
-            n: 'output',
+            n: 'outputMSIDs',
             rq: true,
-            col: true,
-            en: 'Output',
-            ti: '.OutputType'
-          }, {
-            n: 'basemap',
-            en: 'Basemap',
-            ti: '.LayerType'
-          }, {
-            n: 'overlay',
-            mno: 0,
-            col: true,
-            en: 'Overlay',
-            ti: '.OverlayType'
+            en: 'OutputMSIDs',
+            ti: '.OutputMSIDsType'
           }]
+      }, {
+        ln: 'AbstractRequestParametersType'
       }, {
         ln: 'PositionType',
         bti: '.AbstractPositionType',
@@ -742,97 +1174,6 @@ var OLS_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'QualityOfPositionType',
-        ps: [{
-            n: 'horizontalAcc',
-            rq: true,
-            en: 'HorizontalAcc',
-            ti: '.HorAccType'
-          }, {
-            n: 'verticalAcc',
-            rq: true,
-            en: 'VerticalAcc',
-            ti: '.VerAccType'
-          }, {
-            n: 'responseReq',
-            an: {
-              lp: 'responseReq'
-            },
-            t: 'a'
-          }, {
-            n: 'responseTimer',
-            an: {
-              lp: 'responseTimer'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'POIAttributeListType',
-        ps: [{
-            n: 'referenceSystem',
-            en: 'ReferenceSystem',
-            ti: '.ReferenceSystemType'
-          }, {
-            n: 'poiInfoList',
-            en: 'POIInfoList',
-            ti: '.POIInfoListType'
-          }]
-      }, {
-        ln: 'HorAccType',
-        ps: [{
-            n: 'distance',
-            rq: true,
-            en: 'Distance',
-            ti: '.DistanceType'
-          }, {
-            n: 'angle',
-            rq: true,
-            en: 'Angle',
-            ti: '.AngleType'
-          }]
-      }, {
-        ln: 'ReferenceSystemType',
-        ps: [{
-            n: 'namedReferenceSystem',
-            rq: true,
-            col: true,
-            mx: false,
-            dom: false,
-            en: '_NamedReferenceSystem',
-            ti: '.AbstractNamedReferenceSystem',
-            t: 'er'
-          }]
-      }, {
-        ln: 'GeocodeResponseType',
-        bti: '.AbstractResponseParametersType',
-        ps: [{
-            n: 'geocodeResponseList',
-            rq: true,
-            col: true,
-            en: 'GeocodeResponseList',
-            ti: '.GeocodeResponseListType'
-          }]
-      }, {
-        ln: 'POIInfoListType',
-        ps: [{
-            n: 'poiInfo',
-            rq: true,
-            col: true,
-            en: 'POIInfo',
-            ti: '.POIInfoType'
-          }]
-      }, {
-        ln: 'StyleType',
-        ps: [{
-            n: 'name',
-            rq: true,
-            en: 'Name'
-          }, {
-            n: 'styleContent',
-            rq: true,
-            en: 'StyleContent'
-          }]
-      }, {
         ln: 'SICType',
         bti: '.AbstractNamedReferenceSystem',
         ps: [{
@@ -861,79 +1202,112 @@ var OLS_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractPositionType',
-        bti: '.AbstractLocationType'
+        ln: 'RouteSegmentType',
+        bti: '.AbstractRouteSegmentType'
       }, {
-        ln: 'NamedPlaceType',
+        ln: 'DetermineRouteRequestType',
+        bti: '.AbstractRequestParametersType',
         ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'type',
+            n: 'routeHandle',
             rq: true,
+            en: 'RouteHandle',
+            ti: '.RouteHandleType'
+          }, {
+            n: 'routePlan',
+            rq: true,
+            en: 'RoutePlan',
+            ti: '.RoutePlanType'
+          }, {
+            n: 'routeInstructionsRequest',
+            en: 'RouteInstructionsRequest',
+            ti: '.RouteInstructionsRequestType'
+          }, {
+            n: 'routeGeometryRequest',
+            en: 'RouteGeometryRequest',
+            ti: '.RouteGeometryRequestType'
+          }, {
+            n: 'routeMapRequest',
+            en: 'RouteMapRequest',
+            ti: '.RouteMapRequestType'
+          }, {
+            n: 'provideRouteHandle',
+            ti: 'Boolean',
             an: {
-              lp: 'type'
+              lp: 'provideRouteHandle'
+            },
+            t: 'a'
+          }, {
+            n: 'distanceUnit',
+            an: {
+              lp: 'distanceUnit'
             },
             t: 'a'
           }]
       }, {
-        ln: 'ErrorListType',
+        ln: 'SLIAType',
+        bti: '.AbstractResponseParametersType',
         ps: [{
-            n: 'error',
+            n: 'outputGatewayParameters',
+            rq: true,
+            en: 'OutputGatewayParameters',
+            ti: '.OutputGatewayParametersType'
+          }, {
+            n: 'requestID',
+            an: {
+              lp: 'requestID'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AvailableFormatsType',
+        ps: [{
+            n: 'format',
             rq: true,
             col: true,
-            en: 'Error',
-            ti: '.ErrorType'
-          }, {
-            n: 'highestSeverity',
-            an: {
-              lp: 'highestSeverity'
-            },
-            t: 'a'
+            en: 'Format'
           }]
       }, {
-        ln: 'GeocodedAddressType',
+        ln: 'RequestType',
+        bti: '.AbstractBodyType',
         ps: [{
-            n: 'point',
+            n: 'requestParameters',
+            mx: false,
+            dom: false,
+            en: '_RequestParameters',
+            ti: '.AbstractRequestParametersType',
+            t: 'er'
+          }, {
+            n: 'methodName',
             rq: true,
-            en: {
-              lp: 'Point',
-              ns: 'http:\/\/www.opengis.net\/gml'
+            ti: 'NMToken',
+            an: {
+              lp: 'methodName'
             },
-            ti: 'GML_3_1_1.PointType'
+            t: 'a'
           }, {
-            n: 'address',
+            n: 'version',
             rq: true,
-            en: 'Address',
-            ti: '.AddressType'
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
           }, {
-            n: 'geocodeMatchCode',
-            en: 'GeocodeMatchCode',
-            ti: '.GeocodingQOSType'
+            n: 'requestID',
+            rq: true,
+            an: {
+              lp: 'requestID'
+            },
+            t: 'a'
+          }, {
+            n: 'maximumResponses',
+            ti: 'NonNegativeInteger',
+            an: {
+              lp: 'maximumResponses'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'AbstractMSInformationType',
-        ps: [{
-            n: 'msIDType',
-            an: {
-              lp: 'msIDType'
-            },
-            t: 'a'
-          }, {
-            n: 'msIDValue',
-            an: {
-              lp: 'msIDValue'
-            },
-            t: 'a'
-          }, {
-            n: 'encryption',
-            an: {
-              lp: 'encryption'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'DistanceType',
+        ln: 'AngleType',
         bti: '.AbstractMeasureType',
         ps: [{
             n: 'uom',
@@ -943,13 +1317,147 @@ var OLS_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'RouteMapRequestType',
+        ln: 'AbstractMSIDsType',
         ps: [{
-            n: 'output',
-            rq: true,
+            n: 'session',
+            an: {
+              lp: 'session'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'POIPropertiesType',
+        bti: '.AbstractPOISelectionCriteriaType',
+        ps: [{
+            n: 'poiProperty',
+            mno: 0,
             col: true,
-            en: 'Output',
-            ti: '.RouteMapOutputType'
+            mx: false,
+            dom: false,
+            en: '_POIProperty',
+            ti: 'AnyType',
+            t: 'er'
+          }, {
+            n: 'directoryType',
+            an: {
+              lp: 'directoryType'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'OverlayType',
+        ps: [{
+            n: 'poi',
+            rq: true,
+            en: 'POI',
+            ti: '.PointOfInterestType'
+          }, {
+            n: 'routeGeometry',
+            rq: true,
+            en: 'RouteGeometry',
+            ti: '.RouteGeometryType'
+          }, {
+            n: 'position',
+            rq: true,
+            en: 'Position',
+            ti: '.PositionType'
+          }, {
+            n: 'map',
+            rq: true,
+            en: 'Map',
+            ti: '.MapType'
+          }, {
+            n: 'style',
+            en: 'Style',
+            ti: '.StyleType'
+          }, {
+            n: 'zorder',
+            ti: 'Integer',
+            an: {
+              lp: 'zorder'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'OutputMSIDsType',
+        bti: '.AbstractMSIDsType',
+        ps: [{
+            n: 'outputMSInformation',
+            rq: true,
+            en: 'OutputMSInformation',
+            ti: '.OutputMSInformationType'
+          }]
+      }, {
+        ln: 'RouteGeometryType',
+        bti: '.AbstractDataType',
+        ps: [{
+            n: 'lineString',
+            rq: true,
+            en: {
+              lp: 'LineString',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.LineStringType'
+          }]
+      }, {
+        ln: 'AbstractMeasureType',
+        ps: [{
+            n: 'value',
+            rq: true,
+            ti: 'Decimal',
+            an: {
+              lp: 'value'
+            },
+            t: 'a'
+          }, {
+            n: 'accuracy',
+            ti: 'Decimal',
+            an: {
+              lp: 'accuracy'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'ReverseGeocodeResponseType',
+        bti: '.AbstractResponseParametersType',
+        ps: [{
+            n: 'reverseGeocodedLocation',
+            mno: 0,
+            col: true,
+            en: 'ReverseGeocodedLocation',
+            ti: '.ReverseGeocodedLocationType'
+          }]
+      }, {
+        ln: 'WayPointType',
+        bti: '.AbstractWayPointType',
+        ps: [{
+            n: 'location',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: '_Location',
+            ti: '.AbstractLocationType',
+            t: 'er'
+          }, {
+            n: 'geocodeMatchCode',
+            en: 'GeocodeMatchCode',
+            ti: '.GeocodingQOSType'
+          }, {
+            n: 'stop',
+            ti: 'Boolean',
+            an: {
+              lp: 'stop'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'InputMSIDsType',
+        bti: '.AbstractMSIDsType',
+        ps: [{
+            n: 'inputMSInformation',
+            rq: true,
+            en: 'InputMSInformation',
+            ti: '.InputMSInformationType'
           }]
       }, {
         ln: 'POIPropertyType',
@@ -969,6 +1477,26 @@ var OLS_1_1_0_Module_Factory = function () {
             },
             t: 'a'
           }]
+      }, {
+        ln: 'TimeStampType',
+        ps: [{
+            n: 'begin',
+            rq: true,
+            ti: 'DateTime',
+            an: {
+              lp: 'begin'
+            },
+            t: 'a'
+          }, {
+            n: 'duration',
+            ti: 'Duration',
+            an: {
+              lp: 'duration'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractPOISelectionCriteriaType'
       }, {
         ln: 'ClipType',
         ps: [{
@@ -994,16 +1522,125 @@ var OLS_1_1_0_Module_Factory = function () {
             ti: '.LineCorridorType'
           }]
       }, {
-        ln: 'InputMSIDsType',
-        bti: '.AbstractMSIDsType',
+        ln: 'AbstractResponseParametersType'
+      }, {
+        ln: 'ResponseType',
+        bti: '.AbstractBodyType',
         ps: [{
-            n: 'inputMSInformation',
+            n: 'errorList',
+            en: 'ErrorList',
+            ti: '.ErrorListType'
+          }, {
+            n: 'responseParameters',
+            mx: false,
+            dom: false,
+            en: '_ResponseParameters',
+            ti: '.AbstractResponseParametersType',
+            t: 'er'
+          }, {
+            n: 'version',
             rq: true,
-            en: 'InputMSInformation',
-            ti: '.InputMSInformationType'
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }, {
+            n: 'requestID',
+            rq: true,
+            an: {
+              lp: 'requestID'
+            },
+            t: 'a'
+          }, {
+            n: 'numberOfResponses',
+            ti: 'NonNegativeInteger',
+            an: {
+              lp: 'numberOfResponses'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'AbstractBodyType'
+        ln: 'WithinDistanceType',
+        ps: [{
+            n: 'location',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: '_Location',
+            ti: '.AbstractLocationType',
+            t: 'er'
+          }, {
+            n: 'minimumDistance',
+            en: 'MinimumDistance',
+            ti: '.DistanceType'
+          }, {
+            n: 'maximumDistance',
+            en: 'MaximumDistance',
+            ti: '.DistanceType'
+          }]
+      }, {
+        ln: 'RoutePlanType',
+        ps: [{
+            n: 'routePreference',
+            rq: true,
+            en: 'RoutePreference'
+          }, {
+            n: 'wayPointList',
+            rq: true,
+            en: 'WayPointList',
+            ti: '.WayPointListType'
+          }, {
+            n: 'avoidList',
+            en: 'AvoidList',
+            ti: '.AvoidListType'
+          }, {
+            n: 'useRealTimeTraffic',
+            ti: 'Boolean',
+            an: {
+              lp: 'useRealTimeTraffic'
+            },
+            t: 'a'
+          }, {
+            n: 'expectedStartTime',
+            ti: 'DateTime',
+            an: {
+              lp: 'expectedStartTime'
+            },
+            t: 'a'
+          }, {
+            n: 'expectedEndTime',
+            ti: 'DateTime',
+            an: {
+              lp: 'expectedEndTime'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractPositionType',
+        bti: '.AbstractLocationType'
+      }, {
+        ln: 'POIWithDistanceType',
+        ps: [{
+            n: 'poi',
+            rq: true,
+            en: 'POI',
+            ti: '.PointOfInterestType'
+          }, {
+            n: 'distance',
+            en: 'Distance',
+            ti: '.DistanceType'
+          }]
+      }, {
+        ln: 'POIAttributeListType',
+        ps: [{
+            n: 'referenceSystem',
+            en: 'ReferenceSystem',
+            ti: '.ReferenceSystemType'
+          }, {
+            n: 'poiInfoList',
+            en: 'POIInfoList',
+            ti: '.POIInfoListType'
+          }]
       }, {
         ln: 'StreetNameType',
         ps: [{
@@ -1048,72 +1685,35 @@ var OLS_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AltitudeType',
-        bti: '.DistanceType'
-      }, {
-        ln: 'InputGatewayParametersType',
-        bti: '.AbstractGatewayParametersType',
+        ln: 'ResponseHeaderType',
+        bti: '.AbstractHeaderType',
         ps: [{
-            n: 'inputMSIDs',
-            rq: true,
-            en: 'InputMSIDs',
-            ti: '.InputMSIDsType'
+            n: 'errorList',
+            en: 'ErrorList',
+            ti: '.ErrorListType'
+          }, {
+            n: 'sessionID',
+            an: {
+              lp: 'sessionID'
+            },
+            t: 'a'
           }]
       }, {
-        ln: 'XLSType',
+        ln: 'POIInfoListType',
         ps: [{
-            n: 'header',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: '_Header',
-            ti: '.AbstractHeaderType',
-            t: 'er'
-          }, {
-            n: 'body',
+            n: 'poiInfo',
             rq: true,
             col: true,
-            mx: false,
-            dom: false,
-            en: '_Body',
-            ti: '.AbstractBodyType',
-            t: 'er'
-          }, {
-            n: 'version',
-            rq: true,
-            ti: 'Decimal',
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'lang',
-            ti: 'Language',
-            an: {
-              lp: 'lang',
-              ns: 'http:\/\/www.opengis.net\/xls'
-            },
-            t: 'a'
+            en: 'POIInfo',
+            ti: '.POIInfoType'
           }]
       }, {
-        ln: 'BuildingLocatorType',
-        bti: '.AbstractStreetLocatorType',
+        ln: 'RouteMapType',
+        bti: '.MapType',
         ps: [{
-            n: 'number',
+            n: 'description',
             an: {
-              lp: 'number'
-            },
-            t: 'a'
-          }, {
-            n: 'subdivision',
-            an: {
-              lp: 'subdivision'
-            },
-            t: 'a'
-          }, {
-            n: 'buildingName',
-            an: {
-              lp: 'buildingName'
+              lp: 'description'
             },
             t: 'a'
           }]
@@ -1142,668 +1742,6 @@ var OLS_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'AbstractPOIType',
-        bti: '.AbstractLocationType'
-      }, {
-        ln: 'AvailableSRSType',
-        ps: [{
-            n: 'srs',
-            rq: true,
-            col: true,
-            en: 'SRS'
-          }]
-      }, {
-        ln: 'DetermineRouteRequestType',
-        bti: '.AbstractRequestParametersType',
-        ps: [{
-            n: 'routeHandle',
-            rq: true,
-            en: 'RouteHandle',
-            ti: '.RouteHandleType'
-          }, {
-            n: 'routePlan',
-            rq: true,
-            en: 'RoutePlan',
-            ti: '.RoutePlanType'
-          }, {
-            n: 'routeInstructionsRequest',
-            en: 'RouteInstructionsRequest',
-            ti: '.RouteInstructionsRequestType'
-          }, {
-            n: 'routeGeometryRequest',
-            en: 'RouteGeometryRequest',
-            ti: '.RouteGeometryRequestType'
-          }, {
-            n: 'routeMapRequest',
-            en: 'RouteMapRequest',
-            ti: '.RouteMapRequestType'
-          }, {
-            n: 'provideRouteHandle',
-            ti: 'Boolean',
-            an: {
-              lp: 'provideRouteHandle'
-            },
-            t: 'a'
-          }, {
-            n: 'distanceUnit',
-            an: {
-              lp: 'distanceUnit'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'TimeStampType',
-        ps: [{
-            n: 'begin',
-            rq: true,
-            ti: 'DateTime',
-            an: {
-              lp: 'begin'
-            },
-            t: 'a'
-          }, {
-            n: 'duration',
-            ti: 'Duration',
-            an: {
-              lp: 'duration'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RadiusType',
-        ps: [{
-            n: 'value',
-            ti: 'Decimal',
-            t: 'v'
-          }, {
-            n: 'unit',
-            rq: true,
-            an: {
-              lp: 'unit'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'POILocationType',
-        ps: [{
-            n: 'address',
-            rq: true,
-            en: 'Address',
-            ti: '.AddressType'
-          }, {
-            n: 'nearest',
-            rq: true,
-            en: 'Nearest',
-            ti: '.NearestType'
-          }, {
-            n: 'withinDistance',
-            rq: true,
-            en: 'WithinDistance',
-            ti: '.WithinDistanceType'
-          }, {
-            n: 'withinBoundary',
-            rq: true,
-            en: 'WithinBoundary',
-            ti: '.WithinBoundaryType'
-          }]
-      }, {
-        ln: 'AvoidListType',
-        ps: [{
-            n: 'aoi',
-            mno: 0,
-            col: true,
-            en: 'AOI',
-            ti: '.AreaOfInterestType'
-          }, {
-            n: 'location',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            en: '_Location',
-            ti: '.AbstractLocationType',
-            t: 'er'
-          }, {
-            n: 'avoidFeature',
-            mno: 0,
-            col: true,
-            en: 'AvoidFeature'
-          }]
-      }, {
-        ln: 'RouteInstructionType',
-        ps: [{
-            n: 'instruction',
-            rq: true,
-            en: 'Instruction'
-          }, {
-            n: 'distance',
-            rq: true,
-            ti: '.DistanceType'
-          }, {
-            n: 'routeInstructionGeometry',
-            en: 'RouteInstructionGeometry',
-            ti: '.RouteGeometryType'
-          }, {
-            n: 'boundingBox',
-            en: 'BoundingBox',
-            ti: 'GML_3_1_1.EnvelopeType'
-          }, {
-            n: 'duration',
-            rq: true,
-            ti: 'Duration',
-            an: {
-              lp: 'duration'
-            },
-            t: 'a'
-          }, {
-            n: 'description',
-            an: {
-              lp: 'description'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RouteSummaryType',
-        bti: '.AbstractRouteSummaryType'
-      }, {
-        ln: 'SLIRType',
-        bti: '.AbstractRequestParametersType',
-        ps: [{
-            n: 'inputGatewayParameters',
-            rq: true,
-            en: 'InputGatewayParameters',
-            ti: '.InputGatewayParametersType'
-          }]
-      }, {
-        ln: 'ErrorType',
-        ps: [{
-            n: 'errorCode',
-            rq: true,
-            an: {
-              lp: 'errorCode'
-            },
-            t: 'a'
-          }, {
-            n: 'severity',
-            an: {
-              lp: 'severity'
-            },
-            t: 'a'
-          }, {
-            n: 'locationID',
-            ti: 'IDREF',
-            an: {
-              lp: 'locationID'
-            },
-            t: 'a'
-          }, {
-            n: 'locationPath',
-            an: {
-              lp: 'locationPath'
-            },
-            t: 'a'
-          }, {
-            n: 'message',
-            an: {
-              lp: 'message'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'ResponseType',
-        bti: '.AbstractBodyType',
-        ps: [{
-            n: 'errorList',
-            en: 'ErrorList',
-            ti: '.ErrorListType'
-          }, {
-            n: 'responseParameters',
-            mx: false,
-            dom: false,
-            en: '_ResponseParameters',
-            ti: '.AbstractResponseParametersType',
-            t: 'er'
-          }, {
-            n: 'version',
-            rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }, {
-            n: 'requestID',
-            rq: true,
-            an: {
-              lp: 'requestID'
-            },
-            t: 'a'
-          }, {
-            n: 'numberOfResponses',
-            ti: 'NonNegativeInteger',
-            an: {
-              lp: 'numberOfResponses'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AvailableFormatsType',
-        ps: [{
-            n: 'format',
-            rq: true,
-            col: true,
-            en: 'Format'
-          }]
-      }, {
-        ln: 'AreaOfInterestType',
-        bti: '.AbstractDataType',
-        ps: [{
-            n: 'circleByCenterPoint',
-            rq: true,
-            en: {
-              lp: 'CircleByCenterPoint',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.CircleByCenterPointType'
-          }, {
-            n: 'polygon',
-            rq: true,
-            en: {
-              lp: 'Polygon',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.PolygonType'
-          }, {
-            n: 'envelope',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'Envelope',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.EnvelopeType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'AbstractPOIPropertyType'
-      }, {
-        ln: 'ContentType',
-        ps: [{
-            n: 'data',
-            rq: true,
-            en: 'Data'
-          }, {
-            n: 'url',
-            rq: true,
-            en: 'URL'
-          }, {
-            n: 'format',
-            rq: true,
-            an: {
-              lp: 'format'
-            },
-            t: 'a'
-          }, {
-            n: 'width',
-            rq: true,
-            ti: 'Integer',
-            an: {
-              lp: 'width'
-            },
-            t: 'a'
-          }, {
-            n: 'height',
-            rq: true,
-            ti: 'Integer',
-            an: {
-              lp: 'height'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'RouteHandleType',
-        ps: [{
-            n: 'serviceID',
-            an: {
-              lp: 'serviceID'
-            },
-            t: 'a'
-          }, {
-            n: 'routeID',
-            rq: true,
-            an: {
-              lp: 'routeID'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SLIAType',
-        bti: '.AbstractResponseParametersType',
-        ps: [{
-            n: 'outputGatewayParameters',
-            rq: true,
-            en: 'OutputGatewayParameters',
-            ti: '.OutputGatewayParametersType'
-          }, {
-            n: 'requestID',
-            an: {
-              lp: 'requestID'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractMeasureType',
-        ps: [{
-            n: 'value',
-            rq: true,
-            ti: 'Decimal',
-            an: {
-              lp: 'value'
-            },
-            t: 'a'
-          }, {
-            n: 'accuracy',
-            ti: 'Decimal',
-            an: {
-              lp: 'accuracy'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GeocodeRequestType',
-        bti: '.AbstractRequestParametersType',
-        ps: [{
-            n: 'address',
-            rq: true,
-            col: true,
-            en: 'Address',
-            ti: '.AddressType'
-          }]
-      }, {
-        ln: 'InputMSInformationType',
-        bti: '.AbstractMSInformationType'
-      }, {
-        ln: 'PortrayMapResponseType',
-        bti: '.AbstractResponseParametersType',
-        ps: [{
-            n: 'map',
-            rq: true,
-            col: true,
-            en: 'Map',
-            ti: '.MapType'
-          }]
-      }, {
-        ln: 'CircularArcType',
-        bti: 'GML_3_1_1.AbstractGeometricPrimitiveType',
-        ps: [{
-            n: 'pos',
-            rq: true,
-            en: {
-              lp: 'pos',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.DirectPositionType'
-          }, {
-            n: 'innerRadius',
-            rq: true,
-            ti: 'GML_3_1_1.LengthType'
-          }, {
-            n: 'outerRadius',
-            rq: true,
-            ti: 'GML_3_1_1.LengthType'
-          }, {
-            n: 'startAngle',
-            rq: true,
-            ti: 'GML_3_1_1.AngleType'
-          }, {
-            n: 'endAngle',
-            rq: true,
-            ti: 'GML_3_1_1.AngleType'
-          }, {
-            n: 'interpolation',
-            ti: 'GML_3_1_1.CurveInterpolationType',
-            an: {
-              lp: 'interpolation'
-            },
-            t: 'a'
-          }, {
-            n: 'numARC',
-            rq: true,
-            ti: 'Integer',
-            an: {
-              lp: 'numArc'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AngleType',
-        bti: '.AbstractMeasureType',
-        ps: [{
-            n: 'uom',
-            an: {
-              lp: 'uom'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractMSIDsType',
-        ps: [{
-            n: 'session',
-            an: {
-              lp: 'session'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'WithinBoundaryType',
-        ps: [{
-            n: 'aoi',
-            rq: true,
-            en: 'AOI',
-            ti: '.AreaOfInterestType'
-          }]
-      }, {
-        ln: 'DirectoryRequestType',
-        bti: '.AbstractRequestParametersType',
-        ps: [{
-            n: 'poiLocation',
-            en: 'POILocation',
-            ti: '.POILocationType'
-          }, {
-            n: 'poiSelectionCriteria',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: '_POISelectionCriteria',
-            ti: '.AbstractPOISelectionCriteriaType',
-            t: 'er'
-          }, {
-            n: 'sortCriteria',
-            an: {
-              lp: 'sortCriteria'
-            },
-            t: 'a'
-          }, {
-            n: 'sortDirection',
-            an: {
-              lp: 'sortDirection'
-            },
-            t: 'a'
-          }, {
-            n: 'distanceUnit',
-            an: {
-              lp: 'distanceUnit'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'WayPointListType',
-        ps: [{
-            n: 'startPoint',
-            rq: true,
-            en: 'StartPoint',
-            ti: '.WayPointType'
-          }, {
-            n: 'viaPoint',
-            mno: 0,
-            col: true,
-            en: 'ViaPoint',
-            ti: '.WayPointType'
-          }, {
-            n: 'endPoint',
-            rq: true,
-            en: 'EndPoint',
-            ti: '.WayPointType'
-          }]
-      }, {
-        ln: 'CenterContextType',
-        ps: [{
-            n: 'centerPoint',
-            rq: true,
-            en: 'CenterPoint',
-            ti: 'GML_3_1_1.PointType'
-          }, {
-            n: 'displayScale',
-            rq: true,
-            en: 'DisplayScale',
-            ti: 'Integer'
-          }, {
-            n: 'dpi',
-            rq: true,
-            en: 'DPI',
-            ti: 'Integer'
-          }, {
-            n: 'radius',
-            rq: true,
-            en: 'Radius',
-            ti: '.RadiusType'
-          }, {
-            n: 'azimuth',
-            ti: 'Integer',
-            an: {
-              lp: 'azimuth'
-            },
-            t: 'a'
-          }, {
-            n: 'srs',
-            rq: true,
-            an: {
-              lp: 'SRS'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AddressType',
-        bti: '.AbstractAddressType',
-        ps: [{
-            n: 'freeFormAddress',
-            rq: true
-          }, {
-            n: 'streetAddress',
-            rq: true,
-            en: 'StreetAddress',
-            ti: '.StreetAddressType'
-          }, {
-            n: 'place',
-            mno: 0,
-            col: true,
-            en: 'Place',
-            ti: '.NamedPlaceType'
-          }, {
-            n: 'postalCode',
-            en: 'PostalCode'
-          }]
-      }, {
-        ln: 'LayerType',
-        ps: [{
-            n: 'layer',
-            rq: true,
-            col: true,
-            en: 'Layer',
-            ti: '.LayerType.Layer'
-          }, {
-            n: 'filter',
-            rq: true,
-            an: {
-              lp: 'filter'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractDataType'
-      }, {
-        ln: 'AvailableStylesType',
-        ps: [{
-            n: 'style',
-            rq: true,
-            col: true,
-            en: 'Style'
-          }]
-      }, {
-        ln: 'AbstractNamedReferenceSystem'
-      }, {
-        ln: 'RouteMapOutputType',
-        ps: [{
-            n: 'bBoxContext',
-            en: 'BBoxContext',
-            ti: 'GML_3_1_1.EnvelopeType'
-          }, {
-            n: 'width',
-            ti: 'NonNegativeInteger',
-            an: {
-              lp: 'width'
-            },
-            t: 'a'
-          }, {
-            n: 'height',
-            ti: 'NonNegativeInteger',
-            an: {
-              lp: 'height'
-            },
-            t: 'a'
-          }, {
-            n: 'format',
-            an: {
-              lp: 'format'
-            },
-            t: 'a'
-          }, {
-            n: 'bGcolor',
-            an: {
-              lp: 'BGcolor'
-            },
-            t: 'a'
-          }, {
-            n: 'transparent',
-            ti: 'Boolean',
-            an: {
-              lp: 'transparent'
-            },
-            t: 'a'
-          }, {
-            n: 'style',
-            an: {
-              lp: 'style'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GeocodingQOSType',
-        ps: [{
-            n: 'accuracy',
-            ti: 'Float',
-            an: {
-              lp: 'accuracy'
-            },
-            t: 'a'
-          }, {
-            n: 'matchType',
-            an: {
-              lp: 'matchType'
-            },
-            t: 'a'
-          }]
-      }, {
         ln: 'ReverseGeocodeRequestType',
         bti: '.AbstractRequestParametersType',
         ps: [{
@@ -1818,56 +1756,50 @@ var OLS_1_1_0_Module_Factory = function () {
             en: 'ReverseGeocodePreference'
           }]
       }, {
-        ln: 'POIWithDistanceType',
+        ln: 'AbstractAddressType',
+        bti: '.AbstractLocationType',
         ps: [{
-            n: 'poi',
-            rq: true,
-            en: 'POI',
-            ti: '.PointOfInterestType'
-          }, {
-            n: 'distance',
-            en: 'Distance',
-            ti: '.DistanceType'
-          }]
-      }, {
-        ln: 'POIPropertiesType',
-        bti: '.AbstractPOISelectionCriteriaType',
-        ps: [{
-            n: 'poiProperty',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            en: '_POIProperty',
-            ti: 'AnyType',
-            t: 'er'
-          }, {
-            n: 'directoryType',
+            n: 'addressee',
             an: {
-              lp: 'directoryType'
+              lp: 'addressee'
+            },
+            t: 'a'
+          }, {
+            n: 'countryCode',
+            rq: true,
+            an: {
+              lp: 'countryCode'
             },
             t: 'a'
           }]
       }, {
-        ln: 'AbstractRequestParametersType'
-      }, {
-        ln: 'MapType',
-        bti: '.AbstractDataType',
+        ln: 'TimeType',
+        bti: '.TimeStampType',
         ps: [{
-            n: 'content',
-            rq: true,
-            en: 'Content',
-            ti: '.ContentType'
+            n: 'utcOffset',
+            ti: 'Integer',
+            an: {
+              lp: 'utcOffset'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'AbstractWayPointType'
+      }, {
+        ln: 'StreetAddressType',
+        ps: [{
+            n: 'streetLocation',
+            mx: false,
+            dom: false,
+            en: '_StreetLocation',
+            ti: '.AbstractStreetLocatorType',
+            t: 'er'
           }, {
-            n: 'bBoxContext',
+            n: 'street',
             rq: true,
-            en: 'BBoxContext',
-            ti: 'GML_3_1_1.EnvelopeType'
-          }, {
-            n: 'centerContext',
-            rq: true,
-            en: 'CenterContext',
-            ti: '.CenterContextType'
+            col: true,
+            en: 'Street',
+            ti: '.StreetNameType'
           }]
       }, {
         ln: 'NACEType',
@@ -1898,126 +1830,29 @@ var OLS_1_1_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LayerType.Layer',
-        tn: null,
+        ln: 'AddressType',
+        bti: '.AbstractAddressType',
         ps: [{
-            n: 'style',
-            en: 'Style',
-            ti: '.StyleType'
+            n: 'freeFormAddress',
+            rq: true
           }, {
-            n: 'name',
+            n: 'streetAddress',
             rq: true,
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
+            en: 'StreetAddress',
+            ti: '.StreetAddressType'
+          }, {
+            n: 'place',
+            mno: 0,
+            col: true,
+            en: 'Place',
+            ti: '.NamedPlaceType'
+          }, {
+            n: 'postalCode',
+            en: 'PostalCode'
           }]
       }, {
-        ln: 'RequestHeaderType',
-        bti: '.AbstractHeaderType',
-        ps: [{
-            n: 'clientName',
-            an: {
-              lp: 'clientName'
-            },
-            t: 'a'
-          }, {
-            n: 'clientPassword',
-            an: {
-              lp: 'clientPassword'
-            },
-            t: 'a'
-          }, {
-            n: 'sessionID',
-            an: {
-              lp: 'sessionID'
-            },
-            t: 'a'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }, {
-            n: 'msid',
-            an: {
-              lp: 'MSID'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'OutputGatewayParametersType',
-        bti: '.AbstractGatewayParametersType',
-        ps: [{
-            n: 'outputMSIDs',
-            rq: true,
-            en: 'OutputMSIDs',
-            ti: '.OutputMSIDsType'
-          }]
-      }, {
-        ln: 'AbstractHeaderType'
-      }, {
-        ln: 'PointOfInterestType',
-        bti: '.AbstractPOIType',
-        ps: [{
-            n: 'poiAttributeList',
-            en: 'POIAttributeList',
-            ti: '.POIAttributeListType'
-          }, {
-            n: 'point',
-            en: {
-              lp: 'Point',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.PointType'
-          }, {
-            n: 'address',
-            en: 'Address',
-            ti: '.AddressType'
-          }, {
-            n: 'id',
-            rq: true,
-            an: {
-              lp: 'ID'
-            },
-            t: 'a'
-          }, {
-            n: 'poiName',
-            an: {
-              lp: 'POIName'
-            },
-            t: 'a'
-          }, {
-            n: 'phoneNumber',
-            an: {
-              lp: 'phoneNumber'
-            },
-            t: 'a'
-          }, {
-            n: 'description',
-            an: {
-              lp: 'description'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'AbstractAddressType',
-        bti: '.AbstractLocationType',
-        ps: [{
-            n: 'addressee',
-            an: {
-              lp: 'addressee'
-            },
-            t: 'a'
-          }, {
-            n: 'countryCode',
-            rq: true,
-            an: {
-              lp: 'countryCode'
-            },
-            t: 'a'
-          }]
+        ln: 'RouteSummaryType',
+        bti: '.AbstractRouteSummaryType'
       }, {
         ln: 'AvailableLayersType',
         ps: [{
@@ -2027,394 +1862,559 @@ var OLS_1_1_0_Module_Factory = function () {
             en: 'Layer'
           }]
       }, {
-        t: 'enum',
-        ln: 'PresentationContentType',
-        vs: ['URL', 'Data']
+        ln: 'DirectoryResponseType',
+        bti: '.AbstractResponseParametersType',
+        ps: [{
+            n: 'poiContext',
+            mno: 0,
+            col: true,
+            en: 'POIContext',
+            ti: '.POIWithDistanceType'
+          }]
       }, {
-        t: 'enum',
-        ln: 'RoutePreferenceType',
-        vs: ['Fastest', 'Shortest', 'Pedestrian']
+        ln: 'GeocodeRequestType',
+        bti: '.AbstractRequestParametersType',
+        ps: [{
+            n: 'address',
+            rq: true,
+            col: true,
+            en: 'Address',
+            ti: '.AddressType'
+          }]
       }, {
-        t: 'enum',
-        ln: 'SpeedUnitType',
-        vs: ['KPH', 'MPH', 'MPS', 'FPS']
+        ln: 'RouteHandleType',
+        ps: [{
+            n: 'serviceID',
+            an: {
+              lp: 'serviceID'
+            },
+            t: 'a'
+          }, {
+            n: 'routeID',
+            rq: true,
+            an: {
+              lp: 'routeID'
+            },
+            t: 'a'
+          }]
       }, {
-        t: 'enum',
-        ln: 'POIPropertyNameType',
-        vs: ['ID', 'POIName', 'PhoneNumber', 'Keyword', 'NAICS_type', 'NAICS_subType', 'NAICS_category', 'SIC_type', 'SIC_subType', 'SIC_category', 'SIC_code', 'other']
+        ln: 'GeocodingQOSType',
+        ps: [{
+            n: 'accuracy',
+            ti: 'Float',
+            an: {
+              lp: 'accuracy'
+            },
+            t: 'a'
+          }, {
+            n: 'matchType',
+            an: {
+              lp: 'matchType'
+            },
+            t: 'a'
+          }]
       }, {
-        t: 'enum',
-        ln: 'AvoidFeatureType',
-        vs: ['Highway', 'Tollway']
+        ln: 'EllipseType',
+        bti: 'GML_3_1_1.AbstractGeometricPrimitiveType',
+        ps: [{
+            n: 'pos',
+            rq: true,
+            en: {
+              lp: 'pos',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.DirectPositionType'
+          }, {
+            n: 'majorAxis',
+            rq: true,
+            ti: 'GML_3_1_1.LengthType'
+          }, {
+            n: 'minorAxis',
+            rq: true,
+            ti: 'GML_3_1_1.LengthType'
+          }, {
+            n: 'rotation',
+            rq: true,
+            ti: 'GML_3_1_1.AngleType'
+          }]
       }, {
-        t: 'enum',
-        ln: 'NamedPlaceClassification',
-        vs: ['CountrySubdivision', 'CountrySecondarySubdivision', 'Municipality', 'MunicipalitySubdivision']
+        ln: 'DetermineRouteResponseType',
+        bti: '.AbstractResponseParametersType',
+        ps: [{
+            n: 'routeHandle',
+            en: 'RouteHandle',
+            ti: '.RouteHandleType'
+          }, {
+            n: 'routeSummary',
+            rq: true,
+            en: 'RouteSummary',
+            ti: '.RouteSummaryType'
+          }, {
+            n: 'routeGeometry',
+            en: 'RouteGeometry',
+            ti: '.RouteGeometryType'
+          }, {
+            n: 'routeInstructionsList',
+            en: 'RouteInstructionsList',
+            ti: '.RouteInstructionsListType'
+          }, {
+            n: 'routeMap',
+            mno: 0,
+            col: true,
+            en: 'RouteMap',
+            ti: '.RouteMapType'
+          }]
       }, {
-        t: 'enum',
-        ln: 'RouteMapStyleType',
-        vs: ['Overview', 'Maneuver']
+        ln: 'NearestType',
+        ps: [{
+            n: 'location',
+            rq: true,
+            col: true,
+            mx: false,
+            dom: false,
+            en: '_Location',
+            ti: '.AbstractLocationType',
+            t: 'er'
+          }, {
+            n: 'nearestCriterion',
+            an: {
+              lp: 'nearestCriterion'
+            },
+            t: 'a'
+          }]
       }, {
-        t: 'enum',
-        ln: 'ReverseGeocodePreferenceType',
-        vs: ['StreetAddress', 'IntersectionAddress']
+        ln: 'PortrayMapRequestType',
+        bti: '.AbstractRequestParametersType',
+        ps: [{
+            n: 'output',
+            rq: true,
+            col: true,
+            en: 'Output',
+            ti: '.OutputType'
+          }, {
+            n: 'basemap',
+            en: 'Basemap',
+            ti: '.LayerType'
+          }, {
+            n: 'overlay',
+            mno: 0,
+            col: true,
+            en: 'Overlay',
+            ti: '.OverlayType'
+          }]
       }, {
-        t: 'enum',
-        ln: 'SeverityType',
-        vs: ['Warning', 'Error']
+        ln: 'ReverseGeocodedLocationType',
+        ps: [{
+            n: 'point',
+            rq: true,
+            en: {
+              lp: 'Point',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.PointType'
+          }, {
+            n: 'address',
+            rq: true,
+            en: 'Address',
+            ti: '.AddressType'
+          }, {
+            n: 'searchCentreDistance',
+            en: 'SearchCentreDistance',
+            ti: '.DistanceType'
+          }]
       }, {
-        t: 'enum',
-        ln: 'DistanceUnitType',
-        vs: ['KM', 'M', 'DM', 'MI', 'YD', 'FT']
+        ln: 'POIProperties',
+        tn: null,
+        bti: '.POIPropertiesType'
       }, {
         t: 'enum',
         ln: 'ErrorCodeType',
         vs: ['RequestVersionMismatch', 'ResponseVersionMismatch', 'ValueNotRecognized', 'NotSupported', 'Inconsistent', 'OtherXml', 'DeliveryFailure', 'SecurityFailure', 'Unknown']
       }, {
         t: 'enum',
-        ln: 'SortDirectionType',
-        vs: ['Ascending', 'Descending']
+        ln: 'ReverseGeocodePreferenceType',
+        vs: ['StreetAddress', 'IntersectionAddress']
       }, {
         t: 'enum',
         ln: 'NearestCriterionType',
         vs: ['Proximity', 'Fastest', 'Shortest', 'Easiest']
+      }, {
+        t: 'enum',
+        ln: 'PresentationContentType',
+        vs: ['URL', 'Data']
+      }, {
+        t: 'enum',
+        ln: 'SpeedUnitType',
+        vs: ['KPH', 'MPH', 'MPS', 'FPS']
+      }, {
+        t: 'enum',
+        ln: 'RoutePreferenceType',
+        vs: ['Fastest', 'Shortest', 'Pedestrian']
+      }, {
+        t: 'enum',
+        ln: 'SeverityType',
+        vs: ['Warning', 'Error']
+      }, {
+        t: 'enum',
+        ln: 'POIPropertyNameType',
+        vs: ['ID', 'POIName', 'PhoneNumber', 'Keyword', 'NAICS_type', 'NAICS_subType', 'NAICS_category', 'SIC_type', 'SIC_subType', 'SIC_category', 'SIC_code', 'other']
+      }, {
+        t: 'enum',
+        ln: 'NamedPlaceClassification',
+        vs: ['CountrySubdivision', 'CountrySecondarySubdivision', 'Municipality', 'MunicipalitySubdivision']
+      }, {
+        t: 'enum',
+        ln: 'SortDirectionType',
+        vs: ['Ascending', 'Descending']
+      }, {
+        t: 'enum',
+        ln: 'DistanceUnitType',
+        vs: ['KM', 'M', 'DM', 'MI', 'YD', 'FT']
+      }, {
+        t: 'enum',
+        ln: 'AvoidFeatureType',
+        vs: ['Highway', 'Tollway']
+      }, {
+        t: 'enum',
+        ln: 'RouteMapStyleType',
+        vs: ['Overview', 'Maneuver']
       }],
     eis: [{
-        en: 'ErrorList',
-        ti: '.ErrorListType'
+        en: 'Angle',
+        ti: '.AngleType',
+        sh: '_Measure'
       }, {
-        en: 'RequestHeader',
-        ti: '.RequestHeaderType',
-        sh: '_Header'
-      }, {
-        en: 'POIAttributeList',
-        ti: '.POIAttributeListType'
-      }, {
-        en: 'POILocation',
-        ti: '.POILocationType'
-      }, {
-        en: 'POIInfoList',
-        ti: '.POIInfoListType'
-      }, {
-        en: 'OutputMSInformation',
-        ti: '.OutputMSInformationType',
-        sh: '_MSInformation'
-      }, {
-        en: 'Request',
-        ti: '.RequestType',
-        sh: '_Body'
-      }, {
-        en: '_POISelectionCriteria',
-        ti: '.AbstractPOISelectionCriteriaType'
-      }, {
-        en: 'WayPointList',
-        ti: '.WayPointListType'
-      }, {
-        en: 'NextSegment',
-        ti: '.RouteSegmentType',
-        sh: '_NextSegment'
-      }, {
-        en: 'RouteInstructionsRequest',
-        ti: '.RouteInstructionsRequestType'
-      }, {
-        en: 'DetermineRouteResponse',
-        ti: '.DetermineRouteResponseType',
-        sh: '_ResponseParameters'
-      }, {
-        en: 'DirectoryResponse',
-        ti: '.DirectoryResponseType',
-        sh: '_ResponseParameters'
-      }, {
-        en: 'Ellipse',
-        ti: '.EllipseType'
-      }, {
-        en: '_POIProperty',
-        ti: 'AnyType'
-      }, {
-        en: '_GatewayParameters',
-        ti: '.AbstractGatewayParametersType'
-      }, {
-        en: '_StreetLocation',
-        ti: '.AbstractStreetLocatorType'
-      }, {
-        en: 'InputMSIDs',
-        ti: '.InputMSIDsType',
-        sh: '_MSIDs'
-      }, {
-        en: 'AvoidFeature'
-      }, {
-        en: '_NextSegment',
-        ti: '.AbstractRouteSegmentType'
-      }, {
-        en: 'RouteHandle',
-        ti: '.RouteHandleType'
-      }, {
-        en: '_RouteSummary',
-        ti: '.AbstractRouteSummaryType',
-        sh: '_ADT'
-      }, {
-        en: 'ResponseHeader',
-        ti: '.ResponseHeaderType',
-        sh: '_Header'
-      }, {
-        en: 'RouteInstructionsList',
-        ti: '.RouteInstructionsListType',
-        sh: '_ADT'
-      }, {
-        en: 'Position',
-        ti: '.PositionType',
-        sh: '_Position'
-      }, {
-        en: '_Header',
-        ti: '.AbstractHeaderType'
-      }, {
-        en: 'RouteSummary',
-        ti: '.RouteSummaryType',
-        sh: '_RouteSummary'
-      }, {
-        en: '_POI',
-        ti: '.AbstractPOIType',
-        sh: '_Location'
-      }, {
-        en: 'Address',
-        ti: '.AddressType',
-        sh: '_Location'
-      }, {
-        en: 'Map',
-        ti: '.MapType',
-        sh: '_ADT'
-      }, {
-        en: 'ReverseGeocodeResponse',
-        ti: '.ReverseGeocodeResponseType',
-        sh: '_ResponseParameters'
-      }, {
-        en: 'PortrayMapResponse',
-        ti: '.PortrayMapResponseType',
-        sh: '_ResponseParameters'
-      }, {
-        en: 'Altitude',
-        ti: '.AltitudeType'
-      }, {
-        en: '_RequestParameters',
-        ti: '.AbstractRequestParametersType'
-      }, {
-        en: 'POIProperty',
-        ti: '.POIPropertyType',
-        sh: '_POIProperty'
-      }, {
-        en: 'GetPortrayMapCapabilitiesResponse',
-        ti: '.GetPortrayMapCapabilitiesResponseType',
-        sh: '_ResponseParameters'
-      }, {
-        en: 'Place',
-        ti: '.NamedPlaceType'
-      }, {
-        en: 'GeocodeResponseList',
-        ti: '.GeocodeResponseListType'
-      }, {
-        en: '_WayPoint',
-        ti: '.AbstractWayPointType'
-      }, {
-        en: '_ResponseParameters',
-        ti: '.AbstractResponseParametersType'
-      }, {
-        en: 'InputMSInformation',
-        ti: '.InputMSInformationType',
-        sh: '_MSInformation'
-      }, {
-        en: 'RouteInstruction',
-        ti: '.RouteInstructionType'
-      }, {
-        en: 'Time',
-        ti: '.TimeType'
-      }, {
-        en: '_ADT',
-        ti: '.AbstractDataType'
-      }, {
-        en: 'RouteGeometry',
-        ti: '.RouteGeometryType',
-        sh: '_ADT'
-      }, {
-        en: '_Measure',
-        ti: '.AbstractMeasureType'
-      }, {
-        en: '_Position',
-        ti: '.AbstractPositionType',
-        sh: '_Location'
+        en: 'GeocodeRequest',
+        ti: '.GeocodeRequestType',
+        sh: '_RequestParameters'
       }, {
         en: 'AvoidList',
         ti: '.AvoidListType'
       }, {
-        en: 'SLIR',
-        ti: '.SLIRType',
-        sh: '_RequestParameters'
+        en: 'Error',
+        ti: '.ErrorType'
+      }, {
+        en: 'RouteInstructionsRequest',
+        ti: '.RouteInstructionsRequestType'
       }, {
         en: 'DirectoryRequest',
         ti: '.DirectoryRequestType',
         sh: '_RequestParameters'
       }, {
-        en: '_Body',
-        ti: '.AbstractBodyType'
+        en: '_ResponseParameters',
+        ti: '.AbstractResponseParametersType'
       }, {
-        en: 'PostalCode'
+        en: 'ReverseGeocodePreference'
       }, {
-        en: 'Response',
-        ti: '.ResponseType',
-        sh: '_Body'
-      }, {
-        en: 'NAICS',
-        ti: '.NAICSType',
-        sh: '_NamedReferenceSystem'
-      }, {
-        en: 'Error',
-        ti: '.ErrorType'
-      }, {
-        en: 'AOI',
-        ti: '.AreaOfInterestType',
+        en: 'RouteInstructionsList',
+        ti: '.RouteInstructionsListType',
         sh: '_ADT'
       }, {
-        en: 'Angle',
-        ti: '.AngleType',
-        sh: '_Measure'
+        en: 'Time',
+        ti: '.TimeType'
       }, {
-        en: 'RouteGeometryRequest',
-        ti: '.RouteGeometryRequestType'
-      }, {
-        en: '_MSInformation',
-        ti: '.AbstractMSInformationType'
-      }, {
-        en: 'ViaPoint',
-        ti: '.WayPointType',
-        sh: '_WayPoint'
-      }, {
-        en: 'BoundingBox',
-        ti: 'GML_3_1_1.EnvelopeType'
-      }, {
-        en: '_MSIDs',
-        ti: '.AbstractMSIDsType'
-      }, {
-        en: 'GetPortrayMapCapabilitiesRequest',
-        ti: '.GetPortrayMapCapabilitiesRequestType',
+        en: 'DetermineRouteRequest',
+        ti: '.DetermineRouteRequestType',
         sh: '_RequestParameters'
+      }, {
+        en: 'InputMSInformation',
+        ti: '.InputMSInformationType',
+        sh: '_MSInformation'
+      }, {
+        en: 'StreetAddress',
+        ti: '.StreetAddressType'
+      }, {
+        en: 'Place',
+        ti: '.NamedPlaceType'
       }, {
         en: 'ReverseGeocodeRequest',
         ti: '.ReverseGeocodeRequestType',
         sh: '_RequestParameters'
       }, {
-        en: '_NamedReferenceSystem',
-        ti: '.AbstractNamedReferenceSystem'
+        en: 'NAICS',
+        ti: '.NAICSType',
+        sh: '_NamedReferenceSystem'
       }, {
-        en: 'ReferenceSystem',
-        ti: '.ReferenceSystemType'
-      }, {
-        en: 'StartPoint',
+        en: 'ViaPoint',
         ti: '.WayPointType',
         sh: '_WayPoint'
       }, {
-        en: 'GeocodeResponse',
-        ti: '.GeocodeResponseType',
-        sh: '_ResponseParameters'
+        en: 'Street',
+        ti: '.StreetNameType'
+      }, {
+        en: 'Distance',
+        ti: '.DistanceType',
+        sh: '_Measure'
+      }, {
+        en: '_NamedReferenceSystem',
+        ti: '.AbstractNamedReferenceSystem'
+      }, {
+        en: '_POIProperty',
+        ti: 'AnyType'
+      }, {
+        en: 'POIAttributeList',
+        ti: '.POIAttributeListType'
+      }, {
+        en: 'Map',
+        ti: '.MapType',
+        sh: '_ADT'
       }, {
         en: 'EndPoint',
         ti: '.WayPointType',
         sh: '_WayPoint'
       }, {
-        en: '_Location',
-        ti: '.AbstractLocationType',
+        en: 'NextSegment',
+        ti: '.RouteSegmentType',
+        sh: '_NextSegment'
+      }, {
+        en: 'RouteGeometry',
+        ti: '.RouteGeometryType',
         sh: '_ADT'
       }, {
-        en: 'SLIA',
-        ti: '.SLIAType',
-        sh: '_ResponseParameters'
+        en: 'StartPoint',
+        ti: '.WayPointType',
+        sh: '_WayPoint'
       }, {
-        en: 'CircularArc',
-        ti: '.CircularArcType'
+        en: 'PortrayMapRequest',
+        ti: '.PortrayMapRequestType',
+        sh: '_RequestParameters'
       }, {
-        en: 'DetermineRouteRequest',
-        ti: '.DetermineRouteRequestType',
+        en: 'OutputGatewayParameters',
+        ti: '.OutputGatewayParametersType',
+        sh: '_GatewayParameters'
+      }, {
+        en: 'InputMSIDs',
+        ti: '.InputMSIDsType',
+        sh: '_MSIDs'
+      }, {
+        en: 'BoundingBox',
+        ti: 'GML_3_1_1.EnvelopeType'
+      }, {
+        en: 'NACE',
+        ti: '.NACEType',
+        sh: '_NamedReferenceSystem'
+      }, {
+        en: '_ADT',
+        ti: '.AbstractDataType'
+      }, {
+        en: '_WayPoint',
+        ti: '.AbstractWayPointType'
+      }, {
+        en: '_GatewayParameters',
+        ti: '.AbstractGatewayParametersType'
+      }, {
+        en: 'Address',
+        ti: '.AddressType',
+        sh: '_Location'
+      }, {
+        en: 'GetPortrayMapCapabilitiesRequest',
+        ti: '.GetPortrayMapCapabilitiesRequestType',
         sh: '_RequestParameters'
       }, {
         en: 'Building',
         ti: '.BuildingLocatorType',
         sh: '_StreetLocation'
       }, {
+        en: 'AOI',
+        ti: '.AreaOfInterestType',
+        sh: '_ADT'
+      }, {
+        en: 'Request',
+        ti: '.RequestType',
+        sh: '_Body'
+      }, {
+        en: 'GeocodeResponseList',
+        ti: '.GeocodeResponseListType'
+      }, {
+        en: '_Position',
+        ti: '.AbstractPositionType',
+        sh: '_Location'
+      }, {
+        en: 'SLIR',
+        ti: '.SLIRType',
+        sh: '_RequestParameters'
+      }, {
+        en: 'POIInfoList',
+        ti: '.POIInfoListType'
+      }, {
+        en: 'POIInfo',
+        ti: '.POIInfoType'
+      }, {
+        en: 'Response',
+        ti: '.ResponseType',
+        sh: '_Body'
+      }, {
+        en: 'Altitude',
+        ti: '.AltitudeType'
+      }, {
+        en: 'RequestHeader',
+        ti: '.RequestHeaderType',
+        sh: '_Header'
+      }, {
+        en: 'CircularArc',
+        ti: '.CircularArcType'
+      }, {
         en: 'RoutePlan',
         ti: '.RoutePlanType'
-      }, {
-        en: 'ReverseGeocodePreference'
-      }, {
-        en: 'OutputGatewayParameters',
-        ti: '.OutputGatewayParametersType',
-        sh: '_GatewayParameters'
-      }, {
-        en: 'Street',
-        ti: '.StreetNameType'
-      }, {
-        en: 'RouteMapRequest',
-        ti: '.RouteMapRequestType'
-      }, {
-        en: 'TimeStamp',
-        ti: '.TimeStampType'
-      }, {
-        en: 'XLS',
-        ti: '.XLSType'
-      }, {
-        en: 'POI',
-        ti: '.PointOfInterestType',
-        sh: '_POI'
-      }, {
-        en: 'Distance',
-        ti: '.DistanceType',
-        sh: '_Measure'
-      }, {
-        en: 'Speed',
-        ti: '.SpeedType',
-        sh: '_Measure'
-      }, {
-        en: 'GeocodeMatchCode',
-        ti: '.GeocodingQOSType'
-      }, {
-        en: 'POIProperties',
-        ti: '.POIProperties',
-        sh: '_POISelectionCriteria'
       }, {
         en: 'SIC',
         ti: '.SICType',
         sh: '_NamedReferenceSystem'
       }, {
-        en: 'NACE',
-        ti: '.NACEType',
-        sh: '_NamedReferenceSystem'
+        en: 'POIProperties',
+        ti: '.POIProperties',
+        sh: '_POISelectionCriteria'
       }, {
-        en: 'StreetAddress',
-        ti: '.StreetAddressType'
+        en: 'ErrorList',
+        ti: '.ErrorListType'
+      }, {
+        en: 'OutputMSInformation',
+        ti: '.OutputMSInformationType',
+        sh: '_MSInformation'
+      }, {
+        en: 'RouteInstruction',
+        ti: '.RouteInstructionType'
+      }, {
+        en: 'GeocodeMatchCode',
+        ti: '.GeocodingQOSType'
+      }, {
+        en: 'SearchCentreDistance',
+        ti: '.DistanceType'
+      }, {
+        en: 'RouteHandle',
+        ti: '.RouteHandleType'
+      }, {
+        en: 'WayPointList',
+        ti: '.WayPointListType'
+      }, {
+        en: 'XLS',
+        ti: '.XLSType'
+      }, {
+        en: 'SLIA',
+        ti: '.SLIAType',
+        sh: '_ResponseParameters'
+      }, {
+        en: '_Measure',
+        ti: '.AbstractMeasureType'
+      }, {
+        en: 'DirectoryResponse',
+        ti: '.DirectoryResponseType',
+        sh: '_ResponseParameters'
+      }, {
+        en: 'Speed',
+        ti: '.SpeedType',
+        sh: '_Measure'
+      }, {
+        en: 'POILocation',
+        ti: '.POILocationType'
       }, {
         en: 'RouteMap',
         ti: '.RouteMapType'
       }, {
-        en: 'InputGatewayParameters',
-        ti: '.InputGatewayParametersType',
-        sh: '_GatewayParameters'
+        en: '_Body',
+        ti: '.AbstractBodyType'
       }, {
-        en: 'PortrayMapRequest',
-        ti: '.PortrayMapRequestType',
-        sh: '_RequestParameters'
+        en: '_RequestParameters',
+        ti: '.AbstractRequestParametersType'
       }, {
-        en: 'SearchCentreDistance',
-        ti: '.DistanceType'
+        en: '_RouteSummary',
+        ti: '.AbstractRouteSummaryType',
+        sh: '_ADT'
+      }, {
+        en: '_NextSegment',
+        ti: '.AbstractRouteSegmentType'
+      }, {
+        en: '_StreetLocation',
+        ti: '.AbstractStreetLocatorType'
+      }, {
+        en: 'RouteGeometryRequest',
+        ti: '.RouteGeometryRequestType'
+      }, {
+        en: 'POIProperty',
+        ti: '.POIPropertyType',
+        sh: '_POIProperty'
+      }, {
+        en: 'PostalCode'
+      }, {
+        en: 'ReverseGeocodeResponse',
+        ti: '.ReverseGeocodeResponseType',
+        sh: '_ResponseParameters'
+      }, {
+        en: 'POI',
+        ti: '.PointOfInterestType',
+        sh: '_POI'
+      }, {
+        en: '_Header',
+        ti: '.AbstractHeaderType'
       }, {
         en: 'OutputMSIDs',
         ti: '.OutputMSIDsType',
         sh: '_MSIDs'
       }, {
-        en: 'POIInfo',
-        ti: '.POIInfoType'
+        en: 'RouteMapRequest',
+        ti: '.RouteMapRequestType'
       }, {
-        en: 'GeocodeRequest',
-        ti: '.GeocodeRequestType',
-        sh: '_RequestParameters'
+        en: '_Location',
+        ti: '.AbstractLocationType',
+        sh: '_ADT'
+      }, {
+        en: '_MSIDs',
+        ti: '.AbstractMSIDsType'
+      }, {
+        en: '_POISelectionCriteria',
+        ti: '.AbstractPOISelectionCriteriaType'
+      }, {
+        en: 'AvoidFeature'
+      }, {
+        en: 'Position',
+        ti: '.PositionType',
+        sh: '_Position'
+      }, {
+        en: '_MSInformation',
+        ti: '.AbstractMSInformationType'
+      }, {
+        en: 'PortrayMapResponse',
+        ti: '.PortrayMapResponseType',
+        sh: '_ResponseParameters'
+      }, {
+        en: '_POI',
+        ti: '.AbstractPOIType',
+        sh: '_Location'
       }, {
         en: 'RoutePreference'
+      }, {
+        en: 'RouteSummary',
+        ti: '.RouteSummaryType',
+        sh: '_RouteSummary'
+      }, {
+        en: 'ResponseHeader',
+        ti: '.ResponseHeaderType',
+        sh: '_Header'
+      }, {
+        en: 'GetPortrayMapCapabilitiesResponse',
+        ti: '.GetPortrayMapCapabilitiesResponseType',
+        sh: '_ResponseParameters'
+      }, {
+        en: 'GeocodeResponse',
+        ti: '.GeocodeResponseType',
+        sh: '_ResponseParameters'
+      }, {
+        en: 'DetermineRouteResponse',
+        ti: '.DetermineRouteResponseType',
+        sh: '_ResponseParameters'
+      }, {
+        en: 'TimeStamp',
+        ti: '.TimeStampType'
+      }, {
+        en: 'InputGatewayParameters',
+        ti: '.InputGatewayParametersType',
+        sh: '_GatewayParameters'
+      }, {
+        en: 'ReferenceSystem',
+        ti: '.ReferenceSystemType'
+      }, {
+        en: 'Ellipse',
+        ti: '.EllipseType'
       }]
   };
   return {

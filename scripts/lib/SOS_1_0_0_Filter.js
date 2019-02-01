@@ -4,152 +4,34 @@ var SOS_1_0_0_Filter_Module_Factory = function () {
     dens: 'http:\/\/www.opengis.net\/ogc',
     deps: ['GML_3_1_1'],
     tis: [{
+        ln: 'ArithmeticOperatorsType',
+        ps: [{
+            n: 'simpleArithmeticOrFunctions',
+            rq: true,
+            col: true,
+            etis: [{
+                en: 'SimpleArithmetic',
+                ti: '.SimpleArithmetic'
+              }, {
+                en: 'Functions',
+                ti: '.FunctionsType'
+              }],
+            t: 'es'
+          }]
+      }, {
         ln: 'ComparisonOpsType'
       }, {
-        ln: 'SpatialOpsType'
-      }, {
-        ln: 'PropertyIsBetweenType',
-        bti: '.ComparisonOpsType',
-        ps: [{
-            n: 'expression',
-            rq: true,
-            mx: false,
-            dom: false,
-            ti: '.ExpressionType',
-            t: 'er'
-          }, {
-            n: 'lowerBoundary',
-            rq: true,
-            en: 'LowerBoundary',
-            ti: '.LowerBoundaryType'
-          }, {
-            n: 'upperBoundary',
-            rq: true,
-            en: 'UpperBoundary',
-            ti: '.UpperBoundaryType'
-          }]
-      }, {
-        ln: 'TemporalOpsType'
-      }, {
-        ln: 'BinaryOperatorType',
+        ln: 'PropertyNameType',
         bti: '.ExpressionType',
         ps: [{
-            n: 'expression',
-            rq: true,
-            mno: 2,
-            mxo: 2,
+            n: 'content',
             col: true,
-            mx: false,
             dom: false,
-            ti: '.ExpressionType',
-            t: 'er'
+            t: 'ae'
           }]
       }, {
-        ln: 'GeometryOperandsType',
-        ps: [{
-            n: 'geometryOperand',
-            rq: true,
-            col: true,
-            en: 'GeometryOperand',
-            ti: 'QName'
-          }]
-      }, {
-        ln: 'SpatialOperatorsType',
-        ps: [{
-            n: 'spatialOperator',
-            rq: true,
-            col: true,
-            en: 'SpatialOperator',
-            ti: '.SpatialOperatorType'
-          }]
-      }, {
-        ln: 'BinarySpatialOpType',
-        bti: '.SpatialOpsType',
-        ps: [{
-            n: 'propertyName',
-            rq: true,
-            mxo: 2,
-            col: true,
-            en: 'PropertyName',
-            ti: '.PropertyNameType'
-          }, {
-            n: 'geometry',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: '_Geometry',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.AbstractGeometryType',
-            t: 'er'
-          }, {
-            n: 'envelope',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'Envelope',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.EnvelopeType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'FilterCapabilities',
-        tn: null,
-        ps: [{
-            n: 'spatialCapabilities',
-            rq: true,
-            en: 'Spatial_Capabilities',
-            ti: '.SpatialCapabilitiesType'
-          }, {
-            n: 'scalarCapabilities',
-            rq: true,
-            en: 'Scalar_Capabilities',
-            ti: '.ScalarCapabilitiesType'
-          }, {
-            n: 'idCapabilities',
-            rq: true,
-            en: 'Id_Capabilities',
-            ti: '.IdCapabilitiesType'
-          }]
-      }, {
-        ln: 'DistanceBufferType',
-        bti: '.SpatialOpsType',
-        ps: [{
-            n: 'propertyName',
-            rq: true,
-            en: 'PropertyName',
-            ti: '.PropertyNameType'
-          }, {
-            n: 'geometry',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: '_Geometry',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            ti: 'GML_3_1_1.AbstractGeometryType',
-            t: 'er'
-          }, {
-            n: 'distance',
-            rq: true,
-            en: 'Distance',
-            ti: '.DistanceType'
-          }]
-      }, {
-        ln: 'LogicalOperators',
+        ln: 'EID',
         tn: null
-      }, {
-        ln: 'FunctionsType',
-        ps: [{
-            n: 'functionNames',
-            rq: true,
-            en: 'FunctionNames',
-            ti: '.FunctionNamesType'
-          }]
       }, {
         ln: 'LiteralType',
         bti: '.ExpressionType',
@@ -159,104 +41,6 @@ var SOS_1_0_0_Filter_Module_Factory = function () {
             dom: false,
             t: 'ae'
           }]
-      }, {
-        ln: 'BinaryComparisonOpType',
-        bti: '.ComparisonOpsType',
-        ps: [{
-            n: 'expression',
-            rq: true,
-            mno: 2,
-            mxo: 2,
-            col: true,
-            mx: false,
-            dom: false,
-            ti: '.ExpressionType',
-            t: 'er'
-          }, {
-            n: 'matchCase',
-            ti: 'Boolean',
-            an: {
-              lp: 'matchCase'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'UpperBoundaryType',
-        ps: [{
-            n: 'expression',
-            rq: true,
-            mx: false,
-            dom: false,
-            ti: '.ExpressionType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'TemporalOperandsType',
-        ps: [{
-            n: 'temporalOperand',
-            rq: true,
-            col: true,
-            en: 'TemporalOperand',
-            ti: 'QName'
-          }]
-      }, {
-        ln: 'DistanceType',
-        ps: [{
-            n: 'value',
-            ti: 'Double',
-            t: 'v'
-          }, {
-            n: 'units',
-            rq: true,
-            an: {
-              lp: 'units'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SpatialOperatorType',
-        ps: [{
-            n: 'geometryOperands',
-            en: 'GeometryOperands',
-            ti: '.GeometryOperandsType'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'SimpleArithmetic',
-        tn: null
-      }, {
-        ln: 'BinaryLogicOpType',
-        bti: '.LogicOpsType',
-        ps: [{
-            n: 'ops',
-            rq: true,
-            mno: 2,
-            col: true,
-            mx: false,
-            dom: false,
-            etis: [{
-                en: 'logicOps',
-                ti: '.LogicOpsType'
-              }, {
-                en: 'comparisonOps',
-                ti: '.ComparisonOpsType'
-              }, {
-                en: 'Function',
-                ti: '.FunctionType'
-              }, {
-                en: 'spatialOps',
-                ti: '.SpatialOpsType'
-              }],
-            t: 'ers'
-          }]
-      }, {
-        ln: 'EID',
-        tn: null
       }, {
         ln: 'PropertyIsLikeType',
         bti: '.ComparisonOpsType',
@@ -300,6 +84,46 @@ var SOS_1_0_0_Filter_Module_Factory = function () {
             t: 'a'
           }]
       }, {
+        ln: 'FeatureIdType',
+        bti: '.AbstractIdType',
+        ps: [{
+            n: 'fid',
+            rq: true,
+            ti: 'ID',
+            an: {
+              lp: 'fid'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'FID',
+        tn: null
+      }, {
+        ln: 'AbstractIdType'
+      }, {
+        ln: 'BinaryTemporalOpType',
+        bti: '.TemporalOpsType',
+        ps: [{
+            n: 'rest',
+            rq: true,
+            mno: 2,
+            mxo: 2,
+            col: true,
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'PropertyName',
+                ti: '.PropertyNameType'
+              }, {
+                en: {
+                  lp: '_TimeObject',
+                  ns: 'http:\/\/www.opengis.net\/gml'
+                },
+                ti: 'GML_3_1_1.AbstractTimeObjectType'
+              }],
+            t: 'ers'
+          }]
+      }, {
         ln: 'ComparisonOperatorsType',
         ps: [{
             n: 'comparisonOperator',
@@ -307,6 +131,48 @@ var SOS_1_0_0_Filter_Module_Factory = function () {
             col: true,
             en: 'ComparisonOperator'
           }]
+      }, {
+        ln: 'ExpressionType'
+      }, {
+        ln: 'GmlObjectIdType',
+        bti: '.AbstractIdType',
+        ps: [{
+            n: 'id',
+            rq: true,
+            ti: 'ID',
+            an: {
+              lp: 'id',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'DistanceType',
+        ps: [{
+            n: 'value',
+            ti: 'Double',
+            t: 'v'
+          }, {
+            n: 'units',
+            rq: true,
+            an: {
+              lp: 'units'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'UpperBoundaryType',
+        ps: [{
+            n: 'expression',
+            rq: true,
+            mx: false,
+            dom: false,
+            ti: '.ExpressionType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'SimpleArithmetic',
+        tn: null
       }, {
         ln: 'FilterType',
         ps: [{
@@ -341,32 +207,49 @@ var SOS_1_0_0_Filter_Module_Factory = function () {
             t: 'er'
           }]
       }, {
-        ln: 'ScalarCapabilitiesType',
-        tn: 'Scalar_CapabilitiesType',
+        ln: 'FunctionNameType',
         ps: [{
-            n: 'logicalOperators',
-            en: 'LogicalOperators',
-            ti: '.LogicalOperators'
+            n: 'value',
+            t: 'v'
           }, {
-            n: 'comparisonOperators',
-            en: 'ComparisonOperators',
-            ti: '.ComparisonOperatorsType'
-          }, {
-            n: 'arithmeticOperators',
-            en: 'ArithmeticOperators',
-            ti: '.ArithmeticOperatorsType'
-          }]
-      }, {
-        ln: 'FeatureIdType',
-        bti: '.AbstractIdType',
-        ps: [{
-            n: 'fid',
+            n: 'nArgs',
             rq: true,
-            ti: 'ID',
             an: {
-              lp: 'fid'
+              lp: 'nArgs'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'FunctionNamesType',
+        ps: [{
+            n: 'functionName',
+            rq: true,
+            col: true,
+            en: 'FunctionName',
+            ti: '.FunctionNameType'
+          }]
+      }, {
+        ln: 'BinaryOperatorType',
+        bti: '.ExpressionType',
+        ps: [{
+            n: 'expression',
+            rq: true,
+            mno: 2,
+            mxo: 2,
+            col: true,
+            mx: false,
+            dom: false,
+            ti: '.ExpressionType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'PropertyIsNullType',
+        bti: '.ComparisonOpsType',
+        ps: [{
+            n: 'propertyName',
+            rq: true,
+            en: 'PropertyName',
+            ti: '.PropertyNameType'
           }]
       }, {
         ln: 'SpatialCapabilitiesType',
@@ -383,13 +266,31 @@ var SOS_1_0_0_Filter_Module_Factory = function () {
             ti: '.SpatialOperatorsType'
           }]
       }, {
-        ln: 'PropertyIsNullType',
-        bti: '.ComparisonOpsType',
+        ln: 'SortPropertyType',
         ps: [{
             n: 'propertyName',
             rq: true,
             en: 'PropertyName',
             ti: '.PropertyNameType'
+          }, {
+            n: 'sortOrder',
+            en: 'SortOrder'
+          }]
+      }, {
+        ln: 'IdCapabilitiesType',
+        tn: 'Id_CapabilitiesType',
+        ps: [{
+            n: 'eidOrFID',
+            rq: true,
+            col: true,
+            etis: [{
+                en: 'EID',
+                ti: '.EID'
+              }, {
+                en: 'FID',
+                ti: '.FID'
+              }],
+            t: 'es'
           }]
       }, {
         ln: 'UnaryLogicOpType',
@@ -422,21 +323,54 @@ var SOS_1_0_0_Filter_Module_Factory = function () {
             ti: '.FunctionType'
           }]
       }, {
-        ln: 'FID',
-        tn: null
-      }, {
-        ln: 'TemporalOperatorType',
+        ln: 'LowerBoundaryType',
         ps: [{
-            n: 'temporalOperands',
-            en: 'TemporalOperands',
-            ti: '.TemporalOperandsType'
-          }, {
-            n: 'name',
-            an: {
-              lp: 'name'
-            },
-            t: 'a'
+            n: 'expression',
+            rq: true,
+            mx: false,
+            dom: false,
+            ti: '.ExpressionType',
+            t: 'er'
           }]
+      }, {
+        ln: 'GeometryOperandsType',
+        ps: [{
+            n: 'geometryOperand',
+            rq: true,
+            col: true,
+            en: 'GeometryOperand',
+            ti: 'QName'
+          }]
+      }, {
+        ln: 'TemporalOperatorsType',
+        ps: [{
+            n: 'temporalOperator',
+            rq: true,
+            col: true,
+            en: 'TemporalOperator',
+            ti: '.TemporalOperatorType'
+          }]
+      }, {
+        ln: 'FilterCapabilities',
+        tn: null,
+        ps: [{
+            n: 'spatialCapabilities',
+            rq: true,
+            en: 'Spatial_Capabilities',
+            ti: '.SpatialCapabilitiesType'
+          }, {
+            n: 'scalarCapabilities',
+            rq: true,
+            en: 'Scalar_Capabilities',
+            ti: '.ScalarCapabilitiesType'
+          }, {
+            n: 'idCapabilities',
+            rq: true,
+            en: 'Id_Capabilities',
+            ti: '.IdCapabilitiesType'
+          }]
+      }, {
+        ln: 'TemporalOpsType'
       }, {
         ln: 'BBOXType',
         bti: '.SpatialOpsType',
@@ -457,89 +391,47 @@ var SOS_1_0_0_Filter_Module_Factory = function () {
             t: 'er'
           }]
       }, {
-        ln: 'SortPropertyType',
+        ln: 'BinarySpatialOpType',
+        bti: '.SpatialOpsType',
         ps: [{
             n: 'propertyName',
             rq: true,
+            mxo: 2,
+            col: true,
             en: 'PropertyName',
             ti: '.PropertyNameType'
           }, {
-            n: 'sortOrder',
-            en: 'SortOrder'
-          }]
-      }, {
-        ln: 'FunctionNameType',
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'nArgs',
+            n: 'geometry',
             rq: true,
-            an: {
-              lp: 'nArgs'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LogicOpsType'
-      }, {
-        ln: 'AbstractIdType'
-      }, {
-        ln: 'BinaryTemporalOpType',
-        bti: '.TemporalOpsType',
-        ps: [{
-            n: 'rest',
-            rq: true,
-            mno: 2,
-            mxo: 2,
-            col: true,
             mx: false,
             dom: false,
-            etis: [{
-                en: 'PropertyName',
-                ti: '.PropertyNameType'
-              }, {
-                en: {
-                  lp: '_TimeObject',
-                  ns: 'http:\/\/www.opengis.net\/gml'
-                },
-                ti: 'GML_3_1_1.AbstractTimeObjectType'
-              }],
-            t: 'ers'
+            en: {
+              lp: '_Geometry',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.AbstractGeometryType',
+            t: 'er'
+          }, {
+            n: 'envelope',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'Envelope',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.EnvelopeType',
+            t: 'er'
           }]
       }, {
-        ln: 'IdCapabilitiesType',
-        tn: 'Id_CapabilitiesType',
+        ln: 'SpatialOperatorsType',
         ps: [{
-            n: 'eidOrFID',
+            n: 'spatialOperator',
             rq: true,
             col: true,
-            etis: [{
-                en: 'EID',
-                ti: '.EID'
-              }, {
-                en: 'FID',
-                ti: '.FID'
-              }],
-            t: 'es'
+            en: 'SpatialOperator',
+            ti: '.SpatialOperatorType'
           }]
-      }, {
-        ln: 'ArithmeticOperatorsType',
-        ps: [{
-            n: 'simpleArithmeticOrFunctions',
-            rq: true,
-            col: true,
-            etis: [{
-                en: 'SimpleArithmetic',
-                ti: '.SimpleArithmetic'
-              }, {
-                en: 'Functions',
-                ti: '.FunctionsType'
-              }],
-            t: 'es'
-          }]
-      }, {
-        ln: 'ExpressionType'
       }, {
         ln: 'SortByType',
         ps: [{
@@ -548,70 +440,6 @@ var SOS_1_0_0_Filter_Module_Factory = function () {
             col: true,
             en: 'SortProperty',
             ti: '.SortPropertyType'
-          }]
-      }, {
-        ln: 'GmlObjectIdType',
-        bti: '.AbstractIdType',
-        ps: [{
-            n: 'id',
-            rq: true,
-            ti: 'ID',
-            an: {
-              lp: 'id',
-              ns: 'http:\/\/www.opengis.net\/gml'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'LowerBoundaryType',
-        ps: [{
-            n: 'expression',
-            rq: true,
-            mx: false,
-            dom: false,
-            ti: '.ExpressionType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'TemporalCapabilitiesType',
-        tn: 'Temporal_CapabilitiesType',
-        ps: [{
-            n: 'temporalOperands',
-            rq: true,
-            en: 'TemporalOperands',
-            ti: '.TemporalOperandsType'
-          }, {
-            n: 'temporalOperators',
-            rq: true,
-            en: 'TemporalOperators',
-            ti: '.TemporalOperatorsType'
-          }]
-      }, {
-        ln: 'FunctionNamesType',
-        ps: [{
-            n: 'functionName',
-            rq: true,
-            col: true,
-            en: 'FunctionName',
-            ti: '.FunctionNameType'
-          }]
-      }, {
-        ln: 'PropertyNameType',
-        bti: '.ExpressionType',
-        ps: [{
-            n: 'content',
-            col: true,
-            dom: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'TemporalOperatorsType',
-        ps: [{
-            n: 'temporalOperator',
-            rq: true,
-            col: true,
-            en: 'TemporalOperator',
-            ti: '.TemporalOperatorType'
           }]
       }, {
         ln: 'FunctionType',
@@ -633,184 +461,219 @@ var SOS_1_0_0_Filter_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        t: 'enum',
-        ln: 'SpatialOperatorNameType',
-        vs: ['BBOX', 'Equals', 'Disjoint', 'Intersects', 'Touches', 'Crosses', 'Within', 'Contains', 'Overlaps', 'Beyond', 'DWithin']
+        ln: 'DistanceBufferType',
+        bti: '.SpatialOpsType',
+        ps: [{
+            n: 'propertyName',
+            rq: true,
+            en: 'PropertyName',
+            ti: '.PropertyNameType'
+          }, {
+            n: 'geometry',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: '_Geometry',
+              ns: 'http:\/\/www.opengis.net\/gml'
+            },
+            ti: 'GML_3_1_1.AbstractGeometryType',
+            t: 'er'
+          }, {
+            n: 'distance',
+            rq: true,
+            en: 'Distance',
+            ti: '.DistanceType'
+          }]
+      }, {
+        ln: 'SpatialOpsType'
+      }, {
+        ln: 'LogicalOperators',
+        tn: null
+      }, {
+        ln: 'SpatialOperatorType',
+        ps: [{
+            n: 'geometryOperands',
+            en: 'GeometryOperands',
+            ti: '.GeometryOperandsType'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TemporalOperatorType',
+        ps: [{
+            n: 'temporalOperands',
+            en: 'TemporalOperands',
+            ti: '.TemporalOperandsType'
+          }, {
+            n: 'name',
+            an: {
+              lp: 'name'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'LogicOpsType'
+      }, {
+        ln: 'TemporalCapabilitiesType',
+        tn: 'Temporal_CapabilitiesType',
+        ps: [{
+            n: 'temporalOperands',
+            rq: true,
+            en: 'TemporalOperands',
+            ti: '.TemporalOperandsType'
+          }, {
+            n: 'temporalOperators',
+            rq: true,
+            en: 'TemporalOperators',
+            ti: '.TemporalOperatorsType'
+          }]
+      }, {
+        ln: 'BinaryComparisonOpType',
+        bti: '.ComparisonOpsType',
+        ps: [{
+            n: 'expression',
+            rq: true,
+            mno: 2,
+            mxo: 2,
+            col: true,
+            mx: false,
+            dom: false,
+            ti: '.ExpressionType',
+            t: 'er'
+          }, {
+            n: 'matchCase',
+            ti: 'Boolean',
+            an: {
+              lp: 'matchCase'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'TemporalOperandsType',
+        ps: [{
+            n: 'temporalOperand',
+            rq: true,
+            col: true,
+            en: 'TemporalOperand',
+            ti: 'QName'
+          }]
+      }, {
+        ln: 'FunctionsType',
+        ps: [{
+            n: 'functionNames',
+            rq: true,
+            en: 'FunctionNames',
+            ti: '.FunctionNamesType'
+          }]
+      }, {
+        ln: 'BinaryLogicOpType',
+        bti: '.LogicOpsType',
+        ps: [{
+            n: 'ops',
+            rq: true,
+            mno: 2,
+            col: true,
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'spatialOps',
+                ti: '.SpatialOpsType'
+              }, {
+                en: 'comparisonOps',
+                ti: '.ComparisonOpsType'
+              }, {
+                en: 'Function',
+                ti: '.FunctionType'
+              }, {
+                en: 'logicOps',
+                ti: '.LogicOpsType'
+              }],
+            t: 'ers'
+          }]
+      }, {
+        ln: 'ScalarCapabilitiesType',
+        tn: 'Scalar_CapabilitiesType',
+        ps: [{
+            n: 'logicalOperators',
+            en: 'LogicalOperators',
+            ti: '.LogicalOperators'
+          }, {
+            n: 'comparisonOperators',
+            en: 'ComparisonOperators',
+            ti: '.ComparisonOperatorsType'
+          }, {
+            n: 'arithmeticOperators',
+            en: 'ArithmeticOperators',
+            ti: '.ArithmeticOperatorsType'
+          }]
+      }, {
+        ln: 'PropertyIsBetweenType',
+        bti: '.ComparisonOpsType',
+        ps: [{
+            n: 'expression',
+            rq: true,
+            mx: false,
+            dom: false,
+            ti: '.ExpressionType',
+            t: 'er'
+          }, {
+            n: 'lowerBoundary',
+            rq: true,
+            en: 'LowerBoundary',
+            ti: '.LowerBoundaryType'
+          }, {
+            n: 'upperBoundary',
+            rq: true,
+            en: 'UpperBoundary',
+            ti: '.UpperBoundaryType'
+          }]
       }, {
         t: 'enum',
-        ln: 'ComparisonOperatorType',
-        vs: ['LessThan', 'GreaterThan', 'LessThanEqualTo', 'GreaterThanEqualTo', 'EqualTo', 'NotEqualTo', 'Like', 'Between', 'NullCheck']
+        ln: 'TemporalOperatorNameType',
+        vs: ['TM_After', 'TM_Before', 'TM_Begins', 'TM_BegunBy', 'TM_Contains', 'TM_During', 'TM_Equals', 'TM_Overlaps', 'TM_Meets', 'TM_OverlappedBy', 'TM_MetBy', 'TM_EndedBy', 'TM_Ends']
       }, {
         t: 'enum',
         ln: 'SortOrderType',
         vs: ['DESC', 'ASC']
       }, {
         t: 'enum',
-        ln: 'TemporalOperatorNameType',
-        vs: ['TM_After', 'TM_Before', 'TM_Begins', 'TM_BegunBy', 'TM_Contains', 'TM_During', 'TM_Equals', 'TM_Overlaps', 'TM_Meets', 'TM_OverlappedBy', 'TM_MetBy', 'TM_EndedBy', 'TM_Ends']
+        ln: 'ComparisonOperatorType',
+        vs: ['LessThan', 'GreaterThan', 'LessThanEqualTo', 'GreaterThanEqualTo', 'EqualTo', 'NotEqualTo', 'Like', 'Between', 'NullCheck']
+      }, {
+        t: 'enum',
+        ln: 'SpatialOperatorNameType',
+        vs: ['BBOX', 'Equals', 'Disjoint', 'Intersects', 'Touches', 'Crosses', 'Within', 'Contains', 'Overlaps', 'Beyond', 'DWithin']
       }],
     eis: [{
-        en: '_Id',
-        ti: '.AbstractIdType'
-      }, {
-        en: 'comparisonOps',
-        ti: '.ComparisonOpsType'
-      }, {
-        en: 'TM_Ends',
-        ti: '.BinaryTemporalOpType',
-        sh: 'temporalOps'
-      }, {
-        en: 'PropertyIsLessThan',
-        ti: '.BinaryComparisonOpType',
-        sh: 'comparisonOps'
-      }, {
-        en: 'PropertyIsGreaterThan',
-        ti: '.BinaryComparisonOpType',
-        sh: 'comparisonOps'
-      }, {
-        en: 'Function',
-        ti: '.FunctionType',
-        sh: 'expression'
-      }, {
-        en: 'GmlObjectId',
-        ti: '.GmlObjectIdType',
-        sh: '_Id'
-      }, {
-        en: 'Filter_Capabilities',
-        ti: '.FilterCapabilities'
-      }, {
-        en: 'Touches',
-        ti: '.BinarySpatialOpType',
-        sh: 'spatialOps'
-      }, {
-        en: 'Or',
-        ti: '.BinaryLogicOpType',
-        sh: 'logicOps'
-      }, {
         en: 'Scalar_Capabilities',
         ti: '.ScalarCapabilitiesType'
       }, {
-        en: 'TM_EndedBy',
-        ti: '.BinaryTemporalOpType',
-        sh: 'temporalOps'
-      }, {
-        en: 'PropertyIsEqualTo',
-        ti: '.BinaryComparisonOpType',
-        sh: 'comparisonOps'
-      }, {
-        en: 'temporalOps',
-        ti: '.TemporalOpsType'
-      }, {
-        en: 'BBOX',
-        ti: '.BBOXType',
-        sh: 'spatialOps'
-      }, {
-        en: 'logicOps',
-        ti: '.LogicOpsType'
-      }, {
-        en: 'PropertyName',
-        ti: '.PropertyNameType',
-        sh: 'expression'
-      }, {
-        en: 'PropertyIsBetween',
-        ti: '.PropertyIsBetweenType',
-        sh: 'comparisonOps'
-      }, {
-        en: 'Contains',
-        ti: '.BinarySpatialOpType',
-        sh: 'spatialOps'
-      }, {
-        en: 'TM_Before',
-        ti: '.BinaryTemporalOpType',
-        sh: 'temporalOps'
-      }, {
-        en: 'expression',
-        ti: '.ExpressionType'
-      }, {
-        en: 'LogicalOperators',
-        ti: '.LogicalOperators'
-      }, {
-        en: 'And',
-        ti: '.BinaryLogicOpType',
-        sh: 'logicOps'
-      }, {
-        en: 'PropertyIsNull',
-        ti: '.PropertyIsNullType',
-        sh: 'comparisonOps'
-      }, {
-        en: 'Disjoint',
-        ti: '.BinarySpatialOpType',
-        sh: 'spatialOps'
-      }, {
-        en: 'DWithin',
-        ti: '.DistanceBufferType',
-        sh: 'spatialOps'
-      }, {
-        en: 'PropertyIsGreaterThanOrEqualTo',
-        ti: '.BinaryComparisonOpType',
-        sh: 'comparisonOps'
-      }, {
-        en: 'Beyond',
-        ti: '.DistanceBufferType',
-        sh: 'spatialOps'
-      }, {
-        en: 'SimpleArithmetic',
-        ti: '.SimpleArithmetic'
-      }, {
-        en: 'Temporal_Capabilities',
-        ti: '.TemporalCapabilitiesType'
-      }, {
-        en: 'Filter',
-        ti: '.FilterType'
-      }, {
-        en: 'SortBy',
-        ti: '.SortByType'
-      }, {
-        en: 'TM_Equals',
-        ti: '.BinaryTemporalOpType',
-        sh: 'temporalOps'
-      }, {
-        en: 'Intersects',
-        ti: '.BinarySpatialOpType',
-        sh: 'spatialOps'
-      }, {
-        en: 'Not',
-        ti: '.UnaryLogicOpType',
-        sh: 'logicOps'
-      }, {
-        en: 'TM_OverlappedBy',
-        ti: '.BinaryTemporalOpType',
-        sh: 'temporalOps'
-      }, {
-        en: 'EID',
-        ti: '.EID'
-      }, {
-        en: 'Literal',
-        ti: '.LiteralType',
-        sh: 'expression'
-      }, {
-        en: 'FeatureId',
-        ti: '.FeatureIdType',
-        sh: '_Id'
+        en: '_Id',
+        ti: '.AbstractIdType'
       }, {
         en: 'TM_Contains',
         ti: '.BinaryTemporalOpType',
         sh: 'temporalOps'
       }, {
-        en: 'TM_Meets',
-        ti: '.BinaryTemporalOpType',
-        sh: 'temporalOps'
+        en: 'spatialOps',
+        ti: '.SpatialOpsType'
       }, {
-        en: 'TM_After',
-        ti: '.BinaryTemporalOpType',
-        sh: 'temporalOps'
+        en: 'PropertyIsNotEqualTo',
+        ti: '.BinaryComparisonOpType',
+        sh: 'comparisonOps'
+      }, {
+        en: 'And',
+        ti: '.BinaryLogicOpType',
+        sh: 'logicOps'
       }, {
         en: 'Div',
         ti: '.BinaryOperatorType',
         sh: 'expression'
-      }, {
-        en: 'Id_Capabilities',
-        ti: '.IdCapabilitiesType'
       }, {
         en: 'TM_BegunBy',
         ti: '.BinaryTemporalOpType',
@@ -820,66 +683,203 @@ var SOS_1_0_0_Filter_Module_Factory = function () {
         ti: '.BinaryTemporalOpType',
         sh: 'temporalOps'
       }, {
-        en: 'TM_Begins',
-        ti: '.BinaryTemporalOpType',
-        sh: 'temporalOps'
-      }, {
-        en: 'Sub',
-        ti: '.BinaryOperatorType',
-        sh: 'expression'
-      }, {
-        en: 'TM_Overalps',
-        ti: '.BinaryTemporalOpType',
-        sh: 'temporalOps'
-      }, {
-        en: 'Add',
-        ti: '.BinaryOperatorType',
-        sh: 'expression'
+        en: 'Filter',
+        ti: '.FilterType'
       }, {
         en: 'PropertyIsLike',
         ti: '.PropertyIsLikeType',
         sh: 'comparisonOps'
       }, {
+        en: 'PropertyName',
+        ti: '.PropertyNameType',
+        sh: 'expression'
+      }, {
         en: 'Mul',
         ti: '.BinaryOperatorType',
         sh: 'expression'
       }, {
-        en: 'Equals',
-        ti: '.BinarySpatialOpType',
-        sh: 'spatialOps'
+        en: 'FID',
+        ti: '.FID'
       }, {
-        en: 'Overlaps',
-        ti: '.BinarySpatialOpType',
-        sh: 'spatialOps'
+        en: 'TM_Ends',
+        ti: '.BinaryTemporalOpType',
+        sh: 'temporalOps'
       }, {
-        en: 'Crosses',
-        ti: '.BinarySpatialOpType',
-        sh: 'spatialOps'
+        en: 'TM_After',
+        ti: '.BinaryTemporalOpType',
+        sh: 'temporalOps'
       }, {
-        en: 'Spatial_Capabilities',
-        ti: '.SpatialCapabilitiesType'
+        en: 'TM_Before',
+        ti: '.BinaryTemporalOpType',
+        sh: 'temporalOps'
+      }, {
+        en: 'expression',
+        ti: '.ExpressionType'
+      }, {
+        en: 'TM_Meets',
+        ti: '.BinaryTemporalOpType',
+        sh: 'temporalOps'
+      }, {
+        en: 'TM_OverlappedBy',
+        ti: '.BinaryTemporalOpType',
+        sh: 'temporalOps'
       }, {
         en: 'TM_MetBy',
         ti: '.BinaryTemporalOpType',
         sh: 'temporalOps'
       }, {
-        en: 'spatialOps',
-        ti: '.SpatialOpsType'
-      }, {
-        en: 'Within',
+        en: 'Overlaps',
         ti: '.BinarySpatialOpType',
         sh: 'spatialOps'
       }, {
-        en: 'PropertyIsNotEqualTo',
-        ti: '.BinaryComparisonOpType',
-        sh: 'comparisonOps'
+        en: 'BBOX',
+        ti: '.BBOXType',
+        sh: 'spatialOps'
+      }, {
+        en: 'Temporal_Capabilities',
+        ti: '.TemporalCapabilitiesType'
+      }, {
+        en: 'logicOps',
+        ti: '.LogicOpsType'
       }, {
         en: 'PropertyIsLessThanOrEqualTo',
         ti: '.BinaryComparisonOpType',
         sh: 'comparisonOps'
       }, {
-        en: 'FID',
-        ti: '.FID'
+        en: 'TM_EndedBy',
+        ti: '.BinaryTemporalOpType',
+        sh: 'temporalOps'
+      }, {
+        en: 'Crosses',
+        ti: '.BinarySpatialOpType',
+        sh: 'spatialOps'
+      }, {
+        en: 'Not',
+        ti: '.UnaryLogicOpType',
+        sh: 'logicOps'
+      }, {
+        en: 'Spatial_Capabilities',
+        ti: '.SpatialCapabilitiesType'
+      }, {
+        en: 'temporalOps',
+        ti: '.TemporalOpsType'
+      }, {
+        en: 'PropertyIsEqualTo',
+        ti: '.BinaryComparisonOpType',
+        sh: 'comparisonOps'
+      }, {
+        en: 'PropertyIsNull',
+        ti: '.PropertyIsNullType',
+        sh: 'comparisonOps'
+      }, {
+        en: 'Contains',
+        ti: '.BinarySpatialOpType',
+        sh: 'spatialOps'
+      }, {
+        en: 'FeatureId',
+        ti: '.FeatureIdType',
+        sh: '_Id'
+      }, {
+        en: 'PropertyIsGreaterThanOrEqualTo',
+        ti: '.BinaryComparisonOpType',
+        sh: 'comparisonOps'
+      }, {
+        en: 'Sub',
+        ti: '.BinaryOperatorType',
+        sh: 'expression'
+      }, {
+        en: 'Add',
+        ti: '.BinaryOperatorType',
+        sh: 'expression'
+      }, {
+        en: 'Touches',
+        ti: '.BinarySpatialOpType',
+        sh: 'spatialOps'
+      }, {
+        en: 'Function',
+        ti: '.FunctionType',
+        sh: 'expression'
+      }, {
+        en: 'GmlObjectId',
+        ti: '.GmlObjectIdType',
+        sh: '_Id'
+      }, {
+        en: 'DWithin',
+        ti: '.DistanceBufferType',
+        sh: 'spatialOps'
+      }, {
+        en: 'PropertyIsBetween',
+        ti: '.PropertyIsBetweenType',
+        sh: 'comparisonOps'
+      }, {
+        en: 'Intersects',
+        ti: '.BinarySpatialOpType',
+        sh: 'spatialOps'
+      }, {
+        en: 'Within',
+        ti: '.BinarySpatialOpType',
+        sh: 'spatialOps'
+      }, {
+        en: 'PropertyIsLessThan',
+        ti: '.BinaryComparisonOpType',
+        sh: 'comparisonOps'
+      }, {
+        en: 'Beyond',
+        ti: '.DistanceBufferType',
+        sh: 'spatialOps'
+      }, {
+        en: 'TM_Begins',
+        ti: '.BinaryTemporalOpType',
+        sh: 'temporalOps'
+      }, {
+        en: 'Disjoint',
+        ti: '.BinarySpatialOpType',
+        sh: 'spatialOps'
+      }, {
+        en: 'PropertyIsGreaterThan',
+        ti: '.BinaryComparisonOpType',
+        sh: 'comparisonOps'
+      }, {
+        en: 'SortBy',
+        ti: '.SortByType'
+      }, {
+        en: 'Literal',
+        ti: '.LiteralType',
+        sh: 'expression'
+      }, {
+        en: 'SimpleArithmetic',
+        ti: '.SimpleArithmetic'
+      }, {
+        en: 'TM_Equals',
+        ti: '.BinaryTemporalOpType',
+        sh: 'temporalOps'
+      }, {
+        en: 'comparisonOps',
+        ti: '.ComparisonOpsType'
+      }, {
+        en: 'Or',
+        ti: '.BinaryLogicOpType',
+        sh: 'logicOps'
+      }, {
+        en: 'LogicalOperators',
+        ti: '.LogicalOperators'
+      }, {
+        en: 'Filter_Capabilities',
+        ti: '.FilterCapabilities'
+      }, {
+        en: 'Id_Capabilities',
+        ti: '.IdCapabilitiesType'
+      }, {
+        en: 'Equals',
+        ti: '.BinarySpatialOpType',
+        sh: 'spatialOps'
+      }, {
+        en: 'EID',
+        ti: '.EID'
+      }, {
+        en: 'TM_Overalps',
+        ti: '.BinaryTemporalOpType',
+        sh: 'temporalOps'
       }]
   };
   return {

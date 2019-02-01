@@ -3,17 +3,15 @@ var WCS_Range_Subsetting_1_0_Module_Factory = function () {
     n: 'WCS_Range_Subsetting_1_0',
     dens: 'http:\/\/www.opengis.net\/wcs\/range-subsetting\/1.0',
     tis: [{
-        ln: 'RangeItemType',
+        ln: 'RangeIntervalType',
         ps: [{
-            n: 'rangeComponent',
+            n: 'startComponent',
             rq: true,
-            en: 'RangeComponent',
             ti: 'NCName'
           }, {
-            n: 'rangeInterval',
+            n: 'endComponent',
             rq: true,
-            en: 'RangeInterval',
-            ti: '.RangeIntervalType'
+            ti: 'NCName'
           }]
       }, {
         ln: 'RangeSubsetType',
@@ -25,15 +23,17 @@ var WCS_Range_Subsetting_1_0_Module_Factory = function () {
             ti: '.RangeItemType'
           }]
       }, {
-        ln: 'RangeIntervalType',
+        ln: 'RangeItemType',
         ps: [{
-            n: 'startComponent',
+            n: 'rangeComponent',
             rq: true,
+            en: 'RangeComponent',
             ti: 'NCName'
           }, {
-            n: 'endComponent',
+            n: 'rangeInterval',
             rq: true,
-            ti: 'NCName'
+            en: 'RangeInterval',
+            ti: '.RangeIntervalType'
           }]
       }],
     eis: [{

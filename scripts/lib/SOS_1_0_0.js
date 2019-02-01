@@ -2,14 +2,83 @@ var SOS_1_0_0_Module_Factory = function () {
   var SOS_1_0_0 = {
     n: 'SOS_1_0_0',
     dens: 'http:\/\/www.opengis.net\/sos\/1.0',
-    deps: ['GML_3_1_1', 'OWS_1_1_0', 'OM_1_0_0', 'SWE_1_0_1', 'SOS_1_0_0_Filter'],
+    deps: ['SOS_1_0_0_Filter', 'SWE_1_0_1', 'OM_1_0_0', 'OWS_1_1_0', 'GML_3_1_1'],
     tis: [{
-        ln: 'DescribeObservationType',
+        ln: 'InsertObservationResponse',
+        tn: null,
+        ps: [{
+            n: 'assignedObservationId',
+            rq: true,
+            en: 'AssignedObservationId'
+          }]
+      }, {
+        ln: 'GetFeatureOfInterestTime',
         tn: null,
         bti: '.RequestBaseType',
         ps: [{
-            n: 'observedProperty',
-            rq: true
+            n: 'featureOfInterestId',
+            rq: true,
+            en: 'FeatureOfInterestId'
+          }]
+      }, {
+        ln: 'GetObservation.EventTime',
+        tn: null,
+        ps: [{
+            n: 'temporalOps',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'temporalOps',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'SOS_1_0_0_Filter.TemporalOpsType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'GetResult',
+        tn: null,
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'observationTemplateId',
+            rq: true,
+            en: 'ObservationTemplateId'
+          }, {
+            n: 'eventTime',
+            mno: 0,
+            col: true,
+            ti: '.GetResult.EventTime'
+          }]
+      }, {
+        ln: 'GetResultResponse',
+        tn: null,
+        ps: [{
+            n: 'result',
+            rq: true,
+            ti: '.GetResultResponse.Result'
+          }]
+      }, {
+        ln: 'Contents',
+        tn: null,
+        ps: [{
+            n: 'observationOfferingList',
+            rq: true,
+            en: 'ObservationOfferingList',
+            ti: '.Contents.ObservationOfferingList'
+          }]
+      }, {
+        ln: 'GetResultResponse.Result',
+        tn: null,
+        ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
+            n: 'rs',
+            rq: true,
+            an: {
+              lp: 'RS'
+            },
+            t: 'a'
           }]
       }, {
         ln: 'RegisterSensorResponse',
@@ -18,6 +87,39 @@ var SOS_1_0_0_Module_Factory = function () {
             n: 'assignedSensorId',
             rq: true,
             en: 'AssignedSensorId'
+          }]
+      }, {
+        ln: 'GetObservation.FeatureOfInterest',
+        tn: null,
+        ps: [{
+            n: 'spatialOps',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'spatialOps',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'SOS_1_0_0_Filter.SpatialOpsType',
+            t: 'er'
+          }, {
+            n: 'objectID',
+            rq: true,
+            col: true,
+            en: 'ObjectID'
+          }]
+      }, {
+        ln: 'Capabilities',
+        tn: null,
+        bti: 'OWS_1_1_0.CapabilitiesBaseType',
+        ps: [{
+            n: 'filterCapabilities',
+            en: 'Filter_Capabilities',
+            ti: '.FilterCapabilities'
+          }, {
+            n: 'contents',
+            en: 'Contents',
+            ti: '.Contents'
           }]
       }, {
         ln: 'ObservationOfferingType',
@@ -61,28 +163,45 @@ var SOS_1_0_0_Module_Factory = function () {
             col: true
           }]
       }, {
-        ln: 'GetCapabilities',
+        ln: 'GetFeatureOfInterest',
         tn: null,
-        bti: 'OWS_1_1_0.GetCapabilitiesType',
+        bti: '.RequestBaseType',
         ps: [{
-            n: 'service',
+            n: 'featureOfInterestId',
             rq: true,
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
+            col: true,
+            en: 'FeatureOfInterestId'
+          }, {
+            n: 'location',
+            rq: true,
+            ti: '.GetFeatureOfInterest.Location'
+          }, {
+            n: 'eventTime',
+            mno: 0,
+            col: true,
+            ti: '.GetFeatureOfInterest.EventTime'
           }]
       }, {
-        ln: 'ObservationTemplate',
+        ln: 'GetObservationById',
         tn: null,
+        bti: '.RequestBaseType',
         ps: [{
-            n: 'observation',
+            n: 'observationId',
             rq: true,
-            en: {
-              lp: 'Observation',
-              ns: 'http:\/\/www.opengis.net\/om\/1.0'
+            en: 'ObservationId'
+          }, {
+            n: 'responseFormat'
+          }, {
+            n: 'resultModel',
+            ti: 'QName'
+          }, {
+            n: 'responseMode'
+          }, {
+            n: 'srsName',
+            an: {
+              lp: 'srsName'
             },
-            ti: 'OM_1_0_0.ObservationType'
+            t: 'a'
           }]
       }, {
         ln: 'DescribeSensor',
@@ -98,6 +217,158 @@ var SOS_1_0_0_Module_Factory = function () {
               lp: 'outputFormat'
             },
             t: 'a'
+          }]
+      }, {
+        ln: 'DescribeFeatureType',
+        tn: null,
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'featureId',
+            rq: true,
+            en: 'FeatureId'
+          }]
+      }, {
+        ln: 'RequestBaseType',
+        ps: [{
+            n: 'service',
+            rq: true,
+            an: {
+              lp: 'service'
+            },
+            t: 'a'
+          }, {
+            n: 'version',
+            rq: true,
+            an: {
+              lp: 'version'
+            },
+            t: 'a'
+          }]
+      }, {
+        ln: 'GetObservation.Result',
+        tn: null,
+        ps: [{
+            n: 'comparisonOps',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'comparisonOps',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'SOS_1_0_0_Filter.ComparisonOpsType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'Contents.ObservationOfferingList',
+        tn: null,
+        ps: [{
+            n: 'observationOffering',
+            rq: true,
+            col: true,
+            en: 'ObservationOffering',
+            ti: '.ObservationOfferingType'
+          }]
+      }, {
+        ln: 'GetResult.EventTime',
+        tn: null,
+        ps: [{
+            n: 'temporalOps',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'temporalOps',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'SOS_1_0_0_Filter.TemporalOpsType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'GetFeatureOfInterest.Location',
+        tn: null,
+        ps: [{
+            n: 'spatialOps',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'spatialOps',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'SOS_1_0_0_Filter.SpatialOpsType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'GetFeatureOfInterest.EventTime',
+        tn: null,
+        ps: [{
+            n: 'temporalOps',
+            rq: true,
+            mx: false,
+            dom: false,
+            en: {
+              lp: 'temporalOps',
+              ns: 'http:\/\/www.opengis.net\/ogc'
+            },
+            ti: 'SOS_1_0_0_Filter.TemporalOpsType',
+            t: 'er'
+          }]
+      }, {
+        ln: 'RegisterSensor.SensorDescription',
+        tn: null,
+        ps: [{
+            n: 'any',
+            rq: true,
+            mx: false,
+            t: 'ae'
+          }]
+      }, {
+        ln: 'DescribeResultModel',
+        tn: null,
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'resultName',
+            rq: true,
+            en: 'ResultName',
+            ti: 'QName'
+          }]
+      }, {
+        ln: 'ObservationTemplate',
+        tn: null,
+        ps: [{
+            n: 'observation',
+            rq: true,
+            en: {
+              lp: 'Observation',
+              ns: 'http:\/\/www.opengis.net\/om\/1.0'
+            },
+            ti: 'OM_1_0_0.ObservationType'
+          }]
+      }, {
+        ln: 'DescribeObservationType',
+        tn: null,
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'observedProperty',
+            rq: true
+          }]
+      }, {
+        ln: 'InsertObservation',
+        tn: null,
+        bti: '.RequestBaseType',
+        ps: [{
+            n: 'assignedSensorId',
+            rq: true,
+            en: 'AssignedSensorId'
+          }, {
+            n: 'observation',
+            rq: true,
+            en: {
+              lp: 'Observation',
+              ns: 'http:\/\/www.opengis.net\/om\/1.0'
+            },
+            ti: 'OM_1_0_0.ObservationType'
           }]
       }, {
         ln: 'GetObservation',
@@ -141,111 +412,23 @@ var SOS_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'DescribeResultModel',
+        ln: 'RegisterSensor',
         tn: null,
         bti: '.RequestBaseType',
         ps: [{
-            n: 'resultName',
+            n: 'sensorDescription',
             rq: true,
-            en: 'ResultName',
-            ti: 'QName'
-          }]
-      }, {
-        ln: 'GetResultResponse',
-        tn: null,
-        ps: [{
-            n: 'result',
-            rq: true,
-            ti: '.GetResultResponse.Result'
-          }]
-      }, {
-        ln: 'RequestBaseType',
-        ps: [{
-            n: 'service',
-            rq: true,
-            an: {
-              lp: 'service'
-            },
-            t: 'a'
+            en: 'SensorDescription',
+            ti: '.RegisterSensor.SensorDescription'
           }, {
-            n: 'version',
+            n: 'observationTemplate',
             rq: true,
-            an: {
-              lp: 'version'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetObservation.FeatureOfInterest',
-        tn: null,
-        ps: [{
-            n: 'spatialOps',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'spatialOps',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: 'SOS_1_0_0_Filter.SpatialOpsType',
-            t: 'er'
-          }, {
-            n: 'objectID',
-            rq: true,
-            col: true,
-            en: 'ObjectID'
+            en: 'ObservationTemplate',
+            ti: '.ObservationTemplate'
           }]
       }, {
         ln: 'ObservationOfferingBaseType',
         bti: 'GML_3_1_1.AbstractFeatureType'
-      }, {
-        ln: 'Contents.ObservationOfferingList',
-        tn: null,
-        ps: [{
-            n: 'observationOffering',
-            rq: true,
-            col: true,
-            en: 'ObservationOffering',
-            ti: '.ObservationOfferingType'
-          }]
-      }, {
-        ln: 'GetFeatureOfInterest.Location',
-        tn: null,
-        ps: [{
-            n: 'spatialOps',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'spatialOps',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: 'SOS_1_0_0_Filter.SpatialOpsType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'GetFeatureOfInterest.EventTime',
-        tn: null,
-        ps: [{
-            n: 'temporalOps',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'temporalOps',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: 'SOS_1_0_0_Filter.TemporalOpsType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'InsertObservationResponse',
-        tn: null,
-        ps: [{
-            n: 'assignedObservationId',
-            rq: true,
-            en: 'AssignedObservationId'
-          }]
       }, {
         ln: 'FilterCapabilities',
         tn: null,
@@ -283,199 +466,16 @@ var SOS_1_0_0_Module_Factory = function () {
             ti: 'SOS_1_0_0_Filter.IdCapabilitiesType'
           }]
       }, {
-        ln: 'GetObservation.Result',
+        ln: 'GetCapabilities',
         tn: null,
+        bti: 'OWS_1_1_0.GetCapabilitiesType',
         ps: [{
-            n: 'comparisonOps',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'comparisonOps',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: 'SOS_1_0_0_Filter.ComparisonOpsType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'GetObservationById',
-        tn: null,
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'observationId',
-            rq: true,
-            en: 'ObservationId'
-          }, {
-            n: 'responseFormat'
-          }, {
-            n: 'resultModel',
-            ti: 'QName'
-          }, {
-            n: 'responseMode'
-          }, {
-            n: 'srsName',
-            an: {
-              lp: 'srsName'
-            },
-            t: 'a'
-          }]
-      }, {
-        ln: 'GetFeatureOfInterestTime',
-        tn: null,
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'featureOfInterestId',
-            rq: true,
-            en: 'FeatureOfInterestId'
-          }]
-      }, {
-        ln: 'RegisterSensor.SensorDescription',
-        tn: null,
-        ps: [{
-            n: 'any',
-            rq: true,
-            mx: false,
-            t: 'ae'
-          }]
-      }, {
-        ln: 'RegisterSensor',
-        tn: null,
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'sensorDescription',
-            rq: true,
-            en: 'SensorDescription',
-            ti: '.RegisterSensor.SensorDescription'
-          }, {
-            n: 'observationTemplate',
-            rq: true,
-            en: 'ObservationTemplate',
-            ti: '.ObservationTemplate'
-          }]
-      }, {
-        ln: 'GetObservation.EventTime',
-        tn: null,
-        ps: [{
-            n: 'temporalOps',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'temporalOps',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: 'SOS_1_0_0_Filter.TemporalOpsType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'GetResult',
-        tn: null,
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'observationTemplateId',
-            rq: true,
-            en: 'ObservationTemplateId'
-          }, {
-            n: 'eventTime',
-            mno: 0,
-            col: true,
-            ti: '.GetResult.EventTime'
-          }]
-      }, {
-        ln: 'Capabilities',
-        tn: null,
-        bti: 'OWS_1_1_0.CapabilitiesBaseType',
-        ps: [{
-            n: 'filterCapabilities',
-            en: 'Filter_Capabilities',
-            ti: '.FilterCapabilities'
-          }, {
-            n: 'contents',
-            en: 'Contents',
-            ti: '.Contents'
-          }]
-      }, {
-        ln: 'DescribeFeatureType',
-        tn: null,
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'featureId',
-            rq: true,
-            en: 'FeatureId'
-          }]
-      }, {
-        ln: 'GetResultResponse.Result',
-        tn: null,
-        ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
-            n: 'rs',
+            n: 'service',
             rq: true,
             an: {
-              lp: 'RS'
+              lp: 'service'
             },
             t: 'a'
-          }]
-      }, {
-        ln: 'Contents',
-        tn: null,
-        ps: [{
-            n: 'observationOfferingList',
-            rq: true,
-            en: 'ObservationOfferingList',
-            ti: '.Contents.ObservationOfferingList'
-          }]
-      }, {
-        ln: 'GetFeatureOfInterest',
-        tn: null,
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'featureOfInterestId',
-            rq: true,
-            col: true,
-            en: 'FeatureOfInterestId'
-          }, {
-            n: 'location',
-            rq: true,
-            ti: '.GetFeatureOfInterest.Location'
-          }, {
-            n: 'eventTime',
-            mno: 0,
-            col: true,
-            ti: '.GetFeatureOfInterest.EventTime'
-          }]
-      }, {
-        ln: 'GetResult.EventTime',
-        tn: null,
-        ps: [{
-            n: 'temporalOps',
-            rq: true,
-            mx: false,
-            dom: false,
-            en: {
-              lp: 'temporalOps',
-              ns: 'http:\/\/www.opengis.net\/ogc'
-            },
-            ti: 'SOS_1_0_0_Filter.TemporalOpsType',
-            t: 'er'
-          }]
-      }, {
-        ln: 'InsertObservation',
-        tn: null,
-        bti: '.RequestBaseType',
-        ps: [{
-            n: 'assignedSensorId',
-            rq: true,
-            en: 'AssignedSensorId'
-          }, {
-            n: 'observation',
-            rq: true,
-            en: {
-              lp: 'Observation',
-              ns: 'http:\/\/www.opengis.net\/om\/1.0'
-            },
-            ti: 'OM_1_0_0.ObservationType'
           }]
       }, {
         t: 'enum',
@@ -483,12 +483,11 @@ var SOS_1_0_0_Module_Factory = function () {
         vs: ['inline', 'attached', 'out-of-band', 'resultTemplate']
       }],
     eis: [{
-        en: 'srsName',
-        ti: 'GML_3_1_1.CodeType',
-        sh: {
-          lp: 'AbstractMetaData',
-          ns: 'http:\/\/www.opengis.net\/ows\/1.1'
-        }
+        en: 'Capabilities',
+        ti: '.Capabilities'
+      }, {
+        en: 'RegisterSensor',
+        ti: '.RegisterSensor'
       }, {
         en: 'supportedSensorDescription',
         ti: 'QName',
@@ -500,50 +499,23 @@ var SOS_1_0_0_Module_Factory = function () {
         en: 'DescribeResultModel',
         ti: '.DescribeResultModel'
       }, {
-        en: 'InsertObservation',
-        ti: '.InsertObservation'
-      }, {
-        en: 'GetFeatureOfInterestTime',
-        ti: '.GetFeatureOfInterestTime'
-      }, {
-        en: 'ObservationTemplate',
-        ti: '.ObservationTemplate'
-      }, {
-        en: 'Contents',
-        ti: '.Contents'
-      }, {
-        en: 'GetObservationById',
-        ti: '.GetObservationById'
-      }, {
         en: 'Filter_Capabilities',
         ti: '.FilterCapabilities'
       }, {
-        en: 'GetObservation',
-        ti: '.GetObservation'
-      }, {
-        en: 'GetCapabilities',
-        ti: '.GetCapabilities'
-      }, {
-        en: 'DescribeObservationType',
-        ti: '.DescribeObservationType'
-      }, {
-        en: 'InsertObservationResponse',
-        ti: '.InsertObservationResponse'
-      }, {
-        en: 'GetResultResponse',
-        ti: '.GetResultResponse'
+        en: 'GetResult',
+        ti: '.GetResult'
       }, {
         en: 'GetFeatureOfInterest',
         ti: '.GetFeatureOfInterest'
       }, {
-        en: 'RegisterSensor',
-        ti: '.RegisterSensor'
+        en: 'ObservationTemplate',
+        ti: '.ObservationTemplate'
       }, {
-        en: 'DescribeFeatureType',
-        ti: '.DescribeFeatureType'
+        en: 'DescribeSensor',
+        ti: '.DescribeSensor'
       }, {
-        en: 'Capabilities',
-        ti: '.Capabilities'
+        en: 'GetCapabilities',
+        ti: '.GetCapabilities'
       }, {
         en: 'supportedSRS',
         ti: 'GML_3_1_1.CodeType',
@@ -552,14 +524,42 @@ var SOS_1_0_0_Module_Factory = function () {
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        en: 'DescribeSensor',
-        ti: '.DescribeSensor'
+        en: 'InsertObservation',
+        ti: '.InsertObservation'
+      }, {
+        en: 'srsName',
+        ti: 'GML_3_1_1.CodeType',
+        sh: {
+          lp: 'AbstractMetaData',
+          ns: 'http:\/\/www.opengis.net\/ows\/1.1'
+        }
+      }, {
+        en: 'DescribeObservationType',
+        ti: '.DescribeObservationType'
+      }, {
+        en: 'InsertObservationResponse',
+        ti: '.InsertObservationResponse'
+      }, {
+        en: 'Contents',
+        ti: '.Contents'
+      }, {
+        en: 'GetObservation',
+        ti: '.GetObservation'
+      }, {
+        en: 'GetFeatureOfInterestTime',
+        ti: '.GetFeatureOfInterestTime'
+      }, {
+        en: 'GetObservationById',
+        ti: '.GetObservationById'
+      }, {
+        en: 'GetResultResponse',
+        ti: '.GetResultResponse'
       }, {
         en: 'RegisterSensorResponse',
         ti: '.RegisterSensorResponse'
       }, {
-        en: 'GetResult',
-        ti: '.GetResult'
+        en: 'DescribeFeatureType',
+        ti: '.DescribeFeatureType'
       }]
   };
   return {

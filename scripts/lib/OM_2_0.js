@@ -3,14 +3,26 @@ var OM_2_0_Module_Factory = function () {
     n: 'OM_2_0',
     dens: 'http:\/\/www.opengis.net\/om\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2_1', 'ISO19139_GMD_20070417'],
+    deps: ['GML_3_2_1', 'XLink_1_0', 'ISO19139_GMD_20070417'],
     tis: [{
-        ln: 'NamedValuePropertyType',
+        ln: 'NamedValueType',
         ps: [{
-            n: 'namedValue',
+            n: 'name',
             rq: true,
-            en: 'NamedValue',
-            ti: '.NamedValueType'
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'value',
+            rq: true,
+            ti: 'AnyType'
+          }]
+      }, {
+        ln: 'OMObservationPropertyType',
+        tn: 'OM_ObservationPropertyType',
+        ps: [{
+            n: 'omObservation',
+            rq: true,
+            en: 'OM_Observation',
+            ti: '.OMObservationType'
           }, {
             n: 'nilReason',
             ti: {
@@ -102,13 +114,12 @@ var OM_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'OMObservationPropertyType',
-        tn: 'OM_ObservationPropertyType',
+        ln: 'NamedValuePropertyType',
         ps: [{
-            n: 'omObservation',
+            n: 'namedValue',
             rq: true,
-            en: 'OM_Observation',
-            ti: '.OMObservationType'
+            en: 'NamedValue',
+            ti: '.NamedValueType'
           }, {
             n: 'nilReason',
             ti: {
@@ -151,70 +162,6 @@ var OM_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ObservationContextType',
-        ps: [{
-            n: 'role',
-            rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'relatedObservation',
-            rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
-          }]
-      }, {
-        ln: 'OMObservationType',
-        tn: 'OM_ObservationType',
-        bti: 'GML_3_2_1.AbstractFeatureType',
-        ps: [{
-            n: 'type',
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'metadata',
-            ti: 'ISO19139_GMD_20070417.MDMetadataPropertyType'
-          }, {
-            n: 'relatedObservation',
-            mno: 0,
-            col: true,
-            ti: '.ObservationContextPropertyType'
-          }, {
-            n: 'phenomenonTime',
-            rq: true,
-            ti: '.TimeObjectPropertyType'
-          }, {
-            n: 'resultTime',
-            rq: true,
-            ti: 'GML_3_2_1.TimeInstantPropertyType'
-          }, {
-            n: 'validTime',
-            ti: 'GML_3_2_1.TimePeriodPropertyType'
-          }, {
-            n: 'procedure',
-            rq: true,
-            ti: '.OMProcessPropertyType'
-          }, {
-            n: 'parameter',
-            mno: 0,
-            col: true,
-            ti: '.NamedValuePropertyType'
-          }, {
-            n: 'observedProperty',
-            rq: true,
-            ti: 'GML_3_2_1.ReferenceType'
-          }, {
-            n: 'featureOfInterest',
-            rq: true,
-            ti: 'GML_3_2_1.FeaturePropertyType'
-          }, {
-            n: 'resultQuality',
-            mno: 0,
-            col: true,
-            ti: 'ISO19139_GMD_20070417.DQElementPropertyType'
-          }, {
-            n: 'result',
-            rq: true,
-            ti: 'AnyType'
-          }]
-      }, {
         ln: 'ObservationContextPropertyType',
         ps: [{
             n: 'observationContext',
@@ -225,6 +172,17 @@ var OM_2_0_Module_Factory = function () {
       }, {
         ln: 'OtherAbstractTimeObjectType',
         bti: 'GML_3_2_1.AbstractTimeObjectType'
+      }, {
+        ln: 'ObservationContextType',
+        ps: [{
+            n: 'role',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'relatedObservation',
+            rq: true,
+            ti: 'GML_3_2_1.ReferenceType'
+          }]
       }, {
         ln: 'TimeObjectPropertyType',
         ps: [{
@@ -280,30 +238,72 @@ var OM_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'NamedValueType',
+        ln: 'OMObservationType',
+        tn: 'OM_ObservationType',
+        bti: 'GML_3_2_1.AbstractFeatureType',
         ps: [{
-            n: 'name',
+            n: 'type',
+            ti: 'GML_3_2_1.ReferenceType'
+          }, {
+            n: 'metadata',
+            ti: 'ISO19139_GMD_20070417.MDMetadataPropertyType'
+          }, {
+            n: 'relatedObservation',
+            mno: 0,
+            col: true,
+            ti: '.ObservationContextPropertyType'
+          }, {
+            n: 'phenomenonTime',
+            rq: true,
+            ti: '.TimeObjectPropertyType'
+          }, {
+            n: 'resultTime',
+            rq: true,
+            ti: 'GML_3_2_1.TimeInstantPropertyType'
+          }, {
+            n: 'validTime',
+            ti: 'GML_3_2_1.TimePeriodPropertyType'
+          }, {
+            n: 'procedure',
+            rq: true,
+            ti: '.OMProcessPropertyType'
+          }, {
+            n: 'parameter',
+            mno: 0,
+            col: true,
+            ti: '.NamedValuePropertyType'
+          }, {
+            n: 'observedProperty',
             rq: true,
             ti: 'GML_3_2_1.ReferenceType'
           }, {
-            n: 'value',
+            n: 'featureOfInterest',
+            rq: true,
+            ti: 'GML_3_2_1.FeaturePropertyType'
+          }, {
+            n: 'resultQuality',
+            mno: 0,
+            col: true,
+            ti: 'ISO19139_GMD_20070417.DQElementPropertyType'
+          }, {
+            n: 'result',
             rq: true,
             ti: 'AnyType'
           }]
       }],
     eis: [{
+        en: 'result',
+        ti: 'AnyType'
+      }, {
+        en: 'ObservationContext',
+        ti: '.ObservationContextType'
+      }, {
         en: 'OM_Observation',
         ti: '.OMObservationType',
         sh: {
           lp: 'AbstractFeature',
           ns: 'http:\/\/www.opengis.net\/gml\/3.2'
         }
-      }, {
-        en: 'result',
-        ti: 'AnyType'
-      }, {
-        en: 'ObservationContext',
-        ti: '.ObservationContextType'
       }, {
         en: 'OtherAbstractTimeObject',
         ti: '.OtherAbstractTimeObjectType',
