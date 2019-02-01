@@ -1,0 +1,321 @@
+<?xml version="1.0"?>
+<!-- Sample list of Model Components -->
+<Model_Components xmlns="CDB" xmlns:CDB="CDB" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="CDB http://schemas.opengis.net/cdb/1.1/Model_Components.xsd">
+
+  <Component name="Artillery_Gun">
+    <Description>1) Refers to any engine used for the discharge of large projectiles and served by a crew of men.  2) Cannon-like weapons operated by more than one person.</Description>
+  </Component>
+  
+  <Component name="Barrel">
+    <Description>The barrel of a gun or cannon; used to control the elevation angle of the weapon.</Description>
+  </Component>
+  
+  <Component name="Cannon">
+    <Description>1) A cannon is any large tubular firearm designed to fire a heavy projectile over a long distance.  2) Main gun on a helicopter or on an aircraft.  3) Rifled gun with a caliber of 20 mm or more.  4) Ship defense artillery cannons, 5 inches or higher.</Description>
+  </Component>
+  
+  <Component name="Chaff_Dispenser">
+    <Description>Identifies the device that dispenses chaff, a countermeasure against radar-guided missiles.</Description>
+  </Component>
+
+  <Component name="Flare_Dispenser">
+    <Description>Identifies the device that dispenses flares, a countermeasure against infrared homing missiles.</Description>
+  </Component>
+  
+  <Component name="Gun">
+    <Description>Cannon of smaller caliber.</Description>
+  </Component>
+  
+  <Component name="Muzzle">
+    <Description>The end of the barrel from which the projectile will exit.</Description>
+  </Component>
+  
+  <Component name="Pylon">
+    <Description>A finlike device used to attach auxiliary equipment to an aircraft.</Description>
+  </Component>
+  
+  <Component name="Rack">
+    <Description>A framework set up on a vehicle to carry loads, as in a missile rack, a bomb rack, etc.</Description>
+  </Component>
+  
+  <Component name="Rail">
+    <Description>Wingtip Missile rail</Description>
+  </Component>
+  
+  <Component name="Rocket_Launcher">
+    <Description>A structural device designed to support and hold a rocket in position for firing.</Description>
+  </Component>
+  
+  <Component name="Turret">
+    <Description>Refers to a rotating weapon or sensor platform.  It controls the azimuth of a gun, cannon, radar dish, antenna, etc.</Description>
+  </Component>
+  
+  <Component name="Blade">
+    <Description>Rotor or propeller blade</Description>
+  </Component>
+  
+  <Component name="Cabin">
+    <Description>The passenger area of an airplane.</Description>
+  </Component>
+  
+  <Component name="Cargo">
+    <Description>Compartment on the airplane for carrying payloads</Description>
+  </Component>
+  
+  <Component name="Cockpit">
+    <Description>1) A usually enclosed space in the forward fuselage of an airplane containing the flying controls, instrument panel, and seats for the pilot and copilot or crew.  2) Protective cover made of glass (or Plexiglas) that protects the pilot from the elements.</Description>
+  </Component>
+  
+  <Component name="Fuselage">
+    <Description>Aircraft main body holding crew and passengers or cargo.</Description>
+  </Component>
+  
+  <Component name="Landing_Light">
+    <Description>A light of very high intensity used on aircraft to illuminate the terrain and runway ahead during nighttime takeoff and landing procedures.</Description>
+  </Component>
+  
+  <Component name="Propeller">
+    <Description>A mechanical device, with shaped blades that turn on a shaft, to push against air or water, especially one used for propelling an aircraft or boat.</Description>
+  </Component>
+  
+  <Component name="Rotor">
+    <Description>1) A rotating part of a mechanical device.  2) A system of rotating airfoils, as the ones of a helicopter.</Description>
+  </Component>
+  
+  <Component name="Wing">
+    <Description>A wing surface used to produce lift and therefore flight, for travel in the air or another gaseous medium.  The wing shape is usually an airfoil.</Description>
+  </Component>
+  
+  <Component name="Aileron">
+    <Description>Control surfaces hinged at the back of the wings which by deflecting up or down help to bank the airplane.</Description>
+  </Component>
+  
+  <Component name="Canard">
+    <Description>Small horizontal stabilizers usually at front of the aircraft, common on delta wing aircraft that controls pitch.</Description>
+  </Component>
+  
+  <Component name="Elevator">
+    <Description>Control surfaces usually found at the back of the aircraft's tail section to control the pitch of the aircraft.  Also called horizontal stabilizers.</Description>
+  </Component>
+  
+  <Component name="Flap">
+    <Description>Hinged control surface located at the trailing edge of the wing inboard of the ailerons</Description>
+  </Component>
+  
+  <Component name="Leading_Edge">
+    <Description>Leading edge control surfaces (also called Slats) move out from the front of the wings to make the wing space larger.  This helps to increase the lifting force of the wing at slower speeds like takeoff and landing.</Description>
+  </Component>
+  
+  <Component name="Rudder">
+    <Description>1) A movable control surface attached to a vertical stabilizer, located at the rear of an airplane and used, along with the ailerons, to turn the airplane.  2) A vertical blade at the stern of a vessel that can be turned to change the vessel's direction when in motion.</Description>
+  </Component>
+  
+  <Component name="Speed_Brake">
+    <Description>A controllable surface that is extended in flight to create extra drag and greatly decrease speed</Description>
+  </Component>
+  
+  <Component name="Spoiler">
+    <Description>An aerodynamic device that changes the direction of airflow in order to reduce lift or aerodynamic drag and/or improve engine cooling.</Description>
+  </Component>
+  
+  <Component name="Stabilizer">
+    <Description>The horizontal stabilizer is a fixed or adjustable surface from which an elevator may be hinged.  A vertical stabilizer (also called a fin) is fixed to the aircraft’s tail and supports the rudder.</Description>
+  </Component>
+  
+  <Component name="Trim_Tab">
+    <Description>A small, auxiliary control surface in the trailing edge of a wingform, adjustable mechanically or by hand, to counteract aerodynamic forces on the main control surfaces.</Description>
+  </Component>
+  
+  <Component name="Engine">
+    <Description>Designates the motor engine or propulsion system.</Description>
+  </Component>
+  
+  <Component name="Nacelle">
+    <Description>Engine nacelle compartment mount which holds the engine</Description>
+  </Component>
+  
+  <Component name="Thrust_Reverser">
+    <Description>Thrust reversers are used to slow jet aircraft following touchdown, in form of a blast shield that covers the nozzles and deflects the exhaust.</Description>
+  </Component>
+  
+  <Component name="Thrust_Vector_Nozzle">
+    <Description>Movable exhaust nozzle, found on next generation aircraft to increase the maneuverability by controlling the direction of the thrust</Description>
+  </Component>
+  
+  <Component name="Exhaust_System">
+    <Description>An exhaust system conveys burnt gases from an internal combustion engine.</Description>
+  </Component>
+  
+  <Component name="Fuel_Tank">
+    <Description>External fuel tank</Description>
+  </Component>
+  
+  <Component name="Axle">
+    <Description>The pin or spindle on which a wheel revolves, or which revolves with a wheel.</Description>
+  </Component>
+  
+  <Component name="Bogey">
+    <Description>A bogey is a structural device that attaches multiple wheels on the same gear unit</Description>
+  </Component>
+  
+  <Component name="Landing_Gear">
+    <Description>Aircraft landing gear parts</Description>
+  </Component>
+  
+  <Component name="Louver">
+    <Description>Gear louver doors</Description>
+  </Component>
+  
+  <Component name="Strut">
+    <Description>The landing strut is the "leg" of the gear unit that attaches the bogey/wheels</Description>
+  </Component>
+  
+  <Component name="Wheel">
+    <Description>Wheels that are attached to the bogey</Description>
+  </Component>
+  
+  <Component name="Boom">
+    <Description>A long, rigid, hollow shaft around a telescopic fuel tube usually fitted to the rear of the tanker.</Description>
+  </Component>
+  
+  <Component name="Drogue">
+    <Description>Sometime called a basket.  A funnel-shaped device attached at the end of a hose on a tanker aircraft for connecting with the probe on the aircraft to be refueled in flight.</Description>
+  </Component>
+  
+  <Component name="Hose">
+    <Description>A flexible tube for conveying fuel.</Description>
+  </Component>
+  
+  <Component name="Nozzle">
+    <Description>Mounted at the end of the fuel tube, the nozzle mates with the receptacle on the receiver aircraft.</Description>
+  </Component>
+  
+  <Component name="Probe">
+    <Description>A rigid, but sometime jointed and retractable, arm placed on the side of the nose of the aircraft to be refueled in flight.</Description>
+  </Component>
+  
+  <Component name="Receptacle">
+    <Description>A contact device installed on top and along the centerline of the aircraft to be refueled.  The boom connects to the receptacle.</Description>
+  </Component>
+  
+  <Component name="Ruddevator">
+    <Description>Small wings mounted at the end of the boom.  Allows the operator to fly the boom in position and align the nozzle with the receptacle.</Description>
+  </Component>
+  
+  <Component name="Tube">
+    <Description>Telescopic fuel tube housed within the boom.</Description>
+  </Component>
+  
+  <Component name="Anchor">
+    <Description>A heavy device dropped by a chain, cable, or rope to the bottom of a body of water for restraining the motion of a vessel or other floating object.</Description>
+  </Component>
+  
+  <Component name="Antenna">
+    <Description>A device to receive or transmit radio signals by converting electromagnetic radiation into electrical signals.</Description>
+  </Component>
+  
+  <Component name="Bow">
+    <Description>The forward end of a vessel or surface ship.</Description>
+  </Component>
+  
+  <Component name="Bridge">
+    <Description>Command post on a ship</Description>
+  </Component>
+  
+  <Component name="Conning_Tower">
+    <Description>The low observation tower of a submarine, constituting the main entrance to the interior.</Description>
+  </Component>
+  
+  <Component name="Deck">
+    <Description>The floor-like covering of the horizontal sections, or compartments, of a ship.  Small vessels have only one deck; larger ships have two or three decks.</Description>
+  </Component>
+  
+  <Component name="Flight_Deck">
+    <Description>The flight deck of an aircraft carrier is the surface from which its aircraft take off and land, essentially a miniature airfield at sea.</Description>
+  </Component>
+  
+  <Component name="Mast">
+    <Description>1) A tall, slim structure used to support, for example, the sails on a ship, floodlights or an aerial.  2) Radio masts and towers are, typically, tall structures designed to support antennas (also known as aerials in the UK) for telecommunications and broadcasting, including television.</Description>
+  </Component>
+  
+  <Component name="Stern">
+    <Description>The rear part or after end of a ship or vessel.</Description>
+  </Component>
+  
+  <Component name="Runway">
+    <Description>A cleared strip on which planes land and take off.</Description>
+  </Component>
+  
+  <Component name="Chimney">
+    <Description>A chimney is a system for venting hot flue gases or smoke from a boiler, stove, furnace or fireplace to the outside atmosphere.</Description>
+  </Component>
+  
+  <Component name="Floor">
+    <Description>1) The bottom or lower part of any room; the supporting surface of a room.  2) A structure formed of beams, girders, etc, with proper covering, which divides a building horizontally into stories.</Description>
+  </Component>
+  
+  <Component name="Hall">
+    <Description>A hall is fundamentally, a relatively large space enclosed by a roof and walls.  The hall of a house is the space inside the front door from which the rooms are reached.</Description>
+  </Component>
+  
+  <Component name="Roof">
+    <Description>The cover at the top of a building</Description>
+  </Component>
+  
+  <Component name="Room">
+    <Description>A portion of space within a building that is enclosed or partitioned off from other parts.</Description>
+  </Component>
+  
+  <Component name="Wall">
+    <Description>A wall is a usually solid structure that defines and sometimes protects an area.  Most commonly, a wall separates space in buildings into rooms, or protects or delineates a space in the open air.  There are three principal types of structural walls: building walls, exterior boundary walls, and retaining walls.</Description>
+  </Component>
+  
+  <Component name="Window">
+    <Description>A window is an opening in an otherwise solid and opaque surface through which light and, sometimes, air can pass.  It is usually glass or a strong, transparent plastic.  For example, a window can be in the wall of a house.</Description>
+  </Component>
+  
+  <Component name="Caterpillar_Tread">
+    <Description>Large (modular) tracks used on tanks, construction equipment and certain other off-road vehicles.  Made of a number of rigid units that are joined to each other.  The tracks help the vehicle to distribute its weight more evenly over a large surface area.</Description>
+  </Component>
+  
+  <Component name="Hatch">
+    <Description>1) A horizontal door in a floor or ceiling.  2) A passageway between the decks of a ship.  3) A small doorway, especially in an aircraft or spacecraft.</Description>
+  </Component>
+  
+  <Component name="Hitch">
+    <Description>1) Hitch knot, a knot used to attach a rope to a fixed object.  2) Tow hitch, a construction on a truck or car to attach a trailer.</Description>
+  </Component>
+  
+  <Component name="Trunk">
+    <Description>The luggage storage compartment of a sedan style car.</Description>
+  </Component>
+  
+  <Component name="Door">
+    <Description>All kinds of doors: main entrance doors on buildings, back doors, cargo doors, passenger doors, cockpit doors, weapon bay doors, gear louver doors, emergency exit doors, car driver’s and passengers doors, etc.</Description>
+  </Component>
+  
+  <Component name="Helipad">
+    <Description>A takeoff and landing area for helicopters.  Provides a clearly marked hard surface away from obstacles where a helicopter can land.  Helipads are usually constructed out of concrete and are marked with a circle and/or a letter "H", so as to be visible from the air.  Helipads are found on the roof of hospitals, corporate head offices, and on large ships.</Description>
+  </Component>
+  
+  <Component name="Hull">
+    <Description>1) The main structural body of the boat, not including the deck, keel, mast, or cabin.  2) The main body of an armored tank.</Description>
+  </Component>
+  
+  <Component name="Porthole">
+    <Description>A porthole is a small, generally circular, window used on the hull of ships, armored vehicles, aircraft, automobiles, and even spacecraft.</Description>
+  </Component>
+  
+  <Component name="Searchlight">
+    <Description>A light source that projects a bright beam of light; usually mounted on a device so that it can be swiveled about.</Description>
+  </Component>
+  
+  <Component name="Tire">
+    <Description>A tire covers the circumference of a wheel to increase the adherence of the wheel to the rolling surface.  The tire also plays the role of a shock absorber to dampen the oscillations caused by irregularities on the surface.</Description>
+  </Component>
+  
+  <Component name="Windshield">
+    <Description>A transparent screen located in front of the occupants of a vehicle to protect them from the wind and weather.</Description>
+  </Component>
+    
+</Model_Components>

@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="xs3p.xsl"?>
+<xs:schema
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified" 
+  targetNamespace="http://www.opengis.net/cdb/1.1/Base_Material_Table"
+  xmlns:cdb="http://www.opengis.net/cdb/1.1/Base_Material_Table"
+  xmlns="http://www.opengis.net/cdb/1.1/Base_Material_Table"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  version="1.1">
+
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+			This XML schema defines the format of the CDB Base Material Table found in /CDB/Metadata/Materials.xml
+			CDB is an OGC Standard.
+			Copyright (c) 2018 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="Base_Material_Table">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        The Base Material Table is a list of one or more CDB Base Materials.
+      </xs:documentation>
+    </xs:annotation>
+
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Version" type="Version" minOccurs="0">
+				  <xs:annotation>
+				    <xs:documentation xml:lang="en">
+				      This element is deprecated and should no longer be used.
+				      It has been replaced by the &apos;version&apos; attribute.
+				    </xs:documentation>
+				  </xs:annotation>
+				</xs:element>
+				<xs:element name="Source" type="xs:token" minOccurs="0">
+				  <xs:annotation>
+				    <xs:documentation xml:lang="en">
+				      This element is deprecated and should no longer be used.
+				    </xs:documentation>
+				  </xs:annotation>
+				</xs:element>
+				<xs:element name="Base_Material" type="Base_Material" maxOccurs="unbounded" />
+			</xs:sequence>
+      <xs:attribute name="version" use="required">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              This attribute is used to indicate the version of the XML file containing the list of CDB Materials.
+              It is independent from the version of the Specification.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="([1-9]([0-9])*[.]([0-9])+)"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+		</xs:complexType>
+
+    <!-- Validate that all Base_Material are unique -->
+    <xs:unique name="UniqueNames">
+      <xs:selector xpath="./cdb:Base_Material" />
+      <xs:field xpath ="cdb:Name" />
+    </xs:unique>
+	</xs:element>
+
+	<!-- A base material has a name and an optional description. -->
+	<xs:complexType name="Base_Material">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This element defines one CDB Base Material by giving it a unique name.
+        It is recommended to provide a description.
+      </xs:documentation>
+    </xs:annotation>
+		<xs:sequence>
+      <xs:element name="Name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[B][M][_]([A-Za-z0-9_-])+"/>
+            <xs:maxLength value="32"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+			<xs:element name="Description" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+  <!-- Deprecated -->
+	<xs:complexType name="Version">
+		<xs:sequence>
+			<xs:element name="Major" type="xs:positiveInteger" />
+			<xs:element name="Minor" type="xs:nonNegativeInteger" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

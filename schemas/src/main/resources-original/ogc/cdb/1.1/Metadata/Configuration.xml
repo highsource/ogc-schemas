@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="Stylesheet/Configuration.xsl"?>
+<Configuration
+  xmlns="http://www.opengis.net/cdb/1.1/Configuration"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/cdb/1.1/Configuration http://schemas.opengis.net/cdb/1.1/Configuration.xsd">
+
+  <Comment>
+    An example of what could be a CDB Configuration for CDB 3.2.
+    The example assumes that all CDB Versions reside on the same device under the same folder;
+    hence the use of relative paths to CDB Versions.
+  </Comment>
+  
+  <!-- Start with 3.2 assets -->
+  <Version>
+    <Folder path="../NavigationData"/>
+    <Comment>Contains the most recent version of the CDB Navigation Data build from Jeppesen sources.</Comment>
+    <Specification version="3.2"/>
+  </Version>
+
+  <Version>
+    <Folder path="../Region_1"/>
+    <Comment>A region of the world that is modelled with a combination of datasets available with version 3.2 of the Specification.</Comment>
+    <Specification version="3.2"/>
+  </Version>
+
+  <Version>
+    <Folder path="../Region_2"/>
+    <Comment>Another region of the world that does not intersect with region 1.</Comment>
+    <Specification version="3.2"/>
+  </Version>
+
+  <Version>
+    <Folder path="../ModelLibrary"/>
+    <Comment>A library of geotypical and moving models in CDB 3.2 format.</Comment>
+    <Specification version="3.2"/>
+  </Version>
+  
+  <!-- Continue with CDB Extensions -->
+  <Version>
+    <Folder path="../AcmeExtensions"/>
+    <Comment>Contains extensions to the CDB made by a vendor named Acme. Intended to support function X of the Acme client-device.</Comment>
+    <Specification version="3.2"/>
+    <Extension name="Acme" version="1.0"/>
+  </Version>
+  
+  <Version>
+    <Folder path="../AbcExtensions"/>
+    <Comment>Extensions of another vendor.</Comment>
+    <Specification version="3.2"/>
+    <Extension name="Abc" version="2.3a"/>
+  </Version>
+  
+  <!-- End with 3.0 assets -->
+  <Version>
+    <Folder path="../World"/>
+    <Comment>This is a Worldwide Database (WWDB) in CDB 3.0 format available from Presagis @ http://www.presagis.com/</Comment>
+  </Version>
+  
+  <Version>
+    <Folder path="../LegacyModelLibrary"/>
+    <Comment>A librarys of geotypical and moving models in CDB 3.0 format.</Comment>
+  </Version>
+  
+</Configuration>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+  attributeFormDefault="unqualified" 
+  elementFormDefault="qualified" 
+  targetNamespace="http://www.opengis.net/cdb/1.1/Vector_Attributes"
+  xmlns:cdb="http://www.opengis.net/cdb/1.1/Vector_Attributes"
+  xmlns="http://www.opengis.net/cdb/1.1/Vector_Attributes"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  version="1.1">
+
+  <xs:annotation>
+    <xs:documentation>
+      XML schema to define and validate CDB Vector Attributes as defined in chapter 5 of CDB Specification v3.2
+      CDB is an OGC Standard.
+      Copyright (c) 2018 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+    </xs:documentation>
+  </xs:annotation>
+  
+  <xs:element name="Vector_Attributes">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Attributes are defined through 3 lists: 1) the attributes themselves, 2) their units, and 3) their scalers.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Attributes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Attribute" type="Attribute" maxOccurs="unbounded" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Units">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Unit" type="Unit" maxOccurs="unbounded" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Scalers">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Scaler" type="Scaler" maxOccurs="unbounded" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="version" type="Version" use="required" />
+    </xs:complexType>
+    
+    <xs:unique name="Unique_Attribute_Code">
+      <xs:selector xpath="Attributes/Attribute"/>
+      <xs:field xpath="@code"/>
+    </xs:unique>
+    
+    <xs:unique name="Unique_Attribute_Symbol">
+      <xs:selector xpath="Attributes/Attribute"/>
+      <xs:field xpath="@symbol"/>
+    </xs:unique>
+    
+    <xs:key name="Unique_Unit_Code">
+      <xs:selector xpath="Units/Unit"/>
+      <xs:field xpath="@code"/>
+    </xs:key>
+    
+    <xs:keyref name="Unit_Ref" refer="Unique_Unit_Code">
+      <xs:selector xpath="Attributes/Attribute/Value"/>
+      <xs:field xpath="Unit"/>
+    </xs:keyref>
+    
+    <xs:key name="Unique_Scaler_Code">
+      <xs:selector xpath="Scalers/Scaler"/>
+      <xs:field xpath="@code"/>
+    </xs:key>
+    
+    <xs:keyref name="Scaler_Ref" refer="Unique_Scaler_Code">
+      <xs:selector xpath="Attributes/Attribute/Value"/>
+      <xs:field xpath="Scaler"/>
+    </xs:keyref>
+    
+  </xs:element>
+  
+  <xs:simpleType name="Version">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This attribute represents the version number of this file. It has two components: major.minor.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([1-9]([0-9])*[.]([0-9])+)"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="Attribute">
+    <xs:sequence>
+      <xs:element name="Name">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Description">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Level" type="Level" />
+      <xs:element name="Value" type="Value" />
+    </xs:sequence>
+    <xs:attribute name="code" type="xs:positiveInteger" use="required" />
+    <xs:attribute name="symbol" type="xs:token" use="required" />
+    <xs:attribute name="deprecated" type="xs:boolean" default="false" />
+  </xs:complexType>
+  
+  <xs:complexType name="Level">
+    <xs:choice maxOccurs="3">
+      <xs:element name="Instance" type="Level_Presence" />
+      <xs:element name="Class" type="Level_Presence" />
+      <xs:element name="Extended" type="Level_Presence" />
+    </xs:choice>
+  </xs:complexType>
+  
+  <xs:simpleType name="Level_Presence">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Preferred"/>
+      <xs:enumeration value="Deprecated"/>
+      <xs:enumeration value="Supported"/>
+      <xs:enumeration value="Not Supported"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="Value">
+    <xs:sequence>
+      <xs:element name="Type">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="Text"/>
+            <xs:enumeration value="Numeric"/>
+            <xs:enumeration value="Boolean"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Format" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="Floating-Point"/>
+            <xs:enumeration value="Integer"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Precision" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:pattern value="([0-9])+.([0-9])+"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Range" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Min" type="xs:decimal" minOccurs="0"/>
+            <xs:element name="Max" type="xs:decimal" minOccurs="0"/>
+          </xs:sequence>
+          <xs:attribute name="interval">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Open"/>
+                <xs:enumeration value="Left-Open"/>
+                <xs:enumeration value="Right-Open"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Length" type="xs:positiveInteger" minOccurs="0"/>
+      <xs:element name="Unit" type="xs:positiveInteger" minOccurs="0"/>
+      <xs:element name="Scaler" type="xs:positiveInteger" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+	<xs:complexType name="Unit">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:token" />
+      <xs:element name="Description" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="code" type="xs:positiveInteger" use="required" />
+    <xs:attribute name="symbol" type="xs:token" use="required" />
+  </xs:complexType>
+  
+	<xs:complexType name="Scaler">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:token" />
+      <xs:element name="Description" type="xs:string" />
+      <xs:element name="Multiplier">
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="code" type="xs:positiveInteger" use="required" />
+    <xs:attribute name="symbol" type="xs:token" use="required" />
+  </xs:complexType>
+  
+</xs:schema>

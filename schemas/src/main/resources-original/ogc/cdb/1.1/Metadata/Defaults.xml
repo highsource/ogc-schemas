@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="Stylesheet/Defaults.xsl"?>
+<Default_Value_Table
+  xmlns="http://www.opengis.net/cdb/1.1/Defaults"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/cdb/1.1/Defaults http://schemas.opengis.net/cdb/1.1/Defaults.xsd"
+  version="3.2">
+
+  <Default_Value>
+    <Dataset>001_Elevation</Dataset>
+    <Name>Default_Elevation-1</Name>
+    <Description>Default Primary Terrain Elevation</Description>
+    <Type>float</Type>
+    <Value>0.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+ 
+  <Default_Value>
+    <Dataset>001_Elevation</Dataset>
+    <Name>Default_Primary_Elevation_Control</Name>
+    <Description>Default Primary Terrain Elevation Control</Description>
+    <Type>integer</Type>
+    <Value>0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>001_Elevation</Dataset>
+    <Name>Default_Subordinate_Elevation_Control</Name>
+    <Description>Default Subordinate Terrain Elevation Control</Description>
+    <Type>integer</Type>
+    <Value>0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>001_Elevation</Dataset>
+    <Name>Default_Bathymetry</Name>
+    <Description>Default Subordinate Bathymetry Elevation</Description>
+    <Type>float</Type>
+    <Value>0.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>001_Elevation</Dataset>
+    <Name>Default_Tide</Name>
+    <Description>Default Subordinate Tide Elevation</Description>
+    <Type>float</Type>
+    <Value>2.5</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>002_MinMaxElevation</Dataset>
+    <Name>Default_MinElevation_CaseI</Name>
+    <Description>Default Minimum Elevation -- Case 1</Description>
+    <Type>float</Type>
+    <Value>0.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>002_MinMaxElevation</Dataset>
+    <Name>Default_MaxElevation_CaseI</Name>
+    <Description>Default Maximum Elevation -- Case 1</Description>
+    <Type>float</Type>
+    <Value>0.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>002_MinMaxElevation</Dataset>
+    <Name>Default_MinElevation_CaseII</Name>
+    <Description>Default Minimum Elevation -- Case 2</Description>
+    <Type>float</Type>
+    <Value>-400.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>002_MinMaxElevation</Dataset>
+    <Name>Default_MaxElevation_CaseII</Name>
+    <Description>Default Maximum Elevation -- Case 2</Description>
+    <Type>float</Type>
+    <Value>8846.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>002_MinMaxElevation</Dataset>
+    <Name>Default_MinElevation_CaseIII</Name>
+    <Description>Default Minimun Elevation -- Case 3</Description>
+    <Type>float</Type>
+    <Value>8846.0</Value>
+    <R_W_Type>W</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>002_MinMaxElevation</Dataset>
+    <Name>Default_MaxElevation_CaseIII</Name>
+    <Description>Default Maximum Elevation -- Case 3</Description>
+    <Type>float</Type>
+    <Value>-400.0</Value>
+    <R_W_Type>W</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>003_MaxCulture</Dataset>
+    <Name>Default_MaxCulture_CaseI</Name>
+    <Description>Default Maximum Culture Height -- Case 1</Description>
+    <Type>float</Type>
+    <Value>600.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>003_MaxCulture</Dataset>
+    <Name>Default_MaxCulture_CaseII</Name>
+    <Description>Default Maximum Culture Height -- Case 2</Description>
+    <Type>float</Type>
+    <Value>0.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>004_Imagery</Dataset>
+    <Name>Default_VSTI_Y_Mono</Name>
+    <Description>Default Visible Spectrum Terrain Imagery -- Yearly Representation -- Monochrome Component</Description>
+    <Type>float</Type>
+    <Value>0.5</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>004_Imagery</Dataset>
+    <Name>Default_VSTI_Y_Red</Name>
+    <Description>Default Visible Spectrum Terrain Imagery -- Yearly Representation -- Red Component</Description>
+    <Type>float</Type>
+    <Value>0.5</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>004_Imagery</Dataset>
+    <Name>Default_VSTI_Y_Green</Name>
+    <Description>Default Visible Spectrum Terrain Imagery -- Yearly Representation -- Green Component</Description>
+    <Type>float</Type>
+    <Value>0.5</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>004_Imagery</Dataset>
+    <Name>Default_VSTI_Y_Blue</Name>
+    <Description>Default Visible Spectrum Terrain Imagery -- Yearly Representation -- Blue Component</Description>
+    <Type>float</Type>
+    <Value>0.5</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>004_Imagery</Dataset>
+    <Name>Default_VSTLM_Mono</Name>
+    <Description>Default Visible Spectrum Terrain Light Map -- Monochrome Component</Description>
+    <Type>float</Type>
+    <Value>0.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>004_Imagery</Dataset>
+    <Name>Default_VSTLM_Red</Name>
+    <Description>Default Visible Spectrum Terrain Light Map -- Red Component</Description>
+    <Type>float</Type>
+    <Value>0.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>004_Imagery</Dataset>
+    <Name>Default_VSTLM_Green</Name>
+    <Description>Default Visible Spectrum Terrain Light Map -- Green Component</Description>
+    <Type>float</Type>
+    <Value>0.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>004_Imagery</Dataset>
+    <Name>Default_VSTLM_Blue</Name>
+    <Description>Default Visible Spectrum Terrain Light Map -- Blue Component</Description>
+    <Type>float</Type>
+    <Value>0.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>004_Imagery</Dataset>
+    <Name>Default_Imagery_Gamma</Name>
+    <Description>Default Gamma for the whole Terrain Imagery</Description>
+    <Type>float</Type>
+    <Value>1.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Name>Default_Base_Material</Name>
+    <Description>Default Base Material</Description>
+    <Type>string</Type>
+    <Value>BM_LAND-MOOR</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Name>Default_Material_Layer</Name>
+    <Description>Default Material Layer Index</Description>
+    <Type>integer</Type>
+    <Value>0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Name>Default_AO1</Name>
+    <Description>Default Angle of Orientation</Description>
+    <Type>float</Type>
+    <Value>0.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Name>Default_SCALx</Name>
+    <Description>Default Feature Scale Factor along the X-axis</Description>
+    <Type>float</Type>
+    <Value>1.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Name>Default_SCALy</Name>
+    <Description>Default Feature Scale Factor along the Y-axis</Description>
+    <Type>float</Type>
+    <Value>1.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Name>Default_SCALz</Name>
+    <Description>Default Feature Scale Factor along the Z-axis</Description>
+    <Type>float</Type>
+    <Value>1.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>201_RoadNetwork</Dataset>
+    <Name>Default_RoadNetwork_LTN</Name>
+    <Description>Default Road Network Lane/Track Number</Description>
+    <Type>integer</Type>
+    <Value>2</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Name>Default_TRF</Name>
+    <Description>Default Traffic Flow Encoding</Description>
+    <Type>integer</Type>
+    <Value>4</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>202_RailRoadNetwork</Dataset>
+    <Name>Default_RailRoadNetwork_LTN</Name>
+    <Description>Default Railroad Network Lane/Track Number</Description>
+    <Type>integer</Type>
+    <Value>1</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>301_GSModelTexture</Dataset>
+    <Name>Default_GSModelTexture_Gamma</Name>
+    <Description>Default Gamma for all geospecific model textures</Description>
+    <Type>float</Type>
+    <Value>1.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>306_GSModelInteriorTexture</Dataset>
+    <Name>Default_GSModelInteriorTexture_Gamma</Name>
+    <Description>Default Gamma for all geospecific model interior textures</Description>
+    <Type>float</Type>
+    <Value>1.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>511_GTModelTexture</Dataset>
+    <Name>Default_GTModelTexture_Gamma</Name>
+    <Description>Default Gamma for all geotypical model textures</Description>
+    <Type>float</Type>
+    <Value>1.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>516_GTModelInteriorTexture</Dataset>
+    <Name>Default_GTModelInteriorTexture_Gamma</Name>
+    <Description>Default Gamma for all geotypical model interior textures</Description>
+    <Type>float</Type>
+    <Value>1.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+  <Default_Value>
+    <Dataset>601_MModelTexture</Dataset>
+    <Name>Default_MModelTexture_Gamma</Name>
+    <Description>Default Gamma for all moving model textures</Description>
+    <Type>float</Type>
+    <Value>1.0</Value>
+    <R_W_Type>R</R_W_Type>
+  </Default_Value>
+
+</Default_Value_Table>

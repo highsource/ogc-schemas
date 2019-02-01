@@ -1,0 +1,454 @@
+<?xml version="1.0"?>
+<Moving_Model_Codes
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.opengis.net/cdb/1.1/Moving_Model_Codes"
+  xsi:schemaLocation="http://www.opengis.net/cdb/1.1/Moving_Model_Codes http://schemas.opengis.net/cdb/1.1/Moving_Model_Codes.xsd"
+  version="2.0">
+  
+  <Kind code="0" name="Other">
+    <Domain code="0" name="Other">
+      <Category code="0" name="Other"/>
+    </Domain>
+  </Kind>
+  <Kind code="1" name="Platform">
+    <Domain code="0" name="Other">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="1" name="Land">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Tank" />
+      <Category code="2" name="Armored_Fighting_Vehicle" />
+      <Category code="3" name="Armored_Utility_Vehicle" />
+      <Category code="4" name="Self-propelled_Artillery" />
+      <Category code="5" name="Towed_Artillery" />
+      <Category code="6" name="Small_Wheeled_Utility_Vehicle" />
+      <Category code="7" name="Large_Wheeled_Utility_Vehicle" />
+      <Category code="8" name="Small_Tracked_Utility_Vehicle" />
+      <Category code="9" name="Large_Tracked_Utility_Vehicle" />
+      <Category code="10" name="Mortar" />
+      <Category code="11" name="Mine_Plow" />
+      <Category code="12" name="Mine_Rake" />
+      <Category code="13" name="Mine_Roller" />
+      <Category code="14" name="Cargo_Trailer" />
+      <Category code="15" name="Fuel_Trailer" />
+      <Category code="16" name="Generator_Trailer" />
+      <Category code="17" name="Water_Trailer" />
+      <Category code="18" name="Engineer_Equipment" />
+      <Category code="19" name="Heavy_Equipment_Trailer" />
+      <Category code="20" name="Maintenance_Equipment_Trailer" />
+      <Category code="21" name="Limber" />
+      <Category code="22" name="Chemical_Decontamination_Trailer" />
+      <Category code="23" name="Warning_System" />
+      <Category code="24" name="Train_Engine" />
+      <Category code="25" name="Train_Car" />
+      <Category code="26" name="Train_Caboose" />
+      <Category code="27" name="Civilian_Vehicle" />
+      <Category code="28" name="Air-Missile_Defense_Equipment" />
+      <Category code="29" name="C3I_System" />
+      <Category code="30" name="Operations_Facility" />
+      <Category code="31" name="Intelligence_Facility" />
+      <Category code="32" name="Surveillance_Facility" />
+      <Category code="33" name="Communication_Facility" />
+      <Category code="34" name="Command_Facility" />
+      <Category code="35" name="C4I_Facility" />
+      <Category code="36" name="Control_Facility" />
+      <Category code="37" name="Fire_Control_Facility" />
+      <Category code="38" name="Missile_Defense_Facility" />
+      <Category code="39" name="Field_Command_Post" />
+      <Category code="40" name="Observation_Post" />
+    </Domain>
+    <Domain code="2" name="Air">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Fighter-Air_Defense" />
+      <Category code="2" name="Attack-Strike" />
+      <Category code="3" name="Bomber" />
+      <Category code="4" name="Cargo-Tanker" />
+      <Category code="5" name="ASW-Patrol-Observation" />
+      <Category code="6" name="EW" />
+      <Category code="7" name="Reconnaissance" />
+      <Category code="8" name="Surveillance-C2" />
+      <Category code="20" name="Attack_Helo" />
+      <Category code="21" name="Utility_Helo" />
+      <Category code="22" name="ASW_Patrol_Helo" />
+      <Category code="23" name="Cargo_Helo" />
+      <Category code="24" name="Observation_Helo" />
+      <Category code="25" name="Special_Ops_Helo" />
+      <Category code="40" name="Trainer" />
+      <Category code="50" name="Unmanned" />
+      <Category code="57" name="Commercial_Aircraft" />
+    </Domain>
+    <Domain code="3" name="Surface">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Carrier" />
+      <Category code="2" name="Command_Ship_Cruiser" />
+      <Category code="3" name="Guided_Missile_Cruiser" />
+      <Category code="4" name="Guided_Missile_Destroyer" />
+      <Category code="5" name="Destroyer" />
+      <Category code="6" name="Guided_Missile_Frigate" />
+      <Category code="7" name="Light-Patrol_Craft" />
+      <Category code="8" name="Mine_Countermeasure_Ship-Craft" />
+      <Category code="9" name="Dock_Landing_Ship" />
+      <Category code="10" name="Tank_Landing_Ship" />
+      <Category code="11" name="Landing_Craft" />
+      <Category code="12" name="Light_Carrier" />
+      <Category code="13" name="Cruiser-Helo_Carrier" />
+      <Category code="14" name="Hydrofoil" />
+      <Category code="15" name="Air_Cushion-Surface_Effect" />
+      <Category code="16" name="Auxiliary" />
+      <Category code="17" name="Merchant_Marine" />
+      <Category code="18" name="Utility" />
+      <Category code="50" name="Frigate" />
+      <Category code="51" name="Battleship" />
+      <Category code="52" name="Heavy_Cruiser" />
+      <Category code="53" name="Destroyer_Tender" />
+      <Category code="54" name="Amphibious_Assault_Ship" />
+      <Category code="55" name="Amphibious_Cargo_Ship" />
+      <Category code="56" name="Amphibious_Transport_Dock" />
+      <Category code="57" name="Ammunition_Ship" />
+      <Category code="58" name="Combat_Stores_Ship" />
+      <Category code="59" name="SURTASS" />
+      <Category code="60" name="Fast_Combat_Support_Ship" />
+      <Category code="61" name="Non-Combatant_Ship" />
+    </Domain>
+    <Domain code="4" name="Subsurface">
+      <Category code="0" name="Other" />
+      <Category code="1" name="SSBN" />
+      <Category code="2" name="SSGN" />
+      <Category code="3" name="SSN" />
+      <Category code="4" name="SSG" />
+      <Category code="5" name="SS" />
+      <Category code="6" name="SSAN" />
+      <Category code="7" name="SSA" />
+    </Domain>
+    <Domain code="5" name="Space">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Manned" />
+      <Category code="2" name="Unmanned" />
+      <Category code="3" name="Booster" />
+    </Domain>
+  </Kind>
+  <Kind code="2" name="Munitions">
+    <Domain code="0" name="Other">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="1" name="Anti-Air">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Guided" />
+      <Category code="2" name="Ballistic" />
+      <Category code="3" name="Fixed" />
+    </Domain>
+    <Domain code="2" name="Anti-Armor">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Guided" />
+      <Category code="2" name="Ballistic" />
+      <Category code="3" name="Fixed" />
+    </Domain>
+    <Domain code="3" name="Anti-Guided_Weapon">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Guided" />
+      <Category code="2" name="Ballistic" />
+      <Category code="3" name="Fixed" />
+    </Domain>
+    <Domain code="4" name="Antiradar">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Guided" />
+      <Category code="2" name="Ballistic" />
+      <Category code="3" name="Fixed" />
+    </Domain>
+    <Domain code="5" name="Antisatellite">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Guided" />
+      <Category code="2" name="Ballistic" />
+      <Category code="3" name="Fixed" />
+    </Domain>
+    <Domain code="6" name="Antiship">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Guided" />
+      <Category code="2" name="Ballistic" />
+      <Category code="3" name="Fixed" />
+    </Domain>
+    <Domain code="7" name="Antisubmarine">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Guided" />
+      <Category code="2" name="Ballistic" />
+      <Category code="3" name="Fixed" />
+    </Domain>
+    <Domain code="8" name="Antipersonnel">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Guided" />
+      <Category code="2" name="Ballistic" />
+      <Category code="3" name="Fixed" />
+    </Domain>
+    <Domain code="9" name="Battlefield_Support">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Guided" />
+      <Category code="2" name="Ballistic" />
+      <Category code="3" name="Fixed" />
+    </Domain>
+    <Domain code="10" name="Strategic">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Guided" />
+      <Category code="2" name="Ballistic" />
+      <Category code="3" name="Fixed" />
+    </Domain>
+    <Domain code="11" name="Tactical">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Guided" />
+      <Category code="2" name="Ballistic" />
+      <Category code="3" name="Fixed" />
+    </Domain>
+    <Domain code="12" name="Directed_Energy_Weapon">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Guided" />
+      <Category code="2" name="Ballistic" />
+      <Category code="3" name="Fixed" />
+    </Domain>
+  </Kind>
+  <Kind code="3" name="Life_Form">
+    <Domain code="0" name="Other">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="1" name="Land">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Dismounted_Infantry" />
+      <Category code="5" name="Animal" />
+    </Domain>
+    <Domain code="2" name="Air">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Parachutist" />
+      <Category code="2" name="Bird" />
+      <Category code="3" name="Flock_Of_Birds" />
+    </Domain>
+    <Domain code="3" name="Surface">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Swimmer" />
+      <Category code="2" name="Occupied_Life_Raft" />
+    </Domain>
+    <Domain code="4" name="Subsurface">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Diver" />
+      <Category code="2" name="School_Of_Fish" />
+      <Category code="3" name="School_Of_Shrimp" />
+      <Category code="4" name="Whale" />
+    </Domain>
+    <Domain code="5" name="Space">
+      <Category code="0" name="Other" />
+      <Category code="1" name="Astronaut" />
+    </Domain>
+  </Kind>
+  <Kind code="4" name="Environmental">
+    <Domain code="0" name="Other">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="1" name="Land">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="2" name="Air">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="3" name="Surface">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="4" name="Subsurface">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="5" name="Space">
+      <Category code="0" name="Other"/>
+    </Domain>
+  </Kind>
+  <Kind code="5" name="Cultural_Feature">
+    <Domain code="0" name="Other">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="1" name="Land">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="2" name="Air">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="3" name="Surface">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="4" name="Subsurface">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="5" name="Space">
+      <Category code="0" name="Other"/>
+    </Domain>
+  </Kind>
+  <Kind code="6" name="Supply">
+    <Domain code="0" name="Other">
+      <Category code="0" name="Other"/>
+    </Domain>
+  </Kind>
+  <Kind code="7" name="Radio">
+    <Domain code="0" name="Other">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="1" name="Land">
+      <Category code="0" name="Other"/>
+      <Category code="1" name="Voice_Link"/>
+      <Category code="2" name="Data_Link"/>
+      <Category code="3" name="Voice_and_Data_Link"/>
+      <Category code="4" name="ILS_Glideslope_Transmitter"/>
+      <Category code="5" name="ILS_Localizer_Transmitter"/>
+      <Category code="6" name="ILS_Outer_Marker_Beacon"/>
+      <Category code="7" name="ILS_Middle_Marker_Beacon"/>
+      <Category code="8" name="ILS_Inner_Marker_Beacon"/>
+      <Category code="9" name="ILS_Receiver"/>
+      <Category code="10" name="TACAN_TX-Moving"/>
+      <Category code="11" name="TACAN_RX"/>
+      <Category code="12" name="TACAN_TXRX-Moving"/>
+      <Category code="13" name="VOR_TX_Fixed"/>
+      <Category code="14" name="VOR_with_DME"/>
+      <Category code="15" name="VOR-ILS_Moving"/>
+      <Category code="16" name="VOR_TACAN"/>
+      <Category code="17" name="NDB_TX"/>
+      <Category code="18" name="NDB_RX"/>
+      <Category code="19" name="NDB_with_DME"/>
+      <Category code="20" name="DME"/>
+    </Domain>
+    <Domain code="2" name="Air">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="3" name="Surface">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="4" name="Subsurface">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="5" name="Space">
+      <Category code="0" name="Other"/>
+    </Domain>
+  </Kind>
+  <Kind code="8" name="Expendable">
+    <Domain code="0" name="Other">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="1" name="Land">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="2" name="Air">
+      <Category code="0" name="Other"/>
+      <Category code="1" name="Chaff"/>
+      <Category code="2" name="Flare"/>
+      <Category code="3" name="Combined_Chaff_Flare"/>
+      <Category code="4" name="Active_Emitter"/>
+      <Category code="5" name="Passive_Decoy"/>
+    </Domain>
+    <Domain code="3" name="Surface">
+      <Category code="0" name="Other"/>
+      <Category code="2" name="Flare"/>
+      <Category code="4" name="Active_Emitter"/>
+      <Category code="5" name="Passive_Decoy"/>
+    </Domain>
+    <Domain code="4" name="Subsurface">
+      <Category code="0" name="Other"/>
+      <Category code="4" name="Active_Emitter"/>
+      <Category code="5" name="Passive_Decoy"/>
+    </Domain>
+    <Domain code="5" name="Space">
+      <Category code="0" name="Other"/>
+    </Domain>
+  </Kind>
+  <Kind code="9" name="Sensor_Emitter">
+    <Domain code="0" name="Other">
+      <Category code="0" name="Other"/>
+    </Domain>
+    <Domain code="1" name="Land">
+      <Category code="0" name="Other"/>
+      <Category code="1" name="Multi-spectral"/>
+      <Category code="2" name="RF_Active"/>
+      <Category code="3" name="RF_Passive"/>
+      <Category code="4" name="Optical"/>
+      <Category code="5" name="Electro-Optical"/>
+      <Category code="6" name="Seismic"/>
+      <Category code="7" name="Chemical_point_detector"/>
+      <Category code="8" name="Chemical_standoff"/>
+      <Category code="9" name="Thermal"/>
+      <Category code="10" name="Acoustic_Active"/>
+      <Category code="11" name="Acoustic_Passive"/>
+      <Category code="12" name="Contact-Pressure"/>
+      <Category code="13" name="Electro-Magnetic_Radiation"/>
+      <Category code="14" name="Particle_Radiation"/>
+      <Category code="15" name="Magnetic"/>
+      <Category code="16" name="Gravitational"/>
+    </Domain>
+    <Domain code="2" name="Air">
+      <Category code="0" name="Other"/>
+      <Category code="1" name="Multi-spectral"/>
+      <Category code="2" name="RF_Active"/>
+      <Category code="3" name="RF_Passive"/>
+      <Category code="4" name="Optical"/>
+      <Category code="5" name="Electro-Optical"/>
+      <Category code="6" name="Seismic"/>
+      <Category code="7" name="Chemical_point_detector"/>
+      <Category code="8" name="Chemical_standoff"/>
+      <Category code="9" name="Thermal"/>
+      <Category code="10" name="Acoustic_Active"/>
+      <Category code="11" name="Acoustic_Passive"/>
+      <Category code="12" name="Contact-Pressure"/>
+      <Category code="13" name="Electro-Magnetic_Radiation"/>
+      <Category code="14" name="Particle_Radiation"/>
+      <Category code="15" name="Magnetic"/>
+      <Category code="16" name="Gravitational"/>
+    </Domain>
+    <Domain code="3" name="Surface">
+      <Category code="0" name="Other"/>
+      <Category code="1" name="Multi-spectral"/>
+      <Category code="2" name="RF_Active"/>
+      <Category code="3" name="RF_Passive"/>
+      <Category code="4" name="Optical"/>
+      <Category code="5" name="Electro-Optical"/>
+      <Category code="6" name="Seismic"/>
+      <Category code="7" name="Chemical_point_detector"/>
+      <Category code="8" name="Chemical_standoff"/>
+      <Category code="9" name="Thermal"/>
+      <Category code="10" name="Acoustic_Active"/>
+      <Category code="11" name="Acoustic_Passive"/>
+      <Category code="12" name="Contact-Pressure"/>
+      <Category code="13" name="Electro-Magnetic_Radiation"/>
+      <Category code="14" name="Particle_Radiation"/>
+      <Category code="15" name="Magnetic"/>
+      <Category code="16" name="Gravitational"/>
+    </Domain>
+    <Domain code="4" name="Subsurface">
+      <Category code="0" name="Other"/>
+      <Category code="1" name="Multi-spectral"/>
+      <Category code="2" name="RF_Active"/>
+      <Category code="3" name="RF_Passive"/>
+      <Category code="4" name="Optical"/>
+      <Category code="5" name="Electro-Optical"/>
+      <Category code="6" name="Seismic"/>
+      <Category code="7" name="Chemical_point_detector"/>
+      <Category code="8" name="Chemical_standoff"/>
+      <Category code="9" name="Thermal"/>
+      <Category code="10" name="Acoustic_Active"/>
+      <Category code="11" name="Acoustic_Passive"/>
+      <Category code="12" name="Contact-Pressure"/>
+      <Category code="13" name="Electro-Magnetic_Radiation"/>
+      <Category code="14" name="Particle_Radiation"/>
+      <Category code="15" name="Magnetic"/>
+      <Category code="16" name="Gravitational"/>
+    </Domain>
+    <Domain code="5" name="Space">
+      <Category code="0" name="Other"/>
+      <Category code="1" name="Multi-spectral"/>
+      <Category code="2" name="RF_Active"/>
+      <Category code="3" name="RF_Passive"/>
+      <Category code="4" name="Optical"/>
+      <Category code="5" name="Electro-Optical"/>
+      <Category code="6" name="Seismic"/>
+      <Category code="7" name="Chemical_point_detector"/>
+      <Category code="8" name="Chemical_standoff"/>
+      <Category code="9" name="Thermal"/>
+      <Category code="10" name="Acoustic_Active"/>
+      <Category code="11" name="Acoustic_Passive"/>
+      <Category code="12" name="Contact-Pressure"/>
+      <Category code="13" name="Electro-Magnetic_Radiation"/>
+      <Category code="14" name="Particle_Radiation"/>
+      <Category code="15" name="Magnetic"/>
+      <Category code="16" name="Gravitational"/>
+    </Domain>
+  </Kind>
+</Moving_Model_Codes>

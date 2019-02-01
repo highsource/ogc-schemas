@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="xs3p.xsl"?>
+<xs:schema
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  targetNamespace="http://www.opengis.net/cdb/1.1/DIS_Country_Codes"
+  xmlns:cdb="http://www.opengis.net/cdb/1.1/DIS_Country_Codes"
+  xmlns="http://www.opengis.net/cdb/1.1/DIS_Country_Codes"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  version="1.1">
+  
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      CDB is an OGC Standard.
+      Copyright (c) 2018 Open Geospatial Consortium.
+      To obtain additional rights of use, visit
+      http://www.opengeospatial.org/legal/.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:element name="DIS_Country_Codes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Country" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="code" type="xs:unsignedShort" />
+            <xs:attribute name="name" type="xs:token" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="version" use="required">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              This attribute is used to indicate the version of the XML file containing the list of CDB Default Values.
+              It is independent from the version of the Specification.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="([1-9]([0-9])*[.]([0-9])+)"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

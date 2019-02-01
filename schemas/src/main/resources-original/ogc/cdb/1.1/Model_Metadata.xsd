@@ -1,0 +1,299 @@
+<?xml version="1.0"?>
+<xs:schema id="CDB_Model_Metadata" targetNamespace="CDB" xmlns="CDB" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.1">
+
+  <xs:annotation>
+    <xs:appinfo>3D Model Metadata Schema</xs:appinfo>
+    <xs:documentation>
+      This XML schema defines the metadata associated with 3D models.
+      In accordance with version 3.0 of the CDB specification.
+      CDB is an OGC Standard.
+      Copyright (c) 2018 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+    </xs:documentation>
+  </xs:annotation>
+
+  <!-- The metadata associated with a model is made of up to seven elements. -->
+  <xs:element name="Model_Metadata">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="Name" type="xs:token" />
+        <xs:element name="Identification" type="Identification" />
+        <xs:element name="Mass" type="Mass" />
+        <xs:element name="Parts" type="Parts" />
+        <xs:element name="Textures" type="Textures" />
+        <xs:element name="Configurations" type="Configurations" />
+        <xs:element name="Composite_Material_Table" type="Composite_Material_Table" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- A 3D model is either a moving model with a DIS Entity Type, or a cultural feature with a FACC code. -->
+  <xs:complexType name="Identification">
+    <xs:choice>
+      <xs:element name="DIS_Entity_Type" type="DIS_Entity_Type" />
+      <xs:element name="Feature_Attribute_Catalog_Code" type="Feature_Attribute_Catalog_Code" />
+    </xs:choice>
+  </xs:complexType>
+  
+  <!-- The DIS Entity Type has two formats: 
+          1) a simple list of up to 7 integers; or
+          2) a sequence of up to 7 elements providing the name of the fields whose values are being provided.
+  -->
+  <xs:complexType name="DIS_Entity_Type">
+    <xs:choice>
+    
+      <xs:element name="List">
+        <xs:simpleType>
+          <xs:restriction>
+            <xs:simpleType>
+              <xs:list itemType="xs:nonNegativeInteger" />
+            </xs:simpleType>
+            <xs:maxLength value="7" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      
+      <xs:sequence>
+        <xs:element name="Kind" type="xs:unsignedByte" minOccurs="0" default="0" />
+        <xs:element name="Domain" type="xs:unsignedByte" minOccurs="0" default="0" />
+        <xs:element name="Country" type="xs:unsignedShort" minOccurs="0" default="0" />
+        <xs:element name="Category" type="xs:unsignedByte" minOccurs="0" default="0" />
+        <xs:element name="Subcategory" type="xs:unsignedByte" minOccurs="0" default="0" />
+        <xs:element name="Specific" type="xs:unsignedByte" minOccurs="0" default="0" />
+        <xs:element name="Extra" type="xs:unsignedByte" minOccurs="0" default="0" />
+      </xs:sequence>
+      
+    </xs:choice>
+  </xs:complexType>
+
+  <!-- FACC is composed of two elements: a code and a subcode.
+       The code is a string of 2 letters and 3 digits.
+       The subcode is optional and defaults to 0.
+  -->
+  <xs:complexType name="Feature_Attribute_Catalog_Code">
+    <xs:sequence>
+      <xs:element name="Code">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:pattern value="[A-Za-z][A-Za-z][0-9][0-9][0-9]" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Subcode" minOccurs="0" default="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:nonNegativeInteger">
+            <xs:maxInclusive value="999" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- The mass is defined by 2 elements: the total mass, and its metallic portion.
+       By default, the metallic portion is assumed to be 0.
+  -->
+  <xs:complexType name="Mass">
+    <xs:sequence>
+      <xs:element name="Total">
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="0.0" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Metal" minOccurs="0" default="0.0">
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal" >
+            <xs:minInclusive value="0.0" />
+            <xs:maxInclusive value="1.0" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- When the list of parts is supplied, it contains at least one entry.
+       If the list is absent, a single part stored in a single file is assumed.
+  -->
+  <xs:complexType name="Parts">
+    <xs:sequence>
+      <xs:element name="Part" type="Part" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- A part has a name and is made of a part number, and the number of files associated with the part. -->
+  <xs:complexType name="Part">
+    <xs:attribute name="no" type="xs:positiveInteger" use="required" />
+    <xs:attribute name="numFiles" type="xs:positiveInteger" default="1" />
+    <xs:attribute name="name" type="xs:token" />
+  </xs:complexType>
+  
+  <!-- When the list of textures is supplied, it contains at least one entry.
+       If the list is absent, the model does not have textures.
+       Optionally, groups of textures may be defined and listed.
+       An individual texture may optionally belong to texture groups.
+  -->
+  <xs:complexType name="Textures">
+    <xs:sequence>
+      <xs:element name="Group" type="Texture_Group" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="Texture" type="Texture" maxOccurs="unbounded"/>      
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- A Texture group is identified by its group number and its group name.
+  	   Later, individual texture will refer to group numbers.
+  -->
+  <xs:complexType name="Texture_Group">
+  	<xs:attribute name="no" type="xs:positiveInteger" use="required"/>
+  	<xs:attribute name="name" type="xs:token" use="required" />
+	<xs:attribute name="type" type="xs:token" />
+  </xs:complexType>
+  
+  <!-- A texture is defined by a sequence of 5 mandatory elements and 2 optional elements.
+       The first 4 elements (Kind, Index, Mipmap, and Name) are used to compose the file name where the texture is stored.
+       The Resolution can be used to select which mipmap to load.
+       The optional Coverage provides the maximum extent of U and V mapping.
+       The optional Group refers to the Texture_Group to which the texture belongs.
+       A texture can refer to zero, one, or more groups.
+  -->
+  <xs:complexType name="Texture">
+    <xs:sequence>
+      <xs:element name="Dataset" type="xs:positiveInteger" minOccurs="0"/>
+      <xs:element name="Kind" type="xs:positiveInteger" />
+      <xs:element name="Index" type="xs:positiveInteger" />
+      <xs:element name="Mipmap">
+        <xs:simpleType>
+          <xs:restriction>
+            <xs:simpleType>
+              <xs:list itemType="xs:nonNegativeInteger" />
+            </xs:simpleType>
+            <xs:length value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Resolution" type="xs:decimal" />
+      <xs:element name="Coverage" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="U" type="ListOfTwoDecimals" />
+            <xs:element name="V" type="ListOfTwoDecimals" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Group" type="xs:positiveInteger" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:token" use="required" />
+  </xs:complexType>
+  
+  <xs:simpleType name="ListOfTwoDecimals">
+    <xs:restriction>
+      <xs:simpleType>
+        <xs:list itemType="xs:decimal" />
+      </xs:simpleType>
+      <xs:length value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- When the list of configurations is supplied, it contains at least one entry. -->
+  <xs:complexType name="Configurations">
+    <xs:sequence>
+      <xs:element name="Configuration" type="Configuration" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- A configuration is a named list of one or more stations. -->
+  <xs:complexType name="Configuration">
+    <xs:sequence>
+      <xs:element name="Station" type="Station" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:token" />
+  </xs:complexType>
+
+  <!-- A station has a name and defines exactly one equipment in one location. -->
+  <xs:complexType name="Station">
+    <xs:sequence>
+      <xs:element name="Location" type="xs:token" />
+      <xs:element name="Equipment" type="Equipment" />
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:token" />
+  </xs:complexType>
+
+  <!-- An Equipment is defined by either a DIS key or an external part - and possibly both. -->
+  <xs:complexType name="Equipment">
+    <xs:choice maxOccurs="2">
+      <xs:element name="Identification" type="DIS_Identification" />
+      <xs:element name="External_Part" type="External_Part" />
+    </xs:choice>
+    <xs:attribute name="name" type="xs:token" />
+  </xs:complexType>
+
+  <!-- An external part is identified by its part number. Optionally the part may have its own configuration. -->
+  <xs:complexType name="External_Part">
+    <xs:sequence>
+      <xs:element name="Part_Number" type="xs:positiveInteger" />
+      <xs:element name="Configuration" type="Configuration" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- A DIS identification is either a DIS entity type or a DIS emitter name. -->
+  <xs:complexType name="DIS_Identification">
+    <xs:choice>
+      <xs:element name="DIS_Entity_Type" type="DIS_Entity_Type" />
+      <xs:element name="DIS_Emitter_Name" type="DIS_Emitter_Name" />
+    </xs:choice>
+  </xs:complexType>
+
+  <!-- A DIS emitter name is a 16-bit unsigned integer. -->
+  <xs:simpleType name="DIS_Emitter_Name">
+    <xs:restriction base="xs:unsignedShort" />
+  </xs:simpleType>
+
+  <!-- A composite material table is a list of one or more composite materials. -->
+  <xs:complexType name="Composite_Material_Table">
+    <xs:sequence>
+      <xs:element name="Composite_Material" type="Composite_Material" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Each composite material has a unique identification number, a name, and one or more substrates. -->
+  <xs:complexType name="Composite_Material">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string" minOccurs="0" />
+      <xs:element name="Surface_Substrate" type="Substrate" minOccurs="0" />
+      <xs:element name="Primary_Substrate" type="Substrate" />
+      <xs:element name="Secondary_Substrate" type="Substrate" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="index" type="xs:nonNegativeInteger" use="required" />
+  </xs:complexType>
+
+  <!-- A substrate has a certain thickness and is composed of one or more base materials. -->
+  <xs:complexType name="Substrate">
+    <xs:sequence>
+      <xs:element name="Material" type="Material" maxOccurs="unbounded" />
+      <xs:element name="Thickness" type="PositiveDecimal" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Each material in a substrate is identified by the name of its base material and by its proportion in the substrate. -->
+  <xs:complexType name="Material">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:token" />
+      <xs:element name="Weight" type="Percentage" minOccurs="0" default="100"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- A percentage is an integer in the range [1,100]. -->
+  <xs:simpleType name="Percentage">
+    <xs:restriction base="xs:positiveInteger">
+      <xs:maxInclusive value="100" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Positive decimals are greater than zero. -->
+  <xs:simpleType name="PositiveDecimal">
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

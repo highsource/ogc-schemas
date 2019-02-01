@@ -1,0 +1,169 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="Stylesheet/Composite_Material_Table.xsl"?>
+<Composite_Material_Table
+  xmlns="http://www.opengis.net/cdb/1.1/Composite_Material_Table"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/cdb/1.1/Composite_Material_Table http://schemas.opengis.net/cdb/1.1/Composite_Material_Table.xsd"
+  version="1.234">
+  
+  <!--
+    This file illustrates several characteristics of a Composite Material Table.
+    First, composite material (CM) index do not have to be consecutive but must appear in ascending order.
+    Second, a CM can be complex with several substrates, or simple with a single primary substrate.
+  -->
+  
+  <!-- This is a complete example of a CM with several substrates. -->
+  <Composite_Material index="3">
+    <Name>A complete example</Name>
+    <Surface_Substrate>
+      <Material>
+        <Name>BM_000</Name>
+      </Material>
+    </Surface_Substrate>
+    
+    <!--
+      For primary and secondary substrates, it is not uncommon to use several base materials (BM).
+      When this is so, the weight of each BM must be provided and must appear in descending order,
+      from the most important BM to the least important one. In addition, the sum of all weights
+      must be 100 since the weight represents a percentage.
+      
+      Note also that the presence of multiple (primary and secondary) substrates comes with the
+      need to provide their respective thickness.
+    -->
+    <Primary_Substrate>
+      <Material>
+        <Name>BM_111</Name>
+        <Weight>67</Weight>
+      </Material>
+      <Material>
+        <Name>BM_222</Name>
+        <Weight>33</Weight>
+      </Material>
+      <Thickness>0.5</Thickness>
+    </Primary_Substrate>
+    <Secondary_Substrate>
+      <Material>
+        <Name>BM_xxx</Name>
+        <Weight>75</Weight>
+      </Material>
+      <Material>
+        <Name>BM_yyy</Name>
+        <Weight>20</Weight>
+      </Material>
+      <Material>
+        <Name>BM_zzz</Name>
+        <Weight>5</Weight>
+      </Material>
+      <Thickness>1.5</Thickness>
+    </Secondary_Substrate>
+    <Secondary_Substrate>
+      <Material>
+        <Name>BM_aaa</Name>
+        <Weight>60</Weight>
+      </Material>
+      <Material>
+        <Name>BM_bbb</Name>
+        <Weight>30</Weight>
+      </Material>
+      <Material>
+        <Name>BM_ccc</Name>
+        <Weight>6</Weight>
+      </Material>
+      <Material>
+        <Name>BM_ddd</Name>
+        <Weight>4</Weight>
+      </Material>
+      <Thickness>20</Thickness>
+    </Secondary_Substrate>
+  </Composite_Material>
+  
+  <!-- A northern America primary road -->
+  <Composite_Material index="19">
+    <Name>Primary Road</Name>
+    <Primary_Substrate>
+      <Material>
+        <Name>BM_ASPHALT</Name>
+      </Material>
+      <Thickness>0.15</Thickness>
+    </Primary_Substrate>
+    <Secondary_Substrate>
+      <Material>
+        <Name>BM_SAND</Name>
+        <Weight>90</Weight>
+      </Material>
+      <Material>
+        <Name>BM_ROCK-GRAVEL</Name>
+        <Weight>10</Weight>
+      </Material>
+      <Thickness>0.55</Thickness>
+    </Secondary_Substrate>
+  </Composite_Material>
+  
+  <!-- To describe the typical walls of offices. -->
+  <Composite_Material index="174">
+    <Name>Painted Dry Wall</Name>
+    <Surface_Substrate>
+      <Material>
+        <Name>BM_PAINT</Name>
+      </Material>
+    </Surface_Substrate>
+    <Primary_Substrate>
+      <Material>
+        <Name>BM_DRYWALL</Name>
+      </Material>
+      <Thickness>0.015</Thickness>
+    </Primary_Substrate>
+  </Composite_Material>
+  
+  <!-- Here, we have a simple runway made of a 26 cm slate of concrete on a 66 cm bed of sand. -->
+  <Composite_Material index="395">
+    <Name>Runway Concrete</Name>
+    <Primary_Substrate>
+      <Material>
+        <Name>BM_CONCRETE</Name>
+      </Material>
+      <Thickness>0.26</Thickness>
+    </Primary_Substrate>
+    <Secondary_Substrate>
+      <Material>
+        <Name>BM_SAND</Name>
+      </Material>
+      <Thickness>0.66</Thickness>
+    </Secondary_Substrate>
+  </Composite_Material>
+  
+  <!--
+    This example shows how to describe the typical pavement of a northern
+    America driveway found in the residential area of urban towns.
+  -->
+  <Composite_Material index="412">
+    <Name>Driveway Pavement</Name>
+    <Surface_Substrate>
+      <Material>
+        <Name>BM_PAINT-ASPHALT</Name>
+      </Material>
+    </Surface_Substrate>
+    <Primary_Substrate>
+      <Material>
+        <Name>BM_ASPHALT</Name>
+      </Material>
+      <Thickness>0.10</Thickness>
+    </Primary_Substrate>
+    <Secondary_Substrate>
+      <Material>
+        <Name>BM_SAND</Name>
+      </Material>
+      <Thickness>0.15</Thickness>
+    </Secondary_Substrate>
+  </Composite_Material>
+  
+  <!-- This example illustrates two points: the largest index, and the simplest CM. -->
+  <Composite_Material index="999999">
+    <Name>The simplest composite material</Name>
+    <Primary_Substrate>
+      <Material>
+        <Name>BM_ xyz</Name>
+      </Material>
+    </Primary_Substrate>
+  </Composite_Material>
+</Composite_Material_Table>

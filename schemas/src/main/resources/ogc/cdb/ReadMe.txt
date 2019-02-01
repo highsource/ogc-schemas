@@ -22,6 +22,9 @@ http://schemas.opengis.net/SCHEMAS_OPENGIS_NET.zip
 
 -----------------------------------------------------------------------
 
+2018-12-19  CDB SWG
+  + v1.1: published CDB 1.1.0 as cdb/1.1
+
 2017-04-21  CDB SWG
   + v1.0: published CDB Volume 9 1.0.0 as cdb/1.0 from OGC 16-119
 

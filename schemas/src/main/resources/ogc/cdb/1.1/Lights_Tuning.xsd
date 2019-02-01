@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<xs:schema id="Light_Tuning" xmlns="CDB" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="CDB" elementFormDefault="qualified" version="1.1">
+
+  <xs:annotation>
+    <xs:appinfo>CDB Light Tuning Schema</xs:appinfo>
+    <xs:documentation>
+      XML schema to define and validate CDB Light Tuning.
+      In accordance with chapter 2 of the CDB specification.
+      Distribution B, Second Draft, March 16, 2005
+      CDB is an OGC Standard.
+      Copyright (c) 2018 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+    </xs:documentation>
+  </xs:annotation>
+
+  <!-- The schema allows the tuning of any number of lights. -->
+  <xs:element name="Lights_Tuning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Light" type="Light" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- The light to tune is identified by its type. -->
+  <!-- Optionaly, a description can inform on the reason to tune this light. -->
+  <!-- The other elements represent properties available for tuning the light. -->
+  <xs:complexType name="Light">
+    <xs:sequence>
+      <xs:element name="Description" type="xs:string" minOccurs="0"/>
+      <xs:element name="Intensity" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Color" type="Color" minOccurs="0"/>
+      <xs:element name="Directionality">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:pattern value="Omnidirectional|Directional|Bidirectional"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Frequency" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Duty_Cycle" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Residual_Intensity" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Lobe_Width" type="Lobe_Width" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="type" type="xs:normalizedString" use="required"/>
+  </xs:complexType>
+
+  <!-- The lobe width has one horizontal and one vertical scale factors. -->
+  <xs:complexType name="Lobe_Width">
+    <xs:sequence>
+      <xs:element name="Horizontal" type="xs:decimal"/>
+      <xs:element name="Vertical" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- Tuning a color requires specifying three (3) floating point values. -->
+  <xs:simpleType name="Color">
+    <xs:restriction>
+      <xs:simpleType>
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minInclusive value="0.0"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:length value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+</xs:schema>

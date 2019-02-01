@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="xs3p.xsl"?>
+<xs:schema
+  version="1.1"
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  targetNamespace="http://www.opengis.net/cdb/1.1/Lights"
+  xmlns:cdb="http://www.opengis.net/cdb/1.1/Lights"
+  xmlns="http://www.opengis.net/cdb/1.1/Lights"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:annotation>
+    <xs:documentation>
+      XML schema to define and validate the content of the CDB Light Names Hierarchy found in /CDB/Metadata/Lights.xml
+      CDB is an OGC Standard.
+      Copyright (c) 2018 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+    </xs:documentation>
+  </xs:annotation>
+
+  <!-- This is a list of light names -->
+  <xs:element name="Lights">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Light" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="version" type="Version" use="required" />
+    </xs:complexType>
+    <xs:key name="Key_Light_Code">
+      <xs:selector xpath=".//Light"/>
+      <xs:field xpath="@code"/>
+    </xs:key>
+    <xs:unique name="Unique_Light_Type">
+      <xs:selector xpath="Light"/>
+      <xs:field xpath="@type"/>
+    </xs:unique>
+  </xs:element>
+
+  <!-- A light has a type and a code. -->
+  <!-- A light can optionally have a description and a list of child lights. -->
+  <xs:element name="Light">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Description" type="xs:string" minOccurs="0"/>
+        <xs:element ref="Light" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="type" type="xs:token" use="required"/>
+      <xs:attribute name="code" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:nonNegativeInteger">
+            <xs:maxExclusive value="10000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+    <xs:unique name="Unique_Type">
+      <xs:selector xpath="Light"/>
+      <xs:field xpath="@type"/>
+    </xs:unique>
+  </xs:element>
+
+  <xs:simpleType name="Version">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This attribute represents the version number of this file. It has two components: major.minor.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([1-9]([0-9])*[.]([0-9])+)"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

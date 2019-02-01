@@ -1,0 +1,1488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="Stylesheet/Lights.xsl"?>
+<Lights
+  xmlns="http://www.opengis.net/cdb/1.1/Lights"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.opengis.net/cdb/1.1/Lights http://schemas.opengis.net/cdb/1.1/Lights.xsd"
+  version = "1.1">
+  <Light type="Light" code="0">
+    <Description>All purpose generic light</Description>
+    <Light type="Platform" code="1">
+      <Description>Generic Platform light</Description>
+      <Light type="Air" code="2">
+        <Description>Generic Aircraft lights</Description>
+        <Light type="Aircraft_Helos" code="3">
+          <Description>Generic light for Aircraft and Helicopters</Description>
+          <Light type="Anti-collision" code="4">
+            <Description>Generic Anti collision light - normally red flashing</Description>
+            <Light type="Bottom_Light" code="5">
+              <Description>Anti-collision found on bottom of the fuselage</Description>
+              <Light type="NVG_Bottom_Light" code="6">
+                <Description>Anti-collision found on bottom of the fuselage in NVG mode</Description>
+              </Light>
+            </Light>
+            <Light type="Top_Light" code="7">
+              <Description>Anti-collision found on Top of the fuselage</Description>
+              <Light type="NVG_Top_Light" code="8">
+                <Description>Anti-collision found on Top of the fuselage in NVG mode</Description>
+              </Light>
+            </Light>
+            <Light type="High_Intensity" code="501">
+              <Description>High Intensity Anti-collision Light</Description>
+            </Light>
+          </Light>
+          <Light type="Formation_Light" code="9">
+            <Description>Florescent formation strip lights</Description>
+          </Light>
+          <Light type="Flood_Light" code="10">
+            <Description>White flood lights used to illuminate the ground or part of the aircraft</Description>
+          </Light>
+          <Light type="Head_Light" code="11">
+            <Description>Head light used to allow pilots to see ahead</Description>
+          </Light>
+          <Light type="Identification_Strobe" code="12">
+            <Description>Strobe lights used in flight to indicate position</Description>
+            <Light type="Red_Light" code="13">
+              <Description>Red Strobe lights used in flight to indicate position</Description>
+            </Light>
+            <Light type="White_Light" code="14">
+              <Description>White Strobe lights used in flight to indicate position</Description>
+            </Light>
+          </Light>
+          <Light type="IR_Light" code="15">
+            <Description>Infrared Lights used to indicate position using infrared instruments</Description>
+          </Light>
+          <Light type="Landing_Light" code="16">
+            <Description>White lights used on Landing approach</Description>
+          </Light>
+          <Light type="Navigation" code="17">
+            <Description>Lights used in flight to indicate position</Description>
+            <Light type="Red_Light" code="18">
+              <Description>Red Navigation light found on the left wing</Description>
+              <Light type="Flashing_Red_Light" code="502">
+                <Description>Flashing Red Navigation light found on the left wing</Description>
+              </Light>
+            </Light>
+            <Light type="Green_Light" code="19">
+              <Description>Green Navigation light found on the right wing</Description>
+              <Light type="Flashing_Green_Light" code="503">
+                <Description>Flashing Green Navigation light found on the right wing</Description>
+              </Light>
+            </Light>
+            <Light type="White_Light" code="20">
+              <Description>White Navigation light found on the tail wing</Description>
+              <Light type="Flashing_White_Light" code="504">
+                <Description>Flashing White Navigation light found on the tail wing</Description>
+              </Light>
+            </Light>
+            <Light type="NVG_Light" code="21">
+              <Description>Navigation light used in NVG mode</Description>
+            </Light>
+          </Light>
+          <Light type="Tail_Light" code="22">
+            <Description>White Tail light</Description>
+          </Light>
+          <Light type="Tail_Flood" code="23">
+            <Description>Flood light used to illuminated the tail, showing off the logo or markings</Description>
+          </Light>
+          <Light type="Taxi_Light" code="24">
+            <Description>White lights used when Aircrafts taxi on the ground</Description>
+          </Light>
+          <Light type="Wingtip_Obstruction" code="25">
+            <Description>Generic Wingtip obstruction light</Description>
+            <Light type="Red_Light" code="26">
+              <Description>Red Obstruction light found on left wing</Description>
+            </Light>
+            <Light type="Green_Light" code="27">
+              <Description>Green Obstruction light found on right wing</Description>
+            </Light>
+          </Light>
+          <Light type="Civil" code="28">
+            <Description>Specific Civil aircraft lights</Description>
+            <Light type="Business" code="29"/>
+            <Light type="Regional" code="30"/>
+            <Light type="Transport" code="31"/>
+            <Light type="Widebody" code="32"/>
+          </Light>
+          <Light type="Military" code="33">
+            <Description>Specific Military aircrafts lights</Description>
+            <Light type="Cargo_Light" code="34">
+              <Description>Cargo Light</Description>
+              <Light type="IR" code="35">
+                <Description>Infra-Red Cargo Light</Description>
+              </Light>
+            </Light>
+            <Light type="Refueling_Light" code="36">
+              <Description>Refueling Light</Description>
+            </Light>
+            <Light type="Search_Light" code="37">
+              <Description>Search Light</Description>
+              <Light type="NVG_Light" code="38">
+                <Description>Search Light used in NVG Mode</Description>
+              </Light>
+            </Light>
+            <Light type="ASW_Patrol" code="39"/>
+            <Light type="Bomber" code="40"/>
+            <Light type="Cargo_Tanker" code="41">
+              <Light type="Pod_Light" code="466">
+                <Light type="Starboard" code="467">
+                  <Light type="Green_Light" code="468">
+                    <Description>Green light Aft of Starboard pod</Description>
+                  </Light>
+                  <Light type="Red_Light" code="469">
+                    <Description>Red light Aft of Starboard pod</Description>
+                  </Light>
+                  <Light type="Yellow_Light" code="470">
+                    <Description>Yellow light Aft of Starboard pod</Description>
+                  </Light>
+                </Light>
+                <Light type="Port" code="471">
+                  <Light type="Green_Light" code="472">
+                    <Description>Green light Aft of Port pod</Description>
+                  </Light>
+                  <Light type="Red_Light" code="473">
+                    <Description>Red light Aft of Port pod</Description>
+                  </Light>
+                  <Light type="Yellow_Light" code="474">
+                    <Description>Yellow light Aft of Port pod</Description>
+                  </Light>
+                </Light>
+              </Light>
+              <Light type="Aldus_Light" code="475">
+                <Light type="Starboard" code="476">
+                  <Light type="Amber_Light" code="477">
+                    <Description>Amber aldus light at Starboard Aft door</Description>
+                  </Light>
+                  <Light type="Green_Light" code="478">
+                    <Description>Green aldus light at Starboard Aft door</Description>
+                  </Light>
+                  <Light type="Red_Light" code="479">
+                    <Description>Red aldus light at Starboard Aft door</Description>
+                  </Light>
+                  <Light type="Yellow_Light" code="480">
+                    <Description>Yellow aldus light at Starboard Aft door</Description>
+                  </Light>
+                </Light>
+                <Light type="Port" code="481">
+                  <Light type="Amber_Light" code="482">
+                    <Description>Amber aldus light at Port Aft door</Description>
+                  </Light>
+                  <Light type="Green_Light" code="483">
+                    <Description>Green aldus light at Port Aft door</Description>
+                  </Light>
+                  <Light type="Red_Light" code="484">
+                    <Description>Red aldus light at Port Aft door</Description>
+                  </Light>
+                  <Light type="Yellow_Light" code="485">
+                    <Description>Yellow aldus light at Port Aft door</Description>
+                  </Light>
+                </Light>
+              </Light>
+            </Light>
+            <Light type="Fighter" code="42"/>
+            <Light type="Helicopter" code="43">
+              <Description>Specific Military Helicopter lights</Description>
+              <Light type="Slung_Load_Light" code="44">
+                <Description>Light used to Illuminate objects carried on a slung load</Description>
+              </Light>
+              <Light type="Attack" code="45"/>
+              <Light type="Cargo" code="46"/>
+              <Light type="Special_Ops" code="47">
+                <Light type="MH47-E" code="486">
+                  <Light type="Porch_Light" code="487">
+                    <Description>Lower White on bottom of Aft pylon near exhaust</Description>
+                  </Light>
+                </Light>
+              </Light>
+              <Light type="Utility" code="48"/>
+            </Light>
+            <Light type="Tanker" code="49"/>
+            <Light type="Unmanned" code="50">
+              <Description>Specific military Unmanned Aerial Vehicle (UAV) lights</Description>
+              <Light type="Navigation" code="494">
+                <Description>Lights used in flight to indicate position</Description>
+                <Light type="Red_Light" code="495">
+                  <Description>Red navigation light found on left wing</Description>
+                </Light>
+                <Light type="Green_Light" code="496">
+                  <Description>Green navigation light found on right wing</Description>
+                </Light>
+                <Light type="White_Light" code="497">
+                  <Description>White navigation light usually on the tail</Description>
+                </Light>
+              </Light>
+              <Light type="Position" code="498">
+                <Description>General position light</Description>
+                <Light type="Orange_Light" code="499">
+                  <Description>Orange position light</Description>
+                </Light>
+                <Light type="White_Light" code="500">
+                  <Description>White position light</Description>
+                </Light>
+              </Light>
+            </Light>
+          </Light>
+        </Light>
+      </Light>
+      <Light type="Land" code="51">
+        <Description>Ground light</Description>
+        <Light type="Backup_Light" code="52">
+          <Description>White lights that indicate a vehicle backing up</Description>
+        </Light>
+        <Light type="Blinking_Emergency_Light" code="53">
+          <Description>Yellow flashing emergency lights (i.e. 4-way flashing indicator  light</Description>
+        </Light>
+        <Light type="Blinking_Turn_Light" code="54">
+          <Description>Yellow blinking turning indicator light</Description>
+        </Light>
+        <Light type="Brake_Light" code="55">
+          <Description>Red lights when brakes are applied</Description>
+        </Light>
+        <Light type="Headlight" code="56">
+          <Description>Primary lights on a vehicle that allow a driver to see ahead</Description>
+          <Light type="Low_Beam_Light" code="57">
+            <Description>Low beam head lights</Description>
+          </Light>
+          <Light type="High_Beam_Light" code="58">
+            <Description>High beam head lights</Description>
+          </Light>
+        </Light>
+        <Light type="Perimeter_Amber_Light" code="59">
+          <Description>Perimeter lights</Description>
+        </Light>
+        <Light type="Strobing_Blue_Light" code="60">
+          <Description>Blue strobe (Flashing)</Description>
+        </Light>
+        <Light type="Strobing_Red_Light" code="61">
+          <Description>Red strobe (Flashing)</Description>
+        </Light>
+        <Light type="Strobing_White_Light" code="62">
+          <Description>White Strobe (Flashing)</Description>
+        </Light>
+        <Light type="Strobing_Yellow_Light" code="63">
+          <Description>Yellow Strobe (Flashing)</Description>
+        </Light>
+        <Light type="Tail_Light" code="64">
+          <Description>Red tail lights</Description>
+        </Light>
+        <Light type="Turn_Signal_Light" code="65">
+          <Description>Yellow turning indicator light</Description>
+        </Light>
+        <Light type="Car" code="66">
+          <Description>Specific Car lights</Description>
+        </Light>
+        <Light type="Transport_Van" code="67">
+          <Description>Specific Transport lights</Description>
+        </Light>
+        <Light type="Truck" code="68">
+          <Description>Specific Truck lights</Description>
+        </Light>
+        <Light type="Ambulance" code="69">
+          <Description>Specific Ambulance  lights</Description>
+        </Light>
+        <Light type="Firetruck" code="70">
+          <Description>Specific Fire truck lights</Description>
+        </Light>
+        <Light type="Train" code="71">
+          <Light type="Caboose_Rear_Light" code="72">
+            <Description>Caboose red light at rear of a train</Description>
+          </Light>
+          <Light type="Engine_Head_Light" code="73">
+            <Description>Train engine white head light</Description>
+          </Light>
+        </Light>
+        <Light type="Tank" code="74"/>
+      </Light>
+      <Light type="Surface" code="75">
+        <Description>Surface light</Description>
+        <Light type="Buoy" code="76">
+          <Description>Lights found on a buoy</Description>
+          <Light type="Green_Light" code="77">
+            <Description>Green Buoy Light</Description>
+          </Light>
+          <Light type="Red_Light" code="78">
+            <Description>Red Buoy Light</Description>
+          </Light>
+          <Light type="White_Light" code="79">
+            <Description>White Buoy Light</Description>
+          </Light>
+          <Light type="Yellow_Light" code="80">
+            <Description>Yellow Buoy Light</Description>
+          </Light>
+        </Light>
+        <Light type="Marine_entry" code="81">
+          <Light type="Green_Light" code="82">
+            <Description>Green Light</Description>
+          </Light>
+          <Light type="Red_Light" code="83">
+            <Description>Red Light</Description>
+          </Light>
+        </Light>
+        <Light type="Ship_Boat" code="84">
+          <Description>Ship/boat lights</Description>
+          <Light type="Navigation" code="85">
+            <Description>Navigation ship lights</Description>
+            <Light type="Directional" code="86">
+              <Description>Directional navigation lights</Description>
+              <Light type="Green_Light" code="87">
+                <Description>Green directional navigation light</Description>
+              </Light>
+              <Light type="Red_Light" code="88">
+                <Description>Red directional navigation light</Description>
+              </Light>
+              <Light type="White_Light" code="89">
+                <Description>White directional navigation light</Description>
+              </Light>
+            </Light>
+            <Light type="Omnidirectional" code="90">
+              <Description>Omnidirectional navigation lights</Description>
+              <Light type="Green_Light" code="91">
+                <Description>Green omnidirectional navigation light</Description>
+              </Light>
+              <Light type="Red_Light" code="92">
+                <Description>Red omnidirectional navigation light</Description>
+              </Light>
+              <Light type="White_Light" code="93">
+                <Description>White omnidirectional navigation light</Description>
+              </Light>
+            </Light>
+          </Light>
+          <Light type="Search_Light" code="94">
+            <Description>Search Light</Description>
+            <Light type="NVG_Light" code="95">
+              <Description>Search Light used in NVG Mode</Description>
+            </Light>
+          </Light>
+          <Light type="Civil" code="96">
+            <Description>Civil Ship/boat light</Description>
+            <Light type="Anchor_Light" code="97">
+              <Description>Lights used to illuminate the anchor</Description>
+            </Light>
+            <Light type="Flood_Light" code="98">
+              <Description>Lights used to illuminate the ground or the deck</Description>
+            </Light>
+            <Light type="Mast" code="99">
+              <Description>Lights found on a mast of the civilian ship</Description>
+              <Light type="Amber_Light" code="100">
+                <Description>Amber Mast light</Description>
+              </Light>
+              <Light type="Green_Light" code="101">
+                <Description>Green Mast light</Description>
+              </Light>
+              <Light type="Red_Light" code="102">
+                <Description>Red Mast light</Description>
+              </Light>
+              <Light type="White_Light" code="103">
+                <Description>White Mast light</Description>
+              </Light>
+            </Light>
+            <Light type="Cargo" code="104">
+              <Description>Cargo specific lights</Description>
+            </Light>
+            <Light type="Container_Vessel" code="105">
+              <Description>Container Vessel specific lights</Description>
+            </Light>
+            <Light type="Ferry" code="106">
+              <Description>Ferry specific lights</Description>
+            </Light>
+            <Light type="Fishing_Vessel" code="107">
+              <Description>Fishing Vessel specific lights</Description>
+            </Light>
+            <Light type="Ocean_Liner" code="108">
+              <Description>Ocean Liner specific lights</Description>
+            </Light>
+            <Light type="Oil_Rig" code="109">
+              <Description>Oil Rig specific lights</Description>
+            </Light>
+            <Light type="Tanker" code="110">
+              <Description>Tanker specific lights</Description>
+            </Light>
+          </Light>
+          <Light type="Military" code="111">
+            <Description>Generic Military Boat/Ship Lights</Description>
+            <Light type="Flare_Light" code="112">
+              <Description>Light effect from a Flare</Description>
+            </Light>
+            <Light type="Flood_Light" code="113">
+              <Description>Lights used to illuminate the ground or the deck</Description>
+            </Light>
+            <Light type="Mast" code="114">
+              <Description>Generic lights found on a mast of the military ship</Description>
+              <Light type="Amber_Light" code="115">
+                <Description>Amber Mast light</Description>
+              </Light>
+              <Light type="Green_Light" code="116">
+                <Description>Green Mast light</Description>
+              </Light>
+              <Light type="Red_Light" code="117">
+                <Description>Red Mast light</Description>
+              </Light>
+              <Light type="White_Light" code="118">
+                <Description>White Mast light</Description>
+              </Light>
+            </Light>
+            <Light type="HIRF" code="447">
+              <Description>High-Intensity Radiated Field lights</Description>
+              <Light type="Amber_Light" code="448">
+                <Description>Amber HIRF light</Description>
+              </Light>
+              <Light type="Red_Light" code="449">
+                <Description>Red HIRF light</Description>
+              </Light>
+            </Light>
+            <Light type="Horizon_Bar" code="119">
+              <Description>Horizon Bar lights for landing on ship</Description>
+              <Light type="Green_Light" code="120">
+                <Description>Green Horizon bar light</Description>
+              </Light>
+              <Light type="White_Light" code="121">
+                <Description>White Horizon bar light</Description>
+              </Light>
+            </Light>
+            <Light type="Stern" code="450">
+              <Description>Stern Light</Description>
+              <Light type="Port_Light" code="451">
+                <Description>Port stern light</Description>
+              </Light>
+              <Light type="Starboard_Light" code="452">
+                <Description>Starboard stern light</Description>
+              </Light>
+            </Light>
+            <Light type="VertRep_Light" code="453">
+              <Description>Vertical Replenishment Light</Description>
+            </Light>
+            <Light type="Aircraft_Carrier" code="122">
+              <Description>Generic aircraft carrier light</Description>
+              <Light type="Approach_Light" code="123">
+                <Description>Aircraft Carrier approach lights</Description>
+              </Light>
+              <Light type="Approach_Strobe_Light" code="124">
+                <Description>Aircraft Carrier approach strobe lights</Description>
+              </Light>
+              <Light type="Deck" code="125">
+                <Description>Deck Lights</Description>
+                <Light type="Aft_Light" code="126">
+                  <Description>Deck Aft area 1/4 mark light</Description>
+                </Light>
+                <Light type="Fore_Light" code="127">
+                  <Description>Deck Fore area 3/4 mark light</Description>
+                </Light>
+                <Light type="Edge" code="128">
+                  <Description>Deck Edge Lights</Description>
+                  <Light type="Blue_Light" code="129">
+                    <Description>Blue Deck edge light</Description>
+                  </Light>
+                  <Light type="Red_Light" code="454">
+                    <Description>Red Deck edge light</Description>
+                  </Light>
+                  <Light type="White_Light" code="130">
+                    <Description>White Deck edge light</Description>
+                  </Light>
+                </Light>
+                <Light type="Obstruction_Light" code="131">
+                  <Description>Deck light indicating the presence of an object which is dangerous to an aircraft</Description>
+                </Light>
+                <Light type="Mark_Area" code="132">
+                  <Description>Mark Deck area lights</Description>
+                  <Light type="Amber_Light" code="133">
+                    <Description>Amber deck light</Description>
+                  </Light>
+                  <Light type="Green_Light" code="134">
+                    <Description>Green deck light</Description>
+                  </Light>
+                  <Light type="Red_Light" code="135">
+                    <Description>Red deck light</Description>
+                  </Light>
+                </Light>
+                <Light type="Ready_Light" code="136">
+                  <Description>Deck Ready lights</Description>
+                </Light>
+                <Light type="Status" code="137">
+                  <Description>Light indicating the authority for flying operations to the Flight Deck Officer or Pilot</Description>
+                  <Light type="Amber_Light" code="138">
+                    <Description>Amber status light</Description>
+                  </Light>
+                  <Light type="Green_Light" code="139">
+                    <Description>Green status light (Go signal)</Description>
+                  </Light>
+                  <Light type="Red_Light" code="140">
+                    <Description>Red status light (Stop signal)</Description>
+                  </Light>
+                </Light>
+              </Light>
+              <Light type="Flood_Light" code="141">
+                <Description>Lights used to illuminate the ground or the deck</Description>
+              </Light>
+              <Light type="GPI" code="142">
+                <Description>Glide path indicator lights</Description>
+                <Light type="Flashing_Green_Light" code="143">
+                  <Description>Green Flashing GPI</Description>
+                </Light>
+                <Light type="Flashing_Orange_Light" code="144">
+                  <Description>Orange Flashing GPI</Description>
+                </Light>
+                <Light type="Amber_Light" code="145">
+                  <Description>Amber GPI light</Description>
+                </Light>
+                <Light type="Green_Light" code="146">
+                  <Description>Green GPI light</Description>
+                </Light>
+                <Light type="Red_Light" code="147">
+                  <Description>Red GPI light</Description>
+                </Light>
+              </Light>
+              <Light type="HAPI" code="148">
+                <Description>Horizontal Approach Path Indicator Lights</Description>
+                <Light type="Red_Light" code="149">
+                  <Description>Red HAPI light</Description>
+                </Light>
+                <Light type="White_Light" code="150">
+                  <Description>White HAPI light</Description>
+                </Light>
+              </Light>
+              <Light type="Homing_Beacon_Light" code="151">
+                <Description>Used to identify the vessel to an approaching aircraft</Description>
+              </Light>
+              <Light type="HPI_Light" code="152">
+                <Description>Horizontal Path Indicator</Description>
+              </Light>
+              <Light type="No-Go_Light" code="153">
+                <Description>Abort go light</Description>
+              </Light>
+              <Light type="Nozzle_Rotation_Light" code="154">
+                <Description>Nozzle rotation light</Description>
+              </Light>
+              <Light type="Pri-Fly_Light" code="455">
+                <Description>Primary Flight control lights</Description>
+              </Light>
+              <Light type="SGSI" code="155">
+                <Description>Stabilized Glide Slope Indicator (approach light indicator)</Description>
+                <Light type="Amber_Light" code="156">
+                  <Description>Amber SGSI light</Description>
+                </Light>
+                <Light type="Blue_Light" code="157">
+                  <Description>Blue SGSI light</Description>
+                </Light>
+                <Light type="Green_Light" code="158">
+                  <Description>Green SGSI light</Description>
+                </Light>
+                <Light type="Red_Light" code="159">
+                  <Description>Red SGSI light</Description>
+                </Light>
+              </Light>
+              <Light type="Standby_Light" code="160">
+                <Description>A means of indicating an aircraft to be at standby</Description>
+              </Light>
+              <Light type="Steady_Ship_Light" code="161">
+                <Description>Steady ship light</Description>
+              </Light>
+              <Light type="STOL" code="162">
+                <Description>Short Takeoff and landing lights</Description>
+                <Light type="Dropline_Light" code="163">
+                  <Description>STOL Dropline light</Description>
+                </Light>
+                <Light type="Lineup_Centerline_Light" code="164">
+                  <Description>STOL Lineup Centerline light</Description>
+                </Light>
+              </Light>
+              <Light type="Waveoff_Light" code="165">
+                <Description>A means of indicating to approaching aircraft that recovery is not permitted and should be aborted immediately.</Description>
+              </Light>
+            </Light>
+            <Light type="Cruiser" code="166">
+              <Description>Specific Cruiser Lights</Description>
+            </Light>
+            <Light type="Destroyer" code="167">
+              <Description>Specific Destroyer Lights</Description>
+            </Light>
+            <Light type="Frigate" code="168">
+              <Description>Specific Frigate Lights</Description>
+            </Light>
+            <Light type="Patrol" code="169">
+              <Description>Specific Patrol ship Lights</Description>
+            </Light>
+            <Light type="Battleship" code="170">
+              <Description>Specific Battleship Lights</Description>
+            </Light>
+            <Light type="Cargo" code="171">
+              <Description>Specific Cargo Lights</Description>
+            </Light>
+          </Light>
+        </Light>
+      </Light>
+      <Light type="Subsurface" code="172">
+        <Description>Generic Subsurface lights</Description>
+        <Light type="Submarine" code="173">
+          <Description>Specific Submarine Lights</Description>
+        </Light>
+      </Light>
+    </Light>
+    <Light type="Munition" code="174">
+      <Description>Generic Munition light</Description>
+      <Light type="Tracer_Light" code="175">
+        <Description>Light created by tracer fire effect in a bullet</Description>
+      </Light>
+      <Light type="Decoy_Flare_Light" code="176">
+        <Description>Decoy flare light</Description>
+      </Light>
+      <Light type="Distress_Flare_Light" code="177">
+        <Description>Distress flare light</Description>
+      </Light>
+      <Light type="Fireworks_Distress_Flare_Light" code="178">
+        <Description>Fireworks flare light</Description>
+      </Light>
+      <Light type="Flare_Light" code="179">
+        <Description>Flare defensive counter measure light effect (vs. IR guided missile)</Description>
+      </Light>
+      <Light type="Chaff_Light" code="180">
+        <Description>Chaff defensive counter measure light effect (vs. Radar guided missiles)</Description>
+      </Light>
+    </Light>
+    <Light type="Lifeform" code="181">
+      <Description>Regroups all lights that could be assigned to (mainly human) lifeforms</Description>
+      <Light type="Flashlight_Light" code="182">
+        <Description>Hand held flashlight</Description>
+      </Light>
+      <Light type="Marshaller" code="183">
+        <Description>Marshaller specific lights</Description>
+      </Light>
+      <Light type="Ground_Personel" code="184">
+        <Description>Ground Personnel specific lights</Description>
+      </Light>
+      <Light type="Survivor" code="185">
+        <Description>Survivor specific lights (on ground or sea)</Description>
+      </Light>
+    </Light>
+    <Light type="Cultural" code="186">
+      <Description>Generic Cultural Ground base light</Description>
+      <Light type="Point-Based" code="187">
+        <Description>Generic Point based Light</Description>
+        <Light type="Flood_Light" code="188">
+          <Description>Lights used to illuminate the ground</Description>
+        </Light>
+        <Light type="Obstruction_Light" code="189">
+          <Description>A light indicating the presence of an object which is dangerous to an aircraft in flight.</Description>
+        </Light>
+        <Light type="Strobe_Light" code="190">
+          <Description>Flashing Ground light that helps to indicate position</Description>
+        </Light>
+        <Light type="Communication_Tower" code="191">
+          <Description>Communication Tower specific lights</Description>
+        </Light>
+        <Light type="FARP" code="192">
+          <Description>Forward Area Rearm/Refuel Point lights</Description>
+          <Light type="IR_Light" code="193">
+            <Description>FARP Infra-red light</Description>
+          </Light>
+          <Light type="Strobe_Light" code="194">
+            <Description>FARP Strobe light</Description>
+          </Light>
+          <Light type="Y_Light" code="195">
+            <Description>FARP Y-shaped light</Description>
+          </Light>
+        </Light>
+        <Light type="Harbour_Light" code="196">
+          <Description>Harbour Light</Description>
+        </Light>
+        <Light type="Pylon" code="197">
+          <Description>Power Pylon specific lights</Description>
+        </Light>
+        <Light type="Railroad_Junction" code="198">
+          <Description>Railroad specific lights</Description>
+          <Light type="Flashing_Red_Light" code="199">
+            <Description>Flashing Red rail road crossing stop lights</Description>
+          </Light>
+        </Light>
+        <Light type="Highway_Junction" code="200">
+          <Description>Highway junction specific lights</Description>
+        </Light>
+        <Light type="Bridge" code="201">
+          <Description>Bridge specific lights</Description>
+        </Light>
+        <Light type="Hazard" code="202">
+          <Description>White light indicating the presence of an hazard around the airport</Description>
+          <Light type="Flashing_Light" code="203">
+            <Description>White Hazard flashing light</Description>
+          </Light>
+          <Light type="Hi_Intensity_Light" code="204">
+            <Description>White Hi Intensity Hazard light</Description>
+          </Light>
+        </Light>
+      </Light>
+      <Light type="Line-Based" code="205">
+        <Description>Generic Line based lights (Linear features as Roads)</Description>
+        <Light type="Fluorescent" code="206">
+          <Description>Fluorescent based Light</Description>
+        </Light>
+        <Light type="Incandescent_Light" code="207">
+          <Description>Incandescent based Light</Description>
+        </Light>
+        <Light type="Mercury_Light" code="208">
+          <Description>Mercury based Light</Description>
+        </Light>
+        <Light type="Metal_Halide_Light" code="209">
+          <Description>Metal Halide based Light</Description>
+        </Light>
+        <Light type="Sodium_Light" code="210">
+          <Description>Sodium based Light</Description>
+        </Light>
+        <Light type="Multilane_Divided_Hwy" code="211">
+          <Description>Generic Multi-lane divided highway  specific lights</Description>
+          <Light type="Incandescent_Light" code="212">
+            <Description>Incandescent based Light</Description>
+          </Light>
+          <Light type="Mercury_Light" code="213">
+            <Description>Mercury based Light</Description>
+          </Light>
+          <Light type="Metal_Halide_Light" code="214">
+            <Description>Metal Halide based Light</Description>
+          </Light>
+          <Light type="Sodium_Light" code="215">
+            <Description>Sodium based Light</Description>
+          </Light>
+          <Light type="Median" code="216">
+            <Description>Median divider Lights</Description>
+          </Light>
+          <Light type="Edge" code="217">
+            <Description>Highway edge/sidewalk lights</Description>
+          </Light>
+        </Light>
+        <Light type="Multilane_Hwy" code="218">
+          <Description>Generic Multi-lane highway lights</Description>
+          <Light type="Incandescent_Light" code="219">
+            <Description>Incandescent based Light</Description>
+          </Light>
+          <Light type="Mercury_Light" code="220">
+            <Description>Mercury based Light</Description>
+          </Light>
+          <Light type="Metal_Halide_Light" code="221">
+            <Description>Metal Halide based Light</Description>
+          </Light>
+          <Light type="Sodium_Light" code="222">
+            <Description>Sodium based Light</Description>
+          </Light>
+          <Light type="Median" code="223">
+            <Description>Median divider Lights</Description>
+          </Light>
+          <Light type="Edge" code="224">
+            <Description>Highway edge/sidewalk lights</Description>
+          </Light>
+        </Light>
+        <Light type="Highway" code="225">
+          <Description>Generic Single Lane Highway</Description>
+          <Light type="Incandescent_Light" code="226">
+            <Description>Incandescent based Light</Description>
+          </Light>
+          <Light type="Mercury_Light" code="227">
+            <Description>Mercury based Light</Description>
+          </Light>
+          <Light type="Metal_Halide_Light" code="228">
+            <Description>Metal Halide based Light</Description>
+          </Light>
+          <Light type="Sodium_Light" code="229">
+            <Description>Sodium based Light</Description>
+          </Light>
+        </Light>
+        <Light type="Road" code="230">
+          <Description>Generic Road Lights</Description>
+          <Light type="Incandescent_Light" code="231">
+            <Description>Incandescent based Light</Description>
+          </Light>
+          <Light type="Mercury_Light" code="232">
+            <Description>Mercury based Light</Description>
+          </Light>
+          <Light type="Metal_Halide_Light" code="233">
+            <Description>Metal Halide based Light</Description>
+          </Light>
+          <Light type="Sodium_Light" code="234">
+            <Description>Sodium based Light</Description>
+          </Light>
+        </Light>
+        <Light type="Boulevard" code="235">
+          <Description>Generic Boulevard lights</Description>
+          <Light type="Incandescent_Light" code="236">
+            <Description>Incandescent based Light</Description>
+          </Light>
+          <Light type="Mercury_Light" code="237">
+            <Description>Mercury based Light</Description>
+          </Light>
+          <Light type="Metal_Halide_Light" code="238">
+            <Description>Metal Halide based Light</Description>
+          </Light>
+          <Light type="Sodium_Light" code="239">
+            <Description>Sodium based Light</Description>
+          </Light>
+        </Light>
+        <Light type="Street" code="240">
+          <Description>Generic Small street lights</Description>
+          <Light type="Incandescent_Light" code="241">
+            <Description>Incandescent based Light</Description>
+          </Light>
+          <Light type="Mercury_Light" code="242">
+            <Description>Mercury based Light</Description>
+          </Light>
+          <Light type="Metal_Halide_Light" code="243">
+            <Description>Metal Halide based Light</Description>
+          </Light>
+          <Light type="Sodium_Light" code="244">
+            <Description>Sodium based Light</Description>
+          </Light>
+        </Light>
+        <Light type="Lane" code="245">
+          <Description>Generic line based light</Description>
+          <Light type="Incandescent_Light" code="246">
+            <Description>Incandescent based Light</Description>
+          </Light>
+        </Light>
+      </Light>
+      <Light type="Area-Based" code="247">
+        <Description>Generic Area lights which cover a larger area</Description>
+        <Light type="Fluorescent_Light" code="248">
+          <Description>Fluorescent based Light</Description>
+        </Light>
+        <Light type="Incandescent_Light" code="249">
+          <Description>Incandescent based Light</Description>
+        </Light>
+        <Light type="Mercury_Light" code="250">
+          <Description>Mercury based Light</Description>
+        </Light>
+        <Light type="Metal_Halide_Light" code="251">
+          <Description>Metal Halide based Light</Description>
+        </Light>
+        <Light type="Sodium_Light" code="252">
+          <Description>Sodium based Light</Description>
+        </Light>
+        <Light type="Residential_Area" code="253">
+          <Description>Generic Residential Area based Lights</Description>
+          <Light type="Bright" code="254">
+            <Description>Generic Bright residential area lights</Description>
+            <Light type="Incandescent_Light" code="255">
+              <Description>Incandescent bright light</Description>
+            </Light>
+            <Light type="Mercury_Light" code="256">
+              <Description>Mercury bright light</Description>
+            </Light>
+          </Light>
+          <Light type="Dim" code="257">
+            <Description>Generic Dim residential area lights</Description>
+            <Light type="Incandescent_Light" code="258">
+              <Description>Incandescent dim light</Description>
+            </Light>
+            <Light type="Mercury_Light" code="259">
+              <Description>Mercury dim light</Description>
+            </Light>
+          </Light>
+        </Light>
+        <Light type="Industrial_Area" code="260">
+          <Description>Generic Industrial Area based Lights</Description>
+          <Light type="Bright" code="261">
+            <Description>Generic Bright industrial area lights</Description>
+            <Light type="Incandescent_Light" code="262">
+              <Description>Incandescent bright light</Description>
+            </Light>
+            <Light type="Mercury_Light" code="263">
+              <Description>Mercury bright light</Description>
+            </Light>
+          </Light>
+          <Light type="Dim" code="264">
+            <Description>Generic dim industrial area lights</Description>
+            <Light type="Incandescent_Light" code="265">
+              <Description>Incandescent dim light</Description>
+            </Light>
+            <Light type="Mercury_Light" code="266">
+              <Description>Mercury dim light</Description>
+            </Light>
+          </Light>
+        </Light>
+        <Light type="Downtown_Area" code="267">
+          <Description>Generic City Downtown Area Lights</Description>
+          <Light type="Bright" code="268">
+            <Description>Generic bright downtown area lights</Description>
+            <Light type="Incandescent_Light" code="269">
+              <Description>Incandescent bright light</Description>
+            </Light>
+            <Light type="Mercury_Light" code="270">
+              <Description>Mercury bright light</Description>
+            </Light>
+          </Light>
+          <Light type="Dim" code="271">
+            <Description>Generic dim downtown area lights</Description>
+            <Light type="Incandescent_Light" code="272">
+              <Description>Incandescent dim light</Description>
+            </Light>
+            <Light type="Mercury_Light" code="273">
+              <Description>Mercury dim light</Description>
+            </Light>
+          </Light>
+        </Light>
+      </Light>
+      <Light type="Airport_Lighting" code="274">
+        <Description>Generic Airport Lighting</Description>
+        <Light type="Apron" code="275">
+          <Description>Generic Apron light</Description>
+          <Light type="Entrance_Light" code="276">
+            <Description>Apron entrance light from runway or taxiway</Description>
+          </Light>
+          <Light type="Flood_Light" code="277">
+            <Description>Flood light to illuminate the Apron</Description>
+          </Light>
+        </Light>
+        <Light type="Beacon" code="278">
+          <Description>Generic Beacon light</Description>
+          <Light type="ID_Beacon_Light" code="279">
+            <Description>Identification Beacon light</Description>
+          </Light>
+          <Light type="Double_White_Rotating_2sec_Light" code="427">
+            <Description>Double peak White 2 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="Double_White_Rotating_3sec_Light" code="428">
+            <Description>Double peak White 3 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="Double_White_Rotating_5sec_Light" code="429">
+            <Description>Double peak White 5 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="Double_White_Rotating_10sec_Light" code="439">
+            <Description>Double peak White 10 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="White_Rotating_2sec_Light" code="280">
+            <Description>White 2 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="White_Rotating_3sec_Light" code="281">
+            <Description>White 3 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="White_Rotating_5sec_Light" code="282">
+            <Description>White 5 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="White_Rotating_10sec_Light" code="445">
+            <Description>White 10 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="Green_Rotating_2sec_Light" code="283">
+            <Description>Green 2 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="Green_Rotating_3sec_Light" code="284">
+            <Description>Green 3 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="Green_Rotating_5sec_Light" code="285">
+            <Description>Green 5 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="Green_Rotating_10sec_Light" code="440">
+            <Description>Green 10 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="Yellow_Rotating_2sec_Light" code="430">
+            <Description>Yellow 2 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="Yellow_Rotating_3sec_Light" code="431">
+            <Description>Yellow 3 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="Yellow_Rotating_5sec_Light" code="432">
+            <Description>Yellow 5 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="Yellow_Rotating_10sec_Light" code="441">
+            <Description>Yellow 10 sec interval Rotating Beacon</Description>
+          </Light>
+          <Light type="Double_White_Flashing_2sec_Light" code="433">
+            <Description>Double peak White 2 sec interval Flashing Beacon</Description>
+          </Light>
+          <Light type="Double_White_Flashing_3sec_Light" code="434">
+            <Description>Double peak White 3 sec interval Flashing Beacon</Description>
+          </Light>
+          <Light type="Double_White_Flashing_5sec_Light" code="435">
+            <Description>Double peak White 5 sec interval Flashing Beacon</Description>
+          </Light>
+          <Light type="Double_White_Flashing_10sec_Light" code="442">
+            <Description>Double peak White 10 sec interval Flashing Beacon</Description>
+          </Light>
+          <Light type="White_Flashing_2sec_Light" code="286">
+            <Description>White 2 sec interval Flashing Beacon</Description>
+          </Light>
+          <Light type="White_Flashing_3sec_Light" code="287">
+            <Description>White 3 sec interval Flashing Beacon</Description>
+          </Light>
+          <Light type="White_Flashing_5sec_Light" code="288">
+            <Description>White 5 sec interval Flashing Beacon</Description>
+          </Light>
+          <Light type="White_Flashing_10sec_Light" code="446">
+            <Description>White 10 sec interval Flashing Beacon</Description>
+          </Light>
+          <Light type="Green_Flashing_2sec_Light" code="289">
+            <Description>Green 2 sec interval Flashing Beacon</Description>
+          </Light>
+          <Light type="Green_Flashing_3sec_Light" code="290">
+            <Description>Green 3 sec interval Flashing Beacon</Description>
+          </Light>
+          <Light type="Green_Flashing_5sec_Light" code="291">
+            <Description>Green 5 sec interval Flashing Beacon</Description>
+          </Light>
+          <Light type="Green_Flashing_10sec_Light" code="443">
+            <Description>Green 10 sec interval Flashing Beacon</Description>
+          </Light>
+          <Light type="Yellow_Flashing_2sec_Light" code="436">
+            <Description>Yellow 2 sec interval Flashing Beacon</Description>
+          </Light>
+          <Light type="Yellow_Flashing_3sec_Light" code="437">
+            <Description>Yellow 3 sec interval Flashing Beacon</Description>
+          </Light>
+          <Light type="Yellow_Flashing_5sec_Light" code="438">
+            <Description>Yellow 5 sec interval Flashing Beacon</Description>
+          </Light>
+          <Light type="Yellow_Flashing_10sec_Light" code="444">
+            <Description>Yellow 10 sec interval Flashing Beacon</Description>
+          </Light>
+        </Light>
+        <Light type="Docking_System" code="292">
+          <Description>Generic docking system light</Description>
+          <Light type="Amber_Light" code="293">
+            <Description>Amber Docking System light</Description>
+          </Light>
+          <Light type="Green_Light" code="294">
+            <Description>Green Docking System light</Description>
+          </Light>
+          <Light type="Red_Light" code="295">
+            <Description>Red Docking System light</Description>
+          </Light>
+        </Light>
+        <Light type="Obstruction" code="296">
+          <Description>Red light indicating the presence of an object which is dangerous to an aircraft in flight.</Description>
+          <Light type="Flashing_Light" code="297">
+            <Description>Red obstruction flashing light</Description>
+          </Light>
+          <Light type="Hi_Intensity_Light" code="298">
+            <Description>Red obstruction high intensity light</Description>
+          </Light>
+        </Light>
+        <Light type="Runway" code="299">
+          <Description>Generic Runway lights</Description>
+          <Light type="Approach_System" code="300">
+            <Description>Generic Airport Approach Lighting Systems</Description>
+            <Light type="Barrette" code="301">
+              <Description>Barrette light</Description>
+              <Light type="Red_Light" code="302">
+                <Description>Red barrette light</Description>
+              </Light>
+              <Light type="White_Light" code="303">
+                <Description>White barrette light</Description>
+              </Light>
+              <Light type="Green_Light" code="488">
+                <Description>Green barrette light</Description>
+              </Light>
+            </Light>
+            <Light type="Circling_Guidance_Light" code="304">
+              <Description>Circling Guidance Light which helps on a circling approach</Description>
+            </Light>
+            <Light type="Landing_Marking_Light" code="305">
+              <Description>Marking Lights that illuminate any markings that need to be visible on the runway in low visibility</Description>
+            </Light>
+            <Light type="Lead-in_Light" code="306">
+              <Description>LDIN - lead-in light system lights</Description>
+            </Light>
+            <Light type="Optical_Landing_System" code="307">
+              <Description>Optical landing system lights</Description>
+            </Light>
+            <Light type="High_Intensity_Light" code="308">
+              <Description>High intensity approach light</Description>
+            </Light>
+            <Light type="Low_Intensity_Light" code="309">
+              <Description>Low intensity approach light</Description>
+            </Light>
+            <Light type="ODAL_Light" code="310">
+              <Description>Omni Directional Approach Light</Description>
+            </Light>
+            <Light type="PAPI" code="311">
+              <Description>Generic Precision approach path indicator. Provides visual glide slope indication using a single row of two or four light units.</Description>
+              <Light type="APAPI_Close_Light" code="312">
+                <Description>Abbreviated Precision Approach Path Indicator closest to runway</Description>
+              </Light>
+              <Light type="APAPI_Far_Light" code="313">
+                <Description>Abbreviated Precision Approach Path Indicator farthest to runway</Description>
+              </Light>
+              <Light type="TypeA_Light" code="314">
+                <Description>PAPI A (farthest from runway)</Description>
+              </Light>
+              <Light type="TypeB_Light" code="315">
+                <Description>PAPI B (3rd from runway)</Description>
+              </Light>
+              <Light type="TypeC_Light" code="316">
+                <Description>PAPI C (2nd from runway)</Description>
+              </Light>
+              <Light type="TypeD_Light" code="317">
+                <Description>PAPI D (Closest from runway)</Description>
+              </Light>
+            </Light>
+            <Light type="RAIL_Light" code="318">
+              <Description>Runway Alignment Indicator Light</Description>
+            </Light>
+            <Light type="REIL_Light" code="319">
+              <Description>Runway End Identifier Light</Description>
+            </Light>
+            <Light type="SFL" code="320">
+              <Description>Generic Sequence Flashing Lights</Description>
+              <Light type="CAT-I" code="321">
+                <Description>CAT-I Approach Lighting System with sequenced flashing</Description>
+              </Light>
+              <Light type="CAT-II" code="322">
+                <Description>CAT-II Approach Lighting System with sequenced flashing</Description>
+              </Light>
+              <Light type="CALVERT-I" code="323">
+                <Description>CALVERT-I Approach Lighting System with sequenced flashing</Description>
+              </Light>
+              <Light type="CALVERT-II" code="324">
+                <Description>CALVERT-II Approach Lighting System with sequenced flashing</Description>
+              </Light>
+              <Light type="ALSF-1" code="325">
+                <Description>Approach Lighting System with sequenced flashing</Description>
+              </Light>
+              <Light type="ALSF-II" code="326">
+                <Description>Approach Lighting System with sequenced flashing</Description>
+              </Light>
+              <Light type="SSALF" code="327">
+                <Description>Approach Lighting System with sequenced flashing</Description>
+              </Light>
+              <Light type="SSALR" code="328">
+                <Description>Approach Lighting System with sequenced flashing</Description>
+              </Light>
+              <Light type="MALSF" code="329">
+                <Description>Approach Lighting System with sequenced flashing</Description>
+              </Light>
+              <Light type="MALSR" code="330">
+                <Description>Approach Lighting System with sequenced flashing</Description>
+              </Light>
+            </Light>
+            <Light type="VASI" code="331">
+              <Description>Generic Visual Approach Slope Indicator System (VASI)</Description>
+              <Light type="2Bar" code="332">
+                <Description>2 Bar Component VASI</Description>
+                <Light type="First_Light" code="333">
+                  <Description>2-Bar VASIS (1st bar closest to threshold)</Description>
+                </Light>
+                <Light type="Second_Light" code="334">
+                  <Description>2-Bar VASIS (2nd bar farthest from threshold)</Description>
+                </Light>
+              </Light>
+              <Light type="3Bar" code="335">
+                <Description>3 Bar component VASI</Description>
+                <Light type="First_Light" code="336">
+                  <Description>3-Bar VASIS (1st bar closest to threshold)</Description>
+                </Light>
+                <Light type="Second_Light" code="337">
+                  <Description>3-Bar VASIS (2nd bar, In between 1st and 3rd)</Description>
+                </Light>
+                <Light type="Third_Light" code="338">
+                  <Description>3-Bar VASIS (3rd bar farthest from threshold)</Description>
+                </Light>
+              </Light>
+              <Light type="LCVASI_Light" code="339">
+                <Description>Low-cost VASI light</Description>
+              </Light>
+              <Light type="TypeP_Light" code="340">
+                <Description>PVASI pulsating light</Description>
+              </Light>
+              <Light type="TypeT" code="341">
+                <Description>Generic T Shaped VASI (T-VASIS)</Description>
+                <Light type="Fly-down_Light" code="342">
+                  <Description>Fly Down lights</Description>
+                </Light>
+                <Light type="Wing_Bar_Light" code="343">
+                  <Description>T-VASIS wing bar light</Description>
+                </Light>
+                <Light type="2.50_Degree" code="344">
+                  <Description>2.50 degree T-VASI</Description>
+                  <Light type="Fly-Up1_Light" code="345">
+                    <Description>T-VASIS Fly-up 1 (closest to Wing Bar) for 2.5 degree Glide slope</Description>
+                  </Light>
+                  <Light type="Fly-Up2_Light" code="346">
+                    <Description>T-VASIS Fly-up 2 (closest to Wing Bar) for 2.5 degree Glide slope</Description>
+                  </Light>
+                  <Light type="Fly-Up3_Light" code="347">
+                    <Description>T-VASIS Fly-up 3 (farthest to Wing Bar) for 2.5 degree Glide slope</Description>
+                  </Light>
+                </Light>
+                <Light type="2.75_Degree" code="348">
+                  <Description>2.75 degree T-VASI</Description>
+                  <Light type="Fly-Up1_Light" code="349">
+                    <Description>T-VASIS Fly-up 1 (closest to Wing Bar) for 2.7 degree Glide slope</Description>
+                  </Light>
+                  <Light type="Fly-Up2_Light" code="350">
+                    <Description>T-VASIS Fly-up 2 (closest to Wing Bar) for 2.7 degree Glide slope</Description>
+                  </Light>
+                  <Light type="Fly-Up3_Light" code="351">
+                    <Description>T-VASIS Fly-up 3 (farthest to Wing Bar) for 2.7 degree Glide slope</Description>
+                  </Light>
+                </Light>
+                <Light type="3.00_Degree" code="352">
+                  <Description>3.00 degree T-VASI</Description>
+                  <Light type="Fly-Up1_Light" code="353">
+                    <Description>T-VASIS Fly-up 1 (closest to Wing Bar) for 3.0 degree Glide slope</Description>
+                  </Light>
+                  <Light type="Fly-Up2_Light" code="354">
+                    <Description>T-VASIS Fly-up 2 (closest to Wing Bar) for 3.0 degree Glide slope</Description>
+                  </Light>
+                  <Light type="Fly-Up3_Light" code="355">
+                    <Description>T-VASIS Fly-up 3 (farthest to Wing Bar) for 3.0 degree Glide slope</Description>
+                  </Light>
+                </Light>
+                <Light type="3.25_Degree" code="356">
+                  <Description>3.25 degree T-VASI</Description>
+                  <Light type="Fly-Up1_Light" code="357">
+                    <Description>T-VASIS Fly-up 1 (closest to Wing Bar) for 3.25 degree Glide slope</Description>
+                  </Light>
+                  <Light type="Fly-Up2_Light" code="358">
+                    <Description>T-VASIS Fly-up 2 (closest to Wing Bar) for 3.25 degree Glide slope</Description>
+                  </Light>
+                  <Light type="Fly-Up3_Light" code="359">
+                    <Description>T-VASIS Fly-up 3 (farthest to Wing Bar) for 3.25 degree Glide slope</Description>
+                  </Light>
+                </Light>
+                <Light type="3.50_Degree" code="360">
+                  <Description>3.5 degree T-VASI</Description>
+                  <Light type="Fly-Up1_Light" code="361">
+                    <Description>T-VASIS Fly-up 1 (closest to Wing Bar) for 3.5 degree Glide slope</Description>
+                  </Light>
+                  <Light type="Fly-Up2_Light" code="362">
+                    <Description>T-VASIS Fly-up 2 (closest to Wing Bar) for 3.5 degree Glide slope</Description>
+                  </Light>
+                  <Light type="Fly-Up3_Light" code="363">
+                    <Description>T-VASIS Fly-up 3 (farthest to Wing Bar) for 3.5 degree Glide slope</Description>
+                  </Light>
+                </Light>
+                <Light type="3.75_Degree" code="364">
+                  <Description>3.75 degree T-VASI</Description>
+                  <Light type="Fly-Up1_Light" code="365">
+                    <Description>T-VASIS Fly-up 1 (closest to Wing Bar) for 3.75 degree Glide slope</Description>
+                  </Light>
+                  <Light type="Fly-Up2_Light" code="366">
+                    <Description>T-VASIS Fly-up 2 (closest to Wing Bar) for 3.75 degree Glide slope</Description>
+                  </Light>
+                  <Light type="Fly-Up3_Light" code="367">
+                    <Description>T-VASIS Fly-up 3 (farthest to Wing Bar) for 3.75 degree Glide slope</Description>
+                  </Light>
+                </Light>
+                <Light type="4.00_Degree" code="368">
+                  <Description>4.00 degree T-VASI</Description>
+                  <Light type="Fly-Up1_Light" code="369">
+                    <Description>T-VASIS Fly-up 1 (closest to Wing Bar) for 4.0 degree Glide slope</Description>
+                  </Light>
+                  <Light type="Fly-Up2_Light" code="370">
+                    <Description>T-VASIS Fly-up 2 (closest to Wing Bar) for 4.0 degree Glide slope</Description>
+                  </Light>
+                  <Light type="Fly-Up3_Light" code="371">
+                    <Description>T-VASIS Fly-up 3 (farthest to Wing Bar) for 4.0 degree Glide slope</Description>
+                  </Light>
+                </Light>
+              </Light>
+            </Light>
+          </Light>
+          <Light type="Centerline" code="372">
+            <Description>Generic runway centerline light</Description>
+            <Light type="Red_Light" code="373">
+              <Description>Unidirectional Red runway centerline light</Description>
+            </Light>
+            <Light type="White_Light" code="374">
+              <Description>Unidirectional White runway centerline light</Description>
+            </Light>
+            <Light type="White_White_Light" code="375">
+              <Description>Bidirectional White runway centerline light</Description>
+            </Light>
+            <Light type="White_Red_Light" code="376">
+              <Description>Bidirectional White/Red runway centerline light</Description>
+            </Light>
+            <Light type="Red_Red_Light" code="511">
+              <Description>Bidirectional Red runway centerline light</Description>
+            </Light>
+          </Light>
+          <Light type="Edge" code="377">
+            <Description>Generic Runway Edge lights</Description>
+            <Light type="White_Light" code="378">
+              <Description>Unidirectional White Edge light</Description>
+            </Light>
+            <Light type="Amber_Light" code="379">
+              <Description>Unidirectional Amber Edge light</Description>
+            </Light>
+            <Light type="Red_Light" code="380">
+              <Description>Unidirectional Red Edge light</Description>
+            </Light>
+            <Light type="Blue_Light" code="381">
+              <Description>Unidirectional Blue Edge light</Description>
+            </Light>
+            <Light type="White_White_Light" code="382">
+              <Description>Bidirectional White Edge light</Description>
+            </Light>
+            <Light type="White_Amber_Light" code="383">
+              <Description>White-Amber Edge light</Description>
+            </Light>
+            <Light type="White_Red_Light" code="384">
+              <Description>White-Red Edge light</Description>
+            </Light>
+            <Light type="White_Blue_Light" code="385">
+              <Description>White-Blue Edge light</Description>
+            </Light>
+            <Light type="Amber_Amber_Light" code="386">
+              <Description>Bidirectional Amber Edge light</Description>
+            </Light>
+            <Light type="Amber_Red_Light" code="387">
+              <Description>Amber-Red Edge light</Description>
+            </Light>
+            <Light type="Amber_Blue_Light" code="388">
+              <Description>Amber-Blue Edge light</Description>
+            </Light>
+            <Light type="Blue_Red_Light" code="389">
+              <Description>Blue-Red Edge light</Description>
+            </Light>
+            <Light type="Red_Red_Light" code="390">
+              <Description>Bidirectional Red Edge light</Description>
+            </Light>
+            <Light type="Blue_Blue_Light" code="391">
+              <Description>Bidirectional Blue Edge light</Description>
+            </Light>
+          </Light>
+          <Light type="End_Wing_Light" code="392">
+            <Description>Runway End Wing lights</Description>
+          </Light>
+          <Light type="End_Light" code="393">
+            <Description>Runway End lights</Description>
+          </Light>
+          <Light type="Flood_Light" code="394">
+            <Description>Runway flood lights</Description>
+          </Light>
+          <Light type="Overrun" code="395">
+            <Description>Light which indicated runway over run area</Description>
+            <Light type="Amber_Light" code="396">
+              <Description>Amber Overrun light</Description>
+            </Light>
+            <Light type="Blue_Light" code="397">
+              <Description>Blue overrun light</Description>
+            </Light>
+            <Light type="Red_Light" code="398">
+              <Description>Red overrun light</Description>
+            </Light>
+          </Light>
+          <Light type="Threshold_Wing_Light" code="399">
+            <Description>Threshold wing lights</Description>
+          </Light>
+          <Light type="Threshold_Light" code="400">
+            <Description>Runway threshold lights: used to identify the landing threshold of the runway</Description>
+          </Light>
+          <Light type="Touchdown_Zone_Light" code="401">
+            <Description>Touchdown Zone lights: used to identify the appropriate landing area on the runway after the threshold</Description>
+          </Light>
+          <Light type="LAHSO_Light" code="402">
+            <Description>Land and hold Short Operations light: runway intersecting stop lights</Description>
+          </Light>
+        </Light>
+        <Light type="Taxiway" code="403">
+          <Description>Generic Airport Taxiway lights</Description>
+          <Light type="Apron_Entrance_Light" code="404">
+            <Description>Apron Entrance light which indication area where taxi enters apron area</Description>
+          </Light>
+          <Light type="CAT-III_Hold_Bar_Light" code="405">
+            <Description>Category III Hold bar light</Description>
+          </Light>
+          <Light type="Centerline" code="406">
+            <Description>Generic Centerline Taxiway lights</Description>
+            <Light type="Aligned_Light" code="407">
+              <Description>Aligned light for a straight sequence of a taxiway</Description>
+            </Light>
+            <Light type="Curved_Light" code="408">
+              <Description>Curved lights for a curved sequence of a taxiway</Description>
+            </Light>
+          </Light>
+          <Light type="Edge" code="409">
+            <Description>Taxiway edge lights</Description>
+            <Light type="Blue_Light" code="425">
+              <Description>Blue Taxiway edge lights</Description>
+            </Light>
+            <Light type="White_Light" code="426">
+              <Description>White Taxiway edge lights</Description>
+            </Light>
+          </Light>
+          <Light type="High-speed" code="410">
+            <Description>Generic Taxiway high speed area lights</Description>
+            <Light type="Amber_Light" code="411">
+              <Description>Amber high-speed lights</Description>
+            </Light>
+            <Light type="Green_Light" code="412">
+              <Description>Green high-speed lights</Description>
+            </Light>
+          </Light>
+          <Light type="Lead-on_Light" code="413">
+            <Description>Generic Lead-On Light</Description>
+            <Light type="Green_Light" code="489">
+              <Description>Green Lead-On Light</Description>
+            </Light>
+            <Light type="Yellow_Light" code="490">
+              <Description>Yellow Lead-On Light</Description>
+            </Light>
+          </Light>
+          <Light type="Lead-off_Light" code="491">
+            <Description>Generic Lead-Off Light</Description>
+            <Light type="Green_Light" code="492">
+              <Description>Green Lead-Off Light</Description>
+            </Light>
+            <Light type="Yellow_Light" code="493">
+              <Description>Yellow Lead-Off Light</Description>
+            </Light>
+          </Light>
+          <Light type="No-entry_Light" code="414">
+            <Description>No entry zone lights</Description>
+          </Light>
+          <Light type="Runway_Guard" code="415">
+            <Description>Runway guard lights</Description>
+          </Light>
+          <Light type="Stop_Bar_Light" code="416">
+            <Description>Stop Bar lights</Description>
+          </Light>
+          <Light type="Taxiway_Clearance_Light" code="417">
+            <Description>Clearance bar lights are located at hold short positions on taxiways in order to increase the visibility of holding position locations. They consist of three yellow lights.</Description>
+          </Light>
+          <Light type="Guard" code="418">
+            <Description>Generic RGl (Runway Guard Light) is used to enhance the visibility of taxiway holding positions on an airport</Description>
+            <Light type="Type1_Light" code="419">
+              <Description>(Deprecated)</Description>
+            </Light>
+            <Light type="Type2_Light" code="420">
+              <Description>(Deprecated)</Description>
+            </Light>
+            <Light type="Type3_Light" code="421">
+              <Description>(Deprecated)</Description>
+            </Light>
+            <Light type="Type4_Light" code="422">
+              <Description>(Deprecated)</Description>
+            </Light>
+          </Light>
+        </Light>
+        <Light type="Wind_Indicator_Light" code="423">
+          <Description>Wind indicator light</Description>
+        </Light>
+        <Light type="Windsock_Light" code="424">
+          <Description>Windsock light used to illuminate the windsock in poor visibility</Description>
+        </Light>
+        <Light type="Heliport" code="457">
+          <Description>Heliport Lights</Description>
+          <Light type="Approach_System" code="458">
+            <Description>Heliport Approach System lights</Description>
+            <Light type="Landing_Marking" code="460">
+              <Description>Heliport Approach Landing Marking lights</Description>
+              <Light type="Green_Light" code="463">
+                <Description>Heliport Approach Landing Marking Green light</Description>
+              </Light>
+              <Light type="Red_Light" code="464">
+                <Description>Heliport Approach Landing Marking Red light</Description>
+              </Light>
+              <Light type="Amber_Light" code="465">
+                <Description>Heliport Approach Landing Marking Amber light</Description>
+              </Light>
+            </Light>
+          </Light>
+          <Light type="Edge" code="459">
+            <Description>Heliport Edge lights</Description>
+            <Light type="White_Light" code="461">
+              <Description>White Heliport Edge light</Description>
+            </Light>
+            <Light type="White_White_Light" code="462">
+              <Description>White White Heliport Edge light</Description>
+            </Light>
+          </Light>
+        </Light>
+      </Light>
+    </Light>
+  </Light>
+</Lights>

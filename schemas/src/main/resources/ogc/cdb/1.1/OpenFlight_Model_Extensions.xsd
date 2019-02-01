@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="xs3p.xsl"?>
+<xs:schema
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  targetNamespace="http://www.opengis.net/cdb/1.1/OpenFlight_Model_Extensions"
+  xmlns="http://www.opengis.net/cdb/1.1/OpenFlight_Model_Extensions"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  version="1.1">
+
+  <xs:annotation>
+    <xs:appinfo>CDB OpenFlight Model Extension Schema</xs:appinfo>
+    <xs:documentation>
+      XML schema to define and validate CDB extensions to OpenFlight models.
+      In accordance with chapter 6 of the CDB specification.
+      Version 3.2
+      CDB is an OGC Standard.
+      Copyright (c) 2018 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:element name="Model">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element name="Zone" type="Zone" />
+        <xs:element name="Point" type="Point" />
+        <xs:element name="Switch" type="Switch" />
+        <xs:element name="Material" type="xs:positiveInteger" />
+        <xs:element name="Articulation" type="Articulation" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="Zone">
+    <xs:all>
+      <xs:element name="Material" type="xs:positiveInteger" minOccurs="0" />
+      <xs:element name="Temperature" type="xs:integer" minOccurs="0" />
+    </xs:all>
+    <xs:attribute name="name" type="xs:token" use="required" />
+    <xs:attribute name="volume" default="closed">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="closed|open" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="Point">
+    <xs:all>
+      <xs:element name="FOV" type="FOV" minOccurs="0" />
+    </xs:all>
+    <xs:attribute name="name" type="xs:token" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="Switch">
+    <xs:choice minOccurs="0">
+      <xs:element name="Damage_Level" type="ListOfPercentages" />
+      <xs:element name="Blurriness" type="ListOfPercentages" />
+    </xs:choice>
+    <xs:attribute name="name" type="xs:token" use="required" />
+  </xs:complexType>
+
+  <xs:simpleType name="ListOfPercentages">
+    <xs:restriction>
+      <xs:simpleType>
+        <xs:list>
+          <xs:simpleType>
+            <xs:restriction base="xs:nonNegativeInteger">
+              <xs:maxInclusive value="100" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:list>
+      </xs:simpleType>
+      <xs:minLength value="1" />
+      <xs:maxLength value="100" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="FOV">
+    <xs:sequence>
+      <xs:element name="Horizontal" default="-30 30">
+        <xs:simpleType>
+          <xs:restriction>
+            <xs:simpleType>
+              <xs:list>
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:minInclusive value="-180" />
+                    <xs:maxInclusive value="180" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:list>
+            </xs:simpleType>
+            <xs:length value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Vertical" default="-30 30">
+        <xs:simpleType>
+          <xs:restriction>
+            <xs:simpleType>
+              <xs:list>
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:minInclusive value="-90" />
+                    <xs:maxInclusive value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:list>
+            </xs:simpleType>
+            <xs:length value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Articulation">
+    <xs:sequence>
+      <xs:element name="Translation" type="Rates" minOccurs="0"/>
+      <xs:element name="Rotation" type="Rates" minOccurs="0"/>
+      <xs:element name="Scaling" type="Rates" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="id" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+
+  <xs:complexType name="Rates">
+    <xs:sequence>
+      <xs:element name="X" type="Rate"/>
+      <xs:element name="Y" type="Rate"/>
+      <xs:element name="Z" type="Rate"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Rate">
+    <xs:attribute name="value" type="xs:decimal" use="required"/>
+  </xs:complexType>
+  
+</xs:schema>

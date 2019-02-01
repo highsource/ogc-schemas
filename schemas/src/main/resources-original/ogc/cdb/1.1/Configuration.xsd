@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="xs3p.xsl"?>
+<xs:schema
+  version="1.1"
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  targetNamespace="http://www.opengis.net/cdb/1.1/Configuration"
+  xmlns:cdb="http://www.opengis.net/cdb/1.1/Configuration"
+  xmlns="http://www.opengis.net/cdb/1.1/Configuration"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      CDB is an OGC Standard.
+      Copyright (c) 2018 Open Geospatial Consortium.
+      To obtain additional rights of use, visit
+      http://www.opengeospatial.org/legal/.
+    </xs:documentation>
+  </xs:annotation>
+  
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      The concept of a &apos;CDB Configuration&apos; is new to version 3.2 of the Specification.
+      A single XML file, named Configuration.xml, completely defines the configuration of one &apos;logical&apos; CDB.
+      This way, the client application does not have to traverse the linked list of CDB Versions through the &apos;PreviousIncrementalRootDirectory&apos; element found in Version.xml
+    </xs:documentation>
+  </xs:annotation>
+  
+  <xs:element name="Configuration">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        The CDB Configuration is a simple list of one or more CDB Versions.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Comment" type="xs:string" minOccurs="0"/>
+        <xs:element name="Version" type="Version" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="Version">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        A CDB Version points to the folder where the data resides.
+        An optional comment can be used to describe the version.
+        It is possible to indicate to which version of the CDB Specification the CDB Version complies.
+        Finally, the CDB Version can indicate if it contains extensions to the Specification.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Folder" type="Folder"/>
+      <xs:element name="Comment" type="xs:string" minOccurs="0"/>
+      <xs:element name="Specification" type="Specification" minOccurs="0"/>
+      <xs:element name="Extension" type="Extension" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Folder">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Provides a non-empty path to a folder.
+        A relative path is prefered although an absolute path is supported.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="path" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  
+  <xs:complexType name="Specification">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Specifies the version of the CDB Specification used to generate the current CDB Version.
+        If &apos;Specification&apos; is omitted, the version number is deemed to be 3.0.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="version" type="xs:token" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="Extension">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Indicates that the CDB Version contains extensions to the CDB Specification.
+        The CDB Extension is identified by a name and a version number.
+        Both are character strings of at least one character.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="name" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="version" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+</xs:schema>

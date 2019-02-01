@@ -1,0 +1,136 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="xs3p.xsl"?>
+<xs:schema
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  targetNamespace="http://www.opengis.net/cdb/1.1/Composite_Material_Table"
+  xmlns:cdb="http://www.opengis.net/cdb/1.1/Composite_Material_Table"
+  xmlns="http://www.opengis.net/cdb/1.1/Composite_Material_Table"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  version="1.1">
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      This XML schema defines the format of a CDB Composite Material Table (CMT);
+      a collection of substrates each made of base materials. 
+      CDB is an OGC Standard.
+      Copyright (c) 2018 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:element name="Composite_Material_Table">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        A CMT is a list of one or more composite materials.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Composite_Material" type="Composite_Material" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="version" type="Version" use="required" />
+    </xs:complexType>
+    <xs:unique name="Unique_Indices">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          This constraint ensures that all composite material indices are unique.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:selector xpath="cdb:Composite_Material" />
+      <xs:field xpath="@index" />
+    </xs:unique>
+  </xs:element>
+
+  <xs:complexType name="Composite_Material">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Each composite material has a unique identification number, a name, and one or more substrates.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string" minOccurs="0" />
+      <xs:element name="Surface_Substrate" type="Substrate" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The presence of a surface substrate is optional.
+            It represents a very thin layer of materials on top of the primary substrate.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Primary_Substrate" type="Substrate" />
+      <xs:element name="Secondary_Substrate" type="Substrate" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            There can be an unlimited number of secondary substrates underneath the primary substrate.
+            They are listed in order from top to bottom.
+            That is, the first secondary substrate appears immediately underneath the primary substrate.
+            The next secondary substrate is found underneath the first one. And so on.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="index" type="xs:nonNegativeInteger" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="Substrate">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        A substrate has a certain thickness and is composed of one or more base materials.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Material" type="Material" maxOccurs="unbounded" />
+      <xs:element name="Thickness" type="PositiveDecimal" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The thickness is expressed in meters, with a value greater than zero.
+            It is optional for the last substrate when several substrates are defined.
+            Note that the thickness is always optional for the surface substrate.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Material">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Each material is identified by the name of its base material and by its proportion in the substrate.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Name" type="xs:token" />
+      <xs:element name="Weight" type="Percentage" minOccurs="0" default="100"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="Percentage">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        A percentage is an integer in the range [1,100].
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:positiveInteger">
+      <xs:maxInclusive value="100" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PositiveDecimal">
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Version">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This attribute represents the version number of this file. It has two components: major.minor.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([1-9]([0-9])*[.]([0-9])+)"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

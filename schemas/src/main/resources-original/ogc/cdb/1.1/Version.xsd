@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="xs3p.xsl"?>
+<xs:schema
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  targetNamespace="http://www.opengis.net/cdb/1.1/Version"
+  xmlns:cdb="http://www.opengis.net/cdb/1.1/Version"
+  xmlns="http://www.opengis.net/cdb/1.1/Version"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  version="1.1">
+  
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      All CDB Versions are identified by a file called &apos;Version.xml&apos;; this schema defines the format of this file.
+      CDB is an OGC Standard.
+      Copyright (c) 2018 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+    </xs:documentation>
+  </xs:annotation>
+  
+  <xs:element name="Version">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PreviousIncrementalRootDirectory" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              This element is optional; when present it provides the location of another CDB Version that is linked with the current one.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Provides the relative or absolute path to another CDB Version.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:choice minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>
+              This choice preserves backward compatibility with version 3.0 of the Specification
+              where a &apos;comment&apos; element was used to describe the content of a CDB Version.
+              As of CDB 3.1, the prefered syntax for commenting a version is to use the &apos;Comment&apos; element.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:element name="Comment" type="xs:string"/>
+          <xs:element name="comment" type="xs:string"/>
+        </xs:choice>
+
+        <xs:element name="Specification" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Specifies the version of the CDB Specification used to generate the current CDB Version.
+              If &apos;Specification&apos; is present, the version number indicated here has preceedence over the one specified in &apos;Version_Specification.xml&apos;, if the file exist.
+              If no explicit version is provided either here or in Specification_Version.xml, the version number is deemed to be 3.0.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="version" use="required">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  The &apos;version&apos; attribute is a character string representing the version number of the Specification.
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:token">
+                  <xs:enumeration value="3.0"/>
+                  <xs:enumeration value="3.1"/>
+                  <xs:enumeration value="3.2"/>
+                  <xs:enumeration value="1.0"/>
+                  <xs:enumeration value="1.1"/>
+
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="update" type="xs:positiveInteger">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  The &apos;update&apos; attribute is an integer number starting with 1.
+                  When present, it indicates the update number of this version of the Specification.
+                  Note that an update to the Specification guarantees the compatibility with the original publishing of the said version of the Specification.
+                  The update number should be considered as informative only.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="Extension" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              This element is optional; when present, it tells us that the current &apos;CDB Version&apos; is a &apos;CDB Extension&apos;.
+              As a result, the whole content of this version is not covered by the Specification.
+              A CDB Extension can contain any datasets, including valid CDB Datasets.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="name" type="xs:token" use="required"/>
+            <xs:attribute name="version" type="xs:token" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
