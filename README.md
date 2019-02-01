@@ -52,7 +52,7 @@ Supports the following schemas:
 * `GML_1_0_0`
 * `GML_2_1_2`
 * `GML_3_1_1`
-* `GML_3_2_1`
+* `GML_3_2`
 * `GML_CE_3_3`
 * `GML_EXR_3_3`
 * `GML_LR_3_3`

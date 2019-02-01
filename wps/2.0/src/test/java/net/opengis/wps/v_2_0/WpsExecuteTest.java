@@ -13,7 +13,7 @@ import javax.xml.bind.Unmarshaller;
 import org.junit.Assert;
 import org.junit.Test;
 
-import net.opengis.gml.v_3_2_1.LinearRingType;
+import net.opengis.gml.v_3_2.LinearRingType;
 
 public class WpsExecuteTest {
 
@@ -22,7 +22,7 @@ public class WpsExecuteTest {
 		try {
 			CONTEXT = JAXBContext.newInstance(net.opengis.wps.v_2_0.ObjectFactory.class.getPackage().getName() + ":"
 					+ net.opengis.ows.v_2_0.ObjectFactory.class.getPackage().getName() + ":"
-					+ net.opengis.gml.v_3_2_1.ObjectFactory.class.getPackage().getName());
+					+ net.opengis.gml.v_3_2.ObjectFactory.class.getPackage().getName());
 		} catch (JAXBException jaxbex) {
 			throw new ExceptionInInitializerError(jaxbex);
 		}

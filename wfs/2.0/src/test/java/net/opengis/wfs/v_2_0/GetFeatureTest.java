@@ -15,8 +15,8 @@ import org.junit.Ignore;
 
 import net.opengis.filter.v_2_0.BinarySpatialOpType;
 import net.opengis.filter.v_2_0.FilterType;
-import net.opengis.gml.v_3_2_1.DirectPositionType;
-import net.opengis.gml.v_3_2_1.PointType;
+import net.opengis.gml.v_3_2.DirectPositionType;
+import net.opengis.gml.v_3_2.PointType;
 
 public class GetFeatureTest {
 
@@ -30,7 +30,7 @@ public class GetFeatureTest {
 		boolean addProperties = true;
 		Double[] coords = { 10., 50. };
 		JAXBContext xmlContext = JAXBContext
-				.newInstance("net.opengis.wfs.v_2_0:net.opengis.filter.v_2_0:net.opengis.gml.v_3_2_1");
+				.newInstance("net.opengis.wfs.v_2_0:net.opengis.filter.v_2_0:net.opengis.gml.v_3_2");
 
 		Marshaller ma = xmlContext.createMarshaller();
 		ma.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -77,7 +77,7 @@ public class GetFeatureTest {
 		point.setSrsName("EPSG:4326");
 		point.setPos(pos);
 
-		net.opengis.gml.v_3_2_1.ObjectFactory gmlFac = new net.opengis.gml.v_3_2_1.ObjectFactory();
+		net.opengis.gml.v_3_2.ObjectFactory gmlFac = new net.opengis.gml.v_3_2.ObjectFactory();
 		interSect.withExpressionOrAny(gmlFac.createPoint(point));
 		net.opengis.filter.v_2_0.ObjectFactory filterFac = new net.opengis.filter.v_2_0.ObjectFactory();
 		JAXBElement<BinarySpatialOpType> je = filterFac.createIntersects(interSect);

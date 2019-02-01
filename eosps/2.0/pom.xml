@@ -18,7 +18,7 @@
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>gml-v_3_2_1</artifactId>
+			<artifactId>gml-v_3_2</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
@@ -66,8 +66,8 @@
 						<binding>
 							<dependencyResource>
 								<groupId>${project.groupId}</groupId>
-								<artifactId>gml-v_3_2_1</artifactId>
-								<resource>gml-v_3_2_1.jsonix.xjb</resource>
+								<artifactId>gml-v_3_2</artifactId>
+								<resource>gml-v_3_2.jsonix.xjb</resource>
 								<version>${project.version}</version>
 							</dependencyResource>
 						</binding>
@@ -98,7 +98,7 @@
 						<binding>
 							<dependencyResource>
 								<groupId>${project.groupId}</groupId>
-								<artifactId>gml-v_3_2_1</artifactId>
+								<artifactId>gml-v_3_2</artifactId>
 								<resource>iso19139-v_20070417.ignore.xjb</resource>
 								<version>${project.version}</version>
 							</dependencyResource>

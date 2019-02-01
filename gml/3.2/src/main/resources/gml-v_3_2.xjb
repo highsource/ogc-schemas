@@ -8,7 +8,7 @@
 	<jaxb:bindings schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd" 
 		node="/xs:schema">
 		<jaxb:schemaBindings>
-			<jaxb:package name="net.opengis.gml.v_3_2_1"/>
+			<jaxb:package name="net.opengis.gml.v_3_2"/>
 		</jaxb:schemaBindings>
 	</jaxb:bindings>
 

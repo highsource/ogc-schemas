@@ -30,7 +30,7 @@
 		<dependency><artifactId>gml-v_2_1_2</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>gml-v_3_1_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>gml-v_3_2_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
-		<dependency><artifactId>gml-v_3_2_1</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
+		<dependency><artifactId>gml-v_3_2</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 		<dependency><artifactId>gml-v_3_3</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
 
 		<dependency><artifactId>gmlcov-v_1_0</artifactId><groupId>${project.groupId}</groupId><version>${project.version}</version></dependency>
