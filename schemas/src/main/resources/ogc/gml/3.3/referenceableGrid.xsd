@@ -1,6 +1,6 @@
-<schema targetNamespace="http://www.opengis.net/gml/3.3/rgrid" xmlns:gmlrgrid="http://www.opengis.net/gml/3.3/rgrid" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="3.3.0" xml:lang="en">
+<schema targetNamespace="http://www.opengis.net/gml/3.3/rgrid" xmlns:gmlrgrid="http://www.opengis.net/gml/3.3/rgrid" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="3.3.1" xml:lang="en">
   <annotation>
-    <documentation>referenceableGrid.xsd, part of GML 3.3. Copyright (c) [2011] Open Geospatial Consortium, Inc. To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.</documentation>
+    <documentation>referenceableGrid.xsd, part of GML 3.3. Copyright (c) [2011,2018] Open Geospatial Consortium, Inc. To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.</documentation>
   </annotation>
   <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd" />
   <complexType abstract="true" name="AbstractReferenceableGridType">

@@ -1,6 +1,6 @@
-<schema targetNamespace="http://www.opengis.net/gml/3.3/xbt" xmlns:gmlxbt="http://www.opengis.net/gml/3.3/xbt"  xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" elementFormDefault="qualified" version="3.3.0">
+<schema targetNamespace="http://www.opengis.net/gml/3.3/xbt" xmlns:gmlxbt="http://www.opengis.net/gml/3.3/xbt"  xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" elementFormDefault="qualified" version="3.3.1">
 	<annotation>
-		<documentation>extdBasicTypes.xsd, part of GML 3.3. Copyright (c) [2011] Open Geospatial Consortium, Inc. To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.</documentation>
+		<documentation>extdBasicTypes.xsd, part of GML 3.3. Copyright (c) [2011,2018] Open Geospatial Consortium, Inc. To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.</documentation>
 	</annotation>
 	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
 	<import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
@@ -40,19 +40,19 @@
 				<attribute ref="xml:lang"/>
 			</extension>
 		</simpleContent>
-	</complexType>	
+	</complexType>
 	<element name="description" type="gmlxbt:LanguageStringAuxType" substitutionGroup="gml:description">
 		<annotation>
 			<documentation>The value of this property is a text description of the object with optional xml:lang attribute.</documentation>
 		</annotation>
-	</element>	
+	</element>
 	<element name="remarks" type="gmlxbt:LanguageStringType" substitutionGroup="gml:remarks">
 		<annotation>
 			<documentation>The value of this property is a text description of the object with optional xml:lang attribute.</documentation>
 		</annotation>
-	</element>	
+	</element>
 	<simpleType name="TimePositionUnion">
-		<union memberTypes="gml:CalDate gmlxbt:OrdDate gmlxbt:WeekDate time dateTime anyURI decimal"/> 
+		<union memberTypes="gml:CalDate gmlxbt:OrdDate gmlxbt:WeekDate time dateTime anyURI decimal"/>
 	</simpleType>
 	<simpleType name="OrdDate">
 		<restriction base="string">
