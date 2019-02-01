@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" version="3.2.1.2">
+<schema targetNamespace="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" version="3.2.2">
 	<annotation>
-		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:temporal:3.2.1">temporal.xsd</appinfo>
+		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:temporal:3.2.2">temporal.xsd</appinfo>
 		<documentation>See ISO/DIS 19136 15.2.
 The GML temporal schemas include components for describing temporal geometry and topology, temporal reference systems, and the temporal characteristics of geographic data. The model underlying the representation constitutes a profile of the conceptual schema described in ISO 19108. The underlying spatiotemporal model strives to accommodate both feature-level and attribute-level time stamping; basic support for tracking moving objects is also included. 
 Time is measured on two types of scales: interval and ordinal.  An interval scale offers a basis for measuring duration, an ordinal scale provides information only about relative position in time.
@@ -9,7 +9,7 @@ Two other ISO standards are relevant to describing temporal objects:  ISO 8601 d
 The temporal schemas cover two interrelated topics and provide basic schema components for representing temporal instants and periods, temporal topology, and reference systems; more specialized schema components defines components used for dynamic features. Instances of temporal geometric types are used as values for the temporal properties of geographic features.
 
 GML is an OGC Standard.
-Copyright (c) 2007,2010 Open Geospatial Consortium.
+Copyright (c) 2007, 2010, 2016, 2018 Open Geospatial Consortium.
 To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
 		</documentation>
 	</annotation>

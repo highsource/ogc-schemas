@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" xml:lang="en" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns="http://www.w3.org/2001/XMLSchema" version="3.2.1.2">
+<schema targetNamespace="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" xml:lang="en" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns="http://www.w3.org/2001/XMLSchema" version="3.2.2">
 	<annotation>
-		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:coordinateOperations:3.2.1">coordinateOperations.xsd</appinfo>
+		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:coordinateOperations:3.2.2">coordinateOperations.xsd</appinfo>
 		<documentation>See ISO/DIS 19136 13.6.
 The spatial or temporal coordinate operations schema components can be divided into five logical parts, which define elements and types for XML encoding of the definitions of:
 -	Multiple abstract coordinate operations
@@ -12,7 +12,7 @@ The spatial or temporal coordinate operations schema components can be divided i
 These schema component encodes the Coordinate Operation package of the UML Model for ISO 19111 Clause 11.
 
 GML is an OGC Standard.
-Copyright (c) 2007,2010 Open Geospatial Consortium.
+Copyright (c) 2007, 2010, 2016, 2018 Open Geospatial Consortium.
 To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
 		</documentation>
 	</annotation>

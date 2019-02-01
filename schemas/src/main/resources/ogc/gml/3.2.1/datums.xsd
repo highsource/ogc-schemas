@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Clemens Portele (interactive instruments) -->
-<schema targetNamespace="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" xml:lang="en" version="3.2.1.2">
+<schema targetNamespace="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" xml:lang="en" version="3.2.2">
 	<annotation>
-		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:datums:3.2.1">datums.xsd</appinfo>
+		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:datums:3.2.2">datums.xsd</appinfo>
 		<documentation>See ISO/DIS 19136 13.5
 The datums schema components can be divided into three logical parts, which define elements and types for XML encoding of the definitions of:
 -	Abstract datum
@@ -11,7 +11,7 @@ The datums schema components can be divided into three logical parts, which defi
 These schema components encode the Datum packages of the UML Models of ISO 19111 Clause 10 and ISO/DIS 19136 D.3.10.
 
 GML is an OGC Standard.
-Copyright (c) 2007,2010 Open Geospatial Consortium.
+Copyright (c) 2007, 2010, 2016, 2018 Open Geospatial Consortium.
 To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
 		</documentation>
 	</annotation>

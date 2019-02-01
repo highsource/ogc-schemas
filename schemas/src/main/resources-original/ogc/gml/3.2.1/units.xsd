@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" xml:lang="en" version="3.2.1.2">
+<schema targetNamespace="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" xml:lang="en" version="3.2.2">
 	<annotation>
-		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:units:3.2.1">units.xsd</appinfo>
+		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:units:3.2.2">units.xsd</appinfo>
 		<documentation>See ISO/DIS 17.2.
 Several GML Schema components concern or require a reference scale or units of measure.  Units are required for quantities that may occur as values of properties of feature types, as the results of observations, in the range parameters of a coverage, and for measures used in Coordinate Reference System definitions. 
 The basic unit definition is an extension of the general gml:Definition element defined in 16.2.1.  Three specialized elements for unit definition are further derived from this. 
@@ -12,7 +12,7 @@ In some application areas Conventional units are used, which may be converted to
 Unit definitions are substitutable for the gml:Definition element declared as part of the dictionary model.  A dictionary that contains only unit definitions and references to unit definitions is a units dictionary.
 
 GML is an OGC Standard.
-Copyright (c) 2007,2010 Open Geospatial Consortium.
+Copyright (c) 2007, 2010, 2016, 2018 Open Geospatial Consortium.
 To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
 		</documentation>
 	</annotation>

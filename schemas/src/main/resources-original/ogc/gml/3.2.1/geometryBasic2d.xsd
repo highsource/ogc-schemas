@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="3.2.1.2">
+<schema targetNamespace="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="3.2.2">
 	<annotation>
-		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:geometryBasic2d:3.2.1">geometryBasic2d.xsd</appinfo>
+		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:geometryBasic2d:3.2.2">geometryBasic2d.xsd</appinfo>
 		<documentation>See ISO/DIS 19136 Clause 10.
 			
 			GML is an OGC Standard.
-			Copyright (c) 2007,2010 Open Geospatial Consortium.
+			Copyright (c) 2007, 2010, 2016, 2018 Open Geospatial Consortium.
 			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
 		</documentation>
 	</annotation>
@@ -75,9 +75,13 @@ The elements exterior and interior describe the surface boundary of the polygon.
 		</annotation>
 	</element>
 	<complexType name="AbstractRingType" abstract="true">
-		<sequence/>
+		<complexContent>
+			<extension base="gml:AbstractCurveType">
+				<sequence/>
+			</extension>
+		</complexContent>
 	</complexType>
-	<element name="AbstractRing" type="gml:AbstractRingType" abstract="true" substitutionGroup="gml:AbstractObject">
+	<element name="AbstractRing" type="gml:AbstractRingType" abstract="true" substitutionGroup="gml:AbstractCurve">
 		<annotation>
 			<documentation>An abstraction of a ring to support surface boundaries of different complexity.
 The AbstractRing element is the abstract head of the substituition group for all closed boundaries of a surface patch.</documentation>

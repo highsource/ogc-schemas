@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" xml:lang="en" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema" version="3.2.1.2">
+<schema targetNamespace="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" xml:lang="en" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema" version="3.2.2">
 	<annotation>
-		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:referenceSystems:3.2.1">referenceSystems.xsd</appinfo>
+		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:referenceSystems:3.2.2">referenceSystems.xsd</appinfo>
 		<documentation>See ISO/DIS 19136 13.2.
 The reference systems schema components have two logical parts, which define elements and types for XML encoding of the definitions of:
 -	Identified Object, inherited by the ten types of GML objects used for coordinate reference systems and coordinate operations
@@ -9,7 +9,7 @@ The reference systems schema components have two logical parts, which define ele
 This schema encodes the Identified Object and Reference System packages of the UML Model for ISO 19111.
 
 GML is an OGC Standard.
-Copyright (c) 2007,2010 Open Geospatial Consortium.
+Copyright (c) 2007, 2010, 2016, 2018 Open Geospatial Consortium.
 To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
 		</documentation>
 	</annotation>

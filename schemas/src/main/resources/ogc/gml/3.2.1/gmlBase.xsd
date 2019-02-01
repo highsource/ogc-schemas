@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="http://www.opengis.net/gml/3.2" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="3.2.1.2">
+<schema targetNamespace="http://www.opengis.net/gml/3.2" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="3.2.2">
 	<annotation>
-		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:gmlBase:3.2.1">gmlBase.xsd</appinfo>
+		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:gmlBase:3.2.2">gmlBase.xsd</appinfo>
 		<documentation>See ISO/DIS 19136 7.2.
 The gmlBase schema components establish the GML model and syntax, in particular
 -	a root XML type from which XML types for all GML objects should be derived,
@@ -11,7 +11,7 @@ The gmlBase schema components establish the GML model and syntax, in particular
 -	components for constructing definitions and dictionaries.
 
 GML is an OGC Standard.
-Copyright (c) 2007,2010 Open Geospatial Consortium.
+Copyright (c) 2007, 2010, 2016, 2018 Open Geospatial Consortium.
 To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
 		</documentation>
 	</annotation>
@@ -32,7 +32,7 @@ To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
 		<sequence>
 			<group ref="gml:StandardObjectProperties"/>
 		</sequence>
-		<attribute ref="gml:id" use="required"/>
+		<attribute ref="gml:id"/>
 	</complexType>
 	<group name="StandardObjectProperties">
 		<sequence>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" version="3.2.1.2">
+<schema targetNamespace="http://www.opengis.net/gml/3.2" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" version="3.2.2">
 	<annotation>
-		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:geometryPrimitives:3.2.1">geometryPrimitives.xsd</appinfo>
+		<appinfo source="urn:x-ogc:specification:gml:schema-xsd:geometryPrimitives:3.2.2">geometryPrimitives.xsd</appinfo>
 		<documentation>See ISO/DIS 19136 Clause 11.
 Beside the "simple" geometric primitives specified in the previous Clause, this Clause specifies additional primitives to describe real world situations which require a more expressive geometry model.
 
 GML is an OGC Standard.
-Copyright (c) 2007,2010 Open Geospatial Consortium.
+Copyright (c) 2007, 2010, 2016, 2018 Open Geospatial Consortium.
 To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
 		</documentation>
 	</annotation>
@@ -817,12 +817,16 @@ trianglePatches encapsulates the triangles of the triangulated surface.</documen
 		</annotation>
 	</element>
 	<complexType name="ShellType">
-		<sequence>
-			<element ref="gml:surfaceMember" maxOccurs="unbounded"/>
-		</sequence>
-		<attributeGroup ref="gml:AggregationAttributeGroup"/>
+		<complexContent>
+			<extension base="gml:AbstractSurfaceType">
+				<sequence>
+					<element ref="gml:surfaceMember" maxOccurs="unbounded"/>
+				</sequence>
+				<attributeGroup ref="gml:AggregationAttributeGroup"/>
+			</extension>
+		</complexContent>
 	</complexType>
-	<element name="Shell" type="gml:ShellType" substitutionGroup="gml:AbstractObject">
+	<element name="Shell" type="gml:ShellType" substitutionGroup="gml:AbstractSurface">
 		<annotation>
 			<documentation>A shell is used to represent a single connected component of a solid boundary as specified in ISO 19107:2003, 6.3.8.
 Every gml:surfaceMember references or contains one surface, i.e. any element which is substitutable for gml:AbstractSurface. In the context of a shell, the surfaces describe the boundary of the solid. 

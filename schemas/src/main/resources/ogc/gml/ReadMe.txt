@@ -13,8 +13,29 @@ The most current schema are available at http://schemas.opengis.net/ .
 
 -----------------------------------------------------------------------
 
+2018-07-03  Gobe Hobona
+  + v3.3.1: Updated to version 3.3.1
+            Added queryBinding="xslt2" attribute to sch:schema element in iso8601.sch
+            Added closing bracket to the first assert test
+
+2018-06-20  Clemens Portele
+  + v3.3.0: targetCodeList element added to extdEncRule.xsd in GML 3.3.0 schema
+
+2016-12-02  Clemens Portele
+  + v3.2.2: Corrigendum to GML 3.2.1 for Change Request 12-092. Changes:
+                - gml:id in gml:AbstractGMLType has been made optional
+                - gml:AbstractRing in substitutionGroup gml:AbstractCurve
+                - gml:AbstractShell in substitutionGroup gml:AbstractSurface
+            - gml:AbstractRingType extended from base type gml:AbstractCurveType
+            - gml:ShellType extended from base type gml:AbstractSurfaceType
+            These changes correct inconsistencies with ISO 19107 without breaking the
+            validity of instance documents created using the GML 3.2.1 schema. This
+            required the change to the gml:id attribute which reverts a change that
+            has been made between GML 3.1.1 and GML 3.2.1 and that has been requested
+            by several communities, too.
+
 2014-10-03  Simon Cox
-  + v3.2.1: Fix spelling of Bezier in gml/3.2.1/gml_32_geometries.rdf . 
+  + v3.2.1: Fix spelling of Bezier in gml/3.2.1/gml_32_geometries.rdf .
             No Version Change.
 
 2012-09-10  Simon Cox
@@ -62,15 +83,12 @@ The most current schema are available at http://schemas.opengis.net/ .
 
 2007-09-06  Kevin Stegemoller
   * v3.2.1: Posted GML 3.2.1 (ISO 19136) schemas from OGC 07-036
-    See http://schemas.opengis.net/gml/3.2.1/gml_3_2_1-ReadMe.txt
+     Note: The root document of the GML 3.2.1 schema is
+       http://schemas.opengis.net/gml/3.2.1/gml.xsd
 
-  Note: The root document of the GML 3.2.1 schema is 
-    http://schemas.opengis.net/gml/3.2.1/gml.xsd
-
-NOTICE: GML 2.1.2 will link to the newest version of GML 2.1.2.x .  As
+Note:: GML 2.1.2 will link to the newest version of GML 2.1.2.x .  As
 of 5 September 2007, the contents of 2.1.2 contain GML 2.1.2.1 per OGC
-06-189.  If you have questions, please contact the webmaster (at)
-opengeospatial.org. -- 2007-09-05  Kevin Stegemoller
+06-189.  -- 2007-09-05
 
 2007-08-27  Chris Holmes
   * v2.1.2: update 2.1.2.1 and ReadMe.txt changes
@@ -89,11 +107,11 @@ opengeospatial.org. -- 2007-09-05  Kevin Stegemoller
 2005-11-22  Arliss Whiteside
   * GML versions 2.0.0 through 3.1.1: The sets of XML Schema Documents for
     OpenGIS GML Versions 2.0.0 through 3.1.1 have been edited to reflect the
-    corrigenda to all those OGC documents that is based on the change requests: 
+    corrigenda to all those OGC documents that is based on the change requests:
     OGC 05-068r1 "Store xlinks.xsd file at a fixed location"
     OGC 05-081r2 "Change to use relative paths"
     OGC 05-105 "Remove description and copyright tags from XML schema documents"
- 
+
   * Note: check each OGC numbered document for detailed changes.
 
 -----------------------------------------------------------------------
@@ -103,7 +121,6 @@ Policies, Procedures, Terms, and Conditions of OGC(r) are available
 
 OGC and OpenGIS are registered trademarks of Open Geospatial Consortium.
 
-Copyright (c) 2012 Open Geospatial Consortium
+Copyright (c) 2012, 2018 Open Geospatial Consortium
 
 -----------------------------------------------------------------------
-
