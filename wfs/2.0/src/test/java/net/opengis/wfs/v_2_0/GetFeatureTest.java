@@ -11,7 +11,6 @@ import javax.xml.bind.Marshaller;
 import javax.xml.namespace.QName;
 
 import org.junit.Test;
-import org.junit.Ignore;
 
 import net.opengis.filter.v_2_0.BinarySpatialOpType;
 import net.opengis.filter.v_2_0.FilterType;
@@ -23,7 +22,6 @@ public class GetFeatureTest {
 	public GetFeatureTest() {
 	}
 
-	@Ignore
 	@Test
 	public void marshals() throws Exception {
 
@@ -52,8 +50,8 @@ public class GetFeatureTest {
 		if (!addProperties)
 			pNames.clear();
 		for (String p : pNames) {
-			// The problem is in this line
-			qt.withAbstractProjectionClause(wfsFactory.createPropertyName(new PropertyName().withValue(new QName(p))));
+			JAXBElement propertyName = wfsFactory.createPropertyName(new PropertyName().withValue(new QName(p)));
+			qt.withAbstractProjectionClause(propertyName);
 		}
 
 		qt.withAbstractSelectionClause(getIntersectsFilter(coords));

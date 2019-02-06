@@ -1111,3 +1111,15 @@ diff -urN ../resources-original/ogc/wms/1.3.0/capabilities_1_3_0.xsd ogc/wms/1.3
 +	<element name="OtherExtendedCapabilities" substitutionGroup="wms:_ExtendedCapabilities"/>
 +	<element name="OtherExtendedOperation" type="wms:OperationType" substitutionGroup="wms:_ExtendedOperation"/>
  </schema>
+diff -urN ../resources-original/ogc/filter/2.0/query.xsd ogc/filter/2.0/query.xsd
+--- ../resources-original/ogc/filter/2.0/query.xsd	2019-01-30 12:44:32.203128600 +0100
++++ ogc/filter/2.0/query.xsd	2019-02-06 20:44:00.225168100 +0100
+@@ -67,4 +67,8 @@
+    <xsd:element name="AbstractSortingClause" abstract="true"/>
+    <xsd:complexType name="AbstractSortingClauseType" abstract="true"/>
+ 
++   <xsd:element name="ProjectionClauseExtension" substitutionGroup="fes:AbstractProjectionClause"/>
++   <xsd:element name="SelectionClauseExtension" substitutionGroup="fes:AbstractSelectionClause"/>
++   <xsd:element name="SortingClauseExtension" substitutionGroup="fes:AbstractSortingClause"/>
++
+ </xsd:schema>

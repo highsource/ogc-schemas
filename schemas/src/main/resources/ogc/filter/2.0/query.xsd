@@ -67,4 +67,8 @@
    <xsd:element name="AbstractSortingClause" abstract="true"/>
    <xsd:complexType name="AbstractSortingClauseType" abstract="true"/>
 
+   <xsd:element name="ProjectionClauseExtension" substitutionGroup="fes:AbstractProjectionClause"/>
+   <xsd:element name="SelectionClauseExtension" substitutionGroup="fes:AbstractSelectionClause"/>
+   <xsd:element name="SortingClauseExtension" substitutionGroup="fes:AbstractSortingClause"/>
+
 </xsd:schema>
