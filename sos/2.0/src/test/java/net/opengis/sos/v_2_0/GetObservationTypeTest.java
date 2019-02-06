@@ -1,4 +1,4 @@
-package net.swe.binding.util;
+package net.opengis.sos.v_2_0;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,8 +14,8 @@ import org.junit.Test;
 
 import net.opengis.filter.v_2_0.BinaryTemporalOpType;
 import net.opengis.filter.v_2_0.TemporalOpsType;
-import net.opengis.gml.v_3_2_1.TimePeriodType;
-import net.opengis.gml.v_3_2_1.TimePositionType;
+import net.opengis.gml.v_3_2.TimePeriodType;
+import net.opengis.gml.v_3_2.TimePositionType;
 import net.opengis.sos.v_2_0.GetObservationType;
 import net.opengis.sos.v_2_0.GetObservationType.TemporalFilter;
 
@@ -23,7 +23,7 @@ public class GetObservationTypeTest {
 
 	net.opengis.sos.v_2_0.ObjectFactory sosFac = new net.opengis.sos.v_2_0.ObjectFactory();
 	net.opengis.filter.v_2_0.ObjectFactory filterFac = new net.opengis.filter.v_2_0.ObjectFactory(); 
-	net.opengis.gml.v_3_2_1.ObjectFactory gmlFac = new net.opengis.gml.v_3_2_1.ObjectFactory(); 
+	net.opengis.gml.v_3_2.ObjectFactory gmlFac = new net.opengis.gml.v_3_2.ObjectFactory(); 
 		
 
 		/**
@@ -55,10 +55,10 @@ public class GetObservationTypeTest {
 		BinaryTemporalOpType filterParameters = new BinaryTemporalOpType();
 		filterParameters.getExpressionOrAny().add(filterFac.createValueReference("phenomenonTime"));
 		filterParameters.getExpressionOrAny().add(gmlFac.createTimePeriod(timePeriod));
+		//  THIS line does not compile, but should
 		JAXBElement<BinaryTemporalOpType> binaryTemporalOps = filterFac.createDuring(filterParameters);
 		
 		TemporalFilter temporalFilter = sosFac.createGetObservationTypeTemporalFilter();
-		//  THIS line does not compile, but should
 		temporalFilter.setTemporalOps(binaryTemporalOps);
 	}
 }
