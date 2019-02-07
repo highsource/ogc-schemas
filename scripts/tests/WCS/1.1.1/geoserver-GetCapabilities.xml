@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wcs:Capabilities xmlns:wcs="http://www.opengis.net/wcs/1.1.1" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1.1" xsi:schemaLocation="http://geoweb2.sbg.ac.at:80/geoserver/schemas/wcs/1.1.1/wcsGetCapabilities.xsd" updateSequence="4552">
+	<ows:ServiceIdentification>
+		<ows:Title>Z_GIS WCS Service</ows:Title>
+		<ows:Abstract>This server implements the WCS specification 1.0 and 1.1.1, it's reference implementation of WCS 1.1.1. All layers published by this service are available on WMS also.</ows:Abstract>
+		<ows:Keywords>
+			<ows:Keyword>WCS</ows:Keyword>
+			<ows:Keyword>WMS</ows:Keyword>
+			<ows:Keyword>GEOSERVER</ows:Keyword>
+		</ows:Keywords>
+		<ows:ServiceType>WCS</ows:ServiceType>
+		<ows:ServiceTypeVersion>1.1.0</ows:ServiceTypeVersion>
+		<ows:ServiceTypeVersion>1.1.1</ows:ServiceTypeVersion>
+		<ows:Fees>NONE</ows:Fees>
+		<ows:AccessConstraints>NONE</ows:AccessConstraints>
+	</ows:ServiceIdentification>
+	<ows:ServiceProvider>
+		<ows:ProviderName>Department of Geoinformatics - Z_GIS (Salzburg University)</ows:ProviderName>
+		<ows:ProviderSite xlink:href="http://geoserver.org" />
+		<ows:ServiceContact>
+			<ows:IndividualName>GII working group (Geographic Information Infrastructures)</ows:IndividualName>
+			<ows:PositionName>GIS and Spatial Databases Experts and Developers</ows:PositionName>
+			<ows:ContactInfo>
+				<ows:Phone />
+				<ows:Address>
+					<ows:DeliveryPoint>Schillerstraße 30, Building 15, 3rd Floor</ows:DeliveryPoint>
+					<ows:City>Salzburg</ows:City>
+					<ows:AdministrativeArea>Salzburg</ows:AdministrativeArea>
+					<ows:PostalCode>5020</ows:PostalCode>
+					<ows:Country>Austria</ows:Country>
+					<ows:ElectronicMailAddress>richard.schoerghofer@sbg.ac.at</ows:ElectronicMailAddress>
+				</ows:Address>
+				<ows:OnlineResource xlink:href="http://geoserver.org" />
+			</ows:ContactInfo>
+		</ows:ServiceContact>
+	</ows:ServiceProvider>
+	<ows:OperationsMetadata>
+		<ows:Operation name="GetCapabilities">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Get xlink:href="http://geoweb2.sbg.ac.at:80/geoserver/wcs?" />
+				</ows:HTTP>
+			</ows:DCP>
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Post xlink:href="http://geoweb2.sbg.ac.at:80/geoserver/wcs?" />
+				</ows:HTTP>
+			</ows:DCP>
+		</ows:Operation>
+		<ows:Operation name="DescribeCoverage">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Get xlink:href="http://geoweb2.sbg.ac.at:80/geoserver/wcs?" />
+				</ows:HTTP>
+			</ows:DCP>
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Post xlink:href="http://geoweb2.sbg.ac.at:80/geoserver/wcs?" />
+				</ows:HTTP>
+			</ows:DCP>
+		</ows:Operation>
+		<ows:Operation name="GetCoverage">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Get xlink:href="http://geoweb2.sbg.ac.at:80/geoserver/wcs?" />
+				</ows:HTTP>
+			</ows:DCP>
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Post xlink:href="http://geoweb2.sbg.ac.at:80/geoserver/wcs?" />
+				</ows:HTTP>
+			</ows:DCP>
+			<ows:Parameter name="store">
+				<ows:AllowedValues>
+					<ows:Value>True</ows:Value>
+					<ows:Value>False</ows:Value>
+				</ows:AllowedValues>
+			</ows:Parameter>
+		</ows:Operation>
+		<ows:Constraint name="PostEncoding">
+			<ows:AllowedValues>
+				<ows:Value>XML</ows:Value>
+			</ows:AllowedValues>
+		</ows:Constraint>
+	</ows:OperationsMetadata>
+	<wcs:Contents>
+		<wcs:CoverageSummary>
+			<ows:Title>DEM_AOI_1</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>DEM_AOI_1</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>3.1501808398605204 42.60135676557603</ows:LowerCorner>
+				<ows:UpperCorner>3.1579961828323606 42.609026594672834</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>DEM_AOI_1</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>Hillshade_AOI_1</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>Hillshade_AOI_1</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>3.1501808398605204 42.60135676557603</ows:LowerCorner>
+				<ows:UpperCorner>3.1579961828323606 42.609026594672834</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>Hillshade_AOI_1</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>SPOT-5_10092011_AOI_1t</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>SPOT-5_10092011_AOI_1t</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>1.16967185499E-4 4.257996540159E-4</ows:LowerCorner>
+				<ows:UpperCorner>1.170723944247E-4 4.258943070433E-4</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>SPOT-5_10092011_AOI_1t</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>Slope_AOI_1</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>Slope_AOI_1</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>13.020645945833248 47.39977492934464</ows:LowerCorner>
+				<ows:UpperCorner>13.032559802408068 47.41040500336011</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>Slope_AOI_1</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>hillsh50m</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>hillsh50m</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.404525211283568 46.31621247101038</ows:LowerCorner>
+				<ows:UpperCorner>17.233245502422033 49.03310035539746</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>hillsh50m</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_1013</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_1013</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40453926779908 46.31659110620431</ows:LowerCorner>
+				<ows:UpperCorner>17.232701094052594 49.032918950622594</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_1013</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_1074</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_1074</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40453926779908 46.31659130702485</ows:LowerCorner>
+				<ows:UpperCorner>17.233261400689713 49.03291895350638</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_1074</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_1078</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_1078</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.404559876053028 46.31632304005225</ows:LowerCorner>
+				<ows:UpperCorner>17.233282008943664 49.0326506865338</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_1078</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_1084</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_1084</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.404559876053028 46.31632304005225</ows:LowerCorner>
+				<ows:UpperCorner>17.233282008943664 49.0326506865338</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_1084</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_1087</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_1087</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40683635235751 46.32034107196777</ows:LowerCorner>
+				<ows:UpperCorner>17.232193222832517 49.027694685340954</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_1087</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_1089</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_1089</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40683635235751 46.32034107196777</ows:LowerCorner>
+				<ows:UpperCorner>17.232193222832517 49.027694685340954</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_1089</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_1530</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_1530</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.404525338512554 46.31621239133111</ows:LowerCorner>
+				<ows:UpperCorner>17.233245629651016 49.03310027571817</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_1530</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_1604</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_1604</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40453926779908 46.31659130702485</ows:LowerCorner>
+				<ows:UpperCorner>17.233261400689713 49.03291895350638</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_1604</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_1915</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_1915</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.404525338512554 46.31621175216736</ows:LowerCorner>
+				<ows:UpperCorner>17.23324747140319 49.03310027571817</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_1915</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_4004</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_4004</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.404525338512554 46.31621239133106</ows:LowerCorner>
+				<ows:UpperCorner>17.233245629651037 49.03310027571813</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_4004</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_4070</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_4070</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40453926779908 46.31659130702485</ows:LowerCorner>
+				<ows:UpperCorner>17.233261400689713 49.03291895350638</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_4070</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_5009</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_5009</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.404525338512554 46.31621239133106</ows:LowerCorner>
+				<ows:UpperCorner>17.233245629651037 49.03310027571813</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_5009</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_5012</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_5012</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.404525338512554 46.31621239133106</ows:LowerCorner>
+				<ows:UpperCorner>17.233245629651037 49.03310027571813</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_5012</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_6110</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_6110</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40453926779908 46.31659130702485</ows:LowerCorner>
+				<ows:UpperCorner>17.233261400689713 49.03291895350638</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_6110</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_6210</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_6210</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40453926779908 46.31659130702485</ows:LowerCorner>
+				<ows:UpperCorner>17.233261400689713 49.03291895350638</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_6210</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_6230</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_6230</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40453926779908 46.31659130702485</ows:LowerCorner>
+				<ows:UpperCorner>17.233261400689713 49.03291895350638</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_6230</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_6240</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_6240</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.404525338512554 46.31621175216736</ows:LowerCorner>
+				<ows:UpperCorner>17.23324747140319 49.03310027571817</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_6240</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_6250</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_6250</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.404539267799079 46.31659130414101</ows:LowerCorner>
+				<ows:UpperCorner>17.23270052362044 49.032918950622566</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_6250</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_6260</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_6260</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.404539267799079 46.31659130414101</ows:LowerCorner>
+				<ows:UpperCorner>17.23270052362044 49.032918950622566</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_6260</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_7110</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_7110</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.404618356660132 46.31473286553913</ows:LowerCorner>
+				<ows:UpperCorner>17.235425196578557 49.03188782507977</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_7110</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_7210</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_7210</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40453926779908 46.31659130702485</ows:LowerCorner>
+				<ows:UpperCorner>17.233261400689713 49.03291895350638</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_7210</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_7220</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_7220</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.404559876053028 46.31632304005225</ows:LowerCorner>
+				<ows:UpperCorner>17.233282008943664 49.0326506865338</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_7220</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_7240</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_7240</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.420246074197749 46.31601737273351</ows:LowerCorner>
+				<ows:UpperCorner>16.436257333714078 48.82762488893097</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_7240</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_8160</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_8160</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40453926779908 46.31659130702485</ows:LowerCorner>
+				<ows:UpperCorner>17.233261400689713 49.03291895350638</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_8160</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_8240</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_8240</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40453926779908 46.31659130702485</ows:LowerCorner>
+				<ows:UpperCorner>17.233261400689713 49.03291895350638</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_8240</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_9180</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_9180</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.404525338512554 46.316211752353155</ows:LowerCorner>
+				<ows:UpperCorner>17.190620814138562 49.033100275903976</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_9180</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_91D0</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_91D0</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.404525338512554 46.31621175216736</ows:LowerCorner>
+				<ows:UpperCorner>17.23324747140319 49.03310027571817</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_91D0</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_91G0</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_91G0</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40683635235751 46.32034107196777</ows:LowerCorner>
+				<ows:UpperCorner>17.232193222832517 49.027694685340954</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_91G0</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_91H0</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_91H0</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40683635235751 46.32034107196777</ows:LowerCorner>
+				<ows:UpperCorner>17.232193222832517 49.027694685340954</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_91H0</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_91I0</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_91I0</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40683635235751 46.32034107196777</ows:LowerCorner>
+				<ows:UpperCorner>17.232193222832517 49.027694685340954</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_91I0</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_9430</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_9430</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40453926779908 46.31659130414105</ows:LowerCorner>
+				<ows:UpperCorner>17.232700523620444 49.032918950622594</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_9430</wcs:Identifier>
+		</wcs:CoverageSummary>
+		<wcs:CoverageSummary>
+			<ows:Title>modellierung_9530</ows:Title>
+			<ows:Abstract>Generated from GeoTIFF</ows:Abstract>
+			<ows:Keywords>
+				<ows:Keyword>WCS</ows:Keyword>
+				<ows:Keyword>GeoTIFF</ows:Keyword>
+				<ows:Keyword>modellierung_9530</ows:Keyword>
+			</ows:Keywords>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>9.40453926779908 46.31659130414105</ows:LowerCorner>
+				<ows:UpperCorner>17.232700523620444 49.032918950622594</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<wcs:Identifier>modellierung_9530</wcs:Identifier>
+		</wcs:CoverageSummary>
+	</wcs:Contents>
+</wcs:Capabilities>

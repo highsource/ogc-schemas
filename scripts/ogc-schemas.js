@@ -129,6 +129,7 @@ module.exports.WaterML_2_0           = require('./lib/WaterML_2_0'              
 module.exports.WCPS_1_0              = require('./lib/WCPS_1_0'                     ).WCPS_1_0             ;
 module.exports.WCS_1_0_0             = require('./lib/WCS_1_0_0'                    ).WCS_1_0_0            ;
 module.exports.WCS_1_1               = require('./lib/WCS_1_1'                      ).WCS_1_1              ;
+module.exports.WCS_1_1_1             = require('./lib/WCS_1_1_1'                    ).WCS_1_1_1            ;
 module.exports.WCS_2_0               = require('./lib/WCS_2_0'                      ).WCS_2_0              ;
 module.exports.WCS_CRS_1_0           = require('./lib/WCS_CRS_1_0'                  ).WCS_CRS_1_0          ;
 module.exports.WCS_Interpolation_1_0 = require('./lib/WCS_Interpolation_1_0'        ).WCS_Interpolation_1_0;
