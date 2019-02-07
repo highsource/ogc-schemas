@@ -1,3 +1,79 @@
+diff -urN ../resources-original/geoserver/wcs/1.1.1/wcsCommon.xsd geoserver/wcs/1.1.1/wcsCommon.xsd
+--- ../resources-original/geoserver/wcs/1.1.1/wcsCommon.xsd	2019-02-07 17:35:15.215841300 +0100
++++ geoserver/wcs/1.1.1/wcsCommon.xsd	2019-02-07 17:35:01.352825900 +0100
+@@ -15,7 +15,7 @@
+ 	<!-- ==============================================================
+  	includes and imports	
+ 	============================================================== -->
+-	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
++	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+ 	<!-- ==============================================================		
+ 	elements and types	
+ 	============================================================== -->
+diff -urN ../resources-original/geoserver/wcs/1.1.1/wcsContents.xsd geoserver/wcs/1.1.1/wcsContents.xsd
+--- ../resources-original/geoserver/wcs/1.1.1/wcsContents.xsd	2019-02-07 17:35:15.229020300 +0100
++++ geoserver/wcs/1.1.1/wcsContents.xsd	2019-02-07 17:35:01.358273000 +0100
+@@ -13,7 +13,7 @@
+        includes and imports
+ 	============================================================== -->
+ 	<include schemaLocation="wcsCommon.xsd"/>
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+ 	<!-- ==============================================================
+        elements and types
+ 	============================================================== -->
+diff -urN ../resources-original/geoserver/wcs/1.1.1/wcsDescribeCoverage.xsd geoserver/wcs/1.1.1/wcsDescribeCoverage.xsd
+--- ../resources-original/geoserver/wcs/1.1.1/wcsDescribeCoverage.xsd	2019-02-07 18:08:29.372641100 +0100
++++ geoserver/wcs/1.1.1/wcsDescribeCoverage.xsd	2019-02-07 18:11:50.574124300 +0100
+@@ -19,8 +19,8 @@
+ 	<include schemaLocation="wcsCommon.xsd"/>
+ 	<include schemaLocation="wcsGridCRS.xsd"/>
+ 	<include schemaLocation="wcsInterpolationMethod.xsd"/>
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+-	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+ 	<!-- ==============================================================    
+ 	   elements and types	
+ 	============================================================== -->
+diff -urN ../resources-original/geoserver/wcs/1.1.1/wcsGetCapabilities.xsd geoserver/wcs/1.1.1/wcsGetCapabilities.xsd
+--- ../resources-original/geoserver/wcs/1.1.1/wcsGetCapabilities.xsd	2019-02-07 17:35:15.282489000 +0100
++++ geoserver/wcs/1.1.1/wcsGetCapabilities.xsd	2019-02-07 17:35:01.408432600 +0100
+@@ -13,7 +13,7 @@
+        includes and imports
+ 	============================================================== -->
+ 	<include schemaLocation="wcsContents.xsd"/>
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+ 	<!-- ==============================================================
+        elements and types
+ 	============================================================== -->
+diff -urN ../resources-original/geoserver/wcs/1.1.1/wcsGetCoverage.xsd geoserver/wcs/1.1.1/wcsGetCoverage.xsd
+--- ../resources-original/geoserver/wcs/1.1.1/wcsGetCoverage.xsd	2019-02-07 18:09:04.180507000 +0100
++++ geoserver/wcs/1.1.1/wcsGetCoverage.xsd	2019-02-07 18:12:05.456124700 +0100
+@@ -19,8 +19,8 @@
+ 	<include schemaLocation="wcsCommon.xsd"/>
+ 	<include schemaLocation="wcsGridCRS.xsd"/>
+ 	<include schemaLocation="wcsCoverages.xsd"/>
+-	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="../../ows/1.1.0/owsAll.xsd"/>
+-	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
++	<import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
++	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+ 	<!-- ==============================================================	
+ 		elements and types	
+ 	============================================================== -->
+diff -urN ../resources-original/geoserver/wcs/1.1.1/wcsGridCRS.xsd geoserver/wcs/1.1.1/wcsGridCRS.xsd
+--- ../resources-original/geoserver/wcs/1.1.1/wcsGridCRS.xsd	2019-02-07 17:35:15.323069700 +0100
++++ geoserver/wcs/1.1.1/wcsGridCRS.xsd	2019-02-07 17:35:01.443372600 +0100
+@@ -16,7 +16,7 @@
+ 	<!-- ========================================================
+            includes and imports
+ 	======================================================== -->
+-	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
++	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+ 	<!-- ========================================================
+ 		elements and types
+ 	======================================================== -->
 diff -urN ../resources-original/geoserver/sld/StyledLayerDescriptor.xsd geoserver/sld/StyledLayerDescriptor.xsd
 --- ../resources-original/geoserver/sld/StyledLayerDescriptor.xsd	2015-04-15 22:05:57.395815100 +0200
 +++ geoserver/sld/StyledLayerDescriptor.xsd	2018-05-01 18:19:14.591135500 +0200
