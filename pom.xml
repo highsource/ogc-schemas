@@ -66,6 +66,7 @@
 		<module>citygml</module>
 		<module>context</module>
 		<module>csw</module>
+		<module>eompom</module>
 		<module>eop</module>
 		<module>eosps</module>
 		<module>filter</module>

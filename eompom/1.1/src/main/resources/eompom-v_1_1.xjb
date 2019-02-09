@@ -1,0 +1,48 @@
+<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
+	jaxb:extensionBindingPrefixes="xjc">
+
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/eompom/1.1/xsd/eop.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.eompom.eop.v_1_1"/>
+		</jaxb:schemaBindings>
+		<jaxb:bindings node="xs:complexType[@name='EarthObservationType']/xs:complexContent/xs:extension/xs:sequence/xs:element[@name='metaDataProperty']">
+			<jaxb:property name="earthObservationMetaDataProperty"/>
+		</jaxb:bindings>
+		<jaxb:bindings node="xs:complexType[@name='EarthObservationType']//xs:attribute[@ref='eop:type']">
+			<jaxb:property name="earthObservationMetaDataPropertyType"/>
+		</jaxb:bindings>
+	</jaxb:bindings>
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/eompom/1.1/xsd/alt.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.eompom.alt.v_1_1"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/eompom/1.1/xsd/atm.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.eompom.atm.v_1_1"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/eompom/1.1/xsd/lmb.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.eompom.lmb.v_1_1"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/eompom/1.1/xsd/opt.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.eompom.opt.v_1_1"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/eompom/1.1/xsd/sar.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.eompom.sar.v_1_1"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	<jaxb:bindings schemaLocation="http://schemas.opengis.net/eompom/1.1/xsd/ssp.xsd" node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="net.opengis.eompom.ssp.v_1_1"/>
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+</jaxb:bindings>
