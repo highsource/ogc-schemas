@@ -138,6 +138,7 @@
 		"scripts/lib/WCPS_1_0.js",
 		"scripts/lib/WCS_1_0_0.js",
 		"scripts/lib/WCS_1_1.js",
+		"scripts/lib/WCS_1_1_1.js",
 		"scripts/lib/WCS_2_0.js",
 		"scripts/lib/WCS_CRS_1_0.js",
 		"scripts/lib/WCS_Interpolation_1_0.js",

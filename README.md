@@ -133,6 +133,7 @@ Supports the following schemas:
 * `WCS_1_0_0`
   * `GML4WCS_1_0_0`
 * `WCS_1_1`
+* `WCS_1_1_1`
 * `WCS_2_0`
 * `WCS_CRS_1_0`
 * `WCS_Interpolation_1_0`
