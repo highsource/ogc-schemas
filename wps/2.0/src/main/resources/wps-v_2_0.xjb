@@ -2,6 +2,7 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
 	xmlns:wildcard="http://jaxb2-commons.dev.java.net/basic/wildcard"
+	xmlns:annox="http://annox.dev.java.net"
 	jaxb:extensionBindingPrefixes="xjc wildcard">
 
 	<jaxb:bindings 
@@ -19,4 +20,13 @@
 			<wildcard:lax/>
 		</jaxb:bindings>
 	</jaxb:bindings>
+	
+	<jaxb:bindings 
+		schemaLocation="http://schemas.opengis.net/wps/2.0/dataTypes.xsd" 
+		node="/xs:schema">
+		<jaxb:bindings node="xs:element[@name='LiteralValue']/xs:complexType">
+			<annox:annotateClass>@javax.xml.bind.annotation.XmlType(name="LiteralValue")</annox:annotateClass>
+		</jaxb:bindings>
+	</jaxb:bindings>
+
 </jaxb:bindings>
